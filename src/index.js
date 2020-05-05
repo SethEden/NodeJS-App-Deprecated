@@ -1,5 +1,4 @@
-// import math from './math';
-import * as math from './math.js';
+import math from './math';
 
 // console.log(math.add(1,2));
 math.start();
