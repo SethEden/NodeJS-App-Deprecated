@@ -1,3 +1,7 @@
+const pySpawn = require('child_process').spawn;
+
+var pyProcess;
+
 function initCommandParser(dataInput) {
   console.log('BEGIN initCommandParser');
   console.log('dataInput is: ' + dataInput);
@@ -6,6 +10,16 @@ function initCommandParser(dataInput) {
     returnData = false;
   } else {
     console.log(dataInput);
+    if (dataInput.includes('.py') === true) {
+      // Here we will need to execute a python script.
+      pyProcess = pySpawn('python', ['../src/hello.py']);
+
+      process.stdout.on('data', data => {
+        console.log(data.toString());
+      });
+    } else {
+
+    }
     returnData = true;
   }
   console.log('returnData is: ' + returnData);
