@@ -1,29 +1,37 @@
-const pySpawn = require('child_process').spawn;
-
-var pyProcess;
+import {PythonShell} from 'python-shell';
 
 function initCommandParser(dataInput) {
-  console.log('BEGIN initCommandParser');
+  console.log('BEGIN commandParser.initCommandParser');
   console.log('dataInput is: ' + dataInput);
   var returnData;
   if (dataInput.toUpperCase() === 'EXIT') {
     returnData = false;
   } else {
-    console.log(dataInput);
     if (dataInput.includes('.py') === true) {
       // Here we will need to execute a python script.
-      pyProcess = pySpawn('python', ['../src/hello.py']);
+      console.log('begin PythonShell run');
+      let pyshell = new PythonShell('./src/hello.py');
+      console.log('End PythonShell run');
 
-      process.stdout.on('data', data => {
-        console.log(data.toString());
+      pyshell.on('message', function (message) {
+        // received a message sent from the Python script (a simple "print" statement)
+        console.log(message);
+      });
+
+      // end the input stream and allow the process to exit
+      pyshell.end(function (err,code,signal) {
+        if (err) throw err;
+        console.log('The python exit code was: ' + code);
+        console.log('The python exit signal was: ' + signal);
+        console.log('python finished');
       });
     } else {
-
+      console.log(dataInput);
     }
     returnData = true;
   }
   console.log('returnData is: ' + returnData);
-  console.log('END initCommandParser');
+  console.log('END commandParser.initCommandParser');
   return returnData;
 };
 

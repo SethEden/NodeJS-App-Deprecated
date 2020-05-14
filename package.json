@@ -18,6 +18,7 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "prompt": "^1.0.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "python-shell": "^2.0.0"
   }
 }
