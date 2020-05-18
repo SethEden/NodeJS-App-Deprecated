@@ -1,5 +1,16 @@
 import commandParser from './commandParser';
 const prompt = require('prompt-sync')();
+// var gs = require('global-singleton');
+// var D = gs('D');
+// var gs = require('global-singleton');
+// var heartbeat = gs('heartbeat', function() { return new heartbeatManager('my-service'); });
+const D = require('./data');
+
+var singletonA = D.data;
+var singletonB = D.data;
+// singletonA.publicMethod();
+// console.log(singletonA.publicProperty);
+// console.log(singletonA.getRandomNumber() === singletonB.getRandomNumber());
 
 var programRunning = false;
 
@@ -10,6 +21,12 @@ application();
 
 async function application() {
   console.log('BEGIN command parser');
+  // heartbeat['ctx'] = {};
+  // console.log('contents of D are: ' + JSON.stringify(D));
+
+  // var data = d;
+  D['ctx'] = {};
+  console.log('contents of D are: ' + JSON.stringify(D));
   while(programRunning === true) {
     var result = prompt('>');
     result = await commandParser.initCommandParser(result);
@@ -19,6 +36,7 @@ async function application() {
       console.log('END main program loop');
       break;
     } else {
+      console.log('contents of D are: ' + JSON.stringify(D));
       console.log(result);
     }
   }

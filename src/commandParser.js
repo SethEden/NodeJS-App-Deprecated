@@ -1,4 +1,6 @@
 import {PythonShell} from 'python-shell';
+//var D = require('D');
+const D = require('./data');
 
 function initCommandParser(dataInput) {
   console.log('BEGIN commandParser.initCommandParser');
@@ -25,7 +27,10 @@ function initCommandParser(dataInput) {
         console.log('The python exit signal was: ' + signal);
         console.log('python finished');
       });
-    } else {
+    } else if (dataInput.includes('data') === true) {
+      D['ctx']['testData'] = 'testData';
+    }
+     else {
       console.log(dataInput);
     }
     returnData = true;
