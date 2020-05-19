@@ -4,13 +4,13 @@ const prompt = require('prompt-sync')();
 // var D = gs('D');
 // var gs = require('global-singleton');
 // var heartbeat = gs('heartbeat', function() { return new heartbeatManager('my-service'); });
-const D = require('./data');
 
-var singletonA = D.data;
-var singletonB = D.data;
-// singletonA.publicMethod();
-// console.log(singletonA.publicProperty);
-// console.log(singletonA.getRandomNumber() === singletonB.getRandomNumber());
+// Almost Works
+// import { obj } from './data.js';
+// let D = obj();
+
+// Works
+var D = require('./data');
 
 var programRunning = false;
 
@@ -25,7 +25,14 @@ async function application() {
   // console.log('contents of D are: ' + JSON.stringify(D));
 
   // var data = d;
-  D['ctx'] = {};
+
+  // Almost works
+  D['data'] = {};
+  D['data']['ctx'] = {};
+
+  //Works
+  // D['data']['ctx'] = {};
+
   console.log('contents of D are: ' + JSON.stringify(D));
   while(programRunning === true) {
     var result = prompt('>');

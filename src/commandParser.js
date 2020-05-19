@@ -1,6 +1,12 @@
 import {PythonShell} from 'python-shell';
 //var D = require('D');
-const D = require('./data');
+
+// Almost works
+// import { obj } from './data.js';
+// let D = obj();
+
+// Works
+var D = require('./data');
 
 function initCommandParser(dataInput) {
   console.log('BEGIN commandParser.initCommandParser');
@@ -28,7 +34,9 @@ function initCommandParser(dataInput) {
         console.log('python finished');
       });
     } else if (dataInput.includes('data') === true) {
-      D['ctx']['testData'] = 'testData';
+      console.log('contents of D are: ' + JSON.stringify(D));
+      console.log('adding a test data field to D');
+      D['data']['ctx']['testData'] = 'testData';
     }
      else {
       console.log(dataInput);

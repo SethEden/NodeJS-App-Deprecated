@@ -70,4 +70,23 @@
 //
 // module.exports = self;
 
-export var data = {};
+//Almost works
+// export let obj = function () {
+//   let objInstance; //private variable
+//   var data;
+//   function create() {
+//     //private function to create methods and properties
+//     data = {};
+//   }
+//   return {
+//     data: data,
+//     getInstance: function() {
+//       if (!objInstance) {
+//         objInstance = create();
+//       }
+//       return objInstance;
+//     }
+//   };
+// };
+
+// export var data = {};

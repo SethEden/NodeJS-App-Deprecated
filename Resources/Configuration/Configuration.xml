@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><Application>
+  <Configurations>
+    <Configuration ConfigurationName="Default">
+      <Common>
+        <ConfigurationElement Name="VersionControl" Value="3"/>
+      </Common>
+      <ConfigurationElements>
+        <ConfigurationElement Name="DateTimeStamp" Type="Default" Value="YYYYMMDD-HHmmss-SSS" Version="3"/>
+        <ConfigurationElement Name="DateStamp" Type="Default" Value="YYYYMMDD" Version="3"/>
+        <ConfigurationElement Name="TimeStamp" Type="Default" Value="HHmmss-SSS" Version="3"/>
+      </ConfigurationElements>
+    </Configuration>
+  </Configurations>
+</Application>
