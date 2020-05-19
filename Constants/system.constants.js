@@ -1131,21 +1131,6 @@ export const cparseSystemRootPath = cparse + cSystem + cRoot + cPath;
 export const creplaceDoublePercentWithMessage = creplace + cDouble + cPercent + cWith + cMessage;
 
 // *********************************
-// MathOperations rules in order
-// *********************************
-export const croundedEquals = crounded + cEquals;
-export const cdotProduct = g.cdot + cProduct;
-export const cquaternionEqual = cquaternion + cEqual;
-export const cnormalizeNumberByN = cnormalize + cNumber + cBy + b.cN;
-export const cdegreesOfCircleFraction = cdegrees + cOf + cCircle + cFraction;
-export const cobjectToArray = cobject + cTo + cArray;
-export const carrayToObject = carray + cTo + cObject;
-export const cquaternionFrom3Vector = cquaternion + cFrom + b.c3 + cVector;
-export const ctransformPointByQuaternion = ctransform + cPoint + cBy + cQuaternion;
-export const clocationSort = clocation + cSort;
-export const clocationEqual = clocation + cEqual;
-
-// *********************************
 // StringGeneration rules in order
 // *********************************
 export const ccreateNdigitStringFromNumber = ccreate + b.cN + cdigit + cString + cFrom + cNumber;
