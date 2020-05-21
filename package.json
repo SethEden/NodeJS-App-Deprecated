@@ -2,9 +2,9 @@
   "name": "NodeJS-App",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App/index.js",
   "scripts": {
-    "start": "babel-node src/index.js",
+    "start": "babel-node App/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,6 +18,7 @@
   "dependencies": {
     "child_process": "^1.0.2",
     "global-singleton": "^0.1.2",
+    "moment": "^2.26.0",
     "prompt": "^1.0.0",
     "prompt-sync": "^4.2.0",
     "python-shell": "^2.0.0"
