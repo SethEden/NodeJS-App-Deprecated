@@ -30,7 +30,6 @@ var path = require('path');
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseTextByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -43,7 +42,6 @@ export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMet
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseTextByLength1 business rule');
   return returnData;
 };
 
@@ -58,7 +56,6 @@ export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMet
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseTextByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -71,7 +68,6 @@ export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMet
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseTextByLength2 business rule');
   return returnData;
 };
 
@@ -86,7 +82,6 @@ export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMet
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseTextByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -99,7 +94,6 @@ export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMet
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseTextByLength1 business rule');
   return returnData;
 };
 
@@ -114,7 +108,6 @@ export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMet
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseTextByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -127,7 +120,6 @@ export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMet
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseTextByLength2 business rule');
   return returnData;
 };
 
@@ -142,7 +134,6 @@ export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMet
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseTextByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -155,7 +146,6 @@ export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMet
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseTextByLength1 business rule');
   return returnData;
 };
 
@@ -170,7 +160,6 @@ export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMet
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseTextByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -183,7 +172,6 @@ export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMet
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseTextByLength2 business rule');
   return returnData;
 };
 
@@ -198,7 +186,6 @@ export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMet
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -211,7 +198,6 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = functio
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1 business rule');
   return returnData;
 };
 
@@ -226,7 +212,6 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = functio
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -239,7 +224,6 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = functio
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2 business rule');
   return returnData;
 };
 
@@ -254,7 +238,6 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = functio
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -267,7 +250,6 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = functio
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1 business rule');
   return returnData;
 };
 
@@ -282,7 +264,6 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = functio
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -295,7 +276,6 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = functio
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2 business rule');
   return returnData;
 };
 
@@ -310,7 +290,6 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = functio
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -323,7 +302,6 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = functio
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1 business rule');
   return returnData;
 };
 
@@ -338,7 +316,6 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = functio
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -351,7 +328,6 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = functio
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2 business rule');
   return returnData;
 };
 
@@ -366,7 +342,6 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = functio
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -379,7 +354,6 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputDa
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1 business rule');
   return returnData;
 };
 
@@ -394,7 +368,6 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputDa
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -407,7 +380,6 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputDa
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2 business rule');
   return returnData;
 };
 
@@ -422,7 +394,6 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputDa
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -435,7 +406,6 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputDa
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1 business rule');
   return returnData;
 };
 
@@ -450,7 +420,6 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputDa
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -463,7 +432,6 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputDa
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2 business rule');
   return returnData;
 };
 
@@ -478,7 +446,6 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputDa
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -491,7 +458,6 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputDa
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1 business rule');
   return returnData;
 };
 
@@ -506,7 +472,6 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputDa
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -519,7 +484,6 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputDa
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2 business rule');
   return returnData;
 };
 
@@ -534,7 +498,6 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputDa
  * @date 2020/03/04
  */
 export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomNumericCodeByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -547,7 +510,6 @@ export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaD
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomNumericCodeByLength1 business rule');
   return returnData;
 };
 
@@ -562,7 +524,6 @@ export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaD
  * @date 2020/05/19
  */
 export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomNumericCodeByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -575,7 +536,6 @@ export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaD
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomNumericCodeByLength2 business rule');
   return returnData;
 };
 
@@ -591,7 +551,6 @@ export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaD
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -604,7 +563,6 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 business rule');
   return returnData;
 };
 
@@ -620,7 +578,6 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -633,7 +590,6 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 business rule');
   return returnData;
 };
 
@@ -649,7 +605,6 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -662,7 +617,6 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 business rule');
   return returnData;
 };
 
@@ -678,7 +632,6 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -691,7 +644,6 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 business rule');
   return returnData;
 };
 
@@ -707,7 +659,6 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -720,7 +671,6 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 business rule');
   return returnData;
 };
 
@@ -736,7 +686,6 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -749,7 +698,6 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 business rule');
   return returnData;
 };
 
@@ -764,7 +712,6 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/03/04
  */
 export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomSpecialCharacterCodeByLength1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomSpecialCharacterCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -777,7 +724,6 @@ export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, i
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomSpecialCharacterCodeByLength1 business rule');
   return returnData;
 };
 
@@ -792,7 +738,6 @@ export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, i
  * @date 2020/05/19
  */
 export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomSpecialCharacterCodeByLength2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomSpecialCharacterCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -805,7 +750,6 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomSpecialCharacterCodeByLength2 business rule');
   return returnData;
 };
 
@@ -825,7 +769,6 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
  * @date 2020/03/04
  */
 export const generateValidEmail1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateValidEmail1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateValidEmail1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -866,7 +809,6 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateValidEmail1 business rule');
   return returnData;
 };
 
@@ -886,7 +828,6 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
  * @date 2020/05/19
  */
 export const generateValidEmail2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateValidEmail2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateValidEmail2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -927,7 +868,6 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateValidEmail2 business rule');
   return returnData;
 };
 
@@ -947,7 +887,6 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
  * @date 2020/03/04
  */
 export const generateInvalidEmail1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateInvalidEmail1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateInvalidEmail1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -988,7 +927,6 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateInvalidEmail1 business rule');
   return returnData;
 };
 
@@ -1008,7 +946,6 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
  * @date 2020/05/19
  */
 export const generateInvalidEmail2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateInvalidEmail2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateInvalidEmail2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1049,7 +986,6 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateInvalidEmail2 business rule');
   return returnData;
 };
 
@@ -1069,7 +1005,6 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
  * @date 2020/03/04
  */
 const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  // console.log('BEGIN stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateValidEmailWithSpecificSuffixAndDomainName1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1099,7 +1034,6 @@ const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfChar
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1 business rule');
   return returnData;
 };
 
@@ -1119,7 +1053,6 @@ const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfChar
  * @date 2020/05/19
  */
 const generateValidEmailWithSpecificSuffixAndDomainName2 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateValidEmailWithSpecificSuffixAndDomainName2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1147,7 +1080,6 @@ const generateValidEmailWithSpecificSuffixAndDomainName2 = function(inputData, i
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2 business rule');
   return returnData;
 };
 
@@ -1165,7 +1097,6 @@ const generateValidEmailWithSpecificSuffixAndDomainName2 = function(inputData, i
  * @date 2020/03/04
  */
 const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  // console.log('BEGIN stringGeneration.generateRandomValidEmail1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateRandomValidEmail1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1258,7 +1189,6 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomValidEmail1 business rule');
   return returnData;
 };
 
@@ -1276,7 +1206,6 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
  * @date 2020/05/19
  */
 const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  // console.log('BEGIN stringGeneration.generateRandomValidEmail2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateRandomValidEmail2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1365,7 +1294,6 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomValidEmail2 business rule');
   return returnData;
 };
 
@@ -1385,7 +1313,6 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
  * @date 2020/03/04
  */
 const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateInvalidEmailWithSpecificSuffixAndDomainName1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1464,7 +1391,6 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(inputData,
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1 business rule');
   return returnData;
 };
 
@@ -1484,7 +1410,6 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(inputData,
  * @date 2020/05/19
  */
 const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  // console.log('BEGIN stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1565,7 +1490,6 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2 business rule');
   return returnData;
 };
 
@@ -1583,7 +1507,6 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
  * @date 2020/03/04
  */
 const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
-  // console.log('BEGIN stringGeneration.generateRandomInvalidEmail1 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomInvalidEmail1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1813,7 +1736,6 @@ const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomInvalidEmail1 business rule');
   return returnData;
 };
 
@@ -1831,7 +1753,6 @@ const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
  * @date 2020/05/19
  */
 const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  // console.log('BEGIN stringGeneration.generateRandomInvalidEmail2 business rule');
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateRandomInvalidEmail2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -2062,6 +1983,5 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END stringGeneration.generateRandomInvalidEmail2 business rule');
   return returnData;
 };
