@@ -1,4 +1,3 @@
-import {t} from 'testcafe';
 import loggers from './loggers';
 import * as s from '../Constants/system.constants';
 var path = require('path');

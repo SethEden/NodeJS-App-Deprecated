@@ -1,4 +1,5 @@
 import commandParser from './commandParser';
+import loggers from '../Executrix/loggers';
 const prompt = require('prompt-sync')();
 // var gs = require('global-singleton');
 // var D = gs('D');

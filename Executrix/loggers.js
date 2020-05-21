@@ -1,11 +1,3 @@
-import {t} from 'testcafe';
-import configurator from './configurator';
-import ruleBroker from '../BusinessRules/ruleBroker';
-import * as s from '../Constants/system.constants';
-import * as b from '../Constants/basic.constants';
-var fs = require('fs');
-
-import {t} from 'testcafe';
 import configurator from './configurator';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import * as s from '../Constants/system.constants';
