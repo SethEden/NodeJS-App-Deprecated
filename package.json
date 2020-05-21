@@ -2,9 +2,9 @@
   "name": "NodeJS-App",
   "version": "1.0.0",
   "description": "",
-  "main": "App/index.js",
+  "main": "Application/NodeJS-App/index.js",
   "scripts": {
-    "start": "babel-node App/index.js",
+    "start": "babel-node Application/NodeJS-App/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

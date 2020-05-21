@@ -1,5 +1,6 @@
 import loggers from './loggers';
 import * as s from '../Constants/system.constants';
+var D = require('../Resources/data');
 var path = require('path');
 // NOTE: This file is needed to keep these lower level functions separate from the chiefConfiguration.
 // Because having these functions in the chiefConfiguration can cause a circular dependency.
@@ -24,7 +25,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
-  t.ctx[s.cConfiguration][configurationName] = configurationValue;
+  D[s.cConfiguration][configurationName] = configurationValue;
   // console.log('END configurator.setConfigurationSetting function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
@@ -44,7 +45,7 @@ function getConfigurationSetting(configurationName) {
   // var functionName = getConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
-  var returnConfigurationValue = t.ctx[s.cConfiguration][configurationName];
+  var returnConfigurationValue = D[s.cConfiguration][configurationName];
   // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
   // console.log('END configurator.getConfigurationSetting function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnConfigurationValue is: ' + returnConfigurationValue);

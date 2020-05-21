@@ -2,6 +2,7 @@ import configurator from './configurator';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import * as s from '../Constants/system.constants';
 import * as b from '../Constants/basic.constants';
+var D = require('../Resources/data');
 var fs = require('fs');
 
 /**
@@ -18,7 +19,7 @@ var fs = require('fs');
  * @date 2020/03/11
  */
 function consoleLog(classPath, message) {
-  if (Object.keys(t.ctx).length !== 0) {
+  if (Object.keys(D).length !== 0) {
     var logFile = configurator.getConfigurationSetting(s.cApplicationRootPath);
     if (logFile !== undefined) {
       logFile = logFile + configurator.getConfigurationSetting(s.cLogFilePathAndName);
