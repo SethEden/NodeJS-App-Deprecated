@@ -9,6 +9,7 @@ import * as s from '../Constants/system.constants';
 import * as g from '../Constants/generic.constants';
 import * as b from '../Constants/basic.constants';
 var path = require('path');
+var D = require('../Resources/data');
 
 /**
  * @name bootStrapApplication

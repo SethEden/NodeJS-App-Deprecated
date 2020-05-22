@@ -1,6 +1,10 @@
 import commandParser from '../../Framework/Controllers/commandBroker';
 import loggers from '../../Framework/Executrix/loggers';
 import warden from '../../Framework/Controllers/warden.js';
+import * as c from './Constants/application.constants';
+import * as s from '../../Framework/Constants/system.constants';
+import * as g from '../../Framework/Constants/generic.constants';
+import * as b from '../../Framework/Constants/basic.constants';
 const prompt = require('prompt-sync')();
 var path = require('path');
 var D = require('../../Framework/Resources/data');
@@ -49,7 +53,7 @@ async function application() {
 
 // Launch the application!!
 var programRunning = false;
-warden.bootStrapApplication() // Call to the function above to do initial pre-setup for the application.
+bootStrapApplication() // Call to the function above to do initial pre-setup for the application.
 console.log('BEGIN main program loop');
 programRunning = true;
 application(); // Call to the function above to actually execute the application.

@@ -323,17 +323,22 @@ export const swapForwardSlashToBackSlash = function(inputData, inputMetaData) {
  * @date 2020/02/26
  */
 export const swapBackSlashToForwardSlash = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cswapBackSlashToForwardSlash;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  // console.log('BEGIN stringParsing.swapBackSlashToForwardSlash function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  // var functionName = s.cswapBackSlashToForwardSlash;
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   if (!inputData) {
     return false;
   }
   var returnData = replaceCharacterWithCharacter(inputData, /\\/g, b.cForwardSlash);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.swapBackSlashToForwardSlash function');
   return returnData;
 };
 
@@ -373,17 +378,22 @@ export const swapDoubleForwardSlashToSingleForwardSlash = function(inputData, in
  * @date 2020/02/26
  */
 export const swapDoubleBackSlashToSingleBackSlash = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cswapDoubleBackSlashToSingleBackSlash;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  // console.log('BEGIN stringParsing.swapDoubleBackSlashToSingleBackSlash function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  // var functionName = s.cswapDoubleBackSlashToSingleBackSlash;
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   if (!inputData) {
     return false;
   }
   var returnData = replaceCharacterWithCharacter(inputData, /\\\\/g, b.cBackSlash);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.swapDoubleBackSlashToSingleBackSlash function');
   return returnData;
 };
 
@@ -479,18 +489,24 @@ export const replaceColonWithUnderscore = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 const replaceCharacterWithCharacter = function(inputData, character2Find, character2Replace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'replaceCharacterWithCharacter';
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Find is: ' + character2Find);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Replace is: ' + character2Replace);
+  // console.log('BEGIN stringParsing.replaceCharacterWithCharacter function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('character2Find is: ' + character2Find);
+  // console.log('character2Replace is: ' + character2Replace);
+  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  // var functionName = 'replaceCharacterWithCharacter';
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Find is: ' + character2Find);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Replace is: ' + character2Replace);
   if (!inputData && !character2Find && !character2Replace) {
     return false;
   }
   var returnData = inputData.replace(character2Find, character2Replace);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.replaceCharacterWithCharacter function');
   return returnData;
 };
 
@@ -1024,17 +1040,20 @@ export const getKeywordNameFromDataContextName = function(inputData, inputMetaDa
  * and will parse that out to determine where on the hard drive this CAFfeinated folder is installed at.
  * @param  {[String]} inputData The root path as defined by calling path.resolve(__dirname);
  * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string with the path up to the CAFfeinated folder,
+ * @return {[String]} A string with the path up to the application folder,
  * where ever that is installed on the local system executing the tests.
  * @author Seth Hollingsead
  * @date 2020/02/26
  */
 export const parseSystemRootPath = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cparseSystemRootPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  // console.log('BEGIN stringParsing.parseSystemRootPath function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  // var functionName = s.cparseSystemRootPath;
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   if (!inputData) {
     return false;
   }
@@ -1042,27 +1061,36 @@ export const parseSystemRootPath = function(inputData, inputMetaData) {
   var pathElements = inputData.split(b.cBackSlash);
   loop1:
     for (let i = 0; i < pathElements.length; i++) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN iteration i: ' + i);
+      // console.log('BEGIN iteration i: ' + i);
+      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN iteration i: ' + i);
       let pathElement = pathElements[i];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathElement is: ' + pathElement);
+      // console.log('pathElement is ' + pathElement);
+      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathElement is: ' + pathElement);
       if (i === 0) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: i = 0');
+        // console.log('case: i = 0');
+        // loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: i = 0');
         returnData = pathElement;
       } else if (pathElement === s.cCAFfeinated) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + s.cCAFfeinated);
+        // console.log('case: pathElement = ' + s.cCAFfeinated);
+        // loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + s.cCAFfeinated);
         returnData = returnData + b.cBackSlash + pathElement + b.cBackSlash;
         break loop1;
       } else {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'case else');
+        // console.log('case else');
+        // loggers.consoleLog(baseFileName + b.cDot + functionName, 'case else');
         returnData = returnData + b.cBackSlash + pathElement;
       }
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData so far is: ' + returnData);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END iteration i: ' + i);
+      // console.log('returnData so far is: ' + returnData);
+      // console.log('END iteration i: ' + i);
+      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData so far is: ' + returnData);
+      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'END iteration i: ' + i);
     }
   returnData = swapDoubleBackSlashToSingleBackSlash(returnData, '');
   returnData = swapBackSlashToForwardSlash(returnData, '');
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.parseSystemRootPath function');
   return returnData;
 };
 

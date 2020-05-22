@@ -22,7 +22,7 @@ function getNowMoment(formatting) {
   var returnValue = moment().format(formatting);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return returnVAlue;
+  return returnValue;
 };
 
 /**

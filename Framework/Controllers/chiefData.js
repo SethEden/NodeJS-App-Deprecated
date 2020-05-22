@@ -77,19 +77,26 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
  * @date 2020/05/22
  */
 function setupAllXmlData(dataPathConfigurationName, contextName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = setupAllCsvData.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPathConfigurationName is: ' + dataPathConfigurationName);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
+  console.log('BEGIN chiefData.setupAllXmlData function');
+  console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
+  console.log('contextName is: ' + contextName);
+  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  // var functionName = setupAllCsvData.name;
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPathConfigurationName is: ' + dataPathConfigurationName);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
   var loadedAndMergedDataAllFiles = {};
   var dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
+  console.log('dataPath is: ' + dataPath);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
   var filesToLoad = dataBroker.scanDataPath(dataPath);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
+  console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
   loadedAndMergedDataAllFiles = dataBroker.loadAllXmlData(filesToLoad, contextName);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'loadedAndMergedDataAllFiles contents are: ' + JSON.stringify(loadedAndMergedDataAllFiles));
-  loggers.consoleLog(baseFileName = b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'loadedAndMergedDataAllFiles contents are: ' + JSON.stringify(loadedAndMergedDataAllFiles));
+  // loggers.consoleLog(baseFileName = b.cDot + functionName, s.cEND_Function);
+  console.log('loadedAndMergedDataAllFiles is: ' + loadedAndMergedDataAllFiles);
+  console.log('END chiefData.setupAllXmlData function');
   return loadedAndMergedDataAllFiles;
 };
 

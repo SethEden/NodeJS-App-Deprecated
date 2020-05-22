@@ -1,11 +1,12 @@
-var D = require('../Resources/data');
-// import chiefData from '../Controllers/chiefData';
+import chiefData from '../Controllers/chiefData';
 import configurator from '../Executrix/configurator';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from '../Executrix/loggers';
+import timers from '../Executrix/timers';
 import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
+var D = require('../Resources/data');
 
 /**
  * @name setupConfiguration
@@ -20,7 +21,8 @@ var path = require('path');
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function setupConfiguration(pathAndFilename) {
-  // console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  console.log('pathAndFilename is: ' + pathAndFilename);
   // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = 'setupTestConfiguration';
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -38,7 +40,7 @@ function setupConfiguration(pathAndFilename) {
   // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
   // Loggers.consoleLog(s.cLogFileEnabled, configurator.getConfigurationSetting(s.cDateTimeSTamp));
   // loggers.consoleLog(baseFilename + b.cDot + functionName, s.cEND_Function);
-  // console.log('END chiefConfiguration.setupTestConfiguration function');
+  console.log('END chiefConfiguration.setupTestConfiguration function');
 };
 
 /**
@@ -56,8 +58,8 @@ function setupConfiguration(pathAndFilename) {
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function parseLoadedConfigurationData(allConfigurationData) {
-  // console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
-  // console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
+  console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
+  console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
   var highLevelConfigurationContainer = {};
   var allConfigurations = {};
   var allSubConfigurations = {};
@@ -192,7 +194,7 @@ function processConfigurationRules(name, value) {
       // NOTE: All of these three configurations are processed exactly the same way.
       // As long as what is stored in the configuration file is correct, then they should be processed correctly here.
       // return moment().format(value);0
-      returnValue = timer.getNowMoment(value);
+      returnValue = timers.getNowMoment(value);
       break;
     default: // We don't know what the value is.
       // We have to just return the value as it was passed in, no processing.

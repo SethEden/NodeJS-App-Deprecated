@@ -6,5 +6,4 @@ export const cConfigurationFilename = s.cConfiguration;
 export const cApplicationName = 'NodeJS-App';
 
 // Configuration Path
-export const cApplicationNamePathPrefix = s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
-export const cConfigurationDataLookupPrefixPath = cApplicationNamePathPrefix + s.cResources + b.cForwardSlash + s.cConfiguration + b.cForwardSlash
+export const cConfigurationDataLookupPrefixPath = b.cForwardSlash + s.cResources + b.cForwardSlash + s.cConfiguration;
