@@ -68,7 +68,75 @@ function processRootPath(systemRootPath) {
   return rootPath;
 };
 
+/**
+ * @name setConfigurationSetting
+ * @description This is just a wrapper for the configurator setConfigurationSetting function.
+ * @param {[String]} configurationName The key of the configuration setting.
+ * @param {[String/Boolean/Integer/Object]} configurationValue The value of the configuration setting.
+ * @author Seth Hollingsead
+ * @data 2020/05/26
+ */
+function setConfigurationSetting(configurationName, configurationValue) {
+  // console.log('BEGIN warden.setConfigurationSetting function');
+  // console.log('configurationName is: ' + configurationName);
+  // console.log('configurationValue is: ' + configurationValue);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = setConfigurationSetting.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
+  // D[s.cConfiguration][configurationName] = configurationValue;
+  configurator.setConfigurationSetting(configurationName, configurationValue);
+  // console.log('END warden.setConfigurationSetting function');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
+ * @name getConfigurationSetting
+ * @description This is just a wrapper for the configurator getConfigurationSetting function.
+ * @param  {[String]} configurationName The key of the configuration setting.
+ * @return {[String/Integer/Boolean/Object]} The value of whatever was stored in the D[Configuration] sub-tree.
+ * @author Seth Hollingsead
+ * @date 2020/05/26
+ */
+function getConfigurationSetting(configurationName) {
+// console.log('BEGIN warden.getConfigurationSetting function');
+// console.log('configurationName is: ' + configurationName);
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var functionName = getConfigurationSetting.name;
+loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
+// var returnConfigurationValue = D[s.cConfiguration][configurationName];
+var returnConfigurationValue = configurator.getConfigurationSetting(configurationName);
+// console.log('returnConfigurationValue is: ' + JSON.stringify(returnConfigurationValue));
+// console.log('END warden.getConfigurationSetting function');
+loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnConfigurationValue is: ' + returnConfigurationValue);
+loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+return returnConfigurationValue;
+};
+
+/**
+ * @name consoleLog
+ * @description This is just a wrapper for the loggers.consoleLog function.
+ * @param  {[String]} classPath The class path for the caller of this function file.function or class.method.
+ * @param  {[String/Boolean/Integer/Object]} message The message or data content that should be dumped to the output.
+ * @author Seth Hollingsead
+ * @date 2020/05/26
+ * @NOTE We cannot insturment this code with calls to loggers.consoleLog as it would introduce yet another ciruclar dependency.
+ * We will have to stick with just hard coded console.logs in this case to debug at this level.
+ */
+function consoleLog(classPath, message) {
+  // console.log('BEGIN warden.consoleLog function');
+  // console.log('classPath is: ' + classPath);
+  // console.log('message is: ' + JSON.stringify(message));
+  loggers.consoleLog(classPath, message);
+  // console.log('END warden.consoleLog function');
+};
+
 export default {
   bootStrapApplication,
-  processRootPath
+  processRootPath,
+  setConfigurationSetting,
+  getConfigurationSetting,
+  consoleLog
 };

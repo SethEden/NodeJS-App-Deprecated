@@ -21,6 +21,7 @@ function bootStrapApplication() {
   rootPath = path.resolve(__dirname);
   rootPath = warden.processRootPath(rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
+  warden.setConfigurationSetting(s.cApplicationRootPath, rootPath);
 };
 
 /**
@@ -30,6 +31,7 @@ function bootStrapApplication() {
  * @date 2020/05/21
  */
 async function application() {
+
   console.log('BEGIN command parser');
   // Almost works
   D['data'] = {};

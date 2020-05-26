@@ -39,13 +39,22 @@ function setConfigurationSetting(configurationName, configurationValue) {
  * @date 2020/02/03
  */
 function getConfigurationSetting(configurationName) {
+  var returnConfigurationValue;
   // console.log('BEGIN configurator.getConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = getConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
-  var returnConfigurationValue = D[s.cConfiguration][configurationName];
+  if (D[s.cConfiguration] !== undefined) {
+    if (D[s.cConfiguration][configurationName] !== undefined) {
+      returnConfigurationValue = D[s.cConfiguration][configurationName];
+    } else {
+      returnConfigurationValue = undefined;
+    }
+  } else {
+    returnConfigurationValue = undefined;
+  }    
   // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
   // console.log('END configurator.getConfigurationSetting function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnConfigurationValue is: ' + returnConfigurationValue);

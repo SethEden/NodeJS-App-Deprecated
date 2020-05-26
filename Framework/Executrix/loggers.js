@@ -22,8 +22,12 @@ function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
     var logFile = configurator.getConfigurationSetting(s.cApplicationRootPath);
     if (logFile !== undefined) {
+      console.log('logFile is !== undefined');
       logFile = logFile + configurator.getConfigurationSetting(s.cLogFilePathAndName);
       if (logFile.indexOf('txt') !== -1) {
+        console.log('BEGIN loggers.consoleLog function');
+        console.log('classPath is: ' + classPath);
+        console.log('message is: ' + message);
         // printMessageToFile(logFile, 'BEGIN loggers.consoleLog function');
         // printMessageToFile(logFile, 'classPath is: ' + classPath);
         // printMessageToFile(logFile, 'message is: ' + message);
