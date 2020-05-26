@@ -381,17 +381,17 @@ export const swapDoubleBackSlashToSingleBackSlash = function(inputData, inputMet
   // console.log('BEGIN stringParsing.swapDoubleBackSlashToSingleBackSlash function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = s.cswapDoubleBackSlashToSingleBackSlash;
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cswapDoubleBackSlashToSingleBackSlash;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   if (!inputData) {
     return false;
   }
   var returnData = replaceCharacterWithCharacter(inputData, /\\\\/g, b.cBackSlash);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.swapDoubleBackSlashToSingleBackSlash function');
   return returnData;
@@ -493,18 +493,18 @@ const replaceCharacterWithCharacter = function(inputData, character2Find, charac
   // console.log('inputData is: ' + inputData);
   // console.log('character2Find is: ' + character2Find);
   // console.log('character2Replace is: ' + character2Replace);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = 'replaceCharacterWithCharacter';
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Find is: ' + character2Find);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Replace is: ' + character2Replace);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = 'replaceCharacterWithCharacter';
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Find is: ' + character2Find);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Replace is: ' + character2Replace);
   if (!inputData && !character2Find && !character2Replace) {
     return false;
   }
   var returnData = inputData.replace(character2Find, character2Replace);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.replaceCharacterWithCharacter function');
   return returnData;
@@ -1113,18 +1113,18 @@ export const replaceDoublePercentWithMessage = function(inputData, inputMetaData
   // We just have to hard code everything and it won't be loged to the log file.
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = s.creplaceDoublePercentWithMessage;
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.creplaceDoublePercentWithMessage;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   if (!inputData) {
     return false;
   }
   var returnData = '';
   returnData = inputData.replace(b.cPercent + b.cPercent, inputMetaData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.replaceDoublePercentWithMessage business rule');
   return returnData;

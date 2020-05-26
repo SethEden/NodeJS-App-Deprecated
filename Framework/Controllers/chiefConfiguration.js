@@ -21,12 +21,12 @@ var D = require('../Resources/data');
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function setupConfiguration(pathAndFilename) {
-  console.log('BEGIN chiefConfiguration.setupConfiguration function');
-  console.log('pathAndFilename is: ' + pathAndFilename);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = 'setupTestConfiguration';
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
+  // console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  // console.log('pathAndFilename is: ' + pathAndFilename);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = 'setupTestConfiguration';
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
   var rules = {};
   rules[1] = s.cswapBackSlashToForwardSlash;
   D[s.cConfiguration] = {};
@@ -38,9 +38,9 @@ function setupConfiguration(pathAndFilename) {
 
   // Get the operating system envrionment variable here and setup how to setup the log files.
   // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
-  // Loggers.consoleLog(s.cLogFileEnabled, configurator.getConfigurationSetting(s.cDateTimeSTamp));
-  // loggers.consoleLog(baseFilename + b.cDot + functionName, s.cEND_Function);
-  console.log('END chiefConfiguration.setupTestConfiguration function');
+  loggers.consoleLog(s.cLogFileEnabled, configurator.getConfigurationSetting(s.cDateTimeSTamp));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END chiefConfiguration.setupTestConfiguration function');
 };
 
 /**
@@ -58,8 +58,12 @@ function setupConfiguration(pathAndFilename) {
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function parseLoadedConfigurationData(allConfigurationData) {
-  console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
-  console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
+  // console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
+  // console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = parseLoadedConfigurationData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
   var highLevelConfigurationContainer = {};
   var allConfigurations = {};
   var allSubConfigurations = {};
@@ -88,13 +92,16 @@ function parseLoadedConfigurationData(allConfigurationData) {
   highLevelConfigurationContainer = allConfigurationData[s.cApplication][s.cConfigurations][s.cConfiguration];
   configurationsName = highLevelConfigurationContainer[s.cConfigurationName];
   // console.log('configurationsName is: ' + configurationsName);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsName is: ' + configurationsName);
   if (highLevelConfigurationContainer[s.cCommon][s.cConfigurationElement][s.cName] === s.cVersionControl) {
     configurationsVersion = highLevelConfigurationContainer[s.cCommon][s.cConfigurationElement][s.cValue];
     configurationsVersion = ruleBroker.processRules(configurationsVersion, '', rules);
   }
   // console.log('configurationsVersion is: ' + configurationsVersion);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsVersion is: ' + configurationsVersion);
   allConfigurations = highLevelConfigurationContainer[s.cConfigurationElements][s.cConfigurationElement];
   // console.log('allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
 
   if (configurationsVersion !== undefined && configurationsVersion !== '' &&
   configurationsName !== undefined && configurationsName !== '' &&
@@ -107,6 +114,7 @@ function parseLoadedConfigurationData(allConfigurationData) {
     // Although we might actually not have more than one configuration file.
     for (let key in allConfigurations) {
       //console.log('single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
       configurationElement = allConfigurations[key];
       name = '';
       type = '';
@@ -125,8 +133,10 @@ function parseLoadedConfigurationData(allConfigurationData) {
           if (type === configurationsName && version == configurationsVersion) {
             if ((name === s.cDebugFunctions || name === s.cDebugFiles) && value === s.cMultiple) {
               // console.log('configurationElement is: ' + JSON.stringify(configurationElement));
+              loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
               allSubConfigurations = configurationElement[s.cConfigurationElement];
               // console.log('allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
+              loggers.consoleLog(baseFileName + b.cDot + functionName, 'allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
               advancedDebugSettingPrefix = name;
               for (let subKey in allSubConfigurations) {
                 name = '';
@@ -143,10 +153,15 @@ function parseLoadedConfigurationData(allConfigurationData) {
                   if (name !== '' && type !== '' && value !== '' && version !== '') {
                     if (type === configurationsName && version === configurationsVersion) {
                       // console.log('process advanced configuration setting: ');
+                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'process advanced configuration setting: ');
                       // console.log('name is: ' + name);
+                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'name is: ' + name);
                       // console.log('type is: ' + type);
+                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'type is: ' + type);
                       // console.log('value is: ' + value);
+                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
                       // console.log('version is: ' + version);
+                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'version is: ' + version);
                       value = ruleBroker.processRules(value, '', rules);
                       configurator.setConfigurationSetting(advancedDebugSettingPrefix + b.cPipe + name, value);
                     }
@@ -158,7 +173,9 @@ function parseLoadedConfigurationData(allConfigurationData) {
               value = processConfigurationRules(name, value);
               value = ruleBroker.processRules(value, '', rules);
               // console.log('setting the configuration name: ' + name);
+              loggers.consoleLog(baseFileName + b.cDot + functionName, 'setting the configuration name: ' + name);
               // console.log('setting the configuration value: ' + value);
+              loggers.consoleLog(baseFileName + b.cDot + functionName, 'setting the configuration value: ' + value);
               configurator.setConfigurationSetting(name, value);
             }
           }
@@ -168,6 +185,8 @@ function parseLoadedConfigurationData(allConfigurationData) {
   }
   // console.log('full contents of the D are: ' + JSON.stringify(D));
   // console.log('END chiefConfiguration.parseLoadedConfigurationData function');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'full contents of the D are: ' + JSON.stringify(D));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
 /**
