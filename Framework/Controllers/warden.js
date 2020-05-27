@@ -24,15 +24,18 @@ var D = require('../Resources/data');
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function bootStrapApplication(pathAndFilename) {
-  console.log('BEGIN warden.bootStrapApplication function');
-  console.log('pathAndFilename is: ' + pathAndFilename);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = bootStrapApp.name;
-  // loggers.consoleLog(baseFileName + b.cDot + fuctionName, s.cBEGIN_Function);
+  // console.log('BEGIN warden.bootStrapApplication function');
+  // console.log('pathAndFilename is: ' + pathAndFilename);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = bootStrapApplication.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
   chiefConfiguration.setupConfiguration(pathAndFilename);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  console.log('contents of D are: ' + JSON.stringify(D));
-  console.log('END warden.bootStrapApplication function');
+  // console.log('contents of D are: ' + JSON.stringify(D));
+  // console.log('END warden.bootStrapApplication function');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
 /**
@@ -51,6 +54,8 @@ function bootStrapApplication(pathAndFilename) {
  * This is true for all functions in this file, so we will have to stick with
  * hard coding the debug statements and debugging them by uncommenting.
  * Believe me I don't like it any more than you do, but it's just the way the system works.
+ * @NOTE: The loggers function calls are still listed below, but they will never do anything because
+ * the configuration system still hasn't loaded yet. But enabling them at least will not crash the system any more.
  */
 function processRootPath(systemRootPath) {
   // console.log('BEGIN warden.processRootPath function');

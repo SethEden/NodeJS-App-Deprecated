@@ -30,33 +30,32 @@ function bootStrapApplication() {
  * @author Seth Hollingsead
  * @date 2020/05/21
  */
-async function application() {
-
-  console.log('BEGIN command parser');
-  // Almost works
-  D['data'] = {};
-  D['data']['ctx'] = {};
-
-  console.log('contents of D are: ' + JSON.stringify(D));
+function application() {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.capplication;
+  var result;
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN main program loop');
+  warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
   while(programRunning === true) {
-    var result = prompt('>');
-    result = await commandParser.initCommandParser(result);
+    result = prompt(b.cGreaterThan);
+    result = commandParser.initCommandParser(result);
     if (result === false) {
-      console.log('END command parser');
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
       programRunning = false;
-      console.log('END main program loop');
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'END main program loop');
+      console.log('Exiting, Good bye, Have a nice day & stay safe!');
       break;
     } else {
-      console.log('contents of D are: ' + JSON.stringify(D));
-      console.log(result);
+      // console.log('contents of D are: ' + JSON.stringify(D));
+      // console.log(result);
     }
   }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
 // Launch the application!!
 var programRunning = false;
 bootStrapApplication() // Call to the function above to do initial pre-setup for the application.
-console.log('BEGIN main program loop');
 programRunning = true;
 application(); // Call to the function above to actually execute the application.
-console.log('Exiting, Good bye, Have a nice day & stay safe!');
