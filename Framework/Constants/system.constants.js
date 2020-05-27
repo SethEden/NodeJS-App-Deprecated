@@ -598,6 +598,16 @@ export const cevent = b.ce + g.cvent;
 export const cEvent = b.cE + g.cvent;
 export const cevents = cevent + b.cs;
 export const cEvents = cEvent + b.cs;
+export const cface = b.cfa + b.cce;
+export const cFace = b.cFa + b.cce;
+export const cargument = g.carg + b.cu + g.cment;
+export const cArgument = g.cArg + b.cu + g.cment;
+export const cdrive = b.cd + g.crive;
+export const cDrive = b.cD + g.crive;
+export const cdriven = cdrive + b.cn;
+export const cDriven = cDrive + b.cn;
+export const cinterface = g.cinter + cface;
+export const cInterface = g.cInter + cface;
 
 // Shapes
 export const ccircle = g.ccir + g.ccle;
@@ -1080,6 +1090,7 @@ export const cPageDataPath = cPage + cDataPath;
 export const cWorkflowDataPath = cWorkflow + cDataPath;
 export const cKeywordsDataPath = cKeywords + cDataPath;
 export const cLocatorsDataPath = cLocators + cDataPath;
+export const cArgumentDrivenInterface = cArgument + cDriven + cInterface;
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = cBegin + cDateTimeStamp;

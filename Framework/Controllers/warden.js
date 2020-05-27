@@ -74,6 +74,25 @@ function processRootPath(systemRootPath) {
 };
 
 /**
+ * @name processCommand
+ * @description This is just a wrapper for the chiefCommander.processCommand function.
+ * @param  {[String]} command The command string and all of the arguments that should be processed for the command.
+ * @return {[Boolean]} A TRUE or FALSE to indicate if the command loop should terminate when it's done.
+ * @author Seth Hollingsead
+ * @date 2020/05/27
+ */
+function processCommand(command) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = processCommand.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'command is: ' + command);
+  var returnValue = false;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnValue;
+};
+
+/**
  * @name setConfigurationSetting
  * @description This is just a wrapper for the configurator setConfigurationSetting function.
  * @param {[String]} configurationName The key of the configuration setting.
@@ -141,6 +160,7 @@ function consoleLog(classPath, message) {
 export default {
   bootStrapApplication,
   processRootPath,
+  processCommand,
   setConfigurationSetting,
   getConfigurationSetting,
   consoleLog

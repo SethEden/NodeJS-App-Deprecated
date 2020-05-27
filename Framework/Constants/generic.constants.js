@@ -247,6 +247,9 @@ export const cper = b.cpe + b.cr;
 export const cPer = b.cPe + b.cr;
 export const casic = b.cas + b.cic;
 export const cvent = b.cve + b.cnt;
+export const carg = b.car + b.cg;
+export const cArg = b.cAr + b.cg;
+export const crive = b.cri + b.cve;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

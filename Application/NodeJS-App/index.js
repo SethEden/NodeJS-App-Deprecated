@@ -1,4 +1,3 @@
-import commandParser from '../../Framework/Controllers/commandBroker';
 import loggers from '../../Framework/Executrix/loggers';
 import warden from '../../Framework/Controllers/warden.js';
 import * as c from './Constants/application.constants';
@@ -33,25 +32,32 @@ function bootStrapApplication() {
 function application() {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.capplication;
-  var result;
+  var argumentDrivenInterface = true;
+  var commandInput;
+  var commandResult;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN main program loop');
   warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
-  while(programRunning === true) {
-    result = prompt(b.cGreaterThan);
-    result = commandParser.initCommandParser(result);
-    if (result === false) {
-      warden.consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
-      programRunning = false;
-      warden.consoleLog(baseFileName + b.cDot + functionName, 'END main program loop');
-      console.log('Exiting, Good bye, Have a nice day & stay safe!');
-      break;
-    } else {
-      // console.log('contents of D are: ' + JSON.stringify(D));
-      // console.log(result);
+  argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
+  if (argumentDrivenInterface === false) {
+    while(programRunning === true) {
+      commandInput = prompt(b.cGreaterThan);
+      commandResult = warden.processCommand(commandInput);
+      if (commandResult === false) {
+        warden.consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
+        programRunning = false;
+        warden.consoleLog(baseFileName + b.cDot + functionName, 'END main program loop');
+        console.log('Exiting, Good bye, Have a nice day & stay safe!');
+        break;
+      } else {
+        // console.log('contents of D are: ' + JSON.stringify(D));
+        // console.log(result);
+      }
     }
+  } else { // argument driven interface / execution is handled here.
+    console.log('argument driven execution');
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
 // Launch the application!!
