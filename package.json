@@ -10,7 +10,12 @@
     "start": "babel-node src/Application/NodeJS-App/application.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["NodeJS", "ES6", "CLI", "Shell"],
+  "keywords": [
+    "NodeJS",
+    "ES6",
+    "CLI",
+    "Shell"
+  ],
   "author": "Seth Hollingsead",
   "license": "MIT",
   "devDependencies": {
