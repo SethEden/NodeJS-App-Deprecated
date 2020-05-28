@@ -1,15 +1,18 @@
 {
   "name": "NodeJS-App",
   "version": "1.0.0",
-  "description": "",
-  "main": "Application/NodeJS-App/index.js",
+  "description": "A template command line application, either interactive or argument driven.",
+  "main": "src/Application/NodeJS-App/application.js",
+  "bin": {
+    "NodeJS-App": "babel-node src/Application/NodeJS-App/application.js"
+  },
   "scripts": {
-    "start": "babel-node Application/NodeJS-App/index.js",
+    "start": "babel-node src/Application/NodeJS-App/application.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["NodeJS", "ES6", "CLI", "Shell"],
+  "author": "Seth Hollingsead",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/node": "^7.8.7",
