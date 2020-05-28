@@ -1,36 +1,36 @@
 {
   "name": "NodeJS-App",
   "version": "1.0.0",
-  "description": "A template command line application, either interactive or argument driven.",
+  "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "src/Application/NodeJS-App/application.js",
-  "bin": {
-    "NodeJS-App": "babel-node src/Application/NodeJS-App/application.js"
-  },
   "scripts": {
-    "start": "babel-node src/Application/NodeJS-App/application.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir bin",
+    "predev": "npm run build -- --watch &",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vers": "standard-version",
+    "dev": "node bin/Application/NodeJS-App/application.js",
+    "start": "babel-node src/Application/NodeJS-App/application.js"
   },
-  "keywords": [
-    "NodeJS",
-    "ES6",
-    "CLI",
-    "Shell"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SethEden/NodeJS-App.git"
+  },
   "author": "Seth Hollingsead",
-  "license": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SethEden/NodeJS-App/issues"
+  },
+  "homepage": "https://github.com/SethEden/NodeJS-App#readme",
   "devDependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.10.1",
     "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.6"
+    "@babel/preset-env": "^7.9.6",
+    "@babel/cli": "^7.0.0"
   },
   "dependencies": {
-    "child_process": "^1.0.2",
-    "global-singleton": "^0.1.2",
     "moment": "^2.26.0",
     "papaparse": "^5.2.0",
-    "prompt": "^1.0.0",
     "prompt-sync": "^4.2.0",
-    "python-shell": "^2.0.0",
     "xml2js": "^0.4.23"
   }
 }
