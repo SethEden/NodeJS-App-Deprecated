@@ -8,10 +8,10 @@
         <ConfigurationElement Name="DateTimeStamp" Type="Default" Value="YYYYMMDD-HHmmss-SSS" Version="3"/>
         <ConfigurationElement Name="DateStamp" Type="Default" Value="YYYYMMDD" Version="3"/>
         <ConfigurationElement Name="TimeStamp" Type="Default" Value="HHmmss-SSS" Version="3"/>
-        <ConfigurationElement Name="ArgumentDrivenInterface" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="ArgumentDrivenInterface" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="DebugFiles" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="index" Type="Default" Value="True" Version="3"/>
-          <ConfigurationElement Name="warden" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="characterGeneration" Type="Default" Value="True" Version="3"/>
