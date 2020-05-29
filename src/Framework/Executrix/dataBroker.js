@@ -504,6 +504,30 @@ function readDirectorySynchronously(directory) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
+/**
+ * @name copyAllFilesAndFoldersFromFolderToFolder
+ * @description Copies all of the files and folders recursively from the source folder to the destination folder.
+ * @param  {[String]} sourceFolder The full source path where files and folders should be copied from.
+ * @param  {[String]} destinationFolder The full destination path where files and folders should be copied.
+ * @return {[Boolean]} A TRUE or FALSE to indicate if the full copy process is successful or not.
+ * @author Seth Hollingsead
+ * @date 2020/05/29
+ * @NOTE: This is mainly used by the build system to execute a copy process for the
+ * non-code files from the source folder to the bin folder.
+ */
+function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolder) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + directory);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + directory);
+  var copySuccess = false;
+  
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return copySuccess;
+};
+
 export default {
   scanDataPath,
   loadAllCsvData,
