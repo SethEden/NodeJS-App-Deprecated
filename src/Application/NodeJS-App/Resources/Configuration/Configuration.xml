@@ -10,7 +10,7 @@
         <ConfigurationElement Name="TimeStamp" Type="Default" Value="HHmmss-SSS" Version="3"/>
         <ConfigurationElement Name="ArgumentDrivenInterface" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="DebugFiles" Type="Default" Value="Multiple" Version="3">
-          <ConfigurationElement Name="index" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="application" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration" Type="Default" Value="True" Version="3"/>
@@ -21,7 +21,7 @@
           <ConfigurationElement Name="commandBroker" Type="Default" Value="True" Version="3"/>
         </ConfigurationElement>
         <ConfigurationElement Name="DebugFunctions" Type="Default" Value="Multiple" Version="3">
-          <ConfigurationElement Name="index.application" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="application.application" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessCsvData" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessXmlData" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllCsvData" Type="Default" Value="True" Version="3"/>
