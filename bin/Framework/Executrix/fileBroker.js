@@ -142,7 +142,7 @@ function readDirectoryContents(directory) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
 
   var filesFound = [];
-  readDirectorySynchronously(dataPath);
+  readDirectorySynchronously(directory);
   filesFound = filesCollection; // Copy the data into a local variable first.
 
   filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.

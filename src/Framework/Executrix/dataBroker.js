@@ -126,8 +126,6 @@ function loadAllXmlData(filesToLoad, contextName) {
     // console.log('MERGED data is: ' + JSON.stringify(multiMergedData));
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'MERGED data is: ' + JSON.stringify(multiMergedData));
   }
-  // Clear it so the next time we try to scan a folder and load a bunch of files, we don't have carry-over files listed.
-  filesCollection = [];
   parsedDataFile = {}; // Clear it, so we can re-assign it to the merged locator data from all the files.
   parsedDataFile = multiMergedData;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'parsedDataFile contents are: ' + JSON.stringify(parsedDataFile));
