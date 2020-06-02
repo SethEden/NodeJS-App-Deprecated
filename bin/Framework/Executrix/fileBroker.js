@@ -1,7 +1,14 @@
-var fs = require('fs');
-var filesCollection = [];
-const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release'];
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var fs = require('fs');
+
+var filesCollection = [];
+var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release'];
 /**
  * @name getXmlData
  * @description Loads the specified file and parses it into JavaScript Objects, all strings.
@@ -10,30 +17,34 @@ const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platfor
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
+
 function getXmlData(pathAndFilename) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getXmlData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
   var returnData;
-  var data = fs.readFileSync(pathAndFilename, {encoding: 'UTF8' });
+  var data = fs.readFileSync(pathAndFilename, {
+    encoding: 'UTF8'
+  });
   var xml;
-  xml2js.parseString(data,
-    function(err, result) {
-      if (err) {
-        returnData = console.log('ERROR: ' + err);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-        return returnData;
-      }
-      xml = result;
-    });
+  xml2js.parseString(data, function (err, result) {
+    if (err) {
+      returnData = console.log('ERROR: ' + err);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+      return returnData;
+    }
+
+    xml = result;
+  });
   returnData = xml;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
-};
+}
 
+;
 /**
  * @name getCsvData
  * @description Loads the specified file and parses it into JSON objects.
@@ -45,12 +56,15 @@ function getXmlData(pathAndFilename) {
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
+
 function getCsvData(pathAndFilename) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
-  var data = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
+  var data = fs.readFileSync(pathAndFilename, {
+    encoding: 'UTF8'
+  });
   var parsedData = Papa.parse(data, {
     delimiter: ',',
     newline: '/n',
@@ -62,8 +76,9 @@ function getCsvData(pathAndFilename) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(parsedData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return parsedData;
-};
+}
 
+;
 /**
  * @name readDirectoryContents
  * @description This function acts as a wrapper for calling readDirectorySynchronously since that function is recursive.
@@ -74,6 +89,7 @@ function getCsvData(pathAndFilename) {
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
+
 function readDirectoryContents(directory) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = readDirectoryContents.name;
@@ -82,13 +98,16 @@ function readDirectoryContents(directory) {
   var filesFound = [];
   readDirectorySynchronously(dataPath);
   filesFound = filesCollection; // Copy the data into a local variable first.
+
   filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
+
   filesCollection = [];
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'files found are: ' + JSON.stringify(filesFound));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return filesFound;
-};
+}
 
+;
 /**
  * @name readDirectorySynchronously
  * @description Recursively parses through all the sub-folders in a given path and loads all of the files contained in each sub-folder into a map.
@@ -99,6 +118,7 @@ function readDirectoryContents(directory) {
  * @reference https://stackoverflow.com/questions/41462606/get-all-files-recursively-in-directores-nodejs
  * @date 2020/05/22
  */
+
 function readDirectorySynchronously(directory) {
   // console.log('BEGIN dataBroker.readDirectorySynchronously function');
   // console.log('directory is: ' + directory);
@@ -108,9 +128,10 @@ function readDirectorySynchronously(directory) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
   var currentDirectoryPath = directory;
   var currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
-  currentDirectory.forEach(file => {
+  currentDirectory.forEach(function (file) {
     var filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
-    var pathOfCurrentItem = directory +'/' + file;
+    var pathOfCurrentItem = directory + '/' + file;
+
     if (!filesShouldBeSkipped && fs.statSync(pathOfCurrentItem).isFile()) {
       filesCollection.push(pathOfCurrentItem);
     } else if (!filesShouldBeSkipped) {
@@ -118,10 +139,10 @@ function readDirectorySynchronously(directory) {
       readDirectorySynchronously(directoryPath);
     }
   });
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('END dataBroker.readDirectorySynchronously function');
-};
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
+}
 
+;
 /**
  * @name copyAllFilesAndFoldersFromFolderToFolder
  * @description Copies all of the files and folders recursively from the source folder to the destination folder.
@@ -133,6 +154,7 @@ function readDirectorySynchronously(directory) {
  * @NOTE: This is mainly used by the build system to execute a copy process for the
  * non-code files from the source folder to the bin folder.
  */
+
 function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolder) {
   // console.log('BEGIN dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
   // console.log('sourceFolder is: ' + sourceFolder);
@@ -150,18 +172,18 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
   sourceFolder = rootPath + sourceFolder;
-  destinationFolder = rootPath + destinationFolder
+  destinationFolder = rootPath + destinationFolder;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder);
-
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('copySuccess is: ' + copySuccess);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('copySuccess is: ' + copySuccess);
   // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
-  return copySuccess;
-};
 
+  return copySuccess;
+}
+
+;
 /**
  * @name buildReleasePackage
  * @description Add all the files from the sourceFolder into a zip file and
@@ -172,6 +194,7 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
+
 function buildReleasePackage(sourceFolder, destinationFolder) {
   // console.log('BEGIN dataBroker.buildReleasePackage function');
   // console.log('sourceFolder is: ' + sourceFolder);
@@ -182,14 +205,14 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   var packageSuccess = false;
-
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('packageSuccess is: ' + packageSuccess);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('packageSuccess is: ' + packageSuccess);
   // console.log('END dataBroker.buildReleasePackage function');
-  return packageSuccess;
-};
 
+  return packageSuccess;
+}
+
+;
 /**
  * @name copyFileSync
  * @description Reads files from the source and copies them to the target.
@@ -202,6 +225,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
  * However, it should suffice for our needs. Meta-data in this case is not all that critical
  * since the original file is more important, and this is really just about the deployment of a build-release.
  */
+
 function copyFileSync(source, target) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyFileSync.name;
@@ -209,26 +233,28 @@ function copyFileSync(source, target) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
   var successfullCopy = false;
-  var targetFile = target;
+  var targetFile = target; // If target is a directory a new file with the same name will be created
 
-  // If target is a directory a new file with the same name will be created
   if (fs.existsSync(target)) {
     if (fs.lstatSync(target).isDirectory()) {
       targetFile = path.join(target, path.basename(source));
     }
   }
+
   try {
     fs.writeFileSync(targetFile, fs.readFileSync(source));
     successfullCopy = true;
-  } catch(err) {
+  } catch (err) {
     console.log('ERROR: Could not copy file: ' + source);
     successfullCopy = false;
   }
+
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return successfullCopy;
-};
+}
 
+;
 /**
  * @name copyFolderRecursiveSync
  * @description Copies a folder and all of its files and sub-folders and sub-files recursively.
@@ -241,6 +267,7 @@ function copyFileSync(source, target) {
  * However, it should suffice for our needs. Meta-data in this case is not all that critical
  * since the original file is more important, and this is really just about the deployment of a build-release.
  */
+
 function copyFolderRecursiveSync(source, target) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyFolderRecursiveSync.name;
@@ -248,28 +275,28 @@ function copyFolderRecursiveSync(source, target) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
   var successfullCopy = false;
-  var files = [];
+  var files = []; // Check if folder needs to be created or integrated
 
-  // Check if folder needs to be created or integrated
   var targetFolder = target; // = path.join(target, path.basename(source));
+
   if (!fs.existsSync(targetFolder)) {
     try {
-      fs.mkdirSync(targetFolder);
-      // NOTE: Just because we complete the above code doesn't mean the entire copy process was a success.
+      fs.mkdirSync(targetFolder); // NOTE: Just because we complete the above code doesn't mean the entire copy process was a success.
       // But atleast we haven't errored out, so it wasn't a failure YET.
-    } catch(err) {
+    } catch (err) {
       console.log('ERROR: Could not create folder: ' + targetFolder);
       console.log('ERROR: ' + err);
       successfullCopy = false;
     }
-  }
+  } // Copy
 
-  // Copy
+
   try {
     if (fs.lstatSync(source).isDirectory()) {
       files = fs.readdirSync(source);
-      files.forEach(function(file) {
+      files.forEach(function (file) {
         var curSource = path.join(source, file);
+
         if (fs.lstatSync(curSource).isDirectory()) {
           successfullCopy = copyFolderRecursiveSync(curSource, targetFolder);
         } else {
@@ -282,17 +309,19 @@ function copyFolderRecursiveSync(source, target) {
     console.log('ERROR: ' + err);
     successfullCopy = false;
   }
+
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return successfullCopy;
-};
+}
 
-export default {
-  getCsvData,
-  getXmlData,
-  readDirectoryContents,
-  copyAllFilesAndFoldersFromFolderToFolder,
-  buildReleasePackage,
-  copyFileSync,
-  copyFolderRecursiveSync
+;
+var _default = {
+  getCsvData: getCsvData,
+  getXmlData: getXmlData,
+  copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder,
+  buildReleasePackage: buildReleasePackage,
+  copyFileSync: copyFileSync,
+  copyFolderRecursiveSync: copyFolderRecursiveSync
 };
+exports["default"] = _default;
