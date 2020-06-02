@@ -17,6 +17,8 @@ var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"))
 
 var _dataBroker = _interopRequireDefault(require("../Executrix/dataBroker"));
 
+var _fileBroker = _interopRequireDefault(require("../Executrix/fileBroker"));
+
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
@@ -58,7 +60,7 @@ function deployApplication(source, destination) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destination is: ' + destination);
 
   var deploymentSuccessfull;
-  deploymentSuccessfull = _dataBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(source, destination);
+  deploymentSuccessfull = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(source, destination);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deploymentSuccessfull is: ' + deploymentSuccessfull);
 
@@ -92,7 +94,7 @@ function releaseApplication(source, release) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release is: ' + release);
 
   var releaseSuccessfull;
-  releaseSuccessfull = _dataBroker["default"].buildReleasePackage(source, release);
+  releaseSuccessfull = _fileBroker["default"].buildReleasePackage(source, release);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseSuccessfull is: ' + releaseSuccessfull);
 
