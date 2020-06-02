@@ -1,4 +1,5 @@
 var fs = require('fs');
+var path = require('path');
 var filesCollection = [];
 const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release'];
 

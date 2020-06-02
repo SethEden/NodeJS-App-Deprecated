@@ -319,6 +319,7 @@ function copyFolderRecursiveSync(source, target) {
 var _default = {
   getCsvData: getCsvData,
   getXmlData: getXmlData,
+  readDirectoryContents: readDirectoryContents,
   copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder,
   buildReleasePackage: buildReleasePackage,
   copyFileSync: copyFileSync,
