@@ -1,5 +1,15 @@
+import ruleBroker from '../BusinessRules/ruleBroker';
+import configurator from './configurator';
+import loggers from './loggers';
+import * as b from '../Constants/basic.constants';
+import * as s from '../Constants/system.constants';
 var fs = require('fs');
 var path = require('path');
+var xml2js = require('xml2js').Parser({
+  parseNumbers: true,
+  parseBooleans: true,
+  explicitArray: false,
+  mergeAttrs: true});
 var filesCollection = [];
 const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release'];
 

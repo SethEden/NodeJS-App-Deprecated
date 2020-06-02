@@ -6,11 +6,6 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var Papa = require('papaparse');
-var xml2js = require('xml2js').Parser({
-  parseNumbers: true,
-  parseBooleans: true,
-  explicitArray: false,
-  mergeAttrs: true});
 // require('should'); // Not sure if this will really be needed or not.
 
 /**

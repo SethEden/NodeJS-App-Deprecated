@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var fs = require('fs');
 
+var path = require('path');
+
 var filesCollection = [];
 var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release'];
 /**
