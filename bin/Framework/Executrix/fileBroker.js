@@ -139,7 +139,7 @@ function readDirectoryContents(directory) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
 
   var filesFound = [];
   readDirectorySynchronously(dataPath);
