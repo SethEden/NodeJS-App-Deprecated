@@ -73,11 +73,7 @@ function deployApplication() {
 
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    console.log('c.cSourceResourcesPath resolves as: ' + c.cSourceResourcesPath);
-    console.log('c.cBinaryResourcesPath resolves as: ' + c.cBinaryResourcesPath);
-    console.log('c.cResourcesCommonPath resolves as: ' + c.cResourcesCommonPath);
-    console.log('c.cConfigurationDataLookupPrefixPath resolves as: ' + c.cConfigurationDataLookupPrefixPath);
-    copyResult = _dataBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(+c.cSourceResourcesPath, rootPath + c.cBinaryResourcesPath);
+    copyResult = _dataBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(c.cSourceResourcesPath, c.cBinaryResourcesPath);
     console.log('Deployment was completed: ' + copyResult);
 
     _warden["default"].setConfigurationSetting('deploymentCompleted', copyResult);

@@ -525,6 +525,12 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   var copySuccess = false;
+  var rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
+  var cleanRootPathRules = {};
+  cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
+  console.log('RootPath before processing is: ' + rootPath);
+  rootPath = ruleBroker.processRules(rootPath, 0, cleanRootPathRules);
+  console.log('RootPath after processing is: ' + rootPath);
 
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

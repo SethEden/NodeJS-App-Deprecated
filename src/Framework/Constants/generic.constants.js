@@ -251,6 +251,7 @@ export const carg = b.car + b.cg;
 export const cArg = b.cAr + b.cg;
 export const crive = b.cri + b.cve;
 export const cloy = b.clo + b.cy;
+export const cumber = b.cum + b.cb + b.cer;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

@@ -1141,7 +1141,7 @@ export const replaceDoublePercentWithMessage = function(inputData, inputMetaData
  */
 export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.creplaceDoublePercentWithMessage;
+  var functionName = s.cremoveXnumberOfFoldersFromEndOfPath;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -1149,7 +1149,7 @@ export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMeta
     return false;
   }
   var returnData = '';
-  var returnData = '';
+  returnData = inputData;
 
   // Determine if we are dealing with a path delimited with forward slashes or back slashes.
   // Use the split accordingly.

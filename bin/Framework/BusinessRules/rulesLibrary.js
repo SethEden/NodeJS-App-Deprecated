@@ -111,6 +111,8 @@ var rulesLibrary = (_rulesLibrary = {}, _defineProperty(_rulesLibrary, s.cEcho, 
   return stringParsing.parseSystemRootPath(inputData, inputMetaData);
 }), _defineProperty(_rulesLibrary, s.creplaceDoublePercentWithMessage, function (inputData, inputMetaData) {
   return stringParsing.replaceDoublePercentWithMessage(inputData, inputMetaData);
+}), _defineProperty(_rulesLibrary, s.cremoveXnumberOfFoldersFromEndOfPath, function (inputData, inputMetaData) {
+  return stringParsing.removeXnumberOfFoldersFromEndOfPath(inputData, inputMetaData);
 }), _defineProperty(_rulesLibrary, s.ccreateNdigitStringFromNumber, function (inputData, inputMetaData) {
   return stringGeneration.createNdigitStringFromNumber(inputData, inputMetaData);
 }), _defineProperty(_rulesLibrary, s.cgenerateRandomMixedCaseTextByLength1, function (inputData, inputMetaData) {
