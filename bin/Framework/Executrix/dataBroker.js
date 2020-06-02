@@ -705,12 +705,50 @@ function readDirectorySynchronously(directory) {
 }
 
 ;
+/**
+ * @name copyAllFilesAndFoldersFromFolderToFolder
+ * @description Copies all of the files and folders recursively from the source folder to the destination folder.
+ * @param  {[String]} sourceFolder The full source path where files and folders should be copied from.
+ * @param  {[String]} destinationFolder The full destination path where files and folders should be copied.
+ * @return {[Boolean]} A TRUE or FALSE to indicate if the full copy process is successful or not.
+ * @author Seth Hollingsead
+ * @date 2020/05/29
+ * @NOTE: This is mainly used by the build system to execute a copy process for the
+ * non-code files from the source folder to the bin folder.
+ */
+
+function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolder) {
+  // console.log('BEGIN dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
+  // console.log('sourceFolder is: ' + sourceFolder);
+  // console.log('destinationFolder is: ' + destinationFolder);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
+  var copySuccess = false;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('copySuccess is: ' + copySuccess);
+  // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
+
+
+  return copySuccess;
+}
+
+;
 var _default = {
   scanDataPath: scanDataPath,
   loadAllCsvData: loadAllCsvData,
   loadAllXmlData: loadAllXmlData,
   getCsvData: getCsvData,
   processCsvData: processCsvData,
-  getXmlData: getXmlData
+  getXmlData: getXmlData,
+  copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder
 };
 exports["default"] = _default;

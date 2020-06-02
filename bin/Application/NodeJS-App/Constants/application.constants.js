@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
+exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
 var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
@@ -24,3 +24,13 @@ var cApplicationName = 'NodeJS-App'; // Configuration Path
 exports.cApplicationName = cApplicationName;
 var cConfigurationDataLookupPrefixPath = b.cForwardSlash + s.cResources + b.cForwardSlash + s.cConfiguration;
 exports.cConfigurationDataLookupPrefixPath = cConfigurationDataLookupPrefixPath;
+var cResourcesCommonPath = s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cResources + b.cForwardSlash; // Source Resources Path
+
+exports.cResourcesCommonPath = cResourcesCommonPath;
+var cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash + cResourcesCommonPath;
+exports.cSourceResourcesPath = cSourceResourcesPath;
+'/src/Application/NodeJS-App/Resources/'; // Binary Resources Path
+
+var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + cResourcesCommonPath;
+exports.cBinaryResourcesPath = cBinaryResourcesPath;
+'/bin/Application/NodeJS-App/Resources/';

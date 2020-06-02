@@ -7,3 +7,10 @@ export const cApplicationName = 'NodeJS-App';
 
 // Configuration Path
 export const cConfigurationDataLookupPrefixPath = b.cForwardSlash + s.cResources + b.cForwardSlash + s.cConfiguration;
+export const cResourcesCommonPath = s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cResources + b.cForwardSlash;
+
+// Source Resources Path
+export const cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash + cResourcesCommonPath; '/src/Application/NodeJS-App/Resources/';
+
+// Binary Resources Path
+export const cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + cResourcesCommonPath; '/bin/Application/NodeJS-App/Resources/'

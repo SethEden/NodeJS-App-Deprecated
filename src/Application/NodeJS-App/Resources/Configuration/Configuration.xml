@@ -11,6 +11,7 @@
         <ConfigurationElement Name="ArgumentDrivenInterface" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="DebugFiles" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="build" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration" Type="Default" Value="True" Version="3"/>
@@ -22,10 +23,10 @@
         </ConfigurationElement>
         <ConfigurationElement Name="DebugFunctions" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application.application" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="warden.bootStrapApplication" Type="Default" Value="True" Version="3"/>
-          <ConfigurationElement Name="warden.processCommand" Type="Default" Value="True" Version="3"/>
-          <ConfigurationElement Name="warden.setConfigurationSetting" Type="Default" Value="True" Version="3"/>
-          <ConfigurationElement Name="warden.getConfigurationSetting" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden.bootStrapApplication" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.processCommand" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.setConfigurationSetting" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.getConfigurationSetting" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessCsvData" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessXmlData" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllCsvData" Type="Default" Value="True" Version="3"/>
@@ -43,6 +44,7 @@
           <ConfigurationElement Name="dataBroker.getDataElement" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="dataBroker.readDirectorySynchronously" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.copyAllFilesAndFoldersFromFolderToFolder" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="timers.getNowMoment" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="timers.computeDeltaTime" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime" Type="Default" Value="True" Version="3"/>

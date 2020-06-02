@@ -416,8 +416,16 @@ export const cFile = b.cF + g.cile;
 export const cFiles = cFile + b.cs;
 export const cfile = b.cf + b.cile;
 export const cfiles = cfile + b.cs;
+export const cfold = b.cfo + b.cld;
+export const cFold = b.cFo + b.cld;
+export const cfolder = cfold + b.cer;
+export const cFolder = cFold + b.cer;
+export const cfolders = cfolder + b.cs;
+export const cFolders = cFolder + b.cs;
 export const ccafe = b.ca + b.cfe; // 'cafe';
 export const ccert = b.cce + b.crt; // 'cert';
+export const csrc = b.csr + b.cc;
+export const cbin = b.cbi + b.cn;
 export const csource = b.cs + g.cource;
 export const cSource = b.cS + g.cource;
 export const cresource = b.cre + csource;
@@ -556,6 +564,9 @@ export const cdoes = b.cdo + b.ces;
 export const cDoes = b.cDo + b.ces;
 export const capplication = g.capp + g.clica + g.ction;
 export const cApplication = g.cApp + g.clica + g.ction;
+export const cdeploy = b.cd + b.cep + g.cloy;
+export const cDeploy = b.cD + b.cep + g.cloy;
+export const cdeployApplication = cdeploy + cApplication;
 export const croot = b.cr + g.coot;
 export const cRoot = b.cR + g.coot;
 export const cparse = b.cp + g.carse;
@@ -1140,6 +1151,7 @@ export const cgetDataCatagoryDetailNameFromDataContextName = cget + cData + cCat
 export const cgetKeywordNameFromDataContextName = cget + cKeyword + cName + cFrom + cData + cContext + cName;
 export const cparseSystemRootPath = cparse + cSystem + cRoot + cPath;
 export const creplaceDoublePercentWithMessage = creplace + cDouble + cPercent + cWith + cMessage;
+export const cremoveXnumberOfFoldersFromEndOfPath = cremove + b.cX + cnumber + b.cOf + cFolders + cFrom + cEnd + b.cOf + cPath;
 
 // *********************************
 // StringGeneration rules in order

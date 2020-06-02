@@ -1130,6 +1130,37 @@ export const replaceDoublePercentWithMessage = function(inputData, inputMetaData
   return returnData;
 };
 
+/**
+ * @name removeXnumberOfFoldersFromEndOfPath
+ * @description Removes X number of folders from the end of a path and returns the newly modified path.
+ * @param  {[String]} inputData The path that should have the number of paths removed.
+ * @param  {[Integer]} inputMetaData The number of paths that should be removed from the input path.
+ * @return {[String]} The modified string with the folders removed from the input path.
+ * @author Seth Hollingsead
+ * @date 2020/06/01
+ */
+export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.creplaceDoublePercentWithMessage;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  var returnData = '';
+  var returnData = '';
+
+  // Determine if we are dealing with a path delimited with forward slashes or back slashes.
+  // Use the split accordingly.
+  // Iterate over the array.length - inputMetaData and re-assemble the array up to the array.length - inputMetaData.
+  // Then return the re-compiled array.
+
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
 // ******************************************************
 // Internal functions
 // ******************************************************

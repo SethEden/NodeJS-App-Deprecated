@@ -5,7 +5,7 @@
   "main": "src/Application/NodeJS-App/application.js",
   "scripts": {
     "build": "babel src --out-dir bin",
-    "predev": "npm run build && babel-node build.js",
+    "predev": "npm run build && babel-node src/Application/NodeJS-App/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "vers": "standard-version",
     "dev": "node bin/Application/NodeJS-App/application.js",

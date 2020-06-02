@@ -516,15 +516,20 @@ function readDirectorySynchronously(directory) {
  * non-code files from the source folder to the bin folder.
  */
 function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolder) {
+  // console.log('BEGIN dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
+  // console.log('sourceFolder is: ' + sourceFolder);
+  // console.log('destinationFolder is: ' + destinationFolder);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + directory);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + directory);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   var copySuccess = false;
-  
+
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('copySuccess is: ' + copySuccess);
+  // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
   return copySuccess;
 };
 
@@ -535,4 +540,5 @@ export default {
   getCsvData,
   processCsvData,
   getXmlData,
+  copyAllFilesAndFoldersFromFolderToFolder
 };

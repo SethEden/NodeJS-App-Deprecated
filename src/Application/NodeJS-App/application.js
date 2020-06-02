@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-
-import loggers from '../../Framework/Executrix/loggers';
-import warden from '../../Framework/Controllers/warden.js';
+import warden from '../../Framework/Controllers/warden';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
