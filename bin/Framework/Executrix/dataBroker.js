@@ -680,6 +680,8 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
  */
 
 function readDirectorySynchronously(directory) {
+  // console.log('BEGIN dataBroker.readDirectorySynchronously function');
+  // console.log('directory is: ' + directory);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = readDirectorySynchronously.name;
 
@@ -701,7 +703,8 @@ function readDirectorySynchronously(directory) {
     }
   });
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
+
 }
 
 ;

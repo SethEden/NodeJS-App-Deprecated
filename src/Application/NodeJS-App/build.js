@@ -22,7 +22,6 @@ function bootStrapApplicationDeployment() {
   rootPath = path.resolve(__dirname);
   rootPath = warden.processRootPath(rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
-  console.log('rootPath resolves as: ' + rootPath);
   warden.setConfigurationSetting(s.cApplicationRootPath, rootPath);
 };
 
@@ -48,7 +47,8 @@ function deployApplication() {
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
     copyResult = dataBroker.copyAllFilesAndFoldersFromFolderToFolder(c.cSourceResourcesPath, c.cBinaryResourcesPath);
-    console.log('Deployment was completed: ' + copyResult);
+    // console.log('Deployment was completed: ' + copyResult);
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
     warden.setConfigurationSetting('deploymentCompleted', copyResult);
   } catch (err) {
     console.error(err);

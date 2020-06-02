@@ -37,9 +37,9 @@ function setupConfiguration(pathAndFilename) {
   parseLoadedConfigurationData(allConfigurationData);
 
   // Get the operating system envrionment variable here and setup how to setup the log files.
-  // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
   loggers.consoleLog(s.cLogFileEnabled, configurator.getConfigurationSetting(s.cDateTimeSTamp));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
   // console.log('END chiefConfiguration.setupTestConfiguration function');
 };
 

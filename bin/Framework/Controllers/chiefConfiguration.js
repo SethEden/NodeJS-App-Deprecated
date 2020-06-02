@@ -64,11 +64,11 @@ function setupConfiguration(pathAndFilename) {
   var allConfigurationData = {};
   allConfigurationData = _chiefData["default"].setupAllXmlData(s.cConfigurationPath, s.cConfiguration);
   parseLoadedConfigurationData(allConfigurationData); // Get the operating system envrionment variable here and setup how to setup the log files.
-  // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
 
   _loggers["default"].consoleLog(s.cLogFileEnabled, _configurator["default"].getConfigurationSetting(s.cDateTimeSTamp));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END chiefConfiguration.setupTestConfiguration function');
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
+  // console.log('END chiefConfiguration.setupTestConfiguration function');
 
 }
 
