@@ -736,9 +736,21 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
 
   var cleanRootPathRules = {};
   cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
-  console.log('RootPath before processing is: ' + rootPath);
-  rootPath = _ruleBroker["default"].processRules(rootPath, 0, cleanRootPathRules);
-  console.log('RootPath after processing is: ' + rootPath);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
+
+  rootPath = _ruleBroker["default"].processRules(rootPath, 3, cleanRootPathRules);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
+
+  sourceFolder = rootPath + sourceFolder;
+  destinationFolder = rootPath + destinationFolder;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
+  copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
 
@@ -747,6 +759,121 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
 
 
   return copySuccess;
+}
+
+;
+/**
+ * @name copyFileSync
+ * @description Reads files from the source and copies them to the target.
+ * @param  {[String]} source The source file that should be copied (read and then re-written to the destination).
+ * @param  {[String]} target The target file that should be saved to.
+ * @author Simon Zyx
+ * @date 2014/09/25
+ * @source https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js
+ * @NOTE: This code is not actually coping the files, it is reading them and re-writing them to the target.
+ * However, it should suffice for our needs. Meta-data in this case is not all that critical
+ * since the original file is more important, and this is really just about the deployment of a build-release.
+ */
+
+function copyFileSync(source, target) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = copyFileSync.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+
+  var successfullCopy = false;
+  var targetFile = target; // If target is a directory a new file with the same name will be created
+
+  if (fs.existsSync(target)) {
+    if (fs.lstatSync(target).isDirectory()) {
+      targetFile = path.join(target, path.basename(source));
+    }
+  }
+
+  try {
+    fs.writeFileSync(targetFile, fs.readFileSync(source));
+    successfullCopy = true;
+  } catch (err) {
+    console.log('ERROR: Could not copy file: ' + source);
+    successfullCopy = false;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return successfullCopy;
+}
+
+;
+/**
+ * @name copyFolderRecursiveSync
+ * @description Copies a folder and all of its files and sub-folders and sub-files recursively.
+ * @param  {[String]} source The source path where all files and folders should be copied from.
+ * @param  {[String]} target The target path where all the files and folders should be copied to.
+ * @author Simon Zyx
+ * @date 2014/09/25
+ * @source https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js
+ * @NOTE: This code is not actually coping the files, it is reading them and re-writing them to the target.
+ * However, it should suffice for our needs. Meta-data in this case is not all that critical
+ * since the original file is more important, and this is really just about the deployment of a build-release.
+ */
+
+function copyFolderRecursiveSync(source, target) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = copyFolderRecursiveSync.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+
+  var successfullCopy = false;
+  var files = []; // Check if folder needs to be created or integrated
+
+  var targetFolder = target; // = path.join(target, path.basename(source));
+
+  if (!fs.existsSync(targetFolder)) {
+    try {
+      fs.mkdirSync(targetFolder); // NOTE: Just because we complete the above code doesn't mean the entire copy process was a success.
+      // But atleast we haven't errored out, so it wasn't a failure YET.
+    } catch (err) {
+      console.log('ERROR: Could not create folder: ' + targetFolder);
+      console.log('ERROR: ' + err);
+      successfullCopy = false;
+    }
+  } // Copy
+
+
+  try {
+    if (fs.lstatSync(source).isDirectory()) {
+      files = fs.readdirSync(source);
+      files.forEach(function (file) {
+        var curSource = path.join(source, file);
+
+        if (fs.lstatSync(curSource).isDirectory()) {
+          successfullCopy = copyFolderRecursiveSync(curSource, targetFolder);
+        } else {
+          successfullCopy = copyFileSync(curSource, targetFolder);
+        }
+      });
+    }
+  } catch (err) {
+    console.log('ERROR: Could not copy folder contents: ' + targetFolder);
+    console.log('ERROR: ' + err);
+    successfullCopy = false;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return successfullCopy;
 }
 
 ;

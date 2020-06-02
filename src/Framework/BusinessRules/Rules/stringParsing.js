@@ -1145,17 +1145,48 @@ export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMeta
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  if (!inputData) {
-    return false;
+  if (!inputData && math.isNumeric(inputMetaData) === false) {
+    returnData = false;
   }
   var returnData = '';
-  returnData = inputData;
-
-  // Determine if we are dealing with a path delimited with forward slashes or back slashes.
-  // Use the split accordingly.
-  // Iterate over the array.length - inputMetaData and re-assemble the array up to the array.length - inputMetaData.
-  // Then return the re-compiled array.
-
+  var pathArray;
+  var pathAsForwardSlash;
+  if (inputData.includes(b.cForwardSlash) === true) {
+    pathArray = inputData.split(b.cForwardSlash);
+    pathAsForwardSlash = true;
+  } else if (inputData.includes(b.cBackSlash) === true) {
+    pathArray = inputData.split(b.cBackSlash);
+    pathAsForwardSlash = false
+  } else {
+    pathAsForwardSlash = false;
+    returnData = false;
+  }
+  if (returnData !== false) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathArray is: ' + JSON.stringify(pathArray));
+    for (let i = 0; i <= pathArray.length - inputMetaData - 1; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'current path element is: ' + pathArray[i]);
+      if (i === 0) {
+          returnData = pathArray[i];
+      } else {
+        if (pathAsForwardSlash === true) {
+          returnData = returnData + b.cForwardSlash + pathArray[i];
+        } else if (pathAsForwardSlash === false) {
+          returnData = returnData + b.cBackSlash + pathArray[i];
+        } else {
+          returnData = false;
+          break;
+        }
+      } // END else case
+    } // END for-loop
+    // We still need a trailing slash
+    if (pathAsForwardSlash === true) {
+      returnData = returnData + b.cForwardSlash;
+    } else if (pathAsForwardSlash === false) {
+      returnData = returnData + b.cBackSlash;
+    } else {
+      returnData = false;
+    }
+  } // END returnData !== false
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
