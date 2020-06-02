@@ -15,6 +15,8 @@ var _timers = _interopRequireDefault(require("../Executrix/timers"));
 
 var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"));
 
+var _dataBroker = _interopRequireDefault(require("../Executrix/dataBroker"));
+
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
@@ -35,6 +37,72 @@ var path = require('path');
 
 var D = require('../Resources/data');
 /**
+ * @name deployApplication
+ * @description Copys all non-source code files and folders from the source path to the destination path.
+ * @param  {[String]} source The path the non-code files should be copied from.
+ * @param  {[String]} destination The path the non-code files should be copied to.
+ * @return {[Boolean]} A TRUE or FALSE value to indicate if the deployment was successful or not.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+
+
+function deployApplication(source, destination) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = deployApplication.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destination is: ' + destination);
+
+  var deploymentSuccessfull;
+  deploymentSuccessfull = _dataBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(source, destination);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deploymentSuccessfull is: ' + deploymentSuccessfull);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return deploymentSuccessfull;
+}
+
+;
+/**
+ * @name releaseApplication
+ * @description Scans the specified release folder path and determines if
+ * there is a zip file for the current release or not. If there is not,
+ * then the system will build a zip file from the bin folder excluding the release folder
+ * and save the resulting archive to the release folder.
+ * @param  {[String]} source The path for the bin folder where the latest source code will have been deployed.
+ * @param  {[type]} release The path for the release folder where the release zip archive file should be saved.
+ * @return {[Boolean]} A TRUE or FALSE value to indicate if the zip archive was created successfully or not.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+
+function releaseApplication(source, release) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = releaseApplication.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release is: ' + release);
+
+  var releaseSuccessfull;
+  releaseSuccessfull = _dataBroker["default"].buildReleasePackage(source, release);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseSuccessfull is: ' + releaseSuccessfull);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return releaseSuccessfull;
+}
+
+;
+/**
  * @name bootStrapApplication
  * @description Do all of the activities to setup the application system to run whatever actions the application will run.
  * @param  {[String]} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
@@ -46,7 +114,6 @@ var D = require('../Resources/data');
  * hard coding the debug statements and debugging them by uncommenting.
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
-
 
 function bootStrapApplication(pathAndFilename) {
   // console.log('BEGIN warden.bootStrapApplication function');
@@ -218,6 +285,8 @@ function consoleLog(classPath, message) {
 
 ;
 var _default = {
+  deployApplication: deployApplication,
+  releaseApplication: releaseApplication,
   bootStrapApplication: bootStrapApplication,
   processRootPath: processRootPath,
   processCommand: processCommand,

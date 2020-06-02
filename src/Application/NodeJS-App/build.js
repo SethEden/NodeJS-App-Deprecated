@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import warden from '../../Framework/Controllers/warden';
-import dataBroker from '../../Framework/Executrix/dataBroker';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
@@ -38,15 +37,11 @@ function bootStrapApplicationDeployment() {
 function deployApplication() {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cdeployApplication;
-  var argumentDrivenInterface = true;
-  var commandInput;
-  var commandResult;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
-  // Sync:
+  var copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    copyResult = dataBroker.copyAllFilesAndFoldersFromFolderToFolder(c.cSourceResourcesPath, c.cBinaryResourcesPath);
+    copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
     // console.log('Deployment was completed: ' + copyResult);
     warden.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
     warden.setConfigurationSetting('deploymentCompleted', copyResult);
@@ -57,5 +52,26 @@ function deployApplication() {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
+/**
+ * @name releaseApplication
+ * @description Determines if the current version number is higher than the release archive of zip files.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+function releaseApplication() {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.creleaseApplication;
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  var releaseResult;
+  try {
+    releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+  } catch (err) {
+    console.error(err);
+  }
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
 bootStrapApplicationDeployment();
 deployApplication();
+releaseApplication();

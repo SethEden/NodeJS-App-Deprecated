@@ -766,6 +766,42 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
 
 ;
 /**
+ * @name buildReleasePackage
+ * @description Add all the files from the sourceFolder into a zip file and
+ * give a name to the file for the current date-time and release version, saving to the destination folder.
+ * @param  {[String]} sourceFolder The folder that should be packaged up for the release zip file.
+ * @param  {[String]} destinationFolder The folder where the zip file release package should be saved.
+ * @return {[Boolean]} A TRUE or FALSE to indicate if the release package process is successful or not.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+
+function buildReleasePackage(sourceFolder, destinationFolder) {
+  // console.log('BEGIN dataBroker.buildReleasePackage function');
+  // console.log('sourceFolder is: ' + sourceFolder);
+  // console.log('destinationFolder is: ' + destinationFolder);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = buildReleasePackage.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
+  var packageSuccess = false;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('packageSuccess is: ' + packageSuccess);
+  // console.log('END dataBroker.buildReleasePackage function');
+
+
+  return packageSuccess;
+}
+
+;
+/**
  * @name copyFileSync
  * @description Reads files from the source and copies them to the target.
  * @param  {[String]} source The source file that should be copied (read and then re-written to the destination).
@@ -887,6 +923,7 @@ var _default = {
   getCsvData: getCsvData,
   processCsvData: processCsvData,
   getXmlData: getXmlData,
-  copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder
+  copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder,
+  buildReleasePackage: buildReleasePackage
 };
 exports["default"] = _default;

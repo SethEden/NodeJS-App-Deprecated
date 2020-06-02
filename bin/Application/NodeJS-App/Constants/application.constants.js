@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
+exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
 var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
@@ -27,10 +27,14 @@ exports.cConfigurationDataLookupPrefixPath = cConfigurationDataLookupPrefixPath;
 var cResourcesCommonPath = s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cResources + b.cForwardSlash; // Source Resources Path
 
 exports.cResourcesCommonPath = cResourcesCommonPath;
-var cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash + cResourcesCommonPath;
-exports.cSourceResourcesPath = cSourceResourcesPath;
-'/src/Application/NodeJS-App/Resources/'; // Binary Resources Path
+var cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash + cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+// Binary Resources Path
 
-var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + cResourcesCommonPath;
+exports.cSourceResourcesPath = cSourceResourcesPath;
+var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+
 exports.cBinaryResourcesPath = cBinaryResourcesPath;
-'/bin/Application/NodeJS-App/Resources/';
+var cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
+exports.cBinaryRootPath = cBinaryRootPath;
+var cBinaryReleasePath = cBinaryRootPath + s.cRelease + b.cForwardSlash;
+exports.cBinaryReleasePath = cBinaryReleasePath;

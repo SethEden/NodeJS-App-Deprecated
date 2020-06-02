@@ -23,6 +23,8 @@
         </ConfigurationElement>
         <ConfigurationElement Name="DebugFunctions" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application.application" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.deployApplication" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden.releaseApplication" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden.bootStrapApplication" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.processCommand" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.setConfigurationSetting" Type="Default" Value="False" Version="3"/>

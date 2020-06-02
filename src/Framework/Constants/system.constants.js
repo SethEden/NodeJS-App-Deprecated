@@ -567,7 +567,9 @@ export const capplication = g.capp + g.clica + g.ction;
 export const cApplication = g.cApp + g.clica + g.ction;
 export const cdeploy = b.cd + b.cep + g.cloy;
 export const cDeploy = b.cD + b.cep + g.cloy;
-export const cdeployApplication = cdeploy + cApplication;
+export const clease = b.cle + g.c_ase;
+export const crelease = b.cre + clease;
+export const cRelease = b.cRe + clease;
 export const croot = b.cr + g.coot;
 export const cRoot = b.cR + g.coot;
 export const cparse = b.cp + g.carse;
@@ -798,6 +800,8 @@ export const cnavigateTo = cnavigate + b.cTo;
 export const cNavigateTo = cNavigate + b.cTo;
 export const cBrowserRefresh = cBrowser + cRefresh;
 export const cSpaceIsColonSpace = b.cSpace + b.cIs + b.cColon + b.cSpace;
+export const cdeployApplication = cdeploy + cApplication;
+export const creleaseApplication = crelease + cApplication;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;

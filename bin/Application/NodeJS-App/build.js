@@ -5,8 +5,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 var _warden = _interopRequireDefault(require("../../Framework/Controllers/warden"));
 
-var _dataBroker = _interopRequireDefault(require("../../Framework/Executrix/dataBroker"));
-
 var c = _interopRequireWildcard(require("./Constants/application.constants"));
 
 var s = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
@@ -61,17 +59,14 @@ function bootStrapApplicationDeployment() {
 function deployApplication() {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cdeployApplication;
-  var argumentDrivenInterface = true;
-  var commandInput;
-  var commandResult;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  argumentDrivenInterface = _warden["default"].getConfigurationSetting(s.cArgumentDrivenInterface); // Sync:
+  var copyResult;
 
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    copyResult = _dataBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(c.cSourceResourcesPath, c.cBinaryResourcesPath); // console.log('Deployment was completed: ' + copyResult);
+    copyResult = _warden["default"].deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath); // console.log('Deployment was completed: ' + copyResult);
 
     _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
 
@@ -86,5 +81,33 @@ function deployApplication() {
 }
 
 ;
+/**
+ * @name releaseApplication
+ * @description Determines if the current version number is higher than the release archive of zip files.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+
+function releaseApplication() {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.creleaseApplication;
+
+  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  var releaseResult;
+
+  try {
+    releaseResult = _warden["default"].releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
+
+    _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+  } catch (err) {
+    console.error(err);
+  }
+
+  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
 bootStrapApplicationDeployment();
 deployApplication();
+releaseApplication();
