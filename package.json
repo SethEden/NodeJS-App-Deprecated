@@ -25,13 +25,14 @@
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.10.1",
     "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.6"
+    "@babel/preset-env": "^7.9.6",
+    "standard-version": "^8.0.0"
   },
   "dependencies": {
+    "fs-extra": "^9.0.0",
     "moment": "^2.26.0",
     "papaparse": "^5.2.0",
     "prompt-sync": "^4.2.0",
-    "xml2js": "^0.4.23",
-    "fs-extra": "^9.0.0"
+    "xml2js": "^0.4.23"
   }
 }
