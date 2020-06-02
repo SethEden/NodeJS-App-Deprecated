@@ -27,14 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var path = require('path');
 
-var Papa = require('papaparse');
-
-var xml2js = require('xml2js').Parser({
-  parseNumbers: true,
-  parseBooleans: true,
-  explicitArray: false,
-  mergeAttrs: true
-}); // require('should'); // Not sure if this will really be needed or not.
+var Papa = require('papaparse'); // require('should'); // Not sure if this will really be needed or not.
 
 /**
  * @name scanDataPath

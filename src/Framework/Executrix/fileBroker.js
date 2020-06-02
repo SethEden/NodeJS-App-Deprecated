@@ -89,7 +89,7 @@ function readDirectoryContents(directory) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = readDirectoryContents.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
   var filesFound = [];
   readDirectorySynchronously(dataPath);
   filesFound = filesCollection; // Copy the data into a local variable first.

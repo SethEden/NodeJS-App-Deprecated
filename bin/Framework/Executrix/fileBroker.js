@@ -1,13 +1,38 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
+var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"));
+
+var _configurator = _interopRequireDefault(require("./configurator"));
+
+var _loggers = _interopRequireDefault(require("./loggers"));
+
+var b = _interopRequireWildcard(require("../Constants/basic.constants"));
+
+var s = _interopRequireWildcard(require("../Constants/system.constants"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 var fs = require('fs');
 
 var path = require('path');
+
+var xml2js = require('xml2js').Parser({
+  parseNumbers: true,
+  parseBooleans: true,
+  explicitArray: false,
+  mergeAttrs: true
+});
 
 var filesCollection = [];
 var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release'];
@@ -23,8 +48,11 @@ var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms
 function getXmlData(pathAndFilename) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getXmlData.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
+
   var returnData;
   var data = fs.readFileSync(pathAndFilename, {
     encoding: 'UTF8'
@@ -33,16 +61,22 @@ function getXmlData(pathAndFilename) {
   xml2js.parseString(data, function (err, result) {
     if (err) {
       returnData = console.log('ERROR: ' + err);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
       return returnData;
     }
 
     xml = result;
   });
   returnData = xml;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
   return returnData;
 }
 
@@ -62,8 +96,11 @@ function getXmlData(pathAndFilename) {
 function getCsvData(pathAndFilename) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getCsvData.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+
   var data = fs.readFileSync(pathAndFilename, {
     encoding: 'UTF8'
   });
@@ -74,9 +111,13 @@ function getCsvData(pathAndFilename) {
     skipEmptyLines: true,
     encoding: 'UTF8'
   });
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE loading data from: ' + pathAndFilename);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(parsedData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE loading data from: ' + pathAndFilename);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(parsedData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
   return parsedData;
 }
 
@@ -95,8 +136,11 @@ function getCsvData(pathAndFilename) {
 function readDirectoryContents(directory) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = readDirectoryContents.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+
   var filesFound = [];
   readDirectorySynchronously(dataPath);
   filesFound = filesCollection; // Copy the data into a local variable first.
@@ -104,8 +148,11 @@ function readDirectoryContents(directory) {
   filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
 
   filesCollection = [];
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'files found are: ' + JSON.stringify(filesFound));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'files found are: ' + JSON.stringify(filesFound));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
   return filesFound;
 }
 
@@ -126,8 +173,11 @@ function readDirectorySynchronously(directory) {
   // console.log('directory is: ' + directory);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = readDirectorySynchronously.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
+
   var currentDirectoryPath = directory;
   var currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
   currentDirectory.forEach(function (file) {
@@ -141,7 +191,9 @@ function readDirectorySynchronously(directory) {
       readDirectorySynchronously(directoryPath);
     }
   });
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
+
 }
 
 ;
@@ -163,24 +215,40 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   // console.log('destinationFolder is: ' + destinationFolder);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
   var copySuccess = false;
-  var rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
+
+  var rootPath = _configurator["default"].getConfigurationSetting(s.cApplicationRootPath);
+
   var cleanRootPathRules = {};
   cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
-  rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
+
+  rootPath = _ruleBroker["default"].processRules(rootPath, 3, cleanRootPathRules);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
+
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
   copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('copySuccess is: ' + copySuccess);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('copySuccess is: ' + copySuccess);
   // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
+
 
   return copySuccess;
 }
@@ -203,13 +271,20 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   // console.log('destinationFolder is: ' + destinationFolder);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = buildReleasePackage.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+
   var packageSuccess = false;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('packageSuccess is: ' + packageSuccess);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('packageSuccess is: ' + packageSuccess);
   // console.log('END dataBroker.buildReleasePackage function');
+
 
   return packageSuccess;
 }
@@ -231,9 +306,13 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 function copyFileSync(source, target) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyFileSync.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+
   var successfullCopy = false;
   var targetFile = target; // If target is a directory a new file with the same name will be created
 
@@ -251,8 +330,10 @@ function copyFileSync(source, target) {
     successfullCopy = false;
   }
 
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
   return successfullCopy;
 }
 
@@ -273,9 +354,13 @@ function copyFileSync(source, target) {
 function copyFolderRecursiveSync(source, target) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyFolderRecursiveSync.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+
   var successfullCopy = false;
   var files = []; // Check if folder needs to be created or integrated
 
@@ -312,8 +397,10 @@ function copyFolderRecursiveSync(source, target) {
     successfullCopy = false;
   }
 
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
   return successfullCopy;
 }
 
