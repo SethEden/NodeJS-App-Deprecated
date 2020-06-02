@@ -5,6 +5,7 @@ import configurator from '../Executrix/configurator';
 import timer from '../Executrix/timers';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import dataBroker from '../Executrix/dataBroker';
+import fileBroker from '../Executrix/fileBroker';
 import loggers from '../Executrix/loggers';
 import * as s from '../Constants/system.constants';
 import * as g from '../Constants/generic.constants';
@@ -28,7 +29,7 @@ function deployApplication(source, destination) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destination is: ' + destination);
   var deploymentSuccessfull;
-  deploymentSuccessfull = dataBroker.copyAllFilesAndFoldersFromFolderToFolder(source, destination);
+  deploymentSuccessfull = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(source, destination);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'deploymentSuccessfull is: ' + deploymentSuccessfull);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return deploymentSuccessfull;
@@ -53,7 +54,7 @@ function releaseApplication(source, release) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'release is: ' + release);
   var releaseSuccessfull;
-   releaseSuccessfull = dataBroker.buildReleasePackage(source, release)
+   releaseSuccessfull = fileBroker.buildReleasePackage(source, release)
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'releaseSuccessfull is: ' + releaseSuccessfull);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return releaseSuccessfull;
