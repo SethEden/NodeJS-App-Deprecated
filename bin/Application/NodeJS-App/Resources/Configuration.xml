@@ -29,7 +29,7 @@
           <ConfigurationElement Name="warden.deployApplication" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden.releaseApplication" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden.bootStrapApplication" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden.saveRootPath" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.processCommand" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.setConfigurationSetting" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.getConfigurationSetting" Type="Default" Value="False" Version="3"/>
@@ -52,10 +52,10 @@
           <ConfigurationElement Name="fileBroker.readDirectoryContents" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectorySynchronously" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.copyAllFilesAndFoldersFromFolderToFolder" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="fileBroker.buildReleasePackage" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="fileBroker.buildReleasePackage" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.copyFileSync" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.copyFolderRecursiveSync" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="timers.getNowMoment" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="timers.getNowMoment" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="timers.computeDeltaTime" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringParsing.stringToBoolean" Type="Default" Value="True" Version="3"/>
@@ -94,8 +94,8 @@
           <ConfigurationElement Name="stringParsing.parseSystemRootPath" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringParsing.replaceDoublePercentWithMessage" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringParsing.removeXnumberOfFoldersFromEndOfPath" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="stringParsing.getFirstTopLevelFolderFromPath" Type="Default" Value="True" Version="3"/>
-          <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFirstTopLevelFolderFromPath" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1" Type="Default" Value="True" Version="3"/>
