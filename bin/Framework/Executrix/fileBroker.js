@@ -337,11 +337,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
         level: 9
       } // Sets the compression level.
 
-    }); // Append a file
-    // archive.file('file1.txt', { name: 'file4.txt' });
-    // Append files
-    // archive.file('/path/to/file0.txt', {name: 'file0-or-change-this-whatever.txt'});
-    // archive.file('/path/to/README.md', {name: 'foobar.md'});
+    });
 
     for (var _i = 0; _i <= releasedArchiveFiles.length - 1; _i++) {
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[_i]);
