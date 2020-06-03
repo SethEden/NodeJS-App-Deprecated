@@ -264,6 +264,8 @@ export const cScore = b.cS + g.ccore;
 export const cCatagory = b.cCa + b.cta + b.cgo + b.cry; // 'Catagory';
 export const cclean = b.cc + g.clean;
 export const cClean = b.cC + g.clean; // 'Clean';
+export const ccleaned = cclean + b.ced;
+export const cCleaned = cClean + b.ced;
 export const cCarriage = b.cCa + b.crr + b.ci + g.cage; // 'Carriage';
 export const cturn = b.ctu + b.crn;
 export const creturn = b.cre + cturn;
@@ -1099,6 +1101,7 @@ export const cctrl_y = g.cctrl + b.cPlus + b.cy;
 export const cctrl_z = g.cctrl + b.cPlus + b.cz;
 
 export const cApplicationRootPath = cApplication + cRoot + cPath;
+export const cApplicationCleanedRootPath = cApplication + cCleaned + cRoot + cPath;
 export const cConfigurationPath = cConfiguration + cPath;
 export const cDataPath = cData + cPath;
 export const cCtempPath = b.cc + b.cColon + b.cForwardSlash + b.ctemp + b.cForwardSlash;
@@ -1157,6 +1160,7 @@ export const cgetKeywordNameFromDataContextName = cget + cKeyword + cName + cFro
 export const cparseSystemRootPath = cparse + cSystem + cRoot + cPath;
 export const creplaceDoublePercentWithMessage = creplace + cDouble + cPercent + cWith + cMessage;
 export const cremoveXnumberOfFoldersFromEndOfPath = cremove + b.cX + cnumber + b.cOf + cFolders + cFrom + cEnd + b.cOf + cPath;
+export const cgetFirstTopLevelFolderFromPath = cget + g.cFirst + cTop + cLevel + cFolder + cFrom + cPath;
 
 // *********************************
 // StringGeneration rules in order

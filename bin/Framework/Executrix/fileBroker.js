@@ -13,6 +13,8 @@ var _configurator = _interopRequireDefault(require("./configurator"));
 
 var _loggers = _interopRequireDefault(require("./loggers"));
 
+var _timers = _interopRequireDefault(require("./timers"));
+
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
@@ -25,7 +27,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var fs = require('fs');
 
+var archiver = require('archiver');
+
 var path = require('path');
+
+var D = require('../Resources/data');
 
 var xml2js = require('xml2js').Parser({
   parseNumbers: true,
@@ -269,12 +275,50 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
   var packageSuccess = false;
   var releaseFiles = [];
+  var releasedArchiveFiles = [];
+  var fileNameBusinessRules = {};
+  fileNameBusinessRules[0] = s.cgetFileNameFromPath;
+  fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
   var rootPath = cleanRootPath();
+  var currentVersion = process.env.npm_package_version;
+  var currentVersionReleased = false;
+  var releaseDateTimeStamp;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
+
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder;
   releaseFiles = readDirectoryContents(sourceFolder);
+  releasedArchiveFiles = readDirectoryContents(destinationFolder);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'released archive files list is: ' + JSON.stringify(releasedArchiveFiles)); // Check if the current version number has already been released as a zip file in the Release folder.
+  // If it has not been released, then we can build the zip file with the current release number and date-time stamp.
+
+
+  for (var i = 0; i <= releasedArchiveFiles.length - 1; i++) {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[i]);
+
+    var pathAndFileName = releasedArchiveFiles[i];
+
+    var fileName = _ruleBroker["default"].processRules(pathAndFileName, '', fileNameBusinessRules);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + fileName);
+
+    if (fileName.includes(currentVersion) === true) {
+      currentVersionReleased = true;
+    }
+  }
+
+  if (currentVersionReleased === false) {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
+
+    releaseDateTimeStamp = _timers["default"].getNowMoment(_configurator["default"].getConfigurationSetting(s.cDateTimeStamp));
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release date-time stamp is: ' + releaseDateTimeStamp);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D)); // let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore +
+
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
 

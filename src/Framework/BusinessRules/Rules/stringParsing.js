@@ -1192,6 +1192,31 @@ export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMeta
   return returnData;
 };
 
+/**
+ * @name getFirstTopLevelFolderFromPath
+ * @description Takes a path and returns the folder at the farthest right of that path.
+ * @param  {[String]} inputData The path that should be evaluated.
+ * @param  {[String]} inputMetaData Not used for this business rule.
+ * @return {[String]} The folder at the far-right of the input path.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.getFirstTopLevelFolderFromPath;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  var returnData = '';
+  // returnData = inputData; // Placeholder for the data processing we still need to do.
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
 // ******************************************************
 // Internal functions
 // ******************************************************

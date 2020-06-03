@@ -1,10 +1,13 @@
 import ruleBroker from '../BusinessRules/ruleBroker';
 import configurator from './configurator';
 import loggers from './loggers';
+import timers from './timers';
 import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var fs = require('fs');
+var archiver = require('archiver');
 var path = require('path');
+var D = require('../Resources/data');
 var xml2js = require('xml2js').Parser({
   parseNumbers: true,
   parseBooleans: true,
@@ -189,16 +192,39 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   var packageSuccess = false;
   var releaseFiles = [];
+  var releasedArchiveFiles = [];
+  var fileNameBusinessRules = {};
+  fileNameBusinessRules[0] = s.cgetFileNameFromPath;
+  fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
   var rootPath = cleanRootPath();
+  var currentVersion = process.env.npm_package_version;
+  var currentVersionReleased = false;
+  var releaseDateTimeStamp;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder
   releaseFiles = readDirectoryContents(sourceFolder);
-  // Need to get the current version number.
+  releasedArchiveFiles = readDirectoryContents(destinationFolder);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'released archive files list is: ' + JSON.stringify(releasedArchiveFiles));
   // Check if the current version number has already been released as a zip file in the Release folder.
   // If it has not been released, then we can build the zip file with the current release number and date-time stamp.
-  
+  for (let i = 0; i <= releasedArchiveFiles.length - 1; i++) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[i]);
+    let pathAndFileName = releasedArchiveFiles[i];
+    let fileName = ruleBroker.processRules(pathAndFileName, '', fileNameBusinessRules);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + fileName);
+    if (fileName.includes(currentVersion) === true) {
+      currentVersionReleased = true;
+    }
+  }
+  if (currentVersionReleased === false) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
+    releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(s.cDateTimeStamp));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release date-time stamp is: ' + releaseDateTimeStamp);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+    // let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore +
+  }
 
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('packageSuccess is: ' + packageSuccess);
@@ -335,6 +361,7 @@ export default {
   readDirectoryContents,
   copyAllFilesAndFoldersFromFolderToFolder,
   buildReleasePackage,
+  cleanRootPath,
   copyFileSync,
   copyFolderRecursiveSync
 };

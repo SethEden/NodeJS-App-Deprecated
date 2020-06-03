@@ -252,6 +252,8 @@ export const cArg = b.cAr + b.cg;
 export const crive = b.cri + b.cve;
 export const cloy = b.clo + b.cy;
 export const cumber = b.cum + b.cb + b.cer;
+export const ccond = b.cco + b.cnd;
+export const ctieth = b.cti + b.ce + b.cth;
 
 // Boolean strings
 export const cTrue = b.cT + crue;
@@ -394,6 +396,69 @@ export const cMillion = b.cM + cillion;
 export const cBillion = b.cB + cillion;
 export const cTrillion = b.cTr + cillion;
 
+// String Number Values
+export const cfirst = b.cfi + b.crs + b.ct;
+export const cFirst = b.cFi + b.crs + b.ct;
+// Second - See below
+export const cthird = b.cth + b.cir + b.cd;
+export const cThird = b.cTh + b.cir + b.cd;
+export const cfourth = cfour + b.cth;
+export const cFourth = cFour + b.cth;
+export const cfifth = b.cfi + b.cft + b.ch;
+export const cFifth = b.cFi + b.cft + b.ch;
+export const csixth = csix + b.cth;
+export const cSixth = cSix + b.cth;
+export const cseventh = cseven + b.cth;
+export const cSeventh = cSeven + b.cth;
+export const ceighth = ceight + b.ch;
+export const cEighth = cEight = b.ch;
+export const ctenth = cten + b.cth;
+export const cTenth = cTen + b.cth;
+export const celeventh = celeven + b.cth;
+export const cEleventh = cEleven + b.cth;
+export const ctwelveth = ctwelve + b.cth;
+export const cTwelveth = cTwelve + b.cth;
+export const cthirteenth = cthirteen + b.cth;
+export const cThirteenth = cThirteen + b.cth;
+export const cfourteenth = cfourteen + b.cth;
+export const cFourteenth = cFourteen + b.cth;
+export const cfifteenth = cFifteen + b.cth;
+export const cFifteenth = cFifteen + b.cth;
+export const csixteenth = csixteen + b.cth;
+export const cSixteenth = cSixteen + b.cth;
+export const cseventeenth = cseventeen + b.cth;
+export const cSeventeenth = cSeventeen + b.cth;
+export const ceighteenth = ceighteen + b.cth;
+export const cEighteenth = cEighteen + b.cth;
+export const cnineteenth = cnineteen + b.cth;
+export const cNineteenth = cNineteen + b.cth;
+export const ctwentieth = b.ctw + b.cen + ctieth;
+export const cTwentieth = b.cTw + b.cen + ctieth;
+export const cthirtieth = b.cth + b.cir + ctieth;
+export const cThirtieth = b.cTh + b.cir + ctieth;
+export const cfourtieth = cfour + ctieth;
+export const cFourtieth = cFour + ctieth;
+export const cfiftieth = b.cfi + b.cf + ctieth;
+export const cFiftieth = b.cFi + b.cf + ctieth;
+export const csixtieth = csix + ctieth;
+export const cSixtieth = cSix + ctieth;
+export const cseventieth = cseven + ctieth;
+export const cSeventieth = cSeven + ctieth;
+export const ceightieth = ceight + ctieth;
+export const cEightieth = cEight + ctieth;
+export const cninetieth = cnine + ctieth;
+export const cNinetieth = cNine + ctieth;
+export const chundredth = chundred + b.cth;
+export const cHundredth = cHundred + b.cth;
+export const cthousandth = cthousand + b.cth;
+export const cThousandth = cThousand + b.cth;
+export const cmillionth = cmillion + b.cth;
+export const cMillionth = cMillion + b.cth;
+export const cbillionth = cbillion + b.cth;
+export const cBillionth = cBillion + b.cth;
+export const ctrillionth = ctrillion + b.cth;
+export const cTrillionth = cTrillion + b.cth;
+
 // Units of Measure
 export const cPico = b.cPi + b.cco; // 'Pico';
 export const cNano = b.cNa + b.cno; // 'Nano';
@@ -402,7 +467,8 @@ export const cMill = b.cMi + b.cll // 'Mill';
 export const cMilli = cMill + b.ci;
 
 // Units of Time
-export const cSecond = b.cSe + b.cco + b.cnd; // 'Second';
+export const csecond = b.cse + ccond;
+export const cSecond = b.cSe + ccond;
 export const cSeconds = cSecond + b.cs;
 export const cMinute = b.cMi + b.cnu + b.cte; // 'Minute';
 export const cMinutes = cMinute + b.cs;

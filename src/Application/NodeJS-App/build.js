@@ -21,7 +21,7 @@ function bootStrapApplicationDeployment() {
   rootPath = path.resolve(__dirname);
   rootPath = warden.processRootPath(rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
-  warden.setConfigurationSetting(s.cApplicationRootPath, rootPath);
+  warden.saveRootPath(rootPath);
 };
 
 /**

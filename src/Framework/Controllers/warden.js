@@ -123,6 +123,32 @@ function processRootPath(systemRootPath) {
 };
 
 /**
+ * @name saveRootPath
+ * @description Saves the root path and also cleans the root path and saves the cleaned root path.
+ * Also saves the current application version number and the application name.
+ * @param  {[String]} rootPath The root path of the application.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+function saveRootPath(rootPath) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = saveRootPath.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'rootPath is: ' + rootPath);
+  warden.setConfigurationSetting(s.cApplicationRootPath, rootPath);
+  var cleanedRootPath;
+  var applicationName;
+  var topLevelFolderNameRules = {};
+  topLevelFolderNameRules[0] = s.cgetFirstTopLevelFolderFromPath;
+  cleanedRootPath = fileBroker.cleanRootPath(rootPath);
+  applicationName = ruleBroker.processRules(cleanedRootPath, '', topLevelFolderNameRules);
+  warden.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
+  warden.setConfigurationSetting(s.cApplicationName, applicationName);
+  warden.setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
  * @name processCommand
  * @description This is just a wrapper for the chiefCommander.processCommand function.
  * @param  {[String]} command The command string and all of the arguments that should be processed for the command.

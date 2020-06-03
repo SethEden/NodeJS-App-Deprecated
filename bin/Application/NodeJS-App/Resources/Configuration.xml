@@ -18,7 +18,7 @@
           <ConfigurationElement Name="characterGeneration" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="fileBroker" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="fileBroker" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="timers" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="commandBroker" Type="Default" Value="True" Version="3"/>
         </ConfigurationElement>
@@ -46,8 +46,8 @@
           <ConfigurationElement Name="dataBroker.mergeData" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElement" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount" Type="Default" Value="True" Version="3"/>
-          <ConfigurationElement Name="fileBroker.getXmlData" Type="Default" Value="True" Version="3"/>
-          <ConfigurationElement Name="fileBroker.getCsvData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getXmlData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getCsvData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectoryContents" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectorySynchronously" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.copyAllFilesAndFoldersFromFolderToFolder" Type="Default" Value="False" Version="3"/>
