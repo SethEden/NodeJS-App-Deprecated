@@ -193,6 +193,11 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder
   releaseFiles = readDirectoryContents(sourceFolder);
+  // Need to get the current version number.
+  // Check if the current version number has already been released as a zip file in the Release folder.
+  // If it has not been released, then we can build the zip file with the current release number and date-time stamp.
+  
+
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
