@@ -18,6 +18,7 @@
           <ConfigurationElement Name="characterGeneration" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="fileBroker" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="timers" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="commandBroker" Type="Default" Value="True" Version="3"/>
         </ConfigurationElement>
