@@ -154,12 +154,7 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   var copySuccess = false;
-  var rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
-  var cleanRootPathRules = {};
-  cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
-  rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
+  var rootPath = cleanRootPath();
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
@@ -193,12 +188,43 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   var packageSuccess = false;
-
+  var releaseFiles = [];
+  var rootPath = cleanRootPath();
+  sourceFolder = rootPath + sourceFolder;
+  destinationFolder = rootPath + destinationFolder
+  releaseFiles = readDirectoryContents(sourceFolder);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('packageSuccess is: ' + packageSuccess);
   // console.log('END dataBroker.buildReleasePackage function');
   return packageSuccess;
+};
+
+/**
+ * @name cleanRootPath
+ * @description Takes the application root path and cleans it to give a real root path,
+ * or top-level folder path for the application.
+ * @return {[String]} The real root path or top-level path for the application.
+ * @NOTE This has been problematic because often many of the init functions are contained in lower level folders,
+ * not at the top-level. This gives much greater level of organization to the over all project and
+ * helps with scalability & reusability.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+function cleanRootPath() {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = buildReleasePackage.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  var rootPath;
+  var rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
+  var cleanRootPathRules = {};
+  cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
+  rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return rootPath;
 };
 
 /**

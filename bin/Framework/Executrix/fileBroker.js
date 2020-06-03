@@ -279,6 +279,10 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
 
   var packageSuccess = false;
+  var releaseFiles = [];
+  releaseFiles = readDirectoryContents(sourceFolder);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
 
