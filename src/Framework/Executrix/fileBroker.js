@@ -233,12 +233,6 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
     archiveObject = archiver(g.czip, {
       zlib: { level: 9 } // Sets the compression level.
     });
-
-    // Append a file
-    // archive.file('file1.txt', { name: 'file4.txt' });
-    // Append files
-    // archive.file('/path/to/file0.txt', {name: 'file0-or-change-this-whatever.txt'});
-    // archive.file('/path/to/README.md', {name: 'foobar.md'});
     for (let i = 0; i <= releasedArchiveFiles.length - 1; i++) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[i]);
       let pathAndFileName = releasedArchiveFiles[i];
