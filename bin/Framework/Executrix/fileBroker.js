@@ -17,6 +17,8 @@ var _timers = _interopRequireDefault(require("./timers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
+var g = _interopRequireWildcard(require("../Constants/generic.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -279,10 +281,17 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   var fileNameBusinessRules = {};
   fileNameBusinessRules[0] = s.cgetFileNameFromPath;
   fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
-  var rootPath = cleanRootPath();
-  var currentVersion = process.env.npm_package_version;
+
+  var rootPath = _configurator["default"].getConfigurationSetting(s.cApplicationCleanedRootPath);
+
+  var currentVersion = _configurator["default"].getConfigurationSetting(s.cApplicationVersionNumber);
+
+  var applicationName = _configurator["default"].getConfigurationSetting(s.cApplicationName);
+
   var currentVersionReleased = false;
   var releaseDateTimeStamp;
+  var releaseZipArchive;
+  var archiveObject;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
 
@@ -314,10 +323,42 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
     releaseDateTimeStamp = _timers["default"].getNowMoment(_configurator["default"].getConfigurationSetting(s.cDateTimeStamp));
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release date-time stamp is: ' + releaseDateTimeStamp);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release date-time stamp is: ' + releaseDateTimeStamp); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D)); // let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore +
 
+    var releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore + applicationName;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName); // create a file to stream archive data to.
+
+
+    releaseZipArchive = fs.createWriteStream(destinationFolder + releaseFileName + g.cDotzip);
+    archiveObject = archiver(g.czip, {
+      zlib: {
+        level: 9
+      } // Sets the compression level.
+
+    }); // Append a file
+    // archive.file('file1.txt', { name: 'file4.txt' });
+    // Append files
+    // archive.file('/path/to/file0.txt', {name: 'file0-or-change-this-whatever.txt'});
+    // archive.file('/path/to/README.md', {name: 'foobar.md'});
+
+    for (var _i = 0; _i <= releasedArchiveFiles.length - 1; _i++) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[_i]);
+
+      var _pathAndFileName = releasedArchiveFiles[_i];
+
+      var _fileName = _ruleBroker["default"].processRules(_pathAndFileName, '', fileNameBusinessRules);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + _fileName);
+
+      archiveObject.file(_pathAndFileName, {
+        name: _fileName
+      });
+    }
+
+    archiveObject.finalize();
+    packageSuccess = true;
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);

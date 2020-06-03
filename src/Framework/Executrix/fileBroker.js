@@ -3,6 +3,7 @@ import configurator from './configurator';
 import loggers from './loggers';
 import timers from './timers';
 import * as b from '../Constants/basic.constants';
+import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var fs = require('fs');
 var archiver = require('archiver');
@@ -196,10 +197,13 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   var fileNameBusinessRules = {};
   fileNameBusinessRules[0] = s.cgetFileNameFromPath;
   fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
-  var rootPath = cleanRootPath();
-  var currentVersion = process.env.npm_package_version;
+  var rootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
+  var currentVersion = configurator.getConfigurationSetting(s.cApplicationVersionNumber);
+  var applicationName = configurator.getConfigurationSetting(s.cApplicationName);
   var currentVersionReleased = false;
   var releaseDateTimeStamp;
+  var releaseZipArchive;
+  var archiveObject;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder
@@ -221,10 +225,30 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
     releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(s.cDateTimeStamp));
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'release date-time stamp is: ' + releaseDateTimeStamp);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
-    // let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore +
-  }
+    // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+    let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore + applicationName;
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName);
+    // create a file to stream archive data to.
+    releaseZipArchive = fs.createWriteStream(destinationFolder + releaseFileName + g.cDotzip);
+    archiveObject = archiver(g.czip, {
+      zlib: { level: 9 } // Sets the compression level.
+    });
 
+    // Append a file
+    // archive.file('file1.txt', { name: 'file4.txt' });
+    // Append files
+    // archive.file('/path/to/file0.txt', {name: 'file0-or-change-this-whatever.txt'});
+    // archive.file('/path/to/README.md', {name: 'foobar.md'});
+    for (let i = 0; i <= releasedArchiveFiles.length - 1; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[i]);
+      let pathAndFileName = releasedArchiveFiles[i];
+      let fileName = ruleBroker.processRules(pathAndFileName, '', fileNameBusinessRules);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + fileName);
+      archiveObject.file(pathAndFileName, {name: fileName});
+    }
+    archiveObject.finalize();
+    packageSuccess = true;
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('packageSuccess is: ' + packageSuccess);
