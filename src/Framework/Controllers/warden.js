@@ -135,16 +135,16 @@ function saveRootPath(rootPath) {
   var functionName = saveRootPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'rootPath is: ' + rootPath);
-  warden.setConfigurationSetting(s.cApplicationRootPath, rootPath);
+  configurator.setConfigurationSetting(s.cApplicationRootPath, rootPath);
   var cleanedRootPath;
   var applicationName;
   var topLevelFolderNameRules = {};
   topLevelFolderNameRules[0] = s.cgetFirstTopLevelFolderFromPath;
   cleanedRootPath = fileBroker.cleanRootPath(rootPath);
   applicationName = ruleBroker.processRules(cleanedRootPath, '', topLevelFolderNameRules);
-  warden.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
-  warden.setConfigurationSetting(s.cApplicationName, applicationName);
-  warden.setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
+  configurator.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
+  configurator.setConfigurationSetting(s.cApplicationName, applicationName);
+  configurator.setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -237,6 +237,7 @@ export default {
   releaseApplication,
   bootStrapApplication,
   processRootPath,
+  saveRootPath,
   processCommand,
   setConfigurationSetting,
   getConfigurationSetting,

@@ -41,7 +41,7 @@ function bootStrapApplicationDeployment() {
 
   _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
 
-  _warden["default"].setConfigurationSetting(s.cApplicationRootPath, rootPath);
+  _warden["default"].saveRootPath(rootPath);
 }
 
 ;

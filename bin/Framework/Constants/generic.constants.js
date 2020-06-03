@@ -7,9 +7,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.cace = exports.cete = exports.ciew = exports.cVar = exports.cvar = exports.cath = exports.cmed = exports.cinter = exports.cInter = exports.cime = exports.cMENT = exports.cment = exports.cter = exports.cdate = exports.cate = exports.ctive = exports.cies = exports.cuary = exports.cide = exports.code = exports.cilter = exports.cisabled = exports.cttributes = exports.cibling = exports.child = exports.check = exports.coolean = exports.celector = exports.cctor = exports.ctor = exports.carent = exports.crent = exports.cith = exports.cisibility = exports.cibility = exports.cility = exports.cOperat = exports.cemb = exports.cEql = exports.ceql = exports.cype = exports.cctrl = exports.click = exports.cnner = exports.celete = exports.cynch = exports.colid = exports.cPRE = exports.cpre = exports.cPre = exports.cMac = exports.cata = exports.cbject = exports.ctring = exports.cing = exports.calid = exports.cable = exports.cCon = exports.ccon = exports.clpha = exports.cExt = exports.cext = exports.cile = exports.came = exports.cABC = exports.chref = exports.ctemp = exports.c_lass = exports.chare = exports.cest = exports.cage = exports.cction = exports.ction = exports.calse = exports.crue = exports.cillion = exports.cion = exports.chousand = exports.csand = exports.cand = exports.cundred = exports.cblue = exports.cgreen = exports.cred = exports.cifty = exports.chirty = exports.cwenty = exports.cigh = exports.chir = exports.cteen = exports.cwelve = exports.cleven = exports.cine = exports.cight = exports.ceven = exports.cive = exports.cour = exports.chree = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
 exports.cgate = exports.cduct = exports.couble = exports.cble = exports.chort = exports.cong = exports.cloat = exports.cnteger = exports.cideo = exports.cComp = exports.ccomp = exports.csol = exports.cplify = exports.cSim = exports.csim = exports.cort = exports.cation = exports.cLoc = exports.cloc = exports.cint = exports.cTrans = exports.ctrans = exports.cFra = exports.cfra = exports.czoid = exports.crap = exports.cNon = exports.cnon = exports.cHep = exports.chep = exports.cHex = exports.chex = exports.cgon = exports.cOct = exports.coct = exports.cRect = exports.crect = exports.cTri = exports.ctri = exports.cgle = exports.cquare = exports.care = exports.ccle = exports.cCir = exports.ccir = exports.cegree = exports.cormal = exports.cmal = exports.cize = exports.cart = exports.cDot = exports.cdot = exports.cound = exports.cmel = exports.cray = exports.cose = exports.card = exports.crror = exports.carning = exports.create = exports.candom = exports.cdom = exports.cenerate = exports.crate = exports.convert = exports.cvert = exports.clean = exports.ceplace = exports.clace = exports.cingle = exports.cetermine = exports.cmine = exports.cource = exports.cmis = exports.cMis = exports.cary = exports.cung = exports.ceous = exports.cous = exports.cian = exports.cCel = exports.ccel = exports.cish = exports.cese = exports.cino = exports.cPRO = exports.cPro = exports.cpro = exports.cara = exports.cral = exports.cInv = exports.cinv = exports.cOPS = exports.cops = exports.caft = exports.cunt = exports.c_ase = exports.cert = exports.ccore = exports.cder = void 0;
-exports.cDotzip = exports.cDotZip = exports.cDotCom = exports.cDotCSV = exports.cxml = exports.cXml = exports.cCsv = exports.ccsv = exports.ctxt = exports.cTxt = exports.czip = exports.cZip = exports.cCom = exports.cDoc = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cumber = exports.cloy = exports.crive = exports.cArg = exports.carg = exports.cvent = exports.casic = exports.cPer = exports.cper = exports.cExe = exports.cexe = exports.cnal = exports.cple = exports.cMulti = exports.cmulti = exports.clti = exports.common = exports.cmon = exports.cemo = exports.cval = exports.cesh = exports.cait = exports.cule = exports.cusiness = exports.cness = exports.cavigate = exports.cENV = exports.clash = exports.cward = exports.cwap = exports.carse = exports.crse = exports.coot = exports.cApp = exports.capp = exports.clica = exports.chan = exports.chen = exports.ceat = exports.cess = exports.cMap = exports.cmap = exports.cord = exports.cween = exports.ctch = exports.cain = exports.cence = exports.cDiff = exports.cggregate = void 0;
-exports.cCentury = exports.cCentur = exports.cCent = exports.ccent = exports.cDecades = exports.cDecade = exports.cYears = exports.cYear = exports.cMonths = exports.cMonth = exports.cWeeks = exports.cWeek = exports.cDays = exports.cDay = exports.cHours = exports.cHour = exports.cMinutes = exports.cMinute = exports.cSeconds = exports.cSecond = exports.cMilli = exports.cMill = exports.cMicro = exports.cNano = exports.cPico = exports.cTrillion = exports.cBillion = exports.cMillion = exports.cThousand = exports.cHundred = exports.cNinety = exports.cEighty = exports.cSeventy = exports.cSixty = exports.cFifty = exports.cFourty = exports.cThirty = exports.cTwenty = exports.cNineteen = exports.cEighteen = exports.cSeventeen = exports.cSixteen = exports.cFifteen = exports.cFourteen = exports.cThirteen = exports.cTwelve = exports.cEleven = exports.cTen = exports.cNine = exports.cEight = exports.cSeven = exports.cSix = exports.cFive = exports.cFour = exports.cThree = exports.cTwo = exports.cOne = exports.ctrillion = exports.cbillion = exports.cmillion = exports.cthousand = exports.chundred = exports.cninety = exports.ceighty = exports.cseventy = exports.csixty = exports.cfifty = exports.cfourty = exports.cthirty = exports.ctwenty = exports.cnineteen = exports.ceighteen = exports.cseventeen = exports.csixteen = exports.cfifteen = exports.cfourteen = exports.cthirteen = exports.ctwelve = exports.celeven = exports.cten = exports.cnine = exports.ceight = exports.cseven = exports.csix = exports.cfive = exports.cfour = exports.cthree = exports.ctwo = exports.cone = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = exports.cYYYY = exports.cDotxml = exports.cDotXml = exports.cDotTxt = void 0;
-exports.cress = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cPicoSeconds = exports.cPicoSecond = exports.cMilliSeconds = exports.cMilliSecond = exports.cMicroSeconds = exports.cMicroSecond = exports.cNanoSeconds = exports.cNanoSecond = exports.cMillenniums = exports.cMillennium = exports.cCenturies = void 0;
+exports.cDotCom = exports.cDotCSV = exports.cxml = exports.cXml = exports.cCsv = exports.ccsv = exports.ctxt = exports.cTxt = exports.czip = exports.cZip = exports.cCom = exports.cDoc = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.ctieth = exports.ccond = exports.cumber = exports.cloy = exports.crive = exports.cArg = exports.carg = exports.cvent = exports.casic = exports.cPer = exports.cper = exports.cExe = exports.cexe = exports.cnal = exports.cple = exports.cMulti = exports.cmulti = exports.clti = exports.common = exports.cmon = exports.cemo = exports.cval = exports.cesh = exports.cait = exports.cule = exports.cusiness = exports.cness = exports.cavigate = exports.cENV = exports.clash = exports.cward = exports.cwap = exports.carse = exports.crse = exports.coot = exports.cApp = exports.capp = exports.clica = exports.chan = exports.chen = exports.ceat = exports.cess = exports.cMap = exports.cmap = exports.cord = exports.cween = exports.ctch = exports.cain = exports.cence = exports.cDiff = exports.cggregate = void 0;
+exports.cfourteenth = exports.cThirteenth = exports.cthirteenth = exports.cTwelveth = exports.ctwelveth = exports.cEleventh = exports.celeventh = exports.cTenth = exports.ctenth = exports.cEighth = exports.ceighth = exports.cSeventh = exports.cseventh = exports.cSixth = exports.csixth = exports.cFifth = exports.cfifth = exports.cFourth = exports.cfourth = exports.cThird = exports.cthird = exports.cFirst = exports.cfirst = exports.cTrillion = exports.cBillion = exports.cMillion = exports.cThousand = exports.cHundred = exports.cNinety = exports.cEighty = exports.cSeventy = exports.cSixty = exports.cFifty = exports.cFourty = exports.cThirty = exports.cTwenty = exports.cNineteen = exports.cEighteen = exports.cSeventeen = exports.cSixteen = exports.cFifteen = exports.cFourteen = exports.cThirteen = exports.cTwelve = exports.cEleven = exports.cTen = exports.cNine = exports.cEight = exports.cSeven = exports.cSix = exports.cFive = exports.cFour = exports.cThree = exports.cTwo = exports.cOne = exports.ctrillion = exports.cbillion = exports.cmillion = exports.cthousand = exports.chundred = exports.cninety = exports.ceighty = exports.cseventy = exports.csixty = exports.cfifty = exports.cfourty = exports.cthirty = exports.ctwenty = exports.cnineteen = exports.ceighteen = exports.cseventeen = exports.csixteen = exports.cfifteen = exports.cfourteen = exports.cthirteen = exports.ctwelve = exports.celeven = exports.cten = exports.cnine = exports.ceight = exports.cseven = exports.csix = exports.cfive = exports.cfour = exports.cthree = exports.ctwo = exports.cone = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = exports.cYYYY = exports.cDotxml = exports.cDotXml = exports.cDotTxt = exports.cDotzip = exports.cDotZip = void 0;
+exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cPicoSeconds = exports.cPicoSecond = exports.cMilliSeconds = exports.cMilliSecond = exports.cMicroSeconds = exports.cMicroSecond = exports.cNanoSeconds = exports.cNanoSecond = exports.cMillenniums = exports.cMillennium = exports.cCenturies = exports.cCentury = exports.cCentur = exports.cCent = exports.ccent = exports.cDecades = exports.cDecade = exports.cYears = exports.cYear = exports.cMonths = exports.cMonth = exports.cWeeks = exports.cWeek = exports.cDays = exports.cDay = exports.cHours = exports.cHour = exports.cMinutes = exports.cMinute = exports.cSeconds = exports.cSecond = exports.csecond = exports.cMilli = exports.cMill = exports.cMicro = exports.cNano = exports.cPico = exports.cTrillionth = exports.ctrillionth = exports.cBillionth = exports.cbillionth = exports.cMillionth = exports.cmillionth = exports.cThousandth = exports.cthousandth = exports.cHundredth = exports.chundredth = exports.cNinetieth = exports.cninetieth = exports.cEightieth = exports.ceightieth = exports.cSeventieth = exports.cseventieth = exports.cSixtieth = exports.csixtieth = exports.cFiftieth = exports.cfiftieth = exports.cFourtieth = exports.cfourtieth = exports.cThirtieth = exports.cthirtieth = exports.cTwentieth = exports.ctwentieth = exports.cNineteenth = exports.cnineteenth = exports.cEighteenth = exports.ceighteenth = exports.cSeventeenth = exports.cseventeenth = exports.cSixteenth = exports.csixteenth = exports.cFifteenth = exports.cfifteenth = exports.cFourteenth = void 0;
+exports.cress = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = void 0;
 
 var b = _interopRequireWildcard(require("../constants/basic.constants"));
 
@@ -516,9 +517,13 @@ var crive = b.cri + b.cve;
 exports.crive = crive;
 var cloy = b.clo + b.cy;
 exports.cloy = cloy;
-var cumber = b.cum + b.cb + b.cer; // Boolean strings
-
+var cumber = b.cum + b.cb + b.cer;
 exports.cumber = cumber;
+var ccond = b.cco + b.cnd;
+exports.ccond = ccond;
+var ctieth = b.cti + b.ce + b.cth; // Boolean strings
+
+exports.ctieth = ctieth;
 var cTrue = b.cT + crue;
 exports.cTrue = cTrue;
 var cFalse = b.cF + calse;
@@ -779,9 +784,131 @@ var cMillion = b.cM + cillion;
 exports.cMillion = cMillion;
 var cBillion = b.cB + cillion;
 exports.cBillion = cBillion;
-var cTrillion = b.cTr + cillion; // Units of Measure
+var cTrillion = b.cTr + cillion; // String Number Values
 
 exports.cTrillion = cTrillion;
+var cfirst = b.cfi + b.crs + b.ct;
+exports.cfirst = cfirst;
+var cFirst = b.cFi + b.crs + b.ct; // Second - See below
+
+exports.cFirst = cFirst;
+var cthird = b.cth + b.cir + b.cd;
+exports.cthird = cthird;
+var cThird = b.cTh + b.cir + b.cd;
+exports.cThird = cThird;
+var cfourth = cfour + b.cth;
+exports.cfourth = cfourth;
+var cFourth = cFour + b.cth;
+exports.cFourth = cFourth;
+var cfifth = b.cfi + b.cft + b.ch;
+exports.cfifth = cfifth;
+var cFifth = b.cFi + b.cft + b.ch;
+exports.cFifth = cFifth;
+var csixth = csix + b.cth;
+exports.csixth = csixth;
+var cSixth = cSix + b.cth;
+exports.cSixth = cSixth;
+var cseventh = cseven + b.cth;
+exports.cseventh = cseventh;
+var cSeventh = cSeven + b.cth;
+exports.cSeventh = cSeventh;
+var ceighth = ceight + b.ch;
+exports.ceighth = ceighth;
+var cEighth = cEight + b.ch;
+exports.cEighth = cEighth;
+var ctenth = cten + b.cth;
+exports.ctenth = ctenth;
+var cTenth = cTen + b.cth;
+exports.cTenth = cTenth;
+var celeventh = celeven + b.cth;
+exports.celeventh = celeventh;
+var cEleventh = cEleven + b.cth;
+exports.cEleventh = cEleventh;
+var ctwelveth = ctwelve + b.cth;
+exports.ctwelveth = ctwelveth;
+var cTwelveth = cTwelve + b.cth;
+exports.cTwelveth = cTwelveth;
+var cthirteenth = cthirteen + b.cth;
+exports.cthirteenth = cthirteenth;
+var cThirteenth = cThirteen + b.cth;
+exports.cThirteenth = cThirteenth;
+var cfourteenth = cfourteen + b.cth;
+exports.cfourteenth = cfourteenth;
+var cFourteenth = cFourteen + b.cth;
+exports.cFourteenth = cFourteenth;
+var cfifteenth = cFifteen + b.cth;
+exports.cfifteenth = cfifteenth;
+var cFifteenth = cFifteen + b.cth;
+exports.cFifteenth = cFifteenth;
+var csixteenth = csixteen + b.cth;
+exports.csixteenth = csixteenth;
+var cSixteenth = cSixteen + b.cth;
+exports.cSixteenth = cSixteenth;
+var cseventeenth = cseventeen + b.cth;
+exports.cseventeenth = cseventeenth;
+var cSeventeenth = cSeventeen + b.cth;
+exports.cSeventeenth = cSeventeenth;
+var ceighteenth = ceighteen + b.cth;
+exports.ceighteenth = ceighteenth;
+var cEighteenth = cEighteen + b.cth;
+exports.cEighteenth = cEighteenth;
+var cnineteenth = cnineteen + b.cth;
+exports.cnineteenth = cnineteenth;
+var cNineteenth = cNineteen + b.cth;
+exports.cNineteenth = cNineteenth;
+var ctwentieth = b.ctw + b.cen + ctieth;
+exports.ctwentieth = ctwentieth;
+var cTwentieth = b.cTw + b.cen + ctieth;
+exports.cTwentieth = cTwentieth;
+var cthirtieth = b.cth + b.cir + ctieth;
+exports.cthirtieth = cthirtieth;
+var cThirtieth = b.cTh + b.cir + ctieth;
+exports.cThirtieth = cThirtieth;
+var cfourtieth = cfour + ctieth;
+exports.cfourtieth = cfourtieth;
+var cFourtieth = cFour + ctieth;
+exports.cFourtieth = cFourtieth;
+var cfiftieth = b.cfi + b.cf + ctieth;
+exports.cfiftieth = cfiftieth;
+var cFiftieth = b.cFi + b.cf + ctieth;
+exports.cFiftieth = cFiftieth;
+var csixtieth = csix + ctieth;
+exports.csixtieth = csixtieth;
+var cSixtieth = cSix + ctieth;
+exports.cSixtieth = cSixtieth;
+var cseventieth = cseven + ctieth;
+exports.cseventieth = cseventieth;
+var cSeventieth = cSeven + ctieth;
+exports.cSeventieth = cSeventieth;
+var ceightieth = ceight + ctieth;
+exports.ceightieth = ceightieth;
+var cEightieth = cEight + ctieth;
+exports.cEightieth = cEightieth;
+var cninetieth = cnine + ctieth;
+exports.cninetieth = cninetieth;
+var cNinetieth = cNine + ctieth;
+exports.cNinetieth = cNinetieth;
+var chundredth = chundred + b.cth;
+exports.chundredth = chundredth;
+var cHundredth = cHundred + b.cth;
+exports.cHundredth = cHundredth;
+var cthousandth = cthousand + b.cth;
+exports.cthousandth = cthousandth;
+var cThousandth = cThousand + b.cth;
+exports.cThousandth = cThousandth;
+var cmillionth = cmillion + b.cth;
+exports.cmillionth = cmillionth;
+var cMillionth = cMillion + b.cth;
+exports.cMillionth = cMillionth;
+var cbillionth = cbillion + b.cth;
+exports.cbillionth = cbillionth;
+var cBillionth = cBillion + b.cth;
+exports.cBillionth = cBillionth;
+var ctrillionth = ctrillion + b.cth;
+exports.ctrillionth = ctrillionth;
+var cTrillionth = cTrillion + b.cth; // Units of Measure
+
+exports.cTrillionth = cTrillionth;
 var cPico = b.cPi + b.cco; // 'Pico';
 
 exports.cPico = cPico;
@@ -797,8 +924,9 @@ exports.cMill = cMill;
 var cMilli = cMill + b.ci; // Units of Time
 
 exports.cMilli = cMilli;
-var cSecond = b.cSe + b.cco + b.cnd; // 'Second';
-
+var csecond = b.cse + ccond;
+exports.csecond = csecond;
+var cSecond = b.cSe + ccond;
 exports.cSecond = cSecond;
 var cSeconds = cSecond + b.cs;
 exports.cSeconds = cSeconds;

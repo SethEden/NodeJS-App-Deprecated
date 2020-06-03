@@ -488,6 +488,7 @@ var _default = {
   readDirectoryContents: readDirectoryContents,
   copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder,
   buildReleasePackage: buildReleasePackage,
+  cleanRootPath: cleanRootPath,
   copyFileSync: copyFileSync,
   copyFolderRecursiveSync: copyFolderRecursiveSync
 };

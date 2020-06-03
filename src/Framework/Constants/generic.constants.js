@@ -411,7 +411,7 @@ export const cSixth = cSix + b.cth;
 export const cseventh = cseven + b.cth;
 export const cSeventh = cSeven + b.cth;
 export const ceighth = ceight + b.ch;
-export const cEighth = cEight = b.ch;
+export const cEighth = cEight + b.ch;
 export const ctenth = cten + b.cth;
 export const cTenth = cTen + b.cth;
 export const celeventh = celeven + b.cth;
