@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.16](https://github.com/SethEden/NodeJS-App/compare/v0.2.15...v0.2.16) (2020-06-03)
+
+
+### Features
+
+* Cleaning up some of the code and attempting again to bump the mid level version. ([edb9007](https://github.com/SethEden/NodeJS-App/commit/edb9007c522031f227b5d2c8743ec744650d0364))
+
 ### [0.2.15](https://github.com/SethEden/NodeJS-App/compare/v0.2.14...v0.2.15) (2020-06-03)
 
 
