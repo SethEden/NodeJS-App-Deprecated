@@ -197,15 +197,11 @@ function saveRootPath(rootPath) {
   _configurator["default"].setConfigurationSetting(s.cApplicationRootPath, rootPath);
 
   var cleanedRootPath;
-  var applicationName;
-  var topLevelFolderNameRules = {};
-  topLevelFolderNameRules[0] = s.cgetFirstTopLevelFolderFromPath;
   cleanedRootPath = _fileBroker["default"].cleanRootPath(rootPath);
-  applicationName = _ruleBroker["default"].processRules(cleanedRootPath, '', topLevelFolderNameRules);
 
   _configurator["default"].setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
 
-  _configurator["default"].setConfigurationSetting(s.cApplicationName, applicationName);
+  _configurator["default"].setConfigurationSetting(s.cApplicationName, process.env.npm_package_name);
 
   _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
 

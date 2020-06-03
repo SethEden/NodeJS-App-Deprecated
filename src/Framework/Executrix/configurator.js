@@ -54,7 +54,7 @@ function getConfigurationSetting(configurationName) {
     }
   } else {
     returnConfigurationValue = undefined;
-  }    
+  }
   // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
   // console.log('END configurator.getConfigurationSetting function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnConfigurationValue is: ' + returnConfigurationValue);

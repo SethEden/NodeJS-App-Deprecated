@@ -1719,6 +1719,9 @@ var removeXnumberOfFoldersFromEndOfPath = function removeXnumberOfFoldersFromEnd
 exports.removeXnumberOfFoldersFromEndOfPath = removeXnumberOfFoldersFromEndOfPath;
 
 var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.getFirstTopLevelFolderFromPath function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.getFirstTopLevelFolderFromPath;
 
@@ -1732,11 +1735,29 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
     return false;
   }
 
-  var returnData = ''; // returnData = inputData; // Placeholder for the data processing we still need to do.
+  var returnData = '';
+  var pathArray;
+
+  if (inputData.includes(b.cForwardSlash) === true) {
+    pathArray = inputData.split(b.cForwardSlash);
+  } else if (inputData.includes(b.cBackSlash) === true) {
+    pathArray = inputData.split(b.cBackSlash);
+  } else {
+    returnData = false;
+  }
+
+  if (returnData !== false) {
+    // console.log('pathArray is: ' + JSON.stringify(pathArray));
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathArray is: ' + JSON.stringify(pathArray));
+
+    returnData = pathArray[pathArray.length - 2];
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.getFirstTopLevelFolderFromPath function');
+
 
   return returnData;
 }; // ******************************************************

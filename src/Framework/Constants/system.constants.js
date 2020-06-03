@@ -1100,9 +1100,11 @@ export const cctrl_x = g.cctrl + b.cPlus + b.cx;
 export const cctrl_y = g.cctrl + b.cPlus + b.cy;
 export const cctrl_z = g.cctrl + b.cPlus + b.cz;
 
+export const cApplicationName = cApplication + cName;
 export const cApplicationRootPath = cApplication + cRoot + cPath;
 export const cApplicationCleanedRootPath = cApplication + cCleaned + cRoot + cPath;
 export const cConfigurationPath = cConfiguration + cPath;
+export const cApplicationVersionNumber = cApplication + cVersion + cNumber;
 export const cDataPath = cData + cPath;
 export const cCtempPath = b.cc + b.cColon + b.cForwardSlash + b.ctemp + b.cForwardSlash;
 export const cPageDataPath = cPage + cDataPath;

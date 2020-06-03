@@ -94,7 +94,7 @@
           <ConfigurationElement Name="stringParsing.parseSystemRootPath" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringParsing.replaceDoublePercentWithMessage" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringParsing.removeXnumberOfFoldersFromEndOfPath" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="stringParsing.getFirstTopLevelFolderFromPath" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFirstTopLevelFolderFromPath" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2" Type="Default" Value="True" Version="3"/>

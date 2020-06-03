@@ -1202,6 +1202,9 @@ export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMeta
  * @date 2020/06/02
  */
 export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.getFirstTopLevelFolderFromPath function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.getFirstTopLevelFolderFromPath;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1211,9 +1214,23 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
     return false;
   }
   var returnData = '';
-  // returnData = inputData; // Placeholder for the data processing we still need to do.
+  var pathArray;
+  if (inputData.includes(b.cForwardSlash) === true) {
+    pathArray = inputData.split(b.cForwardSlash);
+  } else if (inputData.includes(b.cBackSlash) === true) {
+    pathArray = inputData.split(b.cBackSlash);
+  } else {
+    returnData = false;
+  }
+  if (returnData !== false) {
+    // console.log('pathArray is: ' + JSON.stringify(pathArray));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathArray is: ' + JSON.stringify(pathArray));
+    returnData = pathArray[pathArray.length - 2];
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.getFirstTopLevelFolderFromPath function');
   return returnData;
 };
 
