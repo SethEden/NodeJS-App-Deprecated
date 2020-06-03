@@ -36,5 +36,5 @@ var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + cResourc
 exports.cBinaryResourcesPath = cBinaryResourcesPath;
 var cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
 exports.cBinaryRootPath = cBinaryRootPath;
-var cBinaryReleasePath = cBinaryRootPath + s.cRelease + b.cForwardSlash;
+var cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash;
 exports.cBinaryReleasePath = cBinaryReleasePath;

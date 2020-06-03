@@ -15,4 +15,4 @@ export const cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash +
 // Binary Resources Path
 export const cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 export const cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
-export const cBinaryReleasePath = cBinaryRootPath + s.cRelease + b.cForwardSlash;
+export const cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash;

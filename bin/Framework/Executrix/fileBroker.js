@@ -29,9 +29,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var fs = require('fs');
 
-var archiver = require('archiver');
-
 var path = require('path');
+
+var zip = require('bestzip');
 
 var D = require('../Resources/data');
 
@@ -279,8 +279,12 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   var releaseFiles = [];
   var releasedArchiveFiles = [];
   var fileNameBusinessRules = {};
+  var cleanFilePathsBusinessRules = {};
   fileNameBusinessRules[0] = s.cgetFileNameFromPath;
   fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
+  cleanFilePathsBusinessRules[0] = s.cswapDoubleForwardSlashToSingleForwardSlash;
+  cleanFilePathsBusinessRules[1] = s.cswapDoubleBackSlashToSingleBackSlash;
+  cleanFilePathsBusinessRules[2] = s.cswapForwardSlashToBackSlash;
 
   var rootPath = _configurator["default"].getConfigurationSetting(s.cApplicationCleanedRootPath);
 
@@ -290,8 +294,6 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
   var currentVersionReleased = false;
   var releaseDateTimeStamp;
-  var releaseZipArchive;
-  var archiveObject;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
 
@@ -328,33 +330,22 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
     var releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore + applicationName;
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName); // create a file to stream archive data to.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName);
 
+    var fullReleasePath = destinationFolder + releaseFileName + g.cDotzip;
+    zip({
+      source: sourceFolder + '/*',
+      destination: fullReleasePath
+    }).then(function () {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Done writing the zip file: ' + fullReleasePath);
 
-    releaseZipArchive = fs.createWriteStream(destinationFolder + releaseFileName + g.cDotzip);
-    archiveObject = archiver(g.czip, {
-      zlib: {
-        level: 9
-      } // Sets the compression level.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Set the return packageSuccess flag to TRUE');
 
+      packageSuccess = true;
+    })["catch"](function (err) {
+      console.error(err.stack);
+      process.exit(1);
     });
-
-    for (var _i = 0; _i <= releasedArchiveFiles.length - 1; _i++) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[_i]);
-
-      var _pathAndFileName = releasedArchiveFiles[_i];
-
-      var _fileName = _ruleBroker["default"].processRules(_pathAndFileName, '', fileNameBusinessRules);
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + _fileName);
-
-      archiveObject.file(_pathAndFileName, {
-        name: _fileName
-      });
-    }
-
-    archiveObject.finalize();
-    packageSuccess = true;
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);

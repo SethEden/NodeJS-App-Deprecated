@@ -6,8 +6,8 @@ import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var fs = require('fs');
-var archiver = require('archiver');
 var path = require('path');
+var zip = require('bestzip');
 var D = require('../Resources/data');
 var xml2js = require('xml2js').Parser({
   parseNumbers: true,
@@ -195,15 +195,17 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   var releaseFiles = [];
   var releasedArchiveFiles = [];
   var fileNameBusinessRules = {};
+  var cleanFilePathsBusinessRules = {};
   fileNameBusinessRules[0] = s.cgetFileNameFromPath;
   fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
+  cleanFilePathsBusinessRules[0] = s.cswapDoubleForwardSlashToSingleForwardSlash;
+  cleanFilePathsBusinessRules[1] = s.cswapDoubleBackSlashToSingleBackSlash;
+  cleanFilePathsBusinessRules[2] = s.cswapForwardSlashToBackSlash;
   var rootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
   var currentVersion = configurator.getConfigurationSetting(s.cApplicationVersionNumber);
   var applicationName = configurator.getConfigurationSetting(s.cApplicationName);
   var currentVersionReleased = false;
   var releaseDateTimeStamp;
-  var releaseZipArchive;
-  var archiveObject;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder
@@ -228,20 +230,18 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
     // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
     let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore + applicationName;
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName);
-    // create a file to stream archive data to.
-    releaseZipArchive = fs.createWriteStream(destinationFolder + releaseFileName + g.cDotzip);
-    archiveObject = archiver(g.czip, {
-      zlib: { level: 9 } // Sets the compression level.
+    let fullReleasePath = destinationFolder + releaseFileName + g.cDotzip;
+    zip({
+      source: sourceFolder + '/*',
+      destination: fullReleasePath
+    }).then(function() {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Done writing the zip file: ' + fullReleasePath);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Set the return packageSuccess flag to TRUE');
+      packageSuccess = true;
+    }).catch(function(err) {
+      console.error(err.stack);
+      process.exit(1);
     });
-    for (let i = 0; i <= releasedArchiveFiles.length - 1; i++) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[i]);
-      let pathAndFileName = releasedArchiveFiles[i];
-      let fileName = ruleBroker.processRules(pathAndFileName, '', fileNameBusinessRules);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + fileName);
-      archiveObject.file(pathAndFileName, {name: fileName});
-    }
-    archiveObject.finalize();
-    packageSuccess = true;
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
