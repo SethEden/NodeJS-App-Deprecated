@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/SethEden/NodeJS-App/compare/v0.2.16...v0.3.1) (2020-06-03)
+
 ### [0.2.16](https://github.com/SethEden/NodeJS-App/compare/v0.2.15...v0.2.16) (2020-06-03)
 
 
