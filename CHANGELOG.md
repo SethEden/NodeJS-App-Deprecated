@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.14](https://github.com/SethEden/NodeJS-App/compare/v0.2.13...v0.2.14) (2020-06-03)
+
+
+### Features
+
+* Finally got the release system up and working. Changing up the commit message to attempt to bump the mid-level version number, since this is a some-what more-or-less major update. ([166d461](https://github.com/SethEden/NodeJS-App/commit/166d46157fa1b02de391dd494c3f7a5d35153cbf))
+
 ### [0.2.13](https://github.com/SethEden/NodeJS-App/compare/v0.2.12...v0.2.13) (2020-06-03)
 
 ### [0.2.12](https://github.com/SethEden/NodeJS-App/compare/v0.2.11...v0.2.12) (2020-06-03)
