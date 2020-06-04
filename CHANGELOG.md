@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/SethEden/NodeJS-App/compare/v0.3.3...v0.4.1) (2020-06-04)
+
+
+### Features
+
+* Start updating the auto-documentation system with JSDoc and fix some bugs with the deployment relating to deploying the documentation along with the configuration file. ([5b70804](https://github.com/SethEden/NodeJS-App/commit/5b70804f9206d670fde8b6d6ac003b7707cb671f))
+
 ### [0.3.3](https://github.com/SethEden/NodeJS-App/compare/v0.3.2...v0.3.3) (2020-06-03)
 
 ### [0.3.2](https://github.com/SethEden/NodeJS-App/compare/v0.3.1...v0.3.2) (2020-06-03)
