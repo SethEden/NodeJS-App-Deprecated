@@ -2,6 +2,14 @@
  * @module dataBroker
  * @description Contains all of the lower level data processing functions,
  * and also acts as an interface for calling the fileBroker to do actual file IO - Input-Output operations.
+ * @requires module:ruleBroker
+ * @requires module:fileBroker
+ * @requires module:configurator
+ * @requires module:loggers
+ * @requires module:basic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://www.npmjs.com/package/papaparse|papaparse}
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

@@ -8,6 +8,13 @@
  * including generated documentation are copied to the bin folder under the same nested folder structure.
  * It also includes the release process where the compiled code & non-code files (Configuration & Documentation)
  * is packaged up into a single zip file and saved in the Release folder.
+ * @requires module:warden
+ * @requires module:application-constants
+ * @requires module:system-constants
+ * @requires module:generic-constants
+ * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */
@@ -16,7 +23,6 @@ import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
 import * as b from '../../Framework/Constants/basic.constants';
-const prompt = require('prompt-sync')();
 var path = require('path');
 var D = require('../../Framework/Resources/data');
 global.appRoot = path.resolve(__dirname);

@@ -2,6 +2,15 @@
  * @module chiefConfiguration
  * @description Contains all the functions to manage the configuration system,
  * such as loading, setup, parsing & processing.
+ * @requires module:chiefData
+ * @requires module:configurator
+ * @requires module:ruleBroker
+ * @requires module:loggers
+ * @requires module:timers
+ * @requires module:basic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

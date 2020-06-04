@@ -3,6 +3,18 @@
  * @description Contains all of the functions required to do file operations on a physical/virtual hard drive and/or mounted volume.
  * Including loading files, saving files, reloading files, resaving files, copying files, moving files, copy folders including copying folders recursively,
  * zipping files and saving zip-packages as part of a deployment/release process.
+ * @requires module:ruleBroker
+ * @requires module:configurator
+ * @requires module:loggers
+ * @requires module:timers
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://www.npmjs.com/package/bestzip|bestzip}
+ * @requires module:data
+ * @requires xml2js
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

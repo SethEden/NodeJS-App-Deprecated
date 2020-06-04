@@ -20,6 +20,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 /**
  * @module ruleBroker
  * @description Contains all the functions necessary to manage the business rules system.
+ * @requires module:rulesLibrary
+ * @requires module:basic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

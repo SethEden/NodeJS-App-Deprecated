@@ -27,13 +27,15 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 /**
- * @module system.constants
+ * @module system-constants
  * @description Contains many re-usable word constants and compound words,
  * system defined acronyms, many of them derived from the basic-constants.
  * Also included are other constants like countries, named spoken languages, named geometric shapes.
  * Also included are common files types, control key combinations, environment variable strings,
  * system defined words and codes, user interface object types,
  * and names of business rules/system defined named commands, etc...
+ * @requires module:basic-constants
+ * @requires module:generic-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

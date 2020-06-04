@@ -2,6 +2,18 @@
  * @module warden
  * @description Contains all the functions to manage the entire application framework at the highest level.
  * Also provides an interface to easily manage all of the application features & various functionality from a single entry point.
+ * @requires module:chiefConfiguration
+ * @requires module:configurator
+ * @requires module:timers
+ * @requires module:ruleBroker
+ * @requires module:dataBroker
+ * @requires module:fileBroker
+ * @requires module:loggers
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */
@@ -9,7 +21,7 @@ import chiefConfiguration from '../Controllers/chiefConfiguration';
 // import chiefData from '../Controllers/chiefData';
 // import chiefWorkflow from '../Controllers/chiefWorkflow';
 import configurator from '../Executrix/configurator';
-import timer from '../Executrix/timers';
+import timers from '../Executrix/timers';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import dataBroker from '../Executrix/dataBroker';
 import fileBroker from '../Executrix/fileBroker';

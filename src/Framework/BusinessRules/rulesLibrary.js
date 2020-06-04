@@ -1,6 +1,10 @@
 /**
  * @module rulesLibrary
  * @description Contains all of the system defined business rules as a map between function names and function calls.
+ * @requires module:characterGeneration
+ * @requires module:stringGeneration
+ * @requires module:stringParsing
+ * @requires module:system-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

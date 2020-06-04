@@ -4,6 +4,12 @@
  * and logging to a system-specified log file.
  * Additional logic is in place to allow the configuration file to define which
  * modules/files & functions should participate in logging operations.
+ * @requires module:configurator
+ * @requires module:ruleBroker
+ * @requires module:system-constants
+ * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */
@@ -11,8 +17,8 @@ import configurator from './configurator';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import * as s from '../Constants/system.constants';
 import * as b from '../Constants/basic.constants';
-var D = require('../Resources/data');
 var fs = require('fs');
+var D = require('../Resources/data');
 
 /**
  * @function consoleLog

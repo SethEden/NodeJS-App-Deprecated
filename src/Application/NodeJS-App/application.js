@@ -5,6 +5,14 @@
  * @description This is the main init for the application.
  * It contains the main program loop and/or basic argument parsing.
  * Of course most of the detailed work is handed off to the application framework.
+ * @requires module:warden
+ * @requires module:application-constants
+ * @requires module:system-constants
+ * @requires module:generic-constants
+ * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

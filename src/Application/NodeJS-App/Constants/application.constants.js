@@ -2,6 +2,9 @@
  * @module application-constants
  * @description A file to hold all of the client application specific constants.
  * So none of the constants in this file should be generic/system/framework constants.
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

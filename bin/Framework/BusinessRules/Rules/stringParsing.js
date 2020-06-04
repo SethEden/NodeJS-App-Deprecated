@@ -28,6 +28,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @module stringParsing
  * @description Contains all business rules for parsing strings, values, arrays,
  * values of all kinds, with various operations.
+ * @requires module:loggers
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/lodash|lodash}
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

@@ -8,6 +8,13 @@
  * including generated documentation are copied to the bin folder under the same nested folder structure.
  * It also includes the release process where the compiled code & non-code files (Configuration & Documentation)
  * is packaged up into a single zip file and saved in the Release folder.
+ * @requires module:warden
+ * @requires module:application-constants
+ * @requires module:system-constants
+ * @requires module:generic-constants
+ * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */
@@ -30,8 +37,6 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var prompt = require('prompt-sync')();
 
 var path = require('path');
 

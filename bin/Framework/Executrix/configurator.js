@@ -20,14 +20,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 /**
  * @module configurator
  * @description Contains the functions necessary to set and get configuration settings from the shared data structure.
+ * @requires module:loggers
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @NOTE This file is needed to keep these lower level functions separate from the chiefConfiguration.
  * Because having these functions in the chiefConfiguration can cause a circular dependency.
  */
-var D = require('../Resources/data');
-
 var path = require('path');
+
+var D = require('../Resources/data');
 /**
  * @function setConfigurationSetting
  * @description Sets a configuration setting on the configuration sub-tree data structure stored on t.ctx.

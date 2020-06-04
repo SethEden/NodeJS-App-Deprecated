@@ -17,6 +17,13 @@
  * Once we have identified which API is the most efficient this code can be decreased by half and we can get rid of the obsolete API.
  * @todo There is a need to evaluate performance of each version of these functions and
  * determine which version is more performant before they are cleaned up.
+ * @requires module:loggers
+ * @requires module:stringParsing
+ * @requires module:characterGeneration
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

@@ -27,12 +27,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * and logging to a system-specified log file.
  * Additional logic is in place to allow the configuration file to define which
  * modules/files & functions should participate in logging operations.
+ * @requires module:configurator
+ * @requires module:ruleBroker
+ * @requires module:system-constants
+ * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */
-var D = require('../Resources/data');
-
 var fs = require('fs');
+
+var D = require('../Resources/data');
 /**
  * @function consoleLog
  * @description compares the class path to a series of configuration settings to determine

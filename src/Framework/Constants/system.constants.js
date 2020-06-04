@@ -1,17 +1,19 @@
-import * as b from './basic.constants';
-import * as g from './generic.constants';
-
 /**
- * @module system.constants
+ * @module system-constants
  * @description Contains many re-usable word constants and compound words,
  * system defined acronyms, many of them derived from the basic-constants.
  * Also included are other constants like countries, named spoken languages, named geometric shapes.
  * Also included are common files types, control key combinations, environment variable strings,
  * system defined words and codes, user interface object types,
  * and names of business rules/system defined named commands, etc...
+ * @requires module:basic-constants
+ * @requires module:generic-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
  */
+import * as b from './basic.constants';
+import * as g from './generic.constants';
+
 // Miscelaneious
 export const c1a1d = 'a' + 'd'; // 'ca' & 'cd' is some how a reserved word.
 export const cENV = b.cEN + b.cV;

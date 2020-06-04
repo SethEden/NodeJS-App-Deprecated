@@ -4,6 +4,7 @@
  * partial words for re-usability, many of them derived from the basic-constants.
  * Also included are other generic constants like string numbers like "one", "two", "three".
  * Also included are spellings of Greek letters, military codes/standards, units of measurement, units of time, etc...
+ * @requires module:basic-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

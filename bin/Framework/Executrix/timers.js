@@ -27,6 +27,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @module timers
  * @description Contains all of the functions needed for generating time stamps,
  * reformatting time stamps and tracking time durations.
+ * @requires module:configurator
+ * @requires module:loggers
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://www.npmjs.com/package/moment|moment}
  * @author Seth Hollingsead
  * @date 2020/06/04
  */

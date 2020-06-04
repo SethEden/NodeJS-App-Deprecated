@@ -1,6 +1,10 @@
 /**
  * @module configurator
  * @description Contains the functions necessary to set and get configuration settings from the shared data structure.
+ * @requires module:loggers
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @NOTE This file is needed to keep these lower level functions separate from the chiefConfiguration.
@@ -8,8 +12,8 @@
  */
 import loggers from './loggers';
 import * as s from '../Constants/system.constants';
-var D = require('../Resources/data');
 var path = require('path');
+var D = require('../Resources/data');
 
 /**
  * @function setConfigurationSetting
