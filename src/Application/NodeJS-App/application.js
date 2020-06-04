@@ -11,8 +11,9 @@ global.appRoot = path.resolve(__dirname);
 var rootPath = '';
 
 /**
- * @name bootStrapApplication
+ * @function bootStrapApplication
  * @description Setup all the application data and configuration settings.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -24,8 +25,9 @@ function bootStrapApplication() {
 };
 
 /**
- * @name application
+ * @function application
  * @description This is the main program look, the init for the entire application.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/21
  */

@@ -27,11 +27,11 @@ var _ = require('lodash');
 
 var path = require('path');
 /**
- * @name stringToBoolean
+ * @function stringToBoolean
  * @description Converts a string to a boolean value
- * @param  {[String]} inputData A string that contains a truthy or a falsy value and should be converted to a boolean.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Boolean]} A boolean value of either True or False according to the business rule conversion.
+ * @param {string} inputData A string that contains a truthy or a falsy value and should be converted to a boolean.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} A boolean value of either True or False according to the business rule conversion.
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -98,16 +98,16 @@ var stringToBoolean = function stringToBoolean(inputData, inputMetaData) {
   return returnData;
 };
 /**
- * @name stringToDataType
+ * @function stringToDataType
  * @description Converts a string to the appropriate data value.
  * So if it's a string value of "3.1415926535897932384626433832" then it will get converted to a float of the same value.
  * If it's a string value of "false" then it will get converted to a boolean of the same value.
  * If it's a string value of "12" then it will get converted to an integer of the same value.
  * If it's a string value of "Happy Birthday" it will get returned the same as the input, no change, since it's just a string.
  * If it's an array of strings, or collection object, it will get returned as the same as the input, no change.
- * @param  {[String]} inputData The string that should be converted to some value.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Object/String/Boolean/Integer]} Returns a value of whatever type the string should be converted to as appropriate.
+ * @param {string} inputData The string that should be converted to some value.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {object|string|boolean|integer} Returns a value of whatever type the string should be converted to as appropriate.
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -162,11 +162,11 @@ var stringToDataType = function stringToDataType(inputData, inputMetaData) {
   return returnData;
 };
 /**
- * @name determineObjectDataType
+ * @function determineObjectDataType
  * @description Determines if the contents of a string are actually a Boolean, Integer, Float or String or something else.
- * @param  {[String]} inputData A string that contains some value that we should figure out what kind of data type that data is, Boolean, Integer, Float, String or something else.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string that indicates if the data type should be Boolean, Integer, Float or String or something else.
+ * @param {string} inputData A string that contains some value that we should figure out what kind of data type that data is, Boolean, Integer, Float, String or something else.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string that indicates if the data type should be Boolean, Integer, Float or String or something else.
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -213,12 +213,12 @@ var determineObjectDataType = function determineObjectDataType(inputData, inputM
   return returnData;
 };
 /**
- * @name isBoolean
+ * @function isBoolean
  * @description Determines if the input string is a boolean type of value, "true", "True", "TRUE", "t", "T", "y", "Y", "yes", "Yes", "YES", "1", "on", "On", "ON" or
  * "false", "False", "FALSE", "f", "F", "n", "N", "no", "No", "NO", "0"
- * @param  {[String]} inputData The string that should be checked if it is a Boolean style value or not, could be some form of "true" or "false".
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Boolean]} A Boolean value of True or False to indicate if the input string is a Boolean or not.
+ * @param {string} inputData The string that should be checked if it is a Boolean style value or not, could be some form of "true" or "false".
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} A Boolean value of True or False to indicate if the input string is a Boolean or not.
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -256,11 +256,11 @@ var isBoolean = function isBoolean(inputData, inputMetaData) {
   return returnData;
 };
 /**
- * @name isInteger
+ * @function isInteger
  * @description Determines if the input string is an integer type of value -9007299254740992 to 9007199254740992
- * @param  {[String]} inputData The string that should be checked if it is an integer style value or not.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Boolean]} A Boolean value of true or false to indicate if the input string is an integer or not.
+ * @param {string} inputData The string that should be checked if it is an integer style value or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} A Boolean value of true or false to indicate if the input string is an integer or not.
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -297,11 +297,11 @@ var isInteger = function isInteger(inputData, inputMetaData) {
   return returnData;
 };
 /**
- * @name isFloat
+ * @function isFloat
  * @description Determines if the input string is a floating point type of value or not.
- * @param  {[String]} inputData The string that should be checked if it is an integer style value or not.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Boolean]} A Boolean value of true or false to indicate if the input string is a floating point number or not.
+ * @param {string} inputData The string that should be checked if it is an integer style value or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} A Boolean value of true or false to indicate if the input string is a floating point number or not.
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -338,11 +338,11 @@ var isFloat = function isFloat(inputData, inputMetaData) {
   return returnData;
 };
 /**
- * @name isString
+ * @function isString
  * @description Determines if the input string is a string or not, by process of elimination, aka if it's not a Boolean, and not an Integer and not a Float then it must be a string.
- * @param  {[String]} inputData The string that should be checked if it is a string and not a Boolean, Integer or Float.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Boolean]} A Boolean value of true or false to indicate if the input string is a string and not a Boolean, Integer or Float; or not (meaning it would be one of those 3 data types, discuised as a string).
+ * @param {string} inputData The string that should be checked if it is a string and not a Boolean, Integer or Float.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} A Boolean value of true or false to indicate if the input string is a string and not a Boolean, Integer or Float; or not (meaning it would be one of those 3 data types, discuised as a string).
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -379,13 +379,13 @@ var isString = function isString(inputData, inputMetaData) {
   return returnData;
 };
 /**
- * @name singleQuoteSwapAfterEquals
+ * @function singleQuoteSwapAfterEquals
  * @description Swaps single quote characters in the middle of the string with double quote characters in the middle of the string.
  * input: 'input[name='emailAddress'][class='username']'
  * output: 'input[name="emailAddress"][class="username"]'
- * @param  {[String]} inputData A string that ontains text with single quotes that should be swapped for double quotes.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string that contains text where single quotes have been exchanged for double quotes.
+ * @param {string} inputData A string that ontains text with single quotes that should be swapped for double quotes.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string that contains text where single quotes have been exchanged for double quotes.
  * @author Seth Hollingsead
  * @date 2020/01/30
  */
@@ -432,11 +432,11 @@ var singleQuoteSwapAfterEquals = function singleQuoteSwapAfterEquals(inputData, 
   return returnData;
 };
 /**
- * @name swapForwardSlashToBackSlash
+ * @function swapForwardSlashToBackSlash
  * @description Swaps all forward slash characters in a string for back slash characters.
- * @param  {[String]} inputData String that might contain some forward slashes.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same as the input string, just all forward slash characters
+ * @param {string} inputData String that might contain some forward slashes.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input string, just all forward slash characters
  * swapped for back slash characters.
  * @author Seth Hollingsead
  * @date 2020/02/26
@@ -468,11 +468,11 @@ var swapForwardSlashToBackSlash = function swapForwardSlashToBackSlash(inputData
   return returnData;
 };
 /**
- * @name swapBackSlashToForwardSlash
+ * @function swapBackSlashToForwardSlash
  * @description Swaps all back slash characters in a string for forward slash characters.
- * @param  {[String]} inputData String that might contain some back slashes.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same as the input string, just all back slash characters
+ * @param {string} inputData String that might contain some back slashes.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input string, just all back slash characters
  * swapped for forward slash characters.
  * @author Seth Hollingsead
  * @date 2020/02/26
@@ -509,11 +509,11 @@ var swapBackSlashToForwardSlash = function swapBackSlashToForwardSlash(inputData
   return returnData;
 };
 /**
- * @name swapDoubleForwardSlashToSingleForwardSlash
+ * @function swapDoubleForwardSlashToSingleForwardSlash
  * @description Swaps all double forward slash characters for single forward slash characters.
- * @param  {[String]} inputData String that might contain some double forward slashes.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same as the input string, just all double forward slash characters
+ * @param {string} inputData String that might contain some double forward slashes.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input string, just all double forward slash characters
  * swapped for single forward slash characters.
  * @author Seth Hollingsead
  * @date 2020/02/26
@@ -545,11 +545,11 @@ var swapDoubleForwardSlashToSingleForwardSlash = function swapDoubleForwardSlash
   return returnData;
 };
 /**
- * @name swapDoubleBackSlashToSingleBackSlash
+ * @function swapDoubleBackSlashToSingleBackSlash
  * @description Swaps all double back slash characters for single back slash characters.
- * @param  {[String]} inputData String that might contain some double back slashes.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same as the input string, just all double back slash characters
+ * @param {string} inputData String that might contain some double back slashes.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input string, just all double back slash characters
  * swapped for single back slash characters.
  * @author Seth Hollingsead
  * @date 2020/02/26
@@ -586,11 +586,11 @@ var swapDoubleBackSlashToSingleBackSlash = function swapDoubleBackSlashToSingleB
   return returnData;
 };
 /**
- * @name getUserNameFromEmail
+ * @function getUserNameFromEmail
  * @description Converts an email input into a username.
- * @param  {[String]} inputData A string that contains an email address value.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string value of the sub-string from before the '@' symbol.
+ * @param {string} inputData A string that contains an email address value.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string value of the sub-string from before the '@' symbol.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -624,11 +624,11 @@ var getUserNameFromEmail = function getUserNameFromEmail(inputData, inputMetaDat
   return returnData;
 };
 /**
- * @name replaceSpacesWithPlus
+ * @function replaceSpacesWithPlus
  * @description Replaces all spaces in the input string with plus symbols.
- * @param  {[String]} inputData A string that contains spaces that should be converted to plus symbols.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same as the input string but with space characters converted to plus symbols.
+ * @param {string} inputData A string that contains spaces that should be converted to plus symbols.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input string but with space characters converted to plus symbols.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -661,11 +661,11 @@ var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaD
   return returnData;
 };
 /**
- * @name replaceColonWithUnderscore
+ * @function replaceColonWithUnderscore
  * @description Replaces all colons in the input string with underscore symbols
- * @param  {[String]} inputData A string that contains colons that should be converted to underscore symbols.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same as the input string but with colon characters converted to underscore symbols.
+ * @param {string} inputData A string that contains colons that should be converted to underscore symbols.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input string but with colon characters converted to underscore symbols.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -698,15 +698,15 @@ var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, 
   return returnData;
 };
 /**
- * @name replaceCharacterWithCharacter
+ * @function replaceCharacterWithCharacter
  * @description Replaces all of a specified character in the input data with another specified character.
  * @NOTE: This is NOT a public facing business rule, because the function signature cannot be made to match with the accepted business rules standards.
  * It actually could be made to match but we would have to combine the 2nd two parameters into one with a delimiter.
  * In practice this would be a mistake, but would be an acceptable solution if we find there are many additional needs for this kind of business rule.
- * @param  {[String]} inputData A string that may or may not contain the specified characters that should be converted to another specified character.
- * @param  {[String]} character2Find The character to be searched and replaced from the input string.
- * @param  {[String]} character2Replace The character that should be used to replace the character specified for replacement from the input data.
- * @return {[String]} The same as the input string but with specified characters converted to the other specified character.
+ * @param {string} inputData A string that may or may not contain the specified characters that should be converted to another specified character.
+ * @param {string} character2Find The character to be searched and replaced from the input string.
+ * @param {string} character2Replace The character that should be used to replace the character specified for replacement from the input data.
+ * @return {string} The same as the input string but with specified characters converted to the other specified character.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -745,11 +745,11 @@ var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(input
   return returnData;
 };
 /**
- * @name cleanCarriageReturnFromString
+ * @function cleanCarriageReturnFromString
  * @description Cleans carriage return characters from the input data and trims off any leading or trailing spaces.
- * @param  {[String]} inputData The string that should be scrubbed for carriage returns.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same as the input string, but with all carriage return characters removed.
+ * @param {string} inputData The string that should be scrubbed for carriage returns.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input string, but with all carriage return characters removed.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -778,11 +778,11 @@ var cleanCarriageReturnFromString = function cleanCarriageReturnFromString(input
   return returnData;
 };
 /**
- * @name convertStringToLowerCase
+ * @function convertStringToLowerCase
  * @description Converts the input string to the same string but with no upper case letters.
- * @param  {[String]} inputData The string that should have all upper case letters changed to lower case letters.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The corrected string with all lower case letters.
+ * @param {string} inputData The string that should have all upper case letters changed to lower case letters.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The corrected string with all lower case letters.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -814,11 +814,11 @@ var convertStringToLowerCase = function convertStringToLowerCase(inputData, inpu
   return returnData;
 };
 /**
- * @name convertStringToUpperCase
+ * @function convertStringToUpperCase
  * @description Converts the input string to the same string but with no lower case letters.
- * @param  {[String]} inputData The string that should have all lower case letters changed to upper case letters.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The corrected string with all upper case letters.
+ * @param {string} inputData The string that should have all lower case letters changed to upper case letters.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The corrected string with all upper case letters.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -851,11 +851,11 @@ var convertStringToUpperCase = function convertStringToUpperCase(inputData, inpu
   return returnData;
 };
 /**
- * @name getFileNameFromPath
+ * @function getFileNameFromPath
  * @description Gets the file name from a string that contains the path and the file name.
- * @param  {[String]} inputData The string that should have all the folders and path removed from it.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The file name and file extension string without the full path.
+ * @param {string} inputData The string that should have all the folders and path removed from it.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The file name and file extension string without the full path.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -895,12 +895,12 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
   return returnData;
 };
 /**
- * @name removeFileExtensionFromFileName
+ * @function removeFileExtensionFromFileName
  * @description Removes the file extension from the file name if it is there.
  * Otherwise it will remove all the characters after the last period in the file name.
- * @param  {[String]} inputData The string that should have all the characters after the last period in the file name removed.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The same input string bbut without the file extension or all the characters removed after the last dot.
+ * @param {string} inputData The string that should have all the characters after the last period in the file name removed.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same input string bbut without the file extension or all the characters removed after the last dot.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -931,11 +931,11 @@ var removeFileExtensionFromFileName = function removeFileExtensionFromFileName(i
   return returnData;
 };
 /**
- * @name getValueFromAssignmentOperationString
+ * @function getValueFromAssignmentOperationString
  * @description Parses the input string and finds the value on the right side of the '=' sign.
- * @param  {[String]} inputData The string that should be parsed for the value on the right side of the assignment operator.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The string value of whatever is on the right side of the assignment operator.
+ * @param {string} inputData The string that should be parsed for the value on the right side of the assignment operator.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The string value of whatever is on the right side of the assignment operator.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -973,11 +973,11 @@ var getValueFromAssignmentOperationString = function getValueFromAssignmentOpera
   return returnData;
 };
 /**
- * @name aggregateNumericalDifferenceBetweenTwoStrings
+ * @function aggregateNumericalDifferenceBetweenTwoStrings
  * @description Determines the delta difference between the two input strings and returns it as a number.
- * @param  {[String]} inputData String 1 to compare.
- * @param  {[String]} inputMetaData String 2 to compare.
- * @return {[Integer]} The delta difference between the two strings, expressed as a number.
+ * @param {string} inputData String 1 to compare.
+ * @param {string} inputMetaData String 2 to compare.
+ * @return {integer} The delta difference between the two strings, expressed as a number.
  * @NOTE Duplicated from the BusinessRules.Rules.stringParsing function,
  * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
@@ -1062,11 +1062,11 @@ var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalD
   return returnData;
 };
 /**
- * @name convertCamelCaseStringToArray
+ * @function convertCamelCaseStringToArray
  * @description Takes a string in camelCase and returns an array of the words.
- * @param {[String]} inputData String to decompose into an array.
- * @param {[String]} inputMetaData Not used for this business rule.
- * @return {[Array]} The array of words that were composed in the original string.
+ * @param {string} inputData String to decompose into an array.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array<string>} The array of words that were composed in the original string.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1116,11 +1116,11 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
   return returnData;
 };
 /**
- * @name convertArrayToCamelCaseString
+ * @function convertArrayToCamelCaseString
  * @description Takes an array of words and returns a camelCase string of the input words.
- * @param {[Array]} inputData The array of words that should be strung together into a single long string.
- * @param {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A String that contains all of the words from the input array put together in sequential order.
+ * @param {array<string>} inputData The array of words that should be strung together into a single long string.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A String that contains all of the words from the input array put together in sequential order.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1151,11 +1151,11 @@ var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(input
   return returnData;
 };
 /**
- * @name mapWordToCamelCase
+ * @function mapWordToCamelCase
  * @description Takes a String key and an indexed String value and maps the word to an upper case first letter word.
- * @param {[String]} inputData The string key/value that should be converted to a camel case word.
- * @param {[String]} inputMetaData The string index for the map to the value that should be used.
- * @return {[String]} A String where the word has been converted into a camel case word.
+ * @param {string} inputData The string key/value that should be converted to a camel case word.
+ * @param {string} inputMetaData The string index for the map to the value that should be used.
+ * @return {string} A String where the word has been converted into a camel case word.
  * @author Seth Hollingsead
  * @data 2020/02/15
  */
@@ -1191,11 +1191,11 @@ var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMet
   return returnData;
 };
 /**
- * @name simplifyAndConsolidateString
+ * @function simplifyAndConsolidateString
  * @description Takes a string, and returns a version of it converted to lowercase, with all digits and symbols and whitespace removed.
- * @param  {[String]} inputData The string that should be simplified and consolidated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string that has been simplified and consolidated by converting to lower case, removing all digits, symbols and white space.
+ * @param {string} inputData The string that should be simplified and consolidated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string that has been simplified and consolidated by converting to lower case, removing all digits, symbols and white space.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1224,11 +1224,11 @@ var simplifyAndConsolidateString = function simplifyAndConsolidateString(inputDa
   return returnData;
 };
 /**
- * @name compareSimplifiedAndConsolidatedStrings
+ * @function compareSimplifiedAndConsolidatedStrings
  * @description Compares two strings by their simplified versions (see simplifyAndConsolidateString()).
- * @param  {[String]} inputData The first string to be compared.
- * @param  {[String]} inputMetaData The second string to be compared.
- * @return {[Boolean]} A Boolean value to indicate if the strings are virtually idential or not.
+ * @param {string} inputData The first string to be compared.
+ * @param {string} inputMetaData The second string to be compared.
+ * @return {boolean} A Boolean value to indicate if the strings are virtually idential or not.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1257,11 +1257,11 @@ var compareSimplifiedAndConsolidatedStrings = function compareSimplifiedAndConso
   return returnData;
 };
 /**
- * @name doesArrayContainLowerCaseConsolidatedString
+ * @function doesArrayContainLowerCaseConsolidatedString
  * @description Checks if an array contains a string, comparison made by lowerCaseAndConsolidateString().
- * @param  {[Array]} inputData The array of strings that should be checked if it contains the specified string.
- * @param  {[String]} inputMetaData The string we are looking for in the array.
- * @return {[Boolean]} A Boolean to indicate if the string is found in the array or not.
+ * @param {array} inputData The array of strings that should be checked if it contains the specified string.
+ * @param {string} inputMetaData The string we are looking for in the array.
+ * @return {boolean} A Boolean to indicate if the string is found in the array or not.
  * @NOTE Duplicated code in the app.js file,
  * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
@@ -1299,11 +1299,11 @@ var doesArrayContainLowerCaseConsolidatedString = function doesArrayContainLower
   return returnData;
 };
 /**
- * @name ascertainMatchingFilenames
+ * @function ascertainMatchingFilenames
  * @description Compares two file names after stripping off the path and determines if they are matching or not.
- * @param  {[String]} inputData The first filename and path that should be used in making the file name comparison.
- * @param  {[String]} inputMetaData The second filename and path that should be used in making the file name comparison.
- * @return {[Boolean]} A Boolean value to indicate if the file names are equavalent.
+ * @param {string} inputData The first filename and path that should be used in making the file name comparison.
+ * @param {string} inputMetaData The second filename and path that should be used in making the file name comparison.
+ * @return {boolean} A Boolean value to indicate if the file names are equavalent.
  * @NOTE Duplicated code in the app.js file,
  * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
@@ -1343,11 +1343,11 @@ var ascertainMatchingFilenames = function ascertainMatchingFilenames(inputData, 
   return returnData;
 };
 /**
- * @name doesArrayContainFilename
+ * @function doesArrayContainFilename
  * @description Checks if an array contains a filename, after stripping off the path.
- * @param  {[Array]} inputData The Array of file names that should be checked for the input file name we are looking for.
- * @param  {[String]} inputMetaData The file name we are looking for in the input Array.
- * @return {[Boolean]} A Boolean value to indicate if the file name was found or not.
+ * @param {array<string>} inputData The Array of file names that should be checked for the input file name we are looking for.
+ * @param {string} inputMetaData The file name we are looking for in the input Array.
+ * @return {boolean} A Boolean value to indicate if the file name was found or not.
  * @NOTE Duplicated code in the app.js file,
  * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
@@ -1381,11 +1381,11 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
 // ******************************************************
 
 /**
- * @name getDataCatagoryFromDataContextName
+ * @function getDataCatagoryFromDataContextName
  * @description Gets the data catagory from the context name, E.g. Input: Page_ProjectList, data catagory is 'Page'.
- * @param  {[String]} inputData The data context name, which should also contain the data catagory seperated by underscore.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The data catagory, such as Page or Test.
+ * @param {string} inputData The data context name, which should also contain the data catagory seperated by underscore.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The data catagory, such as Page or Test.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -1420,11 +1420,11 @@ var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContext
   return returnData;
 };
 /**
- * @name getDataCatagoryDetailNameFromDataContextName
+ * @function getDataCatagoryDetailNameFromDataContextName
  * @description Gets the data catagory detail name from the context name, E.g. Input: Page_ProjectList, data catagory is 'ProjectList'.
- * @param  {[String]} inputData The data context name, which should also contain the data catagory and data catagory detail name seperated by an underscore.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The data catagory detail name, such as ProjectDetails or ProjectList.
+ * @param {string} inputData The data context name, which should also contain the data catagory and data catagory detail name seperated by an underscore.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The data catagory detail name, such as ProjectDetails or ProjectList.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -1459,11 +1459,11 @@ var getDataCatagoryDetailNameFromDataContextName = function getDataCatagoryDetai
   return returnData;
 };
 /**
- * @name getKeywordNameFromDataContextName
+ * @function getKeywordNameFromDataContextName
  * @description Gets the keyword name from the context name, E.g. Input: Keywords_ProjectDetails_DeleteEntireProject, keyword is: 'DeleteEntireProject'.
- * @param  {[String]} inputData The data context name, which should also contain the data catagory and data catagory detail name and keyword name seperated by an underscore.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The keyword name, such as DeleteEntireProject or EditProjectInfoClick.
+ * @param {string} inputData The data context name, which should also contain the data catagory and data catagory detail name and keyword name seperated by an underscore.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The keyword name, such as DeleteEntireProject or EditProjectInfoClick.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
@@ -1498,13 +1498,13 @@ var getKeywordNameFromDataContextName = function getKeywordNameFromDataContextNa
   return returnData;
 };
 /**
- * @name parseSystemRootPath
+ * @function parseSystemRootPath
  * @description Parses the root path as returned by calling: path.resolve(__dirname);
  * This business rule looks for the CAFfeinated part of the path
  * and will parse that out to determine where on the hard drive this CAFfeinated folder is installed at.
- * @param  {[String]} inputData The root path as defined by calling path.resolve(__dirname);
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string with the path up to the application folder,
+ * @param {string} inputData The root path as defined by calling path.resolve(__dirname);
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string with the path up to the application folder,
  * where ever that is installed on the local system executing the tests.
  * @author Seth Hollingsead
  * @date 2020/02/26
@@ -1578,12 +1578,12 @@ var parseSystemRootPath = function parseSystemRootPath(inputData, inputMetaData)
   return returnData;
 };
 /**
- * @name replaceDoublePercentWithMessage
+ * @function replaceDoublePercentWithMessage
  * @description Parses the input string and replaces any instance of a double percentage sign
  * with the input Meta Data string.
- * @param {[String]} inputData The string that might contain the double percentage signs.
- * @param {[String]} inputMetaData The string that should replace the double percentage signs.
- * @return {[String]} The modified string with the message inserted.
+ * @param {string} inputData The string that might contain the double percentage signs.
+ * @param {string} inputMetaData The string that should replace the double percentage signs.
+ * @return {string} The modified string with the message inserted.
  * @author Seth Hollingsead
  * @date 2020/03/26
  * @NOTE The code that has been commented out below, is left as a memorial of what NOT TO DO!
@@ -1625,11 +1625,11 @@ var replaceDoublePercentWithMessage = function replaceDoublePercentWithMessage(i
   return returnData;
 };
 /**
- * @name removeXnumberOfFoldersFromEndOfPath
+ * @function removeXnumberOfFoldersFromEndOfPath
  * @description Removes X number of folders from the end of a path and returns the newly modified path.
- * @param  {[String]} inputData The path that should have the number of paths removed.
- * @param  {[Integer]} inputMetaData The number of paths that should be removed from the input path.
- * @return {[String]} The modified string with the folders removed from the input path.
+ * @param {string} inputData The path that should have the number of paths removed.
+ * @param {integer} inputMetaData The number of paths that should be removed from the input path.
+ * @return {string} The modified string with the folders removed from the input path.
  * @author Seth Hollingsead
  * @date 2020/06/01
  */
@@ -1706,11 +1706,11 @@ var removeXnumberOfFoldersFromEndOfPath = function removeXnumberOfFoldersFromEnd
   return returnData;
 };
 /**
- * @name getFirstTopLevelFolderFromPath
+ * @function getFirstTopLevelFolderFromPath
  * @description Takes a path and returns the folder at the farthest right of that path.
- * @param  {[String]} inputData The path that should be evaluated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} The folder at the far-right of the input path.
+ * @param {string} inputData The path that should be evaluated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The folder at the far-right of the input path.
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
@@ -1765,12 +1765,12 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
 // ******************************************************
 
 /**
- * @name doesArrayContainValue
+ * @function doesArrayContainValue
  * @description Checks if an array contains a value, checking equality by function(val, arr[i])
- * @param  {[Array]} inputData The input array that should be searched for the given input value.
- * @param  {[String/Integer/Object]} inputMetaData The value that should be searched for in the input array.
- * @param  {[Function]} myFunction The function that should be used to do the search.
- * @return {[Boolean]} A Boolean value to indicate if the value was found in the array or not found.
+ * @param {array<string|object|map>} inputData The input array that should be searched for the given input value.
+ * @param {string|integer|object]} inputMetaData The value that should be searched for in the input array.
+ * @param {function} myFunction The function that should be used to do the search.
+ * @return {boolean} A Boolean value to indicate if the value was found in the array or not found.
  * @NOTE Duplicated code in the app.js file,
  * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
@@ -1821,11 +1821,11 @@ function doesArrayContainValue(array, value, myFunction) {
 }
 
 ; // /**
-//  * @name mostPopularNumber
+//  * @function mostPopularNumber
 //  * @description Parses through an array of integers and determine which value is the most popular.
-//  * @param  {[Array]} inputArray The array that should be evaluated for most popular value.
-//  * @param  {[Integer]} length The length of the array that was passed in.
-//  * @return {[Integer]} The most popular value in the array.
+//  * @param {array<integer>} inputArray The array that should be evaluated for most popular value.
+//  * @param {integer} length The length of the array that was passed in.
+//  * @return {integer} The most popular value in the array.
 //  * @author Seth Hollingsead
 //  * @date 2020/05/20
 //  * @NOTE: NOT TESTED!!!!
@@ -1871,12 +1871,12 @@ function doesArrayContainValue(array, value, myFunction) {
 // };
 //
 // /**
-//  * @name isAlmostPalindrome
+//  * @function isAlmostPalindrome
 //  * @description Determines if the input string is almost a Palindrome string or not.
 //  * That is to say if the word is reversable or not reversable and if it is at least within
 //  * one character of being a palindrome string.
-//  * @param  {[String]} inputData The string that should be evaluated to determine if it is a Palindrome string or not.
-//  * @return {Boolean} True or False to indicate if the input string is a Palindrome or almost palindrome string or not.
+//  * @param {string} inputData The string that should be evaluated to determine if it is a Palindrome string or not.
+//  * @return {boolean} True or False to indicate if the input string is a Palindrome or almost palindrome string or not.
 //  * @author Seth Hollingsead
 //  * @date 2020/05/20
 //  * @NOTE: NOT TESTED!!!!
@@ -1906,12 +1906,12 @@ function doesArrayContainValue(array, value, myFunction) {
 // // where the coordinates of these points are (x1, y1), (x2, y2) and (x3, y3).
 //
 // /**
-//  * @name threePointAverage
+//  * @function threePointAverage
 //  * @description Calculates the average of 3 coordinates in a 2-Dimensional plane.
-//  * @param  {[Array]} point1 The coordinate for the first point.
-//  * @param  {[Array]} point2 The coordinate for the second point.
-//  * @param  {[Array]} point3 The coordinate for the third point.
-//  * @return {[Array]} Returns the XY coordinate of the average point between all points.
+//  * @param {array<integer|float|double>} point1 The coordinate for the first point.
+//  * @param {array<integer|float|double>} point2 The coordinate for the second point.
+//  * @param {array<integer|float|double>} point3 The coordinate for the third point.
+//  * @return {array<integer|float|double>} Returns the XY coordinate of the average point between all points.
 //  * @author Seth Hollingsead
 //  * @date 2020/05/20
 //  * @NOTE: NOT TESTED!!!!
@@ -1942,11 +1942,11 @@ function doesArrayContainValue(array, value, myFunction) {
 // };
 //
 // /**
-//  * @name arrayCounter
+//  * @function arrayCounter
 //  * @description Receives an array and a value, counts the number of occurances of that value in the array.
-//  * @param  {[Array]} inputArray The array which should have it's values counted.
-//  * @param  {[Integer/String/Object]} instance The instance that should be counted in the array.
-//  * @return {[Integer]} The count of the objects/values that was found to match out of the array
+//  * @param {array<integer|string|object>} inputArray The array which should have it's values counted.
+//  * @param {integer|string|object]} instance The instance that should be counted in the array.
+//  * @return {integer} The count of the objects/values that was found to match out of the array
 //  * @author Seth Hollingsead
 //  * @date 2020/05/20
 //  */

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Framework/Executrix/fileBroker.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Framework/Executrix/fileBroker.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import ruleBroker from '../BusinessRules/ruleBroker';
+import configurator from './configurator';
+import loggers from './loggers';
+import timers from './timers';
+import * as b from '../Constants/basic.constants';
+import * as g from '../Constants/generic.constants';
+import * as s from '../Constants/system.constants';
+var fs = require('fs');
+var path = require('path');
+var zip = require('bestzip');
+var D = require('../Resources/data');
+var xml2js = require('xml2js').Parser({
+  parseNumbers: true,
+  parseBooleans: true,
+  explicitArray: false,
+  mergeAttrs: true});
+var filesCollection = [];
+const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release', 'Documentation'];
+
+/**
+ * @function getXmlData
+ * @description Loads the specified file and parses it into JavaScript Objects, all strings.
+ * @param {string} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
+ * @return {object} A parsed JSON object containing all of the data, meta-data, objects, values and attributes that were stored in the specified XML file.
+ * @author Seth Hollingsead
+ * @date 2020/05/22
+ */
+function getXmlData(pathAndFilename) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = getXmlData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
+  var returnData;
+  var data = fs.readFileSync(pathAndFilename, {encoding: 'UTF8' });
+  var xml;
+  xml2js.parseString(data,
+    function(err, result) {
+      if (err) {
+        returnData = console.log('ERROR: ' + err);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+        return returnData;
+      }
+      xml = result;
+    });
+  returnData = xml;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getCsvData
+ * @description Loads the specified file and parses it into JSON objects.
+ * @NOTE This function only does the loading and preliminary parsing.
+ * Some clients might need their own parsing business rules so this might need to factor into things.
+ * We want to keep everything as modular as possible to allow for this future proofing flexibility.
+ * @param {string} pathAndFilename The path and file name of the CSV file that should be loaded and parsed into JSON objects.
+ * @return {object} The JSON object as it was loaded from the file with minimal to no additional processing.
+ * @author Seth Hollingsead
+ * @date 2020/05/22
+ */
+function getCsvData(pathAndFilename) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = getCsvData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+  var data = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
+  var parsedData = Papa.parse(data, {
+    delimiter: ',',
+    newline: '/n',
+    header: true,
+    skipEmptyLines: true,
+    encoding: 'UTF8'
+  });
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE loading data from: ' + pathAndFilename);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(parsedData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return parsedData;
+};
+
+/**
+ * @function readDirectoryContents
+ * @description This function acts as a wrapper for calling readDirectorySynchronously since that function is recursive.
+ * Also that function doesn't technically return anything, it works with a global variable that
+ * needs to be reset after the work is done with it. So these are the things that this wrapper function can do.
+ * @param {string} directory The path that needs to be scanned.
+ * @return {object} An object containing an array of all of the files in the folder and all sub-folders.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+function readDirectoryContents(directory) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = readDirectoryContents.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
+  var filesFound = [];
+  readDirectorySynchronously(directory);
+  filesFound = filesCollection; // Copy the data into a local variable first.
+  filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
+  filesCollection = [];
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'files found are: ' + JSON.stringify(filesFound));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return filesFound;
+};
+
+/**
+ * @function readDirectorySynchronously
+ * @description Recursively parses through all the sub-folders in a given path and loads all of the files contained in each sub-folder into a map.
+ * @param {string} directory The system path that should be scanned recursively for files.
+ * @return {object} A map of all the files contained in all levels of the specified path in all the folders and sub-folders.
+ * @NOTE The function doesn't actually return anything, all the file data is stored in an external data collection.
+ * @author wn050
+ * @reference https://stackoverflow.com/questions/41462606/get-all-files-recursively-in-directores-nodejs
+ * @date 2020/05/22
+ */
+function readDirectorySynchronously(directory) {
+  // console.log('BEGIN dataBroker.readDirectorySynchronously function');
+  // console.log('directory is: ' + directory);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = readDirectorySynchronously.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
+  var currentDirectoryPath = directory;
+  var currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
+  currentDirectory.forEach(file => {
+    var filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
+    var pathOfCurrentItem = directory +'/' + file;
+    if (!filesShouldBeSkipped &amp;&amp; fs.statSync(pathOfCurrentItem).isFile()) {
+      filesCollection.push(pathOfCurrentItem);
+    } else if (!filesShouldBeSkipped) {
+      var directoryPath = path.join(directory + '\\' + file);
+      readDirectorySynchronously(directoryPath);
+    }
+  });
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END dataBroker.readDirectorySynchronously function');
+};
+
+/**
+ * @function copyAllFilesAndFoldersFromFolderToFolder
+ * @description Copies all of the files and folders recursively from the source folder to the destination folder.
+ * @param {string} sourceFolder The full source path where files and folders should be copied from.
+ * @param {string} destinationFolder The full destination path where files and folders should be copied.
+ * @return {boolean} A TRUE or FALSE to indicate if the full copy process is successful or not.
+ * @author Seth Hollingsead
+ * @date 2020/05/29
+ * @NOTE: This is mainly used by the build system to execute a copy process for the
+ * non-code files from the source folder to the bin folder.
+ */
+function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolder) {
+  // console.log('BEGIN dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
+  // console.log('sourceFolder is: ' + sourceFolder);
+  // console.log('destinationFolder is: ' + destinationFolder);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+  var copySuccess = false;
+  var rootPath = cleanRootPath();
+  sourceFolder = rootPath + sourceFolder;
+  destinationFolder = rootPath + destinationFolder
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+  copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder);
+
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('copySuccess is: ' + copySuccess);
+  // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
+  return copySuccess;
+};
+
+/**
+ * @function buildReleasePackage
+ * @description Add all the files from the sourceFolder into a zip file and
+ * give a name to the file for the current date-time and release version, saving to the destination folder.
+ * @param {string} sourceFolder The folder that should be packaged up for the release zip file.
+ * @param {string} destinationFolder The folder where the zip file release package should be saved.
+ * @return {boolean} A TRUE or FALSE to indicate if the release package process is successful or not.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+function buildReleasePackage(sourceFolder, destinationFolder) {
+  // console.log('BEGIN dataBroker.buildReleasePackage function');
+  // console.log('sourceFolder is: ' + sourceFolder);
+  // console.log('destinationFolder is: ' + destinationFolder);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = buildReleasePackage.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+  var packageSuccess = false;
+  var releaseFiles = [];
+  var releasedArchiveFiles = [];
+  var fileNameBusinessRules = {};
+  var cleanFilePathsBusinessRules = {};
+  fileNameBusinessRules[0] = s.cgetFileNameFromPath;
+  fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
+  cleanFilePathsBusinessRules[0] = s.cswapDoubleForwardSlashToSingleForwardSlash;
+  cleanFilePathsBusinessRules[1] = s.cswapDoubleBackSlashToSingleBackSlash;
+  cleanFilePathsBusinessRules[2] = s.cswapForwardSlashToBackSlash;
+  var rootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
+  var currentVersion = configurator.getConfigurationSetting(s.cApplicationVersionNumber);
+  var applicationName = configurator.getConfigurationSetting(s.cApplicationName);
+  var currentVersionReleased = false;
+  var releaseDateTimeStamp;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
+  sourceFolder = rootPath + sourceFolder;
+  destinationFolder = rootPath + destinationFolder
+  releaseFiles = readDirectoryContents(sourceFolder);
+  releasedArchiveFiles = readDirectoryContents(destinationFolder);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'released archive files list is: ' + JSON.stringify(releasedArchiveFiles));
+  // Check if the current version number has already been released as a zip file in the Release folder.
+  // If it has not been released, then we can build the zip file with the current release number and date-time stamp.
+  for (let i = 0; i &lt;= releasedArchiveFiles.length - 1; i++) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[i]);
+    let pathAndFileName = releasedArchiveFiles[i];
+    let fileName = ruleBroker.processRules(pathAndFileName, '', fileNameBusinessRules);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + fileName);
+    if (fileName.includes(currentVersion) === true) {
+      currentVersionReleased = true;
+    }
+  }
+  if (currentVersionReleased === false) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
+    releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(s.cDateTimeStamp));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release date-time stamp is: ' + releaseDateTimeStamp);
+    // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+    let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore + applicationName;
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName);
+    let fullReleasePath = destinationFolder + releaseFileName + g.cDotzip;
+    zip({
+      source: sourceFolder + '/*',
+      destination: fullReleasePath
+    }).then(function() {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Done writing the zip file: ' + fullReleasePath);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Set the return packageSuccess flag to TRUE');
+      packageSuccess = true;
+    }).catch(function(err) {
+      console.error(err.stack);
+      process.exit(1);
+    });
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('packageSuccess is: ' + packageSuccess);
+  // console.log('END dataBroker.buildReleasePackage function');
+  return packageSuccess;
+};
+
+/**
+ * @function cleanRootPath
+ * @description Takes the application root path and cleans it to give a real root path,
+ * or top-level folder path for the application.
+ * @return {string} The real root path or top-level path for the application.
+ * @NOTE This has been problematic because often many of the init functions are contained in lower level folders,
+ * not at the top-level. This gives much greater level of organization to the over all project and
+ * helps with scalability &amp; reusability.
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+function cleanRootPath() {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = buildReleasePackage.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  var rootPath;
+  var rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
+  var cleanRootPathRules = {};
+  cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
+  rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return rootPath;
+};
+
+/**
+ * @function copyFileSync
+ * @description Reads files from the source and copies them to the target.
+ * @param {string} source The source file that should be copied (read and then re-written to the destination).
+ * @param {string} target The target file that should be saved to.
+ * @author Simon Zyx
+ * @date 2014/09/25
+ * {@link https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js}
+ * @NOTE: This code is not actually coping the files, it is reading them and re-writing them to the target.
+ * However, it should suffice for our needs. Meta-data in this case is not all that critical
+ * since the original file is more important, and this is really just about the deployment of a build-release.
+ */
+function copyFileSync(source, target) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = copyFileSync.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+  var successfullCopy = false;
+  var targetFile = target;
+
+  // If target is a directory a new file with the same name will be created
+  if (fs.existsSync(target)) {
+    if (fs.lstatSync(target).isDirectory()) {
+      targetFile = path.join(target, path.basename(source));
+    }
+  }
+  try {
+    fs.writeFileSync(targetFile, fs.readFileSync(source));
+    successfullCopy = true;
+  } catch(err) {
+    console.log('ERROR: Could not copy file: ' + source);
+    successfullCopy = false;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return successfullCopy;
+};
+
+/**
+ * @function copyFolderRecursiveSync
+ * @description Copies a folder and all of its files and sub-folders and sub-files recursively.
+ * @param {string} source The source path where all files and folders should be copied from.
+ * @param {string} target The target path where all the files and folders should be copied to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the copy operation was a success or not.
+ * @author Simon Zyx
+ * @date 2014/09/25
+ * {@link https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js}
+ * @NOTE: This code is not actually coping the files, it is reading them and re-writing them to the target.
+ * However, it should suffice for our needs. Meta-data in this case is not all that critical
+ * since the original file is more important, and this is really just about the deployment of a build-release.
+ */
+function copyFolderRecursiveSync(source, target) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = copyFolderRecursiveSync.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+  var successfullCopy = false;
+  var files = [];
+
+  // Check if folder needs to be created or integrated
+  // var targetFolder = target; 
+  var targetFolder = path.join(target, path.basename(source));
+  if (!fs.existsSync(targetFolder)) {
+    try {
+      fs.mkdirSync(targetFolder);
+      // NOTE: Just because we complete the above code doesn't mean the entire copy process was a success.
+      // But atleast we haven't errored out, so it wasn't a failure YET.
+    } catch(err) {
+      console.log('ERROR: Could not create folder: ' + targetFolder);
+      console.log('ERROR: ' + err);
+      successfullCopy = false;
+    }
+  }
+
+  // Copy
+  try {
+    if (fs.lstatSync(source).isDirectory()) {
+      files = fs.readdirSync(source);
+      files.forEach(function(file) {
+        var curSource = path.join(source, file);
+        if (fs.lstatSync(curSource).isDirectory()) {
+          successfullCopy = copyFolderRecursiveSync(curSource, targetFolder);
+        } else {
+          successfullCopy = copyFileSync(curSource, targetFolder);
+        }
+      });
+    }
+  } catch (err) {
+    console.log('ERROR: Could not copy folder contents: ' + targetFolder);
+    console.log('ERROR: ' + err);
+    successfullCopy = false;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return successfullCopy;
+};
+
+export default {
+  getCsvData,
+  getXmlData,
+  readDirectoryContents,
+  copyAllFilesAndFoldersFromFolderToFolder,
+  buildReleasePackage,
+  cleanRootPath,
+  copyFileSync,
+  copyFolderRecursiveSync
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Global</h3><ul><li><a href="global.html#aggregateNumericalDifferenceBetweenTwoStrings">aggregateNumericalDifferenceBetweenTwoStrings</a></li><li><a href="global.html#application">application</a></li><li><a href="global.html#ascertainMatchingFilenames">ascertainMatchingFilenames</a></li><li><a href="global.html#bootStrapApplication">bootStrapApplication</a></li><li><a href="global.html#buildReleasePackage">buildReleasePackage</a></li><li><a href="global.html#cleanCarriageReturnFromString">cleanCarriageReturnFromString</a></li><li><a href="global.html#cleanRootPath">cleanRootPath</a></li><li><a href="global.html#compareSimplifiedAndConsolidatedStrings">compareSimplifiedAndConsolidatedStrings</a></li><li><a href="global.html#consoleLog">consoleLog</a></li><li><a href="global.html#consoleLogProcess">consoleLogProcess</a></li><li><a href="global.html#convertArrayToCamelCaseString">convertArrayToCamelCaseString</a></li><li><a href="global.html#convertCamelCaseStringToArray">convertCamelCaseStringToArray</a></li><li><a href="global.html#convertNumberToLowerCaseLetter">convertNumberToLowerCaseLetter</a></li><li><a href="global.html#convertNumberToUpperCaseLetter">convertNumberToUpperCaseLetter</a></li><li><a href="global.html#convertStringToLowerCase">convertStringToLowerCase</a></li><li><a href="global.html#convertStringToUpperCase">convertStringToUpperCase</a></li><li><a href="global.html#copyAllFilesAndFoldersFromFolderToFolder">copyAllFilesAndFoldersFromFolderToFolder</a></li><li><a href="global.html#copyFileSync">copyFileSync</a></li><li><a href="global.html#copyFolderRecursiveSync">copyFolderRecursiveSync</a></li><li><a href="global.html#deployApplication">deployApplication</a></li><li><a href="global.html#determineObjectDataType">determineObjectDataType</a></li><li><a href="global.html#doesArrayContainFilename">doesArrayContainFilename</a></li><li><a href="global.html#doesArrayContainLowerCaseConsolidatedString">doesArrayContainLowerCaseConsolidatedString</a></li><li><a href="global.html#doesArrayContainValue">doesArrayContainValue</a></li><li><a href="global.html#extractDataFromPapaParseObject">extractDataFromPapaParseObject</a></li><li><a href="global.html#generateInvalidEmail1">generateInvalidEmail1</a></li><li><a href="global.html#generateInvalidEmail2">generateInvalidEmail2</a></li><li><a href="global.html#generateInvalidEmailWithSpecificSuffixAndDomainName1">generateInvalidEmailWithSpecificSuffixAndDomainName1</a></li><li><a href="global.html#generateInvalidEmailWithSpecificSuffixAndDomainName2">generateInvalidEmailWithSpecificSuffixAndDomainName2</a></li><li><a href="global.html#generateRandomInvalidEmail1">generateRandomInvalidEmail1</a></li><li><a href="global.html#generateRandomInvalidEmail2">generateRandomInvalidEmail2</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeByLength1">generateRandomLowerCaseAlphaNumericCodeByLength1</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeByLength2">generateRandomLowerCaseAlphaNumericCodeByLength2</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1">generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2">generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomLowerCaseTextByLength1">generateRandomLowerCaseTextByLength1</a></li><li><a href="global.html#generateRandomLowerCaseTextByLength2">generateRandomLowerCaseTextByLength2</a></li><li><a href="global.html#generateRandomLowerCaseTextWithSpecialCharactersByLength1">generateRandomLowerCaseTextWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomLowerCaseTextWithSpecialCharactersByLength2">generateRandomLowerCaseTextWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeByLength1">generateRandomMixedCaseAlphaNumericCodeByLength1</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeByLength2">generateRandomMixedCaseAlphaNumericCodeByLength2</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1">generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2">generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomMixedCaseTextByLength1">generateRandomMixedCaseTextByLength1</a></li><li><a href="global.html#generateRandomMixedCaseTextByLength2">generateRandomMixedCaseTextByLength2</a></li><li><a href="global.html#generateRandomMixedCaseTextWithSpecialCharactersByLength1">generateRandomMixedCaseTextWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomMixedCaseTextWithSpecialCharactersByLength2">generateRandomMixedCaseTextWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomNumericCodeByLength1">generateRandomNumericCodeByLength1</a></li><li><a href="global.html#generateRandomNumericCodeByLength2">generateRandomNumericCodeByLength2</a></li><li><a href="global.html#generateRandomSpecialCharacterCodeByLength1">generateRandomSpecialCharacterCodeByLength1</a></li><li><a href="global.html#generateRandomSpecialCharacterCodeByLength2">generateRandomSpecialCharacterCodeByLength2</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeByLength1">generateRandomUpperCaseAlphaNumericCodeByLength1</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeByLength2">generateRandomUpperCaseAlphaNumericCodeByLength2</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1">generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2">generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomUpperCaseTextByLength1">generateRandomUpperCaseTextByLength1</a></li><li><a href="global.html#generateRandomUpperCaseTextByLength2">generateRandomUpperCaseTextByLength2</a></li><li><a href="global.html#generateRandomUpperCaseTextWithSpecialCharactersByLength1">generateRandomUpperCaseTextWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomUpperCaseTextWithSpecialCharactersByLength2">generateRandomUpperCaseTextWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomValidEmail1">generateRandomValidEmail1</a></li><li><a href="global.html#generateRandomValidEmail2">generateRandomValidEmail2</a></li><li><a href="global.html#generateValidEmail1">generateValidEmail1</a></li><li><a href="global.html#generateValidEmail2">generateValidEmail2</a></li><li><a href="global.html#generateValidEmailWithSpecificSuffixAndDomainName1">generateValidEmailWithSpecificSuffixAndDomainName1</a></li><li><a href="global.html#generateValidEmailWithSpecificSuffixAndDomainName2">generateValidEmailWithSpecificSuffixAndDomainName2</a></li><li><a href="global.html#getAndProcessCsvData">getAndProcessCsvData</a></li><li><a href="global.html#getAndProcessXmlData">getAndProcessXmlData</a></li><li><a href="global.html#getConfigurationSetting">getConfigurationSetting</a></li><li><a href="global.html#getCsvData">getCsvData</a></li><li><a href="global.html#getDataCatagoryDetailNameFromContextName">getDataCatagoryDetailNameFromContextName</a></li><li><a href="global.html#getDataCatagoryDetailNameFromDataContextName">getDataCatagoryDetailNameFromDataContextName</a></li><li><a href="global.html#getDataCatagoryFromContextName">getDataCatagoryFromContextName</a></li><li><a href="global.html#getDataCatagoryFromDataContextName">getDataCatagoryFromDataContextName</a></li><li><a href="global.html#getDataElement">getDataElement</a></li><li><a href="global.html#getDataElementCount">getDataElementCount</a></li><li><a href="global.html#getFileNameFromPath">getFileNameFromPath</a></li><li><a href="global.html#getFirstTopLevelFolderFromPath">getFirstTopLevelFolderFromPath</a></li><li><a href="global.html#getKeywordNameFromDataContextName">getKeywordNameFromDataContextName</a></li><li><a href="global.html#getNowMoment">getNowMoment</a></li><li><a href="global.html#getUserNameFromEmail">getUserNameFromEmail</a></li><li><a href="global.html#getValueFromAssignmentOperationString">getValueFromAssignmentOperationString</a></li><li><a href="global.html#getXmlData">getXmlData</a></li><li><a href="global.html#isBoolean">isBoolean</a></li><li><a href="global.html#isFloat">isFloat</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#loadAllCsvData">loadAllCsvData</a></li><li><a href="global.html#loadAllXmlData">loadAllXmlData</a></li><li><a href="global.html#mapWordToCamelCase">mapWordToCamelCase</a></li><li><a href="global.html#mergeData">mergeData</a></li><li><a href="global.html#parseClassPath">parseClassPath</a></li><li><a href="global.html#parseLoadedConfigurationData">parseLoadedConfigurationData</a></li><li><a href="global.html#parseSystemRootPath">parseSystemRootPath</a></li><li><a href="global.html#printMessageToFile">printMessageToFile</a></li><li><a href="global.html#processCommand">processCommand</a></li><li><a href="global.html#processConfigurationRules">processConfigurationRules</a></li><li><a href="global.html#processCsvData">processCsvData</a></li><li><a href="global.html#processRootPath">processRootPath</a></li><li><a href="global.html#processRules">processRules</a></li><li><a href="global.html#randomlyGenerateBooleanValue1">randomlyGenerateBooleanValue1</a></li><li><a href="global.html#randomlyGenerateBooleanValue2">randomlyGenerateBooleanValue2</a></li><li><a href="global.html#randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1">randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2">randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1">randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2">randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1">randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2">randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateLowerCaseAlphaNumericCharacter1">randomlyGenerateLowerCaseAlphaNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateLowerCaseAlphaNumericCharacter2">randomlyGenerateLowerCaseAlphaNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetter1">randomlyGenerateLowerCaseLetter1</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetter2">randomlyGenerateLowerCaseLetter2</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetterOrSpecialCharacter1">randomlyGenerateLowerCaseLetterOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetterOrSpecialCharacter2">randomlyGenerateLowerCaseLetterOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphabeticCharacter1">randomlyGenerateMixedCaseAlphabeticCharacter1</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphabeticCharacter2">randomlyGenerateMixedCaseAlphabeticCharacter2</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphaNumericCharacter1">randomlyGenerateMixedCaseAlphaNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphaNumericCharacter2">randomlyGenerateMixedCaseAlphaNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateMixedCaseLetterOrSpecialCharacter1">randomlyGenerateMixedCaseLetterOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateMixedCaseLetterOrSpecialCharacter2">randomlyGenerateMixedCaseLetterOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateNumberInRange1">randomlyGenerateNumberInRange1</a></li><li><a href="global.html#randomlyGenerateNumberInRange2">randomlyGenerateNumberInRange2</a></li><li><a href="global.html#randomlyGenerateNumericCharacter1">randomlyGenerateNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateNumericCharacter2">randomlyGenerateNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateSpecialCharacter1">randomlyGenerateSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateSpecialCharacter2">randomlyGenerateSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateUpperCaseAlphaNumericCharacter1">randomlyGenerateUpperCaseAlphaNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateUpperCaseAlphaNumericCharacter2">randomlyGenerateUpperCaseAlphaNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetter1">randomlyGenerateUpperCaseLetter1</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetter2">randomlyGenerateUpperCaseLetter2</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetterOrSpecialCharacter1">randomlyGenerateUpperCaseLetterOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetterOrSpecialCharacter2">randomlyGenerateUpperCaseLetterOrSpecialCharacter2</a></li><li><a href="global.html#readDirectoryContents">readDirectoryContents</a></li><li><a href="global.html#readDirectorySynchronously">readDirectorySynchronously</a></li><li><a href="global.html#reformatDeltaTime">reformatDeltaTime</a></li><li><a href="global.html#releaseApplication">releaseApplication</a></li><li><a href="global.html#removeFileExtensionFromFileName">removeFileExtensionFromFileName</a></li><li><a href="global.html#removeXnumberOfFoldersFromEndOfPath">removeXnumberOfFoldersFromEndOfPath</a></li><li><a href="global.html#replaceCharacterWithCharacter">replaceCharacterWithCharacter</a></li><li><a href="global.html#replaceColonWithUnderscore">replaceColonWithUnderscore</a></li><li><a href="global.html#replaceDoublePercentWithMessage">replaceDoublePercentWithMessage</a></li><li><a href="global.html#replaceSpacesWithPlus">replaceSpacesWithPlus</a></li><li><a href="global.html#rulesLibrary">rulesLibrary</a></li><li><a href="global.html#saveRootPath">saveRootPath</a></li><li><a href="global.html#scanDataPath">scanDataPath</a></li><li><a href="global.html#setConfigurationSetting">setConfigurationSetting</a></li><li><a href="global.html#setupAllCsvData">setupAllCsvData</a></li><li><a href="global.html#setupAllXmlData">setupAllXmlData</a></li><li><a href="global.html#setupConfiguration">setupConfiguration</a></li><li><a href="global.html#simplifyAndConsolidateString">simplifyAndConsolidateString</a></li><li><a href="global.html#singleQuoteSwapAfterEquals">singleQuoteSwapAfterEquals</a></li><li><a href="global.html#stringToBoolean">stringToBoolean</a></li><li><a href="global.html#stringToDataType">stringToDataType</a></li><li><a href="global.html#swapBackSlashToForwardSlash">swapBackSlashToForwardSlash</a></li><li><a href="global.html#swapDoubleBackSlashToSingleBackSlash">swapDoubleBackSlashToSingleBackSlash</a></li><li><a href="global.html#swapDoubleForwardSlashToSingleForwardSlash">swapDoubleForwardSlashToSingleForwardSlash</a></li><li><a href="global.html#swapForwardSlashToBackSlash">swapForwardSlashToBackSlash</a></li><li><a href="global.html#validMessage">validMessage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jun 04 2020 13:30:51 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

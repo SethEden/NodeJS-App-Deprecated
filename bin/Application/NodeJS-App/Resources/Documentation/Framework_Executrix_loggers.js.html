@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Framework/Executrix/loggers.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Framework/Executrix/loggers.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import configurator from './configurator';
+import ruleBroker from '../BusinessRules/ruleBroker';
+import * as s from '../Constants/system.constants';
+import * as b from '../Constants/basic.constants';
+var D = require('../Resources/data');
+var fs = require('fs');
+
+/**
+ * @function consoleLog
+ * @description compares the class path to a series of configuration settings to determine
+ * if we should log to the console or not.
+ * Also can provisionally log to a log file as well since the console
+ * is technically a transient data output.
+ * @NOTE When it comes to dumping large amounts of data out of a script the console will not do,
+ * and dumping data to an output log file is critical to debugging certain tests and workflows.
+ * @param {string} classPath The class path for the caller of this funciton file.function or class.method.
+ * @param {string} message The message or data contents that should be dumped to the output.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/03/11
+ */
+function consoleLog(classPath, message) {
+  if (Object.keys(D).length !== 0) {
+    var logFile = configurator.getConfigurationSetting(s.cApplicationRootPath);
+    if (logFile !== undefined) {
+      // console.log('logFile is !== undefined');
+      var debugSetting = false;
+      var outputMessage = '';
+      var rules = {};
+      rules[1] = s.creplaceDoublePercentWithMessage;
+      logFile = logFile + configurator.getConfigurationSetting(s.cLogFilePathAndName);
+      // console.log('determine if there is a configuration setting for the class path');
+      debugSetting = configurator.getConfigurationSetting(classPath);
+      // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
+      if (logFile.indexOf('txt') !== -1) { // If we have a log file then we will log it to the console &amp; file.
+        consoleLogProcess(debugSetting, logFile, classPath, message, true);
+      } else { // No text log file specified, proceed with the same process for console only.
+        consoleLogProcess(debugSetting, undefined, classPath, message, false);
+      }
+    }
+  }
+};
+
+/**
+ * @function consoleLogProcess
+ * @description A function to refactor functionality that will print a message to a log file and the console, or just the console.
+ * The output depends on if there was a txt log file specified or not.
+ * @param {boolean} debugSetting A TRUE or FALSE value to indicate if the log action is enabled or not.
+ * @param {string} logFile The path to the log file where the message should be logged.
+ * @param {string} classPath The class path for the caller of this function file.function or class.method.
+ * @param {string} message The message or data contents that should be dumped to the output (log file and/or console).
+ * @param {boolean} loggingToFileAndConsole A TRUE or FALSE value to indicate if the log should be done to the specified log file and the console.
+ * If no log file is specified by the caller/settings system then this will be FALSE and only the console will be logged.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/05/27
+ */
+function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToFileAndConsole) {
+  // console.log('BEGIN loggers.consoleLogProcess function');
+  // console.log('debugSetting is: ' + debugSetting);
+  // console.log('logFile is: ' + logFile);
+  // console.log('classPath is: ' + classPath);
+  // console.log('message is: ' + message);
+  // console.log('loggingToFileAndConsole is: ' + loggingToFileAndConsole);
+  var outputMessage = '';
+  var messageIsValid = false;
+
+  if (debugSetting !== undefined) {
+    // console.log('The debugSetting is not undefined, now check if it is true or not.');
+    if (debugSetting === true) {
+      // console.log('The debugSetting is true now stringify it');
+      outputMessage = JSON.stringify(message);
+      console.log(outputMessage);
+      if (loggingToFileAndConsole === true) {
+        printMessageToFile(logFile, outputMessage);
+        // console.log('done printing the message to the logfile');
+      }
+    }
+    // console.log('Past the block of code that checks if the setting is true or not.');
+  } else if (configurator.getConfigurationSetting(s.cDebugTestExhaustive) === true) {
+    // console.log('else-block the DebugTestExhaustive setting is true');
+    outputMessage = ruleBroker.processRules(message, classPath, rules);
+    // Debug Exhaustive is probably not the best, we might want to consider another configuration setting to
+    // enable or disable the console specifically. Right now there is no real business need for it.
+    // If you really wanted to disable it just comment it out here.
+    console.log(outputMessage);
+    if (loggingToFileAndConsole === true) {
+      printMessageToFile(logFile, outputMessage);
+      // console.log('done printing the message to the logfile');
+    }
+  } else {
+    // console.log('else-block we will parse the ClassPath');
+    outputMessage = parseClassPath(logFile, classPath, message);
+    // console.log('outputMessage is: ' + outputMessage);
+    // console.log('message is: ' + message);
+    // if (outputMessage !== false &amp;&amp; outputMessage !== message) {
+    //   console.log(outputMessage);
+    // }
+    // if (outputMessage !== false &amp;&amp; outputMessage !== message &amp;&amp; loggingToFileAndConsole === true) {
+    //     printMessageToFile(logFile, outputMessage);
+    //     console.log('DONE printing the message to the logFile');
+    // }
+    messageIsValid = validMessage(outputMessage, message);
+    if (messageIsValid === true) {
+      console.log(outputMessage);
+    }
+    if (messageIsValid === true &amp;&amp; loggingToFileAndConsole === true) {
+      printMessageToFile(logFile, outputMessage);
+      // console.log('DONE printing the message to the logFile');
+    }
+
+    // else {
+    //   // NOTE: We should always stringify the message, because even if it's a string already,
+    //   // it won't hurt to attempt to stringify it again.
+    //   // But if it's some kind of an object then it's absolutely critical that we stringify it.
+    //   outputMessage = JSON.stringify(message);
+    //   console.log(outputMessage);
+    // }
+  }
+  // console.log('Past all of the if-else-if-else blocks of code.');
+  // console.log('END loggers.consoleLogProcess function');
+  // printMessageToFile(logFile, 'END loggers.consoleLog function (File &amp; Console)');
+};
+
+/**
+ * @function validMessage
+ * @description Looks at the parsed / processed output message and the original message
+ * to determine if the message is a valid message to dump to the console and/or the log file (if specified).
+ * @param {string|integer|boolean|object} outputMessage The message that has been parsed/processed.
+ * @param {string|integer|boolean|object} originalMessage The original message passed in before processing/parsing.
+ * @return {boolean} A TRUE or FALSE to indicate if the output message should be dumped to the log file and/or the console.
+ * @author Seth Hollingsead
+ * @date 2020/05/27
+ */
+function validMessage(outputMessage, originalMessage) {
+  // console.log('BEGIN loggers.validMessage function');
+  // console.log('outputMessage is: ' + outputMessage);
+  // console.log('originalMessage is: ' + originalMessage);
+  var returnValue = false;
+
+  // if (outputMessage !== false &amp;&amp; outputMessage !== message) {
+  //   console.log(outputMessage);
+  // }
+  // if (outputMessage !== false &amp;&amp; outputMessage !== message &amp;&amp; loggingToFileAndConsole === true) {
+  //     printMessageToFile(logFile, outputMessage);
+  //     console.log('DONE printing the message to the logFile');
+  // }
+  if (outputMessage !== false &amp;&amp; outputMessage !== originalMessage) {
+    returnValue = true;
+  } else if (outputMessage !== false &amp;&amp; outputMessage.includes(b.cPercent + b.cPercent) === false) {
+    returnValue = true;
+  }
+  // console.log('returnValue is: ' + returnValue);
+  // console.log('END loggers.validMessage');
+  return returnValue;
+};
+
+/**
+ * @function parseClassPath
+ * @description parses the class path and message pulling it apart for logging and looking at custom debug settings.
+ * @param {string} logFile The file name and path to the log file were the data should be printed.
+ * @param {string} classPath The class path for the caller of this funciton file.function or class.method.
+ * @param {string} message The message or data contents that should be dumped to the output.
+ * @return {string} Returns the message that should be printed out to the console and logged to the log file.
+ * @author Seth Hollingsead
+ * @date 2020/03/26
+ */
+function parseClassPath(logFile, classPath, message) {
+  var className = '';
+  var functionName = '';
+  var debugFunctionsSetting = false;
+  var debugFilesSetting = false;
+  var classPathArray = {};
+  var rules = {};
+  rules[1] = s.creplaceDoublePercentWithMessage;
+
+  classPathArray = classPath.split(b.cDot);
+  // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
+  // printMessageToFile(logFile, 'classPathArray.length is: ' + Object.keys(classPathArray).length);
+  if (Object.keys(classPathArray).length > 3) {
+    // printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
+  } else if (Object.keys(classPathArray).length === 3 ) {
+    className = classPathArray[0] + b.cDot + classPathArray[1];
+    // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
+    // printMessageToFile(logFile, 'className is: ' + className);
+    functionName = classPathArray[2];
+    // printMessageToFile(logFile, 'functionName is: ' + functionName);
+  } else if (Object.keys(classPathArray).length === 2) {
+    className = classPathArray[0];
+    // printMessageToFile(logFile, 'className is: ' + className);
+    functionName = classPathArray[1];
+    // printMessageToFile(logFile, 'functionName is: ' + functionName);
+  } else if (Object.keys(classPathArray).length === 1) {
+    className = classPathArray[0];
+    // printMessageToFile(logFile, 'className is: ' + className);
+  } else {
+    // printMessageToFile(logFile, 'ERROR: No class data, just print the message as is.');
+  }
+  // printMessageToFile(logFile, 'getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
+  debugFunctionsSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
+  // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
+
+  debugFilesSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className);
+  // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
+  if (debugFunctionsSetting === true || debugFilesSetting === true) {
+    return message.replace('%%', className + b.cDot + functionName);
+    return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+  } else if ((debugFunctionsSetting === undefined &amp;&amp; debugFilesSetting === undefined) ||
+  (debugFunctionsSetting === undefined &amp;&amp; debugFilesSetting === false) ||
+  (debugFunctionsSetting === false &amp;&amp; debugFilesSetting === undefined) ||
+  (debugFunctionsSetting === false &amp;&amp; debugFilesSetting === false)) {
+    return false;
+  } else {
+    return message;
+  }
+};
+
+/**
+ * @function printMessageToFile
+ * @description Prints a message to a log text file.
+ * @param {string} file The file path and file name where message data should be printed.
+ * @param {string} message The message that should be logged to the log file if the specific flag is true.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/03/23
+ */
+function printMessageToFile(file, message) {
+  // console.log('BEGIN loggers.printMessageToFile function');
+  // console.log('file is: ' + file);
+  console.log(message);
+  let fd;
+  var currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
+  if (currentOS === s.cWindows || currentOS === s.cLinux) {
+    if (configurator.getConfigurationSetting(s.cLogFileEnabled) === true) {
+      try {
+        fd = fs.openSync(file, 'a');
+        fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, 'utf8');
+      } catch (err) {
+        return console.log(err);
+      } finally {
+        if (fd !== undefined) {
+          fs.closeSync(fd);
+        }
+      }
+      // // console.log('writing message to file: ' + file + ' message: ' + message);
+      // fs.appendFile(file, message + b.cCarriageReturn + b.cNewLine, 'utf8', function(err) {
+      //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
+      //   if (err) { return console.log(err); }
+      // });
+    } else {
+      // console.log('ERROR: Failure to log to file: ' + file);
+    }
+  } else { console.log('ERROR: Invalid OS: ' + currentOS); }
+  // console.log('END loggers.printMessageToFile function');
+
+  // let fd;
+  // try {
+  //   fd = fs.openSync('message.txt', 'a');
+  //   fs.appendFileSync(fd, 'data to append', 'utf8');
+  // } catch (err) {
+  //   /* Handle the error */
+  // } finally {
+  //   if (fd !== undefined)
+  //     fs.closeSync(fd);
+  // }
+};
+
+export default {
+  consoleLog
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Global</h3><ul><li><a href="global.html#aggregateNumericalDifferenceBetweenTwoStrings">aggregateNumericalDifferenceBetweenTwoStrings</a></li><li><a href="global.html#application">application</a></li><li><a href="global.html#ascertainMatchingFilenames">ascertainMatchingFilenames</a></li><li><a href="global.html#bootStrapApplication">bootStrapApplication</a></li><li><a href="global.html#buildReleasePackage">buildReleasePackage</a></li><li><a href="global.html#cleanCarriageReturnFromString">cleanCarriageReturnFromString</a></li><li><a href="global.html#cleanRootPath">cleanRootPath</a></li><li><a href="global.html#compareSimplifiedAndConsolidatedStrings">compareSimplifiedAndConsolidatedStrings</a></li><li><a href="global.html#consoleLog">consoleLog</a></li><li><a href="global.html#consoleLogProcess">consoleLogProcess</a></li><li><a href="global.html#convertArrayToCamelCaseString">convertArrayToCamelCaseString</a></li><li><a href="global.html#convertCamelCaseStringToArray">convertCamelCaseStringToArray</a></li><li><a href="global.html#convertNumberToLowerCaseLetter">convertNumberToLowerCaseLetter</a></li><li><a href="global.html#convertNumberToUpperCaseLetter">convertNumberToUpperCaseLetter</a></li><li><a href="global.html#convertStringToLowerCase">convertStringToLowerCase</a></li><li><a href="global.html#convertStringToUpperCase">convertStringToUpperCase</a></li><li><a href="global.html#copyAllFilesAndFoldersFromFolderToFolder">copyAllFilesAndFoldersFromFolderToFolder</a></li><li><a href="global.html#copyFileSync">copyFileSync</a></li><li><a href="global.html#copyFolderRecursiveSync">copyFolderRecursiveSync</a></li><li><a href="global.html#deployApplication">deployApplication</a></li><li><a href="global.html#determineObjectDataType">determineObjectDataType</a></li><li><a href="global.html#doesArrayContainFilename">doesArrayContainFilename</a></li><li><a href="global.html#doesArrayContainLowerCaseConsolidatedString">doesArrayContainLowerCaseConsolidatedString</a></li><li><a href="global.html#doesArrayContainValue">doesArrayContainValue</a></li><li><a href="global.html#extractDataFromPapaParseObject">extractDataFromPapaParseObject</a></li><li><a href="global.html#generateInvalidEmail1">generateInvalidEmail1</a></li><li><a href="global.html#generateInvalidEmail2">generateInvalidEmail2</a></li><li><a href="global.html#generateInvalidEmailWithSpecificSuffixAndDomainName1">generateInvalidEmailWithSpecificSuffixAndDomainName1</a></li><li><a href="global.html#generateInvalidEmailWithSpecificSuffixAndDomainName2">generateInvalidEmailWithSpecificSuffixAndDomainName2</a></li><li><a href="global.html#generateRandomInvalidEmail1">generateRandomInvalidEmail1</a></li><li><a href="global.html#generateRandomInvalidEmail2">generateRandomInvalidEmail2</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeByLength1">generateRandomLowerCaseAlphaNumericCodeByLength1</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeByLength2">generateRandomLowerCaseAlphaNumericCodeByLength2</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1">generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2">generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomLowerCaseTextByLength1">generateRandomLowerCaseTextByLength1</a></li><li><a href="global.html#generateRandomLowerCaseTextByLength2">generateRandomLowerCaseTextByLength2</a></li><li><a href="global.html#generateRandomLowerCaseTextWithSpecialCharactersByLength1">generateRandomLowerCaseTextWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomLowerCaseTextWithSpecialCharactersByLength2">generateRandomLowerCaseTextWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeByLength1">generateRandomMixedCaseAlphaNumericCodeByLength1</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeByLength2">generateRandomMixedCaseAlphaNumericCodeByLength2</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1">generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2">generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomMixedCaseTextByLength1">generateRandomMixedCaseTextByLength1</a></li><li><a href="global.html#generateRandomMixedCaseTextByLength2">generateRandomMixedCaseTextByLength2</a></li><li><a href="global.html#generateRandomMixedCaseTextWithSpecialCharactersByLength1">generateRandomMixedCaseTextWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomMixedCaseTextWithSpecialCharactersByLength2">generateRandomMixedCaseTextWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomNumericCodeByLength1">generateRandomNumericCodeByLength1</a></li><li><a href="global.html#generateRandomNumericCodeByLength2">generateRandomNumericCodeByLength2</a></li><li><a href="global.html#generateRandomSpecialCharacterCodeByLength1">generateRandomSpecialCharacterCodeByLength1</a></li><li><a href="global.html#generateRandomSpecialCharacterCodeByLength2">generateRandomSpecialCharacterCodeByLength2</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeByLength1">generateRandomUpperCaseAlphaNumericCodeByLength1</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeByLength2">generateRandomUpperCaseAlphaNumericCodeByLength2</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1">generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2">generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomUpperCaseTextByLength1">generateRandomUpperCaseTextByLength1</a></li><li><a href="global.html#generateRandomUpperCaseTextByLength2">generateRandomUpperCaseTextByLength2</a></li><li><a href="global.html#generateRandomUpperCaseTextWithSpecialCharactersByLength1">generateRandomUpperCaseTextWithSpecialCharactersByLength1</a></li><li><a href="global.html#generateRandomUpperCaseTextWithSpecialCharactersByLength2">generateRandomUpperCaseTextWithSpecialCharactersByLength2</a></li><li><a href="global.html#generateRandomValidEmail1">generateRandomValidEmail1</a></li><li><a href="global.html#generateRandomValidEmail2">generateRandomValidEmail2</a></li><li><a href="global.html#generateValidEmail1">generateValidEmail1</a></li><li><a href="global.html#generateValidEmail2">generateValidEmail2</a></li><li><a href="global.html#generateValidEmailWithSpecificSuffixAndDomainName1">generateValidEmailWithSpecificSuffixAndDomainName1</a></li><li><a href="global.html#generateValidEmailWithSpecificSuffixAndDomainName2">generateValidEmailWithSpecificSuffixAndDomainName2</a></li><li><a href="global.html#getAndProcessCsvData">getAndProcessCsvData</a></li><li><a href="global.html#getAndProcessXmlData">getAndProcessXmlData</a></li><li><a href="global.html#getConfigurationSetting">getConfigurationSetting</a></li><li><a href="global.html#getCsvData">getCsvData</a></li><li><a href="global.html#getDataCatagoryDetailNameFromContextName">getDataCatagoryDetailNameFromContextName</a></li><li><a href="global.html#getDataCatagoryDetailNameFromDataContextName">getDataCatagoryDetailNameFromDataContextName</a></li><li><a href="global.html#getDataCatagoryFromContextName">getDataCatagoryFromContextName</a></li><li><a href="global.html#getDataCatagoryFromDataContextName">getDataCatagoryFromDataContextName</a></li><li><a href="global.html#getDataElement">getDataElement</a></li><li><a href="global.html#getDataElementCount">getDataElementCount</a></li><li><a href="global.html#getFileNameFromPath">getFileNameFromPath</a></li><li><a href="global.html#getFirstTopLevelFolderFromPath">getFirstTopLevelFolderFromPath</a></li><li><a href="global.html#getKeywordNameFromDataContextName">getKeywordNameFromDataContextName</a></li><li><a href="global.html#getNowMoment">getNowMoment</a></li><li><a href="global.html#getUserNameFromEmail">getUserNameFromEmail</a></li><li><a href="global.html#getValueFromAssignmentOperationString">getValueFromAssignmentOperationString</a></li><li><a href="global.html#getXmlData">getXmlData</a></li><li><a href="global.html#isBoolean">isBoolean</a></li><li><a href="global.html#isFloat">isFloat</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#loadAllCsvData">loadAllCsvData</a></li><li><a href="global.html#loadAllXmlData">loadAllXmlData</a></li><li><a href="global.html#mapWordToCamelCase">mapWordToCamelCase</a></li><li><a href="global.html#mergeData">mergeData</a></li><li><a href="global.html#parseClassPath">parseClassPath</a></li><li><a href="global.html#parseLoadedConfigurationData">parseLoadedConfigurationData</a></li><li><a href="global.html#parseSystemRootPath">parseSystemRootPath</a></li><li><a href="global.html#printMessageToFile">printMessageToFile</a></li><li><a href="global.html#processCommand">processCommand</a></li><li><a href="global.html#processConfigurationRules">processConfigurationRules</a></li><li><a href="global.html#processCsvData">processCsvData</a></li><li><a href="global.html#processRootPath">processRootPath</a></li><li><a href="global.html#processRules">processRules</a></li><li><a href="global.html#randomlyGenerateBooleanValue1">randomlyGenerateBooleanValue1</a></li><li><a href="global.html#randomlyGenerateBooleanValue2">randomlyGenerateBooleanValue2</a></li><li><a href="global.html#randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1">randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2">randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1">randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2">randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1">randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2">randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateLowerCaseAlphaNumericCharacter1">randomlyGenerateLowerCaseAlphaNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateLowerCaseAlphaNumericCharacter2">randomlyGenerateLowerCaseAlphaNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetter1">randomlyGenerateLowerCaseLetter1</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetter2">randomlyGenerateLowerCaseLetter2</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetterOrSpecialCharacter1">randomlyGenerateLowerCaseLetterOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateLowerCaseLetterOrSpecialCharacter2">randomlyGenerateLowerCaseLetterOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphabeticCharacter1">randomlyGenerateMixedCaseAlphabeticCharacter1</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphabeticCharacter2">randomlyGenerateMixedCaseAlphabeticCharacter2</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphaNumericCharacter1">randomlyGenerateMixedCaseAlphaNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateMixedCaseAlphaNumericCharacter2">randomlyGenerateMixedCaseAlphaNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateMixedCaseLetterOrSpecialCharacter1">randomlyGenerateMixedCaseLetterOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateMixedCaseLetterOrSpecialCharacter2">randomlyGenerateMixedCaseLetterOrSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateNumberInRange1">randomlyGenerateNumberInRange1</a></li><li><a href="global.html#randomlyGenerateNumberInRange2">randomlyGenerateNumberInRange2</a></li><li><a href="global.html#randomlyGenerateNumericCharacter1">randomlyGenerateNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateNumericCharacter2">randomlyGenerateNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateSpecialCharacter1">randomlyGenerateSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateSpecialCharacter2">randomlyGenerateSpecialCharacter2</a></li><li><a href="global.html#randomlyGenerateUpperCaseAlphaNumericCharacter1">randomlyGenerateUpperCaseAlphaNumericCharacter1</a></li><li><a href="global.html#randomlyGenerateUpperCaseAlphaNumericCharacter2">randomlyGenerateUpperCaseAlphaNumericCharacter2</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetter1">randomlyGenerateUpperCaseLetter1</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetter2">randomlyGenerateUpperCaseLetter2</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetterOrSpecialCharacter1">randomlyGenerateUpperCaseLetterOrSpecialCharacter1</a></li><li><a href="global.html#randomlyGenerateUpperCaseLetterOrSpecialCharacter2">randomlyGenerateUpperCaseLetterOrSpecialCharacter2</a></li><li><a href="global.html#readDirectoryContents">readDirectoryContents</a></li><li><a href="global.html#readDirectorySynchronously">readDirectorySynchronously</a></li><li><a href="global.html#reformatDeltaTime">reformatDeltaTime</a></li><li><a href="global.html#releaseApplication">releaseApplication</a></li><li><a href="global.html#removeFileExtensionFromFileName">removeFileExtensionFromFileName</a></li><li><a href="global.html#removeXnumberOfFoldersFromEndOfPath">removeXnumberOfFoldersFromEndOfPath</a></li><li><a href="global.html#replaceCharacterWithCharacter">replaceCharacterWithCharacter</a></li><li><a href="global.html#replaceColonWithUnderscore">replaceColonWithUnderscore</a></li><li><a href="global.html#replaceDoublePercentWithMessage">replaceDoublePercentWithMessage</a></li><li><a href="global.html#replaceSpacesWithPlus">replaceSpacesWithPlus</a></li><li><a href="global.html#rulesLibrary">rulesLibrary</a></li><li><a href="global.html#saveRootPath">saveRootPath</a></li><li><a href="global.html#scanDataPath">scanDataPath</a></li><li><a href="global.html#setConfigurationSetting">setConfigurationSetting</a></li><li><a href="global.html#setupAllCsvData">setupAllCsvData</a></li><li><a href="global.html#setupAllXmlData">setupAllXmlData</a></li><li><a href="global.html#setupConfiguration">setupConfiguration</a></li><li><a href="global.html#simplifyAndConsolidateString">simplifyAndConsolidateString</a></li><li><a href="global.html#singleQuoteSwapAfterEquals">singleQuoteSwapAfterEquals</a></li><li><a href="global.html#stringToBoolean">stringToBoolean</a></li><li><a href="global.html#stringToDataType">stringToDataType</a></li><li><a href="global.html#swapBackSlashToForwardSlash">swapBackSlashToForwardSlash</a></li><li><a href="global.html#swapDoubleBackSlashToSingleBackSlash">swapDoubleBackSlashToSingleBackSlash</a></li><li><a href="global.html#swapDoubleForwardSlashToSingleForwardSlash">swapDoubleForwardSlashToSingleForwardSlash</a></li><li><a href="global.html#swapForwardSlashToBackSlash">swapForwardSlashToBackSlash</a></li><li><a href="global.html#validMessage">validMessage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jun 04 2020 13:30:51 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

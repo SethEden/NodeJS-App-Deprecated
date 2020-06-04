@@ -30,11 +30,11 @@ var path = require('path');
 var Papa = require('papaparse'); // require('should'); // Not sure if this will really be needed or not.
 
 /**
- * @name scanDataPath
+ * @function scanDataPath
  * @description Scans the specified path and returns a colleciton
  * of all the files contained recursively within that path and all sub-folders.
- * @param  {[String]} dataPath The path that should be recursively scanned for files in all the folders.
- * @return {[Object]} A collection of files with their paths at all levels of the specified path including sub-folders.
+ * @param {string} dataPath The path that should be recursively scanned for files in all the folders.
+ * @return {object} A collection of files with their paths at all levels of the specified path including sub-folders.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -70,11 +70,11 @@ function scanDataPath(dataPath) {
 
 ;
 /**
- * @name loadAllCsvData
+ * @function loadAllCsvData
  * @description Loads all the contents of all files and folders and sub-folders at the specified path and builds a list of files to load,
  * then loads them accordingly in the D.contextName_fileName.
- * @param  {[Object]} filesToLoad The data structure containing all of the files to load data from.
- * @param  {[String]} contextName The context name that should be used when adding data to the D data structure.
+ * @param {object} filesToLoad The data structure containing all of the files to load data from.
+ * @param {string} contextName The context name that should be used when adding data to the D data structure.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -119,12 +119,12 @@ function loadAllCsvData(filesToLoad, contextName) {
 
 ;
 /**
- * @name loadAllXmlData
+ * @function loadAllXmlData
  * @description Loads all the contents of all files and folders and sub-folders at the specified path and builds a list of files to load,
  * then loads them accordingly in the D.contextName_fileName.
- * @param  {[Object]} filesToLoad The data structure containing all of the files to load data from.
- * @param  {[String]} contextName The context name that should be used when adding data to the t.ctx data structure.
- * @return {[Object]} A JSON object that contains all of the data that was loaded and parsed from all the input files list.
+ * @param {object} filesToLoad The data structure containing all of the files to load data from.
+ * @param {string} contextName The context name that should be used when adding data to the t.ctx data structure.
+ * @return {object} A JSON object that contains all of the data that was loaded and parsed from all the input files list.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -205,11 +205,11 @@ function loadAllXmlData(filesToLoad, contextName) {
 
 ;
 /**
- * @name processCsvData
+ * @function processCsvData
  * @description Processes all of the CSV data into a usable format and executes any additional processing rules.
- * @param  {[Object]} data A JSON object that contains all of the data loaded from a CSV file.
- * @param  {[String]} contextName The name that should be used when adding the objects to the D for data-sharing.
- * @return {[Object]} A parsed and cleaned up JSON object where all of the CSV data is collated and organized and cleaned up ready for use.
+ * @param {object} data A JSON object that contains all of the data loaded from a CSV file.
+ * @param {string} contextName The name that should be used when adding the objects to the D for data-sharing.
+ * @return {object} A parsed and cleaned up JSON object where all of the CSV data is collated and organized and cleaned up ready for use.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -263,10 +263,10 @@ function processCsvData(data, contextName) {
 // };
 
 /**
- * @name getDataCatagoryFromContextName
+ * @function getDataCatagoryFromContextName
  * @description Gets the data catagory, give the context name.
- * @param  {[String]} contextName The cotext name which will be something like Application_xxxx or Script_nnnn or Command_yyyy
- * @return {[String]} The string before the first cUnderscore (Application, Script, Command, etc).
+ * @param {string} contextName The cotext name which will be something like Application_xxxx or Script_nnnn or Command_yyyy
+ * @return {string} The string before the first cUnderscore (Application, Script, Command, etc).
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -296,10 +296,10 @@ function getDataCatagoryFromContextName(contextName) {
 
 ;
 /**
- * @name getDataCatagoryDetailNameFromContextName
+ * @function getDataCatagoryDetailNameFromContextName
  * @description Gets the data catagory detail name, given the context name.
- * @param  {[String]} contextName The name which will be something like Command_ApiPost or Script_ApiMacroX.
- * @return {[String]} The string after the first cUnderscore (ApiPost or ApiMacroX).
+ * @param {string} contextName The name which will be something like Command_ApiPost or Script_ApiMacroX.
+ * @return {string} The string after the first cUnderscore (ApiPost or ApiMacroX).
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -329,11 +329,11 @@ function getDataCatagoryDetailNameFromContextName(contextName) {
 
 ;
 /**
- * @name extractDataFromPapaParseObject
+ * @function extractDataFromPapaParseObject
  * @description Extracts the parsed data from the papa parse data object.
- * @param  {[Object]} data Contains the full contents of the papa parse data object, for which we need to get data out of.
- * @param  {[String]} contextName The name of the context either Command, Macro from which data should be retrieved.
- * @return {[Object]} The fully parsed data that we intend to use for the application.
+ * @param {object} data Contains the full contents of the papa parse data object, for which we need to get data out of.
+ * @param {string} contextName The name of the context either Command, Macro from which data should be retrieved.
+ * @return {object} The fully parsed data that we intend to use for the application.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -391,13 +391,13 @@ function extractDataFromPapaParseObject(data, contextName) {
 
 ;
 /**
- * @name mergeData
+ * @function mergeData
  * @description Merge data with the D for the specified data catagory and optional name.
- * @param  {[Object]} targetData The target data object where the dataToMerge should be merged with.
- * @param  {[String]} dataCatagory Command or Script to indicate what catagory the test data should be used as.
- * @param  {[String]} pageName (Optional) The name of the page where the data should be merged under. Pass as empty string if nothing.
- * @param  {[Object]} dataToMerge The data to be merged.
- * @return {[Object]} A merged set of data combining all of the original data plust all the additional data from the dataToMerge data set.
+ * @param {object} targetData The target data object where the dataToMerge should be merged with.
+ * @param {string} dataCatagory Command or Script to indicate what catagory the test data should be used as.
+ * @param {string} pageName (Optional) The name of the page where the data should be merged under. Pass as empty string if nothing.
+ * @param {object} dataToMerge The data to be merged.
+ * @return {object} A merged set of data combining all of the original data plust all the additional data from the dataToMerge data set.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -414,7 +414,7 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'data to Merge is: ' + JSON.stringify(dataToMerge));
 
-  var dataToMergeElementCount = getDataElementCount(dataToMerge, '', rowNumber, '');
+  var dataToMergeElementCount = getDataElementCount(dataToMerge, '', '');
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dataToMergeElementCount is: ' + dataToMergeElementCount);
 
@@ -477,12 +477,12 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
 
 ;
 /**
- * @name getDataElement
+ * @function getDataElement
  * @description Gets the named value from the data object then cleans it from any carriage return characters.
- * @param  {[Object]} dataObject The data map with all data.
- * @param  {[String]} pageName The name of the page where the data should be found.
- * @param  {[String]} elementName The name of the data element that should be found for the given page.
- * @return {[String]} The data element with all carriage return characters removed from it.
+ * @param {object} dataObject The data map with all data.
+ * @param {string} pageName The name of the page where the data should be found.
+ * @param {string} elementName The name of the data element that should be found for the given page.
+ * @return {string} The data element with all carriage return characters removed from it.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -516,14 +516,14 @@ function getDataElement(dataObject, pageName, elementName) {
 
 ;
 /**
- * @name getDataElementCount
+ * @function getDataElementCount
  * @description Gets the count of the number of elements that match a given pattern,
  * if an empty string is passed in for the pattern then the count of the collection is returned with no pattern matching.
- * @param  {[Object]} dataObject The data map with all data.
- * @param  {[String]} pageName The name of the page were the data should be found.
- * @param  {[String]} elementNamePattern A string containing a pattern that should be matched in the object collection,
+ * @param {object} dataObject The data map with all data.
+ * @param {string} pageName The name of the page were the data should be found.
+ * @param {string} elementNamePattern A string containing a pattern that should be matched in the object collection,
  * to establish a count of elements that match this pattern.
- * @return {[Integer]} A count of either the number of data elements in the object collection,
+ * @return {integer} A count of either the number of data elements in the object collection,
  * or a count for the number of data elements that match a pattern that is passed in.
  * @author Seth Hollingsead
  * @date 2020/05/22

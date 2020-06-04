@@ -24,10 +24,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * @name rulesLibrary
+ * @enum rulesLibrary
  * @description The map of rules and rule names that is available to be executed iteratively.
- * @param {[String/Integer/Boolean/Map]} inputData Primary data source needed by the rule to perform its function.
- * @param {[String/Integer/Boolean/Map]} inputMetaData Additional data usually helps as giving context to the primary input or additional settings for a function.
+ * @param {string|integer|boolean|map]} inputData Primary data source needed by the rule to perform its function.
+ * @param {string|integer|boolean|map]} inputMetaData Additional data usually helps as giving context to the primary input or additional settings for a function.
  * @NOTE: For selector construction and selector string construction: We should not change the constant that maps to the function,
  * because we want the attribute in the XML to remain the same, However there is the possibility that the function, if named the same as the XML attribute,
  * would be a reserved word like "Parent" or "Sibling".

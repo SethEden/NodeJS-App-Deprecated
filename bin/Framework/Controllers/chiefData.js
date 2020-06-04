@@ -25,11 +25,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var path = require('path');
 /**
- * @name getAndProcessCsvData
+ * @function getAndProcessCsvData
  * @description Loads the specified file, parses it and converts all the data to the appropriate format.
- * @param  {[String]} pathAndFilename The path and file name of the CSV file that should be loaded and parsed into JSON objects.
- * @param  {[String]} contextName The name that should be used when adding the objects to the D for data-sharing.
- * @return {[Object]} A parsed CSV JSON object where all the values have been converted from their string representation into acutal values of appropriate type.
+ * @param {string} pathAndFilename The path and file name of the CSV file that should be loaded and parsed into JSON objects.
+ * @param {string} contextName The name that should be used when adding the objects to the D for data-sharing.
+ * @return {object} A parsed CSV JSON object where all the values have been converted from their string representation into acutal values of appropriate type.
  * @author Seth Hollingsead
  * @date 2020/05/21
  */
@@ -55,10 +55,10 @@ function getAndProcessCsvData(pathAndFilename, contextName) {
 
 ;
 /**
- * @name getAndProcessXmlData
+ * @function getAndProcessXmlData
  * @description Loads the specified file, parses it and converts all values into their appropriate data types.
- * @param  {[String]} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JSON objects.
- * @return {[Object]} A parsed XML JSON object where all the values have been converted from their string representation into actual values as appropriate type.
+ * @param {string} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JSON objects.
+ * @return {object} A parsed XML JSON object where all the values have been converted from their string representation into actual values as appropriate type.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -76,15 +76,20 @@ function getAndProcessXmlData(pathAndFilename) {
 
   allSystemConfigurations = _dataBroker["default"].processXmlData(allSystemConfigurations);
 
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'allSystemConfigurations is: ' + JSON.stringify(allSystemConfigurations));
+
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return allSystemConfigurations;
 }
 
 ;
 /**
- * @name setupAllCsvData
+ * @function setupAllCsvData
  * @description Sets up all of the specified CSV data.
- * @param  {[String]} dataPathConfigurationName The name of the configuration setting that has the path we should search.
- * @param  {[String]} contextName The context name that should be used when adding data to the D.
+ * @param {string} dataPathConfigurationName The name of the configuration setting that has the path we should search.
+ * @param {string} contextName The context name that should be used when adding data to the D.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -114,11 +119,11 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
 
 ;
 /**
- * @name setupAllXmlData
+ * @function setupAllXmlData
  * @description Sets up all of the specified XML data.
- * @param  {[String]} dataPathConfigurationName The name of the configuration setting that has the path we should search.
- * @param  {[String]} contextName The context name that should be used when adding data to the D.
- * @return {[Object]} A JSON object that contains all of the data that was loaded and merged together.
+ * @param {string} dataPathConfigurationName The name of the configuration setting that has the path we should search.
+ * @param {string} contextName The context name that should be used when adding data to the D.
+ * @return {object} A JSON object that contains all of the data that was loaded and merged together.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */

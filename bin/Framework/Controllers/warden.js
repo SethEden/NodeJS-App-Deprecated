@@ -39,11 +39,11 @@ var path = require('path');
 
 var D = require('../Resources/data');
 /**
- * @name deployApplication
+ * @function deployApplication
  * @description Copys all non-source code files and folders from the source path to the destination path.
- * @param  {[String]} source The path the non-code files should be copied from.
- * @param  {[String]} destination The path the non-code files should be copied to.
- * @return {[Boolean]} A TRUE or FALSE value to indicate if the deployment was successful or not.
+ * @param {string} source The path the non-code files should be copied from.
+ * @param {string} destination The path the non-code files should be copied to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the deployment was successful or not.
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
@@ -71,14 +71,14 @@ function deployApplication(source, destination) {
 
 ;
 /**
- * @name releaseApplication
+ * @function releaseApplication
  * @description Scans the specified release folder path and determines if
  * there is a zip file for the current release or not. If there is not,
  * then the system will build a zip file from the bin folder excluding the release folder
  * and save the resulting archive to the release folder.
- * @param  {[String]} source The path for the bin folder where the latest source code will have been deployed.
- * @param  {[type]} release The path for the release folder where the release zip archive file should be saved.
- * @return {[Boolean]} A TRUE or FALSE value to indicate if the zip archive was created successfully or not.
+ * @param {string} source The path for the bin folder where the latest source code will have been deployed.
+ * @param {string} release The path for the release folder where the release zip archive file should be saved.
+ * @return {boolean} A TRUE or FALSE value to indicate if the zip archive was created successfully or not.
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
@@ -105,9 +105,10 @@ function releaseApplication(source, release) {
 
 ;
 /**
- * @name bootStrapApplication
+ * @function bootStrapApplication
  * @description Do all of the activities to setup the application system to run whatever actions the application will run.
- * @param  {[String]} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
+ * @param {string} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/21
  * @NOTE The following code that uses the loggers.consoleLog will never work,
@@ -139,14 +140,14 @@ function bootStrapApplication(pathAndFilename) {
 
 ;
 /**
- * @name processRootPath
+ * @function processRootPath
  * @description Processes the root path of the application using business rules.
  * @NOTE: By calling: path.resolve(__dirname); This does not return the true root path of the application.
  * It returns the path to the currently executing file, or the file that was executed first.
  * which is C:/NodeJS-App/Application/NodeJS-App/
  * But what we really need for the root path is just C:/NodeJS-App/
- * @param  {[String]} systemRootPath The root path as returned by calling: path.resolve(__dirname);
- * @return {[String]} The true root path of the application.
+ * @param {string} systemRootPath The root path as returned by calling: path.resolve(__dirname);
+ * @return {string} The true root path of the application.
  * @author Seth Hollingsead
  * @date 2020/05/21
  * @NOTE: The following code that uses the loggers.consoleLog will never work,
@@ -178,10 +179,11 @@ function processRootPath(systemRootPath) {
 
 ;
 /**
- * @name saveRootPath
+ * @function saveRootPath
  * @description Saves the root path and also cleans the root path and saves the cleaned root path.
  * Also saves the current application version number and the application name.
- * @param  {[String]} rootPath The root path of the application.
+ * @param {string} rootPath The root path of the application.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
@@ -210,10 +212,10 @@ function saveRootPath(rootPath) {
 
 ;
 /**
- * @name processCommand
+ * @function processCommand
  * @description This is just a wrapper for the chiefCommander.processCommand function.
- * @param  {[String]} command The command string and all of the arguments that should be processed for the command.
- * @return {[Boolean]} A TRUE or FALSE to indicate if the command loop should terminate when it's done.
+ * @param {string} command The command string and all of the arguments that should be processed for the command.
+ * @return {boolean} A TRUE or FALSE to indicate if the command loop should terminate when it's done.
  * @author Seth Hollingsead
  * @date 2020/05/27
  */
@@ -237,10 +239,11 @@ function processCommand(command) {
 
 ;
 /**
- * @name setConfigurationSetting
+ * @function setConfigurationSetting
  * @description This is just a wrapper for the configurator setConfigurationSetting function.
- * @param {[String]} configurationName The key of the configuration setting.
- * @param {[String/Boolean/Integer/Object]} configurationValue The value of the configuration setting.
+ * @param {string} configurationName The key of the configuration setting.
+ * @param {string|boolean|integer|object} configurationValue The value of the configuration setting.
+ * @return {void}
  * @author Seth Hollingsead
  * @data 2020/05/26
  */
@@ -267,10 +270,10 @@ function setConfigurationSetting(configurationName, configurationValue) {
 
 ;
 /**
- * @name getConfigurationSetting
+ * @function getConfigurationSetting
  * @description This is just a wrapper for the configurator getConfigurationSetting function.
- * @param  {[String]} configurationName The key of the configuration setting.
- * @return {[String/Integer/Boolean/Object]} The value of whatever was stored in the D[Configuration] sub-tree.
+ * @param {string} configurationName The key of the configuration setting.
+ * @return {string|integer|boolean|object} The value of whatever was stored in the D[Configuration] sub-tree.
  * @author Seth Hollingsead
  * @date 2020/05/26
  */
@@ -299,10 +302,11 @@ function getConfigurationSetting(configurationName) {
 
 ;
 /**
- * @name consoleLog
+ * @function consoleLog
  * @description This is just a wrapper for the loggers.consoleLog function.
- * @param  {[String]} classPath The class path for the caller of this function file.function or class.method.
- * @param  {[String/Boolean/Integer/Object]} message The message or data content that should be dumped to the output.
+ * @param {string} classPath The class path for the caller of this function file.function or class.method.
+ * @param {string|boolean|integer|object} message The message or data content that should be dumped to the output.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/26
  * @NOTE We cannot insturment this code with calls to loggers.consoleLog as it would introduce yet another ciruclar dependency.

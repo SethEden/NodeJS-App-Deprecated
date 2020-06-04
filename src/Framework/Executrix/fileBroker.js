@@ -15,13 +15,13 @@ var xml2js = require('xml2js').Parser({
   explicitArray: false,
   mergeAttrs: true});
 var filesCollection = [];
-const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release'];
+const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release', 'Documentation'];
 
 /**
- * @name getXmlData
+ * @function getXmlData
  * @description Loads the specified file and parses it into JavaScript Objects, all strings.
- * @param  {[String]} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
- * @return {[Object]} A parsed JSON object containing all of the data, meta-data, objects, values and attributes that were stored in the specified XML file.
+ * @param {string} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
+ * @return {object} A parsed JSON object containing all of the data, meta-data, objects, values and attributes that were stored in the specified XML file.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -50,13 +50,13 @@ function getXmlData(pathAndFilename) {
 };
 
 /**
- * @name getCsvData
+ * @function getCsvData
  * @description Loads the specified file and parses it into JSON objects.
  * @NOTE This function only does the loading and preliminary parsing.
  * Some clients might need their own parsing business rules so this might need to factor into things.
  * We want to keep everything as modular as possible to allow for this future proofing flexibility.
- * @param  {[String]} pathAndFilename The path and file name of the CSV file that should be loaded and parsed into JSON objects.
- * @return {[Object]} The JSON object as it was loaded from the file with minimal to no additional processing.
+ * @param {string} pathAndFilename The path and file name of the CSV file that should be loaded and parsed into JSON objects.
+ * @return {object} The JSON object as it was loaded from the file with minimal to no additional processing.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -80,12 +80,12 @@ function getCsvData(pathAndFilename) {
 };
 
 /**
- * @name readDirectoryContents
+ * @function readDirectoryContents
  * @description This function acts as a wrapper for calling readDirectorySynchronously since that function is recursive.
  * Also that function doesn't technically return anything, it works with a global variable that
  * needs to be reset after the work is done with it. So these are the things that this wrapper function can do.
- * @param  {[String]} directory The path that needs to be scanned.
- * @return {[Object]} An object containing an array of all of the files in the folder and all sub-folders.
+ * @param {string} directory The path that needs to be scanned.
+ * @return {object} An object containing an array of all of the files in the folder and all sub-folders.
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
@@ -105,10 +105,10 @@ function readDirectoryContents(directory) {
 };
 
 /**
- * @name readDirectorySynchronously
+ * @function readDirectorySynchronously
  * @description Recursively parses through all the sub-folders in a given path and loads all of the files contained in each sub-folder into a map.
- * @param  {[String]} directory The system path that should be scanned recursively for files.
- * @return {[Object]} A map of all the files contained in all levels of the specified path in all the folders and sub-folders.
+ * @param {string} directory The system path that should be scanned recursively for files.
+ * @return {object} A map of all the files contained in all levels of the specified path in all the folders and sub-folders.
  * @NOTE The function doesn't actually return anything, all the file data is stored in an external data collection.
  * @author wn050
  * @reference https://stackoverflow.com/questions/41462606/get-all-files-recursively-in-directores-nodejs
@@ -138,11 +138,11 @@ function readDirectorySynchronously(directory) {
 };
 
 /**
- * @name copyAllFilesAndFoldersFromFolderToFolder
+ * @function copyAllFilesAndFoldersFromFolderToFolder
  * @description Copies all of the files and folders recursively from the source folder to the destination folder.
- * @param  {[String]} sourceFolder The full source path where files and folders should be copied from.
- * @param  {[String]} destinationFolder The full destination path where files and folders should be copied.
- * @return {[Boolean]} A TRUE or FALSE to indicate if the full copy process is successful or not.
+ * @param {string} sourceFolder The full source path where files and folders should be copied from.
+ * @param {string} destinationFolder The full destination path where files and folders should be copied.
+ * @return {boolean} A TRUE or FALSE to indicate if the full copy process is successful or not.
  * @author Seth Hollingsead
  * @date 2020/05/29
  * @NOTE: This is mainly used by the build system to execute a copy process for the
@@ -173,12 +173,12 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
 };
 
 /**
- * @name buildReleasePackage
+ * @function buildReleasePackage
  * @description Add all the files from the sourceFolder into a zip file and
  * give a name to the file for the current date-time and release version, saving to the destination folder.
- * @param  {[String]} sourceFolder The folder that should be packaged up for the release zip file.
- * @param  {[String]} destinationFolder The folder where the zip file release package should be saved.
- * @return {[Boolean]} A TRUE or FALSE to indicate if the release package process is successful or not.
+ * @param {string} sourceFolder The folder that should be packaged up for the release zip file.
+ * @param {string} destinationFolder The folder where the zip file release package should be saved.
+ * @return {boolean} A TRUE or FALSE to indicate if the release package process is successful or not.
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
@@ -251,10 +251,10 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 };
 
 /**
- * @name cleanRootPath
+ * @function cleanRootPath
  * @description Takes the application root path and cleans it to give a real root path,
  * or top-level folder path for the application.
- * @return {[String]} The real root path or top-level path for the application.
+ * @return {string} The real root path or top-level path for the application.
  * @NOTE This has been problematic because often many of the init functions are contained in lower level folders,
  * not at the top-level. This gives much greater level of organization to the over all project and
  * helps with scalability & reusability.
@@ -277,13 +277,13 @@ function cleanRootPath() {
 };
 
 /**
- * @name copyFileSync
+ * @function copyFileSync
  * @description Reads files from the source and copies them to the target.
- * @param  {[String]} source The source file that should be copied (read and then re-written to the destination).
- * @param  {[String]} target The target file that should be saved to.
+ * @param {string} source The source file that should be copied (read and then re-written to the destination).
+ * @param {string} target The target file that should be saved to.
  * @author Simon Zyx
  * @date 2014/09/25
- * @source https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js
+ * {@link https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js}
  * @NOTE: This code is not actually coping the files, it is reading them and re-writing them to the target.
  * However, it should suffice for our needs. Meta-data in this case is not all that critical
  * since the original file is more important, and this is really just about the deployment of a build-release.
@@ -316,13 +316,14 @@ function copyFileSync(source, target) {
 };
 
 /**
- * @name copyFolderRecursiveSync
+ * @function copyFolderRecursiveSync
  * @description Copies a folder and all of its files and sub-folders and sub-files recursively.
- * @param  {[String]} source The source path where all files and folders should be copied from.
- * @param  {[String]} target The target path where all the files and folders should be copied to.
+ * @param {string} source The source path where all files and folders should be copied from.
+ * @param {string} target The target path where all the files and folders should be copied to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the copy operation was a success or not.
  * @author Simon Zyx
  * @date 2014/09/25
- * @source https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js
+ * {@link https://stackoverflow.com/questions/13786160/copy-folder-recursively-in-node-js}
  * @NOTE: This code is not actually coping the files, it is reading them and re-writing them to the target.
  * However, it should suffice for our needs. Meta-data in this case is not all that critical
  * since the original file is more important, and this is really just about the deployment of a build-release.
@@ -337,7 +338,8 @@ function copyFolderRecursiveSync(source, target) {
   var files = [];
 
   // Check if folder needs to be created or integrated
-  var targetFolder = target; // = path.join(target, path.basename(source));
+  // var targetFolder = target; 
+  var targetFolder = path.join(target, path.basename(source));
   if (!fs.existsSync(targetFolder)) {
     try {
       fs.mkdirSync(targetFolder);

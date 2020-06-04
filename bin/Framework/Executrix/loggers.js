@@ -25,15 +25,16 @@ var D = require('../Resources/data');
 
 var fs = require('fs');
 /**
- * @name consoleLog
+ * @function consoleLog
  * @description compares the class path to a series of configuration settings to determine
  * if we should log to the console or not.
  * Also can provisionally log to a log file as well since the console
  * is technically a transient data output.
  * @NOTE When it comes to dumping large amounts of data out of a script the console will not do,
  * and dumping data to an output log file is critical to debugging certain tests and workflows.
- * @param {[String]} classPath The class path for the caller of this funciton file.function or class.method.
- * @param {[String]} message The message or data contents that should be dumped to the output.
+ * @param {string} classPath The class path for the caller of this funciton file.function or class.method.
+ * @param {string} message The message or data contents that should be dumped to the output.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/03/11
  */
@@ -66,15 +67,16 @@ function consoleLog(classPath, message) {
 
 ;
 /**
- * @name consoleLogProcess
+ * @function consoleLogProcess
  * @description A function to refactor functionality that will print a message to a log file and the console, or just the console.
  * The output depends on if there was a txt log file specified or not.
- * @param  {[Boolean]} debugSetting A TRUE or FALSE value to indicate if the log action is enabled or not.
- * @param  {[String]} logFile The path to the log file where the message should be logged.
- * @param  {[String]} classPath The class path for the caller of this function file.function or class.method.
- * @param  {[String]} message The message or data contents that should be dumped to the output (log file and/or console).
- * @param  {[Boolean]} loggingToFileAndConsole A TRUE or FALSE value to indicate if the log should be done to the specified log file and the console.
+ * @param {boolean} debugSetting A TRUE or FALSE value to indicate if the log action is enabled or not.
+ * @param {string} logFile The path to the log file where the message should be logged.
+ * @param {string} classPath The class path for the caller of this function file.function or class.method.
+ * @param {string} message The message or data contents that should be dumped to the output (log file and/or console).
+ * @param {boolean} loggingToFileAndConsole A TRUE or FALSE value to indicate if the log should be done to the specified log file and the console.
  * If no log file is specified by the caller/settings system then this will be FALSE and only the console will be logged.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/27
  */
@@ -148,12 +150,12 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
 
 ;
 /**
- * @name validMessage
+ * @function validMessage
  * @description Looks at the parsed / processed output message and the original message
  * to determine if the message is a valid message to dump to the console and/or the log file (if specified).
- * @param  {[String/Integer/Boolean/Object]} outputMessage The message that has been parsed/processed.
- * @param  {[String/Integer/Boolean/Object]} originalMessage The original message passed in before processing/parsing.
- * @return {[Boolean]} A TRUE or FALSE to indicate if the output message should be dumped to the log file and/or the console.
+ * @param {string|integer|boolean|object} outputMessage The message that has been parsed/processed.
+ * @param {string|integer|boolean|object} originalMessage The original message passed in before processing/parsing.
+ * @return {boolean} A TRUE or FALSE to indicate if the output message should be dumped to the log file and/or the console.
  * @author Seth Hollingsead
  * @date 2020/05/27
  */
@@ -183,12 +185,12 @@ function validMessage(outputMessage, originalMessage) {
 
 ;
 /**
- * @name parseClassPath
+ * @function parseClassPath
  * @description parses the class path and message pulling it apart for logging and looking at custom debug settings.
- * @param {[String]} logFile The file name and path to the log file were the data should be printed.
- * @param {[String]} classPath The class path for the caller of this funciton file.function or class.method.
- * @param {[String]} message The message or data contents that should be dumped to the output.
- * @return {[String]} Returns the message that should be printed out to the console and logged to the log file.
+ * @param {string} logFile The file name and path to the log file were the data should be printed.
+ * @param {string} classPath The class path for the caller of this funciton file.function or class.method.
+ * @param {string} message The message or data contents that should be dumped to the output.
+ * @return {string} Returns the message that should be printed out to the console and logged to the log file.
  * @author Seth Hollingsead
  * @date 2020/03/26
  */
@@ -236,10 +238,11 @@ function parseClassPath(logFile, classPath, message) {
 
 ;
 /**
- * @name printMessageToFile
+ * @function printMessageToFile
  * @description Prints a message to a log text file.
- * @param {[String]} file The file path and file name where message data should be printed.
- * @param {[String]} message The message that should be logged to the log file if the specific flag is true.
+ * @param {string} file The file path and file name where message data should be printed.
+ * @param {string} message The message that should be logged to the log file if the specific flag is true.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/03/23
  */

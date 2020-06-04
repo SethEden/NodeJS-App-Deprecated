@@ -7,10 +7,10 @@ import * as s from '../Constants/system.constants';
 var path = require('path');
 
 /**
- * @name getNowMoment
+ * @function getNowMoment
  * @description Returns a time stamp string formatted according to the input formatting string.
- * @param  {[String]} formatting The formatting string, that tells moment in what format to return the value for the day, month, year, hour, minute, and second.
- * @return {[String]} A time stamp string that has been formatted according to the input format.
+ * @param {string} formatting The formatting string, that tells moment in what format to return the value for the day, month, year, hour, minute, and second.
+ * @return {string} A time stamp string that has been formatted according to the input format.
  * @author Seth Hollingsead
  * @date 2020/05/21
  */
@@ -26,11 +26,11 @@ function getNowMoment(formatting) {
 };
 
 /**
- * @name reformatDeltaTime
+ * @function reformatDeltaTime
  * @description Converts a time interval into a different kind of format.
- * @param  {[Integer]} deltaTime A time interval measured in microseconds.
- * @param {[String]} format The formatting template that should be used to format the time interval.
- * @return {[String]} A time interval formatted according to the input format template string.
+ * @param {integer} deltaTime A time interval measured in microseconds.
+ * @param {string} format The formatting template that should be used to format the time interval.
+ * @return {string} A time interval formatted according to the input format template string.
  * @author Seth Hollingsead
  * @date 2020/05/21
  */

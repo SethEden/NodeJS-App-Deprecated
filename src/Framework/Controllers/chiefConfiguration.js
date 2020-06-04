@@ -9,9 +9,10 @@ var path = require('path');
 var D = require('../Resources/data');
 
 /**
- * @name setupConfiguration
+ * @function setupConfiguration
  * @description Sets up all of the system configuration data.
- * @param  {[String]} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
+ * @param {string} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JavaScript objects.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/21
  * @NOTE: The following code that uses the loggers.ConsoleLog will never work,
@@ -44,10 +45,11 @@ function setupConfiguration(pathAndFilename) {
 };
 
 /**
- * @name parseLoadedConfigurationData
+ * @function parseLoadedConfigurationData
  * @description Parses through all of the configuration data that we just loaded from the XML files and
  * adds that data to the correct data-structures in the d.[Configuration] data hive.
- * @param  {[Object]} allConfigurationData A JSON data structure object that contains all configuration meta-data
+ * @param {object} allConfigurationData A JSON data structure object that contains all configuration meta-data
+ * @return {void}
  * loaded from the Configuration XML files.
  * @author Seth Hollingsead
  * @date 2020/05/21
@@ -192,11 +194,11 @@ function parseLoadedConfigurationData(allConfigurationData) {
 };
 
 /**
- * @name processConfigurationRules
+ * @function processConfigurationRules
  * @description Processes a name and value to execute required code and convert string values to actual data objects needed by the configuration system.
- * @param  {[String]} name The name of the configuration variable.
- * @param  {[String]} value The value of the configuration variable.
- * @return {[String/Boolean/Integer/Fload/Object]} A value that is appropriately processed.
+ * @param {string} name The name of the configuration variable.
+ * @param {string} value The value of the configuration variable.
+ * @return {string|boolean|integer|float|object]} A value that is appropriately processed.
  * @author Seth Hollingsead
  * @date 2020/05/21
  * @NOTE: The following code that uses the loggers.ConsoleLog will never work,

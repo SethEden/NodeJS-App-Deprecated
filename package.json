@@ -1,6 +1,6 @@
 {
   "name": "NodeJS-App",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "src/Application/NodeJS-App/application.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node bin/Application/NodeJS-App/application.js",
     "vers": "standard-version -m \"chore(release) version %s [ci skip\"]",
-    "start": "babel-node src/Application/NodeJS-App/application.js"
+    "start": "babel-node src/Application/NodeJS-App/application.js",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "bestzip": "^2.1.5",
+    "jsdoc": "^3.6.4",
     "standard-version": "^8.0.0"
   },
   "dependencies": {

@@ -19,13 +19,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var path = require('path');
 /**
- * @name processRules
+ * @function processRules
  * @description Parse the given input Object/String/Integer/Data/Function through a set of business rules,
  * (Some rules do not support chaining); where the rules are defined in the input rules map.
- * @param  {[String/Integer/Object/Function]} inputData The primary input data that should be processed by the business rule.
- * @param  {[String/Integer/Boolean/Map]} inputMetaData Additional meta-data that should be used when processing the business rule.
- * @param  {[Map]} rulesToExecute The name(s) of the rule(s) that should be executed for modding the input data.
- * @return {[String/Integer/Object/Function]} A modified data Object/String/Integer/Boolean/Function
+ * @param {string|integer|object|function} inputData The primary input data that should be processed by the business rule.
+ * @param {string|integer|boolean|map} inputMetaData Additional meta-data that should be used when processing the business rule.
+ * @param {map} rulesToExecute The name(s) of the rule(s) that should be executed for modding the input data.
+ * @return {string|integer|object|function]} A modified data Object/String/Integer/Boolean/Function
  * where the data has been modified based on the input data, input meta-data, and business rule that was executed.
  * @author Seth Hollingsead
  * @date 2020/05/19

@@ -39,11 +39,11 @@ var path = require('path'); // NOTE: The original implementation of the followin
 // Once we have identified which API is the most efficient this code can be decreased by half and we can get rid of the obsolete API.
 
 /**
- * @name generateRandomMixedCaseTextByLength1
+ * @function generateRandomMixedCaseTextByLength1
  * @description Parse the input string, and determine how many mixed case alphabetic characters should be generated, generate them and string them together.
- * @param  {[String]} inputData The string that contains a number or how many randomly generated mixed case alphabetic characters should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated mixed case letters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The string that contains a number or how many randomly generated mixed case alphabetic characters should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated mixed case letters where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -74,11 +74,11 @@ var generateRandomMixedCaseTextByLength1 = function generateRandomMixedCaseTextB
   return returnData;
 };
 /**
- * @name generateRandomMixedCaseTextByLength2
+ * @function generateRandomMixedCaseTextByLength2
  * @description Parse the input string, and determine how many mixed case alphabetic characters should be generated, generate them and string them together.
- * @param  {[String]} inputData The string that contains a number or how many randomly generated mixed case alphabetic characters should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated mixed case letters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The string that contains a number or how many randomly generated mixed case alphabetic characters should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated mixed case letters where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -111,11 +111,11 @@ var generateRandomMixedCaseTextByLength2 = function generateRandomMixedCaseTextB
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseTextByLength1
+ * @function generateRandomUpperCaseTextByLength1
  * @description Parse the input string, and determine how many upper case alphabetic characters should be generated, generate them and string them together.
- * @param  {[String]} inputData The string that contains a number for how many randomly generated upper case alphabetic characters should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated upper case letters where the length of the string is defined by the input parameter
+ * @param {string} inputData The string that contains a number for how many randomly generated upper case alphabetic characters should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated upper case letters where the length of the string is defined by the input parameter
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -148,11 +148,11 @@ var generateRandomUpperCaseTextByLength1 = function generateRandomUpperCaseTextB
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseTextByLength2
+ * @function generateRandomUpperCaseTextByLength2
  * @description Parse the input string, and determine how many upper case alphabetic characters should be generated, generate them and string them together.
- * @param  {[String]} inputData The string that contains a number for how many randomly generated upper case alphabetic characters should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated upper case letters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The string that contains a number for how many randomly generated upper case alphabetic characters should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated upper case letters where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -185,11 +185,11 @@ var generateRandomUpperCaseTextByLength2 = function generateRandomUpperCaseTextB
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseTextByLength1
+ * @function generateRandomLowerCaseTextByLength1
  * @description Parse the input string, and determine how many lower case alphabetic characters should be generated, generate them and string them together.
- * @param  {[String]} inputData The string that contains a number for how many randomly generated lower case alphabetic characters that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated lower case letters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The string that contains a number for how many randomly generated lower case alphabetic characters that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated lower case letters where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -222,11 +222,11 @@ var generateRandomLowerCaseTextByLength1 = function generateRandomLowerCaseTextB
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseTextByLength2
+ * @function generateRandomLowerCaseTextByLength2
  * @description Parse the input string, and determine how many lower case alphabetic characters should be generated, generate them and string them together.
- * @param  {[String]} inputData The string that contains a number for how many randomly generated lower case alphabetic characters that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated lower case letters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The string that contains a number for how many randomly generated lower case alphabetic characters that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated lower case letters where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -259,11 +259,11 @@ var generateRandomLowerCaseTextByLength2 = function generateRandomLowerCaseTextB
   return returnData;
 };
 /**
- * @name generateRandomMixedCaseTextWithSpecialCharactersByLength1
+ * @function generateRandomMixedCaseTextWithSpecialCharactersByLength1
  * @description Generate the specified number of random mixed case letters and/or special characters and string them together.
- * @param  {[String]} inputData The number of randomly generated mixed case letters and/or special characters to generate the output string.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated mixed case letters and special characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated mixed case letters and/or special characters to generate the output string.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated mixed case letters and special characters where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -296,11 +296,11 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function generat
   return returnData;
 };
 /**
- * @name generateRandomMixedCaseTextWithSpecialCharactersByLength2
+ * @function generateRandomMixedCaseTextWithSpecialCharactersByLength2
  * @description Generate the specified number of random mixed case letters and/or special characters and string them together.
- * @param  {[String]} inputData The number of randomly generated mixed case letters and/or special characters to generate the output string.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated mixed case letters and special characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated mixed case letters and/or special characters to generate the output string.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated mixed case letters and special characters where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -333,11 +333,11 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function generat
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseTextWithSpecialCharactersByLength1
+ * @function generateRandomUpperCaseTextWithSpecialCharactersByLength1
  * @description Generate the specified number of random upper case letters and/or special characters and string them together.
- * @param  {[String]} inputData The number of randomly generated upper case letters and/or special characters to generate.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generate process.
- * @return {[String]} A string of randomly generated upper case letters and special characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated upper case letters and/or special characters to generate.
+ * @param {string} inputMetaData The list of special characters that should be used during the generate process.
+ * @return {string} A string of randomly generated upper case letters and special characters where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -370,11 +370,11 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function generat
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseTextWithSpecialCharactersByLength2
+ * @function generateRandomUpperCaseTextWithSpecialCharactersByLength2
  * @description Generate the specified number of random upper case letters and/or special characters and string them together.
- * @param  {[String]} inputData The number of randomly generated upper case letters and/or special characters to generate.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generate process.
- * @return {[String]} A string of randomly generated upper case letters and special characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated upper case letters and/or special characters to generate.
+ * @param {string} inputMetaData The list of special characters that should be used during the generate process.
+ * @return {string} A string of randomly generated upper case letters and special characters where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -407,11 +407,11 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function generat
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseTextWithSpecialCharactersByLength1
+ * @function generateRandomLowerCaseTextWithSpecialCharactersByLength1
  * @description Generate the specified number of random lower case letters and/or special characters and string them together.
- * @param  {[String]} inputData The number of randomly generated lower case letters and/or special characters to generate.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated lower case letters and special characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated lower case letters and/or special characters to generate.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated lower case letters and special characters where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -444,11 +444,11 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function generat
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseTextWithSpecialCharactersByLength2
+ * @function generateRandomLowerCaseTextWithSpecialCharactersByLength2
  * @description Generate the specified number of random lower case letters and/or special characters and string them together.
- * @param  {[String]} inputData The number of randomly generated lower case letters and/or special characters to generate.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated lower case letters and special characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated lower case letters and/or special characters to generate.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated lower case letters and special characters where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -481,11 +481,11 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function generat
   return returnData;
 };
 /**
- * @name generateRandomMixedCaseAlphaNumericCodeByLength1
+ * @function generateRandomMixedCaseAlphaNumericCodeByLength1
  * @description Generate the specified number of random mixed case letters and/or numeric characters and string them together.
- * @param  {[String]} inputData The number of randomly generated mixed case letters and/or numbers that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated mixed case letters and numbers where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated mixed case letters and/or numbers that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated mixed case letters and numbers where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -518,11 +518,11 @@ var generateRandomMixedCaseAlphaNumericCodeByLength1 = function generateRandomMi
   return returnData;
 };
 /**
- * @name generateRandomMixedCaseAlphaNumericCodeByLength2
+ * @function generateRandomMixedCaseAlphaNumericCodeByLength2
  * @description Generate the specified number of random mixed case letters and/or numeric characters and string them together.
- * @param  {[String]} inputData The number of randomly generated mixed case letters and/or numbers that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated mixed case letters and numbers where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated mixed case letters and/or numbers that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated mixed case letters and numbers where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -555,11 +555,11 @@ var generateRandomMixedCaseAlphaNumericCodeByLength2 = function generateRandomMi
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseAlphaNumericCodeByLength1
+ * @function generateRandomUpperCaseAlphaNumericCodeByLength1
  * @description Generate the specified number of random upper case letters and/or numeric characters and string them together.
- * @param  {[String]} inputData The string that contains a number for how many randomly generated upper case letters and/or numbers that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated upper case letters and numbers where the length of the string is defined by the input parameter.
+ * @param {string} inputData The string that contains a number for how many randomly generated upper case letters and/or numbers that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated upper case letters and numbers where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -592,11 +592,11 @@ var generateRandomUpperCaseAlphaNumericCodeByLength1 = function generateRandomUp
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseAlphaNumericCodeByLength2
+ * @function generateRandomUpperCaseAlphaNumericCodeByLength2
  * @description Generate the specified number of random upper case letters and/or numeric characters and string them together.
- * @param  {[String]} inputData The string that contains a number for how many randomly generated upper case letters and/or numbers that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated upper case letters and numbers where the length of the string is defined by the input parameter.
+ * @param {string} inputData The string that contains a number for how many randomly generated upper case letters and/or numbers that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated upper case letters and numbers where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -629,11 +629,11 @@ var generateRandomUpperCaseAlphaNumericCodeByLength2 = function generateRandomUp
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseAlphaNumericCodeByLength1
+ * @function generateRandomLowerCaseAlphaNumericCodeByLength1
  * @description Generate the specified number of random lower case letters and/or numeric characters and string them together.
- * @param  {[String]} inputData The number of randomly generated lower case letters and/or numbers that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated lower case letters and numbers where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated lower case letters and/or numbers that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated lower case letters and numbers where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -666,11 +666,11 @@ var generateRandomLowerCaseAlphaNumericCodeByLength1 = function generateRandomLo
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseAlphaNumericCodeByLength2
+ * @function generateRandomLowerCaseAlphaNumericCodeByLength2
  * @description Generate the specified number of random lower case letters and/or numeric characters and string them together.
- * @param  {[String]} inputData The number of randomly generated lower case letters and/or numbers that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated lower case letters and numbers where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated lower case letters and/or numbers that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated lower case letters and numbers where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -703,11 +703,11 @@ var generateRandomLowerCaseAlphaNumericCodeByLength2 = function generateRandomLo
   return returnData;
 };
 /**
- * @name generateRandomNumericCodeByLength1
+ * @function generateRandomNumericCodeByLength1
  * @description Generate the specified number of random numberic characters and string them together.
- * @param  {[String]} inputData The number of randomly generated numeric characters that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated numeric characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated numeric characters that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated numeric characters where the length of the string is defined by the input parameter.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -740,11 +740,11 @@ var generateRandomNumericCodeByLength1 = function generateRandomNumericCodeByLen
   return returnData;
 };
 /**
- * @name generateRandomNumericCodeByLength2
+ * @function generateRandomNumericCodeByLength2
  * @description Generate the specified number of random numberic characters and string them together.
- * @param  {[String]} inputData The number of randomly generated numeric characters that should be generated.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A string of randomly generated numeric characters where the length of the string is defined by the input parameter.
+ * @param {string} inputData The number of randomly generated numeric characters that should be generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A string of randomly generated numeric characters where the length of the string is defined by the input parameter.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -777,12 +777,12 @@ var generateRandomNumericCodeByLength2 = function generateRandomNumericCodeByLen
   return returnData;
 };
 /**
- * @name generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1
+ * @function generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1
  * @description Generate a random selection of mixed case letters, numeric characters and special characters from a list of allowable special characters,
  * should be generated; generate them and string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated letters, numeric characters and special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated letters, numeric characters and special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated mixed case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -815,12 +815,12 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
   return returnData;
 };
 /**
- * @name generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2
+ * @function generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2
  * @description Generate a random selection of mixed case letters, numeric characters and special characters from a list of allowable special characters,
  * should be generated; generate them and string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated letters, numeric characters and special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated letters, numeric characters and special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated mixed case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -853,12 +853,12 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1
+ * @function generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1
  * @description Generate a random selection of upper case letters, numeric characters and special characters from a list of alloable special characters,
  * should be generated; generate them and string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated upper case letters, numeric characters and special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[Strhing]} A string of randomly generated upper case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated upper case letters, numeric characters and special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated upper case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -891,12 +891,12 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
   return returnData;
 };
 /**
- * @name generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2
+ * @function generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2
  * @description Generate a random selection of upper case letters, numeric characters and special characters from a list of alloable special characters,
  * should be generated; generate them and string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated upper case letters, numeric characters and special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[Strhing]} A string of randomly generated upper case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated upper case letters, numeric characters and special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated upper case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -929,12 +929,12 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1
+ * @function generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1
  * @description Generate a random selection of lower case letters, numeric characters and special characters from a list of allowable special characters,
  * should be generated, generate them ans string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated lower case letters, numeric characters and special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated lower case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated lower case letters, numeric characters and special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated lower case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -967,12 +967,12 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
   return returnData;
 };
 /**
- * @name generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2
+ * @function generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2
  * @description Generate a random selection of lower case letters, numeric characters and special characters from a list of allowable special characters,
  * should be generated, generate them ans string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated lower case letters, numeric characters and special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated lower case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated lower case letters, numeric characters and special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated lower case alpha numeric characters, and special characters where the length of the string is defined as one of the input parameters.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -1005,11 +1005,11 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
   return returnData;
 };
 /**
- * @name generateRandomSpecialCharacterCodeByLength1
+ * @function generateRandomSpecialCharacterCodeByLength1
  * @description Generate a random selection of characters from the input allowable alphabet of characters, generate them and string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated characters from the list of allowable special characters that are passed in where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated characters from the list of allowable special characters that are passed in where the length of the string is defined as one of the input parameters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/04
@@ -1042,11 +1042,11 @@ var generateRandomSpecialCharacterCodeByLength1 = function generateRandomSpecial
   return returnData;
 };
 /**
- * @name generateRandomSpecialCharacterCodeByLength2
+ * @function generateRandomSpecialCharacterCodeByLength2
  * @description Generate a random selection of characters from the input allowable alphabet of characters, generate them and string them together to the specified length.
- * @param  {[String]} inputData The number of randomly generated special characters that should be generated.
- * @param  {[String]} inputMetaData The list of special characters that should be used during the generation process.
- * @return {[String]} A string of randomly generated characters from the list of allowable special characters that are passed in where the length of the string is defined as one of the input parameters.
+ * @param {string} inputData The number of randomly generated special characters that should be generated.
+ * @param {string} inputMetaData The list of special characters that should be used during the generation process.
+ * @return {string} A string of randomly generated characters from the list of allowable special characters that are passed in where the length of the string is defined as one of the input parameters.
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -1079,15 +1079,15 @@ var generateRandomSpecialCharacterCodeByLength2 = function generateRandomSpecial
   return returnData;
 };
 /**
- * @name generateValidEmail1
+ * @function generateValidEmail1
  * @description Generate a valid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[String]} inputData The string that contains the number of characters to generate.
- * @param  {[Map]} inputMetaData A map with multiple input parameters:
+ * @param {string} inputData The string that contains the number of characters to generate.
+ * @param {map} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email: "a@b.com".
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
@@ -1163,15 +1163,15 @@ var generateValidEmail1 = function generateValidEmail1(inputData, inputMetaData)
   return returnData;
 };
 /**
- * @name generateValidEmail2
+ * @function generateValidEmail2
  * @description Generate a valid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[String]} inputData The string that contains the number of characters to generate.
- * @param  {[Map]} inputMetaData A map with multiple input parameters:
+ * @param {string} inputData The string that contains the number of characters to generate.
+ * @param {map} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email: "a@b.com".
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
@@ -1247,15 +1247,15 @@ var generateValidEmail2 = function generateValidEmail2(inputData, inputMetaData)
   return returnData;
 };
 /**
- * @name generateInvalidEmail1
+ * @function generateInvalidEmail1
  * @description Generate an invalid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated, generate them and string them together to the specified length.
- * @param  {[String]} inputData The string that contains the number of characters to generate.
- * @param  {[Map]} inputMetaData A map with multiple input parameters:
+ * @param {string} inputData The string that contains the number of characters to generate.
+ * @param {map} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and
  * optionally special characters where the length of the string is also defined as one of the input parameters, formeatted as an email: "a@b.com".
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
@@ -1331,15 +1331,15 @@ var generateInvalidEmail1 = function generateInvalidEmail1(inputData, inputMetaD
   return returnData;
 };
 /**
- * @name generateInvalidEmail2
+ * @function generateInvalidEmail2
  * @description Generate an invalid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated, generate them and string them together to the specified length.
- * @param  {[String]} inputData The string that contains the number of characters to generate.
- * @param  {[Map]} inputMetaData A map with multiple input parameters:
+ * @param {string} inputData The string that contains the number of characters to generate.
+ * @param {map} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and
  * optionally special characters where the length of the string is also defined as one of the input parameters, formeatted as an email: "a@b.com".
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
@@ -1415,14 +1415,14 @@ var generateInvalidEmail2 = function generateInvalidEmail2(inputData, inputMetaD
   return returnData;
 };
 /**
- * @name generateValidEmailWithSpecificSuffixAndDomainName1
+ * @function generateValidEmailWithSpecificSuffixAndDomainName1
  * @description Generate a valid eamil composed of a random selection of mmixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
- * @param  {[String]} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
+ * @param {string} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email: "a@b.com".
  * @NOTE The number of characters in the {@code specifiedSuffixAndDomain} input variable must not exceed the {j@code numberofCharactersToGenerate + 2} or the function/rule will return an empty string.
  * @NOTE: OLD implementation.
@@ -1477,14 +1477,14 @@ var generateValidEmailWithSpecificSuffixAndDomainName1 = function generateValidE
   return returnData;
 };
 /**
- * @name generateValidEmailWithSpecificSuffixAndDomainName2
+ * @function generateValidEmailWithSpecificSuffixAndDomainName2
  * @description Generate a valid eamil composed of a random selection of mmixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
- * @param  {[String]} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
+ * @param {string} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email: "a@b.com".
  * @NOTE The number of characters in the {@code specifiedSuffixAndDomain} input variable must not exceed the {j@code numberofCharactersToGenerate + 2} or the function/rule will return an empty string.
  * @NOTE: NEW implementation
@@ -1533,13 +1533,13 @@ var generateValidEmailWithSpecificSuffixAndDomainName2 = function generateValidE
   return returnData;
 };
 /**
- * @name generateRandomValidEmail1
+ * @function generateRandomValidEmail1
  * @description Generate a valid email composed of a random selection of mixed case letters, numeric characters and optional special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email "a@b.com".
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
@@ -1659,13 +1659,13 @@ var generateRandomValidEmail1 = function generateRandomValidEmail1(numberOfChara
   return returnData;
 };
 /**
- * @name generateRandomValidEmail2
+ * @function generateRandomValidEmail2
  * @description Generate a valid email composed of a random selection of mixed case letters, numeric characters and optional special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email "a@b.com".
  * @NOTE: NEW implementation
  * @author Seth Hollingsead
@@ -1782,14 +1782,14 @@ var generateRandomValidEmail2 = function generateRandomValidEmail2(numberOfChara
   return returnData;
 };
 /**
- * @name generateInvalidEmailWithSpecificSuffixAndDomainName1
+ * @function generateInvalidEmailWithSpecificSuffixAndDomainName1
  * @description Generate an invalid email composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TREUE}.
- * @param  {[String]} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TREUE}.
+ * @param {string} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email "a@b.com".
  * @NOTE The number of characters in the {@code specifiedSuffixAndDomain} input variable must not exceed the {@code numberofCharactersToGenerate + 2} or the function/rule will return an empty string.
  * @NOTE: OLD implementation.
@@ -1898,14 +1898,14 @@ var generateInvalidEmailWithSpecificSuffixAndDomainName1 = function generateInva
   return returnData;
 };
 /**
- * @name generateInvalidEmailWithSpecificSuffixAndDomainName2
+ * @function generateInvalidEmailWithSpecificSuffixAndDomainName2
  * @description Generate an invalid email composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TREUE}.
- * @param  {[String]} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TREUE}.
+ * @param {string} specifiedSuffixAndDomain The specified suffix and domain to use after the "@" symbol in the email being generated, example: "Yahoo.com".
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email "a@b.com".
  * @NOTE The number of characters in the {@code specifiedSuffixAndDomain} input variable must not exceed the {@code numberofCharactersToGenerate + 2} or the function/rule will return an empty string.
  * @NOTE: NEW implementation
@@ -2018,13 +2018,13 @@ var generateInvalidEmailWithSpecificSuffixAndDomainName2 = function generateInva
   return returnData;
 };
 /**
- * @name generateRandomInvalidEmail1
+ * @function generateRandomInvalidEmail1
  * @description Generate a valid email composed of a random selection of mixed case letters, numeric characters and optional special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email "a@b.com".
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
@@ -2333,13 +2333,13 @@ var generateRandomInvalidEmail1 = function generateRandomInvalidEmail1(inputData
   return returnData;
 };
 /**
- * @name generateRandomInvalidEmail2
+ * @function generateRandomInvalidEmail2
  * @description Generate a valid email composed of a random selection of mixed case letters, numeric characters and optional special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
- * @param  {[Integer]} numberOfCharactersToGenerate The number of characters to generate as an integer.
- * @param  {[Boolean]} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
- * @param  {[String]} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
- * @return {[String]} A string of randomly generated mixed case alpha numeric characters and optionally special characters
+ * @param {integer} numberOfCharactersToGenerate The number of characters to generate as an integer.
+ * @param {boolean} generateSpecialCharacters A Boolean value to indicate if special characters should be included when randomly generating characters for the output string.
+ * @param {string} allowableSpecialCharacters The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} Boolean value is set to {@code TRUE}.
+ * @return {string} A string of randomly generated mixed case alpha numeric characters and optionally special characters
  * where the length of the string is also defined as one of the input parameters, formatted as an email "a@b.com".
  * @NOTE: NEW implementation
  * @author Seth Hollingsead

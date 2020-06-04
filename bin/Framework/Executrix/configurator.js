@@ -23,10 +23,11 @@ var path = require('path'); // NOTE: This file is needed to keep these lower lev
 // Because having these functions in the chiefConfiguration can cause a circular dependency.
 
 /**
- * @name setConfigurationSetting
+ * @function setConfigurationSetting
  * @description Sets a configuration setting on the configuration sub-tree data structure stored on t.ctx.
- * @param {[String]} configurationName The key of the configuration setting.
- * @param {[String]} configurationValue The value of the configuration setting.
+ * @param {string} configurationName The key of the configuration setting.
+ * @param {string} configurationValue The value of the configuration setting.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/02/03
  * @NOTE We cannot do the usual logging here with the loggers.
@@ -50,10 +51,10 @@ function setConfigurationSetting(configurationName, configurationValue) {
 
 ;
 /**
- * @name getConfigurationSetting
+ * @function getConfigurationSetting
  * @description Gets a configuration value based on the configuration name.
- * @param  {[String]} configurationName The key of the configuration setting.
- * @return {[String/Integer/Boolean]} The value of whatever was stored in the t.ctx[Configuration] sub-tree.
+ * @param {string} configurationName The key of the configuration setting.
+ * @return {string|integer|boolean]} The value of whatever was stored in the t.ctx[Configuration] sub-tree.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */

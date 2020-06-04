@@ -31,7 +31,7 @@ var cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash + cResourc
 // Binary Resources Path
 
 exports.cSourceResourcesPath = cSourceResourcesPath;
-var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 
 exports.cBinaryResourcesPath = cBinaryResourcesPath;
 var cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;

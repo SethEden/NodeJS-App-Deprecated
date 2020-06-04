@@ -12,8 +12,9 @@ var rootPath = '';
 var copyResult = false;
 
 /**
- * @name bootStrapApplication
+ * @function bootStrapApplication
  * @description Setup all the application data and configuration settings.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/01
  */
@@ -25,12 +26,13 @@ function bootStrapApplicationDeployment() {
 };
 
 /**
- * @name deployApplication
+ * @function deployApplication
  * @description This is the main function to deploy the application.
  * The function copies all non-code files from the src/Application/<MyAppName>/Resources/ folder to the
  * bin/Application/<MyAppName>/Resources/ folder.
  * Finally all the tranpiled code and non-code files are packaged together into a zip file,
  * with the date-time stamp and version number. This forms either a patch or a release.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/01
  */
@@ -53,8 +55,9 @@ function deployApplication() {
 };
 
 /**
- * @name releaseApplication
+ * @function releaseApplication
  * @description Determines if the current version number is higher than the release archive of zip files.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/02
  */

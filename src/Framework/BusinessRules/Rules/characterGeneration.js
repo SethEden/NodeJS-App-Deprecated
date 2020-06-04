@@ -7,11 +7,11 @@ import * as s from '../../Constants/system.constants';
 var path = require('path');
 
 /**
- * @name randomlyGenerateMixedCaseLetterOrSpecialCharacter1
+ * @function randomlyGenerateMixedCaseLetterOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from A-Z, a-z or a random special character from the input list of special characters.
- * @param  {[String]} inputData  The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData  The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -36,11 +36,11 @@ export const randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function(input
 };
 
 /**
- * @name randomlyGenerateMixedCaseLetterOrSpecialCharacter2
+ * @function randomlyGenerateMixedCaseLetterOrSpecialCharacter2
  * @description Randomly generates an alphabetic letter from A-Z, a-z or a random special character from the input list of special characters.
- * @param  {[String]} inputData  The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData  The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -59,11 +59,11 @@ export const randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function(input
 };
 
 /**
- * @name randomlyGenerateUpperCaseLetterOrSpecialCharacter1
+ * @function randomlyGenerateUpperCaseLetterOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from A-Z or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -88,11 +88,11 @@ export const randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function(input
 };
 
 /**
- * @name randomlyGenerateUpperCaseLetterOrSpecialCharacter2
+ * @function randomlyGenerateUpperCaseLetterOrSpecialCharacter2
  * @description Randomly generates an alphabetic letter from A-Z or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -111,11 +111,11 @@ export const randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = function(input
 };
 
 /**
- * @name randomlyGenerateLowerCaseLetterOrSpecialCharacter1
+ * @function randomlyGenerateLowerCaseLetterOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from a-z or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -140,11 +140,11 @@ export const randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function(input
 };
 
 /**
- * @name randomlyGenerateLowerCaseLetterOrSpecialCharacter2
+ * @function randomlyGenerateLowerCaseLetterOrSpecialCharacter2
  * @description Randomly generates an alphabetic letter from a-z or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -163,11 +163,11 @@ export const randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function(input
 };
 
 /**
- * @name randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1
+ * @function randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from A-Z, a-z or a number 0-9 or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randommly returns a random number, a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randommly returns a random number, a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -206,11 +206,11 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = 
 };
 
 /**
- * @name randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2
+ * @function randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2
  * @description Randomly generates an alphabetic letter from A-Z, a-z or a number 0-9 or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randommly returns a random number, a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randommly returns a random number, a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -229,11 +229,11 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = 
 };
 
 /**
- * @name randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1
+ * @function randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from A-Z or a number 0-9 or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random number, a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random number, a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -272,11 +272,11 @@ export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = 
 };
 
 /**
- * @name randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2
+ * @function randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2
  * @description Randomly generates an alphabetic letter from A-Z or a number 0-9 or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randomly returns a random number, a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randomly returns a random number, a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -295,11 +295,11 @@ export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = 
 };
 
 /**
- * @name randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1
+ * @function randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from a-z or a number 0-9 or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randonly returns a random number, a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randonly returns a random number, a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -338,11 +338,11 @@ export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = 
 };
 
 /**
- * @name randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2
+ * @function randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2
  * @description Randomly generates an alphabetic letter from a-z or a number 0-9 or a random special character from the input list of special characters.
- * @param  {[String]} inputData The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Randonly returns a random number, a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Randonly returns a random number, a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -361,11 +361,11 @@ export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = 
 };
 
 /**
- * @name randomlyGenerateMixedCaseAlphaNumericCharacter1
+ * @function randomlyGenerateMixedCaseAlphaNumericCharacter1
  * @description Randomly generates an alpha-numeric code from a-z or A-Z or 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Either a random letter (could be upper case or lower case, which is also random) or a random number.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Either a random letter (could be upper case or lower case, which is also random) or a random number.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -388,11 +388,11 @@ export const randomlyGenerateMixedCaseAlphaNumericCharacter1 = function(inputDat
 };
 
 /**
- * @name randomlyGenerateMixedCaseAlphaNumericCharacter2
+ * @function randomlyGenerateMixedCaseAlphaNumericCharacter2
  * @description Randomly generates an alpha-numeric code from a-z or A-Z or 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Either a random letter (could be upper case or lower case, which is also random) or a random number.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Either a random letter (could be upper case or lower case, which is also random) or a random number.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -411,11 +411,11 @@ export const randomlyGenerateMixedCaseAlphaNumericCharacter2 = function(inputDat
 };
 
 /**
- * @name randomlyGenerateUpperCaseAlphaNumericCharacter1
+ * @function randomlyGenerateUpperCaseAlphaNumericCharacter1
  * @description Randomly generates an alpha-numeric code from A-Z or 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Either a random upper case letter or a random number.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Either a random upper case letter or a random number.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -438,11 +438,11 @@ export const randomlyGenerateUpperCaseAlphaNumericCharacter1 = function(inputDat
 };
 
 /**
- * @name randomlyGenerateUpperCaseAlphaNumericCharacter2
+ * @function randomlyGenerateUpperCaseAlphaNumericCharacter2
  * @description Randomly generates an alpha-numeric code from A-Z or 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Either a random upper case letter or a random number.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Either a random upper case letter or a random number.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -461,11 +461,11 @@ export const randomlyGenerateUpperCaseAlphaNumericCharacter2 = function(inputDat
 };
 
 /**
- * @name randomlyGenerateLowerCaseAlphaNumericCharacter1
+ * @function randomlyGenerateLowerCaseAlphaNumericCharacter1
  * @description Randomly generates an alpha-numeric code from a-z or 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Either a random lower case letter or a random number.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Either a random lower case letter or a random number.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -488,11 +488,11 @@ export const randomlyGenerateLowerCaseAlphaNumericCharacter1 = function(inputDat
 };
 
 /**
- * @name randomlyGenerateLowerCaseAlphaNumericCharacter2
+ * @function randomlyGenerateLowerCaseAlphaNumericCharacter2
  * @description Randomly generates an alpha-numeric code from a-z or 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} Either a random lower case letter or a random number.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} Either a random lower case letter or a random number.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -511,11 +511,11 @@ export const randomlyGenerateLowerCaseAlphaNumericCharacter2 = function(inputDat
 };
 
 /**
- * @name randomlyGenerateNumericCharacter1
+ * @function randomlyGenerateNumericCharacter1
  * @description Randomly generates a string character in the range of 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A single randomly generated string character in the range of 0-9.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A single randomly generated string character in the range of 0-9.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -537,11 +537,11 @@ export const randomlyGenerateNumericCharacter1 = function(inputData, inputMetaDa
 };
 
 /**
- * @name randomlyGenerateNumericCharacter2
+ * @function randomlyGenerateNumericCharacter2
  * @description Randomly generates a string character in the range of 0-9.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A single randomly generated string character in the range of 0-9.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A single randomly generated string character in the range of 0-9.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -560,11 +560,11 @@ export const randomlyGenerateNumericCharacter2 = function(inputData, inputMetaDa
 };
 
 /**
- * @name randomlyGenerateSpecialCharacter1
+ * @function randomlyGenerateSpecialCharacter1
  * @description Randommly select a special character from a list of allowable special characters.
- * @param  {[String]} inputData  The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A special character randomly selected from the input list of allowable special characters.
+ * @param {string} inputData  The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A special character randomly selected from the input list of allowable special characters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -588,11 +588,11 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
 };
 
 /**
- * @name randomlyGenerateSpecialCharacter2
+ * @function randomlyGenerateSpecialCharacter2
  * @description Randommly select a special character from a list of allowable special characters.
- * @param  {[String]} inputData  The list of allowable special characters that should be used to randomly select from.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A special character randomly selected from the input list of allowable special characters.
+ * @param {string} inputData  The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A special character randomly selected from the input list of allowable special characters.
  * @NOTE: NEW implementation.
  * @NOTE This is the same implementation as version 1.
  * @author Seth Hollingsead
@@ -617,14 +617,14 @@ export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaDa
 };
 
 /**
- * @name randomlyGenerateNumberInRange1
+ * @function randomlyGenerateNumberInRange1
  * @description Randomly generates a number between the start-range and end-range.
- * @param  {[String]} inputData A string that contains the number with the minimum value.
- * @param  {[Map]} inputMetaData A map with multiple input parameters:
+ * @param {string} inputData A string that contains the number with the minimum value.
+ * @param {map} inputMetaData A map with multiple input parameters:
  *  maximumValue - A string that contains the number with the maximum value.
  *  includeMaximum - A Boolean value that indicates if the maximum should be included or excluded from the range of allowable range of values to return from.
  *  addMinimum - A Boolean value that indicates if the minimum should be added to the value or not.
- * @return {[String]} The new random number that was generated according to the input parameters.
+ * @return {string} The new random number that was generated according to the input parameters.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -659,14 +659,14 @@ export const randomlyGenerateNumberInRange1 = function(inputData, inputMetaData)
 };
 
 /**
- * @name randomlyGenerateNumberInRange2
+ * @function randomlyGenerateNumberInRange2
  * @description Randomly generates a number between the start-range and end-range.
- * @param  {[String]} inputData A string that contains the number with the minimum value.
- * @param  {[Map]} inputMetaData A map with multiple input parameters:
+ * @param {string} inputData A string that contains the number with the minimum value.
+ * @param {map} inputMetaData A map with multiple input parameters:
  *  maximumValue - A string that contains the number with the maximum value.
  *  includeMaximum - A Boolean value that indicates if the maximum should be included or excluded from the range of allowable range of values to return from.
  *  addMinimum - A Boolean value that indicates if the minimum should be added to the value or not.
- * @return {[String]} The new random number that was generated according to the input parameters.
+ * @return {string} The new random number that was generated according to the input parameters.
  * @NOTE: NEW implementation.
  * @NOTE This is the same implementation as version 1.
  * @author Seth Hollingsead
@@ -702,11 +702,11 @@ export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData)
 };
 
 /**
- * @name randomlyGenerateBooleanValue1
+ * @function randomlyGenerateBooleanValue1
  * @description Randomly generates a boolean value {@code TRUE} or {@code FALSE}.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Boolean]} A Boolean value that is either {@code TRUE} or {@code FALSE} as a random 50-50 chance of one or the other.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} A Boolean value that is either {@code TRUE} or {@code FALSE} as a random 50-50 chance of one or the other.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -725,11 +725,11 @@ export const randomlyGenerateBooleanValue1 = function(inputData, inputMetaData) 
 };
 
 /**
- * @name randomlyGenerateBooleanValue2
+ * @function randomlyGenerateBooleanValue2
  * @description Randomly generates a boolean value {@code TRUE} or {@code FALSE}.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[Boolean]} A Boolean value that is either {@code TRUE} or {@code FALSE} as a random 50-50 chance of one or the other.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} A Boolean value that is either {@code TRUE} or {@code FALSE} as a random 50-50 chance of one or the other.
  * @NOTE: NEW implementation.
  * @NOTE This is the same implementation as version 1.
  * @author Seth Hollingsead
@@ -749,11 +749,11 @@ export const randomlyGenerateBooleanValue2 = function(inputData, inputMetaData) 
 };
 
 /**
- * @name randomlyGenerateMixedCaseAlphabeticCharacter1
+ * @function randomlyGenerateMixedCaseAlphabeticCharacter1
  * @description Randomly generates either an upper case or lower case random alphabetic letter from a-z or A-Z.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A randomly generated alphabetic letter from a-z or A-Z.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A randomly generated alphabetic letter from a-z or A-Z.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -776,11 +776,11 @@ export const randomlyGenerateMixedCaseAlphabeticCharacter1 = function(inputData,
 };
 
 /**
- * @name randomlyGenerateMixedCaseAlphabeticCharacter2
+ * @function randomlyGenerateMixedCaseAlphabeticCharacter2
  * @description Randomly generates either an upper case or lower case random alphabetic letter from a-z or A-Z.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A randomly generated alphabetic letter from a-z or A-Z.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A randomly generated alphabetic letter from a-z or A-Z.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -799,11 +799,11 @@ export const randomlyGenerateMixedCaseAlphabeticCharacter2 = function(inputData,
 };
 
 /**
- * @name randomlyGenerateLowerCaseLetter1
+ * @function randomlyGenerateLowerCaseLetter1
  * @description Randomly generates a lower case alphabetic letter from a-z.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A randomly generated alphabetic letter from a-z.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A randomly generated alphabetic letter from a-z.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -825,11 +825,11 @@ export const randomlyGenerateLowerCaseLetter1 = function(inputData, inputMetaDat
 };
 
 /**
- * @name randomlyGenerateLowerCaseLetter2
+ * @function randomlyGenerateLowerCaseLetter2
  * @description Randomly generates a lower case alphabetic letter from a-z.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A randomly generated alphabetic letter from a-z.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A randomly generated alphabetic letter from a-z.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -848,11 +848,11 @@ export const randomlyGenerateLowerCaseLetter2 = function(inputData, inputMetaDat
 };
 
 /**
- * @name randomlyGenerateUpperCaseLetter1
+ * @function randomlyGenerateUpperCaseLetter1
  * @description Randomly generates an upper case alphabetic letter from A-Z.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A randomly generated alphabetic letter from A-Z.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A randomly generated alphabetic letter from A-Z.
  * @NOTE: OLD implementation.
  * @author Seth Hollingsead
  * @date 2020/03/05
@@ -874,11 +874,11 @@ export const randomlyGenerateUpperCaseLetter1 = function(inputData, inputMetaDat
 };
 
 /**
- * @name randomlyGenerateUpperCaseLetter2
+ * @function randomlyGenerateUpperCaseLetter2
  * @description Randomly generates an upper case alphabetic letter from A-Z.
- * @param  {[String]} inputData Not used for this business rule.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A randomly generated alphabetic letter from A-Z.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A randomly generated alphabetic letter from A-Z.
  * @NOTE: NEW implementation.
  * @author Seth Hollingsead
  * @date 2020/05/19
@@ -897,11 +897,11 @@ export const randomlyGenerateUpperCaseLetter2 = function(inputData, inputMetaDat
 };
 
 /**
- * @name convertNumberToUpperCaseLetter
+ * @function convertNumberToUpperCaseLetter
  * @description Converts a number from 1-26 into a upper case letter of the alphabet A-Z.
- * @param  {[String]} inputData A string that contains a number in the range of 1-26 that should be converted to an upper case letter of the alphabet.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A letter of the alphabet where 1-26 is converted to a letter A-Z.
+ * @param {string} inputData A string that contains a number in the range of 1-26 that should be converted to an upper case letter of the alphabet.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A letter of the alphabet where 1-26 is converted to a letter A-Z.
  * @author Seth Hollingsead
  * @date 2020/05/19
  */
@@ -926,11 +926,11 @@ export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData)
 };
 
 /**
- * @name convertNumberToLowerCaseLetter
+ * @function convertNumberToLowerCaseLetter
  * @description Converts a number from 1-26 into a lower case letter of the alphabet a-z.
- * @param  {[String]} inputData A string that contains a number in the range of 1-26 that should be converted to a lower case letter of the alphabet.
- * @param  {[String]} inputMetaData Not used for this business rule.
- * @return {[String]} A letter of the alphabet where 1-26 is converted to a letter a-z.
+ * @param {string} inputData A string that contains a number in the range of 1-26 that should be converted to a lower case letter of the alphabet.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A letter of the alphabet where 1-26 is converted to a letter a-z.
  * @author Seth Hollingsead
  * @date 2020/05/19
  */
