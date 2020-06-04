@@ -1,9 +1,15 @@
+/**
+ * @module configurator
+ * @description Contains the functions necessary to set and get configuration settings from the shared data structure.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ * @NOTE This file is needed to keep these lower level functions separate from the chiefConfiguration.
+ * Because having these functions in the chiefConfiguration can cause a circular dependency.
+ */
 import loggers from './loggers';
 import * as s from '../Constants/system.constants';
 var D = require('../Resources/data');
 var path = require('path');
-// NOTE: This file is needed to keep these lower level functions separate from the chiefConfiguration.
-// Because having these functions in the chiefConfiguration can cause a circular dependency.
 
 /**
  * @function setConfigurationSetting

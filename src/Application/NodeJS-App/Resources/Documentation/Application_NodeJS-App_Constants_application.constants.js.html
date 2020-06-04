@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: NodeJS-App Documentation</title>
+    <title>JSDoc: Source: Application/NodeJS-App/Constants/application.constants.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,37 +17,43 @@
 
 <div id="main">
 
-    <h1 class="page-title">NodeJS-App Documentation</h1>
+    <h1 class="page-title">Source: Application/NodeJS-App/Constants/application.constants.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>NodeJS-App</h1>
-<p>A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module application-constants
+ * @description A file to hold all of the client application specific constants.
+ * So none of the constants in this file should be generic/system/framework constants.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
+import * as b from '../../../Framework/Constants/basic.constants';
+import * as g from '../../../Framework/Constants/generic.constants';
+import * as s from '../../../Framework/Constants/system.constants';
+
+export const cConfigurationFilename = s.cConfiguration;
+export const cApplicationName = 'NodeJS-App';
+
+// Configuration Path
+export const cConfigurationDataLookupPrefixPath = b.cForwardSlash + s.cResources + b.cForwardSlash;
+export const cResourcesCommonPath = s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cResources + b.cForwardSlash;
+
+// Source Resources Path
+export const cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash +  cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+
+// Binary Resources Path
+export const cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+export const cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
+export const cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash;
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

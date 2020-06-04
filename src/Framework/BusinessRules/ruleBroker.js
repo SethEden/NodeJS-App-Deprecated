@@ -1,3 +1,9 @@
+/**
+ * @module ruleBroker
+ * @description Contains all the functions necessary to manage the business rules system.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import * as rules from './rulesLibrary';
 import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';

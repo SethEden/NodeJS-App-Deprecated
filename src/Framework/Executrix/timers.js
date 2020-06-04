@@ -1,10 +1,17 @@
-var moment = require('moment');
+/**
+ * @module timers
+ * @description Contains all of the functions needed for generating time stamps,
+ * reformatting time stamps and tracking time durations.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import configurator from './configurator';
 import loggers from './loggers';
 import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
+var moment = require('moment');
 
 /**
  * @function getNowMoment

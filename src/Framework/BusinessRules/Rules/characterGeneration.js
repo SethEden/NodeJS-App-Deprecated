@@ -1,5 +1,15 @@
 // NOTE: DO NOT directly import this library to your script(s).
 // please call via the RuleBroker.js.
+
+/**
+ * @module characterGeneration
+ * @description Contains all business rules for randomly generating characters of all kinds.
+ * There are two versions of each function, an old implementation and a new implementation.
+ * @todo There is a need to evaluate performance of each version of these functions and
+ * determine which version is more performant before they are cleaned up.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';

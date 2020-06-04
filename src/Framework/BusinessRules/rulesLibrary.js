@@ -1,3 +1,9 @@
+/**
+ * @module rulesLibrary
+ * @description Contains all of the system defined business rules as a map between function names and function calls.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import * as characterGeneration from './Rules/characterGeneration';
 import * as stringGeneration from './Rules/stringGeneration';
 import * as stringParsing from './Rules/stringParsing';

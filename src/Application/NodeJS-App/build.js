@@ -1,4 +1,16 @@
 #!/usr/bin/env node
+
+/**
+ * @module build
+ * @description This is the main init for the build processes for the application.
+ * This includes the Build which uses Babel to transpile the code down from
+ * ES6 (ECMA Script 6) syntax to JavaScript Common syntax, and all non-code files
+ * including generated documentation are copied to the bin folder under the same nested folder structure.
+ * It also includes the release process where the compiled code & non-code files (Configuration & Documentation)
+ * is packaged up into a single zip file and saved in the Release folder.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import warden from '../../Framework/Controllers/warden';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';

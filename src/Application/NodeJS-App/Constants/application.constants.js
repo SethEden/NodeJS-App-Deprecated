@@ -1,3 +1,10 @@
+/**
+ * @module application-constants
+ * @description A file to hold all of the client application specific constants.
+ * So none of the constants in this file should be generic/system/framework constants.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import * as b from '../../../Framework/Constants/basic.constants';
 import * as g from '../../../Framework/Constants/generic.constants';
 import * as s from '../../../Framework/Constants/system.constants';

@@ -1,3 +1,10 @@
+/**
+ * @module dataBroker
+ * @description Contains all of the lower level data processing functions,
+ * and also acts as an interface for calling the fileBroker to do actual file IO - Input-Output operations.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import ruleBroker from '../BusinessRules/ruleBroker';
 import fileBroker from './fileBroker';
 import configurator from './configurator';
@@ -6,7 +13,6 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var Papa = require('papaparse');
-// require('should'); // Not sure if this will really be needed or not.
 
 /**
  * @function scanDataPath

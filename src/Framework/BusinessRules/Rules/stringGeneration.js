@@ -1,5 +1,25 @@
 // NOTE: DO NOT directly import this library to your script(s).
 // please call via the RuleBroker.js.
+
+/**
+ * @module stringrGeneration
+ * @description Contains all business rules for randomly generating strings of all kinds.
+ * There are two versions of each function, an old implementation and a new implementation.
+ * @NOTE The original implementation of the following functions was in bad need of a refactoring two major reasons:
+ * 1. All of the function signatures needed to be standardized with the new business rule standard of two input parameters.
+ * 2. How the functions are implemented needed to be simplified, however, after further analysis of this re-implementation effort it was discovered that:
+ * The old implementation might also still be useful, so both implementations will be supported and indicated with a 1 or 2.
+ *
+ * This will make it clear to the caller which function implmentation is done with with version of the function.
+ * It would be interesting to call all of these functions in a loop and do a performance analysis to determine which version of the implementation runs faster.
+ * I speculate that version 2 might run faster just because it's less code to execute and could be more efficient.
+ *
+ * Once we have identified which API is the most efficient this code can be decreased by half and we can get rid of the obsolete API.
+ * @todo There is a need to evaluate performance of each version of these functions and
+ * determine which version is more performant before they are cleaned up.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import loggers from '../../Executrix/loggers';
 import { StringToBoolean } from './stringParsing';
 import * as cg from './characterGeneration';
@@ -7,17 +27,6 @@ import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
-
-// NOTE: The original implementation of the following functions was in bad need of a refactoring two major reasons:
-// 1. All of the function signatures needed to be standardized with the new business rule standard of two input parameters.
-// 2. How the functions are implemented needed to be simplified, however, after further analysis of this re-implementation effort it was discovered that:
-//
-// The old implementation might also still be useful, so both implementations will be supported and indicated with a 1 or 2.
-// This will make it clear to the caller which function implmentation is done with with version of the function.
-// It would be interesting to call all of these functions in a loop and do a performance analysis to determine which version of the implementation runs faster.
-// I speculate that version 2 might run faster just because it's less code to execute and could be more efficient.
-//
-// Once we have identified which API is the most efficient this code can be decreased by half and we can get rid of the obsolete API.
 
 /**
  * @function generateRandomMixedCaseTextByLength1

@@ -1,3 +1,10 @@
+/**
+ * @module chiefConfiguration
+ * @description Contains all the functions to manage the configuration system,
+ * such as loading, setup, parsing & processing.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import chiefData from '../Controllers/chiefData';
 import configurator from '../Executrix/configurator';
 import ruleBroker from '../BusinessRules/ruleBroker';

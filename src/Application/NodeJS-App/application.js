@@ -1,4 +1,13 @@
 #!/usr/bin/env node
+
+/**
+ * @module application
+ * @description This is the main init for the application.
+ * It contains the main program loop and/or basic argument parsing.
+ * Of course most of the detailed work is handed off to the application framework.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import warden from '../../Framework/Controllers/warden';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
@@ -21,7 +30,7 @@ function bootStrapApplication() {
   rootPath = path.resolve(__dirname);
   rootPath = warden.processRootPath(rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
-  warden.setConfigurationSetting(s.cApplicationRootPath, rootPath);
+  warden.saveRootPath(rootPath);
 };
 
 /**

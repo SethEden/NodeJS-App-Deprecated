@@ -12,6 +12,7 @@
   "opts": {
     "recurse": true,
     "destination": "./src/Application/NodeJS-App/Resources/Documentation",
-    "template": "./jsDocTemplate"
+    "template": "./jsDocTemplate",
+    "readme": "./readme.md"
   }
 }

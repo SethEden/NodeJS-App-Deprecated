@@ -1,10 +1,18 @@
 // NOTE: DO NOT directly import this library to your script(s).
 // please call via the RuleBroker.js.
+
+/**
+ * @module stringParsing
+ * @description Contains all business rules for parsing strings, values, arrays,
+ * values of all kinds, with various operations.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 import loggers from '../../Executrix/loggers';
-const _ = require('lodash');
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
 import * as s from '../../Constants/system.constants';
+const _ = require('lodash');
 var path = require('path');
 
 /**
