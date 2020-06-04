@@ -242,7 +242,7 @@ function parseLoadedConfigurationData(allConfigurationData) {
  * @description Processes a name and value to execute required code and convert string values to actual data objects needed by the configuration system.
  * @param {string} name The name of the configuration variable.
  * @param {string} value The value of the configuration variable.
- * @return {string|boolean|integer|float|object]} A value that is appropriately processed.
+ * @return {string|boolean|integer|float|object} A value that is appropriately processed.
  * @author Seth Hollingsead
  * @date 2020/05/21
  * @NOTE: The following code that uses the loggers.ConsoleLog will never work,
