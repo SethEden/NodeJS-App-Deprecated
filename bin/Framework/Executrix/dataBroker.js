@@ -25,10 +25,16 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/**
+ * @module dataBroker
+ * @description Contains all of the lower level data processing functions,
+ * and also acts as an interface for calling the fileBroker to do actual file IO - Input-Output operations.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 var path = require('path');
 
-var Papa = require('papaparse'); // require('should'); // Not sure if this will really be needed or not.
-
+var Papa = require('papaparse');
 /**
  * @function scanDataPath
  * @description Scans the specified path and returns a colleciton

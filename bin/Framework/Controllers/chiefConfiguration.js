@@ -27,6 +27,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/**
+ * @module chiefConfiguration
+ * @description Contains all the functions to manage the configuration system,
+ * such as loading, setup, parsing & processing.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 var path = require('path');
 
 var D = require('../Resources/data');

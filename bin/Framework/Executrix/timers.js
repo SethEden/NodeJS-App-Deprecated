@@ -23,9 +23,16 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var moment = require('moment');
-
+/**
+ * @module timers
+ * @description Contains all of the functions needed for generating time stamps,
+ * reformatting time stamps and tracking time durations.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 var path = require('path');
+
+var moment = require('moment');
 /**
  * @function getNowMoment
  * @description Returns a time stamp string formatted according to the input formatting string.

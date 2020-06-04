@@ -18,6 +18,15 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+/**
+ * @module generic-constants
+ * @description Contains many re-usable string constants and partial phrases and/or
+ * partial words for re-usability, many of them derived from the basic-constants.
+ * Also included are other generic constants like string numbers like "one", "two", "three".
+ * Also included are spellings of Greek letters, military codes/standards, units of measurement, units of time, etc...
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 var cDotDot = b.cDot + b.cDot;
 exports.cDotDot = cDotDot;
 var cDotDotForwardSlash = cDotDot + b.cForwardSlash; // Reusable Grammer

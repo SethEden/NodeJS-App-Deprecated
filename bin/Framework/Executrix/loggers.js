@@ -21,6 +21,15 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/**
+ * @module loggers
+ * @description Contains all of the functions necessary for logging to the console,
+ * and logging to a system-specified log file.
+ * Additional logic is in place to allow the configuration file to define which
+ * modules/files & functions should participate in logging operations.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 var D = require('../Resources/data');
 
 var fs = require('fs');

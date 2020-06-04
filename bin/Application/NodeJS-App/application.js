@@ -1,4 +1,13 @@
 #!/usr/bin/env node
+
+/**
+ * @module application
+ * @description This is the main init for the application.
+ * It contains the main program loop and/or basic argument parsing.
+ * Of course most of the detailed work is handed off to the application framework.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 "use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -41,7 +50,7 @@ function bootStrapApplication() {
 
   _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
 
-  _warden["default"].setConfigurationSetting(s.cApplicationRootPath, rootPath);
+  _warden["default"].saveRootPath(rootPath);
 }
 
 ;

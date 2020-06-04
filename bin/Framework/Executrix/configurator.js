@@ -17,11 +17,17 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/**
+ * @module configurator
+ * @description Contains the functions necessary to set and get configuration settings from the shared data structure.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ * @NOTE This file is needed to keep these lower level functions separate from the chiefConfiguration.
+ * Because having these functions in the chiefConfiguration can cause a circular dependency.
+ */
 var D = require('../Resources/data');
 
-var path = require('path'); // NOTE: This file is needed to keep these lower level functions separate from the chiefConfiguration.
-// Because having these functions in the chiefConfiguration can cause a circular dependency.
-
+var path = require('path');
 /**
  * @function setConfigurationSetting
  * @description Sets a configuration setting on the configuration sub-tree data structure stored on t.ctx.

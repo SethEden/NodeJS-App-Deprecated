@@ -23,6 +23,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/**
+ * @module chiefData
+ * @description Contains all the functions to manage the loading and processing of data,
+ * such as XML files or CSV files. Additional file type processing should be added in this module.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 var path = require('path');
 /**
  * @function getAndProcessCsvData

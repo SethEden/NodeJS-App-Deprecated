@@ -27,17 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var path = require('path'); // NOTE: The original implementation of the following functions was in bad need of a refactoring two major reasons:
-// 1. All of the function signatures needed to be standardized with the new business rule standard of two input parameters.
-// 2. How the functions are implemented needed to be simplified, however, after further analysis of this re-implementation effort it was discovered that:
-//
-// The old implementation might also still be useful, so both implementations will be supported and indicated with a 1 or 2.
-// This will make it clear to the caller which function implmentation is done with with version of the function.
-// It would be interesting to call all of these functions in a loop and do a performance analysis to determine which version of the implementation runs faster.
-// I speculate that version 2 might run faster just because it's less code to execute and could be more efficient.
-//
-// Once we have identified which API is the most efficient this code can be decreased by half and we can get rid of the obsolete API.
-
+var path = require('path');
 /**
  * @function generateRandomMixedCaseTextByLength1
  * @description Parse the input string, and determine how many mixed case alphabetic characters should be generated, generate them and string them together.

@@ -33,6 +33,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/**
+ * @module warden
+ * @description Contains all the functions to manage the entire application framework at the highest level.
+ * Also provides an interface to easily manage all of the application features & various functionality from a single entry point.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 // import chiefData from '../Controllers/chiefData';
 // import chiefWorkflow from '../Controllers/chiefWorkflow';
 var path = require('path');

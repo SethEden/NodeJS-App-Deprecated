@@ -27,6 +27,14 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/**
+ * @module fileBroker
+ * @description Contains all of the functions required to do file operations on a physical/virtual hard drive and/or mounted volume.
+ * Including loading files, saving files, reloading files, resaving files, copying files, moving files, copy folders including copying folders recursively,
+ * zipping files and saving zip-packages as part of a deployment/release process.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ */
 var fs = require('fs');
 
 var path = require('path');
@@ -469,7 +477,7 @@ function copyFolderRecursiveSync(source, target) {
 
   var successfullCopy = false;
   var files = []; // Check if folder needs to be created or integrated
-  // var targetFolder = target; 
+  // var targetFolder = target;
 
   var targetFolder = path.join(target, path.basename(source));
 
