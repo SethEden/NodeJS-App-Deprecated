@@ -1249,7 +1249,7 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
  * @function doesArrayContainValue
  * @description Checks if an array contains a value, checking equality by function(val, arr[i])
  * @param {array<string|object|map>} inputData The input array that should be searched for the given input value.
- * @param {string|integer|object]} inputMetaData The value that should be searched for in the input array.
+ * @param {string|integer|object} inputMetaData The value that should be searched for in the input array.
  * @param {function} myFunction The function that should be used to do the search.
  * @return {boolean} A Boolean value to indicate if the value was found in the array or not found.
  * @NOTE Duplicated code in the app.js file,
@@ -1407,7 +1407,7 @@ function doesArrayContainValue(array, value, myFunction) {
 //  * @function arrayCounter
 //  * @description Receives an array and a value, counts the number of occurances of that value in the array.
 //  * @param {array<integer|string|object>} inputArray The array which should have it's values counted.
-//  * @param {integer|string|object]} instance The instance that should be counted in the array.
+//  * @param {integer|string|object} instance The instance that should be counted in the array.
 //  * @return {integer} The count of the objects/values that was found to match out of the array
 //  * @author Seth Hollingsead
 //  * @date 2020/05/20

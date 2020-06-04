@@ -41,7 +41,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
  * @function getConfigurationSetting
  * @description Gets a configuration value based on the configuration name.
  * @param {string} configurationName The key of the configuration setting.
- * @return {string|integer|boolean]} The value of whatever was stored in the t.ctx[Configuration] sub-tree.
+ * @return {string|integer|boolean} The value of whatever was stored in the t.ctx[Configuration] sub-tree.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */

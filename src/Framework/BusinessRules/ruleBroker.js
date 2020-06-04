@@ -16,7 +16,7 @@ var path = require('path');
  * @param {string|integer|object|function} inputData The primary input data that should be processed by the business rule.
  * @param {string|integer|boolean|map} inputMetaData Additional meta-data that should be used when processing the business rule.
  * @param {map} rulesToExecute The name(s) of the rule(s) that should be executed for modding the input data.
- * @return {string|integer|object|function]} A modified data Object/String/Integer/Boolean/Function
+ * @return {string|integer|object|function} A modified data Object/String/Integer/Boolean/Function
  * where the data has been modified based on the input data, input meta-data, and business rule that was executed.
  * @author Seth Hollingsead
  * @date 2020/05/19
