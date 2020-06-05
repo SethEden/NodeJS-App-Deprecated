@@ -24,6 +24,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
+ * @file chiefData.js
  * @module chiefData
  * @description Contains all the functions to manage the loading and processing of data,
  * such as XML files or CSV files. Additional file type processing should be added in this module.
@@ -35,6 +36,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
 /**

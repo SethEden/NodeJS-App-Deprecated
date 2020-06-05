@@ -34,10 +34,12 @@ exports.cZX = exports.cZW = exports.cZV = exports.cZU = exports.cZT = exports.cZ
 exports.c50 = exports.c49 = exports.c48 = exports.c47 = exports.c46 = exports.c45 = exports.c44 = exports.c43 = exports.c42 = exports.c41 = exports.c40 = exports.c39 = exports.c38 = exports.c37 = exports.c36 = exports.c35 = exports.c34 = exports.c33 = exports.c32 = exports.c31 = exports.c30 = exports.c29 = exports.c28 = exports.c27 = exports.c26 = exports.c25 = exports.c24 = exports.c23 = exports.c22 = exports.c21 = exports.c20 = exports.c19 = exports.c18 = exports.c17 = exports.c16 = exports.c15 = exports.c14 = exports.c13 = exports.c12 = exports.c11 = exports.c10 = exports.cZZ = exports.cZY = void 0;
 
 /**
+ * @file basic.constants.js
  * @module basic-constants
  * @description Contains constants for all of the most basic characters and basic 2-character combinations.
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 // Special Characters
 var cSpace = ' ';

@@ -18,6 +18,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
+ * @file configurator.js
  * @module configurator
  * @description Contains the functions necessary to set and get configuration settings from the shared data structure.
  * @requires module:loggers
@@ -26,6 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  * @NOTE This file is needed to keep these lower level functions separate from the chiefConfiguration.
  * Because having these functions in the chiefConfiguration can cause a circular dependency.
  */

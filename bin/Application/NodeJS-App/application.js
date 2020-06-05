@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 /**
+ * @file application.js
  * @module application
  * @description This is the main init for the application.
  * It contains the main program loop and/or basic argument parsing.
@@ -16,6 +17,7 @@
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 "use strict";
 

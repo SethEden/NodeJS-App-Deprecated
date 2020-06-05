@@ -26,6 +26,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
+ * @file dataBroker.js
  * @module dataBroker
  * @description Contains all of the lower level data processing functions,
  * and also acts as an interface for calling the fileBroker to do actual file IO - Input-Output operations.
@@ -39,6 +40,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires {@link https://www.npmjs.com/package/papaparse|papaparse}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
 

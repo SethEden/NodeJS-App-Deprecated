@@ -25,6 +25,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // please call via the RuleBroker.js.
 
 /**
+ * @file stringParsing.js
  * @module stringParsing
  * @description Contains all business rules for parsing strings, values, arrays,
  * values of all kinds, with various operations.
@@ -36,6 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var _ = require('lodash');
 

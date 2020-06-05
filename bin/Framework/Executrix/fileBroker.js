@@ -28,6 +28,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
+ * @file fileBroker.js
  * @module fileBroker
  * @description Contains all of the functions required to do file operations on a physical/virtual hard drive and/or mounted volume.
  * Including loading files, saving files, reloading files, resaving files, copying files, moving files, copy folders including copying folders recursively,
@@ -46,6 +47,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires xml2js
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var fs = require('fs');
 

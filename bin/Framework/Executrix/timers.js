@@ -24,6 +24,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
+ * @file timers.js
  * @module timers
  * @description Contains all of the functions needed for generating time stamps,
  * reformatting time stamps and tracking time durations.
@@ -36,6 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires {@link https://www.npmjs.com/package/moment|moment}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
 
