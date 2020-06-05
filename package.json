@@ -33,6 +33,8 @@
     "standard-version": "^8.0.0"
   },
   "dependencies": {
+    "chalk": "^4.0.0",
+    "figlet": "^1.4.0",
     "fs-extra": "^9.0.0",
     "moment": "^2.26.0",
     "papaparse": "^5.2.0",

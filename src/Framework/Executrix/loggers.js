@@ -9,6 +9,7 @@
  * @requires module:system-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -18,6 +19,7 @@ import ruleBroker from '../BusinessRules/ruleBroker';
 import * as s from '../Constants/system.constants';
 import * as b from '../Constants/basic.constants';
 var fs = require('fs');
+var chalk = require('chalk');
 var D = require('../Resources/data');
 
 /**
@@ -196,6 +198,7 @@ function parseClassPath(logFile, classPath, message) {
     // printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
   } else if (Object.keys(classPathArray).length === 3 ) {
     className = classPathArray[0] + b.cDot + classPathArray[1];
+
     // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
     // printMessageToFile(logFile, 'className is: ' + className);
     functionName = classPathArray[2];
@@ -218,7 +221,10 @@ function parseClassPath(logFile, classPath, message) {
   debugFilesSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className);
   // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
-    return message.replace('%%', className + b.cDot + functionName);
+    message = chalk.white(message);
+    className = chalk.red.bold(className);
+    functionName = chalk.red.bold(functionName);
+    // message = message.replace('%%', className + b.cDot + functionName);
     return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
   } else if ((debugFunctionsSetting === undefined && debugFilesSetting === undefined) ||
   (debugFunctionsSetting === undefined && debugFilesSetting === false) ||

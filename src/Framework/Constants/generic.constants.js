@@ -264,6 +264,8 @@ export const cloy = b.clo + b.cy;
 export const cumber = b.cum + b.cb + b.cer;
 export const ccond = b.cco + b.cnd;
 export const ctieth = b.cti + b.ce + b.cth;
+export const cont = b.con + b.ct;
+export const cull = b.cul + b.cl;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

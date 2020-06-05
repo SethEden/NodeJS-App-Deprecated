@@ -11,6 +11,7 @@
  * @requires module:generic-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
+ * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -37,6 +38,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var prompt = require('prompt-sync')();
+
+var figlet = require('figlet');
 
 var path = require('path');
 
@@ -76,6 +79,8 @@ function application() {
   var argumentDrivenInterface = true;
   var commandInput;
   var commandResult;
+  var applicationName;
+  var figletFont;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -84,6 +89,12 @@ function application() {
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
 
   argumentDrivenInterface = _warden["default"].getConfigurationSetting(s.cArgumentDrivenInterface);
+  applicationName = _warden["default"].getConfigurationSetting(s.cApplicationName);
+  figletFont = _warden["default"].getConfigurationSetting(s.cFigletFont);
+  console.log(figlet.textSync(applicationName, {
+    font: figletFont,
+    horizontalLayout: s.cfull
+  }));
 
   if (argumentDrivenInterface === false) {
     while (programRunning === true) {

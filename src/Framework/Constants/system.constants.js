@@ -84,7 +84,10 @@ export const cOops = b.cO + g.cops; // 'Oops';
 export const coops = b.co + g.cops;
 export const cConfiguration = b.cCo + b.cnf + b.cig + b.cur + b.ca + g.ction; // 'Configura' + b.ction;
 export const cConfigurations = cConfiguration + b.cs;
+export const cempty = b.cem + b.cpt + b.cy;
 export const cEmpty = b.cEm + b.cpt + b.cy; // 'Empty';
+export const cfull = b.cf + g.cull;
+export const cFull = b.cF + g.cull;
 export const ccreate = b.cc + g.create;
 export const cCreate = b.cC + g.create; // 'Create';
 export const cSubmit = b.cSu + b.cbm + b.cit; // 'Submit';
@@ -296,6 +299,7 @@ export const cdig = b.cdi + b.cg;
 export const cDig = b.cDi + b.cg;
 export const cdigit = cdig + b.cit;
 export const cDigit = cDig + b.cit; // 'Digit';
+export const clet = b.cle + b.ct;
 export const cLet = b.cLe + b.ct;
 export const cLetter = cLet + b.ct + b.cer; // 'Letter';
 export const cUpper = b.cUp + b.cp + b.cer; // 'Upper';
@@ -637,6 +641,12 @@ export const cdriven = cdrive + b.cn;
 export const cDriven = cDrive + b.cn;
 export const cinterface = g.cinter + cface;
 export const cInterface = g.cInter + cface;
+export const cfig = b.cf + b.cig;
+export const cFig = b.cF + b.cig;
+export const cfiglet = cfig + clet;
+export const cFiglet = cFig + clet;
+export const cfont = b.cf + g.cont;
+export const cFont = b.cF + g.cont;
 
 // Shapes
 export const ccircle = g.ccir + g.ccle;
@@ -1125,6 +1135,7 @@ export const cWorkflowDataPath = cWorkflow + cDataPath;
 export const cKeywordsDataPath = cKeywords + cDataPath;
 export const cLocatorsDataPath = cLocators + cDataPath;
 export const cArgumentDrivenInterface = cArgument + cDriven + cInterface;
+export const cFigletFont = cFiglet + cFont;
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = cBegin + cDateTimeStamp;

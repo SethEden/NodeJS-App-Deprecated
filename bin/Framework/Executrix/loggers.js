@@ -32,11 +32,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:system-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  */
 var fs = require('fs');
+
+var chalk = require('chalk');
 
 var D = require('../Resources/data');
 /**
@@ -242,7 +245,10 @@ function parseClassPath(logFile, classPath, message) {
   debugFilesSetting = _configurator["default"].getConfigurationSetting(s.cDebugFiles + b.cPipe + className); // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
 
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
-    return message.replace('%%', className + b.cDot + functionName);
+    message = chalk.white(message);
+    className = chalk.red.bold(className);
+    functionName = chalk.red.bold(functionName); // message = message.replace('%%', className + b.cDot + functionName);
+
     return _ruleBroker["default"].processRules(message, className + b.cDot + functionName, rules);
   } else if (debugFunctionsSetting === undefined && debugFilesSetting === undefined || debugFunctionsSetting === undefined && debugFilesSetting === false || debugFunctionsSetting === false && debugFilesSetting === undefined || debugFunctionsSetting === false && debugFilesSetting === false) {
     return false;
