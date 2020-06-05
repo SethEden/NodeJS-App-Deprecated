@@ -2,6 +2,7 @@
 // please call via the RuleBroker.js.
 
 /**
+ * @file characterGeneration.js
  * @module characterGeneration
  * @description Contains all business rules for randomly generating characters of all kinds.
  * There are two versions of each function, an old implementation and a new implementation.
@@ -14,6 +15,7 @@
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';

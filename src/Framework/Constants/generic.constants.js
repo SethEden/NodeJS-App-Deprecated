@@ -1,4 +1,5 @@
 /**
+ * @file generic.constants.js
  * @module generic-constants
  * @description Contains many re-usable string constants and partial phrases and/or
  * partial words for re-usability, many of them derived from the basic-constants.
@@ -7,6 +8,7 @@
  * @requires module:basic-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as b from '../constants/basic.constants';
 

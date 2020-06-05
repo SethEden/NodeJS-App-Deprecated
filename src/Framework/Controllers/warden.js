@@ -1,4 +1,5 @@
 /**
+ * @file warden.js
  * @module warden
  * @description Contains all the functions to manage the entire application framework at the highest level.
  * Also provides an interface to easily manage all of the application features & various functionality from a single entry point.
@@ -16,6 +17,7 @@
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import chiefConfiguration from '../Controllers/chiefConfiguration';
 // import chiefData from '../Controllers/chiefData';

@@ -1,4 +1,5 @@
 /**
+ * @file system.constants.js
  * @module system-constants
  * @description Contains many re-usable word constants and compound words,
  * system defined acronyms, many of them derived from the basic-constants.
@@ -10,6 +11,7 @@
  * @requires module:generic-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as b from './basic.constants';
 import * as g from './generic.constants';

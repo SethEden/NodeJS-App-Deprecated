@@ -1,4 +1,5 @@
 /**
+ * @file chiefConfiguration.js
  * @module chiefConfiguration
  * @description Contains all the functions to manage the configuration system,
  * such as loading, setup, parsing & processing.
@@ -13,6 +14,7 @@
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import chiefData from '../Controllers/chiefData';
 import configurator from '../Executrix/configurator';

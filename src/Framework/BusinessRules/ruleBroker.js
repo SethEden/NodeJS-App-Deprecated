@@ -1,4 +1,5 @@
 /**
+ * @file ruleBroker.js
  * @module ruleBroker
  * @description Contains all the functions necessary to manage the business rules system.
  * @requires module:rulesLibrary
@@ -7,6 +8,7 @@
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as rules from './rulesLibrary';
 import * as b from '../Constants/basic.constants';

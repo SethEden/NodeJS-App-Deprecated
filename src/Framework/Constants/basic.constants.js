@@ -1,8 +1,10 @@
 /**
+ * @file basic.constants.js
  * @module basic-constants
  * @description Contains constants for all of the most basic characters and basic 2-character combinations.
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 
 // Special Characters

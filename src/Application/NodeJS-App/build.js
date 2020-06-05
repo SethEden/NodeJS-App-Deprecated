@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 /**
+ * @file build.js
  * @module build
  * @description This is the main init for the build processes for the application.
  * This includes the Build which uses Babel to transpile the code down from
@@ -17,6 +18,7 @@
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import warden from '../../Framework/Controllers/warden';
 import * as c from './Constants/application.constants';

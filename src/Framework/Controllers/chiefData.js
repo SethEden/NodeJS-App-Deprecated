@@ -1,4 +1,5 @@
 /**
+ * @file chiefData.js
  * @module chiefData
  * @description Contains all the functions to manage the loading and processing of data,
  * such as XML files or CSV files. Additional file type processing should be added in this module.
@@ -10,6 +11,7 @@
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import dataBroker from '../Executrix/dataBroker';
 import configurator from '../Executrix/configurator';

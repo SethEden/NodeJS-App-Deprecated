@@ -1,4 +1,5 @@
 /**
+ * @file data.js
  * @module data
  * @description Contains the singleton data structure definition that allows the entire application,
  * to share data between various components of the framework and greater application.
@@ -7,6 +8,7 @@
  * Right now there is no business need for anything beyond the basic system defined below.
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 
 // var mySingleton = (function() {

@@ -1,4 +1,5 @@
 /**
+ * @file dataBroker.js
  * @module dataBroker
  * @description Contains all of the lower level data processing functions,
  * and also acts as an interface for calling the fileBroker to do actual file IO - Input-Output operations.
@@ -12,6 +13,7 @@
  * @requires {@link https://www.npmjs.com/package/papaparse|papaparse}
  * @author Seth Hollingsead
  * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import ruleBroker from '../BusinessRules/ruleBroker';
 import fileBroker from './fileBroker';
