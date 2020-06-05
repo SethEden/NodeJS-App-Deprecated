@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/SethEden/NodeJS-App/compare/v0.4.4...v0.5.1) (2020-06-05)
+
+
+### Features
+
+* Implement the ascii art and colorized console logs for better visual usability of the application. ([67c80dc](https://github.com/SethEden/NodeJS-App/commit/67c80dc4ce6f78ef11e59741f3ff70cbfb1bb7ac))
+
 ### [0.4.4](https://github.com/SethEden/NodeJS-App/compare/v0.4.3...v0.4.4) (2020-06-04)
 
 ### [0.4.3](https://github.com/SethEden/NodeJS-App/compare/v0.4.2...v0.4.3) (2020-06-04)
