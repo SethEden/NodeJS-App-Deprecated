@@ -268,6 +268,13 @@ export const ccond = b.cco + b.cnd;
 export const ctieth = b.cti + b.ce + b.cth;
 export const cont = b.con + b.ct;
 export const cull = b.cul + b.cl;
+export const cmod = b.cmo + b.cd;
+export const ccol = b.cco + b.cl;
+export const cCol = b.cCo + b.cl;
+export const creen = b.cre + b.cen;
+export const clue = b.clu + b.ce; // Referance to Tron here! :-P
+export const cyan = b.cy + b.can;
+export const centa = b.cen + b.cta;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

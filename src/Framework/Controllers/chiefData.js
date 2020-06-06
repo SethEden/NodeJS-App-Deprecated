@@ -57,6 +57,7 @@ function getAndProcessXmlData(pathAndFilename) {
   var allSystemConfigurations = dataBroker.getXmlData(pathAndFilename);
   // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
   allSystemConfigurations = dataBroker.processXmlData(allSystemConfigurations);
+
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allSystemConfigurations is: ' + JSON.stringify(allSystemConfigurations));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return allSystemConfigurations;

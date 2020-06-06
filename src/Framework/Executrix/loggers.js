@@ -219,23 +219,139 @@ function parseClassPath(logFile, classPath, message) {
   // printMessageToFile(logFile, 'getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
   debugFunctionsSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
   // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
-
   debugFilesSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className);
   // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
-    message = chalk.white(message);
-    className = chalk.red.bold(className);
-    functionName = chalk.red.bold(functionName);
-    // message = message.replace('%%', className + b.cDot + functionName);
-    return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    // message = chalk.white(message);
+    // className = chalk.red.bold(className);
+    // functionName = chalk.red.bold(functionName);
+    // // message = message.replace('%%', className + b.cDot + functionName);
+    // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    message = colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
   } else if ((debugFunctionsSetting === undefined && debugFilesSetting === undefined) ||
   (debugFunctionsSetting === undefined && debugFilesSetting === false) ||
   (debugFunctionsSetting === false && debugFilesSetting === undefined) ||
   (debugFunctionsSetting === false && debugFilesSetting === false)) {
     return false;
   } else {
+    message = colorizeMessage(message, className, functionName, undefined, undefined, true);
     return message;
   }
+};
+
+/**
+ * @function colorizeMessage
+ * @description Applies color settings to various portions of the message according to the settings from the configuration system.
+ * @param {string} message The message that should be formatted and returned to be logged to the console and/or loged to a log file.
+ * @param {string} className The name of the module/file that made the log call.
+ * @param {string} functionName The name of the function that made the log call.
+ * @param {boolean} debugFilesSetting A TRUE or FALSE value to indicate if the log should happen according to the file/module name.
+ * Setting is set in the configuration/settings system.
+ * @param {boolean} debugFunctionsSetting A TRUE or FALSE value to indicate if the log should happen according to the function/method name.
+ * Setting is set in the configuration/settings system.
+ * @param {boolean} flatMessageLog A TRUE or FALSE value to indicate if we are logging a flat message or if we should do additional processing.
+ * We will probably do some additional processing either way, but there is a difference in the workflows.
+ * For one a non-flat message will certainly have to replace a "%%" with the class path (className.functionName),
+ * and the associated formatting that goes with that according to the settings.
+ * @return {String} A colorized version of the message.
+ * @author Seth Hollingsead
+ * @date 2020/06/05
+ */
+function colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, flatMessageLog) {
+  console.log('BEGIN loggers.colorizeMessage function');
+  console.log('message is: ' + message);
+  console.log('className is: ' + className);
+  console.log('functionName is: ' + functionName);
+  console.log('debugFileSetting is: ' + debugFilesSetting);
+  console.log('debugFunctionsSetting is: ' debugFunctionsSetting);
+  var colorizedMessage;
+  var debugFilesModuleFontStyleSetting = "Default";
+  var debugFilesFunctionFontStyleSetting = "Default";
+  var debugFilesMessageFontStyleSetting = "Default";
+  var debugFilesDataFontStyleSetting = "Default";
+  var debugFilesModuleFontColorSetting = "Default";
+  var debugFilesFunctionFontColorSetting = "Default";
+  var debugFilesMessageFontColorSetting = "Default";
+  var debugFilesDataFontColorSetting = "Default";
+  var debugFilesModuleFontBackgroundColorSetting = "Default";
+  var debugFilesFunctionFontBackgroundColorSetting = "Default";
+  var debugFilesMessageFontBackgroundColorSetting = "Default";
+  var debugFilesDataFontBackgroundColorSetting = "Default";
+
+  var debugFunctionsModuleFontStyleSetting = "Default";
+  var debugFunctionsFunctionFontStyleSetting = "Default";
+  var debugFunctionsMessageFontStyleSetting = "Default";
+  var debugFunctionsDataFontStyleSetting = "Default";
+  var debugFunctionsModuleFontColorSetting = "Default";
+  var debugFunctionsFunctionFontColorSetting = "Default";
+  var debugFunctionsMessageFontColorSetting = "Default";
+  var debugFunctionsDataFontColorSetting = "Default";
+  var debugFunctionsModuleFontBackgroundColorSetting = "Default";
+  var debugFunctionsFunctionFontBackgroundColorSetting = "Default";
+  var debugFunctionsMessageFontBackgroundColorSetting = "Default";
+  var debugFunctionsDataFontBackgroundColorSetting = "Default";
+
+  // We need a 3rd set of variables because we will need to aggregate these settings together to determine which ones are in effect.
+  // One way is to aggregate each setting individually and let which ever one is defined be in effect.
+  // Another way is to let the master debug functions and/or debug files setting be the controlling factor.
+  // However if both of them are set to true then we should default to determine which one is in effect from either one.
+  // This will also let us do additional processing on the values that come from the settings file.
+  // Because some of those settings like the colors and the font styles might have multiple sub-settings.
+  // The color setting will of course have R,G,B; And the style setting might have Bold|Underline, so we will of course have to parse those out.
+  var aggregateModuleFontStyleUnderline = false;
+  var aggregateModuleFontStyleBold = false;
+  var aggregateFunctionFontStyleUnderline = false;
+  var aggregateFunctionFontStyleBold = false;
+  var aggregateMessageFontStyleUnderline = false;
+  var aggregateMessageFontStyleBold = false;
+  var aggregateDataFontStyleUnderline = false;
+  var aggregateDataFontStyleBold = false;
+  var aggregateModuleFontColorSetting = {: };
+  var aggregateFunctionFontColorSetting = {};
+  var aggregateMessageFontColorSetting = {};
+  var aggregateDataFontColorSetting = {};
+  var aggregateModuleFontBackgroundColorSetting = {};
+  var aggregateFunctionFontBackgroundColorSetting = {};
+  var aggregateMessageFontBackgroundColorSetting = {};
+  var aggregateDataFontBackgroundColorSetting = {};
+
+  debugFilesModuleFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cModuleFontStyleSetting);
+  debugFilesFunctionFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cFunctionFontStyleSetting);
+  debugFilesMessageFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cMessageFontStyleSetting);
+  debugFilesDataFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cDataFontStyleSetting);
+  debugFilesModuleFontColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cModuleFontColorSetting);
+  debugFilesFunctionFontColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cFunctionFontColorSetting);
+  debugFilesMessageFontColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cMessageFontColorSetting);
+  debugFilesDataFontColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cDataFontColorSetting);
+  debugFilesModuleFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cModuleFontBackgroundColorSetting);
+  debugFilesFunctionFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cFunctionFontBackgroundColorSetting);
+  debugFilesMessageFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cMessageFontBackgroundColorSetting);
+  debugFilesDataFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className + b.cAt + s.cDataFontBackgroundColorSetting);
+
+  debugFunctionsModuleFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cModuleFontStyleSetting);
+  debugFunctionsFunctionFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cFunctionFontStyleSetting);
+  debugFunctionsMessageFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cMessageFontStyleSetting);
+  debugFunctionsDataFontStyleSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cDataFontStyleSetting);
+  debugFunctionsModuleFontColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cModuleFontColorSetting);
+  debugFunctionsFunctionFontColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cFunctionFontColorSetting);
+  debugFunctionsMessageFontColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cMessageFontColorSetting);
+  debugFunctionsDataFontColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cDataFontColorSetting);
+  debugFunctionsModuleFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cModuleFontBackgroundColorSetting);
+  debugFunctionsFunctionFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cFunctionFontBackgroundColorSetting);
+  debugFunctionsMessageFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cMessageFontBackgroundColorSetting);
+  debugFunctionsDataFontBackgroundColorSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName + b.cAt + s.cDataFontBackgroundColorSetting);
+
+  if (flatMessageLog === false) {
+
+  } else if (flatMessageLog === true) {
+
+  } else { // Just return the message as we got it and make sure it gets out!
+    colorizedMessage = message;
+  }
+
+  console.log('colorizedMessage is: ' + message);
+  console.log('END loggers.colorizeMessage function');
+  return colorizedMessage;
 };
 
 /**

@@ -3,7 +3,7 @@
  * @module system-constants
  * @description Contains many re-usable word constants and compound words,
  * system defined acronyms, many of them derived from the basic-constants.
- * Also included are other constants like countries, named spoken languages, named geometric shapes.
+ * Also included are other constants like countries, named spoken languages, named geometric shapes and colors.
  * Also included are common files types, control key combinations, environment variable strings,
  * system defined words and codes, user interface object types,
  * and names of business rules/system defined named commands, etc...
@@ -180,6 +180,7 @@ export const cpage = b.cp + g.cage;
 export const cPage = b.cP + g.cage;
 export const cpages = cpage + b.cs;
 export const cPages = cPage + b.cs;
+export const cmessage = b.cme + b.css + g.cage;
 export const cMessage = cMe + b.css + g.cage;
 export const cScript = b.cSc + b.cri + b.cpt; // 'Script';
 export const cScripts = cScript + b.cs;
@@ -250,7 +251,10 @@ export const cExit = b.cEx + b.cit; // 'Exit';
 export const cViewer = b.cVi + b.cew + b.cer; // 'Viewer';
 export const cPermission = b.cPe + b.crm + b.cis + b.csi + b.con; // 'Permission';
 export const cBug = b.cBu + b.cg; // 'Bug';
+export const cset = b.cse + b.ct;
 export const cSet = b.cSe + b.ct; // 'Set';
+export const csetting = cset + b.ct + g.cing;
+export const cSetting = cSet + b.ct + g.cing;
 export const cPreview = g.cPre + cview; // 'Preview';
 export const cLimit = b.cLi + b.cmi + b.ct; // 'Limit';
 export const cGate = b.cGa + b.cte;
@@ -649,6 +653,10 @@ export const cfiglet = cfig + clet;
 export const cFiglet = cFig + clet;
 export const cfont = b.cf + g.cont;
 export const cFont = b.cF + g.cont;
+export const cmodule = g.cmod + g.cule;
+export const cModule = g.cMod + g.cule;
+export const ccolor = g.ccol + b.cor;
+export const cColor = g.cCol + b.cor;
 
 // Shapes
 export const ccircle = g.ccir + g.ccle;
@@ -673,8 +681,983 @@ export const ctrapezoid = ctrap + b.ce + g.czoid;
 export const cTrapezoid = cTrap + b.ce + g.czoid;
 export const ccube = b.ccu + b.cbe;
 export const cCube = b.cCu + b.cbe;
+export const cground = b.cgr + g.cound;
+export const cGround = b.cGr + g.cound;
+export const cyell = b.cye + b.cll;
+export const cYell = b.cYe + b.cll;
+export const clack = b.cla + b.cck;
+export const cLack = b.cLa + b.cck;
 // This could go on forever!!
 // https://en.wikipedia.org/wiki/List_of_mathematical_shapes
+
+// Colors
+// Primary Colors
+export const cred = b.cr + b.ced;
+export const cRed = b.cR + b.ced;
+export const cgreen = b.cg + g.creen;
+export const cGreen = b.cG + g.creen;
+export const cblue = b.cb + g.clue;
+export const cBlue = b.cB + g.clue;
+// Secondary Colors CMYK
+export const ccyan = b.cc + g.cyan;
+export const cCyan = b.cC + g.cyan;
+export const cmagenta = b.cm + b.cag + g.centa;
+export const cMagenta = b.cM + b.cag + g.centa;
+export const cyellow = cyell + b.cow;
+export const cYellow = cYell + b.cow;
+export const cblack = b.cb + clack;
+export const cBlack = b.cB + clack;
+// Tertiary Named Colors
+// https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F
+// AbsoluteZero
+// AcidGreen
+// Aero
+// AeroBlue
+// AfricanViolet
+// AirSuperiorityBlue
+// Alabaster
+// AliceBlue
+// AlloyOrange
+// Almond
+// Amaranth
+// AmaranthMP
+// AmaranthPink
+// AmaranthPurple
+// AmaranthRed
+// Amazon
+// Amber
+// AmberSAE-ECE
+// Amethyst
+// AndroidGreen
+// AntiqueBrass
+// AntiqueBronze
+// AntiqueFuchsia
+// AntiqueRuby
+// AntiqueWhite
+// AoEnglish
+// AppleGreen
+// Apricot
+// Aqua
+// Aquamarine
+// ArcticLime
+// ArmyGreen
+// Artichoke
+// ArylideYellow
+// AshGray
+// Asparagus
+// AtomicTangerine
+// Auburn
+// Aureolin
+// Avocado
+// Azure
+// AzureWeb
+// BabyBlue
+// BabyBlueEyes
+// BabyPink
+// BabyPowder
+// Baker-MillerPink
+// BananaMania
+// BarbiePink
+// BarnRed
+// BattleshipGrey
+// BeauBlue
+// Beaver
+// Beige
+// B-DazzledBlue
+// BigDipO-Ruby
+// Bisque
+// Bistre
+// BistreBrown
+// BitterLemon
+// BitterLime
+// Bittersweet
+// BittersweetShimmer
+// BlackBean
+// BlackChocolate
+// BlackCoffee
+// BlackCoral
+// BlackOlive
+// BlackShadows
+// BlanchedAlmond
+// Blast-OffBronze
+// BleuDeFrance
+// BlizzardBlue
+// Blond
+// BloodRed
+// BlueCrayola
+// BlueMunsell
+// BlueNCS
+// BluePantone
+// BluePigment
+// BlueRYB
+// BlueBell
+// Blue-Gray
+// Blue-Green
+// Blue-GreenColorWheel
+// BlueJeans
+// BlueSapphire
+// Blue-Violet
+// Blue-VioletCrayola
+// Blue-VioletColorWheel
+// BlueYonder
+// Bluetiful
+// Blush
+// Bole
+// Bone
+// BottleGreen
+// Brandy
+// BrickRed
+// BrightGreen
+// BrightLilac
+// BrightMaroon
+// BrightNavyBlue
+// BrightYellowCrayola
+// BrilliantRose
+// BrinkPink
+// BritishRacingGreen
+// Bronze
+// Brown
+// BrownSugar
+// BrunswickGreen
+// BudGreen
+// Buff
+// Burgundy
+// Burlywood
+// BurnishedBrown
+// BurntOrange
+// BurntSienna
+// BurntUmber
+// Byzantine
+// Byzantium
+// Cadet
+// CadetBlue
+// CadetBlueCrayola
+// CadetGrey
+// CadmiumGreen
+// CadmiumOrange
+// CadmiumRed
+// CadmiumYellow
+// CafeAuLait
+// CafeNoir
+// CambridgeBlue
+// Camel
+// CameoPink
+// Canary
+// CanaryYellow
+// CandyAppleRed
+// CandyPink
+// Capri
+// CaputMortuum
+// Cardinal
+// CaribbeanGreen
+// Carmine
+// CarmineMP
+// CarnationPink
+// Carnelian
+// CarolinaBlue
+// CarrotOrange
+// CastletonGreen
+// Catawba
+// CedarChest
+// Celadon
+// CeladonBlue
+// CeladonGreen
+// Celeste
+// CelticBlue
+// Cerise
+// Cerulean
+// CeruleanBlue
+// CeruleanFrost
+// CeruleanCrayola
+// CGBlue
+// CGRed
+// Champagne
+// ChampagnePink
+// Charcoal
+// CharlestonGreen
+// CharmPink
+// ChartreuseTraditional
+// ChartreuseWeb
+// CherryBlossomPink
+// Chestnut
+// ChinaPink
+// ChinaRose
+// ChineseRed
+// ChineseViolet
+// ChineseYellow
+// ChocolateTraditional
+// ChocolateWeb
+// ChromeYellow
+// Cinereous
+// Cinnabar
+// CinnamonSatin
+// Citrine
+// Citron
+// Claret
+// CobaltBlue
+// CocoaBrown
+// Coffee
+// ColumbiaBlue
+// CongoPink
+// CoolGrey
+// Copper
+// CopperCrayola
+// CopperPenny
+// CopperRed
+// CopperRose
+// Coquelicot
+// Coral
+// CoralPink
+// Cordovan
+// Corn
+// CornflowerBlue
+// Cornsilk
+// CosmicCobalt
+// CosmicLatte
+// CoyoteBrown
+// CottonCandy
+// Cream
+// Crimson
+// CrimsonUA
+// Cultured
+// CyanProcess
+// CyberGrape
+// CyberYellow
+// Cyclamen
+// DarkBlue-Gray
+// DarkBrown
+// DarkByzantium
+// DarkCornflowerBlue
+// DarkCyan
+// DarkElectricBlue
+// DarkGoldenrod
+// DarkGreen
+// DarkGreenX11
+// DarkJungleGreen
+// DarkKhaki
+// DarkLava
+// DarkLiver
+// DarkLiverHorses
+// DarkMagenta
+// DarkMossGreen
+// DarkOliveGreen
+// DarkOrange
+// DarkOrchid
+// DarkPastelGreen
+// DarkPurple
+// DarkRed
+// DarkSalmon
+// DarkSeaGreen
+// DarkSienna
+// DarkSkyBlue
+// DarkSlateBlue
+// DarkSlateGray
+// DarkSpringGreen
+// DarkTurquoise
+// DarkViolet
+// DartmouthGreen
+// DavysGrey
+// DeepCerise
+// DeepChampagne
+// DeepChestnut
+// DeepJungleGreen
+// DeepPink
+// DeepSaffron
+// DeepSkyBlue
+// DeepSpaceSparkle
+// DeepTaupe
+// Denim
+// DenimBlue
+// Desert
+// DesertSand
+// DimGray
+// DodgerBlue
+// DogwoodRose
+// Drab
+// DukeBlue
+// DutchWhite
+// EarthYellow
+// Ebony
+// Ecru
+// EerieBlack
+// Eggplant
+// Eggshell
+// EgyptianBlue
+// ElectricBlue
+// ElectricGreen
+// ElectricIndigo
+// ElectricLime
+// ElectricPurple
+// ElectricViolet
+// Emerald
+// Eminence
+// EnglishGreen
+// EnglishLavender
+// EnglishRed
+// EnglishVermillion
+// EnglishViolet
+// Erin
+// EtonBlue
+// Fallow
+// FaluRed
+// Fandango
+// FandangoPink
+// FashionFuchsia
+// Fawn
+// Feldgrau
+// FernGreen
+// FieldDrab
+// FieryRose
+// Firebrick
+// FireEngineRed
+// FireOpal
+// Flame
+// Flax
+// Flirt
+// FloralWhite
+// FluorescentBlue
+// ForestGreenCrayola
+// ForestGreenTraditional
+// ForestGreenWeb
+// FrenchBeige
+// FrenchBistre
+// FrenchBlue
+// FrenchFuchsia
+// FrenchLilac
+// FrenchLime
+// FrenchMauve
+// FrenchPink
+// FrenchRaspberry
+// FrenchRose
+// FrenchSky Blue
+// FrenchViolet
+// Frostbite
+// Fuchsia
+// FuchsiaCrayola
+// FuchsiaPurple
+// FuchsiaRose
+// Fulvous
+// FuzzyWuzzy
+// https://en.wikipedia.org/wiki/List_of_colors:_G%E2%80%93M
+// Gainsboro
+// Gamboge
+// GenericViridian
+// GhostWhite
+// Glaucous
+// GlossyGrape
+// GOGreen
+// Gold
+// GoldMetallic
+// GoldWebGolden
+// GoldCrayola
+// GoldFusion
+// GoldenBrown
+// GoldenPoppy
+// GoldenYellow
+// Goldenrod
+// GraniteGray
+// GrannySmithApple
+// GrayWeb
+// GrayX11
+// GreenCrayola
+// GreenWeb
+// GreenMunsell
+// GreenNCS
+// GreenPantone
+// GreenPigment
+// GreenRYB
+// GreenBlue
+// GreenBlueCrayola
+// GreenCyan
+// GreenLizard
+// GreenSheen
+// GreenYellow
+// GreenYellowCrayola
+// Grullo
+// Gunmetal
+// HanBlue
+// HanPurple
+// HansaYellow
+// Harlequin
+// HarvestGold
+// HeatWave
+// Heliotrope
+// HeliotropeGray
+// HollywoodCerise
+// Honeydew
+// HonoluluBlue
+// HookersGreen
+// HotMagenta
+// HotPink
+// HunterGreen
+// Iceberg
+// Icterine
+// IlluminatingEmerald
+// ImperialRed
+// Inchworm
+// Independence
+// IndiaGreen
+// IndianRed
+// IndianYellow
+// Indigo
+// IndigoDye
+// InternationalOrangeAerospace
+// InternationalOrangeEngineering
+// InternationalOrangeGoldenGateBridge
+// Iris
+// Irresistible
+// Isabelline
+// ItalianSkyBlue
+// Ivory
+// Jade
+// JapaneseCarmine
+// JapaneseViolet
+// Jasmine
+// JazzberryJam
+// Jet
+// Jonquil
+// JuneBud
+// JungleGreen
+// KellyGreen
+// Keppel
+// KeyLime
+// KhakiWeb
+// KhakiX11
+// Kobe
+// Kobi
+// Kobicha
+// KombuGreen
+// KSUPurple
+// LanguidLavender
+// LapisLazuli
+// LaserLemon
+// LaurelGreen
+// Lava
+// LavenderFloral
+// LavenderWeb
+// LavenderBlue
+// LavenderBlush
+// LavenderGray
+// LawnGreen
+// Lemon
+// LemonChiffon
+// LemonCurry
+// LemonGlacier
+// LemonMeringue
+// LemonYellow
+// LemonYellowCrayola
+// Liberty
+// LightBlue
+// LightCoral
+// LightCornflowerBlue
+// LightCyan
+// LightFrenchBeige
+// LightGoldenrodYellow
+// LightGray
+// LightGreen
+// LightOrange
+// LightPeriwinkle
+// LightPink
+// LightSalmon
+// LightSeaGreen
+// LightSkyBlue
+// LightSlateGray
+// LightSteelBlue
+// LightYellow
+// Lilac
+// LilacLuster
+// LimeColorWheel
+// LimeWeb
+// LimeGreen
+// LincolnGreen
+// Linen
+// Lion
+// LiseranPurple
+// LittleBoyBlue
+// Liver
+// LiverDogs
+// LiverOrgan
+// LiverChestnut
+// Livid
+// MacaroniAndCheese
+// MadderLake
+// MagentaCrayola
+// MagentaDye
+// MagentaPantone
+// MagentaProcess
+// MagentaHaze
+// MagicMint
+// Magnolia
+// Mahogany
+// Maize
+// MaizeCrayola
+// MajorelleBlue
+// Malachite
+// Manatee
+// Mandarin
+// Mango
+// MangoTango
+// Mantis
+// MardiGras
+// Marigold
+// MaroonCrayola
+// MaroonWeb
+// MaroonX11
+// Mauve
+// MauveTaupe
+// Mauvelous
+// MaximumBlue
+// MaximumBlueGreen
+// MaximumBluePurple
+// MaximumGreen
+// MaximumGreenYellow
+// MaximumPurple
+// MaximumRed
+// MaximumRedPurple
+// MaximumYellow
+// MaximumYellowRed
+// MayGreen
+// MayaBlue
+// MediumAquamarine
+// MediumBlue
+// MediumCandyAppleRed
+// MediumCarmine
+// MediumChampagne
+// MediumOrchid
+// MediumPurple
+// MediumSeaGreen
+// MediumSlateBlue
+// MediumSpringGreen
+// MediumTurquoise
+// MediumVioletRed
+// MellowApricot
+// MellowYellow
+// Melon
+// MetallicGold
+// MetallicSeaweed
+// MetallicSunburst
+// MexicanPink
+// MiddleBlue
+// MiddleBlueGreen
+// MiddleBluePurple
+// MiddleGrey
+// MiddleGreen
+// MiddleGreenYellow
+// MiddlePurple
+// MiddleRed
+// MiddleRedPurple
+// MiddleYellow
+// MiddleYellowRed
+// Midnight
+// MidnightBlue
+// MidnightGreen
+// MikadoYellow
+// MimiPink
+// Mindaro
+// Ming
+// MinionYellow
+// Mint
+// MintCream
+// MintGreen
+// MistyMoss
+// MistyRose
+// ModeBeige
+// MorningBlue
+// MossGreen
+// MountainMeadow
+// MountbattenPink
+// MSUGreen
+// Mulberry
+// MulberryCrayola
+// Mustard
+// MyrtleGreen
+// Mystic
+// MysticMaroon
+// https://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z
+// NadeshikoPink
+// NaplesYellow
+// NavajoWhite
+// NavyBlue
+// NavyBlueCrayola
+// NeonBlue
+// NeonCarrot
+// NeonGreen
+// NeonFuchsia
+// NewYorkPink
+// Nickel
+// NonPhotoBlue
+// Nyanza
+// OceanBlue
+// OceanGreen
+// Ochre
+// OldBurgundy
+// OldGold
+// OldLace
+// OldLavender
+// OldMauve
+// OldRose
+// OldSilver
+// Olive
+// OliveDrab3
+// OliveDrab7
+// OliveGreen
+// Olivine
+// Onyx
+// Opal
+// OperaMauve
+// OrangeCrayola
+// OrangePantone
+// OrangeWeb
+// OrangePeel
+// OrangeRed
+// OrangeRedCrayola
+// OrangeSoda
+// OrangeYellow
+// OrangeYellowCrayola
+// Orchid
+// Orchid Pink
+// OrchidCrayola
+// OuterSpaceCrayola
+// OutrageousOrange
+// OxBlood
+// OxfordBlue
+// OUCrimsonRed
+// PacificBlue
+// PakistanGreen
+// PalatinatePurple
+// PaleAqua
+// PaleCerulean
+// PalePink
+// PalePurplePantone
+// PaleSilver
+// PaleSpringBud
+// PansyPurple
+// PaoloVeroneseGreen
+// PapayaWhip
+// ParadisePink
+// ParisGreen
+// PastelPink
+// Patriarch
+// PaynesGrey
+// Peach
+// PeachCrayola
+// PeachPuff
+// Pear
+// PearlyPurple
+// Periwinkle
+// PeriwinkleCrayola
+// PermanentGeraniumLake
+// PersianBlue
+// PersianGreen
+// PersianIndigo
+// PersianOrange
+// PersianPink
+// PersianPlum
+// PersianRed
+// PersianRose
+// Persimmon
+// PewterBlue
+// Phlox
+// PhthaloBlue
+// PhthaloGreen
+// PicoteeBlue
+// PictorialCarmine
+// PiggyPink
+// PineGreen
+// PineTree
+// Pink
+// PinkPantone
+// PinkFlamingo
+// PinkLace
+// PinkLavender
+// PinkSherbet
+// Pistachio
+// Platinum
+// Plum
+// PlumWeb
+// PlumpPurple
+// PolishedPine
+// PompAndPower
+// Popstar
+// PortlandOrange
+// PowderBlue
+// PrincetonOrange
+// Prune
+// PrussianBlue
+// PsychedelicPurple
+// Puce
+// PullmanBrown
+// Pumpkin
+// Purple
+// PurpleWeb
+// PurpleMunsell
+// PurpleX11
+// PurpleMountainMajesty
+// PurpleNavy
+// PurplePizzazz
+// PurplePlum
+// Purpureus
+// QueenBlue
+// QueenPink
+// QuickSilver
+// QuinacridoneMagenta
+// RadicalRed
+// RaisinBlack
+// Rajah
+// Raspberry
+// RaspberryGlace
+// RaspberryRose
+// RawSienna
+// RawUmber
+// RazzleDazzleRose
+// Razzmatazz
+// RazzmicBerry
+// RebeccaPurple
+// RedCrayola
+// RedMunsell
+// RedNCS
+// RedPantone
+// RedPigment
+// RedRYB
+// RedOrange
+// RedOrangeCrayola
+// RedOrangeColorWheel
+// RedPurple
+// RedSalsa
+// RedViolet
+// RedVioletCrayola
+// RedVioletColorWheel
+// Redwood
+// ResolutionBlue
+// Rhythm
+// RichBlack
+// RichBlackFOGRA29
+// RichBlackFOGRA39
+// RifleGreen
+// RobinEggBlue
+// RocketMetallic
+// RomanSilver
+// Rose
+// RoseBonbon
+// RoseDust
+// RoseEbony
+// RoseMadder
+// RosePink
+// RoseQuartz
+// RoseRed
+// RoseTaupe
+// RoseVale
+// Rosewood
+// RossoCorsa
+// RosyBrown
+// RoyalBlueDark
+// RoyalBlueLight
+// RoyalPurple
+// RoyalYellow
+// Ruber
+// RubineRed
+// Ruby
+// RubyRed
+// Rufous
+// Russet
+// RussianGreen
+// RussianViolet
+// Rust
+// RustyRed
+// SacramentoState Green
+// SaddleBrown
+// SafetyOrange
+// BlazeOrange
+// SafetyYellow
+// Saffron
+// Sage
+// StPatricksBlue
+// Salmon
+// SalmonPink
+// Sand
+// SandDune
+// SandyBrown
+// SapGreen
+// Sapphire
+// SapphireBlue
+// SapphireCrayola
+// SatinSheenGold
+// Scarlet
+// SchaussPink
+// SchoolBusYellow
+// ScreaminGreen
+// SeaGreen
+// SeaGreenCrayola
+// SealBrown
+// Seashell
+// SelectiveYellow
+// Sepia
+// Shadow
+// ShadowBlue
+// ShamrockGreen
+// SheenGreen
+// ShimmeringBlush
+// ShinyShamrock
+// ShockingPink
+// ShockingPinkCrayola
+// Sienna
+// Silver
+// SilverCrayola
+// SilverMetallic
+// SilverChalice
+// SilverPink
+// SilverSand
+// Sinopia
+// SizzlingRed
+// SizzlingSunrise
+// Skobeloff
+// SkyBlue
+// SkyBlueCrayola
+// SkyMagenta
+// SlateBlue
+// SlateGray
+// SlimyGreen
+// Smitten
+// SmokyBlack
+// Snow
+// SolidPink
+// SonicSilver
+// SpaceCadet
+// SpanishBistre
+// SpanishBlue
+// SpanishCarmine
+// SpanishGray
+// SpanishGreen
+// SpanishOrange
+// SpanishPink
+// SpanishRed
+// SpanishSkyBlue
+// SpanishViolet
+// SpanishViridian
+// SpringBud
+// SpringFrost
+// SpringGreen
+// SpringGreenCrayola
+// StarCommandBlue
+// SteelBlue
+// SteelPink
+// SteelTeal
+// StilDeGrainYellow
+// Straw
+// SugarPlum
+// Sunglow
+// Sunray
+// Sunset
+// SuperPink
+// SweetBrown
+// Tan
+// TanCrayola
+// Tangerine
+// TangoPink
+// TartOrange
+// Taupe
+// TaupeGray
+// TeaGreen
+// TeaRose = #F88379
+// TeaRoseWeb = #F4C2C2
+// Teal
+// TealBlue
+// Telemagenta
+// Tawny
+// TerraCotta
+// Thistle
+// ThulianPink
+// TickleMePink
+// TiffanyBlue
+// Timberwolf
+// TitaniumYellow
+// Tomato
+// TropicalRainforest
+// TrueBlue
+// TrypanBlue
+// TuftsBlue
+// Tumbleweed
+// Turquoise
+// TurquoiseBlue
+// TurquoiseGreen
+// TurtleGreen
+// Tuscan
+// TuscanBrown
+// TuscanRed
+// TuscanTan
+// Tuscany
+// TwilightLavender
+// TyrianPurple
+// UABlue
+// UARed
+// Ultramarine
+// UltramarineBlue
+// UltraPink
+// UltraRed
+// Umber
+// UnbleachedSilk
+// UnitedNationsBlue
+// UnmellowYellow
+// UPForestGreen
+// UPMaroon
+// UpsdellRed
+// UranianBlue
+// USAFABlue
+// VanDykeBrown
+// Vanilla
+// VanillaIce
+// VegasGold
+// VenetianRed
+// Verdigris
+// Vermilion = #E34234
+// VermilionWeb = #D9381E
+// Veronica
+// Violet
+// VioletColorWheel
+// VioletCrayola
+// VioletRYB
+// VioletWeb
+// VioletBlue
+// VioletBlueCrayola
+// VioletRed
+// Viridian
+// ViridianGreen
+// VividBurgundy
+// VividSkyBlue
+// VividTangerine
+// VividViolet
+// Volt
+// WarmBlack
+// Wheat
+// WildBlueYonder
+// WildOrchid
+// WildStrawberry
+// WildWatermelon
+// WindsorTan
+// Wine
+// WineDregs
+// WinterSky
+// WintergreenDream
+// Wisteria
+// WoodBrown
+// Xanthic
+// Xanadu
+// YaleBlue
+// YellowCrayola
+// YellowMunsell
+// YellowNCS
+// YellowPantone
+// YellowProcess
+// YellowRYB
+// YellowGreen
+// YellowGreenCrayola
+// YellowGreenColorWheel
+// YellowOrange
+// YellowOrangeColorWheel
+// YellowSunshine
+// YInMnBlue
+// Zaffre
+// Zomp
 
 // Compound System Words
 export const cWithText = cWith + cText;
@@ -829,6 +1812,8 @@ export const cBrowserRefresh = cBrowser + cRefresh;
 export const cSpaceIsColonSpace = b.cSpace + b.cIs + b.cColon + b.cSpace;
 export const cdeployApplication = cdeploy + cApplication;
 export const creleaseApplication = crelease + cApplication;
+export const cbackground = cback + cground;
+export const cBackground = cBack + cground;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -838,6 +1823,19 @@ export const cinputMetaDataIs = cinput + cMetaData + cSpaceIsColonSpace;
 export const creturnDataIs = creturn + cData + cSpaceIsColonSpace;
 export const cLogBasicSystemEvents = cLog + cBasic + cSystem + cEvents;
 export const cLogWarnings = cLog + cWarnings;
+// Logging Styles Constants
+export const cModuleFontStyleSetting = cModule + cFont + cStyle + cSetting;
+export const cFunctionFontStyleSetting = cFunction + cFont + cStyle + cSetting;
+export const cMessageFontStyleSetting = cMessage + cFont + cStyle + cSetting;
+export const cDataFontStyleSetting = cData + cFont + cStyle + cSetting;
+export const cModuleFontColorSetting = cModule + cFont + cColor + cSetting;
+export const cFunctionFontColorSetting = cFunction + cFont + cColor + cSetting;
+export const cMessageFontColorSetting = cMessage + cFont + cColor + cSetting;
+export const cDataFontColorSetting = cData + cFont + cColor + cSetting;
+export const cModuleFontBackgroundColorSetting = cModule + cFont + cBackground + cColor + cSetting;
+export const cFunctionFontBackgroundColorSetting = cFunction + cFont + cBackground + cColor + cSetting;
+export const cMessageFontBackgroundColorSetting = cMessage + cFont + cBackground + cColor + cSetting;
+export const cDataFontBackgroundColorSetting = cData + cFont + cBackground + cColor + cSetting;
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // 'Catia';
