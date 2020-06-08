@@ -275,6 +275,9 @@ export const creen = b.cre + b.cen;
 export const clue = b.clu + b.ce; // Referance to Tron here! :-P
 export const cyan = b.cy + b.can;
 export const centa = b.cen + b.cta;
+export const cite = b.cit + b.ce;
+export const cange = b.can + b.cge;
+
 
 // Boolean strings
 export const cTrue = b.cT + crue;
