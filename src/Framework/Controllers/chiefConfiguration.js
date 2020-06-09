@@ -54,6 +54,9 @@ function setupConfiguration(pathAndFilename) {
   var allConfigurationData = {};
   allConfigurationData = chiefData.setupAllXmlData(s.cConfigurationPath, s.cConfiguration);
   parseLoadedConfigurationData(allConfigurationData);
+  allConfigurationData = {};
+  allConfigurationData = chiefData.setupAllCsvData(s.cConfigurationPath, s.cConfiguration);
+  // parseLoadedConfigurationData(allConfigurationData);
 
   // Get the operating system envrionment variable here and setup how to setup the log files.
   loggers.consoleLog(s.cLogFileEnabled, configurator.getConfigurationSetting(s.cDateTimeSTamp));
@@ -135,7 +138,7 @@ function parseLoadedConfigurationData(allConfigurationData) {
     // acutally start working with more than one configuration file.
     // Although we might actually not have more than one configuration file.
     for (let key in allConfigurations) {
-      //console.log('single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
+      // console.log('single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
       // loggers.consoleLog(baseFileName + b.cDot + functionName, 'single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
       configurationElement = allConfigurations[key];
       name = '';

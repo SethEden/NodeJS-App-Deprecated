@@ -95,7 +95,7 @@
           <ConfigurationElement Name="characterGeneration@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="characterGeneration@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="chiefData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="chiefData" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="chiefData@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="chiefData@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -109,7 +109,7 @@
           <ConfigurationElement Name="chiefData@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="chiefData@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="dataBroker" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="dataBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="dataBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="dataBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -950,6 +950,34 @@
           <ConfigurationElement Name="stringParsing.getFileNameFromPath@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getFileNameFromPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getFileNameFromPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.getFileExtension" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getFileExtension@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.removeDotFromFileExtension@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="stringParsing.removeFileExtensionFromFileName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.removeFileExtensionFromFileName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

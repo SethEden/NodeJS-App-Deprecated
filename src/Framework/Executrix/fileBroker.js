@@ -15,6 +15,7 @@
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/bestzip|bestzip}
  * @requires module:data
+ * @requires {@link https://www.npmjs.com/package/papaparse|papaparse}
  * @requires xml2js
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -31,6 +32,7 @@ var fs = require('fs');
 var path = require('path');
 var zip = require('bestzip');
 var D = require('../Resources/data');
+var Papa = require('papaparse');
 var xml2js = require('xml2js').Parser({
   parseNumbers: true,
   parseBooleans: true,

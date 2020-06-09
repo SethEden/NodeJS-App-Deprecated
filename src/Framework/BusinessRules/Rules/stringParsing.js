@@ -561,7 +561,6 @@ export const cleanCarriageReturnFromString = function(inputData, inputMetaData) 
  */
 export const convertStringToLowerCase = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertStringToLowerCase is resolving as: ' + s.cconvertStringToLowerCase);
   var functionName = s.cconvertStringToLowerCase;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -586,7 +585,6 @@ export const convertStringToLowerCase = function(inputData, inputMetaData) {
  */
 export const convertStringToUpperCase = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertStringToUpperCase is resolving as: ' + s.cconvertStringToUpperCase);
   var functionName = s.cconvertStringToUpperCase;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -611,6 +609,9 @@ export const convertStringToUpperCase = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 export const getFileNameFromPath = function(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.getFileNameFromPath function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetFileNameFromPath;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -626,7 +627,57 @@ export const getFileNameFromPath = function(inputData, inputMetaData) {
   if (inputData.includes(b.cForwardSlash)) {
     inputData = swapForwardSlashToBackSlash(inputData, '');
   }
+  // console.log('inputData right before processing is: ' + inputData);
   var returnData = inputData.split(b.cBackSlash).pop().trim();
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getFileExtension
+ * @description parses the file name and it may or may not also include the path,
+ * but regardless it gets the file extension of the file.
+ * @param {string} inputData The string that should contain the file name to which we want to get the file extension.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The file extension such as txt, xml, csv, etc...
+ * @author Seth Hollingsead
+ * @date 2020/06/08
+ */
+export const getFileExtension = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cgetFileExtension;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  var returnData = path.extname(inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function removeDotFromFileExtension
+ * @description Removes the Dot from the file extension, such as if the input is ".txt", the return value will just be "txt".
+ * @param {string} inputData The string that should contain the file extension that is being modified.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {[string]} The file extension without the dot prefix.
+ * @author Seth Hollingsead
+ * @date 2020/06/08
+ */
+export const removeDotFromFileExtension = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cremoveDotFromFileExtension;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  var returnData = inputData.substring(1);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

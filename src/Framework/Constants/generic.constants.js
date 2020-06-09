@@ -325,16 +325,24 @@ export const cUpperCaseEnglishAlphabet = b.cAB + b.cCD + b.cEF + b.cGH + b.cIJ +
 export const cAllNumbers = b.c0 + b.c1 + b.c2 + b.c3 + b.c4 + b.c5 + b.c6 + b.c7 + b.c8 + b.c9;
 
 // File Extensions
+export const cdoc = b.cdo + b.cc;
 export const cDoc = b.cDo + b.cc;
+export const cDOC = b.cDO + b.cC;
+export const ccom = b.cco + b.cm;
 export const cCom = b.cCo + b.cm;
-export const cZip = b.cZ + b.cip;
+export const cCOM = b.cCO + b.cM;
 export const czip = b.cz + b.cip;
-export const cTxt = b.cT + b.cxt;
+export const cZip = b.cZ + b.cip;
+export const cZIP = b.cZ + b.cIP;
 export const ctxt = b.ct + b.cxt;
+export const cTxt = b.cT + b.cxt;
+export const cTXT = b.cT + b.cXT;
 export const ccsv = b.ccs + b.cv;
 export const cCsv = b.cCs + b.cv;
-export const cXml = b.cXm + b.cl;
+export const cCSV = b.cCS + b.cv;
 export const cxml = b.cxm + b.cl;
+export const cXml = b.cXm + b.cl;
+export const cXML = b.cXM + b.cL;
 
 export const cDotCSV = b.cDot + ccsv;
 export const cDotCom = b.cDot + cCom;
