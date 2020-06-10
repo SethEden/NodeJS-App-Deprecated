@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/SethEden/NodeJS-App/compare/v0.5.2...v0.5.3) (2020-06-10)
+
+
+### Features
+
+* Finishing adding and debugging all of the chalk colorizing systems for the console logs. ([b80de78](https://github.com/SethEden/NodeJS-App/commit/b80de78bd275b78fd16055d14480d4be988aaab8))
+* Working on deploying the new colors logging system. ([5c5ae6f](https://github.com/SethEden/NodeJS-App/commit/5c5ae6f0976d1293b98ecfe02e59e4c19eadd09c))
+
 ### [0.5.2](https://github.com/SethEden/NodeJS-App/compare/v0.5.1...v0.5.2) (2020-06-05)
 
 ### [0.5.1](https://github.com/SethEden/NodeJS-App/compare/v0.4.4...v0.5.1) (2020-06-05)
