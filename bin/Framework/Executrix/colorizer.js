@@ -338,7 +338,7 @@ function aggregateStyleSetting(settingValue1, settingValue2, processAsFontSettin
  * @function getFontStyleSettingsFromSetting
  * @description Parses the font setting to determine if values should be set for bold and/or underline.
  * @param {string} settingValue The setting value that should be parsed.
- * @return {array[boolean]} An array of booleans, [0] = underline setting True or False; [1] = bold setting True or False.
+ * @return {array<boolean>} An array of booleans, [0] = underline setting True or False; [1] = bold setting True or False.
  * @author Seth Hollingsead
  * @date 2020/06/09
  */
@@ -387,7 +387,7 @@ function getFontStyleSettingsFromSetting(settingValue) {
  * @function getColorStyleSettingFromSetting
  * @description Parses the color setting to determine if the value should be parsed or loaded from the color data tables by unique color name.
  * @param {string} settingValue The setting value, which could be RGB as in R,G,B or it could be a string-name as in a unique color name.
- * @return {array[integer]} An array of integers that represent RGB values.
+ * @return {array<integer>} An array of integers that represent RGB values.
  * @author Seth Hollingsead
  * @date 2020/06/09
  */
@@ -425,7 +425,7 @@ function getColorStyleSettingFromSetting(settingValue) {
  * @description Queries the D-data structure for the named color data.
  * All of this data should have been loaded from the Colors.csv file.
  * @param {string} colorName The name of the color who's RGB value we should look up from the color data structure.
- * @return {array[integer]} An array of integers that represent RGB values.
+ * @return {array<integer>} An array of integers that represent RGB values.
  * @author Seth Hollingsead
  * @date 2020/06/09
  */
@@ -530,7 +530,7 @@ function setBoldFontStyleOnMessageComponentAccordingToSetting(messageComponent, 
  * @description Examines the color setting to determine if it is False,
  * if not false then it is assumed to be an array of RGB values which are assigned to the message foreground component using chalk.
  * @param {string} messageComponent The message to which the foreground color setting should be applied if the color setting value != false.
- * @param {boolean|array[integer]} colorSettingValue A value of false or an array of integers for RGB values. False if no color should be applied.
+ * @param {boolean|array<integer>} colorSettingValue A value of false or an array of integers for RGB values. False if no color should be applied.
  * @return {string} The same as the input string, except perhaps it might have a foreground color setting applied to it.
  * @author Seth Hollingsead
  * @date 2020/06/10
@@ -561,7 +561,7 @@ function setFontForgroundColorOnMessageComponentAccordingToSetting(messageCompon
  * @description Examins the color setting to determine if it is false,
  * if not false then it is assumed to be an array of RGB values which are assigned to the message background using chalk.
  * @param {string} messageComponent The message to which the background color setting should be applied if the color setting value != false.
- * @param {boolean|array[integer]} colorSettingValue A value of false or an array of integers for RGB values. False if no color should be applied.
+ * @param {boolean|array<integer>} colorSettingValue A value of false or an array of integers for RGB values. False if no color should be applied.
  * @return {string} The same as the input string, except perhaps it might have a background color setting applied to it.
  * @author Seth Hollingsead
  * @date 2020/06/10

@@ -34,22 +34,22 @@
  * Additional logic is in place to allow the configuration file to define which
  * modules/files &amp; functions should participate in logging operations.
  * @requires module:configurator
+ * @requires module:colorizer
  * @requires module:ruleBroker
  * @requires module:system-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
- * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import configurator from './configurator';
+import colorizer from './colorizer';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import * as s from '../Constants/system.constants';
 import * as b from '../Constants/basic.constants';
 var fs = require('fs');
-var chalk = require('chalk');
 var D = require('../Resources/data');
 
 /**
@@ -218,8 +218,6 @@ function parseClassPath(logFile, classPath, message) {
   var debugFunctionsSetting = false;
   var debugFilesSetting = false;
   var classPathArray = {};
-  var rules = {};
-  rules[1] = s.creplaceDoublePercentWithMessage;
 
   classPathArray = classPath.split(b.cDot);
   // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
@@ -247,21 +245,23 @@ function parseClassPath(logFile, classPath, message) {
   // printMessageToFile(logFile, 'getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
   debugFunctionsSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
   // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
-
   debugFilesSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className);
   // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
-    message = chalk.white(message);
-    className = chalk.red.bold(className);
-    functionName = chalk.red.bold(functionName);
-    // message = message.replace('%%', className + b.cDot + functionName);
-    return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    // message = chalk.white(message);
+    // className = chalk.red.bold(className);
+    // functionName = chalk.red.bold(functionName);
+    // // message = message.replace('%%', className + b.cDot + functionName);
+    // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    message = colorizer.colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
+    return message;
   } else if ((debugFunctionsSetting === undefined &amp;&amp; debugFilesSetting === undefined) ||
   (debugFunctionsSetting === undefined &amp;&amp; debugFilesSetting === false) ||
   (debugFunctionsSetting === false &amp;&amp; debugFilesSetting === undefined) ||
   (debugFunctionsSetting === false &amp;&amp; debugFilesSetting === false)) {
     return false;
   } else {
+    message = colorizer.colorizeMessage(message, className, functionName, undefined, undefined, true);
     return message;
   }
 };
@@ -329,13 +329,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 05 2020 08:29:44 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 10 2020 17:05:21 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

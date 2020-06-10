@@ -85,6 +85,7 @@ function getAndProcessXmlData(pathAndFilename) {
   var allSystemConfigurations = dataBroker.getXmlData(pathAndFilename);
   // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
   allSystemConfigurations = dataBroker.processXmlData(allSystemConfigurations);
+
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allSystemConfigurations is: ' + JSON.stringify(allSystemConfigurations));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return allSystemConfigurations;
@@ -100,17 +101,27 @@ function getAndProcessXmlData(pathAndFilename) {
  * @date 2020/05/22
  */
 function setupAllCsvData(dataPathConfigurationName, contextName) {
+  // console.log('BEGIN chiefData.setupAllCsvData function');
+  // console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
+  // console.log('contextName is: ' + contextName);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = setupAllCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPathConfigurationName is: ' + dataPathConfigurationName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
+  var loadedAndMergedDataAllFiles = {};
   var dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  // console.log('dataPath is: ' + dataPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
   var filesToLoad = dataBroker.scanDataPath(dataPath);
+  // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
-  dataBroker.loadAllCsvData(filesToLoad, contextName);
+  loadedAndMergedDataAllFiles = dataBroker.loadAllCsvData(filesToLoad, contextName);
+  // console.log('loadedAndMergedDataAllFiles is: ' + JSON.stringify(loadedAndMergedDataAllFiles));
+  // console.log('END chiefData.setupAllCsvData function');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'loadedAndMergedDataAllFiles is: ' + JSON.stringify(loadedAndMergedDataAllFiles));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return loadedAndMergedDataAllFiles;
 };
 
 /**
@@ -141,7 +152,7 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
   loadedAndMergedDataAllFiles = dataBroker.loadAllXmlData(filesToLoad, contextName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'loadedAndMergedDataAllFiles contents are: ' + JSON.stringify(loadedAndMergedDataAllFiles));
   loggers.consoleLog(baseFileName = b.cDot + functionName, s.cEND_Function);
-  // console.log('loadedAndMergedDataAllFiles is: ' + loadedAndMergedDataAllFiles);
+  // console.log('loadedAndMergedDataAllFiles is: ' + JSON.stringify(loadedAndMergedDataAllFiles));
   // console.log('END chiefData.setupAllXmlData function');
   return loadedAndMergedDataAllFiles;
 };
@@ -162,13 +173,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 05 2020 08:29:44 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 10 2020 17:05:21 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
