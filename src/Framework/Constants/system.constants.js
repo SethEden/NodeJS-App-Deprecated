@@ -295,6 +295,7 @@ export const cSpace = b.cSp + g.cace; // 'Space';
 export const cSpaces = cSpace + g.cs; // 'Spaces';
 export const cPlus = b.cPl + b.cus; // 'Plus';
 export const cColon = b.cCo + b.clo + b.cn; // 'Colon';
+export const cunder = b.cun + g.cder;
 export const cUnder = b.cUn + g.cder;
 export const cscore = b.cs + g.ccore;
 export const cScore = b.cS + g.ccore;
@@ -388,7 +389,9 @@ export const cSingular = b.cSi + b.cng + b.cul + b.car; // 'Singular';
 export const cParallel = b.cPa + b.cra + b.cll + b.cel; // 'Parallel';
 export const cMulti = b.cMu + b.clt + b.ci; // 'Multi';
 export const cUnified = b.cUn + b.cif + b.cie + b.cd; // 'Unified';
-export const cDefault = b.cDe + b.cfa + b.cul + b.ct; // 'Default';
+export const cfault = b.cfa + b.cul + b.ct;
+export const cdefault = b.cde + cfault;
+export const cDefault = b.cDe + cfault; // 'Default';
 export const csingle = b.cs + g.cingle;
 export const cSingle = b.cS + g.cingle; // 'Single';
 export const cQuote = b.cQu + b.cot + b.ce; // 'Quote';
@@ -674,8 +677,14 @@ export const ccolor = g.ccol + b.cor;
 export const cColor = g.cCol + b.cor;
 export const ccolors = ccolor + b.cs;
 export const cColors = cColor + b.cs;
+export const cold = b.col + b.cd;
+export const cOld = b.cOl + b.cd;
+export const cbold = b.cb + cold;
+export const cBold = b.cB + cold;
 
 // Shapes
+export const cline = b.cli + b.cne;
+export const cLine = b.cLi + b.cne;
 export const ccircle = g.ccir + g.ccle;
 export const cCircle = g.cCir + g.ccle;
 export const coval = b.cov + b.cal;
@@ -1680,6 +1689,8 @@ export const cZaffre = 'Zaffre';
 export const cZomp = 'Zomp';
 
 // Compound System Words
+export const cunderline = cunder + cline;
+export const cUnderline = cUnder + cline;
 export const cWithText = cWith + cText;
 export const cwithText = cwith + cText;
 export const cDebugTest = cDebug + cTest;
@@ -1847,18 +1858,18 @@ export const creturnDataIs = creturn + cData + cSpaceIsColonSpace;
 export const cLogBasicSystemEvents = cLog + cBasic + cSystem + cEvents;
 export const cLogWarnings = cLog + cWarnings;
 // Logging Styles Constants
-export const cModuleFontStyleSetting = cModule + cFont + cStyle + cSetting;
-export const cFunctionFontStyleSetting = cFunction + cFont + cStyle + cSetting;
-export const cMessageFontStyleSetting = cMessage + cFont + cStyle + cSetting;
-export const cDataFontStyleSetting = cData + cFont + cStyle + cSetting;
-export const cModuleFontColorSetting = cModule + cFont + cColor + cSetting;
-export const cFunctionFontColorSetting = cFunction + cFont + cColor + cSetting;
-export const cMessageFontColorSetting = cMessage + cFont + cColor + cSetting;
-export const cDataFontColorSetting = cData + cFont + cColor + cSetting;
-export const cModuleFontBackgroundColorSetting = cModule + cFont + cBackground + cColor + cSetting;
-export const cFunctionFontBackgroundColorSetting = cFunction + cFont + cBackground + cColor + cSetting;
-export const cMessageFontBackgroundColorSetting = cMessage + cFont + cBackground + cColor + cSetting;
-export const cDataFontBackgroundColorSetting = cData + cFont + cBackground + cColor + cSetting;
+export const cModuleFontStyle = cModule + cFont + cStyle;
+export const cFunctionFontStyle = cFunction + cFont + cStyle;
+export const cMessageFontStyle = cMessage + cFont + cStyle;
+export const cDataFontStyle = cData + cFont + cStyle;
+export const cModuleFontColor = cModule + cFont + cColor;
+export const cFunctionFontColor = cFunction + cFont + cColor;
+export const cMessageFontColor = cMessage + cFont + cColor;
+export const cDataFontColor = cData + cFont + cColor;
+export const cModuleFontBackgroundColor = cModule + cFont + cBackground + cColor;
+export const cFunctionFontBackgroundColor = cFunction + cFont + cBackground + cColor;
+export const cMessageFontBackgroundColor = cMessage + cFont + cBackground + cColor;
+export const cDataFontBackgroundColor = cData + cFont + cBackground + cColor;
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // 'Catia';

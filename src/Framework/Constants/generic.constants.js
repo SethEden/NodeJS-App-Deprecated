@@ -269,6 +269,7 @@ export const ctieth = b.cti + b.ce + b.cth;
 export const cont = b.con + b.ct;
 export const cull = b.cul + b.cl;
 export const cmod = b.cmo + b.cd;
+export const cMod = b.cMo + b.cd;
 export const ccol = b.cco + b.cl;
 export const cCol = b.cCo + b.cl;
 export const creen = b.cre + b.cen;

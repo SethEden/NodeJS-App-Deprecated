@@ -11,7 +11,6 @@
  * @requires module:system-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
- * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -23,7 +22,6 @@ import ruleBroker from '../BusinessRules/ruleBroker';
 import * as s from '../Constants/system.constants';
 import * as b from '../Constants/basic.constants';
 var fs = require('fs');
-var chalk = require('chalk');
 var D = require('../Resources/data');
 
 /**
@@ -192,8 +190,6 @@ function parseClassPath(logFile, classPath, message) {
   var debugFunctionsSetting = false;
   var debugFilesSetting = false;
   var classPathArray = {};
-  var rules = {};
-  rules[1] = s.creplaceDoublePercentWithMessage;
 
   classPathArray = classPath.split(b.cDot);
   // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
@@ -229,14 +225,15 @@ function parseClassPath(logFile, classPath, message) {
     // functionName = chalk.red.bold(functionName);
     // // message = message.replace('%%', className + b.cDot + functionName);
     // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
-    message = colorizeMessage.colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
+    message = colorizer.colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
+    return message;
   } else if ((debugFunctionsSetting === undefined && debugFilesSetting === undefined) ||
   (debugFunctionsSetting === undefined && debugFilesSetting === false) ||
   (debugFunctionsSetting === false && debugFilesSetting === undefined) ||
   (debugFunctionsSetting === false && debugFilesSetting === false)) {
     return false;
   } else {
-    message = colorizeMessage.colorizeMessage(message, className, functionName, undefined, undefined, true);
+    message = colorizer.colorizeMessage(message, className, functionName, undefined, undefined, true);
     return message;
   }
 };

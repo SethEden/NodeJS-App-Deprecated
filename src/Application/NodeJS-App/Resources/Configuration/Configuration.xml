@@ -39,19 +39,19 @@
           <ConfigurationElement Name="build@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="build@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="warden@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="warden@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
           <ConfigurationElement Name="warden@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
-          <ConfigurationElement Name="warden@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="warden@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="warden@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="warden@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="warden@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="warden@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="warden@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="warden@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="warden@ModuleFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="warden@FunctionFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="warden@MessageFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="warden@DataFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="warden@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="warden@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="warden@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="warden@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="stringParsing" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -100,30 +100,30 @@
           <ConfigurationElement Name="chiefData@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="chiefData@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
           <ConfigurationElement Name="chiefData@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
-          <ConfigurationElement Name="chiefData@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="chiefData@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="chiefData@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="chiefData@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="chiefData@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="chiefData@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="chiefData@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="chiefData@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="chiefData@ModuleFontColor" Type="Default" Value="Orange" Version="3"/>
+          <ConfigurationElement Name="chiefData@FunctionFontColor" Type="Default" Value="Orange" Version="3"/>
+          <ConfigurationElement Name="chiefData@MessageFontColor" Type="Default" Value="Orange" Version="3"/>
+          <ConfigurationElement Name="chiefData@DataFontColor" Type="Default" Value="Orange" Version="3"/>
+          <ConfigurationElement Name="chiefData@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="chiefData@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="chiefData@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="chiefData@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="dataBroker" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="dataBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="dataBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="dataBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
           <ConfigurationElement Name="dataBroker@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
-          <ConfigurationElement Name="dataBroker@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="dataBroker@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="dataBroker@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="dataBroker@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="dataBroker@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="dataBroker@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="dataBroker@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="dataBroker@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="dataBroker@ModuleFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="dataBroker@FunctionFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="dataBroker@MessageFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="dataBroker@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="dataBroker@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="dataBroker@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="dataBroker@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="dataBroker@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="fileBroker" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="fileBroker" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="fileBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="fileBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="fileBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>

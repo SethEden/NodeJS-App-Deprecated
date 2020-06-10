@@ -75,7 +75,8 @@ function application() {
         warden.consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
         programRunning = false;
         warden.consoleLog(baseFileName + b.cDot + functionName, 'END main program loop');
-        console.log('Exiting, Good bye, Have a nice day & stay safe!');
+        // console.log('Exiting, Good bye, Have a nice day & stay safe!');
+        warden.consoleLog(baseFileName + b.cDot + functionName, 'Exiting, Good bye, Have a nice day & stay safe!');
         break;
       } else {
         // console.log('contents of D are: ' + JSON.stringify(D));
