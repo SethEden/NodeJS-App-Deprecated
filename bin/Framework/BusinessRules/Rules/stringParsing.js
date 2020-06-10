@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
@@ -808,7 +808,6 @@ exports.cleanCarriageReturnFromString = cleanCarriageReturnFromString;
 
 var convertStringToLowerCase = function convertStringToLowerCase(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertStringToLowerCase is resolving as: ' + s.cconvertStringToLowerCase);
   var functionName = s.cconvertStringToLowerCase;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -844,7 +843,6 @@ exports.convertStringToLowerCase = convertStringToLowerCase;
 
 var convertStringToUpperCase = function convertStringToUpperCase(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertStringToUpperCase is resolving as: ' + s.cconvertStringToUpperCase);
   var functionName = s.cconvertStringToUpperCase;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -880,6 +878,9 @@ var convertStringToUpperCase = function convertStringToUpperCase(inputData, inpu
 exports.convertStringToUpperCase = convertStringToUpperCase;
 
 var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.getFileNameFromPath function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetFileNameFromPath;
 
@@ -900,9 +901,81 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
 
   if (inputData.includes(b.cForwardSlash)) {
     inputData = swapForwardSlashToBackSlash(inputData, '');
-  }
+  } // console.log('inputData right before processing is: ' + inputData);
+
 
   var returnData = inputData.split(b.cBackSlash).pop().trim();
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getFileExtension
+ * @description parses the file name and it may or may not also include the path,
+ * but regardless it gets the file extension of the file.
+ * @param {string} inputData The string that should contain the file name to which we want to get the file extension.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The file extension such as txt, xml, csv, etc...
+ * @author Seth Hollingsead
+ * @date 2020/06/08
+ */
+
+
+exports.getFileNameFromPath = getFileNameFromPath;
+
+var getFileExtension = function getFileExtension(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cgetFileExtension;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (!inputData) {
+    return false;
+  }
+
+  var returnData = path.extname(inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function removeDotFromFileExtension
+ * @description Removes the Dot from the file extension, such as if the input is ".txt", the return value will just be "txt".
+ * @param {string} inputData The string that should contain the file extension that is being modified.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The file extension without the dot prefix.
+ * @author Seth Hollingsead
+ * @date 2020/06/08
+ */
+
+
+exports.getFileExtension = getFileExtension;
+
+var removeDotFromFileExtension = function removeDotFromFileExtension(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cremoveDotFromFileExtension;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (!inputData) {
+    return false;
+  }
+
+  var returnData = inputData.substring(1);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -922,7 +995,7 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
  */
 
 
-exports.getFileNameFromPath = getFileNameFromPath;
+exports.removeDotFromFileExtension = removeDotFromFileExtension;
 
 var removeFileExtensionFromFileName = function removeFileExtensionFromFileName(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));

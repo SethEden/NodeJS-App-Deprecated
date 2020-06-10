@@ -79,6 +79,10 @@ var rulesLibrary = (_rulesLibrary = {}, _defineProperty(_rulesLibrary, s.cEcho, 
   return stringParsing.convertStringToUpperCase(inputData, inputMetaData);
 }), _defineProperty(_rulesLibrary, s.cgetFileNameFromPath, function (inputData, inputMetaData) {
   return stringParsing.getFileNameFromPath(inputData, inputMetaData);
+}), _defineProperty(_rulesLibrary, s.cgetFileExtension, function (inputData, inputMetaData) {
+  return stringParsing.getFileExtension(inputData, inputMetaData);
+}), _defineProperty(_rulesLibrary, s.cremoveDotFromFileExtension, function (inputData, inputMetaData) {
+  return stringParsing.removeDotFromFileExtension(inputData, inputMetaData);
 }), _defineProperty(_rulesLibrary, s.cremoveFileExtensionFromFileName, function (inputData, inputMetaData) {
   return stringParsing.removeFileExtensionFromFileName(inputData, inputMetaData);
 }), _defineProperty(_rulesLibrary, s.cgetValueFromAssignmentOperationString, function (inputData, inputMetaData) {

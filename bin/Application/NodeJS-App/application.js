@@ -108,9 +108,11 @@ function application() {
 
         programRunning = false;
 
-        _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'END main program loop');
+        _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'END main program loop'); // console.log('Exiting, Good bye, Have a nice day & stay safe!');
 
-        console.log('Exiting, Good bye, Have a nice day & stay safe!');
+
+        _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'Exiting, Good bye, Have a nice day & stay safe!');
+
         break;
       } else {// console.log('contents of D are: ' + JSON.stringify(D));
         // console.log(result);

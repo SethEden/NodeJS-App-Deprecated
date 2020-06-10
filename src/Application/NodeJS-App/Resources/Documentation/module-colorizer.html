@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: warden</title>
+    <title>JSDoc: Module: colorizer</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: warden</h1>
+    <h1 class="page-title">Module: colorizer</h1>
 
     
 
@@ -38,8 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Contains all the functions to manage the entire application framework at the highest level.
-Also provides an interface to easily manage all of the application features &amp; various functionality from a single entry point.</p></div>
+            <div class="description"><p>Contains all of the functions needed to manage, parse and control font styles and font colors.</p></div>
         
 
         
@@ -98,7 +97,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line1">line 1</a>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -138,27 +137,15 @@ Also provides an interface to easily manage all of the application features &amp
         <h3 class="subsection-title">Requires</h3>
 
         <ul>
-            <li><a href="module-chiefConfiguration.html">module:chiefConfiguration</a></li>
-        
             <li><a href="module-configurator.html">module:configurator</a></li>
-        
-            <li><a href="module-timers.html">module:timers</a></li>
         
             <li><a href="module-ruleBroker.html">module:ruleBroker</a></li>
         
-            <li><a href="module-dataBroker.html">module:dataBroker</a></li>
-        
-            <li><a href="module-fileBroker.html">module:fileBroker</a></li>
-        
-            <li><a href="module-loggers.html">module:loggers</a></li>
+            <li><a href="module-system-constants.html">module:system-constants</a></li>
         
             <li><a href="module-basic-constants.html">module:basic-constants</a></li>
         
-            <li><a href="module-generic-constants.html">module:generic-constants</a></li>
-        
-            <li><a href="module-system-constants.html">module:system-constants</a></li>
-        
-            <li><a href="https://www.npmjs.com/package/path">path</a></li>
+            <li><a href="https://www.npmjs.com/package/chalk">chalk</a></li>
         
             <li><a href="module-data.html">module:data</a></li>
         </ul>
@@ -173,6 +160,80 @@ Also provides an interface to easily manage all of the application features &amp
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~setFontBackgroundColorOnMessageComponentAccordingToSetting"><span class="type-signature">(inner) </span>setFontBackgroundColorOnMessageComponentAccordingToSetting<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>Examins the color setting to determine if it is false,
+if not false then it is assumed to be an array of RGB values which are assigned to the message background using chalk.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line501">line 501</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -183,7 +244,7 @@ Also provides an interface to easily manage all of the application features &amp
     
 
     
-    <h4 class="name" id="~bootStrapApplication"><span class="type-signature">(inner) </span>bootStrapApplication<span class="signature">(pathAndFilename)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~aggregateStyleSetting"><span class="type-signature">(inner) </span>aggregateStyleSetting<span class="signature">(settingValue1, settingValue2, processAsFontSetting)</span><span class="type-signature"> &rarr; {array.&lt;boolean>}</span></h4>
     
 
     
@@ -191,7 +252,7 @@ Also provides an interface to easily manage all of the application features &amp
 
 
 <div class="description">
-    <p>Do all of the activities to setup the application system to run whatever actions the application will run.</p>
+    <p>Compares the two input settings and determines which one of them is valuable or not valuable.</p>
 </div>
 
 
@@ -227,7 +288,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         <tr>
             
-                <td class="name"><code>pathAndFilename</code></td>
+                <td class="name"><code>settingValue1</code></td>
             
 
             <td class="type">
@@ -243,7 +304,53 @@ Also provides an interface to easily manage all of the application features &amp
 
             
 
-            <td class="description last"><p>The path and file name of the XML file that should be loaded and parsed into JavaScript objects.</p></td>
+            <td class="description last"><p>The file level setting from the configuration file.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>settingValue2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The function level setting from the configuration file.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>processAsFontSetting</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A True or False value to indicate if we are processing True = font setting, False = color setting.</p></td>
         </tr>
 
     
@@ -291,7 +398,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line84">line 84</a>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line281">line 281</a>
     </li></ul></dd>
     
 
@@ -319,6 +426,10 @@ Also provides an interface to easily manage all of the application features &amp
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>An array of booleans, [0] = underline setting True or False; [1] = bold setting True or False.</p>
+</div>
+
 
 
 <dl>
@@ -327,7 +438,7 @@ Also provides an interface to easily manage all of the application features &amp
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">array.&lt;boolean></span>
 
 
     </dd>
@@ -345,7 +456,7 @@ Also provides an interface to easily manage all of the application features &amp
     
 
     
-    <h4 class="name" id="~consoleLog"><span class="type-signature">(inner) </span>consoleLog<span class="signature">(classPath, message)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~colorizeMessage"><span class="type-signature">(inner) </span>colorizeMessage<span class="signature">(message, className, functionName, debugFilesSetting, debugFunctionsSetting, flatMessageLog)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
 
     
@@ -353,7 +464,7 @@ Also provides an interface to easily manage all of the application features &amp
 
 
 <div class="description">
-    <p>This is just a wrapper for the loggers.consoleLog function.</p>
+    <p>Applies color settings to various portions of the message according to the settings from the configuration system.</p>
 </div>
 
 
@@ -385,29 +496,6 @@ Also provides an interface to easily manage all of the application features &amp
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>classPath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The class path for the caller of this function file.function or class.method.</p></td>
-        </tr>
-
     
 
         <tr>
@@ -419,15 +507,75 @@ Also provides an interface to easily manage all of the application features &amp
             
                 
 <span class="param-type">string</span>
-|
 
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The message that should be formatted and returned to be logged to the console and/or loged to a log file.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>className</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the module/file that made the log call.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>functionName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the function that made the log call.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>debugFilesSetting</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">boolean</span>
-|
-
-<span class="param-type">integer</span>
-|
-
-<span class="param-type">object</span>
 
 
             
@@ -437,7 +585,58 @@ Also provides an interface to easily manage all of the application features &amp
 
             
 
-            <td class="description last"><p>The message or data content that should be dumped to the output.</p></td>
+            <td class="description last"><p>A TRUE or FALSE value to indicate if the log should happen according to the file/module name.
+Setting is set in the configuration/settings system.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>debugFunctionsSetting</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A TRUE or FALSE value to indicate if the log should happen according to the function/method name.
+Setting is set in the configuration/settings system.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>flatMessageLog</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A TRUE or FALSE value to indicate if we are logging a flat message or if we should do additional processing.
+We will probably do some additional processing either way, but there is a difference in the workflows.
+For one a non-flat message will certainly have to replace a &quot;%%&quot; with the class path (className.functionName),
+and the associated formatting that goes with that according to the settings.</p></td>
         </tr>
 
     
@@ -485,192 +684,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line237">line 237</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~deployApplication"><span class="type-signature">(inner) </span>deployApplication<span class="signature">(source, destination)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Copys all non-source code files and folders from the source path to the destination path.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>source</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The path the non-code files should be copied from.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>destination</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The path the non-code files should be copied to.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line37">line 37</a>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -699,7 +713,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         
 <div class="param-desc">
-    <p>A TRUE or FALSE value to indicate if the deployment was successful or not.</p>
+    <p>A colorized version of the message.</p>
 </div>
 
 
@@ -710,7 +724,7 @@ Also provides an interface to easily manage all of the application features &amp
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">String</span>
 
 
     </dd>
@@ -728,7 +742,7 @@ Also provides an interface to easily manage all of the application features &amp
     
 
     
-    <h4 class="name" id="~getConfigurationSetting"><span class="type-signature">(inner) </span>getConfigurationSetting<span class="signature">(configurationName)</span><span class="type-signature"> &rarr; {string|integer|boolean|object}</span></h4>
+    <h4 class="name" id="~getColorStyleSettingFromSetting"><span class="type-signature">(inner) </span>getColorStyleSettingFromSetting<span class="signature">(settingValue)</span><span class="type-signature"></span></h4>
     
 
     
@@ -736,7 +750,7 @@ Also provides an interface to easily manage all of the application features &amp
 
 
 <div class="description">
-    <p>This is just a wrapper for the configurator getConfigurationSetting function.</p>
+    <p>Parses the color setting to determine if the value should be parsed or loaded from the color data tables by unique color name.</p>
 </div>
 
 
@@ -772,7 +786,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         <tr>
             
-                <td class="name"><code>configurationName</code></td>
+                <td class="name"><code>settingValue</code></td>
             
 
             <td class="type">
@@ -788,7 +802,7 @@ Also provides an interface to easily manage all of the application features &amp
 
             
 
-            <td class="description last"><p>The key of the configuration setting.</p></td>
+            <td class="description last"><p>The setting value, which could be RGB as in R,G,B or it could be a string-name as in a unique color name.</p></td>
         </tr>
 
     
@@ -836,7 +850,481 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line213">line 213</a>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line368">line 368</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getFontStyleSettingsFromSetting"><span class="type-signature">(inner) </span>getFontStyleSettingsFromSetting<span class="signature">(settingValue)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parses the font setting to determine if values should be set for bold and/or underline.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settingValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The setting value that should be parsed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line323">line 323</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getNamedColorData"><span class="type-signature">(inner) </span>getNamedColorData<span class="signature">(colorName)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Queries the D-data structure for the named color data.
+All of this data should have been loaded from the Colors.csv file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>colorName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the color who's RGB value we should look up from the color data structure.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line396">line 396</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~setBoldFontStyleOnMessageComponentAccordingToSetting"><span class="type-signature">(inner) </span>setBoldFontStyleOnMessageComponentAccordingToSetting<span class="signature">(messageComponent, boldsettingValue)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Examins the bold setting value and determines if the bold font setting should be applied to the message component or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>messageComponent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The message to which the bold font setting should be applied if the setting value calls for it.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>boldsettingValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A True or False value to indicate if the bold font setting should be applied or not applied.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line451">line 451</a>
     </li></ul></dd>
     
 
@@ -865,7 +1353,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         
 <div class="param-desc">
-    <p>The value of whatever was stored in the D[Configuration] sub-tree.</p>
+    <p>The same as the input string, except perhaps it might have a bold setting applied to it.</p>
 </div>
 
 
@@ -877,15 +1365,6 @@ Also provides an interface to easily manage all of the application features &amp
     <dd>
         
 <span class="param-type">string</span>
-|
-
-<span class="param-type">integer</span>
-|
-
-<span class="param-type">boolean</span>
-|
-
-<span class="param-type">object</span>
 
 
     </dd>
@@ -903,7 +1382,7 @@ Also provides an interface to easily manage all of the application features &amp
     
 
     
-    <h4 class="name" id="~processCommand"><span class="type-signature">(inner) </span>processCommand<span class="signature">(command)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="~setFontForgroundColorOnMessageComponentAccordingToSetting"><span class="type-signature">(inner) </span>setFontForgroundColorOnMessageComponentAccordingToSetting<span class="signature">(messageComponent)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -911,7 +1390,8 @@ Also provides an interface to easily manage all of the application features &amp
 
 
 <div class="description">
-    <p>This is just a wrapper for the chiefCommander.processCommand function.</p>
+    <p>Examines the color setting to determine if it is False,
+if not false then it is assumed to be an array of RGB values which are assigned to the message foreground component using chalk.</p>
 </div>
 
 
@@ -947,7 +1427,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         <tr>
             
-                <td class="name"><code>command</code></td>
+                <td class="name"><code>messageComponent</code></td>
             
 
             <td class="type">
@@ -963,7 +1443,25 @@ Also provides an interface to easily manage all of the application features &amp
 
             
 
-            <td class="description last"><p>The command string and all of the arguments that should be processed for the command.</p></td>
+            <td class="description last"><p>The message to which the foreground color setting should be applied if the color setting value != false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code></code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
         </tr>
 
     
@@ -1011,7 +1509,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line170">line 170</a>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line473">line 473</a>
     </li></ul></dd>
     
 
@@ -1040,7 +1538,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         
 <div class="param-desc">
-    <p>A TRUE or FALSE to indicate if the command loop should terminate when it's done.</p>
+    <p>The same as the input string, except perhaps it might have a foreground color setting applied to it.</p>
 </div>
 
 
@@ -1051,7 +1549,7 @@ Also provides an interface to easily manage all of the application features &amp
     </dt>
     <dd>
         
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
     </dd>
@@ -1069,7 +1567,7 @@ Also provides an interface to easily manage all of the application features &amp
     
 
     
-    <h4 class="name" id="~processRootPath"><span class="type-signature">(inner) </span>processRootPath<span class="signature">(systemRootPath)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~setUnderlineFontStyleOnMessageComponentAccordingToSetting"><span class="type-signature">(inner) </span>setUnderlineFontStyleOnMessageComponentAccordingToSetting<span class="signature">(messageComponent, underlineSettingValue)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -1077,7 +1575,7 @@ Also provides an interface to easily manage all of the application features &amp
 
 
 <div class="description">
-    <p>Processes the root path of the application using business rules.</p>
+    <p>Examins the underline setting value and determines if the underline font setting should be applied to the message component or not.</p>
 </div>
 
 
@@ -1113,7 +1611,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         <tr>
             
-                <td class="name"><code>systemRootPath</code></td>
+                <td class="name"><code>messageComponent</code></td>
             
 
             <td class="type">
@@ -1129,7 +1627,30 @@ Also provides an interface to easily manage all of the application features &amp
 
             
 
-            <td class="description last"><p>The root path as returned by calling: path.resolve(__dirname);</p></td>
+            <td class="description last"><p>The message to which the underline font setting should be applied if the setting value calls for it.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>underlineSettingValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A True or False value to indicate is the underline font setting should be applied or not applied.</p></td>
         </tr>
 
     
@@ -1177,7 +1698,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line112">line 112</a>
+        <a href="Framework_Executrix_colorizer.js.html">Framework/Executrix/colorizer.js</a>, <a href="Framework_Executrix_colorizer.js.html#line429">line 429</a>
     </li></ul></dd>
     
 
@@ -1206,7 +1727,7 @@ Also provides an interface to easily manage all of the application features &amp
 
         
 <div class="param-desc">
-    <p>The true root path of the application.</p>
+    <p>The same as the input string, except perhaps it might have an underline setting applied to it.</p>
 </div>
 
 
@@ -1218,555 +1739,6 @@ Also provides an interface to easily manage all of the application features &amp
     <dd>
         
 <span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~releaseApplication"><span class="type-signature">(inner) </span>releaseApplication<span class="signature">(source, release)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Scans the specified release folder path and determines if
-there is a zip file for the current release or not. If there is not,
-then the system will build a zip file from the bin folder excluding the release folder
-and save the resulting archive to the release folder.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>source</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The path for the bin folder where the latest source code will have been deployed.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>release</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The path for the release folder where the release zip archive file should be saved.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A TRUE or FALSE value to indicate if the zip archive was created successfully or not.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">boolean</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~saveRootPath"><span class="type-signature">(inner) </span>saveRootPath<span class="signature">(rootPath)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Saves the root path and also cleans the root path and saves the cleaned root path.
-Also saves the current application version number and the application name.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>rootPath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The root path of the application.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line147">line 147</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~setConfigurationSetting"><span class="type-signature">(inner) </span>setConfigurationSetting<span class="signature">(configurationName, configurationValue)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>This is just a wrapper for the configurator setConfigurationSetting function.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>configurationName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The key of the configuration setting.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>configurationValue</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type">boolean</span>
-|
-
-<span class="param-type">integer</span>
-|
-
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The value of the configuration setting.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line189">line 189</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
 
 
     </dd>
@@ -1800,7 +1772,7 @@ Also saves the current application version number and the application name.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 10 2020 17:01:48 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 10 2020 17:01:47 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

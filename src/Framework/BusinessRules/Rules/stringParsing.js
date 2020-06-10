@@ -664,7 +664,7 @@ export const getFileExtension = function(inputData, inputMetaData) {
  * @description Removes the Dot from the file extension, such as if the input is ".txt", the return value will just be "txt".
  * @param {string} inputData The string that should contain the file extension that is being modified.
  * @param {string} inputMetaData Not used for this business rule.
- * @return {[string]} The file extension without the dot prefix.
+ * @return {string} The file extension without the dot prefix.
  * @author Seth Hollingsead
  * @date 2020/06/08
  */

@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _configurator = _interopRequireDefault(require("./configurator"));
 
+var _colorizer = _interopRequireDefault(require("./colorizer"));
+
 var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"));
 
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
@@ -29,19 +31,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * Additional logic is in place to allow the configuration file to define which
  * modules/files & functions should participate in logging operations.
  * @requires module:configurator
+ * @requires module:colorizer
  * @requires module:ruleBroker
  * @requires module:system-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
- * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var fs = require('fs');
-
-var chalk = require('chalk');
 
 var D = require('../Resources/data');
 /**
@@ -221,8 +221,6 @@ function parseClassPath(logFile, classPath, message) {
   var debugFunctionsSetting = false;
   var debugFilesSetting = false;
   var classPathArray = {};
-  var rules = {};
-  rules[1] = s.creplaceDoublePercentWithMessage;
   classPathArray = classPath.split(b.cDot); // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
   // printMessageToFile(logFile, 'classPathArray.length is: ' + Object.keys(classPathArray).length);
 
@@ -247,14 +245,17 @@ function parseClassPath(logFile, classPath, message) {
   debugFilesSetting = _configurator["default"].getConfigurationSetting(s.cDebugFiles + b.cPipe + className); // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
 
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
-    message = chalk.white(message);
-    className = chalk.red.bold(className);
-    functionName = chalk.red.bold(functionName); // message = message.replace('%%', className + b.cDot + functionName);
-
-    return _ruleBroker["default"].processRules(message, className + b.cDot + functionName, rules);
+    // message = chalk.white(message);
+    // className = chalk.red.bold(className);
+    // functionName = chalk.red.bold(functionName);
+    // // message = message.replace('%%', className + b.cDot + functionName);
+    // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    message = _colorizer["default"].colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
+    return message;
   } else if (debugFunctionsSetting === undefined && debugFilesSetting === undefined || debugFunctionsSetting === undefined && debugFilesSetting === false || debugFunctionsSetting === false && debugFilesSetting === undefined || debugFunctionsSetting === false && debugFilesSetting === false) {
     return false;
   } else {
+    message = _colorizer["default"].colorizeMessage(message, className, functionName, undefined, undefined, true);
     return message;
   }
 }
