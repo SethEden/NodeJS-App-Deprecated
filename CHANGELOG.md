@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.4](https://github.com/SethEden/NodeJS-App/compare/v0.5.3...v0.5.4) (2020-06-15)
+
+
+### Features
+
+* Move all the business rules to the D-data structure and also add the client business rules and implement a merge system to merge both client business rules and system defined business rules. ([1636abf](https://github.com/SethEden/NodeJS-App/commit/1636abfaebba5fcd5a337f7c1f90b8fc1e7ee3fd))
+
 ### [0.5.3](https://github.com/SethEden/NodeJS-App/compare/v0.5.2...v0.5.3) (2020-06-10)
 
 
