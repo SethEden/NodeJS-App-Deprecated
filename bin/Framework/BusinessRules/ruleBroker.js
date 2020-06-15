@@ -25,11 +25,53 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @requires module:basic-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var D = require('../Resources/data');
+/**
+ * @function bootStrapApplication
+ * @description Captures all of the business rule string-to-function call map data in the rulesLibrary and migrates that data to the D-data structure.
+ * This is important now because we are going to allow the client to define their own business rules seperate from the system defined business rules.
+ * So we need a way to merge all client defined and system defined business rules into one location.
+ * Then the rule broker will execute business rules from the D-Data structure and not the rules library per-say.
+ * This will allow the system to expand much more dynamically and even be user-defined & flexible to client needs.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/10
+ */
+
+
+function bootStrapBusinessRules() {
+  // console.log('BEGIN ruleBroker.bootStrapBusinessRules function');
+  rules.initRulesLibrary(); // console.log('END ruleBroker.bootStrapBusinessRules function');
+}
+
+;
+/**
+ * @function addClientRules
+ * @description Merges client defined business rules with the system defined business rules.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/15
+ */
+
+function addClientRules(clientRules) {
+  // console.log('BEGIN ruleBroker.addClientRules function');
+  // console.log('clientRules is: ' + JSON.stringify(clientRules));
+  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  // var functionName = addClientRules.name;
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientRules is: ' + JSON.stringify(clientRules));
+  Object.assign(D[s.cBusinessRules], clientRules); // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END ruleBroker.addClientRules function');
+}
+
+;
 /**
  * @function processRules
  * @description Parse the given input Object/String/Integer/Data/Function through a set of business rules,
@@ -46,11 +88,10 @@ var path = require('path');
  * If you need to debug this function, you'll need to uncomment the console.logs that are hard-coded below.
  */
 
-
 var processRules = function processRules(inputData, inputMetaData, rulesToExecute) {
   // NOTE Cannot call the Loggers.consoleLog from here because it causes a circular dependency.
   // We will have to hard-code the console logs and will not be able to write them to the log file.
-  // consoe.log('BEGIN ruleBroker.processRules function');
+  // console.log('BEGIN ruleBroker.processRules function');
   // console.log('inputData is: ' + JSON.stringify(inputData));
   // console.log('inputMetaData is: ' + JSON.stringify(inputMetaData));
   // console.log('rulesToExecute are: ' + JSON.stringify(rulesToExecute));
@@ -68,8 +109,9 @@ var processRules = function processRules(inputData, inputMetaData, rulesToExecut
 
       var value = rulesToExecute[key]; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
       // console.log('value is: ' + value);
+      // returnData = rules.rulesLibrary[value](returnData, inputMetaData);
 
-      returnData = rules.rulesLibrary[value](returnData, inputMetaData);
+      returnData = D[s.cBusinessRules][value](returnData, inputMetaData);
     }
   } // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -82,6 +124,8 @@ var processRules = function processRules(inputData, inputMetaData, rulesToExecut
 
 exports.processRules = processRules;
 var _default = {
+  bootStrapBusinessRules: bootStrapBusinessRules,
+  addClientRules: addClientRules,
   processRules: processRules
 };
 exports["default"] = _default;

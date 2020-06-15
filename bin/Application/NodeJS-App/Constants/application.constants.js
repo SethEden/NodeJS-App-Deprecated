@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
+exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
 var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
@@ -48,5 +48,21 @@ var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + s.cAppli
 exports.cBinaryResourcesPath = cBinaryResourcesPath;
 var cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
 exports.cBinaryRootPath = cBinaryRootPath;
-var cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash;
+var cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash; // Client Business Rules
+
 exports.cBinaryReleasePath = cBinaryReleasePath;
+var cclientEcho = s.cclient + s.cEcho; // ********************************
+// ClientStringParsing rules in order
+// ********************************
+
+exports.cclientEcho = cclientEcho;
+var ccustomEcho = s.ccustom + s.cEcho;
+exports.ccustomEcho = ccustomEcho;
+var cmostPopularNumber = s.cmost + s.cPopular + s.cNumber;
+exports.cmostPopularNumber = cmostPopularNumber;
+var cisAlmostPalindrome = b.cis + s.cAlmost + s.cPalindrom;
+exports.cisAlmostPalindrome = cisAlmostPalindrome;
+var cthreePointAverage = g.cthree + s.cPoint + s.cAverage;
+exports.cthreePointAverage = cthreePointAverage;
+var carrayCounter = s.carray + s.cCounter;
+exports.carrayCounter = carrayCounter;

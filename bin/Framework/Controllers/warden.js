@@ -149,14 +149,11 @@ function bootStrapApplication(pathAndFilename) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
 
-  _chiefConfiguration["default"].setupConfiguration(pathAndFilename); // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _chiefConfiguration["default"].setupConfiguration(pathAndFilename); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('contents of D are: ' + JSON.stringify(D));
   // console.log('END warden.bootStrapApplication function');
 
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 }
 
 ;
@@ -189,6 +186,8 @@ function processRootPath(systemRootPath) {
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemRootPath is: ' + systemRootPath);
   var rules = {};
   rules[1] = s.cparseSystemRootPath;
+
+  _ruleBroker["default"].bootStrapBusinessRules();
 
   var rootPath = _ruleBroker["default"].processRules(systemRootPath, '', rules); // console.log('systemRootPath after business rule processing is: ' + rootPath);
   // console.log('END warden.processRootPath function');
@@ -229,6 +228,77 @@ function saveRootPath(rootPath) {
   _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
+ * @function mergeClientBusinessRules
+ * @description Merges the map of client defined business rule names and client defined business rule function calls
+ * with the existing D-data structure that should already have all of the system defined business rules.
+ * @param {object} clientBusinessRules A map of client defined business rule names and client defined business rule function calls.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/10
+ */
+
+function mergeClientBusinessRules(clientBusinessRules) {
+  // console.log('BEGIN warden.mergeClientBusinessRules function');
+  // console.log('clientBusinessRules is: ' + JSON.stringify(clientBusinessRules));
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = mergeClientBusinessRules.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'clientBusinessRules are: ' + JSON.stringify(clientBusinessRules));
+
+  _ruleBroker["default"].addClientRules(clientBusinessRules);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.mergeClientBusinessRules function');
+
+}
+
+;
+/**
+ * @function executeBusinessRule
+ * @description A wrapper to call a business rule from the application level code.
+ * @param {string} businessRule The name of the business rule that should execute.
+ * @param {string} ruleInput The input to the rule that is being called.
+ * @param {string} ruleMetaData Additional data to input to the rule.
+ * @return {string} The value that is returned from the rule is also returned.
+ * @author Seth Hollingsead
+ * @date 2020/06/15
+ */
+
+function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
+  // console.log('BEGIN warden.executeBusinessRule function');
+  // console.log('businessRule is: ' + businessRule);
+  // console.log('ruleInput is: ' + ruleInput);
+  // console.log('ruleMetaData is: ' + ruleInput);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = executeBusinessRule.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRule is: ' + businessRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInput is: ' + ruleInput);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleMetaData is: ' + ruleMetaData);
+
+  var rules = {};
+  var returnData;
+  rules[0] = businessRule;
+  returnData = _ruleBroker["default"].processRules(ruleInput, ruleMetaData, rules);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  // console.log('END warden.executeBusinessRule function');
+
+
+  return returnData;
 }
 
 ;
@@ -349,6 +419,8 @@ var _default = {
   bootStrapApplication: bootStrapApplication,
   processRootPath: processRootPath,
   saveRootPath: saveRootPath,
+  mergeClientBusinessRules: mergeClientBusinessRules,
+  executeBusinessRule: executeBusinessRule,
   processCommand: processCommand,
   setConfigurationSetting: setConfigurationSetting,
   getConfigurationSetting: getConfigurationSetting,

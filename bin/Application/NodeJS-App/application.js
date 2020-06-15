@@ -7,6 +7,7 @@
  * It contains the main program loop and/or basic argument parsing.
  * Of course most of the detailed work is handed off to the application framework.
  * @requires module:warden
+ * @requires module:clientRulesLibrary
  * @requires module:application-constants
  * @requires module:system-constants
  * @requires module:generic-constants
@@ -24,6 +25,8 @@
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var _warden = _interopRequireDefault(require("../../Framework/Controllers/warden"));
+
+var _clientRulesLibrary = _interopRequireDefault(require("./BusinessRules/clientRulesLibrary"));
 
 var c = _interopRequireWildcard(require("./Constants/application.constants"));
 
@@ -64,6 +67,8 @@ function bootStrapApplication() {
   _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
 
   _warden["default"].saveRootPath(rootPath);
+
+  _warden["default"].mergeClientBusinessRules(_clientRulesLibrary["default"].initClientRulesLibrary());
 }
 
 ;

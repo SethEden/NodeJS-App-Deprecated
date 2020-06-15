@@ -485,7 +485,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line237">line 237</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line293">line 293</a>
     </li></ul></dd>
     
 
@@ -728,6 +728,218 @@ Also provides an interface to easily manage all of the application features &amp
     
 
     
+    <h4 class="name" id="~executeBusinessRule"><span class="type-signature">(inner) </span>executeBusinessRule<span class="signature">(businessRule, ruleInput, ruleMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>A wrapper to call a business rule from the application level code.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>businessRule</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the business rule that should execute.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ruleInput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The input to the rule that is being called.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ruleMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Additional data to input to the rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line194">line 194</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The value that is returned from the rule is also returned.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="~getConfigurationSetting"><span class="type-signature">(inner) </span>getConfigurationSetting<span class="signature">(configurationName)</span><span class="type-signature"> &rarr; {string|integer|boolean|object}</span></h4>
     
 
@@ -836,7 +1048,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line213">line 213</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line269">line 269</a>
     </li></ul></dd>
     
 
@@ -886,6 +1098,169 @@ Also provides an interface to easily manage all of the application features &amp
 |
 
 <span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~mergeClientBusinessRules"><span class="type-signature">(inner) </span>mergeClientBusinessRules<span class="signature">(clientBusinessRules)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Merges the map of client defined business rule names and client defined business rule function calls
+with the existing D-data structure that should already have all of the system defined business rules.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>clientBusinessRules</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A map of client defined business rule names and client defined business rule function calls.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line170">line 170</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
 
 
     </dd>
@@ -1011,7 +1386,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line170">line 170</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line226">line 226</a>
     </li></ul></dd>
     
 
@@ -1177,7 +1552,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line112">line 112</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -1730,7 +2105,7 @@ Also saves the current application version number and the application name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line189">line 189</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line245">line 245</a>
     </li></ul></dd>
     
 
@@ -1794,13 +2169,13 @@ Also saves the current application version number and the application name.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 10 2020 17:05:21 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 15 2020 16:23:56 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
