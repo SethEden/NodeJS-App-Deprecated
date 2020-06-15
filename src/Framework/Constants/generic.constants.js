@@ -275,10 +275,20 @@ export const cCol = b.cCo + b.cl;
 export const creen = b.cre + b.cen;
 export const clue = b.clu + b.ce; // Referance to Tron here! :-P
 export const cyan = b.cy + b.can;
-export const centa = b.cen + b.cta;
 export const cite = b.cit + b.ce;
 export const cange = b.can + b.cge;
-
+export const cost = b.cos + b.ct;
+export const cular = b.cul + b.car;
+export const cdrom = b.cdr + b.com;
+export const cave = b.cav + b.ce;
+export const cAve = b.cAv + b.ce;
+export const ccli = b.ccl + b.ci;
+export const cCli = b.cCl + b.ci;
+export const cules = b.cul + b.ces;
+export const cent = b.cen + b.ct;
+export const centa = cent + b.ca;
+export const ccust = b.ccu + b.cst;
+export const cCust = b.cCu + b.cst;
 
 // Boolean strings
 export const cTrue = b.cT + crue;
@@ -517,8 +527,8 @@ export const cYear = b.cYe + b.car; // 'Year';
 export const cYears = cYear + b.cs;
 export const cDecade = b.cDe + b.cca + b.cde;
 export const cDecades = cDecade + b.cs;
-export const ccent = b.cce + b.cnt;
-export const cCent = b.cCe + b.cnt;
+export const ccent = b.cc + cent;
+export const cCent = b.cC + cent;
 export const cCentur = cCent + b.cur; // b.cC + b.cen + b.ctu + b.cr; // 'Centur';
 export const cCentury = cCentur + b.cy;
 export const cCenturies = cCentur + cies;

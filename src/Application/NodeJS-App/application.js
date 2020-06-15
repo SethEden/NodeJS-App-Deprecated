@@ -7,6 +7,7 @@
  * It contains the main program loop and/or basic argument parsing.
  * Of course most of the detailed work is handed off to the application framework.
  * @requires module:warden
+ * @requires module:clientRulesLibrary
  * @requires module:application-constants
  * @requires module:system-constants
  * @requires module:generic-constants
@@ -20,6 +21,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import warden from '../../Framework/Controllers/warden';
+import clientRules from './BusinessRules/clientRulesLibrary';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
@@ -43,6 +45,7 @@ function bootStrapApplication() {
   rootPath = warden.processRootPath(rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
   warden.saveRootPath(rootPath);
+  warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
 };
 
 /**

@@ -6,6 +6,7 @@
  * @requires module:basic-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -14,6 +15,43 @@ import * as rules from './rulesLibrary';
 import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
+var D = require('../Resources/data');
+
+/**
+ * @function bootStrapApplication
+ * @description Captures all of the business rule string-to-function call map data in the rulesLibrary and migrates that data to the D-data structure.
+ * This is important now because we are going to allow the client to define their own business rules seperate from the system defined business rules.
+ * So we need a way to merge all client defined and system defined business rules into one location.
+ * Then the rule broker will execute business rules from the D-Data structure and not the rules library per-say.
+ * This will allow the system to expand much more dynamically and even be user-defined & flexible to client needs.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/10
+ */
+function bootStrapBusinessRules() {
+  // console.log('BEGIN ruleBroker.bootStrapBusinessRules function');
+  rules.initRulesLibrary();
+  // console.log('END ruleBroker.bootStrapBusinessRules function');
+};
+
+/**
+ * @function addClientRules
+ * @description Merges client defined business rules with the system defined business rules.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/15
+ */
+function addClientRules(clientRules) {
+  // console.log('BEGIN ruleBroker.addClientRules function');
+  // console.log('clientRules is: ' + JSON.stringify(clientRules));
+  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  // var functionName = addClientRules.name;
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientRules is: ' + JSON.stringify(clientRules));
+  Object.assign(D[s.cBusinessRules], clientRules);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END ruleBroker.addClientRules function');
+};
 
 /**
  * @function processRules
@@ -33,7 +71,7 @@ var path = require('path');
 export const processRules = function(inputData, inputMetaData, rulesToExecute) {
   // NOTE Cannot call the Loggers.consoleLog from here because it causes a circular dependency.
   // We will have to hard-code the console logs and will not be able to write them to the log file.
-  // consoe.log('BEGIN ruleBroker.processRules function');
+  // console.log('BEGIN ruleBroker.processRules function');
   // console.log('inputData is: ' + JSON.stringify(inputData));
   // console.log('inputMetaData is: ' + JSON.stringify(inputMetaData));
   // console.log('rulesToExecute are: ' + JSON.stringify(rulesToExecute));
@@ -51,7 +89,8 @@ export const processRules = function(inputData, inputMetaData, rulesToExecute) {
       var value = rulesToExecute[key];
       // loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
       // console.log('value is: ' + value);
-      returnData = rules.rulesLibrary[value](returnData, inputMetaData);
+      // returnData = rules.rulesLibrary[value](returnData, inputMetaData);
+      returnData = D[s.cBusinessRules][value](returnData, inputMetaData);
     }
   }
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -62,5 +101,7 @@ export const processRules = function(inputData, inputMetaData, rulesToExecute) {
 };
 
 export default {
+  bootStrapBusinessRules,
+  addClientRules,
   processRules
 };

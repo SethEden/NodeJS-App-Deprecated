@@ -325,7 +325,9 @@ export const clet = b.cle + b.ct;
 export const cLet = b.cLe + b.ct;
 export const cLetter = cLet + b.ct + b.cer; // 'Letter';
 export const cUpper = b.cUp + b.cp + b.cer; // 'Upper';
+export const ccount = b.cco + g.cunt;
 export const cCount = b.cCo + g.cunt; // 'Count';
+export const ccounter = ccount + b.cer;
 export const cCounter = cCount + b.cer;
 export const crandom = b.cr + g.candom;
 export const cRandom = b.cR + g.candom; // 'Random';
@@ -351,8 +353,11 @@ export const cVariable = g.cVar + g.ci + g.cable; // 'Variable';
 export const cVisibility = b.cV + g.cisibility;
 export const cvisibility = b.cv + g.cisibility;
 export const cDialog = b.cDi + b.ca + clog; // 'Dia' + clog;
+export const clibrary = b.cli + b.cbr + b.car + b.cy;
 export const cLibrary = b.cLi + b.cbr + b.car + b.cy; // 'Library';
+export const ctable = b.cta + b.cbl + b.ce;
 export const cTable = b.cTa + b.cbl + b.ce; // 'Table';
+export const cequal = b.ceq + b.cua + b.cl;
 export const cEqual = b.cEq + b.cua + b.cl; // 'Equal';
 export const cEquals = cEqual + b.cs;
 export const cRaw = b.cRa + b.cw; // 'Raw';
@@ -681,6 +686,26 @@ export const cold = b.col + b.cd;
 export const cOld = b.cOl + b.cd;
 export const cbold = b.cb + cold;
 export const cBold = b.cB + cold;
+export const cmost = b.cm + g.cost;
+export const cMost = b.cM + g.cost;
+export const cpop = b.cpo + b.cp;
+export const cPop = b.cPo + b.cp;
+export const cpopular = cpop + g.cular;
+export const cPopular = cPop + g.cular;
+export const calmost = b.cal + cmost;
+export const cAlmost = b.cAl + cmost;
+export const cpal = b.cpa + b.cl;
+export const cPal = b.cPa + b.cl;
+export const cpalindrom = cpal + b.cin + g.cdrom;
+export const cPalindrom = cPal + b.cin + g.cdrom;
+export const caverage = g.cave + g.crage;
+export const cAverage = g.cAve + g.crage;
+export const cclient = g.ccli + g.cent;
+export const cClient = g.cCli + g.cent;
+export const crules = b.cr + g.cules;
+export const cRules = b.cR + g.cules;
+export const ccustom = g.ccust + b.com;
+export const cCustom = g.cCust + b.com;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -1848,6 +1873,8 @@ export const cBackground = cBack + cground;
 export const cConfiguration_Colors = cConfiguration + b.cUnderscore + cColors;
 export const cColorData = cColor + cData;
 export const cColorName = cColor + cName;
+export const cBusinessRules = cBusiness + cRules;
+export const crulesLibrary = crules + cLibrary;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -2170,6 +2197,7 @@ export const cKeywordsDataPath = cKeywords + cDataPath;
 export const cLocatorsDataPath = cLocators + cDataPath;
 export const cArgumentDrivenInterface = cArgument + cDriven + cInterface;
 export const cFigletFont = cFiglet + cFont;
+export const cclientRulesLibrary = cclient + cRules + cLibrary;
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = cBegin + cDateTimeStamp;
@@ -2180,6 +2208,8 @@ export const cBeginTimeStampVariableName = cBegin + cTimeStampVariableName;
 export const cEndTimeStampVariableName = cEnd + cTimeStampVariableName;
 
 // Business Rules
+export const cecho = b.cec + b.cho;
+export const cEcho = b.cEc + b.cho;
 // ********************************
 // StringParsing rules in order
 // ********************************

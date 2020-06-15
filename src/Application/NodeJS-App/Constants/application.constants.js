@@ -28,3 +28,14 @@ export const cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash +
 export const cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 export const cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
 export const cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash;
+
+// Client Business Rules
+export const cclientEcho = s.cclient + s.cEcho;
+// ********************************
+// ClientStringParsing rules in order
+// ********************************
+export const ccustomEcho = s.ccustom + s.cEcho;
+export const cmostPopularNumber = s.cmost + s.cPopular + s.cNumber;
+export const cisAlmostPalindrome = b.cis + s.cAlmost + s.cPalindrom;
+export const cthreePointAverage = g.cthree + s.cPoint + s.cAverage;
+export const carrayCounter = s.carray + s.cCounter;

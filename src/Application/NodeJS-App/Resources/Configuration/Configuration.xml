@@ -279,6 +279,34 @@
           <ConfigurationElement Name="warden.saveRootPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.saveRootPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="warden.mergeClientBusinessRules" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientBusinessRules@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="warden.executeBusinessRule" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="warden.processCommand" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.processCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.processCommand@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2154,6 +2182,90 @@
           <ConfigurationElement Name="characterGeneration.convertNumberToLowerCaseLetter@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="characterGeneration.convertNumberToLowerCaseLetter@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="characterGeneration.convertNumberToLowerCaseLetter@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="clientStringParsing.clientEcho" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.clientEcho@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="clientStringParsing.customEcho" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.customEcho@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.mostPopularNumber@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.isAlmostPalindrome@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="clientStringParsing.threePointAverage" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.threePointAverage@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="clientStringParsing.arrayCounter" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing.arrayCounter@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
         </ConfigurationElement>
       </ConfigurationElements>
     </Configuration>
