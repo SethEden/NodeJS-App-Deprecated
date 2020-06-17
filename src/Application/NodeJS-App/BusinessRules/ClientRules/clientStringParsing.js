@@ -67,57 +67,71 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData;
+  var returnData = 0;
   var i, j, instanceCounter = 0;
   var tempArray1 = [];
   var tempArray2 = [];
 
-  console.log('BEGIN first for-loop');
+  // console.log('BEGIN first for-loop');
   for (i = 0; i <= inputMetaData; i++) {
-    console.log('BEGIN nested for-loop i = ' + i);
+    // console.log('BEGIN nested for-loop i = ' + i);
     for (j = 0; j <= inputMetaData; j++) {
-      console.log('BEGIN iteration j = ' + j);
-      if (inputData[i] === inputData[j]) {
+      // console.log('BEGIN iteration j = ' + j);
+      if (inputData[i] === inputData[j] && i !== j && i !== undefined && i !== null) {
+        // console.log('FOUND a MATCH!!');
+        // console.log('inputData[i] is: ' + JSON.stringify(inputData[i]));
+        // console.log('inputData[j] is: ' + JSON.stringify(inputData[j]));
         tempArray1[i] = inputData[i];
+        // console.log('contents of tempArray1 are: ' + JSON.stringify(tempArray1));
       }
-      console.log('END iteration j = ' + j);
+      // console.log('END iteration j = ' + j);
     }
-    console.log('END nested for-loop i = ' + i);
+    // console.log('END nested for-loop i = ' + i);
   }
-  console.log('END first for-loop');
+  // console.log('END first for-loop');
 
-  console.log('BEGIN second for-loop');
+  // console.log('BEGIN second for-loop');
   for (i = 0; i <= tempArray1.length; i++) {
-    console.log('BEGIN nested for-loop i = ' + i);
+    // console.log('BEGIN nested for-loop i = ' + i);
     for (j = 0; j <= tempArray1.length; j++) {
-      console.log('BEGIN iteration j = ' + j);
-      if (tempArray1[i] === inputData[j]) {
+      // console.log('BEGIN iteration j = ' + j);
+      if (tempArray1[i] === inputData[j] && tempArray1[i] !== undefined && tempArray1[i] !== null && i !== j) {
+        // console.log('FOUND a MATCH!!!');
+        // console.log('tempArray1[i] is: ' + JSON.stringify(tempArray1[i]));
+        // console.log('inputData[j] is: ' + JSON.stringify(inputData[j]));
+        // console.log('instanceCounter before increment is: ' + instanceCounter);
         tempArray2[i] = ++instanceCounter;
+        // console.log('instanceCounter after increment is: ' + instanceCounter);
+        // console.log('contents of tempArray2 are: ' + JSON.stringify(tempArray2));
       }
-      console.log('END iteration j = ' + j);
+      // console.log('END iteration j = ' + j);
     }
-    console.log('END nested for-loop i = ' + i);
+    // console.log('END nested for-loop i = ' + i);
   }
-  console.log('END second for-loop');
+  // console.log('END second for-loop');
 
-  console.log('BEGIN third for-loop');
-  console.log('tempArray2.length is: ' + tempArray2.length);
+  // console.log('BEGIN third for-loop');
+  // console.log('tempArray2.length is: ' + tempArray2.length);
   for (i = 0; i <= tempArray2.length; i++) {
-    console.log('BEGIN iteration i = ' + i);
-    if (i === 0) {
-      console.log('if-condition i = 0 has been met! i = ' + i);
-      returnData = tempArray2[i];
+    // console.log('BEGIN iteration i = ' + i);
+    if (tempArray2[i] !== 0 && i === 0) {
+      // console.log('if-condition i = 0 has been met! i = ' + i);
+      returnData = inputData[i];
     } else {
-      console.log('if-condition-else i <> 0 has been met! i = ' + i);
-      if (tempArray2[i] > tempArray2[i - 1]) {
-        returnData = tempArray2[i];
+      // console.log('if-condition-else i <> 0 has been met! i = ' + i);
+      if (tempArray2[i] > returnData) {
+        // console.log('found one greater');
+        // console.log('tempArray2[i] is: ' + JSON.stringify(tempArray2[i]));
+        // console.log('tempArray2[i - 1] is: ' + JSON.stringify(tempArray2[i-1]));
+        returnData = inputData[i];
+        // console.log('returnData is: ' + returnData);
       }
-      console.log('done setting the return data: i = ' + i);
+      // console.log('done setting the return data: i = ' + i);
     }
     i += 1;
-    console.log('END iteration i = ' + i);
+    // console.log('END iteration i = ' + i);
   }
-  console.log('END third for-loop');
+  // console.log('END third for-loop');
 
   warden.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -149,11 +163,22 @@ export const isAlmostPalindrome = function(inputData, inputMetaData) {
   var returnData = false;
   var i, misCompareCount;
   misCompareCount = 0;
+  // TODO: We need to enable additional types of comparisons. The below algorthim works for if the mis-compare is in the center of the string.
+  // But if the mis-compare is at the beginning or the end of the string then it can throw off all the other comparisons resulting in a false positive result.
+  // We actually need to check starting with the first character but also the first + 1 character and also,
+  // We need to check ending with the last - 1 character.
+  // Using a similar algorthim as below.
   for (i = 0; i < inputData.length; i++) {
-    if (inputData.charAt(i) !== inputData.charAt(inputData.length - i)) {
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'inputData.charAt(i) is: ' + inputData.charAt(i));
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'inputData.chartAt(inputData.length - ' + i + ' - 1) is: ' + inputData.charAt(inputData.length - i - 1));
+    if (inputData.charAt(i) !== inputData.charAt(inputData.length - i - 1)) {
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'We got a mismatch!');
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount before increment is: ' + misCompareCount);
       misCompareCount += 1;
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount post increment is: ' + misCompareCount);
     }
   }
+  warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount after the for-loop is: ' + misCompareCount);
   if (misCompareCount <= 1) {
     returnData = true;
   }

@@ -255,7 +255,6 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
     }
 
     if (messageContent.includes(b.cPercent + b.cPercent) === true) {
-      // messageContentPre
       colorizedMessage = messageContentPrefix + b.cSpace + className + b.cDot + functionName + b.cSpace + messageContentSuffix;
     } else if (messageData !== undefined) {
       colorizedMessage = messageContent + b.cColon + messageData;
@@ -304,14 +303,14 @@ function aggregateStyleSetting(settingValue1, settingValue2, processAsFontSettin
   // console.log('settingValue2 is: ' + settingValue2);
   // console.log('processAsFontSetting is: ' + processAsFontSetting);
   var styles = [];
-  if (settingValue1 !== s.cDefault || settingValue2 !== s.cDefault) {
-    if (settingValue1 !== s.cDefault && settingValue2 === s.cDefault) {
+  if ((settingValue1 !== s.cDefault || settingValue2 !== s.cDefault) && (settingValue1 !== undefined || settingValue2 !== undefined)) {
+    if ((settingValue1 !== s.cDefault && settingValue2 === s.cDefault) || (settingValue1 !== undefined && settingValue2 === undefined)) {
       if (processAsFontSetting === true) {
         styles = getFontStyleSettingsFromSetting(settingValue1);
       } else {
         styles = getColorStyleSettingFromSetting(settingValue1);
       }
-    } else if (settingValue1 === s.cDefault && settingValue2 !== s.cDefault) {
+    } else if ((settingValue1 === s.cDefault && settingValue2 !== s.cDefault) || (settingValue1 === undefined && settingValue2 !== undefined)) {
       if (processAsFontSetting === true) {
         styles = getFontStyleSettingsFromSetting(settingValue2);
       } else {
@@ -401,6 +400,8 @@ function getColorStyleSettingFromSetting(settingValue) {
     } else { // It must be a named color.
       colorStyle = getNamedColorData(settingValue);
     }
+  } else {
+    colorStyle = false;
   }
   // console.log('colorStyle settings are: ' + JSON.stringify(colorStyle));
   // console.log('END colorizer.getColorStyleSettingFromSetting function');
