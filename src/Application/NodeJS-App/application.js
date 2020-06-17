@@ -70,6 +70,14 @@ function application() {
   applicationName = warden.getConfigurationSetting(s.cApplicationName);
   figletFont = warden.getConfigurationSetting(s.cFigletFont);
   console.log(figlet.textSync(applicationName, {font: figletFont, horizontalLayout: s.cfull }));
+
+  // console.log('**************************************************************************');
+  // console.log('Testing client business rule: ' + c.cmostPopularNumber);
+  // var inputData = [1,2,3,1];
+  // var inputMetaData = 4;
+  // warden.executeBusinessRule(c.cmostPopularNumber, inputData, inputMetaData);
+  // console.log('**************************************************************************');
+
   if (argumentDrivenInterface === false) {
     while(programRunning === true) {
       commandInput = prompt(b.cGreaterThan);

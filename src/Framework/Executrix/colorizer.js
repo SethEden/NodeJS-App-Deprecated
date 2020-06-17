@@ -227,8 +227,10 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
       messageContent = setBoldFontStyleOnMessageComponentAccordingToSetting(messageContent, aggregateMessageFontStyleBold);
       // console.log('Done processing underline & bold settings: messageContent is: ' + messageContent);
 
-      // messageData = setUnderlineFontStyleOnMessageComponentAccordingToSetting(messageData, aggregateDataFontStyleUnderline);
-      // messageData = setBoldFontStyleOnMessageComponentAccordingToSetting(messageData, aggregateDataFontStyleBold);
+      if (processingMessageData === true) {
+        messageData = setUnderlineFontStyleOnMessageComponentAccordingToSetting(messageData, aggregateDataFontStyleUnderline);
+        messageData = setBoldFontStyleOnMessageComponentAccordingToSetting(messageData, aggregateDataFontStyleBold);
+      }
 
       messageContent = setFontForgroundColorOnMessageComponentAccordingToSetting(messageContent, aggregateMessageFontColorSetting);
       // console.log('Done processing foreground color settings: messageContent is: ' + messageContent);
@@ -240,17 +242,23 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
     // console.log('Done processing foreground color settings: classname is: ' + className);
     functionName = setFontForgroundColorOnMessageComponentAccordingToSetting(functionName, aggregateFunctionFontColorSetting);
     // console.log('Done processing foreground color settings: functionName is: ' + functionName);
-    // messageData = setFontForgroundColorOnMessageComponentAccordingToSetting(messageData, aggregateDataFontColorSetting);
 
     className = setFontBackgroundColorOnMessageComponentAccordingToSetting(className, aggregateModuleFontBackgroundColorSetting);
     // console.log('Done processing background color settings: className is: ' + className);
     functionName = setFontBackgroundColorOnMessageComponentAccordingToSetting(functionName, aggregateFunctionFontBackgroundColorSetting);
     // console.log('Done processing background color settings: functionName is: ' + functionName);
-    // messageData = setFontBackgroundColorOnMessageComponentAccordingToSetting(messageData, aggregateDataFontBackgroundColorSetting);
+
+
+    if (processingMessageData === true) {
+      messageData = setFontForgroundColorOnMessageComponentAccordingToSetting(messageData, aggregateDataFontColorSetting);
+      messageData = setFontBackgroundColorOnMessageComponentAccordingToSetting(messageData, aggregateDataFontBackgroundColorSetting);
+    }
 
     if (messageContent.includes(b.cPercent + b.cPercent) === true) {
       // messageContentPre
       colorizedMessage = messageContentPrefix + b.cSpace + className + b.cDot + functionName + b.cSpace + messageContentSuffix;
+    } else if (messageData !== undefined) {
+      colorizedMessage = messageContent + b.cColon + messageData;
     } else {
       colorizedMessage = messageContent;
     }
@@ -261,10 +269,12 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
     messageContent = setUnderlineFontStyleOnMessageComponentAccordingToSetting(messageContent, aggregateMessageFontStyleUnderline);
     messageContent = setBoldFontStyleOnMessageComponentAccordingToSetting(messageContent, aggregateMessageFontStyleBold);
     if (processingMessageData === true) {
+      // console.log('Attempting to format the message data component of the message: ' + messageData);
       messageData = setUnderlineFontStyleOnMessageComponentAccordingToSetting(messageData, aggregateDataFontStyleUnderline);
       messageData = setBoldFontStyleOnMessageComponentAccordingToSetting(messageData, aggregateDataFontStyleBold);
       messageData = setFontForgroundColorOnMessageComponentAccordingToSetting(messageData, aggregateDataFontColorSetting);
       messageData = setFontBackgroundColorOnMessageComponentAccordingToSetting(messageData, aggregateDataFontBackgroundColorSetting);
+      // console.log('Done formatting all of the messageData: ' + messageData);
     }
     messageContent = setFontForgroundColorOnMessageComponentAccordingToSetting(messageContent, aggregateMessageFontColorSetting);
     messageContent = setFontBackgroundColorOnMessageComponentAccordingToSetting(functionName, aggregateMessageFontBackgroundColorSetting);
@@ -333,32 +343,34 @@ function getFontStyleSettingsFromSetting(settingValue) {
   // console.log('settingValue is: ' + settingValue);
   var fontStyles = [false, false];
   var aggregateUnderlineBoldArray = [];
-  if (settingValue.includes(b.cPipe) === true) {
-    aggregateUnderlineBoldArray = settingValue.split(b.cPipe);
-    // console.log('aggregateUnderlineBoldArray is: ' + JSON.stringify(aggregateUnderlineBoldArray));
-    // console.log('aggregateUnderlineBoldArray[0] is: ' + aggregateUnderlineBoldArray[0]);
-    // console.log('aggregateUnderlineBoldArray[1] is: ' + aggregateUnderlineBoldArray[1]);
-    if (aggregateUnderlineBoldArray[0] === s.cUnderline && aggregateUnderlineBoldArray[1] === s.cBold) {
-      // aggregateModuleFontStyleUnderline = true;
-      // aggregateModuleFontStyleBold = true
-      fontStyles[true, true];
-    } else if (aggregateUnderlineBoldArray[0] === s.cBold && aggregateUnderlineBoldArray[1] === s.cUnderline) {
-      // aggregateModuleFontStyleUnderline = true;
-      // aggregateModuleFontStyleBold = true
-      fontStyles[true, true];
-    } else if (aggregateUnderlineBoldArray[0] === s.cUnderline && aggregateUnderlineBoldArray[1] !== s.cBold) {
+  if (settingValue !== undefined) {
+    if (settingValue.includes(b.cPipe) === true) {
+      aggregateUnderlineBoldArray = settingValue.split(b.cPipe);
+      // console.log('aggregateUnderlineBoldArray is: ' + JSON.stringify(aggregateUnderlineBoldArray));
+      // console.log('aggregateUnderlineBoldArray[0] is: ' + aggregateUnderlineBoldArray[0]);
+      // console.log('aggregateUnderlineBoldArray[1] is: ' + aggregateUnderlineBoldArray[1]);
+      if (aggregateUnderlineBoldArray[0] === s.cUnderline && aggregateUnderlineBoldArray[1] === s.cBold) {
+        // aggregateModuleFontStyleUnderline = true;
+        // aggregateModuleFontStyleBold = true
+        fontStyles[true, true];
+      } else if (aggregateUnderlineBoldArray[0] === s.cBold && aggregateUnderlineBoldArray[1] === s.cUnderline) {
+        // aggregateModuleFontStyleUnderline = true;
+        // aggregateModuleFontStyleBold = true
+        fontStyles[true, true];
+      } else if (aggregateUnderlineBoldArray[0] === s.cUnderline && aggregateUnderlineBoldArray[1] !== s.cBold) {
+        // aggregateModuleFontStyleUnderline = true;
+        fontStyles[true, false];
+      } else if (aggregateUnderlineBoldArray[0] === s.cBold && aggregateUnderlineBoldArray[1] !== s.cUnderline) {
+        // aggregateModuleFontStyleBold = true
+        fontStyles[false, true];
+      }
+    } else if (settingValue === s.cUnderline) {
       // aggregateModuleFontStyleUnderline = true;
       fontStyles[true, false];
-    } else if (aggregateUnderlineBoldArray[0] === s.cBold && aggregateUnderlineBoldArray[1] !== s.cUnderline) {
+    } else if (settingValue === s.cBold) {
       // aggregateModuleFontStyleBold = true
       fontStyles[false, true];
     }
-  } else if (settingValue === s.cUnderline) {
-    // aggregateModuleFontStyleUnderline = true;
-    fontStyles[true, false];
-  } else if (settingValue === s.cBold) {
-    // aggregateModuleFontStyleBold = true
-    fontStyles[false, true];
   }
   // console.log('fontStyles settings are: ' + JSON.stringify(fontStyles));
   // console.log('END colorizer.getFontStyleSettingsFromSetting function');
@@ -378,15 +390,17 @@ function getColorStyleSettingFromSetting(settingValue) {
   // console.log('settingValue is ' + JSON.stringify(settingValue));
   var colorStyle = {Red: 0, Green: 0, Blue: 0};
   var aggregateColorArray = [];
-  if (settingValue.includes(b.cComa) === true) {
-    aggregateColorArray = settingValue.split(b.cComa);
-    colorStyle[s.cRed] = aggregateColorArray[0];
-    colorStyle[s.cGreen] = aggregateColorArray[1];
-    colorStyle[s.cBlue] = aggregateColorArray[2];
-  } else if (settingValue === s.cDefault) {
-    colorStyle = false; // Do not apply any color settings of any kind!
-  } else { // It must be a named color.
-    colorStyle = getNamedColorData(settingValue);
+  if (settingValue !== undefined) {
+    if (settingValue.includes(b.cComa) === true) {
+      aggregateColorArray = settingValue.split(b.cComa);
+      colorStyle[s.cRed] = aggregateColorArray[0];
+      colorStyle[s.cGreen] = aggregateColorArray[1];
+      colorStyle[s.cBlue] = aggregateColorArray[2];
+    } else if (settingValue === s.cDefault) {
+      colorStyle = false; // Do not apply any color settings of any kind!
+    } else { // It must be a named color.
+      colorStyle = getNamedColorData(settingValue);
+    }
   }
   // console.log('colorStyle settings are: ' + JSON.stringify(colorStyle));
   // console.log('END colorizer.getColorStyleSettingFromSetting function');
