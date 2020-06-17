@@ -172,7 +172,7 @@ export const isAlmostPalindrome = function(inputData, inputMetaData) {
  * @function threePointAverage
  * @description Calculates the average of 3 coordinates in a 2-Dimensional plane.
  * @param {array<array<integer|float|double>>} inputPointArray The coordinate for the first point.
- * @param {string>} inputMetaData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
  * @return {array<integer|float|double>} Returns the XY coordinate of the average point between all points.
  * @author Seth Hollingsead
  * @date 2020/05/20

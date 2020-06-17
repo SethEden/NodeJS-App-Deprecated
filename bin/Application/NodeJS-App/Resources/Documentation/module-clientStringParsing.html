@@ -135,6 +135,20 @@ values of all kinds, with various operations.</p></div>
     
 
     
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li><a href="module-warden.html">module:warden</a></li>
+        
+            <li><a href="module-application-constants.html">module:application-constants</a></li>
+        
+            <li><a href="module-system-constants.html">module:system-constants</a></li>
+        
+            <li><a href="module-basic-constants.html">module:basic-constants</a></li>
+        
+            <li><a href="https://www.npmjs.com/package/path">path</a></li>
+        </ul>
+    
 
     
 
@@ -155,7 +169,7 @@ values of all kinds, with various operations.</p></div>
     
 
     
-    <h4 class="name" id="~arrayCounter"><span class="type-signature">(inner) </span>arrayCounter<span class="signature">(inputArray, instance)</span><span class="type-signature"> &rarr; {integer}</span></h4>
+    <h4 class="name" id="~arrayCounter"><span class="type-signature">(inner) </span>arrayCounter<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {integer}</span></h4>
     
 
     
@@ -199,7 +213,7 @@ values of all kinds, with various operations.</p></div>
 
         <tr>
             
-                <td class="name"><code>inputArray</code></td>
+                <td class="name"><code>inputData</code></td>
             
 
             <td class="type">
@@ -222,7 +236,7 @@ values of all kinds, with various operations.</p></div>
 
         <tr>
             
-                <td class="name"><code>instance</code></td>
+                <td class="name"><code>inputMetaData</code></td>
             
 
             <td class="type">
@@ -292,7 +306,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line155">line 155</a>
+        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line212">line 212</a>
     </li></ul></dd>
     
 
@@ -481,7 +495,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line14">line 14</a>
+        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -539,7 +553,7 @@ values of all kinds, with various operations.</p></div>
     
 
     
-    <h4 class="name" id="~isAlmostPalindrome"><span class="type-signature">(inner) </span>isAlmostPalindrome<span class="signature">(inputData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="~isAlmostPalindrome"><span class="type-signature">(inner) </span>isAlmostPalindrome<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -605,6 +619,29 @@ one character of being a palindrome string.</p>
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -649,7 +686,7 @@ one character of being a palindrome string.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line84">line 84</a>
+        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line129">line 129</a>
     </li></ul></dd>
     
 
@@ -707,7 +744,7 @@ one character of being a palindrome string.</p>
     
 
     
-    <h4 class="name" id="~mostPopularNumber"><span class="type-signature">(inner) </span>mostPopularNumber<span class="signature">(inputArray, length)</span><span class="type-signature"> &rarr; {integer}</span></h4>
+    <h4 class="name" id="~mostPopularNumber"><span class="type-signature">(inner) </span>mostPopularNumber<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {integer}</span></h4>
     
 
     
@@ -751,7 +788,7 @@ one character of being a palindrome string.</p>
 
         <tr>
             
-                <td class="name"><code>inputArray</code></td>
+                <td class="name"><code>inputData</code></td>
             
 
             <td class="type">
@@ -774,7 +811,7 @@ one character of being a palindrome string.</p>
 
         <tr>
             
-                <td class="name"><code>length</code></td>
+                <td class="name"><code>inputMetaData</code></td>
             
 
             <td class="type">
@@ -838,7 +875,7 @@ one character of being a palindrome string.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line34">line 34</a>
+        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line51">line 51</a>
     </li></ul></dd>
     
 
@@ -896,7 +933,7 @@ one character of being a palindrome string.</p>
     
 
     
-    <h4 class="name" id="~threePointAverage"><span class="type-signature">(inner) </span>threePointAverage<span class="signature">(point1, point2, point3)</span><span class="type-signature"> &rarr; {array.&lt;(integer|float|double)>}</span></h4>
+    <h4 class="name" id="~threePointAverage"><span class="type-signature">(inner) </span>threePointAverage<span class="signature">(inputPointArray, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;(integer|float|double)>}</span></h4>
     
 
     
@@ -940,13 +977,13 @@ one character of being a palindrome string.</p>
 
         <tr>
             
-                <td class="name"><code>point1</code></td>
+                <td class="name"><code>inputPointArray</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">array.&lt;(integer|float|double)></span>
+<span class="param-type">array.&lt;array.&lt;(integer|float|double)>></span>
 
 
             
@@ -963,13 +1000,13 @@ one character of being a palindrome string.</p>
 
         <tr>
             
-                <td class="name"><code>point2</code></td>
+                <td class="name"><code>inputMetaData</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">array.&lt;(integer|float|double)></span>
+<span class="param-type">string</span>
 
 
             
@@ -979,30 +1016,7 @@ one character of being a palindrome string.</p>
 
             
 
-            <td class="description last"><p>The coordinate for the second point.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>point3</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array.&lt;(integer|float|double)></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The coordinate for the third point.</p></td>
+            <td class="description last"><p>Not used for this business rule.</p></td>
         </tr>
 
     
@@ -1050,7 +1064,7 @@ one character of being a palindrome string.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line119">line 119</a>
+        <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html">Application/NodeJS-App/BusinessRules/ClientRules/clientStringParsing.js</a>, <a href="Application_NodeJS-App_BusinessRules_ClientRules_clientStringParsing.js.html#line171">line 171</a>
     </li></ul></dd>
     
 
@@ -1124,7 +1138,7 @@ one character of being a palindrome string.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 15 2020 16:23:55 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 17 2020 14:43:33 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -272,20 +272,20 @@ function mergeClientBusinessRules(clientBusinessRules) {
  */
 
 function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
-  // console.log('BEGIN warden.executeBusinessRule function');
-  // console.log('businessRule is: ' + businessRule);
-  // console.log('ruleInput is: ' + ruleInput);
-  // console.log('ruleMetaData is: ' + ruleInput);
+  console.log('BEGIN warden.executeBusinessRule function');
+  console.log('businessRule is: ' + JSON.stringify(businessRule));
+  console.log('ruleInput is: ' + JSON.stringify(ruleInput));
+  console.log('ruleMetaData is: ' + JSON.stringify(ruleMetaData));
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = executeBusinessRule.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRule is: ' + businessRule);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRule is: ' + JSON.stringify(businessRule));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInput is: ' + ruleInput);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInput is: ' + JSON.stringify(ruleInput));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleMetaData is: ' + ruleMetaData);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleMetaData is: ' + JSON.stringify(ruleMetaData));
 
   var rules = {};
   var returnData;

@@ -19,7 +19,7 @@
           <ConfigurationElement Name="application@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="application@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="application@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="application@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="application@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
           <ConfigurationElement Name="application@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="application@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="application@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
@@ -33,7 +33,7 @@
           <ConfigurationElement Name="build@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="build@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="build@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="build@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="build@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
           <ConfigurationElement Name="build@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="build@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="build@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
@@ -47,7 +47,7 @@
           <ConfigurationElement Name="warden@ModuleFontColor" Type="Default" Value="Red" Version="3"/>
           <ConfigurationElement Name="warden@FunctionFontColor" Type="Default" Value="Red" Version="3"/>
           <ConfigurationElement Name="warden@MessageFontColor" Type="Default" Value="Red" Version="3"/>
-          <ConfigurationElement Name="warden@DataFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="warden@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
           <ConfigurationElement Name="warden@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="warden@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="warden@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
@@ -61,7 +61,7 @@
           <ConfigurationElement Name="stringParsing@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="stringParsing@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="stringParsing@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="stringParsing@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="stringParsing@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
           <ConfigurationElement Name="stringParsing@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="stringParsing@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="stringParsing@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
@@ -75,7 +75,7 @@
           <ConfigurationElement Name="stringGeneration@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="stringGeneration@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="stringGeneration@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="stringGeneration@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="stringGeneration@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
           <ConfigurationElement Name="stringGeneration@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="stringGeneration@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="stringGeneration@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
@@ -89,11 +89,25 @@
           <ConfigurationElement Name="characterGeneration@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="characterGeneration@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
           <ConfigurationElement Name="characterGeneration@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="characterGeneration@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="characterGeneration@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
           <ConfigurationElement Name="characterGeneration@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="characterGeneration@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="characterGeneration@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="characterGeneration@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+
+          <ConfigurationElement Name="clientStringParsing" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="clientStringParsing@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
           <ConfigurationElement Name="chiefData" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefData@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -293,7 +307,7 @@
           <ConfigurationElement Name="warden.mergeClientBusinessRules@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientBusinessRules@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="warden.executeBusinessRule" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
