@@ -56,7 +56,6 @@ export const customEcho = function(inputData, inputMetaData) {
  * @return {integer} The most popular value in the array.
  * @author Seth Hollingsead
  * @date 2020/05/20
- * @NOTE: NOT TESTED!!!!
  */
 export const mostPopularNumber = function(inputData, inputMetaData) {
   // console.log('BEGIN mostPopularNumber function');
@@ -150,7 +149,6 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
  * @return {boolean} True or False to indicate if the input string is a Palindrome or almost palindrome string or not.
  * @author Seth Hollingsead
  * @date 2020/05/20
- * @NOTE: NOT TESTED!!!!
  */
 export const isAlmostPalindrome = function(inputData, inputMetaData) {
   // console.log('BEGIN isAlmostPalindrome function');
@@ -241,7 +239,6 @@ loop2:
  * @return {array<integer|float|double>} Returns the XY coordinate of the average point between all points.
  * @author Seth Hollingsead
  * @date 2020/05/20
- * @NOTE: NOT TESTED!!!!
  */
 export const threePointAverage = function(inputData, inputMetaData) {
   // console.log('BEGIN threePointAverage function');
