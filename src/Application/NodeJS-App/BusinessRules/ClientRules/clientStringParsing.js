@@ -161,26 +161,66 @@ export const isAlmostPalindrome = function(inputData, inputMetaData) {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = false;
-  var i, misCompareCount;
+  var misCompareCount;
+  var startingPoint, endingPoint;
   misCompareCount = 0;
   // TODO: We need to enable additional types of comparisons. The below algorthim works for if the mis-compare is in the center of the string.
   // But if the mis-compare is at the beginning or the end of the string then it can throw off all the other comparisons resulting in a false positive result.
   // We actually need to check starting with the first character but also the first + 1 character and also,
   // We need to check ending with the last - 1 character.
   // Using a similar algorthim as below.
-  for (i = 0; i < inputData.length; i++) {
-    warden.consoleLog(baseFileName + b.cDot + functionName, 'inputData.charAt(i) is: ' + inputData.charAt(i));
-    warden.consoleLog(baseFileName + b.cDot + functionName, 'inputData.chartAt(inputData.length - ' + i + ' - 1) is: ' + inputData.charAt(inputData.length - i - 1));
-    if (inputData.charAt(i) !== inputData.charAt(inputData.length - i - 1)) {
-      warden.consoleLog(baseFileName + b.cDot + functionName, 'We got a mismatch!');
-      warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount before increment is: ' + misCompareCount);
-      misCompareCount += 1;
-      warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount post increment is: ' + misCompareCount);
+loop1:
+  for (let i = 0; i < 3; i++) {
+    // Setup the different start point & end points to do the comparison.
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'comparison iteration is: ' + i);
+    if (i === 0) {
+      startingPoint = 0;
+      endingPoint = -1;
+    } else if (i === 1) {
+      startingPoint = 1;
+      endingPoint = 0;
+    } else if (i === 2) {
+      startingPoint = 0;
+      endingPoint = -2;
+    } else { // We shouldn't get to this point, given the for-loop parameters defined above.
+      returnData = false;
+      break;
     }
-  }
-  warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount after the for-loop is: ' + misCompareCount);
-  if (misCompareCount <= 1) {
-    returnData = true;
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'startingPoint is: ' + startingPoint);
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'endingPoint is: ' + endingPoint);
+loop2:
+    for (let j = startingPoint; j < inputData.length; j++) {
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'j value is: ' + j);
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'inputData.charAt(j) is: ' + inputData.charAt(j));
+      warden.consoleLog(baseFileName + b.cDot + functionName, 'inputData.chartAt(inputData.length - ' + j + ' + ' + endingPoint + ') is: ' +
+        inputData.charAt(inputData.length - j + endingPoint));
+      if (inputData.charAt(j) !== inputData.charAt(inputData.length - j + endingPoint)) {
+        warden.consoleLog(baseFileName + b.cDot + functionName, 'We got a mismatch!');
+        warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount before increment is: ' + misCompareCount);
+        misCompareCount += 1;
+        warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount post increment is: ' + misCompareCount);
+        if (misCompareCount >= 2) {
+          break loop2;
+        }
+      }
+    }
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'misCompareCount after the for-loop is: ' + misCompareCount);
+    if (i === 0) {
+      if (misCompareCount <= 1) {
+        returnData = true;
+      }
+    } else if (i > 0) {
+      if (misCompareCount <= 1) {
+        returnData = true;
+      }
+    }
+    warden.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+    // If we got a positive result then we can break out of the function and return our positive result.
+    if (returnData === true) {
+      break;
+    } else { // Otherwise proceed to the next comparison iteration and check if one of the other scenarios will yield a positive result.
+      misCompareCount = 0; // Reset it for the next comparison iteration.
+    }
   }
   warden.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -196,14 +236,14 @@ export const isAlmostPalindrome = function(inputData, inputMetaData) {
 /**
  * @function threePointAverage
  * @description Calculates the average of 3 coordinates in a 2-Dimensional plane.
- * @param {array<array<integer|float|double>>} inputPointArray The coordinate for the first point.
+ * @param {array<array<integer|float|double>>} inputData The coordinate for the first point.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {array<integer|float|double>} Returns the XY coordinate of the average point between all points.
  * @author Seth Hollingsead
  * @date 2020/05/20
  * @NOTE: NOT TESTED!!!!
  */
-export const threePointAverage = function(inputPointArray, inputMetaData) {
+export const threePointAverage = function(inputData, inputMetaData) {
   // console.log('BEGIN threePointAverage function');
   // console.log('inputPointArray is: ' + inputPointArray);
   // console.log('inputMetaData is: ' + inputMetaData);
@@ -216,12 +256,12 @@ export const threePointAverage = function(inputPointArray, inputMetaData) {
   var xAverage, x1, x2, x3;
   var yAverage, y1, y2, y3;
 
-  x1 = point1[0];
-  x2 = point2[0];
-  x3 = point3[0];
-  y1 = point1[1];
-  y2 = point2[1];
-  y3 = point3[1];
+  x1 = inputData[0][0];
+  x2 = inputData[1][0];
+  x3 = inputData[2][0];
+  y1 = inputData[0][1];
+  y2 = inputData[1][1];
+  y3 = inputData[2][1];
 
   // Calculate the X-averages:
   xAverage = (x1 + x2 + x3) / 3
@@ -254,8 +294,8 @@ export const arrayCounter = function(inputData, inputMetaData) {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var i;
   var returnData = 0;
-  for (i = 0; i <= inputArray.length(); i++) {
-    if (inputArray[i] === instance) {
+  for (i = 0; i <= inputData.length; i++) {
+    if (inputData[i] === inputMetaData) {
       returnData += 1;
     }
   }
