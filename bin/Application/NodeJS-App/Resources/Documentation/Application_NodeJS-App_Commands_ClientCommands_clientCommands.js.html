@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Application/NodeJS-App/Commands/ClientCommands/clientCommands.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Application/NodeJS-App/Commands/ClientCommands/clientCommands.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file clientCommands
+ * @module clientCommands
+ * @description Contains all client defined commands for execution client actions with various operations.
+ * @requires module:warden
+ * @requires module:application-constants
+ * @requires module:system-constants
+ * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @author Seth Hollingsead
+ * @date 2020/06/10
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+ */
+
+import warden from '../../../../Framework/Controllers/warden';
+import * as c from '../../Constants/application.constants';
+import * as s from '../../../../Framework/Constants/system.constants';
+import * as b from '../../../../Framework/Constants/basic.constants';
+var path = require('path');
+
+/**
+ * @function customEchoCommand
+ * @description A quick command to validate that the new dynamic data storage technique for client commands.
+ * @param {string} inputData The string input data.
+ * @param {string} inputMetaData The string of input meta-data.
+ * @return {string} An echo of the inputData with some hard-coded modifier.
+ * @author Seth Hollingsead
+ * @date 2020/06/19
+ */
+export const customEchoCommand = function(inputData, inputMetaData) {
+  // console.log('BEGIN clientStringParsing.customEchoCommand function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = c.ccustomEchoCommand;
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var returnData;
+  returnData = inputData + ' clientStringParsing.customEchoCommand';
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END clientStringParsing.customEcho function');
+  return returnData;
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 19 2020 18:02:36 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

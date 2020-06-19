@@ -28,6 +28,8 @@ var _warden = _interopRequireDefault(require("../../Framework/Controllers/warden
 
 var _clientRulesLibrary = _interopRequireDefault(require("./BusinessRules/clientRulesLibrary"));
 
+var _clientCommandsLibrary = _interopRequireDefault(require("./Commands/clientCommandsLibrary"));
+
 var c = _interopRequireWildcard(require("./Constants/application.constants"));
 
 var s = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
@@ -69,6 +71,8 @@ function bootStrapApplication() {
   _warden["default"].saveRootPath(rootPath);
 
   _warden["default"].mergeClientBusinessRules(_clientRulesLibrary["default"].initClientRulesLibrary());
+
+  _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
 }
 
 ;
@@ -105,8 +109,13 @@ function application() {
 
   if (argumentDrivenInterface === false) {
     while (programRunning === true) {
-      commandInput = prompt(b.cGreaterThan);
-      commandResult = _warden["default"].processCommand(commandInput);
+      if (_warden["default"].isCommandQueueEmpty() === true) {
+        commandInput = prompt(b.cGreaterThan);
+
+        _warden["default"].enqueueCommand(commandInput);
+      }
+
+      commandResult = _warden["default"].processCommandQueue();
 
       if (commandResult === false) {
         _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'END command parser');

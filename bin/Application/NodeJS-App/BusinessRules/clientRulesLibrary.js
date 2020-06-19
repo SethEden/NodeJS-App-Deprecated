@@ -17,6 +17,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+/**
+ * @function initClientRulesLibrary
+ * @description Initializes an object map of client business rules and client function calls and returns them.
+ * @return {object} A JSON object that contains a list of business rule names and their associated function calls.
+ * @author Seth Hollingsead
+ * @date 2020/06/19
+ */
 var initClientRulesLibrary = function initClientRulesLibrary() {
   var _ref;
 

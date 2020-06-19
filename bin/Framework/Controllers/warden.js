@@ -9,6 +9,10 @@ exports["default"] = void 0;
 
 var _chiefConfiguration = _interopRequireDefault(require("../Controllers/chiefConfiguration"));
 
+var _chiefCommander = _interopRequireDefault(require("../Controllers/chiefCommander"));
+
+var _commandBroker = _interopRequireDefault(require("../CommandsBlob/commandBroker"));
+
 var _configurator = _interopRequireDefault(require("../Executrix/configurator"));
 
 var _timers = _interopRequireDefault(require("../Executrix/timers"));
@@ -39,6 +43,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @description Contains all the functions to manage the entire application framework at the highest level.
  * Also provides an interface to easily manage all of the application features & various functionality from a single entry point.
  * @requires module:chiefConfiguration
+ * @requires module:chiefCommander
+ * @requires module:commandBroker
  * @requires module:configurator
  * @requires module:timers
  * @requires module:ruleBroker
@@ -189,6 +195,8 @@ function processRootPath(systemRootPath) {
 
   _ruleBroker["default"].bootStrapBusinessRules();
 
+  _chiefCommander["default"].bootStrapCommands();
+
   var rootPath = _ruleBroker["default"].processRules(systemRootPath, '', rules); // console.log('systemRootPath after business rule processing is: ' + rootPath);
   // console.log('END warden.processRootPath function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -261,6 +269,32 @@ function mergeClientBusinessRules(clientBusinessRules) {
 
 ;
 /**
+ * @function mergeClientCommands
+ * @description Merges the map of client defined command names and client defined command function calls
+ * with the existing D-data structure that should already have all of the system defined commands.
+ * @param {object} clientCommands A map of client defined command names and client defined command function calls.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/19
+ */
+
+function mergeClientCommands(clientCommands) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = mergeClientCommands.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
+
+  _commandBroker["default"].addClientCommands(clientCommands);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
  * @function executeBusinessRule
  * @description A wrapper to call a business rule from the application level code.
  * @param {string} businessRule The name of the business rule that should execute.
@@ -272,10 +306,10 @@ function mergeClientBusinessRules(clientBusinessRules) {
  */
 
 function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
-  console.log('BEGIN warden.executeBusinessRule function');
-  console.log('businessRule is: ' + JSON.stringify(businessRule));
-  console.log('ruleInput is: ' + JSON.stringify(ruleInput));
-  console.log('ruleMetaData is: ' + JSON.stringify(ruleMetaData));
+  // console.log('BEGIN warden.executeBusinessRule function');
+  // console.log('businessRule is: ' + JSON.stringify(businessRule));
+  // console.log('ruleInput is: ' + JSON.stringify(ruleInput));
+  // console.log('ruleMetaData is: ' + JSON.stringify(ruleMetaData));
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = executeBusinessRule.name;
 
@@ -303,23 +337,76 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
 
 ;
 /**
- * @function processCommand
- * @description This is just a wrapper for the chiefCommander.processCommand function.
- * @param {string} command The command string and all of the arguments that should be processed for the command.
+ * @function enqueueCommand
+ * @description Adds a command to the command queue.
+ * It is worth noting that a command could actually load a whole workflow of commands.
+ * So one command can spawn into many commands that cause
+ * the command queue to be very full with a very complicated workflow.
+ * This also acts as a wrapper for the chiefCommander.enqueueCommand function.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/18
+ */
+
+function enqueueCommand(command) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = enqueueCommand.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _chiefCommander["default"].enqueueCommand(command);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
+ * @function isCommandQueueEmpty
+ * @description This is a wrapper for the chiefCommander.isCommandQueueEmpty function.
+ * Determines if the command queue is empty or not,
+ * which also determines if the application should continue executing commands from the command queue
+ * in sequential order or prompt for another command or exit.
+ * @return {Boolean} True or False to indicate if command execution should continue or not.
+ * @author Seth Hollingsead
+ * @date 2020/06/18
+ */
+
+function isCommandQueueEmpty() {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = isCommandQueueEmpty.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  var returnValue = false;
+  returnValue = _chiefCommander["default"].isCommandQueueEmpty();
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnValue;
+}
+
+;
+/**
+ * @function processCommandQueue
+ * @description This is just a wrapper for the chiefCommander.processCommandQueue function,
+ * which will ultimately call chiefCommander.processCommand to process an individual command.
+ * This is because a command could actually invoke a command workflow that might enqueue a bunch of commands
+ * to the command queue. All of them must be executed in sequence as part of the main application loop.
  * @return {boolean} A TRUE or FALSE to indicate if the command loop should terminate when it's done.
  * @author Seth Hollingsead
  * @date 2020/05/27
  */
 
-function processCommand(command) {
+function processCommandQueue() {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = processCommand.name;
+  var functionName = processCommandQueue.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'command is: ' + command);
-
   var returnValue = false;
+  returnValue = _chiefCommander["default"].processCommandQueue();
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
 
@@ -420,8 +507,11 @@ var _default = {
   processRootPath: processRootPath,
   saveRootPath: saveRootPath,
   mergeClientBusinessRules: mergeClientBusinessRules,
+  mergeClientCommands: mergeClientCommands,
   executeBusinessRule: executeBusinessRule,
-  processCommand: processCommand,
+  enqueueCommand: enqueueCommand,
+  isCommandQueueEmpty: isCommandQueueEmpty,
+  processCommandQueue: processCommandQueue,
   setConfigurationSetting: setConfigurationSetting,
   getConfigurationSetting: getConfigurationSetting,
   consoleLog: consoleLog

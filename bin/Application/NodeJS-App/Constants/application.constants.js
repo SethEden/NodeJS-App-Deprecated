@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
+exports.ccustomEchoCommand = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
 var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
@@ -64,5 +64,11 @@ var cisAlmostPalindrome = b.cis + s.cAlmost + s.cPalindrom;
 exports.cisAlmostPalindrome = cisAlmostPalindrome;
 var cthreePointAverage = g.cthree + s.cPoint + s.cAverage;
 exports.cthreePointAverage = cthreePointAverage;
-var carrayCounter = s.carray + s.cCounter;
+var carrayCounter = s.carray + s.cCounter; // Client Commands
+// ********************************
+// Client Commands in order
+// ********************************
+
 exports.carrayCounter = carrayCounter;
+var ccustomEchoCommand = s.ccustom + s.cEcho + s.cCommand;
+exports.ccustomEchoCommand = ccustomEchoCommand;

@@ -140,6 +140,10 @@ Also provides an interface to easily manage all of the application features &amp
         <ul>
             <li><a href="module-chiefConfiguration.html">module:chiefConfiguration</a></li>
         
+            <li><a href="module-chiefCommander.html">module:chiefCommander</a></li>
+        
+            <li><a href="module-commandBroker.html">module:commandBroker</a></li>
+        
             <li><a href="module-configurator.html">module:configurator</a></li>
         
             <li><a href="module-timers.html">module:timers</a></li>
@@ -291,7 +295,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line84">line 84</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -485,7 +489,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line293">line 293</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line361">line 361</a>
     </li></ul></dd>
     
 
@@ -670,7 +674,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line37">line 37</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -711,6 +715,123 @@ Also provides an interface to easily manage all of the application features &amp
     <dd>
         
 <span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~enqueueCommand"><span class="type-signature">(inner) </span>enqueueCommand<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a command to the command queue.
+It is worth noting that a command could actually load a whole workflow of commands.
+So one command can spawn into many commands that cause
+the command queue to be very full with a very complicated workflow.
+This also acts as a wrapper for the chiefCommander.enqueueCommand function.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line252">line 252</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
 
 
     </dd>
@@ -882,7 +1003,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line194">line 194</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line220">line 220</a>
     </li></ul></dd>
     
 
@@ -1048,7 +1169,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line269">line 269</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line337">line 337</a>
     </li></ul></dd>
     
 
@@ -1098,6 +1219,126 @@ Also provides an interface to easily manage all of the application features &amp
 |
 
 <span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isCommandQueueEmpty"><span class="type-signature">(inner) </span>isCommandQueueEmpty<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>This is a wrapper for the chiefCommander.isCommandQueueEmpty function.
+Determines if the command queue is empty or not,
+which also determines if the application should continue executing commands from the command queue
+in sequential order or prompt for another command or exit.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line271">line 271</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if command execution should continue or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
 
 
     </dd>
@@ -1224,7 +1465,7 @@ with the existing D-data structure that should already have all of the system de
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line170">line 170</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -1278,7 +1519,7 @@ with the existing D-data structure that should already have all of the system de
     
 
     
-    <h4 class="name" id="~processCommand"><span class="type-signature">(inner) </span>processCommand<span class="signature">(command)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="~mergeClientCommands"><span class="type-signature">(inner) </span>mergeClientCommands<span class="signature">(clientCommands)</span><span class="type-signature"> &rarr; {void}</span></h4>
     
 
     
@@ -1286,7 +1527,8 @@ with the existing D-data structure that should already have all of the system de
 
 
 <div class="description">
-    <p>This is just a wrapper for the chiefCommander.processCommand function.</p>
+    <p>Merges the map of client defined command names and client defined command function calls
+with the existing D-data structure that should already have all of the system defined commands.</p>
 </div>
 
 
@@ -1322,13 +1564,13 @@ with the existing D-data structure that should already have all of the system de
 
         <tr>
             
-                <td class="name"><code>command</code></td>
+                <td class="name"><code>clientCommands</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -1338,7 +1580,7 @@ with the existing D-data structure that should already have all of the system de
 
             
 
-            <td class="description last"><p>The command string and all of the arguments that should be processed for the command.</p></td>
+            <td class="description last"><p>A map of client defined command names and client defined command function calls.</p></td>
         </tr>
 
     
@@ -1386,7 +1628,123 @@ with the existing D-data structure that should already have all of the system de
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line226">line 226</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line199">line 199</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~processCommandQueue"><span class="type-signature">(inner) </span>processCommandQueue<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>This is just a wrapper for the chiefCommander.processCommandQueue function,
+which will ultimately call chiefCommander.processCommand to process an individual command.
+This is because a command could actually invoke a command workflow that might enqueue a bunch of commands
+to the command queue. All of them must be executed in sequence as part of the main application loop.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line292">line 292</a>
     </li></ul></dd>
     
 
@@ -1552,7 +1910,7 @@ with the existing D-data structure that should already have all of the system de
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line111">line 111</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line115">line 115</a>
     </li></ul></dd>
     
 
@@ -1744,7 +2102,7 @@ and save the resulting archive to the release folder.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line59">line 59</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -1911,7 +2269,7 @@ Also saves the current application version number and the application name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line147">line 147</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line152">line 152</a>
     </li></ul></dd>
     
 
@@ -2105,7 +2463,7 @@ Also saves the current application version number and the application name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line245">line 245</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line313">line 313</a>
     </li></ul></dd>
     
 
@@ -2169,13 +2527,13 @@ Also saves the current application version number and the application name.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jun 18 2020 13:43:08 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 19 2020 18:02:38 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
