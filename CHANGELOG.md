@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.7](https://github.com/SethEden/NodeJS-App/compare/v0.5.6...v0.5.7) (2020-06-19)
+
+
+### Features
+
+* Implement the basics of the new command queue system and command execution engine, plus many debugging. ([30b1a80](https://github.com/SethEden/NodeJS-App/commit/30b1a80367add8aed17a4f090a6a01241c60498a))
+
 ### [0.5.6](https://github.com/SethEden/NodeJS-App/compare/v0.5.5...v0.5.6) (2020-06-18)
 
 ### [0.5.5](https://github.com/SethEden/NodeJS-App/compare/v0.5.4...v0.5.5) (2020-06-17)
