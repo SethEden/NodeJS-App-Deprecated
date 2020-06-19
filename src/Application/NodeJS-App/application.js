@@ -22,6 +22,7 @@
  */
 import warden from '../../Framework/Controllers/warden';
 import clientRules from './BusinessRules/clientRulesLibrary';
+import clientCommands from './Commands/clientCommandsLibrary';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
@@ -46,6 +47,7 @@ function bootStrapApplication() {
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
+  warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
 };
 
 /**
@@ -72,8 +74,11 @@ function application() {
   console.log(figlet.textSync(applicationName, {font: figletFont, horizontalLayout: s.cfull }));
   if (argumentDrivenInterface === false) {
     while(programRunning === true) {
-      commandInput = prompt(b.cGreaterThan);
-      commandResult = warden.processCommand(commandInput);
+      if (warden.isCommandQueueEmpty() === true) {
+        commandInput = prompt(b.cGreaterThan);
+        warden.enqueueCommand(commandInput);
+      }
+      commandResult = warden.processCommandQueue();
       if (commandResult === false) {
         warden.consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
         programRunning = false;

@@ -11,6 +11,13 @@
 import * as clientStringParsing from './ClientRules/clientStringParsing';
 import * as c from '../Constants/application.constants';
 
+/**
+ * @function initClientRulesLibrary
+ * @description Initializes an object map of client business rules and client function calls and returns them.
+ * @return {object} A JSON object that contains a list of business rule names and their associated function calls.
+ * @author Seth Hollingsead
+ * @date 2020/06/19
+ */
 export const initClientRulesLibrary = function() {
   // console.log('BEGIN clientRulesLibrary.initClientRulesLibrary function');
   // console.log('END clientRulesLibrary.initClientRulesLibrary function');
@@ -26,7 +33,7 @@ export const initClientRulesLibrary = function() {
       [c.cisAlmostPalindrome]: (inputData, inputMetaData) => clientStringParsing.isAlmostPalindrome(inputData, inputMetaData),
       [c.cthreePointAverage]: (inputData, inputMetaData) => clientStringParsing.threePointAverage(inputData, inputMetaData),
       [c.carrayCounter]: (inputData, inputMetaData) => clientStringParsing.arrayCounter(inputData, inputMetaData)
-  }
+  };
 };
 
 export default {

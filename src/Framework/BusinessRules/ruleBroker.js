@@ -37,6 +37,7 @@ function bootStrapBusinessRules() {
 /**
  * @function addClientRules
  * @description Merges client defined business rules with the system defined business rules.
+ * @param {array<object>} clientRules The client rules that should be merged with the system rules.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/15

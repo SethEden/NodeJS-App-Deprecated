@@ -289,6 +289,7 @@ export const cent = b.cen + b.ct;
 export const centa = cent + b.ca;
 export const ccust = b.ccu + b.cst;
 export const cCust = b.cCu + b.cst;
+export const cmand = b.cma + b.cnd;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

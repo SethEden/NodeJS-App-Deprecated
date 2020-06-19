@@ -39,3 +39,9 @@ export const cmostPopularNumber = s.cmost + s.cPopular + s.cNumber;
 export const cisAlmostPalindrome = b.cis + s.cAlmost + s.cPalindrom;
 export const cthreePointAverage = g.cthree + s.cPoint + s.cAverage;
 export const carrayCounter = s.carray + s.cCounter;
+
+// Client Commands
+// ********************************
+// Client Commands in order
+// ********************************
+export const ccustomEchoCommand = s.ccustom + s.cEcho + s.cCommand;

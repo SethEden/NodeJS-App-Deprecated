@@ -262,6 +262,7 @@ export const cintermediate = g.cinter + cmediate;
 export const cIntermediate = g.cInter + cmediate; // 'Intermediate';
 export const cpath = b.cp + g.cath;
 export const cPath = b.cP + g.cath; // 'Path';
+export const cexit = b.cex + b.cit;
 export const cExit = b.cEx + b.cit; // 'Exit';
 export const cViewer = b.cVi + b.cew + b.cer; // 'Viewer';
 export const cPermission = b.cPe + b.crm + b.cis + b.csi + b.con; // 'Permission';
@@ -706,6 +707,12 @@ export const crules = b.cr + g.cules;
 export const cRules = b.cR + g.cules;
 export const ccustom = g.ccust + b.com;
 export const cCustom = g.cCust + b.com;
+export const ccommand = g.ccom + g.cmand;
+export const cCommand = g.cCom + g.cmand;
+export const ccommands = ccommand + b.cs;
+export const cCommands = cCommand + b.cs;
+export const cqueue = b.cqu + b.ceu + b.ce;
+export const cQueue = b.cQu + b.ceu + b.ce;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -2198,6 +2205,7 @@ export const cLocatorsDataPath = cLocators + cDataPath;
 export const cArgumentDrivenInterface = cArgument + cDriven + cInterface;
 export const cFigletFont = cFiglet + cFont;
 export const cclientRulesLibrary = cclient + cRules + cLibrary;
+export const cCommandQueue = cCommand + cQueue;
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = cBegin + cDateTimeStamp;
@@ -2328,3 +2336,10 @@ export const crandomlyGenerateUpperCaseLetter1 = crandomlyGenerate + cUpperCase 
 export const crandomlyGenerateUpperCaseLetter2 = crandomlyGenerate + cUpperCase + cLetter + b.c2;
 export const cconvertNumberToUpperCaseLetter = cconvert + cNumber + cTo + cUpperCase + cLetter;
 export const cconvertNumberToLowerCaseLetter = cconvert + cNumber + cTo + cLowerCase + cLetter;
+
+// Commands
+// ********************************
+// Nominal Commands in order
+// ********************************
+export const cechoCommand = cecho + cCommand;
+export const cEchoCommand = cEcho + cCommand;

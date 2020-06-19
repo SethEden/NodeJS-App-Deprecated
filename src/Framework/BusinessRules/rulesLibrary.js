@@ -20,6 +20,7 @@ var D = require('../Resources/data');
 /**
  * @function initRulesLibrary
  * @description Initializes the business rules function data structure on D.
+ * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/15
  */
