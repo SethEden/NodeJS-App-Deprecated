@@ -3,6 +3,7 @@
  * @module chiefCommander
  * @description Holds all of the functions that manage the command queue, and allows commands to be enqueued and dequeued from the command queue.
  * Also executes the command queue ultimately by making calls to the commandBroker to execute individual commands.
+ * @requires module:chiefData
  * @requires module:commandBroker
  * @requires module:queue
  * @requires module:loggers
@@ -14,7 +15,7 @@
  * @date 2020/06/18
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-
+import chiefData from '../Controllers/chiefData';
 import commandBroker from '../CommandsBlob/commandBroker';
 import queue from '../Resources/queue';
 import loggers from '../Executrix/loggers';
@@ -35,6 +36,34 @@ function bootStrapCommands() {
   var functionName = bootStrapCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   commandBroker.bootStrapCommands();
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
+ * @function loadCommandAliasesFromPath
+ * @description Loads the command aliases XML file that is specified by the input.
+ * The data is automatically saved on the D-data structure.
+ * @param {string} commandAliasesFilePath The path and file name to the XML file that contains the command aliases definitions.
+ * (Could be system command aliases or client command aliases)
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/21
+ */
+function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = loadCommandAliasesFromPath.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandAliasesFilePathConfigurationName is: ' + commandAliasesFilePathConfigurationName);
+  var allCommandAliasesData = {};
+  allCommandAliasesData = chiefData.setupAllXmlData(commandAliasesFilePathConfigurationName, s.cCommandsAliases);
+  if (D[s.cCommandsAliases] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
+    D[s.cCommandsAliases] = {};
+    D[s.cCommandsAliases] = allCommandAliasesData[s.cCommandsAliases];
+  } else {
+    for (let i=0; i<allCommandAliasesData[s.cCommandsAliases][s.cCommand].length; i++) {
+      D[s.cCommandsAliases][s.cCommand].push(allCommandAliasesData[s.cCommandsAliases][s.cCommand][i])
+    }
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -99,6 +128,7 @@ function processCommandQueue() {
 
 export default {
   bootStrapCommands,
+  loadCommandAliasesFromPath,
   enqueueCommand,
   isCommandQueueEmpty,
   processCommandQueue

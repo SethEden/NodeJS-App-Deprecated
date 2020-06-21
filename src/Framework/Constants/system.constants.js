@@ -713,6 +713,14 @@ export const ccommands = ccommand + b.cs;
 export const cCommands = cCommand + b.cs;
 export const cqueue = b.cqu + b.ceu + b.ce;
 export const cQueue = b.cQu + b.ceu + b.ce;
+export const cblob = b.cb + g.clob;
+export const cBlob = b.cB + g.clob;
+export const cframe = b.cf + g.crame;
+export const cFrame = b.cF + g.crame;
+export const calias = b.cal + g.cias;
+export const cAlias = b.cAl + g.cias;
+export const caliases = calias + b.ces;
+export const cAliases = cAlias + b.ces;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -1882,6 +1890,9 @@ export const cColorData = cColor + cData;
 export const cColorName = cColor + cName;
 export const cBusinessRules = cBusiness + cRules;
 export const crulesLibrary = crules + cLibrary;
+export const cframework = cframe + cwork;
+export const cFramework = cFrame + cwork;
+export const cCommandsAliases = cCommands + cAliases;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -2338,6 +2349,9 @@ export const cconvertNumberToUpperCaseLetter = cconvert + cNumber + cTo + cUpper
 export const cconvertNumberToLowerCaseLetter = cconvert + cNumber + cTo + cLowerCase + cLetter;
 
 // Commands
+export const cSystemCommandsAliasesActualPath = csrc + b.cForwardSlash + cFramework + b.cForwardSlash + cCommands + cBlob + b.cForwardSlash;
+export const cSystemCommandsAliasesPath = cSystem + cCommands + cAliases + cPath;
+export const cClientCommandsAliasesPath = cClient + cCommands + cAliases + cPath;
 // ********************************
 // Nominal Commands in order
 // ********************************

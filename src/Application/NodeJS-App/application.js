@@ -48,6 +48,9 @@ function bootStrapApplication() {
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
+  // console.log('s.cSystemCommandAliasesPath resolves as: ' + s.cSystemCommandAliasesPath);
+  // console.log('c.cClientCommandAliasesPath resolves as: ' + c.cClientCommandAliasesPath);
+  warden.loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
 };
 
 /**
