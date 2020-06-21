@@ -138,6 +138,8 @@ Also executes the command queue ultimately by making calls to the commandBroker 
         <h3 class="subsection-title">Requires</h3>
 
         <ul>
+            <li><a href="module-chiefData.html">module:chiefData</a></li>
+        
             <li><a href="module-commandBroker.html">module:commandBroker</a></li>
         
             <li><a href="module-queue.html">module:queue</a></li>
@@ -232,7 +234,7 @@ Also executes the command queue ultimately by making calls to the commandBroker 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line26">line 26</a>
+        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -395,7 +397,7 @@ if not then it is initialized, and the command is added to the command queue.</p
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line41">line 41</a>
+        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line70">line 70</a>
     </li></ul></dd>
     
 
@@ -508,7 +510,7 @@ if not then it is initialized, and the command is added to the command queue.</p
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line62">line 62</a>
+        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -549,6 +551,170 @@ if not then it is initialized, and the command is added to the command queue.</p
     <dd>
         
 <span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~loadCommandAliasesFromPath"><span class="type-signature">(inner) </span>loadCommandAliasesFromPath<span class="signature">(commandAliasesFilePath)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Loads the command aliases XML file that is specified by the input.
+The data is automatically saved on the D-data structure.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>commandAliasesFilePath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path and file name to the XML file that contains the command aliases definitions.
+(Could be system command aliases or client command aliases)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
 
 
     </dd>
@@ -625,7 +791,7 @@ if not then it is initialized, and the command is added to the command queue.</p
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line80">line 80</a>
+        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line109">line 109</a>
     </li></ul></dd>
     
 
@@ -699,7 +865,7 @@ if not then it is initialized, and the command is added to the command queue.</p
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 19 2020 18:02:37 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 21 2020 18:35:55 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

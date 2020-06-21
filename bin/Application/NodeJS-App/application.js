@@ -72,7 +72,11 @@ function bootStrapApplication() {
 
   _warden["default"].mergeClientBusinessRules(_clientRulesLibrary["default"].initClientRulesLibrary());
 
-  _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
+  _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary()); // console.log('s.cSystemCommandAliasesPath resolves as: ' + s.cSystemCommandAliasesPath);
+  // console.log('c.cClientCommandAliasesPath resolves as: ' + c.cClientCommandAliasesPath);
+
+
+  _warden["default"].loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
 }
 
 ;

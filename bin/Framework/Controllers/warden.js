@@ -295,6 +295,42 @@ function mergeClientCommands(clientCommands) {
 
 ;
 /**
+ * @function loadCommandAliases
+ * @description Loads and merges both the system defined command aliases XML file & the client defined command aliases XML file.
+ * @param {string} systemCommandsAliasesPath The path from the application root to the system defined commands aliases XML file.
+ * @param {string} clientCommandsAliasesPath The path from the application root to the client defined commands aliases XML file.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/21
+ */
+
+function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = loadCommandAliases.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'systemCommandsAliasesPath is: ' + systemCommandsAliasesPath);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'clientCommandsAliasesPath is: ' + clientCommandsAliasesPath);
+
+  var applicationRootPath = _configurator["default"].getConfigurationSetting(s.cApplicationCleanedRootPath);
+
+  _configurator["default"].setConfigurationSetting(s.cSystemCommandsAliasesPath, applicationRootPath + systemCommandsAliasesPath);
+
+  _configurator["default"].setConfigurationSetting(s.cClientCommandsAliasesPath, applicationRootPath + clientCommandsAliasesPath);
+
+  _chiefCommander["default"].loadCommandAliasesFromPath(s.cSystemCommandsAliasesPath); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+
+
+  _chiefCommander["default"].loadCommandAliasesFromPath(s.cClientCommandsAliasesPath); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
  * @function executeBusinessRule
  * @description A wrapper to call a business rule from the application level code.
  * @param {string} businessRule The name of the business rule that should execute.
@@ -508,6 +544,7 @@ var _default = {
   saveRootPath: saveRootPath,
   mergeClientBusinessRules: mergeClientBusinessRules,
   mergeClientCommands: mergeClientCommands,
+  loadCommandAliases: loadCommandAliases,
   executeBusinessRule: executeBusinessRule,
   enqueueCommand: enqueueCommand,
   isCommandQueueEmpty: isCommandQueueEmpty,

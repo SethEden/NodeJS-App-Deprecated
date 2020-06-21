@@ -7,6 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _chiefData = _interopRequireDefault(require("../Controllers/chiefData"));
+
 var _commandBroker = _interopRequireDefault(require("../CommandsBlob/commandBroker"));
 
 var _queue = _interopRequireDefault(require("../Resources/queue"));
@@ -28,6 +30,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @module chiefCommander
  * @description Holds all of the functions that manage the command queue, and allows commands to be enqueued and dequeued from the command queue.
  * Also executes the command queue ultimately by making calls to the commandBroker to execute individual commands.
+ * @requires module:chiefData
  * @requires module:commandBroker
  * @requires module:queue
  * @requires module:loggers
@@ -58,6 +61,42 @@ function bootStrapCommands() {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
   _commandBroker["default"].bootStrapCommands();
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
+ * @function loadCommandAliasesFromPath
+ * @description Loads the command aliases XML file that is specified by the input.
+ * The data is automatically saved on the D-data structure.
+ * @param {string} commandAliasesFilePath The path and file name to the XML file that contains the command aliases definitions.
+ * (Could be system command aliases or client command aliases)
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/21
+ */
+
+function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = loadCommandAliasesFromPath.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasesFilePathConfigurationName is: ' + commandAliasesFilePathConfigurationName);
+
+  var allCommandAliasesData = {};
+  allCommandAliasesData = _chiefData["default"].setupAllXmlData(commandAliasesFilePathConfigurationName, s.cCommandsAliases);
+
+  if (D[s.cCommandsAliases] === undefined) {
+    // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
+    D[s.cCommandsAliases] = {};
+    D[s.cCommandsAliases] = allCommandAliasesData[s.cCommandsAliases];
+  } else {
+    for (var i = 0; i < allCommandAliasesData[s.cCommandsAliases][s.cCommand].length; i++) {
+      D[s.cCommandsAliases][s.cCommand].push(allCommandAliasesData[s.cCommandsAliases][s.cCommand][i]);
+    }
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 }
@@ -145,6 +184,7 @@ function processCommandQueue() {
 ;
 var _default = {
   bootStrapCommands: bootStrapCommands,
+  loadCommandAliasesFromPath: loadCommandAliasesFromPath,
   enqueueCommand: enqueueCommand,
   isCommandQueueEmpty: isCommandQueueEmpty,
   processCommandQueue: processCommandQueue

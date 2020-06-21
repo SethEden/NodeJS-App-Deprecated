@@ -235,6 +235,20 @@
           <ConfigurationElement Name="nominal@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="nominal@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
+          <ConfigurationElement Name="clientCommands" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientCommands@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="clientCommands@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="clientCommands@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="clientCommands@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="clientCommands@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="clientCommands@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="clientCommands@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="clientCommands@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="clientCommands@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="clientCommands@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="clientCommands@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="clientCommands@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+
         </ConfigurationElement>
         <ConfigurationElement Name="DebugFunctions" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application.application" Type="Default" Value="False" Version="3"/>
@@ -363,6 +377,20 @@
           <ConfigurationElement Name="warden.mergeClientCommands@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientCommands@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="warden.loadCommandAliases" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="warden.executeBusinessRule" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -460,6 +488,20 @@
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.loadCommandAliasesFromPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="chiefCommander.enqueueCommand" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefCommander.enqueueCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2588,6 +2630,20 @@
           <ConfigurationElement Name="nominal.exit@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.exit@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.exit@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="clientCommands.customEchoCommand" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.customEchoCommand@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
         </ConfigurationElement>
       </ConfigurationElements>
     </Configuration>

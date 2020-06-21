@@ -489,7 +489,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line361">line 361</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line386">line 386</a>
     </li></ul></dd>
     
 
@@ -795,7 +795,7 @@ This also acts as a wrapper for the chiefCommander.enqueueCommand function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line252">line 252</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line277">line 277</a>
     </li></ul></dd>
     
 
@@ -1003,7 +1003,7 @@ This also acts as a wrapper for the chiefCommander.enqueueCommand function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line220">line 220</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line245">line 245</a>
     </li></ul></dd>
     
 
@@ -1169,7 +1169,7 @@ This also acts as a wrapper for the chiefCommander.enqueueCommand function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line337">line 337</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line362">line 362</a>
     </li></ul></dd>
     
 
@@ -1298,7 +1298,7 @@ in sequential order or prompt for another command or exit.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line271">line 271</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line296">line 296</a>
     </li></ul></dd>
     
 
@@ -1339,6 +1339,191 @@ in sequential order or prompt for another command or exit.</p>
     <dd>
         
 <span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~loadCommandAliases"><span class="type-signature">(inner) </span>loadCommandAliases<span class="signature">(systemCommandsAliasesPath, clientCommandsAliasesPath)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Loads and merges both the system defined command aliases XML file &amp; the client defined command aliases XML file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>systemCommandsAliasesPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path from the application root to the system defined commands aliases XML file.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clientCommandsAliasesPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path from the application root to the client defined commands aliases XML file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
 
 
     </dd>
@@ -1744,7 +1929,7 @@ to the command queue. All of them must be executed in sequence as part of the ma
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line292">line 292</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line317">line 317</a>
     </li></ul></dd>
     
 
@@ -2463,7 +2648,7 @@ Also saves the current application version number and the application name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line313">line 313</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line338">line 338</a>
     </li></ul></dd>
     
 
@@ -2533,7 +2718,7 @@ Also saves the current application version number and the application name.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 19 2020 18:02:38 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 21 2020 18:35:56 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
