@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.8](https://github.com/SethEden/NodeJS-App/compare/v0.5.7...v0.5.8) (2020-06-21)
+
+
+### Features
+
+* Add the capability to load command alias XML meta-data files into the D-data structure system, so we can use that data as part of the command execution architecture. ([d15a361](https://github.com/SethEden/NodeJS-App/commit/d15a3617294a83c7d2eee4bf94c6eca1e5b18a2c))
+
 ### [0.5.7](https://github.com/SethEden/NodeJS-App/compare/v0.5.6...v0.5.7) (2020-06-19)
 
 
