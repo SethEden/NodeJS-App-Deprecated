@@ -109,7 +109,7 @@
           <ConfigurationElement Name="clientStringParsing@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="clientStringParsing@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="chiefData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="chiefData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefData@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="chiefData@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="chiefData@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -123,7 +123,7 @@
           <ConfigurationElement Name="chiefData@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="chiefData@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="dataBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="dataBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -137,7 +137,7 @@
           <ConfigurationElement Name="dataBroker@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="dataBroker@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="fileBroker" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="fileBroker" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="fileBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="fileBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -165,7 +165,7 @@
           <ConfigurationElement Name="timers@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="timers@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="commandBroker" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="commandBroker" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="commandBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="commandBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="commandBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -193,7 +193,7 @@
           <ConfigurationElement Name="commandsLibrary@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="commandsLibrary@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="chiefCommander" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="chiefCommander" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefCommander@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="chiefCommander@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="chiefCommander@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -207,7 +207,7 @@
           <ConfigurationElement Name="chiefCommander@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="chiefCommander@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="queue" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="queue" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="queue@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="queue@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -221,7 +221,7 @@
           <ConfigurationElement Name="queue@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="queue@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="nominal" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -363,7 +363,7 @@
           <ConfigurationElement Name="warden.mergeClientBusinessRules@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientBusinessRules@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="warden.mergeClientCommands" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden.mergeClientCommands" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientCommands@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientCommands@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientCommands@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -377,7 +377,7 @@
           <ConfigurationElement Name="warden.mergeClientCommands@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientCommands@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="warden.loadCommandAliases" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandAliases" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.loadCommandAliases@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.loadCommandAliases@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.loadCommandAliases@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -601,7 +601,7 @@
           <ConfigurationElement Name="commandsLibrary.initCommandsLibrary@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="commandsLibrary.initCommandsLibrary@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="chiefData.getAndProcessCsvData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="chiefData.getAndProcessCsvData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessCsvData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessCsvData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessCsvData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -615,7 +615,7 @@
           <ConfigurationElement Name="chiefData.getAndProcessCsvData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessCsvData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="chiefData.getAndProcessXmlData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="chiefData.getAndProcessXmlData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessXmlData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessXmlData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessXmlData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -629,7 +629,7 @@
           <ConfigurationElement Name="chiefData.getAndProcessXmlData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.getAndProcessXmlData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="chiefData.setupAllCsvData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="chiefData.setupAllCsvData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllCsvData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllCsvData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllCsvData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -643,7 +643,7 @@
           <ConfigurationElement Name="chiefData.setupAllCsvData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllCsvData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="chiefData.setupAllXmlData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="chiefData.setupAllXmlData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllXmlData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllXmlData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllXmlData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -657,7 +657,7 @@
           <ConfigurationElement Name="chiefData.setupAllXmlData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllXmlData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.scanDataPath" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.scanDataPath" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.scanDataPath@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.scanDataPath@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.scanDataPath@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -671,7 +671,7 @@
           <ConfigurationElement Name="dataBroker.scanDataPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.scanDataPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.loadAllCsvData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.loadAllCsvData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllCsvData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllCsvData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllCsvData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -685,7 +685,7 @@
           <ConfigurationElement Name="dataBroker.loadAllCsvData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllCsvData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.loadAllXmlData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.loadAllXmlData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllXmlData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllXmlData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllXmlData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -699,7 +699,7 @@
           <ConfigurationElement Name="dataBroker.loadAllXmlData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.loadAllXmlData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.processCsvData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.processCsvData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.processCsvData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.processCsvData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.processCsvData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -713,7 +713,7 @@
           <ConfigurationElement Name="dataBroker.processCsvData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.processCsvData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.getDataCatagoryFromContextName" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.getDataCatagoryFromContextName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryFromContextName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryFromContextName@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryFromContextName@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -727,7 +727,7 @@
           <ConfigurationElement Name="dataBroker.getDataCatagoryFromContextName@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryFromContextName@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.getDataCatagoryDetailNameFromContextName" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.getDataCatagoryDetailNameFromContextName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryDetailNameFromContextName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryDetailNameFromContextName@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryDetailNameFromContextName@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -741,7 +741,7 @@
           <ConfigurationElement Name="dataBroker.getDataCatagoryDetailNameFromContextName@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataCatagoryDetailNameFromContextName@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.extractDataFromPapaParseObject" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.extractDataFromPapaParseObject" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.extractDataFromPapaParseObject@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.extractDataFromPapaParseObject@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.extractDataFromPapaParseObject@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -755,7 +755,7 @@
           <ConfigurationElement Name="dataBroker.extractDataFromPapaParseObject@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.extractDataFromPapaParseObject@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.mergeData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.mergeData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.mergeData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.mergeData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.mergeData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -769,7 +769,7 @@
           <ConfigurationElement Name="dataBroker.mergeData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.mergeData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.getDataElement" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.getDataElement" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElement@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElement@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElement@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -783,7 +783,7 @@
           <ConfigurationElement Name="dataBroker.getDataElement@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElement@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.getDataElementCount" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.getDataElementCount" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -951,7 +951,7 @@
           <ConfigurationElement Name="timers.reformatDeltaTime@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="queue.initQueue" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="queue.initQueue" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue.initQueue@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.initQueue@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.initQueue@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -965,7 +965,7 @@
           <ConfigurationElement Name="queue.initQueue@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.initQueue@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="queue.dequeue" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="queue.dequeue" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue.dequeue@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.dequeue@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.dequeue@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -979,7 +979,7 @@
           <ConfigurationElement Name="queue.dequeue@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.dequeue@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="queue.enqueue" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="queue.enqueue" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue.enqueue@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.enqueue@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.enqueue@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -993,7 +993,7 @@
           <ConfigurationElement Name="queue.enqueue@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.enqueue@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="queue.isEmpty" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="queue.isEmpty" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue.isEmpty@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.isEmpty@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.isEmpty@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1007,7 +1007,7 @@
           <ConfigurationElement Name="queue.isEmpty@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.isEmpty@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="queue.queueFront" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="queue.queueFront" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue.queueFront@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.queueFront@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.queueFront@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1021,7 +1021,7 @@
           <ConfigurationElement Name="queue.queueFront@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.queueFront@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="queue.queueSize" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="queue.queueSize" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue.queueSize@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.queueSize@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.queueSize@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2603,7 +2603,7 @@
           <ConfigurationElement Name="clientStringParsing.arrayCounter@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="clientStringParsing.arrayCounter@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="nominal.echoCommand" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal.echoCommand" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.echoCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.echoCommand@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.echoCommand@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2617,7 +2617,7 @@
           <ConfigurationElement Name="nominal.echoCommand@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.echoCommand@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="nominal.exit" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal.exit" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.exit@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.exit@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.exit@MessageFontStyle" Type="Default" Value="Default" Version="3"/>

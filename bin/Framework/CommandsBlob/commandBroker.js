@@ -109,10 +109,41 @@ function executeCommand(commandToExecute) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
 
-  var returnValue = false; // NOTE: Right now I am passing the commandToExecute as an input to the command that is being executed.
+  var returnValue = false;
+  var foundValidCommand = false; // NOTE: Right now I am passing the commandToExecute as an input to the command that is being executed.
   // This is great for testing, but we will need to parse this out when we get to actually executing functional commands.
 
-  returnValue = D[s.cCommands][commandToExecute](commandToExecute, '');
+  if (D[s.cCommands][commandToExecute] !== undefined) {
+    foundValidCommand = true;
+    returnValue = D[s.cCommands][commandToExecute](commandToExecute, '');
+  } else {
+    // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
+    // to see if we can find a match, then get the actual command that should be executed.
+    var allCommandAliases = D[s.cCommandsAliases][s.cCommand];
+
+    loop1: for (var i = 0; i < allCommandAliases.length; i++) {
+      // Iterate through all of the command aliases and see if we can find a
+      // command alias that matches the command the user is trying to execute.
+      var currentCommand = allCommandAliases[i];
+      var aliasList = currentCommand[s.cAliases];
+      var arrayOfAliases = aliasList.split(b.cComa);
+
+      loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
+        if (commandToExecute === arrayOfAliases[j]) {
+          foundValidCommand = true;
+          commandToExecute = currentCommand[s.cName];
+          break loop1;
+        }
+      }
+    }
+
+    if (foundValidCommand === true) {
+      returnValue = D[s.cCommands][commandToExecute](commandToExecute, '');
+    } else {
+      console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
+      returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.
+    }
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
 

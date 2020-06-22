@@ -82,7 +82,7 @@ exports.echoCommand = echoCommand;
 
 var exit = function exit(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cechoCommand;
+  var functionName = s.cexit;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
