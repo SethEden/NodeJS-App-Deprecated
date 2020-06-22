@@ -191,7 +191,7 @@ function mergeClientBusinessRules(clientBusinessRules) {
 
   ruleBroker.addClientRules(clientBusinessRules);
 
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('END warden.mergeClientBusinessRules function');
 };
@@ -209,11 +209,11 @@ function mergeClientCommands(clientCommands) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = mergeClientCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
 
   commandBroker.addClientCommands(clientCommands);
 
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 

@@ -52,7 +52,7 @@
  */
 export const exit = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cechoCommand;
+  var functionName = s.cexit;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
