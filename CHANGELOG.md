@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.10](https://github.com/SethEden/NodeJS-App/compare/v0.5.9...v0.5.10) (2020-06-22)
+
+
+### Features
+
+* Fully functional command alias system. ([62d6db3](https://github.com/SethEden/NodeJS-App/commit/62d6db36e6351c74b58f5a719100bb639c0482da))
+
 ### [0.5.9](https://github.com/SethEden/NodeJS-App/compare/v0.5.8...v0.5.9) (2020-06-21)
 
 ### [0.5.8](https://github.com/SethEden/NodeJS-App/compare/v0.5.7...v0.5.8) (2020-06-21)
