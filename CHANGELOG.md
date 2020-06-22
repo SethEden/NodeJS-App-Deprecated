@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.11](https://github.com/SethEden/NodeJS-App/compare/v0.5.10...v0.5.11) (2020-06-22)
+
+
+### Features
+
+* Add the basic commands for the application, application name, version, about, description. ([fc12f3e](https://github.com/SethEden/NodeJS-App/commit/fc12f3e82dae5460d440536ddd12effcdc1191e3))
+
 ### [0.5.10](https://github.com/SethEden/NodeJS-App/compare/v0.5.9...v0.5.10) (2020-06-22)
 
 
