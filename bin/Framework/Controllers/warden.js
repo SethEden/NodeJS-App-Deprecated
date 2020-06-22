@@ -235,6 +235,8 @@ function saveRootPath(rootPath) {
 
   _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
 
+  _configurator["default"].setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
+
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 }
 

@@ -110,12 +110,37 @@ function executeCommand(commandToExecute) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
 
   var returnValue = false;
-  var foundValidCommand = false; // NOTE: Right now I am passing the commandToExecute as an input to the command that is being executed.
-  // This is great for testing, but we will need to parse this out when we get to actually executing functional commands.
+  var foundValidCommand = false;
+  var foundSomeCommandArgs = false;
+  var commandArgsDelimiter = ''; // NOTE: Implement command parameters here!
+  // Lets determine what the command parameter delimiter might be. (could be "," or ";" or ":" or "|" or " ")
+
+  if (commandToExecute.includes(b.cComa) === true) {
+    commandArgsDelimiter = b.cComa;
+    foundSomeCommandArgs = true;
+  } else if (commandToExecute.includes(b.cSemiColon) === true) {
+    commandArgsDelimiter = b.cSemiColon;
+    foundSomeCommandArgs = true;
+  } else if (commandToExecute.includes(b.cColon) === true) {
+    commandArgsDelimiter = b.cColon;
+    foundSomeCommandArgs = true;
+  } else if (commandToExecute.includes(b.cPipe) === true) {
+    commandArgsDelimiter = b.cPipe;
+    foundSomeCommandArgs = true;
+  } else if (commandToExecute.includes(b.cSpace) === true) {
+    commandArgsDelimiter = b.cSpace;
+    foundSomeCommandArgs = true;
+  }
+
+  var commandArgs = commandToExecute.split(commandArgsDelimiter);
+
+  if (foundSomeCommandArgs === true) {
+    commandToExecute = commandArgs[0];
+  }
 
   if (D[s.cCommands][commandToExecute] !== undefined) {
     foundValidCommand = true;
-    returnValue = D[s.cCommands][commandToExecute](commandToExecute, '');
+    returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
   } else {
     // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
     // to see if we can find a match, then get the actual command that should be executed.
@@ -131,14 +156,16 @@ function executeCommand(commandToExecute) {
       loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
         if (commandToExecute === arrayOfAliases[j]) {
           foundValidCommand = true;
+          console.log('commandToExecute before the Alias is: ' + commandToExecute);
           commandToExecute = currentCommand[s.cName];
+          console.log('commandToExecute after the Alias is: ' + commandToExecute);
           break loop1;
         }
       }
     }
 
     if (foundValidCommand === true) {
-      returnValue = D[s.cCommands][commandToExecute](commandToExecute, '');
+      returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
     } else {
       console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
       returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.

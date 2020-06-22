@@ -48,6 +48,12 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.echoCommand(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.cexit, function (inputData, inputMetaData) {
     return nominalCommands.exit(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cversion, function (inputData, inputMetaData) {
+    return nominalCommands.version(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cabout, function (inputData, inputMetaData) {
+    return nominalCommands.about(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cname, function (inputData, inputMetaData) {
+    return nominalCommands.name(inputData, inputMetaData);
   }), _D$s$cCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
