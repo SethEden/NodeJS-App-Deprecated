@@ -38,6 +38,7 @@ export const cand = b.can + b.cd;
 export const csand = b.cs + b.cand;
 export const chousand = b.cho + b.cu + csand;
 export const cion = b.cio + b.cn;
+export const csion = b.cs + cion;
 export const cillion = b.ci + b.cll + cion;
 export const crue = b.cru + b.ce;
 export const calse = b.cal + b.cse;
@@ -149,7 +150,9 @@ export const cingle = b.cin + b.cgl + b.ce;
 export const clace = b.cla + b.cce;
 export const ceplace = b.cep + clace;
 export const clean = b.cle + b.can;
-export const cvert = b.cve + b.crt;
+export const cver = b.cve + b.cr;
+export const cVer = b.cVe + b.cr;
+export const cvert = cver + b.ct;
 export const convert = b.con + cvert;
 export const crate = b.cra + b.cte;
 export const cenerate = b.cen + b.ce + crate;
@@ -293,6 +296,7 @@ export const cmand = b.cma + b.cnd;
 export const clob = b.clo + b.cb;
 export const crame = b.cra + b.cme;
 export const cias = b.cia + b.cs;
+export const cbout = b.cbo + b.cut; // Bout time we added this one! LOL
 
 // Boolean strings
 export const cTrue = b.cT + crue;

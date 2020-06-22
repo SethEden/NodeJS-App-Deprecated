@@ -38,7 +38,10 @@ export const initCommandsLibrary = function() {
     // Nominal commands in order
     // ********************************
     [s.cechoCommand]: (inputData, inputMetaData) => nominalCommands.echoCommand(inputData, inputMetaData),
-    [s.cexit]: (inputData, inputMetaData) => nominalCommands.exit(inputData, inputMetaData)
+    [s.cexit]: (inputData, inputMetaData) => nominalCommands.exit(inputData, inputMetaData),
+    [s.cversion]: (inputData, inputMetaData) => nominalCommands.version(inputData, inputMetaData),
+    [s.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
+    [s.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData)
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

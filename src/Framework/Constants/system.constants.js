@@ -1820,7 +1820,8 @@ export const cFileNumber = cFile + cNumber;
 export const cConfigurationName = cConfiguration + cName;
 export const cConfigurationElement = cConfiguration + cElement;
 export const cConfigurationElements = cConfigurationElement + b.cs;
-export const cVersion = b.cVe + b.crs + b.cio + b.cn; // 'Version';
+export const cversion = g.cver + g.csion;
+export const cVersion = g.cVer + g.csion; // b.cVe + b.crs + b.cio + b.cn; // 'Version';
 export const cControl = b.cCo + b.cnt + b.cro + b.cl; // 'Control';
 export const cVersionControl = cVersion + cControl;
 export const cPerformance = b.cPe + b.crf + b.cor + b.cma + b.cnc + b.ce; // 'Performance';
@@ -1893,6 +1894,8 @@ export const crulesLibrary = crules + cLibrary;
 export const cframework = cframe + cwork;
 export const cFramework = cFrame + cwork;
 export const cCommandsAliases = cCommands + cAliases;
+export const cabout = b.ca + g.cbout;
+export const cAbout = b.cA + g.cbout;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -2207,6 +2210,7 @@ export const cApplicationRootPath = cApplication + cRoot + cPath;
 export const cApplicationCleanedRootPath = cApplication + cCleaned + cRoot + cPath;
 export const cConfigurationPath = cConfiguration + cPath;
 export const cApplicationVersionNumber = cApplication + cVersion + cNumber;
+export const cApplicationDescription = cApplication + cDescription;
 export const cDataPath = cData + cPath;
 export const cCtempPath = b.cc + b.cColon + b.cForwardSlash + b.ctemp + b.cForwardSlash;
 export const cPageDataPath = cPage + cDataPath;

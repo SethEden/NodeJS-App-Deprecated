@@ -169,6 +169,7 @@ function saveRootPath(rootPath) {
   configurator.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
   configurator.setConfigurationSetting(s.cApplicationName, process.env.npm_package_name);
   configurator.setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
+  configurator.setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
