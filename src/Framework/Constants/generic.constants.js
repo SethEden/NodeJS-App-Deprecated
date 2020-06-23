@@ -310,6 +310,9 @@ export const cTert = b.cTe + b.crt;
 export const ctart = b.cta + b.crt;
 export const cTart = b.cTa + b.crt; // poptart....LOL
 export const crint = b.cri + b.cnt;
+export const cgen = b.cge + b.cn;
+export const cGen = b.cGe + b.cn;
+export const cator = b.cat + b.cor;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

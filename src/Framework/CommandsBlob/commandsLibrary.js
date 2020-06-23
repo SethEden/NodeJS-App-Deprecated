@@ -43,9 +43,12 @@ export const initCommandsLibrary = function() {
     [s.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
     [s.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData),
     [s.chelp]: (inputData, inputMetaData) => nominalCommands.help(inputData, inputMetaData),
+    [s.cworkflowHelp]: (inputData, inputMetaData) => nominalCommands.workflowHelp(inputData, inputMetaData),
     [s.ccommandSequencer]: (inputData, inputMetaData) => nominalCommands.commandSequencer(inputData, inputMetaData),
     [s.cworkflow]: (inputData, inputMetaData) => nominalCommands.workflow(inputData, inputMetaData),
-    [s.cprintDataHive]: (inputData, inputMetaData) => nominalCommands.printDataHive(inputData, inputMetaData)
+    [s.cprintDataHive]: (inputData, inputMetaData) => nominalCommands.printDataHive(inputData, inputMetaData),
+    [s.cbusinessRule]: (inputData, inputMetaData) => nominalCommands.businessRule(inputData, inputMetaData),
+    [s.ccommandGenerator]: (inputData, inputMetaData) => nominalCommands.commandGenerator(inputData, inputMetaData)
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

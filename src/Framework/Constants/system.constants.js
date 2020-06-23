@@ -314,7 +314,7 @@ export const cconvert = b.cc + g.convert;
 export const cConvert = b.cC + g.convert; // 'Convert';
 export const cLow = b.cLo + b.cw;
 export const cLower = cLow + b.cer; // 'Lower';
-export const cCase = b.cC + g.case; // 'Case';
+export const cCase = b.cC + g.c_ase; // 'Case';
 export const cmove = b.cmo + b.cve;
 export const cremove = b.cre + cmove;
 export const cRemove = b.cRe + cmove; // 'Remove';
@@ -745,6 +745,8 @@ export const cprint = b.cp + g.crint;
 export const cPrint = b.cP + g.crint;
 export const chive = b.ch + g.cive;
 export const cHive = b.cH + g.cive;
+export const cgenerator = g.cgen + b.cer + g.cator;
+export const cGenerator = g.cGen + b.cer + g.cator;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -1867,7 +1869,7 @@ export const caddNth = c_add + cNth;
 export const caddSibling = c_add + cSibling;
 export const caddFilter = c_add + cFilter;
 export const cgenerateRandom = cGenerate + cRandom;
-export const crandomlyGenerate = cRandom + cGenerate;
+export const crandomlyGenerate = crandomly + cGenerate;
 export const cMixedCase = cMixed + cCase;
 export const cUpperCase = cUpper + cCase;
 export const cLowerCase = cLower + cCase;
@@ -1913,6 +1915,9 @@ export const cBackground = cBack + cground;
 export const cConfiguration_Colors = cConfiguration + b.cUnderscore + cColors;
 export const cColorData = cColor + cData;
 export const cColorName = cColor + cName;
+export const cbusinessRule = cbusiness + cRule;
+export const cBusinessRule = cBusiness + cRule;
+export const cbusinessRules = cbusiness + cRules;
 export const cBusinessRules = cBusiness + cRules;
 export const crulesLibrary = crules + cLibrary;
 export const cframework = cframe + cwork;
@@ -2394,8 +2399,10 @@ export const cClientWorkflowsPath = cClient + cWorkflows + cPath;
 // ********************************
 export const cechoCommand = cecho + cCommand;
 export const cEchoCommand = cEcho + cCommand;
+export const cworkflowHelp = cworkflow + cHelp;
 export const ccommandSequencer = ccommand + cSequencer;
 export const cprintDataHive = cprint + cData + cHive;
+export const ccommandGenerator = ccommand + cGenerator;
 
 // ********************************
 // System defined workflows

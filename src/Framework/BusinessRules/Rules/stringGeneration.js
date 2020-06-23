@@ -30,7 +30,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import loggers from '../../Executrix/loggers';
-import { StringToBoolean } from './stringParsing';
+import { stringToBoolean } from './stringParsing';
 import * as cg from './characterGeneration';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
@@ -800,7 +800,7 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
   var sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2];
       // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
@@ -811,7 +811,7 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
       returnData = generateValidEmailWithSpecificSuffixAndDomainName1(inputData, {generateSpecialCharacters,
         allowableSpecialCharacters, specifiedSuffixAndDomain});
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
@@ -859,7 +859,7 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
   var sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2];
       // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
@@ -870,7 +870,7 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
       returnData = generateValidEmailWithSpecificSuffixAndDomainName2(inputData, {generateSpecialCharacters,
         allowableSpecialCharacters, specifiedSuffixAndDomain});
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
@@ -918,7 +918,7 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
   var sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2];
       // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
@@ -929,7 +929,7 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
       returnData = generateInvalidEmailWithSpecificSuffixAndDomainName1(inputData, {generateSpecialCharacters,
         allowableSpecialCharacters, specifiedSuffixAndDomain});
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
@@ -977,7 +977,7 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
   var sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2];
       // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
@@ -988,7 +988,7 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
       returnData = generateInvalidEmailWithSpecificSuffixAndDomainName2(inputData, {generateSpecialCharacters,
         allowableSpecialCharacters, specifiedSuffixAndDomain});
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = StringToBoolean(inputMetaData[0]);
+      generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
