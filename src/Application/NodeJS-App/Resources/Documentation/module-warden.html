@@ -144,6 +144,8 @@ Also provides an interface to easily manage all of the application features &amp
         
             <li><a href="module-commandBroker.html">module:commandBroker</a></li>
         
+            <li><a href="module-chiefWorkflow.html">module:chiefWorkflow</a></li>
+        
             <li><a href="module-configurator.html">module:configurator</a></li>
         
             <li><a href="module-timers.html">module:timers</a></li>
@@ -295,7 +297,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line88">line 88</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -489,7 +491,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line387">line 387</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line411">line 411</a>
     </li></ul></dd>
     
 
@@ -674,7 +676,7 @@ Also provides an interface to easily manage all of the application features &amp
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line41">line 41</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -795,7 +797,7 @@ This also acts as a wrapper for the chiefCommander.enqueueCommand function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line278">line 278</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line302">line 302</a>
     </li></ul></dd>
     
 
@@ -1003,7 +1005,7 @@ This also acts as a wrapper for the chiefCommander.enqueueCommand function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line246">line 246</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line270">line 270</a>
     </li></ul></dd>
     
 
@@ -1169,7 +1171,7 @@ This also acts as a wrapper for the chiefCommander.enqueueCommand function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line363">line 363</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line387">line 387</a>
     </li></ul></dd>
     
 
@@ -1298,7 +1300,7 @@ in sequential order or prompt for another command or exit.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line297">line 297</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line321">line 321</a>
     </li></ul></dd>
     
 
@@ -1487,7 +1489,192 @@ in sequential order or prompt for another command or exit.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line221">line 221</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line222">line 222</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~loadCommandWorkflows"><span class="type-signature">(inner) </span>loadCommandWorkflows<span class="signature">(systemWorkflowPath, clientWorkflowPath)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Loads and merges both the system defined command workflows XML file &amp; client defined command workflows XML file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>systemWorkflowPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path from the application root to the system defined command workflows XML file.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>clientWorkflowPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path from the application root to the client defined command workflows XML file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line247">line 247</a>
     </li></ul></dd>
     
 
@@ -1650,7 +1837,7 @@ with the existing D-data structure that should already have all of the system de
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line176">line 176</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line177">line 177</a>
     </li></ul></dd>
     
 
@@ -1813,7 +2000,7 @@ with the existing D-data structure that should already have all of the system de
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line200">line 200</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line201">line 201</a>
     </li></ul></dd>
     
 
@@ -1929,7 +2116,7 @@ to the command queue. All of them must be executed in sequence as part of the ma
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line318">line 318</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line342">line 342</a>
     </li></ul></dd>
     
 
@@ -2095,7 +2282,7 @@ to the command queue. All of them must be executed in sequence as part of the ma
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line115">line 115</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line116">line 116</a>
     </li></ul></dd>
     
 
@@ -2287,7 +2474,7 @@ and save the resulting archive to the release folder.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line63">line 63</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line64">line 64</a>
     </li></ul></dd>
     
 
@@ -2454,7 +2641,7 @@ Also saves the current application version number and the application name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line152">line 152</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line153">line 153</a>
     </li></ul></dd>
     
 
@@ -2648,7 +2835,7 @@ Also saves the current application version number and the application name.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line339">line 339</a>
+        <a href="Framework_Controllers_warden.js.html">Framework/Controllers/warden.js</a>, <a href="Framework_Controllers_warden.js.html#line363">line 363</a>
     </li></ul></dd>
     
 
@@ -2712,13 +2899,13 @@ Also saves the current application version number and the application name.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 21 2020 23:17:31 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 22 2020 19:31:53 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

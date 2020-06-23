@@ -32,6 +32,8 @@
  * @description Contains all of the nominal system commands.
  * @requires module:configurator
  * @requires module:ruleBroker
+ * @requires module:workflowBroker
+ * @requires module:queue
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:system-constants
@@ -43,6 +45,8 @@
  */
 import configurator from '../../Executrix/configurator';
 import ruleBroker from '../../BusinessRules/ruleBroker';
+import workflowBroker from '../../Executrix/workflowBroker';
+import queue from '../../Resources/queue';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
 import * as s from '../../Constants/system.constants';
@@ -106,7 +110,7 @@ export const exit = function(inputData, inputMetaData) {
  */
 export const version = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.cversion;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -128,7 +132,7 @@ export const version = function(inputData, inputMetaData) {
  */
 export const about = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.cabout;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -152,7 +156,7 @@ export const about = function(inputData, inputMetaData) {
  */
 export const name = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.cname;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -188,12 +192,64 @@ export const name = function(inputData, inputMetaData) {
  */
 export const commandSequencer = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.ccommandSequencer;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = true;
-  
+  for (let i = 1; i &lt; inputData.length; i++) {
+    let currentCommand = inputData[i];
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
+    if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
+      primaryCommandDelimiter = b.cSpace;
+    }
+    let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
+    let foundSomeCommandArgs = false;
+    // NOTE: The following 6 lines of code is also duplicated in the commandBroker.executeCommand function,
+    // but the truth is it wouldn't be worth refactoring this, because we need 3 different pieces of data out of this code,
+    // and with 2 points of logic, it just doesn't make any sense to refactor into a function,
+    // even if we are trying to follow the DRY method: Do not Repeat Yourself!
+    if (currentCommand.includes(secondaryCommandArgsDelimiter) === true) {
+      foundSomeCommandArgs = true;
+    }
+    let commandArgs = currentCommand.split(secondaryCommandArgsDelimiter);
+    if (foundSomeCommandArgs === true) {
+      currentCommand = commandArgs[0];
+    }
+    // We need to recompose the command arguments for the current command using the s.cPrimaryCommandDelimiter.
+    for (let j = 1; j &lt; commandArgs.length; j++) {
+      currentCommand = currentCommand + primaryCommandDelimiter + commandArgs[j];
+    }
+    queue.enqueue(s.cCommandQueue, currentCommand);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function workflow
+ * @description Takes an arguments array where the second array object would contain a workflow name.
+ * We will look up the named workflow in the D-data structure and send that workflow to a call to the command sequencer.
+ * Which will in-turn convert the list of commands in that workflow into commands that are enqueued to the command queue.
+ * @param {array&lt;boolean|string|integer>} inputData An array that could actually contain anything,
+ * depending on what the user entered. But the function filters all of that internally and
+ * extracts the case the user has entered a workflow name, that we should use to look up the workflow in the D-data structure.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {Boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/06/22
+ */
+export const workflow = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cworkflow;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var returnData = true;
+  let workflowName = inputData[1];
+  let workflowValue = workflowBroker.getWorkflow(workflowName);
+  queue.enqueue(s.cCommandQueue, workflowValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -208,13 +264,13 @@ export const commandSequencer = function(inputData, inputMetaData) {
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 21 2020 23:17:30 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 22 2020 19:31:52 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

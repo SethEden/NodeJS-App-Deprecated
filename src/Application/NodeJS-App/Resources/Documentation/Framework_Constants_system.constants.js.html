@@ -238,8 +238,8 @@ export const cwork = b.cwo + b.crk;
 export const cWork = b.cWo + b.crk;
 export const cflow = b.cfl + b.cow;
 export const cFlow = b.cFl + b.cow;
-export const cWorkflow = cWork + cflow; // 'Workflow';
 export const cworkflow = cwork + cflow;
+export const cWorkflow = cWork + cflow; // 'Workflow';
 export const cworkflows = cworkflow + b.cs;
 export const cWorkflows = cWorkflow + b.cs;
 export const cTest = b.cT + g.cest;
@@ -267,8 +267,8 @@ export const cRun = b.cRu + b.cn; // 'Run';
 export const cRows = cRow + b.cs;
 export const cMaster = b.cMa + b.cst + b.cer; // 'Master';
 export const cEnvironment = b.cEn + b.cvi + b.cro + b.cn + g.cment; // 'Environment';
-export const cName = b.cN + g.came;
 export const cname = b.cn + g.came;
+export const cName = b.cN + g.came;
 export const ckeywordName = ckeyword + cName;
 export const cKeywordName = cKeyword + cName;
 export const cPageScriptName = cPage + cScript + cName;
@@ -300,7 +300,8 @@ export const cSet = b.cSe + b.ct; // 'Set';
 export const csetting = cset + b.ct + g.cing;
 export const cSetting = cSet + b.ct + g.cing;
 export const cPreview = g.cPre + cview; // 'Preview';
-export const cLimit = b.cLi + b.cmi + b.ct; // 'Limit';
+export const climit = b.cli + b.cmi + b.ct;
+export const cLimit = b.cLi + b.cmi + b.ct;
 export const cGate = b.cGa + b.cte;
 export const cway = b.cwa + b.cy;
 export const cWay = b.cWa + b.cy;
@@ -366,13 +367,20 @@ export const cgenerate = b.cg + g.cenerate;
 export const cGenerate = b.cG + g.cenerate; // 'Generate';
 export const cParent = b.cP + g.carent;
 export const cparent = b.cp + g.carent;
+export const cvalue = b.cva + b.clu + b.ce;
 export const cValue = b.cVa + b.clu + b.ce; // 'Value';
+export const cfind = b.cfi + b.cnd;
 export const cFind = b.cFi + b.cnd; // 'Find';
+export const cfindvalue = cfind + cvalue;
+export const cfindValue = cfind + cValue;
 export const cFindValue = cFind + cValue;
+export const crange = b.cra + b.cng + b.ce;
 export const cRange = b.cRa + b.cng + b.ce; // 'Range';
 export const cNumeric = b.cNu + b.cme + b.cri + b.cc; // 'Numeric';
 export const cNumerical = cNumeric + b.cal;
+export const clength = b.cle + b.cng + b.cth;
 export const cLength = b.cLe + b.cng + b.cth; // 'Length';
+export const ccode = b.cco + b.cde;
 export const cCode = b.cCo + b.cde; // 'Code';
 export const cEither = b.cEi + b.cth + b.cer; // 'Either';
 export const cEnabled = b.cEn + b.cab + b.cle + b.cd; // 'Enabled';
@@ -749,6 +757,16 @@ export const calias = b.cal + g.cias;
 export const cAlias = b.cAl + g.cias;
 export const caliases = calias + b.ces;
 export const cAliases = cAlias + b.ces;
+export const csequencer = g.cseq + b.cue + g.cncer;
+export const cSequencer = g.cSeq + b.cue + g.cncer;
+export const cprimary = g.cpri + g.cmary;
+export const cPrimary = g.cPri + g.cmary;
+export const csecondary = g.csecond + g.cary;
+export const cSecondary = g.cSecond + g.cary;
+export const ctertiary = g.ctert + g.ciary;
+export const cTertiary = g.cTert + g.ciary;
+export const cdelimiter = b.cde + climit + b.cer;
+export const cDelimiter = b.cDe + climit + b.cer;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -1922,8 +1940,14 @@ export const crulesLibrary = crules + cLibrary;
 export const cframework = cframe + cwork;
 export const cFramework = cFrame + cwork;
 export const cCommandsAliases = cCommands + cAliases;
+export const cCommandWorkflows = cCommand + cWorkflows;
 export const cabout = b.ca + g.cbout;
 export const cAbout = b.cA + g.cbout;
+export const cPrimaryCommandDelimiter = cPrimary + cCommand + cDelimiter;
+export const cSecondaryCommandDelimiter = cSecondary + cCommand + cDelimiter;
+export const cstart = b.cs + g.ctart;
+export const cStart = b.cS + g.ctart;
+export const cstartup = cstart + b.cup;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -2382,13 +2406,18 @@ export const cconvertNumberToLowerCaseLetter = cconvert + cNumber + cTo + cLower
 
 // Commands
 export const cSystemCommandsAliasesActualPath = csrc + b.cForwardSlash + cFramework + b.cForwardSlash + cCommands + cBlob + b.cForwardSlash;
+export const cSystemWorkflowsActualPath = csrc + b.cForwardSlash + cFramework + b.cForwardSlash + cResources + b.cForwardSlash + cWorkflows + b.cForwardSlash;
 export const cSystemCommandsAliasesPath = cSystem + cCommands + cAliases + cPath;
 export const cClientCommandsAliasesPath = cClient + cCommands + cAliases + cPath;
+export const cSystemWorkflowsPath = cSystem + cWorkflows + cPath;
+export const cClientWorkflowsPath = cClient + cWorkflows + cPath;
 // ********************************
 // Nominal Commands in order
 // ********************************
 export const cechoCommand = cecho + cCommand;
 export const cEchoCommand = cEcho + cCommand;
+export const ccommandSequencer = ccommand + cSequencer;
+export const cStartupWorkflow = cWorkflow + b.cSpace + cstartup;
 </code></pre>
         </article>
     </section>
@@ -2399,13 +2428,13 @@ export const cEchoCommand = cEcho + cCommand;
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jun 21 2020 23:17:30 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 22 2020 19:31:52 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
