@@ -87,6 +87,21 @@ function consoleLog(classPath, message) {
 
 ;
 /**
+ * @function consoleTableLog
+ * @description Prints out a table with the data provided in the input tableDataArray.
+ * @param {string} classPath The class path for the caller of this funciton file.function or class.method.
+ * @param {array<objects>} tableDataArray An array of objects that should be printed to the console as if it was data.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/22
+ */
+
+function consoleTableLog(classPath, tableDataArray) {
+  console.table(tableDataArray, [s.cName, s.cDescription]);
+}
+
+;
+/**
  * @function consoleLogProcess
  * @description A function to refactor functionality that will print a message to a log file and the console, or just the console.
  * The output depends on if there was a txt log file specified or not.
@@ -316,6 +331,7 @@ function printMessageToFile(file, message) {
 
 ;
 var _default = {
-  consoleLog: consoleLog
+  consoleLog: consoleLog,
+  consoleTableLog: consoleTableLog
 };
 exports["default"] = _default;

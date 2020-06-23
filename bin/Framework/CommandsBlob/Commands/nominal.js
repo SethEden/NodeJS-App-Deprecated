@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.workflow = exports.commandSequencer = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.printDataHive = exports.workflow = exports.commandSequencer = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -40,6 +40,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/19
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -47,6 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var figlet = require('figlet');
 
 var path = require('path');
+
+var D = require('../../../Framework/Resources/data');
 /**
  * @function echoCommand
  * @description returns the input as the output without any changes.
@@ -230,6 +233,38 @@ var name = function name(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function help
+ * @description Displays all the information about all of the commands in the system,
+ * including both system defined commands & client defined commands.
+ * @param {array<boolean|string|integer>} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ */
+
+
+exports.name = name;
+
+var help = function help(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.chelp;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][s.cCommand]);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function commandSequencer
  * @description Takes an arguments array where the second array object would contain a list of
  * commands that should enqueued to the command queue.
@@ -243,7 +278,7 @@ var name = function name(inputData, inputMetaData) {
  */
 
 
-exports.name = name;
+exports.help = help;
 
 var commandSequencer = function commandSequencer(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -337,5 +372,46 @@ var workflow = function workflow(inputData, inputMetaData) {
 
   return returnData;
 };
+/**
+ * @function printDataHive
+ * @description Prints out all the data contents of a particular data hive in the D-data structure.
+ * If no hive is specified then the entire D-data structure will be printed.
+ * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
+ * depending on what the user entered. But the function filters all of that internally and
+ * extracts the case the user has entered a data hive name at the top level of the D-data structure.
+ * Examples: Configuration, Workflows, Colors, Commands, etc...
+ * @param {string} inputMetaData Not used for this command.
+ * @return {Boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/06/22
+ */
+
 
 exports.workflow = workflow;
+
+var printDataHive = function printDataHive(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cprintDataHive;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  if (D[inputData[1]] !== undefined) {
+    console.log(inputData[1] + ' contents are: ' + JSON.stringify(D[inputData[1]]));
+  } else {
+    console.log('contents of D are: ' + JSON.stringify(D));
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+
+exports.printDataHive = printDataHive;

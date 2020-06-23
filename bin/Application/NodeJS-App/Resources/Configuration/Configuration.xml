@@ -251,7 +251,7 @@
           <ConfigurationElement Name="queue@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="queue@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="nominal" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="nominal@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -2744,6 +2744,20 @@
           <ConfigurationElement Name="nominal.name@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.name@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.name@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.help" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.help@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.help@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.help@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.help@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.help@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.help@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.help@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.help@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.help@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.help@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.help@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.help@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="nominal.commandSequencer" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.commandSequencer@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
