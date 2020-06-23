@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ccustomEchoCommand = exports.cClientCommandAliasesActualPath = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
+exports.ccustomEchoCommand = exports.cClientWorkflowsActualPath = exports.cClientCommandAliasesActualPath = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
 var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
@@ -67,10 +67,12 @@ exports.cthreePointAverage = cthreePointAverage;
 var carrayCounter = s.carray + s.cCounter; // Client Commands
 
 exports.carrayCounter = carrayCounter;
-var cClientCommandAliasesActualPath = s.csrc + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cCommands + b.cForwardSlash; // ********************************
+var cClientCommandAliasesActualPath = s.csrc + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cCommands + b.cForwardSlash;
+exports.cClientCommandAliasesActualPath = cClientCommandAliasesActualPath;
+var cClientWorkflowsActualPath = cSourceResourcesPath + s.cWorkflows + b.cForwardSlash; // ********************************
 // Client Commands in order
 // ********************************
 
-exports.cClientCommandAliasesActualPath = cClientCommandAliasesActualPath;
+exports.cClientWorkflowsActualPath = cClientWorkflowsActualPath;
 var ccustomEchoCommand = s.ccustom + s.cEcho + s.cCommand;
 exports.ccustomEchoCommand = ccustomEchoCommand;

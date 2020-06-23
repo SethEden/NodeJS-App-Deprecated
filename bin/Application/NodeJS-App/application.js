@@ -72,11 +72,11 @@ function bootStrapApplication() {
 
   _warden["default"].mergeClientBusinessRules(_clientRulesLibrary["default"].initClientRulesLibrary());
 
-  _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary()); // console.log('s.cSystemCommandAliasesPath resolves as: ' + s.cSystemCommandAliasesPath);
-  // console.log('c.cClientCommandAliasesPath resolves as: ' + c.cClientCommandAliasesPath);
-
+  _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
 
   _warden["default"].loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
+
+  _warden["default"].loadCommandWorkflows(s.cSystemWorkflowsActualPath, c.cClientWorkflowsActualPath);
 }
 
 ;
@@ -94,8 +94,6 @@ function application() {
   var argumentDrivenInterface = true;
   var commandInput;
   var commandResult;
-  var applicationName;
-  var figletFont;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -104,12 +102,8 @@ function application() {
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
 
   argumentDrivenInterface = _warden["default"].getConfigurationSetting(s.cArgumentDrivenInterface);
-  applicationName = _warden["default"].getConfigurationSetting(s.cApplicationName);
-  figletFont = _warden["default"].getConfigurationSetting(s.cFigletFont);
-  console.log(figlet.textSync(applicationName, {
-    font: figletFont,
-    horizontalLayout: s.cfull
-  }));
+
+  _warden["default"].enqueueCommand(s.cStartupWorkflow);
 
   if (argumentDrivenInterface === false) {
     while (programRunning === true) {

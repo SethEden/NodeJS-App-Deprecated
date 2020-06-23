@@ -5,11 +5,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.commandSequencer = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.workflow = exports.commandSequencer = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
 var _ruleBroker = _interopRequireDefault(require("../../BusinessRules/ruleBroker"));
+
+var _workflowBroker = _interopRequireDefault(require("../../Executrix/workflowBroker"));
+
+var _queue = _interopRequireDefault(require("../../Resources/queue"));
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
@@ -29,6 +33,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @description Contains all of the nominal system commands.
  * @requires module:configurator
  * @requires module:ruleBroker
+ * @requires module:workflowBroker
+ * @requires module:queue
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:system-constants
@@ -122,7 +128,7 @@ exports.exit = exit;
 
 var version = function version(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.cversion;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -154,7 +160,7 @@ exports.version = version;
 
 var about = function about(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.cabout;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -188,7 +194,7 @@ exports.about = about;
 
 var name = function name(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.cname;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -241,7 +247,7 @@ exports.name = name;
 
 var commandSequencer = function commandSequencer(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  var functionName = s.ccommandSequencer;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -251,6 +257,80 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
 
   var returnData = true;
 
+  for (var i = 1; i < inputData.length; i++) {
+    var currentCommand = inputData[i];
+
+    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
+
+    if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
+      primaryCommandDelimiter = b.cSpace;
+    }
+
+    var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
+
+    var foundSomeCommandArgs = false; // NOTE: The following 6 lines of code is also duplicated in the commandBroker.executeCommand function,
+    // but the truth is it wouldn't be worth refactoring this, because we need 3 different pieces of data out of this code,
+    // and with 2 points of logic, it just doesn't make any sense to refactor into a function,
+    // even if we are trying to follow the DRY method: Do not Repeat Yourself!
+
+    if (currentCommand.includes(secondaryCommandArgsDelimiter) === true) {
+      foundSomeCommandArgs = true;
+    }
+
+    var commandArgs = currentCommand.split(secondaryCommandArgsDelimiter);
+
+    if (foundSomeCommandArgs === true) {
+      currentCommand = commandArgs[0];
+    } // We need to recompose the command arguments for the current command using the s.cPrimaryCommandDelimiter.
+
+
+    for (var j = 1; j < commandArgs.length; j++) {
+      currentCommand = currentCommand + primaryCommandDelimiter + commandArgs[j];
+    }
+
+    _queue["default"].enqueue(s.cCommandQueue, currentCommand);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function workflow
+ * @description Takes an arguments array where the second array object would contain a workflow name.
+ * We will look up the named workflow in the D-data structure and send that workflow to a call to the command sequencer.
+ * Which will in-turn convert the list of commands in that workflow into commands that are enqueued to the command queue.
+ * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
+ * depending on what the user entered. But the function filters all of that internally and
+ * extracts the case the user has entered a workflow name, that we should use to look up the workflow in the D-data structure.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {Boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/06/22
+ */
+
+
+exports.commandSequencer = commandSequencer;
+
+var workflow = function workflow(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cworkflow;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var workflowName = inputData[1];
+
+  var workflowValue = _workflowBroker["default"].getWorkflow(workflowName);
+
+  _queue["default"].enqueue(s.cCommandQueue, workflowValue);
+
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -258,4 +338,4 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
   return returnData;
 };
 
-exports.commandSequencer = commandSequencer;
+exports.workflow = workflow;

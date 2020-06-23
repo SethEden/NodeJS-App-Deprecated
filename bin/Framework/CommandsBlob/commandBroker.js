@@ -7,28 +7,34 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _configurator = _interopRequireDefault(require("../Executrix/configurator"));
+
 var commands = _interopRequireWildcard(require("./commandsLibrary"));
 
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
-var s = _interopRequireWildcard(require("../Constants/system.constants"));
+var g = _interopRequireWildcard(require("../Constants/generic.constants"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * @file commandBroker.js
  * @module commandBroker
  * @description Executes commands by calling the appropriate command-function from the commandLibrary,
  * which will actually be stored functions on the D-Data structure.
+ * @requires module:configurator
  * @requires module:commandsLibrary
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:generic-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -112,23 +118,20 @@ function executeCommand(commandToExecute) {
   var returnValue = false;
   var foundValidCommand = false;
   var foundSomeCommandArgs = false;
-  var commandArgsDelimiter = ''; // NOTE: Implement command parameters here!
-  // Lets determine what the command parameter delimiter might be. (could be "," or ";" or ":" or "|" or " ")
 
-  if (commandToExecute.includes(b.cComa) === true) {
-    commandArgsDelimiter = b.cComa;
-    foundSomeCommandArgs = true;
-  } else if (commandToExecute.includes(b.cSemiColon) === true) {
-    commandArgsDelimiter = b.cSemiColon;
-    foundSomeCommandArgs = true;
-  } else if (commandToExecute.includes(b.cColon) === true) {
-    commandArgsDelimiter = b.cColon;
-    foundSomeCommandArgs = true;
-  } else if (commandToExecute.includes(b.cPipe) === true) {
-    commandArgsDelimiter = b.cPipe;
-    foundSomeCommandArgs = true;
-  } else if (commandToExecute.includes(b.cSpace) === true) {
+  var commandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
+
+  if (commandArgsDelimiter === null || commandArgsDelimiter !== commandArgsDelimiter || commandArgsDelimiter === undefined) {
     commandArgsDelimiter = b.cSpace;
+  } // NOTE: Implement command parameters here!
+  // Lets determine what the command parameter delimiter might be. (could be "," or ";" or ":" or "|" or " ")
+  // NOTE: The following 6 lines of code is also duplicated in the nominal.sequenceCommand function,
+  // but the truth is it wouldn't be worth refactoring this, because we need 3 different pieces of data out of this code,
+  // and with 2 points of logic, it just doesn't make any sense to refactor into a function,
+  // even if we are trying to follow the DRY method: Do not Repeat Yourself!
+
+
+  if (commandToExecute.includes(commandArgsDelimiter) === true) {
     foundSomeCommandArgs = true;
   }
 
@@ -156,16 +159,25 @@ function executeCommand(commandToExecute) {
       loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
         if (commandToExecute === arrayOfAliases[j]) {
           foundValidCommand = true;
-          console.log('commandToExecute before the Alias is: ' + commandToExecute);
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute before the Alias is: ' + commandToExecute);
+
           commandToExecute = currentCommand[s.cName];
-          console.log('commandToExecute after the Alias is: ' + commandToExecute);
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute after the Alias is: ' + commandToExecute);
+
           break loop1;
         }
       }
     }
 
     if (foundValidCommand === true) {
-      returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
+      if (D[s.cCommands][commandToExecute] !== undefined) {
+        returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
+      } else {
+        console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
+        returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.
+      }
     } else {
       console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
       returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.

@@ -54,6 +54,10 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.about(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.cname, function (inputData, inputMetaData) {
     return nominalCommands.name(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.ccommandSequencer, function (inputData, inputMetaData) {
+    return nominalCommands.commandSequencer(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cworkflow, function (inputData, inputMetaData) {
+    return nominalCommands.workflow(inputData, inputMetaData);
   }), _D$s$cCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

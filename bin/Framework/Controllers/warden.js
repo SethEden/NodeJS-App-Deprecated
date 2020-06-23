@@ -13,6 +13,8 @@ var _chiefCommander = _interopRequireDefault(require("../Controllers/chiefComman
 
 var _commandBroker = _interopRequireDefault(require("../CommandsBlob/commandBroker"));
 
+var _chiefWorkflow = _interopRequireDefault(require("../Controllers/chiefWorkflow"));
+
 var _configurator = _interopRequireDefault(require("../Executrix/configurator"));
 
 var _timers = _interopRequireDefault(require("../Executrix/timers"));
@@ -45,6 +47,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:chiefConfiguration
  * @requires module:chiefCommander
  * @requires module:commandBroker
+ * @requires module:chiefWorkflow
  * @requires module:configurator
  * @requires module:timers
  * @requires module:ruleBroker
@@ -61,7 +64,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 // import chiefData from '../Controllers/chiefData';
-// import chiefWorkflow from '../Controllers/chiefWorkflow';
 var path = require('path');
 
 var D = require('../Resources/data');
@@ -330,6 +332,40 @@ function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath
 
 ;
 /**
+ * @function loadCommandWorkflows
+ * @description Loads and merges both the system defined command workflows XML file & client defined command workflows XML file.
+ * @param {string} systemWorkflowPath The path from the application root to the system defined command workflows XML file.
+ * @param {string} clientWorkflowPath The path from the application root to the client defined command workflows XML file.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/22
+ */
+
+function loadCommandWorkflows(systemWorkflowPath, clientWorkflowPath) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = loadCommandWorkflows.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'systemWorkflowPath is: ' + systemWorkflowPath);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'clientWorkflowPath is: ' + clientWorkflowPath);
+
+  var applicationRootPath = _configurator["default"].getConfigurationSetting(s.cApplicationCleanedRootPath);
+
+  _configurator["default"].setConfigurationSetting(s.cSystemWorkflowsPath, applicationRootPath + systemWorkflowPath);
+
+  _configurator["default"].setConfigurationSetting(s.cClientWorkflowsPath, applicationRootPath + clientWorkflowPath);
+
+  _chiefWorkflow["default"].loadCommandWorkflowsFromPath(s.cSystemWorkflowsPath);
+
+  _chiefWorkflow["default"].loadCommandWorkflowsFromPath(s.cClientWorkflowsPath);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
  * @function executeBusinessRule
  * @description A wrapper to call a business rule from the application level code.
  * @param {string} businessRule The name of the business rule that should execute.
@@ -544,6 +580,7 @@ var _default = {
   mergeClientBusinessRules: mergeClientBusinessRules,
   mergeClientCommands: mergeClientCommands,
   loadCommandAliases: loadCommandAliases,
+  loadCommandWorkflows: loadCommandWorkflows,
   executeBusinessRule: executeBusinessRule,
   enqueueCommand: enqueueCommand,
   isCommandQueueEmpty: isCommandQueueEmpty,

@@ -10,6 +10,8 @@
         <ConfigurationElement Name="TimeStamp" Type="Default" Value="HHmmss-SSS" Version="3"/>
         <ConfigurationElement Name="ArgumentDrivenInterface" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="FigletFont" Type="Default" Value="Star Wars" Version="3"/>
+        <ConfigurationElement Name="PrimaryCommandDelimiter" Type="Default" Value=" " Version="3"/>
+        <ConfigurationElement Name="SecondaryCommandDelimiter" Type="Default" Value="," Version="3"/>
         <ConfigurationElement Name="DebugFiles" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="application@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -39,7 +41,7 @@
           <ConfigurationElement Name="build@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="build@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="warden" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="warden@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="warden@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -179,7 +181,7 @@
           <ConfigurationElement Name="commandBroker@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="commandBroker@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="commandsLibrary" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="commandsLibrary" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="commandsLibrary@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="commandsLibrary@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="commandsLibrary@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -206,6 +208,34 @@
           <ConfigurationElement Name="chiefCommander@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="chiefCommander@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="chiefCommander@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+
+          <ConfigurationElement Name="chiefWorkflow" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+
+          <ConfigurationElement Name="workflowBroker" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="workflowBroker@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
           <ConfigurationElement Name="queue" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -235,7 +265,7 @@
           <ConfigurationElement Name="nominal@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="nominal@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="clientCommands" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientCommands" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="clientCommands@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="clientCommands@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="clientCommands@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -391,6 +421,20 @@
           <ConfigurationElement Name="warden.loadCommandAliases@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.loadCommandAliases@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="warden.loadCommandWorkflows" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.loadCommandWorkflows@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="warden.executeBusinessRule" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -544,6 +588,34 @@
           <ConfigurationElement Name="chiefCommander.processCommandQueue@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefCommander.processCommandQueue@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefCommander.processCommandQueue@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefWorkflow.loadCommandWorkflowsFromPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="workflowBroker.getWorkflow" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="workflowBroker.getWorkflow@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="commandBroker.bootStrapCommands" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="commandBroker.bootStrapCommands@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2630,6 +2702,76 @@
           <ConfigurationElement Name="nominal.exit@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.exit@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.exit@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.version" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.version@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.version@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.version@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.version@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.version@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.version@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.version@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.version@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.version@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.version@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.version@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.version@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.about" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.about@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.about@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.about@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.about@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.about@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.about@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.about@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.about@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.about@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.about@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.about@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.about@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.name" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.name@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.name@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.name@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.name@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.name@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.name@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.name@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.name@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.name@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.name@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.name@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.name@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.commandSequencer" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.commandSequencer@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.workflow" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.workflow@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="clientCommands.customEchoCommand" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
