@@ -42,6 +42,7 @@ export const carrayCounter = s.carray + s.cCounter;
 
 // Client Commands
 export const cClientCommandAliasesActualPath = s.csrc + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cCommands + b.cForwardSlash;
+export const cClientWorkflowsActualPath = cSourceResourcesPath + s.cWorkflows + b.cForwardSlash;
 // ********************************
 // Client Commands in order
 // ********************************

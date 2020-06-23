@@ -140,6 +140,7 @@ export const cous = b.cou + b.cs;
 export const ceous = b.ce + cous;
 export const cung = b.cun + b.cg;
 export const cary = b.car + b.cy;
+export const ciary = b.ci + cary;
 export const cMis = b.cMi + b.cs;
 export const cmis = b.cmi = b.cs;
 export const cource = b.cou + b.crc + b.ce;
@@ -297,6 +298,17 @@ export const clob = b.clo + b.cb;
 export const crame = b.cra + b.cme;
 export const cias = b.cia + b.cs;
 export const cbout = b.cbo + b.cut; // Bout time we added this one! LOL
+export const cseq = b.cse + b.cq;
+export const cSeq = b.cSe + b.cq;
+export const cncer = b.cnc + b.cer;
+export const cpri = b.cpr + b.ci;
+export const cPri = b.cPr + b.ci;
+export const cmary = b.cma + b.cry;
+export const cmit = b.cmi + b.ct;
+export const ctert = b.cte + b.crt;
+export const cTert = b.cTe + b.crt;
+export const ctart = b.cta + b.crt;
+export const cTart = b.cTa + b.crt; // poptart....LOL
 
 // Boolean strings
 export const cTrue = b.cT + crue;

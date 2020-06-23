@@ -48,9 +48,8 @@ function bootStrapApplication() {
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
-  // console.log('s.cSystemCommandAliasesPath resolves as: ' + s.cSystemCommandAliasesPath);
-  // console.log('c.cClientCommandAliasesPath resolves as: ' + c.cClientCommandAliasesPath);
   warden.loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
+  warden.loadCommandWorkflows(s.cSystemWorkflowsActualPath, c.cClientWorkflowsActualPath);
 };
 
 /**
@@ -66,15 +65,11 @@ function application() {
   var argumentDrivenInterface = true;
   var commandInput;
   var commandResult;
-  var applicationName;
-  var figletFont;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN main program loop');
   warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
   argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
-  applicationName = warden.getConfigurationSetting(s.cApplicationName);
-  figletFont = warden.getConfigurationSetting(s.cFigletFont);
-  console.log(figlet.textSync(applicationName, {font: figletFont, horizontalLayout: s.cfull }));
+  warden.enqueueCommand(s.cStartupWorkflow);
   if (argumentDrivenInterface === false) {
     while(programRunning === true) {
       if (warden.isCommandQueueEmpty() === true) {

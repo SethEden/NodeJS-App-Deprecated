@@ -41,7 +41,9 @@ export const initCommandsLibrary = function() {
     [s.cexit]: (inputData, inputMetaData) => nominalCommands.exit(inputData, inputMetaData),
     [s.cversion]: (inputData, inputMetaData) => nominalCommands.version(inputData, inputMetaData),
     [s.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
-    [s.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData)
+    [s.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData),
+    [s.ccommandSequencer]: (inputData, inputMetaData) => nominalCommands.commandSequencer(inputData, inputMetaData),
+    [s.cworkflow]: (inputData, inputMetaData) => nominalCommands.workflow(inputData, inputMetaData)
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

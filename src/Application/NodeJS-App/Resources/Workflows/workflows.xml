@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><CommandWorkflows>
+  <Workflow name="workflow1" value="commandSequencer echoCommand customEchoCommand"/>
+  <Workflow name="workflow2" value="commandSequencer customEchoCommand echoCommand"/>
+</CommandWorkflows>

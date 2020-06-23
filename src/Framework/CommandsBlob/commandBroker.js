@@ -3,9 +3,11 @@
  * @module commandBroker
  * @description Executes commands by calling the appropriate command-function from the commandLibrary,
  * which will actually be stored functions on the D-Data structure.
+ * @requires module:configurator
  * @requires module:commandsLibrary
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:generic-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -14,9 +16,11 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 
+import configurator from '../Executrix/configurator';
 import * as commands from './commandsLibrary';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
+import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -79,23 +83,17 @@ function addClientCommands(clientCommands) {
    let returnValue = false;
    let foundValidCommand = false;
    let foundSomeCommandArgs = false;
-   let commandArgsDelimiter = '';
+   let commandArgsDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
+   if (commandArgsDelimiter === null || commandArgsDelimiter !== commandArgsDelimiter || commandArgsDelimiter === undefined) {
+     commandArgsDelimiter = b.cSpace;
+   }
    // NOTE: Implement command parameters here!
    // Lets determine what the command parameter delimiter might be. (could be "," or ";" or ":" or "|" or " ")
-   if (commandToExecute.includes(b.cComa) === true) {
-     commandArgsDelimiter = b.cComa;
-     foundSomeCommandArgs = true;
-   } else if (commandToExecute.includes(b.cSemiColon) === true) {
-     commandArgsDelimiter = b.cSemiColon;
-     foundSomeCommandArgs = true;
-   } else if (commandToExecute.includes(b.cColon) === true) {
-     commandArgsDelimiter = b.cColon;
-     foundSomeCommandArgs = true;
-   } else if (commandToExecute.includes(b.cPipe) === true) {
-     commandArgsDelimiter = b.cPipe;
-     foundSomeCommandArgs = true;
-   } else if (commandToExecute.includes(b.cSpace) === true) {
-     commandArgsDelimiter = b.cSpace;
+   // NOTE: The following 6 lines of code is also duplicated in the nominal.sequenceCommand function,
+   // but the truth is it wouldn't be worth refactoring this, because we need 3 different pieces of data out of this code,
+   // and with 2 points of logic, it just doesn't make any sense to refactor into a function,
+   // even if we are trying to follow the DRY method: Do not Repeat Yourself!
+   if (commandToExecute.includes(commandArgsDelimiter) === true) {
      foundSomeCommandArgs = true;
    }
    let commandArgs = commandToExecute.split(commandArgsDelimiter);
@@ -120,15 +118,20 @@ loop2:
        for (let j = 0; j < arrayOfAliases.length; j++) {
          if (commandToExecute === arrayOfAliases[j]) {
            foundValidCommand = true;
-           console.log('commandToExecute before the Alias is: ' + commandToExecute);
+           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute before the Alias is: ' + commandToExecute);
            commandToExecute = currentCommand[s.cName];
-           console.log('commandToExecute after the Alias is: ' + commandToExecute);
+           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute after the Alias is: ' + commandToExecute);
            break loop1;
          }
        }
      }
      if (foundValidCommand === true) {
-       returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
+       if (D[s.cCommands][commandToExecute] !== undefined) {
+         returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
+       } else {
+         console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
+         returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.
+       }
      } else {
        console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
        returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.

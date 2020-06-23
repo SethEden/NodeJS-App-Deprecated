@@ -6,6 +6,7 @@
  * @requires module:chiefConfiguration
  * @requires module:chiefCommander
  * @requires module:commandBroker
+ * @requires module:chiefWorkflow
  * @requires module:configurator
  * @requires module:timers
  * @requires module:ruleBroker
@@ -25,7 +26,7 @@ import chiefConfiguration from '../Controllers/chiefConfiguration';
 import chiefCommander from '../Controllers/chiefCommander';
 import commandBroker from '../CommandsBlob/commandBroker';
 // import chiefData from '../Controllers/chiefData';
-// import chiefWorkflow from '../Controllers/chiefWorkflow';
+import chiefWorkflow from '../Controllers/chiefWorkflow';
 import configurator from '../Executrix/configurator';
 import timers from '../Executrix/timers';
 import ruleBroker from '../BusinessRules/ruleBroker';
@@ -233,13 +234,36 @@ function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemCommandsAliasesPath is: ' + systemCommandsAliasesPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommandsAliasesPath is: ' + clientCommandsAliasesPath);
-  var applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath)
+  var applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
   configurator.setConfigurationSetting(s.cSystemCommandsAliasesPath, applicationRootPath + systemCommandsAliasesPath);
   configurator.setConfigurationSetting(s.cClientCommandsAliasesPath, applicationRootPath + clientCommandsAliasesPath);
   chiefCommander.loadCommandAliasesFromPath(s.cSystemCommandsAliasesPath);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   chiefCommander.loadCommandAliasesFromPath(s.cClientCommandsAliasesPath);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
+ * @function loadCommandWorkflows
+ * @description Loads and merges both the system defined command workflows XML file & client defined command workflows XML file.
+ * @param {string} systemWorkflowPath The path from the application root to the system defined command workflows XML file.
+ * @param {string} clientWorkflowPath The path from the application root to the client defined command workflows XML file.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/22
+ */
+function loadCommandWorkflows(systemWorkflowPath, clientWorkflowPath) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = loadCommandWorkflows.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemWorkflowPath is: ' + systemWorkflowPath);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientWorkflowPath is: ' + clientWorkflowPath);
+  var applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
+  configurator.setConfigurationSetting(s.cSystemWorkflowsPath, applicationRootPath + systemWorkflowPath);
+  configurator.setConfigurationSetting(s.cClientWorkflowsPath, applicationRootPath + clientWorkflowPath);
+  chiefWorkflow.loadCommandWorkflowsFromPath(s.cSystemWorkflowsPath);
+  chiefWorkflow.loadCommandWorkflowsFromPath(s.cClientWorkflowsPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -412,6 +436,7 @@ export default {
   mergeClientBusinessRules,
   mergeClientCommands,
   loadCommandAliases,
+  loadCommandWorkflows,
   executeBusinessRule,
   enqueueCommand,
   isCommandQueueEmpty,

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><CommandWorkflows>
+  <Workflow name="startup" value="commandSequencer name,true version about"/>
+  <Workflow name="details" value="commandSequencer name version about"/>
+</CommandWorkflows>
