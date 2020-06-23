@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/SethEden/NodeJS-App/compare/v0.5.11...v0.6.1) (2020-06-23)
+
+
+### Features
+
+* Finally got the workflow engine fully implemented and integrated with the command engine architecture and working. ([4c1befc](https://github.com/SethEden/NodeJS-App/commit/4c1befce76da3017e142f726221336af3da36bd2))
+
 ### [0.5.11](https://github.com/SethEden/NodeJS-App/compare/v0.5.10...v0.5.11) (2020-06-22)
 
 
