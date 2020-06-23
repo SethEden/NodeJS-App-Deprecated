@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.2](https://github.com/SethEden/NodeJS-App/compare/v0.6.1...v0.6.2) (2020-06-23)
+
+
+### Features
+
+* Finish building the help command, and the print data hive command to help with data debugging in the future. ([fd339f7](https://github.com/SethEden/NodeJS-App/commit/fd339f7ef6029791aa48dd765c7bedf09d3f7201))
+
 ### [0.6.1](https://github.com/SethEden/NodeJS-App/compare/v0.5.11...v0.6.1) (2020-06-23)
 
 
