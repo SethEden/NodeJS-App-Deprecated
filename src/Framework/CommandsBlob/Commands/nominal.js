@@ -11,6 +11,7 @@
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/19
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -24,6 +25,7 @@ import * as b from '../../Constants/basic.constants';
 import * as s from '../../Constants/system.constants';
 const figlet = require('figlet');
 var path = require('path');
+var D = require('../../../Framework/Resources/data');
 
  /**
   * @function echoCommand
@@ -151,6 +153,27 @@ export const name = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function help
+ * @description Displays all the information about all of the commands in the system,
+ * including both system defined commands & client defined commands.
+ * @param {array<boolean|string|integer>} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ */
+export const help = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.chelp;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var returnData = true;
+  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][s.cCommand]);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function commandSequencer
  * @description Takes an arguments array where the second array object would contain a list of
  * commands that should enqueued to the command queue.
@@ -222,6 +245,36 @@ export const workflow = function(inputData, inputMetaData) {
   let workflowName = inputData[1];
   let workflowValue = workflowBroker.getWorkflow(workflowName);
   queue.enqueue(s.cCommandQueue, workflowValue);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function printDataHive
+ * @description Prints out all the data contents of a particular data hive in the D-data structure.
+ * If no hive is specified then the entire D-data structure will be printed.
+ * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
+ * depending on what the user entered. But the function filters all of that internally and
+ * extracts the case the user has entered a data hive name at the top level of the D-data structure.
+ * Examples: Configuration, Workflows, Colors, Commands, etc...
+ * @param {string} inputMetaData Not used for this command.
+ * @return {Boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/06/22
+ */
+export const printDataHive = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cprintDataHive;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var returnData = true;
+  if (D[inputData[1]] !== undefined) {
+    console.log(inputData[1] + ' contents are: ' + JSON.stringify(D[inputData[1]]));
+  } else {
+    console.log('contents of D are: ' + JSON.stringify(D));
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

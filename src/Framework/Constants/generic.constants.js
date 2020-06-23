@@ -309,6 +309,7 @@ export const ctert = b.cte + b.crt;
 export const cTert = b.cTe + b.crt;
 export const ctart = b.cta + b.crt;
 export const cTart = b.cTa + b.crt; // poptart....LOL
+export const crint = b.cri + b.cnt;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

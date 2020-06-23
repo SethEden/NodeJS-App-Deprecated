@@ -739,6 +739,12 @@ export const ctertiary = g.ctert + g.ciary;
 export const cTertiary = g.cTert + g.ciary;
 export const cdelimiter = b.cde + climit + b.cer;
 export const cDelimiter = b.cDe + climit + b.cer;
+export const chelp = b.che + b.clp;
+export const cHelp = b.cHe + b.clp;
+export const cprint = b.cp + g.crint;
+export const cPrint = b.cP + g.crint;
+export const chive = b.ch + g.cive;
+export const cHive = b.cH + g.cive;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -2389,4 +2395,9 @@ export const cClientWorkflowsPath = cClient + cWorkflows + cPath;
 export const cechoCommand = cecho + cCommand;
 export const cEchoCommand = cEcho + cCommand;
 export const ccommandSequencer = ccommand + cSequencer;
+export const cprintDataHive = cprint + cData + cHive;
+
+// ********************************
+// System defined workflows
+// ********************************
 export const cStartupWorkflow = cWorkflow + b.cSpace + cstartup;
