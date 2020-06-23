@@ -367,6 +367,389 @@
     
 
     
+    <h4 class="name" id="~businessRule"><span class="type-signature">(inner) </span>businessRule<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Executes a user specified business rule with some input.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;(boolean|string|integer)></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array that could actually contain anything,
+depending on what the user entered. But the function filters all of that internally and
+extracts the case the user has entered a business rule name and perhaps some rule inputs.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this command.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line308">line 308</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~commandGenerator"><span class="type-signature">(inner) </span>commandGenerator<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Takes a set of input parameters such as a command and the number of times it should be executed.
+Then this command will enqueue that command that number of times to the command queue.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;(boolean|string|integer)></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array that could actually contain anything,
+depending on what the user entered. But the function filters all of that internally and
+extracts the command that should be executed and the number of times it should be executed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this command.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line354">line 354</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="~commandSequencer"><span class="type-signature">(inner) </span>commandSequencer<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
@@ -501,7 +884,7 @@ extracts the case the user has entered a list of commands that should be enqueue
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line176">line 176</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line201">line 201</a>
     </li></ul></dd>
     
 
@@ -1052,6 +1435,13 @@ including both system defined commands &amp; client defined commands.</p>
     
 
     
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
 
     
 
@@ -1446,7 +1836,7 @@ Examples: Configuration, Workflows, Colors, Commands, etc...</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line253">line 253</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line278">line 278</a>
     </li></ul></dd>
     
 
@@ -1828,7 +2218,7 @@ extracts the case the user has entered a workflow name, that we should use to lo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line225">line 225</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line250">line 250</a>
     </li></ul></dd>
     
 
@@ -1881,6 +2271,196 @@ extracts the case the user has entered a workflow name, that we should use to lo
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="~workflowHelp"><span class="type-signature">(inner) </span>workflowHelp<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Displays all the information about all the workflows in the system,
+including both system defined workflows &amp; client defined commands.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;(boolean|string|integer)></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this command.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this command.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line178">line 178</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
     
 
     
@@ -1902,7 +2482,7 @@ extracts the case the user has entered a workflow name, that we should use to lo
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 22 2020 22:58:56 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 23 2020 18:45:41 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

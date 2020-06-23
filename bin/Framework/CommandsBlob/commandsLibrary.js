@@ -56,12 +56,18 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.name(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.chelp, function (inputData, inputMetaData) {
     return nominalCommands.help(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cworkflowHelp, function (inputData, inputMetaData) {
+    return nominalCommands.workflowHelp(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.ccommandSequencer, function (inputData, inputMetaData) {
     return nominalCommands.commandSequencer(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.cworkflow, function (inputData, inputMetaData) {
     return nominalCommands.workflow(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.cprintDataHive, function (inputData, inputMetaData) {
     return nominalCommands.printDataHive(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cbusinessRule, function (inputData, inputMetaData) {
+    return nominalCommands.businessRule(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.ccommandGenerator, function (inputData, inputMetaData) {
+    return nominalCommands.commandGenerator(inputData, inputMetaData);
   }), _D$s$cCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

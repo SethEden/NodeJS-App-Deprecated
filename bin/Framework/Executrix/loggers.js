@@ -90,14 +90,15 @@ function consoleLog(classPath, message) {
  * @function consoleTableLog
  * @description Prints out a table with the data provided in the input tableDataArray.
  * @param {string} classPath The class path for the caller of this funciton file.function or class.method.
- * @param {array<objects>} tableDataArray An array of objects that should be printed to the console as if it was data.
+ * @param {array<object>} tableData An array of objects that should be printed to the console as if it was data.
+ * @param {array<string>} columnNames An array of column names that should be used when outputting the table.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/22
  */
 
-function consoleTableLog(classPath, tableDataArray) {
-  console.table(tableDataArray, [s.cName, s.cDescription]);
+function consoleTableLog(classPath, tableData, columnNames) {
+  console.table(tableData, columnNames);
 }
 
 ;

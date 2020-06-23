@@ -1106,7 +1106,7 @@ var generateValidEmail1 = function generateValidEmail1(inputData, inputMetaData)
 
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2]; // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
@@ -1121,7 +1121,7 @@ var generateValidEmail1 = function generateValidEmail1(inputData, inputMetaData)
         specifiedSuffixAndDomain: specifiedSuffixAndDomain
       });
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1]; // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
 
@@ -1190,7 +1190,7 @@ var generateValidEmail2 = function generateValidEmail2(inputData, inputMetaData)
 
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2]; // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
@@ -1205,7 +1205,7 @@ var generateValidEmail2 = function generateValidEmail2(inputData, inputMetaData)
         specifiedSuffixAndDomain: specifiedSuffixAndDomain
       });
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1]; // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
 
@@ -1274,7 +1274,7 @@ var generateInvalidEmail1 = function generateInvalidEmail1(inputData, inputMetaD
 
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2]; // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
@@ -1289,7 +1289,7 @@ var generateInvalidEmail1 = function generateInvalidEmail1(inputData, inputMetaD
         specifiedSuffixAndDomain: specifiedSuffixAndDomain
       });
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1]; // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
 
@@ -1358,7 +1358,7 @@ var generateInvalidEmail2 = function generateInvalidEmail2(inputData, inputMetaD
 
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
       specifiedSuffixAndDomain = inputMetaData[2]; // @NOTE the above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
@@ -1373,7 +1373,7 @@ var generateInvalidEmail2 = function generateInvalidEmail2(inputData, inputMetaD
         specifiedSuffixAndDomain: specifiedSuffixAndDomain
       });
     } else if (inputMetaData.length <= 2) {
-      generateSpecialCharacters = (0, _stringParsing.StringToBoolean)(inputMetaData[0]);
+      generateSpecialCharacters = (0, _stringParsing.stringToBoolean)(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1]; // @NOTE The above function StringToBoolean will default to False if the input is an empty or undefined string.
       // We want to flip it back to True but only if some special characters are passed in.
 

@@ -9,6 +9,8 @@ exports.convertNumberToLowerCaseLetter = exports.convertNumberToUpperCaseLetter 
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
+var _stringParsing = require("./stringParsing");
+
 var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
@@ -271,18 +273,12 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function 
   var c3 = b.c3;
   var c9 = b.c9;
   var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, _defineProperty({
-    c3: c3,
-    cTrue: cTrue
-  }, "cTrue", cTrue));
+  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
 
   switch (typeToGenerate) {
     case 1:
       // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(b.c0, _defineProperty({
-        c9: c9,
-        cTrue: cTrue
-      }, "cTrue", cTrue));
+      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
@@ -370,18 +366,12 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function 
   var c3 = b.c3;
   var c9 = b.c9;
   var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, _defineProperty({
-    c3: c3,
-    cTrue: cTrue
-  }, "cTrue", cTrue));
+  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
 
   switch (typeToGenerate) {
     case 1:
       // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(b.c0, _defineProperty({
-        c9: c9,
-        cTrue: cTrue
-      }, "cTrue", cTrue));
+      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
@@ -469,18 +459,12 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function 
   var c3 = b.c3;
   var c9 = b.c9;
   var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, _defineProperty({
-    c3: c3,
-    cTrue: cTrue
-  }, "cTrue", cTrue));
+  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
 
   switch (typeToGenerate) {
     case 1:
       // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(b.c0, _defineProperty({
-        c9: c9,
-        cTrue: cTrue
-      }, "cTrue", cTrue));
+      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
@@ -851,10 +835,7 @@ var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacte
 
   var cTrue = g.cTrue;
   var inputDataLength = inputData.length.toString();
-  var number = randomlyGenerateNumberInRange1(b.c1, _defineProperty({
-    inputDataLength: inputDataLength,
-    cTrue: cTrue
-  }, "cTrue", cTrue)); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+  var number = randomlyGenerateNumberInRange1(b.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 
   returnData = inputData.substring(number - 1, number);
 
@@ -893,10 +874,7 @@ var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacte
 
   var cTrue = g.cTrue;
   var inputDataLength = inputData.length.toString();
-  var number = randomlyGenerateNumberInRange1(b.c1, _defineProperty({
-    inputDataLength: inputDataLength,
-    cTrue: cTrue
-  }, "cTrue", cTrue)); // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
+  var number = randomlyGenerateNumberInRange1(b.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
 
   returnData = inputData.substring(number - 1, number);
 
@@ -931,13 +909,13 @@ var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inp
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = '';
   var minimum = parseInt(inputData);
   var maximum = parseInt(inputMetaData[0]);
-  var addOne = StringToBoolean(inputMetaData[1]);
-  var addMinimum = StringToBoolean(inputMetaData[2]);
+  var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1], '');
+  var addMinimum = (0, _stringParsing.stringToBoolean)(inputMetaData[2], '');
 
   if (addOne === true) {
     if (addMinimum === true) {
@@ -1179,10 +1157,7 @@ var randomlyGenerateLowerCaseLetter1 = function randomlyGenerateLowerCaseLetter1
 
   var c26 = b.c2 + b.c6;
   var cTrue = g.cTrue;
-  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(b.c1, _defineProperty({
-    c26: c26,
-    cTrue: cTrue
-  }, "cTrue", cTrue)));
+  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(b.c1, [b.c26, g.cTrue, g.cTrue]));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1251,10 +1226,7 @@ var randomlyGenerateUpperCaseLetter1 = function randomlyGenerateUpperCaseLetter1
 
   var c26 = b.c2 + b.c6;
   var cTrue = g.cTrue;
-  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(b.c1, _defineProperty({
-    c26: c26,
-    cTrue: cTrue
-  }, "cTrue", cTrue)));
+  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(b.c1, [b.c26, g.cTrue, g.cTrue]));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1325,7 +1297,7 @@ var convertNumberToUpperCaseLetter = function convertNumberToUpperCaseLetter(inp
   if (number > 25 || number < 0) {
     returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
   } else {
-    returnData = g.cUppercaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1364,7 +1336,7 @@ var convertNumberToLowerCaseLetter = function convertNumberToLowerCaseLetter(inp
   if (number > 25 || number < 0) {
     returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
   } else {
-    returnData = g.cUppercaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
