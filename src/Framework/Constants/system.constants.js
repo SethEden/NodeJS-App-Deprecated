@@ -1928,6 +1928,7 @@ export const cabout = b.ca + g.cbout;
 export const cAbout = b.cA + g.cbout;
 export const cPrimaryCommandDelimiter = cPrimary + cCommand + cDelimiter;
 export const cSecondaryCommandDelimiter = cSecondary + cCommand + cDelimiter;
+export const cTertiaryCommandDelimiter = cTertiary + cCommand + cDelimiter;
 export const cstart = b.cs + g.ctart;
 export const cStart = b.cS + g.ctart;
 export const cstartup = cstart + b.cup;

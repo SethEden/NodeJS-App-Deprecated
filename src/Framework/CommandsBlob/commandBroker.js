@@ -61,91 +61,146 @@ function addClientCommands(clientCommands) {
 };
 
 /**
+ * @function getValidCommand
+ * @description Parses the command string and returns an array that can be used to
+ * enqueue or execute that command. Useful for determining if a command is a valid command and
+ * working with multiple levels of delimiters for nested command calls, looking up a command alias, etc...
+ * @param {string} commandString The command string that should be parsed for a valid command.
+ * @param {string} commandDelimiter The delimiter that should be used to parse the command line.
+ * @return {boolean|string} False if the command is not valid, otherwise it returns the command string.
+ * @author Seth Hollingsead
+ * @date 2020/06/23
+ */
+function getValidCommand(commandString, commandDelimiter) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = getValidCommand.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString is: ' + commandString);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandDelimiter is: ' + commandDelimiter);
+  var returnValue = false; // Assume it is not a valid command, until we prove that it is.
+  let foundValidCommand = false;
+  let foundSomeCommandArgs = false;
+  let commandToExecute, commandArgs;
+  let commandArgsDelimiter = commandDelimiter;
+  if (commandDelimiter === null || commandDelimiter !== commandDelimiter || commandDelimiter === undefined) {
+    commandArgsDelimiter = b.cSpace;
+  }
+  if (commandString.includes(commandArgsDelimiter) === true) {
+    foundSomeCommandArgs = true;
+    commandArgs = commandString.split(commandArgsDelimiter);
+    commandToExecute = commandArgs[0];
+  } else {
+    commandToExecute = commandString;
+  }
+
+  if (D[s.cCommands][commandToExecute] !== undefined) {
+    foundValidCommand = true;
+    returnValue = commandToExecute;
+  } else {
+    // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
+    // to see if we can find a match, then get the actual command that should be executed.
+    var allCommandAliases = D[s.cCommandsAliases][s.cCommand];
+loop1:
+    for (let i = 0; i < allCommandAliases.length; i++) {
+      // Iterate through all of the command aliases and see if we can find a
+      // command alias that matches the command the user is trying to execute.
+      let currentCommand = allCommandAliases[i];
+      let aliasList = currentCommand[s.cAliases];
+      let arrayOfAliases = aliasList.split(b.cComa);
+loop2:
+      for (let j = 0; j < arrayOfAliases.length; j++) {
+        if (commandToExecute === arrayOfAliases[j]) {
+          foundValidCommand = true;
+          loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute before the Alias is: ' + commandToExecute);
+          commandToExecute = currentCommand[s.cName];
+          loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute after the Alias is: ' + commandToExecute);
+          break loop1;
+        }
+      }
+    }
+    if (foundValidCommand === true) {
+      if (D[s.cCommands][commandToExecute] !== undefined) {
+        returnValue = commandToExecute;
+      } else {
+        console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
+      }
+    } else {
+      console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnValue;
+};
+
+/**
+ * @function getCommandArgs
+ * @description Gets the arguments of the current command.
+ * @param {string} commandString The command string that should be parsed for command arguments.
+ * @param {string} commandDelimiter The delimiter that should be used to parse the command line.
+ * @return {array<boolean|string|integer>} An array of arguments, some times these might actually be nested command calls.
+ * @author Seth Hollingsead
+ * @date 2020/06/23
+ */
+function getCommandArgs(commandString, commandDelimiter) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = getCommandArgs.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString is: ' + commandString);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandDelimiter is: ' + commandDelimiter);
+  let returnValue = false;
+  let foundValidCommand = false;
+  let commandArgsDelimiter = commandDelimiter;
+  if (commandDelimiter === null || commandDelimiter !== commandDelimiter || commandDelimiter === undefined) {
+    commandArgsDelimiter = b.cSpace;
+  }
+  if (commandString.includes(commandArgsDelimiter) === true) {
+    returnValue = commandString.split(commandArgsDelimiter);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnValue;
+};
+
+/**
  * @function executeCommand
  * @description Takes a command string with all its associated arguments, data & meta-data.
  * This function will parse all of that out of the command line variable that is passed in.
  * And finally pass all of that data on to execution of the actual command.
- * @param {string} commandToExecute The command to execute along with all the associated command arguments, data & meta-data.
+ * @param {string} commandString The command to execute along with all the associated command arguments, data & meta-data.
  * @return {boolean} A True or False value to indicate if the application should exit or not exit.
  * @author Seth Hollingsead
  * @date 2020/06/18
  */
- function executeCommand(commandToExecute) {
-   // Here we need to do all of the parsing for the command.
-   // Might be a good idea to rely on business rules to do much of the parsing for us!
-   // Also don't forget this is where we will need to implement the command performance
-   // tracking & command results processing such as pass-fail,
-   // so that when a chain of commands has completed execution we can evaluate command statistics and metrics.
-   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-   var functionName = executeCommand.name;
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
-   let returnValue = false;
-   let foundValidCommand = false;
-   let foundSomeCommandArgs = false;
-   let commandArgsDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
-   if (commandArgsDelimiter === null || commandArgsDelimiter !== commandArgsDelimiter || commandArgsDelimiter === undefined) {
-     commandArgsDelimiter = b.cSpace;
-   }
-   // NOTE: Implement command parameters here!
-   // Lets determine what the command parameter delimiter might be. (could be "," or ";" or ":" or "|" or " ")
-   // NOTE: The following 6 lines of code is also duplicated in the nominal.sequenceCommand function,
-   // but the truth is it wouldn't be worth refactoring this, because we need 3 different pieces of data out of this code,
-   // and with 2 points of logic, it just doesn't make any sense to refactor into a function,
-   // even if we are trying to follow the DRY method: Do not Repeat Yourself!
-   if (commandToExecute.includes(commandArgsDelimiter) === true) {
-     foundSomeCommandArgs = true;
-   }
-   let commandArgs = commandToExecute.split(commandArgsDelimiter);
-   if (foundSomeCommandArgs === true) {
-     commandToExecute = commandArgs[0];
-   }
-   if (D[s.cCommands][commandToExecute] !== undefined) {
-     foundValidCommand = true;
-     returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
-   } else {
-     // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
-     // to see if we can find a match, then get the actual command that should be executed.
-     var allCommandAliases = D[s.cCommandsAliases][s.cCommand];
-loop1:
-     for (let i = 0; i < allCommandAliases.length; i++) {
-       // Iterate through all of the command aliases and see if we can find a
-       // command alias that matches the command the user is trying to execute.
-       let currentCommand = allCommandAliases[i];
-       let aliasList = currentCommand[s.cAliases];
-       let arrayOfAliases = aliasList.split(b.cComa);
-loop2:
-       for (let j = 0; j < arrayOfAliases.length; j++) {
-         if (commandToExecute === arrayOfAliases[j]) {
-           foundValidCommand = true;
-           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute before the Alias is: ' + commandToExecute);
-           commandToExecute = currentCommand[s.cName];
-           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute after the Alias is: ' + commandToExecute);
-           break loop1;
-         }
-       }
-     }
-     if (foundValidCommand === true) {
-       if (D[s.cCommands][commandToExecute] !== undefined) {
-         returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
-       } else {
-         console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
-         returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.
-       }
-     } else {
-       console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
-       returnValue = true; // Keep the application running, we don't want to exit/crash just because the user entered something wrong.
-     }
-   }
-
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-   return returnValue;
- };
+ function executeCommand(commandString) {
+  // Here we need to do all of the parsing for the command.
+  // Might be a good idea to rely on business rules to do much of the parsing for us!
+  // Also don't forget this is where we will need to implement the command performance
+  // tracking & command results processing such as pass-fail,
+  // so that when a chain of commands has completed execution we can evaluate command statistics and metrics.
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = executeCommand.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString is: ' + commandString);
+  let returnValue = false;
+  let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter));
+  let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter));
+  if (commandToExecute !== false && commandArgs !== false) {
+    returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
+  } else if (commandToExecute !== false && commandArgs === false) {
+    // This could be a command without any arguments.
+    returnValue = D[s.cCommands][commandToExecute]('', '');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnValue;
+};
 
  export default {
    bootStrapCommands,
    addClientCommands,
+   getValidCommand,
+   getCommandArgs,
    executeCommand
  };
 
