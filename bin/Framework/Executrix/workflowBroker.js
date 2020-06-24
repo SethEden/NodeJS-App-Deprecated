@@ -42,7 +42,8 @@ var D = require('../Resources/data');
  * @description Given the name of the workflow that is being requested,
  * get that workflow from the D-data structure workflows data hive.
  * @param {string} workflowName The name of the workflow we should get workflow data for.
- * @return {string} The workflow value, which ideally would be a list of commands and command parameters.
+ * @return {string|boolean} The workflow value, which ideally would be a list of commands and command parameters.
+ * False if no workflow by the specified name was found.
  * @author Seth Hollingsead
  * @date 2020/06/22
  */
@@ -56,7 +57,7 @@ function getWorkflow(workflowName) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'workflowName is: ' + workflowName);
 
-  var workflowValue = '';
+  var workflowValue = false;
   var arrayOfWorkflows = D[s.cCommandWorkflows][s.cWorkflow];
 
   for (var i = 0; i < arrayOfWorkflows.length; i++) {
@@ -64,8 +65,8 @@ function getWorkflow(workflowName) {
 
     _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentWorkflow is: ' + JSON.stringify(currentWorkflow));
 
-    if (currentWorkflow[s.cname] === workflowName) {
-      workflowValue = currentWorkflow[s.cvalue];
+    if (currentWorkflow[s.cName] === workflowName) {
+      workflowValue = currentWorkflow[s.cValue];
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'workflowValue is: ' + JSON.stringify(workflowValue));
 

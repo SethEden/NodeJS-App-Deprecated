@@ -12,6 +12,7 @@
         <ConfigurationElement Name="FigletFont" Type="Default" Value="Star Wars" Version="3"/>
         <ConfigurationElement Name="PrimaryCommandDelimiter" Type="Default" Value=" " Version="3"/>
         <ConfigurationElement Name="SecondaryCommandDelimiter" Type="Default" Value="," Version="3"/>
+        <ConfigurationElement Name="TertiaryCommandDelimiter" Type="Default" Value="|" Version="3"/>
         <ConfigurationElement Name="DebugFiles" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="application@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -251,7 +252,7 @@
           <ConfigurationElement Name="queue@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="queue@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="nominal" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="nominal@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -644,6 +645,34 @@
           <ConfigurationElement Name="commandBroker.addClientCommands@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="commandBroker.addClientCommands@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="commandBroker.addClientCommands@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="commandBroker.getValidCommand" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getValidCommand@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="commandBroker.getCommandArgs" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="commandBroker.getCommandArgs@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="commandBroker.executeCommand" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="commandBroker.executeCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

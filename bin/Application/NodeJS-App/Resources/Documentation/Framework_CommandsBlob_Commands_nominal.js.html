@@ -31,6 +31,7 @@
  * @module nominal
  * @description Contains all of the nominal system commands.
  * @requires module:configurator
+ * @requires module:commandBroker
  * @requires module:ruleBroker
  * @requires module:workflowBroker
  * @requires module:queue
@@ -45,6 +46,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import configurator from '../../Executrix/configurator';
+import commandBroker from '../commandBroker';
 import ruleBroker from '../../BusinessRules/ruleBroker';
 import workflowBroker from '../../Executrix/workflowBroker';
 import queue from '../../Resources/queue';
@@ -220,7 +222,7 @@ export const workflowHelp = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = true;
-  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cname, s.cvalue]);
+  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName, s.cValue]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -246,24 +248,18 @@ export const commandSequencer = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = true;
   for (let i = 1; i &lt; inputData.length; i++) {
-    let currentCommand = inputData[i];
+    let commandString = inputData[i];
     let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
     if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
       primaryCommandDelimiter = b.cSpace;
     }
     let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
-    let foundSomeCommandArgs = false;
-    // NOTE: The following 6 lines of code is also duplicated in the commandBroker.executeCommand function,
-    // but the truth is it wouldn't be worth refactoring this, because we need 3 different pieces of data out of this code,
-    // and with 2 points of logic, it just doesn't make any sense to refactor into a function,
-    // even if we are trying to follow the DRY method: Do not Repeat Yourself!
-    if (currentCommand.includes(secondaryCommandArgsDelimiter) === true) {
-      foundSomeCommandArgs = true;
-    }
-    let commandArgs = currentCommand.split(secondaryCommandArgsDelimiter);
-    if (foundSomeCommandArgs === true) {
-      currentCommand = commandArgs[0];
-    }
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    // Replace 2nd &amp; 3rd level delimiters and down-increment them so we are dealing with command strings that can actually be executed.
+    commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
+    commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
+    let currentCommand = commandBroker.getValidCommand(commandString, primaryCommandDelimiter);
+    let commandArgs = commandBroker.getCommandArgs(commandString, primaryCommandDelimiter)
     // We need to recompose the command arguments for the current command using the s.cPrimaryCommandDelimiter.
     for (let j = 1; j &lt; commandArgs.length; j++) {
       currentCommand = currentCommand + primaryCommandDelimiter + commandArgs[j];
@@ -297,7 +293,13 @@ export const workflow = function(inputData, inputMetaData) {
   var returnData = true;
   let workflowName = inputData[1];
   let workflowValue = workflowBroker.getWorkflow(workflowName);
-  queue.enqueue(s.cCommandQueue, workflowValue);
+  if (workflowValue !== false) {
+    queue.enqueue(s.cCommandQueue, workflowValue);
+  } else {
+    console.log('WARNING: The specified workflow: ' + workflowName + b.cComa +
+    ' was not found in either the system defined workflows, or client defined workflows.' +
+    ' Please enter a valid workflow name and try again.');
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -361,18 +363,25 @@ export const businessRule = function(inputData, inputMetaData) {
     let ruleArgs = [];
     if (currentRule.includes(secondaryCommandArgsDelimiter) === true) {
       ruleArgs = currentRule.split(secondaryCommandArgsDelimiter);
-      if (ruleArgs === 2) {
+      console.log('ruleArgs is: ' + JSON.stringify(ruleArgs));
+      if (ruleArgs.length === 2) {
         ruleInputData = ruleArgs[1];
         ruleInputMetaData = '';
-      } else if (ruleArgs === 3) {
+      } else if (ruleArgs.length === 3) {
         ruleInputData = ruleArgs[1];
         ruleInputMetaData = ruleArgs[2];
       } else {
         console.log('WARNING: businessRule command does not currently support more than 2 rule arguments.')
       }
+      rules[i - 1] = ruleArgs[0];
+    } else {
+      rules[i - 1] = currentRule;
     }
-    rules[i] = currentRule
   }
+  console.log('s.cstringToBoolean resolves as: ' + s.cstringToBoolean);
+  console.log('rules is: ' + JSON.stringify(rules));
+  console.log('ruleInputData is: ' + ruleInputData);
+  console.log('ruleInputMetaData is: ' + ruleInputMetaData);
   console.log('Rule output is: ' + ruleBroker.processRules(ruleInputData, ruleInputMetaData, rules));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -400,24 +409,42 @@ export const commandGenerator = function(inputData, inputMetaData) {
   var returnData = true;
   let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
-  if (inputData[1].includes(secondaryCommandArgsDelimiter) === true) {
-    let commandArgs = inputData[1].split(secondaryCommandArgsDelimiter);
-    // The first parameter will be the command that we should enqueue.
-    // The second parameter will be the number of times that the command should be enqueued.
-    // If there is a third parameter and/or fourth parameter those need to be inputs to the command call.
-    let currentCommand = commandArgs[0];
-    if (D[s.cCommands][commandArgs[0]] !== undefined) {
-      if (isNaN(commandArgs[1]) === false) {
-        let numberOfCommands = parseInt(commandArgs[1]);
-        if (numberOfCommands > 0) {
-          for (let i = 0; i &lt; numberOfCommands; i++) {
-            queue.enqueue(s.cCommandQueue, currentCommand);
-          }
+  // if (inputData[1].includes(secondaryCommandArgsDelimiter) === true) {
+  //   let commandArgs = inputData[1].split(secondaryCommandArgsDelimiter);
+  //   // The first parameter will be the command that we should enqueue.
+  //   // The second parameter will be the number of times that the command should be enqueued.
+  //   // If there is a third parameter and/or fourth parameter those need to be inputs to the command call.
+  //   let currentCommand = commandArgs[0];
+  //   if (D[s.cCommands][commandArgs[0]] !== undefined) {
+  //     if (isNaN(commandArgs[1]) === false) {
+  //       let numberOfCommands = parseInt(commandArgs[1]);
+  //       if (numberOfCommands > 0) {
+  //         for (let i = 0; i &lt; numberOfCommands; i++) {
+  //           queue.enqueue(s.cCommandQueue, currentCommand);
+  //         }
+  //       }
+  //     }
+  //   }
+  // } else {
+  //   console.log('WARNING: Invalid parameters passed into the commandGenerator command. Please try again.');
+  // }
+
+  let currentCommand = inputData[1];
+  if (D[s.cCommands][currentCommand] !== undefined) {
+    if (isNaN(inputData[2]) === false) {
+      let numberOfCommands = parseInt(inputData[2]);
+      if (inputData[2] > 0) {
+        for (let i = 0; i &lt; numberOfCommands; i++) {
+          queue.enqueue(s.cCommandQueue, currentCommand);
         }
+      } else {
+        console.log('WARNING: Must enter a number greater than 0, number entered: ' + inputData[1]);
       }
+    } else {
+      console.log('WARNING: Number entered for the number of commands to generate is not a number: ' + inputData[1]);
     }
   } else {
-    console.log('WARNING: Invalid parameters passed into the commandGenerator command. Please try again.');
+    console.log('WARNING: Invalid command: ' + currentCommand + ', please try again.');
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -439,7 +466,7 @@ export const commandGenerator = function(inputData, inputMetaData) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 23 2020 18:45:40 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 23 2020 23:27:05 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -454,7 +454,7 @@ This will allow the system to expand much more dynamically and even be user-defi
     
 
     
-    <h4 class="name" id="~executeCommand"><span class="type-signature">(inner) </span>executeCommand<span class="signature">(commandToExecute)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="~executeCommand"><span class="type-signature">(inner) </span>executeCommand<span class="signature">(commandString)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -500,7 +500,7 @@ And finally pass all of that data on to execution of the actual command.</p>
 
         <tr>
             
-                <td class="name"><code>commandToExecute</code></td>
+                <td class="name"><code>commandString</code></td>
             
 
             <td class="type">
@@ -517,6 +517,386 @@ And finally pass all of that data on to execution of the actual command.</p>
             
 
             <td class="description last"><p>The command to execute along with all the associated command arguments, data &amp; meta-data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_commandBroker.js.html">Framework/CommandsBlob/commandBroker.js</a>, <a href="Framework_CommandsBlob_commandBroker.js.html#line165">line 165</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A True or False value to indicate if the application should exit or not exit.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getCommandArgs"><span class="type-signature">(inner) </span>getCommandArgs<span class="signature">(commandString, commandDelimiter)</span><span class="type-signature"> &rarr; {array.&lt;(boolean|string|integer)>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets the arguments of the current command.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>commandString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The command string that should be parsed for command arguments.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>commandDelimiter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The delimiter that should be used to parse the command line.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_commandBroker.js.html">Framework/CommandsBlob/commandBroker.js</a>, <a href="Framework_CommandsBlob_commandBroker.js.html#line136">line 136</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An array of arguments, some times these might actually be nested command calls.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;(boolean|string|integer)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getValidCommand"><span class="type-signature">(inner) </span>getValidCommand<span class="signature">(commandString, commandDelimiter)</span><span class="type-signature"> &rarr; {boolean|string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parses the command string and returns an array that can be used to
+enqueue or execute that command. Useful for determining if a command is a valid command and
+working with multiple levels of delimiters for nested command calls, looking up a command alias, etc...</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>commandString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The command string that should be parsed for a valid command.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>commandDelimiter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The delimiter that should be used to parse the command line.</p></td>
         </tr>
 
     
@@ -593,7 +973,7 @@ And finally pass all of that data on to execution of the actual command.</p>
 
         
 <div class="param-desc">
-    <p>A True or False value to indicate if the application should exit or not exit.</p>
+    <p>False if the command is not valid, otherwise it returns the command string.</p>
 </div>
 
 
@@ -605,6 +985,9 @@ And finally pass all of that data on to execution of the actual command.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+|
+
+<span class="param-type">string</span>
 
 
     </dd>
@@ -638,7 +1021,7 @@ And finally pass all of that data on to execution of the actual command.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 23 2020 18:45:41 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 23 2020 23:27:06 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
