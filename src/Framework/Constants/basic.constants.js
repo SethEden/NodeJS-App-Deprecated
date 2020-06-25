@@ -13,6 +13,7 @@ export const cUnderscore = '_';
 export const cPipe = '|';
 export const cExclamation = '!';
 export const cSingleQuote = '\'';
+export const cBackTickQuote = '`';
 export const cDoubleQuote = '"';
 export const cForwardSlash = '/';
 export const cDoubleForwardSlash = '//';
@@ -46,6 +47,7 @@ export const cDot = '.';
 export const cComa = ',';
 export const cColon = ':';
 export const cSemiColon = ';';
+export const cTilde = '~';
 
 // Numbers
 export const c0 = '0';

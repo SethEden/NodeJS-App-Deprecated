@@ -252,7 +252,7 @@
           <ConfigurationElement Name="queue@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="queue@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="nominal" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="nominal@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -1681,6 +1681,48 @@
           <ConfigurationElement Name="stringParsing.getFirstTopLevelFolderFromPath@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getFirstTopLevelFolderFromPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getFirstTopLevelFolderFromPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.isOdd" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isOdd@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.isEven" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isEven@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

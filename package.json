@@ -36,6 +36,7 @@
     "chalk": "^4.0.0",
     "figlet": "^1.4.0",
     "fs-extra": "^9.0.0",
+    "mathjs": "^7.0.2",
     "moment": "^2.26.0",
     "papaparse": "^5.2.0",
     "prompt-sync": "^4.2.0",

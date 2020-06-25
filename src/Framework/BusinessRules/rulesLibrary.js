@@ -74,6 +74,10 @@ export const initRulesLibrary = function() {
     [s.creplaceDoublePercentWithMessage]: (inputData, inputMetaData) => stringParsing.replaceDoublePercentWithMessage(inputData, inputMetaData),
     [s.cremoveXnumberOfFoldersFromEndOfPath]: (inputData, inputMetaData) => stringParsing.removeXnumberOfFoldersFromEndOfPath(inputData, inputMetaData),
     [s.cgetFirstTopLevelFolderFromPath]: (inputData, inputMetaData) => stringParsing.getFirstTopLevelFolderFromPath(inputData, inputMetaData),
+    [s.cisOdd]: (inputData, inputMetaData) => stringParsing.isOdd(inputData, inputMetaData),
+    [s.cisEven]: (inputData, inputMetaData) => stringParsing.isEven(inputData, inputMetaData),
+    [s.creplaceCharacterAtIndex]: (inputData, inputMetaData) => stringParsing.replaceCharacterAtIndex(inputData, inputMetaData),
+
     // *********************************
     // StringGeneration rules in order
     // *********************************

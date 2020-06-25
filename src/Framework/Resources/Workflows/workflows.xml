@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><CommandWorkflows>
   <Workflow Name="startup" Value="commandSequencer name,true version about"/>
   <Workflow Name="details" Value="commandSequencer name version about"/>
-  <Workflow Name="stringToBoolean" Value="commandGenerator businessRule|stringToBoolean|T,4"/>
+  <Workflow Name="stringToBoolean" Value="cmdgen bizrul,stringToBoolean,T 4"/>
+  <Workflow Name="stringToDataType" Value="cmdgen bizrul,stringToDataType,1 4"/>
+  <Workflow Name="determineObjectDataType" Value="cmdgen bizrul,determineObjectDataType,something 4"/>
+  <Workflow Name="isBoolean" Value="cmdgen bizrul,isBoolean,2 4"/>
+  <Workflow Name="isInteger" Value="cmdgen bizrul,isInteger,2 4"/>
+  <Workflow Name="isFloat" Value="cmdgen bizrul,isFloat,3.14159265358979 4"/>
+  <Workflow Name="isString" Value="cmdgen bizrul,isString,2 4"/>
+  <Workflow Name="singleQuoteSwapAfterEquals" Value="cmdgen bizrul,singleQuoteSwapAfterEquals,input[name='emailAddress'][class='username'] 4"/>
+  <Workflow Name="swapForwardSlashToBackSlash" Value="cmdgen bizrul,swapForwardSlashToBackSlash,C:/ 4"/>
+  <Workflow Name="swapBackSlashToForwardSlash" Value="cmdgen bizrul,swapBackSlashToForwardSlash,C:\ 4"/>
+  <Workflow Name="swapDoubleForwardSlashToSingleForwardSlash" Value="cmdgen bizrul,swapDoubleForwardSlashToSingleForwardSlash,http:// 4"/>
+  <Workflow Name="swapDoubleBackSlashToSingleBackSlash" Value="cmdgen bizrul,swapDoubleBackSlashToSingleBackSlash,http:\\ 4"/>
+  <Workflow Name="getUserNameFromEmail" Value="cmdgen bizrul,getUserNameFromEmail,Iceversaka@hotmail.com 4"/>
+  <Workflow Name="replaceSpacesWithPlus" Value="cmdgen bizRul,replaceSpacesWithPlus,'Hello My Name Is: Blaaa' 4"/>
 </CommandWorkflows>

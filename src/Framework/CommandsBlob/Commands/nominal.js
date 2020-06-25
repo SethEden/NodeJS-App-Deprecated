@@ -33,6 +33,7 @@ var D = require('../../../Framework/Resources/data');
   * @function echoCommand
   * @description returns the input as the output without any changes.
   * @param {array<boolean|string|integer>} inputData String that should be echoed.
+  * inputData[0] === 'echoCommand'
   * @param {string} inputMetaData Not used for this business rule.
   * @return {string} The same as the input string.
   * @author Seth Hollingsead
@@ -58,6 +59,7 @@ var D = require('../../../Framework/Resources/data');
  * @function exit
  * @description Returns false so the entire application can exit.
  * @param {array<boolean|string|integer>} inputData Not used for this command.
+ * inputData[0] === 'exit'
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} False to indicate that the application should exit.
  * @author Seth Hollingsead
@@ -79,6 +81,7 @@ export const exit = function(inputData, inputMetaData) {
  * @function version
  * @description Displays the current version number for the current application.
  * @param {array<boolean|string|integer>} inputData Not used for this command.
+ * inputData[0] === 'version'
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -101,6 +104,7 @@ export const version = function(inputData, inputMetaData) {
  * @function about
  * @description Displays the message about the current application.
  * @param {array<boolean|string|integer>} inputData Not used for this command.
+ * inputData[0] === 'about'
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -125,6 +129,8 @@ export const about = function(inputData, inputMetaData) {
  * @param {array<boolean|string|integer>} inputData An array that could really contain anything depending
  * on what the user entered, but the function converts and filters out for a boolean
  * True or False value internally to the function.
+ * inputData[0] === 'name'
+ * inputData[1] === 'true|false' (optional)
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -159,6 +165,7 @@ export const name = function(inputData, inputMetaData) {
  * @description Displays all the information about all of the commands in the system,
  * including both system defined commands & client defined commands.
  * @param {array<boolean|string|integer>} inputData Not used for this command.
+ * inputData[0] = 'help'
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -182,6 +189,7 @@ export const help = function(inputData, inputMetaData) {
  * @description Displays all the information about all the workflows in the system,
  * including both system defined workflows & client defined commands.
  * @param {array<boolean|string|integer>} inputData Not used for this command.
+ * inputData[0] === 'workflowHelp'
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -207,6 +215,10 @@ export const workflowHelp = function(inputData, inputMetaData) {
  * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
  * depending on what the user entered. But the function filters all of that internally and
  * extracts the case the user has entered a list of commands that should be enqueued to the command queue.
+ * inputData[0] === 'commandSequencer'
+ * inputData[1] === command string 1
+ * inputData[2] === command string 2
+ * inputData[n] === command string n
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -231,12 +243,16 @@ export const commandSequencer = function(inputData, inputMetaData) {
     commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
     commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
     let currentCommand = commandBroker.getValidCommand(commandString, primaryCommandDelimiter);
-    let commandArgs = commandBroker.getCommandArgs(commandString, primaryCommandDelimiter)
+    let commandArgs = commandBroker.getCommandArgs(commandString, primaryCommandDelimiter);
     // We need to recompose the command arguments for the current command using the s.cPrimaryCommandDelimiter.
-    for (let j = 1; j < commandArgs.length; j++) {
-      currentCommand = currentCommand + primaryCommandDelimiter + commandArgs[j];
+    if (currentCommand !== false) {
+      for (let j = 1; j < commandArgs.length; j++) {
+        currentCommand = currentCommand + primaryCommandDelimiter + commandArgs[j];
+      }
+      queue.enqueue(s.cCommandQueue, currentCommand);
+    } else {
+      console.log('WARNING, The specified command was not found, please enter a valid command and try again.');
     }
-    queue.enqueue(s.cCommandQueue, currentCommand);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -251,6 +267,8 @@ export const commandSequencer = function(inputData, inputMetaData) {
  * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
  * depending on what the user entered. But the function filters all of that internally and
  * extracts the case the user has entered a workflow name, that we should use to look up the workflow in the D-data structure.
+ * inputData[0] === 'workflow'
+ * inputData[1] === workflowName
  * @param {string} inputMetaData Not used for this command.
  * @return {Boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -285,6 +303,8 @@ export const workflow = function(inputData, inputMetaData) {
  * depending on what the user entered. But the function filters all of that internally and
  * extracts the case the user has entered a data hive name at the top level of the D-data structure.
  * Examples: Configuration, Workflows, Colors, Commands, etc...
+ * inputData[0] === 'printDataHive'
+ * inputData[1] === dataHiveName
  * @param {string} inputMetaData Not used for this command.
  * @return {Boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -313,6 +333,17 @@ export const printDataHive = function(inputData, inputMetaData) {
  * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
  * depending on what the user entered. But the function filters all of that internally and
  * extracts the case the user has entered a business rule name and perhaps some rule inputs.
+ * inputData[0] === 'businessRule'
+ * inputData[1] === rule 1 (including arguments with secondary delimiter)
+ * inputData[2] === rule 2 (including arguments with secondary delimiter)
+ * inputData[n] === rule n (including arguments with secondary delimiter)
+ * NOTE: There are 2 ways this system can work, the user can either call each rule with it's own inputs,
+ * or the user can leverage the rule system itself to pass the outputs from rule 1 as inputs to rule 2, etc...
+ * This command will only always take the arguments for the first business rule as inputs and let the business rules system
+ * pass the outputs as inputs as discussed above.
+ * It is assumed if the user wanted to execute a sequence of business rules each with their own inputs,
+ * Then the user should use the command sequencer in combination with this function
+ * to call a series of business rules each with their own inputs.
  * @param {string} inputMetaData Not used for this command.
  * @return {Boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -326,7 +357,7 @@ export const businessRule = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = true;
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
-  let rules = {};
+  let rules = [];
   let ruleInputData, ruleInputMetaData;
   // First go through each rule that should be executed and determine if
   // there are any inputs that need to be passed into the business rule.
@@ -335,25 +366,27 @@ export const businessRule = function(inputData, inputMetaData) {
     let ruleArgs = [];
     if (currentRule.includes(secondaryCommandArgsDelimiter) === true) {
       ruleArgs = currentRule.split(secondaryCommandArgsDelimiter);
-      console.log('ruleArgs is: ' + JSON.stringify(ruleArgs));
-      if (ruleArgs.length === 2) {
-        ruleInputData = ruleArgs[1];
-        ruleInputMetaData = '';
-      } else if (ruleArgs.length === 3) {
-        ruleInputData = ruleArgs[1];
-        ruleInputMetaData = ruleArgs[2];
-      } else {
-        console.log('WARNING: businessRule command does not currently support more than 2 rule arguments.')
+      // console.log('ruleArgs is: ' + JSON.stringify(ruleArgs));
+      if (i === 1) { // Only get the rule args if it's the first business rule, see note above in the header.
+        if (ruleArgs.length === 2) {
+          ruleInputData = ruleArgs[1];
+          ruleInputMetaData = '';
+        } else if (ruleArgs.length === 3) {
+          ruleInputData = ruleArgs[1];
+          ruleInputMetaData = ruleArgs[2];
+        } else {
+          console.log('WARNING: businessRule command does not currently support more than 2 rule arguments.')
+        }
       }
       rules[i - 1] = ruleArgs[0];
     } else {
       rules[i - 1] = currentRule;
     }
   }
-  console.log('s.cstringToBoolean resolves as: ' + s.cstringToBoolean);
-  console.log('rules is: ' + JSON.stringify(rules));
-  console.log('ruleInputData is: ' + ruleInputData);
-  console.log('ruleInputMetaData is: ' + ruleInputMetaData);
+
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'rules is: ' + JSON.stringify(rules));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInputData is: ' + ruleInputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + ruleInputMetaData);
   console.log('Rule output is: ' + ruleBroker.processRules(ruleInputData, ruleInputMetaData, rules));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -367,6 +400,9 @@ export const businessRule = function(inputData, inputMetaData) {
  * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
  * depending on what the user entered. But the function filters all of that internally and
  * extracts the command that should be executed and the number of times it should be executed.
+ * inputData[0] === 'commandGenerator'
+ * inputData[1] === command String
+ * inputData[2] === number of times to enqueue the above command string
  * @param {string} inputMetaData Not used for this command.
  * @return {Boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -380,43 +416,32 @@ export const commandGenerator = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = true;
   let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
+  if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
+    primaryCommandDelimiter = b.cSpace;
+  }
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
-  // if (inputData[1].includes(secondaryCommandArgsDelimiter) === true) {
-  //   let commandArgs = inputData[1].split(secondaryCommandArgsDelimiter);
-  //   // The first parameter will be the command that we should enqueue.
-  //   // The second parameter will be the number of times that the command should be enqueued.
-  //   // If there is a third parameter and/or fourth parameter those need to be inputs to the command call.
-  //   let currentCommand = commandArgs[0];
-  //   if (D[s.cCommands][commandArgs[0]] !== undefined) {
-  //     if (isNaN(commandArgs[1]) === false) {
-  //       let numberOfCommands = parseInt(commandArgs[1]);
-  //       if (numberOfCommands > 0) {
-  //         for (let i = 0; i < numberOfCommands; i++) {
-  //           queue.enqueue(s.cCommandQueue, currentCommand);
-  //         }
-  //       }
-  //     }
-  //   }
-  // } else {
-  //   console.log('WARNING: Invalid parameters passed into the commandGenerator command. Please try again.');
-  // }
-
-  let currentCommand = inputData[1];
-  if (D[s.cCommands][currentCommand] !== undefined) {
-    if (isNaN(inputData[2]) === false) {
-      let numberOfCommands = parseInt(inputData[2]);
-      if (inputData[2] > 0) {
+  let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+  let commandString = inputData[1];
+  commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
+  commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
+  let currentCommand = commandBroker.getValidCommand(commandString, primaryCommandDelimiter);
+  let commandArgs = commandBroker.getCommandArgs(commandString, primaryCommandDelimiter);
+  if (currentCommand !== false) {
+    if (isNaN(inputData[2]) === false) { // Make sure the user passed in a number for the second argument.
+      var numberOfCommands = parseInt(inputData[2]);
+      if (numberOfCommands > 0) {
         for (let i = 0; i < numberOfCommands; i++) {
-          queue.enqueue(s.cCommandQueue, currentCommand);
+          queue.enqueue(s.cCommandQueue, commandString);
         }
       } else {
-        console.log('WARNING: Must enter a number greater than 0, number entered: ' + inputData[1]);
+        console.log('WARNING: Must enter a number greater than 0, number entered: ' + numberOfCommands);
       }
     } else {
-      console.log('WARNING: Number entered for the number of commands to generate is not a number: ' + inputData[1]);
+      console.log('WARNING: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
     }
   } else {
-    console.log('WARNING: Invalid command: ' + currentCommand + ', please try again.');
+    console.log('WARNING, The specified command: ' + commandString +
+    ' was not found, please enter a valid command and try again.');
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

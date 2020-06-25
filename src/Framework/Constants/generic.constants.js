@@ -262,7 +262,8 @@ export const cExe = b.cEx + b.ce;
 export const cper = b.cpe + b.cr;
 export const cPer = b.cPe + b.cr;
 export const casic = b.cas + b.cic;
-export const cvent = b.cve + b.cnt;
+export const cven = b.cve + b.cn;
+export const cvent = cven + b.ct; // b.cve + b.cnt;
 export const carg = b.car + b.cg;
 export const cArg = b.cAr + b.cg;
 export const crive = b.cri + b.cve;
@@ -313,6 +314,9 @@ export const crint = b.cri + b.cnt;
 export const cgen = b.cge + b.cn;
 export const cGen = b.cGe + b.cn;
 export const cator = b.cat + b.cor;
+export const cdex = b.cde + b.cx;
+export const call = b.cal + b.cl;
+export const cAll = b.cAl + b.cl;
 
 // Boolean strings
 export const cTrue = b.cT + crue;
