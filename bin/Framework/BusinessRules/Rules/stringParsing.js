@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
@@ -35,6 +35,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://mathjs.org/index.html|math}
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -42,6 +43,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var _ = require('lodash');
 
 var path = require('path');
+
+var math = require('mathjs');
 /**
  * @function stringToBoolean
  * @description Converts a string to a boolean value
@@ -475,7 +478,7 @@ var swapForwardSlashToBackSlash = function swapForwardSlashToBackSlash(inputData
     return false;
   }
 
-  var returnData = replaceCharacterWithCharacter(inputData, /\//g, b.cBackSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\//g, b.cBackSlash]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -514,7 +517,7 @@ var swapBackSlashToForwardSlash = function swapBackSlashToForwardSlash(inputData
     return false;
   }
 
-  var returnData = replaceCharacterWithCharacter(inputData, /\\/g, b.cForwardSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\\/g, b.cForwardSlash]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -552,7 +555,7 @@ var swapDoubleForwardSlashToSingleForwardSlash = function swapDoubleForwardSlash
     return false;
   }
 
-  var returnData = replaceCharacterWithCharacter(inputData, /\/\//g, b.cForwardSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\/\//g, b.cForwardSlash]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -591,7 +594,7 @@ var swapDoubleBackSlashToSingleBackSlash = function swapDoubleBackSlashToSingleB
     return false;
   }
 
-  var returnData = replaceCharacterWithCharacter(inputData, /\\\\/g, b.cBackSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\\\\/g, b.cBackSlash]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -616,7 +619,6 @@ exports.swapDoubleBackSlashToSingleBackSlash = swapDoubleBackSlashToSingleBackSl
 
 var getUserNameFromEmail = function getUserNameFromEmail(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cgetUserNameFromEmail is resolving as: ' + s.cgetUserNameFromEmail);
   var functionName = s.cgetUserNameFromEmail;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -654,7 +656,6 @@ exports.getUserNameFromEmail = getUserNameFromEmail;
 
 var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.creplaceSpacesWithPlus is resolving as: ' + s.creplaceSpacesWithPlus);
   var functionName = s.creplaceSpacesWithPlus;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -668,7 +669,7 @@ var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaD
   } // var returnData = inputData.replace(/ /g, b.cPlus);
 
 
-  var returnData = replaceCharacterWithCharacter(inputData, / /g, b.cPlus);
+  var returnData = replaceCharacterWithCharacter(inputData, [/ /g, b.cPlus]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -705,7 +706,7 @@ var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, 
   } // var returnData == inputData.replace(/:/g, b.cUnderscore);
 
 
-  var returnData = replaceCharacterWithCharacter(inputData, /:/g, b.cUnderscore);
+  var returnData = replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -720,8 +721,9 @@ var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, 
  * It actually could be made to match but we would have to combine the 2nd two parameters into one with a delimiter.
  * In practice this would be a mistake, but would be an acceptable solution if we find there are many additional needs for this kind of business rule.
  * @param {string} inputData A string that may or may not contain the specified characters that should be converted to another specified character.
- * @param {string} character2Find The character to be searched and replaced from the input string.
- * @param {string} character2Replace The character that should be used to replace the character specified for replacement from the input data.
+ * @param {array<string,string>} inputMetaData An array of data that contains 2 additional string parameters:
+ * inputMetaData[0] === character2Find - The character to be searched and replaced from the input string.
+ * inputMetaData[1] === character2Replace - The character that should be used to replace the character specified for replacement from the input data.
  * @return {string} The same as the input string but with specified characters converted to the other specified character.
  * @author Seth Hollingsead
  * @date 2020/02/03
@@ -730,21 +732,21 @@ var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, 
 
 exports.replaceColonWithUnderscore = replaceColonWithUnderscore;
 
-var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(inputData, character2Find, character2Replace) {
+var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.replaceCharacterWithCharacter function');
   // console.log('inputData is: ' + inputData);
-  // console.log('character2Find is: ' + character2Find);
-  // console.log('character2Replace is: ' + character2Replace);
+  // console.log('inputMetaData is: ' + JSON.stringify(inputMetaData));
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'replaceCharacterWithCharacter';
+  var functionName = s.creplaceCharacterWithCharacter;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'character2Find is: ' + character2Find);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'character2Replace is: ' + character2Replace);
+  var character2Find = inputMetaData[0];
+  var character2Replace = inputMetaData[1];
 
   if (!inputData && !character2Find && !character2Replace) {
     return false;
@@ -770,6 +772,8 @@ var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(input
  * @date 2020/02/03
  */
 
+
+exports.replaceCharacterWithCharacter = replaceCharacterWithCharacter;
 
 var cleanCarriageReturnFromString = function cleanCarriageReturnFromString(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -1132,7 +1136,7 @@ var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalD
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'substitutionCost is: ' + substitutionCost);
 
-      variation1[j + 1] = Math.min(deletionCost, insertionCost, substitutionCost);
+      variation1[j + 1] = math.min(deletionCost, insertionCost, substitutionCost);
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'variation1 value is: ' + variation1);
     }
@@ -1812,7 +1816,7 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.getFirstTopLevelFolderFromPath;
+  var functionName = s.cgetFirstTopLevelFolderFromPath;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -1849,6 +1853,149 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
 
 
   return returnData;
+};
+/**
+ * @function isOdd
+ * @description Determines if the input value is an odd number or not an odd number.
+ * @param {string} inputData The value that should be evaluated to determine if it is odd or not odd.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the value passed in is an Odd value or not an odd value.
+ * @author Seth Hollingsead
+ * @date 2020/06/24
+ * {@link https://stackoverflow.com/questions/5016313/how-to-determine-if-a-number-is-odd-in-javascript}
+ */
+
+
+exports.getFirstTopLevelFolderFromPath = getFirstTopLevelFolderFromPath;
+
+var isOdd = function isOdd(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.isOdd function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cisOdd;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (!inputData) {
+    return false;
+  }
+
+  var returnData = false;
+
+  if (math.isNumeric(inputData) === true) {
+    var inputValue = parseInt(inputData);
+    var result = inputValue % 2;
+    returnData = stringToBoolean(result.toString(), '');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.isOdd function');
+
+
+  return returnData;
+};
+/**
+ * @function isEven
+ * @description Determines if the input value is an even number or not an even number.
+ * @param {string} inputData The value that should be evaluated to determine if it is even or not even.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the value passed in is an even value or not an even value.
+ * @author Seth Hollingsead
+ * @date 2020/06/24
+ * {@link https://stackoverflow.com/questions/5016313/how-to-determine-if-a-number-is-odd-in-javascript}
+ * @NOTE This function isn't actually needed, as we can just invert our logic for calling isOdd, but I provided it here anyways for completeness.
+ */
+
+
+exports.isOdd = isOdd;
+
+var isEven = function isEven(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cisEven;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (!inputData) {
+    return false;
+  }
+
+  var returnData = false;
+
+  if (math.isNumeric(inputData) === true) {
+    var inputValue = parseInt(inputData);
+    var result = inputValue % 2; // Same as the Odd business rule, we just use the "!" to swap the true case to a false case and the false case to true, so it is logically inverted.
+
+    returnData = !stringToBoolean(result.toString(), '');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function replaceCharacterAtIndex
+ * @description Replaces a character at the specified index with another character.
+ * @param {string} inputData The string which should have the specified character changed, then returned.
+ * @param {array<integer,string>} inputMetaData An array with an integer of what index the character should be replaced,
+ * and a string with the character or characters that should be inserted at the specified index.
+ * @return {string} The modified string.
+ * @author Seth Hollingsead
+ * @date 2020/06/24
+ * {@link https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript}
+ */
+
+
+exports.isEven = isEven;
+
+var replaceCharacterAtIndex = function replaceCharacterAtIndex(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.replaceCharacterAtIndex function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.creplaceCharacterAtIndex;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (!inputData) {
+    return false;
+  }
+
+  var returnData = false;
+  var indexOfReplacement;
+  var stringToReplaceWith;
+
+  if (inputMetaData.length === 2) {
+    indexOfReplacement = inputMetaData[0];
+    stringToReplaceWith = inputMetaData[1];
+    var stringArray = inputData.split('');
+    stringArray.splice(indexOfReplacement, 1, stringToReplaceWith);
+    returnData = stringArray.join('');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.replaceCharacterAtIndex function');
+
+
+  return returnData;
 }; // ******************************************************
 // Internal functions
 // ******************************************************
@@ -1867,7 +2014,7 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
  */
 
 
-exports.getFirstTopLevelFolderFromPath = getFirstTopLevelFolderFromPath;
+exports.replaceCharacterAtIndex = replaceCharacterAtIndex;
 
 function doesArrayContainValue(array, value, myFunction) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));

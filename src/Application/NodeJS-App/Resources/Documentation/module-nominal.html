@@ -240,7 +240,8 @@
 
             
 
-            <td class="description last"><p>Not used for this command.</p></td>
+            <td class="description last"><p>Not used for this command.
+inputData[0] === 'about'</p></td>
         </tr>
 
     
@@ -311,7 +312,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line100">line 100</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -431,7 +432,18 @@
 
             <td class="description last"><p>An array that could actually contain anything,
 depending on what the user entered. But the function filters all of that internally and
-extracts the case the user has entered a business rule name and perhaps some rule inputs.</p></td>
+extracts the case the user has entered a business rule name and perhaps some rule inputs.
+inputData[0] === 'businessRule'
+inputData[1] === rule 1 (including arguments with secondary delimiter)
+inputData[2] === rule 2 (including arguments with secondary delimiter)
+inputData[n] === rule n (including arguments with secondary delimiter)
+NOTE: There are 2 ways this system can work, the user can either call each rule with it's own inputs,
+or the user can leverage the rule system itself to pass the outputs from rule 1 as inputs to rule 2, etc...
+This command will only always take the arguments for the first business rule as inputs and let the business rules system
+pass the outputs as inputs as discussed above.
+It is assumed if the user wanted to execute a sequence of business rules each with their own inputs,
+Then the user should use the command sequencer in combination with this function
+to call a series of business rules each with their own inputs.</p></td>
         </tr>
 
     
@@ -502,7 +514,7 @@ extracts the case the user has entered a business rule name and perhaps some rul
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line310">line 310</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line330">line 330</a>
     </li></ul></dd>
     
 
@@ -623,7 +635,10 @@ Then this command will enqueue that command that number of times to the command 
 
             <td class="description last"><p>An array that could actually contain anything,
 depending on what the user entered. But the function filters all of that internally and
-extracts the command that should be executed and the number of times it should be executed.</p></td>
+extracts the command that should be executed and the number of times it should be executed.
+inputData[0] === 'commandGenerator'
+inputData[1] === command String
+inputData[2] === number of times to enqueue the above command string</p></td>
         </tr>
 
     
@@ -694,7 +709,7 @@ extracts the command that should be executed and the number of times it should b
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line363">line 363</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line396">line 396</a>
     </li></ul></dd>
     
 
@@ -815,7 +830,11 @@ commands that should enqueued to the command queue.</p>
 
             <td class="description last"><p>An array that could actually contain anything,
 depending on what the user entered. But the function filters all of that internally and
-extracts the case the user has entered a list of commands that should be enqueued to the command queue.</p></td>
+extracts the case the user has entered a list of commands that should be enqueued to the command queue.
+inputData[0] === 'commandSequencer'
+inputData[1] === command string 1
+inputData[2] === command string 2
+inputData[n] === command string n</p></td>
         </tr>
 
     
@@ -886,7 +905,7 @@ extracts the case the user has entered a list of commands that should be enqueue
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line203">line 203</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line211">line 211</a>
     </li></ul></dd>
     
 
@@ -1004,7 +1023,8 @@ extracts the case the user has entered a list of commands that should be enqueue
 
             
 
-            <td class="description last"><p>String that should be echoed.</p></td>
+            <td class="description last"><p>String that should be echoed.
+inputData[0] === 'echoCommand'</p></td>
         </tr>
 
     
@@ -1193,7 +1213,8 @@ extracts the case the user has entered a list of commands that should be enqueue
 
             
 
-            <td class="description last"><p>Not used for this command.</p></td>
+            <td class="description last"><p>Not used for this command.
+inputData[0] === 'exit'</p></td>
         </tr>
 
     
@@ -1264,7 +1285,7 @@ extracts the case the user has entered a list of commands that should be enqueue
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line57">line 57</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -1383,7 +1404,8 @@ including both system defined commands &amp; client defined commands.</p>
 
             
 
-            <td class="description last"><p>Not used for this command.</p></td>
+            <td class="description last"><p>Not used for this command.
+inputData[0] = 'help'</p></td>
         </tr>
 
     
@@ -1454,7 +1476,7 @@ including both system defined commands &amp; client defined commands.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line157">line 157</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line163">line 163</a>
     </li></ul></dd>
     
 
@@ -1574,7 +1596,9 @@ including both system defined commands &amp; client defined commands.</p>
 
             <td class="description last"><p>An array that could really contain anything depending
 on what the user entered, but the function converts and filters out for a boolean
-True or False value internally to the function.</p></td>
+True or False value internally to the function.
+inputData[0] === 'name'
+inputData[1] === 'true|false' (optional)</p></td>
         </tr>
 
     
@@ -1645,7 +1669,7 @@ True or False value internally to the function.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line122">line 122</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line126">line 126</a>
     </li></ul></dd>
     
 
@@ -1767,7 +1791,9 @@ If no hive is specified then the entire D-data structure will be printed.</p>
             <td class="description last"><p>An array that could actually contain anything,
 depending on what the user entered. But the function filters all of that internally and
 extracts the case the user has entered a data hive name at the top level of the D-data structure.
-Examples: Configuration, Workflows, Colors, Commands, etc...</p></td>
+Examples: Configuration, Workflows, Colors, Commands, etc...
+inputData[0] === 'printDataHive'
+inputData[1] === dataHiveName</p></td>
         </tr>
 
     
@@ -1838,7 +1864,7 @@ Examples: Configuration, Workflows, Colors, Commands, etc...</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line280">line 280</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line298">line 298</a>
     </li></ul></dd>
     
 
@@ -1956,7 +1982,8 @@ Examples: Configuration, Workflows, Colors, Commands, etc...</p></td>
 
             
 
-            <td class="description last"><p>Not used for this command.</p></td>
+            <td class="description last"><p>Not used for this command.
+inputData[0] === 'version'</p></td>
         </tr>
 
     
@@ -2027,7 +2054,7 @@ Examples: Configuration, Workflows, Colors, Commands, etc...</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line78">line 78</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line80">line 80</a>
     </li></ul></dd>
     
 
@@ -2149,7 +2176,9 @@ Which will in-turn convert the list of commands in that workflow into commands t
 
             <td class="description last"><p>An array that could actually contain anything,
 depending on what the user entered. But the function filters all of that internally and
-extracts the case the user has entered a workflow name, that we should use to look up the workflow in the D-data structure.</p></td>
+extracts the case the user has entered a workflow name, that we should use to look up the workflow in the D-data structure.
+inputData[0] === 'workflow'
+inputData[1] === workflowName</p></td>
         </tr>
 
     
@@ -2220,7 +2249,7 @@ extracts the case the user has entered a workflow name, that we should use to lo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line246">line 246</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line262">line 262</a>
     </li></ul></dd>
     
 
@@ -2339,7 +2368,8 @@ including both system defined workflows &amp; client defined commands.</p>
 
             
 
-            <td class="description last"><p>Not used for this command.</p></td>
+            <td class="description last"><p>Not used for this command.
+inputData[0] === 'workflowHelp'</p></td>
         </tr>
 
     
@@ -2410,7 +2440,7 @@ including both system defined workflows &amp; client defined commands.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line180">line 180</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line187">line 187</a>
     </li></ul></dd>
     
 
@@ -2484,7 +2514,7 @@ including both system defined workflows &amp; client defined commands.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 23 2020 23:27:06 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 24 2020 22:53:58 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

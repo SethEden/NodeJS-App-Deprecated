@@ -40,6 +40,7 @@
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://mathjs.org/index.html|math}
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -50,6 +51,7 @@ import * as g from '../../Constants/generic.constants';
 import * as s from '../../Constants/system.constants';
 const _ = require('lodash');
 var path = require('path');
+var math = require('mathjs');
 
 /**
  * @function stringToBoolean
@@ -350,7 +352,7 @@ export const swapForwardSlashToBackSlash = function(inputData, inputMetaData) {
   if (!inputData) {
     return false;
   }
-  var returnData = replaceCharacterWithCharacter(inputData, /\//g, b.cBackSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\//g, b.cBackSlash]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -378,7 +380,7 @@ export const swapBackSlashToForwardSlash = function(inputData, inputMetaData) {
   if (!inputData) {
     return false;
   }
-  var returnData = replaceCharacterWithCharacter(inputData, /\\/g, b.cForwardSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\\/g, b.cForwardSlash]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('returnData is: ' + returnData);
@@ -405,7 +407,7 @@ export const swapDoubleForwardSlashToSingleForwardSlash = function(inputData, in
   if (!inputData) {
     return false;
   }
-  var returnData = replaceCharacterWithCharacter(inputData, /\/\//g, b.cForwardSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\/\//g, b.cForwardSlash]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -433,7 +435,7 @@ export const swapDoubleBackSlashToSingleBackSlash = function(inputData, inputMet
   if (!inputData) {
     return false;
   }
-  var returnData = replaceCharacterWithCharacter(inputData, /\\\\/g, b.cBackSlash);
+  var returnData = replaceCharacterWithCharacter(inputData, [/\\\\/g, b.cBackSlash]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('returnData is: ' + returnData);
@@ -452,7 +454,6 @@ export const swapDoubleBackSlashToSingleBackSlash = function(inputData, inputMet
  */
 export const getUserNameFromEmail = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cgetUserNameFromEmail is resolving as: ' + s.cgetUserNameFromEmail);
   var functionName = s.cgetUserNameFromEmail;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -478,7 +479,6 @@ export const getUserNameFromEmail = function(inputData, inputMetaData) {
  */
 export const replaceSpacesWithPlus = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.creplaceSpacesWithPlus is resolving as: ' + s.creplaceSpacesWithPlus);
   var functionName = s.creplaceSpacesWithPlus;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -487,7 +487,7 @@ export const replaceSpacesWithPlus = function(inputData, inputMetaData) {
     return false;
   }
   // var returnData = inputData.replace(/ /g, b.cPlus);
-  var returnData = replaceCharacterWithCharacter(inputData, / /g, b.cPlus);
+  var returnData = replaceCharacterWithCharacter(inputData, [/ /g, b.cPlus]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -513,7 +513,7 @@ export const replaceColonWithUnderscore = function(inputData, inputMetaData) {
     return false;
   }
   // var returnData == inputData.replace(/:/g, b.cUnderscore);
-  var returnData = replaceCharacterWithCharacter(inputData, /:/g, b.cUnderscore);
+  var returnData = replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -526,23 +526,24 @@ export const replaceColonWithUnderscore = function(inputData, inputMetaData) {
  * It actually could be made to match but we would have to combine the 2nd two parameters into one with a delimiter.
  * In practice this would be a mistake, but would be an acceptable solution if we find there are many additional needs for this kind of business rule.
  * @param {string} inputData A string that may or may not contain the specified characters that should be converted to another specified character.
- * @param {string} character2Find The character to be searched and replaced from the input string.
- * @param {string} character2Replace The character that should be used to replace the character specified for replacement from the input data.
+ * @param {array&lt;string,string>} inputMetaData An array of data that contains 2 additional string parameters:
+ * inputMetaData[0] === character2Find - The character to be searched and replaced from the input string.
+ * inputMetaData[1] === character2Replace - The character that should be used to replace the character specified for replacement from the input data.
  * @return {string} The same as the input string but with specified characters converted to the other specified character.
  * @author Seth Hollingsead
  * @date 2020/02/03
  */
-const replaceCharacterWithCharacter = function(inputData, character2Find, character2Replace) {
+export const replaceCharacterWithCharacter = function(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.replaceCharacterWithCharacter function');
   // console.log('inputData is: ' + inputData);
-  // console.log('character2Find is: ' + character2Find);
-  // console.log('character2Replace is: ' + character2Replace);
+  // console.log('inputMetaData is: ' + JSON.stringify(inputMetaData));
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'replaceCharacterWithCharacter';
+  var functionName = s.creplaceCharacterWithCharacter;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Find is: ' + character2Find);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'character2Replace is: ' + character2Replace);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let character2Find = inputMetaData[0];
+  let character2Replace = inputMetaData[1];
   if (!inputData &amp;&amp; !character2Find &amp;&amp; !character2Replace) {
     return false;
   }
@@ -812,7 +813,7 @@ export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData,
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'deletionCost is: ' + deletionCost);
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'insertionCost is: ' + insertionCost);
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'substitutionCost is: ' + substitutionCost);
-      variation1[j + 1] = Math.min(deletionCost, insertionCost, substitutionCost);
+      variation1[j + 1] = math.min(deletionCost, insertionCost, substitutionCost);
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'variation1 value is: ' + variation1);
     }
     let temp = variation1;
@@ -1301,7 +1302,7 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.getFirstTopLevelFolderFromPath;
+  var functionName = s.cgetFirstTopLevelFolderFromPath;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -1326,6 +1327,113 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.getFirstTopLevelFolderFromPath function');
+  return returnData;
+};
+
+/**
+ * @function isOdd
+ * @description Determines if the input value is an odd number or not an odd number.
+ * @param {string} inputData The value that should be evaluated to determine if it is odd or not odd.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the value passed in is an Odd value or not an odd value.
+ * @author Seth Hollingsead
+ * @date 2020/06/24
+ * {@link https://stackoverflow.com/questions/5016313/how-to-determine-if-a-number-is-odd-in-javascript}
+ */
+export const isOdd = function(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.isOdd function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cisOdd;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  var returnData = false;
+  if (math.isNumeric(inputData) === true) {
+    let inputValue = parseInt(inputData);
+    let result = inputValue % 2;
+    returnData = stringToBoolean(result.toString(), '');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.isOdd function');
+  return returnData;
+};
+
+/**
+ * @function isEven
+ * @description Determines if the input value is an even number or not an even number.
+ * @param {string} inputData The value that should be evaluated to determine if it is even or not even.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the value passed in is an even value or not an even value.
+ * @author Seth Hollingsead
+ * @date 2020/06/24
+ * {@link https://stackoverflow.com/questions/5016313/how-to-determine-if-a-number-is-odd-in-javascript}
+ * @NOTE This function isn't actually needed, as we can just invert our logic for calling isOdd, but I provided it here anyways for completeness.
+ */
+export const isEven = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cisEven;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  var returnData = false;
+  if (math.isNumeric(inputData) === true) {
+    let inputValue = parseInt(inputData);
+    let result = inputValue % 2;
+    // Same as the Odd business rule, we just use the "!" to swap the true case to a false case and the false case to true, so it is logically inverted.
+    returnData = !stringToBoolean(result.toString(), '');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function replaceCharacterAtIndex
+ * @description Replaces a character at the specified index with another character.
+ * @param {string} inputData The string which should have the specified character changed, then returned.
+ * @param {array&lt;integer,string>} inputMetaData An array with an integer of what index the character should be replaced,
+ * and a string with the character or characters that should be inserted at the specified index.
+ * @return {string} The modified string.
+ * @author Seth Hollingsead
+ * @date 2020/06/24
+ * {@link https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript}
+ */
+export const replaceCharacterAtIndex = function(inputData, inputMetaData) {
+  // console.log('BEGIN stringParsing.replaceCharacterAtIndex function');
+  // console.log('inputData is: ' + inputData);
+  // console.log('inputMetaData is: ' + inputMetaData);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.creplaceCharacterAtIndex;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  var returnData = false;
+  let indexOfReplacement;
+  let stringToReplaceWith;
+  if (inputMetaData.length === 2) {
+    indexOfReplacement = inputMetaData[0];
+    stringToReplaceWith = inputMetaData[1];
+    let stringArray = inputData.split('');
+    stringArray.splice(indexOfReplacement, 1, stringToReplaceWith);
+    returnData = stringArray.join('');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('returnData is: ' + returnData);
+  // console.log('END stringParsing.replaceCharacterAtIndex function');
   return returnData;
 };
 
@@ -1384,7 +1492,7 @@ function doesArrayContainValue(array, value, myFunction) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 23 2020 23:27:05 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 24 2020 22:53:58 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

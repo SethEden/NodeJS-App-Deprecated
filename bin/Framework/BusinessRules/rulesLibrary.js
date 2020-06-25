@@ -118,6 +118,12 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.removeXnumberOfFoldersFromEndOfPath(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetFirstTopLevelFolderFromPath, function (inputData, inputMetaData) {
     return stringParsing.getFirstTopLevelFolderFromPath(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisOdd, function (inputData, inputMetaData) {
+    return stringParsing.isOdd(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisEven, function (inputData, inputMetaData) {
+    return stringParsing.isEven(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.creplaceCharacterAtIndex, function (inputData, inputMetaData) {
+    return stringParsing.replaceCharacterAtIndex(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccreateNdigitStringFromNumber, function (inputData, inputMetaData) {
     return stringGeneration.createNdigitStringFromNumber(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength1, function (inputData, inputMetaData) {

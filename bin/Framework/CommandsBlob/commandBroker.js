@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _configurator = _interopRequireDefault(require("../Executrix/configurator"));
 
+var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"));
+
 var commands = _interopRequireWildcard(require("./commandsLibrary"));
 
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
@@ -204,16 +206,150 @@ function getCommandArgs(commandString, commandDelimiter) {
   var returnValue = false;
   var foundValidCommand = false;
   var commandArgsDelimiter = commandDelimiter;
+  var isOddRule = [];
+  var replaceCharacterAtIndexRule = [];
+  var replaceTildesWithSingleQuoteRule = [];
+  isOddRule[0] = s.cisOdd;
+  replaceCharacterAtIndexRule[0] = s.creplaceCharacterAtIndex;
+  replaceTildesWithSingleQuoteRule[0] = s.creplaceCharacterWithCharacter;
+
+  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
 
   if (commandDelimiter === null || commandDelimiter !== commandDelimiter || commandDelimiter === undefined) {
     commandArgsDelimiter = b.cSpace;
   }
 
   if (commandString.includes(commandArgsDelimiter) === true) {
-    returnValue = commandString.split(commandArgsDelimiter);
+    // NOTE: All commands that enqueue or execute commands need to pass through this function.
+    // There is a case where the user might pass a string with spaces or other code/syntax.
+    // So we need to split first by single character string delimiters and parse the
+    // non-string array elements to parse command arguments without accidently parsing string literal values as command arguments.
+    if (commandString.includes(b.cBackTickQuote) === true) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString contains either a singleQuote or a backTickQuote');
+
+      var preSplitCommandString;
+
+      if (commandString.includes(b.cBackTickQuote) === true) {
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString contains a singleQuote!'); // NOTE: We cannot actually just replace each single quote, we need to tag each single quote in pairs of 2.
+        // The first one should be post-tagged, i.e. replace "'" with "'~" and the second should be pre-tagged i.e. replace "'" with "~'".
+        // Then if there are more single quotes, the third post-tagged, i.e. replace "'" with "'~", etc...
+
+
+        var numberOfSingleQuotes = commandString.split(b.cBackTickQuote).length - 1; // Determine if the number of single quotes is odd or event?
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'About to call the rule broker to process on the number of single quotes and determine if it-be even or odd');
+
+        if (numberOfSingleQuotes >= 2 && _ruleBroker["default"].processRules(numberOfSingleQuotes, '', isOddRule) === false) {
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'numberOfSingleQuotes is >= 2 & the numberOfSingleQuotes is EVEN!!! YAY!!!');
+
+          var indexOfStringDelimiter;
+
+          for (var i = 0; i < numberOfSingleQuotes; i++) {
+            // Iterate over each one and if they are even or odd we will change how we replace each single quote character as described above.
+            if (i === 0) {
+              // Get the index of the first string delimiter.
+              indexOfStringDelimiter = commandString.indexOf(b.cBackTickQuote, 0);
+
+              _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'First index is: ' + indexOfStringDelimiter); // commandString.replace(b.cBackTickQuote, b.cBackTickQuote + b.cTilde)
+              // Rather than use the above, we will make a business rule to replace at index, the above replaces all instances and we don't want that!
+
+
+              commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
+
+              _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging the first string delimiter: ' + commandString);
+            } else {
+              indexOfStringDelimiter = commandString.indexOf(b.cBackTickQuote, indexOfStringDelimiter + 1);
+
+              _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Additional index is: ' + indexOfStringDelimiter); // Determine if it is odd or even.
+
+
+              if (_ruleBroker["default"].processRules(i.toString(), '', isOddRule) === true) {
+                // We are on the odd index, 1, 3, 5, etc...
+                _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'odd index');
+
+                commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
+
+                _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an odd string delimiter: ' + commandString);
+              } else {
+                // We are on the even index, 2, 4, 6, etc...
+                _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'even index');
+
+                commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, b.cTilde + b.cBackTickQuote], replaceCharacterAtIndexRule);
+
+                _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an even string delimiter: ' + commandString);
+              }
+            }
+          }
+
+          preSplitCommandString = commandString.split(b.cBackTickQuote); // Now we can check which segments of the array contain our Tilde character, since we used that to tag our single quotes.
+          // And the array element that contains the Tilde tag we will not split.
+          // ultimately everything needs to be returned as an array, make sure we trim the array elements so we don't get any empty array elements.
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'preSplitCommandString is: ' + JSON.stringify(preSplitCommandString));
+
+          for (var j = 0; j < preSplitCommandString.length; j++) {
+            var preSplitCommandStringElement = preSplitCommandString[j];
+            preSplitCommandStringElement = preSplitCommandStringElement.trim(); // Make sure to get rid of any white space on the ends of the string.
+
+            var postSplitCommandString = void 0;
+
+            if (j === 0) {
+              // Make sure we re-initialize our return value to an array, since it was set first to a boolean value.
+              returnValue = [];
+            }
+
+            if (preSplitCommandStringElement.includes(b.cTilde) === false) {
+              postSplitCommandString = preSplitCommandStringElement.split(commandArgsDelimiter);
+
+              for (var k = 0; k < postSplitCommandString.length; k++) {
+                if (postSplitCommandString[k] !== '') {
+                  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'postSplitCommandString[k] is: ' + JSON.stringify(postSplitCommandString[k]));
+
+                  returnValue.push(postSplitCommandString[k]);
+
+                  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + JSON.stringify(returnValue));
+                }
+              }
+
+              postSplitCommandString = []; // Clear it for the next time around the loop.
+            } else {
+              // NOTE: We cannot just push the quoted string array back onto the array. Well we might be able to,
+              // but if the last character on the last element of the returnValue array is a secondaryCommandArgsDelimiter
+              // then we need to just append our string to that array element, after we remove the tilde string tags,
+              // and replace them with our single quotes again.
+              if (returnValue[returnValue.length - 1].slice(-1) === secondaryCommandArgsDelimiter) {
+                preSplitCommandStringElement = _ruleBroker["default"].processRules(preSplitCommandStringElement, [/~/g, b.cBackTickQuote], replaceTildesWithSingleQuoteRule);
+                returnValue[returnValue.length - 1] = returnValue[returnValue.length - 1] + preSplitCommandStringElement;
+              } else {
+                _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'preSplitCommandStringElement is: ' + JSON.stringify(preSplitCommandStringElement));
+
+                returnValue.push(preSplitCommandStringElement); // Add the string now.
+              } // End else-clause: returnValue[returnValue.length - 1].slice(-1) === secondaryCommandArgsDelimiter
+
+
+              _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + JSON.stringify(returnValue));
+            } // End else-clause: preSplitCommandStringElement.includes(b.cTilde) === false
+
+          } // End for-loop: preSplitCommandString, j++
+
+        } // End if-condition: numberOfSingleQuotes >= 2 && ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false
+
+      } // End if-condition: commandString.includes(b.cBackTickQuote) === true
+      // We might need much additional logic to manage the case that the string contains multiple levels of commands with strings....in that case:
+      // The command system will probably need to implement A re-assignment of the string delimiter, also using the b.cBackTickQuote.
+      // I have started to lay out some of that logic above, but we are FAR from it, and there isn't any business need for it right now.
+      // So I will handle that case if & when I come to it.
+
+    } else {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Doing a straight split of the commandString: ' + commandString);
+
+      returnValue = commandString.split(commandArgsDelimiter);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + JSON.stringify(returnValue));
+    }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + JSON.stringify(returnValue));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
