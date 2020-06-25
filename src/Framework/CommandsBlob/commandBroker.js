@@ -167,15 +167,15 @@ function getCommandArgs(commandString, commandDelimiter) {
     // There is a case where the user might pass a string with spaces or other code/syntax.
     // So we need to split first by single character string delimiters and parse the
     // non-string array elements to parse command arguments without accidently parsing string literal values as command arguments.
-    if (commandString.includes(b.cSingleQuote) === true || commandString.includes(b.cBackTickQuote) === true) {
+    if (commandString.includes(b.cBackTickQuote) === true) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString contains either a singleQuote or a backTickQuote');
       let preSplitCommandString;
-      if (commandString.includes(b.cSingleQuote) === true) {
+      if (commandString.includes(b.cBackTickQuote) === true) {
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString contains a singleQuote!');
         // NOTE: We cannot actually just replace each single quote, we need to tag each single quote in pairs of 2.
         // The first one should be post-tagged, i.e. replace "'" with "'~" and the second should be pre-tagged i.e. replace "'" with "~'".
         // Then if there are more single quotes, the third post-tagged, i.e. replace "'" with "'~", etc...
-        let numberOfSingleQuotes = commandString.split(b.cSingleQuote).length - 1;
+        let numberOfSingleQuotes = commandString.split(b.cBackTickQuote).length - 1;
         // Determine if the number of single quotes is odd or event?
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'About to call the rule broker to process on the number of single quotes and determine if it-be even or odd');
         if (numberOfSingleQuotes >= 2 && ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false) {
@@ -185,30 +185,30 @@ function getCommandArgs(commandString, commandDelimiter) {
             // Iterate over each one and if they are even or odd we will change how we replace each single quote character as described above.
             if (i === 0) {
               // Get the index of the first string delimiter.
-              indexOfStringDelimiter = commandString.indexOf(b.cSingleQuote, 0);
+              indexOfStringDelimiter = commandString.indexOf(b.cBackTickQuote, 0);
               loggers.consoleLog(baseFileName + b.cDot + functionName, 'First index is: ' + indexOfStringDelimiter);
-              // commandString.replace(b.cSingleQuote, b.cSingleQuote + b.cTilde)
+              // commandString.replace(b.cBackTickQuote, b.cBackTickQuote + b.cTilde)
               // Rather than use the above, we will make a business rule to replace at index, the above replaces all instances and we don't want that!
-              commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cSingleQuote + b.cTilde], replaceCharacterAtIndexRule);
+              commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
               loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging the first string delimiter: ' + commandString);
             } else {
-              indexOfStringDelimiter = commandString.indexOf(b.cSingleQuote, indexOfStringDelimiter + 1);
+              indexOfStringDelimiter = commandString.indexOf(b.cBackTickQuote, indexOfStringDelimiter + 1);
               loggers.consoleLog(baseFileName + b.cDot + functionName, 'Additional index is: ' + indexOfStringDelimiter);
               // Determine if it is odd or even.
               if (ruleBroker.processRules(i.toString(), '', isOddRule) === true) {
                 // We are on the odd index, 1, 3, 5, etc...
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'odd index');
-                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter,  b.cSingleQuote + b.cTilde], replaceCharacterAtIndexRule);
+                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter,  b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an odd string delimiter: ' + commandString);
               } else {
                 // We are on the even index, 2, 4, 6, etc...
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'even index');
-                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cTilde + b.cSingleQuote], replaceCharacterAtIndexRule);
+                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cTilde + b.cBackTickQuote], replaceCharacterAtIndexRule);
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an even string delimiter: ' + commandString);
               }
             }
           }
-          preSplitCommandString = commandString.split(b.cSingleQuote);
+          preSplitCommandString = commandString.split(b.cBackTickQuote);
           // Now we can check which segments of the array contain our Tilde character, since we used that to tag our single quotes.
           // And the array element that contains the Tilde tag we will not split.
           // ultimately everything needs to be returned as an array, make sure we trim the array elements so we don't get any empty array elements.
@@ -237,7 +237,7 @@ function getCommandArgs(commandString, commandDelimiter) {
               // then we need to just append our string to that array element, after we remove the tilde string tags,
               // and replace them with our single quotes again.
               if (returnValue[returnValue.length - 1].slice(-1) === secondaryCommandArgsDelimiter) {
-                preSplitCommandStringElement = ruleBroker.processRules(preSplitCommandStringElement, [/~/g, b.cSingleQuote], replaceTildesWithSingleQuoteRule);
+                preSplitCommandStringElement = ruleBroker.processRules(preSplitCommandStringElement, [/~/g, b.cBackTickQuote], replaceTildesWithSingleQuoteRule);
                 returnValue[returnValue.length - 1] = returnValue[returnValue.length - 1] + preSplitCommandStringElement;
               } else {
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'preSplitCommandStringElement is: ' + JSON.stringify(preSplitCommandStringElement));
@@ -247,7 +247,7 @@ function getCommandArgs(commandString, commandDelimiter) {
             } // End else-clause: preSplitCommandStringElement.includes(b.cTilde) === false
           } // End for-loop: preSplitCommandString, j++
         } // End if-condition: numberOfSingleQuotes >= 2 && ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false
-      } // End if-condition: commandString.includes(b.cSingleQuote) === true
+      } // End if-condition: commandString.includes(b.cBackTickQuote) === true
       // We might need much additional logic to manage the case that the string contains multiple levels of commands with strings....in that case:
       // The command system will probably need to implement A re-assignment of the string delimiter, also using the b.cBackTickQuote.
       // I have started to lay out some of that logic above, but we are FAR from it, and there isn't any business need for it right now.

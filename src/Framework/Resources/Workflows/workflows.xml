@@ -14,5 +14,5 @@
   <Workflow Name="swapDoubleForwardSlashToSingleForwardSlash" Value="cmdgen bizrul,swapDoubleForwardSlashToSingleForwardSlash,http:// 4"/>
   <Workflow Name="swapDoubleBackSlashToSingleBackSlash" Value="cmdgen bizrul,swapDoubleBackSlashToSingleBackSlash,http:\\ 4"/>
   <Workflow Name="getUserNameFromEmail" Value="cmdgen bizrul,getUserNameFromEmail,Iceversaka@hotmail.com 4"/>
-  <Workflow Name="replaceSpacesWithPlus" Value="cmdgen bizRul,replaceSpacesWithPlus,'Hello My Name Is: Blaaa' 4"/>
+  <Workflow Name="replaceSpacesWithPlus" Value="cmdgen bizRul,replaceSpacesWithPlus,`Hello My Name Is: Blaaa` 4"/>
 </CommandWorkflows>
