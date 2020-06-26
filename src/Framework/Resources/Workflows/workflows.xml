@@ -15,4 +15,28 @@
   <Workflow Name="swapDoubleBackSlashToSingleBackSlash" Value="cmdgen bizrul,swapDoubleBackSlashToSingleBackSlash,http:\\ 4"/>
   <Workflow Name="getUserNameFromEmail" Value="cmdgen bizrul,getUserNameFromEmail,Iceversaka@hotmail.com 4"/>
   <Workflow Name="replaceSpacesWithPlus" Value="cmdgen bizRul,replaceSpacesWithPlus,`Hello My Name Is: Blaaa` 4"/>
+  <Workflow Name="replaceColonWithUnderscore" Value="cmdgen bizRul,replaceColonWithUnderscore,Ok:So:Give_this_a:try 4"/>
+  <Workflow Name="replaceCharacterWithCharacter" Value="cmdgen bizRul,replaceCharacterWithCharacter,What+is+the+answer+to+life+the+universe+and+everything,regEx:\+:flags:g|= 4"/>
+  <Workflow Name="cleanCarriageReturnFromString" Value="cmdgen bizRul,cleanCarriageReturnFromString,`This
+    is
+    a
+    string
+    with
+    many
+    newline
+    characters.` 4"/>
+  <Workflow Name="convertStringToLowerCase" Value="cmdgen bizRul,convertStringToLowerCase,GENERATERANDOMLOWERCASETEXTWITHSPECIALCHARACTERBYLENGTH123456!@#$%^ 4"/>
+  <Workflow Name="convertStringToUpperCase" Value="cmdgen bizRul,convertStringToUpperCase,generaterandomlowercasetextwithspecialcharacterbylength123456!@#$%^ 4"/>
+  <Workflow Name="getFileNameFromPath" Value="cmdgen bizRul,getFileNameFromPath,C:\NodeJS-App\src\Application\NodeJS-App\application.js 4"/>
+  <Workflow Name="getFileExtension" Value="cmdgen bizRul,getFileExtension,C:\NodeJS-App\src\Application\NodeJS-App\application.js 4"/>
+  <Workflow Name="removeDotFromFileExtension" Value="cmdgen bizRul,removeDotFromFileExtension,.exe 4"/>
+  <Workflow Name="removeFileExtensionFromFileName" Value="cmdgen bizRul,removeFileExtensionFromFileName,application.js 4"/>
+  <Workflow Name="aggregateNumericalDifferenceBetweenTwoStrings" Value="cmdgen bizRul,aggregateNumericalDifferenceBetweenTwoStrings,1234string,string432 4"/>
+  <Workflow Name="convertCamelCaseStringToArray" Value="cmdgen bizRul,convertCamelCaseStringToArray,TheAnswerToLifeTheUniverseAndEverythingIs42 4"/>
+  <Workflow Name="convertArrayToCamelCaseString" Value="cmdgen bizRul,convertArrayToCamelCaseString,[the|answer|to|life|the|universe|and|everything|is|42] 4"/>
+  <Workflow Name="mapWordToCamelCaseWord" Value="cmdgen bizRul,mapWordToCamelCaseWord,supercalafragilisticexpealidoshious 4"/>
+  <Workflow Name="simplifyAndConsolidateString" Value="cmdgen bizRul,simplifyAndConsolidateString,11UpberDriver321CodeClearance0x#0000FF-akaBlue 4"/>
+  <Workflow Name="compareSimplifiedAndConsolidatedStrings" Value="cmdgen bizRul,compareSimplifiedAndConsolidatedStrings,string1,string1 4"/>
+  <Workflow Name="doesArrayContainLowerCaseConsolidatedStrings" Value="cmdgen bizRul,doesArrayContainLowerCaseConsolidatedStrings,[the|answer|to|life|the|universe|and|everything|is|42],everything 4"/>
+  <Workflow Name="stringParsing" Value="cmdSeq wrkflo,stringToBoolean wrkflo,stringToDataType wrkflo,determineObjectDataType wrkflo,isBoolean wrkflo,isInteger wrkflo,isFloat wrkflo,isString wrkflo,singleQuoteSwapAfterEquals wrkflo,swapForwardSlashToBackSlash wrkflo,swapBackSlashToForwardSlash wrkflo,swapDoubleForwardSlashToSingleForwardSlash wrkflo,swapDoubleBackSlashToSingleBackSlash wrkflo,getUserNameFromEmail wrkflo,replaceSpacesWithPlus wrkflo,replaceColonWithUnderscore wrkflo,replaceCharacterWithCharacter wrkflo,cleanCarriageReturnFromString wrkflo,convertStringToLowerCase wrkflo,convertStringToUpperCase wrkflo,getFileNameFromPath wrkflo,getFileExtension wrkflo,removeDotFromFileExtension wrkflo,removeFileExtensionFromFileName wrkflo,aggregateNumericalDifferenceBetweenTwoStrings wrkflo,convertCamelCaseStringToArray wrkflo,convertArrayToCamelCaseString wrkflo,mapWordToCamelCaseWord wrkflo,simplifyAndConsolidateString wrkflo,compareSimplifiedAndConsolidatedStrings wrkflo,doesArrayContainLowerCaseConsolidatedStrings"/>
 </CommandWorkflows>

@@ -476,7 +476,6 @@ export const replaceSpacesWithPlus = function(inputData, inputMetaData) {
  */
 export const replaceColonWithUnderscore = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.creplaceColonWithUnderscore is resolving as: ' + s.creplaceColonWithUnderscore);
   var functionName = s.creplaceColonWithUnderscore;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -750,7 +749,6 @@ export const getValueFromAssignmentOperationString = function(inputData, inputMe
  */
 export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.caggregateNumericalDifferenceBetweenTwoStrings is resolving as: ' + s.caggregateNumericalDifferenceBetweenTwoStrings);
   var functionName = s.caggregateNumericalDifferenceBetweenTwoStrings;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -806,10 +804,12 @@ export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData,
  * @return {array<string>} The array of words that were composed in the original string.
  * @author Seth Hollingsead
  * @date 2020/02/10
+ * @NOTE Might not work so well with numbers as part of the string, they are not treated as capital letters.
+ * We might need to do some refactoring of this function if
+ * mixed numbers and camel case strings ever becomes a requirement as input to this function.
  */
 export const convertCamelCaseStringToArray = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertCamelCaseStringToArray is resolving as: ' + s.cconvertCamelCaseStringToArray);
   var functionName = s.cconvertCamelCaseStringToArray;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -817,13 +817,13 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
   var returnData;
   let caps = [];
   for (let i = 1; i < inputData.length; i++) {
-    if (g.cUpperCaseEnglishAlphabet.includes(str.charAt(i))) { caps.push(i); }
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
   }
   if (caps.length > 0) {
     let last = 0;
     let decomposedString = [];
     for (let j = 0; j < caps.length; j++) {
-      decomposedString.push(inputData.sice(last, caps[j]).toLowerCase());
+      decomposedString.push(inputData.slice(last, caps[j]).toLowerCase());
       last = caps[j];
     }
     decomposedString.push(inputData.slice(last).toLowerCase());
@@ -847,13 +847,12 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
  */
 export const convertArrayToCamelCaseString = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertArrayToCamelCaseString is resolving as: ' + s.cconvertArrayToCamelCaseString);
   var functionName = s.cconvertArrayToCamelCaseString;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData;
-  returnData = inputData.map((key, index) => mapWordToCamelCase(key, index));
+  returnData = inputData.map((key, index) => mapWordToCamelCaseWord(key, index));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -870,17 +869,12 @@ export const convertArrayToCamelCaseString = function(inputData, inputMetaData) 
  */
 export const mapWordToCamelCaseWord = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cmapWordToCamelCaseWord is resolving as: ' + s.cmapWordToCamelCaseWord);
   var functionName = s.cmapWordToCamelCaseWord;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData;
-  if (inputMetaData === 0) {
-    returnData = inputData;
-  } else {
-    returnData = inputData.replace(/^./, character => character.toUpperCase());
-  }
+  returnData = inputData.replace(/^./, character => character.toUpperCase());
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -894,10 +888,14 @@ export const mapWordToCamelCaseWord = function(inputData, inputMetaData) {
  * @return {string} A string that has been simplified and consolidated by converting to lower case, removing all digits, symbols and white space.
  * @author Seth Hollingsead
  * @date 2020/02/10
+ * @NOTE I think this function is not completely working as expected, probably something to do with that regular expression.
+ * Input was: 11UpberDriver321CodeClearance0x#0000FF-akaBlue
+ * Output was: 11upberdriver321codeclearance0x0000ffakablue
+ * As you can see there are still some numbers coming through.
+ * Might need to revisit this one when time allows, and if there is ever a business need again.
  */
 export const simplifyAndConsolidateString = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.csimplifyAndConsolidateString is resolving as: ' + s.csimplifyAndConsolidateString);
   var functionName = s.csimplifyAndConsolidateString;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -920,7 +918,6 @@ export const simplifyAndConsolidateString = function(inputData, inputMetaData) {
  */
 export const compareSimplifiedAndConsolidatedStrings = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.ccompareSimplifiedAndConsolidatedStrings is resolving as: ' + s.ccompareSimplifiedAndConsolidatedStrings);
   var functionName = s.ccompareSimplifiedAndConsolidatedStrings;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -955,6 +952,71 @@ export const doesArrayContainLowerCaseConsolidatedString = function(inputData, i
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stringDelta value is: ' + stringDelta);
 
   returnData = doesArrayContainValue(inputData, inputMetaData, stringDelta);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData
+};
+
+/**
+ * @function doesArrayContainCharacter
+ * @description Parses through all the elements of an array and determines if any one of them contains the input character.
+ * @param {string|boolean|integer|object} inputData The character that should be searched for in the array of elements.
+ * @param {array<string|boolean|integer|object>} inputMetaData The array that should be searched for the specified character/value/etc...
+ * @return {boolean} True or False to indicate if the value was found or not found.
+ * @author Seth Hollingsead
+ * @date 2020/06/25
+ */
+export const doesArrayContainCharacter = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cdoesArrayContainCharacter;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var returnData = false;
+  if (!inputData && !inputMetaData) {
+    return false;
+  }
+  for (let i = 0; i < inputMetaData.length; i++) {
+    let arrayElement = inputMetaData[i];
+    if (arrayElement.includes(inputData) === true) {
+      returnData = true;
+      break;
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData
+};
+
+/**
+ * @function removeCharacterFromArray
+ * @description Removes all instances of a character or value from all array elements.
+ * @param {string|integer|boolean|float|object} inputData The character, integer, boolean, float or object
+ * that should be removed from all instances of the input array.
+ * @param {array<string|boolean|integer|object>} inputMetaData The array from which all instances of the input character, integer, etc... should be removed.
+ * @return {array<string|boolean|integer|object>} The array after having the specified character removed from all elements of the input array.
+ * @author Seth Hollingsead
+ * @date 2020/06/25
+ */
+export const removeCharacterFromArray = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cremoveCharacterFromArray;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  var returnData = false;
+  if (!inputData && !inputMetaData) {
+    return false;
+  }
+  for (let i = 0; i < inputMetaData.length; i++) {
+    let arrayElement = inputMetaData[i];
+    if (arrayElement.includes(inputData) === true) {
+      // replaceCharacterWithCharacter Use this to parse the string and remove all characters that match.
+      // replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
+      inputMetaData[i] = replaceCharacterWithCharacter(arrayElement, [RegExp('\\' + inputData, 'g'), '']);
+    }
+  }
+  returnData = inputMetaData;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData

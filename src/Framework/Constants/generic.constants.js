@@ -317,6 +317,9 @@ export const cator = b.cat + b.cor;
 export const cdex = b.cde + b.cx;
 export const call = b.cal + b.cl;
 export const cAll = b.cAl + b.cl;
+export const creg = b.cre + b.cg;
+export const cReg = b.cRe + b.cg;
+export const ctain = b.cta + b.cin;
 
 // Boolean strings
 export const cTrue = b.cT + crue;
