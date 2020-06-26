@@ -18,6 +18,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import configurator from '../../Executrix/configurator';
+import lexical from '../../Executrix/lexical';
 import commandBroker from '../commandBroker';
 import ruleBroker from '../../BusinessRules/ruleBroker';
 import workflowBroker from '../../Executrix/workflowBroker';
@@ -251,7 +252,7 @@ export const commandSequencer = function(inputData, inputMetaData) {
       }
       queue.enqueue(s.cCommandQueue, currentCommand);
     } else {
-      console.log('WARNING, The specified command was not found, please enter a valid command and try again.');
+      console.log('WARNING: nominal.commandSequencer: The specified command was not found, please enter a valid command and try again.');
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -286,7 +287,7 @@ export const workflow = function(inputData, inputMetaData) {
   if (workflowValue !== false) {
     queue.enqueue(s.cCommandQueue, workflowValue);
   } else {
-    console.log('WARNING: The specified workflow: ' + workflowName + b.cComa +
+    console.log('WARNING: nominal.workflow: The specified workflow: ' + workflowName + b.cComa +
     ' was not found in either the system defined workflows, or client defined workflows.' +
     ' Please enter a valid workflow name and try again.');
   }
@@ -358,190 +359,32 @@ export const businessRule = function(inputData, inputMetaData) {
   var returnData = true;
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
   let rules = [];
+  let ruleInputData, ruleInputMetaData;
+
   let argsArrayContainsCharacterRule = [];
   let removeBracketsFromArgsArrayRule = [];
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
   removeBracketsFromArgsArrayRule[0] = s.cremoveCharacterFromArray;
   let addedARule = false;
-  let ruleInputData, ruleInputMetaData;
+
   // First go through each rule that should be executed and determine if
   // there are any inputs that need to be passed into the business rule.
   for (let i = 1; i < inputData.length; i++) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Begin the i-th iteration of the inputData array. i is: ' + i);
-    let currentRule = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentRule is: ' + JSON.stringify(currentRule));
+    let currentRuleArg = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentRule is: ' + JSON.stringify(currentRuleArg));
     let ruleArgs = [];
-    if (currentRule.includes(secondaryCommandArgsDelimiter) === true) {
-      ruleArgs = currentRule.split(secondaryCommandArgsDelimiter);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleArgs is: ' + JSON.stringify(ruleArgs));
-      let argsArrayContainsOpenBracket = ruleBroker.processRules(b.cOpenBracket, ruleArgs, argsArrayContainsCharacterRule);
-      let argsArrayContainsCloseBracket = ruleBroker.processRules(b.cCloseBracket, ruleArgs, argsArrayContainsCharacterRule);
-      if (argsArrayContainsOpenBracket === false || argsArrayContainsCloseBracket === false) {
-        // if (i === 1) { // Only get the rule args if it's the first business rule, see note above in the header.
-          // console.log('We are processing the first argument in the array of inputData');
-          if (i === 1) {
-            if (addedARule === false) {
-              loggers.consoleLog(baseFileName + b.cDot + functionName, 'Adding the currentRule to the rules array: ' + currentRule);
-              rules[i - 1] = currentRule;
-              addedARule = true;
-              loggers.consoleLog(baseFileName + b.cDot + functionName, 'rules now contains: ' + JSON.stringify(rules));
-            }
-          } else if (i === 2) {
-            loggers.consoleLog(baseFileName + b.cDot + functionName, 'Adding intpuData[i] to the ruleInputData');
-            ruleInputData = inputData[i];
-          } else if (i === 3) {
-            loggers.consoleLog(baseFileName + b.cDot + functionName, 'Processing the 3rd inputData argument');
-            let argsArrayContainsRegEx1 = ruleBroker.processRules(s.cregEx, ruleArgs, argsArrayContainsCharacterRule);
-            let argsArrayContainsRegEx2 = ruleBroker.processRules(s.cRegEx, ruleArgs, argsArrayContainsCharacterRule);
-            let argsArrayContainsColon = ruleBroker.processRules(b.cColon, ruleArgs, argsArrayContainsCharacterRule);
-            if ((ruleArgs.length > 0 && argsArrayContainsRegEx1 === true || argsArrayContainsRegEx2 === true) && argsArrayContainsColon === true) {
-              // We need to combine all additional parameters into a separate array, because we will pass that array as the 2nd argument.
-              ruleInputMetaData = [] // Re-initialize it as an array, because we will be adding all the remaining arguments to it.
-              for (let j = 0; j < ruleArgs.length; j++) {
-                loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleArgs[j] is: ' + JSON.stringify(ruleArgs[j]));
-                if ((ruleArgs[j].includes(s.cregEx) === true || ruleArgs[j].includes(s.cRegEx) === true) && ruleArgs[j].includes(b.cColon) === true) {
-                  // Then we need to split this argument after the colon, and evaluate the second array element as a regular expression,
-                  // then add that regular expression to the array.
-                  let regExArray = ruleArgs[j].split(b.cColon);
-                  let regExValue, regExFlags;
-                  loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExArray is: ' + JSON.stringify(regExArray));
-                  for (let k = 0; k < regExArray.length; k++) {
-                    if (regExArray[k] === s.cregEx || regExArray[k] === s.cRegEx) {
-                      k++;
-                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression is: ' + regExArray[k]);
-                      regExValue = regExArray[k];
-                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExValue is: ' + regExValue);
-                    } else if (regExArray[k] === s.cflags || regExArray[k] === s.cFlags) {
-                      k++;
-                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression flags are: ' + regExArray[k]);
-                      regExFlags = regExArray[k];
-                      loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExFlags is: ' + regExFlags);
-                    }
-                  }
-                  let regularExpression = new RegExp(regExValue, regExFlags);
-                  ruleInputMetaData.push(regularExpression);
-                } else {
-                  ruleInputMetaData.push(ruleArgs[j]);
-                }
-              }
-            } else {
-              ruleInputMetaData = currentRule;
-            }
-          }
-          // if (ruleArgs.length === 2) {
-          //   ruleInputData = ruleArgs[1];
-          //   ruleInputMetaData = '';
-          // } else if (ruleArgs.length === 3) {
-          //   ruleInputData = ruleArgs[1];
-          //   ruleInputMetaData = ruleArgs[2];
-          // } else {
-          //   ruleInputData = ruleArgs[1];
-          //   // We need to combine all additional parameters into a separate array, because we will pass that array as the 2nd argument.
-          //   ruleInputMetaData = []; // Re-initialize it as an array, because we will be adding all the remaining arguments to it.
-          //   for (let j = 2; j < ruleArgs.length; j++) {
-          //     loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleArgs[j] is: ' + JSON.stringify(ruleArgs[j]));
-          //     if ((ruleArgs[j].includes(s.cregEx) === true || ruleArgs[j].includes(s.cRegEx) === true) && ruleArgs[j].includes(b.cColon) === true) {
-          //       // Then we need to split this argument after the colon, and evaulate the second array element as a regular expression,
-          //       // then add that regular expression to the array.
-          //       let regExArray = ruleArgs[j].split(b.cColon);
-          //       let regExValue, regExFlags;
-          //       loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExArray is: ' + JSON.stringify(regExArray));
-          //       for (let k = 0; k < regExArray.length; k++) {
-          //         if (regExArray[k] === s.cregEx || regExArray[k] === s.cRegEx) {
-          //           k++;
-          //           loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression is: ' + regExArray[k]);
-          //           regExValue = regExArray[k];
-          //           loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExValue is: ' + regExValue);
-          //         } else if (regExArray[k] === s.cflags || regExArray[k] === s.cFlags) {
-          //           k++;
-          //           loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression flags are: ' + regExArray[k]);
-          //           regExFlags = regExArray[k];
-          //           loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExFlags is: ' + regExFlags);
-          //         }
-          //       }
-          //       let regularExpression = new RegExp(regExValue, regExFlags);
-          //       ruleInputMetaData.push(regularExpression);
-          //     } else {
-          //       ruleInputMetaData.push(ruleArgs[j]);
-          //     } // End else-clause: ruleArgs[j].includes(s.cRegEx) === true && ruleArgs[j].includes(s.cColon) === true
-          //   } // End for-loop: let j = 2; j < ruleArgs.length; j++
-          // } // End else-clause: ruleArgs.length === 2
-        // } // End if-condition: i === 1
-      } else {
-        // First we need to remove all instances of the "[" & "]" from the array.
-        if (argsArrayContainsOpenBracket === true) {
-          ruleArgs = ruleBroker.processRules(b.cOpenBracket, ruleArgs, removeBracketsFromArgsArrayRule);
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleArgs after attempting to remove an open bracket from all array elements is: ' + JSON.stringify(ruleArgs));
-        }
-        if (argsArrayContainsCloseBracket === true) {
-          ruleArgs = ruleBroker.processRules(b.cCloseBracket, ruleArgs, removeBracketsFromArgsArrayRule);
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleArgs after attempting to remove an close bracket from all array elements is: ' + JSON.stringify(ruleArgs));
-        }
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'secondaryCommandArgsDelimiter is: ' + secondaryCommandArgsDelimiter);
-        if (ruleArgs[0].includes(secondaryCommandArgsDelimiter) === true) {
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleArgs contains the delimiter, lets split it!');
-          ruleInputData = ruleArgs[0].split(secondaryCommandArgsDelimiter);
-        } else {
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'Looks like we are just adding the ruleArgs directly to the ruleInputData, no additional parsing!!');
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'Check manually if the ruleArgs is an array: ' + Array.isArray(ruleArgs));
-          ruleInputData = ruleArgs; // Just all everything, since that what this rule will take.
-        }
-      }
-
-      if (addedARule === false) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Adding the 0th ruleArgs element to rules[i - 1]: ' + ruleArgs[0]);
-        rules[i - 1] = ruleArgs[0];
-        addedARule = true;
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'rules now contains: ' + JSON.stringify(rules));
-      }
-    } else {
-      // Again, see note above, we only want to add the first argument to the rules.
-      if (i === 1 && addedARule === false) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Adding the currentRule to the rules array: ' + currentRule);
-        rules[i - 1] = currentRule;
-        addedARule = true;
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'rules now contains: ' + JSON.stringify(rules));
-      } else if (i === 2) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Adding intpuData[i] to the ruleInputData');
-        ruleInputData = inputData[i];
-      } else if (i === 3) {
-        let argsArrayContainsRegEx1 = ruleBroker.processRules(s.cregEx, ruleArgs, argsArrayContainsCharacterRule);
-        let argsArrayContainsRegEx2 = ruleBroker.processRules(s.cRegEx, ruleArgs, argsArrayContainsCharacterRule);
-        let argsArrayContainsColon = ruleBroker.processRules(b.cColon, ruleArgs, argsArrayContainsCharacterRule);
-        if ((ruleArgs.length > 0 && argsArrayContainsRegEx1 === true || argsArrayContainsRegEx2 === true) && argsArrayContainsColon === true) {
-          // We need to combine all additional parameters into a separate array, because we will pass that array as the 2nd argument.
-          ruleInputMetaData = [] // Re-initialize it as an array, because we will be adding all the remaining arguments to it.
-          for (let j = 0; j < ruleArgs.length; j++) {
-            loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleArgs[j] is: ' + JSON.stringify(ruleArgs[j]));
-            if ((ruleArgs[j].includes(s.cregEx) === true || ruleArgs[j].includes(s.cRegEx) === true) && ruleArgs[j].includes(b.cColon) === true) {
-              // Then we need to split this argument after the colon, and evaluate the second array element as a regular expression,
-              // then add that regular expression to the array.
-              let regExArray = ruleArgs[j].split(b.cColon);
-              let regExValue, regExFlags;
-              loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExArray is: ' + JSON.stringify(regExArray));
-              for (let k = 0; k < regExArray.length; k++) {
-                if (regExArray[k] === s.cregEx || regExArray[k] === s.cRegEx) {
-                  k++;
-                  loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression is: ' + regExArray[k]);
-                  regExValue = regExArray[k];
-                  loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExValue is: ' + regExValue);
-                } else if (regExArray[k] === s.cflags || regExArray[k] === s.cFlags) {
-                  k++;
-                  loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression flags are: ' + regExArray[k]);
-                  regExFlags = regExArray[k];
-                  loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExFlags is: ' + regExFlags);
-                }
-              }
-              let regularExpression = new RegExp(regExValue, regExFlags);
-              ruleInputMetaData.push(regularExpression);
-            } else {
-              ruleInputMetaData.push(ruleArgs[j]);
-            }
-          }
-        } else {
-          ruleInputMetaData = currentRule;
-        }
-      }
+    if (i === 1) {
+      rules = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 2 && inputData.length <= 4) {
+      ruleInputData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 2 && inputData.length > 4) {
+      ruleInputData = lexical.parseBusinessRuleArgument(inputData, i, true);
+    } else if (i === 3 && inputData.length <= 4) {
+      ruleInputMetaData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 3 && inputData.length > 4) {
+      // In this case all of the arguments will have been combined into a single array and added to the ruleInputData.
+      ruleInputMetaData = '';
     }
   }
 
@@ -610,13 +453,13 @@ export const commandGenerator = function(inputData, inputMetaData) {
           queue.enqueue(s.cCommandQueue, commandString);
         }
       } else {
-        console.log('WARNING: Must enter a number greater than 0, number entered: ' + numberOfCommands);
+        console.log('WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered: ' + numberOfCommands);
       }
     } else {
-      console.log('WARNING: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
+      console.log('WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
     }
   } else {
-    console.log('WARNING, The specified command: ' + commandString +
+    console.log('WARNING: nominal.commandGenerator: The specified command: ' + commandString +
     ' was not found, please enter a valid command and try again.');
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

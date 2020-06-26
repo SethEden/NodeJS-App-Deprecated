@@ -154,6 +154,20 @@
           <ConfigurationElement Name="fileBroker@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="fileBroker@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
+          <ConfigurationElement Name="lexical" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="lexical@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="lexical@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="lexical@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="lexical@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="lexical@ModuleFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="lexical@FunctionFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="lexical@MessageFontColor" Type="Default" Value="Red" Version="3"/>
+          <ConfigurationElement Name="lexical@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="lexical@ModuleFontBackgroundColor" Type="Default" Value="100,100,100" Version="3"/>
+          <ConfigurationElement Name="lexical@FunctionFontBackgroundColor" Type="Default" Value="100,100,100" Version="3"/>
+          <ConfigurationElement Name="lexical@MessageFontBackgroundColor" Type="Default" Value="100,100,100" Version="3"/>
+          <ConfigurationElement Name="lexical@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
           <ConfigurationElement Name="timers" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="timers@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="timers@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -1009,6 +1023,76 @@
           <ConfigurationElement Name="fileBroker.copyFolderRecursiveSync@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.copyFolderRecursiveSync@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.copyFolderRecursiveSync@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseBusinessRuleArgument@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="lexical.analyzeArgument" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeArgument@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.analyzeForRegularExpression@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsRegularExpression@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="lexical.parseArgumentAsArray" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="lexical.parseArgumentAsArray@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="timers.getNowMoment" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="timers.getNowMoment@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

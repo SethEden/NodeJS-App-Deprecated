@@ -942,7 +942,6 @@ export const compareSimplifiedAndConsolidatedStrings = function(inputData, input
  */
 export const doesArrayContainLowerCaseConsolidatedString = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cdoesArrayContainLowerCaseConsolidatedString is resolving as: ' + s.cdoesArrayContainLowerCaseConsolidatedString);
   var functionName = s.cdoesArrayContainLowerCaseConsolidatedString;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -1013,7 +1012,7 @@ export const removeCharacterFromArray = function(inputData, inputMetaData) {
     if (arrayElement.includes(inputData) === true) {
       // replaceCharacterWithCharacter Use this to parse the string and remove all characters that match.
       // replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
-      inputMetaData[i] = replaceCharacterWithCharacter(arrayElement, [RegExp('\\' + inputData, 'g'), '']);
+      inputMetaData[i] = replaceCharacterWithCharacter(arrayElement, [RegExp('\\' + inputData, b.cg), '']);
     }
   }
   returnData = inputMetaData;
