@@ -67,6 +67,12 @@ export const curl = b.cur + b.cl; // 'url';
 export const cURL = b.cUR + b.cL;
 export const cNth = b.cN + b.cth;
 export const cnth = b.cn + b.cth;
+export const cregEx = g.creg + b.cEx;
+export const cRegEx = g.cReg + b.cEx;
+export const cflag = b.cfl + b.cag;
+export const cFlag = b.cFl + b.cag;
+export const cflags = cflag + b.cs;
+export const cFlags = cFlag + b.cs;
 
 // Data Types
 export const cString = b.cS + g.ctring;
@@ -595,8 +601,8 @@ export const cdecompose = b.cde + ccompose;
 export const cDecompose = b.cDe + ccompose;
 export const carray = b.car + g.cray;
 export const cArray = b.cAr + g.cray;
-export const ccamel = b.ca + g.cmel;
-export const cCamel = b.Ca + g.cmel;
+export const ccamel = b.cca + g.cmel;
+export const cCamel = b.cCa + g.cmel;
 export const cround = b.cr + g.cound;
 export const cRound = b.cR + g.cound;
 export const crounded = cround + b.ced;
@@ -2346,10 +2352,12 @@ export const cgetValueFromAssignmentOperationString = cget + cValue + cFrom + cA
 export const caggregateNumericalDifferenceBetweenTwoStrings = caggregate + cNumerical + cDifference + cBetween + g.cTwo + cStrings;
 export const cconvertCamelCaseStringToArray = cconvert + cCamel + cCase + cString + b.cTo + cArray;
 export const cconvertArrayToCamelCaseString = cconvert + cArray + b.cTo + cCamel + cCase + cString;
-export const cmapWordToCamelCase = g.cmap + cWord + b.cTo + cCamel + cCase;
+export const cmapWordToCamelCaseWord = g.cmap + cWord + b.cTo + cCamel + cCase + cWord;
 export const csimplifyAndConsolidateString = csimplify + cAnd + cConsolidate + cString;
 export const ccompareSimplifiedAndConsolidatedStrings = ccompare + cSimplified + cAnd + cConsolidated + cStrings;
 export const cdoesArrayContainLowerCaseConsolidatedString = cdoes + cArray + cContain + cLower + cCase + cConsolidated + cString;
+export const cdoesArrayContainCharacter = cdoes + cArray + cContain + cCharacter;
+export const cremoveCharacterFromArray = cremove + cCharacter + cFrom + cArray;
 export const cascertainMatchingFilenames = cascertain + cMatching + cFilenames;
 export const cdoesArrayContainFilename = cdoes + cArray + cContain + cFilename;
 export const cgetDataCatagoryFromDataContextName = cget + cData + cCatagory + cFrom + cData + cContext + cName;
@@ -2469,13 +2477,13 @@ export const cStartupWorkflow = cWorkflow + b.cSpace + cstartup;
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 24 2020 22:53:58 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 26 2020 15:39:55 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

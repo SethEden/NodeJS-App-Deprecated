@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
@@ -692,7 +692,6 @@ exports.replaceSpacesWithPlus = replaceSpacesWithPlus;
 
 var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.creplaceColonWithUnderscore is resolving as: ' + s.creplaceColonWithUnderscore);
   var functionName = s.creplaceColonWithUnderscore;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1082,7 +1081,6 @@ exports.getValueFromAssignmentOperationString = getValueFromAssignmentOperationS
 
 var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.caggregateNumericalDifferenceBetweenTwoStrings is resolving as: ' + s.caggregateNumericalDifferenceBetweenTwoStrings);
   var functionName = s.caggregateNumericalDifferenceBetweenTwoStrings;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1162,6 +1160,9 @@ var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalD
  * @return {array<string>} The array of words that were composed in the original string.
  * @author Seth Hollingsead
  * @date 2020/02/10
+ * @NOTE Might not work so well with numbers as part of the string, they are not treated as capital letters.
+ * We might need to do some refactoring of this function if
+ * mixed numbers and camel case strings ever becomes a requirement as input to this function.
  */
 
 
@@ -1169,7 +1170,6 @@ exports.aggregateNumericalDifferenceBetweenTwoStrings = aggregateNumericalDiffer
 
 var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertCamelCaseStringToArray is resolving as: ' + s.cconvertCamelCaseStringToArray);
   var functionName = s.cconvertCamelCaseStringToArray;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1182,7 +1182,7 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
   var caps = [];
 
   for (var i = 1; i < inputData.length; i++) {
-    if (g.cUpperCaseEnglishAlphabet.includes(str.charAt(i))) {
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
       caps.push(i);
     }
   }
@@ -1192,7 +1192,7 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
     var decomposedString = [];
 
     for (var j = 0; j < caps.length; j++) {
-      decomposedString.push(inputData.sice(last, caps[j]).toLowerCase());
+      decomposedString.push(inputData.slice(last, caps[j]).toLowerCase());
       last = caps[j];
     }
 
@@ -1223,7 +1223,6 @@ exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
 
 var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cconvertArrayToCamelCaseString is resolving as: ' + s.cconvertArrayToCamelCaseString);
   var functionName = s.cconvertArrayToCamelCaseString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1234,7 +1233,7 @@ var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(input
 
   var returnData;
   returnData = inputData.map(function (key, index) {
-    return mapWordToCamelCase(key, index);
+    return mapWordToCamelCaseWord(key, index);
   });
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1258,7 +1257,6 @@ exports.convertArrayToCamelCaseString = convertArrayToCamelCaseString;
 
 var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cmapWordToCamelCaseWord is resolving as: ' + s.cmapWordToCamelCaseWord);
   var functionName = s.cmapWordToCamelCaseWord;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1268,14 +1266,9 @@ var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMet
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData;
-
-  if (inputMetaData === 0) {
-    returnData = inputData;
-  } else {
-    returnData = inputData.replace(/^./, function (character) {
-      return character.toUpperCase();
-    });
-  }
+  returnData = inputData.replace(/^./, function (character) {
+    return character.toUpperCase();
+  });
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1291,6 +1284,11 @@ var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMet
  * @return {string} A string that has been simplified and consolidated by converting to lower case, removing all digits, symbols and white space.
  * @author Seth Hollingsead
  * @date 2020/02/10
+ * @NOTE I think this function is not completely working as expected, probably something to do with that regular expression.
+ * Input was: 11UpberDriver321CodeClearance0x#0000FF-akaBlue
+ * Output was: 11upberdriver321codeclearance0x0000ffakablue
+ * As you can see there are still some numbers coming through.
+ * Might need to revisit this one when time allows, and if there is ever a business need again.
  */
 
 
@@ -1298,7 +1296,6 @@ exports.mapWordToCamelCaseWord = mapWordToCamelCaseWord;
 
 var simplifyAndConsolidateString = function simplifyAndConsolidateString(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.csimplifyAndConsolidateString is resolving as: ' + s.csimplifyAndConsolidateString);
   var functionName = s.csimplifyAndConsolidateString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1331,7 +1328,6 @@ exports.simplifyAndConsolidateString = simplifyAndConsolidateString;
 
 var compareSimplifiedAndConsolidatedStrings = function compareSimplifiedAndConsolidatedStrings(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.ccompareSimplifiedAndConsolidatedStrings is resolving as: ' + s.ccompareSimplifiedAndConsolidatedStrings);
   var functionName = s.ccompareSimplifiedAndConsolidatedStrings;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1366,7 +1362,6 @@ exports.compareSimplifiedAndConsolidatedStrings = compareSimplifiedAndConsolidat
 
 var doesArrayContainLowerCaseConsolidatedString = function doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cdoesArrayContainLowerCaseConsolidatedString is resolving as: ' + s.cdoesArrayContainLowerCaseConsolidatedString);
   var functionName = s.cdoesArrayContainLowerCaseConsolidatedString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1392,6 +1387,98 @@ var doesArrayContainLowerCaseConsolidatedString = function doesArrayContainLower
   return returnData;
 };
 /**
+ * @function doesArrayContainCharacter
+ * @description Parses through all the elements of an array and determines if any one of them contains the input character.
+ * @param {string|boolean|integer|object} inputData The character that should be searched for in the array of elements.
+ * @param {array<string|boolean|integer|object>} inputMetaData The array that should be searched for the specified character/value/etc...
+ * @return {boolean} True or False to indicate if the value was found or not found.
+ * @author Seth Hollingsead
+ * @date 2020/06/25
+ */
+
+
+exports.doesArrayContainLowerCaseConsolidatedString = doesArrayContainLowerCaseConsolidatedString;
+
+var doesArrayContainCharacter = function doesArrayContainCharacter(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cdoesArrayContainCharacter;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (!inputData && !inputMetaData) {
+    return false;
+  }
+
+  for (var i = 0; i < inputMetaData.length; i++) {
+    var arrayElement = inputMetaData[i];
+
+    if (arrayElement.includes(inputData) === true) {
+      returnData = true;
+      break;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function removeCharacterFromArray
+ * @description Removes all instances of a character or value from all array elements.
+ * @param {string|integer|boolean|float|object} inputData The character, integer, boolean, float or object
+ * that should be removed from all instances of the input array.
+ * @param {array<string|boolean|integer|object>} inputMetaData The array from which all instances of the input character, integer, etc... should be removed.
+ * @return {array<string|boolean|integer|object>} The array after having the specified character removed from all elements of the input array.
+ * @author Seth Hollingsead
+ * @date 2020/06/25
+ */
+
+
+exports.doesArrayContainCharacter = doesArrayContainCharacter;
+
+var removeCharacterFromArray = function removeCharacterFromArray(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cremoveCharacterFromArray;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (!inputData && !inputMetaData) {
+    return false;
+  }
+
+  for (var i = 0; i < inputMetaData.length; i++) {
+    var arrayElement = inputMetaData[i];
+
+    if (arrayElement.includes(inputData) === true) {
+      // replaceCharacterWithCharacter Use this to parse the string and remove all characters that match.
+      // replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
+      inputMetaData[i] = replaceCharacterWithCharacter(arrayElement, [RegExp('\\' + inputData, b.cg), '']);
+    }
+  }
+
+  returnData = inputMetaData;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function ascertainMatchingFilenames
  * @description Compares two file names after stripping off the path and determines if they are matching or not.
  * @param {string} inputData The first filename and path that should be used in making the file name comparison.
@@ -1404,7 +1491,7 @@ var doesArrayContainLowerCaseConsolidatedString = function doesArrayContainLower
  */
 
 
-exports.doesArrayContainLowerCaseConsolidatedString = doesArrayContainLowerCaseConsolidatedString;
+exports.removeCharacterFromArray = removeCharacterFromArray;
 
 var ascertainMatchingFilenames = function ascertainMatchingFilenames(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));

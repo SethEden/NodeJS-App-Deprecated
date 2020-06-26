@@ -9,6 +9,8 @@ exports.commandGenerator = exports.businessRule = exports.printDataHive = export
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
+var _lexical = _interopRequireDefault(require("../../Executrix/lexical"));
+
 var _commandBroker = _interopRequireDefault(require("../commandBroker"));
 
 var _ruleBroker = _interopRequireDefault(require("../../BusinessRules/ruleBroker"));
@@ -303,7 +305,7 @@ var workflowHelp = function workflowHelp(inputData, inputMetaData) {
 
   var returnData = true;
 
-  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName, s.cValue]);
+  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -372,7 +374,7 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
 
       _queue["default"].enqueue(s.cCommandQueue, currentCommand);
     } else {
-      console.log('WARNING, The specified command was not found, please enter a valid command and try again.');
+      console.log('WARNING: nominal.commandSequencer: The specified command was not found, please enter a valid command and try again.');
     }
   }
 
@@ -419,7 +421,7 @@ var workflow = function workflow(inputData, inputMetaData) {
   if (workflowValue !== false) {
     _queue["default"].enqueue(s.cCommandQueue, workflowValue);
   } else {
-    console.log('WARNING: The specified workflow: ' + workflowName + b.cComa + ' was not found in either the system defined workflows, or client defined workflows.' + ' Please enter a valid workflow name and try again.');
+    console.log('WARNING: nominal.workflow: The specified workflow: ' + workflowName + b.cComa + ' was not found in either the system defined workflows, or client defined workflows.' + ' Please enter a valid workflow name and try again.');
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -512,33 +514,34 @@ var businessRule = function businessRule(inputData, inputMetaData) {
   var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
 
   var rules = [];
-  var ruleInputData, ruleInputMetaData; // First go through each rule that should be executed and determine if
+  var ruleInputData, ruleInputMetaData;
+  var argsArrayContainsCharacterRule = [];
+  var removeBracketsFromArgsArrayRule = [];
+  argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
+  removeBracketsFromArgsArrayRule[0] = s.cremoveCharacterFromArray;
+  var addedARule = false; // First go through each rule that should be executed and determine if
   // there are any inputs that need to be passed into the business rule.
 
   for (var i = 1; i < inputData.length; i++) {
-    var currentRule = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Begin the i-th iteration of the inputData array. i is: ' + i);
+
+    var currentRuleArg = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentRule is: ' + JSON.stringify(currentRuleArg));
 
     var ruleArgs = [];
 
-    if (currentRule.includes(secondaryCommandArgsDelimiter) === true) {
-      ruleArgs = currentRule.split(secondaryCommandArgsDelimiter); // console.log('ruleArgs is: ' + JSON.stringify(ruleArgs));
-
-      if (i === 1) {
-        // Only get the rule args if it's the first business rule, see note above in the header.
-        if (ruleArgs.length === 2) {
-          ruleInputData = ruleArgs[1];
-          ruleInputMetaData = '';
-        } else if (ruleArgs.length === 3) {
-          ruleInputData = ruleArgs[1];
-          ruleInputMetaData = ruleArgs[2];
-        } else {
-          console.log('WARNING: businessRule command does not currently support more than 2 rule arguments.');
-        }
-      }
-
-      rules[i - 1] = ruleArgs[0];
-    } else {
-      rules[i - 1] = currentRule;
+    if (i === 1) {
+      rules = _lexical["default"].parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 2 && inputData.length <= 4) {
+      ruleInputData = _lexical["default"].parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 2 && inputData.length > 4) {
+      ruleInputData = _lexical["default"].parseBusinessRuleArgument(inputData, i, true);
+    } else if (i === 3 && inputData.length <= 4) {
+      ruleInputMetaData = _lexical["default"].parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 3 && inputData.length > 4) {
+      // In this case all of the arguments will have been combined into a single array and added to the ruleInputData.
+      ruleInputMetaData = '';
     }
   }
 
@@ -546,9 +549,9 @@ var businessRule = function businessRule(inputData, inputMetaData) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInputData is: ' + ruleInputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + ruleInputMetaData);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + JSON.stringify(ruleInputMetaData));
 
-  console.log('Rule output is: ' + _ruleBroker["default"].processRules(ruleInputData, ruleInputMetaData, rules));
+  console.log('Rule output is: ' + JSON.stringify(_ruleBroker["default"].processRules(ruleInputData, ruleInputMetaData, rules)));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -586,6 +589,8 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
+  var replaceCharacterWithCharacterRule = [];
+  replaceCharacterWithCharacterRule[0] = s.creplaceCharacterWithCharacter;
 
   var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
 
@@ -597,9 +602,27 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
 
   var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter);
 
-  var commandString = inputData[1];
-  commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
-  commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
+  var commandString = inputData[1]; // NOTE: The str.replace only replaces the first instance of a string value, not all values.
+  // but we might have another issue in the sense that if the string begins and ends with "[" & "]" respectively,
+  // we might not want to replace those characters.
+  // Because it might be that the command should take responsibility for that in such a special case,
+  // i.e. treating the whole block as a single array and doing it's own split operation.
+  // commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
+  // commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString before attempted delimiter swap is: ' + commandString);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'replaceCharacterWithCharacterRule is: ' + JSON.stringify(replaceCharacterWithCharacterRule));
+
+  var secondaryCommandDelimiterRegEx = new RegExp('\\' + secondaryCommandArgsDelimiter, 'g');
+  commandString = _ruleBroker["default"].processRules(commandString, [secondaryCommandDelimiterRegEx, primaryCommandDelimiter], replaceCharacterWithCharacterRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is: ' + commandString);
+
+  var tertiaryCommandDelimiterRegEx = new RegExp('\\' + tertiaryCommandDelimiter, 'g');
+  commandString = _ruleBroker["default"].processRules(commandString, [tertiaryCommandDelimiterRegEx, secondaryCommandArgsDelimiter], replaceCharacterWithCharacterRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandArgsDelimiter commandString is: ' + commandString);
 
   var currentCommand = _commandBroker["default"].getValidCommand(commandString, primaryCommandDelimiter);
 
@@ -615,13 +638,13 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
           _queue["default"].enqueue(s.cCommandQueue, commandString);
         }
       } else {
-        console.log('WARNING: Must enter a number greater than 0, number entered: ' + numberOfCommands);
+        console.log('WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered: ' + numberOfCommands);
       }
     } else {
-      console.log('WARNING: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
+      console.log('WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
     }
   } else {
-    console.log('WARNING, The specified command: ' + commandString + ' was not found, please enter a valid command and try again.');
+    console.log('WARNING: nominal.commandGenerator: The specified command: ' + commandString + ' was not found, please enter a valid command and try again.');
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

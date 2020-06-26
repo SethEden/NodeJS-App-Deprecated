@@ -46,6 +46,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import configurator from '../../Executrix/configurator';
+import lexical from '../../Executrix/lexical';
 import commandBroker from '../commandBroker';
 import ruleBroker from '../../BusinessRules/ruleBroker';
 import workflowBroker from '../../Executrix/workflowBroker';
@@ -230,7 +231,7 @@ export const workflowHelp = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = true;
-  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName, s.cValue]);
+  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -279,7 +280,7 @@ export const commandSequencer = function(inputData, inputMetaData) {
       }
       queue.enqueue(s.cCommandQueue, currentCommand);
     } else {
-      console.log('WARNING, The specified command was not found, please enter a valid command and try again.');
+      console.log('WARNING: nominal.commandSequencer: The specified command was not found, please enter a valid command and try again.');
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -314,7 +315,7 @@ export const workflow = function(inputData, inputMetaData) {
   if (workflowValue !== false) {
     queue.enqueue(s.cCommandQueue, workflowValue);
   } else {
-    console.log('WARNING: The specified workflow: ' + workflowName + b.cComa +
+    console.log('WARNING: nominal.workflow: The specified workflow: ' + workflowName + b.cComa +
     ' was not found in either the system defined workflows, or client defined workflows.' +
     ' Please enter a valid workflow name and try again.');
   }
@@ -387,35 +388,38 @@ export const businessRule = function(inputData, inputMetaData) {
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
   let rules = [];
   let ruleInputData, ruleInputMetaData;
+
+  let argsArrayContainsCharacterRule = [];
+  let removeBracketsFromArgsArrayRule = [];
+  argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
+  removeBracketsFromArgsArrayRule[0] = s.cremoveCharacterFromArray;
+  let addedARule = false;
+
   // First go through each rule that should be executed and determine if
   // there are any inputs that need to be passed into the business rule.
   for (let i = 1; i &lt; inputData.length; i++) {
-    let currentRule = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Begin the i-th iteration of the inputData array. i is: ' + i);
+    let currentRuleArg = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentRule is: ' + JSON.stringify(currentRuleArg));
     let ruleArgs = [];
-    if (currentRule.includes(secondaryCommandArgsDelimiter) === true) {
-      ruleArgs = currentRule.split(secondaryCommandArgsDelimiter);
-      // console.log('ruleArgs is: ' + JSON.stringify(ruleArgs));
-      if (i === 1) { // Only get the rule args if it's the first business rule, see note above in the header.
-        if (ruleArgs.length === 2) {
-          ruleInputData = ruleArgs[1];
-          ruleInputMetaData = '';
-        } else if (ruleArgs.length === 3) {
-          ruleInputData = ruleArgs[1];
-          ruleInputMetaData = ruleArgs[2];
-        } else {
-          console.log('WARNING: businessRule command does not currently support more than 2 rule arguments.')
-        }
-      }
-      rules[i - 1] = ruleArgs[0];
-    } else {
-      rules[i - 1] = currentRule;
+    if (i === 1) {
+      rules = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 2 &amp;&amp; inputData.length &lt;= 4) {
+      ruleInputData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 2 &amp;&amp; inputData.length > 4) {
+      ruleInputData = lexical.parseBusinessRuleArgument(inputData, i, true);
+    } else if (i === 3 &amp;&amp; inputData.length &lt;= 4) {
+      ruleInputMetaData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
+    } else if (i === 3 &amp;&amp; inputData.length > 4) {
+      // In this case all of the arguments will have been combined into a single array and added to the ruleInputData.
+      ruleInputMetaData = '';
     }
   }
 
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'rules is: ' + JSON.stringify(rules));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInputData is: ' + ruleInputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + ruleInputMetaData);
-  console.log('Rule output is: ' + ruleBroker.processRules(ruleInputData, ruleInputMetaData, rules));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + JSON.stringify(ruleInputMetaData));
+  console.log('Rule output is: ' + JSON.stringify(ruleBroker.processRules(ruleInputData, ruleInputMetaData, rules)));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -443,6 +447,8 @@ export const commandGenerator = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   var returnData = true;
+  var replaceCharacterWithCharacterRule = [];
+  replaceCharacterWithCharacterRule[0] = s.creplaceCharacterWithCharacter;
   let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
   if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
     primaryCommandDelimiter = b.cSpace;
@@ -450,8 +456,21 @@ export const commandGenerator = function(inputData, inputMetaData) {
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
   let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
   let commandString = inputData[1];
-  commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
-  commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
+  // NOTE: The str.replace only replaces the first instance of a string value, not all values.
+  // but we might have another issue in the sense that if the string begins and ends with "[" &amp; "]" respectively,
+  // we might not want to replace those characters.
+  // Because it might be that the command should take responsibility for that in such a special case,
+  // i.e. treating the whole block as a single array and doing it's own split operation.
+  // commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
+  // commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString before attempted delimiter swap is: ' + commandString);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'replaceCharacterWithCharacterRule is: ' + JSON.stringify(replaceCharacterWithCharacterRule));
+  let secondaryCommandDelimiterRegEx = new RegExp('\\' + secondaryCommandArgsDelimiter, 'g');
+  commandString = ruleBroker.processRules(commandString, [secondaryCommandDelimiterRegEx, primaryCommandDelimiter], replaceCharacterWithCharacterRule);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is: ' + commandString);
+  let tertiaryCommandDelimiterRegEx = new RegExp('\\' + tertiaryCommandDelimiter, 'g');
+  commandString = ruleBroker.processRules(commandString, [tertiaryCommandDelimiterRegEx, secondaryCommandArgsDelimiter], replaceCharacterWithCharacterRule);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandArgsDelimiter commandString is: ' + commandString);
   let currentCommand = commandBroker.getValidCommand(commandString, primaryCommandDelimiter);
   let commandArgs = commandBroker.getCommandArgs(commandString, primaryCommandDelimiter);
   if (currentCommand !== false) {
@@ -462,13 +481,13 @@ export const commandGenerator = function(inputData, inputMetaData) {
           queue.enqueue(s.cCommandQueue, commandString);
         }
       } else {
-        console.log('WARNING: Must enter a number greater than 0, number entered: ' + numberOfCommands);
+        console.log('WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered: ' + numberOfCommands);
       }
     } else {
-      console.log('WARNING: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
+      console.log('WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
     }
   } else {
-    console.log('WARNING, The specified command: ' + commandString +
+    console.log('WARNING: nominal.commandGenerator: The specified command: ' + commandString +
     ' was not found, please enter a valid command and try again.');
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -485,13 +504,13 @@ export const commandGenerator = function(inputData, inputMetaData) {
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 24 2020 22:53:58 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 26 2020 15:39:55 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

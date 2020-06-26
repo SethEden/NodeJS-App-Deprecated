@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: chiefCommander</title>
+    <title>JSDoc: Module: lexical</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: chiefCommander</h1>
+    <h1 class="page-title">Module: lexical</h1>
 
     
 
@@ -38,8 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Holds all of the functions that manage the command queue, and allows commands to be enqueued and dequeued from the command queue.
-Also executes the command queue ultimately by making calls to the commandBroker to execute individual commands.</p></div>
+            <div class="description"><p>Contains all functions used for parsing command arguments and/or business rule arguments.</p></div>
         
 
         
@@ -98,7 +97,7 @@ Also executes the command queue ultimately by making calls to the commandBroker 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line1">line 1</a>
+        <a href="Framework_Executrix_lexical.js.html">Framework/Executrix/lexical.js</a>, <a href="Framework_Executrix_lexical.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -138,21 +137,17 @@ Also executes the command queue ultimately by making calls to the commandBroker 
         <h3 class="subsection-title">Requires</h3>
 
         <ul>
-            <li><a href="module-chiefData.html">module:chiefData</a></li>
-        
-            <li><a href="module-commandBroker.html">module:commandBroker</a></li>
-        
-            <li><a href="module-queue.html">module:queue</a></li>
+            <li><a href="module-configurator.html">module:configurator</a></li>
         
             <li><a href="module-loggers.html">module:loggers</a></li>
         
             <li><a href="module-basic-constants.html">module:basic-constants</a></li>
         
+            <li><a href="module-generic-constants.html">module:generic-constants</a></li>
+        
             <li><a href="module-system-constants.html">module:system-constants</a></li>
         
             <li><a href="https://www.npmjs.com/package/path">path</a></li>
-        
-            <li><a href="module-data.html">module:data</a></li>
         </ul>
     
 
@@ -175,7 +170,7 @@ Also executes the command queue ultimately by making calls to the commandBroker 
     
 
     
-    <h4 class="name" id="~bootStrapCommands"><span class="type-signature">(inner) </span>bootStrapCommands<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~analyzeArgument"><span class="type-signature">(inner) </span>analyzeArgument<span class="signature">(argumentValue)</span><span class="type-signature"> &rarr; {string|array.&lt;(string|integer|boolean|object)>}</span></h4>
     
 
     
@@ -183,121 +178,11 @@ Also executes the command queue ultimately by making calls to the commandBroker 
 
 
 <div class="description">
-    <p>Initializes all of the commands and gets them added to the D-data structure.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~enqueueCommand"><span class="type-signature">(inner) </span>enqueueCommand<span class="signature">(command)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Determines if the command queue has been setup or not,
-if not then it is initialized, and the command is added to the command queue.</p>
+    <p>Does additional parsing of an individual argument.
+Identifies the case that the argument needs to be treated as an array,
+then the function will clean the array string tags and split the string into an array and return it.
+This function can also identify the case that an agrument contains a regular expression that must be formally created,
+using the RegExp constructor, then the RegExp object will be returned as part of the return object.</p>
 </div>
 
 
@@ -333,7 +218,7 @@ if not then it is initialized, and the command is added to the command queue.</p
 
         <tr>
             
-                <td class="name"><code>command</code></td>
+                <td class="name"><code>argumentValue</code></td>
             
 
             <td class="type">
@@ -349,7 +234,7 @@ if not then it is initialized, and the command is added to the command queue.</p
 
             
 
-            <td class="description last"><p>The command that should be added to the command queue.</p></td>
+            <td class="description last"><p>The argument string that needs additional parsing.</p></td>
         </tr>
 
     
@@ -397,120 +282,7 @@ if not then it is initialized, and the command is added to the command queue.</p
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line70">line 70</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~isCommandQueueEmpty"><span class="type-signature">(inner) </span>isCommandQueueEmpty<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Determines if the command queue is empty or not empty.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line91">line 91</a>
+        <a href="Framework_Executrix_lexical.js.html">Framework/Executrix/lexical.js</a>, <a href="Framework_Executrix_lexical.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -539,7 +311,8 @@ if not then it is initialized, and the command is added to the command queue.</p
 
         
 <div class="param-desc">
-    <p>A True or False value to indicate if the command queue is empty or not empty.</p>
+    <p>The argument that should be returned and used
+by the system after all necessary parsing.</p>
 </div>
 
 
@@ -550,7 +323,10 @@ if not then it is initialized, and the command is added to the command queue.</p
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">array.&lt;(string|integer|boolean|object)></span>
 
 
     </dd>
@@ -568,7 +344,7 @@ if not then it is initialized, and the command is added to the command queue.</p
     
 
     
-    <h4 class="name" id="~loadCommandAliasesFromPath"><span class="type-signature">(inner) </span>loadCommandAliasesFromPath<span class="signature">(commandAliasesFilePath)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~analyzeForRegularExpression"><span class="type-signature">(inner) </span>analyzeForRegularExpression<span class="signature">(argumentValue)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -576,8 +352,7 @@ if not then it is initialized, and the command is added to the command queue.</p
 
 
 <div class="description">
-    <p>Loads the command aliases XML file that is specified by the input.
-The data is automatically saved on the D-data structure.</p>
+    <p>Analyzes the argument value to determine if it includes a regular expression or no regular expression.</p>
 </div>
 
 
@@ -613,7 +388,7 @@ The data is automatically saved on the D-data structure.</p>
 
         <tr>
             
-                <td class="name"><code>commandAliasesFilePath</code></td>
+                <td class="name"><code>argumentValue</code></td>
             
 
             <td class="type">
@@ -629,8 +404,7 @@ The data is automatically saved on the D-data structure.</p>
 
             
 
-            <td class="description last"><p>The path and file name to the XML file that contains the command aliases definitions.
-(Could be system command aliases or client command aliases)</p></td>
+            <td class="description last"><p>The business rule argument that should be analyzed to determine if it includes a regular expression or no regular expression.</p></td>
         </tr>
 
     
@@ -678,120 +452,7 @@ The data is automatically saved on the D-data structure.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line42">line 42</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~processCommandQueue"><span class="type-signature">(inner) </span>processCommandQueue<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Pulls the command from the front of the command queue and executes it using the command broker.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Controllers_chiefCommander.js.html">Framework/Controllers/chiefCommander.js</a>, <a href="Framework_Controllers_chiefCommander.js.html#line109">line 109</a>
+        <a href="Framework_Executrix_lexical.js.html">Framework/Executrix/lexical.js</a>, <a href="Framework_Executrix_lexical.js.html#line140">line 140</a>
     </li></ul></dd>
     
 
@@ -820,7 +481,7 @@ The data is automatically saved on the D-data structure.</p>
 
         
 <div class="param-desc">
-    <p>A True or False value to indicate if the application should exit or not exit.</p>
+    <p>True or False to indicate if the argument contains a regular expression or no regular expression.</p>
 </div>
 
 
@@ -832,6 +493,561 @@ The data is automatically saved on the D-data structure.</p>
     <dd>
         
 <span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~parseArgumentAsArray"><span class="type-signature">(inner) </span>parseArgumentAsArray<span class="signature">(argumentValue)</span><span class="type-signature"> &rarr; {array.&lt;string>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parses the argument as an array and return the array.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>argumentValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A string that contains an array, we will use the secondary command delimiter to split the array.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_lexical.js.html">Framework/Executrix/lexical.js</a>, <a href="Framework_Executrix_lexical.js.html#line203">line 203</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An array of strings.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~parseArgumentAsRegularExpression"><span class="type-signature">(inner) </span>parseArgumentAsRegularExpression<span class="signature">(argumentValue)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parses the argument as a regular expression and returns a new RegExp object.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>argumentValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The argument string that should be parsed as a RegExp.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_lexical.js.html">Framework/Executrix/lexical.js</a>, <a href="Framework_Executrix_lexical.js.html#line167">line 167</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A RegExp object.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~parseBusinessRuleArgument"><span class="type-signature">(inner) </span>parseBusinessRuleArgument<span class="signature">(argumentValue, index, consolidatedArgumentMode)</span><span class="type-signature"> &rarr; {string|array.&lt;(string|integer|boolean|object)>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>parses a single business rule argument and returns it after cleaning it up or
+doing required operations on it to convert it to valid input for a command as necessary.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>argumentValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">array.&lt;(string|integer|boolean|object)></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value of the argument, could be an array or a string.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The index of the argument (1, 2, 3).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>consolidatedArgumentMode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A True or False to indicate if the argument should be parsed in consolidated mode or not.
+If we are in consolidated mode then all of the arguments will have been passed into the argumentValue input parameter.
+If we are not in consolidated mode then the contents of argumentValue is specific to the argument index that was passed in.
+This is necessary, because there are cases where we would want to combine all arguments from 2-n into a single array,
+which will ultimately be passed as input to the business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_lexical.js.html">Framework/Executrix/lexical.js</a>, <a href="Framework_Executrix_lexical.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The value of the argument as it should be passed into the business rule call.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">array.&lt;(string|integer|boolean|object)></span>
 
 
     </dd>
@@ -865,7 +1081,7 @@ The data is automatically saved on the D-data structure.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 26 2020 15:39:55 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 26 2020 15:39:56 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

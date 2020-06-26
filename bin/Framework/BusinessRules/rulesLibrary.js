@@ -92,14 +92,18 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.convertCamelCaseStringToArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cconvertArrayToCamelCaseString, function (inputData, inputMetaData) {
     return stringParsing.convertArrayToCamelCaseString(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cmapWordToCamelCase, function (inputData, inputMetaData) {
-    return stringParsing.mapWordToCamelCase(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cmapWordToCamelCaseWord, function (inputData, inputMetaData) {
+    return stringParsing.mapWordToCamelCaseWord(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.csimplifyAndConsolidateString, function (inputData, inputMetaData) {
     return stringParsing.simplifyAndConsolidateString(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccompareSimplifiedAndConsolidatedStrings, function (inputData, inputMetaData) {
     return stringParsing.compareSimplifiedAndConsolidatedStrings(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainLowerCaseConsolidatedString, function (inputData, inputMetaData) {
     return stringParsing.doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainCharacter, function (inputData, inputMetaData) {
+    return stringParsing.doesArrayContainCharacter(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cremoveCharacterFromArray, function (inputData, inputMetaData) {
+    return stringParsing.removeCharacterFromArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cascertainMatchingFilenames, function (inputData, inputMetaData) {
     return stringParsing.ascertainMatchingFilenames(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainFilename, function (inputData, inputMetaData) {
