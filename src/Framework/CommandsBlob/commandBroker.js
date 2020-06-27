@@ -195,15 +195,17 @@ function getCommandArgs(commandString, commandDelimiter) {
               indexOfStringDelimiter = commandString.indexOf(b.cBackTickQuote, indexOfStringDelimiter + 1);
               loggers.consoleLog(baseFileName + b.cDot + functionName, 'Additional index is: ' + indexOfStringDelimiter);
               // Determine if it is odd or even.
+              // NOTE: We start our count with 0 which would technically be our odd, then 1 should be even, but 1 is an odd number, so the logic here should actaully be backwards.
+              // an even value for "i" would be the odd i-th delimiter value.
               if (ruleBroker.processRules(i.toString(), '', isOddRule) === true) {
                 // We are on the odd index, 1, 3, 5, etc...
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'odd index');
-                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter,  b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
+                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cTilde + b.cBackTickQuote], replaceCharacterAtIndexRule);
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an odd string delimiter: ' + commandString);
               } else {
                 // We are on the even index, 2, 4, 6, etc...
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'even index');
-                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cTilde + b.cBackTickQuote], replaceCharacterAtIndexRule);
+                commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
                 loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an even string delimiter: ' + commandString);
               }
             }

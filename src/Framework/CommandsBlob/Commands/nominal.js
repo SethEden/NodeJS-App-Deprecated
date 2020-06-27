@@ -379,6 +379,7 @@ export const businessRule = function(inputData, inputMetaData) {
     } else if (i === 2 && inputData.length <= 4) {
       ruleInputData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
     } else if (i === 2 && inputData.length > 4) {
+      console.log('inputData.length is: ' + inputData.length);
       ruleInputData = lexical.parseBusinessRuleArgument(inputData, i, true);
     } else if (i === 3 && inputData.length <= 4) {
       ruleInputMetaData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
