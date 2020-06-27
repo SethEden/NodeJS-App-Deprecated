@@ -34,6 +34,7 @@
  * @module stringParsing
  * @description Contains all system defined business rules for parsing strings, values, arrays,
  * values of all kinds, with various operations.
+ * @requires module:configurator
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
@@ -45,6 +46,7 @@
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
+import configurator from '../../Executrix/configurator';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
@@ -61,6 +63,9 @@ var math = require('mathjs');
  * @return {boolean} A boolean value of either True or False according to the business rule conversion.
  * @author Seth Hollingsead
  * @date 2020/01/30
+ * @NOTE We cannot pass in a 1 or 0 to this function and expect it to evaluate as a True or False because:
+ * We have another function that is passing strings into the function, and also part of that check to look for data-types is a check to see if a string is a number.
+ * If we cause this function to evaluate a 0 or 1 to a boolean, then the integer function would never get a chance to evaluate.
  */
 export const stringToBoolean = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -224,8 +229,18 @@ export const isInteger = function(inputData, inputMetaData) {
     return false;
   }
   var returnData;
-  if (!isNaN(inputData) &amp;&amp; inputData.indexOf(b.cDot) === -1) {
-    returnData = true;
+  // if (!isNaN(inputData) &amp;&amp; inputData.indexOf(b.cDot) === -1) {
+  // if (!isNaN(inputData) &amp;&amp; inputData.includes(b.cDot) === false) { // Might work for strings, but not numbers.
+  // // Technically this works, but we want to make sure we don't attempt to evaluate a string here, and also filter out string decimal points.
+  // if (!isNaN(inputData) &amp;&amp; inputData % 1 === 0) {
+  if (!isNaN(inputData)) {
+    if (inputData % 1 === 0) {
+      // It's a whole number, aka: integer
+      returnData = true;
+    } else {
+      // Might be a number, but not a whole number.
+      returnData = false;
+    }
   } else {
     returnData = false;
   }
@@ -1062,7 +1077,6 @@ export const removeCharacterFromArray = function(inputData, inputMetaData) {
  */
 export const ascertainMatchingFilenames = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cascertainMatchingFilenames is resolving as: ' + s.cascertainMatchingFilenames);
   var functionName = s.cascertainMatchingFilenames;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -1093,13 +1107,24 @@ export const ascertainMatchingFilenames = function(inputData, inputMetaData) {
  */
 export const doesArrayContainFilename = function(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cdoesArrayContainFilename is resolving as: ' + s.cdoesArrayContainFilename);
   var functionName = s.cdoesArrayContainFilename;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData;
+  var returnData = false;
+  // NOTE: This call doesn't actually work, it may have worked at one time, but it doesn't work now.
+  // And I'm not going to spend the time trying to figure out why,
+  // when it will be much simpler to just call that same function in a loop to figure out the result.
   returnData = doesArrayContainValue(inputData, inputMetaData, ascertainMatchingFilenames);
+
+  // NOTE: The below code also works, I am going to attempt to re-enable the above code and see if it also works.
+  // YES! This is a second way of doing the same thing. If the above code ever has a problem, we can fall back to this method.
+  // for (let i = 0; i &lt; inputData.length; i++) {
+  //   if (ascertainMatchingFilenames(inputData[i], inputMetaData) === true) {
+  //     returnData = true;
+  //     break;
+  //   }
+  // }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -1156,7 +1181,7 @@ export const getDataCatagoryDetailNameFromDataContextName = function(inputData, 
   }
   var returnData;
   var dataCatagoryDetailName = inputData.split(b.cUnderscore);
-  returnData = dataCatagoryDetailName[0];
+  returnData = dataCatagoryDetailName[1];
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'Data Catagory Detail Name should be: ' + dataCatagoryDetailName[1]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1183,7 +1208,7 @@ export const getKeywordNameFromDataContextName = function(inputData, inputMetaDa
   }
   var returnData;
   var dataCatagoryKeywordName = inputData.split(b.cUnderscore);
-  returnData = dataCatagoryKeywordName[1];
+  returnData = dataCatagoryKeywordName[2];
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'Keyword Name should be: ' + dataCatagoryKeywordName[2]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1193,8 +1218,10 @@ export const getKeywordNameFromDataContextName = function(inputData, inputMetaDa
 /**
  * @function parseSystemRootPath
  * @description Parses the root path as returned by calling: path.resolve(__dirname);
- * This business rule looks for the CAFfeinated part of the path
- * and will parse that out to determine where on the hard drive this CAFfeinated folder is installed at.
+ * This business rule looks for the "AppName" part of the path
+ * and will parse that out to determine where on the hard drive this "AppName" folder is installed at.
+ * @NOTE: The "AppName" is derived from the configuration setting called "ApplicationName"
+ * which should have been set by the system when it was loaded.
  * @param {string} inputData The root path as defined by calling path.resolve(__dirname);
  * @param {string} inputMetaData Not used for this business rule.
  * @return {string} A string with the path up to the application folder,
@@ -1215,6 +1242,7 @@ export const parseSystemRootPath = function(inputData, inputMetaData) {
     return false;
   }
   var returnData = '';
+  var applicationName = configurator.getConfigurationSetting(s.cApplicationName);
   var pathElements = inputData.split(b.cBackSlash);
   loop1:
     for (let i = 0; i &lt; pathElements.length; i++) {
@@ -1227,9 +1255,9 @@ export const parseSystemRootPath = function(inputData, inputMetaData) {
         // console.log('case: i = 0');
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: i = 0');
         returnData = pathElement;
-      } else if (pathElement === s.cCAFfeinated) {
+      } else if (pathElement === applicationName) {
         // console.log('case: pathElement = ' + s.cCAFfeinated);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + s.cCAFfeinated);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + applicationName);
         returnData = returnData + b.cBackSlash + pathElement + b.cBackSlash;
         break loop1;
       } else {
@@ -1290,7 +1318,7 @@ export const replaceDoublePercentWithMessage = function(inputData, inputMetaData
 /**
  * @function removeXnumberOfFoldersFromEndOfPath
  * @description Removes X number of folders from the end of a path and returns the newly modified path.
- * @param {string} inputData The path that should have the number of paths removed.
+ * @param {string} inputData The path that should have the number of folders removed.
  * @param {integer} inputMetaData The number of paths that should be removed from the input path.
  * @return {string} The modified string with the folders removed from the input path.
  * @author Seth Hollingsead
@@ -1414,10 +1442,12 @@ export const isOdd = function(inputData, inputMetaData) {
     return false;
   }
   var returnData = false;
-  if (math.isNumeric(inputData) === true) {
+  if (isInteger(inputData, '') === true) {
     let inputValue = parseInt(inputData);
     let result = inputValue % 2;
-    returnData = stringToBoolean(result.toString(), '');
+    if (result === 1) {
+      returnData = true;
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1450,8 +1480,9 @@ export const isEven = function(inputData, inputMetaData) {
   if (math.isNumeric(inputData) === true) {
     let inputValue = parseInt(inputData);
     let result = inputValue % 2;
-    // Same as the Odd business rule, we just use the "!" to swap the true case to a false case and the false case to true, so it is logically inverted.
-    returnData = !stringToBoolean(result.toString(), '');
+    if (result === 0) {
+      returnData = true;
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1553,7 +1584,7 @@ function doesArrayContainValue(array, value, myFunction) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 26 2020 15:39:55 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jun 26 2020 19:20:15 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

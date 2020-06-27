@@ -7,6 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
+var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
+
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
@@ -29,6 +31,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @module stringParsing
  * @description Contains all system defined business rules for parsing strings, values, arrays,
  * values of all kinds, with various operations.
+ * @requires module:configurator
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
@@ -53,6 +56,9 @@ var math = require('mathjs');
  * @return {boolean} A boolean value of either True or False according to the business rule conversion.
  * @author Seth Hollingsead
  * @date 2020/01/30
+ * @NOTE We cannot pass in a 1 or 0 to this function and expect it to evaluate as a True or False because:
+ * We have another function that is passing strings into the function, and also part of that check to look for data-types is a check to see if a string is a number.
+ * If we cause this function to evaluate a 0 or 1 to a boolean, then the integer function would never get a chance to evaluate.
  */
 
 
@@ -301,10 +307,19 @@ var isInteger = function isInteger(inputData, inputMetaData) {
     return false;
   }
 
-  var returnData;
+  var returnData; // if (!isNaN(inputData) && inputData.indexOf(b.cDot) === -1) {
+  // if (!isNaN(inputData) && inputData.includes(b.cDot) === false) { // Might work for strings, but not numbers.
+  // // Technically this works, but we want to make sure we don't attempt to evaluate a string here, and also filter out string decimal points.
+  // if (!isNaN(inputData) && inputData % 1 === 0) {
 
-  if (!isNaN(inputData) && inputData.indexOf(b.cDot) === -1) {
-    returnData = true;
+  if (!isNaN(inputData)) {
+    if (inputData % 1 === 0) {
+      // It's a whole number, aka: integer
+      returnData = true;
+    } else {
+      // Might be a number, but not a whole number.
+      returnData = false;
+    }
   } else {
     returnData = false;
   }
@@ -1495,7 +1510,6 @@ exports.removeCharacterFromArray = removeCharacterFromArray;
 
 var ascertainMatchingFilenames = function ascertainMatchingFilenames(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cascertainMatchingFilenames is resolving as: ' + s.cascertainMatchingFilenames);
   var functionName = s.cascertainMatchingFilenames;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1539,17 +1553,26 @@ exports.ascertainMatchingFilenames = ascertainMatchingFilenames;
 
 var doesArrayContainFilename = function doesArrayContainFilename(inputData, inputMetaData) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  console.log('s.cdoesArrayContainFilename is resolving as: ' + s.cdoesArrayContainFilename);
   var functionName = s.cdoesArrayContainFilename;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
-  returnData = doesArrayContainValue(inputData, inputMetaData, ascertainMatchingFilenames);
+  var returnData = false; // NOTE: This call doesn't actually work, it may have worked at one time, but it doesn't work now.
+  // And I'm not going to spend the time trying to figure out why,
+  // when it will be much simpler to just call that same function in a loop to figure out the result.
+
+  returnData = doesArrayContainValue(inputData, inputMetaData, ascertainMatchingFilenames); // NOTE: The below code also works, I am going to attempt to re-enable the above code and see if it also works.
+  // YES! This is a second way of doing the same thing. If the above code ever has a problem, we can fall back to this method.
+  // for (let i = 0; i < inputData.length; i++) {
+  //   if (ascertainMatchingFilenames(inputData[i], inputMetaData) === true) {
+  //     returnData = true;
+  //     break;
+  //   }
+  // }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1628,7 +1651,7 @@ var getDataCatagoryDetailNameFromDataContextName = function getDataCatagoryDetai
 
   var returnData;
   var dataCatagoryDetailName = inputData.split(b.cUnderscore);
-  returnData = dataCatagoryDetailName[0];
+  returnData = dataCatagoryDetailName[1];
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Data Catagory Detail Name should be: ' + dataCatagoryDetailName[1]);
 
@@ -1667,7 +1690,7 @@ var getKeywordNameFromDataContextName = function getKeywordNameFromDataContextNa
 
   var returnData;
   var dataCatagoryKeywordName = inputData.split(b.cUnderscore);
-  returnData = dataCatagoryKeywordName[1];
+  returnData = dataCatagoryKeywordName[2];
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Keyword Name should be: ' + dataCatagoryKeywordName[2]);
 
@@ -1680,8 +1703,10 @@ var getKeywordNameFromDataContextName = function getKeywordNameFromDataContextNa
 /**
  * @function parseSystemRootPath
  * @description Parses the root path as returned by calling: path.resolve(__dirname);
- * This business rule looks for the CAFfeinated part of the path
- * and will parse that out to determine where on the hard drive this CAFfeinated folder is installed at.
+ * This business rule looks for the "AppName" part of the path
+ * and will parse that out to determine where on the hard drive this "AppName" folder is installed at.
+ * @NOTE: The "AppName" is derived from the configuration setting called "ApplicationName"
+ * which should have been set by the system when it was loaded.
  * @param {string} inputData The root path as defined by calling path.resolve(__dirname);
  * @param {string} inputMetaData Not used for this business rule.
  * @return {string} A string with the path up to the application folder,
@@ -1711,6 +1736,9 @@ var parseSystemRootPath = function parseSystemRootPath(inputData, inputMetaData)
   }
 
   var returnData = '';
+
+  var applicationName = _configurator["default"].getConfigurationSetting(s.cApplicationName);
+
   var pathElements = inputData.split(b.cBackSlash);
 
   loop1: for (var i = 0; i < pathElements.length; i++) {
@@ -1726,9 +1754,9 @@ var parseSystemRootPath = function parseSystemRootPath(inputData, inputMetaData)
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'case: i = 0');
 
       returnData = pathElement;
-    } else if (pathElement === s.cCAFfeinated) {
+    } else if (pathElement === applicationName) {
       // console.log('case: pathElement = ' + s.cCAFfeinated);
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + s.cCAFfeinated);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + applicationName);
 
       returnData = returnData + b.cBackSlash + pathElement + b.cBackSlash;
       break loop1;
@@ -1807,7 +1835,7 @@ var replaceDoublePercentWithMessage = function replaceDoublePercentWithMessage(i
 /**
  * @function removeXnumberOfFoldersFromEndOfPath
  * @description Removes X number of folders from the end of a path and returns the newly modified path.
- * @param {string} inputData The path that should have the number of paths removed.
+ * @param {string} inputData The path that should have the number of folders removed.
  * @param {integer} inputMetaData The number of paths that should be removed from the input path.
  * @return {string} The modified string with the folders removed from the input path.
  * @author Seth Hollingsead
@@ -1974,10 +2002,13 @@ var isOdd = function isOdd(inputData, inputMetaData) {
 
   var returnData = false;
 
-  if (math.isNumeric(inputData) === true) {
+  if (isInteger(inputData, '') === true) {
     var inputValue = parseInt(inputData);
     var result = inputValue % 2;
-    returnData = stringToBoolean(result.toString(), '');
+
+    if (result === 1) {
+      returnData = true;
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -2021,9 +2052,11 @@ var isEven = function isEven(inputData, inputMetaData) {
 
   if (math.isNumeric(inputData) === true) {
     var inputValue = parseInt(inputData);
-    var result = inputValue % 2; // Same as the Odd business rule, we just use the "!" to swap the true case to a false case and the false case to true, so it is logically inverted.
+    var result = inputValue % 2;
 
-    returnData = !stringToBoolean(result.toString(), '');
+    if (result === 0) {
+      returnData = true;
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
