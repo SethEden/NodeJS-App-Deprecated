@@ -23,13 +23,31 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+// NOTE: DO NOT directly import this library to your script(s).
+// please call via the RuleBroker.js.
 
+/**
+ * @file characterGeneration.js
+ * @module characterGeneration
+ * @description Contains all business rules for randomly generating characters of all kinds.
+ * There are two versions of each function, an old implementation and a new implementation.
+ * @todo There is a need to evaluate performance of each version of these functions and
+ * determine which version is more performant before they are cleaned up.
+ * @requires module:loggers
+ * @requires module:stringParsing
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+ */
 var path = require('path');
 /**
  * @function randomlyGenerateMixedCaseLetterOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from A-Z, a-z or a random special character from the input list of special characters.
- * @param {string} inputData  The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {string} Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: OLD implementation.
@@ -67,7 +85,7 @@ var randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function randomlyGenera
 /**
  * @function randomlyGenerateMixedCaseLetterOrSpecialCharacter2
  * @description Randomly generates an alphabetic letter from A-Z, a-z or a random special character from the input list of special characters.
- * @param {string} inputData  The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {string} Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.
  * @NOTE: NEW implementation.
@@ -89,7 +107,7 @@ var randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function randomlyGenera
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + b.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -235,7 +253,7 @@ var randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function randomlyGenera
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + b.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cLowerCaseEnglishAlphabet);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -275,24 +293,37 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function 
   var cTrue = g.cTrue;
   typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
 
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'typeToGenerate is: ' + typeToGenerate);
+
   switch (typeToGenerate) {
     case 1:
+    case '1':
       // Generate a number.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a number.');
+
       returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
+    case '2':
       // Generate a random upper case or lower case letter.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a random upper case or lower case letter.');
+
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
 
     case 3:
+    case '3':
       // Generate a special characters.
-      returnData = randommlyGenerateSpecialCharacter1(inputData, inputMetaData);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a special character.');
+
+      returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
 
     default:
       // Default to a random upper case or lower case letter as a fall-back.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DEFAULT: Generate a random upper case or lower case letter.');
+
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
   }
@@ -328,7 +359,7 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = function 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + b.cLowerCaseEnglishAlphabet + b.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -370,16 +401,19 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function 
 
   switch (typeToGenerate) {
     case 1:
+    case '1':
       // Generate a number.
       returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
+    case '2':
       // Generate a random upper case letter.
       returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
       break;
 
     case 3:
+    case '3':
       // Generate a special character.
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
@@ -421,7 +455,7 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = function 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + b.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cAllNumbers);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -463,16 +497,19 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function 
 
   switch (typeToGenerate) {
     case 1:
+    case '1':
       // Generate a number.
       returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
+    case '2':
       // Generate a random lower case letter.
-      returnData = randomlyGenerateLowerCaseLetter(inputData, inputMetaData);
+      returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
       break;
 
     case 3:
+    case '3':
       // Generate a special character.
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
@@ -514,7 +551,7 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = function 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + b.cLowerCaseEnglishAlphabet + b.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -585,7 +622,7 @@ var randomlyGenerateMixedCaseAlphaNumericCharacter2 = function randomlyGenerateM
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + b.cLowerCaseEnglishAlphabet + b.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -656,7 +693,7 @@ var randomlyGenerateUpperCaseAlphaNumericCharacter2 = function randomlyGenerateU
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + b.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cAllNumbers);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -690,7 +727,7 @@ var randomlyGenerateLowerCaseAlphaNumericCharacter1 = function randomlyGenerateL
 
   var returnData = '';
 
-  if (randomlyGenerateBooleanValueu(inputData, inputMetaData) === true) {
+  if (randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) {
     returnData = randomlyGenerateNumericCharacter1(inputData, inputMetaData); // Generate a number.
   } else {
     returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
@@ -727,7 +764,7 @@ var randomlyGenerateLowerCaseAlphaNumericCharacter2 = function randomlyGenerateL
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(b.cLowerCaseEnglishAlphabet + b.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -759,14 +796,8 @@ var randomlyGenerateNumericCharacter1 = function randomlyGenerateNumericCharacte
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
-  var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
-
-  var c9 = b.c9;
-  var cTrue = g.cTrue;
-  returnData = randomlyGenerateNumberInRange(b.c0, _defineProperty({
-    c9: c9,
-    cTrue: cTrue
-  }, "cTrue", cTrue));
+  var returnData = '';
+  returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -799,7 +830,7 @@ var randomlyGenerateNumericCharacter2 = function randomlyGenerateNumericCharacte
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(b.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(g.cAllNumbers);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -888,7 +919,7 @@ var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacte
  * @function randomlyGenerateNumberInRange1
  * @description Randomly generates a number between the start-range and end-range.
  * @param {string} inputData A string that contains the number with the minimum value.
- * @param {map} inputMetaData A map with multiple input parameters:
+ * @param {array<string|integer,boolean,boolean>} inputMetaData an array with multiple input parameters:
  *  maximumValue - A string that contains the number with the maximum value.
  *  includeMaximum - A Boolean value that indicates if the maximum should be included or excluded from the range of allowable range of values to return from.
  *  addMinimum - A Boolean value that indicates if the minimum should be added to the value or not.
@@ -941,7 +972,7 @@ var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inp
  * @function randomlyGenerateNumberInRange2
  * @description Randomly generates a number between the start-range and end-range.
  * @param {string} inputData A string that contains the number with the minimum value.
- * @param {map} inputMetaData A map with multiple input parameters:
+ * @param {array<string|integer,boolean,boolean>} inputMetaData A map with multiple input parameters:
  *  maximumValue - A string that contains the number with the maximum value.
  *  includeMaximum - A Boolean value that indicates if the maximum should be included or excluded from the range of allowable range of values to return from.
  *  addMinimum - A Boolean value that indicates if the minimum should be added to the value or not.
@@ -968,8 +999,8 @@ var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inp
   var returnData = '';
   var minimum = parseInt(inputData);
   var maximum = parseInt(inputMetaData[0]);
-  var addOne = StringToBoolean(inputMetaData[1]);
-  var addMinimum = StringToBoolean(inputMetaData[2]);
+  var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1]);
+  var addMinimum = (0, _stringParsing.stringToBoolean)(inputMetaData[2]);
 
   if (addOne === true) {
     if (addMinimum === true) {
@@ -1085,7 +1116,7 @@ var randomlyGenerateMixedCaseAlphabeticCharacter1 = function randomlyGenerateMix
   var returnData = '';
 
   if (randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) {
-    returnData = randomlyGenerateBooleanValue1(inputData, inputMetaData);
+    returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
   } else {
     returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
   }
@@ -1121,7 +1152,7 @@ var randomlyGenerateMixedCaseAlphabeticCharacter2 = function randomlyGenerateMix
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + b.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1190,7 +1221,7 @@ var randomlyGenerateLowerCaseLetter2 = function randomlyGenerateLowerCaseLetter2
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(b.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 

@@ -1217,9 +1217,9 @@ exports.cpublic = cpublic;
 var cPublic = b.cPu + b.cbl + b.cic; // 'Public';
 
 exports.cPublic = cPublic;
-var cspecial = b.csp + b.cec + b.cia + b.cal;
+var cspecial = b.csp + b.cec + b.cia + b.cl;
 exports.cspecial = cspecial;
-var cSpecial = b.cSp + b.cec + b.cia + b.cal; // 'Special';
+var cSpecial = b.cSp + b.cec + b.cia + b.cl; // 'Special';
 
 exports.cSpecial = cSpecial;
 var ccharacter = cchar + b.cac + g.cter;

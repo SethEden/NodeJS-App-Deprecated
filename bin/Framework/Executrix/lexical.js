@@ -391,12 +391,7 @@ function removeStringLiteralTagsFromArray(argumentArray) {
   var returnData;
   var removeCharacterRule = [];
   removeCharacterRule[0] = s.cremoveCharacterFromArray;
-  returnData = _ruleBroker["default"].processRules(b.cTilde, argumentArray, removeCharacterRule); // for (let i = 0; i < argumentArray.length; i++) {
-  //   let arrayElement = argumentArray[i];
-  //   if (arrayElement.includes(b.cTilde) === true) {
-  //     arrayElement = ruleBroker.processRules()
-  //   }
-  // }
+  returnData = _ruleBroker["default"].processRules(b.cTilde, argumentArray, removeCharacterRule);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
 
