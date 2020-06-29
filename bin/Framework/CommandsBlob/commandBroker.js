@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _configurator = _interopRequireDefault(require("../Executrix/configurator"));
 
+var _lexical = _interopRequireDefault(require("../Executrix/lexical"));
+
 var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"));
 
 var commands = _interopRequireWildcard(require("./commandsLibrary"));
@@ -33,6 +35,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @description Executes commands by calling the appropriate command-function from the commandLibrary,
  * which will actually be stored functions on the D-Data structure.
  * @requires module:configurator
+ * @requires module:lexical
  * @requires module:commandsLibrary
  * @requires module:loggers
  * @requires module:basic-constants
@@ -209,6 +212,7 @@ function getCommandArgs(commandString, commandDelimiter) {
   var isOddRule = [];
   var replaceCharacterAtIndexRule = [];
   var replaceTildesWithSingleQuoteRule = [];
+  var stringLiteralCommandDelimiterAdded = false;
   isOddRule[0] = s.cisOdd;
   replaceCharacterAtIndexRule[0] = s.creplaceCharacterAtIndex;
   replaceTildesWithSingleQuoteRule[0] = s.creplaceCharacterWithCharacter;
@@ -255,6 +259,7 @@ function getCommandArgs(commandString, commandDelimiter) {
 
 
               commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
+              stringLiteralCommandDelimiterAdded = true;
 
               _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging the first string delimiter: ' + commandString);
             } else {
@@ -270,6 +275,7 @@ function getCommandArgs(commandString, commandDelimiter) {
                 _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'odd index');
 
                 commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, b.cTilde + b.cBackTickQuote], replaceCharacterAtIndexRule);
+                stringLiteralCommandDelimiterAdded = true;
 
                 _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an odd string delimiter: ' + commandString);
               } else {
@@ -277,6 +283,7 @@ function getCommandArgs(commandString, commandDelimiter) {
                 _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'even index');
 
                 commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
+                stringLiteralCommandDelimiterAdded = true;
 
                 _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString after tagging an even string delimiter: ' + commandString);
               }
@@ -349,6 +356,11 @@ function getCommandArgs(commandString, commandDelimiter) {
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + JSON.stringify(returnValue));
     }
+  }
+
+  if (stringLiteralCommandDelimiterAdded === true) {
+    // This means we need to remove some b.cTilde from one or more of the command args.
+    _lexical["default"].removeStringLiteralTagsFromArray(returnValue);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + JSON.stringify(returnValue));

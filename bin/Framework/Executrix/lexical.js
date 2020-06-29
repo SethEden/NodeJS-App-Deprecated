@@ -370,7 +370,44 @@ function parseArgumentAsArray(argumentValue) {
 }
 
 ;
+/**
+ * @function removeStringLiteralTagsFromArray
+ * @description Removes all string literal tags from all the argument array elements passed as input to the function.
+ * @param {array<string>} argumentArray The argument array that should have the string literal tags removed.
+ * The string literal tag is the tilde character.
+ * @return {array<string>} The same as the input, but just with the string literal tags removed from all array elements.
+ * @author Seth Hollingsead
+ * @date 2020/06/28
+ */
+
+function removeStringLiteralTagsFromArray(argumentArray) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = parseArgumentAsRegularExpression.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentArray is: ' + JSON.stringify(argumentArray));
+
+  var returnData;
+  var removeCharacterRule = [];
+  removeCharacterRule[0] = s.cremoveCharacterFromArray;
+  returnData = _ruleBroker["default"].processRules(b.cTilde, argumentArray, removeCharacterRule); // for (let i = 0; i < argumentArray.length; i++) {
+  //   let arrayElement = argumentArray[i];
+  //   if (arrayElement.includes(b.cTilde) === true) {
+  //     arrayElement = ruleBroker.processRules()
+  //   }
+  // }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+}
+
+;
 var _default = {
-  parseBusinessRuleArgument: parseBusinessRuleArgument
+  parseBusinessRuleArgument: parseBusinessRuleArgument,
+  removeStringLiteralTagsFromArray: removeStringLiteralTagsFromArray
 };
 exports["default"] = _default;
