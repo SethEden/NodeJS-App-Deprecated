@@ -3,6 +3,7 @@
  * @module nominal
  * @description Contains all of the nominal system commands.
  * @requires module:configurator
+ * @requires module:lexical
  * @requires module:commandBroker
  * @requires module:ruleBroker
  * @requires module:workflowBroker
