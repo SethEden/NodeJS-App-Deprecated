@@ -128,8 +128,6 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.isEven(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.creplaceCharacterAtIndex, function (inputData, inputMetaData) {
     return stringParsing.replaceCharacterAtIndex(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.ccreateNdigitStringFromNumber, function (inputData, inputMetaData) {
-    return stringGeneration.createNdigitStringFromNumber(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength1, function (inputData, inputMetaData) {
     return stringGeneration.generateRandomMixedCaseTextByLength1(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength2, function (inputData, inputMetaData) {
