@@ -2346,7 +2346,6 @@ export const creplaceCharacterAtIndex = creplace  + cCharacter + cAt + cIndex;
 // *********************************
 // StringGeneration rules in order
 // *********************************
-export const ccreateNdigitStringFromNumber = ccreate + b.cN + cdigit + cString + cFrom + cNumber;
 export const cgenerateRandomMixedCaseTextByLength1 = cgenerateRandom + cMixedCase + cTextByLength + b.c1;
 export const cgenerateRandomMixedCaseTextByLength2 = cgenerateRandom + cMixedCase + cTextByLength + b.c2;
 export const cgenerateRandomUpperCaseTextByLength1 = cgenerateRandom + cUpperCase + cTextByLength + b.c1;

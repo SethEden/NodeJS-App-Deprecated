@@ -83,7 +83,6 @@ export const initRulesLibrary = function() {
     // *********************************
     // StringGeneration rules in order
     // *********************************
-    [s.ccreateNdigitStringFromNumber]: (inputData, inputMetaData) => stringGeneration.createNdigitStringFromNumber(inputData, inputMetaData),
     [s.cgenerateRandomMixedCaseTextByLength1]: (inputData, inputMetaData) => stringGeneration.generateRandomMixedCaseTextByLength1(inputData, inputMetaData),
     [s.cgenerateRandomMixedCaseTextByLength2]: (inputData, inputMetaData) => stringGeneration.generateRandomMixedCaseTextByLength2(inputData, inputMetaData),
     [s.cgenerateRandomUpperCaseTextByLength1]: (inputData, inputMetaData) => stringGeneration.generateRandomUpperCaseTextByLength1(inputData, inputMetaData),
