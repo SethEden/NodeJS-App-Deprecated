@@ -776,7 +776,7 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
  * @description Generate a valid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
  * @param {string} inputData The string that contains the number of characters to generate.
- * @param {map} inputMetaData A map with multiple input parameters:
+ * @param {array<boolean,string,string>} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
@@ -791,7 +791,7 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
   var functionName = s.cgenerateValidEmail1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
   var returnData = '';
   var allowableSpecialCharacters;
   var generateSpecialCharacters;
@@ -808,8 +808,8 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateValidEmailWithSpecificSuffixAndDomainName1(inputData, {generateSpecialCharacters,
-        allowableSpecialCharacters, specifiedSuffixAndDomain});
+      returnData = generateValidEmailWithSpecificSuffixAndDomainName1(inputData, generateSpecialCharacters,
+        allowableSpecialCharacters, specifiedSuffixAndDomain);
     } else if (inputMetaData.length <= 2) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
@@ -818,12 +818,12 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateRandomValidEmail1(inputData, {generateSpecialCharacters, allowableSpecialCharacters});
+      returnData = generateRandomValidEmail1(inputData, generateSpecialCharacters, allowableSpecialCharacters);
     } else {
-      returnData = GenerateRandomValidEmail1(inputData, {bFalse, sEmpty});
+      returnData = generateRandomValidEmail1(inputData, b.cFalse, s.cEmpty);
     }
   } else {
-    returnData = GenerateRandomValidEmail1(inputData, {bFalse, sEmpty});
+    returnData = generateRandomValidEmail1(inputData, b.cFalse, s.cEmpty);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -835,7 +835,7 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
  * @description Generate a valid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated; generate them and string them together to the specified length.
  * @param {string} inputData The string that contains the number of characters to generate.
- * @param {map} inputMetaData A map with multiple input parameters:
+ * @param {array<boolean,string,string>} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
@@ -850,7 +850,7 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
   var functionName = s.cgenerateValidEmail2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
   var returnData = '';
   var allowableSpecialCharacters;
   var generateSpecialCharacters;
@@ -867,8 +867,8 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateValidEmailWithSpecificSuffixAndDomainName2(inputData, {generateSpecialCharacters,
-        allowableSpecialCharacters, specifiedSuffixAndDomain});
+      returnData = generateValidEmailWithSpecificSuffixAndDomainName2(inputData, generateSpecialCharacters,
+        allowableSpecialCharacters, specifiedSuffixAndDomain);
     } else if (inputMetaData.length <= 2) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
@@ -877,12 +877,12 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateRandomValidEmail2(inputData, {generateSpecialCharacters, allowableSpecialCharacters})
+      returnData = generateRandomValidEmail2(inputData, generateSpecialCharacters, allowableSpecialCharacters)
     } else {
-      returnData = GenerateRandomValidEmail2(inputData, {bFalse, sEmpty});
+      returnData = generateRandomValidEmail2(inputData, b.cFalse, s.cEmpty);
     }
   } else {
-    returnData = GenerateRandomValidEmail2(inputData, {bFalse, sEmpty});
+    returnData = generateRandomValidEmail2(inputData, b.cFalse, s.cEmpty);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -894,7 +894,7 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
  * @description Generate an invalid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated, generate them and string them together to the specified length.
  * @param {string} inputData The string that contains the number of characters to generate.
- * @param {map} inputMetaData A map with multiple input parameters:
+ * @param {array<boolean,string,string>} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
@@ -926,8 +926,8 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateInvalidEmailWithSpecificSuffixAndDomainName1(inputData, {generateSpecialCharacters,
-        allowableSpecialCharacters, specifiedSuffixAndDomain});
+      returnData = generateInvalidEmailWithSpecificSuffixAndDomainName1(inputData, generateSpecialCharacters,
+        allowableSpecialCharacters, specifiedSuffixAndDomain);
     } else if (inputMetaData.length <= 2) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
@@ -936,12 +936,12 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateRandomInvalidEmail1(inputData, {generateSpecialCharacters, allowableSpecialCharacters})
+      returnData = generateRandomInvalidEmail1(inputData, generateSpecialCharacters, allowableSpecialCharacters)
     } else {
-      returnData = GenerateRandomInvalidEmail1(inputData, {bFalse, sEmpty});
+      returnData = generateRandomInvalidEmail1(inputData, [bFalse, sEmpty]);
     }
   } else {
-    returnData = GenerateRandomInvalidEmail1(inputData, {bFalse, sEmpty});
+    returnData = generateRandomInvalidEmail1(inputData, [bFalse, sEmpty]);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -953,7 +953,7 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
  * @description Generate an invalid random email address composed of a random selection of mixed case letters, numeric characters and optionally special characters
  * from an optional list of allowable special characters, should be generated, generate them and string them together to the specified length.
  * @param {string} inputData The string that contains the number of characters to generate.
- * @param {map} inputMetaData A map with multiple input parameters:
+ * @param {array<boolean,string,string>} inputMetaData A map with multiple input parameters:
  *  generateSpecialCharacters - A boolean value to indicate if special characters should be included when randomly generating characters for the output string.
  *  allowableSpecialCharacters - The list of allowable special characters as a string, only used if the {@code generateSpecialCharacters} boolean value is set to {@code TRUE}.
  *  specifiedSuffixAndDomain - The specified suffix and domain to use after the "@" symbol in the email being generated, example "Yahoo.com".
@@ -985,8 +985,8 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateInvalidEmailWithSpecificSuffixAndDomainName2(inputData, {generateSpecialCharacters,
-        allowableSpecialCharacters, specifiedSuffixAndDomain});
+      returnData = generateInvalidEmailWithSpecificSuffixAndDomainName2(inputData, generateSpecialCharacters,
+        allowableSpecialCharacters, specifiedSuffixAndDomain);
     } else if (inputMetaData.length <= 2) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
       allowableSpecialCharacters = inputMetaData[1];
@@ -995,12 +995,12 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
       if (generateSpecialCharacters === false && allowableSpecialCharacters !== '') {
         generateSpecialCharacters = true;
       }
-      returnData = generateRandomInvalidEmail2(inputData, {generateSpecialCharacters, allowableSpecialCharacters})
+      returnData = generateRandomInvalidEmail2(inputData, generateSpecialCharacters, allowableSpecialCharacters)
     } else {
-      returnData = GenerateRandomInvalidEmail2(inputData, {bFalse, sEmpty});
+      returnData = generateRandomInvalidEmail2(inputData, [bFalse, sEmpty]);
     }
   } else {
-    returnData = GenerateRandomInvalidEmail2(inputData, {bFalse, sEmpty});
+    returnData = generateRandomInvalidEmail2(inputData, [bFalse, sEmpty]);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1042,9 +1042,9 @@ const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfChar
     numberOfCharactersToGenerate = numberOfCharactersToGenerate - 1;
     numberOfCharactersToGenerate = numberOfCharactersToGenerate - specifiedSuffixAndDomain.length;
     if (generateSpecialCharacters === false) {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfCharactersToGenerate, '');
+      prefix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfCharactersToGenerate, '');
     } else {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfCharactersToGenerate, allowableSpecialCharacters);
+      prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfCharactersToGenerate, allowableSpecialCharacters);
     }
     returnData = prefix + b.cAt + specifiedSuffixAndDomain;
   } else {
@@ -1070,12 +1070,14 @@ const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfChar
  * @author Seth Hollingsead
  * @date 2020/05/19
  */
-const generateValidEmailWithSpecificSuffixAndDomainName2 = function(inputData, inputMetaData) {
+const generateValidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateValidEmailWithSpecificSuffixAndDomainName2;
+  var functionName = 'generateValidEmailWithSpecificSuffixAndDomainName2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'specifiedSuffixAndDomain is: ' + specifiedSuffixAndDomain);
   var returnData = '';
   var prefix = '';
   if ((numberOfCharactersToGenerate >= specifiedSuffixAndDomain.length + 2) && numberOfCharactersToGenerate >= 6 &&
@@ -1088,9 +1090,9 @@ const generateValidEmailWithSpecificSuffixAndDomainName2 = function(inputData, i
     numberOfCharactersToGenerate = numberOfCharactersToGenerate - 1;
     numberOfCharactersToGenerate = numberOfCharactersToGenerate - specifiedSuffixAndDomain.length;
     if (generateSpecialCharacters === false) {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfCharactersToGenerate, '');
+      prefix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfCharactersToGenerate, '');
     } else {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfCharactersToGenerate, allowableSpecialCharacters);
+      prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfCharactersToGenerate, allowableSpecialCharacters);
     }
     returnData = prefix + b.cAt + specifiedSuffixAndDomain;
   } else {
@@ -1143,26 +1145,26 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
     // So let us first figure that out, then the rest of the available characters that we must provide can be divided up betwee the prefix and suffix.
     if (numberOfCharactersToGenerate === 4) { // Stick with a 2-character domain name.
       if (generateSpecialCharacters === false) {
-        domainName = cg.generateRandomMixedCaseTextByLength1(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
       } else {
-        domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
       }
     } else if (numberOfCharactersToGenerate >= 5) {
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
       // but need to decide now so we can get it done and be fair.
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
-      if (cg.randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) { // Stick with a 2-character domain name.
+      if (cg.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = cg.generateRandomMixedCaseTextByLength1(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
         } else {
-          domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
       } else { // Do a 3-characterdomain name.
         if (generateSpecialCharacters === false) {
-          domainName = cg.generateRandomMixedCaseTextByLength1(b.c3, '');
+          domainName = generateRandomMixedCaseTextByLength1(b.c3, '');
         } else {
-          domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c3, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c3, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 3;
       }
@@ -1170,9 +1172,9 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
       // @NOTE We should never actually get here, because the {@code numberOfCharactersToGenerate} cannot be less than 6 and 6-2 must be >= 4.
       // Just generate the minimum domain and try to proceed as best as possible as a matter of completeness of the code.
       if (generateSpecialCharacters === false) {
-        domainName = cg.generateRandomMixedCaseTextByLength1(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
       } else {
-        domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
       }
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
@@ -1192,14 +1194,14 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
     }
 
     if (generateSpecialCharacters === false) {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfPrefixCharacters, '');
+      prefix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfPrefixCharacters, '');
     } else {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfPrefixCharacters, allowableSpecialCharacters);
+      prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfPrefixCharacters, allowableSpecialCharacters);
     }
     if (generateSpecialCharacters === false) {
-      suffix = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfSuffixCharacters, '');
+      suffix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfSuffixCharacters, '');
     } else {
-      suffix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfSuffixCharacters, allowableSpecialCharacters);
+      suffix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfSuffixCharacters, allowableSpecialCharacters);
     }
     returnData = prefix + b.cAt + suffix + b.cDot + domainName;
   } else {
@@ -1248,26 +1250,26 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
     // So let us first figure that out, then the rest of the available characters that we must provide can be divided up betwee the prefix and suffix.
     if (numberOfCharactersToGenerate === 4) { // Stick with a 2-character domain name.
       if (generateSpecialCharacters === false) {
-        domainName = cg.generateRandomMixedCaseTextByLength2(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
       } else {
-        domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
       }
     } else if (numberOfCharactersToGenerate >= 5) {
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
       // but need to decide now so we can get it done and be fair.
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
-      if (cg.randomlyGenerateBooleanValue2(inputData, inputMetaData) === true) { // Stick with a 2-character domain name.
+      if (cg.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = cg.generateRandomMixedCaseTextByLength2(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
         } else {
-          domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
       } else { // Do a 3-characterdomain name.
         if (generateSpecialCharacters === false) {
-          domainName = cg.generateRandomMixedCaseTextByLength2(b.c3, '');
+          domainName = generateRandomMixedCaseTextByLength2(b.c3, '');
         } else {
-          domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c3, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c3, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 3;
       }
@@ -1275,9 +1277,9 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
       // @NOTE We should never actually get here, because the {@code numberOfCharactersToGenerate} cannot be less than 6 and 6-2 must be >= 4.
       // Just generate the minimum domain and try to proceed as best as possible as a matter of completeness of the code.
       if (generateSpecialCharacters === false) {
-        domainName = cg.generateRandomMixedCaseTextByLength2(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
       } else {
-        domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
       }
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
@@ -1297,14 +1299,14 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
     }
 
     if (generateSpecialCharacters === false) {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfPrefixCharacters, '');
+      prefix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfPrefixCharacters, '');
     } else {
-      prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfPrefixCharacters, allowableSpecialCharacters);
+      prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfPrefixCharacters, allowableSpecialCharacters);
     }
     if (generateSpecialCharacters === false) {
-      suffix = cg.generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfSuffixCharacters, '');
+      suffix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfSuffixCharacters, '');
     } else {
-      suffix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfSuffixCharacters, allowableSpecialCharacters);
+      suffix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfSuffixCharacters, allowableSpecialCharacters);
     }
     returnData = prefix + b.cAt + suffix + b.cDot + domainName;
   } else {
@@ -1330,12 +1332,14 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
  * @author Seth Hollingsead
  * @date 2020/03/04
  */
-const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(inputData, inputMetaData) {
+const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateInvalidEmailWithSpecificSuffixAndDomainName1;
+  var functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'specifiedSuffixAndDomain is: ' + specifiedSuffixAndDomain);
   var returnData = '';
   var prefix = '';
   var numberOfPrefixCharacters = 0;
@@ -1349,7 +1353,8 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(inputData,
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange1(b.c1, {c3, cTrue, cTrue});
+  failureMode = cg.randomlyGenerateNumberInRange1(b.c1, [c3, cTrue, cTrue]);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -1366,19 +1371,21 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(inputData,
     // We know we have to use an "@" symbol, and a "x" symbol, the rest of the characters must be generated.
     // first need to figure out how many characters of each we must generate to get the desired final length.
     switch (failureMode) {
-      case 1:
+      case 1: case '1':
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - (specifiedSuffixAndDomain.length + 1);
         break;
-      case 2:
+      case 2: case '2':
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - specifiedSuffixAndDomain.length;
         break;
-      case 3:
+      case 3: case '3':
         numberOfCharactersToGenerate = 0;
         break;
       default:
         numberOfCharactersToGenerate = 0;
         break;
     }
+
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
 
     // This is a pretty dumb and stupid way of doing it, but we only have 3 failure modes for this rule.
     // There are basically with and without the prefix, and we've ractored in all the other cases already above.
@@ -1386,23 +1393,28 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(inputData,
 
     if (numberOfPrefixCharacters > 0) {
       if (generateSpecialCharacters === false) {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfPrefixCharacters.toString(), '');
+        prefix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfPrefixCharacters.toString(), '');
       } else {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
+        prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'prefix is: ' + prefix);
 
     switch (failureMode) {
-      case 1: // Without the "@" symbol
+      case 1: case '1': // Without the "@" symbol
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ symbol.');
         returnData = prefix + specifiedSuffixAndDomain;
         break;
-      case 2: // Without the prefix
+      case 2: case '2': // Without the prefix
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix.');
         returnData = b.cAt + specifiedSuffixAndDomain;
         break;
-      case 3: // Without the "@" & Prefix
+      case 3: case '3': // Without the "@" & Prefix
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and prefix.');
         returnData = specifiedSuffixAndDomain;
         break;
       default:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'DEFAULT: Without the @ and prefix.');
         returnData = specifiedSuffixAndDomain;
         break;
     }
@@ -1448,7 +1460,8 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange2(b.c1, {c3, cTrue, cTrue});
+  failureMode = cg.randomlyGenerateNumberInRange2(b.c1, [c3, cTrue, cTrue]);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -1465,13 +1478,13 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
     // We know we have to use an "@" symbol, and a "x" symbol, the rest of the characters must be generated.
     // first need to figure out how many characters of each we must generate to get the desired final length.
     switch (failureMode) {
-      case 1:
+      case 1: case '1':
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - (specifiedSuffixAndDomain.length + 1);
         break;
-      case 2:
+      case 2: case '2':
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - specifiedSuffixAndDomain.length;
         break;
-      case 3:
+      case 3: case '3':
         numberOfCharactersToGenerate = 0;
         break;
       default:
@@ -1482,26 +1495,32 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
     // This is a pretty dumb and stupid way of doing it, but we only have 3 failure modes for this rule.
     // There are basically with and without the prefix, and we've ractored in all the other cases already above.
     numberOfPrefixCharacters = numberOfCharactersToGenerate;
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
 
     if (numberOfPrefixCharacters > 0) {
       if (generateSpecialCharacters === false) {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfPrefixCharacters.toString(), '');
+        prefix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfPrefixCharacters.toString(), '');
       } else {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
+        prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'prefix is: ' + prefix);
 
     switch (failureMode) {
-      case 1: // Without the "@" symbol
+      case 1: case '1': // Without the "@" symbol
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ symbol.');
         returnData = prefix + specifiedSuffixAndDomain;
         break;
-      case 2: // Without the prefix
+      case 2: case '2': // Without the prefix
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix.');
         returnData = b.cAt + specifiedSuffixAndDomain;
         break;
-      case 3: // Without the "@" & Prefix
+      case 3: case '3': // Without the "@" & Prefix
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and prefix.');
         returnData = specifiedSuffixAndDomain;
         break;
       default:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'DEFAULT: Without the @ and prefix.');
         returnData = specifiedSuffixAndDomain;
         break;
     }
@@ -1524,12 +1543,13 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
  * @author Seth Hollingsead
  * @date 2020/03/04
  */
-const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
+const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomInvalidEmail1;
+  var functionName = 'generateRandomInvalidEmail1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
   var returnData = '';
   var prefix = '';
   var suffix = '';
@@ -1542,7 +1562,9 @@ const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
   var c28 = b.c2 + b.c8;
   var cTrue = g.cTrue;
 
-  failureMode = cg.randomlyGenerateNumberInRange1(b.c1, {c28, cTrue, cTrue});
+  failureMode = cg.randomlyGenerateNumberInRange1(b.c1, [c28, cTrue, cTrue]);
+  failureMode = parseInt(failureMode);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -1591,6 +1613,7 @@ const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
     } else if (failureMode === 3 || failureMode === 7 || failureMode === 14 || failureMode === 15 || failureMode === 16) {
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
 
     // Only work generating the domain name if we are not going to be building our invalid email on a missing domain name.
     if (failureMode === 1 || failureMode === 2 || failureMode === 3 || (failureMode >= 8 && failureMode <= 16) || failureMode === 19 || failureMode > 27) {
@@ -1599,34 +1622,47 @@ const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
       if (numberOfCharactersToGenerate === 4) {
         // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = cg.generateRandomMixedCaseTextByLength1(b.c2, '');
-          // domainName = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+          // domainName = generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
         } else {
-          // domainName = cg.generateRandomMixedCaseTextWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
-          domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+          if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+            // domainName = generateRandomMixedCaseTextWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+            domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+          } else {
+            domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+          }
         }
         numberOfCharactersToGenerate = numberOfDomainNameCharacters - 2;
       } else if (numberOfCharactersToGenerate >= 5) {
         // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
         // but need to decide now so we can get it done and be fair.
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
-        if (cg.randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) { // Stick with a 2-character domain name.
+        if (cg.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = cg.generateRandomMixedCaseTextByLength1(b.c2, '');
+            domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
           } else {
-            domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+            if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+              domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+            } else {
+              domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+            }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 2;
         } else { // Do a 3-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = cg.generateRandomMixedCaseTextByLength1(b.c3, '');
+            domainName = generateRandomMixedCaseTextByLength1(b.c3, '');
           } else {
-            domainNme = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c3, allowableSpecialCharacters);
+            if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+              domainNme = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c3, allowableSpecialCharacters);
+            } else {
+              domainName = generateRandomMixedCaseTextByLength1(b.c3, '');
+            }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 3;
         }
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'domainName is: ' + domainName);
 
     // ONLY do suffix and prefix if our failure modes do not exclude both.
     if (failureMode >= 1 && failureMode <= 7) {
@@ -1648,108 +1684,148 @@ const generateRandomInvalidEmail1 = function(inputData, inputMetaData) {
       numberOfPrefixCharacters = numberOfCharactersToGenerate; // Prefix gets the remainder!
       numberOfSuffixCharacters = 0;
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfPrefixCharacters is: ' + numberOfPrefixCharacters);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfSuffixCharacters is: ' + numberOfSuffixCharacters);
 
     if (numberOfPrefixCharacters > 0) {
       if (generateSpecialCharacters === false) {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfPrefixCharacters.toString(), '');
+        prefix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfPrefixCharacters.toString(), '');
       } else {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
+        if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+          prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
+        } else {
+          prefix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfPrefixCharacters.toString(), '');
+        }
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'prefix is: ' + prefix);
 
     if (numberOfSuffixCharacters > 0) {
       if (generateSpecialCharacters === false) {
-        suffix = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfSuffixCharacters.toString(), '');
+        suffix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfSuffixCharacters.toString(), '');
       } else {
-        suffix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfSuffixCharacters.toString(), allowableSpecialCharacters);
+        if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+          suffix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(numberOfSuffixCharacters.toString(), allowableSpecialCharacters);
+        } else {
+          suffix = generateRandomMixedCaseAlphaNumericCodeByLength1(numberOfSuffixCharacters.toString(), '');
+        }
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'suffix is: ' + prefix);
   }
 
   switch (failureMode) {
     case 1: // Without the "@" symbol
-      returnData = prefix + suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ symbol.');
+      returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 2: // Without the "." symbol
-      returnData = prefix + genConst.cAt + suffix + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . symbol.');
+      returnData = prefix + b.cAt + suffix + domainName;
       break;
     case 3: // Without both the "@" & "." symbols
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and . symbols.');
       returnData = prefix + suffix + domainName;
       break;
     case 4: // Without the domain name
-      returnData = prefix + genConst.cAt + suffix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the domain name.');
+      returnData = prefix + b.cAt + suffix + b.cDot;
       break;
     case 5: // Without the "@" & domain name
-      returnData = prefix + suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and domain name.');
+      returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 6: // Without the "." & domain name
-      returnData = prefix + genConst.cAt + suffix;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and domain name.');
+      returnData = prefix + b.cAt + suffix;
       break;
     case 7: // Without the "@", "." & domain name
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and domain name.');
       returnData = prefix + suffix;
       break;
     case 8: // Without the Prefix
-      returnData = genConst.cAt + suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix.');
+      returnData = b.cAt + suffix + b.cDot + domainName;
       break;
     case 9: // Without the Suffix
-      returnData = prefix + genConst.cAt + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix.');
+      returnData = prefix + b.cAt + b.cDot + domainName;
       break;
     case 10: // Without the "@" & Prefix
-      returnData = suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and prefix.');
+      returnData = suffix + b.cDot + domainName;
       break;
     case 11: // Without the "." & Prefix
-      returnData = genConst.cAt + suffix + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and prefix.');
+      returnData = b.cAt + suffix + domainName;
       break;
     case 12: // Without the "@" & Suffix
-      returnData = prefix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and suffix.');
+      returnData = prefix + b.cDot + domainName;
       break;
     case 13: // Without the "." & Suffix
-      returnData = prefix + genConst.cAt + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and suffix.');
+      returnData = prefix + b.cAt + domainName;
       break;
     case 14: // Without the "@", "." & Prefix
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and prefix.');
       returnData = suffix + domainName;
       break;
     case 15: // Without the "@", "." & Suffix
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and suffix.');
       returnData = prefix + domainName;
       break;
     case 16: // Without the "@", ".", Prefix, & Suffix
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, ., prefix and suffix.');
       returnData = domainName;
       break;
     case 17: // Without the Prefix & domain name
-      returnData = genConst.cAt + suffix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and domain name.');
+      returnData = b.cAt + suffix + b.cDot;
       break;
     case 18: // Without the Suffix & domain name
-      returnData = prefix + genConst.cAt + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix and domain name.');
+      returnData = prefix + b.cAt + b.cDot;
       break;
     case 19: // Without the Prefix & suffix
-      returnData = genConst.cAt + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and suffix.');
+      returnData = b.cAt + b.cDot + domainName;
       break;
     case 20: // Without the Prefix, Suffix & domain name
-      returnData = genConst.cAt + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and domain name.');
+      returnData = b.cAt + b.cDot;
       break;
     case 21: // Without the "@", Prefix & domain name
-      returnData = suffix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix and domain name.');
+      returnData = suffix + b.cDot;
       break;
     case 22: // Without the ".", Prefix & domain name
-      returnData = genConst.cAt + suffix;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix and domain name.');
+      returnData = b.cAt + suffix;
       break;
     case 23: // Without the "@", Suffix & domain name
-      returnData = prefix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, suffix and domain name.');
+      returnData = prefix + b.cDot;
       break;
     case 24: // Without the ".", Suffix & domain name
-      returnData = prefix + genConst.cAt + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., suffix and domain name.');
+      returnData = prefix + b.cAt + b.cDot;
       break;
     case 25: // Without the "@", Prefix, Suffix & domain name
-      returnData = genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix, suffix and domain name.');
+      returnData = b.cDot;
       break;
     case 26: // Without the ".", Prefix, Suffix & domain name
-      returnData = genConst.cAt;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix, suffix and domain name.');
+      returnData = b.cAt;
       break;
     case 27: // Without the Prefix, Suffix & "@"
-      returnData = genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and @.');
+      returnData = b.cDot + domainName;
       break;
     case 28: // Without the Prefix, Suffix & "."
-      returnData = genConst.cAt + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and ..');
+      returnData = b.cAt + domainName;
       break;
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1789,7 +1865,9 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
   var c28 = b.c2 + b.c8;
   var cTrue = g.cTrue;
 
-  failureMode = cg.randomlyGenerateNumberInRange2(b.c1, {c28, cTrue, cTrue});
+  failureMode = cg.randomlyGenerateNumberInRange2(b.c1, [c28, cTrue, cTrue]);
+  failureMode = parseInt(failureMode);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -1838,6 +1916,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
     } else if (failureMode === 3 || failureMode === 7 || failureMode === 14 || failureMode === 15 || failureMode === 16) {
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
 
     // Only work generating the domain name if we are not going to be building our invalid email on a missing domain name.
     if (failureMode === 1 || failureMode === 2 || failureMode === 3 || (failureMode >= 8 && failureMode <= 16) || failureMode === 19 || failureMode > 27) {
@@ -1846,34 +1925,48 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       if (numberOfCharactersToGenerate === 4) {
         // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = cg.generateRandomMixedCaseTextByLength2(b.c2, '');
-          // domainName = cg.generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+          // domainName = generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
         } else {
-          // domainName = cg.generateRandomMixedCaseTextWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
-          domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+          if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+            // domainName = generateRandomMixedCaseTextWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+            domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+          } else {
+            domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+            // domainName = generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
+          }
         }
         numberOfCharactersToGenerate = numberOfDomainNameCharacters - 2;
       } else if (numberOfCharactersToGenerate >= 5) {
         // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
         // but need to decide now so we can get it done and be fair.
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
-        if (cg.randomlyGenerateBooleanValue2(inputData, inputMetaData) === true) { // Stick with a 2-character domain name.
+        if (cg.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = cg.generateRandomMixedCaseTextByLength2(b.c2, '');
+            domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
           } else {
-            domainName = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+            if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+              domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+            } else {
+              domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+            }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 2;
         } else { // Do a 3-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = cg.generateRandomMixedCaseTextByLength2(b.c3, '');
+            domainName = generateRandomMixedCaseTextByLength2(b.c3, '');
           } else {
-            domainNme = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c3, allowableSpecialCharacters);
+            if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+              domainNme = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c3, allowableSpecialCharacters);
+            } else {
+              domainName = generateRandomMixedCaseTextByLength2(b.c3, '');
+            }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 3;
         }
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'domainName is: ' + domainName);
 
     // ONLY do suffix and prefix if our failure modes do not exclude both.
     if (failureMode >= 1 && failureMode <= 7) {
@@ -1895,108 +1988,148 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       numberOfPrefixCharacters = numberOfCharactersToGenerate; // Prefix gets the remainder!
       numberOfSuffixCharacters = 0;
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfPrefixCharacters is: ' + numberOfPrefixCharacters);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfSuffixCharacters is: ' + numberOfSuffixCharacters);
 
     if (numberOfPrefixCharacters > 0) {
       if (generateSpecialCharacters === false) {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfPrefixCharacters.toString(), '');
+        prefix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfPrefixCharacters.toString(), '');
       } else {
-        prefix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
+        if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+          prefix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfPrefixCharacters.toString(), allowableSpecialCharacters);
+        } else {
+          prefix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfPrefixCharacters.toString(), '');
+        }
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'prefix is: ' + prefix);
 
     if (numberOfSuffixCharacters > 0) {
       if (generateSpecialCharacters === false) {
-        suffix = cg.generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfSuffixCharacters.toString(), '');
+        suffix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfSuffixCharacters.toString(), '');
       } else {
-        suffix = cg.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfSuffixCharacters.toString(), allowableSpecialCharacters);
+        if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
+          suffix = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(numberOfSuffixCharacters.toString(), allowableSpecialCharacters);
+        } else {
+          suffix = generateRandomMixedCaseAlphaNumericCodeByLength2(numberOfSuffixCharacters.toString(), '');
+        }
       }
     }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'suffix is: ' + prefix);
   }
 
   switch (failureMode) {
     case 1: // Without the "@" symbol
-      returnData = prefix + suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ symbol.');
+      returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 2: // Without the "." symbol
-      returnData = prefix + genConst.cAt + suffix + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . symbol.');
+      returnData = prefix + b.cAt + suffix + domainName;
       break;
     case 3: // Without both the "@" & "." symbols
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and . symbols.');
       returnData = prefix + suffix + domainName;
       break;
     case 4: // Without the domain name
-      returnData = prefix + genConst.cAt + suffix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the domain name.');
+      returnData = prefix + b.cAt + suffix + b.cDot;
       break;
     case 5: // Without the "@" & domain name
-      returnData = prefix + suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and domain name.');
+      returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 6: // Without the "." & domain name
-      returnData = prefix + genConst.cAt + suffix;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and domain name.');
+      returnData = prefix + b.cAt + suffix;
       break;
     case 7: // Without the "@", "." & domain name
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and domain name.');
       returnData = prefix + suffix;
       break;
     case 8: // Without the Prefix
-      returnData = genConst.cAt + suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix.');
+      returnData = b.cAt + suffix + b.cDot + domainName;
       break;
     case 9: // Without the Suffix
-      returnData = prefix + genConst.cAt + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix.');
+      returnData = prefix + b.cAt + b.cDot + domainName;
       break;
     case 10: // Without the "@" & Prefix
-      returnData = suffix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and prefix.');
+      returnData = suffix + b.cDot + domainName;
       break;
     case 11: // Without the "." & Prefix
-      returnData = genConst.cAt + suffix + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and prefix.');
+      returnData = b.cAt + suffix + domainName;
       break;
     case 12: // Without the "@" & Suffix
-      returnData = prefix + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and suffix.');
+      returnData = prefix + b.cDot + domainName;
       break;
     case 13: // Without the "." & Suffix
-      returnData = prefix + genConst.cAt + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and suffix.');
+      returnData = prefix + b.cAt + domainName;
       break;
     case 14: // Without the "@", "." & Prefix
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and prefix.');
       returnData = suffix + domainName;
       break;
     case 15: // Without the "@", "." & Suffix
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and suffix.');
       returnData = prefix + domainName;
       break;
     case 16: // Without the "@", ".", Prefix, & Suffix
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, ., prefix and suffix.');
       returnData = domainName;
       break;
     case 17: // Without the Prefix & domain name
-      returnData = genConst.cAt + suffix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and domain name.');
+      returnData = b.cAt + suffix + b.cDot;
       break;
     case 18: // Without the Suffix & domain name
-      returnData = prefix + genConst.cAt + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix and domain name.');
+      returnData = prefix + b.cAt + b.cDot;
       break;
     case 19: // Without the Prefix & suffix
-      returnData = genConst.cAt + genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and suffix.');
+      returnData = b.cAt + b.cDot + domainName;
       break;
     case 20: // Without the Prefix, Suffix & domain name
-      returnData = genConst.cAt + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and domain name.');
+      returnData = b.cAt + b.cDot;
       break;
     case 21: // Without the "@", Prefix & domain name
-      returnData = suffix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix and domain name.');
+      returnData = suffix + b.cDot;
       break;
     case 22: // Without the ".", Prefix & domain name
-      returnData = genConst.cAt + suffix;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix and domain name.');
+      returnData = b.cAt + suffix;
       break;
     case 23: // Without the "@", Suffix & domain name
-      returnData = prefix + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, suffix and domain name.');
+      returnData = prefix + b.cDot;
       break;
     case 24: // Without the ".", Suffix & domain name
-      returnData = prefix + genConst.cAt + genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., suffix and domain name.');
+      returnData = prefix + b.cAt + b.cDot;
       break;
     case 25: // Without the "@", Prefix, Suffix & domain name
-      returnData = genConst.cDot;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix, suffix and domain name.');
+      returnData = b.cDot;
       break;
     case 26: // Without the ".", Prefix, Suffix & domain name
-      returnData = genConst.cAt;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix, suffix and domain name.');
+      returnData = b.cAt;
       break;
     case 27: // Without the Prefix, Suffix & "@"
-      returnData = genConst.cDot + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and @.');
+      returnData = b.cDot + domainName;
       break;
     case 28: // Without the Prefix, Suffix & "."
-      returnData = genConst.cAt + domainName;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and ..');
+      returnData = b.cAt + domainName;
       break;
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

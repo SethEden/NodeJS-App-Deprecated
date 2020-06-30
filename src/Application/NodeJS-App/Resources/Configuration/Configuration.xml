@@ -82,7 +82,7 @@
           <ConfigurationElement Name="stringGeneration@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="stringGeneration@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="stringGeneration@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="stringGeneration@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="stringGeneration@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="characterGeneration" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="characterGeneration@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -1850,7 +1850,7 @@
           <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1864,7 +1864,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1878,7 +1878,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1892,7 +1892,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1906,7 +1906,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1920,7 +1920,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1934,7 +1934,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1948,7 +1948,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1962,7 +1962,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseTextWithSpecialCharactersByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1976,7 +1976,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1990,7 +1990,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseTextWithSpecialCharactersByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2004,7 +2004,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2018,7 +2018,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseTextWithSpecialCharactersByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2032,7 +2032,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2046,7 +2046,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2060,7 +2060,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2074,7 +2074,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2088,7 +2088,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2102,7 +2102,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2116,7 +2116,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2130,7 +2130,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomNumericCodeByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2144,7 +2144,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2158,7 +2158,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2172,7 +2172,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2186,7 +2186,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2200,7 +2200,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2214,7 +2214,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2228,7 +2228,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2242,7 +2242,7 @@
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomSpecialCharacterCodeByLength2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateValidEmail1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmail1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2256,7 +2256,7 @@
           <ConfigurationElement Name="stringGeneration.generateValidEmail1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateValidEmail2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmail2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2270,7 +2270,7 @@
           <ConfigurationElement Name="stringGeneration.generateValidEmail2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateValidEmail2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateInvalidEmail1" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmail1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2284,7 +2284,7 @@
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringGeneration.generateInvalidEmail2" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmail2" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2297,6 +2297,118 @@
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail2@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateInvalidEmail2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateValidEmailWithSpecificSuffixAndDomainName2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomValidEmail2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateInvalidEmailWithSpecificSuffixAndDomainName2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail1@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="characterGeneration.randomlyGenerateMixedCaseLetterOrSpecialCharacter1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="characterGeneration.randomlyGenerateMixedCaseLetterOrSpecialCharacter1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
