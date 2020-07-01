@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.2](https://github.com/SethEden/NodeJS-App/compare/v0.8.1...v0.8.2) (2020-07-01)
+
+
+### Features
+
+* Finish the color conversion from hexidecimal values to RGB values. Then copied and pasted those new values back into the color library. Using the platform to improve the platform. ([ca64a2d](https://github.com/SethEden/NodeJS-App/commit/ca64a2df9092a8ba07aaf3b8308afe1295600065))
+
 ### [0.8.1](https://github.com/SethEden/NodeJS-App/compare/v0.7.3...v0.8.1) (2020-07-01)
 
 
