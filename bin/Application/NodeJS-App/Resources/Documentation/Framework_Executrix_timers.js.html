@@ -63,10 +63,40 @@ function getNowMoment(formatting) {
   var functionName = getNowMoment.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input formatting value is: ' + formatting);
-  var returnValue = moment().format(formatting);
+  let returnValue = '';
+  returnValue = moment().format(formatting);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnValue;
+};
+
+/**
+ * @name computeDeltaTime
+ * @description Gets the names of the beginning time and ending time, looks up those variables in the testData,
+ * converts them to moment objects and uses moment to compute a time difference between the two time stamps in seconds.
+ * @param {string} startTime The start of the time period that should be computed.
+ * @param {string} endTime The end of the time period that should be computed.
+ * @return {integer} The difference between the beginning time and ending time in milliseconds.
+ * @author Seth Hollingsead
+ * @date 2020/03/04 - Refactored on 2020/06/30
+ */
+function computeDeltaTime(startTime, endTime) {
+  // console.log('BEGIN timer.computeDeltaTime function');
+  // console.log('level is: ' + level);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = computeDeltaTime.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'startTime is: ' + startTime);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'endTime is: ' + endTime);
+  var deltaTimeResult;
+  startTime = moment(startTime, g.cYYYYMMDD_HHmmss_SSS);
+  endTime = moment(endTime, g.cYYYYMMDD_HHmmss_SSS);
+  deltaTimeResult = endTime.diff(startTime); // Should work in milliseconds out of the box!
+  // console.log('deltaTimeResult is: ' + deltaTimeResult);
+  // console.log('END timer.computeDeltaTime function');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'deltaTimeResult is: ' + deltaTimeResult);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return deltaTimeResult;
 };
 
 /**
@@ -84,16 +114,40 @@ function reformatDeltaTime(deltaTime, format) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'deltaTime is: ' + deltaTime);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'format is: ' + format);
-  var returnDeltaTime;
+  let returnDeltaTime = '';
   returnDeltaTime = moment.duration(deltaTime).format(format);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnDeltaTime is: ' + returnDeltaTime);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnDeltaTime;
 };
 
+/**
+ * @function sleep
+ * @description Causes the javascript code to wait for a period of time defined by the input.
+ * @param {integer} sleepTime The number of milliseconds that the system should sleep for.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/30
+ * {@link https://www.sitepoint.com/delay-sleep-pause-wait/}
+ */
+function sleep(sleepTime) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = reformatDeltaTime.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sleepTime is: ' + sleepTime);
+  const date = moment();
+  let currentDate = null;
+  do {
+    currentDate = moment();
+  } while (currentDate - date &lt; sleepTime);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
 export default {
   getNowMoment,
-  reformatDeltaTime
+  computeDeltaTime,
+  reformatDeltaTime,
+  sleep
 };
 </code></pre>
         </article>
@@ -105,13 +159,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 30 2020 09:35:25 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jun 30 2020 20:47:19 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

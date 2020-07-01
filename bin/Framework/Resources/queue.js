@@ -22,7 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 /**
  * @file queue.js
  * @module queue
- * @description Implements the various functions of a queue,
+ * @description Implements the various functions of a queue data structure,
  * using the specified name-space on the D-data structure.
  * @requires module:loggers
  * @requires module:basic-constants

@@ -68,6 +68,8 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.businessRule(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.ccommandGenerator, function (inputData, inputMetaData) {
     return nominalCommands.commandGenerator(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cbusinessRulesMetrics, function (inputData, inputMetaData) {
+    return nominalCommands.businessRulesMetrics(inputData, inputMetaData);
   }), _D$s$cCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

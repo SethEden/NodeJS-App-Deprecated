@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: queue</title>
+    <title>JSDoc: Module: stack</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: queue</h1>
+    <h1 class="page-title">Module: stack</h1>
 
     
 
@@ -38,7 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Implements the various functions of a queue data structure,
+            <div class="description"><p>Implements the various functions of a stack data structure,
 using the specified name-space on the D-data structure.</p></div>
         
 
@@ -98,7 +98,7 @@ using the specified name-space on the D-data structure.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Resources_queue.js.html">Framework/Resources/queue.js</a>, <a href="Framework_Resources_queue.js.html#line1">line 1</a>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -138,6 +138,8 @@ using the specified name-space on the D-data structure.</p></div>
         <h3 class="subsection-title">Requires</h3>
 
         <ul>
+            <li><a href="module-ruleBroker.html">module:ruleBroker</a></li>
+        
             <li><a href="module-loggers.html">module:loggers</a></li>
         
             <li><a href="module-basic-constants.html">module:basic-constants</a></li>
@@ -169,7 +171,7 @@ using the specified name-space on the D-data structure.</p></div>
     
 
     
-    <h4 class="name" id="~dequeue"><span class="type-signature">(inner) </span>dequeue<span class="signature">(queueNameSpace)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~clearStack"><span class="type-signature">(inner) </span>clearStack<span class="signature">(stackNameSpace)</span><span class="type-signature"> &rarr; {void}</span></h4>
     
 
     
@@ -177,7 +179,7 @@ using the specified name-space on the D-data structure.</p></div>
 
 
 <div class="description">
-    <p>Gets the entity at the front of the queue, removes it from the queue and returns that entity.</p>
+    <p>Clears all contents of the stack so it can start fresh. It does not delete the stack completely!</p>
 </div>
 
 
@@ -213,7 +215,7 @@ using the specified name-space on the D-data structure.</p></div>
 
         <tr>
             
-                <td class="name"><code>queueNameSpace</code></td>
+                <td class="name"><code>stackNameSpace</code></td>
             
 
             <td class="type">
@@ -229,7 +231,7 @@ using the specified name-space on the D-data structure.</p></div>
 
             
 
-            <td class="description last"><p>The namespace the queue array should be dequeued from.</p></td>
+            <td class="description last"><p>The namespace for the stack that should be cleared.</p></td>
         </tr>
 
     
@@ -277,7 +279,7 @@ using the specified name-space on the D-data structure.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Resources_queue.js.html">Framework/Resources/queue.js</a>, <a href="Framework_Resources_queue.js.html#line39">line 39</a>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -305,10 +307,6 @@ using the specified name-space on the D-data structure.</p></div>
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>The item at the front of the queue and removes it from the queue.</p>
-</div>
-
 
 
 <dl>
@@ -317,7 +315,7 @@ using the specified name-space on the D-data structure.</p></div>
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">void</span>
 
 
     </dd>
@@ -335,7 +333,7 @@ using the specified name-space on the D-data structure.</p></div>
     
 
     
-    <h4 class="name" id="~enqueue"><span class="type-signature">(inner) </span>enqueue<span class="signature">(queueNameSpace, value)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~contains"><span class="type-signature">(inner) </span>contains<span class="signature">(stackNameSpace, value)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -343,7 +341,7 @@ using the specified name-space on the D-data structure.</p></div>
 
 
 <div class="description">
-    <p>Adds the value to the specified namespace queue.</p>
+    <p>Determines if the specified stack contains the specified value.</p>
 </div>
 
 
@@ -379,7 +377,7 @@ using the specified name-space on the D-data structure.</p></div>
 
         <tr>
             
-                <td class="name"><code>queueNameSpace</code></td>
+                <td class="name"><code>stackNameSpace</code></td>
             
 
             <td class="type">
@@ -395,7 +393,7 @@ using the specified name-space on the D-data structure.</p></div>
 
             
 
-            <td class="description last"><p>The namespace the queue array should have a value added to.</p></td>
+            <td class="description last"><p>The namespace of the stack that should be searched for the specified value.</p></td>
         </tr>
 
     
@@ -409,6 +407,15 @@ using the specified name-space on the D-data structure.</p></div>
             
                 
 <span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+|
+
+<span class="param-type">object</span>
+|
+
+<span class="param-type">array</span>
 
 
             
@@ -418,7 +425,7 @@ using the specified name-space on the D-data structure.</p></div>
 
             
 
-            <td class="description last"><p>The value that should be added to the specified queue array.</p></td>
+            <td class="description last"><p>The value/object that should be searched to see if it exists on the specified stack or does not exist.</p></td>
         </tr>
 
     
@@ -466,331 +473,7 @@ using the specified name-space on the D-data structure.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Resources_queue.js.html">Framework/Resources/queue.js</a>, <a href="Framework_Resources_queue.js.html#line60">line 60</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~initQueue"><span class="type-signature">(inner) </span>initQueue<span class="signature">(queueNameSpace)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Initializes the queue with the provided namespace.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>queueNameSpace</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The namespace the Queue array should be created under.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Resources_queue.js.html">Framework/Resources/queue.js</a>, <a href="Framework_Resources_queue.js.html#line21">line 21</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~isEmpty"><span class="type-signature">(inner) </span>isEmpty<span class="signature">(queueNameSpace)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Determines if the queue is empty or not empty.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>queueNameSpace</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The namespace the queue array should have a value added to.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Resources_queue.js.html">Framework/Resources/queue.js</a>, <a href="Framework_Resources_queue.js.html#line80">line 80</a>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line167">line 167</a>
     </li></ul></dd>
     
 
@@ -819,7 +502,335 @@ using the specified name-space on the D-data structure.</p></div>
 
         
 <div class="param-desc">
-    <p>True or False to indicate if the queue is empty or not empty.</p>
+    <p>True or False to indicate if the value/object exists or does not exist.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~initStack"><span class="type-signature">(inner) </span>initStack<span class="signature">(stackNameSpace)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Initializes the stack with the provided namespace.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>stackNameSpace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The namespace the Stack array should be created under.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isEmpty"><span class="type-signature">(inner) </span>isEmpty<span class="signature">(stackNameSpace)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if the stack specified by the namespace parameter is empty or not empty.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>stackNameSpace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The namespace of the stack that should be checked if it is empty or not empty.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the specified stack is empty or not empty.</p>
 </div>
 
 
@@ -848,7 +859,7 @@ using the specified name-space on the D-data structure.</p></div>
     
 
     
-    <h4 class="name" id="~queueFront"><span class="type-signature">(inner) </span>queueFront<span class="signature">(queueNameSpace)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~length"><span class="type-signature">(inner) </span>length<span class="signature">(stackNameSpace)</span><span class="type-signature"> &rarr; {integer}</span></h4>
     
 
     
@@ -856,7 +867,7 @@ using the specified name-space on the D-data structure.</p></div>
 
 
 <div class="description">
-    <p>Gets the entity at the front of the queue.</p>
+    <p>Gets the length of the stack specified by the namespace parameter.</p>
 </div>
 
 
@@ -892,7 +903,7 @@ using the specified name-space on the D-data structure.</p></div>
 
         <tr>
             
-                <td class="name"><code>queueNameSpace</code></td>
+                <td class="name"><code>stackNameSpace</code></td>
             
 
             <td class="type">
@@ -908,7 +919,7 @@ using the specified name-space on the D-data structure.</p></div>
 
             
 
-            <td class="description last"><p>The namespace the queue array from which the front of the queue should be found.</p></td>
+            <td class="description last"><p>The namespace of the stack that should return a length property.</p></td>
         </tr>
 
     
@@ -956,7 +967,7 @@ using the specified name-space on the D-data structure.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Resources_queue.js.html">Framework/Resources/queue.js</a>, <a href="Framework_Resources_queue.js.html#line105">line 105</a>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -985,173 +996,7 @@ using the specified name-space on the D-data structure.</p></div>
 
         
 <div class="param-desc">
-    <p>The entity at the front of the queue.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~queueSize"><span class="type-signature">(inner) </span>queueSize<span class="signature">(queueNameSpace)</span><span class="type-signature"> &rarr; {integer}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Gets the current size of the queue.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>queueNameSpace</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The namespace of the queue array from which we should get the current queue size.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Resources_queue.js.html">Framework/Resources/queue.js</a>, <a href="Framework_Resources_queue.js.html#line126">line 126</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A count for the number of entities in the specified queue.</p>
+    <p>A value that represents a count of the number of entities on the specified stack.</p>
 </div>
 
 
@@ -1163,6 +1008,543 @@ using the specified name-space on the D-data structure.</p></div>
     <dd>
         
 <span class="param-type">integer</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~pop"><span class="type-signature">(inner) </span>pop<span class="signature">(stackNameSpace)</span><span class="type-signature"> &rarr; {string|integer|boolean|object|array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Pops some data off the stack identified by the namespace input parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>stackNameSpace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The namespace of the stack that should be used to pop the data and return it.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whatever data was stored at the top of the stack.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+|
+
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">object</span>
+|
+
+<span class="param-type">array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~print"><span class="type-signature">(inner) </span>print<span class="signature">(stackNameSpace)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Prints out the stack as specified by the namespace input parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>stackNameSpace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The namespace that should be used to print out the contents of the stack on the D-data structure.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line195">line 195</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~push"><span class="type-signature">(inner) </span>push<span class="signature">(stackNameSpace, value)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Pushes some data on the stack identified by the namespace input parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>stackNameSpace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The namespace of the stack that should be used to push the data onto.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+|
+
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">object</span>
+|
+
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The data that should be pushed on the stack.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Resources_stack.js.html">Framework/Resources/stack.js</a>, <a href="Framework_Resources_stack.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
 
 
     </dd>

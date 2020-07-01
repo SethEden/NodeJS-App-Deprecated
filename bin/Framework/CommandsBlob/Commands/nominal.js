@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -19,9 +19,15 @@ var _workflowBroker = _interopRequireDefault(require("../../Executrix/workflowBr
 
 var _queue = _interopRequireDefault(require("../../Resources/queue"));
 
+var _stack = _interopRequireDefault(require("../../Resources/stack"));
+
+var _timers = _interopRequireDefault(require("../../Executrix/timers"));
+
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
+
+var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
 
@@ -41,11 +47,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:ruleBroker
  * @requires module:workflowBroker
  * @requires module:queue
+ * @requires module:stack
+ * @requires module:timers
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:generic-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://mathjs.org/index.html|math}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/19
@@ -54,6 +64,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var figlet = require('figlet');
 
 var path = require('path');
+
+var math = require('mathjs');
 
 var D = require('../../../Framework/Resources/data');
 /**
@@ -516,11 +528,22 @@ var businessRule = function businessRule(inputData, inputMetaData) {
 
   var rules = [];
   var ruleInputData, ruleInputMetaData;
+  var ruleOutput = '';
   var argsArrayContainsCharacterRule = [];
   var removeBracketsFromArgsArrayRule = [];
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
   removeBracketsFromArgsArrayRule[0] = s.cremoveCharacterFromArray;
-  var addedARule = false; // First go through each rule that should be executed and determine if
+  var addedARule = false;
+
+  var businessRuleOutput = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRuleOutput);
+
+  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
+
+  var businessRuleMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRulePerformanceMetrics);
+
+  var businessRuleStartTime = '';
+  var businessRuleEndTime = '';
+  var businessRuleDeltaTime = ''; // First go through each rule that should be executed and determine if
   // there are any inputs that need to be passed into the business rule.
 
   for (var i = 1; i < inputData.length; i++) {
@@ -537,7 +560,6 @@ var businessRule = function businessRule(inputData, inputMetaData) {
     } else if (i === 2 && inputData.length <= 4) {
       ruleInputData = _lexical["default"].parseBusinessRuleArgument(currentRuleArg, i, false);
     } else if (i === 2 && inputData.length > 4) {
-      console.log('inputData.length is: ' + inputData.length);
       ruleInputData = _lexical["default"].parseBusinessRuleArgument(inputData, i, true);
     } else if (i === 3 && inputData.length <= 4) {
       ruleInputMetaData = _lexical["default"].parseBusinessRuleArgument(currentRuleArg, i, false);
@@ -553,7 +575,58 @@ var businessRule = function businessRule(inputData, inputMetaData) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + JSON.stringify(ruleInputMetaData));
 
-  console.log('Rule output is: ' + JSON.stringify(_ruleBroker["default"].processRules(ruleInputData, ruleInputMetaData, rules)));
+  if (businessRuleMetricsEnabled === true) {
+    // Here we will capture the start time of the business rule we are about to execute.
+    // After executing we will capture the end time and then
+    // compute the difference to determine how many milliseconds it took to run the business rule.
+    businessRuleStartTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Business Rule Start time is: ' + businessRuleStartTime);
+  }
+
+  ruleOutput = _ruleBroker["default"].processRules(ruleInputData, ruleInputMetaData, rules);
+
+  if (businessRuleMetricsEnabled === true) {
+    var performanceTrackingObject = {};
+    businessRuleEndTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BusinessRule End time is: ' + businessRuleEndTime); // Now compute the delta time so we know how long it took to run that business rule.
+
+
+    businessRuleDeltaTime = _timers["default"].computeDeltaTime(businessRuleStartTime, businessRuleEndTime);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BusinessRule run-time is: ' + businessRuleDeltaTime); // Check to make sure the business rule performance tracking stack exists or does not exist.
+
+
+    if (D[s.cBusinessRulePerformanceTrackingStack] === undefined) {
+      _stack["default"].initStack(s.cBusinessRulePerformanceTrackingStack);
+    }
+
+    if (D[s.cBusinessRuleNamesPerformanceTrackingStack] === undefined) {
+      _stack["default"].initStack(s.cBusinessRuleNamesPerformanceTrackingStack);
+    }
+
+    performanceTrackingObject = {
+      'Name': rules[0],
+      'RunTime': businessRuleDeltaTime
+    };
+
+    if (_stack["default"].contains(s.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
+      _stack["default"].push(s.cBusinessRuleNamesPerformanceTrackingStack, rules[0]);
+    }
+
+    _stack["default"].push(s.cBusinessRulePerformanceTrackingStack, performanceTrackingObject); // stack.print(s.cBusinessRulePerformanceTrackingStack);
+    // stack.print(s.cBusinessRuleNamesPerformanceTrackingStack);
+
+  }
+
+  if (businessRuleOutput === true) {
+    console.log('Rule output is: ' + JSON.stringify(ruleOutput));
+  }
+
+  businessRuleStartTime = '';
+  businessRuleEndTime = '';
+  businessRuleDeltaTime = '';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -655,5 +728,95 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
 
   return returnData;
 };
+/**
+ * @function businessRulesMetrics
+ * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of calls.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/30
+ */
+
 
 exports.commandGenerator = commandGenerator;
+
+var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cbusinessRulesMetrics;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var businessRuleCounter = 0;
+  var businessRulePerformanceSum = 0;
+  var businessRulePerformanceStdSum = 0;
+  var average = 0;
+  var standardDev = 0; // Here we iterate over all of the business rules that were added to the s.cBusinessRulePerformanceTrackingStack.
+
+  for (var i = 0; i < _stack["default"].length(s.cBusinessRuleNamesPerformanceTrackingStack); i++) {
+    businessRuleCounter = 0; // Reset it to zero, because we are beginning again with another business rule name.
+
+    businessRulePerformanceSum = 0;
+    businessRulePerformanceStdSum = 0;
+    average = 0;
+    standardDev = 0; // Here we will now iterate over all of the contents of all of the business rule performance numbers and
+    // do the necessary math for each business rule according to the parent loop.
+
+    var currentBusinessRuleName = D[s.cBusinessRuleNamesPerformanceTrackingStack][i];
+
+    for (var j = 0; j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); j++) {
+      if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
+        businessRuleCounter = businessRuleCounter + 1;
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRuleCounter is: ' + businessRuleCounter);
+
+        businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+      }
+    }
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+
+    average = businessRulePerformanceSum / businessRuleCounter;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average); // Now go back through them all so we can compute the standard deviation
+
+
+    for (var _j = 0; _j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); _j++) {
+      if (D[s.cBusinessRulePerformanceTrackingStack][_j][s.cName] === currentBusinessRuleName) {
+        businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[s.cBusinessRulePerformanceTrackingStack][_j][s.cRunTime] - average, 2);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+      }
+    }
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!! businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+
+    standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'standardDev is: ' + standardDev);
+
+    if (D[s.cBusinessRulesPerformanceAnalysisStack] === undefined) {
+      _stack["default"].initStack(s.cBusinessRulesPerformanceAnalysisStack);
+    }
+
+    _stack["default"].push(s.cBusinessRulesPerformanceAnalysisStack, {
+      'Name': currentBusinessRuleName,
+      'Average': average,
+      'StandardDeviation': standardDev
+    });
+  }
+
+  _loggers["default"].consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+
+  _stack["default"].clearStack(s.cBusinessRulesPerformanceAnalysisStack);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+exports.businessRulesMetrics = businessRulesMetrics;
