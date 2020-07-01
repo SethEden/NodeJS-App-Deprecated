@@ -35,10 +35,40 @@ function getNowMoment(formatting) {
   var functionName = getNowMoment.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input formatting value is: ' + formatting);
-  var returnValue = moment().format(formatting);
+  let returnValue = '';
+  returnValue = moment().format(formatting);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnValue;
+};
+
+/**
+ * @name computeDeltaTime
+ * @description Gets the names of the beginning time and ending time, looks up those variables in the testData,
+ * converts them to moment objects and uses moment to compute a time difference between the two time stamps in seconds.
+ * @param {string} startTime The start of the time period that should be computed.
+ * @param {string} endTime The end of the time period that should be computed.
+ * @return {integer} The difference between the beginning time and ending time in milliseconds.
+ * @author Seth Hollingsead
+ * @date 2020/03/04 - Refactored on 2020/06/30
+ */
+function computeDeltaTime(startTime, endTime) {
+  // console.log('BEGIN timer.computeDeltaTime function');
+  // console.log('level is: ' + level);
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = computeDeltaTime.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'startTime is: ' + startTime);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'endTime is: ' + endTime);
+  var deltaTimeResult;
+  startTime = moment(startTime, g.cYYYYMMDD_HHmmss_SSS);
+  endTime = moment(endTime, g.cYYYYMMDD_HHmmss_SSS);
+  deltaTimeResult = endTime.diff(startTime); // Should work in milliseconds out of the box!
+  // console.log('deltaTimeResult is: ' + deltaTimeResult);
+  // console.log('END timer.computeDeltaTime function');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'deltaTimeResult is: ' + deltaTimeResult);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return deltaTimeResult;
 };
 
 /**
@@ -56,14 +86,38 @@ function reformatDeltaTime(deltaTime, format) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'deltaTime is: ' + deltaTime);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'format is: ' + format);
-  var returnDeltaTime;
+  let returnDeltaTime = '';
   returnDeltaTime = moment.duration(deltaTime).format(format);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnDeltaTime is: ' + returnDeltaTime);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnDeltaTime;
 };
 
+/**
+ * @function sleep
+ * @description Causes the javascript code to wait for a period of time defined by the input.
+ * @param {integer} sleepTime The number of milliseconds that the system should sleep for.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/30
+ * {@link https://www.sitepoint.com/delay-sleep-pause-wait/}
+ */
+function sleep(sleepTime) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = reformatDeltaTime.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sleepTime is: ' + sleepTime);
+  const date = moment();
+  let currentDate = null;
+  do {
+    currentDate = moment();
+  } while (currentDate - date < sleepTime);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
 export default {
   getNowMoment,
-  reformatDeltaTime
+  computeDeltaTime,
+  reformatDeltaTime,
+  sleep
 };

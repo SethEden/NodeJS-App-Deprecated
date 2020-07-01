@@ -252,6 +252,8 @@ export const cMaster = b.cMa + b.cst + b.cer; // 'Master';
 export const cEnvironment = b.cEn + b.cvi + b.cro + b.cn + g.cment; // 'Environment';
 export const cname = b.cn + g.came;
 export const cName = b.cN + g.came;
+export const cnames = cname + b.cs;
+export const cNames = cName + b.cs;
 export const ckeywordName = ckeyword + cName;
 export const cKeywordName = cKeyword + cName;
 export const cPageScriptName = cPage + cScript + cName;
@@ -366,7 +368,10 @@ export const cLength = b.cLe + b.cng + b.cth; // 'Length';
 export const ccode = b.cco + b.cde;
 export const cCode = b.cCo + b.cde; // 'Code';
 export const cEither = b.cEi + b.cth + b.cer; // 'Either';
-export const cEnabled = b.cEn + b.cab + b.cle + b.cd; // 'Enabled';
+export const cenable = b.cen + g.cable;
+export const cEnable = b.cEn + g.cable;
+export const cenabled = cenable + b.cd;
+export const cEnabled = cEnable + b.cd; // 'Enabled';
 export const cdetermine = b.cd + g.cetermine;
 export const cDetermine = b.cD + g.cetermine; // 'Determine';
 export const cVariable = g.cVar + g.ci + g.cable; // 'Variable';
@@ -772,6 +777,31 @@ export const cgenerator = g.cgen + b.cer + g.cator;
 export const cGenerator = g.cGen + b.cer + g.cator;
 export const cindex = b.cin + g.cdex;
 export const cIndex = b.cIn + g.cdex;
+export const cabout = b.ca + g.cbout;
+export const cAbout = b.cA + g.cbout;
+export const cstart = b.cs + g.ctart;
+export const cStart = b.cS + g.ctart;
+export const cstartup = cstart + b.cup;
+export const coutput = cout + cput;
+export const cOutput = cOut + cput;
+export const cmetric = g.cmet + g.cric;
+export const cMetric = g.cMet + g.cric;
+export const cmetrics = cmetric + b.cs;
+export const cMetrics = cMetric + b.cs;
+export const crack = b.cr + g.cack;
+export const cRack = b.cR + g.cack;
+export const ctrack = b.ct + crack;
+export const cTrack = b.cT + crack;
+export const ctracking = ctrack + g.cing;
+export const cTracking = cTrack + g.cing;
+export const cstack = b.cst + g.cack;
+export const cStack = b.cSt + g.cack;
+export const cstandard = b.cst + cand + g.card;
+export const cStandard = b.cSt + cand + g.card;
+export const cdeviation = g.cdev + b.cia + g.ction;
+export const cDeviation = g.cDev + b.cia + g.ction;
+export const canalysis = g.cana + b.cly + g.csis;
+export const cAnalysis = g.cAna + b.cly + g.csis;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -1949,14 +1979,7 @@ export const cframework = cframe + cwork;
 export const cFramework = cFrame + cwork;
 export const cCommandsAliases = cCommands + cAliases;
 export const cCommandWorkflows = cCommand + cWorkflows;
-export const cabout = b.ca + g.cbout;
-export const cAbout = b.cA + g.cbout;
-export const cPrimaryCommandDelimiter = cPrimary + cCommand + cDelimiter;
-export const cSecondaryCommandDelimiter = cSecondary + cCommand + cDelimiter;
-export const cTertiaryCommandDelimiter = cTertiary + cCommand + cDelimiter;
-export const cstart = b.cs + g.ctart;
-export const cStart = b.cS + g.ctart;
-export const cstartup = cstart + b.cup;
+export const cStandardDeviation = cStandard + cDeviation;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -2278,10 +2301,18 @@ export const cPageDataPath = cPage + cDataPath;
 export const cWorkflowDataPath = cWorkflow + cDataPath;
 export const cKeywordsDataPath = cKeywords + cDataPath;
 export const cLocatorsDataPath = cLocators + cDataPath;
-export const cArgumentDrivenInterface = cArgument + cDriven + cInterface;
-export const cFigletFont = cFiglet + cFont;
 export const cclientRulesLibrary = cclient + cRules + cLibrary;
 export const cCommandQueue = cCommand + cQueue;
+
+// Configuration Settings
+export const cArgumentDrivenInterface = cArgument + cDriven + cInterface;
+export const cFigletFont = cFiglet + cFont;
+export const cPrimaryCommandDelimiter = cPrimary + cCommand + cDelimiter;
+export const cSecondaryCommandDelimiter = cSecondary + cCommand + cDelimiter;
+export const cTertiaryCommandDelimiter = cTertiary + cCommand + cDelimiter;
+export const cEnableBusinessRuleOutput = cEnable + cBusiness + cRule + cOutput;
+export const cEnableBusinessRulePerformanceMetrics = cEnable + cBusiness + cRule + cPerformance + cMetrics;
+export const cEnableCommandPerformanceMetrics = cEnable + cCommand + cPerformance + cMetrics;
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = cBegin + cDateTimeStamp;
@@ -2290,6 +2321,9 @@ export const cItemsIndividuallySynch = cItems + cIndividually + cSynch;
 export const cTimeStampVariableName = cTimeStamp + cVariable + cName;
 export const cBeginTimeStampVariableName = cBegin + cTimeStampVariableName;
 export const cEndTimeStampVariableName = cEnd + cTimeStampVariableName;
+export const cBusinessRulePerformanceTrackingStack = cBusiness + cRule + cPerformance + cTracking + cStack;
+export const cBusinessRuleNamesPerformanceTrackingStack = cBusiness + cRule + cNames + cPerformance + cTracking + cStack;
+export const cBusinessRulesPerformanceAnalysisStack = cBusiness + cRules + cPerformance + cAnalysis + cStack;
 
 // Business Rules
 export const cecho = b.cec + b.cho;
@@ -2433,6 +2467,7 @@ export const cworkflowHelp = cworkflow + cHelp;
 export const ccommandSequencer = ccommand + cSequencer;
 export const cprintDataHive = cprint + cData + cHive;
 export const ccommandGenerator = ccommand + cGenerator;
+export const cbusinessRulesMetrics = cbusiness + cRules + cMetrics;
 
 // ********************************
 // System defined workflows

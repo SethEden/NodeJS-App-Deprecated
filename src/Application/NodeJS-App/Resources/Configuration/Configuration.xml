@@ -13,6 +13,9 @@
         <ConfigurationElement Name="PrimaryCommandDelimiter" Type="Default" Value=" " Version="3"/>
         <ConfigurationElement Name="SecondaryCommandDelimiter" Type="Default" Value="," Version="3"/>
         <ConfigurationElement Name="TertiaryCommandDelimiter" Type="Default" Value="|" Version="3"/>
+        <ConfigurationElement Name="EnableBusinessRuleOutput" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="EnableBusinessRulePerformanceMetrics" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="EnableCommandPerformanceMetrics" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DebugFiles" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="application@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -168,7 +171,7 @@
           <ConfigurationElement Name="lexical@MessageFontBackgroundColor" Type="Default" Value="100,100,100" Version="3"/>
           <ConfigurationElement Name="lexical@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="timers" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="timers" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="timers@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="timers@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="timers@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
@@ -265,6 +268,20 @@
           <ConfigurationElement Name="queue@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="queue@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="queue@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+
+          <ConfigurationElement Name="stack" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="stack@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="stack@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="stack@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="stack@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="stack@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="stack@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="stack@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="stack@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="stack@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="stack@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="stack@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
           <ConfigurationElement Name="nominal" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -1108,7 +1125,7 @@
           <ConfigurationElement Name="timers.getNowMoment@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.getNowMoment@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="timers.computeDeltaTime" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="timers.computeDeltaTime" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="timers.computeDeltaTime@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.computeDeltaTime@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.computeDeltaTime@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1122,7 +1139,7 @@
           <ConfigurationElement Name="timers.computeDeltaTime@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.computeDeltaTime@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="timers.reformatDeltaTime" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="timers.reformatDeltaTime" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1135,6 +1152,20 @@
           <ConfigurationElement Name="timers.reformatDeltaTime@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="timers.reformatDeltaTime@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="timers.sleep" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="timers.sleep@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="queue.initQueue" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="queue.initQueue@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1219,6 +1250,118 @@
           <ConfigurationElement Name="queue.queueSize@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.queueSize@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="queue.queueSize@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.initStack" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.initStack@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.clearStack" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.clearStack@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.push" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.push@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.push@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.pop" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.pop@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.pop@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.isEmpty" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.isEmpty@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.length" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.length@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.length@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.contains" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.contains@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.contains@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stack.print" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stack.print@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stack.print@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="stringParsing.stringToBoolean" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.stringToBoolean@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -3137,6 +3280,20 @@
           <ConfigurationElement Name="nominal.commandGenerator@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.commandGenerator@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.commandGenerator@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.businessRulesMetrics" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.businessRulesMetrics@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="clientCommands.customEchoCommand" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

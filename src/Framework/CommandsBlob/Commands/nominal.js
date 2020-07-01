@@ -8,11 +8,15 @@
  * @requires module:ruleBroker
  * @requires module:workflowBroker
  * @requires module:queue
+ * @requires module:stack
+ * @requires module:timers
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:generic-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://mathjs.org/index.html|math}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/19
@@ -24,11 +28,15 @@ import commandBroker from '../commandBroker';
 import ruleBroker from '../../BusinessRules/ruleBroker';
 import workflowBroker from '../../Executrix/workflowBroker';
 import queue from '../../Resources/queue';
+import stack from '../../Resources/stack';
+import timers from '../../Executrix/timers';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
+import * as g from '../../Constants/generic.constants';
 import * as s from '../../Constants/system.constants';
 const figlet = require('figlet');
 var path = require('path');
+var math = require('mathjs');
 var D = require('../../../Framework/Resources/data');
 
  /**
@@ -361,12 +369,19 @@ export const businessRule = function(inputData, inputMetaData) {
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
   let rules = [];
   let ruleInputData, ruleInputMetaData;
+  let ruleOutput = '';
 
   let argsArrayContainsCharacterRule = [];
   let removeBracketsFromArgsArrayRule = [];
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
   removeBracketsFromArgsArrayRule[0] = s.cremoveCharacterFromArray;
   let addedARule = false;
+  let businessRuleOutput = configurator.getConfigurationSetting(s.cEnableBusinessRuleOutput);
+  let commandMetricsEnabled = configurator.getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
+  let businessRuleMetricsEnabled = configurator.getConfigurationSetting(s.cEnableBusinessRulePerformanceMetrics);
+  let businessRuleStartTime = '';
+  let businessRuleEndTime = '';
+  let businessRuleDeltaTime = '';
 
   // First go through each rule that should be executed and determine if
   // there are any inputs that need to be passed into the business rule.
@@ -380,7 +395,6 @@ export const businessRule = function(inputData, inputMetaData) {
     } else if (i === 2 && inputData.length <= 4) {
       ruleInputData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
     } else if (i === 2 && inputData.length > 4) {
-      console.log('inputData.length is: ' + inputData.length);
       ruleInputData = lexical.parseBusinessRuleArgument(inputData, i, true);
     } else if (i === 3 && inputData.length <= 4) {
       ruleInputMetaData = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
@@ -393,7 +407,42 @@ export const businessRule = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'rules is: ' + JSON.stringify(rules));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInputData is: ' + ruleInputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + JSON.stringify(ruleInputMetaData));
-  console.log('Rule output is: ' + JSON.stringify(ruleBroker.processRules(ruleInputData, ruleInputMetaData, rules)));
+  if (businessRuleMetricsEnabled === true) {
+    // Here we will capture the start time of the business rule we are about to execute.
+    // After executing we will capture the end time and then
+    // compute the difference to determine how many milliseconds it took to run the business rule.
+    businessRuleStartTime = timers.getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Business Rule Start time is: ' + businessRuleStartTime);
+  }
+  ruleOutput = ruleBroker.processRules(ruleInputData, ruleInputMetaData, rules);
+  if (businessRuleMetricsEnabled === true) {
+    let performanceTrackingObject = {};
+    businessRuleEndTime = timers.getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'BusinessRule End time is: ' + businessRuleEndTime);
+    // Now compute the delta time so we know how long it took to run that business rule.
+    businessRuleDeltaTime = timers.computeDeltaTime(businessRuleStartTime, businessRuleEndTime);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'BusinessRule run-time is: ' + businessRuleDeltaTime);
+    // Check to make sure the business rule performance tracking stack exists or does not exist.
+    if (D[s.cBusinessRulePerformanceTrackingStack] === undefined) {
+      stack.initStack(s.cBusinessRulePerformanceTrackingStack);
+    }
+    if (D[s.cBusinessRuleNamesPerformanceTrackingStack] === undefined) {
+      stack.initStack(s.cBusinessRuleNamesPerformanceTrackingStack)
+    }
+    performanceTrackingObject = {'Name': rules[0], 'RunTime': businessRuleDeltaTime};
+    if (stack.contains(s.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
+      stack.push(s.cBusinessRuleNamesPerformanceTrackingStack, rules[0]);
+    }
+    stack.push(s.cBusinessRulePerformanceTrackingStack, performanceTrackingObject);
+    // stack.print(s.cBusinessRulePerformanceTrackingStack);
+    // stack.print(s.cBusinessRuleNamesPerformanceTrackingStack);
+  }
+  if (businessRuleOutput === true) {
+    console.log('Rule output is: ' + JSON.stringify(ruleOutput));
+  }
+  businessRuleStartTime = '';
+  businessRuleEndTime = '';
+  businessRuleDeltaTime = '';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -467,4 +516,65 @@ export const commandGenerator = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
+};
+
+/**
+ * @function businessRulesMetrics
+ * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of calls.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/30
+ */
+export const businessRulesMetrics = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cbusinessRulesMetrics;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let businessRuleCounter = 0;
+  let businessRulePerformanceSum = 0;
+  let businessRulePerformanceStdSum = 0;
+  let average = 0;
+  let standardDev = 0;
+  // Here we iterate over all of the business rules that were added to the s.cBusinessRulePerformanceTrackingStack.
+  for (let i = 0; i < stack.length(s.cBusinessRuleNamesPerformanceTrackingStack); i++) {
+    businessRuleCounter = 0; // Reset it to zero, because we are beginning again with another business rule name.
+    businessRulePerformanceSum = 0;
+    businessRulePerformanceStdSum = 0;
+    average = 0;
+    standardDev = 0;
+    // Here we will now iterate over all of the contents of all of the business rule performance numbers and
+    // do the necessary math for each business rule according to the parent loop.
+    let currentBusinessRuleName = D[s.cBusinessRuleNamesPerformanceTrackingStack][i];
+    for (let j = 0; j < stack.length(s.cBusinessRulePerformanceTrackingStack); j++) {
+      if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
+        businessRuleCounter = businessRuleCounter + 1;
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'businessRuleCounter is: ' + businessRuleCounter);
+        businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime];
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+      }
+    }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+    average = businessRulePerformanceSum / businessRuleCounter;
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average);
+    // Now go back through them all so we can compute the standard deviation
+    for (let j = 0; j < stack.length(s.cBusinessRulePerformanceTrackingStack); j++) {
+      if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
+        businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow((D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime] - average), 2);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+      }
+    }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!! businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+    standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'standardDev is: ' + standardDev);
+    if (D[s.cBusinessRulesPerformanceAnalysisStack] === undefined) {
+      stack.initStack(s.cBusinessRulesPerformanceAnalysisStack);
+    }
+    stack.push(s.cBusinessRulesPerformanceAnalysisStack, {'Name': currentBusinessRuleName, 'Average': average, 'StandardDeviation': standardDev});
+  }
+  loggers.consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+  stack.clearStack(s.cBusinessRulesPerformanceAnalysisStack);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

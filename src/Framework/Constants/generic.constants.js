@@ -320,6 +320,16 @@ export const cAll = b.cAl + b.cl;
 export const creg = b.cre + b.cg;
 export const cReg = b.cRe + b.cg;
 export const ctain = b.cta + b.cin;
+export const cmet = b.cme + b.ct;
+export const cMet = b.cMe + b.ct;
+export const cric = b.cri + b.cc;
+export const cack = b.cac + b.ck;
+export const cdev = b.cde + b.cv;
+export const cDev = b.cDe + b.cv;
+export const cana = b.can + b.ca;
+export const cAna = b.cAn + b.ca;
+export const csis = b.csi + b.cs;
+export const crage = b.cra + b.cge;
 
 // Boolean strings
 export const cTrue = b.cT + crue;

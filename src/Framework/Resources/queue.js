@@ -1,7 +1,7 @@
 /**
  * @file queue.js
  * @module queue
- * @description Implements the various functions of a queue,
+ * @description Implements the various functions of a queue data structure,
  * using the specified name-space on the D-data structure.
  * @requires module:loggers
  * @requires module:basic-constants
@@ -12,7 +12,6 @@
  * @date 2020/06/18
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
@@ -97,7 +96,7 @@ function isEmpty(queueNameSpace) {
     returnValue = true;
   } else {
     returnValue = (D[queueNameSpace].length === 0);
-  }  
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnValue;
