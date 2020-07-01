@@ -134,4 +134,5 @@
   <Workflow Name="generators2" Value="cmdSeq wrkflo,charGen2 wrkflo,stringGen2"/>
   <Workflow Name="businessRulesMetrics" Value="cmdSeq brm"/>
   <Workflow Name="commandMetrics" Value="cmdSeq cmdMet"/>
+  <Workflow Name="hex2rgbConversion" Value="cmdgen convertColors 1"/>
 </CommandWorkflows>

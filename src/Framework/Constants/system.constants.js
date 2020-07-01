@@ -804,6 +804,12 @@ export const canalysis = g.cana + b.cly + g.csis;
 export const cAnalysis = g.cAna + b.cly + g.csis;
 export const cclear = b.ccl + g.cear;
 export const cClear = b.cCl + g.cear;
+export const cversion = g.cver + g.csion;
+export const cVersion = g.cVer + g.csion; // b.cVe + b.crs + b.cio + b.cn; // 'Version';
+export const cControl = b.cCo + b.cnt + b.cro + b.cl; // 'Control';
+export const cPerformance = b.cPe + b.crf + b.cor + b.cma + b.cnc + b.ce; // 'Performance';
+export const cconversion = g.ccon + cversion;
+export const cConversion = g.cCon + cversion;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -1903,11 +1909,7 @@ export const cFileNumber = cFile + cNumber;
 export const cConfigurationName = cConfiguration + cName;
 export const cConfigurationElement = cConfiguration + cElement;
 export const cConfigurationElements = cConfigurationElement + b.cs;
-export const cversion = g.cver + g.csion;
-export const cVersion = g.cVer + g.csion; // b.cVe + b.crs + b.cio + b.cn; // 'Version';
-export const cControl = b.cCo + b.cnt + b.cro + b.cl; // 'Control';
 export const cVersionControl = cVersion + cControl;
-export const cPerformance = b.cPe + b.crf + b.cor + b.cma + b.cnc + b.ce; // 'Performance';
 export const cScriptRunTime = cScript + cRuntime;
 export const cTestRunTime = cTest + cRuntime;
 export const cTypeText = cType + cText;
@@ -1982,6 +1984,7 @@ export const cFramework = cFrame + cwork;
 export const cCommandsAliases = cCommands + cAliases;
 export const cCommandWorkflows = cCommand + cWorkflows;
 export const cStandardDeviation = cStandard + cDeviation;
+export const cHexValue = g.cHex + cValue;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -2458,6 +2461,11 @@ export const crandomlyGenerateUpperCaseLetter2 = crandomlyGenerate + cUpperCase 
 export const cconvertNumberToUpperCaseLetter = cconvert + cNumber + cTo + cUpperCase + cLetter;
 export const cconvertNumberToLowerCaseLetter = cconvert + cNumber + cTo + cLowerCase + cLetter;
 
+// *********************************
+// mathOperations rules in order
+// *********************************
+export const chex2rgbConversion = g.chex + b.c2 + g.crgb + cConversion;
+
 // Commands
 export const cSystemCommandsAliasesActualPath = csrc + b.cForwardSlash + cFramework + b.cForwardSlash + cCommands + cBlob + b.cForwardSlash;
 export const cSystemWorkflowsActualPath = csrc + b.cForwardSlash + cFramework + b.cForwardSlash + cResources + b.cForwardSlash + cWorkflows + b.cForwardSlash;
@@ -2476,6 +2484,7 @@ export const cprintDataHive = cprint + cData + cHive;
 export const ccommandGenerator = ccommand + cGenerator;
 export const cbusinessRulesMetrics = cbusiness + cRules + cMetrics;
 export const ccommandMetrics = ccommand + cMetrics;
+export const cconvertColors = cconvert + cColors;
 
 // ********************************
 // System defined workflows

@@ -103,6 +103,20 @@
           <ConfigurationElement Name="characterGeneration@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="characterGeneration@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
+          <ConfigurationElement Name="mathOperations" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="mathOperations@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="mathOperations@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="mathOperations@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="mathOperations@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="mathOperations@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="mathOperations@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="mathOperations@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="mathOperations@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="mathOperations@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="mathOperations@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="mathOperations@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="mathOperations@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
           <ConfigurationElement Name="clientStringParsing" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="clientStringParsing@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="clientStringParsing@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -3031,6 +3045,20 @@
           <ConfigurationElement Name="characterGeneration.convertNumberToLowerCaseLetter@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="characterGeneration.convertNumberToLowerCaseLetter@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="mathOperations.hex2rgbConversion@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="clientStringParsing.clientEcho" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="clientStringParsing.clientEcho@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="clientStringParsing.clientEcho@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -3296,6 +3324,34 @@
           <ConfigurationElement Name="nominal.businessRulesMetrics@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.businessRulesMetrics@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.businessRulesMetrics@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.commandMetrics" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.commandMetrics@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.convertColors" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.convertColors@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="clientCommands.customEchoCommand" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

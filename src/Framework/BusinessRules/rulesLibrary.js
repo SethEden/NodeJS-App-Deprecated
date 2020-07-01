@@ -5,6 +5,7 @@
  * @requires module:characterGeneration
  * @requires module:stringGeneration
  * @requires module:stringParsing
+ * @requires module:mathOperations
  * @requires module:system-constants
  * @requires module:data
  * @author Seth Hollingsead
@@ -14,6 +15,7 @@
 import * as characterGeneration from './Rules/characterGeneration';
 import * as stringGeneration from './Rules/stringGeneration';
 import * as stringParsing from './Rules/stringParsing';
+import * as mathOperations from './Rules/mathOperations';
 import * as s from '../Constants/system.constants';
 var D = require('../Resources/data');
 
@@ -153,6 +155,11 @@ export const initRulesLibrary = function() {
     [s.crandomlyGenerateUpperCaseLetter2]: (inputData, inputMetaData) => characterGeneration.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData),
     [s.cconvertNumberToUpperCaseLetter]: (inputData, inputMetaData) => characterGeneration.convertNumberToUpperCaseLetter(inputData, inputMetaData),
     [s.cconvertNumberToLowerCaseLetter]: (inputData, inputMetaData) => characterGeneration.convertNumberToLowerCaseLetter(inputData, inputMetaData),
+
+    // *********************************
+    // Math Operations rules in order
+    // *********************************
+    [s.chex2rgbConversion]: (inputData, inputMetaData) => mathOperations.hex2rgbConversion(inputData, inputMetaData)
   }
   // console.log('END rulesLibrary.initRulesLibrary function');
 };

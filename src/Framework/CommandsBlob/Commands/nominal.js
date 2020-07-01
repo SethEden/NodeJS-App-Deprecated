@@ -662,3 +662,42 @@ export const commandMetrics = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
 };
+
+/**
+ * @function convertColors
+ * @description Converts all of the color hexidecimal values into RGB color values.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/07/01
+ * {@link: https://github.com/paularmstrong/normalizr/issues/15}
+ */
+export const convertColors = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cconvertColors;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  let colorConvertionRule = [];
+  colorConvertionRule[0] = s.creplaceCharacterWithCharacter;
+  colorConvertionRule[1] = s.chex2rgbConversion;
+
+  let colorKeys = Object.keys(D[s.cColors][s.cColorData]);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'colorKeys is: ' + JSON.stringify(colorKeys));
+  for (let i = 0; i < colorKeys.length; i++) {
+    let currentColorName = colorKeys[i];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentColorName is: ' + currentColorName);
+    let currentColorObject = D[s.cColors][s.cColorData][currentColorName];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentColorObject is: ' + JSON.stringify(currentColorObject));
+    let currentColorHexValue = currentColorObject[s.cHexValue];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentColorHexValue is: ' + currentColorHexValue);
+    let ruleOutput = ruleBroker.processRules(currentColorHexValue, [b.cHash, ''], colorConvertionRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleOutput is: ' + ruleOutput);
+    console.log(currentColorName + b.cComa + currentColorHexValue + b.cComa + ruleOutput[0] + b.cComa + ruleOutput[1] + b.cComa + ruleOutput[2]);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
