@@ -802,6 +802,8 @@ export const cdeviation = g.cdev + b.cia + g.ction;
 export const cDeviation = g.cDev + b.cia + g.ction;
 export const canalysis = g.cana + b.cly + g.csis;
 export const cAnalysis = g.cAna + b.cly + g.csis;
+export const cclear = b.ccl + g.cear;
+export const cClear = b.cCl + g.cear;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -2324,6 +2326,7 @@ export const cEndTimeStampVariableName = cEnd + cTimeStampVariableName;
 export const cBusinessRulePerformanceTrackingStack = cBusiness + cRule + cPerformance + cTracking + cStack;
 export const cBusinessRuleNamesPerformanceTrackingStack = cBusiness + cRule + cNames + cPerformance + cTracking + cStack;
 export const cBusinessRulesPerformanceAnalysisStack = cBusiness + cRules + cPerformance + cAnalysis + cStack;
+export const cClearBusinessRulesPerformanceDataAfterAnalysis = cClear + cBusiness + cRules + cPerformance + cData + cAfter + cAnalysis;
 
 // Business Rules
 export const cecho = b.cec + b.cho;

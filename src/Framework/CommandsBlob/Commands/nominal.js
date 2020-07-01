@@ -533,6 +533,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
   let businessRuleCounter = 0;
   let businessRulePerformanceSum = 0;
   let businessRulePerformanceStdSum = 0;
@@ -576,5 +577,13 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
   }
   loggers.consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
   stack.clearStack(s.cBusinessRulesPerformanceAnalysisStack);
+  // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
+  // It might be that the user wants to do something else with this data in memory after it's done.
+  if (configurator.getConfigurationSetting(s.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
+    stack.clearStack(s.cBusinessRulePerformanceTrackingStack);
+    stack.clearStack(s.cBusinessRuleNamesPerformanceTrackingStack);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
 };

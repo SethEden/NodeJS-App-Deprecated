@@ -330,6 +330,7 @@ export const cana = b.can + b.ca;
 export const cAna = b.cAn + b.ca;
 export const csis = b.csi + b.cs;
 export const crage = b.cra + b.cge;
+export const cear = b.cea + b.cr;
 
 // Boolean strings
 export const cTrue = b.cT + crue;
