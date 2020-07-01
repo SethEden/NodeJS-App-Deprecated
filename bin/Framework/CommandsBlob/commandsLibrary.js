@@ -72,6 +72,8 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.businessRulesMetrics(inputData, inputMetaData);
   }), _defineProperty(_D$s$cCommands, s.ccommandMetrics, function (inputData, inputMetaData) {
     return nominalCommands.commandMetrics(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cCommands, s.cconvertColors, function (inputData, inputMetaData) {
+    return nominalCommands.convertColors(inputData, inputMetaData);
   }), _D$s$cCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

@@ -832,6 +832,12 @@ export const canalysis = g.cana + b.cly + g.csis;
 export const cAnalysis = g.cAna + b.cly + g.csis;
 export const cclear = b.ccl + g.cear;
 export const cClear = b.cCl + g.cear;
+export const cversion = g.cver + g.csion;
+export const cVersion = g.cVer + g.csion; // b.cVe + b.crs + b.cio + b.cn; // 'Version';
+export const cControl = b.cCo + b.cnt + b.cro + b.cl; // 'Control';
+export const cPerformance = b.cPe + b.crf + b.cor + b.cma + b.cnc + b.ce; // 'Performance';
+export const cconversion = g.ccon + cversion;
+export const cConversion = g.cCon + cversion;
 
 // Shapes
 export const cline = b.cli + b.cne;
@@ -1931,11 +1937,7 @@ export const cFileNumber = cFile + cNumber;
 export const cConfigurationName = cConfiguration + cName;
 export const cConfigurationElement = cConfiguration + cElement;
 export const cConfigurationElements = cConfigurationElement + b.cs;
-export const cversion = g.cver + g.csion;
-export const cVersion = g.cVer + g.csion; // b.cVe + b.crs + b.cio + b.cn; // 'Version';
-export const cControl = b.cCo + b.cnt + b.cro + b.cl; // 'Control';
 export const cVersionControl = cVersion + cControl;
-export const cPerformance = b.cPe + b.crf + b.cor + b.cma + b.cnc + b.ce; // 'Performance';
 export const cScriptRunTime = cScript + cRuntime;
 export const cTestRunTime = cTest + cRuntime;
 export const cTypeText = cType + cText;
@@ -2010,6 +2012,7 @@ export const cFramework = cFrame + cwork;
 export const cCommandsAliases = cCommands + cAliases;
 export const cCommandWorkflows = cCommand + cWorkflows;
 export const cStandardDeviation = cStandard + cDeviation;
+export const cHexValue = g.cHex + cValue;
 
 // Logging Constants
 export const cBEGIN_Function = cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + cFunction;
@@ -2486,6 +2489,11 @@ export const crandomlyGenerateUpperCaseLetter2 = crandomlyGenerate + cUpperCase 
 export const cconvertNumberToUpperCaseLetter = cconvert + cNumber + cTo + cUpperCase + cLetter;
 export const cconvertNumberToLowerCaseLetter = cconvert + cNumber + cTo + cLowerCase + cLetter;
 
+// *********************************
+// mathOperations rules in order
+// *********************************
+export const chex2rgbConversion = g.chex + b.c2 + g.crgb + cConversion;
+
 // Commands
 export const cSystemCommandsAliasesActualPath = csrc + b.cForwardSlash + cFramework + b.cForwardSlash + cCommands + cBlob + b.cForwardSlash;
 export const cSystemWorkflowsActualPath = csrc + b.cForwardSlash + cFramework + b.cForwardSlash + cResources + b.cForwardSlash + cWorkflows + b.cForwardSlash;
@@ -2504,6 +2512,7 @@ export const cprintDataHive = cprint + cData + cHive;
 export const ccommandGenerator = ccommand + cGenerator;
 export const cbusinessRulesMetrics = cbusiness + cRules + cMetrics;
 export const ccommandMetrics = ccommand + cMetrics;
+export const cconvertColors = cconvert + cColors;
 
 // ********************************
 // System defined workflows
@@ -2519,13 +2528,13 @@ export const cStartupWorkflow = cWorkflow + b.cSpace + cstartup;
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 01 2020 15:45:41 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 01 2020 18:42:51 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

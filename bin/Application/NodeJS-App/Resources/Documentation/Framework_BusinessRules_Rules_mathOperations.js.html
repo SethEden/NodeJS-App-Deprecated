@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Application/NodeJS-App/BusinessRules/clientRulesLibrary.js</title>
+    <title>JSDoc: Source: Framework/BusinessRules/Rules/mathOperations.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Application/NodeJS-App/BusinessRules/clientRulesLibrary.js</h1>
+    <h1 class="page-title">Source: Framework/BusinessRules/Rules/mathOperations.js</h1>
 
     
 
@@ -26,46 +26,74 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @file clientRulesLibrary.js
- * @module clientRulesLibrary
- * @description Contains all of the client defined business rules as a map between function names and function calls.
- * @requires module:clientStringParsing
- * @requires module:application-constants
- * @author Seth Hollingsead
- * @date 2020/06/10
- * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
- */
-import * as clientStringParsing from './ClientRules/clientStringParsing';
-import * as c from '../Constants/application.constants';
+            <pre class="prettyprint source linenums"><code>// NOTE: DO NOT directly import this library to your script(s).
+// please call via the RuleBroker.js.
 
 /**
- * @function initClientRulesLibrary
- * @description Initializes an object map of client business rules and client function calls and returns them.
- * @return {object} A JSON object that contains a list of business rule names and their associated function calls.
+ * @file mathOperations
+ * @module mathOperations
+ * @description Contains all of the business rule functions for doing math operations and conversions.
+ * @requires module:loggers
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
- * @date 2020/06/19
+ * @date 2020/07/01
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-export const initClientRulesLibrary = function() {
-  // console.log('BEGIN clientRulesLibrary.initClientRulesLibrary function');
-  // console.log('END clientRulesLibrary.initClientRulesLibrary function');
-  return {
-      [c.cclientEcho]: (inputData, inputMetaData) => (inputData, inputMetaData),
+import loggers from '../../Executrix/loggers';
+import * as b from '../../Constants/basic.constants';
+import * as g from '../../Constants/generic.constants';
+import * as s from '../../Constants/system.constants';
+var path = require('path');
 
-      // Client Business Rules
-      // ********************************
-      // ClientStringParsing rules in order
-      // ********************************
-      [c.ccustomEcho]: (inputData, inputMetaData) => clientStringParsing.customEcho(inputData, inputMetaData),
-      [c.cmostPopularNumber]: (inputData, inputMetaData) => clientStringParsing.mostPopularNumber(inputData, inputMetaData),
-      [c.cisAlmostPalindrome]: (inputData, inputMetaData) => clientStringParsing.isAlmostPalindrome(inputData, inputMetaData),
-      [c.cthreePointAverage]: (inputData, inputMetaData) => clientStringParsing.threePointAverage(inputData, inputMetaData),
-      [c.carrayCounter]: (inputData, inputMetaData) => clientStringParsing.arrayCounter(inputData, inputMetaData)
-  };
-};
+/**
+ * @function hex2rgbConversion
+ * @description Converts an hexidecimal color value to an RGB color value.
+ * @param {string} inputData The hexidecimal value that should be converted to an RGB value.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array&lt;integer,integer,integer>} The RGB value.
+ * @author Seth Hollingsead
+ * @date 2020/07/01
+ * {@link: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb}
+ */
+export const hex2rgbConversion = function(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.chex2rgbConversion;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData;
+  if (!inputData) {
+    return false;
+  }
+  // A few different ways to implement this business rule, see link above.
+  // Personally I like the version that doesn't have a big ugly regular expression that is impossible to understand and debug.
+  // But that is just a personal/professional opinion,
+  // I am sure others have their own reasons to choose the regular expression technique,
+  // perhaps performance constraints, etc...
+  // I am including the alternate algorthim below as reference in case someone ever wants/needs it,
+  // as an alternative to the below implementation.
 
-export default {
-  initClientRulesLibrary
+  // function hexToRgb(hex) {
+  //   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  //   return result ? {
+  //     r: parseInt(result[1], 16),
+  //     g: parseInt(result[2], 16),
+  //     b: parseInt(result[3], 16)
+  //   } : null;
+  // }
+
+  let bigInteger = parseInt(inputData, 16);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'bigInteger is: ' + bigInteger);
+  let red = (bigInteger >> 16) &amp; 255;
+  let green = (bigInteger >> 8) &amp; 255;
+  let blue = bigInteger &amp; 255;
+  returnData = [red, green, blue];
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
 };
 </code></pre>
         </article>

@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -941,5 +941,63 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
 
   return returnData;
 };
+/**
+ * @function convertColors
+ * @description Converts all of the color hexidecimal values into RGB color values.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/07/01
+ * {@link: https://github.com/paularmstrong/normalizr/issues/15}
+ */
+
 
 exports.commandMetrics = commandMetrics;
+
+var convertColors = function convertColors(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.cconvertColors;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var colorConvertionRule = [];
+  colorConvertionRule[0] = s.creplaceCharacterWithCharacter;
+  colorConvertionRule[1] = s.chex2rgbConversion;
+  var colorKeys = Object.keys(D[s.cColors][s.cColorData]);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'colorKeys is: ' + JSON.stringify(colorKeys));
+
+  for (var i = 0; i < colorKeys.length; i++) {
+    var currentColorName = colorKeys[i];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorName is: ' + currentColorName);
+
+    var currentColorObject = D[s.cColors][s.cColorData][currentColorName];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorObject is: ' + JSON.stringify(currentColorObject));
+
+    var currentColorHexValue = currentColorObject[s.cHexValue];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorHexValue is: ' + currentColorHexValue);
+
+    var ruleOutput = _ruleBroker["default"].processRules(currentColorHexValue, [b.cHash, ''], colorConvertionRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleOutput is: ' + ruleOutput);
+
+    console.log(currentColorName + b.cComa + currentColorHexValue + b.cComa + ruleOutput[0] + b.cComa + ruleOutput[1] + b.cComa + ruleOutput[2]);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+
+exports.convertColors = convertColors;

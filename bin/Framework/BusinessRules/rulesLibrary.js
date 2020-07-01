@@ -13,6 +13,8 @@ var stringGeneration = _interopRequireWildcard(require("./Rules/stringGeneration
 
 var stringParsing = _interopRequireWildcard(require("./Rules/stringParsing"));
 
+var mathOperations = _interopRequireWildcard(require("./Rules/mathOperations"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -260,6 +262,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return characterGeneration.convertNumberToUpperCaseLetter(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cconvertNumberToLowerCaseLetter, function (inputData, inputMetaData) {
     return characterGeneration.convertNumberToLowerCaseLetter(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.chex2rgbConversion, function (inputData, inputMetaData) {
+    return mathOperations.hex2rgbConversion(inputData, inputMetaData);
   }), _D$s$cBusinessRules); // console.log('END rulesLibrary.initRulesLibrary function');
 };
 
