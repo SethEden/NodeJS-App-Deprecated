@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.2](https://github.com/SethEden/NodeJS-App/compare/v0.7.1...v0.7.2) (2020-07-01)
+
+
+### Features
+
+* Add the business rules metrics system. A few minor bugs, but it's working for the most part. ([3bfd4cd](https://github.com/SethEden/NodeJS-App/commit/3bfd4cdebcecce0fe7357da86ab66a0f0b9c236a))
+
 ### [0.7.1](https://github.com/SethEden/NodeJS-App/compare/v0.6.10...v0.7.1) (2020-06-30)
 
 
