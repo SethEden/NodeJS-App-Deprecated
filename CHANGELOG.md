@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.1](https://github.com/SethEden/NodeJS-App/compare/v0.7.3...v0.8.1) (2020-07-01)
+
+
+### Features
+
+* Implement the new command metrics system and some bug fixes for the business rule performance metrics system as well. ([fe4c4cb](https://github.com/SethEden/NodeJS-App/commit/fe4c4cba00359a4b51042dce9b4bb4862c5714a9))
+
 ### [0.7.3](https://github.com/SethEden/NodeJS-App/compare/v0.7.2...v0.7.3) (2020-07-01)
 
 ### [0.7.2](https://github.com/SethEden/NodeJS-App/compare/v0.7.1...v0.7.2) (2020-07-01)
