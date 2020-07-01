@@ -751,6 +751,7 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
+  var returnData = true;
   var businessRuleCounter = 0;
   var businessRulePerformanceSum = 0;
   var businessRulePerformanceStdSum = 0;
@@ -814,9 +815,21 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
 
   _loggers["default"].consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
 
-  _stack["default"].clearStack(s.cBusinessRulesPerformanceAnalysisStack);
+  _stack["default"].clearStack(s.cBusinessRulesPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
+  // It might be that the user wants to do something else with this data in memory after it's done.
+
+
+  if (_configurator["default"].getConfigurationSetting(s.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
+    _stack["default"].clearStack(s.cBusinessRulePerformanceTrackingStack);
+
+    _stack["default"].clearStack(s.cBusinessRuleNamesPerformanceTrackingStack);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
 };
 
 exports.businessRulesMetrics = businessRulesMetrics;
