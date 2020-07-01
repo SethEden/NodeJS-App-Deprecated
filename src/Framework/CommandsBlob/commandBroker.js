@@ -6,6 +6,8 @@
  * @requires module:configurator
  * @requires module:lexical
  * @requires module:commandsLibrary
+ * @requires module:stack
+ * @requires module:timers
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
@@ -21,6 +23,8 @@ import configurator from '../Executrix/configurator';
 import lexical from '../Executrix/lexical';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import * as commands from './commandsLibrary';
+import stack from '../Resources/stack';
+import timers from '../Executrix/timers';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
@@ -298,11 +302,45 @@ function getCommandArgs(commandString, commandDelimiter) {
   let returnValue = false;
   let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter));
   let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter));
+  let commandMetricsEnabled = configurator.getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
+  let commandStartTime = '';
+  let commandEndTime = '';
+  let commandDeltaTime = '';
+
+  if (commandMetricsEnabled === true) {
+    // Here we will capture the start time of the command we are about to execute.
+    // After executing we will capture the end time and then
+    // compute the difference to determine how many milliseconds it took to run the command.
+    commandStartTime = timers.getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Business Rule Start time is: ' + commandStartTime);
+  }
   if (commandToExecute !== false && commandArgs !== false) {
     returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false && commandArgs === false) {
     // This could be a command without any arguments.
     returnValue = D[s.cCommands][commandToExecute]('', '');
+  }
+  if (commandMetricsEnabled === true) {
+    let performanceTrackingObject = {};
+    commandEndTime = timers.getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Command End time is: ' + commandEndTime);
+    // Now compute the delta time so we know how long it took to run that command.
+    commandDeltaTime = timers.computeDeltaTime(commandStartTime, commandEndTime);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Command run-time is: ' + commandDeltaTime);
+    // Check to make sure the command performance tracking stack exists or does not exist.
+    if (D[s.cCommandPerformanceTrackingStack] === undefined) {
+      stack.initStack(s.cCommandPerformanceTrackingStack);
+    }
+    if (D[s.cCommandNamesPerformanceTrackingStack] === undefined) {
+      stack.initStack(s.cCommandNamesPerformanceTrackingStack);
+    }
+    performanceTrackingObject = {'Name': commandToExecute, 'RunTime': commandDeltaTime};
+    if (stack.contains(s.cCommandNamesPerformanceTrackingStack, commandToExecute) === false) {
+      stack.push(s.cCommandNamesPerformanceTrackingStack, commandToExecute);
+    }
+    stack.push(s.cCommandPerformanceTrackingStack, performanceTrackingObject);
+    // stack.print(s.cCommandNamesPerformanceTrackingStack);
+    // stack.print(s.cCommandPerformanceTrackingStack);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

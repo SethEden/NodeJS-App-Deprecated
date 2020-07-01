@@ -2327,6 +2327,10 @@ export const cBusinessRulePerformanceTrackingStack = cBusiness + cRule + cPerfor
 export const cBusinessRuleNamesPerformanceTrackingStack = cBusiness + cRule + cNames + cPerformance + cTracking + cStack;
 export const cBusinessRulesPerformanceAnalysisStack = cBusiness + cRules + cPerformance + cAnalysis + cStack;
 export const cClearBusinessRulesPerformanceDataAfterAnalysis = cClear + cBusiness + cRules + cPerformance + cData + cAfter + cAnalysis;
+export const cCommandPerformanceTrackingStack = cCommand + cPerformance + cTracking + cStack;
+export const cCommandNamesPerformanceTrackingStack = cCommand + cNames + cPerformance + cTracking + cStack;
+export const cCommandsPerformanceAnalysisStack = cCommands + cPerformance + cAnalysis + cStack;
+export const cClearCommandPerformanceDataAfterAnalysis = cClear + cCommand + cPerformance + cData + cAfter + cAnalysis;
 
 // Business Rules
 export const cecho = b.cec + b.cho;
@@ -2471,6 +2475,7 @@ export const ccommandSequencer = ccommand + cSequencer;
 export const cprintDataHive = cprint + cData + cHive;
 export const ccommandGenerator = ccommand + cGenerator;
 export const cbusinessRulesMetrics = cbusiness + cRules + cMetrics;
+export const ccommandMetrics = ccommand + cMetrics;
 
 // ********************************
 // System defined workflows
