@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -537,8 +537,6 @@ var businessRule = function businessRule(inputData, inputMetaData) {
 
   var businessRuleOutput = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRuleOutput);
 
-  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
-
   var businessRuleMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRulePerformanceMetrics);
 
   var businessRuleStartTime = '';
@@ -730,7 +728,7 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
 };
 /**
  * @function businessRulesMetrics
- * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of calls.
+ * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
  * @return {void}
@@ -752,77 +750,189 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
-  var businessRuleCounter = 0;
-  var businessRulePerformanceSum = 0;
-  var businessRulePerformanceStdSum = 0;
-  var average = 0;
-  var standardDev = 0; // Here we iterate over all of the business rules that were added to the s.cBusinessRulePerformanceTrackingStack.
 
-  for (var i = 0; i < _stack["default"].length(s.cBusinessRuleNamesPerformanceTrackingStack); i++) {
-    businessRuleCounter = 0; // Reset it to zero, because we are beginning again with another business rule name.
+  var businessRuleMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRulePerformanceMetrics);
 
-    businessRulePerformanceSum = 0;
-    businessRulePerformanceStdSum = 0;
-    average = 0;
-    standardDev = 0; // Here we will now iterate over all of the contents of all of the business rule performance numbers and
-    // do the necessary math for each business rule according to the parent loop.
+  if (businessRuleMetricsEnabled === true) {
+    var businessRuleCounter = 0;
+    var businessRulePerformanceSum = 0;
+    var businessRulePerformanceStdSum = 0;
+    var average = 0;
+    var standardDev = 0; // Here we iterate over all of the business rules that were added to the s.cBusinessRulePerformanceTrackingStack.
 
-    var currentBusinessRuleName = D[s.cBusinessRuleNamesPerformanceTrackingStack][i];
+    for (var i = 0; i < _stack["default"].length(s.cBusinessRuleNamesPerformanceTrackingStack); i++) {
+      businessRuleCounter = 0; // Reset it to zero, because we are beginning again with another business rule name.
 
-    for (var j = 0; j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); j++) {
-      if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
-        businessRuleCounter = businessRuleCounter + 1;
+      businessRulePerformanceSum = 0;
+      businessRulePerformanceStdSum = 0;
+      average = 0;
+      standardDev = 0; // Here we will now iterate over all of the contents of all of the business rule performance numbers and
+      // do the necessary math for each business rule according to the parent loop.
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRuleCounter is: ' + businessRuleCounter);
+      var currentBusinessRuleName = D[s.cBusinessRuleNamesPerformanceTrackingStack][i];
 
-        businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime];
+      for (var j = 0; j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); j++) {
+        if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
+          businessRuleCounter = businessRuleCounter + 1;
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRuleCounter is: ' + businessRuleCounter);
+
+          businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime];
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+        }
       }
-    }
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! businessRulePerformanceSum is: ' + businessRulePerformanceSum);
 
-    average = businessRulePerformanceSum / businessRuleCounter;
+      average = businessRulePerformanceSum / businessRuleCounter;
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average); // Now go back through them all so we can compute the standard deviation
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average); // Now go back through them all so we can compute the standard deviation
 
 
-    for (var _j = 0; _j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); _j++) {
-      if (D[s.cBusinessRulePerformanceTrackingStack][_j][s.cName] === currentBusinessRuleName) {
-        businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[s.cBusinessRulePerformanceTrackingStack][_j][s.cRunTime] - average, 2);
+      for (var _j = 0; _j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); _j++) {
+        if (D[s.cBusinessRulePerformanceTrackingStack][_j][s.cName] === currentBusinessRuleName) {
+          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[s.cBusinessRulePerformanceTrackingStack][_j][s.cRunTime] - average, 2);
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+        }
       }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!! businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+
+      standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'standardDev is: ' + standardDev);
+
+      if (D[s.cBusinessRulesPerformanceAnalysisStack] === undefined) {
+        _stack["default"].initStack(s.cBusinessRulesPerformanceAnalysisStack);
+      }
+
+      _stack["default"].push(s.cBusinessRulesPerformanceAnalysisStack, {
+        'Name': currentBusinessRuleName,
+        'Average': average,
+        'StandardDeviation': standardDev
+      });
     }
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!! businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+    _loggers["default"].consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
 
-    standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter);
+    _stack["default"].clearStack(s.cBusinessRulesPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
+    // It might be that the user wants to do something else with this data in memory after it's done.
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'standardDev is: ' + standardDev);
 
-    if (D[s.cBusinessRulesPerformanceAnalysisStack] === undefined) {
-      _stack["default"].initStack(s.cBusinessRulesPerformanceAnalysisStack);
+    if (_configurator["default"].getConfigurationSetting(s.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
+      _stack["default"].clearStack(s.cBusinessRulePerformanceTrackingStack);
+
+      _stack["default"].clearStack(s.cBusinessRuleNamesPerformanceTrackingStack);
     }
-
-    _stack["default"].push(s.cBusinessRulesPerformanceAnalysisStack, {
-      'Name': currentBusinessRuleName,
-      'Average': average,
-      'StandardDeviation': standardDev
-    });
   }
 
-  _loggers["default"].consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
-  _stack["default"].clearStack(s.cBusinessRulesPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
-  // It might be that the user wants to do something else with this data in memory after it's done.
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function commandMetrics
+ * @description A command to compute command metrics for each of the commands that were called in a sequence of call(s) or workflow(s).
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/30
+ */
 
 
-  if (_configurator["default"].getConfigurationSetting(s.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
-    _stack["default"].clearStack(s.cBusinessRulePerformanceTrackingStack);
+exports.businessRulesMetrics = businessRulesMetrics;
 
-    _stack["default"].clearStack(s.cBusinessRuleNamesPerformanceTrackingStack);
+var commandMetrics = function commandMetrics(inputData, inputMetaData) {
+  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+  var functionName = s.ccommandMetrics;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
+
+  if (commandMetricsEnabled === true) {
+    var commandCounter = 0;
+    var commandPerformanceSum = 0;
+    var commandPerformanceStdSum = 0;
+    var average = 0;
+    var standardDev = 0; // Here we iterate over all of the commands that were added to the s.cCommandPerformanceTrackingStack.
+
+    for (var i = 0; i < _stack["default"].length(s.cCommandNamesPerformanceTrackingStack); i++) {
+      commandCounter = 0;
+      commandPerformanceSum = 0;
+      commandPerformanceStdSum = 0;
+      average = 0;
+      standardDev = 0; // Here we will now iterate over all of the contents of all the command performance numbers and
+      // do the necessary math for each command according to the parent loop.
+
+      var currentCommandName = D[s.cCommandNamesPerformanceTrackingStack][i];
+
+      for (var j = 0; j < _stack["default"].length(s.cCommandPerformanceTrackingStack); j++) {
+        if (D[s.cCommandPerformanceTrackingStack][j][s.cName] === currentCommandName) {
+          commandCounter = commandCounter + 1;
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandCounter is: ' + commandCounter);
+
+          commandPerformanceSum = commandPerformanceSum + D[s.cCommandPerformanceTrackingStack][j][s.cRunTime];
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandPerformanceSum is: ' + commandPerformanceSum);
+        }
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! commandPerformanceSum is: ' + commandPerformanceSum);
+
+      average = commandPerformanceSum / commandCounter;
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average); // Now go back through them all so we can compute the standard deviation
+
+
+      for (var _j2 = 0; _j2 < _stack["default"].length(s.cCommandPerformanceTrackingStack); _j2++) {
+        if (D[s.cCommandPerformanceTrackingStack][_j2][s.cName] === currentCommandName) {
+          commandPerformanceStdSum = commandPerformanceStdSum + math.pow(D[s.cCommandPerformanceTrackingStack][_j2][s.cRunTime] - average, 2);
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandPerformanceStdSum is: ' + commandPerformanceStdSum);
+        }
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! commandPerformanceStdSum is: ' + commandPerformanceStdSum);
+
+      standardDev = math.sqrt(commandPerformanceStdSum / commandCounter);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'standardDev is: ' + standardDev);
+
+      if (D[s.cCommandsPerformanceAnalysisStack] === undefined) {
+        _stack["default"].initStack(s.cCommandsPerformanceAnalysisStack);
+      }
+
+      _stack["default"].push(s.cCommandsPerformanceAnalysisStack, {
+        'Name': currentCommandName,
+        'Average': average,
+        'StandardDeviation': standardDev
+      });
+    }
+
+    _loggers["default"].consoleTableLog('', D[s.cCommandsPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+
+    _stack["default"].clearStack(s.cCommandsPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
+    // It might be that the user wants to do something else with this data in memory after it's done.
+
+
+    if (_configurator["default"].getConfigurationSetting(s.cClearCommandPerformanceDataAfterAnalysis) === true) {
+      _stack["default"].clearStack(s.cCommandPerformanceTrackingStack);
+
+      _stack["default"].clearStack(s.cCommandNamesPerformanceTrackingStack);
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -832,4 +942,4 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
   return returnData;
 };
 
-exports.businessRulesMetrics = businessRulesMetrics;
+exports.commandMetrics = commandMetrics;

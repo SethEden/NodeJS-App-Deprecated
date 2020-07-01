@@ -15,6 +15,10 @@ var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"))
 
 var commands = _interopRequireWildcard(require("./commandsLibrary"));
 
+var _stack = _interopRequireDefault(require("../Resources/stack"));
+
+var _timers = _interopRequireDefault(require("../Executrix/timers"));
+
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
@@ -37,6 +41,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:configurator
  * @requires module:lexical
  * @requires module:commandsLibrary
+ * @requires module:stack
+ * @requires module:timers
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
@@ -399,11 +405,60 @@ function executeCommand(commandString) {
   var commandToExecute = getValidCommand(commandString, _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter));
   var commandArgs = getCommandArgs(commandString, _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter));
 
+  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
+
+  var commandStartTime = '';
+  var commandEndTime = '';
+  var commandDeltaTime = '';
+
+  if (commandMetricsEnabled === true) {
+    // Here we will capture the start time of the command we are about to execute.
+    // After executing we will capture the end time and then
+    // compute the difference to determine how many milliseconds it took to run the command.
+    commandStartTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Business Rule Start time is: ' + commandStartTime);
+  }
+
   if (commandToExecute !== false && commandArgs !== false) {
     returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false && commandArgs === false) {
     // This could be a command without any arguments.
     returnValue = D[s.cCommands][commandToExecute]('', '');
+  }
+
+  if (commandMetricsEnabled === true) {
+    var performanceTrackingObject = {};
+    commandEndTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Command End time is: ' + commandEndTime); // Now compute the delta time so we know how long it took to run that command.
+
+
+    commandDeltaTime = _timers["default"].computeDeltaTime(commandStartTime, commandEndTime);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Command run-time is: ' + commandDeltaTime); // Check to make sure the command performance tracking stack exists or does not exist.
+
+
+    if (D[s.cCommandPerformanceTrackingStack] === undefined) {
+      _stack["default"].initStack(s.cCommandPerformanceTrackingStack);
+    }
+
+    if (D[s.cCommandNamesPerformanceTrackingStack] === undefined) {
+      _stack["default"].initStack(s.cCommandNamesPerformanceTrackingStack);
+    }
+
+    performanceTrackingObject = {
+      'Name': commandToExecute,
+      'RunTime': commandDeltaTime
+    };
+
+    if (_stack["default"].contains(s.cCommandNamesPerformanceTrackingStack, commandToExecute) === false) {
+      _stack["default"].push(s.cCommandNamesPerformanceTrackingStack, commandToExecute);
+    }
+
+    _stack["default"].push(s.cCommandPerformanceTrackingStack, performanceTrackingObject); // stack.print(s.cCommandNamesPerformanceTrackingStack);
+    // stack.print(s.cCommandPerformanceTrackingStack);
+
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
