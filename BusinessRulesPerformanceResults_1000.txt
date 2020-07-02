@@ -1,0 +1,73 @@
+┌─────────┬─────────────────────────────────────────────────────────────────────────┬─────────┬─────────────────────┐
+│ (index) │                                  Name                                   │ Average │  StandardDeviation  │
+├─────────┼─────────────────────────────────────────────────────────────────────────┼─────────┼─────────────────────┤
+│    0    │          'randomlyGenerateMixedCaseLetterOrSpecialCharacter1'           │  0.453  │ 0.5270588202468485  │
+│    1    │          'randomlyGenerateUpperCaseLetterOrSpecialCharacter1'           │  0.334  │ 0.4779581571644125  │
+│    2    │          'randomlyGenerateLowerCaseLetterOrSpecialCharacter1'           │  0.386  │ 0.4888803534608455  │
+│    3    │   'randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1'    │  0.502  │ 0.5291464825546897  │
+│    4    │   'randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1'    │  0.423  │ 0.5177557339132058  │
+│    5    │   'randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1'    │  0.426  │ 0.5123709593644055  │
+│    6    │            'randomlyGenerateMixedCaseAlphaNumericCharacter1'            │  0.392  │ 0.49430355046266744 │
+│    7    │            'randomlyGenerateUpperCaseAlphaNumericCharacter1'            │  0.342  │ 0.47437959483940473 │
+│    8    │            'randomlyGenerateLowerCaseAlphaNumericCharacter1'            │  0.344  │ 0.4875079486531487  │
+│    9    │                   'randomlyGenerateNumericCharacter1'                   │  0.241  │ 0.42769030851773693 │
+│   10    │                   'randomlyGenerateSpecialCharacter1'                   │  0.251  │ 0.4358887472738935  │
+│   11    │                    'randomlyGenerateNumberInRange1'                     │  0.21   │ 0.4217819341792597  │
+│   12    │                     'randomlyGenerateBooleanValue1'                     │  0.12   │ 0.3249615361854355  │
+│   13    │             'randomlyGenerateMixedCaseAlphabeticCharacter1'             │  0.362  │ 0.5049316785467155  │
+│   14    │                   'randomlyGenerateLowerCaseLetter1'                    │  0.277  │ 0.44751648014346884 │
+│   15    │                   'randomlyGenerateUpperCaseLetter1'                    │  0.314  │ 0.4810446964680067  │
+│   16    │                 'generateRandomMixedCaseTextByLength1'                  │ 37.938  │  8.828825289923943  │
+│   17    │                 'generateRandomUpperCaseTextByLength1'                  │ 27.874  │  6.654932306192153  │
+│   18    │                 'generateRandomLowerCaseTextByLength1'                  │ 26.367  │  3.945416454571058  │
+│   19    │       'generateRandomMixedCaseTextWithSpecialCharactersByLength1'       │  39.66  │  7.241712504649671  │
+│   20    │       'generateRandomUpperCaseTextWithSpecialCharactersByLength1'       │ 33.728  │  3.509703121348021  │
+│   21    │       'generateRandomLowerCaseTextWithSpecialCharactersByLength1'       │ 31.992  │  7.711675304368047  │
+│   22    │           'generateRandomMixedCaseAlphaNumericCodeByLength1'            │ 39.221  │  5.118804450259863  │
+│   23    │           'generateRandomUpperCaseAlphaNumericCodeByLength1'            │ 36.018  │  7.979954636462572  │
+│   24    │           'generateRandomLowerCaseAlphaNumericCodeByLength1'            │ 40.581  │ 19.686783358385387  │
+│   25    │                  'generateRandomNumericCodeByLength1'                   │ 21.682  │  5.241457430906019  │
+│   26    │ 'generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1' │ 57.072  │  26.72255257268655  │
+│   27    │ 'generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1' │ 42.626  │   7.1018394800221   │
+│   28    │ 'generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1' │ 43.519  │ 12.742513056693374  │
+│   29    │              'generateRandomSpecialCharacterCodeByLength1'              │ 21.039  │ 2.6304902584879493  │
+│   30    │                          'generateValidEmail1'                          │ 49.1885 │  18.0638026935084   │
+│   31    │                         'generateInvalidEmail1'                         │ 21.9755 │ 20.853702303188086  │
+└─────────┴─────────────────────────────────────────────────────────────────────────┴─────────┴─────────────────────┘
+
+┌─────────┬─────────────────────────────────────────────────────────────────────────┬─────────┬─────────────────────┐
+│ (index) │                                  Name                                   │ Average │  StandardDeviation  │
+├─────────┼─────────────────────────────────────────────────────────────────────────┼─────────┼─────────────────────┤
+│    0    │          'randomlyGenerateMixedCaseLetterOrSpecialCharacter2'           │  0.335  │ 0.5007744003041672  │
+│    1    │          'randomlyGenerateUpperCaseLetterOrSpecialCharacter2'           │  0.304  │ 0.4707270971592742  │
+│    2    │          'randomlyGenerateLowerCaseLetterOrSpecialCharacter2'           │  0.301  │ 0.4586927075940912  │
+│    3    │   'randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2'    │  0.306  │ 0.4608296865437405  │
+│    4    │   'randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2'    │  0.296  │ 0.46085138602373704 │
+│    5    │   'randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2'    │  0.305  │ 0.46040742826327374 │
+│    6    │            'randomlyGenerateMixedCaseAlphaNumericCharacter2'            │  0.307  │ 0.4612493902434958  │
+│    7    │            'randomlyGenerateUpperCaseAlphaNumericCharacter2'            │  0.299  │ 0.45781983355901135 │
+│    8    │            'randomlyGenerateLowerCaseAlphaNumericCharacter2'            │  0.29   │ 0.45376205218153914 │
+│    9    │                   'randomlyGenerateNumericCharacter2'                   │  0.279  │ 0.4485075250204888  │
+│   10    │                   'randomlyGenerateSpecialCharacter2'                   │  0.237  │ 0.42524228388061325 │
+│   11    │                    'randomlyGenerateNumberInRange2'                     │  0.194  │ 0.4029441648665483  │
+│   12    │                     'randomlyGenerateBooleanValue2'                     │  0.125  │ 0.33071891388307384 │
+│   13    │             'randomlyGenerateMixedCaseAlphabeticCharacter2'             │  0.287  │ 0.45236158103888413 │
+│   14    │                   'randomlyGenerateLowerCaseLetter2'                    │  0.262  │ 0.43972263985381027 │
+│   15    │                   'randomlyGenerateUpperCaseLetter2'                    │  0.295  │ 0.45604276115294556 │
+│   16    │                 'generateRandomMixedCaseTextByLength2'                  │ 19.396  │ 1.8732816125719112  │
+│   17    │                 'generateRandomUpperCaseTextByLength2'                  │  19.62  │  1.889867720238632  │
+│   18    │                 'generateRandomLowerCaseTextByLength2'                  │ 23.387  │  4.980485016542068  │
+│   19    │       'generateRandomMixedCaseTextWithSpecialCharactersByLength2'       │ 24.318  │  5.69779571413367   │
+│   20    │       'generateRandomUpperCaseTextWithSpecialCharactersByLength2'       │ 23.723  │ 4.3025888718305625  │
+│   21    │       'generateRandomLowerCaseTextWithSpecialCharactersByLength2'       │ 25.443  │  4.277703940199696  │
+│   22    │           'generateRandomMixedCaseAlphaNumericCodeByLength2'            │  25.19  │  7.185812410576818  │
+│   23    │           'generateRandomUpperCaseAlphaNumericCodeByLength2'            │ 24.165  │  4.463157514585374  │
+│   24    │           'generateRandomLowerCaseAlphaNumericCodeByLength2'            │ 29.167  │ 12.905158309761278  │
+│   25    │                  'generateRandomNumericCodeByLength2'                   │ 25.666  │  4.473750551830082  │
+│   26    │ 'generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2' │ 25.433  │ 4.4941641047029055  │
+│   27    │ 'generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2' │ 26.998  │  7.441504955316484  │
+│   28    │ 'generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2' │ 26.575  │  4.081712263254243  │
+│   29    │              'generateRandomSpecialCharacterCodeByLength2'              │  21.44  │  2.670280884101893  │
+│   30    │                          'generateValidEmail2'                          │ 24.2705 │  7.291867370571108  │
+│   31    │                         'generateInvalidEmail2'                         │ 13.123  │ 12.506593101240641  │
+└─────────┴─────────────────────────────────────────────────────────────────────────┴─────────┴─────────────────────┘
