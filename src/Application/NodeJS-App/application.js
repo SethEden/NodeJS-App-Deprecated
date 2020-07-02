@@ -33,6 +33,7 @@ var path = require('path');
 var D = require('../../Framework/Resources/data');
 global.appRoot = path.resolve(__dirname);
 var rootPath = '';
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function bootStrapApplication
@@ -60,11 +61,10 @@ function bootStrapApplication() {
  * @date 2020/05/21
  */
 function application() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.capplication;
-  var argumentDrivenInterface = true;
-  var commandInput;
-  var commandResult;
+  let functionName = s.capplication;
+  let argumentDrivenInterface = true;
+  let commandInput;
+  let commandResult;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN main program loop');
   warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
@@ -96,7 +96,7 @@ function application() {
 };
 
 // Launch the application!!
-var programRunning = false;
+let programRunning = false;
 bootStrapApplication() // Call to the function above to do initial pre-setup for the application.
 programRunning = true;
 application(); // Call to the function above to actually execute the application.

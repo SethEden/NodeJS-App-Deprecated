@@ -17,6 +17,7 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('./data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function initQueue
@@ -28,8 +29,7 @@ var D = require('./data');
  * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function initQueue(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = initQueue.name;
+  let functionName = initQueue.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
   D[queueNameSpace] = [];
@@ -46,11 +46,10 @@ function initQueue(queueNameSpace) {
  * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function dequeue(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = dequeue.name;
+  let functionName = dequeue.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  var returnValue;
+  let returnValue;
   returnValue = D[queueNameSpace].shift();
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -68,8 +67,7 @@ function dequeue(queueNameSpace) {
  * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function enqueue(queueNameSpace, value) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = enqueue.name;
+  let functionName = enqueue.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
@@ -87,11 +85,10 @@ function enqueue(queueNameSpace, value) {
  * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function isEmpty(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = isEmpty.name;
+  let functionName = isEmpty.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  var returnValue;
+  let returnValue;
   if (D[queueNameSpace] === undefined) {
     returnValue = true;
   } else {
@@ -112,11 +109,10 @@ function isEmpty(queueNameSpace) {
  * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function queueFront(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = queueFront.name;
+  let functionName = queueFront.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  var returnValue;
+  let returnValue;
   returnValue = D[queueNameSpace][0];
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -133,11 +129,10 @@ function queueFront(queueNameSpace) {
  * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function queueSize(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = queueSize.name;
+  let functionName = queueSize.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  var returnValue;
+  let returnValue;
   returnValue = D[queueNameSpace].length;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

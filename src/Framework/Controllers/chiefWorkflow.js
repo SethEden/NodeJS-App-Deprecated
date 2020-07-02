@@ -20,6 +20,7 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function loadCommandWorkflowsFromPath
@@ -31,11 +32,10 @@ var D = require('../Resources/data');
  * @date 2020/06/22
  */
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = loadCommandWorkflowsFromPath.name;
+  let functionName = loadCommandWorkflowsFromPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWorkflowFilePathConfigurationName is: ' + commandWorkflowFilePathConfigurationName);
-  var allCommandWorkflowsData = {};
+  let allCommandWorkflowsData = {};
   allCommandWorkflowsData = chiefData.setupAllXmlData(commandWorkflowFilePathConfigurationName, s.cCommandWorkflows);
   if (D[s.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
     D[s.cCommandWorkflows] = {};

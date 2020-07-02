@@ -7,7 +7,6 @@
  * @date 2020/06/19
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-
 import * as clientCommands from './ClientCommands/clientCommands';
 import * as c from '../Constants/application.constants';
 

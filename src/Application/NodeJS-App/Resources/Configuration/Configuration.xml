@@ -13,7 +13,7 @@
         <ConfigurationElement Name="PrimaryCommandDelimiter" Type="Default" Value=" " Version="3"/>
         <ConfigurationElement Name="SecondaryCommandDelimiter" Type="Default" Value="," Version="3"/>
         <ConfigurationElement Name="TertiaryCommandDelimiter" Type="Default" Value="|" Version="3"/>
-        <ConfigurationElement Name="EnableBusinessRuleOutput" Type="Default" Value="False" Version="3"/>
+        <ConfigurationElement Name="EnableBusinessRuleOutput" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableBusinessRulePerformanceMetrics" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableCommandPerformanceMetrics" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="ClearBusinessRulesPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>

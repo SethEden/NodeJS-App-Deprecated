@@ -38,6 +38,7 @@ const figlet = require('figlet');
 var path = require('path');
 var math = require('mathjs');
 var D = require('../../../Framework/Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
  /**
   * @function echoCommand
@@ -50,8 +51,7 @@ var D = require('../../../Framework/Resources/data');
   * @date 2020/06/19
   */
  export const echoCommand = function(inputData, inputMetaData) {
-   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-   var functionName = s.cechoCommand;
+   let functionName = s.cechoCommand;
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -59,7 +59,7 @@ var D = require('../../../Framework/Resources/data');
      return false;
    }
    loggers.consoleLog(inputData);
-   var returnData = true;
+   let returnData = true;
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
    return returnData;
@@ -76,12 +76,11 @@ var D = require('../../../Framework/Resources/data');
  * @date 2020/06/19
  */
 export const exit = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cexit;
+  let functionName = s.cexit;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = false;
+  let returnData = false;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -98,12 +97,11 @@ export const exit = function(inputData, inputMetaData) {
  * @date 2020/06/21
  */
 export const version = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cversion;
+  let functionName = s.cversion;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   console.log(configurator.getConfigurationSetting(s.cApplicationVersionNumber));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -121,12 +119,11 @@ export const version = function(inputData, inputMetaData) {
  * @date 2020/06/21
  */
 export const about = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cabout;
+  let functionName = s.cabout;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   console.log(configurator.getConfigurationSetting(s.cApplicationDescription));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -147,14 +144,13 @@ export const about = function(inputData, inputMetaData) {
  * @date 2020/06/21
  */
 export const name = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cname;
+  let functionName = s.cname;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   let applicationName = configurator.getConfigurationSetting(s.cApplicationName);
-  var figletFont = configurator.getConfigurationSetting(s.cFigletFont);
+  let figletFont = configurator.getConfigurationSetting(s.cFigletFont);
   let useFancyFont = false;
   let rules = {};
   rules[0] = s.cstringToDataType;
@@ -182,12 +178,11 @@ export const name = function(inputData, inputMetaData) {
  * @date 2020/06/22
  */
 export const help = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.chelp;
+  let functionName = s.chelp;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][s.cCommand], [s.cName, s.cDescription]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -206,12 +201,11 @@ export const help = function(inputData, inputMetaData) {
  * @date 2020/06/23
  */
 export const workflowHelp = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cworkflowHelp;
+  let functionName = s.cworkflowHelp;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -235,12 +229,11 @@ export const workflowHelp = function(inputData, inputMetaData) {
  * @date 2020/06/21
  */
 export const commandSequencer = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.ccommandSequencer;
+  let functionName = s.ccommandSequencer;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   for (let i = 1; i < inputData.length; i++) {
     let commandString = inputData[i];
     let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
@@ -285,12 +278,11 @@ export const commandSequencer = function(inputData, inputMetaData) {
  * @date 2020/06/22
  */
 export const workflow = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cworkflow;
+  let functionName = s.cworkflow;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   let workflowName = inputData[1];
   let workflowValue = workflowBroker.getWorkflow(workflowName);
   if (workflowValue !== false) {
@@ -321,12 +313,11 @@ export const workflow = function(inputData, inputMetaData) {
  * @date 2020/06/22
  */
 export const printDataHive = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cprintDataHive;
+  let functionName = s.cprintDataHive;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   if (D[inputData[1]] !== undefined) {
     console.log(inputData[1] + ' contents are: ' + JSON.stringify(D[inputData[1]]));
   } else {
@@ -360,12 +351,11 @@ export const printDataHive = function(inputData, inputMetaData) {
  * @date 2020/06/23
  */
 export const businessRule = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cbusinessRule;
+  let functionName = s.cbusinessRule;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
+  let returnData = true;
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
   let rules = [];
   let ruleInputData, ruleInputMetaData;
@@ -463,13 +453,12 @@ export const businessRule = function(inputData, inputMetaData) {
  * @date 2020/06/23
  */
 export const commandGenerator = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.ccommandGenerator;
+  let functionName = s.ccommandGenerator;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = true;
-  var replaceCharacterWithCharacterRule = [];
+  let returnData = true;
+  let replaceCharacterWithCharacterRule = [];
   replaceCharacterWithCharacterRule[0] = s.creplaceCharacterWithCharacter;
   let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
   if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
@@ -497,7 +486,7 @@ export const commandGenerator = function(inputData, inputMetaData) {
   let commandArgs = commandBroker.getCommandArgs(commandString, primaryCommandDelimiter);
   if (currentCommand !== false) {
     if (isNaN(inputData[2]) === false) { // Make sure the user passed in a number for the second argument.
-      var numberOfCommands = parseInt(inputData[2]);
+      let numberOfCommands = parseInt(inputData[2]);
       if (numberOfCommands > 0) {
         for (let i = 0; i < numberOfCommands; i++) {
           queue.enqueue(s.cCommandQueue, commandString);
@@ -527,8 +516,7 @@ export const commandGenerator = function(inputData, inputMetaData) {
  * @date 2020/06/30
  */
 export const businessRulesMetrics = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cbusinessRulesMetrics;
+  let functionName = s.cbusinessRulesMetrics;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -600,8 +588,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
  * @date 2020/06/30
  */
 export const commandMetrics = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.ccommandMetrics;
+  let functionName = s.ccommandMetrics;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -674,8 +661,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
  * {@link: https://github.com/paularmstrong/normalizr/issues/15}
  */
 export const convertColors = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cconvertColors;
+  let functionName = s.cconvertColors;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);

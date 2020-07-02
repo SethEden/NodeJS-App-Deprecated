@@ -40,12 +40,12 @@ var D = require('../Resources/data');
  */
 function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
-    var logFile = configurator.getConfigurationSetting(s.cApplicationRootPath);
+    let logFile = configurator.getConfigurationSetting(s.cApplicationRootPath);
     if (logFile !== undefined) {
       // console.log('logFile is !== undefined');
-      var debugSetting = false;
-      var outputMessage = '';
-      var rules = {};
+      let debugSetting = false;
+      let outputMessage = '';
+      let rules = {};
       rules[1] = s.creplaceDoublePercentWithMessage;
       logFile = logFile + configurator.getConfigurationSetting(s.cLogFilePathAndName);
       // console.log('determine if there is a configuration setting for the class path');
@@ -95,8 +95,8 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
   // console.log('classPath is: ' + classPath);
   // console.log('message is: ' + message);
   // console.log('loggingToFileAndConsole is: ' + loggingToFileAndConsole);
-  var outputMessage = '';
-  var messageIsValid = false;
+  let outputMessage = '';
+  let messageIsValid = false;
 
   if (debugSetting !== undefined) {
     // console.log('The debugSetting is not undefined, now check if it is true or not.');
@@ -169,7 +169,7 @@ function validMessage(outputMessage, originalMessage) {
   // console.log('BEGIN loggers.validMessage function');
   // console.log('outputMessage is: ' + outputMessage);
   // console.log('originalMessage is: ' + originalMessage);
-  var returnValue = false;
+  let returnValue = false;
 
   // if (outputMessage !== false && outputMessage !== message) {
   //   console.log(outputMessage);
@@ -199,11 +199,11 @@ function validMessage(outputMessage, originalMessage) {
  * @date 2020/03/26
  */
 function parseClassPath(logFile, classPath, message) {
-  var className = '';
-  var functionName = '';
-  var debugFunctionsSetting = false;
-  var debugFilesSetting = false;
-  var classPathArray = {};
+  let className = '';
+  let functionName = '';
+  let debugFunctionsSetting = false;
+  let debugFilesSetting = false;
+  let classPathArray = {};
 
   classPathArray = classPath.split(b.cDot);
   // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
@@ -266,7 +266,7 @@ function printMessageToFile(file, message) {
   // console.log('file is: ' + file);
   console.log(message);
   let fd;
-  var currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
+  let currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
   if (currentOS === s.cWindows || currentOS === s.cLinux) {
     if (configurator.getConfigurationSetting(s.cLogFileEnabled) === true) {
       try {

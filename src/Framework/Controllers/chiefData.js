@@ -19,6 +19,7 @@ import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function getAndProcessCsvData
@@ -30,14 +31,13 @@ var path = require('path');
  * @date 2020/05/21
  */
 function getAndProcessCsvData(pathAndFilename, contextName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getAndProcessCsvData.name;
+  let functionName = getAndProcessCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input pathAndFilename is: ' + pathAndFilename);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
-  var loadedData = dataBroker.getCsvData(pathAndFilename);
+  let loadedData = dataBroker.getCsvData(pathAndFilename);
   // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
-  var allLoadedData = dataBroker.getAndProcessCsvData(testData, contextName);
+  let allLoadedData = dataBroker.getAndProcessCsvData(testData, contextName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -50,11 +50,10 @@ function getAndProcessCsvData(pathAndFilename, contextName) {
  * @date 2020/05/22
  */
 function getAndProcessXmlData(pathAndFilename) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getAndProcessXmlData.name;
+  let functionName = getAndProcessXmlData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input pathAndFilename is: ' + pathAndFilename);
-  var allSystemConfigurations = dataBroker.getXmlData(pathAndFilename);
+  let allSystemConfigurations = dataBroker.getXmlData(pathAndFilename);
   // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
   allSystemConfigurations = dataBroker.processXmlData(allSystemConfigurations);
 
@@ -76,16 +75,15 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
   // console.log('BEGIN chiefData.setupAllCsvData function');
   // console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = setupAllCsvData.name;
+  let functionName = setupAllCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPathConfigurationName is: ' + dataPathConfigurationName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
-  var loadedAndMergedDataAllFiles = {};
-  var dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  let loadedAndMergedDataAllFiles = {};
+  let dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
   // console.log('dataPath is: ' + dataPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
-  var filesToLoad = dataBroker.scanDataPath(dataPath);
+  let filesToLoad = dataBroker.scanDataPath(dataPath);
   // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
   loadedAndMergedDataAllFiles = dataBroker.loadAllCsvData(filesToLoad, contextName);
@@ -109,16 +107,15 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
   // console.log('BEGIN chiefData.setupAllXmlData function');
   // console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = setupAllCsvData.name;
+  let functionName = setupAllCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPathConfigurationName is: ' + dataPathConfigurationName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
-  var loadedAndMergedDataAllFiles = {};
-  var dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  let loadedAndMergedDataAllFiles = {};
+  let dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
   // console.log('dataPath is: ' + dataPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
-  var filesToLoad = dataBroker.scanDataPath(dataPath);
+  let filesToLoad = dataBroker.scanDataPath(dataPath);
   // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
   loadedAndMergedDataAllFiles = dataBroker.loadAllXmlData(filesToLoad, contextName);

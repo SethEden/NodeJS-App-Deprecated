@@ -16,6 +16,7 @@ import loggers from './loggers';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+// var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function setConfigurationSetting
@@ -33,8 +34,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // console.log('BEGIN configurator.setConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // console.log('configurationValue is: ' + configurationValue);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = setConfigurationSetting.name;
+  // let functionName = setConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
@@ -52,11 +52,10 @@ function setConfigurationSetting(configurationName, configurationValue) {
  * @date 2020/02/03
  */
 function getConfigurationSetting(configurationName) {
-  var returnConfigurationValue;
+  let returnConfigurationValue;
   // console.log('BEGIN configurator.getConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = getConfigurationSetting.name;
+  // let functionName = getConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   if (D[s.cConfiguration] !== undefined) {

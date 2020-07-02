@@ -18,6 +18,7 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function getWorkflow
@@ -30,8 +31,7 @@ var D = require('../Resources/data');
  * @date 2020/06/22
  */
 function getWorkflow(workflowName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getWorkflow.name;
+  let functionName = getWorkflow.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'workflowName is: ' + workflowName);
   let workflowValue = false;

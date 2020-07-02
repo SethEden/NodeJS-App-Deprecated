@@ -11,12 +11,12 @@
  * @date 2020/06/10
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-
 import warden from '../../../../Framework/Controllers/warden';
 import * as c from '../../Constants/application.constants';
 import * as s from '../../../../Framework/Constants/system.constants';
 import * as b from '../../../../Framework/Constants/basic.constants';
 var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function customEchoCommand
@@ -31,12 +31,11 @@ export const customEchoCommand = function(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEchoCommand function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = c.ccustomEchoCommand;
+  let functionName = c.ccustomEchoCommand;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData;
+  let returnData;
   returnData = inputData + ' clientStringParsing.customEchoCommand';
   warden.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

@@ -40,6 +40,7 @@ var xml2js = require('xml2js').Parser({
   mergeAttrs: true});
 var filesCollection = [];
 const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release', 'Documentation'];
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function getXmlData
@@ -50,13 +51,12 @@ const directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platfor
  * @date 2020/05/22
  */
 function getXmlData(pathAndFilename) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getXmlData.name;
+  let functionName = getXmlData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
-  var returnData;
-  var data = fs.readFileSync(pathAndFilename, {encoding: 'UTF8' });
-  var xml;
+  let returnData;
+  let data = fs.readFileSync(pathAndFilename, {encoding: 'UTF8' });
+  let xml;
   xml2js.parseString(data,
     function(err, result) {
       if (err) {
@@ -85,12 +85,11 @@ function getXmlData(pathAndFilename) {
  * @date 2020/05/22
  */
 function getCsvData(pathAndFilename) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getCsvData.name;
+  let functionName = getCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
-  var data = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
-  var parsedData = Papa.parse(data, {
+  let data = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
+  let parsedData = Papa.parse(data, {
     delimiter: ',',
     newline: '/n',
     header: true,
@@ -114,11 +113,10 @@ function getCsvData(pathAndFilename) {
  * @date 2020/06/02
  */
 function readDirectoryContents(directory) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = readDirectoryContents.name;
+  let functionName = readDirectoryContents.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
-  var filesFound = [];
+  let filesFound = [];
   readDirectorySynchronously(directory);
   filesFound = filesCollection; // Copy the data into a local variable first.
   filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
@@ -141,19 +139,18 @@ function readDirectoryContents(directory) {
 function readDirectorySynchronously(directory) {
   // console.log('BEGIN dataBroker.readDirectorySynchronously function');
   // console.log('directory is: ' + directory);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = readDirectorySynchronously.name;
+  let functionName = readDirectorySynchronously.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
-  var currentDirectoryPath = directory;
-  var currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
+  let currentDirectoryPath = directory;
+  let currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
   currentDirectory.forEach(file => {
-    var filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
-    var pathOfCurrentItem = directory +'/' + file;
+    let filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
+    let pathOfCurrentItem = directory +'/' + file;
     if (!filesShouldBeSkipped && fs.statSync(pathOfCurrentItem).isFile()) {
       filesCollection.push(pathOfCurrentItem);
     } else if (!filesShouldBeSkipped) {
-      var directoryPath = path.join(directory + '\\' + file);
+      let directoryPath = path.join(directory + '\\' + file);
       readDirectorySynchronously(directoryPath);
     }
   });
@@ -176,13 +173,12 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   // console.log('BEGIN dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
   // console.log('sourceFolder is: ' + sourceFolder);
   // console.log('destinationFolder is: ' + destinationFolder);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
+  let functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
-  var copySuccess = false;
-  var rootPath = cleanRootPath();
+  let copySuccess = false;
+  let rootPath = cleanRootPath();
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
@@ -210,26 +206,25 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   // console.log('BEGIN dataBroker.buildReleasePackage function');
   // console.log('sourceFolder is: ' + sourceFolder);
   // console.log('destinationFolder is: ' + destinationFolder);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = buildReleasePackage.name;
+  let functionName = buildReleasePackage.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
-  var packageSuccess = false;
-  var releaseFiles = [];
-  var releasedArchiveFiles = [];
-  var fileNameBusinessRules = {};
-  var cleanFilePathsBusinessRules = {};
+  let packageSuccess = false;
+  let releaseFiles = [];
+  let releasedArchiveFiles = [];
+  let fileNameBusinessRules = {};
+  let cleanFilePathsBusinessRules = {};
   fileNameBusinessRules[0] = s.cgetFileNameFromPath;
   fileNameBusinessRules[1] = s.cremoveFileExtensionFromFileName;
   cleanFilePathsBusinessRules[0] = s.cswapDoubleForwardSlashToSingleForwardSlash;
   cleanFilePathsBusinessRules[1] = s.cswapDoubleBackSlashToSingleBackSlash;
   cleanFilePathsBusinessRules[2] = s.cswapForwardSlashToBackSlash;
-  var rootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
-  var currentVersion = configurator.getConfigurationSetting(s.cApplicationVersionNumber);
-  var applicationName = configurator.getConfigurationSetting(s.cApplicationName);
-  var currentVersionReleased = false;
-  var releaseDateTimeStamp;
+  let rootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
+  let currentVersion = configurator.getConfigurationSetting(s.cApplicationVersionNumber);
+  let applicationName = configurator.getConfigurationSetting(s.cApplicationName);
+  let currentVersionReleased = false;
+  let releaseDateTimeStamp;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
   sourceFolder = rootPath + sourceFolder;
   destinationFolder = rootPath + destinationFolder
@@ -286,12 +281,11 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
  * @date 2020/06/02
  */
 function cleanRootPath() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = buildReleasePackage.name;
+  let functionName = buildReleasePackage.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  var rootPath;
-  var rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
-  var cleanRootPathRules = {};
+  let rootPath;
+  rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
+  let cleanRootPathRules = {};
   cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
   rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
@@ -313,13 +307,12 @@ function cleanRootPath() {
  * since the original file is more important, and this is really just about the deployment of a build-release.
  */
 function copyFileSync(source, target) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = copyFileSync.name;
+  let functionName = copyFileSync.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
-  var successfullCopy = false;
-  var targetFile = target;
+  let successfullCopy = false;
+  let targetFile = target;
 
   // If target is a directory a new file with the same name will be created
   if (fs.existsSync(target)) {
@@ -353,17 +346,16 @@ function copyFileSync(source, target) {
  * since the original file is more important, and this is really just about the deployment of a build-release.
  */
 function copyFolderRecursiveSync(source, target) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = copyFolderRecursiveSync.name;
+  let functionName = copyFolderRecursiveSync.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
-  var successfullCopy = false;
-  var files = [];
+  let successfullCopy = false;
+  let files = [];
 
   // Check if folder needs to be created or integrated
   // var targetFolder = target;
-  var targetFolder = path.join(target, path.basename(source));
+  let targetFolder = path.join(target, path.basename(source));
   if (!fs.existsSync(targetFolder)) {
     try {
       fs.mkdirSync(targetFolder);
@@ -381,7 +373,7 @@ function copyFolderRecursiveSync(source, target) {
     if (fs.lstatSync(source).isDirectory()) {
       files = fs.readdirSync(source);
       files.forEach(function(file) {
-        var curSource = path.join(source, file);
+        let curSource = path.join(source, file);
         if (fs.lstatSync(curSource).isDirectory()) {
           successfullCopy = copyFolderRecursiveSync(curSource, targetFolder);
         } else {

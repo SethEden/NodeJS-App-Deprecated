@@ -19,6 +19,7 @@ import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function hex2rgbConversion
@@ -31,8 +32,7 @@ var path = require('path');
  * {@link: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb}
  */
 export const hex2rgbConversion = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.chex2rgbConversion;
+  let functionName = s.chex2rgbConversion;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
@@ -49,7 +49,7 @@ export const hex2rgbConversion = function(inputData, inputMetaData) {
   // as an alternative to the below implementation.
 
   // function hexToRgb(hex) {
-  //   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  //   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   //   return result ? {
   //     r: parseInt(result[1], 16),
   //     g: parseInt(result[2], 16),

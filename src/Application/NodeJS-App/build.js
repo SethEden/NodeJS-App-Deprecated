@@ -30,6 +30,7 @@ var D = require('../../Framework/Resources/data');
 global.appRoot = path.resolve(__dirname);
 var rootPath = '';
 var copyResult = false;
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function bootStrapApplication
@@ -57,10 +58,9 @@ function bootStrapApplicationDeployment() {
  * @date 2020/06/01
  */
 function deployApplication() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cdeployApplication;
+  let functionName = s.cdeployApplication;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  var copyResult;
+  let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
     copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
@@ -82,10 +82,9 @@ function deployApplication() {
  * @date 2020/06/02
  */
 function releaseApplication() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.creleaseApplication;
+  let functionName = s.creleaseApplication;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  var releaseResult;
+  let releaseResult;
   try {
     releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
     warden.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);

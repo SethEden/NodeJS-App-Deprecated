@@ -19,6 +19,7 @@ import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
  /**
   * @function parseBusinessRuleArgument
@@ -36,13 +37,12 @@ var path = require('path');
   * @date 2020/06/26
   */
   function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMode) {
-    var baseFileName = path.basename(module.filename, path.extname(module.filename));
-    var functionName = parseBusinessRuleArgument.name;
+    let functionName = parseBusinessRuleArgument.name;
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'index is: ' + index);
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'consolidatedArgumentMode is: ' + consolidatedArgumentMode);
-    var returnData;
+    let returnData;
 
     if (index === 1) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'Pushing the argumentValue to the returnData as an array element');
@@ -89,8 +89,7 @@ var path = require('path');
  * @date 2020/06/26
  */
 function analyzeArgument(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = analyzeArgument.name;
+  let functionName = analyzeArgument.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
   let returnData;
@@ -146,8 +145,7 @@ function analyzeArgument(argumentValue) {
  * @date 2020/06/26
  */
 function analyzeForRegularExpression(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = analyzeForRegularExpression.name;
+  let functionName = analyzeForRegularExpression.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
   let returnData = false;
@@ -173,8 +171,7 @@ function analyzeForRegularExpression(argumentValue) {
  * @date 2020/06/26
  */
 function parseArgumentAsRegularExpression(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = parseArgumentAsRegularExpression.name;
+  let functionName = parseArgumentAsRegularExpression.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
   let returnData;
@@ -209,8 +206,7 @@ function parseArgumentAsRegularExpression(argumentValue) {
  * @date 2020/06/26
  */
 function parseArgumentAsArray(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = parseArgumentAsArray.name;
+  let functionName = parseArgumentAsArray.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
   let returnData;
@@ -270,8 +266,7 @@ function parseArgumentAsArray(argumentValue) {
  * @date 2020/06/28
  */
 function removeStringLiteralTagsFromArray(argumentArray) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = parseArgumentAsRegularExpression.name;
+  let functionName = parseArgumentAsRegularExpression.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'argumentArray is: ' + JSON.stringify(argumentArray));
   let returnData;

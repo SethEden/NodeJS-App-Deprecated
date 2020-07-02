@@ -20,6 +20,7 @@ import * as c from '../../Constants/application.constants';
 import * as s from '../../../../Framework/Constants/system.constants';
 import * as b from '../../../../Framework/Constants/basic.constants';
 var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function customEcho
@@ -34,12 +35,11 @@ export const customEcho = function(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEcho function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = c.ccustomEcho;
+  let functionName = c.ccustomEcho;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData;
+  let returnData;
   returnData = inputData + ' clientStringParsing.customEcho';
   warden.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -61,15 +61,14 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
   // console.log('BEGIN mostPopularNumber function');
   // console.log('inputArray is: ' + JSON.stringify(inputArray));
   // console.log('length is: ' + length);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = c.cmostPopularNumber;
+  let functionName = c.cmostPopularNumber;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = 0;
-  var i, j, instanceCounter = 0;
-  var tempArray1 = [];
-  var tempArray2 = [];
+  let returnData = 0;
+  let i, j, instanceCounter = 0;
+  let tempArray1 = [];
+  let tempArray2 = [];
 
   // console.log('BEGIN first for-loop');
   for (i = 0; i <= inputMetaData; i++) {
@@ -153,14 +152,13 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
 export const isAlmostPalindrome = function(inputData, inputMetaData) {
   // console.log('BEGIN isAlmostPalindrome function');
   // console.log('inputData is: ' + inputData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = c.cisAlmostPalindrome;
+  let functionName = c.cisAlmostPalindrome;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = false;
-  var misCompareCount;
-  var startingPoint, endingPoint;
+  let returnData = false;
+  let misCompareCount;
+  let startingPoint, endingPoint;
   misCompareCount = 0;
   // TODO: We need to enable additional types of comparisons. The below algorthim works for if the mis-compare is in the center of the string.
   // But if the mis-compare is at the beginning or the end of the string then it can throw off all the other comparisons resulting in a false positive result.
@@ -244,14 +242,13 @@ export const threePointAverage = function(inputData, inputMetaData) {
   // console.log('BEGIN threePointAverage function');
   // console.log('inputPointArray is: ' + inputPointArray);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = c.cthreePointAverage;
+  let functionName = c.cthreePointAverage;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData;
-  var xAverage, x1, x2, x3;
-  var yAverage, y1, y2, y3;
+  let returnData;
+  let xAverage, x1, x2, x3;
+  let yAverage, y1, y2, y3;
 
   x1 = inputData[0][0];
   x2 = inputData[1][0];
@@ -284,14 +281,12 @@ export const arrayCounter = function(inputData, inputMetaData) {
   // console.log('BEGIN arrayCounter function');
   // console.log('inputArray is: ' + inputArray);
   // console.log('instance is: ' + instance);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = c.carrayCounter;
+  let functionName = c.carrayCounter;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var i;
-  var returnData = 0;
-  for (i = 0; i <= inputData.length; i++) {
+  let returnData = 0;
+  for (let i = 0; i <= inputData.length; i++) {
     if (inputData[i] === inputMetaData) {
       returnData += 1;
     }

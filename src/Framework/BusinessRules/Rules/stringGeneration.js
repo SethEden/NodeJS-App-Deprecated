@@ -36,6 +36,7 @@ import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function generateRandomMixedCaseTextByLength1
@@ -48,14 +49,13 @@ var path = require('path');
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseTextByLength1;
+  let functionName = s.cgenerateRandomMixedCaseTextByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -74,14 +74,13 @@ export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMet
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseTextByLength2;
+  let functionName = s.cgenerateRandomMixedCaseTextByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -100,14 +99,13 @@ export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMet
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseTextByLength1;
+  let functionName = s.cgenerateRandomUpperCaseTextByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -126,14 +124,13 @@ export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMet
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseTextByLength2;
+  let functionName = s.cgenerateRandomUpperCaseTextByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -152,14 +149,13 @@ export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMet
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseTextByLength1;
+  let functionName = s.cgenerateRandomLowerCaseTextByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -178,14 +174,13 @@ export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMet
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseTextByLength2;
+  let functionName = s.cgenerateRandomLowerCaseTextByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -204,14 +199,13 @@ export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMet
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1;
+  let functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -230,14 +224,13 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = functio
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2;
+  let functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -256,14 +249,13 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = functio
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1;
+  let functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -282,14 +274,13 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = functio
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2;
+  let functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -308,14 +299,13 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = functio
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1;
+  let functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -334,14 +324,13 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = functio
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2;
+  let functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -360,14 +349,13 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = functio
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength1;
+  let functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -386,14 +374,13 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputDa
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength2;
+  let functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -412,14 +399,13 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputDa
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength1;
+  let functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -438,14 +424,13 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputDa
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength2;
+  let functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -464,14 +449,13 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputDa
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength1;
+  let functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -490,14 +474,13 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputDa
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength2;
+  let functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -516,14 +499,13 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputDa
  * @date 2020/03/04
  */
 export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomNumericCodeByLength1;
+  let functionName = s.cgenerateRandomNumericCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -542,14 +524,13 @@ export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaD
  * @date 2020/05/19
  */
 export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomNumericCodeByLength2;
+  let functionName = s.cgenerateRandomNumericCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -569,14 +550,13 @@ export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaD
  * @date 2020/03/04
  */
 export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1;
+  let functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -596,14 +576,13 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/05/19
  */
 export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2;
+  let functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -623,14 +602,13 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/03/04
  */
 export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1;
+  let functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -650,14 +628,13 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/05/19
  */
 export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2;
+  let functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -677,14 +654,13 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/03/04
  */
 export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1;
+  let functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -704,14 +680,13 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/05/19
  */
 export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2;
+  let functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -730,14 +705,13 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
  * @date 2020/03/04
  */
 export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomSpecialCharacterCodeByLength1;
+  let functionName = s.cgenerateRandomSpecialCharacterCodeByLength1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -756,14 +730,13 @@ export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, i
  * @date 2020/05/19
  */
 export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateRandomSpecialCharacterCodeByLength2;
+  let functionName = s.cgenerateRandomSpecialCharacterCodeByLength2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+  let returnData = '';
+  let numberOfCharactersToGenerate = parseInt(inputData);
+  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
     returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -787,17 +760,16 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
  * @date 2020/03/04
  */
 export const generateValidEmail1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateValidEmail1;
+  let functionName = s.cgenerateValidEmail1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-  var returnData = '';
-  var allowableSpecialCharacters;
-  var generateSpecialCharacters;
-  var specifiedSuffixAndDomain;
-  var bFalse = false;
-  var sEmpty = '';
+  let returnData = '';
+  let allowableSpecialCharacters;
+  let generateSpecialCharacters;
+  let specifiedSuffixAndDomain;
+  let bFalse = false;
+  let sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
@@ -846,17 +818,16 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
  * @date 2020/05/19
  */
 export const generateValidEmail2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateValidEmail2;
+  let functionName = s.cgenerateValidEmail2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-  var returnData = '';
-  var allowableSpecialCharacters;
-  var generateSpecialCharacters;
-  var specifiedSuffixAndDomain;
-  var bFalse = false;
-  var sEmpty = '';
+  let returnData = '';
+  let allowableSpecialCharacters;
+  let generateSpecialCharacters;
+  let specifiedSuffixAndDomain;
+  let bFalse = false;
+  let sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
@@ -905,17 +876,16 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
  * @date 2020/03/04
  */
 export const generateInvalidEmail1 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateInvalidEmail1;
+  let functionName = s.cgenerateInvalidEmail1;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var allowableSpecialCharacters;
-  var generateSpecialCharacters;
-  var specifiedSuffixAndDomain;
-  var bFalse = false;
-  var sEmpty = '';
+  let returnData = '';
+  let allowableSpecialCharacters;
+  let generateSpecialCharacters;
+  let specifiedSuffixAndDomain;
+  let bFalse = false;
+  let sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
@@ -964,17 +934,16 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
  * @date 2020/05/19
  */
 export const generateInvalidEmail2 = function(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = s.cgenerateInvalidEmail2;
+  let functionName = s.cgenerateInvalidEmail2;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = '';
-  var allowableSpecialCharacters;
-  var generateSpecialCharacters;
-  var specifiedSuffixAndDomain;
-  var bFalse = false;
-  var sEmpty = '';
+  let returnData = '';
+  let allowableSpecialCharacters;
+  let generateSpecialCharacters;
+  let specifiedSuffixAndDomain;
+  let bFalse = false;
+  let sEmpty = '';
   if (!!inputMetaData && inputMetaData !== 'undefined' && inputMetaData !== '') {
     if (inputMetaData.length === 3) {
       generateSpecialCharacters = stringToBoolean(inputMetaData[0], '');
@@ -1023,15 +992,14 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
  * @date 2020/03/04
  */
 const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateValidEmailWithSpecificSuffixAndDomainName1';
+  let functionName = 'generateValidEmailWithSpecificSuffixAndDomainName1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'specifiedSuffixAndDomain is: ' + specifiedSuffixAndDomain);
-  var returnData = '';
-  var prefix = '';
+  let returnData = '';
+  let prefix = '';
   if ((numberOfCharactersToGenerate >= specifiedSuffixAndDomain.length + 2) && numberOfCharactersToGenerate >= 6 &&
   specifiedSuffixAndDomain.includes(b.cDot)) {
     // @NOTE We cannot have less then 6 characters, because an e-mail address cannot be shorter than a@b.cc which is 6 characters long.
@@ -1071,15 +1039,14 @@ const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfChar
  * @date 2020/05/19
  */
 const generateValidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateValidEmailWithSpecificSuffixAndDomainName2';
+  let functionName = 'generateValidEmailWithSpecificSuffixAndDomainName2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'specifiedSuffixAndDomain is: ' + specifiedSuffixAndDomain);
-  var returnData = '';
-  var prefix = '';
+  let returnData = '';
+  let prefix = '';
   if ((numberOfCharactersToGenerate >= specifiedSuffixAndDomain.length + 2) && numberOfCharactersToGenerate >= 6 &&
   specifiedSuffixAndDomain.includes(b.cDot)) {
     // @NOTE We cannot have less then 6 characters, because an e-mail address cannot be shorter than a@b.cc which is 6 characters long.
@@ -1117,18 +1084,17 @@ const generateValidEmailWithSpecificSuffixAndDomainName2 = function(numberOfChar
  * @date 2020/03/04
  */
 const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateRandomValidEmail1';
+  let functionName = 'generateRandomValidEmail1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
-  var returnData = '';
-  var prefix = '';
-  var suffix = '';
-  var domainName = '';
-  var numberOfPrefixCharacters = 0;
-  var numberOfSuffixCharacters = 0;
+  let returnData = '';
+  let prefix = '';
+  let suffix = '';
+  let domainName = '';
+  let numberOfPrefixCharacters = 0;
+  let numberOfSuffixCharacters = 0;
   // console.log('Started the execution of the business rule generateRandomValidEmail1');
   // console.log('Number of characters to generate is: ' + numberOfCharactersToGenerate);
   // console.log('Generate special characters flag is set to: ' + generateSpecialCharacters);
@@ -1226,18 +1192,17 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
  * @date 2020/05/19
  */
 const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateRandomValidEmail2';
+  let functionName = 'generateRandomValidEmail2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
-  var returnData = '';
-  var prefix = '';
-  var suffix = '';
-  var domainName = '';
-  var numberOfPrefixCharacters = 0;
-  var numberOfSuffixCharacters = 0;
+  let returnData = '';
+  let prefix = '';
+  let suffix = '';
+  let domainName = '';
+  let numberOfPrefixCharacters = 0;
+  let numberOfSuffixCharacters = 0;
   if (numberOfCharactersToGenerate >= 6) {
     // @NOTE We cannot have less then 6, because an e-mail address cannot be shorter than a@b.cc which is 6 characters long.
     // We know we have to use an "@" symbol, and a "." symbol, the rest of the characters must be generated.
@@ -1333,20 +1298,19 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
  * @date 2020/03/04
  */
 const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName1';
+  let functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'specifiedSuffixAndDomain is: ' + specifiedSuffixAndDomain);
-  var returnData = '';
-  var prefix = '';
-  var numberOfPrefixCharacters = 0;
-  var failureMode = -1;
+  let returnData = '';
+  let prefix = '';
+  let numberOfPrefixCharacters = 0;
+  let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  var c3 = b.c3;
-  var cTrue = g.cTrue;
+  let c3 = b.c3;
+  let cTrue = g.cTrue;
   // console.log('Started the execution of the business rule generateInvalidEmailWithSpecificSuffixAndDomainName1');
   // console.log('Number of characters to generate is: ' + numberOfCharactersToGenerate);
   // console.log('Generate special characters flag is set to: ' + generateSpecialCharacters);
@@ -1440,20 +1404,19 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
  * @date 2020/05/19
  */
 const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName2';
+  let functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'specifiedSuffixAndDomain is: ' + specifiedSuffixAndDomain);
-  var returnData = '';
-  var prefix = '';
-  var numberOfPrefixCharacters = 0;
-  var failureMode = -1;
+  let returnData = '';
+  let prefix = '';
+  let numberOfPrefixCharacters = 0;
+  let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  var c3 = b.c3;
-  var cTrue = g.cTrue;
+  let c3 = b.c3;
+  let cTrue = g.cTrue;
   // console.log('Started the execution of the business rule generateInvalidEmailWithSpecificSuffixAndDomainName2');
   // console.log('Number of characters to generate is: ' + numberOfCharactersToGenerate);
   // console.log('Generate special characters flag is set to: ' + generateSpecialCharacters);
@@ -1544,23 +1507,22 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
  * @date 2020/03/04
  */
 const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateRandomInvalidEmail1';
+  let functionName = 'generateRandomInvalidEmail1';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
-  var returnData = '';
-  var prefix = '';
-  var suffix = '';
-  var domainName = '';
-  var numberOfPrefixCharacters = 0;
-  var numberOfSuffixCharacters = 0;
-  var numberOfDomainNameCharacters = 0;
-  var failureMode = -1;
+  let returnData = '';
+  let prefix = '';
+  let suffix = '';
+  let domainName = '';
+  let numberOfPrefixCharacters = 0;
+  let numberOfSuffixCharacters = 0;
+  let numberOfDomainNameCharacters = 0;
+  let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  var c28 = b.c2 + b.c8;
-  var cTrue = g.cTrue;
+  let c28 = b.c2 + b.c8;
+  let cTrue = g.cTrue;
 
   failureMode = cg.randomlyGenerateNumberInRange1(b.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);
@@ -1847,23 +1809,22 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
  * @date 2020/05/19
  */
 const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'generateRandomInvalidEmail2';
+  let functionName = 'generateRandomInvalidEmail2';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfCharactersToGenerate is: ' + numberOfCharactersToGenerate);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'generateSpecialCharacters is: ' + generateSpecialCharacters);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'allowableSpecialCharacters is: ' + allowableSpecialCharacters);
-  var returnData = '';
-  var prefix = '';
-  var suffix = '';
-  var domainName = '';
-  var numberOfPrefixCharacters = 0;
-  var numberOfSuffixCharacters = 0;
-  var numberOfDomainNameCharacters = 0;
-  var failureMode = -1;
+  let returnData = '';
+  let prefix = '';
+  let suffix = '';
+  let domainName = '';
+  let numberOfPrefixCharacters = 0;
+  let numberOfSuffixCharacters = 0;
+  let numberOfDomainNameCharacters = 0;
+  let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  var c28 = b.c2 + b.c8;
-  var cTrue = g.cTrue;
+  let c28 = b.c2 + b.c8;
+  let cTrue = g.cTrue;
 
   failureMode = cg.randomlyGenerateNumberInRange2(b.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);

@@ -23,6 +23,7 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function bootStrapCommands
@@ -32,8 +33,7 @@ var D = require('../Resources/data');
  * @date 2020/06/19
  */
 function bootStrapCommands() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = bootStrapCommands.name;
+  let functionName = bootStrapCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   commandBroker.bootStrapCommands();
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -50,11 +50,10 @@ function bootStrapCommands() {
  * @date 2020/06/21
  */
 function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = loadCommandAliasesFromPath.name;
+  let functionName = loadCommandAliasesFromPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandAliasesFilePathConfigurationName is: ' + commandAliasesFilePathConfigurationName);
-  var allCommandAliasesData = {};
+  let allCommandAliasesData = {};
   allCommandAliasesData = chiefData.setupAllXmlData(commandAliasesFilePathConfigurationName, s.cCommandsAliases);
   if (D[s.cCommandsAliases] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
     D[s.cCommandsAliases] = {};
@@ -77,8 +76,7 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
  * @date 2020/06/18
  */
 function enqueueCommand(command) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = enqueueCommand.name;
+  let functionName = enqueueCommand.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'command is: ' + command);
   if (D[s.cCommandQueue] === undefined) {
@@ -96,10 +94,9 @@ function enqueueCommand(command) {
  * @date 2020/06/18
  */
 function isCommandQueueEmpty() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = isCommandQueueEmpty.name;
+  let functionName = isCommandQueueEmpty.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  var returnValue = false;
+  let returnValue = false;
   returnValue = queue.isEmpty(s.cCommandQueue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -114,11 +111,10 @@ function isCommandQueueEmpty() {
  * @date 2020/06/18
  */
 function processCommandQueue() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = processCommandQueue.name;
+  let functionName = processCommandQueue.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  var commandToExecute;
-  var returnValue;
+  let commandToExecute;
+  let returnValue;
   commandToExecute = queue.dequeue(s.cCommandQueue);
   returnValue = commandBroker.executeCommand(commandToExecute);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);

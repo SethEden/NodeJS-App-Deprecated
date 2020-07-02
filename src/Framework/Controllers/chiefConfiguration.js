@@ -25,6 +25,7 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function setupConfiguration
@@ -42,16 +43,15 @@ var D = require('../Resources/data');
 function setupConfiguration(pathAndFilename) {
   // console.log('BEGIN chiefConfiguration.setupConfiguration function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = 'setupTestConfiguration';
+  let functionName = 'setupTestConfiguration';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
-  var rules = {};
+  let rules = {};
   rules[1] = s.cswapBackSlashToForwardSlash;
   D[s.cConfiguration] = {};
   pathAndFilename = ruleBroker.processRules(pathAndFilename, '', rules);
   configurator.setConfigurationSetting(s.cConfigurationPath, pathAndFilename);
-  var allConfigurationData = {};
+  let allConfigurationData = {};
   allConfigurationData = chiefData.setupAllXmlData(s.cConfigurationPath, s.cConfiguration);
   parseLoadedConfigurationData(allConfigurationData);
   allConfigurationData = {};
@@ -85,31 +85,30 @@ function setupConfiguration(pathAndFilename) {
 function parseLoadedConfigurationData(allConfigurationData) {
   // console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
   // console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = parseLoadedConfigurationData.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
-  var highLevelConfigurationContainer = {};
-  var allConfigurations = {};
-  var allSubConfigurations = {};
-  var configurations = {};
-  var singleConfigurationFile = {};
-  var rules = {};
-  var configurationsName; // This is the top level name for all of these configuration elements.
-  var configurationsVersion;
-  var configurationElement;
+  let highLevelConfigurationContainer = {};
+  let allConfigurations = {};
+  let allSubConfigurations = {};
+  let configurations = {};
+  let singleConfigurationFile = {};
+  let rules = {};
+  let configurationsName; // This is the top level name for all of these configuration elements.
+  let configurationsVersion;
+  let configurationElement;
   // NOTE We are probably only going to have one nested level deep of configuration settings.
   // So there-fore I will hard-code the Sub-Element rather than
   // trying to add complexity to make this function recursive. That just makes things WAY to difficult.
   // If there is a business need to have many many levels deep of configurations and settings,
   // Then we can reconsider that and solve the problems to make it recursive at that time.
   // It just doesn't make sense at this time.
-  var configurationSubElement;
-  var name;
-  var type;
-  var value;
-  var version;
-  var advancedDebugSettingPrefix;
+  let configurationSubElement;
+  let name;
+  let type;
+  let value;
+  let version;
+  let advancedDebugSettingPrefix;
   rules[1] = s.cstringToDataType;
 
   // First we need to pull out all the high level configuration meta-data
@@ -234,12 +233,11 @@ function processConfigurationRules(name, value) {
   // console.log('BEGIN chiefConfiguration.processConfigurationRules function');
   // console.log('name is: ' + name);
   // console.log('value is: ' + value);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = parseLoadedConfigurationData.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'name is: ' + name);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
-  var returnValue;
+  let returnValue;
   switch (name) {
     case s.cDateTimeStamp: case s.cDateStamp: case s.cTimeStamp:
       // NOTE: All of these three configurations are processed exactly the same way.

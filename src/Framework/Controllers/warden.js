@@ -38,6 +38,7 @@ import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function deployApplication
@@ -49,12 +50,11 @@ var D = require('../Resources/data');
  * @date 2020/06/02
  */
 function deployApplication(source, destination) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = deployApplication.name;
+  let functionName = deployApplication.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destination is: ' + destination);
-  var deploymentSuccessfull;
+  let deploymentSuccessfull;
   deploymentSuccessfull = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(source, destination);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'deploymentSuccessfull is: ' + deploymentSuccessfull);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -74,12 +74,11 @@ function deployApplication(source, destination) {
  * @date 2020/06/02
  */
 function releaseApplication(source, release) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = releaseApplication.name;
+  let functionName = releaseApplication.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'release is: ' + release);
-  var releaseSuccessfull;
+  let releaseSuccessfull;
    releaseSuccessfull = fileBroker.buildReleasePackage(source, release)
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'releaseSuccessfull is: ' + releaseSuccessfull);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -102,8 +101,7 @@ function releaseApplication(source, release) {
 function bootStrapApplication(pathAndFilename) {
   // console.log('BEGIN warden.bootStrapApplication function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = bootStrapApplication.name;
+  let functionName = bootStrapApplication.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
   chiefConfiguration.setupConfiguration(pathAndFilename);
@@ -135,11 +133,10 @@ function bootStrapApplication(pathAndFilename) {
 function processRootPath(systemRootPath) {
   // console.log('BEGIN warden.processRootPath function');
   // console.log('systemRootPath is: ' + systemRootPath);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = processRootPath.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemRootPath is: ' + systemRootPath);
-  var rules = {};
+  let rules = {};
   rules[1] = s.cparseSystemRootPath;
   ruleBroker.bootStrapBusinessRules();
   chiefCommander.bootStrapCommands();
@@ -160,12 +157,11 @@ function processRootPath(systemRootPath) {
  * @date 2020/06/02
  */
 function saveRootPath(rootPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = saveRootPath.name;
+  let functionName = saveRootPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'rootPath is: ' + rootPath);
   configurator.setConfigurationSetting(s.cApplicationRootPath, rootPath);
-  var cleanedRootPath;
+  let cleanedRootPath;
   cleanedRootPath = fileBroker.cleanRootPath(rootPath);
   configurator.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
   configurator.setConfigurationSetting(s.cApplicationName, process.env.npm_package_name);
@@ -186,8 +182,7 @@ function saveRootPath(rootPath) {
 function mergeClientBusinessRules(clientBusinessRules) {
   // console.log('BEGIN warden.mergeClientBusinessRules function');
   // console.log('clientBusinessRules is: ' + JSON.stringify(clientBusinessRules));
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = mergeClientBusinessRules.name;
+  let functionName = mergeClientBusinessRules.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientBusinessRules are: ' + JSON.stringify(clientBusinessRules));
 
@@ -208,8 +203,7 @@ function mergeClientBusinessRules(clientBusinessRules) {
  * @date 2020/06/19
  */
 function mergeClientCommands(clientCommands) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = mergeClientCommands.name;
+  let functionName = mergeClientCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
 
@@ -229,12 +223,11 @@ function mergeClientCommands(clientCommands) {
  * @date 2020/06/21
  */
 function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = loadCommandAliases.name;
+  let functionName = loadCommandAliases.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemCommandsAliasesPath is: ' + systemCommandsAliasesPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommandsAliasesPath is: ' + clientCommandsAliasesPath);
-  var applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
+  let applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
   configurator.setConfigurationSetting(s.cSystemCommandsAliasesPath, applicationRootPath + systemCommandsAliasesPath);
   configurator.setConfigurationSetting(s.cClientCommandsAliasesPath, applicationRootPath + clientCommandsAliasesPath);
   chiefCommander.loadCommandAliasesFromPath(s.cSystemCommandsAliasesPath);
@@ -254,12 +247,11 @@ function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath
  * @date 2020/06/22
  */
 function loadCommandWorkflows(systemWorkflowPath, clientWorkflowPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = loadCommandWorkflows.name;
+  let functionName = loadCommandWorkflows.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemWorkflowPath is: ' + systemWorkflowPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientWorkflowPath is: ' + clientWorkflowPath);
-  var applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
+  let applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
   configurator.setConfigurationSetting(s.cSystemWorkflowsPath, applicationRootPath + systemWorkflowPath);
   configurator.setConfigurationSetting(s.cClientWorkflowsPath, applicationRootPath + clientWorkflowPath);
   chiefWorkflow.loadCommandWorkflowsFromPath(s.cSystemWorkflowsPath);
@@ -282,14 +274,13 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
     // console.log('businessRule is: ' + JSON.stringify(businessRule));
     // console.log('ruleInput is: ' + JSON.stringify(ruleInput));
     // console.log('ruleMetaData is: ' + JSON.stringify(ruleMetaData));
-    var baseFileName = path.basename(module.filename, path.extname(module.filename));
-    var functionName = executeBusinessRule.name;
+    let functionName = executeBusinessRule.name;
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'businessRule is: ' + JSON.stringify(businessRule));
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleInput is: ' + JSON.stringify(ruleInput));
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'ruleMetaData is: ' + JSON.stringify(ruleMetaData));
-    var rules = {};
-    var returnData;
+    let rules = {};
+    let returnData;
     rules[0] = businessRule;
     returnData = ruleBroker.processRules(ruleInput, ruleMetaData, rules);
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
@@ -311,8 +302,7 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
  * @date 2020/06/18
  */
 function enqueueCommand(command) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = enqueueCommand.name;
+  let functionName = enqueueCommand.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   chiefCommander.enqueueCommand(command);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -329,10 +319,9 @@ function enqueueCommand(command) {
  * @date 2020/06/18
  */
 function isCommandQueueEmpty() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = isCommandQueueEmpty.name;
+  let functionName = isCommandQueueEmpty.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  var returnValue = false;
+  let returnValue = false;
   returnValue = chiefCommander.isCommandQueueEmpty();
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -350,10 +339,9 @@ function isCommandQueueEmpty() {
  * @date 2020/05/27
  */
 function processCommandQueue() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = processCommandQueue.name;
+  let functionName = processCommandQueue.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  var returnValue = false;
+  let returnValue = false;
   returnValue = chiefCommander.processCommandQueue();
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -373,8 +361,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // console.log('BEGIN warden.setConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // console.log('configurationValue is: ' + configurationValue);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = setConfigurationSetting.name;
+  let functionName = setConfigurationSetting.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
@@ -395,12 +382,11 @@ function setConfigurationSetting(configurationName, configurationValue) {
 function getConfigurationSetting(configurationName) {
 // console.log('BEGIN warden.getConfigurationSetting function');
 // console.log('configurationName is: ' + configurationName);
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var functionName = getConfigurationSetting.name;
+let functionName = getConfigurationSetting.name;
 loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
 // var returnConfigurationValue = D[s.cConfiguration][configurationName];
-var returnConfigurationValue = configurator.getConfigurationSetting(configurationName);
+let returnConfigurationValue = configurator.getConfigurationSetting(configurationName);
 // console.log('returnConfigurationValue is: ' + JSON.stringify(returnConfigurationValue));
 // console.log('END warden.getConfigurationSetting function');
 loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnConfigurationValue is: ' + returnConfigurationValue);

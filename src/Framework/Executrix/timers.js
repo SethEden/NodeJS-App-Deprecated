@@ -21,6 +21,7 @@ import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var moment = require('moment');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function getNowMoment
@@ -31,8 +32,7 @@ var moment = require('moment');
  * @date 2020/05/21
  */
 function getNowMoment(formatting) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getNowMoment.name;
+  let functionName = getNowMoment.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input formatting value is: ' + formatting);
   let returnValue = '';
@@ -55,12 +55,11 @@ function getNowMoment(formatting) {
 function computeDeltaTime(startTime, endTime) {
   // console.log('BEGIN timer.computeDeltaTime function');
   // console.log('level is: ' + level);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = computeDeltaTime.name;
+  let functionName = computeDeltaTime.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'startTime is: ' + startTime);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'endTime is: ' + endTime);
-  var deltaTimeResult;
+  let deltaTimeResult;
   startTime = moment(startTime, g.cYYYYMMDD_HHmmss_SSS);
   endTime = moment(endTime, g.cYYYYMMDD_HHmmss_SSS);
   deltaTimeResult = endTime.diff(startTime); // Should work in milliseconds out of the box!
@@ -81,8 +80,7 @@ function computeDeltaTime(startTime, endTime) {
  * @date 2020/05/21
  */
 function reformatDeltaTime(deltaTime, format) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = reformatDeltaTime.name;
+  let functionName = reformatDeltaTime.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'deltaTime is: ' + deltaTime);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'format is: ' + format);
@@ -103,8 +101,7 @@ function reformatDeltaTime(deltaTime, format) {
  * {@link https://www.sitepoint.com/delay-sleep-pause-wait/}
  */
 function sleep(sleepTime) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = reformatDeltaTime.name;
+  let functionName = reformatDeltaTime.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sleepTime is: ' + sleepTime);
   const date = moment();

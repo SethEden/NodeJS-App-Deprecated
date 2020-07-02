@@ -81,13 +81,13 @@ export const processRules = function(inputData, inputMetaData, rulesToExecute) {
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  var returnData = inputData;
-  for (var rule in rulesToExecute) {
+  let returnData = inputData;
+  for (let rule in rulesToExecute) {
     if (rulesToExecute.hasOwnProperty(rule)) {
-      var key = rule;
+      let key = rule;
       // loggers.consoleLog(baseFileName + b.cDot + functionName, 'key is: ' + key);
       // console.log('key is: ' + key);
-      var value = rulesToExecute[key];
+      let value = rulesToExecute[key];
       // loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
       // console.log('value is: ' + value);
       // returnData = rules.rulesLibrary[value](returnData, inputMetaData);

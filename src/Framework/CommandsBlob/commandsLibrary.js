@@ -12,13 +12,13 @@
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-
 import * as nominalCommands from './Commands/nominal';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function initCommandsLibrary
@@ -28,8 +28,7 @@ var D = require('../Resources/data');
  * @date 2020/06/18
  */
 export const initCommandsLibrary = function() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = initCommandsLibrary.name;
+  let functionName = initCommandsLibrary.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   D[s.cCommands] = {};
   D[s.cCommands] = {

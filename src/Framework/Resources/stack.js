@@ -19,6 +19,7 @@ import * as b from '../Constants/basic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('./data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function initStack
@@ -29,8 +30,7 @@ var D = require('./data');
  * @date 2020/06/30
  */
 function initStack(stackNameSpace) {
-   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-   var functionName = initStack.name;
+   let functionName = initStack.name;
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
    loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
    if (D[stackNameSpace] === undefined) {
@@ -50,8 +50,7 @@ function initStack(stackNameSpace) {
  * @date 2020/06/30
  */
 function clearStack(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = clearStack.name;
+  let functionName = clearStack.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
   if (D[stackNameSpace] !== undefined) {
@@ -72,8 +71,7 @@ function clearStack(stackNameSpace) {
  * @date 2020/06/30
  */
 function push(stackNameSpace, value) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = push.name;
+  let functionName = push.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
@@ -94,8 +92,7 @@ function push(stackNameSpace, value) {
  * @date 2020/06/30
  */
 function pop(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = pop.name;
+  let functionName = pop.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
   let returnData;
@@ -123,11 +120,10 @@ function pop(stackNameSpace) {
  * @date 2020/06/30
  */
 function isEmpty(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = isEmpty.name;
+  let functionName = isEmpty.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
-  var returnData = false;
+  let returnData = false;
   if (D[stackNameSpace] !== undefined) {
     if (D[stackNameSpace].length === 0) {
       returnData = true;
@@ -149,11 +145,10 @@ function isEmpty(stackNameSpace) {
  * @date 2020/06/30
  */
 function length(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = length.name;
+  let functionName = length.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
-  var returnData = -1;
+  let returnData = -1;
   if (D[stackNameSpace] !== undefined) {
     returnData = D[stackNameSpace].length;
   } else {
@@ -174,12 +169,11 @@ function length(stackNameSpace) {
  * @date 2020/06/30
  */
 function contains(stackNameSpace, value) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = contains.name;
+  let functionName = contains.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
-  var returnData = false;
+  let returnData = false;
   let containsRule = [];
   containsRule[0] = s.cdoesArrayContainCharacter;
   if (D[stackNameSpace] !== undefined) {
@@ -201,8 +195,7 @@ function contains(stackNameSpace, value) {
  * @date 2020/06/30
  */
 function print(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = contains.name;
+  let functionName = contains.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
   if (D[stackNameSpace] !== undefined) {
