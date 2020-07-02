@@ -35,6 +35,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function customEchoCommand
  * @description A quick command to validate that the new dynamic data storage technique for client commands.
@@ -45,12 +47,10 @@ var path = require('path');
  * @date 2020/06/19
  */
 
-
 var customEchoCommand = function customEchoCommand(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEchoCommand function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = c.ccustomEchoCommand;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

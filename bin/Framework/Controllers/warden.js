@@ -67,6 +67,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var D = require('../Resources/data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function deployApplication
  * @description Copys all non-source code files and folders from the source path to the destination path.
@@ -77,9 +79,7 @@ var D = require('../Resources/data');
  * @date 2020/06/02
  */
 
-
 function deployApplication(source, destination) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = deployApplication.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -113,7 +113,6 @@ function deployApplication(source, destination) {
  */
 
 function releaseApplication(source, release) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = releaseApplication.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -150,7 +149,6 @@ function releaseApplication(source, release) {
 function bootStrapApplication(pathAndFilename) {
   // console.log('BEGIN warden.bootStrapApplication function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = bootStrapApplication.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -188,7 +186,6 @@ function bootStrapApplication(pathAndFilename) {
 function processRootPath(systemRootPath) {
   // console.log('BEGIN warden.processRootPath function');
   // console.log('systemRootPath is: ' + systemRootPath);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = processRootPath.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemRootPath is: ' + systemRootPath);
@@ -219,7 +216,6 @@ function processRootPath(systemRootPath) {
  */
 
 function saveRootPath(rootPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = saveRootPath.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -256,7 +252,6 @@ function saveRootPath(rootPath) {
 function mergeClientBusinessRules(clientBusinessRules) {
   // console.log('BEGIN warden.mergeClientBusinessRules function');
   // console.log('clientBusinessRules is: ' + JSON.stringify(clientBusinessRules));
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = mergeClientBusinessRules.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -282,7 +277,6 @@ function mergeClientBusinessRules(clientBusinessRules) {
  */
 
 function mergeClientCommands(clientCommands) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = mergeClientCommands.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
@@ -306,7 +300,6 @@ function mergeClientCommands(clientCommands) {
  */
 
 function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = loadCommandAliases.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -342,7 +335,6 @@ function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath
  */
 
 function loadCommandWorkflows(systemWorkflowPath, clientWorkflowPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = loadCommandWorkflows.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -381,7 +373,6 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
   // console.log('businessRule is: ' + JSON.stringify(businessRule));
   // console.log('ruleInput is: ' + JSON.stringify(ruleInput));
   // console.log('ruleMetaData is: ' + JSON.stringify(ruleMetaData));
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = executeBusinessRule.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -420,7 +411,6 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
  */
 
 function enqueueCommand(command) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = enqueueCommand.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -443,7 +433,6 @@ function enqueueCommand(command) {
  */
 
 function isCommandQueueEmpty() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = isCommandQueueEmpty.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -471,7 +460,6 @@ function isCommandQueueEmpty() {
  */
 
 function processCommandQueue() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = processCommandQueue.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -501,7 +489,6 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // console.log('BEGIN warden.setConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // console.log('configurationValue is: ' + configurationValue);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = setConfigurationSetting.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -530,7 +517,6 @@ function setConfigurationSetting(configurationName, configurationValue) {
 function getConfigurationSetting(configurationName) {
   // console.log('BEGIN warden.getConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getConfigurationSetting.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

@@ -39,6 +39,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var D = require('./data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function initStack
  * @description Initializes the stack with the provided namespace.
@@ -48,9 +50,7 @@ var D = require('./data');
  * @date 2020/06/30
  */
 
-
 function initStack(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = initStack.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -77,7 +77,6 @@ function initStack(stackNameSpace) {
  */
 
 function clearStack(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = clearStack.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -105,7 +104,6 @@ function clearStack(stackNameSpace) {
  */
 
 function push(stackNameSpace, value) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = push.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -134,7 +132,6 @@ function push(stackNameSpace, value) {
  */
 
 function pop(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = pop.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -172,7 +169,6 @@ function pop(stackNameSpace) {
  */
 
 function isEmpty(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = isEmpty.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -207,7 +203,6 @@ function isEmpty(stackNameSpace) {
  */
 
 function length(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = length.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -241,7 +236,6 @@ function length(stackNameSpace) {
  */
 
 function contains(stackNameSpace, value) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = contains.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -278,7 +272,6 @@ function contains(stackNameSpace, value) {
  */
 
 function print(stackNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = contains.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

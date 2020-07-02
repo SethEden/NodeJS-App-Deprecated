@@ -68,6 +68,8 @@ var path = require('path');
 var math = require('mathjs');
 
 var D = require('../../../Framework/Resources/data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function echoCommand
  * @description returns the input as the output without any changes.
@@ -79,9 +81,7 @@ var D = require('../../../Framework/Resources/data');
  * @date 2020/06/19
  */
 
-
 var echoCommand = function echoCommand(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cechoCommand;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -119,7 +119,6 @@ var echoCommand = function echoCommand(inputData, inputMetaData) {
 exports.echoCommand = echoCommand;
 
 var exit = function exit(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cexit;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -151,7 +150,6 @@ var exit = function exit(inputData, inputMetaData) {
 exports.exit = exit;
 
 var version = function version(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cversion;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -184,7 +182,6 @@ var version = function version(inputData, inputMetaData) {
 exports.version = version;
 
 var about = function about(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cabout;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -220,7 +217,6 @@ var about = function about(inputData, inputMetaData) {
 exports.about = about;
 
 var name = function name(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cname;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -272,7 +268,6 @@ var name = function name(inputData, inputMetaData) {
 exports.name = name;
 
 var help = function help(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.chelp;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -307,7 +302,6 @@ var help = function help(inputData, inputMetaData) {
 exports.help = help;
 
 var workflowHelp = function workflowHelp(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cworkflowHelp;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -347,7 +341,6 @@ var workflowHelp = function workflowHelp(inputData, inputMetaData) {
 exports.workflowHelp = workflowHelp;
 
 var commandSequencer = function commandSequencer(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.ccommandSequencer;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -417,7 +410,6 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
 exports.commandSequencer = commandSequencer;
 
 var workflow = function workflow(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cworkflow;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -463,7 +455,6 @@ var workflow = function workflow(inputData, inputMetaData) {
 exports.workflow = workflow;
 
 var printDataHive = function printDataHive(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cprintDataHive;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -513,7 +504,6 @@ var printDataHive = function printDataHive(inputData, inputMetaData) {
 exports.printDataHive = printDataHive;
 
 var businessRule = function businessRule(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cbusinessRule;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -652,7 +642,6 @@ var businessRule = function businessRule(inputData, inputMetaData) {
 exports.businessRule = businessRule;
 
 var commandGenerator = function commandGenerator(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.ccommandGenerator;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -740,7 +729,6 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
 exports.commandGenerator = commandGenerator;
 
 var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cbusinessRulesMetrics;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -848,7 +836,6 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
 exports.businessRulesMetrics = businessRulesMetrics;
 
 var commandMetrics = function commandMetrics(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.ccommandMetrics;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -956,7 +943,6 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
 exports.commandMetrics = commandMetrics;
 
 var convertColors = function convertColors(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cconvertColors;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

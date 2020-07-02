@@ -56,6 +56,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var D = require('../Resources/data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function bootStrapCommands
  * @description Captures all of the commands string-to-function call map data in the commandsLibrary and migrates that data to the D-data structure.
@@ -68,9 +70,7 @@ var D = require('../Resources/data');
  * @date 2020/06/18
  */
 
-
 function bootStrapCommands() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = bootStrapCommands.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -91,7 +91,6 @@ function bootStrapCommands() {
  */
 
 function addClientCommands(clientCommands) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = addClientCommands.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -115,7 +114,6 @@ function addClientCommands(clientCommands) {
  */
 
 function getValidCommand(commandString, commandDelimiter) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getValidCommand.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -203,7 +201,6 @@ function getValidCommand(commandString, commandDelimiter) {
  */
 
 function getCommandArgs(commandString, commandDelimiter) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getCommandArgs.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -394,7 +391,6 @@ function executeCommand(commandString) {
   // Also don't forget this is where we will need to implement the command performance
   // tracking & command results processing such as pass-fail,
   // so that when a chain of commands has completed execution we can evaluate command statistics and metrics.
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = executeCommand.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

@@ -37,6 +37,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var D = require('../Resources/data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function getWorkflow
  * @description Given the name of the workflow that is being requested,
@@ -48,9 +50,7 @@ var D = require('../Resources/data');
  * @date 2020/06/22
  */
 
-
 function getWorkflow(workflowName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getWorkflow.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

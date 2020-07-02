@@ -53,6 +53,7 @@ import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var D = require('../Resources/data');
 var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function scanDataPath
@@ -64,12 +65,11 @@ var path = require('path');
  * @date 2020/05/22
  */
 function scanDataPath(dataPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = scanDataPath.name;
+  let functionName = scanDataPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
-  var rules = {};
-  var filesFound = [];
+  let rules = {};
+  let filesFound = [];
   // rules[1] = s.cswapFowardSlashToBackSlash;
   rules[1] = s.cswapBackSlashToForwardSlash;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
@@ -94,19 +94,18 @@ function loadAllCsvData(filesToLoad, contextName) {
   // console.log('BEGIN dataBroker.loadAllCsvData function');
   // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = loadAllCsvData.name;
+  let functionName = loadAllCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
-  var rules = {};
-  var fileExtensionRules = {};
-  var parsedDataFile;
+  let rules = {};
+  let fileExtensionRules = {};
+  let parsedDataFile;
   rules[1] = s.cgetFileNameFromPath;
   rules[2] = s.cremoveFileExtensionFromFileName;
   fileExtensionRules[0] = s.cgetFileExtension;
   fileExtensionRules[1] = s.cremoveDotFromFileExtension;
-  for (var i = 0; i &lt; filesToLoad.length; i++) {
+  for (let i = 0; i &lt; filesToLoad.length; i++) {
     let fileToLoad = filesToLoad[i];
     // console.log('File to load is: ' + fileToLoad)
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'File to load is: ' + fileToLoad);
@@ -149,23 +148,22 @@ function loadAllXmlData(filesToLoad, contextName) {
   // console.log('BEGIN dataBroker.loadAllXmlData function');
   // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = loadAllXmlData.name;
+  let functionName = loadAllXmlData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
-  var j = 0;
-  var multiMergedData = {};
-  var parsedDataFile = {};
-  var fileNameRules = {};
-  var fileExtensionRules = {};
-  var filePathRules = {};
+  let j = 0;
+  let multiMergedData = {};
+  let parsedDataFile = {};
+  let fileNameRules = {};
+  let fileExtensionRules = {};
+  let filePathRules = {};
   fileNameRules[1] = s.cgetFileNameFromPath;
   fileNameRules[2] = s.cremoveFileExtensionFromFileName;
   filePathRules[1] = s.cswapDoubleForwardSlashToSingleForwardSlash;
   fileExtensionRules[0] = s.cgetFileExtension;
   fileExtensionRules[1] = s.cremoveDotFromFileExtension;
-  for (var i = 0; i &lt; filesToLoad.length; i++) {
+  for (let i = 0; i &lt; filesToLoad.length; i++) {
     let fileToLoad = filesToLoad[i];
     // console.log('execute business rules: ' + JSON.stringify(filePathRules));
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(filePathRules));
@@ -224,16 +222,15 @@ function processCsvData(data, contextName) {
   // console.log('BEGIN dataBroker.processCsvData function');
   // console.log('input data is: ' + JSON.stringify(data));
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = processCsvData.name;
+  let functionName = processCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input data is: ' + JSON.stringify(data));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
-  var parsedData = extractDataFromPapaParseObject(data, contextName);
-  var dataCatagory = getDataCatagoryFromContextName(contextName);
+  let parsedData = extractDataFromPapaParseObject(data, contextName);
+  let dataCatagory = getDataCatagoryFromContextName(contextName);
   // console.log('dataCatagory is: ' + dataCatagory);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is: ' + dataCatagory);
-  var dataCatagoryDetailName;
+  let dataCatagoryDetailName;
   if (contextName.includes(s.cWorkflow)) {
     // Processing a workflow
     Object.assign(D[s.cWorkflow], parsedData[contextName]);
@@ -277,12 +274,11 @@ function processCsvData(data, contextName) {
  * @date 2020/05/22
  */
 function getDataCatagoryFromContextName(contextName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getDataCatagoryFromContextName.name;
+  let functionName = getDataCatagoryFromContextName.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
-  var rules = {};
-  var dataCatagory = '';
+  let rules = {};
+  let dataCatagory = '';
   rules[1] = s.cgetDataCatagoryFromDataContextName;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
   dataCatagory = ruleBroker.processRules(contextName, '', rules);
@@ -300,12 +296,11 @@ function getDataCatagoryFromContextName(contextName) {
  * @date 2020/05/22
  */
 function getDataCatagoryDetailNameFromContextName(contextName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getDataCatagoryDetailNameFromContextName.name;
+  let functionName = getDataCatagoryDetailNameFromContextName.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
-  var rules = {};
-  var dataCatagoryDetailName = '';
+  let rules = {};
+  let dataCatagoryDetailName = '';
   rules[1] = s.cgetDataCatagoryDetailNameFromDataContextName;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
   dataCatagoryDetailName = ruleBroker.processRules(contextName, '', rules);
@@ -327,31 +322,30 @@ function extractDataFromPapaParseObject(data, contextName) {
   // console.log('BEGIN dataBroker.extractDataFromPapaParseObject function');
   // console.log('input contextName is: ' + contextName);
   // console.log('data is: ' + JSON.stringify(data));
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = extractDataFromPapaParseObject.name;
+  let functionName = extractDataFromPapaParseObject.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input data is: ' + JSON.stringify(data));
-  var cleanKeysRules = {};
-  var tempData = {};
-  var validDataAdded = false;
+  let cleanKeysRules = {};
+  let tempData = {};
+  let validDataAdded = false;
   if (contextName === s.cConfiguration_Colors) {
     contextName = s.cColorData;
   }
   tempData[contextName] = {};
   cleanKeysRules[1] = s.ccleanCarriageReturnFromString;
-  var highLevelDataCount = Object.keys(data[s.cdata]).length;
-  for (var i = 0; i&lt;=highLevelDataCount; i++) {
+  let highLevelDataCount = Object.keys(data[s.cdata]).length;
+  for (let i = 0; i&lt;=highLevelDataCount; i++) {
     validDataAdded = false;
-    var lowLevelTempData = {};
+    let lowLevelTempData = {};
     if (contextName === s.cColorData) {
-      var colorName = '';
-      for (var key in data[s.cdata][i]) {
+      let colorName = '';
+      for (let key in data[s.cdata][i]) {
         validDataAdded = true;
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
         // console.log('key is: ' + key);
-        var newKey = ruleBroker.processRules(key, '', cleanKeysRules);
+        let newKey = ruleBroker.processRules(key, '', cleanKeysRules);
         // console.log('newKey is: ' + newKey);
         if (key === s.cColorName) {
           colorName = data[s.cdata][i][key];
@@ -372,12 +366,12 @@ function extractDataFromPapaParseObject(data, contextName) {
         }
       } // End-if validDataAdd === true
     } else { // Else-if (contextName === s.cConfiguration_Colors)
-      for (var key in data[s.cdata][i]) {
+      for (let key in data[s.cdata][i]) {
         validDataAdded = true;
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
         // console.log('key is: ' + key);
-        var newKey = ruleBroker.processRules(key, '', cleanKeysRules);
+        let newKey = ruleBroker.processRules(key, '', cleanKeysRules);
         // console.log('newKey is: ' + newKey);
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
@@ -414,13 +408,12 @@ function extractDataFromPapaParseObject(data, contextName) {
  * @date 2020/05/22
  */
 function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = mergeData.name;
+  let functionName = mergeData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is: ' + dataCatagory);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'data to Merge is: ' + JSON.stringify(dataToMerge));
-  var dataToMergeElementCount = getDataElementCount(dataToMerge, '', '');
+  let dataToMergeElementCount = getDataElementCount(dataToMerge, '', '');
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToMergeElementCount is: ' + dataToMergeElementCount);
   if (dataToMergeElementCount === 1) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToMergeElementCount is 1');
@@ -447,7 +440,7 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
   } else {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Caught the special case that we are merging a flat list.');
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData content is: ' + JSON.stringify(targetData));
-    for (var key in dataToMerge) {
+    for (let key in dataToMerge) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'inside the for-loop');
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'key is: ' + key);
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
@@ -472,14 +465,13 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
  * @date 2020/05/22
  */
 function getDataElement(dataObject, pageName, elementName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getDataElement.name;
+  let functionName = getDataElement.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataObject value is: ' + JSON.stringify(dataObject));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'elementName is: ' + elementName);
-  var returnString = dataObject[pageName][elementName];
-  var rules = {};
+  let returnString = dataObject[pageName][elementName];
+  let rules = {};
   rules[1] = s.cCleanCarriageReturnFromString;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
   returnString = ruleBroker.processRules(returnString, '', rules);
@@ -502,14 +494,13 @@ function getDataElement(dataObject, pageName, elementName) {
  * @date 2020/05/22
  */
 function getDataElementCount(dataObject, pageName, elementNamePattern) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getDataElementCount.name;
+  let functionName = getDataElementCount.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataObject is: ' + JSON.stringify(dataObject));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'elementNamePattern is: ' + elementNamePattern);
-  var elementCollection;
-  var elementCount = 0;
+  let elementCollection;
+  let elementCount = 0;
   if (pageName === '') {
     elementCollection = dataObject;
   } else {
@@ -518,7 +509,7 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
   if (!elementNamePattern || elementNamePattern === '') {
     elementCount = Object.keys(elementCollection).length;
   } else {
-    for (var key in elementCollection) {
+    for (let key in elementCollection) {
       if (elementCollection.hasOwnProperty(key)) {
         if (key.includes(elementNamePattern)) {
           elementCount++;
@@ -553,7 +544,7 @@ export default {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 01 2020 18:42:51 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 01 2020 20:09:45 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

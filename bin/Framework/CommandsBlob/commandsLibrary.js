@@ -26,6 +26,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var path = require('path');
 
 var D = require('../Resources/data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function initCommandsLibrary
  * @description Initializes the commands function data structure on D.
@@ -34,11 +36,9 @@ var D = require('../Resources/data');
  * @date 2020/06/18
  */
 
-
 var initCommandsLibrary = function initCommandsLibrary() {
   var _D$s$cCommands;
 
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = initCommandsLibrary.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

@@ -48,6 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var D = require('../Resources/data');
 
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function scanDataPath
  * @description Scans the specified path and returns a colleciton
@@ -58,9 +60,7 @@ var path = require('path');
  * @date 2020/05/22
  */
 
-
 function scanDataPath(dataPath) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = scanDataPath.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -102,7 +102,6 @@ function loadAllCsvData(filesToLoad, contextName) {
   // console.log('BEGIN dataBroker.loadAllCsvData function');
   // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = loadAllCsvData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -174,7 +173,6 @@ function loadAllXmlData(filesToLoad, contextName) {
   // console.log('BEGIN dataBroker.loadAllXmlData function');
   // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = loadAllXmlData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -272,7 +270,6 @@ function processCsvData(data, contextName) {
   // console.log('BEGIN dataBroker.processCsvData function');
   // console.log('input data is: ' + JSON.stringify(data));
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = processCsvData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -335,7 +332,6 @@ function processCsvData(data, contextName) {
  */
 
 function getDataCatagoryFromContextName(contextName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getDataCatagoryFromContextName.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -368,7 +364,6 @@ function getDataCatagoryFromContextName(contextName) {
  */
 
 function getDataCatagoryDetailNameFromContextName(contextName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getDataCatagoryDetailNameFromContextName.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -405,7 +400,6 @@ function extractDataFromPapaParseObject(data, contextName) {
   // console.log('BEGIN dataBroker.extractDataFromPapaParseObject function');
   // console.log('input contextName is: ' + contextName);
   // console.log('data is: ' + JSON.stringify(data));
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = extractDataFromPapaParseObject.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -464,18 +458,18 @@ function extractDataFromPapaParseObject(data, contextName) {
 
     } else {
       // Else-if (contextName === s.cConfiguration_Colors)
-      for (var key in data[s.cdata][i]) {
+      for (var _key in data[s.cdata][i]) {
         validDataAdded = true; // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
         // console.log('key is: ' + key);
 
-        var newKey = _ruleBroker["default"].processRules(key, '', cleanKeysRules); // console.log('newKey is: ' + newKey);
+        var _newKey = _ruleBroker["default"].processRules(_key, '', cleanKeysRules); // console.log('newKey is: ' + newKey);
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
         // console.log('data[s.cData][i][key] is: ' + data[s.cdata][i][key]);
 
 
-        lowLevelTempData[newKey] = _ruleBroker["default"].processRules(data[s.cdata][i][key], '', cleanKeysRules); // console.log('lowLevelTempData is: ' + JSON.stringify(lowLevelTempData));
+        lowLevelTempData[_newKey] = _ruleBroker["default"].processRules(data[s.cdata][i][_key], '', cleanKeysRules); // console.log('lowLevelTempData is: ' + JSON.stringify(lowLevelTempData));
       }
 
       if (validDataAdded === true) {
@@ -515,7 +509,6 @@ function extractDataFromPapaParseObject(data, contextName) {
  */
 
 function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = mergeData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -600,7 +593,6 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
  */
 
 function getDataElement(dataObject, pageName, elementName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getDataElement.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -642,7 +634,6 @@ function getDataElement(dataObject, pageName, elementName) {
  */
 
 function getDataElementCount(dataObject, pageName, elementNamePattern) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getDataElementCount.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

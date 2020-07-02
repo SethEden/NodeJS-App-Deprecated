@@ -69,6 +69,7 @@ var xml2js = require('xml2js').Parser({
 
 var filesCollection = [];
 var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release', 'Documentation'];
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function getXmlData
  * @description Loads the specified file and parses it into JavaScript Objects, all strings.
@@ -79,7 +80,6 @@ var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms
  */
 
 function getXmlData(pathAndFilename) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getXmlData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -127,7 +127,6 @@ function getXmlData(pathAndFilename) {
  */
 
 function getCsvData(pathAndFilename) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getCsvData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -167,7 +166,6 @@ function getCsvData(pathAndFilename) {
  */
 
 function readDirectoryContents(directory) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = readDirectoryContents.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -204,7 +202,6 @@ function readDirectoryContents(directory) {
 function readDirectorySynchronously(directory) {
   // console.log('BEGIN dataBroker.readDirectorySynchronously function');
   // console.log('directory is: ' + directory);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = readDirectorySynchronously.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -246,7 +243,6 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   // console.log('BEGIN dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
   // console.log('sourceFolder is: ' + sourceFolder);
   // console.log('destinationFolder is: ' + destinationFolder);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -291,7 +287,6 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   // console.log('BEGIN dataBroker.buildReleasePackage function');
   // console.log('sourceFolder is: ' + sourceFolder);
   // console.log('destinationFolder is: ' + destinationFolder);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = buildReleasePackage.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -396,15 +391,12 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
  */
 
 function cleanRootPath() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = buildReleasePackage.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
   var rootPath;
-
-  var rootPath = _configurator["default"].getConfigurationSetting(s.cApplicationRootPath);
-
+  rootPath = _configurator["default"].getConfigurationSetting(s.cApplicationRootPath);
   var cleanRootPathRules = {};
   cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
 
@@ -434,7 +426,6 @@ function cleanRootPath() {
  */
 
 function copyFileSync(source, target) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyFileSync.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -483,7 +474,6 @@ function copyFileSync(source, target) {
  */
 
 function copyFolderRecursiveSync(source, target) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = copyFolderRecursiveSync.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

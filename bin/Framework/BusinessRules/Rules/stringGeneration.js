@@ -57,6 +57,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function generateRandomMixedCaseTextByLength1
  * @description Parse the input string, and determine how many mixed case alphabetic characters should be generated, generate them and string them together.
@@ -68,9 +70,7 @@ var path = require('path');
  * @date 2020/03/04
  */
 
-
 var generateRandomMixedCaseTextByLength1 = function generateRandomMixedCaseTextByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -107,7 +107,6 @@ var generateRandomMixedCaseTextByLength1 = function generateRandomMixedCaseTextB
 exports.generateRandomMixedCaseTextByLength1 = generateRandomMixedCaseTextByLength1;
 
 var generateRandomMixedCaseTextByLength2 = function generateRandomMixedCaseTextByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -144,7 +143,6 @@ var generateRandomMixedCaseTextByLength2 = function generateRandomMixedCaseTextB
 exports.generateRandomMixedCaseTextByLength2 = generateRandomMixedCaseTextByLength2;
 
 var generateRandomUpperCaseTextByLength1 = function generateRandomUpperCaseTextByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -181,7 +179,6 @@ var generateRandomUpperCaseTextByLength1 = function generateRandomUpperCaseTextB
 exports.generateRandomUpperCaseTextByLength1 = generateRandomUpperCaseTextByLength1;
 
 var generateRandomUpperCaseTextByLength2 = function generateRandomUpperCaseTextByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -218,7 +215,6 @@ var generateRandomUpperCaseTextByLength2 = function generateRandomUpperCaseTextB
 exports.generateRandomUpperCaseTextByLength2 = generateRandomUpperCaseTextByLength2;
 
 var generateRandomLowerCaseTextByLength1 = function generateRandomLowerCaseTextByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -255,7 +251,6 @@ var generateRandomLowerCaseTextByLength1 = function generateRandomLowerCaseTextB
 exports.generateRandomLowerCaseTextByLength1 = generateRandomLowerCaseTextByLength1;
 
 var generateRandomLowerCaseTextByLength2 = function generateRandomLowerCaseTextByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -292,7 +287,6 @@ var generateRandomLowerCaseTextByLength2 = function generateRandomLowerCaseTextB
 exports.generateRandomLowerCaseTextByLength2 = generateRandomLowerCaseTextByLength2;
 
 var generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function generateRandomMixedCaseTextWithSpecialCharactersByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -329,7 +323,6 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function generat
 exports.generateRandomMixedCaseTextWithSpecialCharactersByLength1 = generateRandomMixedCaseTextWithSpecialCharactersByLength1;
 
 var generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function generateRandomMixedCaseTextWithSpecialCharactersByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -366,7 +359,6 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function generat
 exports.generateRandomMixedCaseTextWithSpecialCharactersByLength2 = generateRandomMixedCaseTextWithSpecialCharactersByLength2;
 
 var generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function generateRandomUpperCaseTextWithSpecialCharactersByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -403,7 +395,6 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function generat
 exports.generateRandomUpperCaseTextWithSpecialCharactersByLength1 = generateRandomUpperCaseTextWithSpecialCharactersByLength1;
 
 var generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function generateRandomUpperCaseTextWithSpecialCharactersByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -440,7 +431,6 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function generat
 exports.generateRandomUpperCaseTextWithSpecialCharactersByLength2 = generateRandomUpperCaseTextWithSpecialCharactersByLength2;
 
 var generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function generateRandomLowerCaseTextWithSpecialCharactersByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -477,7 +467,6 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function generat
 exports.generateRandomLowerCaseTextWithSpecialCharactersByLength1 = generateRandomLowerCaseTextWithSpecialCharactersByLength1;
 
 var generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function generateRandomLowerCaseTextWithSpecialCharactersByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -514,7 +503,6 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function generat
 exports.generateRandomLowerCaseTextWithSpecialCharactersByLength2 = generateRandomLowerCaseTextWithSpecialCharactersByLength2;
 
 var generateRandomMixedCaseAlphaNumericCodeByLength1 = function generateRandomMixedCaseAlphaNumericCodeByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -551,7 +539,6 @@ var generateRandomMixedCaseAlphaNumericCodeByLength1 = function generateRandomMi
 exports.generateRandomMixedCaseAlphaNumericCodeByLength1 = generateRandomMixedCaseAlphaNumericCodeByLength1;
 
 var generateRandomMixedCaseAlphaNumericCodeByLength2 = function generateRandomMixedCaseAlphaNumericCodeByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -588,7 +575,6 @@ var generateRandomMixedCaseAlphaNumericCodeByLength2 = function generateRandomMi
 exports.generateRandomMixedCaseAlphaNumericCodeByLength2 = generateRandomMixedCaseAlphaNumericCodeByLength2;
 
 var generateRandomUpperCaseAlphaNumericCodeByLength1 = function generateRandomUpperCaseAlphaNumericCodeByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -625,7 +611,6 @@ var generateRandomUpperCaseAlphaNumericCodeByLength1 = function generateRandomUp
 exports.generateRandomUpperCaseAlphaNumericCodeByLength1 = generateRandomUpperCaseAlphaNumericCodeByLength1;
 
 var generateRandomUpperCaseAlphaNumericCodeByLength2 = function generateRandomUpperCaseAlphaNumericCodeByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -662,7 +647,6 @@ var generateRandomUpperCaseAlphaNumericCodeByLength2 = function generateRandomUp
 exports.generateRandomUpperCaseAlphaNumericCodeByLength2 = generateRandomUpperCaseAlphaNumericCodeByLength2;
 
 var generateRandomLowerCaseAlphaNumericCodeByLength1 = function generateRandomLowerCaseAlphaNumericCodeByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -699,7 +683,6 @@ var generateRandomLowerCaseAlphaNumericCodeByLength1 = function generateRandomLo
 exports.generateRandomLowerCaseAlphaNumericCodeByLength1 = generateRandomLowerCaseAlphaNumericCodeByLength1;
 
 var generateRandomLowerCaseAlphaNumericCodeByLength2 = function generateRandomLowerCaseAlphaNumericCodeByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -736,7 +719,6 @@ var generateRandomLowerCaseAlphaNumericCodeByLength2 = function generateRandomLo
 exports.generateRandomLowerCaseAlphaNumericCodeByLength2 = generateRandomLowerCaseAlphaNumericCodeByLength2;
 
 var generateRandomNumericCodeByLength1 = function generateRandomNumericCodeByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomNumericCodeByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -773,7 +755,6 @@ var generateRandomNumericCodeByLength1 = function generateRandomNumericCodeByLen
 exports.generateRandomNumericCodeByLength1 = generateRandomNumericCodeByLength1;
 
 var generateRandomNumericCodeByLength2 = function generateRandomNumericCodeByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomNumericCodeByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -811,7 +792,6 @@ var generateRandomNumericCodeByLength2 = function generateRandomNumericCodeByLen
 exports.generateRandomNumericCodeByLength2 = generateRandomNumericCodeByLength2;
 
 var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -849,7 +829,6 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
 exports.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1;
 
 var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -887,7 +866,6 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
 exports.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2;
 
 var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -925,7 +903,6 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
 exports.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1;
 
 var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -963,7 +940,6 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
 exports.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2;
 
 var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1001,7 +977,6 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
 exports.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1;
 
 var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1038,7 +1013,6 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
 exports.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2;
 
 var generateRandomSpecialCharacterCodeByLength1 = function generateRandomSpecialCharacterCodeByLength1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomSpecialCharacterCodeByLength1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1075,7 +1049,6 @@ var generateRandomSpecialCharacterCodeByLength1 = function generateRandomSpecial
 exports.generateRandomSpecialCharacterCodeByLength1 = generateRandomSpecialCharacterCodeByLength1;
 
 var generateRandomSpecialCharacterCodeByLength2 = function generateRandomSpecialCharacterCodeByLength2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateRandomSpecialCharacterCodeByLength2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1117,7 +1090,6 @@ var generateRandomSpecialCharacterCodeByLength2 = function generateRandomSpecial
 exports.generateRandomSpecialCharacterCodeByLength2 = generateRandomSpecialCharacterCodeByLength2;
 
 var generateValidEmail1 = function generateValidEmail1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateValidEmail1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1188,7 +1160,6 @@ var generateValidEmail1 = function generateValidEmail1(inputData, inputMetaData)
 exports.generateValidEmail1 = generateValidEmail1;
 
 var generateValidEmail2 = function generateValidEmail2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateValidEmail2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1259,7 +1230,6 @@ var generateValidEmail2 = function generateValidEmail2(inputData, inputMetaData)
 exports.generateValidEmail2 = generateValidEmail2;
 
 var generateInvalidEmail1 = function generateInvalidEmail1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateInvalidEmail1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1330,7 +1300,6 @@ var generateInvalidEmail1 = function generateInvalidEmail1(inputData, inputMetaD
 exports.generateInvalidEmail1 = generateInvalidEmail1;
 
 var generateInvalidEmail2 = function generateInvalidEmail2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgenerateInvalidEmail2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1401,7 +1370,6 @@ var generateInvalidEmail2 = function generateInvalidEmail2(inputData, inputMetaD
 exports.generateInvalidEmail2 = generateInvalidEmail2;
 
 var generateValidEmailWithSpecificSuffixAndDomainName1 = function generateValidEmailWithSpecificSuffixAndDomainName1(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateValidEmailWithSpecificSuffixAndDomainName1';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1461,7 +1429,6 @@ var generateValidEmailWithSpecificSuffixAndDomainName1 = function generateValidE
 
 
 var generateValidEmailWithSpecificSuffixAndDomainName2 = function generateValidEmailWithSpecificSuffixAndDomainName2(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateValidEmailWithSpecificSuffixAndDomainName2';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1519,7 +1486,6 @@ var generateValidEmailWithSpecificSuffixAndDomainName2 = function generateValidE
 
 
 var generateRandomValidEmail1 = function generateRandomValidEmail1(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateRandomValidEmail1';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1645,7 +1611,6 @@ var generateRandomValidEmail1 = function generateRandomValidEmail1(numberOfChara
 
 
 var generateRandomValidEmail2 = function generateRandomValidEmail2(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateRandomValidEmail2';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1770,7 +1735,6 @@ var generateRandomValidEmail2 = function generateRandomValidEmail2(numberOfChara
 
 
 var generateInvalidEmailWithSpecificSuffixAndDomainName1 = function generateInvalidEmailWithSpecificSuffixAndDomainName1(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName1';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1908,7 +1872,6 @@ var generateInvalidEmailWithSpecificSuffixAndDomainName1 = function generateInva
 
 
 var generateInvalidEmailWithSpecificSuffixAndDomainName2 = function generateInvalidEmailWithSpecificSuffixAndDomainName2(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateInvalidEmailWithSpecificSuffixAndDomainName2';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -2044,7 +2007,6 @@ var generateInvalidEmailWithSpecificSuffixAndDomainName2 = function generateInva
 
 
 var generateRandomInvalidEmail1 = function generateRandomInvalidEmail1(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateRandomInvalidEmail1';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -2450,7 +2412,6 @@ var generateRandomInvalidEmail1 = function generateRandomInvalidEmail1(numberOfC
 
 
 var generateRandomInvalidEmail2 = function generateRandomInvalidEmail2(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'generateRandomInvalidEmail2';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

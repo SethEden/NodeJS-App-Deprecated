@@ -39,6 +39,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function customEcho
  * @description A quick business rule to validate that the new dynamic data storage technique for business rules.
@@ -49,12 +51,10 @@ var path = require('path');
  * @date 2020/06/15
  */
 
-
 var customEcho = function customEcho(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEcho function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = c.ccustomEcho;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -91,7 +91,6 @@ var mostPopularNumber = function mostPopularNumber(inputData, inputMetaData) {
   // console.log('BEGIN mostPopularNumber function');
   // console.log('inputArray is: ' + JSON.stringify(inputArray));
   // console.log('length is: ' + length);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = c.cmostPopularNumber;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -190,7 +189,6 @@ exports.mostPopularNumber = mostPopularNumber;
 var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
   // console.log('BEGIN isAlmostPalindrome function');
   // console.log('inputData is: ' + inputData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = c.cisAlmostPalindrome;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -303,7 +301,6 @@ var threePointAverage = function threePointAverage(inputData, inputMetaData) {
   // console.log('BEGIN threePointAverage function');
   // console.log('inputPointArray is: ' + inputPointArray);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = c.cthreePointAverage;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -351,7 +348,6 @@ var arrayCounter = function arrayCounter(inputData, inputMetaData) {
   // console.log('BEGIN arrayCounter function');
   // console.log('inputArray is: ' + inputArray);
   // console.log('instance is: ' + instance);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = c.carrayCounter;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -360,10 +356,9 @@ var arrayCounter = function arrayCounter(inputData, inputMetaData) {
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
-  var i;
   var returnData = 0;
 
-  for (i = 0; i <= inputData.length; i++) {
+  for (var i = 0; i <= inputData.length; i++) {
     if (inputData[i] === inputMetaData) {
       returnData += 1;
     }

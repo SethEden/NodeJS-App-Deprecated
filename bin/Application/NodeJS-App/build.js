@@ -47,6 +47,7 @@ var D = require('../../Framework/Resources/data');
 global.appRoot = path.resolve(__dirname);
 var rootPath = '';
 var copyResult = false;
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function bootStrapApplication
  * @description Setup all the application data and configuration settings.
@@ -78,7 +79,6 @@ function bootStrapApplicationDeployment() {
  */
 
 function deployApplication() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cdeployApplication;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -111,7 +111,6 @@ function deployApplication() {
  */
 
 function releaseApplication() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.creleaseApplication;
 
   _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

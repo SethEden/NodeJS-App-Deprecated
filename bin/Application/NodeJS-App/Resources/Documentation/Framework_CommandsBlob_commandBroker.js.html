@@ -46,7 +46,6 @@
  * @date 2020/06/18
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-
 import configurator from '../Executrix/configurator';
 import lexical from '../Executrix/lexical';
 import ruleBroker from '../BusinessRules/ruleBroker';
@@ -59,6 +58,7 @@ import * as g from '../Constants/generic.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function bootStrapCommands
@@ -72,8 +72,7 @@ var D = require('../Resources/data');
  * @date 2020/06/18
  */
  function bootStrapCommands() {
-   var baseFileName = path.basename(module.filename, path.extname(module.filename));
-   var functionName = bootStrapCommands.name;
+   let functionName = bootStrapCommands.name;
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
    commands.initCommandsLibrary();
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -88,8 +87,7 @@ var D = require('../Resources/data');
  * @date 2020/06/19
  */
 function addClientCommands(clientCommands) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = addClientCommands.name;
+  let functionName = addClientCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   Object.assign(D[s.cCommands], clientCommands);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -107,12 +105,11 @@ function addClientCommands(clientCommands) {
  * @date 2020/06/23
  */
 function getValidCommand(commandString, commandDelimiter) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getValidCommand.name;
+  let functionName = getValidCommand.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString is: ' + commandString);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandDelimiter is: ' + commandDelimiter);
-  var returnValue = false; // Assume it is not a valid command, until we prove that it is.
+  let returnValue = false; // Assume it is not a valid command, until we prove that it is.
   let foundValidCommand = false;
   let foundSomeCommandArgs = false;
   let commandToExecute, commandArgs;
@@ -134,7 +131,7 @@ function getValidCommand(commandString, commandDelimiter) {
   } else {
     // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
     // to see if we can find a match, then get the actual command that should be executed.
-    var allCommandAliases = D[s.cCommandsAliases][s.cCommand];
+    let allCommandAliases = D[s.cCommandsAliases][s.cCommand];
 loop1:
     for (let i = 0; i &lt; allCommandAliases.length; i++) {
       // Iterate through all of the command aliases and see if we can find a
@@ -178,8 +175,7 @@ loop2:
  * @date 2020/06/23
  */
 function getCommandArgs(commandString, commandDelimiter) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = getCommandArgs.name;
+  let functionName = getCommandArgs.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString is: ' + commandString);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandDelimiter is: ' + commandDelimiter);
@@ -215,7 +211,7 @@ function getCommandArgs(commandString, commandDelimiter) {
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'About to call the rule broker to process on the number of single quotes and determine if it-be even or odd');
         if (numberOfSingleQuotes >= 2 &amp;&amp; ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false) {
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'numberOfSingleQuotes is >= 2 &amp; the numberOfSingleQuotes is EVEN!!! YAY!!!');
-          var indexOfStringDelimiter;
+          let indexOfStringDelimiter;
           for (let i = 0; i &lt; numberOfSingleQuotes; i++) {
             // Iterate over each one and if they are even or odd we will change how we replace each single quote character as described above.
             if (i === 0) {
@@ -323,8 +319,7 @@ function getCommandArgs(commandString, commandDelimiter) {
   // Also don't forget this is where we will need to implement the command performance
   // tracking &amp; command results processing such as pass-fail,
   // so that when a chain of commands has completed execution we can evaluate command statistics and metrics.
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  var functionName = executeCommand.name;
+  let functionName = executeCommand.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandString is: ' + commandString);
   let returnValue = false;
@@ -398,7 +393,7 @@ function getCommandArgs(commandString, commandDelimiter) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 01 2020 18:42:51 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 01 2020 20:09:45 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

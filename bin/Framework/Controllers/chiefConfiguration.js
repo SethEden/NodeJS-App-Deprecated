@@ -48,6 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var D = require('../Resources/data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function setupConfiguration
  * @description Sets up all of the system configuration data.
@@ -62,11 +64,9 @@ var D = require('../Resources/data');
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 
-
 function setupConfiguration(pathAndFilename) {
   // console.log('BEGIN chiefConfiguration.setupConfiguration function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'setupTestConfiguration';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -116,7 +116,6 @@ function setupConfiguration(pathAndFilename) {
 function parseLoadedConfigurationData(allConfigurationData) {
   // console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
   // console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = parseLoadedConfigurationData.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
@@ -272,7 +271,6 @@ function processConfigurationRules(name, value) {
   // console.log('BEGIN chiefConfiguration.processConfigurationRules function');
   // console.log('name is: ' + name);
   // console.log('value is: ' + value);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = parseLoadedConfigurationData.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'name is: ' + name);

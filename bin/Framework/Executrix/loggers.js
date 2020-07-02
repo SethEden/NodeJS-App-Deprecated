@@ -68,8 +68,8 @@ function consoleLog(classPath, message) {
       // console.log('logFile is !== undefined');
       var debugSetting = false;
       var outputMessage = '';
-      var rules = {};
-      rules[1] = s.creplaceDoublePercentWithMessage;
+      var _rules = {};
+      _rules[1] = s.creplaceDoublePercentWithMessage;
       logFile = logFile + _configurator["default"].getConfigurationSetting(s.cLogFilePathAndName); // console.log('determine if there is a configuration setting for the class path');
 
       debugSetting = _configurator["default"].getConfigurationSetting(classPath); // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');

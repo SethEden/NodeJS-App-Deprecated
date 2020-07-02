@@ -36,6 +36,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var D = require('./data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function initQueue
  * @description Initializes the queue with the provided namespace.
@@ -46,9 +48,7 @@ var D = require('./data');
  * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 
-
 function initQueue(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = initQueue.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -72,7 +72,6 @@ function initQueue(queueNameSpace) {
  */
 
 function dequeue(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = dequeue.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -102,7 +101,6 @@ function dequeue(queueNameSpace) {
  */
 
 function enqueue(queueNameSpace, value) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = enqueue.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -128,7 +126,6 @@ function enqueue(queueNameSpace, value) {
  */
 
 function isEmpty(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = isEmpty.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -162,7 +159,6 @@ function isEmpty(queueNameSpace) {
  */
 
 function queueFront(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = queueFront.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -191,7 +187,6 @@ function queueFront(queueNameSpace) {
  */
 
 function queueSize(queueNameSpace) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = queueSize.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

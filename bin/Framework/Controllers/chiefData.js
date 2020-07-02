@@ -39,6 +39,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function getAndProcessCsvData
  * @description Loads the specified file, parses it and converts all the data to the appropriate format.
@@ -49,9 +51,7 @@ var path = require('path');
  * @date 2020/05/21
  */
 
-
 function getAndProcessCsvData(pathAndFilename, contextName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getAndProcessCsvData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -79,7 +79,6 @@ function getAndProcessCsvData(pathAndFilename, contextName) {
  */
 
 function getAndProcessXmlData(pathAndFilename) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getAndProcessXmlData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -113,7 +112,6 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
   // console.log('BEGIN chiefData.setupAllCsvData function');
   // console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = setupAllCsvData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -159,7 +157,6 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
   // console.log('BEGIN chiefData.setupAllXmlData function');
   // console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
   // console.log('contextName is: ' + contextName);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = setupAllCsvData.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

@@ -40,6 +40,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function parseBusinessRuleArgument
  * @description parses a single business rule argument and returns it after cleaning it up or
@@ -56,9 +58,7 @@ var path = require('path');
  * @date 2020/06/26
  */
 
-
 function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMode) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = parseBusinessRuleArgument.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -128,7 +128,6 @@ function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMod
  */
 
 function analyzeArgument(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = analyzeArgument.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -210,7 +209,6 @@ function analyzeArgument(argumentValue) {
  */
 
 function analyzeForRegularExpression(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = analyzeForRegularExpression.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -249,7 +247,6 @@ function analyzeForRegularExpression(argumentValue) {
  */
 
 function parseArgumentAsRegularExpression(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = parseArgumentAsRegularExpression.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -301,7 +298,6 @@ function parseArgumentAsRegularExpression(argumentValue) {
  */
 
 function parseArgumentAsArray(argumentValue) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = parseArgumentAsArray.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -381,7 +377,6 @@ function parseArgumentAsArray(argumentValue) {
  */
 
 function removeStringLiteralTagsFromArray(argumentArray) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = parseArgumentAsRegularExpression.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

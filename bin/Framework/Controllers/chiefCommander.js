@@ -45,6 +45,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var D = require('../Resources/data');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function bootStrapCommands
  * @description Initializes all of the commands and gets them added to the D-data structure.
@@ -53,9 +55,7 @@ var D = require('../Resources/data');
  * @date 2020/06/19
  */
 
-
 function bootStrapCommands() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = bootStrapCommands.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -78,7 +78,6 @@ function bootStrapCommands() {
  */
 
 function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = loadCommandAliasesFromPath.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -113,7 +112,6 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
  */
 
 function enqueueCommand(command) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = enqueueCommand.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -139,7 +137,6 @@ function enqueueCommand(command) {
  */
 
 function isCommandQueueEmpty() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = isCommandQueueEmpty.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -164,7 +161,6 @@ function isCommandQueueEmpty() {
  */
 
 function processCommandQueue() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = processCommandQueue.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

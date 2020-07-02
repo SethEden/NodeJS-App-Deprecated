@@ -48,6 +48,8 @@ var _ = require('lodash');
 var path = require('path');
 
 var math = require('mathjs');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function stringToBoolean
  * @description Converts a string to a boolean value
@@ -61,9 +63,7 @@ var math = require('mathjs');
  * If we cause this function to evaluate a 0 or 1 to a boolean, then the integer function would never get a chance to evaluate.
  */
 
-
 var stringToBoolean = function stringToBoolean(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cstringToBoolean;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -141,7 +141,6 @@ var stringToBoolean = function stringToBoolean(inputData, inputMetaData) {
 exports.stringToBoolean = stringToBoolean;
 
 var stringToDataType = function stringToDataType(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cstringToDataType;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -200,7 +199,6 @@ var stringToDataType = function stringToDataType(inputData, inputMetaData) {
 exports.stringToDataType = stringToDataType;
 
 var determineObjectDataType = function determineObjectDataType(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cdetermineObjectDataType;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -252,7 +250,6 @@ var determineObjectDataType = function determineObjectDataType(inputData, inputM
 exports.determineObjectDataType = determineObjectDataType;
 
 var isBoolean = function isBoolean(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cisBoolean;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -294,7 +291,6 @@ var isBoolean = function isBoolean(inputData, inputMetaData) {
 exports.isBoolean = isBoolean;
 
 var isInteger = function isInteger(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cisInteger;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -344,7 +340,6 @@ var isInteger = function isInteger(inputData, inputMetaData) {
 exports.isInteger = isInteger;
 
 var isFloat = function isFloat(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cisFloat;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -385,7 +380,6 @@ var isFloat = function isFloat(inputData, inputMetaData) {
 exports.isFloat = isFloat;
 
 var isString = function isString(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cisString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -428,7 +422,6 @@ var isString = function isString(inputData, inputMetaData) {
 exports.isString = isString;
 
 var singleQuoteSwapAfterEquals = function singleQuoteSwapAfterEquals(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.csingleQuoteSwapAfterEquals;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -480,7 +473,6 @@ var singleQuoteSwapAfterEquals = function singleQuoteSwapAfterEquals(inputData, 
 exports.singleQuoteSwapAfterEquals = singleQuoteSwapAfterEquals;
 
 var swapForwardSlashToBackSlash = function swapForwardSlashToBackSlash(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cswapForwardSlashToBackSlash;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -519,7 +511,6 @@ var swapBackSlashToForwardSlash = function swapBackSlashToForwardSlash(inputData
   // console.log('BEGIN stringParsing.swapBackSlashToForwardSlash function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cswapBackSlashToForwardSlash;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -557,7 +548,6 @@ var swapBackSlashToForwardSlash = function swapBackSlashToForwardSlash(inputData
 exports.swapBackSlashToForwardSlash = swapBackSlashToForwardSlash;
 
 var swapDoubleForwardSlashToSingleForwardSlash = function swapDoubleForwardSlashToSingleForwardSlash(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cswapDoubleForwardSlashToSingleForwardSlash;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -596,7 +586,6 @@ var swapDoubleBackSlashToSingleBackSlash = function swapDoubleBackSlashToSingleB
   // console.log('BEGIN stringParsing.swapDoubleBackSlashToSingleBackSlash function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cswapDoubleBackSlashToSingleBackSlash;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -633,7 +622,6 @@ var swapDoubleBackSlashToSingleBackSlash = function swapDoubleBackSlashToSingleB
 exports.swapDoubleBackSlashToSingleBackSlash = swapDoubleBackSlashToSingleBackSlash;
 
 var getUserNameFromEmail = function getUserNameFromEmail(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetUserNameFromEmail;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -670,7 +658,6 @@ var getUserNameFromEmail = function getUserNameFromEmail(inputData, inputMetaDat
 exports.getUserNameFromEmail = getUserNameFromEmail;
 
 var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.creplaceSpacesWithPlus;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -681,7 +668,7 @@ var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaD
 
   if (!inputData) {
     return false;
-  } // var returnData = inputData.replace(/ /g, b.cPlus);
+  } // let returnData = inputData.replace(/ /g, b.cPlus);
 
 
   var returnData = replaceCharacterWithCharacter(inputData, [/ /g, b.cPlus]);
@@ -706,7 +693,6 @@ var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaD
 exports.replaceSpacesWithPlus = replaceSpacesWithPlus;
 
 var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.creplaceColonWithUnderscore;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -717,7 +703,7 @@ var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, 
 
   if (!inputData) {
     return false;
-  } // var returnData == inputData.replace(/:/g, b.cUnderscore);
+  } // let returnData == inputData.replace(/:/g, b.cUnderscore);
 
 
   var returnData = replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
@@ -750,7 +736,6 @@ var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(input
   // console.log('BEGIN stringParsing.replaceCharacterWithCharacter function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + JSON.stringify(inputMetaData));
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.creplaceCharacterWithCharacter;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -790,7 +775,6 @@ var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(input
 exports.replaceCharacterWithCharacter = replaceCharacterWithCharacter;
 
 var cleanCarriageReturnFromString = function cleanCarriageReturnFromString(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.ccleanCarriageReturnFromString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -825,7 +809,6 @@ var cleanCarriageReturnFromString = function cleanCarriageReturnFromString(input
 exports.cleanCarriageReturnFromString = cleanCarriageReturnFromString;
 
 var convertStringToLowerCase = function convertStringToLowerCase(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cconvertStringToLowerCase;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -860,7 +843,6 @@ var convertStringToLowerCase = function convertStringToLowerCase(inputData, inpu
 exports.convertStringToLowerCase = convertStringToLowerCase;
 
 var convertStringToUpperCase = function convertStringToUpperCase(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cconvertStringToUpperCase;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -899,7 +881,6 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
   // console.log('BEGIN stringParsing.getFileNameFromPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetFileNameFromPath;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -945,7 +926,6 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
 exports.getFileNameFromPath = getFileNameFromPath;
 
 var getFileExtension = function getFileExtension(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetFileExtension;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -980,7 +960,6 @@ var getFileExtension = function getFileExtension(inputData, inputMetaData) {
 exports.getFileExtension = getFileExtension;
 
 var removeDotFromFileExtension = function removeDotFromFileExtension(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cremoveDotFromFileExtension;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1016,7 +995,6 @@ var removeDotFromFileExtension = function removeDotFromFileExtension(inputData, 
 exports.removeDotFromFileExtension = removeDotFromFileExtension;
 
 var removeFileExtensionFromFileName = function removeFileExtensionFromFileName(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cremoveFileExtensionFromFileName;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1051,7 +1029,6 @@ var removeFileExtensionFromFileName = function removeFileExtensionFromFileName(i
 exports.removeFileExtensionFromFileName = removeFileExtensionFromFileName;
 
 var getValueFromAssignmentOperationString = function getValueFromAssignmentOperationString(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   console.log('s.cgetValueFromAssignmentOperationString is resolving as: ' + s.cgetValueFromAssignmentOperationString);
   var functionName = s.cgetValueFromAssignmentOperationString;
 
@@ -1095,7 +1072,6 @@ var getValueFromAssignmentOperationString = function getValueFromAssignmentOpera
 exports.getValueFromAssignmentOperationString = getValueFromAssignmentOperationString;
 
 var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.caggregateNumericalDifferenceBetweenTwoStrings;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1184,7 +1160,6 @@ var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalD
 exports.aggregateNumericalDifferenceBetweenTwoStrings = aggregateNumericalDifferenceBetweenTwoStrings;
 
 var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cconvertCamelCaseStringToArray;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1237,7 +1212,6 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
 exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
 
 var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cconvertArrayToCamelCaseString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1271,7 +1245,6 @@ var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(input
 exports.convertArrayToCamelCaseString = convertArrayToCamelCaseString;
 
 var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cmapWordToCamelCaseWord;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1310,7 +1283,6 @@ var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMet
 exports.mapWordToCamelCaseWord = mapWordToCamelCaseWord;
 
 var simplifyAndConsolidateString = function simplifyAndConsolidateString(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.csimplifyAndConsolidateString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1342,7 +1314,6 @@ var simplifyAndConsolidateString = function simplifyAndConsolidateString(inputDa
 exports.simplifyAndConsolidateString = simplifyAndConsolidateString;
 
 var compareSimplifiedAndConsolidatedStrings = function compareSimplifiedAndConsolidatedStrings(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.ccompareSimplifiedAndConsolidatedStrings;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1376,7 +1347,6 @@ var compareSimplifiedAndConsolidatedStrings = function compareSimplifiedAndConso
 exports.compareSimplifiedAndConsolidatedStrings = compareSimplifiedAndConsolidatedStrings;
 
 var doesArrayContainLowerCaseConsolidatedString = function doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cdoesArrayContainLowerCaseConsolidatedString;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1415,7 +1385,6 @@ var doesArrayContainLowerCaseConsolidatedString = function doesArrayContainLower
 exports.doesArrayContainLowerCaseConsolidatedString = doesArrayContainLowerCaseConsolidatedString;
 
 var doesArrayContainCharacter = function doesArrayContainCharacter(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cdoesArrayContainCharacter;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1460,7 +1429,6 @@ var doesArrayContainCharacter = function doesArrayContainCharacter(inputData, in
 exports.doesArrayContainCharacter = doesArrayContainCharacter;
 
 var removeCharacterFromArray = function removeCharacterFromArray(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cremoveCharacterFromArray;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1509,7 +1477,6 @@ var removeCharacterFromArray = function removeCharacterFromArray(inputData, inpu
 exports.removeCharacterFromArray = removeCharacterFromArray;
 
 var ascertainMatchingFilenames = function ascertainMatchingFilenames(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cascertainMatchingFilenames;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1552,7 +1519,6 @@ var ascertainMatchingFilenames = function ascertainMatchingFilenames(inputData, 
 exports.ascertainMatchingFilenames = ascertainMatchingFilenames;
 
 var doesArrayContainFilename = function doesArrayContainFilename(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cdoesArrayContainFilename;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1597,7 +1563,6 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
 exports.doesArrayContainFilename = doesArrayContainFilename;
 
 var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContextName(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetDataCatagoryFromDataContextName;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1636,7 +1601,6 @@ var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContext
 exports.getDataCatagoryFromDataContextName = getDataCatagoryFromDataContextName;
 
 var getDataCatagoryDetailNameFromDataContextName = function getDataCatagoryDetailNameFromDataContextName(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetDataCatagoryDetailNameFromDataContextName;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1675,7 +1639,6 @@ var getDataCatagoryDetailNameFromDataContextName = function getDataCatagoryDetai
 exports.getDataCatagoryDetailNameFromDataContextName = getDataCatagoryDetailNameFromDataContextName;
 
 var getKeywordNameFromDataContextName = function getKeywordNameFromDataContextName(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetKeywordNameFromDataContextName;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1722,7 +1685,6 @@ var parseSystemRootPath = function parseSystemRootPath(inputData, inputMetaData)
   // console.log('BEGIN stringParsing.parseSystemRootPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cparseSystemRootPath;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1808,7 +1770,6 @@ var replaceDoublePercentWithMessage = function replaceDoublePercentWithMessage(i
   // We just have to hard code everything and it won't be loged to the log file.
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.creplaceDoublePercentWithMessage;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1846,7 +1807,6 @@ var replaceDoublePercentWithMessage = function replaceDoublePercentWithMessage(i
 exports.replaceDoublePercentWithMessage = replaceDoublePercentWithMessage;
 
 var removeXnumberOfFoldersFromEndOfPath = function removeXnumberOfFoldersFromEndOfPath(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cremoveXnumberOfFoldersFromEndOfPath;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1930,7 +1890,6 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
   // console.log('BEGIN stringParsing.getFirstTopLevelFolderFromPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cgetFirstTopLevelFolderFromPath;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1987,7 +1946,6 @@ var isOdd = function isOdd(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.isOdd function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cisOdd;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -2035,7 +1993,6 @@ var isOdd = function isOdd(inputData, inputMetaData) {
 exports.isOdd = isOdd;
 
 var isEven = function isEven(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cisEven;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -2084,7 +2041,6 @@ var replaceCharacterAtIndex = function replaceCharacterAtIndex(inputData, inputM
   // console.log('BEGIN stringParsing.replaceCharacterAtIndex function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.creplaceCharacterAtIndex;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -2137,7 +2093,6 @@ var replaceCharacterAtIndex = function replaceCharacterAtIndex(inputData, inputM
 exports.replaceCharacterAtIndex = replaceCharacterAtIndex;
 
 function doesArrayContainValue(array, value, myFunction) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = 'doesArrayContainValue';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

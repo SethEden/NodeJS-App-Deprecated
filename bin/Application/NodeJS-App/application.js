@@ -54,6 +54,7 @@ var D = require('../../Framework/Resources/data');
 
 global.appRoot = path.resolve(__dirname);
 var rootPath = '';
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function bootStrapApplication
  * @description Setup all the application data and configuration settings.
@@ -89,7 +90,6 @@ function bootStrapApplication() {
  */
 
 function application() {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.capplication;
   var argumentDrivenInterface = true;
   var commandInput;

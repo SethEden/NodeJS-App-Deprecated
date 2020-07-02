@@ -38,6 +38,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function hex2rgbConversion
  * @description Converts an hexidecimal color value to an RGB color value.
@@ -49,9 +51,7 @@ var path = require('path');
  * {@link: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb}
  */
 
-
 var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.chex2rgbConversion;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -72,7 +72,7 @@ var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
   // I am including the alternate algorthim below as reference in case someone ever wants/needs it,
   // as an alternative to the below implementation.
   // function hexToRgb(hex) {
-  //   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  //   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   //   return result ? {
   //     r: parseInt(result[1], 16),
   //     g: parseInt(result[2], 16),

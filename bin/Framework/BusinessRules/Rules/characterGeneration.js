@@ -44,6 +44,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var path = require('path');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function randomlyGenerateMixedCaseLetterOrSpecialCharacter1
  * @description Randomly generates an alphabetic letter from A-Z, a-z or a random special character from the input list of special characters.
@@ -55,9 +57,7 @@ var path = require('path');
  * @date 2020/03/05
  */
 
-
 var randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -97,7 +97,6 @@ var randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function randomlyGenera
 exports.randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = randomlyGenerateMixedCaseLetterOrSpecialCharacter1;
 
 var randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -130,7 +129,6 @@ var randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function randomlyGenera
 exports.randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = randomlyGenerateMixedCaseLetterOrSpecialCharacter2;
 
 var randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -170,7 +168,6 @@ var randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function randomlyGenera
 exports.randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = randomlyGenerateUpperCaseLetterOrSpecialCharacter1;
 
 var randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = function randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -203,7 +200,6 @@ var randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = function randomlyGenera
 exports.randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = randomlyGenerateUpperCaseLetterOrSpecialCharacter2;
 
 var randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -243,7 +239,6 @@ var randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function randomlyGenera
 exports.randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = randomlyGenerateLowerCaseLetterOrSpecialCharacter1;
 
 var randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -276,7 +271,6 @@ var randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function randomlyGenera
 exports.randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = randomlyGenerateLowerCaseLetterOrSpecialCharacter2;
 
 var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -349,7 +343,6 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function 
 exports.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
 
 var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = function randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -382,7 +375,6 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = function 
 exports.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
 
 var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -445,7 +437,6 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function 
 exports.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
 
 var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = function randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -478,7 +469,6 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = function 
 exports.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
 
 var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -541,7 +531,6 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function 
 exports.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
 
 var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = function randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -574,7 +563,6 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = function 
 exports.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
 
 var randomlyGenerateMixedCaseAlphaNumericCharacter1 = function randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateMixedCaseAlphaNumericCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -612,7 +600,6 @@ var randomlyGenerateMixedCaseAlphaNumericCharacter1 = function randomlyGenerateM
 exports.randomlyGenerateMixedCaseAlphaNumericCharacter1 = randomlyGenerateMixedCaseAlphaNumericCharacter1;
 
 var randomlyGenerateMixedCaseAlphaNumericCharacter2 = function randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateMixedCaseAlphaNumericCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -645,7 +632,6 @@ var randomlyGenerateMixedCaseAlphaNumericCharacter2 = function randomlyGenerateM
 exports.randomlyGenerateMixedCaseAlphaNumericCharacter2 = randomlyGenerateMixedCaseAlphaNumericCharacter2;
 
 var randomlyGenerateUpperCaseAlphaNumericCharacter1 = function randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateUpperCaseAlphaNumericCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -683,7 +669,6 @@ var randomlyGenerateUpperCaseAlphaNumericCharacter1 = function randomlyGenerateU
 exports.randomlyGenerateUpperCaseAlphaNumericCharacter1 = randomlyGenerateUpperCaseAlphaNumericCharacter1;
 
 var randomlyGenerateUpperCaseAlphaNumericCharacter2 = function randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateUpperCaseAlphaNumericCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -716,7 +701,6 @@ var randomlyGenerateUpperCaseAlphaNumericCharacter2 = function randomlyGenerateU
 exports.randomlyGenerateUpperCaseAlphaNumericCharacter2 = randomlyGenerateUpperCaseAlphaNumericCharacter2;
 
 var randomlyGenerateLowerCaseAlphaNumericCharacter1 = function randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateLowerCaseAlphaNumericCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -754,7 +738,6 @@ var randomlyGenerateLowerCaseAlphaNumericCharacter1 = function randomlyGenerateL
 exports.randomlyGenerateLowerCaseAlphaNumericCharacter1 = randomlyGenerateLowerCaseAlphaNumericCharacter1;
 
 var randomlyGenerateLowerCaseAlphaNumericCharacter2 = function randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateLowerCaseAlphaNumericCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -787,7 +770,6 @@ var randomlyGenerateLowerCaseAlphaNumericCharacter2 = function randomlyGenerateL
 exports.randomlyGenerateLowerCaseAlphaNumericCharacter2 = randomlyGenerateLowerCaseAlphaNumericCharacter2;
 
 var randomlyGenerateNumericCharacter1 = function randomlyGenerateNumericCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateNumericCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -820,7 +802,6 @@ var randomlyGenerateNumericCharacter1 = function randomlyGenerateNumericCharacte
 exports.randomlyGenerateNumericCharacter1 = randomlyGenerateNumericCharacter1;
 
 var randomlyGenerateNumericCharacter2 = function randomlyGenerateNumericCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateNumericCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -853,7 +834,6 @@ var randomlyGenerateNumericCharacter2 = function randomlyGenerateNumericCharacte
 exports.randomlyGenerateNumericCharacter2 = randomlyGenerateNumericCharacter2;
 
 var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateSpecialCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -892,7 +872,6 @@ var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacte
 exports.randomlyGenerateSpecialCharacter1 = randomlyGenerateSpecialCharacter1;
 
 var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateSpecialCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -933,7 +912,6 @@ var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacte
 exports.randomlyGenerateSpecialCharacter2 = randomlyGenerateSpecialCharacter2;
 
 var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateNumberInRange1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -987,7 +965,6 @@ var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inp
 exports.randomlyGenerateNumberInRange1 = randomlyGenerateNumberInRange1;
 
 var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateNumberInRange2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1037,7 +1014,6 @@ var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inp
 exports.randomlyGenerateNumberInRange2 = randomlyGenerateNumberInRange2;
 
 var randomlyGenerateBooleanValue1 = function randomlyGenerateBooleanValue1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateBooleanValue1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1071,7 +1047,6 @@ var randomlyGenerateBooleanValue1 = function randomlyGenerateBooleanValue1(input
 exports.randomlyGenerateBooleanValue1 = randomlyGenerateBooleanValue1;
 
 var randomlyGenerateBooleanValue2 = function randomlyGenerateBooleanValue2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateBooleanValue2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1104,7 +1079,6 @@ var randomlyGenerateBooleanValue2 = function randomlyGenerateBooleanValue2(input
 exports.randomlyGenerateBooleanValue2 = randomlyGenerateBooleanValue2;
 
 var randomlyGenerateMixedCaseAlphabeticCharacter1 = function randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateMixedCaseAlphabeticCharacter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1142,7 +1116,6 @@ var randomlyGenerateMixedCaseAlphabeticCharacter1 = function randomlyGenerateMix
 exports.randomlyGenerateMixedCaseAlphabeticCharacter1 = randomlyGenerateMixedCaseAlphabeticCharacter1;
 
 var randomlyGenerateMixedCaseAlphabeticCharacter2 = function randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateMixedCaseAlphabeticCharacter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1175,7 +1148,6 @@ var randomlyGenerateMixedCaseAlphabeticCharacter2 = function randomlyGenerateMix
 exports.randomlyGenerateMixedCaseAlphabeticCharacter2 = randomlyGenerateMixedCaseAlphabeticCharacter2;
 
 var randomlyGenerateLowerCaseLetter1 = function randomlyGenerateLowerCaseLetter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateLowerCaseLetter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1211,7 +1183,6 @@ var randomlyGenerateLowerCaseLetter1 = function randomlyGenerateLowerCaseLetter1
 exports.randomlyGenerateLowerCaseLetter1 = randomlyGenerateLowerCaseLetter1;
 
 var randomlyGenerateLowerCaseLetter2 = function randomlyGenerateLowerCaseLetter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateLowerCaseLetter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1244,7 +1215,6 @@ var randomlyGenerateLowerCaseLetter2 = function randomlyGenerateLowerCaseLetter2
 exports.randomlyGenerateLowerCaseLetter2 = randomlyGenerateLowerCaseLetter2;
 
 var randomlyGenerateUpperCaseLetter1 = function randomlyGenerateUpperCaseLetter1(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateUpperCaseLetter1;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1280,7 +1250,6 @@ var randomlyGenerateUpperCaseLetter1 = function randomlyGenerateUpperCaseLetter1
 exports.randomlyGenerateUpperCaseLetter1 = randomlyGenerateUpperCaseLetter1;
 
 var randomlyGenerateUpperCaseLetter2 = function randomlyGenerateUpperCaseLetter2(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.crandomlyGenerateUpperCaseLetter2;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1312,7 +1281,6 @@ var randomlyGenerateUpperCaseLetter2 = function randomlyGenerateUpperCaseLetter2
 exports.randomlyGenerateUpperCaseLetter2 = randomlyGenerateUpperCaseLetter2;
 
 var convertNumberToUpperCaseLetter = function convertNumberToUpperCaseLetter(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cconvertNumberToUpperCaseLetter;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -1351,7 +1319,6 @@ var convertNumberToUpperCaseLetter = function convertNumberToUpperCaseLetter(inp
 exports.convertNumberToUpperCaseLetter = convertNumberToUpperCaseLetter;
 
 var convertNumberToLowerCaseLetter = function convertNumberToLowerCaseLetter(inputData, inputMetaData) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = s.cconvertNumberToLowerCaseLetter;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

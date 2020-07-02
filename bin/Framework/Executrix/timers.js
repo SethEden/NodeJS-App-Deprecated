@@ -42,6 +42,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var path = require('path');
 
 var moment = require('moment');
+
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function getNowMoment
  * @description Returns a time stamp string formatted according to the input formatting string.
@@ -51,9 +53,7 @@ var moment = require('moment');
  * @date 2020/05/21
  */
 
-
 function getNowMoment(formatting) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = getNowMoment.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -85,7 +85,6 @@ function getNowMoment(formatting) {
 function computeDeltaTime(startTime, endTime) {
   // console.log('BEGIN timer.computeDeltaTime function');
   // console.log('level is: ' + level);
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = computeDeltaTime.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -120,7 +119,6 @@ function computeDeltaTime(startTime, endTime) {
  */
 
 function reformatDeltaTime(deltaTime, format) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = reformatDeltaTime.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -151,7 +149,6 @@ function reformatDeltaTime(deltaTime, format) {
  */
 
 function sleep(sleepTime) {
-  var baseFileName = path.basename(module.filename, path.extname(module.filename));
   var functionName = reformatDeltaTime.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);

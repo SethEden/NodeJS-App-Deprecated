@@ -33,7 +33,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var path = require('path');
 
-var D = require('../Resources/data');
+var D = require('../Resources/data'); // var baseFileName = path.basename(module.filename, path.extname(module.filename));
+
 /**
  * @function setConfigurationSetting
  * @description Sets a configuration setting on the configuration sub-tree data structure stored on t.ctx.
@@ -52,8 +53,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // console.log('BEGIN configurator.setConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // console.log('configurationValue is: ' + configurationValue);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = setConfigurationSetting.name;
+  // let functionName = setConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
@@ -74,8 +74,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
 function getConfigurationSetting(configurationName) {
   var returnConfigurationValue; // console.log('BEGIN configurator.getConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
-  // var baseFileName = path.basename(module.filename, path.extname(module.filename));
-  // var functionName = getConfigurationSetting.name;
+  // let functionName = getConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
 
