@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.4](https://github.com/SethEden/NodeJS-App/compare/v0.8.3...v0.8.4) (2020-07-02)
+
+
+### Features
+
+* Update the code with test performance results for the character generation & string generation business rules and also include test results in text files. ([081c69f](https://github.com/SethEden/NodeJS-App/commit/081c69f99d21b1b0d1824db0ad33b1374d9be68f))
+
 ### [0.8.3](https://github.com/SethEden/NodeJS-App/compare/v0.8.2...v0.8.3) (2020-07-02)
 
 ### [0.8.2](https://github.com/SethEden/NodeJS-App/compare/v0.8.1...v0.8.2) (2020-07-01)
