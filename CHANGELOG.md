@@ -16,6 +16,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 * Update the constants system architecture to be much more scalable, and debug the whole system. ([0b13660](https://github.com/SethEden/NodeJS-App/commit/0b13660ce31a0fd811e943ec56cc72781cefec8b))
 
+## [1.1.0](https://github.com/SethEden/NodeJS-App/compare/v1.0.1...v1.1.0) (2020-07-17)
+
+
+### Features
+
+* Update the constants system architecture to be much more scalable, and debug the whole system. ([0b13660](https://github.com/SethEden/NodeJS-App/commit/0b13660ce31a0fd811e943ec56cc72781cefec8b))
+
 ## [1.2.0](https://github.com/SethEden/NodeJS-App/compare/v1.0.1...v1.2.0) (2020-07-17)
 
 
