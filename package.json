@@ -30,7 +30,7 @@
     "@babel/preset-env": "^7.9.6",
     "bestzip": "^2.1.5",
     "jsdoc": "^3.6.4",
-    "standard-version": "^8.0.0"
+    "standard-version": ">=8.0.1"
   },
   "dependencies": {
     "chalk": "^4.0.0",
