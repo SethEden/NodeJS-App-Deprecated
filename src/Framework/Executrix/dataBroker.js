@@ -9,6 +9,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module.generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -22,6 +23,7 @@ import configurator from './configurator';
 import loggers from './loggers';
 import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var D = require('../Resources/data');
 var path = require('path');
@@ -164,7 +166,7 @@ function loadAllXmlData(filesToLoad, contextName) {
         multiMergedData = dataFile;
       } else {
         j++;
-        multiMergedData = mergeData(multiMergedData, s.cPage, '', 0, dataFile);
+        multiMergedData = mergeData(multiMergedData, w.cPage, '', 0, dataFile);
       }
       // console.log('DONE PROCESSING ADDITIONAL DATA');
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE PROCESSING ADDITIONAL DATA');
@@ -203,12 +205,12 @@ function processCsvData(data, contextName) {
   // console.log('dataCatagory is: ' + dataCatagory);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is: ' + dataCatagory);
   let dataCatagoryDetailName;
-  if (contextName.includes(s.cWorkflow)) {
+  if (contextName.includes(w.cWorkflow)) {
     // Processing a workflow
-    Object.assign(D[s.cWorkflow], parsedData[contextName]);
-  } else if (contextName.includes(s.cColors)) {
-    D[s.cColors] = {};
-    Object.assign(D[s.cColors], parsedData);
+    Object.assign(D[w.cWorkflow], parsedData[contextName]);
+  } else if (contextName.includes(w.cColors)) {
+    D[w.cColors] = {};
+    Object.assign(D[w.cColors], parsedData);
   } else {
     // Processing all other kinds of files.
     if (typeof D[dataCatagory] !== 'undefined' && D[dataCatagory]) {
@@ -306,13 +308,13 @@ function extractDataFromPapaParseObject(data, contextName) {
   }
   tempData[contextName] = {};
   cleanKeysRules[1] = s.ccleanCarriageReturnFromString;
-  let highLevelDataCount = Object.keys(data[s.cdata]).length;
+  let highLevelDataCount = Object.keys(data[w.cdata]).length;
   for (let i = 0; i<=highLevelDataCount; i++) {
     validDataAdded = false;
     let lowLevelTempData = {};
     if (contextName === s.cColorData) {
       let colorName = '';
-      for (let key in data[s.cdata][i]) {
+      for (let key in data[w.cdata][i]) {
         validDataAdded = true;
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
@@ -320,12 +322,12 @@ function extractDataFromPapaParseObject(data, contextName) {
         let newKey = ruleBroker.processRules(key, '', cleanKeysRules);
         // console.log('newKey is: ' + newKey);
         if (key === s.cColorName) {
-          colorName = data[s.cdata][i][key];
+          colorName = data[w.cdata][i][key];
         }
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
-        // console.log('data[s.cData][i][key] is: ' + data[s.cdata][i][key]);
-        lowLevelTempData[newKey] = ruleBroker.processRules(data[s.cdata][i][key], '', cleanKeysRules);
+        // console.log('data[w.cData][i][key] is: ' + data[w.cdata][i][key]);
+        lowLevelTempData[newKey] = ruleBroker.processRules(data[w.cdata][i][key], '', cleanKeysRules);
         // console.log('lowLevelTempData is: ' + JSON.stringify(lowLevelTempData));
       }
       if (validDataAdded === true) {
@@ -338,7 +340,7 @@ function extractDataFromPapaParseObject(data, contextName) {
         }
       } // End-if validDataAdd === true
     } else { // Else-if (contextName === s.cConfiguration_Colors)
-      for (let key in data[s.cdata][i]) {
+      for (let key in data[w.cdata][i]) {
         validDataAdded = true;
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
@@ -347,8 +349,8 @@ function extractDataFromPapaParseObject(data, contextName) {
         // console.log('newKey is: ' + newKey);
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
-        // console.log('data[s.cData][i][key] is: ' + data[s.cdata][i][key]);
-        lowLevelTempData[newKey] = ruleBroker.processRules(data[s.cdata][i][key], '', cleanKeysRules);
+        // console.log('data[w.cData][i][key] is: ' + data[w.cdata][i][key]);
+        lowLevelTempData[newKey] = ruleBroker.processRules(data[w.cdata][i][key], '', cleanKeysRules);
         // console.log('lowLevelTempData is: ' + JSON.stringify(lowLevelTempData));
       }
       if (validDataAdded === true) {

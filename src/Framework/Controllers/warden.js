@@ -157,17 +157,28 @@ function processRootPath(systemRootPath) {
  * @date 2020/06/02
  */
 function saveRootPath(rootPath) {
+  // console.log('BEGIN warden.saveRootPath function');
+  // console.log('rootPath is: ' + rootPath);
   let functionName = saveRootPath.name;
+  // console.log('logging the BEGIN warden.saveRootPath function');
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // console.log('logging the current rootPath input.');
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'rootPath is: ' + rootPath);
+  // console.log('setting the configuration setting for the root path');
   configurator.setConfigurationSetting(s.cApplicationRootPath, rootPath);
   let cleanedRootPath;
+  // console.log('calling file broker to clean the root path.');
   cleanedRootPath = fileBroker.cleanRootPath(rootPath);
+  // console.log('set the cleaned root path as a configuration setting');
   configurator.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
+  // console.log('set the application name as a configuration setting');
   configurator.setConfigurationSetting(s.cApplicationName, process.env.npm_package_name);
+  // console.log('set the application version number as a configuration setting');
   configurator.setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
+  // console.log('set the application description as a configuration setting');
   configurator.setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END warden.saveRootPath function');
 };
 
 /**
@@ -203,6 +214,7 @@ function mergeClientBusinessRules(clientBusinessRules) {
  * @date 2020/06/19
  */
 function mergeClientCommands(clientCommands) {
+  // console.log('BEGIN warden.mergeClientCommands function');
   let functionName = mergeClientCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
@@ -211,6 +223,7 @@ function mergeClientCommands(clientCommands) {
 
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END warden.mergeClientCommands function');
 };
 
 /**
@@ -302,10 +315,13 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
  * @date 2020/06/18
  */
 function enqueueCommand(command) {
+  // console.log('BEGIN warden.enqueueCommand function');
+  // console.log('command is: ' + command);
   let functionName = enqueueCommand.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   chiefCommander.enqueueCommand(command);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END warden.enqueueCommand function');
 };
 
 /**

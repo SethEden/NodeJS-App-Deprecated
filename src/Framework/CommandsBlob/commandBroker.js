@@ -11,6 +11,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -27,6 +28,7 @@ import timers from '../Executrix/timers';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -61,7 +63,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function addClientCommands(clientCommands) {
   let functionName = addClientCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  Object.assign(D[s.cCommands], clientCommands);
+  Object.assign(D[w.cCommands], clientCommands);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -97,33 +99,33 @@ function getValidCommand(commandString, commandDelimiter) {
     commandToExecute = commandString;
   }
 
-  if (D[s.cCommands][commandToExecute] !== undefined) {
+  if (D[w.cCommands][commandToExecute] !== undefined) {
     foundValidCommand = true;
     returnValue = commandToExecute;
   } else {
     // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
     // to see if we can find a match, then get the actual command that should be executed.
-    let allCommandAliases = D[s.cCommandsAliases][s.cCommand];
+    let allCommandAliases = D[s.cCommandsAliases][w.cCommand];
 loop1:
     for (let i = 0; i < allCommandAliases.length; i++) {
       // Iterate through all of the command aliases and see if we can find a
       // command alias that matches the command the user is trying to execute.
       let currentCommand = allCommandAliases[i];
-      let aliasList = currentCommand[s.cAliases];
+      let aliasList = currentCommand[w.cAliases];
       let arrayOfAliases = aliasList.split(b.cComa);
 loop2:
       for (let j = 0; j < arrayOfAliases.length; j++) {
         if (commandToExecute === arrayOfAliases[j]) {
           foundValidCommand = true;
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute before the Alias is: ' + commandToExecute);
-          commandToExecute = currentCommand[s.cName];
+          commandToExecute = currentCommand[w.cName];
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute after the Alias is: ' + commandToExecute);
           break loop1;
         }
       }
     }
     if (foundValidCommand === true) {
-      if (D[s.cCommands][commandToExecute] !== undefined) {
+      if (D[w.cCommands][commandToExecute] !== undefined) {
         returnValue = commandToExecute;
       } else {
         console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
@@ -310,10 +312,10 @@ function getCommandArgs(commandString, commandDelimiter) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Business Rule Start time is: ' + commandStartTime);
   }
   if (commandToExecute !== false && commandArgs !== false) {
-    returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
+    returnValue = D[w.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false && commandArgs === false) {
     // This could be a command without any arguments.
-    returnValue = D[s.cCommands][commandToExecute]('', '');
+    returnValue = D[w.cCommands][commandToExecute]('', '');
   }
   if (commandMetricsEnabled === true) {
     let performanceTrackingObject = {};

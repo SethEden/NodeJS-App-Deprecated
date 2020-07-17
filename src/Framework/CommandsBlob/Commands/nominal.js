@@ -13,6 +13,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -33,6 +34,7 @@ import timers from '../../Executrix/timers';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
 const figlet = require('figlet');
 var path = require('path');
@@ -76,7 +78,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/06/19
  */
 export const exit = function(inputData, inputMetaData) {
-  let functionName = s.cexit;
+  let functionName = w.cexit;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -97,7 +99,7 @@ export const exit = function(inputData, inputMetaData) {
  * @date 2020/06/21
  */
 export const version = function(inputData, inputMetaData) {
-  let functionName = s.cversion;
+  let functionName = w.cversion;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -119,7 +121,7 @@ export const version = function(inputData, inputMetaData) {
  * @date 2020/06/21
  */
 export const about = function(inputData, inputMetaData) {
-  let functionName = s.cabout;
+  let functionName = w.cabout;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -144,7 +146,7 @@ export const about = function(inputData, inputMetaData) {
  * @date 2020/06/21
  */
 export const name = function(inputData, inputMetaData) {
-  let functionName = s.cname;
+  let functionName = w.cname;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -178,12 +180,12 @@ export const name = function(inputData, inputMetaData) {
  * @date 2020/06/22
  */
 export const help = function(inputData, inputMetaData) {
-  let functionName = s.chelp;
+  let functionName = w.chelp;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][s.cCommand], [s.cName, s.cDescription]);
+  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][w.cCommand], [w.cName, w.cDescription]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -206,7 +208,7 @@ export const workflowHelp = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName]);
+  loggers.consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][w.cWorkflow], [w.cName]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -236,12 +238,16 @@ export const commandSequencer = function(inputData, inputMetaData) {
   let returnData = true;
   for (let i = 1; i < inputData.length; i++) {
     let commandString = inputData[i];
+    // b.cli + b.cmi + b.ct;
     let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
+    // console.log('primaryCommandDelimiter is: ' + primaryCommandDelimiter);
     if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
       primaryCommandDelimiter = b.cSpace;
     }
     let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
+    // console.log('secondaryCommandDelimiter is: ' + secondaryCommandArgsDelimiter);
     let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    // console.log('tertiaryCommandDelimiter is: ' + tertiaryCommandDelimiter);
     // Replace 2nd & 3rd level delimiters and down-increment them so we are dealing with command strings that can actually be executed.
     commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
     commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
@@ -278,7 +284,7 @@ export const commandSequencer = function(inputData, inputMetaData) {
  * @date 2020/06/22
  */
 export const workflow = function(inputData, inputMetaData) {
-  let functionName = s.cworkflow;
+  let functionName = w.cworkflow;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -551,7 +557,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average);
       // Now go back through them all so we can compute the standard deviation
       for (let j = 0; j < stack.length(s.cBusinessRulePerformanceTrackingStack); j++) {
-        if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
+        if (D[s.cBusinessRulePerformanceTrackingStack][j][w.cName] === currentBusinessRuleName) {
           businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow((D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime] - average), 2);
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
         }
@@ -564,7 +570,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       }
       stack.push(s.cBusinessRulesPerformanceAnalysisStack, {'Name': currentBusinessRuleName, 'Average': average, 'StandardDeviation': standardDev});
     }
-    loggers.consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+    loggers.consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [w.cName, w.cAverage, s.cStandardDeviation]);
     stack.clearStack(s.cBusinessRulesPerformanceAnalysisStack);
     // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
@@ -611,7 +617,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
       // do the necessary math for each command according to the parent loop.
       let currentCommandName = D[s.cCommandNamesPerformanceTrackingStack][i];
       for (let j = 0; j < stack.length(s.cCommandPerformanceTrackingStack); j++) {
-        if (D[s.cCommandPerformanceTrackingStack][j][s.cName] === currentCommandName) {
+        if (D[s.cCommandPerformanceTrackingStack][j][w.cName] === currentCommandName) {
           commandCounter = commandCounter + 1;
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandCounter is: ' + commandCounter);
           commandPerformanceSum = commandPerformanceSum + D[s.cCommandPerformanceTrackingStack][j][s.cRunTime];
@@ -623,7 +629,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average);
       // Now go back through them all so we can compute the standard deviation
       for (let j = 0; j < stack.length(s.cCommandPerformanceTrackingStack); j++) {
-        if (D[s.cCommandPerformanceTrackingStack][j][s.cName] === currentCommandName) {
+        if (D[s.cCommandPerformanceTrackingStack][j][w.cName] === currentCommandName) {
           commandPerformanceStdSum = commandPerformanceStdSum + math.pow((D[s.cCommandPerformanceTrackingStack][j][s.cRunTime] - average), 2);
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandPerformanceStdSum is: ' + commandPerformanceStdSum);
         }
@@ -636,7 +642,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
       }
       stack.push(s.cCommandsPerformanceAnalysisStack, {'Name': currentCommandName, 'Average': average, 'StandardDeviation': standardDev});
     }
-    loggers.consoleTableLog('', D[s.cCommandsPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+    loggers.consoleTableLog('', D[s.cCommandsPerformanceAnalysisStack], [w.cName, w.cAverage, s.cStandardDeviation]);
     stack.clearStack(s.cCommandsPerformanceAnalysisStack);
     // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
@@ -675,7 +681,7 @@ export const convertColors = function(inputData, inputMetaData) {
   for (let i = 0; i < colorKeys.length; i++) {
     let currentColorName = colorKeys[i];
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentColorName is: ' + currentColorName);
-    let currentColorObject = D[s.cColors][s.cColorData][currentColorName];
+    let currentColorObject = D[w.cColors][s.cColorData][currentColorName];
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentColorObject is: ' + JSON.stringify(currentColorObject));
     let currentColorHexValue = currentColorObject[s.cHexValue];
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentColorHexValue is: ' + currentColorHexValue);

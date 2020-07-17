@@ -8,6 +8,7 @@
  * @requires module:queue
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -20,6 +21,7 @@ import commandBroker from '../CommandsBlob/commandBroker';
 import queue from '../Resources/queue';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -59,8 +61,8 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
     D[s.cCommandsAliases] = {};
     D[s.cCommandsAliases] = allCommandAliasesData[s.cCommandsAliases];
   } else {
-    for (let i=0; i<allCommandAliasesData[s.cCommandsAliases][s.cCommand].length; i++) {
-      D[s.cCommandsAliases][s.cCommand].push(allCommandAliasesData[s.cCommandsAliases][s.cCommand][i])
+    for (let i=0; i<allCommandAliasesData[s.cCommandsAliases][w.cCommand].length; i++) {
+      D[s.cCommandsAliases][w.cCommand].push(allCommandAliasesData[s.cCommandsAliases][w.cCommand][i])
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

@@ -5,6 +5,7 @@
  * @requires module:nominal
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -15,6 +16,7 @@
 import * as nominalCommands from './Commands/nominal';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -30,21 +32,21 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 export const initCommandsLibrary = function() {
   let functionName = initCommandsLibrary.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  D[s.cCommands] = {};
-  D[s.cCommands] = {
+  D[w.cCommands] = {};
+  D[w.cCommands] = {
     // Commands
     // ********************************
     // Nominal commands in order
     // ********************************
     [s.cechoCommand]: (inputData, inputMetaData) => nominalCommands.echoCommand(inputData, inputMetaData),
-    [s.cexit]: (inputData, inputMetaData) => nominalCommands.exit(inputData, inputMetaData),
-    [s.cversion]: (inputData, inputMetaData) => nominalCommands.version(inputData, inputMetaData),
-    [s.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
-    [s.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData),
-    [s.chelp]: (inputData, inputMetaData) => nominalCommands.help(inputData, inputMetaData),
+    [w.cexit]: (inputData, inputMetaData) => nominalCommands.exit(inputData, inputMetaData),
+    [w.cversion]: (inputData, inputMetaData) => nominalCommands.version(inputData, inputMetaData),
+    [w.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
+    [w.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData),
+    [w.chelp]: (inputData, inputMetaData) => nominalCommands.help(inputData, inputMetaData),
     [s.cworkflowHelp]: (inputData, inputMetaData) => nominalCommands.workflowHelp(inputData, inputMetaData),
     [s.ccommandSequencer]: (inputData, inputMetaData) => nominalCommands.commandSequencer(inputData, inputMetaData),
-    [s.cworkflow]: (inputData, inputMetaData) => nominalCommands.workflow(inputData, inputMetaData),
+    [w.cworkflow]: (inputData, inputMetaData) => nominalCommands.workflow(inputData, inputMetaData),
     [s.cprintDataHive]: (inputData, inputMetaData) => nominalCommands.printDataHive(inputData, inputMetaData),
     [s.cbusinessRule]: (inputData, inputMetaData) => nominalCommands.businessRule(inputData, inputMetaData),
     [s.ccommandGenerator]: (inputData, inputMetaData) => nominalCommands.commandGenerator(inputData, inputMetaData),

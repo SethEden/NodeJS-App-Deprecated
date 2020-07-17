@@ -8,8 +8,9 @@
  * @requires module:configurator
  * @requires module:colorizer
  * @requires module:ruleBroker
- * @requires module:system-constants
  * @requires module:basic-constants
+ * @requires module:word-constants
+ * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires module:data
  * @author Seth Hollingsead
@@ -19,8 +20,9 @@
 import configurator from './configurator';
 import colorizer from './colorizer';
 import ruleBroker from '../BusinessRules/ruleBroker';
-import * as s from '../Constants/system.constants';
 import * as b from '../Constants/basic.constants';
+import * as w from '../Constants/word.constants';
+import * as s from '../Constants/system.constants';
 var fs = require('fs');
 var D = require('../Resources/data');
 
@@ -199,57 +201,81 @@ function validMessage(outputMessage, originalMessage) {
  * @date 2020/03/26
  */
 function parseClassPath(logFile, classPath, message) {
+  // console.log('BEGIN loggers.parseClassPath function');
+  // console.log('logFile is: ' + logFile);
+  // console.log('classPath is: ' + classPath);
+  // console.log('message is: ' + message);
   let className = '';
   let functionName = '';
   let debugFunctionsSetting = false;
   let debugFilesSetting = false;
   let classPathArray = {};
+  let returnData = '';
 
   classPathArray = classPath.split(b.cDot);
   // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
   // printMessageToFile(logFile, 'classPathArray.length is: ' + Object.keys(classPathArray).length);
+  // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
+  // console.log('classPathArray.length is: ' + Object.keys(classPathArray).length);
   if (Object.keys(classPathArray).length > 3) {
     // printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
+    // console.log('ERROR: Advanced debugging capability more than 3 not supported at all!');
   } else if (Object.keys(classPathArray).length === 3 ) {
     className = classPathArray[0] + b.cDot + classPathArray[1];
 
     // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
     // printMessageToFile(logFile, 'className is: ' + className);
+    // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
+    // console.log('className is: ' + className);
     functionName = classPathArray[2];
     // printMessageToFile(logFile, 'functionName is: ' + functionName);
+    // console.log('functionName is: ' + functionName);
   } else if (Object.keys(classPathArray).length === 2) {
     className = classPathArray[0];
     // printMessageToFile(logFile, 'className is: ' + className);
+    // console.log('className is: ' + className);
     functionName = classPathArray[1];
     // printMessageToFile(logFile, 'functionName is: ' + functionName);
+    // console.log('functionName is: ' + functionName);
   } else if (Object.keys(classPathArray).length === 1) {
     className = classPathArray[0];
     // printMessageToFile(logFile, 'className is: ' + className);
+    // console.log('className is: ' + className);
   } else {
     // printMessageToFile(logFile, 'ERROR: No class data, just print the message as is.');
+    // console.log('ERROR: No class data, just print the message as is.');
   }
   // printMessageToFile(logFile, 'getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
+  // console.log('getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
   debugFunctionsSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
   // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
+  // console.log('configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
   debugFilesSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className);
   // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
+  // console.log('configuration setting debugFilesSetting is: ' + debugFilesSetting);
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
     // message = chalk.white(message);
     // className = chalk.red.bold(className);
     // functionName = chalk.red.bold(functionName);
     // // message = message.replace('%%', className + b.cDot + functionName);
     // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    // console.log('both true, call colorizer.colorizeMessage with the false flag');
     message = colorizer.colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
-    return message;
+    returnData = message;
   } else if ((debugFunctionsSetting === undefined && debugFilesSetting === undefined) ||
   (debugFunctionsSetting === undefined && debugFilesSetting === false) ||
   (debugFunctionsSetting === false && debugFilesSetting === undefined) ||
   (debugFunctionsSetting === false && debugFilesSetting === false)) {
-    return false;
+    // console.log('Something is undefined && false or some combination of both, return false');
+    returnData = false;
   } else {
+    // console.log('something is true, call the colorizer.colorizeMessage with true flag');
     message = colorizer.colorizeMessage(message, className, functionName, undefined, undefined, true);
-    return message;
+    returnData = message;
   }
+  // console.log('returnData is: ' + returnData);
+  // console.log('END loggers.parseClassPath function');
+  return returnData;
 };
 
 /**
@@ -267,7 +293,7 @@ function printMessageToFile(file, message) {
   console.log(message);
   let fd;
   let currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
-  if (currentOS === s.cWindows || currentOS === s.cLinux) {
+  if (currentOS === w.cWindows || currentOS === w.cLinux) {
     if (configurator.getConfigurationSetting(s.cLogFileEnabled) === true) {
       try {
         fd = fs.openSync(file, 'a');

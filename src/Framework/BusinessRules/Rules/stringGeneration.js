@@ -103,6 +103,7 @@
  * @requires module:characterGeneration
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -114,6 +115,7 @@ import { stringToBoolean } from './stringParsing';
 import * as cg from './characterGeneration';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -872,10 +874,10 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
       }
       returnData = generateRandomValidEmail1(inputData, generateSpecialCharacters, allowableSpecialCharacters);
     } else {
-      returnData = generateRandomValidEmail1(inputData, b.cFalse, s.cEmpty);
+      returnData = generateRandomValidEmail1(inputData, b.cFalse, w.cEmpty);
     }
   } else {
-    returnData = generateRandomValidEmail1(inputData, b.cFalse, s.cEmpty);
+    returnData = generateRandomValidEmail1(inputData, b.cFalse, w.cEmpty);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -930,10 +932,10 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
       }
       returnData = generateRandomValidEmail2(inputData, generateSpecialCharacters, allowableSpecialCharacters)
     } else {
-      returnData = generateRandomValidEmail2(inputData, b.cFalse, s.cEmpty);
+      returnData = generateRandomValidEmail2(inputData, b.cFalse, w.cEmpty);
     }
   } else {
-    returnData = generateRandomValidEmail2(inputData, b.cFalse, s.cEmpty);
+    returnData = generateRandomValidEmail2(inputData, b.cFalse, w.cEmpty);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

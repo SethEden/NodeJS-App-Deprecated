@@ -7,6 +7,7 @@
  * @requires module:chiefData
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -17,6 +18,7 @@
 import chiefData from '../Controllers/chiefData';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -41,8 +43,8 @@ function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) 
     D[s.cCommandWorkflows] = {};
     D[s.cCommandWorkflows] = allCommandWorkflowsData[s.cCommandWorkflows];
   } else {
-    for (let i=0; i<allCommandWorkflowsData[s.cCommandWorkflows][s.cWorkflow].length; i++) {
-      D[s.cCommandWorkflows][s.cWorkflow].push(allCommandWorkflowsData[s.cCommandWorkflows][s.cWorkflow][i])
+    for (let i=0; i<allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow].length; i++) {
+      D[s.cCommandWorkflows][w.cWorkflow].push(allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow][i])
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

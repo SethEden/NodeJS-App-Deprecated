@@ -3,6 +3,7 @@
  * @module configurator
  * @description Contains the functions necessary to set and get configuration settings from the shared data structure.
  * @requires module:loggers
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -13,6 +14,7 @@
  * Because having these functions in the chiefConfiguration can cause a circular dependency.
  */
 import loggers from './loggers';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -38,7 +40,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
-  D[s.cConfiguration][configurationName] = configurationValue;
+  D[w.cConfiguration][configurationName] = configurationValue;
   // console.log('END configurator.setConfigurationSetting function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
@@ -58,9 +60,9 @@ function getConfigurationSetting(configurationName) {
   // let functionName = getConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
-  if (D[s.cConfiguration] !== undefined) {
-    if (D[s.cConfiguration][configurationName] !== undefined) {
-      returnConfigurationValue = D[s.cConfiguration][configurationName];
+  if (D[w.cConfiguration] !== undefined) {
+    if (D[w.cConfiguration][configurationName] !== undefined) {
+      returnConfigurationValue = D[w.cConfiguration][configurationName];
     } else {
       returnConfigurationValue = undefined;
     }

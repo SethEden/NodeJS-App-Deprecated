@@ -6,6 +6,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -17,6 +18,7 @@ import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from './loggers';
 import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -151,8 +153,8 @@ function analyzeForRegularExpression(argumentValue) {
   let returnData = false;
   let argsArrayContainsCharacterRule = [];
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
-  let argsArrayContainsRegEx1 = ruleBroker.processRules(s.cregEx, argumentValue, argsArrayContainsCharacterRule);
-  let argsArrayContainsRegEx2 = ruleBroker.processRules(s.cRegEx, argumentValue, argsArrayContainsCharacterRule);
+  let argsArrayContainsRegEx1 = ruleBroker.processRules(w.cregEx, argumentValue, argsArrayContainsCharacterRule);
+  let argsArrayContainsRegEx2 = ruleBroker.processRules(w.cRegEx, argumentValue, argsArrayContainsCharacterRule);
   let argsArrayContainsColon = ruleBroker.processRules(b.cColon, argumentValue, argsArrayContainsCharacterRule);
   if ((argsArrayContainsRegEx1 === true || argsArrayContainsRegEx2 === true) && argsArrayContainsColon === true) {
     returnData = true;
@@ -178,12 +180,12 @@ function parseArgumentAsRegularExpression(argumentValue) {
   let regExValue, regExFlags;
   let regExArray = argumentValue.split(b.cColon);
   for (let k = 0; k < regExArray.length; k++) {
-    if (regExArray[k] === s.cregEx || regExArray[k] === s.cRegEx) {
+    if (regExArray[k] === w.cregEx || regExArray[k] === w.cRegEx) {
       k++;
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression is: ' + regExArray[k]);
       regExValue = regExArray[k];
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'regExValue is: ' + regExValue);
-    } else if (regExArray[k] === s.cflags || regExArray[k] === s.cFlags) {
+    } else if (regExArray[k] === w.cflags || regExArray[k] === w.cFlags) {
       k++;
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'regular expression flags are: ' + regExArray[k]);
       regExFlags = regExArray[k];

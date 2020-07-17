@@ -6,6 +6,7 @@
  * setting the workflow data and getting the workflow data.
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -15,6 +16,7 @@
  */
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -35,12 +37,12 @@ function getWorkflow(workflowName) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'workflowName is: ' + workflowName);
   let workflowValue = false;
-  let arrayOfWorkflows = D[s.cCommandWorkflows][s.cWorkflow];
+  let arrayOfWorkflows = D[s.cCommandWorkflows][w.cWorkflow];
   for (let i = 0; i < arrayOfWorkflows.length; i++) {
     let currentWorkflow = arrayOfWorkflows[i];
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentWorkflow is: ' + JSON.stringify(currentWorkflow));
-    if (currentWorkflow[s.cName] === workflowName) {
-      workflowValue = currentWorkflow[s.cValue];
+    if (currentWorkflow[w.cName] === workflowName) {
+      workflowValue = currentWorkflow[w.cValue];
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'workflowValue is: ' + JSON.stringify(workflowValue));
       break;
     }

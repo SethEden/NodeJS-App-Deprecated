@@ -10,6 +10,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -22,6 +23,7 @@ import configurator from '../../Executrix/configurator';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
 const _ = require('lodash');
 var path = require('path');
@@ -90,16 +92,16 @@ export const stringToDataType = function(inputData, inputMetaData) {
   let returnData;
   let dataType = determineObjectDataType(inputData);
   switch (dataType) {
-    case s.cBoolean:
+    case w.cBoolean:
       returnData = stringToBoolean(inputData);
       break;
-    case s.cInteger:
+    case w.cInteger:
       returnData = parseInt(inputData);
       break;
-    case s.cFloat:
+    case w.cFloat:
       returnData = parseFloat(inputData);
       break;
-    case s.cString:
+    case w.cString:
       returnData = inputData;
       break;
     default: // We don't know what kind of object this is, better return it the way it was.
@@ -130,18 +132,18 @@ export const determineObjectDataType = function(inputData, inputMetaData) {
   }
   let returnData;
   if (isBoolean(inputData) === true) {
-    returnData = s.cBoolean;
+    returnData = w.cBoolean;
   } else if (isInteger(inputData) === true) {
-    returnData = s.cInteger;
+    returnData = w.cInteger;
   } else if (isFloat(inputData) === true) {
-    returnData = s.cFloat;
+    returnData = w.cFloat;
   } else if (isString(inputData) === true) {
-    returnData = s.cString;
+    returnData = w.cString;
   } else { // Otherwise we cannot figure out what the data type is.
     // No real way to tell the difference between Short, Long and Double.
     // And we don't really need to tell the difference between all those complicated data types.
     // At least not yet!
-    returnData = s.cObject;
+    returnData = w.cObject;
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

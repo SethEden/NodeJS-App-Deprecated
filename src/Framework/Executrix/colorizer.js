@@ -4,8 +4,10 @@
  * @description Contains all of the functions needed to manage, parse and control font styles and font colors.
  * @requires module:configurator
  * @requires module:ruleBroker
- * @requires module:system-constants
  * @requires module:basic-constants
+ * @requires module:word-constants
+ * @requires module:color-constants
+ * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
@@ -14,8 +16,10 @@
  */
 import configurator from './configurator';
 import ruleBroker from '../BusinessRules/ruleBroker';
-import * as s from '../Constants/system.constants';
 import * as b from '../Constants/basic.constants';
+import * as w from '../Constants/word.constants';
+import * as colr from '../Constants/color.constants';
+import * as s from '../Constants/system.constants';
 var chalk = require('chalk');
 var D = require('../Resources/data');
 
@@ -50,31 +54,31 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
   let messageContentSuffix;
   let messageData;
   let processingMessageData = false;
-  let debugFilesModuleFontStyleSetting = s.cDefault;
-  let debugFilesFunctionFontStyleSetting = s.cDefault;
-  let debugFilesMessageFontStyleSetting = s.cDefault;
-  let debugFilesDataFontStyleSetting = s.cDefault;
-  let debugFilesModuleFontColorSetting = s.cDefault;
-  let debugFilesFunctionFontColorSetting = s.cDefault;
-  let debugFilesMessageFontColorSetting = s.cDefault;
-  let debugFilesDataFontColorSetting = s.cDefault;
-  let debugFilesModuleFontBackgroundColorSetting = s.cDefault;
-  let debugFilesFunctionFontBackgroundColorSetting = s.cDefault;
-  let debugFilesMessageFontBackgroundColorSetting = s.cDefault;
-  let debugFilesDataFontBackgroundColorSetting = s.cDefault;
+  let debugFilesModuleFontStyleSetting = w.cDefault;
+  let debugFilesFunctionFontStyleSetting = w.cDefault;
+  let debugFilesMessageFontStyleSetting = w.cDefault;
+  let debugFilesDataFontStyleSetting = w.cDefault;
+  let debugFilesModuleFontColorSetting = w.cDefault;
+  let debugFilesFunctionFontColorSetting = w.cDefault;
+  let debugFilesMessageFontColorSetting = w.cDefault;
+  let debugFilesDataFontColorSetting = w.cDefault;
+  let debugFilesModuleFontBackgroundColorSetting = w.cDefault;
+  let debugFilesFunctionFontBackgroundColorSetting = w.cDefault;
+  let debugFilesMessageFontBackgroundColorSetting = w.cDefault;
+  let debugFilesDataFontBackgroundColorSetting = w.cDefault;
 
-  let debugFunctionsModuleFontStyleSetting = s.cDefault;
-  let debugFunctionsFunctionFontStyleSetting = s.cDefault;
-  let debugFunctionsMessageFontStyleSetting = s.cDefault;
-  let debugFunctionsDataFontStyleSetting = s.cDefault;
-  let debugFunctionsModuleFontColorSetting = s.cDefault;
-  let debugFunctionsFunctionFontColorSetting = s.cDefault;
-  let debugFunctionsMessageFontColorSetting = s.cDefault;
-  let debugFunctionsDataFontColorSetting = s.cDefault;
-  let debugFunctionsModuleFontBackgroundColorSetting = s.cDefault;
-  let debugFunctionsFunctionFontBackgroundColorSetting = s.cDefault;
-  let debugFunctionsMessageFontBackgroundColorSetting = s.cDefault;
-  let debugFunctionsDataFontBackgroundColorSetting = s.cDefault;
+  let debugFunctionsModuleFontStyleSetting = w.cDefault;
+  let debugFunctionsFunctionFontStyleSetting = w.cDefault;
+  let debugFunctionsMessageFontStyleSetting = w.cDefault;
+  let debugFunctionsDataFontStyleSetting = w.cDefault;
+  let debugFunctionsModuleFontColorSetting = w.cDefault;
+  let debugFunctionsFunctionFontColorSetting = w.cDefault;
+  let debugFunctionsMessageFontColorSetting = w.cDefault;
+  let debugFunctionsDataFontColorSetting = w.cDefault;
+  let debugFunctionsModuleFontBackgroundColorSetting = w.cDefault;
+  let debugFunctionsFunctionFontBackgroundColorSetting = w.cDefault;
+  let debugFunctionsMessageFontBackgroundColorSetting = w.cDefault;
+  let debugFunctionsDataFontBackgroundColorSetting = w.cDefault;
 
   // We need a 3rd set of variables because we will need to aggregate these settings together to determine which ones are in effect.
   // One way is to aggregate each setting individually and let which ever one is defined be in effect.
@@ -303,14 +307,14 @@ function aggregateStyleSetting(settingValue1, settingValue2, processAsFontSettin
   // console.log('settingValue2 is: ' + settingValue2);
   // console.log('processAsFontSetting is: ' + processAsFontSetting);
   let styles = [];
-  if ((settingValue1 !== s.cDefault || settingValue2 !== s.cDefault) && (settingValue1 !== undefined || settingValue2 !== undefined)) {
-    if ((settingValue1 !== s.cDefault && settingValue2 === s.cDefault) || (settingValue1 !== undefined && settingValue2 === undefined)) {
+  if ((settingValue1 !== w.cDefault || settingValue2 !== w.cDefault) && (settingValue1 !== undefined || settingValue2 !== undefined)) {
+    if ((settingValue1 !== w.cDefault && settingValue2 === w.cDefault) || (settingValue1 !== undefined && settingValue2 === undefined)) {
       if (processAsFontSetting === true) {
         styles = getFontStyleSettingsFromSetting(settingValue1);
       } else {
         styles = getColorStyleSettingFromSetting(settingValue1);
       }
-    } else if ((settingValue1 === s.cDefault && settingValue2 !== s.cDefault) || (settingValue1 === undefined && settingValue2 !== undefined)) {
+    } else if ((settingValue1 === w.cDefault && settingValue2 !== w.cDefault) || (settingValue1 === undefined && settingValue2 !== undefined)) {
       if (processAsFontSetting === true) {
         styles = getFontStyleSettingsFromSetting(settingValue2);
       } else {
@@ -348,25 +352,25 @@ function getFontStyleSettingsFromSetting(settingValue) {
       // console.log('aggregateUnderlineBoldArray is: ' + JSON.stringify(aggregateUnderlineBoldArray));
       // console.log('aggregateUnderlineBoldArray[0] is: ' + aggregateUnderlineBoldArray[0]);
       // console.log('aggregateUnderlineBoldArray[1] is: ' + aggregateUnderlineBoldArray[1]);
-      if (aggregateUnderlineBoldArray[0] === s.cUnderline && aggregateUnderlineBoldArray[1] === s.cBold) {
+      if (aggregateUnderlineBoldArray[0] === w.cUnderline && aggregateUnderlineBoldArray[1] === w.cBold) {
         // aggregateModuleFontStyleUnderline = true;
         // aggregateModuleFontStyleBold = true
         fontStyles[true, true];
-      } else if (aggregateUnderlineBoldArray[0] === s.cBold && aggregateUnderlineBoldArray[1] === s.cUnderline) {
+      } else if (aggregateUnderlineBoldArray[0] === w.cBold && aggregateUnderlineBoldArray[1] === w.cUnderline) {
         // aggregateModuleFontStyleUnderline = true;
         // aggregateModuleFontStyleBold = true
         fontStyles[true, true];
-      } else if (aggregateUnderlineBoldArray[0] === s.cUnderline && aggregateUnderlineBoldArray[1] !== s.cBold) {
+      } else if (aggregateUnderlineBoldArray[0] === w.cUnderline && aggregateUnderlineBoldArray[1] !== w.cBold) {
         // aggregateModuleFontStyleUnderline = true;
         fontStyles[true, false];
-      } else if (aggregateUnderlineBoldArray[0] === s.cBold && aggregateUnderlineBoldArray[1] !== s.cUnderline) {
+      } else if (aggregateUnderlineBoldArray[0] === w.cBold && aggregateUnderlineBoldArray[1] !== w.cUnderline) {
         // aggregateModuleFontStyleBold = true
         fontStyles[false, true];
       }
-    } else if (settingValue === s.cUnderline) {
+    } else if (settingValue === w.cUnderline) {
       // aggregateModuleFontStyleUnderline = true;
       fontStyles[true, false];
-    } else if (settingValue === s.cBold) {
+    } else if (settingValue === w.cBold) {
       // aggregateModuleFontStyleBold = true
       fontStyles[false, true];
     }
@@ -392,10 +396,10 @@ function getColorStyleSettingFromSetting(settingValue) {
   if (settingValue !== undefined) {
     if (settingValue.includes(b.cComa) === true) {
       aggregateColorArray = settingValue.split(b.cComa);
-      colorStyle[s.cRed] = aggregateColorArray[0];
-      colorStyle[s.cGreen] = aggregateColorArray[1];
-      colorStyle[s.cBlue] = aggregateColorArray[2];
-    } else if (settingValue === s.cDefault) {
+      colorStyle[colr.cRed] = aggregateColorArray[0];
+      colorStyle[colr.cGreen] = aggregateColorArray[1];
+      colorStyle[colr.cBlue] = aggregateColorArray[2];
+    } else if (settingValue === w.cDefault) {
       colorStyle = false; // Do not apply any color settings of any kind!
     } else { // It must be a named color.
       colorStyle = getNamedColorData(settingValue);
@@ -421,12 +425,12 @@ function getNamedColorData(colorName) {
   // console.log('BEGIN colorizer.getNamedColorData function');
   // console.log('colorName is: ' + colorName);
   let returnColorData = {Red: 0, Green: 0, Blue: 0};
-  if (D[s.cColors] !== undefined) {
-    if (D[s.cColors][s.cColorData] !== undefined) {
-      if (D[s.cColors][s.cColorData][colorName] !== undefined) {
-        returnColorData[s.cRed] = D[s.cColors][s.cColorData][colorName][s.cRed];
-        returnColorData[s.cGreen] = D[s.cColors][s.cColorData][colorName][s.cGreen];
-        returnColorData[s.cBlue] = D[s.cColors][s.cColorData][colorName][s.cBlue];
+  if (D[w.cColors] !== undefined) {
+    if (D[w.cColors][s.cColorData] !== undefined) {
+      if (D[w.cColors][s.cColorData][colorName] !== undefined) {
+        returnColorData[colr.cRed] = D[w.cColors][s.cColorData][colorName][colr.cRed];
+        returnColorData[colr.cGreen] = D[w.cColors][s.cColorData][colorName][colr.cGreen];
+        returnColorData[colr.cBlue] = D[w.cColors][s.cColorData][colorName][colr.cBlue];
       } else {
         returnColorData = {Red: 0, Green: 0, Blue: 0};
       }
@@ -500,12 +504,14 @@ function setFontForgroundColorOnMessageComponentAccordingToSetting(messageCompon
   // console.log('messageComponent is: ' + messageComponent);
   // console.log('colorSettingValue is: ' + JSON.stringify(colorSettingValue));
   let returnMessageComponent = messageComponent;
-  if (colorSettingValue !== false) {
-    // console.log('Red color setting value is: ' + colorSettingValue[s.cRed]);
-    // console.log('Green color setting value is: ' + colorSettingValue[s.cGreen]);
-    // console.log('Blue color setting value is: ' + colorSettingValue[s.cBlue]);
+  if (colorSettingValue !== false && colorSettingValue !== undefined) {
+    // console.log('Red color setting value is: ' + colorSettingValue[colr.cRed]);
+    // console.log('Green color setting value is: ' + colorSettingValue[colr.cGreen]);
+    // console.log('Blue color setting value is: ' + colorSettingValue[colr.cBlue]);
     // console.log('Before using chalk, returnMessageComponent is: ' + returnMessageComponent);
-    returnMessageComponent = chalk.rgb(colorSettingValue[s.cRed], colorSettingValue[s.cGreen], colorSettingValue[s.cBlue])(returnMessageComponent);
+    if (colorSettingValue[colr.cRed] !== undefined && colorSettingValue[colr.cGreen] !== undefined && colorSettingValue[colr.cBlue] !== undefined) {
+      returnMessageComponent = chalk.rgb(colorSettingValue[colr.cRed], colorSettingValue[colr.cGreen], colorSettingValue[colr.cBlue])(returnMessageComponent);
+    }
     // console.log('After using chalk, returnMessageComponent is: ' + returnMessageComponent);
   }
   // console.log('returnMessageComponent is: ' + returnMessageComponent);
@@ -528,12 +534,14 @@ function setFontBackgroundColorOnMessageComponentAccordingToSetting(messageCompo
   // console.log('messageComponent is: ' + messageComponent);
   // console.log('colorSettingValue is: ' + JSON.stringify(colorSettingValue));
   let returnMessageComponent = messageComponent;
-  if (colorSettingValue !== false) {
-    // console.log('Red color setting value is: ' + colorSettingValue[s.cRed]);
-    // console.log('Green color setting value is: ' + colorSettingValue[s.cGreen]);
-    // console.log('Blue color setting value is: ' + colorSettingValue[s.cBlue]);
+  if (colorSettingValue !== false && colorSettingValue !== undefined) {
+    // console.log('Red color setting value is: ' + colorSettingValue[colr.cRed]);
+    // console.log('Green color setting value is: ' + colorSettingValue[colr.cGreen]);
+    // console.log('Blue color setting value is: ' + colorSettingValue[colr.cBlue]);
     // console.log('Before using chalk, returnMessageComponent is: ' + returnMessageComponent);
-    returnMessageComponent = chalk.bgRgb(colorSettingValue[s.cRed], colorSettingValue[s.cGreen], colorSettingValue[s.cBlue])(returnMessageComponent);
+    if (colorSettingValue[colr.cRed] !== undefined && colorSettingValue[colr.cGreen] !== undefined && colorSettingValue[colr.cBlue] !== undefined) {
+      returnMessageComponent = chalk.bgRgb(colorSettingValue[colr.cRed], colorSettingValue[colr.cGreen], colorSettingValue[colr.cBlue])(returnMessageComponent);
+    }
     // console.log('After using chalk, returnMessageComponent is: ' + returnMessageComponent);
   }
   // console.log('returnMessageComponent is: ' + returnMessageComponent);
