@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/SethEden/NodeJS-App/compare/v1.0.1...v1.1.0) (2020-07-17)
+
+
+### Features
+
+* Update the constants system architecture to be much more scalable, and debug the whole system. ([0b13660](https://github.com/SethEden/NodeJS-App/commit/0b13660ce31a0fd811e943ec56cc72781cefec8b))
+
 ### [1.0.1](https://github.com/SethEden/NodeJS-App/compare/v0.8.4...v1.0.1) (2020-07-02)
 
 ### [0.8.4](https://github.com/SethEden/NodeJS-App/compare/v0.8.3...v0.8.4) (2020-07-02)
