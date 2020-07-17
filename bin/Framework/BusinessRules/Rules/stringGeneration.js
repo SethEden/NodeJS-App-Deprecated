@@ -17,6 +17,8 @@ var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -130,6 +132,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:characterGeneration
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -1208,10 +1211,10 @@ var generateValidEmail1 = function generateValidEmail1(inputData, inputMetaData)
 
       returnData = generateRandomValidEmail1(inputData, generateSpecialCharacters, allowableSpecialCharacters);
     } else {
-      returnData = generateRandomValidEmail1(inputData, b.cFalse, s.cEmpty);
+      returnData = generateRandomValidEmail1(inputData, b.cFalse, w.cEmpty);
     }
   } else {
-    returnData = generateRandomValidEmail1(inputData, b.cFalse, s.cEmpty);
+    returnData = generateRandomValidEmail1(inputData, b.cFalse, w.cEmpty);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1278,10 +1281,10 @@ var generateValidEmail2 = function generateValidEmail2(inputData, inputMetaData)
 
       returnData = generateRandomValidEmail2(inputData, generateSpecialCharacters, allowableSpecialCharacters);
     } else {
-      returnData = generateRandomValidEmail2(inputData, b.cFalse, s.cEmpty);
+      returnData = generateRandomValidEmail2(inputData, b.cFalse, w.cEmpty);
     }
   } else {
-    returnData = generateRandomValidEmail2(inputData, b.cFalse, s.cEmpty);
+    returnData = generateRandomValidEmail2(inputData, b.cFalse, w.cEmpty);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

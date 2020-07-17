@@ -29,6 +29,8 @@ var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -52,6 +54,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -119,7 +122,7 @@ var echoCommand = function echoCommand(inputData, inputMetaData) {
 exports.echoCommand = echoCommand;
 
 var exit = function exit(inputData, inputMetaData) {
-  var functionName = s.cexit;
+  var functionName = w.cexit;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -150,7 +153,7 @@ var exit = function exit(inputData, inputMetaData) {
 exports.exit = exit;
 
 var version = function version(inputData, inputMetaData) {
-  var functionName = s.cversion;
+  var functionName = w.cversion;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -182,7 +185,7 @@ var version = function version(inputData, inputMetaData) {
 exports.version = version;
 
 var about = function about(inputData, inputMetaData) {
-  var functionName = s.cabout;
+  var functionName = w.cabout;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -217,7 +220,7 @@ var about = function about(inputData, inputMetaData) {
 exports.about = about;
 
 var name = function name(inputData, inputMetaData) {
-  var functionName = s.cname;
+  var functionName = w.cname;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -268,7 +271,7 @@ var name = function name(inputData, inputMetaData) {
 exports.name = name;
 
 var help = function help(inputData, inputMetaData) {
-  var functionName = s.chelp;
+  var functionName = w.chelp;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -278,7 +281,7 @@ var help = function help(inputData, inputMetaData) {
 
   var returnData = true;
 
-  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][s.cCommand], [s.cName, s.cDescription]);
+  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][w.cCommand], [w.cName, w.cDescription]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -312,7 +315,7 @@ var workflowHelp = function workflowHelp(inputData, inputMetaData) {
 
   var returnData = true;
 
-  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][s.cWorkflow], [s.cName]);
+  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][w.cWorkflow], [w.cName]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -352,17 +355,20 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
   var returnData = true;
 
   for (var i = 1; i < inputData.length; i++) {
-    var commandString = inputData[i];
+    var commandString = inputData[i]; // b.cli + b.cmi + b.ct;
 
-    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
+    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter); // console.log('primaryCommandDelimiter is: ' + primaryCommandDelimiter);
+
 
     if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
       primaryCommandDelimiter = b.cSpace;
     }
 
-    var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
+    var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter); // console.log('secondaryCommandDelimiter is: ' + secondaryCommandArgsDelimiter);
 
-    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter); // Replace 2nd & 3rd level delimiters and down-increment them so we are dealing with command strings that can actually be executed.
+
+    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter); // console.log('tertiaryCommandDelimiter is: ' + tertiaryCommandDelimiter);
+    // Replace 2nd & 3rd level delimiters and down-increment them so we are dealing with command strings that can actually be executed.
 
 
     commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
@@ -410,7 +416,7 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
 exports.commandSequencer = commandSequencer;
 
 var workflow = function workflow(inputData, inputMetaData) {
-  var functionName = s.cworkflow;
+  var functionName = w.cworkflow;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -779,7 +785,7 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
 
 
       for (var _j = 0; _j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); _j++) {
-        if (D[s.cBusinessRulePerformanceTrackingStack][_j][s.cName] === currentBusinessRuleName) {
+        if (D[s.cBusinessRulePerformanceTrackingStack][_j][w.cName] === currentBusinessRuleName) {
           businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[s.cBusinessRulePerformanceTrackingStack][_j][s.cRunTime] - average, 2);
 
           _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
@@ -803,7 +809,7 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
       });
     }
 
-    _loggers["default"].consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+    _loggers["default"].consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [w.cName, w.cAverage, s.cStandardDeviation]);
 
     _stack["default"].clearStack(s.cBusinessRulesPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
@@ -866,7 +872,7 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
       var currentCommandName = D[s.cCommandNamesPerformanceTrackingStack][i];
 
       for (var j = 0; j < _stack["default"].length(s.cCommandPerformanceTrackingStack); j++) {
-        if (D[s.cCommandPerformanceTrackingStack][j][s.cName] === currentCommandName) {
+        if (D[s.cCommandPerformanceTrackingStack][j][w.cName] === currentCommandName) {
           commandCounter = commandCounter + 1;
 
           _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandCounter is: ' + commandCounter);
@@ -885,7 +891,7 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
 
 
       for (var _j2 = 0; _j2 < _stack["default"].length(s.cCommandPerformanceTrackingStack); _j2++) {
-        if (D[s.cCommandPerformanceTrackingStack][_j2][s.cName] === currentCommandName) {
+        if (D[s.cCommandPerformanceTrackingStack][_j2][w.cName] === currentCommandName) {
           commandPerformanceStdSum = commandPerformanceStdSum + math.pow(D[s.cCommandPerformanceTrackingStack][_j2][s.cRunTime] - average, 2);
 
           _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandPerformanceStdSum is: ' + commandPerformanceStdSum);
@@ -909,7 +915,7 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
       });
     }
 
-    _loggers["default"].consoleTableLog('', D[s.cCommandsPerformanceAnalysisStack], [s.cName, s.cAverage, s.cStandardDeviation]);
+    _loggers["default"].consoleTableLog('', D[s.cCommandsPerformanceAnalysisStack], [w.cName, w.cAverage, s.cStandardDeviation]);
 
     _stack["default"].clearStack(s.cCommandsPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
@@ -964,7 +970,7 @@ var convertColors = function convertColors(inputData, inputMetaData) {
 
     _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorName is: ' + currentColorName);
 
-    var currentColorObject = D[s.cColors][s.cColorData][currentColorName];
+    var currentColorObject = D[w.cColors][s.cColorData][currentColorName];
 
     _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorObject is: ' + JSON.stringify(currentColorObject));
 

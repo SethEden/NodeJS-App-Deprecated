@@ -17,6 +17,8 @@ var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -33,6 +35,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -219,9 +222,9 @@ function analyzeForRegularExpression(argumentValue) {
   var argsArrayContainsCharacterRule = [];
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
 
-  var argsArrayContainsRegEx1 = _ruleBroker["default"].processRules(s.cregEx, argumentValue, argsArrayContainsCharacterRule);
+  var argsArrayContainsRegEx1 = _ruleBroker["default"].processRules(w.cregEx, argumentValue, argsArrayContainsCharacterRule);
 
-  var argsArrayContainsRegEx2 = _ruleBroker["default"].processRules(s.cRegEx, argumentValue, argsArrayContainsCharacterRule);
+  var argsArrayContainsRegEx2 = _ruleBroker["default"].processRules(w.cRegEx, argumentValue, argsArrayContainsCharacterRule);
 
   var argsArrayContainsColon = _ruleBroker["default"].processRules(b.cColon, argumentValue, argsArrayContainsCharacterRule);
 
@@ -258,7 +261,7 @@ function parseArgumentAsRegularExpression(argumentValue) {
   var regExArray = argumentValue.split(b.cColon);
 
   for (var k = 0; k < regExArray.length; k++) {
-    if (regExArray[k] === s.cregEx || regExArray[k] === s.cRegEx) {
+    if (regExArray[k] === w.cregEx || regExArray[k] === w.cRegEx) {
       k++;
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'regular expression is: ' + regExArray[k]);
@@ -266,7 +269,7 @@ function parseArgumentAsRegularExpression(argumentValue) {
       regExValue = regExArray[k];
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'regExValue is: ' + regExValue);
-    } else if (regExArray[k] === s.cflags || regExArray[k] === s.cFlags) {
+    } else if (regExArray[k] === w.cflags || regExArray[k] === w.cFlags) {
       k++;
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'regular expression flags are: ' + regExArray[k]);

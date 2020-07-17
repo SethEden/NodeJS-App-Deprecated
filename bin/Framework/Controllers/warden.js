@@ -216,26 +216,35 @@ function processRootPath(systemRootPath) {
  */
 
 function saveRootPath(rootPath) {
-  var functionName = saveRootPath.name;
+  // console.log('BEGIN warden.saveRootPath function');
+  // console.log('rootPath is: ' + rootPath);
+  var functionName = saveRootPath.name; // console.log('logging the BEGIN warden.saveRootPath function');
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // console.log('logging the current rootPath input.');
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'rootPath is: ' + rootPath);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'rootPath is: ' + rootPath); // console.log('setting the configuration setting for the root path');
+
 
   _configurator["default"].setConfigurationSetting(s.cApplicationRootPath, rootPath);
 
-  var cleanedRootPath;
-  cleanedRootPath = _fileBroker["default"].cleanRootPath(rootPath);
+  var cleanedRootPath; // console.log('calling file broker to clean the root path.');
 
-  _configurator["default"].setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
+  cleanedRootPath = _fileBroker["default"].cleanRootPath(rootPath); // console.log('set the cleaned root path as a configuration setting');
 
-  _configurator["default"].setConfigurationSetting(s.cApplicationName, process.env.npm_package_name);
+  _configurator["default"].setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath); // console.log('set the application name as a configuration setting');
 
-  _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
+
+  _configurator["default"].setConfigurationSetting(s.cApplicationName, process.env.npm_package_name); // console.log('set the application version number as a configuration setting');
+
+
+  _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version); // console.log('set the application description as a configuration setting');
+
 
   _configurator["default"].setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.saveRootPath function');
+
 }
 
 ;
@@ -277,6 +286,7 @@ function mergeClientBusinessRules(clientBusinessRules) {
  */
 
 function mergeClientCommands(clientCommands) {
+  // console.log('BEGIN warden.mergeClientCommands function');
   var functionName = mergeClientCommands.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
@@ -285,7 +295,8 @@ function mergeClientCommands(clientCommands) {
   _commandBroker["default"].addClientCommands(clientCommands); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.mergeClientCommands function');
+
 }
 
 ;
@@ -411,13 +422,16 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
  */
 
 function enqueueCommand(command) {
+  // console.log('BEGIN warden.enqueueCommand function');
+  // console.log('command is: ' + command);
   var functionName = enqueueCommand.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
   _chiefCommander["default"].enqueueCommand(command);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.enqueueCommand function');
+
 }
 
 ;

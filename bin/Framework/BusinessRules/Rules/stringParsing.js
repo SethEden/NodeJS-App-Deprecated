@@ -15,6 +15,8 @@ var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -35,6 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -157,19 +160,19 @@ var stringToDataType = function stringToDataType(inputData, inputMetaData) {
   var dataType = determineObjectDataType(inputData);
 
   switch (dataType) {
-    case s.cBoolean:
+    case w.cBoolean:
       returnData = stringToBoolean(inputData);
       break;
 
-    case s.cInteger:
+    case w.cInteger:
       returnData = parseInt(inputData);
       break;
 
-    case s.cFloat:
+    case w.cFloat:
       returnData = parseFloat(inputData);
       break;
 
-    case s.cString:
+    case w.cString:
       returnData = inputData;
       break;
 
@@ -214,19 +217,19 @@ var determineObjectDataType = function determineObjectDataType(inputData, inputM
   var returnData;
 
   if (isBoolean(inputData) === true) {
-    returnData = s.cBoolean;
+    returnData = w.cBoolean;
   } else if (isInteger(inputData) === true) {
-    returnData = s.cInteger;
+    returnData = w.cInteger;
   } else if (isFloat(inputData) === true) {
-    returnData = s.cFloat;
+    returnData = w.cFloat;
   } else if (isString(inputData) === true) {
-    returnData = s.cString;
+    returnData = w.cString;
   } else {
     // Otherwise we cannot figure out what the data type is.
     // No real way to tell the difference between Short, Long and Double.
     // And we don't really need to tell the difference between all those complicated data types.
     // At least not yet!
-    returnData = s.cObject;
+    returnData = w.cObject;
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

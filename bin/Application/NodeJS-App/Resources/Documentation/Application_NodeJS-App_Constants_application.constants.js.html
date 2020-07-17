@@ -33,6 +33,7 @@
  * So none of the constants in this file should be generic/system/framework constants.
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -40,41 +41,42 @@
  */
 import * as b from '../../../Framework/Constants/basic.constants';
 import * as g from '../../../Framework/Constants/generic.constants';
+import * as w from '../../../Framework/Constants/word.constants';
 import * as s from '../../../Framework/Constants/system.constants';
 
-export const cConfigurationFilename = s.cConfiguration;
+export const cConfigurationFilename = w.cConfiguration;
 export const cApplicationName = 'NodeJS-App';
 
 // Configuration Path
-export const cConfigurationDataLookupPrefixPath = b.cForwardSlash + s.cResources + b.cForwardSlash;
-export const cResourcesCommonPath = s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cResources + b.cForwardSlash;
+export const cConfigurationDataLookupPrefixPath = b.cForwardSlash + w.cResources + b.cForwardSlash;
+export const cResourcesCommonPath = w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cResources + b.cForwardSlash;
 
 // Source Resources Path
-export const cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash +  cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+export const cSourceResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash +  cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
 
 // Binary Resources Path
-export const cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
-export const cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
-export const cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash;
+export const cBinaryResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+export const cBinaryRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
+export const cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
 
 // Client Business Rules
-export const cclientEcho = s.cclient + s.cEcho;
+export const cclientEcho = w.cclient + s.cEcho;
 // ********************************
 // ClientStringParsing rules in order
 // ********************************
-export const ccustomEcho = s.ccustom + s.cEcho;
-export const cmostPopularNumber = s.cmost + s.cPopular + s.cNumber;
-export const cisAlmostPalindrome = b.cis + s.cAlmost + s.cPalindrom;
-export const cthreePointAverage = g.cthree + s.cPoint + s.cAverage;
-export const carrayCounter = s.carray + s.cCounter;
+export const ccustomEcho = w.ccustom + s.cEcho;
+export const cmostPopularNumber = w.cmost + w.cPopular + w.cNumber;
+export const cisAlmostPalindrome = w.cis + w.cAlmost + w.cPalindrom;
+export const cthreePointAverage = g.cthree + w.cPoint + w.cAverage;
+export const carrayCounter = w.carray + w.cCounter;
 
 // Client Commands
-export const cClientCommandAliasesActualPath = s.csrc + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cCommands + b.cForwardSlash;
-export const cClientWorkflowsActualPath = cSourceResourcesPath + s.cWorkflows + b.cForwardSlash;
+export const cClientCommandAliasesActualPath = w.csrc + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cCommands + b.cForwardSlash;
+export const cClientWorkflowsActualPath = cSourceResourcesPath + w.cWorkflows + b.cForwardSlash;
 // ********************************
 // Client Commands in order
 // ********************************
-export const ccustomEchoCommand = s.ccustom + s.cEcho + s.cCommand;
+export const ccustomEchoCommand = w.ccustom + s.cEcho + w.cCommand;
 </code></pre>
         </article>
     </section>
@@ -85,13 +87,13 @@ export const ccustomEchoCommand = s.ccustom + s.cEcho + s.cCommand;
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jul 02 2020 08:46:18 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jul 17 2020 12:17:25 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -19,6 +19,8 @@ var _timers = _interopRequireDefault(require("../Executrix/timers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -38,6 +40,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:loggers
  * @requires module:timers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -75,16 +78,16 @@ function setupConfiguration(pathAndFilename) {
 
   var rules = {};
   rules[1] = s.cswapBackSlashToForwardSlash;
-  D[s.cConfiguration] = {};
+  D[w.cConfiguration] = {};
   pathAndFilename = _ruleBroker["default"].processRules(pathAndFilename, '', rules);
 
   _configurator["default"].setConfigurationSetting(s.cConfigurationPath, pathAndFilename);
 
   var allConfigurationData = {};
-  allConfigurationData = _chiefData["default"].setupAllXmlData(s.cConfigurationPath, s.cConfiguration);
+  allConfigurationData = _chiefData["default"].setupAllXmlData(s.cConfigurationPath, w.cConfiguration);
   parseLoadedConfigurationData(allConfigurationData);
   allConfigurationData = {};
-  allConfigurationData = _chiefData["default"].setupAllCsvData(s.cConfigurationPath, s.cConfiguration); // parseLoadedConfigurationData(allConfigurationData);
+  allConfigurationData = _chiefData["default"].setupAllCsvData(s.cConfigurationPath, w.cConfiguration); // parseLoadedConfigurationData(allConfigurationData);
   // Get the operating system envrionment variable here and setup how to setup the log files.
 
   _loggers["default"].consoleLog(s.cLogFileEnabled, _configurator["default"].getConfigurationSetting(s.cDateTimeSTamp));
@@ -144,12 +147,12 @@ function parseLoadedConfigurationData(allConfigurationData) {
   rules[1] = s.cstringToDataType; // First we need to pull out all the high level configuration meta-data
   // about the rest of the cofiguration elements we are about to process.
 
-  highLevelConfigurationContainer = allConfigurationData[s.cApplication][s.cConfigurations][s.cConfiguration];
+  highLevelConfigurationContainer = allConfigurationData[w.cApplication][w.cConfigurations][w.cConfiguration];
   configurationsName = highLevelConfigurationContainer[s.cConfigurationName]; // console.log('configurationsName is: ' + configurationsName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsName is: ' + configurationsName);
 
-  if (highLevelConfigurationContainer[s.cCommon][s.cConfigurationElement][s.cName] === s.cVersionControl) {
-    configurationsVersion = highLevelConfigurationContainer[s.cCommon][s.cConfigurationElement][s.cValue];
+  if (highLevelConfigurationContainer[w.cCommon][s.cConfigurationElement][w.cName] === s.cVersionControl) {
+    configurationsVersion = highLevelConfigurationContainer[w.cCommon][s.cConfigurationElement][w.cValue];
     configurationsVersion = _ruleBroker["default"].processRules(configurationsVersion, '', rules);
   } // console.log('configurationsVersion is: ' + configurationsVersion);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsVersion is: ' + configurationsVersion);
@@ -178,15 +181,15 @@ function parseLoadedConfigurationData(allConfigurationData) {
       allSubConfigurations = {};
 
       if (!!configurationElement) {
-        name = configurationElement[s.cName];
-        type = configurationElement[s.cType];
-        value = configurationElement[s.cValue];
-        version = configurationElement[s.cVersion];
+        name = configurationElement[w.cName];
+        type = configurationElement[w.cType];
+        value = configurationElement[w.cValue];
+        version = configurationElement[w.cVersion];
         version = _ruleBroker["default"].processRules(version, '', rules);
 
         if (name !== '' && type !== '' && value !== '' && version !== '') {
           if (type === configurationsName && version == configurationsVersion) {
-            if ((name === s.cDebugFunctions || name === s.cDebugFiles) && value === s.cMultiple) {
+            if ((name === s.cDebugFunctions || name === s.cDebugFiles) && value === w.cMultiple) {
               // console.log('configurationElement is: ' + JSON.stringify(configurationElement));
               // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
               allSubConfigurations = configurationElement[s.cConfigurationElement]; // console.log('allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
@@ -202,10 +205,10 @@ function parseLoadedConfigurationData(allConfigurationData) {
                 configurationSubElement = allSubConfigurations[subKey];
 
                 if (!!configurationSubElement) {
-                  name = configurationSubElement[s.cName];
-                  type = configurationSubElement[s.cType];
-                  value = configurationSubElement[s.cValue];
-                  version = configurationSubElement[s.cVersion];
+                  name = configurationSubElement[w.cName];
+                  type = configurationSubElement[w.cType];
+                  value = configurationSubElement[w.cValue];
+                  version = configurationSubElement[w.cVersion];
                   version = _ruleBroker["default"].processRules(version, '', rules);
 
                   if (name !== '' && type !== '' && value !== '' && version !== '') {

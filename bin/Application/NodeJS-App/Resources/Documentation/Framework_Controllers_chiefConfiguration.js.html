@@ -37,6 +37,7 @@
  * @requires module:loggers
  * @requires module:timers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -50,6 +51,7 @@ import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from '../Executrix/loggers';
 import timers from '../Executrix/timers';
 import * as b from '../Constants/basic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -76,14 +78,14 @@ function setupConfiguration(pathAndFilename) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
   let rules = {};
   rules[1] = s.cswapBackSlashToForwardSlash;
-  D[s.cConfiguration] = {};
+  D[w.cConfiguration] = {};
   pathAndFilename = ruleBroker.processRules(pathAndFilename, '', rules);
   configurator.setConfigurationSetting(s.cConfigurationPath, pathAndFilename);
   let allConfigurationData = {};
-  allConfigurationData = chiefData.setupAllXmlData(s.cConfigurationPath, s.cConfiguration);
+  allConfigurationData = chiefData.setupAllXmlData(s.cConfigurationPath, w.cConfiguration);
   parseLoadedConfigurationData(allConfigurationData);
   allConfigurationData = {};
-  allConfigurationData = chiefData.setupAllCsvData(s.cConfigurationPath, s.cConfiguration);
+  allConfigurationData = chiefData.setupAllCsvData(s.cConfigurationPath, w.cConfiguration);
   // parseLoadedConfigurationData(allConfigurationData);
 
   // Get the operating system envrionment variable here and setup how to setup the log files.
@@ -141,12 +143,12 @@ function parseLoadedConfigurationData(allConfigurationData) {
 
   // First we need to pull out all the high level configuration meta-data
   // about the rest of the cofiguration elements we are about to process.
-  highLevelConfigurationContainer = allConfigurationData[s.cApplication][s.cConfigurations][s.cConfiguration];
+  highLevelConfigurationContainer = allConfigurationData[w.cApplication][w.cConfigurations][w.cConfiguration];
   configurationsName = highLevelConfigurationContainer[s.cConfigurationName];
   // console.log('configurationsName is: ' + configurationsName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsName is: ' + configurationsName);
-  if (highLevelConfigurationContainer[s.cCommon][s.cConfigurationElement][s.cName] === s.cVersionControl) {
-    configurationsVersion = highLevelConfigurationContainer[s.cCommon][s.cConfigurationElement][s.cValue];
+  if (highLevelConfigurationContainer[w.cCommon][s.cConfigurationElement][w.cName] === s.cVersionControl) {
+    configurationsVersion = highLevelConfigurationContainer[w.cCommon][s.cConfigurationElement][w.cValue];
     configurationsVersion = ruleBroker.processRules(configurationsVersion, '', rules);
   }
   // console.log('configurationsVersion is: ' + configurationsVersion);
@@ -176,14 +178,14 @@ function parseLoadedConfigurationData(allConfigurationData) {
       configurationSubElement = undefined;
       allSubConfigurations = {};
       if (!!configurationElement) {
-        name = configurationElement[s.cName];
-        type = configurationElement[s.cType];
-        value = configurationElement[s.cValue];
-        version = configurationElement[s.cVersion];
+        name = configurationElement[w.cName];
+        type = configurationElement[w.cType];
+        value = configurationElement[w.cValue];
+        version = configurationElement[w.cVersion];
         version = ruleBroker.processRules(version, '', rules);
         if (name !== '' &amp;&amp; type !== '' &amp;&amp; value !== '' &amp;&amp; version !== '') {
           if (type === configurationsName &amp;&amp; version == configurationsVersion) {
-            if ((name === s.cDebugFunctions || name === s.cDebugFiles) &amp;&amp; value === s.cMultiple) {
+            if ((name === s.cDebugFunctions || name === s.cDebugFiles) &amp;&amp; value === w.cMultiple) {
               // console.log('configurationElement is: ' + JSON.stringify(configurationElement));
               // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
               allSubConfigurations = configurationElement[s.cConfigurationElement];
@@ -197,10 +199,10 @@ function parseLoadedConfigurationData(allConfigurationData) {
                 version = '';
                 configurationSubElement = allSubConfigurations[subKey];
                 if (!!configurationSubElement) {
-                  name = configurationSubElement[s.cName];
-                  type = configurationSubElement[s.cType];
-                  value = configurationSubElement[s.cValue];
-                  version = configurationSubElement[s.cVersion];
+                  name = configurationSubElement[w.cName];
+                  type = configurationSubElement[w.cType];
+                  value = configurationSubElement[w.cValue];
+                  version = configurationSubElement[w.cVersion];
                   version = ruleBroker.processRules(version, '', rules);
                   if (name !== '' &amp;&amp; type !== '' &amp;&amp; value !== '' &amp;&amp; version !== '') {
                     if (type === configurationsName &amp;&amp; version === configurationsVersion) {
@@ -299,13 +301,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jul 02 2020 08:46:18 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jul 17 2020 12:17:25 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

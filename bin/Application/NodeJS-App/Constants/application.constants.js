@@ -11,6 +11,8 @@ var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.cons
 
 var g = _interopRequireWildcard(require("../../../Framework/Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../../../Framework/Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../../../Framework/Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -24,55 +26,56 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * So none of the constants in this file should be generic/system/framework constants.
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-var cConfigurationFilename = s.cConfiguration;
+var cConfigurationFilename = w.cConfiguration;
 exports.cConfigurationFilename = cConfigurationFilename;
 var cApplicationName = 'NodeJS-App'; // Configuration Path
 
 exports.cApplicationName = cApplicationName;
-var cConfigurationDataLookupPrefixPath = b.cForwardSlash + s.cResources + b.cForwardSlash;
+var cConfigurationDataLookupPrefixPath = b.cForwardSlash + w.cResources + b.cForwardSlash;
 exports.cConfigurationDataLookupPrefixPath = cConfigurationDataLookupPrefixPath;
-var cResourcesCommonPath = s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cResources + b.cForwardSlash; // Source Resources Path
+var cResourcesCommonPath = w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cResources + b.cForwardSlash; // Source Resources Path
 
 exports.cResourcesCommonPath = cResourcesCommonPath;
-var cSourceResourcesPath = b.cForwardSlash + s.csrc + b.cForwardSlash + cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+var cSourceResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash + cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
 // Binary Resources Path
 
 exports.cSourceResourcesPath = cSourceResourcesPath;
-var cBinaryResourcesPath = b.cForwardSlash + s.cbin + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+var cBinaryResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 
 exports.cBinaryResourcesPath = cBinaryResourcesPath;
-var cBinaryRootPath = b.cForwardSlash + s.cbin + b.cForwardSlash;
+var cBinaryRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
 exports.cBinaryRootPath = cBinaryRootPath;
-var cBinaryReleasePath = b.cForwardSlash + s.cRelease + b.cForwardSlash; // Client Business Rules
+var cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash; // Client Business Rules
 
 exports.cBinaryReleasePath = cBinaryReleasePath;
-var cclientEcho = s.cclient + s.cEcho; // ********************************
+var cclientEcho = w.cclient + s.cEcho; // ********************************
 // ClientStringParsing rules in order
 // ********************************
 
 exports.cclientEcho = cclientEcho;
-var ccustomEcho = s.ccustom + s.cEcho;
+var ccustomEcho = w.ccustom + s.cEcho;
 exports.ccustomEcho = ccustomEcho;
-var cmostPopularNumber = s.cmost + s.cPopular + s.cNumber;
+var cmostPopularNumber = w.cmost + w.cPopular + w.cNumber;
 exports.cmostPopularNumber = cmostPopularNumber;
-var cisAlmostPalindrome = b.cis + s.cAlmost + s.cPalindrom;
+var cisAlmostPalindrome = w.cis + w.cAlmost + w.cPalindrom;
 exports.cisAlmostPalindrome = cisAlmostPalindrome;
-var cthreePointAverage = g.cthree + s.cPoint + s.cAverage;
+var cthreePointAverage = g.cthree + w.cPoint + w.cAverage;
 exports.cthreePointAverage = cthreePointAverage;
-var carrayCounter = s.carray + s.cCounter; // Client Commands
+var carrayCounter = w.carray + w.cCounter; // Client Commands
 
 exports.carrayCounter = carrayCounter;
-var cClientCommandAliasesActualPath = s.csrc + b.cForwardSlash + s.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + s.cCommands + b.cForwardSlash;
+var cClientCommandAliasesActualPath = w.csrc + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cCommands + b.cForwardSlash;
 exports.cClientCommandAliasesActualPath = cClientCommandAliasesActualPath;
-var cClientWorkflowsActualPath = cSourceResourcesPath + s.cWorkflows + b.cForwardSlash; // ********************************
+var cClientWorkflowsActualPath = cSourceResourcesPath + w.cWorkflows + b.cForwardSlash; // ********************************
 // Client Commands in order
 // ********************************
 
 exports.cClientWorkflowsActualPath = cClientWorkflowsActualPath;
-var ccustomEchoCommand = s.ccustom + s.cEcho + s.cCommand;
+var ccustomEchoCommand = w.ccustom + s.cEcho + w.cCommand;
 exports.ccustomEchoCommand = ccustomEchoCommand;

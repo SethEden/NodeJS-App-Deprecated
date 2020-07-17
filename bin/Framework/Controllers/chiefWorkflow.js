@@ -13,6 +13,8 @@ var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -30,6 +32,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:chiefData
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -67,8 +70,8 @@ function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) 
     D[s.cCommandWorkflows] = {};
     D[s.cCommandWorkflows] = allCommandWorkflowsData[s.cCommandWorkflows];
   } else {
-    for (var i = 0; i < allCommandWorkflowsData[s.cCommandWorkflows][s.cWorkflow].length; i++) {
-      D[s.cCommandWorkflows][s.cWorkflow].push(allCommandWorkflowsData[s.cCommandWorkflows][s.cWorkflow][i]);
+    for (var i = 0; i < allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow].length; i++) {
+      D[s.cCommandWorkflows][w.cWorkflow].push(allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow][i]);
     }
   }
 

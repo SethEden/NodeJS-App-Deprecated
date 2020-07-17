@@ -11,6 +11,8 @@ var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -27,6 +29,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * setting the workflow data and getting the workflow data.
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -58,15 +61,15 @@ function getWorkflow(workflowName) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'workflowName is: ' + workflowName);
 
   var workflowValue = false;
-  var arrayOfWorkflows = D[s.cCommandWorkflows][s.cWorkflow];
+  var arrayOfWorkflows = D[s.cCommandWorkflows][w.cWorkflow];
 
   for (var i = 0; i < arrayOfWorkflows.length; i++) {
     var currentWorkflow = arrayOfWorkflows[i];
 
     _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentWorkflow is: ' + JSON.stringify(currentWorkflow));
 
-    if (currentWorkflow[s.cName] === workflowName) {
-      workflowValue = currentWorkflow[s.cValue];
+    if (currentWorkflow[w.cName] === workflowName) {
+      workflowValue = currentWorkflow[w.cValue];
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'workflowValue is: ' + JSON.stringify(workflowValue));
 

@@ -13,6 +13,8 @@ var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -37,44 +39,44 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 var initCommandsLibrary = function initCommandsLibrary() {
-  var _D$s$cCommands;
+  var _D$w$cCommands;
 
   var functionName = initCommandsLibrary.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  D[s.cCommands] = {};
-  D[s.cCommands] = (_D$s$cCommands = {}, _defineProperty(_D$s$cCommands, s.cechoCommand, function (inputData, inputMetaData) {
+  D[w.cCommands] = {};
+  D[w.cCommands] = (_D$w$cCommands = {}, _defineProperty(_D$w$cCommands, s.cechoCommand, function (inputData, inputMetaData) {
     return nominalCommands.echoCommand(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cexit, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, w.cexit, function (inputData, inputMetaData) {
     return nominalCommands.exit(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cversion, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, w.cversion, function (inputData, inputMetaData) {
     return nominalCommands.version(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cabout, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, w.cabout, function (inputData, inputMetaData) {
     return nominalCommands.about(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cname, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, w.cname, function (inputData, inputMetaData) {
     return nominalCommands.name(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.chelp, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, w.chelp, function (inputData, inputMetaData) {
     return nominalCommands.help(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cworkflowHelp, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.cworkflowHelp, function (inputData, inputMetaData) {
     return nominalCommands.workflowHelp(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.ccommandSequencer, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.ccommandSequencer, function (inputData, inputMetaData) {
     return nominalCommands.commandSequencer(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cworkflow, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, w.cworkflow, function (inputData, inputMetaData) {
     return nominalCommands.workflow(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cprintDataHive, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.cprintDataHive, function (inputData, inputMetaData) {
     return nominalCommands.printDataHive(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cbusinessRule, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.cbusinessRule, function (inputData, inputMetaData) {
     return nominalCommands.businessRule(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.ccommandGenerator, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.ccommandGenerator, function (inputData, inputMetaData) {
     return nominalCommands.commandGenerator(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cbusinessRulesMetrics, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.cbusinessRulesMetrics, function (inputData, inputMetaData) {
     return nominalCommands.businessRulesMetrics(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.ccommandMetrics, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.ccommandMetrics, function (inputData, inputMetaData) {
     return nominalCommands.commandMetrics(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cCommands, s.cconvertColors, function (inputData, inputMetaData) {
+  }), _defineProperty(_D$w$cCommands, s.cconvertColors, function (inputData, inputMetaData) {
     return nominalCommands.convertColors(inputData, inputMetaData);
-  }), _D$s$cCommands);
+  }), _D$w$cCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

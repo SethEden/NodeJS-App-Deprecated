@@ -25,6 +25,8 @@ var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -46,6 +48,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -95,7 +98,7 @@ function addClientCommands(clientCommands) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  Object.assign(D[s.cCommands], clientCommands);
+  Object.assign(D[w.cCommands], clientCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 }
@@ -141,19 +144,19 @@ function getValidCommand(commandString, commandDelimiter) {
     commandToExecute = commandString;
   }
 
-  if (D[s.cCommands][commandToExecute] !== undefined) {
+  if (D[w.cCommands][commandToExecute] !== undefined) {
     foundValidCommand = true;
     returnValue = commandToExecute;
   } else {
     // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
     // to see if we can find a match, then get the actual command that should be executed.
-    var allCommandAliases = D[s.cCommandsAliases][s.cCommand];
+    var allCommandAliases = D[s.cCommandsAliases][w.cCommand];
 
     loop1: for (var i = 0; i < allCommandAliases.length; i++) {
       // Iterate through all of the command aliases and see if we can find a
       // command alias that matches the command the user is trying to execute.
       var currentCommand = allCommandAliases[i];
-      var aliasList = currentCommand[s.cAliases];
+      var aliasList = currentCommand[w.cAliases];
       var arrayOfAliases = aliasList.split(b.cComa);
 
       loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
@@ -162,7 +165,7 @@ function getValidCommand(commandString, commandDelimiter) {
 
           _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute before the Alias is: ' + commandToExecute);
 
-          commandToExecute = currentCommand[s.cName];
+          commandToExecute = currentCommand[w.cName];
 
           _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute after the Alias is: ' + commandToExecute);
 
@@ -172,7 +175,7 @@ function getValidCommand(commandString, commandDelimiter) {
     }
 
     if (foundValidCommand === true) {
-      if (D[s.cCommands][commandToExecute] !== undefined) {
+      if (D[w.cCommands][commandToExecute] !== undefined) {
         returnValue = commandToExecute;
       } else {
         console.log('WARNING: The specified command: ' + commandToExecute + ' does not exist, please try again!');
@@ -417,10 +420,10 @@ function executeCommand(commandString) {
   }
 
   if (commandToExecute !== false && commandArgs !== false) {
-    returnValue = D[s.cCommands][commandToExecute](commandArgs, '');
+    returnValue = D[w.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false && commandArgs === false) {
     // This could be a command without any arguments.
-    returnValue = D[s.cCommands][commandToExecute]('', '');
+    returnValue = D[w.cCommands][commandToExecute]('', '');
   }
 
   if (commandMetricsEnabled === true) {

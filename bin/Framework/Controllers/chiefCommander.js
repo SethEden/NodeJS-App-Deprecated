@@ -17,6 +17,8 @@ var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -35,6 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:queue
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -92,8 +95,8 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
     D[s.cCommandsAliases] = {};
     D[s.cCommandsAliases] = allCommandAliasesData[s.cCommandsAliases];
   } else {
-    for (var i = 0; i < allCommandAliasesData[s.cCommandsAliases][s.cCommand].length; i++) {
-      D[s.cCommandsAliases][s.cCommand].push(allCommandAliasesData[s.cCommandsAliases][s.cCommand][i]);
+    for (var i = 0; i < allCommandAliasesData[s.cCommandsAliases][w.cCommand].length; i++) {
+      D[s.cCommandsAliases][w.cCommand].push(allCommandAliasesData[s.cCommandsAliases][w.cCommand][i]);
     }
   }
 
