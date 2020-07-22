@@ -9,6 +9,7 @@
  * @requires module:basic-constants
  * @requires module:phonics-constants
  * @requires module:generic-constants
+ * @requires module:numeric-constants
  * @requires module:word-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -17,6 +18,7 @@
 import * as b from './basic.constants';
 import * as p from './phonics.constants';
 import * as g from './generic.constants';
+import * as n from './numeric.constants';
 import * as w from './word.constants';
 
 // Miscelaneious
@@ -572,7 +574,7 @@ export const cgetFileExtension = w.cget + w.cFile + w.cExtension;
 export const cremoveDotFromFileExtension = w.cremove + p.cDot + w.cFrom + w.cFile + w.cExtension;
 export const cremoveFileExtensionFromFileName = w.cremove + w.cFile + w.cExtension + w.cFrom + cFileName;
 export const cgetValueFromAssignmentOperationString = w.cget + w.cValue + w.cFrom + w.cAssignment + w.cOperation + w.cString;
-export const caggregateNumericalDifferenceBetweenTwoStrings = w.caggregate + w.cNumerical + w.cDifference + w.cBetween + g.cTwo + w.cStrings;
+export const caggregateNumericalDifferenceBetweenTwoStrings = w.caggregate + w.cNumerical + w.cDifference + w.cBetween + n.cTwo + w.cStrings;
 export const cconvertCamelCaseStringToArray = w.cconvert + w.cCamel + w.cCase + w.cString + b.cTo + w.cArray;
 export const cconvertArrayToCamelCaseString = w.cconvert + w.cArray + b.cTo + w.cCamel + w.cCase + w.cString;
 export const cmapWordToCamelCaseWord = p.cmap + w.cWord + b.cTo + w.cCamel + w.cCase + w.cWord;
@@ -589,7 +591,7 @@ export const cgetKeywordNameFromDataContextName = w.cget + w.cKeyword + w.cName 
 export const cparseSystemRootPath = w.cparse + w.cSystem + w.cRoot + w.cPath;
 export const creplaceDoublePercentWithMessage = w.creplace + w.cDouble + w.cPercent + w.cWith + w.cMessage;
 export const cremoveXnumberOfFoldersFromEndOfPath = w.cremove + b.cX + w.cnumber + b.cOf + w.cFolders + w.cFrom + w.cEnd + b.cOf + w.cPath;
-export const cgetFirstTopLevelFolderFromPath = w.cget + g.cFirst + w.cTop + w.cLevel + w.cFolder + w.cFrom + w.cPath;
+export const cgetFirstTopLevelFolderFromPath = w.cget + n.cFirst + w.cTop + w.cLevel + w.cFolder + w.cFrom + w.cPath;
 export const cisOdd = b.cis + w.cOdd;
 export const cisEven = b.cis + w.cEven;
 export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.cIndex;
@@ -597,74 +599,74 @@ export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.c
 // *********************************
 // StringGeneration rules in order
 // *********************************
-export const cgenerateRandomMixedCaseTextByLength1 = cgenerateRandom + cMixedCase + cTextByLength + b.c1;
-export const cgenerateRandomMixedCaseTextByLength2 = cgenerateRandom + cMixedCase + cTextByLength + b.c2;
-export const cgenerateRandomUpperCaseTextByLength1 = cgenerateRandom + cUpperCase + cTextByLength + b.c1;
-export const cgenerateRandomUpperCaseTextByLength2 = cgenerateRandom + cUpperCase + cTextByLength + b.c2;
-export const cgenerateRandomLowerCaseTextByLength1 = cgenerateRandom + cLowerCase + cTextByLength + b.c1;
-export const cgenerateRandomLowerCaseTextByLength2 = cgenerateRandom + cLowerCase + cTextByLength + b.c2;
-export const cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cMixedCase + cTextWithSpecialCharactersByLength + b.c1;
-export const cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cMixedCase + cTextWithSpecialCharactersByLength + b.c2;
-export const cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cUpperCase + cTextWithSpecialCharactersByLength + b.c1;
-export const cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cUpperCase + cTextWithSpecialCharactersByLength + b.c2;
-export const cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cLowerCase + cTextWithSpecialCharactersByLength + b.c1;
-export const cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cLowerCase + cTextWithSpecialCharactersByLength + b.c2;
-export const cgenerateRandomMixedCaseAlphaNumericCodeByLength1 = cgenerateRandom + cMixedCase + cAlphaNumericCodeByLength + b.c1;
-export const cgenerateRandomMixedCaseAlphaNumericCodeByLength2 = cgenerateRandom + cMixedCase + cAlphaNumericCodeByLength + b.c2;
-export const cgenerateRandomUpperCaseAlphaNumericCodeByLength1 = cgenerateRandom + cUpperCase + cAlphaNumericCodeByLength + b.c1;
-export const cgenerateRandomUpperCaseAlphaNumericCodeByLength2 = cgenerateRandom + cUpperCase + cAlphaNumericCodeByLength + b.c2;
-export const cgenerateRandomLowerCaseAlphaNumericCodeByLength1 = cgenerateRandom + cLowerCase + cAlphaNumericCodeByLength + b.c1;
-export const cgenerateRandomLowerCaseAlphaNumericCodeByLength2 = cgenerateRandom + cLowerCase + cAlphaNumericCodeByLength + b.c2;
-export const cgenerateRandomNumericCodeByLength1 = cgenerateRandom + cNumericCodeByLength + b.c1;
-export const cgenerateRandomNumericCodeByLength2 = cgenerateRandom + cNumericCodeByLength + b.c2;
-export const cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cMixedCase + cAlphaNumericCodeWithSpecialCharactersByLength + b.c1;
-export const cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cMixedCase + cAlphaNumericCodeWithSpecialCharactersByLength + b.c2;
-export const cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cUpperCase + cAlphaNumericCodeWithSpecialCharactersByLength + b.c1;
-export const cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cUpperCase + cAlphaNumericCodeWithSpecialCharactersByLength + b.c2;
-export const cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cLowerCase + cAlphaNumericCodeWithSpecialCharactersByLength + b.c1;
-export const cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cLowerCase + cAlphaNumericCodeWithSpecialCharactersByLength + b.c2;
-export const cgenerateRandomSpecialCharacterCodeByLength1 = cgenerateRandom + cSpecialCharacterCodeByLength + b.c1;
-export const cgenerateRandomSpecialCharacterCodeByLength2 = cgenerateRandom + cSpecialCharacterCodeByLength + b.c2;
-export const cgenerateValidEmail1 = w.cgenerate + cValidEmail + b.c1;
-export const cgenerateValidEmail2 = w.cgenerate + cValidEmail + b.c2;
-export const cgenerateInvalidEmail1 = w.cgenerate + cInvalidEmail + b.c1;
-export const cgenerateInvalidEmail2 = w.cgenerate + cInvalidEmail + b.c2;
+export const cgenerateRandomMixedCaseTextByLength1 = cgenerateRandom + cMixedCase + cTextByLength + n.c1;
+export const cgenerateRandomMixedCaseTextByLength2 = cgenerateRandom + cMixedCase + cTextByLength + n.c2;
+export const cgenerateRandomUpperCaseTextByLength1 = cgenerateRandom + cUpperCase + cTextByLength + n.c1;
+export const cgenerateRandomUpperCaseTextByLength2 = cgenerateRandom + cUpperCase + cTextByLength + n.c2;
+export const cgenerateRandomLowerCaseTextByLength1 = cgenerateRandom + cLowerCase + cTextByLength + n.c1;
+export const cgenerateRandomLowerCaseTextByLength2 = cgenerateRandom + cLowerCase + cTextByLength + n.c2;
+export const cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cMixedCase + cTextWithSpecialCharactersByLength + n.c1;
+export const cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cMixedCase + cTextWithSpecialCharactersByLength + n.c2;
+export const cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cUpperCase + cTextWithSpecialCharactersByLength + n.c1;
+export const cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cUpperCase + cTextWithSpecialCharactersByLength + n.c2;
+export const cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cLowerCase + cTextWithSpecialCharactersByLength + n.c1;
+export const cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cLowerCase + cTextWithSpecialCharactersByLength + n.c2;
+export const cgenerateRandomMixedCaseAlphaNumericCodeByLength1 = cgenerateRandom + cMixedCase + cAlphaNumericCodeByLength + n.c1;
+export const cgenerateRandomMixedCaseAlphaNumericCodeByLength2 = cgenerateRandom + cMixedCase + cAlphaNumericCodeByLength + n.c2;
+export const cgenerateRandomUpperCaseAlphaNumericCodeByLength1 = cgenerateRandom + cUpperCase + cAlphaNumericCodeByLength + n.c1;
+export const cgenerateRandomUpperCaseAlphaNumericCodeByLength2 = cgenerateRandom + cUpperCase + cAlphaNumericCodeByLength + n.c2;
+export const cgenerateRandomLowerCaseAlphaNumericCodeByLength1 = cgenerateRandom + cLowerCase + cAlphaNumericCodeByLength + n.c1;
+export const cgenerateRandomLowerCaseAlphaNumericCodeByLength2 = cgenerateRandom + cLowerCase + cAlphaNumericCodeByLength + n.c2;
+export const cgenerateRandomNumericCodeByLength1 = cgenerateRandom + cNumericCodeByLength + n.c1;
+export const cgenerateRandomNumericCodeByLength2 = cgenerateRandom + cNumericCodeByLength + n.c2;
+export const cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cMixedCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c1;
+export const cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cMixedCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c2;
+export const cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cUpperCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c1;
+export const cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cUpperCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c2;
+export const cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cLowerCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c1;
+export const cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cLowerCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c2;
+export const cgenerateRandomSpecialCharacterCodeByLength1 = cgenerateRandom + cSpecialCharacterCodeByLength + n.c1;
+export const cgenerateRandomSpecialCharacterCodeByLength2 = cgenerateRandom + cSpecialCharacterCodeByLength + n.c2;
+export const cgenerateValidEmail1 = w.cgenerate + cValidEmail + n.c1;
+export const cgenerateValidEmail2 = w.cgenerate + cValidEmail + n.c2;
+export const cgenerateInvalidEmail1 = w.cgenerate + cInvalidEmail + n.c1;
+export const cgenerateInvalidEmail2 = w.cgenerate + cInvalidEmail + n.c2;
 
 // *********************************
 // CharacterGeneration rules in order
 // *********************************
-export const crandomlyGenerateMixedCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cMixedCase + cLetterOrSpecialCharacter + b.c1;
-export const crandomlyGenerateMixedCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cMixedCase + cLetterOrSpecialCharacter + b.c2;
-export const crandomlyGenerateUpperCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cUpperCase + cLetterOrSpecialCharacter + b.c1;
-export const crandomlyGenerateUpperCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cUpperCase + cLetterOrSpecialCharacter + b.c2;
-export const crandomlyGenerateLowerCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cLowerCase + cLetterOrSpecialCharacter + b.c1;
-export const crandomlyGenerateLowerCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cLowerCase + cLetterOrSpecialCharacter + b.c2;
-export const crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cMixedCase + cLetterOrNumberOrSpecialCharacter + b.c1;
-export const crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cMixedCase + cLetterOrNumberOrSpecialCharacter + b.c2;
-export const crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cUpperCase + cLetterOrNumberOrSpecialCharacter + b.c1;
-export const crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cUpperCase + cLetterOrNumberOrSpecialCharacter + b.c2;
-export const crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cLowerCase + cLetterOrNumberOrSpecialCharacter + b.c1;
-export const crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cLowerCase + cLetterOrNumberOrSpecialCharacter + b.c2;
-export const crandomlyGenerateMixedCaseAlphaNumericCharacter1 = crandomlyGenerate + cMixedCase + cAlphaNumericCharacter + b.c1;
-export const crandomlyGenerateMixedCaseAlphaNumericCharacter2 = crandomlyGenerate + cMixedCase + cAlphaNumericCharacter + b.c2;
-export const crandomlyGenerateUpperCaseAlphaNumericCharacter1 = crandomlyGenerate + cUpperCase + cAlphaNumericCharacter + b.c1;
-export const crandomlyGenerateUpperCaseAlphaNumericCharacter2 = crandomlyGenerate + cUpperCase + cAlphaNumericCharacter + b.c2;
-export const crandomlyGenerateLowerCaseAlphaNumericCharacter1 = crandomlyGenerate + cLowerCase + cAlphaNumericCharacter + b.c1;
-export const crandomlyGenerateLowerCaseAlphaNumericCharacter2 = crandomlyGenerate + cLowerCase + cAlphaNumericCharacter + b.c2;
-export const crandomlyGenerateNumericCharacter1 = crandomlyGenerate + cNumericCharacter + b.c1;
-export const crandomlyGenerateNumericCharacter2 = crandomlyGenerate + cNumericCharacter + b.c2;
-export const crandomlyGenerateSpecialCharacter1 = crandomlyGenerate + cSpecialCharacter + b.c1;
-export const crandomlyGenerateSpecialCharacter2 = crandomlyGenerate + cSpecialCharacter + b.c2;
-export const crandomlyGenerateNumberInRange1 = crandomlyGenerate + cNumberInRange + b.c1;
-export const crandomlyGenerateNumberInRange2 = crandomlyGenerate + cNumberInRange + b.c2;
-export const crandomlyGenerateBooleanValue1 = crandomlyGenerate + cBooleanValue + b.c1;
-export const crandomlyGenerateBooleanValue2 = crandomlyGenerate + cBooleanValue + b.c2;
-export const crandomlyGenerateMixedCaseAlphabeticCharacter1 = crandomlyGenerate + cMixedCase + cAlphabeticCharacter + b.c1;
-export const crandomlyGenerateMixedCaseAlphabeticCharacter2 = crandomlyGenerate + cMixedCase + cAlphabeticCharacter + b.c2;
-export const crandomlyGenerateLowerCaseLetter1 = crandomlyGenerate + cLowerCase + w.cLetter + b.c1;
-export const crandomlyGenerateLowerCaseLetter2 = crandomlyGenerate + cLowerCase + w.cLetter + b.c2;
-export const crandomlyGenerateUpperCaseLetter1 = crandomlyGenerate + cUpperCase + w.cLetter + b.c1;
-export const crandomlyGenerateUpperCaseLetter2 = crandomlyGenerate + cUpperCase + w.cLetter + b.c2;
+export const crandomlyGenerateMixedCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cMixedCase + cLetterOrSpecialCharacter + n.c1;
+export const crandomlyGenerateMixedCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cMixedCase + cLetterOrSpecialCharacter + n.c2;
+export const crandomlyGenerateUpperCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cUpperCase + cLetterOrSpecialCharacter + n.c1;
+export const crandomlyGenerateUpperCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cUpperCase + cLetterOrSpecialCharacter + n.c2;
+export const crandomlyGenerateLowerCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cLowerCase + cLetterOrSpecialCharacter + n.c1;
+export const crandomlyGenerateLowerCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cLowerCase + cLetterOrSpecialCharacter + n.c2;
+export const crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cMixedCase + cLetterOrNumberOrSpecialCharacter + n.c1;
+export const crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cMixedCase + cLetterOrNumberOrSpecialCharacter + n.c2;
+export const crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cUpperCase + cLetterOrNumberOrSpecialCharacter + n.c1;
+export const crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cUpperCase + cLetterOrNumberOrSpecialCharacter + n.c2;
+export const crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cLowerCase + cLetterOrNumberOrSpecialCharacter + n.c1;
+export const crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cLowerCase + cLetterOrNumberOrSpecialCharacter + n.c2;
+export const crandomlyGenerateMixedCaseAlphaNumericCharacter1 = crandomlyGenerate + cMixedCase + cAlphaNumericCharacter + n.c1;
+export const crandomlyGenerateMixedCaseAlphaNumericCharacter2 = crandomlyGenerate + cMixedCase + cAlphaNumericCharacter + n.c2;
+export const crandomlyGenerateUpperCaseAlphaNumericCharacter1 = crandomlyGenerate + cUpperCase + cAlphaNumericCharacter + n.c1;
+export const crandomlyGenerateUpperCaseAlphaNumericCharacter2 = crandomlyGenerate + cUpperCase + cAlphaNumericCharacter + n.c2;
+export const crandomlyGenerateLowerCaseAlphaNumericCharacter1 = crandomlyGenerate + cLowerCase + cAlphaNumericCharacter + n.c1;
+export const crandomlyGenerateLowerCaseAlphaNumericCharacter2 = crandomlyGenerate + cLowerCase + cAlphaNumericCharacter + n.c2;
+export const crandomlyGenerateNumericCharacter1 = crandomlyGenerate + cNumericCharacter + n.c1;
+export const crandomlyGenerateNumericCharacter2 = crandomlyGenerate + cNumericCharacter + n.c2;
+export const crandomlyGenerateSpecialCharacter1 = crandomlyGenerate + cSpecialCharacter + n.c1;
+export const crandomlyGenerateSpecialCharacter2 = crandomlyGenerate + cSpecialCharacter + n.c2;
+export const crandomlyGenerateNumberInRange1 = crandomlyGenerate + cNumberInRange + n.c1;
+export const crandomlyGenerateNumberInRange2 = crandomlyGenerate + cNumberInRange + n.c2;
+export const crandomlyGenerateBooleanValue1 = crandomlyGenerate + cBooleanValue + n.c1;
+export const crandomlyGenerateBooleanValue2 = crandomlyGenerate + cBooleanValue + n.c2;
+export const crandomlyGenerateMixedCaseAlphabeticCharacter1 = crandomlyGenerate + cMixedCase + cAlphabeticCharacter + n.c1;
+export const crandomlyGenerateMixedCaseAlphabeticCharacter2 = crandomlyGenerate + cMixedCase + cAlphabeticCharacter + n.c2;
+export const crandomlyGenerateLowerCaseLetter1 = crandomlyGenerate + cLowerCase + w.cLetter + n.c1;
+export const crandomlyGenerateLowerCaseLetter2 = crandomlyGenerate + cLowerCase + w.cLetter + n.c2;
+export const crandomlyGenerateUpperCaseLetter1 = crandomlyGenerate + cUpperCase + w.cLetter + n.c1;
+export const crandomlyGenerateUpperCaseLetter2 = crandomlyGenerate + cUpperCase + w.cLetter + n.c2;
 export const cconvertNumberToUpperCaseLetter = w.cconvert + w.cNumber + w.cTo + cUpperCase + w.cLetter;
 export const cconvertNumberToLowerCaseLetter = w.cconvert + w.cNumber + w.cTo + cLowerCase + w.cLetter;
 

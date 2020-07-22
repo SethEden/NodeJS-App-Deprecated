@@ -6,12 +6,14 @@
  * Also included are spellings of Greek letters, military codes/standards, units of measurement, units of time, etc...
  * @requires module:basic-constants
  * @requires module:phonics-constants
+ * @requires module:numeric-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as b from '../constants/basic.constants';
 import * as p from '../constants/phonics.constants';
+import * as n from '../constants/numeric.constants';
 
 export const cDotDot = b.cDot + b.cDot;
 export const cDotDotForwardSlash = cDotDot + b.cForwardSlash;
@@ -59,7 +61,7 @@ export const cRight = b.cRi + b.cgh + b.ct;
 // Alphabets
 export const cLowerCaseEnglishAlphabet = b.cab + b.ccd + b.cef + b.cgh + b.cij + b.ckl + b.cmn + b.cop + b.cqr + b.cst + b.cuv + b.cwx + b.cyz;
 export const cUpperCaseEnglishAlphabet = b.cAB + b.cCD + b.cEF + b.cGH + b.cIJ + b.cKL + b.cMN + b.cOP + b.cQR + b.cST + b.cUV + b.cWX + b.cYZ;
-export const cAllNumbers = b.c0 + b.c1 + b.c2 + b.c3 + b.c4 + b.c5 + b.c6 + b.c7 + b.c8 + b.c9;
+export const cAllNumbers = n.c0 + n.c1 + n.c2 + n.c3 + n.c4 + n.c5 + n.c6 + n.c7 + n.c8 + n.c9;
 
 // File Extensions
 export const cdoc = b.cdo + b.cc;
@@ -98,176 +100,6 @@ export const cHHmmss_SSS = cHHmmss + b.cDash + cSSS;
 export const cYYYYMMDD_HHmmss  = cYYYYMMDD + b.cDash + cHHmmss;
 export const cYYYYMMDD_HHmmss_SSS = cYYYYMMDD_HHmmss + cSSS;
 export const cYYYY_MM_DD_HH_mm_ss_SSS = cYYYY + b.cColon + b.cMM + b.cColon + b.cDD + b.cDash + b.cHH + b.cColon + b.cmm + b.cColon + b.css + b.cColon + cSSS;
-
-// String Numbers
-export const cone = b.co + b.cne;
-export const ctwo = b.ct + b.cwo;
-export const cthree = b.ct + p.chree;
-export const cfour = b.cf + p.cour;
-export const cfive = b.cf + p.cive;
-export const csix = b.cs + b.cix;
-export const cseven = b.cs + p.ceven;
-export const ceight = b.ce + p.cight;
-export const cnine = b.cn + p.cine;
-export const cten = b.ct + b.cen;
-export const celeven = b.ce + p.cleven;
-export const ctwelve = b.ct + p.cwelve;
-export const cthirteen = b.ct + p.chir + p.cteen;
-export const cfourteen = cfour + p.cteen;
-export const cfifteen = b.cf + b.cif + p.cteen;
-export const csixteen = csix + p.cteen;
-export const cseventeen = cseven + p.cteen;
-export const ceighteen = b.ce + p.cigh + p.cteen;
-export const cnineteen = cnine + p.cteen;
-export const ctwenty = b.ct + p.cwenty;
-export const cthirty = b.ct + p.chirty;
-export const cfourty = cfour + b.cty;
-export const cfifty = b.cf + p.cifty;
-export const csixty = csix + b.cty;
-export const cseventy = cseven + b.cty;
-export const ceighty = ceight + b.cy;
-export const cninety = cnine + b.cty;
-export const chundred = b.ch + p.cundred;
-export const cthousand = b.ct + p.chousand;
-export const cmillion = b.cm + p.cillion;
-export const cbillion = b.cb + p.cillion;
-export const ctrillion = b.ctr + p.cillion;
-export const cOne = b.cO + b.cne;
-export const cTwo = b.cT + b.cwo;
-export const cThree = b.cT + p.chree;
-export const cFour = b.cF + p.cour;
-export const cFive = b.cF + p.cive;
-export const cSix = b.cS + b.cix;
-export const cSeven = b.cS + p.ceven;
-export const cEight = b.cE + p.cight;
-export const cNine = b.cN + p.cine;
-export const cTen = b.cT + b.cen;
-export const cEleven = b.cE + p.cleven;
-export const cTwelve = b.cT + p.cwelve;
-export const cThirteen = b.cT + p.chir + p.cteen;
-export const cFourteen = cFour + p.cteen;
-export const cFifteen = b.cF + b.cif + p.cteen;
-export const cSixteen = cSix + p.cteen;
-export const cSeventeen = cSeven + p.cteen;
-export const cEighteen = b.cE + p.cigh + p.cteen;
-export const cNineteen = cNine + p.cteen;
-export const cTwenty = b.cT + p.cwenty;
-export const cThirty = b.cT + p.chirty;
-export const cFourty = cFour + b.cty;
-export const cFifty = b.cF + p.cifty;
-export const cSixty = cSix + b.cty;
-export const cSeventy = cSeven + b.cty;
-export const cEighty = cEight + b.cy;
-export const cNinety = cNine + b.cty;
-export const cHundred = b.cH + p.cundred;
-export const cThousand = b.cT + p.chousand;
-export const cMillion = b.cM + p.cillion;
-export const cBillion = b.cB + p.cillion;
-export const cTrillion = b.cTr + p.cillion;
-
-// String Number Values
-export const cfirst = b.cfi + b.crs + b.ct;
-export const cFirst = b.cFi + b.crs + b.ct;
-// Second - See below
-export const cthird = b.cth + b.cir + b.cd;
-export const cThird = b.cTh + b.cir + b.cd;
-export const cfourth = cfour + b.cth;
-export const cFourth = cFour + b.cth;
-export const cfifth = b.cfi + b.cft + b.ch;
-export const cFifth = b.cFi + b.cft + b.ch;
-export const csixth = csix + b.cth;
-export const cSixth = cSix + b.cth;
-export const cseventh = cseven + b.cth;
-export const cSeventh = cSeven + b.cth;
-export const ceighth = ceight + b.ch;
-export const cEighth = cEight + b.ch;
-export const ctenth = cten + b.cth;
-export const cTenth = cTen + b.cth;
-export const celeventh = celeven + b.cth;
-export const cEleventh = cEleven + b.cth;
-export const ctwelveth = ctwelve + b.cth;
-export const cTwelveth = cTwelve + b.cth;
-export const cthirteenth = cthirteen + b.cth;
-export const cThirteenth = cThirteen + b.cth;
-export const cfourteenth = cfourteen + b.cth;
-export const cFourteenth = cFourteen + b.cth;
-export const cfifteenth = cFifteen + b.cth;
-export const cFifteenth = cFifteen + b.cth;
-export const csixteenth = csixteen + b.cth;
-export const cSixteenth = cSixteen + b.cth;
-export const cseventeenth = cseventeen + b.cth;
-export const cSeventeenth = cSeventeen + b.cth;
-export const ceighteenth = ceighteen + b.cth;
-export const cEighteenth = cEighteen + b.cth;
-export const cnineteenth = cnineteen + b.cth;
-export const cNineteenth = cNineteen + b.cth;
-export const ctwentieth = b.ctw + b.cen + p.ctieth;
-export const cTwentieth = b.cTw + b.cen + p.ctieth;
-export const cthirtieth = b.cth + b.cir + p.ctieth;
-export const cThirtieth = b.cTh + b.cir + p.ctieth;
-export const cfourtieth = cfour + p.ctieth;
-export const cFourtieth = cFour + p.ctieth;
-export const cfiftieth = b.cfi + b.cf + p.ctieth;
-export const cFiftieth = b.cFi + b.cf + p.ctieth;
-export const csixtieth = csix + p.ctieth;
-export const cSixtieth = cSix + p.ctieth;
-export const cseventieth = cseven + p.ctieth;
-export const cSeventieth = cSeven + p.ctieth;
-export const ceightieth = ceight + p.ctieth;
-export const cEightieth = cEight + p.ctieth;
-export const cninetieth = cnine + p.ctieth;
-export const cNinetieth = cNine + p.ctieth;
-export const chundredth = chundred + b.cth;
-export const cHundredth = cHundred + b.cth;
-export const cthousandth = cthousand + b.cth;
-export const cThousandth = cThousand + b.cth;
-export const cmillionth = cmillion + b.cth;
-export const cMillionth = cMillion + b.cth;
-export const cbillionth = cbillion + b.cth;
-export const cBillionth = cBillion + b.cth;
-export const ctrillionth = ctrillion + b.cth;
-export const cTrillionth = cTrillion + b.cth;
-
-// Units of Measure
-export const cPico = b.cPi + b.cco; // 'Pico';
-export const cNano = b.cNa + b.cno; // 'Nano';
-export const cMicro = b.cMi + b.ccr + b.co; // 'Micro';
-export const cMill = b.cMi + b.cll // 'Mill';
-export const cMilli = cMill + b.ci;
-
-// Units of Time
-export const csecond = b.cse + p.ccond;
-export const cSecond = b.cSe + p.ccond;
-export const cSeconds = cSecond + b.cs;
-export const cMinute = b.cMi + b.cnu + b.cte; // 'Minute';
-export const cMinutes = cMinute + b.cs;
-export const cHour = b.cHo + b.cur; // 'Hour';
-export const cHours = cHour + b.cs;
-export const cDay = b.cDa + b.cy; // 'Day';
-export const cDays = cDay + b.cs;
-export const cWeek = b.cW + b.cee + b.ck; // 'Week';
-export const cWeeks = cWeek + b.cs;
-export const cMonth = b.cMo + b.cn + b.cth; // 'Month';
-export const cMonths = cMonth + b.cs;
-export const cYear = b.cYe + b.car; // 'Year';
-export const cYears = cYear + b.cs;
-export const cDecade = b.cDe + b.cca + b.cde;
-export const cDecades = cDecade + b.cs;
-export const ccent = b.cc + p.cent;
-export const cCent = b.cC + p.cent;
-export const cCentur = cCent + b.cur; // b.cC + b.cen + b.ctu + b.cr; // 'Centur';
-export const cCentury = cCentur + b.cy;
-export const cCenturies = cCentur + p.cies;
-export const cMillennium = cMill + b.cen + b.cni + b.cum; // 'ennium'; // Millennium Falcon ;-)
-export const cMillenniums = cMillennium + b.cs;
-export const cNanoSecond = cNano + cSecond;
-export const cNanoSeconds = cNano + cSeconds;
-export const cMicroSecond = cMicro + cSecond;
-export const cMicroSeconds = cMicro + cSeconds;
-export const cMilliSecond = cMilli + cSecond;
-export const cMilliSeconds = cMilli + cSeconds;
-export const cPicoSecond = cPico + cSecond;
-export const cPicoSeconds = cPico + cSeconds;
 
 // Naval & Military Codes
 export const cAlfa = b.cAl + b.cfa; //  'Alfa';

@@ -545,7 +545,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       // do the necessary math for each business rule according to the parent loop.
       let currentBusinessRuleName = D[s.cBusinessRuleNamesPerformanceTrackingStack][i];
       for (let j = 0; j < stack.length(s.cBusinessRulePerformanceTrackingStack); j++) {
-        if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
+        if (D[s.cBusinessRulePerformanceTrackingStack][j][w.cName] === currentBusinessRuleName) {
           businessRuleCounter = businessRuleCounter + 1;
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'businessRuleCounter is: ' + businessRuleCounter);
           businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime];

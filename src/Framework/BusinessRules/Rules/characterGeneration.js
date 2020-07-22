@@ -92,6 +92,7 @@
  * @requires module:stringParsing
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:numeric-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -102,6 +103,7 @@ import loggers from '../../Executrix/loggers';
 import { stringToBoolean } from './stringParsing';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as n from '../../Constants/numeric.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -275,15 +277,15 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = 
   let typeToGenerate = -1;
 
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = b.c3;
-  let c9 = b.c9;
+  let c3 = n.c3;
+  let c9 = n.c9;
   let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'typeToGenerate is: ' + typeToGenerate);
   switch (typeToGenerate) {
     case 1: case '1': // Generate a number.
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a number.');
-      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
     case 2: case '2': // Generate a random upper case or lower case letter.
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a random upper case or lower case letter.');
@@ -344,13 +346,13 @@ export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = 
   let typeToGenerate = -1
 
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = b.c3;
-  let c9 = b.c9;
+  let c3 = n.c3;
+  let c9 = n.c9;
   let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
   switch (typeToGenerate) {
     case 1: case '1': // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
     case 2: case '2': // Generate a random upper case letter.
       returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
@@ -408,13 +410,13 @@ export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = 
   let typeToGenerate = -1;
 
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = b.c3;
-  let c9 = b.c9;
+  let c3 = n.c3;
+  let c9 = n.c9;
   let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
   switch (typeToGenerate) {
     case 1: case '1': // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
     case 2: case '2': // Generate a random lower case letter.
       returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
@@ -613,7 +615,7 @@ export const randomlyGenerateNumericCharacter1 = function(inputData, inputMetaDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+  returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -660,7 +662,7 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
   let inputDataLength = inputData.length.toString();
-  let number = randomlyGenerateNumberInRange1(b.c1, [inputDataLength, g.cTrue, g.cTrue]);
+  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
   // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
   returnData = inputData.substring(number - 1, number);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -688,7 +690,7 @@ export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaDa
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
   let inputDataLength = inputData.length.toString();
-  let number = randomlyGenerateNumberInRange1(b.c1, [inputDataLength, g.cTrue, g.cTrue]);
+  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
   // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
   returnData = inputData.substring(number - 1, number);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -889,9 +891,9 @@ export const randomlyGenerateLowerCaseLetter1 = function(inputData, inputMetaDat
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c26 = b.c2 + b.c6;
+  let c26 = n.c2 + n.c6;
   let cTrue = g.cTrue;
-  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(b.c1, [b.c26, g.cTrue, g.cTrue]));
+  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -936,9 +938,9 @@ export const randomlyGenerateUpperCaseLetter1 = function(inputData, inputMetaDat
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c26 = b.c2 + b.c6;
+  let c26 = n.c2 + n.c6;
   let cTrue = g.cTrue;
-  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(b.c1, [b.c26, g.cTrue, g.cTrue]));
+  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

@@ -5,6 +5,7 @@
  * @requires module:basic-constants
  * @requires module:phonics-constants
  * @requires module:generic-constants
+ * @requires module:units-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -12,6 +13,7 @@
 import * as b from './basic.constants';
 import * as p from './phonics.constants';
 import * as g from './generic.constants';
+import * as u from './units.constants';
 
 // Miscelaneious Words
 export const c1a1d = 'a' + 'd'; // 'ca' & 'cd' is some how a reserved word.
@@ -761,8 +763,8 @@ export const csequencer = p.cseq + b.cue + p.cncer;
 export const cSequencer = p.cSeq + b.cue + p.cncer;
 export const cprimary = p.cpri + p.cmary;
 export const cPrimary = p.cPri + p.cmary;
-export const csecondary = g.csecond + p.cary;
-export const cSecondary = g.cSecond + p.cary;
+export const csecondary = u.csecond + p.cary;
+export const cSecondary = u.cSecond + p.cary;
 export const ctertiary = p.ctert + p.ciary;
 export const cTertiary = p.cTert + p.ciary;
 export const cdelimiter = b.cde + climit + b.cer;
@@ -820,3 +822,11 @@ export const cyell = b.cye + b.cll;
 export const cYell = b.cYe + b.cll;
 export const clack = b.cla + b.cck;
 export const cLack = b.cLa + b.cck;
+export const clane = b.cl + p.cane;
+export const cLane = b.cL + p.cane;
+export const csection = p.csec + p.ction;
+export const cSection = p.cSec + p.ction;
+export const csections = csection + b.cs;
+export const cSections = cSection + b.cs;
+export const cunit = p.cuni + b.ct;
+export const cUnit = p.cUni + b.ct;

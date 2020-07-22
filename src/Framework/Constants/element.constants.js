@@ -1,0 +1,261 @@
+/**
+ * @file element.constants.js
+ * @module element-constants
+ * @description Contains named elements & isotopes.
+ * @requires module:basic-constants
+ * @requires module:phonics-constants
+ * @requires module:generic-constants
+ * @requires module:word-constants
+ * @author Seth Hollingsead
+ * @date 2020/07/16
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+ * {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
+ */
+import * as b from './basic.constants';
+import * as p from './phonics.constants';
+import * as n from './numeric.constants';
+import * as g from './generic.constants';
+import * as w from './word.constants';
+
+export const cH = b.cH; // Hydrogen
+export const cHe = b.cHe; // Helium
+export const cLi = b.cLi; // Lithium
+export const cBe = b.cBe; // Beryllium
+export const cB = b.cB; // Boron
+export const cC = b.cC; // Carbon
+export const cN = b.cN; // Nitrogen
+export const cO = b.cO; // Oxygen
+export const cF = b.cF; // Florine
+export const cNe = b.cNe; // Neon
+export const cNa = b.cNa; // Sodium
+export const cMg = b.cMg; // Magnesium
+export const cAl = b.cAl; // Aluminum
+export const cSi = b.cSi; // Silicon
+export const cP = b.cP; // Phosphorus
+export const cS = b.cS; // Sulfur
+export const cCl = b.cCl; // Clorine
+export const cAr = b.cAr; // Argon
+export const cK = b.cK; // Potassium
+export const cCa = b.cCa; // Calcium
+export const cSc = b.cSc; // Scandium
+export const cTi = b.cTi; // Titanium
+export const cV = b.cV; // Vanadium
+export const cCr = b.cCr; // Chromium
+export const cMn = b.cMn; // Manganese
+export const cFe = b.cFe; // Iron
+export const cCo = b.cCo; // Cobalt
+export const cNi = b.cNi; // Nickel
+export const cCu = b.cCu; // Copper
+export const cZn = b.cZn; // Zinc
+export const cGa = b.cGa; // Gallium
+export const cGe = b.cGe; // Germanium
+export const cAs = b.cAs; // Arsenic
+export const cSe = b.cSe; // Selenium
+export const cBr = b.cBr; // Bromine
+export const cKr = b.cKr; // Krypton
+export const cRb = b.cRb; // Rubidium
+export const cSr = b.cSr; // Strontium
+export const cY = b.cY; // Yttrium
+export const cZr = b.cZr; // Zirconium
+export const cNb = b.cNb; // Niobium
+export const cMo = b.cMo; // Molybdenum
+export const cTc = b.cTc; // Technetium
+export const cRu = b.cRu; // Ruthenium
+export const cRh = b.cRh; // Rhodium
+export const cPd = b.cPd; // Palladium
+export const cAg = b.cAg; // Silver
+export const cCd = b.cCd; // Cadmium
+export const cIn = b.cIn; // Indium
+export const cSn = b.cSn; // Tin
+export const cSb = b.cSb; // Antimony
+export const cTe = b.cTe; // Tellurium
+export const cI = b.cI; // Iodine
+export const cXe = b.cXe; // Xenon
+export const cCs = b.cCs; // Cesium
+export const cBa = b.cBa; // Barium
+export const cLa = b.cLa; // Lanthanum
+export const cCe = b.cCe; // Cerium
+export const cPr = b.cPr; // Praseodymium
+export const cNd = b.cNd; // Neodymium
+export const cPm = b.cPm; // Promethium
+export const cSm = b.cSm; // Samarium
+export const cEu = b.cEu; // Europium
+export const cGd = b.cGd; // Gadolinium
+export const cTb = b.cTb; // Terbium
+export const cDy = b.cDy; // Dysprosium
+export const cHo = b.cHo; // Holmium
+export const cEr = b.cEr; // Erbium
+export const cTm = b.cTm; // Thulium
+export const cYb = b.cYb; // Ytterbium
+export const cLu = b.cLu; // Lutetium
+export const cHf = b.cHf; // Hafnium
+export const cTa = b.cTa; // Tantalum
+export const cW = b.cW; // Tungsten
+export const cRe = b.cRe; // Rhenium
+export const cOs = b.cOs; // Osmium
+export const cIr = b.cIr; // Iridium
+export const cPt = b.cPt; // Platinum
+export const cAu = b.cAu; // Gold
+export const cHg = b.cHg; // Mercury
+export const cTl = b.cTl; // Thallium
+export const cPb = b.cPb; // Lead
+export const cBi = b.cBi;// Bismuth
+export const cPo = b.cPo;// Polonium
+export const cAt = b.cAt;// Astatine
+export const cRn = b.cRn;// Radon
+export const cFr = b.cFr;// Francium
+export const cRa = b.cRa;// Radium
+export const cAc = b.cAc;// Actinium
+export const cTh = b.cTh;// Thorium
+export const cPa = b.cPa;// Protactinium
+export const cU = b.cU;// Uranium
+export const cNp = b.cNp;// Neptunium
+export const cPu = b.cPu;// Plutonium
+export const cAm = b.cAm;// Americium
+export const cCm = b.cCm;// Curium
+export const cBk = b.cBk;// Berkelium
+export const cCf = b.cCf;// Californium
+export const cEs = b.cEs;// Einsteinium
+export const cFm = b.cFm;// Fermium
+export const cMd = b.cMd; // Mendelevium
+export const cNo = b.cNo; // Nobelium
+export const cLr = b.cLr; // Lawrencium
+export const cRf = b.cRf; // Rutherfordium
+export const cDb = b.cDb; // Dubnium
+export const cSg = b.cSg; // Seaborgium
+export const cBh = b.cBh; // Bohrium
+export const cHs = b.cHs; // Hassium
+export const cMt = b.cMt; // Meitnerium
+export const cDs = b.cDs; // Darmstatium
+export const cRg = b.cRg; // Roentgenium
+export const cCn = b.cCn; // Copernicium
+export const cNh = b.cNh; // Nihonium
+export const cFl = b.cFl; // Flerovium
+export const cMc = b.cMc; // Moscovium
+export const cLv = b.cLv; // Livermorium
+export const cTs = b.cTs; // Tennessine
+export const cOg = b.cOg; // Oganesson
+
+// *****************************************************
+
+export const cHydrogen = 'Hydrogen'; // H
+export const cHelium = 'Helium'; // He
+export const cLithium = 'Lithium'; // Li
+export const cBeryllium = 'Beryllium'; // Be
+export const cBoron = 'Boron'; // B
+export const cCarbon = 'Carbon'; // C
+export const cNitrogen = 'Nitrogen'; // N
+export const cOxygen = 'Oxygen'; // O
+export const cFlorine = 'Florine'; // F
+export const cNeon = 'Neon'; // Ne
+export const cSodium = 'Sodium'; // Na
+export const cMagnesium = 'Magnesium'; // Mg
+export const cAluminum = 'Aluminum'; // Al
+export const cSilicon = 'Silicon'; // Si
+export const cPhosphorus = 'Phosphorus'; // P
+export const cSulfur = 'Sulfur'; // S
+export const cClorine = 'Clorine'; // Cl
+export const cArgon = 'Argon'; // Ar
+export const cPotassium = 'Potassium'; // K
+export const cCalcium = 'Calcium'; // Ca
+export const cScandium = 'Scandium'; // Sc
+export const cTitanium = 'Titanium'; // Ti
+export const cVanadium = 'Vanadium'; // V
+export const cChromium = 'Chromium'; // Cr
+export const cManganese = 'Manganese'; // Mn
+export const cIron = 'Iron'; // Fe
+export const cCobalt = 'Cobalt'; // Co
+export const cNickel = 'Nickel'; // Ni
+export const cCopper = 'Copper'; // Cu
+export const cZinc = 'Zinc'; // Zn
+export const cGallium = 'Gallium'; // Ga
+export const cGermanium = 'Germanium'; // Ge
+export const cArsenic = 'Arsenic'; // As
+export const cSelenium = 'Selenium'; // Se
+export const cBromine = 'Bromine'; // Br
+export const cKrypton = 'Krypton'; // Kr
+export const cRubidium = 'Rubidium'; // Rb
+export const cStrontium = 'Strontium'; // Sr
+export const cYttrium = 'Yttrium'; // Y
+export const cZirconium = 'Zirconium'; // Zr
+export const cNiobium = 'Niobium'; // Nb
+export const cMolybdenum = 'Molybdenum'; // Mo
+export const cTechnetium = 'Technetium'; // Tc
+export const cRuthenium = 'Ruthenium'; // Ru
+export const cRhodium = 'Rhodium'; // Rh
+export const cPalladium = 'Palladium'; // Pd
+export const cSilver = 'Silver'; // Ag
+export const cCadmium = 'Cadmium'; // Cd
+export const cIndium = 'Indium'; // In
+export const cTin = 'Tin'; // Sn
+export const cAntimony = 'Antimony'; // Sb
+export const cTellurium = 'Tellurium'; // Te
+export const cIodine = 'Iodine'; // I
+export const cXenon = 'Xenon'; // Xe
+export const cCesium = 'Cesium'; // Cs
+export const cBarium = 'Barium'; // Ba
+export const cLanthanum = 'Lanthanum'; // La
+export const cCerium = 'Cerium'; // Ce
+export const cPraseodymium = 'Praseodymium'; // Pr
+export const cNeodymium = 'Neodymium'; // Nd
+export const cPromethium = 'Promethium'; // Pm
+export const cSamarium = 'Samarium'; // Sm
+export const cEuropium = 'Europium'; // Eu
+export const cGadolinium = 'Gadolinium'; // Gd
+export const cTerbium = 'Terbium'; // Tb
+export const cDysprosium = 'Dysprosium'; // Dy
+export const cHolmium = 'Holmium'; // Ho
+export const cErbium = 'Erbium'; // Er
+export const cThulium = 'Thulium'; // Tm
+export const cYtterbium = 'Ytterbium'; // Yb
+export const cLutetium = 'Lutetium'; // Lu
+export const cHafnium = 'Hafnium'; // Hf
+export const cTantalum = 'Tantalum'; // Ta
+export const cTungsten = 'Tungsten'; // W
+export const cRhenium = 'Rhenium'; // Re
+export const cOsmium = 'Osmium'; // Os
+export const cIridium = 'Iridium'; // Ir
+export const cPlatinum = 'Platinum'; // Pt
+export const cGold = 'Gold'; // Au
+export const cMercury = 'Mercury'; // Hg
+export const cThallium = 'Thallium'; // Tl
+export const cLead = 'Lead'; // Pb
+export const cBismuth = 'Bismuth'; // Bi
+export const cPolonium = 'Polonium'; // Po
+export const cAstatine = 'Astatine'; // At
+export const cRadon = 'Radon'; // Rn
+export const cFrancium = 'Francium'; // Fr
+export const cRadium = 'Radium'; // Ra
+export const cActinium = 'Actinium'; // Ac
+export const cThorium = 'Thorium'; // Th
+export const cProtactinium = 'Protactinium'; // Pa
+export const cUranium = 'Uranium'; // U
+export const cNeptunium = 'Neptunium'; // Np
+export const cPlutonium = 'Plutonium'; // Pu
+export const cAmericium = 'Americium'; // Am
+export const cCurium = 'Curium'; // Cm
+export const cBerkelium = 'Berkelium'; // Bk
+export const cCalifornium = 'Californium'; // Cf
+export const cEinsteinium = 'Einsteinium'; // Es
+export const cFermium = 'Fermium'; // Fm
+export const cMendelevium = 'Mendelevium'; // Md
+export const cNobelium = 'Nobelium'; // No
+export const cLawrencium = 'Lawrencium'; // Lr
+export const cRutherfordium = 'Rutherfordium'; // Rf
+export const cDubnium = 'Dubnium'; // Db
+export const cSeaborgium = 'Seaborgium'; // Sg
+export const cBohrium = 'Bohrium'; // Bh
+export const cHassium = 'Hassium'; // Hs
+export const cMeitnerium = 'Meitnerium'; // Mt
+export const cDarmstatium = 'Darmstatium'; // Ds
+export const cRoentgenium = 'Roentgenium'; // Rg
+export const cCopernicium = 'Copernicium'; // Cn
+export const cNihonium = 'Nihonium'; // Nh
+export const cFlerovium = 'Flerovium'; // Fl
+export const cMoscovium = 'Moscovium'; // Mc
+export const cLivermorium = 'Livermorium'; // Lv
+export const cTennessine = 'Tennessine'; // Ts
+export const cOganesson = 'Oganesson'; // Og
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

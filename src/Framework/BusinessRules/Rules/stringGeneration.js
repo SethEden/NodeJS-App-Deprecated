@@ -103,6 +103,7 @@
  * @requires module:characterGeneration
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:numeric-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -115,6 +116,7 @@ import { stringToBoolean } from './stringParsing';
 import * as cg from './characterGeneration';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as n from '../../Constants/numeric.constants';
 import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
@@ -1193,9 +1195,9 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
     // So let us first figure that out, then the rest of the available characters that we must provide can be divided up betwee the prefix and suffix.
     if (numberOfCharactersToGenerate === 4) { // Stick with a 2-character domain name.
       if (generateSpecialCharacters === false) {
-        domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
       } else {
-        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(n.c2, allowableSpecialCharacters);
       }
     } else if (numberOfCharactersToGenerate >= 5) {
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
@@ -1203,16 +1205,16 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
       if (cg.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
         } else {
-          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(n.c2, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
       } else { // Do a 3-characterdomain name.
         if (generateSpecialCharacters === false) {
-          domainName = generateRandomMixedCaseTextByLength1(b.c3, '');
+          domainName = generateRandomMixedCaseTextByLength1(n.c3, '');
         } else {
-          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c3, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(n.c3, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 3;
       }
@@ -1220,9 +1222,9 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
       // @NOTE We should never actually get here, because the {@code numberOfCharactersToGenerate} cannot be less than 6 and 6-2 must be >= 4.
       // Just generate the minimum domain and try to proceed as best as possible as a matter of completeness of the code.
       if (generateSpecialCharacters === false) {
-        domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
       } else {
-        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(n.c2, allowableSpecialCharacters);
       }
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
@@ -1297,9 +1299,9 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
     // So let us first figure that out, then the rest of the available characters that we must provide can be divided up betwee the prefix and suffix.
     if (numberOfCharactersToGenerate === 4) { // Stick with a 2-character domain name.
       if (generateSpecialCharacters === false) {
-        domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
       } else {
-        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(n.c2, allowableSpecialCharacters);
       }
     } else if (numberOfCharactersToGenerate >= 5) {
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
@@ -1307,16 +1309,16 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
       if (cg.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
         } else {
-          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(n.c2, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
       } else { // Do a 3-characterdomain name.
         if (generateSpecialCharacters === false) {
-          domainName = generateRandomMixedCaseTextByLength2(b.c3, '');
+          domainName = generateRandomMixedCaseTextByLength2(n.c3, '');
         } else {
-          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c3, allowableSpecialCharacters);
+          domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(n.c3, allowableSpecialCharacters);
         }
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - 3;
       }
@@ -1324,9 +1326,9 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
       // @NOTE We should never actually get here, because the {@code numberOfCharactersToGenerate} cannot be less than 6 and 6-2 must be >= 4.
       // Just generate the minimum domain and try to proceed as best as possible as a matter of completeness of the code.
       if (generateSpecialCharacters === false) {
-        domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+        domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
       } else {
-        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+        domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(n.c2, allowableSpecialCharacters);
       }
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
@@ -1391,7 +1393,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
   let numberOfPrefixCharacters = 0;
   let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = b.c3;
+  let c3 = n.c3;
   let cTrue = g.cTrue;
   // console.log('Started the execution of the business rule generateInvalidEmailWithSpecificSuffixAndDomainName1');
   // console.log('Number of characters to generate is: ' + numberOfCharactersToGenerate);
@@ -1399,7 +1401,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange1(b.c1, [c3, cTrue, cTrue]);
+  failureMode = cg.randomlyGenerateNumberInRange1(n.c1, [c3, cTrue, cTrue]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
   // Failure Mode Legend:
@@ -1497,7 +1499,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
   let numberOfPrefixCharacters = 0;
   let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = b.c3;
+  let c3 = n.c3;
   let cTrue = g.cTrue;
   // console.log('Started the execution of the business rule generateInvalidEmailWithSpecificSuffixAndDomainName2');
   // console.log('Number of characters to generate is: ' + numberOfCharactersToGenerate);
@@ -1505,7 +1507,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange2(b.c1, [c3, cTrue, cTrue]);
+  failureMode = cg.randomlyGenerateNumberInRange2(n.c1, [c3, cTrue, cTrue]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
   // Failure Mode Legend:
@@ -1603,10 +1605,10 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
   let numberOfDomainNameCharacters = 0;
   let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c28 = b.c2 + b.c8;
+  let c28 = n.c2 + n.c8;
   let cTrue = g.cTrue;
 
-  failureMode = cg.randomlyGenerateNumberInRange1(b.c1, [c28, cTrue, cTrue]);
+  failureMode = cg.randomlyGenerateNumberInRange1(n.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
@@ -1666,14 +1668,14 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       if (numberOfCharactersToGenerate === 4) {
         // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
           // domainName = generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
         } else {
           if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
             // domainName = generateRandomMixedCaseTextWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
-            domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+            domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(n.c2, allowableSpecialCharacters);
           } else {
-            domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+            domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
           }
         }
         numberOfCharactersToGenerate = numberOfDomainNameCharacters - 2;
@@ -1683,23 +1685,23 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
         if (cg.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+            domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
           } else {
             if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
-              domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
+              domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(n.c2, allowableSpecialCharacters);
             } else {
-              domainName = generateRandomMixedCaseTextByLength1(b.c2, '');
+              domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
             }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 2;
         } else { // Do a 3-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = generateRandomMixedCaseTextByLength1(b.c3, '');
+            domainName = generateRandomMixedCaseTextByLength1(n.c3, '');
           } else {
             if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
-              domainNme = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(b.c3, allowableSpecialCharacters);
+              domainNme = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1(n.c3, allowableSpecialCharacters);
             } else {
-              domainName = generateRandomMixedCaseTextByLength1(b.c3, '');
+              domainName = generateRandomMixedCaseTextByLength1(n.c3, '');
             }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 3;
@@ -1905,10 +1907,10 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
   let numberOfDomainNameCharacters = 0;
   let failureMode = -1;
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c28 = b.c2 + b.c8;
+  let c28 = n.c2 + n.c8;
   let cTrue = g.cTrue;
 
-  failureMode = cg.randomlyGenerateNumberInRange2(b.c1, [c28, cTrue, cTrue]);
+  failureMode = cg.randomlyGenerateNumberInRange2(n.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'failureMode is: ' + failureMode);
   // ************************************************************
@@ -1968,14 +1970,14 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       if (numberOfCharactersToGenerate === 4) {
         // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
-          domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+          domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
           // domainName = generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
         } else {
           if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
             // domainName = generateRandomMixedCaseTextWithSpecialCharactersByLength1(b.c2, allowableSpecialCharacters);
-            domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+            domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(n.c2, allowableSpecialCharacters);
           } else {
-            domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+            domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
             // domainName = generateRandomMixedCaseAlphaNumericCodeByLength1(b.c2, '');
           }
         }
@@ -1986,23 +1988,23 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
         if (cg.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+            domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
           } else {
             if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
-              domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c2, allowableSpecialCharacters);
+              domainName = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(n.c2, allowableSpecialCharacters);
             } else {
-              domainName = generateRandomMixedCaseTextByLength2(b.c2, '');
+              domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
             }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 2;
         } else { // Do a 3-character domain name.
           if (generateSpecialCharacters === false) {
-            domainName = generateRandomMixedCaseTextByLength2(b.c3, '');
+            domainName = generateRandomMixedCaseTextByLength2(n.c3, '');
           } else {
             if (!!allowableSpecialCharacters && allowableSpecialCharacters !== undefined) {
-              domainNme = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(b.c3, allowableSpecialCharacters);
+              domainNme = generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2(n.c3, allowableSpecialCharacters);
             } else {
-              domainName = generateRandomMixedCaseTextByLength2(b.c3, '');
+              domainName = generateRandomMixedCaseTextByLength2(n.c3, '');
             }
           }
           numberOfCharactersToGenerate = numberOfDomainNameCharacters - 3;
