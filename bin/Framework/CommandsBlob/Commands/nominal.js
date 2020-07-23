@@ -766,7 +766,7 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
       var currentBusinessRuleName = D[s.cBusinessRuleNamesPerformanceTrackingStack][i];
 
       for (var j = 0; j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); j++) {
-        if (D[s.cBusinessRulePerformanceTrackingStack][j][s.cName] === currentBusinessRuleName) {
+        if (D[s.cBusinessRulePerformanceTrackingStack][j][w.cName] === currentBusinessRuleName) {
           businessRuleCounter = businessRuleCounter + 1;
 
           _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRuleCounter is: ' + businessRuleCounter);

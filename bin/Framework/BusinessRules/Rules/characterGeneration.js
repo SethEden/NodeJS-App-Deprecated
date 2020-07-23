@@ -15,6 +15,8 @@ var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
+var n = _interopRequireWildcard(require("../../Constants/numeric.constants"));
+
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -117,6 +119,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:stringParsing
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:numeric-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -362,10 +365,10 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function 
   var returnData = '';
   var typeToGenerate = -1; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c3 = b.c3;
-  var c9 = b.c9;
+  var c3 = n.c3;
+  var c9 = n.c9;
   var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'typeToGenerate is: ' + typeToGenerate);
 
@@ -375,7 +378,7 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function 
       // Generate a number.
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a number.');
 
-      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
@@ -466,16 +469,16 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function 
   var returnData = '';
   var typeToGenerate = -1; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c3 = b.c3;
-  var c9 = b.c9;
+  var c3 = n.c3;
+  var c9 = n.c9;
   var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
 
   switch (typeToGenerate) {
     case 1:
     case '1':
       // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
@@ -560,16 +563,16 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function 
   var returnData = '';
   var typeToGenerate = -1; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c3 = b.c3;
-  var c9 = b.c9;
+  var c3 = n.c3;
+  var c9 = n.c9;
   var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(b.c1, [b.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
 
   switch (typeToGenerate) {
     case 1:
     case '1':
       // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
@@ -859,7 +862,7 @@ var randomlyGenerateNumericCharacter1 = function randomlyGenerateNumericCharacte
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateNumberInRange1(b.c0, [b.c9, g.cTrue, g.cTrue]);
+  returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -926,7 +929,7 @@ var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacte
 
   var cTrue = g.cTrue;
   var inputDataLength = inputData.length.toString();
-  var number = randomlyGenerateNumberInRange1(b.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+  var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 
   returnData = inputData.substring(number - 1, number);
 
@@ -964,7 +967,7 @@ var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacte
 
   var cTrue = g.cTrue;
   var inputDataLength = inputData.length.toString();
-  var number = randomlyGenerateNumberInRange1(b.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
+  var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
 
   returnData = inputData.substring(number - 1, number);
 
@@ -1238,9 +1241,9 @@ var randomlyGenerateLowerCaseLetter1 = function randomlyGenerateLowerCaseLetter1
 
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c26 = b.c2 + b.c6;
+  var c26 = n.c2 + n.c6;
   var cTrue = g.cTrue;
-  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(b.c1, [b.c26, g.cTrue, g.cTrue]));
+  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1305,9 +1308,9 @@ var randomlyGenerateUpperCaseLetter1 = function randomlyGenerateUpperCaseLetter1
 
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c26 = b.c2 + b.c6;
+  var c26 = n.c2 + n.c6;
   var cTrue = g.cTrue;
-  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(b.c1, [b.c26, g.cTrue, g.cTrue]));
+  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 

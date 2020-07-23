@@ -1,11 +1,11 @@
 {
   "name": "NodeJS-App",
-  "version": "1.1.0",
+  "version": "1.0.7",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "src/Application/NodeJS-App/application.js",
   "scripts": {
     "build": "babel src --out-dir bin",
-    "deploy": "npm run vers && npm run build && npm run docs && babel-node src/Application/NodeJS-App/build.js",
+    "deploy": "npm run build && npm run docs && babel-node src/Application/NodeJS-App/build.js",
     "predev": "npm run build && babel-node src/Application/NodeJS-App/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node bin/Application/NodeJS-App/application.js",

@@ -219,7 +219,6 @@ export const cTwistedCubic = 'TwistedCubic';
 export const cVivianisCurve = 'VivianisCurve';
 
 // Surfaces in 3D Space
-export const cPlane = 'Plane';
 export const cQuadricSurfaces = 'QuadricSurfaces';
 export const cCone = 'Cone';
 export const cCylinder = 'Cylinder';
@@ -253,15 +252,10 @@ export const cRomanSurface = 'RomanSurface';
 export const cBoysSurface = 'BoysSurface';
 
 // Quadrics
-export const cSphere = 'Sphere';
-export const cSpheroid = 'Spheroid';
 export const cOblateSpheroid = 'OblateSpheroid';
-export const cCone = 'Cone';
-export const cEllipsoid = 'Ellipsoid';
 export const cHyperboloidOfOneSheet = 'HyperboloidOfOneSheet';
 export const cHyperboloidOfTwoSheets = 'HyperboloidOfTwoSheets';
 export const cHyperbolicParaboloid = 'HyperbolicParaboloid';
-export const cParaboloid = 'Paraboloid';
 export const cSphericon = 'Sphericon';
 export const cOloid = 'Oloid';
 
@@ -274,7 +268,6 @@ export const cCayleyCubic = 'CayleyCubic';
 export const cBarthSextic = 'BarthSextic';
 export const cClebschCubic = 'ClebschCubic';
 export const cMonkeySaddle = 'MonkeySaddle';
-export const cTorus = 'Torus';
 export const cDupinCyclide = 'DupinCyclide';
 export const cWhitneyUmbrella = 'WhitneyUmbrella';
 
@@ -333,7 +326,6 @@ export const cSierpinskiTriangle = 'SierpinskiTriangle';
 export const cSmithVolterraCantorSet = 'SmithVolterraCantorSet';
 export const cTSquare = 'TSquare';
 export const cTakagiCurve = 'TakagiCurve';
-export const cBlancmangeCurve = 'BlancmangeCurve';
 export const cTriflake = 'Triflake';
 export const cVicsekFractal = 'VicsekFractal';
 export const cVonKochCurve = 'VonKochCurve';
@@ -369,13 +361,9 @@ export const cPentagram = 'Pentagram';
 export const cRegularPolygon = 'RegularPolygon';
 export const cEquilateralTriangle = 'EquilateralTriangle';
 export const cSimplex = 'Simplex';
-export const cSquare = 'Square';
 export const cCrossPolytope = 'CrossPolytope';
 export const cHypercube = 'Hypercube';
 export const cPentagon = 'Pentagon';
-export const cHexagon = 'Hexagon';
-export const cHeptagon = 'Heptagon';
-export const cOctagon = 'Octagon';
 export const cEnneagon = 'Enneagon';
 export const cDecagon = 'Decagon';
 export const cHendecagon = 'Hendecagon';
@@ -396,8 +384,6 @@ export const cMonogon = 'Monogon';
 export const cDigon = 'Digon';
 
 // 2D Non-Convex Polytopes
-export const cStarPolygon = 'StarPolygon';
-export const cPentagram = 'Pentagram';
 export const cHeptagram = 'Heptagram';
 export const cOctagram = 'Octagram';
 export const cEnneagram = 'Enneagram';
@@ -412,7 +398,6 @@ export const cPolyhedron = 'Polyhedron';
 // 3D Convex Polytopes
 export const cPlatonicSolid = 'PlatonicSolid';
 export const cTetrahedron = 'Tetrahedron';
-export const cCube = 'Cube';
 export const cOctahedron = 'Octahedron';
 export const cDodecahedron = 'Dodecahedron';
 export const cIcosahedron = 'Icosahedron';
@@ -434,8 +419,6 @@ export const cSquareTiling = 'SquareTiling';
 export const cGrid = 'Grid';
 export const cTriangularTiling = 'TriangularTiling';
 export const cHexagonalTiling = 'HexagonalTiling';
-export const cApeirogon = 'Apeirogon';
-export const cDihedron = 'Dihedron';
 
 // Hyperbolic Tilings
 export const cLobachevskiPlane = 'LobachevskiPlane';
@@ -450,7 +433,6 @@ export const cEnneagrammicOrderEnneagonalTiling = 'EnneagrammicOrderEnneagonalTi
 // 4D Regular Polytopes
 export const c4DSpaceSimplex = '4DSpaceSimplex';
 export const c4DHypercube = '4DHypercube';
-export const cHypercube = 'Hypercube';
 export const c4DCrossPolytope = '4DCrossPolytope';
 export const c24Cell = '24Cell';
 export const c120Cell = '120Cell';
@@ -479,8 +461,6 @@ export const cHoneycomb = 'Honeycomb';
 export const cCubicHoneycomb = 'CubicHoneycomb';
 
 // Degenerate tessellations of Euclidean 3D
-export const cHosohedron = 'Hosohedron';
-export const cDihedron = 'Dihedron';
 export const cOrder2ApeirogonalTiling = 'Order2ApeirogonalTiling';
 export const cApeirogonalHosohedron = 'ApeirogonalHosohedron';
 export const cOrder4SquareHosohedralHoneycomb = 'Order4SquareHosohedralHoneycomb';
@@ -510,7 +490,6 @@ export const cOrder6HexagonalTilingHoneycomb = 'Order6HexagonalTilingHoneycomb';
 
 // 5D Regular Polytopes and Higher
 export const c5Polytope = '5Polytope';
-export const cHoneycomb = 'Honeycomb';
 export const cTetracomb = 'Tetracomb';
 export const cSimplexHypercubeCrossPolytope = 'SimplexHypercubeCrossPolytope';
 export const c5Simplex = '5Simplex';
@@ -543,9 +522,6 @@ export const c24CellHoneycomb = '24CellHoneycomb';
 
 // Tessellations of Euclidean 5D and Higher
 export const cHypercubicHoneycomb = 'HypercubicHoneycomb';
-export const cSquareTiling = 'SquareTiling';
-export const cCubicHoneycomb = 'CubicHoneycomb';
-export const cTesseracticHoneycomb = 'TesseracticHoneycomb';
 export const c5CubeHoneycomb = '5CubeHoneycomb';
 export const c6CubeHoneycomb = '6CubeHoneycomb';
 export const c7CubeHoneycomb = '7CubeHoneycomb';
@@ -558,7 +534,6 @@ export const cOrder5TesseracticHoneycomb = 'Order5TesseracticHoneycomb';
 export const cOrder4_120CellHoneycomb = 'Order4_120CellHoneycomb';
 export const cOrder5_120CellHoneycomb = 'Order5_120CellHoneycomb';
 export const cOrder4_24CellHoneycomb = 'Order4_24CellHoneycomb';
-export const cCubicHoneycomb = 'CubicHoneycomb';
 export const cSmallStellated120CellHoneycomb = 'SmallStellated120CellHoneycomb';
 export const cPentagrammicOrder600CellHoneycomb = 'PentagrammicOrder600CellHoneycomb';
 export const cOrder5Icosahedral120CellHoneycomb = 'Order5Icosahedral120CellHoneycomb';
@@ -568,11 +543,9 @@ export const cGreat120CellHoneycomb = 'Great120CellHoneycomb';
 export const c5OrthoplexHoneycomb = '5OrthoplexHoneycomb';
 export const c24CellHoneycombHoneycomb = '24CellHoneycombHoneycomb';
 export const c16CellHoneycombHoneycomb = '16CellHoneycombHoneycomb';
-export const cOrder4_24CellHoneycomb = 'Order4_24CellHoneycomb';
 
 // Apeirotopes
 export const cApeirotope = 'Apeirotope';
-export const cApeirogon = 'Apeirogon';
 export const cApeirohedron = 'Apeirohedron';
 export const cRegularSkewPolyhedron = 'RegularSkewPolyhedron';
 
@@ -582,34 +555,22 @@ export const c11Cell = '11Cell';
 export const c57Cell = '57Cell';
 
 // 2D with 1D Surface
-export const cConvexPolygon = 'ConvexPolygon';
 export const cConcavePolygon = 'ConcavePolygon';
 export const cConstructiblePolygon = 'ConstructiblePolygon';
-export const cCyclicPolygon = 'CyclicPolygon';
 export const cEquiangularPolygon = 'EquiangularPolygon';
 export const cEquilateralPolygon = 'EquilateralPolygon';
-export const cRegularPolygon = 'RegularPolygon';
 export const cPenroseTile = 'PenroseTile';
 export const cPolyform = 'Polyform';
 export const cBalbis = 'Balbis';
 export const cGnomon = 'Gnomon';
 export const cGolygon = 'Golygon';
 export const cStar = 'Star';
-export const cStarPolygon = 'StarPolygon';
 export const cHexagram = 'Hexagram';
 export const cStarOfDavid = 'StarOfDavid';
-export const cHeptagram = 'Heptagram';
-export const cOctagram = 'Octagram';
 export const cStarOfLakshmi = 'StarOfLakshmi';
-export const cDecagram = 'Decagram';
-export const cPentagram = 'Pentagram';
 
 // Polygons named for their number of sides
-export const cMonogon = 'Monogon';
-export const cDigon = 'Digon';
-export const cTriangle = 'Triangle';
 export const cAcuteTriangle = 'AcuteTriangle';
-export const cEquilateralTriangle = 'EquilateralTriangle';
 export const cIsoscelesTriangle = 'IsoscelesTriangle';
 export const cObtuseTriangle = 'ObtuseTriangle';
 export const cRationalTriangle = 'RationalTriangle';
@@ -620,39 +581,20 @@ export const cKeplerTriangle = 'KeplerTriangle';
 export const cScaleneTriangle = 'ScaleneTriangle';
 export const cQuadrilateral = 'Quadrilateral';
 export const cCyclicQuadrilateral = 'CyclicQuadrilateral';
-export const cSquare = 'Square';
 export const cKite = 'Kite';
 export const cParallelogram = 'Parallelogram';
 export const cRhombus = 'Rhombus';
 export const cEquilateralParallelogram = 'EquilateralParallelogram';
 export const cLozenge = 'Lozenge';
 export const cRhomboid = 'Rhomboid';
-export const cRectangle = 'Rectangle';
-export const cSquare = 'Square';
 export const cTangentialQuadrilateral = 'TangentialQuadrilateral';
-export const cTrapezoid = 'Trapezoid';
 export const cTrapezium = 'Trapezium';
 export const cIsoscelesTrapezoid = 'IsoscelesTrapezoid';
-export const cPentagon = 'Pentagon';
 export const cRegularPentagon = 'RegularPentagon';
-export const cHexagon = 'Hexagon';
 export const cLemoineHexagon = 'LemoineHexagon';
-export const cHeptagon = 'Heptagon';
-export const cOctagon = 'Octagon';
 export const cRegularOctagon = 'RegularOctagon';
-export const cNonagon = 'Nonagon';
-export const cDecagon = 'Decagon';
 export const cRegularDecagon = 'RegularDecagon';
-export const cHendecagon = 'Hendecagon';
-export const cDodecagon = 'Dodecagon';
 export const cTriskaidecagon = 'Triskaidecagon';
-export const cTetradecagon = 'Tetradecagon';
-export const cPentadecagon = 'Pentadecagon';
-export const cHexadecagon = 'Hexadecagon';
-export const cHeptadecagon = 'Heptadecagon';
-export const cOctadecagon = 'Octadecagon';
-export const cEnneadecagon = 'Enneadecagon';
-export const cIcosagon = 'Icosagon';
 export const cTriacontagon = 'Triacontagon';
 export const cTetracontagon = 'Tetracontagon';
 export const cPentacontagon = 'Pentacontagon';
@@ -660,19 +602,13 @@ export const cHexacontagon = 'Hexacontagon';
 export const cHeptacontagon = 'Heptacontagon';
 export const cOctacontagon = 'Octacontagon';
 export const cEnneacontagon = 'Enneacontagon';
-export const cHectogon = 'Hectogon';
 export const c257Gon = '257Gon';
-export const cChiliagon = 'Chiliagon';
 export const cMyriagon = 'Myriagon';
 export const c65537Gon = '65537Gon';
 export const cMegagon = 'Megagon';
-export const cApeirogon = 'Apeirogon';
 
 // Tilings
 export const cArchimedeanTiling = 'ArchimedeanTiling';
-export const cSquareTiling = 'SquareTiling';
-export const cTriangularTiling = 'TriangularTiling';
-export const cHexagonalTiling = 'HexagonalTiling';
 export const cTruncatedSquareTiling = 'TruncatedSquareTiling';
 export const cSnubSquareTiling = 'SnubSquareTiling';
 export const cTrihexagonalTiling = 'TrihexagonalTiling';
@@ -683,10 +619,6 @@ export const cSnubHexagonalTiling = 'SnubHexagonalTiling';
 export const cElongatedTriangularTiling = 'ElongatedTriangularTiling';
 
 // Uniform Polyhedra
-export const cGreatIcosahedron = 'GreatIcosahedron';
-export const cSmallStellatedDodecahedron = 'SmallStellatedDodecahedron';
-export const cGreatDodecahedron = 'GreatDodecahedron';
-export const cGreatStellatedDodecahedron = 'GreatStellatedDodecahedron';
 export const cHemicube = 'Hemicube';
 export const cHemiOctahedron = 'HemiOctahedron';
 export const cHemiDodecahedron = 'HemiDodecahedron';
@@ -780,7 +712,6 @@ export const cGreatComplexIcosidodecahedron = 'GreatComplexIcosidodecahedron';
 export const cGreatDeltoidalHexecontahedron = 'GreatDeltoidalHexecontahedron';
 export const cGreatDeltoidalIcositetrahedron = 'GreatDeltoidalIcositetrahedron';
 export const cGreatDirhombicosidodecacron = 'GreatDirhombicosidodecacron';
-export const cGreatDirhombicosidodecahedron = 'GreatDirhombicosidodecahedron';
 export const cGreatDisdyakisDodecahedron = 'GreatDisdyakisDodecahedron';
 export const cGreatDisdyakisTriacontahedron = 'GreatDisdyakisTriacontahedron';
 export const cGreatDisnubDirhombidodecacron = 'GreatDisnubDirhombidodecacron';
@@ -943,12 +874,7 @@ export const cPrismatoid = 'Prismatoid';
 export const cCupola = 'Cupola';
 export const cBicupola = 'Bicupola';
 
-// Spherical Polyhedra
-export const cDihedron = 'Dihedron';
-export const cHosohedron = 'Hosohedron';
-
 // Honeycombs
-export const cCubicHoneycomb = 'CubicHoneycomb';
 export const cTruncatedCubicHoneycomb = 'TruncatedCubicHoneycomb';
 export const cBitruncatedCubicHoneycomb = 'BitruncatedCubicHoneycomb';
 export const cCantellatedCubicHoneycomb = 'CantellatedCubicHoneycomb';
@@ -985,17 +911,8 @@ export const cRhombicDodecahedralHoneycomb = 'RhombicDodecahedralHoneycomb';
 export const cTrapezoRhombicDodecahedralHoneycomb = 'TrapezoRhombicDodecahedralHoneycomb';
 export const cWeairePhelanStructure = 'WeairePhelanStructure';
 
-// Convex Uniform Honeycombs in Hyperbolic Space
-export const cOrder4DodecahedralHoneycomb = 'Order4DodecahedralHoneycomb';
-export const cOrder5CubicHoneycomb = 'Order5CubicHoneycomb';
-export const cOrder5DodecahedralHoneycomb = 'Order5DodecahedralHoneycomb';
-export const cIcosahedralHoneycomb = 'IcosahedralHoneycomb';
-
 // Other Prismatic Geometries
 export const cApeirogonalPrism = 'ApeirogonalPrism';
-export const cApeirohedron = 'Apeirohedron';
-export const cBicupola = 'Bicupola';
-export const cCupola = 'Cupola';
 export const cBifrustum = 'Bifrustum';
 export const cBoerdijkCoxeterHelix = 'BoerdijkCoxeterHelix';
 export const cCsaszarPolyhedron = 'CsaszarPolyhedron';
@@ -1009,14 +926,11 @@ export const cHolyhedron = 'Holyhedron';
 export const cInfiniteSkewPolyhedron = 'InfiniteSkewPolyhedron';
 export const cJessensIcosahedron = 'JessensIcosahedron';
 export const cNearMissJohnsonSolid = 'NearMissJohnsonSolid';
-export const cParallelepiped = 'Parallelepiped';
 export const cPentagonalBifrustum = 'PentagonalBifrustum';
 export const cPolytetrahedron = 'Polytetrahedron';
 export const cPyritohedron = 'Pyritohedron';
 export const cRhombicEnneacontahedron = 'RhombicEnneacontahedron';
 export const cRhombicIcosahedron = 'RhombicIcosahedron';
-export const cRhomboHexagonalDodecahedron = 'RhomboHexagonalDodecahedron';
-export const cRhombohedron = 'Rhombohedron';
 export const cScalenohedron = 'Scalenohedron';
 export const cSchonhardtPolyhedron = 'SchonhardtPolyhedron';
 export const cSquareBifrustum = 'SquareBifrustum';
@@ -1026,13 +940,10 @@ export const cTetradecahedron = 'Tetradecahedron';
 export const cTetradyakisHexahedron = 'TetradyakisHexahedron';
 export const cTetratedDodecahedron = 'TetratedDodecahedron';
 export const cTriangularBifrustum = 'TriangularBifrustum';
-export const cTriaugmentedTriangularPrism = 'TriaugmentedTriangularPrism';
 export const cTruncatedRhombicDodecahedron = 'TruncatedRhombicDodecahedron';
-export const cTruncatedTrapezohedron = 'TruncatedTrapezohedron';
 export const cTruncatedTriakisTetrahedron = 'TruncatedTriakisTetrahedron';
 export const cTridyakisIcosahedron = 'TridyakisIcosahedron';
 export const cTrigonalTrapezohedron = 'TrigonalTrapezohedron';
-export const cRegularSkewPolyhedron = 'RegularSkewPolyhedron';
 export const cWatermanPolyhedron = 'WatermanPolyhedron';
 export const cWedge = 'Wedge';
 
@@ -1182,7 +1093,6 @@ export const cSnubDodecahedralPrism = 'SnubDodecahedralPrism';
 export const cUniformAntiprismaticPrism = 'UniformAntiprismaticPrism';
 
 // 5D Space, 5D Polytope and Uniform 5D Polytope
-export const c5Simplex = '5Simplex';
 export const cRectified_5Simplex = 'Rectified_5Simplex';
 export const cTruncated_5Simplex = 'Truncated_5Simplex';
 export const cCantellated_5Simplex = 'Cantellated_5Simplex';
@@ -1192,13 +1102,11 @@ export const c5Demicube = '5Demicube';
 export const cTruncated_5Demicube = 'Truncated_5Demicube';
 export const cCantellated_5Demicube = 'Cantellated_5Demicube';
 export const cRuncinated_5Demicube = 'Runcinated_5Demicube';
-export const c5Cube = '5Cube';
 export const cRectified_5Cube = 'Rectified_5Cube';
 export const cTruncated_5Cube = 'Truncated_5Cube';
 export const cCantellated_5Cube = 'Cantellated_5Cube';
 export const cRuncinated_5Cube = 'Runcinated_5Cube';
 export const cStericated_5Cube = 'Stericated_5Cube';
-export const c5Orthoplex = '5Orthoplex';
 export const cRectified_5Orthoplex = 'Rectified_5Orthoplex';
 export const cTruncated_5Orthoplex = 'Truncated_5Orthoplex';
 export const cCantellated_5Orthoplex = 'Cantellated_5Orthoplex';
@@ -1211,7 +1119,6 @@ export const cTruncated_5SimplexHoneycomb = 'Truncated_5SimplexHoneycomb';
 export const c5DemicubicHoneycomb = '5DemicubicHoneycomb';
 
 // 6D Space, 6D Polytope and Uniform 6D Polytope
-export const c6Simplex = '6Simplex';
 export const cRectified_6Simplex = 'Rectified_6Simplex';
 export const cTruncated_6Simplex = 'Truncated_6Simplex';
 export const cCantellated_6Simplex = 'Cantellated_6Simplex';
@@ -1223,14 +1130,12 @@ export const cTruncated_6Demicube = 'Truncated_6Demicube';
 export const cCantellated_6Demicube = 'Cantellated_6Demicube';
 export const cRuncinated_6Demicube = 'Runcinated_6Demicube';
 export const cStericated_6Demicube = 'Stericated_6Demicube';
-export const c6Cube = '6Cube';
 export const cRectified_6Cube = 'Rectified_6Cube';
 export const cTruncated_6Cube = 'Truncated_6Cube';
 export const cCantellated_6Cube = 'Cantellated_6Cube';
 export const cRuncinated_6Cube = 'Runcinated_6Cube';
 export const cStericated_6Cube = 'Stericated_6Cube';
 export const cPentellated_6Cube = 'Pentellated_6Cube';
-export const c6Orthoplex = '6Orthoplex';
 export const cRectified_6Orthoplex = 'Rectified_6Orthoplex';
 export const cTruncated_6Orthoplex = 'Truncated_6Orthoplex';
 export const cCantellated_6Orthoplex = 'Cantellated_6Orthoplex';
@@ -1243,7 +1148,6 @@ export const c6SimplexHoneycomb = '6SimplexHoneycomb';
 export const c6DemicubicHoneycomb = '6DemicubicHoneycomb';
 
 // 7D Space, Uniform 7D Polytope
-export const c7Simplex = '7Simplex';
 export const cRectified_7Simplex = 'Rectified_7Simplex';
 export const cTruncated_7Simplex = 'Truncated_7Simplex';
 export const cCantellated_7Simplex = 'Cantellated_7Simplex';
@@ -1257,7 +1161,6 @@ export const cCantellated_7Demicube = 'Cantellated_7Demicube';
 export const cRuncinated_7Demicube = 'Runcinated_7Demicube';
 export const cStericated_7Demicube = 'Stericated_7Demicube';
 export const cPentellated_7Demicube = 'Pentellated_7Demicube';
-export const c7Cube = '7Cube';
 export const cRectified_7Cube = 'Rectified_7Cube';
 export const cTruncated_7Cube = 'Truncated_7Cube';
 export const cCantellated_7Cube = 'Cantellated_7Cube';
@@ -1265,7 +1168,6 @@ export const cRuncinated_7Cube = 'Runcinated_7Cube';
 export const cStericated_7Cube = 'Stericated_7Cube';
 export const cPentellated_7Cube = 'Pentellated_7Cube';
 export const cHexicated_7Cube = 'Hexicated_7Cube';
-export const c7Orthoplex = '7Orthoplex';
 export const cRectified_7Orthoplex = 'Rectified_7Orthoplex';
 export const cTruncated_7Orthoplex = 'Truncated_7Orthoplex';
 export const cCantellated_7Orthoplex = 'Cantellated_7Orthoplex';
@@ -1278,7 +1180,6 @@ export const c7CubicHoneycomb = '7CubicHoneycomb';
 export const c7DemicubicHoneycomb = '7DemicubicHoneycomb';
 
 // 8D Space, Uniform 8D Polytope
-export const c8Simplex = '8Simplex';
 export const cRectified_8Simplex = 'Rectified_8Simplex';
 export const cTruncated_8Simplex = 'Truncated_8Simplex';
 export const cCantellated_8Simplex = 'Cantellated_8Simplex';
@@ -1287,7 +1188,6 @@ export const cStericated_8Simplex = 'Stericated_8Simplex';
 export const cPentellated_8Simplex = 'Pentellated_8Simplex';
 export const cHexicated_8Simplex = 'Hexicated_8Simplex';
 export const cHeptellated_8Simplex = 'Heptellated_8Simplex';
-export const c8Orthoplex = '8Orthoplex';
 export const cRectified_8Orthoplex = 'Rectified_8Orthoplex';
 export const cTruncated_8Orthoplex = 'Truncated_8Orthoplex';
 export const cCantellated_8Orthoplex = 'Cantellated_8Orthoplex';
@@ -1295,7 +1195,6 @@ export const cRuncinated_8Orthoplex = 'Runcinated_8Orthoplex';
 export const cStericated_8Orthoplex = 'Stericated_8Orthoplex';
 export const cPentellated_8Orthoplex = 'Pentellated_8Orthoplex';
 export const cHexicated_8Orthoplex = 'Hexicated_8Orthoplex';
-export const c8Cube = '8Cube';
 export const cRectified_8Cube = 'Rectified_8Cube';
 export const cTruncated_8Cube = 'Truncated_8Cube';
 export const cCantellated_8Cube = 'Cantellated_8Cube';
@@ -1317,40 +1216,23 @@ export const c8CubicHoneycomb = '8CubicHoneycomb';
 export const c8DemicubicHoneycomb = '8DemicubicHoneycomb';
 
 // 9D Polytope
-export const c9Cube = '9Cube';
 export const c9Demicube = '9Demicube';
-export const c9Orthoplex = '9Orthoplex';
-export const c9Simplex = '9Simplex';
 
 // 10D Polytope
-export const c10Cube = '10Cube';
 export const c10Demicube = '10Demicube';
-export const c10Orthoplex = '10Orthoplex';
-export const c10Simplex = '10Simplex';
 
 // Geometry and other areas of mathematics
 export const cAnnulus = 'Annulus';
 export const cApollonianCircles = 'ApollonianCircles';
-export const cApollonianGasket = 'ApollonianGasket';
 export const cArbelos = 'Arbelos';
 export const cBorromeanRings = 'BorromeanRings';
-export const cCircle = 'Circle';
 export const cCircularSector = 'CircularSector';
 export const cCircularSegment = 'CircularSegment';
-export const cCyclicQuadrilateral = 'CyclicQuadrilateral';
-export const cCycloid = 'Cycloid';
-export const cEpitrochoid = 'Epitrochoid';
-export const cEpicycloid = 'Epicycloid';
-export const cCardioid = 'Cardioid';
-export const cNephroid = 'Nephroid';
 export const cDeferent = 'Deferent';
 export const cEpicycle = 'Epicycle';
 export const cExTangentialQuadrilateral = 'ExTangentialQuadrilateral';
 export const cHorocycle = 'Horocycle';
 export const cHypotrochoid = 'Hypotrochoid';
-export const cHypocycloid = 'Hypocycloid';
-export const cAstroid = 'Astroid';
-export const cDeltoidCurve = 'DeltoidCurve';
 export const cLune = 'Lune';
 export const cPappusChain = 'PappusChain';
 export const cPeaucellierLipkinLinkage = 'PeaucellierLipkinLinkage';
@@ -1359,29 +1241,21 @@ export const cSalinon = 'Salinon';
 export const cSemicircle = 'Semicircle';
 export const cSquircle = 'Squircle';
 export const cSteinerChain = 'SteinerChain';
-export const cTangentialQuadrilateral = 'TangentialQuadrilateral';
 export const cBicentricQuadrilateral = 'BicentricQuadrilateral';
 
 // Glyphs and Symbols
-export const cBorromeanRings = 'BorromeanRings';
 export const cCrescent = 'Crescent';
 export const cVesicaPiscis = 'VesicaPiscis';
 export const cArc = 'Arc';
-export const cCaustic = 'Caustic';
-export const cCissoid = 'Cissoid';
-export const cConchoid = 'Conchoid';
 export const cCubicHermiteCurve = 'CubicHermiteCurve';
 export const cCurveOfConstantWidth = 'CurveOfConstantWidth';
 export const cHedgehog = 'Hedgehog';
 export const cParametricCurve = 'ParametricCurve';
-export const cBezierCurve = 'BezierCurve';
 export const cSpline = 'Spline';
 export const cHermiteSpline = 'HermiteSpline';
 export const cBetaSpline = 'BetaSpline';
-export const cBSpline = 'BSpline';
 export const cHigherOrderSpline = 'HigherOrderSpline';
 export const cRay = 'Ray';
-export const cReuleauxTriangle = 'ReuleauxTriangle';
 export const cRibaucourCurve = 'RibaucourCurve';
 
 // Knots
