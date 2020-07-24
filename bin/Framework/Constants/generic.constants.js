@@ -31,53 +31,75 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-var cDotDot = b.cDot + b.cDot;
+var cDotDot = b.cDot + b.cDot; // ..
+
 exports.cDotDot = cDotDot;
-var cDotDotForwardSlash = cDotDot + b.cForwardSlash; // Boolean strings
+var cDotDotForwardSlash = cDotDot + b.cForwardSlash; // ../
+// Boolean strings
 
 exports.cDotDotForwardSlash = cDotDotForwardSlash;
-var cTrue = b.cT + p.crue;
+var cTrue = b.cT + p.crue; // True
+
 exports.cTrue = cTrue;
-var cFalse = b.cF + p.calse;
+var cFalse = b.cF + p.calse; // False
+
 exports.cFalse = cFalse;
-var ctrue = b.ct + p.crue;
+var ctrue = b.ct + p.crue; // true
+
 exports.ctrue = ctrue;
-var cfalse = b.cf + p.calse;
+var cfalse = b.cf + p.calse; // false
+
 exports.cfalse = cfalse;
-var cTRUE = b.cTR + b.cUE;
+var cTRUE = b.cTR + b.cUE; // TRUE
+
 exports.cTRUE = cTRUE;
-var cFALSE = b.cFA + b.cLS + b.cE;
+var cFALSE = b.cFA + b.cLS + b.cE; // FALSE
+
 exports.cFALSE = cFALSE;
-var cOff = b.cO + b.cff;
+var cOff = b.cO + b.cff; // Off
+
 exports.cOff = cOff;
-var coff = b.co + b.cff;
+var coff = b.co + b.cff; // off
+
 exports.coff = coff;
-var cOFF = b.cOF + b.cF;
+var cOFF = b.cOF + b.cF; // OFF
+
 exports.cOFF = cOFF;
-var cyes = b.cy + b.ces;
+var cyes = b.cy + b.ces; // yes
+
 exports.cyes = cyes;
-var cnot = b.cno + b.ct;
+var cnot = b.cno + b.ct; // not
+
 exports.cnot = cnot;
-var cYes = b.cY + b.ces;
+var cYes = b.cY + b.ces; // Yes
+
 exports.cYes = cYes;
-var cNot = b.cNo + b.ct;
+var cNot = b.cNo + b.ct; // Not
+
 exports.cNot = cNot;
-var cYES = b.cYE + b.cS;
+var cYES = b.cYE + b.cS; // YES
+
 exports.cYES = cYES;
 var cNOT = 'NOT'; // b.c_NO + b.cT; // NOTE cNOT is some how a reserved word that is a variable.
 
 exports.cNOT = cNOT;
-var cnotok = cnot + b.cok;
+var cnotok = cnot + b.cok; // notok
+
 exports.cnotok = cnotok;
-var cnotOk = cnot + b.cOk;
+var cnotOk = cnot + b.cOk; // notOk
+
 exports.cnotOk = cnotOk;
-var cnotOK = cnot + b.cOK;
+var cnotOK = cnot + b.cOK; // notOK
+
 exports.cnotOK = cnotOK;
-var cNotok = cNot + b.cok;
+var cNotok = cNot + b.cok; // Notok
+
 exports.cNotok = cNotok;
-var cNotOk = cNot + b.cOk;
+var cNotOk = cNot + b.cOk; // NotOk
+
 exports.cNotOk = cNotOk;
-var cNotOK = cNot + b.cOK;
+var cNotOK = cNot + b.cOK; // NotOK
+
 exports.cNotOK = cNotOK;
 var cNOTok = 'NOTok'; // c_NOT = b.cok;
 
@@ -88,288 +110,343 @@ exports.cNOTOk = cNOTOk;
 var cNOTOK = 'NOTOK'; // c_NOT + b.cOK;
 
 exports.cNOTOK = cNOTOK;
-var cnotEql = cnot + p.cEql;
+var cnotEql = cnot + p.cEql; // notEql
+
 exports.cnotEql = cnotEql;
-var cnoteql = cnot + p.ceql;
+var cnoteql = cnot + p.ceql; // noteql
+
 exports.cnoteql = cnoteql;
-var cNotEql = cNot + p.cEql;
+var cNotEql = cNot + p.cEql; // NotEql
+
 exports.cNotEql = cNotEql;
-var cNoteql = cNot + p.ceql; // Test Status
+var cNoteql = cNot + p.ceql; // Noteql
+// Test Status
 
 exports.cNoteql = cNoteql;
-var cPass = b.cPa + b.css;
+var cPass = b.cPa + b.css; // Pass
+
 exports.cPass = cPass;
-var cWarning = b.cWa + b.crn + b.cin + b.cg;
+var cWarning = b.cWa + b.crn + b.cin + b.cg; // Warning
+
 exports.cWarning = cWarning;
-var cFail = b.cFa + b.cil; // Directions
+var cFail = b.cFa + b.cil; // Fail
+// Directions
 
 exports.cFail = cFail;
-var cDown = b.cDo + b.cwn;
+var cDown = b.cDo + b.cwn; // Down
+
 exports.cDown = cDown;
-var cLeft = b.cLe + b.cft;
+var cLeft = b.cLe + b.cft; // Left
+
 exports.cLeft = cLeft;
-var cRight = b.cRi + b.cgh + b.ct; // Alphabets
+var cRight = b.cRi + b.cgh + b.ct; // Right
+// Alphabets
 
 exports.cRight = cRight;
-var cLowerCaseEnglishAlphabet = b.cab + b.ccd + b.cef + b.cgh + b.cij + b.ckl + b.cmn + b.cop + b.cqr + b.cst + b.cuv + b.cwx + b.cyz;
+var cLowerCaseEnglishAlphabet = b.cab + b.ccd + b.cef + b.cgh + b.cij + b.ckl + b.cmn + b.cop + b.cqr + b.cst + b.cuv + b.cwx + b.cyz; // abcdefghijklmnopqrstuvwxyz
+
 exports.cLowerCaseEnglishAlphabet = cLowerCaseEnglishAlphabet;
-var cUpperCaseEnglishAlphabet = b.cAB + b.cCD + b.cEF + b.cGH + b.cIJ + b.cKL + b.cMN + b.cOP + b.cQR + b.cST + b.cUV + b.cWX + b.cYZ;
+var cUpperCaseEnglishAlphabet = b.cAB + b.cCD + b.cEF + b.cGH + b.cIJ + b.cKL + b.cMN + b.cOP + b.cQR + b.cST + b.cUV + b.cWX + b.cYZ; // ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
 exports.cUpperCaseEnglishAlphabet = cUpperCaseEnglishAlphabet;
-var cAllNumbers = n.c0 + n.c1 + n.c2 + n.c3 + n.c4 + n.c5 + n.c6 + n.c7 + n.c8 + n.c9; // File Extensions
+var cAllNumbers = n.c0 + n.c1 + n.c2 + n.c3 + n.c4 + n.c5 + n.c6 + n.c7 + n.c8 + n.c9; // 0123456789
+// File Extensions
 
 exports.cAllNumbers = cAllNumbers;
-var cdoc = b.cdo + b.cc;
+var cdoc = b.cdo + b.cc; // doc
+
 exports.cdoc = cdoc;
-var cDoc = b.cDo + b.cc;
+var cDoc = b.cDo + b.cc; // Doc
+
 exports.cDoc = cDoc;
-var cDOC = b.cDO + b.cC;
+var cDOC = b.cDO + b.cC; // DOC
+
 exports.cDOC = cDOC;
-var ccom = b.cco + b.cm;
+var ccom = b.cco + b.cm; // com
+
 exports.ccom = ccom;
-var cCom = b.cCo + b.cm;
+var cCom = b.cCo + b.cm; // Com
+
 exports.cCom = cCom;
-var cCOM = b.cCO + b.cM;
+var cCOM = b.cCO + b.cM; // COM
+
 exports.cCOM = cCOM;
-var czip = b.cz + b.cip;
+var czip = b.cz + b.cip; // zip
+
 exports.czip = czip;
-var cZip = b.cZ + b.cip;
+var cZip = b.cZ + b.cip; // Zip
+
 exports.cZip = cZip;
-var cZIP = b.cZ + b.cIP;
+var cZIP = b.cZ + b.cIP; // ZIP
+
 exports.cZIP = cZIP;
-var ctxt = b.ct + b.cxt;
+var ctxt = b.ct + b.cxt; // txt
+
 exports.ctxt = ctxt;
-var cTxt = b.cT + b.cxt;
+var cTxt = b.cT + b.cxt; // Txt
+
 exports.cTxt = cTxt;
-var cTXT = b.cT + b.cXT;
+var cTXT = b.cT + b.cXT; // TXT
+
 exports.cTXT = cTXT;
-var ccsv = b.ccs + b.cv;
+var ccsv = b.ccs + b.cv; // csv
+
 exports.ccsv = ccsv;
-var cCsv = b.cCs + b.cv;
+var cCsv = b.cCs + b.cv; // Csv
+
 exports.cCsv = cCsv;
-var cCSV = b.cCS + b.cv;
+var cCSV = b.cCS + b.cv; // CSV
+
 exports.cCSV = cCSV;
-var cxml = b.cxm + b.cl;
+var cxml = b.cxm + b.cl; // xml
+
 exports.cxml = cxml;
-var cXml = b.cXm + b.cl;
+var cXml = b.cXm + b.cl; // Xml
+
 exports.cXml = cXml;
-var cXML = b.cXM + b.cL;
+var cXML = b.cXM + b.cL; // XML
+
 exports.cXML = cXML;
-var cDotCSV = b.cDot + ccsv;
+var cDotCSV = b.cDot + ccsv; // .csv
+
 exports.cDotCSV = cDotCSV;
-var cDotCom = b.cDot + cCom;
+var cDotCom = b.cDot + cCom; // .com
+
 exports.cDotCom = cDotCom;
-var cDotZip = b.cDot + cZip;
+var cDotZip = b.cDot + cZip; // .Zip
+
 exports.cDotZip = cDotZip;
-var cDotzip = b.cDot + czip;
+var cDotzip = b.cDot + czip; // .zip
+
 exports.cDotzip = cDotzip;
-var cDotTxt = b.cDot + cTxt;
+var cDotTxt = b.cDot + cTxt; // .Txt
+
 exports.cDotTxt = cDotTxt;
-var cDotXml = b.cDot + cXml;
+var cDotXml = b.cDot + cXml; // .Xml
+
 exports.cDotXml = cDotXml;
-var cDotxml = b.cDot + cxml; // Time Formatting
+var cDotxml = b.cDot + cxml; // .xml
+// Time Formatting
 
 exports.cDotxml = cDotxml;
-var cYYYY = b.cYY + b.cYY;
+var cYYYY = b.cYY + b.cYY; // YYYY
+
 exports.cYYYY = cYYYY;
-var cSSS = b.cSS + b.cS;
+var cSSS = b.cSS + b.cS; // SSS
+
 exports.cSSS = cSSS;
-var cYYYYMMDD = cYYYY + b.cMM + b.cDD;
+var cYYYYMMDD = cYYYY + b.cMM + b.cDD; // YYYYMMDD
+
 exports.cYYYYMMDD = cYYYYMMDD;
-var cHHmmss = b.cHH + b.cmm + b.css;
+var cHHmmss = b.cHH + b.cmm + b.css; // HHmmss
+
 exports.cHHmmss = cHHmmss;
-var cHHmmss_SSS = cHHmmss + b.cDash + cSSS;
+var cHHmmss_SSS = cHHmmss + b.cDash + cSSS; // HHmmss_SSS
+
 exports.cHHmmss_SSS = cHHmmss_SSS;
-var cYYYYMMDD_HHmmss = cYYYYMMDD + b.cDash + cHHmmss;
+var cYYYYMMDD_HHmmss = cYYYYMMDD + b.cDash + cHHmmss; // YYYYMMDD_HHmmss
+
 exports.cYYYYMMDD_HHmmss = cYYYYMMDD_HHmmss;
-var cYYYYMMDD_HHmmss_SSS = cYYYYMMDD_HHmmss + cSSS;
+var cYYYYMMDD_HHmmss_SSS = cYYYYMMDD_HHmmss + cSSS; // YYYYMMDD_HHmmss_SSS
+
 exports.cYYYYMMDD_HHmmss_SSS = cYYYYMMDD_HHmmss_SSS;
-var cYYYY_MM_DD_HH_mm_ss_SSS = cYYYY + b.cColon + b.cMM + b.cColon + b.cDD + b.cDash + b.cHH + b.cColon + b.cmm + b.cColon + b.css + b.cColon + cSSS; // Naval & Military Codes
+var cYYYY_MM_DD_HH_mm_ss_SSS = cYYYY + b.cColon + b.cMM + b.cColon + b.cDD + b.cDash + b.cHH + b.cColon + b.cmm + b.cColon + b.css + b.cColon + cSSS; // YYYY_MM_DD_HH_mm_ss_SSS
+// Naval & Military Codes
 
 exports.cYYYY_MM_DD_HH_mm_ss_SSS = cYYYY_MM_DD_HH_mm_ss_SSS;
-var cAlfa = b.cAl + b.cfa; //  'Alfa';
+var cAlfa = b.cAl + b.cfa; //  Alfa
 
 exports.cAlfa = cAlfa;
-var cBravo = b.cBr + b.cav + b.co; // 'Bravo';
+var cBravo = b.cBr + b.cav + b.co; // Bravo
 
 exports.cBravo = cBravo;
-var cCharlie = b.cCh + b.car + b.cli + b.ce; // 'Charlie';
+var cCharlie = b.cCh + b.car + b.cli + b.ce; // Charlie
 
 exports.cCharlie = cCharlie;
-var cDelta = b.cDe + b.clt + b.ca;
+var cDelta = b.cDe + b.clt + b.ca; // Delta
+
 exports.cDelta = cDelta;
-var cEcho = b.cEc + b.cho; // 'Echo';
+var cEcho = b.cEc + b.cho; // Echo
 
 exports.cEcho = cEcho;
-var cFoxtrot = b.cFo + b.cxt + b.cro + b.ct; // 'Foxtrot';
+var cFoxtrot = b.cFo + b.cxt + b.cro + b.ct; // Foxtrot
 
 exports.cFoxtrot = cFoxtrot;
-var cGolf = b.cGo + b.clf; // 'Golf';
+var cGolf = b.cGo + b.clf; // Golf
 
 exports.cGolf = cGolf;
-var cHotel = b.cHo + b.cte + b.cl; // 'Hotel';
+var cHotel = b.cHo + b.cte + b.cl; // Hotel
 
 exports.cHotel = cHotel;
-var cIndia = b.cIn + b.cdi + b.ca; // 'India';
+var cIndia = b.cIn + b.cdi + b.ca; // India
 
 exports.cIndia = cIndia;
-var cJuliett = b.cJu + b.cli + b.cet + b.ct; // 'Juliett';
+var cJuliett = b.cJu + b.cli + b.cet + b.ct; // Juliett
 
 exports.cJuliett = cJuliett;
-var cKilo = b.cKi + b.clo; // 'Kilo';
+var cKilo = b.cKi + b.clo; // Kilo
 
 exports.cKilo = cKilo;
-var cLima = b.cLi + b.cma; // 'Lima';
+var cLima = b.cLi + b.cma; // Lima
 
 exports.cLima = cLima;
-var cMike = b.cMi + b.cke; // 'Mike';
+var cMike = b.cMi + b.cke; // Mike
 
 exports.cMike = cMike;
-var cNovember = b.cNo + b.cv + p.cemb + b.cer; // 'Nov' + cemb + cer;
+var cNovember = b.cNo + b.cv + p.cemb + b.cer; // November
 
 exports.cNovember = cNovember;
-var cOscar = b.cOs + b.cca + b.cr; // 'Oscar';
+var cOscar = b.cOs + b.cca + b.cr; // Oscar
 
 exports.cOscar = cOscar;
-var cPapa = b.cPa + b.cpa; // 'Papa';
+var cPapa = b.cPa + b.cpa; // Papa
 
 exports.cPapa = cPapa;
-var cQuebec = b.cQu + b.ceb + b.cec; // 'Quebec';
+var cQuebec = b.cQu + b.ceb + b.cec; // Quebec
 
 exports.cQuebec = cQuebec;
-var cRomeo = b.cRo + b.cme + b.co; // 'Romeo';
+var cRomeo = b.cRo + b.cme + b.co; // Romeo
 
 exports.cRomeo = cRomeo;
-var cSierra = b.cSi + b.cer + b.cra;
+var cSierra = b.cSi + b.cer + b.cra; // Sierra
+
 exports.cSierra = cSierra;
-var cTango = b.cTa + b.cng + b.co; // 'Tango';
+var cTango = b.cTa + b.cng + b.co; // Tango
 
 exports.cTango = cTango;
-var cUniform = b.cUn + b.cif + b.cor + b.cm; // 'Uniform';
+var cUniform = b.cUn + b.cif + b.cor + b.cm; // Uniform
 
 exports.cUniform = cUniform;
-var cVictor = b.cVi + p.cctor; // 'Victor';
+var cVictor = b.cVi + p.cctor; // Victor
 
 exports.cVictor = cVictor;
-var cWhiskey = b.cWh + b.cis + b.cke + b.cy; // 'Whiskey';
+var cWhiskey = b.cWh + b.cis + b.cke + b.cy; // Whiskey
 
 exports.cWhiskey = cWhiskey;
-var cXray = b.cXr + b.cay; // 'Xray';
+var cXray = b.cXr + b.cay; // Xray
 
 exports.cXray = cXray;
-var cYankee = b.cYa + b.cnk + b.cee; // 'Yankee';
+var cYankee = b.cYa + b.cnk + b.cee; // Yankee
 
 exports.cYankee = cYankee;
-var cZulu = b.cZu + b.clu; // 'Zulu';
+var cZulu = b.cZu + b.clu; // Zulu
 
 exports.cZulu = cZulu;
-var cAlpha = b.cAl + b.cph + b.ca; // 'Alpha';
+var cAlpha = b.cAl + b.cph + b.ca; // Alpha
 
 exports.cAlpha = cAlpha;
-var cBeta = b.cBe + b.cta; // 'Beta';
+var cBeta = b.cBe + b.cta; // Beta
 
 exports.cBeta = cBeta;
-var cGamma = b.cGa + b.cmm + b.ca; // 'Gamma';
+var cGamma = b.cGa + b.cmm + b.ca; // Gamma
 
 exports.cGamma = cGamma;
-var cEpsilon = b.cEp + b.csi + b.clo + b.cn; // 'Epsilon';
+var cEpsilon = b.cEp + b.csi + b.clo + b.cn; // Epsilon
 
 exports.cEpsilon = cEpsilon;
-var cDigamma = b.cDi + b.cga + b.cmm + b.ca; // 'Digamma';
+var cDigamma = b.cDi + b.cga + b.cmm + b.ca; // Digamma
 
 exports.cDigamma = cDigamma;
-var cZeta = b.cZe + b.cta; // 'Zeta';
+var cZeta = b.cZe + b.cta; // Zeta
 
 exports.cZeta = cZeta;
-var ceta = b.cet + b.ca;
+var ceta = b.cet + b.ca; // eta
+
 exports.ceta = ceta;
-var cEta = b.cEt + b.ca; // 'Eta';
+var cEta = b.cEt + b.ca; // Eta
 
 exports.cEta = cEta;
-var cTheta = b.cTh + b.cet + b.ca; // 'Theta';
+var cTheta = b.cTh + b.cet + b.ca; // Theta
 
 exports.cTheta = cTheta;
-var cIota = b.cIo + b.cta; // 'Iota';
+var cIota = b.cIo + b.cta; // Iota
 
 exports.cIota = cIota;
-var cKappa = b.cKa + b.cpp + b.ca; // 'Kappa';
+var cKappa = b.cKa + b.cpp + b.ca; // Kappa
 
 exports.cKappa = cKappa;
-var cLambda = b.cLa + b.cmb + b.cda; // 'Lambda';
+var cLambda = b.cLa + b.cmb + b.cda; // Lambda
 
 exports.cLambda = cLambda;
-var cMu = b.cMu;
+var cMu = b.cMu; // Mu
+
 exports.cMu = cMu;
-var cNu = b.cNu;
+var cNu = b.cNu; // Nu
+
 exports.cNu = cNu;
-var cXi = b.cXi;
+var cXi = b.cXi; // Xi
+
 exports.cXi = cXi;
-var cOmicron = b.cOm + b.cic + b.cro + b.cn; // 'Omicron';
+var cOmicron = b.cOm + b.cic + b.cro + b.cn; // Omicron
 
 exports.cOmicron = cOmicron;
-var cPi = b.cPi;
+var cPi = b.cPi; // Pi
+
 exports.cPi = cPi;
-var cSan = b.cSa + b.cn; // 'San';
+var cSan = b.cSa + b.cn; // San
 
 exports.cSan = cSan;
-var cKoppa = b.cKo + b.cpp + b.ca; // 'Koppa';
+var cKoppa = b.cKo + b.cpp + b.ca; // Koppa
 
 exports.cKoppa = cKoppa;
-var cRho = b.cRh + b.co; // 'Rho';
+var cRho = b.cRh + b.co; // Rho
 
 exports.cRho = cRho;
-var cSigma = b.cSi + b.cgm + b.ca; // 'Sigma';
+var cSigma = b.cSi + b.cgm + b.ca; // Sigma
 
 exports.cSigma = cSigma;
-var cTau = b.cTa + b.cu; // 'Tau';
+var cTau = b.cTa + b.cu; // Tau
 
 exports.cTau = cTau;
-var cUpsilon = b.cUp + b.csi + b.clo + b.cn; // 'Upsilon';
+var cUpsilon = b.cUp + b.csi + b.clo + b.cn; // Upsilon
 
 exports.cUpsilon = cUpsilon;
-var cPhi = b.cPh + b.ci; // 'Phi';
+var cPhi = b.cPh + b.ci; // Phi
 
 exports.cPhi = cPhi;
-var cChi = b.cCh + b.ci; // 'Chi';
+var cChi = b.cCh + b.ci; // Chi
 
 exports.cChi = cChi;
-var cPsi = b.cPs + b.ci; // 'Psi';
+var cPsi = b.cPs + b.ci; // Psi
 
 exports.cPsi = cPsi;
-var cOmega = b.cOm + b.ceg + b.ca; // 'Omega';
+var cOmega = b.cOm + b.ceg + b.ca; // Omega
 // Months Of The Year
 
 exports.cOmega = cOmega;
-var cJanuary = b.cJa + b.cn + p.cuary; // 'January';
+var cJanuary = b.cJa + b.cn + p.cuary; // January
 
 exports.cJanuary = cJanuary;
-var cFebuary = b.cFe + b.cb + p.cuary; // 'Febuary';
+var cFebuary = b.cFe + b.cb + p.cuary; // Febuary
 
 exports.cFebuary = cFebuary;
-var cMarch = b.cMa + b.crc + b.ch; // 'March';
+var cMarch = b.cMa + b.crc + b.ch; // March
 
 exports.cMarch = cMarch;
-var cApril = b.cAp + b.cri + b.cl; // 'April';
+var cApril = b.cAp + b.cri + b.cl; // April
 
 exports.cApril = cApril;
-var cMay = b.cMa + b.cy; // 'May';
+var cMay = b.cMa + b.cy; // May
 
 exports.cMay = cMay;
-var cJune = b.cJu + b.cne; // 'June';
+var cJune = b.cJu + b.cne; // June
 
 exports.cJune = cJune;
-var cJuly = b.cJu + b.cly; // 'July';
+var cJuly = b.cJu + b.cly; // July
 
 exports.cJuly = cJuly;
-var cAugust = b.cAu + b.cgu + b.cst; // 'August';
+var cAugust = b.cAu + b.cgu + b.cst; // August
 
 exports.cAugust = cAugust;
-var cSeptember = b.cSe + b.cpt + p.cemb + b.cer; // 'Sept' + cemb + cer;
+var cSeptember = b.cSe + b.cpt + p.cemb + b.cer; // September
 
 exports.cSeptember = cSeptember;
-var cOctober = b.cOc + b.cto + b.cb + b.cer; // 'Octob' + cer;
+var cOctober = b.cOc + b.cto + b.cb + b.cer; // October
+// export const cNovember = b.cNo + b.cv + b.cemb + b.cer; // November
 
 exports.cOctober = cOctober;
-var cDecember = b.cDe + b.cc + b.cemb + b.cer; // Miscelanious
+var cDecember = b.cDe + b.cc + b.cemb + b.cer; // December
+// Miscelanious
 
 exports.cDecember = cDecember;
 var cress = b.cre + b.css;

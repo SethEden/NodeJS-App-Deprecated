@@ -16,7 +16,7 @@ import * as g from '../../../Constants/generic.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const genericConstantsValidation [
+ export const genericConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

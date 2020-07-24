@@ -15,6 +15,7 @@ import * as p from '../constants/phonics.constants';
 import * as n from '../constants/numeric.constants';
 
 // Units of Measure
+export const cFemto = b.cFe + b.cmt + b.co; // Femto
 export const cPico = b.cPi + b.cco; // Pico
 export const cNano = b.cNa + b.cno; // Nano
 export const cMicro = b.cMi + b.ccr + b.co; // Micro

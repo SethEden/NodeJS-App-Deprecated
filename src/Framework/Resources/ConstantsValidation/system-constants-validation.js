@@ -20,7 +20,7 @@ import * as s from '../../../Constants/system.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const systemConstantsValidation [
+ export const systemConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

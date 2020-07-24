@@ -16,7 +16,7 @@ import * as e from '../../../Constants/element.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const elementConstantsValidation [
+ export const elementConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

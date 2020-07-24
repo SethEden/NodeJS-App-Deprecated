@@ -17,7 +17,7 @@ import * as p from '../../../Constants/phonics.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const phonicsConstantsValidation [
+ export const phonicsConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

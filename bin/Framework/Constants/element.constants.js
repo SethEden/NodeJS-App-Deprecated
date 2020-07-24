@@ -26,7 +26,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 /**
  * @file element.constants.js
  * @module element-constants
- * @description Contains named elements & isotopes.
+ * @description Contains named elements.
  * @requires module:basic-constants
  * @requires module:phonics-constants
  * @requires module:generic-constants
@@ -36,714 +36,712 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  * {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
  */
-var cH = b.cH; // Hydrogen
+var cH = b.cH; // H
 
 exports.cH = cH;
-var cHe = b.cHe; // Helium
+var cHe = b.cHe; // He
 
 exports.cHe = cHe;
-var cLi = b.cLi; // Lithium
+var cLi = b.cLi; // Li
 
 exports.cLi = cLi;
-var cBe = b.cBe; // Beryllium
+var cBe = b.cBe; // Be
 
 exports.cBe = cBe;
-var cB = b.cB; // Boron
+var cB = b.cB; // B
 
 exports.cB = cB;
-var cC = b.cC; // Carbon
+var cC = b.cC; // C
 
 exports.cC = cC;
-var cN = b.cN; // Nitrogen
+var cN = b.cN; // N
 
 exports.cN = cN;
-var cO = b.cO; // Oxygen
+var cO = b.cO; // O
 
 exports.cO = cO;
-var cF = b.cF; // Florine
+var cF = b.cF; // F
 
 exports.cF = cF;
-var cNe = b.cNe; // Neon
+var cNe = b.cNe; // Ne
 
 exports.cNe = cNe;
-var cNa = b.cNa; // Sodium
+var cNa = b.cNa; // Na
 
 exports.cNa = cNa;
-var cMg = b.cMg; // Magnesium
+var cMg = b.cMg; // Mg
 
 exports.cMg = cMg;
-var cAl = b.cAl; // Aluminum
+var cAl = b.cAl; // Al
 
 exports.cAl = cAl;
-var cSi = b.cSi; // Silicon
+var cSi = b.cSi; // Si
 
 exports.cSi = cSi;
-var cP = b.cP; // Phosphorus
+var cP = b.cP; // P
 
 exports.cP = cP;
-var cS = b.cS; // Sulfur
+var cS = b.cS; // S
 
 exports.cS = cS;
-var cCl = b.cCl; // Clorine
+var cCl = b.cCl; // Cl
 
 exports.cCl = cCl;
-var cAr = b.cAr; // Argon
+var cAr = b.cAr; // Ar
 
 exports.cAr = cAr;
-var cK = b.cK; // Potassium
+var cK = b.cK; // K
 
 exports.cK = cK;
-var cCa = b.cCa; // Calcium
+var cCa = b.cCa; // Ca
 
 exports.cCa = cCa;
-var cSc = b.cSc; // Scandium
+var cSc = b.cSc; // Sc
 
 exports.cSc = cSc;
-var cTi = b.cTi; // Titanium
+var cTi = b.cTi; // Ti
 
 exports.cTi = cTi;
-var cV = b.cV; // Vanadium
+var cV = b.cV; // V
 
 exports.cV = cV;
-var cCr = b.cCr; // Chromium
+var cCr = b.cCr; // Cr
 
 exports.cCr = cCr;
-var cMn = b.cMn; // Manganese
+var cMn = b.cMn; // Mn
 
 exports.cMn = cMn;
-var cFe = b.cFe; // Iron
+var cFe = b.cFe; // Fe
 
 exports.cFe = cFe;
-var cCo = b.cCo; // Cobalt
+var cCo = b.cCo; // Co
 
 exports.cCo = cCo;
-var cNi = b.cNi; // Nickel
+var cNi = b.cNi; // Ni
 
 exports.cNi = cNi;
-var cCu = b.cCu; // Copper
+var cCu = b.cCu; // Cu
 
 exports.cCu = cCu;
-var cZn = b.cZn; // Zinc
+var cZn = b.cZn; // Zn
 
 exports.cZn = cZn;
-var cGa = b.cGa; // Gallium
+var cGa = b.cGa; // Ga
 
 exports.cGa = cGa;
-var cGe = b.cGe; // Germanium
+var cGe = b.cGe; // Ge
 
 exports.cGe = cGe;
-var cAs = b.cAs; // Arsenic
+var cAs = b.cAs; // As
 
 exports.cAs = cAs;
-var cSe = b.cSe; // Selenium
+var cSe = b.cSe; // Se
 
 exports.cSe = cSe;
-var cBr = b.cBr; // Bromine
+var cBr = b.cBr; // Br
 
 exports.cBr = cBr;
-var cKr = b.cKr; // Krypton
+var cKr = b.cKr; // Kr
 
 exports.cKr = cKr;
-var cRb = b.cRb; // Rubidium
+var cRb = b.cRb; // Rb
 
 exports.cRb = cRb;
-var cSr = b.cSr; // Strontium
+var cSr = b.cSr; // Sr
 
 exports.cSr = cSr;
-var cY = b.cY; // Yttrium
+var cY = b.cY; // Y
 
 exports.cY = cY;
-var cZr = b.cZr; // Zirconium
+var cZr = b.cZr; // Zr
 
 exports.cZr = cZr;
-var cNb = b.cNb; // Niobium
+var cNb = b.cNb; // Nb
 
 exports.cNb = cNb;
-var cMo = b.cMo; // Molybdenum
+var cMo = b.cMo; // Mo
 
 exports.cMo = cMo;
-var cTc = b.cTc; // Technetium
+var cTc = b.cTc; // Tc
 
 exports.cTc = cTc;
-var cRu = b.cRu; // Ruthenium
+var cRu = b.cRu; // Ru
 
 exports.cRu = cRu;
-var cRh = b.cRh; // Rhodium
+var cRh = b.cRh; // Rh
 
 exports.cRh = cRh;
-var cPd = b.cPd; // Palladium
+var cPd = b.cPd; // Pd
 
 exports.cPd = cPd;
-var cAg = b.cAg; // Silver
+var cAg = b.cAg; // Ag
 
 exports.cAg = cAg;
-var cCd = b.cCd; // Cadmium
+var cCd = b.cCd; // Cd
 
 exports.cCd = cCd;
-var cIn = b.cIn; // Indium
+var cIn = b.cIn; // In
 
 exports.cIn = cIn;
-var cSn = b.cSn; // Tin
+var cSn = b.cSn; // Sn
 
 exports.cSn = cSn;
-var cSb = b.cSb; // Antimony
+var cSb = b.cSb; // Sb
 
 exports.cSb = cSb;
-var cTe = b.cTe; // Tellurium
+var cTe = b.cTe; // Te
 
 exports.cTe = cTe;
-var cI = b.cI; // Iodine
+var cI = b.cI; // I
 
 exports.cI = cI;
-var cXe = b.cXe; // Xenon
+var cXe = b.cXe; // Xe
 
 exports.cXe = cXe;
-var cCs = b.cCs; // Cesium
+var cCs = b.cCs; // Cs
 
 exports.cCs = cCs;
-var cBa = b.cBa; // Barium
+var cBa = b.cBa; // Ba
 
 exports.cBa = cBa;
-var cLa = b.cLa; // Lanthanum
+var cLa = b.cLa; // La
 
 exports.cLa = cLa;
-var cCe = b.cCe; // Cerium
+var cCe = b.cCe; // Ce
 
 exports.cCe = cCe;
-var cPr = b.cPr; // Praseodymium
+var cPr = b.cPr; // Pr
 
 exports.cPr = cPr;
-var cNd = b.cNd; // Neodymium
+var cNd = b.cNd; // Nd
 
 exports.cNd = cNd;
-var cPm = b.cPm; // Promethium
+var cPm = b.cPm; // Pm
 
 exports.cPm = cPm;
-var cSm = b.cSm; // Samarium
+var cSm = b.cSm; // Sm
 
 exports.cSm = cSm;
-var cEu = b.cEu; // Europium
+var cEu = b.cEu; // Eu
 
 exports.cEu = cEu;
-var cGd = b.cGd; // Gadolinium
+var cGd = b.cGd; // Gd
 
 exports.cGd = cGd;
-var cTb = b.cTb; // Terbium
+var cTb = b.cTb; // Tb
 
 exports.cTb = cTb;
-var cDy = b.cDy; // Dysprosium
+var cDy = b.cDy; // Dy
 
 exports.cDy = cDy;
-var cHo = b.cHo; // Holmium
+var cHo = b.cHo; // Ho
 
 exports.cHo = cHo;
-var cEr = b.cEr; // Erbium
+var cEr = b.cEr; // Er
 
 exports.cEr = cEr;
-var cTm = b.cTm; // Thulium
+var cTm = b.cTm; // Tm
 
 exports.cTm = cTm;
-var cYb = b.cYb; // Ytterbium
+var cYb = b.cYb; // Yb
 
 exports.cYb = cYb;
-var cLu = b.cLu; // Lutetium
+var cLu = b.cLu; // Lu
 
 exports.cLu = cLu;
-var cHf = b.cHf; // Hafnium
+var cHf = b.cHf; // Hf
 
 exports.cHf = cHf;
-var cTa = b.cTa; // Tantalum
+var cTa = b.cTa; // Ta
 
 exports.cTa = cTa;
-var cW = b.cW; // Tungsten
+var cW = b.cW; // W
 
 exports.cW = cW;
-var cRe = b.cRe; // Rhenium
+var cRe = b.cRe; // Re
 
 exports.cRe = cRe;
-var cOs = b.cOs; // Osmium
+var cOs = b.cOs; // Os
 
 exports.cOs = cOs;
-var cIr = b.cIr; // Iridium
+var cIr = b.cIr; // Ir
 
 exports.cIr = cIr;
-var cPt = b.cPt; // Platinum
+var cPt = b.cPt; // Pt
 
 exports.cPt = cPt;
-var cAu = b.cAu; // Gold
+var cAu = b.cAu; // Au
 
 exports.cAu = cAu;
-var cHg = b.cHg; // Mercury
+var cHg = b.cHg; // Hg
 
 exports.cHg = cHg;
-var cTl = b.cTl; // Thallium
+var cTl = b.cTl; // Tl
 
 exports.cTl = cTl;
-var cPb = b.cPb; // Lead
+var cPb = b.cPb; // Pb
 
 exports.cPb = cPb;
-var cBi = b.cBi; // Bismuth
+var cBi = b.cBi; // Bi
 
 exports.cBi = cBi;
-var cPo = b.cPo; // Polonium
+var cPo = b.cPo; // Po
 
 exports.cPo = cPo;
-var cAt = b.cAt; // Astatine
+var cAt = b.cAt; // At
 
 exports.cAt = cAt;
-var cRn = b.cRn; // Radon
+var cRn = b.cRn; // Rn
 
 exports.cRn = cRn;
-var cFr = b.cFr; // Francium
+var cFr = b.cFr; // Fr
 
 exports.cFr = cFr;
-var cRa = b.cRa; // Radium
+var cRa = b.cRa; // Ra
 
 exports.cRa = cRa;
-var cAc = b.cAc; // Actinium
+var cAc = b.cAc; // Ac
 
 exports.cAc = cAc;
-var cTh = b.cTh; // Thorium
+var cTh = b.cTh; // Th
 
 exports.cTh = cTh;
-var cPa = b.cPa; // Protactinium
+var cPa = b.cPa; // Pa
 
 exports.cPa = cPa;
-var cU = b.cU; // Uranium
+var cU = b.cU; // U
 
 exports.cU = cU;
-var cNp = b.cNp; // Neptunium
+var cNp = b.cNp; // Np
 
 exports.cNp = cNp;
-var cPu = b.cPu; // Plutonium
+var cPu = b.cPu; // Pu
 
 exports.cPu = cPu;
-var cAm = b.cAm; // Americium
+var cAm = b.cAm; // Am
 
 exports.cAm = cAm;
-var cCm = b.cCm; // Curium
+var cCm = b.cCm; // Cm
 
 exports.cCm = cCm;
-var cBk = b.cBk; // Berkelium
+var cBk = b.cBk; // Bk
 
 exports.cBk = cBk;
-var cCf = b.cCf; // Californium
+var cCf = b.cCf; // Cf
 
 exports.cCf = cCf;
-var cEs = b.cEs; // Einsteinium
+var cEs = b.cEs; // Es
 
 exports.cEs = cEs;
-var cFm = b.cFm; // Fermium
+var cFm = b.cFm; // Fm
 
 exports.cFm = cFm;
-var cMd = b.cMd; // Mendelevium
+var cMd = b.cMd; // Md
 
 exports.cMd = cMd;
-var cNo = b.cNo; // Nobelium
+var cNo = b.cNo; // No
 
 exports.cNo = cNo;
-var cLr = b.cLr; // Lawrencium
+var cLr = b.cLr; // Lr
 
 exports.cLr = cLr;
-var cRf = b.cRf; // Rutherfordium
+var cRf = b.cRf; // Rf
 
 exports.cRf = cRf;
-var cDb = b.cDb; // Dubnium
+var cDb = b.cDb; // Db
 
 exports.cDb = cDb;
-var cSg = b.cSg; // Seaborgium
+var cSg = b.cSg; // Sg
 
 exports.cSg = cSg;
-var cBh = b.cBh; // Bohrium
+var cBh = b.cBh; // Bh
 
 exports.cBh = cBh;
-var cHs = b.cHs; // Hassium
+var cHs = b.cHs; // Hs
 
 exports.cHs = cHs;
-var cMt = b.cMt; // Meitnerium
+var cMt = b.cMt; // Mt
 
 exports.cMt = cMt;
-var cDs = b.cDs; // Darmstatium
+var cDs = b.cDs; // Ds
 
 exports.cDs = cDs;
-var cRg = b.cRg; // Roentgenium
+var cRg = b.cRg; // Rg
 
 exports.cRg = cRg;
-var cCn = b.cCn; // Copernicium
+var cCn = b.cCn; // Cn
 
 exports.cCn = cCn;
-var cNh = b.cNh; // Nihonium
+var cNh = b.cNh; // Nh
 
 exports.cNh = cNh;
-var cFl = b.cFl; // Flerovium
+var cFl = b.cFl; // Fl
 
 exports.cFl = cFl;
-var cMc = b.cMc; // Moscovium
+var cMc = b.cMc; // Mc
 
 exports.cMc = cMc;
-var cLv = b.cLv; // Livermorium
+var cLv = b.cLv; // Lv
 
 exports.cLv = cLv;
-var cTs = b.cTs; // Tennessine
+var cTs = b.cTs; // Ts
 
 exports.cTs = cTs;
-var cOg = b.cOg; // Oganesson
+var cOg = b.cOg; // Og
 // *****************************************************
 
 exports.cOg = cOg;
-var cHydrogen = 'Hydrogen'; // H
+var cHydrogen = 'Hydrogen'; // Hydrogen
 
 exports.cHydrogen = cHydrogen;
-var cHelium = 'Helium'; // He
+var cHelium = 'Helium'; // Helium
 
 exports.cHelium = cHelium;
-var cLithium = 'Lithium'; // Li
+var cLithium = 'Lithium'; // Lithium
 
 exports.cLithium = cLithium;
-var cBeryllium = 'Beryllium'; // Be
+var cBeryllium = 'Beryllium'; // Beryllium
 
 exports.cBeryllium = cBeryllium;
-var cBoron = 'Boron'; // B
+var cBoron = 'Boron'; // Boron
 
 exports.cBoron = cBoron;
-var cCarbon = 'Carbon'; // C
+var cCarbon = 'Carbon'; // Carbon
 
 exports.cCarbon = cCarbon;
-var cNitrogen = 'Nitrogen'; // N
+var cNitrogen = 'Nitrogen'; // Nitrogen
 
 exports.cNitrogen = cNitrogen;
-var cOxygen = 'Oxygen'; // O
+var cOxygen = 'Oxygen'; // Oxygen
 
 exports.cOxygen = cOxygen;
-var cFlorine = 'Florine'; // F
+var cFlorine = 'Florine'; // Florine
 
 exports.cFlorine = cFlorine;
-var cNeon = 'Neon'; // Ne
+var cNeon = 'Neon'; // Neon
 
 exports.cNeon = cNeon;
-var cSodium = 'Sodium'; // Na
+var cSodium = 'Sodium'; // Sodium
 
 exports.cSodium = cSodium;
-var cMagnesium = 'Magnesium'; // Mg
+var cMagnesium = 'Magnesium'; // Magnesium
 
 exports.cMagnesium = cMagnesium;
-var cAluminum = 'Aluminum'; // Al
+var cAluminum = 'Aluminum'; // Aluminum
 
 exports.cAluminum = cAluminum;
-var cSilicon = 'Silicon'; // Si
+var cSilicon = 'Silicon'; // Silicon
 
 exports.cSilicon = cSilicon;
-var cPhosphorus = 'Phosphorus'; // P
+var cPhosphorus = 'Phosphorus'; // Phosphorus
 
 exports.cPhosphorus = cPhosphorus;
-var cSulfur = 'Sulfur'; // S
+var cSulfur = 'Sulfur'; // Sulfur
 
 exports.cSulfur = cSulfur;
-var cClorine = 'Clorine'; // Cl
+var cClorine = 'Clorine'; // Clorine
 
 exports.cClorine = cClorine;
-var cArgon = 'Argon'; // Ar
+var cArgon = 'Argon'; // Argon
 
 exports.cArgon = cArgon;
-var cPotassium = 'Potassium'; // K
+var cPotassium = 'Potassium'; // Potassium
 
 exports.cPotassium = cPotassium;
-var cCalcium = 'Calcium'; // Ca
+var cCalcium = 'Calcium'; // Calcium
 
 exports.cCalcium = cCalcium;
-var cScandium = 'Scandium'; // Sc
+var cScandium = 'Scandium'; // Scandium
 
 exports.cScandium = cScandium;
-var cTitanium = 'Titanium'; // Ti
+var cTitanium = 'Titanium'; // Titanium
 
 exports.cTitanium = cTitanium;
-var cVanadium = 'Vanadium'; // V
+var cVanadium = 'Vanadium'; // Vanadium
 
 exports.cVanadium = cVanadium;
-var cChromium = 'Chromium'; // Cr
+var cChromium = 'Chromium'; // Chromium
 
 exports.cChromium = cChromium;
-var cManganese = 'Manganese'; // Mn
+var cManganese = 'Manganese'; // Manganese
 
 exports.cManganese = cManganese;
-var cIron = 'Iron'; // Fe
+var cIron = 'Iron'; // Iron
 
 exports.cIron = cIron;
-var cCobalt = 'Cobalt'; // Co
+var cCobalt = 'Cobalt'; // Cobalt
 
 exports.cCobalt = cCobalt;
-var cNickel = 'Nickel'; // Ni
+var cNickel = 'Nickel'; // Nickel
 
 exports.cNickel = cNickel;
-var cCopper = 'Copper'; // Cu
+var cCopper = 'Copper'; // Copper
 
 exports.cCopper = cCopper;
-var cZinc = 'Zinc'; // Zn
+var cZinc = 'Zinc'; // Zinc
 
 exports.cZinc = cZinc;
-var cGallium = 'Gallium'; // Ga
+var cGallium = 'Gallium'; // Gallium
 
 exports.cGallium = cGallium;
-var cGermanium = 'Germanium'; // Ge
+var cGermanium = 'Germanium'; // Germanium
 
 exports.cGermanium = cGermanium;
-var cArsenic = 'Arsenic'; // As
+var cArsenic = 'Arsenic'; // Arsenic
 
 exports.cArsenic = cArsenic;
-var cSelenium = 'Selenium'; // Se
+var cSelenium = 'Selenium'; // Selenium
 
 exports.cSelenium = cSelenium;
-var cBromine = 'Bromine'; // Br
+var cBromine = 'Bromine'; // Bromine
 
 exports.cBromine = cBromine;
-var cKrypton = 'Krypton'; // Kr
+var cKrypton = 'Krypton'; // Krypton
 
 exports.cKrypton = cKrypton;
-var cRubidium = 'Rubidium'; // Rb
+var cRubidium = 'Rubidium'; // Rubidium
 
 exports.cRubidium = cRubidium;
-var cStrontium = 'Strontium'; // Sr
+var cStrontium = 'Strontium'; // Strontium
 
 exports.cStrontium = cStrontium;
-var cYttrium = 'Yttrium'; // Y
+var cYttrium = 'Yttrium'; // Yttrium
 
 exports.cYttrium = cYttrium;
-var cZirconium = 'Zirconium'; // Zr
+var cZirconium = 'Zirconium'; // Zirconium
 
 exports.cZirconium = cZirconium;
-var cNiobium = 'Niobium'; // Nb
+var cNiobium = 'Niobium'; // Niobium
 
 exports.cNiobium = cNiobium;
-var cMolybdenum = 'Molybdenum'; // Mo
+var cMolybdenum = 'Molybdenum'; // Molybdenum
 
 exports.cMolybdenum = cMolybdenum;
-var cTechnetium = 'Technetium'; // Tc
+var cTechnetium = 'Technetium'; // Technetium
 
 exports.cTechnetium = cTechnetium;
-var cRuthenium = 'Ruthenium'; // Ru
+var cRuthenium = 'Ruthenium'; // Ruthenium
 
 exports.cRuthenium = cRuthenium;
-var cRhodium = 'Rhodium'; // Rh
+var cRhodium = 'Rhodium'; // Rhodium
 
 exports.cRhodium = cRhodium;
-var cPalladium = 'Palladium'; // Pd
+var cPalladium = 'Palladium'; // Palladium
 
 exports.cPalladium = cPalladium;
-var cSilver = 'Silver'; // Ag
+var cSilver = 'Silver'; // Silver
 
 exports.cSilver = cSilver;
-var cCadmium = 'Cadmium'; // Cd
+var cCadmium = 'Cadmium'; // Cadmium
 
 exports.cCadmium = cCadmium;
-var cIndium = 'Indium'; // In
+var cIndium = 'Indium'; // Indium
 
 exports.cIndium = cIndium;
-var cTin = 'Tin'; // Sn
+var cTin = 'Tin'; // Tin
 
 exports.cTin = cTin;
-var cAntimony = 'Antimony'; // Sb
+var cAntimony = 'Antimony'; // Antimony
 
 exports.cAntimony = cAntimony;
-var cTellurium = 'Tellurium'; // Te
+var cTellurium = 'Tellurium'; // Tellurium
 
 exports.cTellurium = cTellurium;
-var cIodine = 'Iodine'; // I
+var cIodine = 'Iodine'; // Iodine
 
 exports.cIodine = cIodine;
-var cXenon = 'Xenon'; // Xe
+var cXenon = 'Xenon'; // Xenon
 
 exports.cXenon = cXenon;
-var cCesium = 'Cesium'; // Cs
+var cCesium = 'Cesium'; // Cesium
 
 exports.cCesium = cCesium;
-var cBarium = 'Barium'; // Ba
+var cBarium = 'Barium'; // Barium
 
 exports.cBarium = cBarium;
-var cLanthanum = 'Lanthanum'; // La
+var cLanthanum = 'Lanthanum'; // Lanthanum
 
 exports.cLanthanum = cLanthanum;
-var cCerium = 'Cerium'; // Ce
+var cCerium = 'Cerium'; // Cerium
 
 exports.cCerium = cCerium;
-var cPraseodymium = 'Praseodymium'; // Pr
+var cPraseodymium = 'Praseodymium'; // Praseodymium
 
 exports.cPraseodymium = cPraseodymium;
-var cNeodymium = 'Neodymium'; // Nd
+var cNeodymium = 'Neodymium'; // Neodymium
 
 exports.cNeodymium = cNeodymium;
-var cPromethium = 'Promethium'; // Pm
+var cPromethium = 'Promethium'; // Promethium
 
 exports.cPromethium = cPromethium;
-var cSamarium = 'Samarium'; // Sm
+var cSamarium = 'Samarium'; // Samarium
 
 exports.cSamarium = cSamarium;
-var cEuropium = 'Europium'; // Eu
+var cEuropium = 'Europium'; // Europium
 
 exports.cEuropium = cEuropium;
-var cGadolinium = 'Gadolinium'; // Gd
+var cGadolinium = 'Gadolinium'; // Gadolinium
 
 exports.cGadolinium = cGadolinium;
-var cTerbium = 'Terbium'; // Tb
+var cTerbium = 'Terbium'; // Terbium
 
 exports.cTerbium = cTerbium;
-var cDysprosium = 'Dysprosium'; // Dy
+var cDysprosium = 'Dysprosium'; // Dysprosium
 
 exports.cDysprosium = cDysprosium;
-var cHolmium = 'Holmium'; // Ho
+var cHolmium = 'Holmium'; // Holmium
 
 exports.cHolmium = cHolmium;
-var cErbium = 'Erbium'; // Er
+var cErbium = 'Erbium'; // Erbium
 
 exports.cErbium = cErbium;
-var cThulium = 'Thulium'; // Tm
+var cThulium = 'Thulium'; // Thulium
 
 exports.cThulium = cThulium;
-var cYtterbium = 'Ytterbium'; // Yb
+var cYtterbium = 'Ytterbium'; // Ytterbium
 
 exports.cYtterbium = cYtterbium;
-var cLutetium = 'Lutetium'; // Lu
+var cLutetium = 'Lutetium'; // Lutetium
 
 exports.cLutetium = cLutetium;
-var cHafnium = 'Hafnium'; // Hf
+var cHafnium = 'Hafnium'; // Hafnium
 
 exports.cHafnium = cHafnium;
-var cTantalum = 'Tantalum'; // Ta
+var cTantalum = 'Tantalum'; // Tantalum
 
 exports.cTantalum = cTantalum;
-var cTungsten = 'Tungsten'; // W
+var cTungsten = 'Tungsten'; // Tungsten
 
 exports.cTungsten = cTungsten;
-var cRhenium = 'Rhenium'; // Re
+var cRhenium = 'Rhenium'; // Rhenium
 
 exports.cRhenium = cRhenium;
-var cOsmium = 'Osmium'; // Os
+var cOsmium = 'Osmium'; // Osmium
 
 exports.cOsmium = cOsmium;
-var cIridium = 'Iridium'; // Ir
+var cIridium = 'Iridium'; // Iridium
 
 exports.cIridium = cIridium;
-var cPlatinum = 'Platinum'; // Pt
+var cPlatinum = 'Platinum'; // Platinum
 
 exports.cPlatinum = cPlatinum;
-var cGold = 'Gold'; // Au
+var cGold = 'Gold'; // Gold
 
 exports.cGold = cGold;
-var cMercury = 'Mercury'; // Hg
+var cMercury = 'Mercury'; // Mercury
 
 exports.cMercury = cMercury;
-var cThallium = 'Thallium'; // Tl
+var cThallium = 'Thallium'; // Thallium
 
 exports.cThallium = cThallium;
-var cLead = 'Lead'; // Pb
+var cLead = 'Lead'; // Lead
 
 exports.cLead = cLead;
-var cBismuth = 'Bismuth'; // Bi
+var cBismuth = 'Bismuth'; // Bismuth
 
 exports.cBismuth = cBismuth;
-var cPolonium = 'Polonium'; // Po
+var cPolonium = 'Polonium'; // Polonium
 
 exports.cPolonium = cPolonium;
-var cAstatine = 'Astatine'; // At
+var cAstatine = 'Astatine'; // Astatine
 
 exports.cAstatine = cAstatine;
-var cRadon = 'Radon'; // Rn
+var cRadon = 'Radon'; // Radon
 
 exports.cRadon = cRadon;
-var cFrancium = 'Francium'; // Fr
+var cFrancium = 'Francium'; // Francium
 
 exports.cFrancium = cFrancium;
-var cRadium = 'Radium'; // Ra
+var cRadium = 'Radium'; // Radium
 
 exports.cRadium = cRadium;
-var cActinium = 'Actinium'; // Ac
+var cActinium = 'Actinium'; // Actinium
 
 exports.cActinium = cActinium;
-var cThorium = 'Thorium'; // Th
+var cThorium = 'Thorium'; // Thorium
 
 exports.cThorium = cThorium;
-var cProtactinium = 'Protactinium'; // Pa
+var cProtactinium = 'Protactinium'; // Protactinium
 
 exports.cProtactinium = cProtactinium;
-var cUranium = 'Uranium'; // U
+var cUranium = 'Uranium'; // Uranium
 
 exports.cUranium = cUranium;
-var cNeptunium = 'Neptunium'; // Np
+var cNeptunium = 'Neptunium'; // Neptunium
 
 exports.cNeptunium = cNeptunium;
-var cPlutonium = 'Plutonium'; // Pu
+var cPlutonium = 'Plutonium'; // Plutonium
 
 exports.cPlutonium = cPlutonium;
-var cAmericium = 'Americium'; // Am
+var cAmericium = 'Americium'; // Americium
 
 exports.cAmericium = cAmericium;
-var cCurium = 'Curium'; // Cm
+var cCurium = 'Curium'; // Curium
 
 exports.cCurium = cCurium;
-var cBerkelium = 'Berkelium'; // Bk
+var cBerkelium = 'Berkelium'; // Berkelium
 
 exports.cBerkelium = cBerkelium;
-var cCalifornium = 'Californium'; // Cf
+var cCalifornium = 'Californium'; // Californium
 
 exports.cCalifornium = cCalifornium;
-var cEinsteinium = 'Einsteinium'; // Es
+var cEinsteinium = 'Einsteinium'; // Einsteinium
 
 exports.cEinsteinium = cEinsteinium;
-var cFermium = 'Fermium'; // Fm
+var cFermium = 'Fermium'; // Fermium
 
 exports.cFermium = cFermium;
-var cMendelevium = 'Mendelevium'; // Md
+var cMendelevium = 'Mendelevium'; // Mendelevium
 
 exports.cMendelevium = cMendelevium;
-var cNobelium = 'Nobelium'; // No
+var cNobelium = 'Nobelium'; // Nobelium
 
 exports.cNobelium = cNobelium;
-var cLawrencium = 'Lawrencium'; // Lr
+var cLawrencium = 'Lawrencium'; // Lawrencium
 
 exports.cLawrencium = cLawrencium;
-var cRutherfordium = 'Rutherfordium'; // Rf
+var cRutherfordium = 'Rutherfordium'; // Rutherfordium
 
 exports.cRutherfordium = cRutherfordium;
-var cDubnium = 'Dubnium'; // Db
+var cDubnium = 'Dubnium'; // Dubnium
 
 exports.cDubnium = cDubnium;
-var cSeaborgium = 'Seaborgium'; // Sg
+var cSeaborgium = 'Seaborgium'; // Seaborgium
 
 exports.cSeaborgium = cSeaborgium;
-var cBohrium = 'Bohrium'; // Bh
+var cBohrium = 'Bohrium'; // Bohrium
 
 exports.cBohrium = cBohrium;
-var cHassium = 'Hassium'; // Hs
+var cHassium = 'Hassium'; // Hassium
 
 exports.cHassium = cHassium;
-var cMeitnerium = 'Meitnerium'; // Mt
+var cMeitnerium = 'Meitnerium'; // Meitnerium
 
 exports.cMeitnerium = cMeitnerium;
-var cDarmstatium = 'Darmstatium'; // Ds
+var cDarmstatium = 'Darmstatium'; // Darmstatium
 
 exports.cDarmstatium = cDarmstatium;
-var cRoentgenium = 'Roentgenium'; // Rg
+var cRoentgenium = 'Roentgenium'; // Roentgenium
 
 exports.cRoentgenium = cRoentgenium;
-var cCopernicium = 'Copernicium'; // Cn
+var cCopernicium = 'Copernicium'; // Copernicium
 
 exports.cCopernicium = cCopernicium;
-var cNihonium = 'Nihonium'; // Nh
+var cNihonium = 'Nihonium'; // Nihonium
 
 exports.cNihonium = cNihonium;
-var cFlerovium = 'Flerovium'; // Fl
+var cFlerovium = 'Flerovium'; // Flerovium
 
 exports.cFlerovium = cFlerovium;
-var cMoscovium = 'Moscovium'; // Mc
+var cMoscovium = 'Moscovium'; // Moscovium
 
 exports.cMoscovium = cMoscovium;
-var cLivermorium = 'Livermorium'; // Lv
+var cLivermorium = 'Livermorium'; // Livermorium
 
 exports.cLivermorium = cLivermorium;
-var cTennessine = 'Tennessine'; // Ts
+var cTennessine = 'Tennessine'; // Tennessine
 
 exports.cTennessine = cTennessine;
-var cOganesson = 'Oganesson'; // Og
-// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+var cOganesson = 'Oganesson'; // Oganesson
 
 exports.cOganesson = cOganesson;

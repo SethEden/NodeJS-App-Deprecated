@@ -16,7 +16,7 @@ import * as clr from '../../../Constants/color.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const colorConstantsValidation [
+ export const colorConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

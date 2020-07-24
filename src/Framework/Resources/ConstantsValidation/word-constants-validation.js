@@ -16,7 +16,7 @@ import * as w from '../../../Constants/word.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const wordConstantsValidation [
+ export const wordConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

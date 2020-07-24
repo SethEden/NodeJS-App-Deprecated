@@ -90,7 +90,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 /**
  * @file element.constants.js
  * @module element-constants
- * @description Contains named elements & isotopes.
+ * @description Contains named isotopes.
  * @requires module:basic-constants
  * @requires module:phonics-constants
  * @requires module:generic-constants

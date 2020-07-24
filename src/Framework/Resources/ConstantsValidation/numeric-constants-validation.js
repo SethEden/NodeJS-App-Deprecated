@@ -16,7 +16,7 @@ import * as n from '../../../Constants/numeric.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const numericConstantsValidation [
+ export const numericConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

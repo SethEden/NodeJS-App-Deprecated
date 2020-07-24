@@ -42,1936 +42,2900 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  */
 // Colors
 // Primary Colors
-var cred = b.cr + b.ced;
+var cred = b.cr + b.ced; // red
+
 exports.cred = cred;
-var cRed = b.cR + b.ced;
+var cRed = b.cR + b.ced; // Red
+
 exports.cRed = cRed;
-var cgreen = b.cg + p.creen;
+var cgreen = b.cg + p.creen; // green
+
 exports.cgreen = cgreen;
-var cGreen = b.cG + p.creen;
+var cGreen = b.cG + p.creen; // Green
+
 exports.cGreen = cGreen;
-var cblue = b.cb + p.clue;
+var cblue = b.cb + p.clue; // blue
+
 exports.cblue = cblue;
-var cBlue = b.cB + p.clue; // Secondary Colors CMYK
+var cBlue = b.cB + p.clue; // Blue
+// Secondary Colors CMYK
 
 exports.cBlue = cBlue;
-var ccyan = b.cc + p.cyan;
+var ccyan = b.cc + p.cyan; // cyan
+
 exports.ccyan = ccyan;
-var cCyan = b.cC + p.cyan;
+var cCyan = b.cC + p.cyan; // Cyan
+
 exports.cCyan = cCyan;
-var cmagenta = b.cm + b.cag + p.centa;
+var cmagenta = b.cm + b.cag + p.centa; // magenta
+
 exports.cmagenta = cmagenta;
-var cMagenta = b.cM + b.cag + p.centa;
+var cMagenta = b.cM + b.cag + p.centa; // Magenta
+
 exports.cMagenta = cMagenta;
-var cyellow = w.cyell + b.cow;
+var cyellow = w.cyell + b.cow; // yellow
+
 exports.cyellow = cyellow;
-var cYellow = w.cYell + b.cow;
+var cYellow = w.cYell + b.cow; // Yellow
+
 exports.cYellow = cYellow;
-var cblack = b.cb + w.clack;
+var cblack = b.cb + w.clack; // black
+
 exports.cblack = cblack;
-var cBlack = b.cB + w.clack;
+var cBlack = b.cB + w.clack; // Black
+
 exports.cBlack = cBlack;
-var cwhite = b.cwh + p.cite;
+var cwhite = b.cwh + p.cite; // white
+
 exports.cwhite = cwhite;
-var cWhite = b.cWh + p.cite;
+var cWhite = b.cWh + p.cite; // White
+
 exports.cWhite = cWhite;
-var corange = b.cor + p.cange;
+var corange = b.cor + p.cange; // orange
+
 exports.corange = corange;
-var cOrange = b.cOr + p.cange; // Tertiary Named Colors
+var cOrange = b.cOr + p.cange; // Orange
+// Tertiary Named Colors
 // https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F
 
 exports.cOrange = cOrange;
-var cAbsoluteZero = 'AbsoluteZero';
+var cAbsoluteZero = 'AbsoluteZero'; // AbsoluteZero
+
 exports.cAbsoluteZero = cAbsoluteZero;
-var cAcidGreen = 'AcidGreen';
+var cAcidGreen = 'AcidGreen'; // AcidGreen
+
 exports.cAcidGreen = cAcidGreen;
-var cAero = 'Aero';
+var cAero = 'Aero'; // Aero
+
 exports.cAero = cAero;
-var cAeroBlue = 'AeroBlue';
+var cAeroBlue = 'AeroBlue'; // AeroBlue
+
 exports.cAeroBlue = cAeroBlue;
-var cAfricanViolet = 'AfricanViolet';
+var cAfricanViolet = 'AfricanViolet'; // AfricanViolet
+
 exports.cAfricanViolet = cAfricanViolet;
-var cAirSuperiorityBlue = 'AirSuperiorityBlue';
+var cAirSuperiorityBlue = 'AirSuperiorityBlue'; // AirSuperiorityBlue
+
 exports.cAirSuperiorityBlue = cAirSuperiorityBlue;
-var cAlabaster = 'Alabaster';
+var cAlabaster = 'Alabaster'; // Alabaster
+
 exports.cAlabaster = cAlabaster;
-var cAliceBlue = 'AliceBlue';
+var cAliceBlue = 'AliceBlue'; // AliceBlue
+
 exports.cAliceBlue = cAliceBlue;
-var cAlloyOrange = 'AlloyOrange';
+var cAlloyOrange = 'AlloyOrange'; // AlloyOrange
+
 exports.cAlloyOrange = cAlloyOrange;
-var cAlmond = 'Almond';
+var cAlmond = 'Almond'; // Almond
+
 exports.cAlmond = cAlmond;
-var cAmaranth = 'Amaranth';
+var cAmaranth = 'Amaranth'; // Amaranth
+
 exports.cAmaranth = cAmaranth;
-var cAmaranthMP = 'AmaranthMP';
+var cAmaranthMP = 'AmaranthMP'; // AmaranthMP
+
 exports.cAmaranthMP = cAmaranthMP;
-var cAmaranthPink = 'AmaranthPink';
+var cAmaranthPink = 'AmaranthPink'; // AmaranthPink
+
 exports.cAmaranthPink = cAmaranthPink;
-var cAmaranthPurple = 'AmaranthPurple';
+var cAmaranthPurple = 'AmaranthPurple'; // AmaranthPurple
+
 exports.cAmaranthPurple = cAmaranthPurple;
-var cAmaranthRed = 'AmaranthRed';
+var cAmaranthRed = 'AmaranthRed'; // AmaranthRed
+
 exports.cAmaranthRed = cAmaranthRed;
-var cAmazon = 'Amazon';
+var cAmazon = 'Amazon'; // Amazon
+
 exports.cAmazon = cAmazon;
-var cAmber = 'Amber';
+var cAmber = 'Amber'; // Amber
+
 exports.cAmber = cAmber;
-var cAmberSAEECE = 'AmberSAEECE';
+var cAmberSAEECE = 'AmberSAEECE'; // AmberSAEECE
+
 exports.cAmberSAEECE = cAmberSAEECE;
-var cAmethyst = 'Amethyst';
+var cAmethyst = 'Amethyst'; // Amethyst
+
 exports.cAmethyst = cAmethyst;
-var cAndroidGreen = 'AndroidGreen';
+var cAndroidGreen = 'AndroidGreen'; // AndroidGreen
+
 exports.cAndroidGreen = cAndroidGreen;
-var cAntiqueBrass = 'AntiqueBrass';
+var cAntiqueBrass = 'AntiqueBrass'; // AntiqueBrass
+
 exports.cAntiqueBrass = cAntiqueBrass;
-var cAntiqueBronze = 'AntiqueBronze';
+var cAntiqueBronze = 'AntiqueBronze'; // AntiqueBronze
+
 exports.cAntiqueBronze = cAntiqueBronze;
-var cAntiqueFuchsia = 'AntiqueFuchsia';
+var cAntiqueFuchsia = 'AntiqueFuchsia'; // AntiqueFuchsia
+
 exports.cAntiqueFuchsia = cAntiqueFuchsia;
-var cAntiqueRuby = 'AntiqueRuby';
+var cAntiqueRuby = 'AntiqueRuby'; // AntiqueRuby
+
 exports.cAntiqueRuby = cAntiqueRuby;
-var cAntiqueWhite = 'AntiqueWhite';
+var cAntiqueWhite = 'AntiqueWhite'; // AntiqueWhite
+
 exports.cAntiqueWhite = cAntiqueWhite;
-var cAoEnglish = 'AoEnglish';
+var cAoEnglish = 'AoEnglish'; // AoEnglish
+
 exports.cAoEnglish = cAoEnglish;
-var cAppleGreen = 'AppleGreen';
+var cAppleGreen = 'AppleGreen'; // AppleGreen
+
 exports.cAppleGreen = cAppleGreen;
-var cApricot = 'Apricot';
+var cApricot = 'Apricot'; // Apricot
+
 exports.cApricot = cApricot;
-var cAqua = 'Aqua';
+var cAqua = 'Aqua'; // Aqua
+
 exports.cAqua = cAqua;
-var cAquamarine = 'Aquamarine';
+var cAquamarine = 'Aquamarine'; // Aquamarine
+
 exports.cAquamarine = cAquamarine;
-var cArcticLime = 'ArcticLime';
+var cArcticLime = 'ArcticLime'; // ArcticLime
+
 exports.cArcticLime = cArcticLime;
-var cArmyGreen = 'ArmyGreen';
+var cArmyGreen = 'ArmyGreen'; // ArmyGreen
+
 exports.cArmyGreen = cArmyGreen;
-var cArtichoke = 'Artichoke';
+var cArtichoke = 'Artichoke'; // Artichoke
+
 exports.cArtichoke = cArtichoke;
-var cArylideYellow = 'ArylideYellow';
+var cArylideYellow = 'ArylideYellow'; // ArylideYellow
+
 exports.cArylideYellow = cArylideYellow;
-var cAshGray = 'AshGray';
+var cAshGray = 'AshGray'; // AshGray
+
 exports.cAshGray = cAshGray;
-var cAsparagus = 'Asparagus';
+var cAsparagus = 'Asparagus'; // Asparagus
+
 exports.cAsparagus = cAsparagus;
-var cAtomicTangerine = 'AtomicTangerine';
+var cAtomicTangerine = 'AtomicTangerine'; // AtomicTangerine
+
 exports.cAtomicTangerine = cAtomicTangerine;
-var cAuburn = 'Auburn';
+var cAuburn = 'Auburn'; // Auburn
+
 exports.cAuburn = cAuburn;
-var cAureolin = 'Aureolin';
+var cAureolin = 'Aureolin'; // Aureolin
+
 exports.cAureolin = cAureolin;
-var cAvocado = 'Avocado';
+var cAvocado = 'Avocado'; // Avocado
+
 exports.cAvocado = cAvocado;
-var cAzure = 'Azure';
+var cAzure = 'Azure'; // Azure
+
 exports.cAzure = cAzure;
-var cAzureWeb = 'AzureWeb';
+var cAzureWeb = 'AzureWeb'; // AzureWeb
+
 exports.cAzureWeb = cAzureWeb;
-var cBabyBlue = 'BabyBlue';
+var cBabyBlue = 'BabyBlue'; // BabyBlue
+
 exports.cBabyBlue = cBabyBlue;
-var cBabyBlueEyes = 'BabyBlueEyes';
+var cBabyBlueEyes = 'BabyBlueEyes'; // BabyBlueEyes
+
 exports.cBabyBlueEyes = cBabyBlueEyes;
-var cBabyPink = 'BabyPink';
+var cBabyPink = 'BabyPink'; // BabyPink
+
 exports.cBabyPink = cBabyPink;
-var cBabyPowder = 'BabyPowder';
+var cBabyPowder = 'BabyPowder'; // BabyPowder
+
 exports.cBabyPowder = cBabyPowder;
-var cBakerMillerPink = 'BakerMillerPink';
+var cBakerMillerPink = 'BakerMillerPink'; // BakerMillerPink
+
 exports.cBakerMillerPink = cBakerMillerPink;
-var cBananaMania = 'BananaMania';
+var cBananaMania = 'BananaMania'; // BananaMania
+
 exports.cBananaMania = cBananaMania;
-var cBarbiePink = 'BarbiePink';
+var cBarbiePink = 'BarbiePink'; // BarbiePink
+
 exports.cBarbiePink = cBarbiePink;
-var cBarnRed = 'BarnRed';
+var cBarnRed = 'BarnRed'; // BarnRed
+
 exports.cBarnRed = cBarnRed;
-var cBattleshipGrey = 'BattleshipGrey';
+var cBattleshipGrey = 'BattleshipGrey'; // BattleshipGrey
+
 exports.cBattleshipGrey = cBattleshipGrey;
-var cBeauBlue = 'BeauBlue';
+var cBeauBlue = 'BeauBlue'; // BeauBlue
+
 exports.cBeauBlue = cBeauBlue;
-var cBeaver = 'Beaver';
+var cBeaver = 'Beaver'; // Beaver
+
 exports.cBeaver = cBeaver;
-var cBeige = 'Beige';
+var cBeige = 'Beige'; // Beige
+
 exports.cBeige = cBeige;
-var cBDazzledBlue = 'BDazzledBlue';
+var cBDazzledBlue = 'BDazzledBlue'; // BDazzledBlue
+
 exports.cBDazzledBlue = cBDazzledBlue;
-var cBigDipORuby = 'BigDipORuby';
+var cBigDipORuby = 'BigDipORuby'; // BigDipORuby
+
 exports.cBigDipORuby = cBigDipORuby;
-var cBisque = 'Bisque';
+var cBisque = 'Bisque'; // Bisque
+
 exports.cBisque = cBisque;
-var cBistre = 'Bistre';
+var cBistre = 'Bistre'; // Bistre
+
 exports.cBistre = cBistre;
-var cBistreBrown = 'BistreBrown';
+var cBistreBrown = 'BistreBrown'; // BistreBrown
+
 exports.cBistreBrown = cBistreBrown;
-var cBitterLemon = 'BitterLemon';
+var cBitterLemon = 'BitterLemon'; // BitterLemon
+
 exports.cBitterLemon = cBitterLemon;
-var cBitterLime = 'BitterLime';
+var cBitterLime = 'BitterLime'; // BitterLime
+
 exports.cBitterLime = cBitterLime;
-var cBittersweet = 'Bittersweet';
+var cBittersweet = 'Bittersweet'; // Bittersweet
+
 exports.cBittersweet = cBittersweet;
-var cBittersweetShimmer = 'BittersweetShimmer';
+var cBittersweetShimmer = 'BittersweetShimmer'; // BittersweetShimmer
+
 exports.cBittersweetShimmer = cBittersweetShimmer;
-var cBlackBean = 'BlackBean';
+var cBlackBean = 'BlackBean'; // BlackBean
+
 exports.cBlackBean = cBlackBean;
-var cBlackChocolate = 'BlackChocolate';
+var cBlackChocolate = 'BlackChocolate'; // BlackChocolate
+
 exports.cBlackChocolate = cBlackChocolate;
-var cBlackCoffee = 'BlackCoffee';
+var cBlackCoffee = 'BlackCoffee'; // BlackCoffee
+
 exports.cBlackCoffee = cBlackCoffee;
-var cBlackCoral = 'BlackCoral';
+var cBlackCoral = 'BlackCoral'; // BlackCoral
+
 exports.cBlackCoral = cBlackCoral;
-var cBlackOlive = 'BlackOlive';
+var cBlackOlive = 'BlackOlive'; // BlackOlive
+
 exports.cBlackOlive = cBlackOlive;
-var cBlackShadows = 'BlackShadows';
+var cBlackShadows = 'BlackShadows'; // BlackShadows
+
 exports.cBlackShadows = cBlackShadows;
-var cBlanchedAlmond = 'BlanchedAlmond';
+var cBlanchedAlmond = 'BlanchedAlmond'; // BlanchedAlmond
+
 exports.cBlanchedAlmond = cBlanchedAlmond;
-var cBlastOffBronze = 'BlastOffBronze';
+var cBlastOffBronze = 'BlastOffBronze'; // BlastOffBronze
+
 exports.cBlastOffBronze = cBlastOffBronze;
-var cBleuDeFrance = 'BleuDeFrance';
+var cBleuDeFrance = 'BleuDeFrance'; // BleuDeFrance
+
 exports.cBleuDeFrance = cBleuDeFrance;
-var cBlizzardBlue = 'BlizzardBlue';
+var cBlizzardBlue = 'BlizzardBlue'; // BlizzardBlue
+
 exports.cBlizzardBlue = cBlizzardBlue;
-var cBlond = 'Blond';
+var cBlond = 'Blond'; // Blond
+
 exports.cBlond = cBlond;
-var cBloodRed = 'BloodRed';
+var cBloodRed = 'BloodRed'; // BloodRed
+
 exports.cBloodRed = cBloodRed;
-var cBlueCrayola = 'BlueCrayola';
+var cBlueCrayola = 'BlueCrayola'; // BlueCrayola
+
 exports.cBlueCrayola = cBlueCrayola;
-var cBlueMunsell = 'BlueMunsell';
+var cBlueMunsell = 'BlueMunsell'; // BlueMunsell
+
 exports.cBlueMunsell = cBlueMunsell;
-var cBlueNCS = 'BlueNCS';
+var cBlueNCS = 'BlueNCS'; // BlueNCS
+
 exports.cBlueNCS = cBlueNCS;
-var cBluePantone = 'BluePantone';
+var cBluePantone = 'BluePantone'; // BluePantone
+
 exports.cBluePantone = cBluePantone;
-var cBluePigment = 'BluePigment';
+var cBluePigment = 'BluePigment'; // BluePigment
+
 exports.cBluePigment = cBluePigment;
-var cBlueRYB = 'BlueRYB';
+var cBlueRYB = 'BlueRYB'; // BlueRYB
+
 exports.cBlueRYB = cBlueRYB;
-var cBlueBell = 'BlueBell';
+var cBlueBell = 'BlueBell'; // BlueBell
+
 exports.cBlueBell = cBlueBell;
-var cBlueGray = 'BlueGray';
+var cBlueGray = 'BlueGray'; // BlueGray
+
 exports.cBlueGray = cBlueGray;
-var cBlueGreen = 'BlueGreen';
+var cBlueGreen = 'BlueGreen'; // BlueGreen
+
 exports.cBlueGreen = cBlueGreen;
-var cBlueGreenColorWheel = 'BlueGreenColorWheel';
+var cBlueGreenColorWheel = 'BlueGreenColorWheel'; // BlueGreenColorWheel
+
 exports.cBlueGreenColorWheel = cBlueGreenColorWheel;
-var cBlueJeans = 'BlueJeans';
+var cBlueJeans = 'BlueJeans'; // BlueJeans
+
 exports.cBlueJeans = cBlueJeans;
-var cBlueSapphire = 'BlueSapphire';
+var cBlueSapphire = 'BlueSapphire'; // BlueSapphire
+
 exports.cBlueSapphire = cBlueSapphire;
-var cBlueViolet = 'BlueViolet';
+var cBlueViolet = 'BlueViolet'; // BlueViolet
+
 exports.cBlueViolet = cBlueViolet;
-var cBlueVioletCrayola = 'BlueVioletCrayola';
+var cBlueVioletCrayola = 'BlueVioletCrayola'; // BlueVioletCrayola
+
 exports.cBlueVioletCrayola = cBlueVioletCrayola;
-var cBlueVioletColorWheel = 'BlueVioletColorWheel';
+var cBlueVioletColorWheel = 'BlueVioletColorWheel'; // BlueVioletColorWheel
+
 exports.cBlueVioletColorWheel = cBlueVioletColorWheel;
-var cBlueYonder = 'BlueYonder';
+var cBlueYonder = 'BlueYonder'; // BlueYonder
+
 exports.cBlueYonder = cBlueYonder;
-var cBluetiful = 'Bluetiful';
+var cBluetiful = 'Bluetiful'; // Bluetiful
+
 exports.cBluetiful = cBluetiful;
-var cBlush = 'Blush';
+var cBlush = 'Blush'; // Blush
+
 exports.cBlush = cBlush;
-var cBole = 'Bole';
+var cBole = 'Bole'; // Bole
+
 exports.cBole = cBole;
-var cBone = 'Bone';
+var cBone = 'Bone'; // Bone
+
 exports.cBone = cBone;
-var cBottleGreen = 'BottleGreen';
+var cBottleGreen = 'BottleGreen'; // BottleGreen
+
 exports.cBottleGreen = cBottleGreen;
-var cBrandy = 'Brandy';
+var cBrandy = 'Brandy'; // Brandy
+
 exports.cBrandy = cBrandy;
-var cBrickRed = 'BrickRed';
+var cBrickRed = 'BrickRed'; // BrickRed
+
 exports.cBrickRed = cBrickRed;
-var cBrightGreen = 'BrightGreen';
+var cBrightGreen = 'BrightGreen'; // BrightGreen
+
 exports.cBrightGreen = cBrightGreen;
-var cBrightLilac = 'BrightLilac';
+var cBrightLilac = 'BrightLilac'; // BrightLilac
+
 exports.cBrightLilac = cBrightLilac;
-var cBrightMaroon = 'BrightMaroon';
+var cBrightMaroon = 'BrightMaroon'; // BrightMaroon
+
 exports.cBrightMaroon = cBrightMaroon;
-var cBrightNavyBlue = 'BrightNavyBlue';
+var cBrightNavyBlue = 'BrightNavyBlue'; // BrightNavyBlue
+
 exports.cBrightNavyBlue = cBrightNavyBlue;
-var cBrightYellowCrayola = 'BrightYellowCrayola';
+var cBrightYellowCrayola = 'BrightYellowCrayola'; // BrightYellowCrayola
+
 exports.cBrightYellowCrayola = cBrightYellowCrayola;
-var cBrilliantRose = 'BrilliantRose';
+var cBrilliantRose = 'BrilliantRose'; // BrilliantRose
+
 exports.cBrilliantRose = cBrilliantRose;
-var cBrinkPink = 'BrinkPink';
+var cBrinkPink = 'BrinkPink'; // BrinkPink
+
 exports.cBrinkPink = cBrinkPink;
-var cBritishRacingGreen = 'BritishRacingGreen';
+var cBritishRacingGreen = 'BritishRacingGreen'; // BritishRacingGreen
+
 exports.cBritishRacingGreen = cBritishRacingGreen;
-var cBronze = 'Bronze';
+var cBronze = 'Bronze'; // Bronze
+
 exports.cBronze = cBronze;
-var cBrown = 'Brown';
+var cBrown = 'Brown'; // Brown
+
 exports.cBrown = cBrown;
-var cBrownSugar = 'BrownSugar';
+var cBrownSugar = 'BrownSugar'; // BrownSugar
+
 exports.cBrownSugar = cBrownSugar;
-var cBrunswickGreen = 'BrunswickGreen';
+var cBrunswickGreen = 'BrunswickGreen'; // BrunswickGreen
+
 exports.cBrunswickGreen = cBrunswickGreen;
-var cBudGreen = 'BudGreen';
+var cBudGreen = 'BudGreen'; // BudGreen
+
 exports.cBudGreen = cBudGreen;
-var cBuff = 'Buff';
+var cBuff = 'Buff'; // Buff
+
 exports.cBuff = cBuff;
-var cBurgundy = 'Burgundy';
+var cBurgundy = 'Burgundy'; // Burgundy
+
 exports.cBurgundy = cBurgundy;
-var cBurlywood = 'Burlywood';
+var cBurlywood = 'Burlywood'; // Burlywood
+
 exports.cBurlywood = cBurlywood;
-var cBurnishedBrown = 'BurnishedBrown';
+var cBurnishedBrown = 'BurnishedBrown'; // BurnishedBrown
+
 exports.cBurnishedBrown = cBurnishedBrown;
-var cBurntOrange = 'BurntOrange';
+var cBurntOrange = 'BurntOrange'; // BurntOrange
+
 exports.cBurntOrange = cBurntOrange;
-var cBurntSienna = 'BurntSienna';
+var cBurntSienna = 'BurntSienna'; // BurntSienna
+
 exports.cBurntSienna = cBurntSienna;
-var cBurntUmber = 'BurntUmber';
+var cBurntUmber = 'BurntUmber'; // BurntUmber
+
 exports.cBurntUmber = cBurntUmber;
-var cByzantine = 'Byzantine';
+var cByzantine = 'Byzantine'; // Byzantine
+
 exports.cByzantine = cByzantine;
-var cByzantium = 'Byzantium';
+var cByzantium = 'Byzantium'; // Byzantium
+
 exports.cByzantium = cByzantium;
-var cCadet = 'Cadet';
+var cCadet = 'Cadet'; // Cadet
+
 exports.cCadet = cCadet;
-var cCadetBlue = 'CadetBlue';
+var cCadetBlue = 'CadetBlue'; // CadetBlue
+
 exports.cCadetBlue = cCadetBlue;
-var cCadetBlueCrayola = 'CadetBlueCrayola';
+var cCadetBlueCrayola = 'CadetBlueCrayola'; // CadetBlueCrayola
+
 exports.cCadetBlueCrayola = cCadetBlueCrayola;
-var cCadetGrey = 'CadetGrey';
+var cCadetGrey = 'CadetGrey'; // CadetGrey
+
 exports.cCadetGrey = cCadetGrey;
-var cCadmiumGreen = 'CadmiumGreen';
+var cCadmiumGreen = 'CadmiumGreen'; // CadmiumGreen
+
 exports.cCadmiumGreen = cCadmiumGreen;
-var cCadmiumOrange = 'CadmiumOrange';
+var cCadmiumOrange = 'CadmiumOrange'; // CadmiumOrange
+
 exports.cCadmiumOrange = cCadmiumOrange;
-var cCadmiumRed = 'CadmiumRed';
+var cCadmiumRed = 'CadmiumRed'; // CadmiumRed
+
 exports.cCadmiumRed = cCadmiumRed;
-var cCadmiumYellow = 'CadmiumYellow';
+var cCadmiumYellow = 'CadmiumYellow'; // CadmiumYellow
+
 exports.cCadmiumYellow = cCadmiumYellow;
-var cCafeAuLait = 'CafeAuLait';
+var cCafeAuLait = 'CafeAuLait'; // CafeAuLait
+
 exports.cCafeAuLait = cCafeAuLait;
-var cCafeNoir = 'CafeNoir';
+var cCafeNoir = 'CafeNoir'; // CafeNoir
+
 exports.cCafeNoir = cCafeNoir;
-var cCambridgeBlue = 'CambridgeBlue';
+var cCambridgeBlue = 'CambridgeBlue'; // CambridgeBlue
+
 exports.cCambridgeBlue = cCambridgeBlue;
-var cCameoPink = 'CameoPink';
+var cCameoPink = 'CameoPink'; // CameoPink
+
 exports.cCameoPink = cCameoPink;
-var cCanary = 'Canary';
+var cCanary = 'Canary'; // Canary
+
 exports.cCanary = cCanary;
-var cCanaryYellow = 'CanaryYellow';
+var cCanaryYellow = 'CanaryYellow'; // CanaryYellow
+
 exports.cCanaryYellow = cCanaryYellow;
-var cCandyAppleRed = 'CandyAppleRed';
+var cCandyAppleRed = 'CandyAppleRed'; // CandyAppleRed
+
 exports.cCandyAppleRed = cCandyAppleRed;
-var cCandyPink = 'CandyPink';
+var cCandyPink = 'CandyPink'; // CandyPink
+
 exports.cCandyPink = cCandyPink;
-var cCapri = 'Capri';
+var cCapri = 'Capri'; // Capri
+
 exports.cCapri = cCapri;
-var cCaputMortuum = 'CaputMortuum';
+var cCaputMortuum = 'CaputMortuum'; // CaputMortuum
+
 exports.cCaputMortuum = cCaputMortuum;
-var cCardinal = 'Cardinal';
+var cCardinal = 'Cardinal'; // Cardinal
+
 exports.cCardinal = cCardinal;
-var cCaribbeanGreen = 'CaribbeanGreen';
+var cCaribbeanGreen = 'CaribbeanGreen'; // CaribbeanGreen
+
 exports.cCaribbeanGreen = cCaribbeanGreen;
-var cCarmine = 'Carmine';
+var cCarmine = 'Carmine'; // Carmine
+
 exports.cCarmine = cCarmine;
-var cCarmineMP = 'CarmineMP';
+var cCarmineMP = 'CarmineMP'; // CarmineMP
+
 exports.cCarmineMP = cCarmineMP;
-var cCarnationPink = 'CarnationPink';
+var cCarnationPink = 'CarnationPink'; // CarnationPink
+
 exports.cCarnationPink = cCarnationPink;
-var cCarnelian = 'Carnelian';
+var cCarnelian = 'Carnelian'; // Carnelian
+
 exports.cCarnelian = cCarnelian;
-var cCarolinaBlue = 'CarolinaBlue';
+var cCarolinaBlue = 'CarolinaBlue'; // CarolinaBlue
+
 exports.cCarolinaBlue = cCarolinaBlue;
-var cCarrotOrange = 'CarrotOrange';
+var cCarrotOrange = 'CarrotOrange'; // CarrotOrange
+
 exports.cCarrotOrange = cCarrotOrange;
-var cCastletonGreen = 'CastletonGreen';
+var cCastletonGreen = 'CastletonGreen'; // CastletonGreen
+
 exports.cCastletonGreen = cCastletonGreen;
-var cCatawba = 'Catawba';
+var cCatawba = 'Catawba'; // Catawba
+
 exports.cCatawba = cCatawba;
-var cCedarChest = 'CedarChest';
+var cCedarChest = 'CedarChest'; // CedarChest
+
 exports.cCedarChest = cCedarChest;
-var cCeladon = 'Celadon';
+var cCeladon = 'Celadon'; // Celadon
+
 exports.cCeladon = cCeladon;
-var cCeladonBlue = 'CeladonBlue';
+var cCeladonBlue = 'CeladonBlue'; // CeladonBlue
+
 exports.cCeladonBlue = cCeladonBlue;
-var cCeladonGreen = 'CeladonGreen';
+var cCeladonGreen = 'CeladonGreen'; // CeladonGreen
+
 exports.cCeladonGreen = cCeladonGreen;
-var cCeleste = 'Celeste';
+var cCeleste = 'Celeste'; // Celeste
+
 exports.cCeleste = cCeleste;
-var cCelticBlue = 'CelticBlue';
+var cCelticBlue = 'CelticBlue'; // CelticBlue
+
 exports.cCelticBlue = cCelticBlue;
-var cCerise = 'Cerise';
+var cCerise = 'Cerise'; // Cerise
+
 exports.cCerise = cCerise;
-var cCerulean = 'Cerulean';
+var cCerulean = 'Cerulean'; // Cerulean
+
 exports.cCerulean = cCerulean;
-var cCeruleanBlue = 'CeruleanBlue';
+var cCeruleanBlue = 'CeruleanBlue'; // CeruleanBlue
+
 exports.cCeruleanBlue = cCeruleanBlue;
-var cCeruleanFrost = 'CeruleanFrost';
+var cCeruleanFrost = 'CeruleanFrost'; // CeruleanFrost
+
 exports.cCeruleanFrost = cCeruleanFrost;
-var cCeruleanCrayola = 'CeruleanCrayola';
+var cCeruleanCrayola = 'CeruleanCrayola'; // CeruleanCrayola
+
 exports.cCeruleanCrayola = cCeruleanCrayola;
-var cCGBlue = 'CGBlue';
+var cCGBlue = 'CGBlue'; // CGBlue
+
 exports.cCGBlue = cCGBlue;
-var cCGRed = 'CGRed';
+var cCGRed = 'CGRed'; // CGRed
+
 exports.cCGRed = cCGRed;
-var cChampagne = 'Champagne';
+var cChampagne = 'Champagne'; // Champagne
+
 exports.cChampagne = cChampagne;
-var cChampagnePink = 'ChampagnePink';
+var cChampagnePink = 'ChampagnePink'; // ChampagnePink
+
 exports.cChampagnePink = cChampagnePink;
-var cCharcoal = 'Charcoal';
+var cCharcoal = 'Charcoal'; // Charcoal
+
 exports.cCharcoal = cCharcoal;
-var cCharlestonGreen = 'CharlestonGreen';
+var cCharlestonGreen = 'CharlestonGreen'; // CharlestonGreen
+
 exports.cCharlestonGreen = cCharlestonGreen;
-var cCharmPink = 'CharmPink';
+var cCharmPink = 'CharmPink'; // CharmPink
+
 exports.cCharmPink = cCharmPink;
-var cChartreuseTraditional = 'ChartreuseTraditional';
+var cChartreuseTraditional = 'ChartreuseTraditional'; // ChartreuseTraditional
+
 exports.cChartreuseTraditional = cChartreuseTraditional;
-var cChartreuseWeb = 'ChartreuseWeb';
+var cChartreuseWeb = 'ChartreuseWeb'; // ChartreuseWeb
+
 exports.cChartreuseWeb = cChartreuseWeb;
-var cCherryBlossomPink = 'CherryBlossomPink';
+var cCherryBlossomPink = 'CherryBlossomPink'; // CherryBlossomPink
+
 exports.cCherryBlossomPink = cCherryBlossomPink;
-var cChestnut = 'Chestnut';
+var cChestnut = 'Chestnut'; // Chestnut
+
 exports.cChestnut = cChestnut;
-var cChinaPink = 'ChinaPink';
+var cChinaPink = 'ChinaPink'; // ChinaPink
+
 exports.cChinaPink = cChinaPink;
-var cChinaRose = 'ChinaRose';
+var cChinaRose = 'ChinaRose'; // ChinaRose
+
 exports.cChinaRose = cChinaRose;
-var cChineseRed = 'ChineseRed';
+var cChineseRed = 'ChineseRed'; // ChineseRed
+
 exports.cChineseRed = cChineseRed;
-var cChineseViolet = 'ChineseViolet';
+var cChineseViolet = 'ChineseViolet'; // ChineseViolet
+
 exports.cChineseViolet = cChineseViolet;
-var cChineseYellow = 'ChineseYellow';
+var cChineseYellow = 'ChineseYellow'; // ChineseYellow
+
 exports.cChineseYellow = cChineseYellow;
-var cChocolateTraditional = 'ChocolateTraditional';
+var cChocolateTraditional = 'ChocolateTraditional'; // ChocolateTraditional
+
 exports.cChocolateTraditional = cChocolateTraditional;
-var cChocolateWeb = 'ChocolateWeb';
+var cChocolateWeb = 'ChocolateWeb'; // ChocolateWeb
+
 exports.cChocolateWeb = cChocolateWeb;
-var cChromeYellow = 'ChromeYellow';
+var cChromeYellow = 'ChromeYellow'; // ChromeYellow
+
 exports.cChromeYellow = cChromeYellow;
-var cCinereous = 'Cinereous';
+var cCinereous = 'Cinereous'; // Cinereous
+
 exports.cCinereous = cCinereous;
-var cCinnabar = 'Cinnabar';
+var cCinnabar = 'Cinnabar'; // Cinnabar
+
 exports.cCinnabar = cCinnabar;
-var cCinnamonSatin = 'CinnamonSatin';
+var cCinnamonSatin = 'CinnamonSatin'; // CinnamonSatin
+
 exports.cCinnamonSatin = cCinnamonSatin;
-var cCitrine = 'Citrine';
+var cCitrine = 'Citrine'; // Citrine
+
 exports.cCitrine = cCitrine;
-var cCitron = 'Citron';
+var cCitron = 'Citron'; // Citron
+
 exports.cCitron = cCitron;
-var cClaret = 'Claret';
+var cClaret = 'Claret'; // Claret
+
 exports.cClaret = cClaret;
-var cCobaltBlue = 'CobaltBlue';
+var cCobaltBlue = 'CobaltBlue'; // CobaltBlue
+
 exports.cCobaltBlue = cCobaltBlue;
-var cCocoaBrown = 'CocoaBrown';
+var cCocoaBrown = 'CocoaBrown'; // CocoaBrown
+
 exports.cCocoaBrown = cCocoaBrown;
-var cCoffee = 'Coffee';
+var cCoffee = 'Coffee'; // Coffee
+
 exports.cCoffee = cCoffee;
-var cColumbiaBlue = 'ColumbiaBlue';
+var cColumbiaBlue = 'ColumbiaBlue'; // ColumbiaBlue
+
 exports.cColumbiaBlue = cColumbiaBlue;
-var cCongoPink = 'CongoPink';
+var cCongoPink = 'CongoPink'; // CongoPink
+
 exports.cCongoPink = cCongoPink;
-var cCoolGrey = 'CoolGrey';
+var cCoolGrey = 'CoolGrey'; // CoolGrey
+
 exports.cCoolGrey = cCoolGrey;
-var cCopper = 'Copper';
+var cCopper = 'Copper'; // Copper
+
 exports.cCopper = cCopper;
-var cCopperCrayola = 'CopperCrayola';
+var cCopperCrayola = 'CopperCrayola'; // CopperCrayola
+
 exports.cCopperCrayola = cCopperCrayola;
-var cCopperPenny = 'CopperPenny';
+var cCopperPenny = 'CopperPenny'; // CopperPenny
+
 exports.cCopperPenny = cCopperPenny;
-var cCopperRed = 'CopperRed';
+var cCopperRed = 'CopperRed'; // CopperRed
+
 exports.cCopperRed = cCopperRed;
-var cCopperRose = 'CopperRose';
+var cCopperRose = 'CopperRose'; // CopperRose
+
 exports.cCopperRose = cCopperRose;
-var cCoquelicot = 'Coquelicot';
+var cCoquelicot = 'Coquelicot'; // Coquelicot
+
 exports.cCoquelicot = cCoquelicot;
-var cCoral = 'Coral';
+var cCoral = 'Coral'; // Coral
+
 exports.cCoral = cCoral;
-var cCoralPink = 'CoralPink';
+var cCoralPink = 'CoralPink'; // CoralPink
+
 exports.cCoralPink = cCoralPink;
-var cCordovan = 'Cordovan';
+var cCordovan = 'Cordovan'; // Cordovan
+
 exports.cCordovan = cCordovan;
-var cCorn = 'Corn';
+var cCorn = 'Corn'; // Corn
+
 exports.cCorn = cCorn;
-var cCornflowerBlue = 'CornflowerBlue';
+var cCornflowerBlue = 'CornflowerBlue'; // CornflowerBlue
+
 exports.cCornflowerBlue = cCornflowerBlue;
-var cCornsilk = 'Cornsilk';
+var cCornsilk = 'Cornsilk'; // Cornsilk
+
 exports.cCornsilk = cCornsilk;
-var cCosmicCobalt = 'CosmicCobalt';
+var cCosmicCobalt = 'CosmicCobalt'; // CosmicCobalt
+
 exports.cCosmicCobalt = cCosmicCobalt;
-var cCosmicLatte = 'CosmicLatte';
+var cCosmicLatte = 'CosmicLatte'; // CosmicLatte
+
 exports.cCosmicLatte = cCosmicLatte;
-var cCoyoteBrown = 'CoyoteBrown';
+var cCoyoteBrown = 'CoyoteBrown'; // CoyoteBrown
+
 exports.cCoyoteBrown = cCoyoteBrown;
-var cCottonCandy = 'CottonCandy';
+var cCottonCandy = 'CottonCandy'; // CottonCandy
+
 exports.cCottonCandy = cCottonCandy;
-var cCream = 'Cream';
+var cCream = 'Cream'; // Cream
+
 exports.cCream = cCream;
-var cCrimson = 'Crimson';
+var cCrimson = 'Crimson'; // Crimson
+
 exports.cCrimson = cCrimson;
-var cCrimsonUA = 'CrimsonUA';
+var cCrimsonUA = 'CrimsonUA'; // CrimsonUA
+
 exports.cCrimsonUA = cCrimsonUA;
-var cCultured = 'Cultured';
+var cCultured = 'Cultured'; // Cultured
+
 exports.cCultured = cCultured;
-var cCyanProcess = 'CyanProcess';
+var cCyanProcess = 'CyanProcess'; // CyanProcess
+
 exports.cCyanProcess = cCyanProcess;
-var cCyberGrape = 'CyberGrape';
+var cCyberGrape = 'CyberGrape'; // CyberGrape
+
 exports.cCyberGrape = cCyberGrape;
-var cCyberYellow = 'CyberYellow';
+var cCyberYellow = 'CyberYellow'; // CyberYellow
+
 exports.cCyberYellow = cCyberYellow;
-var cCyclamen = 'Cyclamen';
+var cCyclamen = 'Cyclamen'; // Cyclamen
+
 exports.cCyclamen = cCyclamen;
-var cDarkBlueGray = 'DarkBlueGray';
+var cDarkBlueGray = 'DarkBlueGray'; // DarkBlueGray
+
 exports.cDarkBlueGray = cDarkBlueGray;
-var cDarkBrown = 'DarkBrown';
+var cDarkBrown = 'DarkBrown'; // DarkBrown
+
 exports.cDarkBrown = cDarkBrown;
-var cDarkByzantium = 'DarkByzantium';
+var cDarkByzantium = 'DarkByzantium'; // DarkByzantium
+
 exports.cDarkByzantium = cDarkByzantium;
-var cDarkCornflowerBlue = 'DarkCornflowerBlue';
+var cDarkCornflowerBlue = 'DarkCornflowerBlue'; // DarkCornflowerBlue
+
 exports.cDarkCornflowerBlue = cDarkCornflowerBlue;
-var cDarkCyan = 'DarkCyan';
+var cDarkCyan = 'DarkCyan'; // DarkCyan
+
 exports.cDarkCyan = cDarkCyan;
-var cDarkElectricBlue = 'DarkElectricBlue';
+var cDarkElectricBlue = 'DarkElectricBlue'; // DarkElectricBlue
+
 exports.cDarkElectricBlue = cDarkElectricBlue;
-var cDarkGoldenrod = 'DarkGoldenrod';
+var cDarkGoldenrod = 'DarkGoldenrod'; // DarkGoldenrod
+
 exports.cDarkGoldenrod = cDarkGoldenrod;
-var cDarkGreen = 'DarkGreen';
+var cDarkGreen = 'DarkGreen'; // DarkGreen
+
 exports.cDarkGreen = cDarkGreen;
-var cDarkGreenX11 = 'DarkGreenX11';
+var cDarkGreenX11 = 'DarkGreenX11'; // DarkGreenX11
+
 exports.cDarkGreenX11 = cDarkGreenX11;
-var cDarkJungleGreen = 'DarkJungleGreen';
+var cDarkJungleGreen = 'DarkJungleGreen'; // DarkJungleGreen
+
 exports.cDarkJungleGreen = cDarkJungleGreen;
-var cDarkKhaki = 'DarkKhaki';
+var cDarkKhaki = 'DarkKhaki'; // DarkKhaki
+
 exports.cDarkKhaki = cDarkKhaki;
-var cDarkLava = 'DarkLava';
+var cDarkLava = 'DarkLava'; // DarkLava
+
 exports.cDarkLava = cDarkLava;
-var cDarkLiver = 'DarkLiver';
+var cDarkLiver = 'DarkLiver'; // DarkLiver
+
 exports.cDarkLiver = cDarkLiver;
-var cDarkLiverHorses = 'DarkLiverHorses';
+var cDarkLiverHorses = 'DarkLiverHorses'; // DarkLiverHorses
+
 exports.cDarkLiverHorses = cDarkLiverHorses;
-var cDarkMagenta = 'DarkMagenta';
+var cDarkMagenta = 'DarkMagenta'; // DarkMagenta
+
 exports.cDarkMagenta = cDarkMagenta;
-var cDarkMossGreen = 'DarkMossGreen';
+var cDarkMossGreen = 'DarkMossGreen'; // DarkMossGreen
+
 exports.cDarkMossGreen = cDarkMossGreen;
-var cDarkOliveGreen = 'DarkOliveGreen';
+var cDarkOliveGreen = 'DarkOliveGreen'; // DarkOliveGreen
+
 exports.cDarkOliveGreen = cDarkOliveGreen;
-var cDarkOrange = 'DarkOrange';
+var cDarkOrange = 'DarkOrange'; // DarkOrange
+
 exports.cDarkOrange = cDarkOrange;
-var cDarkOrchid = 'DarkOrchid';
+var cDarkOrchid = 'DarkOrchid'; // DarkOrchid
+
 exports.cDarkOrchid = cDarkOrchid;
-var cDarkPastelGreen = 'DarkPastelGreen';
+var cDarkPastelGreen = 'DarkPastelGreen'; // DarkPastelGreen
+
 exports.cDarkPastelGreen = cDarkPastelGreen;
-var cDarkPurple = 'DarkPurple';
+var cDarkPurple = 'DarkPurple'; // DarkPurple
+
 exports.cDarkPurple = cDarkPurple;
-var cDarkRed = 'DarkRed';
+var cDarkRed = 'DarkRed'; // DarkRed
+
 exports.cDarkRed = cDarkRed;
-var cDarkSalmon = 'DarkSalmon';
+var cDarkSalmon = 'DarkSalmon'; // DarkSalmon
+
 exports.cDarkSalmon = cDarkSalmon;
-var cDarkSeaGreen = 'DarkSeaGreen';
+var cDarkSeaGreen = 'DarkSeaGreen'; // DarkSeaGreen
+
 exports.cDarkSeaGreen = cDarkSeaGreen;
-var cDarkSienna = 'DarkSienna';
+var cDarkSienna = 'DarkSienna'; // DarkSienna
+
 exports.cDarkSienna = cDarkSienna;
-var cDarkSkyBlue = 'DarkSkyBlue';
+var cDarkSkyBlue = 'DarkSkyBlue'; // DarkSkyBlue
+
 exports.cDarkSkyBlue = cDarkSkyBlue;
-var cDarkSlateBlue = 'DarkSlateBlue';
+var cDarkSlateBlue = 'DarkSlateBlue'; // DarkSlateBlue
+
 exports.cDarkSlateBlue = cDarkSlateBlue;
-var cDarkSlateGray = 'DarkSlateGray';
+var cDarkSlateGray = 'DarkSlateGray'; // DarkSlateGray
+
 exports.cDarkSlateGray = cDarkSlateGray;
-var cDarkSpringGreen = 'DarkSpringGreen';
+var cDarkSpringGreen = 'DarkSpringGreen'; // DarkSpringGreen
+
 exports.cDarkSpringGreen = cDarkSpringGreen;
-var cDarkTurquoise = 'DarkTurquoise';
+var cDarkTurquoise = 'DarkTurquoise'; // DarkTurquoise
+
 exports.cDarkTurquoise = cDarkTurquoise;
-var cDarkViolet = 'DarkViolet';
+var cDarkViolet = 'DarkViolet'; // DarkViolet
+
 exports.cDarkViolet = cDarkViolet;
-var cDartmouthGreen = 'DartmouthGreen';
+var cDartmouthGreen = 'DartmouthGreen'; // DartmouthGreen
+
 exports.cDartmouthGreen = cDartmouthGreen;
-var cDavysGrey = 'DavysGrey';
+var cDavysGrey = 'DavysGrey'; // DavysGrey
+
 exports.cDavysGrey = cDavysGrey;
-var cDeepCerise = 'DeepCerise';
+var cDeepCerise = 'DeepCerise'; // DeepCerise
+
 exports.cDeepCerise = cDeepCerise;
-var cDeepChampagne = 'DeepChampagne';
+var cDeepChampagne = 'DeepChampagne'; // DeepChampagne
+
 exports.cDeepChampagne = cDeepChampagne;
-var cDeepChestnut = 'DeepChestnut';
+var cDeepChestnut = 'DeepChestnut'; // DeepChestnut
+
 exports.cDeepChestnut = cDeepChestnut;
-var cDeepJungleGreen = 'DeepJungleGreen';
+var cDeepJungleGreen = 'DeepJungleGreen'; // DeepJungleGreen
+
 exports.cDeepJungleGreen = cDeepJungleGreen;
-var cDeepPink = 'DeepPink';
+var cDeepPink = 'DeepPink'; // DeepPink
+
 exports.cDeepPink = cDeepPink;
-var cDeepSaffron = 'DeepSaffron';
+var cDeepSaffron = 'DeepSaffron'; // DeepSaffron
+
 exports.cDeepSaffron = cDeepSaffron;
-var cDeepSkyBlue = 'DeepSkyBlue';
+var cDeepSkyBlue = 'DeepSkyBlue'; // DeepSkyBlue
+
 exports.cDeepSkyBlue = cDeepSkyBlue;
-var cDeepSpaceSparkle = 'DeepSpaceSparkle';
+var cDeepSpaceSparkle = 'DeepSpaceSparkle'; // DeepSpaceSparkle
+
 exports.cDeepSpaceSparkle = cDeepSpaceSparkle;
-var cDeepTaupe = 'DeepTaupe';
+var cDeepTaupe = 'DeepTaupe'; // DeepTaupe
+
 exports.cDeepTaupe = cDeepTaupe;
-var cDenim = 'Denim';
+var cDenim = 'Denim'; // Denim
+
 exports.cDenim = cDenim;
-var cDenimBlue = 'DenimBlue';
+var cDenimBlue = 'DenimBlue'; // DenimBlue
+
 exports.cDenimBlue = cDenimBlue;
-var cDesert = 'Desert';
+var cDesert = 'Desert'; // Desert
+
 exports.cDesert = cDesert;
-var cDesertSand = 'DesertSand';
+var cDesertSand = 'DesertSand'; // DesertSand
+
 exports.cDesertSand = cDesertSand;
-var cDimGray = 'DimGray';
+var cDimGray = 'DimGray'; // DimGray
+
 exports.cDimGray = cDimGray;
-var cDodgerBlue = 'DodgerBlue';
+var cDodgerBlue = 'DodgerBlue'; // DodgerBlue
+
 exports.cDodgerBlue = cDodgerBlue;
-var cDogwoodRose = 'DogwoodRose';
+var cDogwoodRose = 'DogwoodRose'; // DogwoodRose
+
 exports.cDogwoodRose = cDogwoodRose;
-var cDrab = 'Drab';
+var cDrab = 'Drab'; // Drab
+
 exports.cDrab = cDrab;
-var cDukeBlue = 'DukeBlue';
+var cDukeBlue = 'DukeBlue'; // DukeBlue
+
 exports.cDukeBlue = cDukeBlue;
-var cDutchWhite = 'DutchWhite';
+var cDutchWhite = 'DutchWhite'; // DutchWhite
+
 exports.cDutchWhite = cDutchWhite;
-var cEarthYellow = 'EarthYellow';
+var cEarthYellow = 'EarthYellow'; // EarthYellow
+
 exports.cEarthYellow = cEarthYellow;
-var cEbony = 'Ebony';
+var cEbony = 'Ebony'; // Ebony
+
 exports.cEbony = cEbony;
-var cEcru = 'Ecru';
+var cEcru = 'Ecru'; // Ecru
+
 exports.cEcru = cEcru;
-var cEerieBlack = 'EerieBlack';
+var cEerieBlack = 'EerieBlack'; // EerieBlack
+
 exports.cEerieBlack = cEerieBlack;
-var cEggplant = 'Eggplant';
+var cEggplant = 'Eggplant'; // Eggplant
+
 exports.cEggplant = cEggplant;
-var cEggshell = 'Eggshell';
+var cEggshell = 'Eggshell'; // Eggshell
+
 exports.cEggshell = cEggshell;
-var cEgyptianBlue = 'EgyptianBlue';
+var cEgyptianBlue = 'EgyptianBlue'; // EgyptianBlue
+
 exports.cEgyptianBlue = cEgyptianBlue;
-var cElectricBlue = 'ElectricBlue';
+var cElectricBlue = 'ElectricBlue'; // ElectricBlue
+
 exports.cElectricBlue = cElectricBlue;
-var cElectricGreen = 'ElectricGreen';
+var cElectricGreen = 'ElectricGreen'; // ElectricGreen
+
 exports.cElectricGreen = cElectricGreen;
-var cElectricIndigo = 'ElectricIndigo';
+var cElectricIndigo = 'ElectricIndigo'; // ElectricIndigo
+
 exports.cElectricIndigo = cElectricIndigo;
-var cElectricLime = 'ElectricLime';
+var cElectricLime = 'ElectricLime'; // ElectricLime
+
 exports.cElectricLime = cElectricLime;
-var cElectricPurple = 'ElectricPurple';
+var cElectricPurple = 'ElectricPurple'; // ElectricPurple
+
 exports.cElectricPurple = cElectricPurple;
-var cElectricViolet = 'ElectricViolet';
+var cElectricViolet = 'ElectricViolet'; // ElectricViolet
+
 exports.cElectricViolet = cElectricViolet;
-var cEmerald = 'Emerald';
+var cEmerald = 'Emerald'; // Emerald
+
 exports.cEmerald = cEmerald;
-var cEminence = 'Eminence';
+var cEminence = 'Eminence'; // Eminence
+
 exports.cEminence = cEminence;
-var cEnglishGreen = 'EnglishGreen';
+var cEnglishGreen = 'EnglishGreen'; // EnglishGreen
+
 exports.cEnglishGreen = cEnglishGreen;
-var cEnglishLavender = 'EnglishLavender';
+var cEnglishLavender = 'EnglishLavender'; // EnglishLavender
+
 exports.cEnglishLavender = cEnglishLavender;
-var cEnglishRed = 'EnglishRed';
+var cEnglishRed = 'EnglishRed'; // EnglishRed
+
 exports.cEnglishRed = cEnglishRed;
-var cEnglishVermillion = 'EnglishVermillion';
+var cEnglishVermillion = 'EnglishVermillion'; // EnglishVermillion
+
 exports.cEnglishVermillion = cEnglishVermillion;
-var cEnglishViolet = 'EnglishViolet';
+var cEnglishViolet = 'EnglishViolet'; // EnglishViolet
+
 exports.cEnglishViolet = cEnglishViolet;
-var cErin = 'Erin';
+var cErin = 'Erin'; // Erin
+
 exports.cErin = cErin;
-var cEtonBlue = 'EtonBlue';
+var cEtonBlue = 'EtonBlue'; // EtonBlue
+
 exports.cEtonBlue = cEtonBlue;
-var cFallow = 'Fallow';
+var cFallow = 'Fallow'; // Fallow
+
 exports.cFallow = cFallow;
-var cFaluRed = 'FaluRed';
+var cFaluRed = 'FaluRed'; // FaluRed
+
 exports.cFaluRed = cFaluRed;
-var cFandango = 'Fandango';
+var cFandango = 'Fandango'; // Fandango
+
 exports.cFandango = cFandango;
-var cFandangoPink = 'FandangoPink';
+var cFandangoPink = 'FandangoPink'; // FandangoPink
+
 exports.cFandangoPink = cFandangoPink;
-var cFashionFuchsia = 'FashionFuchsia';
+var cFashionFuchsia = 'FashionFuchsia'; // FashionFuchsia
+
 exports.cFashionFuchsia = cFashionFuchsia;
-var cFawn = 'Fawn';
+var cFawn = 'Fawn'; // Fawn
+
 exports.cFawn = cFawn;
-var cFeldgrau = 'Feldgrau';
+var cFeldgrau = 'Feldgrau'; // Feldgrau
+
 exports.cFeldgrau = cFeldgrau;
-var cFernGreen = 'FernGreen';
+var cFernGreen = 'FernGreen'; // FernGreen
+
 exports.cFernGreen = cFernGreen;
-var cFieldDrab = 'FieldDrab';
+var cFieldDrab = 'FieldDrab'; // FieldDrab
+
 exports.cFieldDrab = cFieldDrab;
-var cFieryRose = 'FieryRose';
+var cFieryRose = 'FieryRose'; // FieryRose
+
 exports.cFieryRose = cFieryRose;
-var cFirebrick = 'Firebrick';
+var cFirebrick = 'Firebrick'; // Firebrick
+
 exports.cFirebrick = cFirebrick;
-var cFireEngineRed = 'FireEngineRed';
+var cFireEngineRed = 'FireEngineRed'; // FireEngineRed
+
 exports.cFireEngineRed = cFireEngineRed;
-var cFireOpal = 'FireOpal';
+var cFireOpal = 'FireOpal'; // FireOpal
+
 exports.cFireOpal = cFireOpal;
-var cFlame = 'Flame';
+var cFlame = 'Flame'; // Flame
+
 exports.cFlame = cFlame;
-var cFlax = 'Flax';
+var cFlax = 'Flax'; // Flax
+
 exports.cFlax = cFlax;
-var cFlirt = 'Flirt';
+var cFlirt = 'Flirt'; // Flirt
+
 exports.cFlirt = cFlirt;
-var cFloralWhite = 'FloralWhite';
+var cFloralWhite = 'FloralWhite'; // FloralWhite
+
 exports.cFloralWhite = cFloralWhite;
-var cFluorescentBlue = 'FluorescentBlue';
+var cFluorescentBlue = 'FluorescentBlue'; // FluorescentBlue
+
 exports.cFluorescentBlue = cFluorescentBlue;
-var cForestGreenCrayola = 'ForestGreenCrayola';
+var cForestGreenCrayola = 'ForestGreenCrayola'; // ForestGreenCrayola
+
 exports.cForestGreenCrayola = cForestGreenCrayola;
-var cForestGreenTraditional = 'ForestGreenTraditional';
+var cForestGreenTraditional = 'ForestGreenTraditional'; // ForestGreenTraditional
+
 exports.cForestGreenTraditional = cForestGreenTraditional;
-var cForestGreenWeb = 'ForestGreenWeb';
+var cForestGreenWeb = 'ForestGreenWeb'; // ForestGreenWeb
+
 exports.cForestGreenWeb = cForestGreenWeb;
-var cFrenchBeige = 'FrenchBeige';
+var cFrenchBeige = 'FrenchBeige'; // FrenchBeige
+
 exports.cFrenchBeige = cFrenchBeige;
-var cFrenchBistre = 'FrenchBistre';
+var cFrenchBistre = 'FrenchBistre'; // FrenchBistre
+
 exports.cFrenchBistre = cFrenchBistre;
-var cFrenchBlue = 'FrenchBlue';
+var cFrenchBlue = 'FrenchBlue'; // FrenchBlue
+
 exports.cFrenchBlue = cFrenchBlue;
-var cFrenchFuchsia = 'FrenchFuchsia';
+var cFrenchFuchsia = 'FrenchFuchsia'; // FrenchFuchsia
+
 exports.cFrenchFuchsia = cFrenchFuchsia;
-var cFrenchLilac = 'FrenchLilac';
+var cFrenchLilac = 'FrenchLilac'; // FrenchLilac
+
 exports.cFrenchLilac = cFrenchLilac;
-var cFrenchLime = 'FrenchLime';
+var cFrenchLime = 'FrenchLime'; // FrenchLime
+
 exports.cFrenchLime = cFrenchLime;
-var cFrenchMauve = 'FrenchMauve';
+var cFrenchMauve = 'FrenchMauve'; // FrenchMauve
+
 exports.cFrenchMauve = cFrenchMauve;
-var cFrenchPink = 'FrenchPink';
+var cFrenchPink = 'FrenchPink'; // FrenchPink
+
 exports.cFrenchPink = cFrenchPink;
-var cFrenchRaspberry = 'FrenchRaspberry';
+var cFrenchRaspberry = 'FrenchRaspberry'; // FrenchRaspberry
+
 exports.cFrenchRaspberry = cFrenchRaspberry;
-var cFrenchRose = 'FrenchRose';
+var cFrenchRose = 'FrenchRose'; // FrenchRose
+
 exports.cFrenchRose = cFrenchRose;
-var cFrenchSkyBlue = 'FrenchSkyBlue';
+var cFrenchSkyBlue = 'FrenchSkyBlue'; // FrenchSkyBlue
+
 exports.cFrenchSkyBlue = cFrenchSkyBlue;
-var cFrenchViolet = 'FrenchViolet';
+var cFrenchViolet = 'FrenchViolet'; // FrenchViolet
+
 exports.cFrenchViolet = cFrenchViolet;
-var cFrostbite = 'Frostbite';
+var cFrostbite = 'Frostbite'; // Frostbite
+
 exports.cFrostbite = cFrostbite;
-var cFuchsia = 'Fuchsia';
+var cFuchsia = 'Fuchsia'; // Fuchsia
+
 exports.cFuchsia = cFuchsia;
-var cFuchsiaCrayola = 'FuchsiaCrayola';
+var cFuchsiaCrayola = 'FuchsiaCrayola'; // FuchsiaCrayola
+
 exports.cFuchsiaCrayola = cFuchsiaCrayola;
-var cFuchsiaPurple = 'FuchsiaPurple';
+var cFuchsiaPurple = 'FuchsiaPurple'; // FuchsiaPurple
+
 exports.cFuchsiaPurple = cFuchsiaPurple;
-var cFuchsiaRose = 'FuchsiaRose';
+var cFuchsiaRose = 'FuchsiaRose'; // FuchsiaRose
+
 exports.cFuchsiaRose = cFuchsiaRose;
-var cFulvous = 'Fulvous';
+var cFulvous = 'Fulvous'; // Fulvous
+
 exports.cFulvous = cFulvous;
-var cFuzzyWuzzy = 'FuzzyWuzzy'; // https://en.wikipedia.org/wiki/List_of_colors:_G%E2%80%93M
+var cFuzzyWuzzy = 'FuzzyWuzzy'; // FuzzyWuzzy
+// https://en.wikipedia.org/wiki/List_of_colors:_G%E2%80%93M
 
 exports.cFuzzyWuzzy = cFuzzyWuzzy;
-var cGainsboro = 'Gainsboro';
+var cGainsboro = 'Gainsboro'; // Gainsboro
+
 exports.cGainsboro = cGainsboro;
-var cGamboge = 'Gamboge';
+var cGamboge = 'Gamboge'; // Gamboge
+
 exports.cGamboge = cGamboge;
-var cGenericViridian = 'GenericViridian';
+var cGenericViridian = 'GenericViridian'; // GenericViridian
+
 exports.cGenericViridian = cGenericViridian;
-var cGhostWhite = 'GhostWhite';
+var cGhostWhite = 'GhostWhite'; // GhostWhite
+
 exports.cGhostWhite = cGhostWhite;
-var cGlaucous = 'Glaucous';
+var cGlaucous = 'Glaucous'; // Glaucous
+
 exports.cGlaucous = cGlaucous;
-var cGlossyGrape = 'GlossyGrape';
+var cGlossyGrape = 'GlossyGrape'; // GlossyGrape
+
 exports.cGlossyGrape = cGlossyGrape;
-var cGOGreen = 'GOGreen';
+var cGOGreen = 'GOGreen'; // GOGreen
+
 exports.cGOGreen = cGOGreen;
-var cGold = 'Gold';
+var cGold = 'Gold'; // Gold
+
 exports.cGold = cGold;
-var cGoldMetallic = 'GoldMetallic';
+var cGoldMetallic = 'GoldMetallic'; // GoldMetallic
+
 exports.cGoldMetallic = cGoldMetallic;
-var cGoldWebGolden = 'GoldWebGolden';
+var cGoldWebGolden = 'GoldWebGolden'; // GoldWebGolden
+
 exports.cGoldWebGolden = cGoldWebGolden;
-var cGoldCrayola = 'GoldCrayola';
+var cGoldCrayola = 'GoldCrayola'; // GoldCrayola
+
 exports.cGoldCrayola = cGoldCrayola;
-var cGoldFusion = 'GoldFusion';
+var cGoldFusion = 'GoldFusion'; // GoldFusion
+
 exports.cGoldFusion = cGoldFusion;
-var cGoldenBrown = 'GoldenBrown';
+var cGoldenBrown = 'GoldenBrown'; // GoldenBrown
+
 exports.cGoldenBrown = cGoldenBrown;
-var cGoldenPoppy = 'GoldenPoppy';
+var cGoldenPoppy = 'GoldenPoppy'; // GoldenPoppy
+
 exports.cGoldenPoppy = cGoldenPoppy;
-var cGoldenYellow = 'GoldenYellow';
+var cGoldenYellow = 'GoldenYellow'; // GoldenYellow
+
 exports.cGoldenYellow = cGoldenYellow;
-var cGoldenrod = 'Goldenrod';
+var cGoldenrod = 'Goldenrod'; // Goldenrod
+
 exports.cGoldenrod = cGoldenrod;
-var cGraniteGray = 'GraniteGray';
+var cGraniteGray = 'GraniteGray'; // GraniteGray
+
 exports.cGraniteGray = cGraniteGray;
-var cGrannySmithApple = 'GrannySmithApple';
+var cGrannySmithApple = 'GrannySmithApple'; // GrannySmithApple
+
 exports.cGrannySmithApple = cGrannySmithApple;
-var cGrayWeb = 'GrayWeb';
+var cGrayWeb = 'GrayWeb'; // GrayWeb
+
 exports.cGrayWeb = cGrayWeb;
-var cGrayX11 = 'GrayX11';
+var cGrayX11 = 'GrayX11'; // GrayX11
+
 exports.cGrayX11 = cGrayX11;
-var cGreenCrayola = 'GreenCrayola';
+var cGreenCrayola = 'GreenCrayola'; // GreenCrayola
+
 exports.cGreenCrayola = cGreenCrayola;
-var cGreenWeb = 'GreenWeb';
+var cGreenWeb = 'GreenWeb'; // GreenWeb
+
 exports.cGreenWeb = cGreenWeb;
-var cGreenMunsell = 'GreenMunsell';
+var cGreenMunsell = 'GreenMunsell'; // GreenMunsell
+
 exports.cGreenMunsell = cGreenMunsell;
-var cGreenNCS = 'GreenNCS';
+var cGreenNCS = 'GreenNCS'; // GreenNCS
+
 exports.cGreenNCS = cGreenNCS;
-var cGreenPantone = 'GreenPantone';
+var cGreenPantone = 'GreenPantone'; // GreenPantone
+
 exports.cGreenPantone = cGreenPantone;
-var cGreenPigment = 'GreenPigment';
+var cGreenPigment = 'GreenPigment'; // GreenPigment
+
 exports.cGreenPigment = cGreenPigment;
-var cGreenRYB = 'GreenRYB';
+var cGreenRYB = 'GreenRYB'; // GreenRYB
+
 exports.cGreenRYB = cGreenRYB;
-var cGreenBlue = 'GreenBlue';
+var cGreenBlue = 'GreenBlue'; // GreenBlue
+
 exports.cGreenBlue = cGreenBlue;
-var cGreenBlueCrayola = 'GreenBlueCrayola';
+var cGreenBlueCrayola = 'GreenBlueCrayola'; // GreenBlueCrayola
+
 exports.cGreenBlueCrayola = cGreenBlueCrayola;
-var cGreenCyan = 'GreenCyan';
+var cGreenCyan = 'GreenCyan'; // GreenCyan
+
 exports.cGreenCyan = cGreenCyan;
-var cGreenLizard = 'GreenLizard';
+var cGreenLizard = 'GreenLizard'; // GreenLizard
+
 exports.cGreenLizard = cGreenLizard;
-var cGreenSheen = 'GreenSheen';
+var cGreenSheen = 'GreenSheen'; // GreenSheen
+
 exports.cGreenSheen = cGreenSheen;
-var cGreenYellow = 'GreenYellow';
+var cGreenYellow = 'GreenYellow'; // GreenYellow
+
 exports.cGreenYellow = cGreenYellow;
-var cGreenYellowCrayola = 'GreenYellowCrayola';
+var cGreenYellowCrayola = 'GreenYellowCrayola'; // GreenYellowCrayola
+
 exports.cGreenYellowCrayola = cGreenYellowCrayola;
-var cGrullo = 'Grullo';
+var cGrullo = 'Grullo'; // Grullo
+
 exports.cGrullo = cGrullo;
-var cGunmetal = 'Gunmetal';
+var cGunmetal = 'Gunmetal'; // Gunmetal
+
 exports.cGunmetal = cGunmetal;
-var cHanBlue = 'HanBlue';
+var cHanBlue = 'HanBlue'; // HanBlue
+
 exports.cHanBlue = cHanBlue;
-var cHanPurple = 'HanPurple';
+var cHanPurple = 'HanPurple'; // HanPurple
+
 exports.cHanPurple = cHanPurple;
-var cHansaYellow = 'HansaYellow';
+var cHansaYellow = 'HansaYellow'; // HansaYellow
+
 exports.cHansaYellow = cHansaYellow;
-var cHarlequin = 'Harlequin';
+var cHarlequin = 'Harlequin'; // Harlequin
+
 exports.cHarlequin = cHarlequin;
-var cHarvestGold = 'HarvestGold';
+var cHarvestGold = 'HarvestGold'; // HarvestGold
+
 exports.cHarvestGold = cHarvestGold;
-var cHeatWave = 'HeatWave';
+var cHeatWave = 'HeatWave'; // HeatWave
+
 exports.cHeatWave = cHeatWave;
-var cHeliotrope = 'Heliotrope';
+var cHeliotrope = 'Heliotrope'; // Heliotrope
+
 exports.cHeliotrope = cHeliotrope;
-var cHeliotropeGray = 'HeliotropeGray';
+var cHeliotropeGray = 'HeliotropeGray'; // HeliotropeGray
+
 exports.cHeliotropeGray = cHeliotropeGray;
-var cHollywoodCerise = 'HollywoodCerise';
+var cHollywoodCerise = 'HollywoodCerise'; // HollywoodCerise
+
 exports.cHollywoodCerise = cHollywoodCerise;
-var cHoneydew = 'Honeydew';
+var cHoneydew = 'Honeydew'; // Honeydew
+
 exports.cHoneydew = cHoneydew;
-var cHonoluluBlue = 'HonoluluBlue';
+var cHonoluluBlue = 'HonoluluBlue'; // HonoluluBlue
+
 exports.cHonoluluBlue = cHonoluluBlue;
-var cHookersGreen = 'HookersGreen';
+var cHookersGreen = 'HookersGreen'; // HookersGreen
+
 exports.cHookersGreen = cHookersGreen;
-var cHotMagenta = 'HotMagenta';
+var cHotMagenta = 'HotMagenta'; // HotMagenta
+
 exports.cHotMagenta = cHotMagenta;
-var cHotPink = 'HotPink';
+var cHotPink = 'HotPink'; // HotPink
+
 exports.cHotPink = cHotPink;
-var cHunterGreen = 'HunterGreen';
+var cHunterGreen = 'HunterGreen'; // HunterGreen
+
 exports.cHunterGreen = cHunterGreen;
-var cIceberg = 'Iceberg';
+var cIceberg = 'Iceberg'; // Iceberg
+
 exports.cIceberg = cIceberg;
-var cIcterine = 'Icterine';
+var cIcterine = 'Icterine'; // Icterine
+
 exports.cIcterine = cIcterine;
-var cIlluminatingEmerald = 'IlluminatingEmerald';
+var cIlluminatingEmerald = 'IlluminatingEmerald'; // IlluminatingEmerald
+
 exports.cIlluminatingEmerald = cIlluminatingEmerald;
-var cImperialRed = 'cmperialRed';
+var cImperialRed = 'cmperialRed'; // cmperialRed
+
 exports.cImperialRed = cImperialRed;
-var cInchworm = 'Inchworm';
+var cInchworm = 'Inchworm'; // Inchworm
+
 exports.cInchworm = cInchworm;
-var cIndependence = 'Independence';
+var cIndependence = 'Independence'; // Independence
+
 exports.cIndependence = cIndependence;
-var cIndiaGreen = 'IndiaGreen';
+var cIndiaGreen = 'IndiaGreen'; // IndiaGreen
+
 exports.cIndiaGreen = cIndiaGreen;
-var cIndianRed = 'IndianRed';
+var cIndianRed = 'IndianRed'; // IndianRed
+
 exports.cIndianRed = cIndianRed;
-var cIndianYellow = 'IndianYellow';
+var cIndianYellow = 'IndianYellow'; // IndianYellow
+
 exports.cIndianYellow = cIndianYellow;
-var cIndigo = 'Indigo';
+var cIndigo = 'Indigo'; // Indigo
+
 exports.cIndigo = cIndigo;
-var cIndigoDye = 'IndigoDye';
+var cIndigoDye = 'IndigoDye'; // IndigoDye
+
 exports.cIndigoDye = cIndigoDye;
-var cInternationalOrangeAerospace = 'InternationalOrangeAerospace';
+var cInternationalOrangeAerospace = 'InternationalOrangeAerospace'; // InternationalOrangeAerospace
+
 exports.cInternationalOrangeAerospace = cInternationalOrangeAerospace;
-var cInternationalOrangeEngineering = 'InternationalOrangeEngineering';
+var cInternationalOrangeEngineering = 'InternationalOrangeEngineering'; // InternationalOrangeEngineering
+
 exports.cInternationalOrangeEngineering = cInternationalOrangeEngineering;
-var cInternationalOrangeGoldenGateBridge = 'InternationalOrangeGoldenGateBridge';
+var cInternationalOrangeGoldenGateBridge = 'InternationalOrangeGoldenGateBridge'; // InternationalOrangeGoldenGateBridge
+
 exports.cInternationalOrangeGoldenGateBridge = cInternationalOrangeGoldenGateBridge;
-var cIris = 'Iris';
+var cIris = 'Iris'; // Iris
+
 exports.cIris = cIris;
-var cIrresistible = 'Irresistible';
+var cIrresistible = 'Irresistible'; // Irresistible
+
 exports.cIrresistible = cIrresistible;
-var cIsabelline = 'Isabelline';
+var cIsabelline = 'Isabelline'; // Isabelline
+
 exports.cIsabelline = cIsabelline;
-var cItalianSkyBlue = 'ItalianSkyBlue';
+var cItalianSkyBlue = 'ItalianSkyBlue'; // ItalianSkyBlue
+
 exports.cItalianSkyBlue = cItalianSkyBlue;
-var cIvory = 'Ivory';
+var cIvory = 'Ivory'; // Ivory
+
 exports.cIvory = cIvory;
-var cJade = 'Jade';
+var cJade = 'Jade'; // Jade
+
 exports.cJade = cJade;
-var cJapaneseCarmine = 'JapaneseCarmine';
+var cJapaneseCarmine = 'JapaneseCarmine'; // JapaneseCarmine
+
 exports.cJapaneseCarmine = cJapaneseCarmine;
-var cJapaneseViolet = 'JapaneseViolet';
+var cJapaneseViolet = 'JapaneseViolet'; // JapaneseViolet
+
 exports.cJapaneseViolet = cJapaneseViolet;
-var cJasmine = 'Jasmine';
+var cJasmine = 'Jasmine'; // Jasmine
+
 exports.cJasmine = cJasmine;
-var cJazzberryJam = 'JazzberryJam';
+var cJazzberryJam = 'JazzberryJam'; // JazzberryJam
+
 exports.cJazzberryJam = cJazzberryJam;
-var cJet = 'Jet';
+var cJet = 'Jet'; // Jet
+
 exports.cJet = cJet;
-var cJonquil = 'Jonquil';
+var cJonquil = 'Jonquil'; // Jonquil
+
 exports.cJonquil = cJonquil;
-var cJuneBud = 'JuneBud';
+var cJuneBud = 'JuneBud'; // JuneBud
+
 exports.cJuneBud = cJuneBud;
-var cJungleGreen = 'JungleGreen';
+var cJungleGreen = 'JungleGreen'; // JungleGreen
+
 exports.cJungleGreen = cJungleGreen;
-var cKellyGreen = 'KellyGreen';
+var cKellyGreen = 'KellyGreen'; // KellyGreen
+
 exports.cKellyGreen = cKellyGreen;
-var cKeppel = 'Keppel';
+var cKeppel = 'Keppel'; // Keppel
+
 exports.cKeppel = cKeppel;
-var cKeyLime = 'KeyLime';
+var cKeyLime = 'KeyLime'; // KeyLime
+
 exports.cKeyLime = cKeyLime;
-var cKhakiWeb = 'KhakiWeb';
+var cKhakiWeb = 'KhakiWeb'; // KhakiWeb
+
 exports.cKhakiWeb = cKhakiWeb;
-var cKhakiX11 = 'KhakiX11';
+var cKhakiX11 = 'KhakiX11'; // KhakiX11
+
 exports.cKhakiX11 = cKhakiX11;
-var cKobe = 'Kobe';
+var cKobe = 'Kobe'; // Kobe
+
 exports.cKobe = cKobe;
-var cKobi = 'Kobi';
+var cKobi = 'Kobi'; // Kobi
+
 exports.cKobi = cKobi;
-var cKobicha = 'Kobicha';
+var cKobicha = 'Kobicha'; // Kobicha
+
 exports.cKobicha = cKobicha;
-var cKombuGreen = 'KombuGreen';
+var cKombuGreen = 'KombuGreen'; // KombuGreen
+
 exports.cKombuGreen = cKombuGreen;
-var cKSUPurple = 'KSUPurple';
+var cKSUPurple = 'KSUPurple'; // KSUPurple
+
 exports.cKSUPurple = cKSUPurple;
-var cLanguidLavender = 'LanguidLavender';
+var cLanguidLavender = 'LanguidLavender'; // LanguidLavender
+
 exports.cLanguidLavender = cLanguidLavender;
-var cLapisLazuli = 'LapisLazuli';
+var cLapisLazuli = 'LapisLazuli'; // LapisLazuli
+
 exports.cLapisLazuli = cLapisLazuli;
-var cLaserLemon = 'LaserLemon';
+var cLaserLemon = 'LaserLemon'; // LaserLemon
+
 exports.cLaserLemon = cLaserLemon;
-var cLaurelGreen = 'LaurelGreen';
+var cLaurelGreen = 'LaurelGreen'; // LaurelGreen
+
 exports.cLaurelGreen = cLaurelGreen;
-var cLava = 'Lava';
+var cLava = 'Lava'; // Lava
+
 exports.cLava = cLava;
-var cLavenderFloral = 'LavenderFloral';
+var cLavenderFloral = 'LavenderFloral'; // LavenderFloral
+
 exports.cLavenderFloral = cLavenderFloral;
-var cLavenderWeb = 'LavenderWeb';
+var cLavenderWeb = 'LavenderWeb'; // LavenderWeb
+
 exports.cLavenderWeb = cLavenderWeb;
-var cLavenderBlue = 'LavenderBlue';
+var cLavenderBlue = 'LavenderBlue'; // LavenderBlue
+
 exports.cLavenderBlue = cLavenderBlue;
-var cLavenderBlush = 'LavenderBlush';
+var cLavenderBlush = 'LavenderBlush'; // LavenderBlush
+
 exports.cLavenderBlush = cLavenderBlush;
-var cLavenderGray = 'LavenderGray';
+var cLavenderGray = 'LavenderGray'; // LavenderGray
+
 exports.cLavenderGray = cLavenderGray;
-var cLawnGreen = 'LawnGreen';
+var cLawnGreen = 'LawnGreen'; // LawnGreen
+
 exports.cLawnGreen = cLawnGreen;
-var cLemon = 'Lemon';
+var cLemon = 'Lemon'; // Lemon
+
 exports.cLemon = cLemon;
-var cLemonChiffon = 'LemonChiffon';
+var cLemonChiffon = 'LemonChiffon'; // LemonChiffon
+
 exports.cLemonChiffon = cLemonChiffon;
-var cLemonCurry = 'LemonCurry';
+var cLemonCurry = 'LemonCurry'; // LemonCurry
+
 exports.cLemonCurry = cLemonCurry;
-var cLemonGlacier = 'LemonGlacier';
+var cLemonGlacier = 'LemonGlacier'; // LemonGlacier
+
 exports.cLemonGlacier = cLemonGlacier;
-var cLemonMeringue = 'LemonMeringue';
+var cLemonMeringue = 'LemonMeringue'; // LemonMeringue
+
 exports.cLemonMeringue = cLemonMeringue;
-var cLemonYellow = 'LemonYellow';
+var cLemonYellow = 'LemonYellow'; // LemonYellow
+
 exports.cLemonYellow = cLemonYellow;
-var cLemonYellowCrayola = 'LemonYellowCrayola';
+var cLemonYellowCrayola = 'LemonYellowCrayola'; // LemonYellowCrayola
+
 exports.cLemonYellowCrayola = cLemonYellowCrayola;
-var cLiberty = 'Liberty';
+var cLiberty = 'Liberty'; // Liberty
+
 exports.cLiberty = cLiberty;
-var cLightBlue = 'LightBlue';
+var cLightBlue = 'LightBlue'; // LightBlue
+
 exports.cLightBlue = cLightBlue;
-var cLightCoral = 'LightCoral';
+var cLightCoral = 'LightCoral'; // LightCoral
+
 exports.cLightCoral = cLightCoral;
-var cLightCornflowerBlue = 'LightCornflowerBlue';
+var cLightCornflowerBlue = 'LightCornflowerBlue'; // LightCornflowerBlue
+
 exports.cLightCornflowerBlue = cLightCornflowerBlue;
-var cLightCyan = 'LightCyan';
+var cLightCyan = 'LightCyan'; // LightCyan
+
 exports.cLightCyan = cLightCyan;
-var cLightFrenchBeige = 'LightFrenchBeige';
+var cLightFrenchBeige = 'LightFrenchBeige'; // LightFrenchBeige
+
 exports.cLightFrenchBeige = cLightFrenchBeige;
-var cLightGoldenrodYellow = 'LightGoldenrodYellow';
+var cLightGoldenrodYellow = 'LightGoldenrodYellow'; // LightGoldenrodYellow
+
 exports.cLightGoldenrodYellow = cLightGoldenrodYellow;
-var cLightGray = 'LightGray';
+var cLightGray = 'LightGray'; // LightGray
+
 exports.cLightGray = cLightGray;
-var cLightGreen = 'LightGreen';
+var cLightGreen = 'LightGreen'; // LightGreen
+
 exports.cLightGreen = cLightGreen;
-var cLightOrange = 'LightOrange';
+var cLightOrange = 'LightOrange'; // LightOrange
+
 exports.cLightOrange = cLightOrange;
-var cLightPeriwinkle = 'LightPeriwinkle';
+var cLightPeriwinkle = 'LightPeriwinkle'; // LightPeriwinkle
+
 exports.cLightPeriwinkle = cLightPeriwinkle;
-var cLightPink = 'LightPink';
+var cLightPink = 'LightPink'; // LightPink
+
 exports.cLightPink = cLightPink;
-var cLightSalmon = 'LightSalmon';
+var cLightSalmon = 'LightSalmon'; // LightSalmon
+
 exports.cLightSalmon = cLightSalmon;
-var cLightSeaGreen = 'LightSeaGreen';
+var cLightSeaGreen = 'LightSeaGreen'; // LightSeaGreen
+
 exports.cLightSeaGreen = cLightSeaGreen;
-var cLightSkyBlue = 'LightSkyBlue';
+var cLightSkyBlue = 'LightSkyBlue'; // LightSkyBlue
+
 exports.cLightSkyBlue = cLightSkyBlue;
-var cLightSlateGray = 'LightSlateGray';
+var cLightSlateGray = 'LightSlateGray'; // LightSlateGray
+
 exports.cLightSlateGray = cLightSlateGray;
-var cLightSteelBlue = 'LightSteelBlue';
+var cLightSteelBlue = 'LightSteelBlue'; // LightSteelBlue
+
 exports.cLightSteelBlue = cLightSteelBlue;
-var cLightYellow = 'LightYellow';
+var cLightYellow = 'LightYellow'; // LightYellow
+
 exports.cLightYellow = cLightYellow;
-var cLilac = 'Lilac';
+var cLilac = 'Lilac'; // Lilac
+
 exports.cLilac = cLilac;
-var cLilacLuster = 'LilacLuster';
+var cLilacLuster = 'LilacLuster'; // LilacLuster
+
 exports.cLilacLuster = cLilacLuster;
-var cLimeColorWheel = 'LimeColorWheel';
+var cLimeColorWheel = 'LimeColorWheel'; // LimeColorWheel
+
 exports.cLimeColorWheel = cLimeColorWheel;
-var cLimeWeb = 'LimeWeb';
+var cLimeWeb = 'LimeWeb'; // LimeWeb
+
 exports.cLimeWeb = cLimeWeb;
-var cLimeGreen = 'LimeGreen';
+var cLimeGreen = 'LimeGreen'; // LimeGreen
+
 exports.cLimeGreen = cLimeGreen;
-var cLincolnGreen = 'LincolnGreen';
+var cLincolnGreen = 'LincolnGreen'; // LincolnGreen
+
 exports.cLincolnGreen = cLincolnGreen;
-var cLinen = 'Linen';
+var cLinen = 'Linen'; // Linen
+
 exports.cLinen = cLinen;
-var cLion = 'Lion';
+var cLion = 'Lion'; // Lion
+
 exports.cLion = cLion;
-var cLiseranPurple = 'LiseranPurple';
+var cLiseranPurple = 'LiseranPurple'; // LiseranPurple
+
 exports.cLiseranPurple = cLiseranPurple;
-var cLittleBoyBlue = 'LittleBoyBlue';
+var cLittleBoyBlue = 'LittleBoyBlue'; // LittleBoyBlue
+
 exports.cLittleBoyBlue = cLittleBoyBlue;
-var cLiver = 'Liver';
+var cLiver = 'Liver'; // Liver
+
 exports.cLiver = cLiver;
-var cLiverDogs = 'LiverDogs';
+var cLiverDogs = 'LiverDogs'; // LiverDogs
+
 exports.cLiverDogs = cLiverDogs;
-var cLiverOrgan = 'LiverOrgan';
+var cLiverOrgan = 'LiverOrgan'; // LiverOrgan
+
 exports.cLiverOrgan = cLiverOrgan;
-var cLiverChestnut = 'LiverChestnut';
+var cLiverChestnut = 'LiverChestnut'; // LiverChestnut
+
 exports.cLiverChestnut = cLiverChestnut;
-var cLivid = 'Livid';
+var cLivid = 'Livid'; // Livid
+
 exports.cLivid = cLivid;
-var cMacaroniAndCheese = 'MacaroniAndCheese';
+var cMacaroniAndCheese = 'MacaroniAndCheese'; // MacaroniAndCheese
+
 exports.cMacaroniAndCheese = cMacaroniAndCheese;
-var cMadderLake = 'MadderLake';
+var cMadderLake = 'MadderLake'; // MadderLake
+
 exports.cMadderLake = cMadderLake;
-var cMagentaCrayola = 'MagentaCrayola';
+var cMagentaCrayola = 'MagentaCrayola'; // MagentaCrayola
+
 exports.cMagentaCrayola = cMagentaCrayola;
-var cMagentaDye = 'MagentaDye';
+var cMagentaDye = 'MagentaDye'; // MagentaDye
+
 exports.cMagentaDye = cMagentaDye;
-var cMagentaPantone = 'MagentaPantone';
+var cMagentaPantone = 'MagentaPantone'; // MagentaPantone
+
 exports.cMagentaPantone = cMagentaPantone;
-var cMagentaProcess = 'MagentaProcess';
+var cMagentaProcess = 'MagentaProcess'; // MagentaProcess
+
 exports.cMagentaProcess = cMagentaProcess;
-var cMagentaHaze = 'MagentaHaze';
+var cMagentaHaze = 'MagentaHaze'; // MagentaHaze
+
 exports.cMagentaHaze = cMagentaHaze;
-var cMagicMint = 'MagicMint';
+var cMagicMint = 'MagicMint'; // MagicMint
+
 exports.cMagicMint = cMagicMint;
-var cMagnolia = 'Magnolia';
+var cMagnolia = 'Magnolia'; // Magnolia
+
 exports.cMagnolia = cMagnolia;
-var cMahogany = 'Mahogany';
+var cMahogany = 'Mahogany'; // Mahogany
+
 exports.cMahogany = cMahogany;
-var cMaize = 'Maize';
+var cMaize = 'Maize'; // Maize
+
 exports.cMaize = cMaize;
-var cMaizeCrayola = 'MaizeCrayola';
+var cMaizeCrayola = 'MaizeCrayola'; // MaizeCrayola
+
 exports.cMaizeCrayola = cMaizeCrayola;
-var cMajorelleBlue = 'MajorelleBlue';
+var cMajorelleBlue = 'MajorelleBlue'; // MajorelleBlue
+
 exports.cMajorelleBlue = cMajorelleBlue;
-var cMalachite = 'Malachite';
+var cMalachite = 'Malachite'; // Malachite
+
 exports.cMalachite = cMalachite;
-var cManatee = 'Manatee';
+var cManatee = 'Manatee'; // Manatee
+
 exports.cManatee = cManatee;
-var cMandarin = 'Mandarin';
+var cMandarin = 'Mandarin'; // Mandarin
+
 exports.cMandarin = cMandarin;
-var cMango = 'Mango';
+var cMango = 'Mango'; // Mango
+
 exports.cMango = cMango;
-var cMangoTango = 'MangoTango';
+var cMangoTango = 'MangoTango'; // MangoTango
+
 exports.cMangoTango = cMangoTango;
-var cMantis = 'Mantis';
+var cMantis = 'Mantis'; // Mantis
+
 exports.cMantis = cMantis;
-var cMardiGras = 'MardiGras';
+var cMardiGras = 'MardiGras'; // MardiGras
+
 exports.cMardiGras = cMardiGras;
-var cMarigold = 'Marigold';
+var cMarigold = 'Marigold'; // Marigold
+
 exports.cMarigold = cMarigold;
-var cMaroonCrayola = 'MaroonCrayola';
+var cMaroonCrayola = 'MaroonCrayola'; // MaroonCrayola
+
 exports.cMaroonCrayola = cMaroonCrayola;
-var cMaroonWeb = 'MaroonWeb';
+var cMaroonWeb = 'MaroonWeb'; // MaroonWeb
+
 exports.cMaroonWeb = cMaroonWeb;
-var cMaroonX11 = 'MaroonX11';
+var cMaroonX11 = 'MaroonX11'; // MaroonX11
+
 exports.cMaroonX11 = cMaroonX11;
-var cMauve = 'Mauve';
+var cMauve = 'Mauve'; // Mauve
+
 exports.cMauve = cMauve;
-var cMauveTaupe = 'MauveTaupe';
+var cMauveTaupe = 'MauveTaupe'; // MauveTaupe
+
 exports.cMauveTaupe = cMauveTaupe;
-var cMauvelous = 'Mauvelous';
+var cMauvelous = 'Mauvelous'; // Mauvelous
+
 exports.cMauvelous = cMauvelous;
-var cMaximumBlue = 'MaximumBlue';
+var cMaximumBlue = 'MaximumBlue'; // MaximumBlue
+
 exports.cMaximumBlue = cMaximumBlue;
-var cMaximumBlueGreen = 'MaximumBlueGreen';
+var cMaximumBlueGreen = 'MaximumBlueGreen'; // MaximumBlueGreen
+
 exports.cMaximumBlueGreen = cMaximumBlueGreen;
-var cMaximumBluePurple = 'MaximumBluePurple';
+var cMaximumBluePurple = 'MaximumBluePurple'; // MaximumBluePurple
+
 exports.cMaximumBluePurple = cMaximumBluePurple;
-var cMaximumGreen = 'MaximumGreen';
+var cMaximumGreen = 'MaximumGreen'; // MaximumGreen
+
 exports.cMaximumGreen = cMaximumGreen;
-var cMaximumGreenYellow = 'MaximumGreenYellow';
+var cMaximumGreenYellow = 'MaximumGreenYellow'; // MaximumGreenYellow
+
 exports.cMaximumGreenYellow = cMaximumGreenYellow;
-var cMaximumPurple = 'MaximumPurple';
+var cMaximumPurple = 'MaximumPurple'; // MaximumPurple
+
 exports.cMaximumPurple = cMaximumPurple;
-var cMaximumRed = 'MaximumRed';
+var cMaximumRed = 'MaximumRed'; // MaximumRed
+
 exports.cMaximumRed = cMaximumRed;
-var cMaximumRedPurple = 'MaximumRedPurple';
+var cMaximumRedPurple = 'MaximumRedPurple'; // MaximumRedPurple
+
 exports.cMaximumRedPurple = cMaximumRedPurple;
-var cMaximumYellow = 'MaximumYellow';
+var cMaximumYellow = 'MaximumYellow'; // MaximumYellow
+
 exports.cMaximumYellow = cMaximumYellow;
-var cMaximumYellowRed = 'MaximumYellowRed';
+var cMaximumYellowRed = 'MaximumYellowRed'; // MaximumYellowRed
+
 exports.cMaximumYellowRed = cMaximumYellowRed;
-var cMayGreen = 'MayGreen';
+var cMayGreen = 'MayGreen'; // MayGreen
+
 exports.cMayGreen = cMayGreen;
-var cMayaBlue = 'MayaBlue';
+var cMayaBlue = 'MayaBlue'; // MayaBlue
+
 exports.cMayaBlue = cMayaBlue;
-var cMediumAquamarine = 'MediumAquamarine';
+var cMediumAquamarine = 'MediumAquamarine'; // MediumAquamarine
+
 exports.cMediumAquamarine = cMediumAquamarine;
-var cMediumBlue = 'MediumBlue';
+var cMediumBlue = 'MediumBlue'; // MediumBlue
+
 exports.cMediumBlue = cMediumBlue;
-var cMediumCandyAppleRed = 'MediumCandyAppleRed';
+var cMediumCandyAppleRed = 'MediumCandyAppleRed'; // MediumCandyAppleRed
+
 exports.cMediumCandyAppleRed = cMediumCandyAppleRed;
-var cMediumCarmine = 'MediumCarmine';
+var cMediumCarmine = 'MediumCarmine'; // MediumCarmine
+
 exports.cMediumCarmine = cMediumCarmine;
-var cMediumChampagne = 'MediumChampagne';
+var cMediumChampagne = 'MediumChampagne'; // MediumChampagne
+
 exports.cMediumChampagne = cMediumChampagne;
-var cMediumOrchid = 'MediumOrchid';
+var cMediumOrchid = 'MediumOrchid'; // MediumOrchid
+
 exports.cMediumOrchid = cMediumOrchid;
-var cMediumPurple = 'MediumPurple';
+var cMediumPurple = 'MediumPurple'; // MediumPurple
+
 exports.cMediumPurple = cMediumPurple;
-var cMediumSeaGreen = 'MediumSeaGreen';
+var cMediumSeaGreen = 'MediumSeaGreen'; // MediumSeaGreen
+
 exports.cMediumSeaGreen = cMediumSeaGreen;
-var cMediumSlateBlue = 'MediumSlateBlue';
+var cMediumSlateBlue = 'MediumSlateBlue'; // MediumSlateBlue
+
 exports.cMediumSlateBlue = cMediumSlateBlue;
-var cMediumSpringGreen = 'MediumSpringGreen';
+var cMediumSpringGreen = 'MediumSpringGreen'; // MediumSpringGreen
+
 exports.cMediumSpringGreen = cMediumSpringGreen;
-var cMediumTurquoise = 'MediumTurquoise';
+var cMediumTurquoise = 'MediumTurquoise'; // MediumTurquoise
+
 exports.cMediumTurquoise = cMediumTurquoise;
-var cMediumVioletRed = 'MediumVioletRed';
+var cMediumVioletRed = 'MediumVioletRed'; // MediumVioletRed
+
 exports.cMediumVioletRed = cMediumVioletRed;
-var cMellowApricot = 'MellowApricot';
+var cMellowApricot = 'MellowApricot'; // MellowApricot
+
 exports.cMellowApricot = cMellowApricot;
-var cMellowYellow = 'MellowYellow';
+var cMellowYellow = 'MellowYellow'; // MellowYellow
+
 exports.cMellowYellow = cMellowYellow;
-var cMelon = 'Melon';
+var cMelon = 'Melon'; // Melon
+
 exports.cMelon = cMelon;
-var cMetallicGold = 'MetallicGold';
+var cMetallicGold = 'MetallicGold'; // MetallicGold
+
 exports.cMetallicGold = cMetallicGold;
-var cMetallicSeaweed = 'MetallicSeaweed';
+var cMetallicSeaweed = 'MetallicSeaweed'; // MetallicSeaweed
+
 exports.cMetallicSeaweed = cMetallicSeaweed;
-var cMetallicSunburst = 'MetallicSunburst';
+var cMetallicSunburst = 'MetallicSunburst'; // MetallicSunburst
+
 exports.cMetallicSunburst = cMetallicSunburst;
-var cMexicanPink = 'MexicanPink';
+var cMexicanPink = 'MexicanPink'; // MexicanPink
+
 exports.cMexicanPink = cMexicanPink;
-var cMiddleBlue = 'MiddleBlue';
+var cMiddleBlue = 'MiddleBlue'; // MiddleBlue
+
 exports.cMiddleBlue = cMiddleBlue;
-var cMiddleBlueGreen = 'MiddleBlueGreen';
+var cMiddleBlueGreen = 'MiddleBlueGreen'; // MiddleBlueGreen
+
 exports.cMiddleBlueGreen = cMiddleBlueGreen;
-var cMiddleBluePurple = 'MiddleBluePurple';
+var cMiddleBluePurple = 'MiddleBluePurple'; // MiddleBluePurple
+
 exports.cMiddleBluePurple = cMiddleBluePurple;
-var cMiddleGrey = 'MiddleGrey';
+var cMiddleGrey = 'MiddleGrey'; // MiddleGrey
+
 exports.cMiddleGrey = cMiddleGrey;
-var cMiddleGreen = 'MiddleGreen';
+var cMiddleGreen = 'MiddleGreen'; // MiddleGreen
+
 exports.cMiddleGreen = cMiddleGreen;
-var cMiddleGreenYellow = 'MiddleGreenYellow';
+var cMiddleGreenYellow = 'MiddleGreenYellow'; // MiddleGreenYellow
+
 exports.cMiddleGreenYellow = cMiddleGreenYellow;
-var cMiddlePurple = 'MiddlePurple';
+var cMiddlePurple = 'MiddlePurple'; // MiddlePurple
+
 exports.cMiddlePurple = cMiddlePurple;
-var cMiddleRed = 'MiddleRed';
+var cMiddleRed = 'MiddleRed'; // MiddleRed
+
 exports.cMiddleRed = cMiddleRed;
-var cMiddleRedPurple = 'MiddleRedPurple';
+var cMiddleRedPurple = 'MiddleRedPurple'; // MiddleRedPurple
+
 exports.cMiddleRedPurple = cMiddleRedPurple;
-var cMiddleYellow = 'MiddleYellow';
+var cMiddleYellow = 'MiddleYellow'; // MiddleYellow
+
 exports.cMiddleYellow = cMiddleYellow;
-var cMiddleYellowRed = 'MiddleYellowRed';
+var cMiddleYellowRed = 'MiddleYellowRed'; // MiddleYellowRed
+
 exports.cMiddleYellowRed = cMiddleYellowRed;
-var cMidnight = 'Midnight';
+var cMidnight = 'Midnight'; // Midnight
+
 exports.cMidnight = cMidnight;
-var cMidnightBlue = 'MidnightBlue';
+var cMidnightBlue = 'MidnightBlue'; // MidnightBlue
+
 exports.cMidnightBlue = cMidnightBlue;
-var cMidnightGreen = 'MidnightGreen';
+var cMidnightGreen = 'MidnightGreen'; // MidnightGreen
+
 exports.cMidnightGreen = cMidnightGreen;
-var cMikadoYellow = 'MikadoYellow';
+var cMikadoYellow = 'MikadoYellow'; // MikadoYellow
+
 exports.cMikadoYellow = cMikadoYellow;
-var cMimiPink = 'MimiPink';
+var cMimiPink = 'MimiPink'; // MimiPink
+
 exports.cMimiPink = cMimiPink;
-var cMindaro = 'Mindaro';
+var cMindaro = 'Mindaro'; // Mindaro
+
 exports.cMindaro = cMindaro;
-var cMing = 'Ming';
+var cMing = 'Ming'; // Ming
+
 exports.cMing = cMing;
-var cMinionYellow = 'MinionYellow';
+var cMinionYellow = 'MinionYellow'; // MinionYellow
+
 exports.cMinionYellow = cMinionYellow;
-var cMint = 'Mint';
+var cMint = 'Mint'; // Mint
+
 exports.cMint = cMint;
-var cMintCream = 'MintCream';
+var cMintCream = 'MintCream'; // MintCream
+
 exports.cMintCream = cMintCream;
-var cMintGreen = 'MintGreen';
+var cMintGreen = 'MintGreen'; // MintGreen
+
 exports.cMintGreen = cMintGreen;
-var cMistyMoss = 'MistyMoss';
+var cMistyMoss = 'MistyMoss'; // MistyMoss
+
 exports.cMistyMoss = cMistyMoss;
-var cMistyRose = 'MistyRose';
+var cMistyRose = 'MistyRose'; // MistyRose
+
 exports.cMistyRose = cMistyRose;
-var cModeBeige = 'ModeBeige';
+var cModeBeige = 'ModeBeige'; // ModeBeige
+
 exports.cModeBeige = cModeBeige;
-var cMorningBlue = 'MorningBlue';
+var cMorningBlue = 'MorningBlue'; // MorningBlue
+
 exports.cMorningBlue = cMorningBlue;
-var cMossGreen = 'MossGreen';
+var cMossGreen = 'MossGreen'; // MossGreen
+
 exports.cMossGreen = cMossGreen;
-var cMountainMeadow = 'MountainMeadow';
+var cMountainMeadow = 'MountainMeadow'; // MountainMeadow
+
 exports.cMountainMeadow = cMountainMeadow;
-var cMountbattenPink = 'MountbattenPink';
+var cMountbattenPink = 'MountbattenPink'; // MountbattenPink
+
 exports.cMountbattenPink = cMountbattenPink;
-var cMSUGreen = 'MSUGreen';
+var cMSUGreen = 'MSUGreen'; // MSUGreen
+
 exports.cMSUGreen = cMSUGreen;
-var cMulberry = 'Mulberry';
+var cMulberry = 'Mulberry'; // Mulberry
+
 exports.cMulberry = cMulberry;
-var cMulberryCrayola = 'MulberryCrayola';
+var cMulberryCrayola = 'MulberryCrayola'; // MulberryCrayola
+
 exports.cMulberryCrayola = cMulberryCrayola;
-var cMustard = 'Mustard';
+var cMustard = 'Mustard'; // Mustard
+
 exports.cMustard = cMustard;
-var cMyrtleGreen = 'MyrtleGreen';
+var cMyrtleGreen = 'MyrtleGreen'; // MyrtleGreen
+
 exports.cMyrtleGreen = cMyrtleGreen;
-var cMystic = 'Mystic';
+var cMystic = 'Mystic'; // Mystic
+
 exports.cMystic = cMystic;
-var cMysticMaroon = 'MysticMaroon'; // https://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z
+var cMysticMaroon = 'MysticMaroon'; // MysticMaroon
+// https://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z
 
 exports.cMysticMaroon = cMysticMaroon;
-var cNadeshikoPink = 'NadeshikoPink';
+var cNadeshikoPink = 'NadeshikoPink'; // NadeshikoPink
+
 exports.cNadeshikoPink = cNadeshikoPink;
-var cNaplesYellow = 'NaplesYellow';
+var cNaplesYellow = 'NaplesYellow'; // NaplesYellow
+
 exports.cNaplesYellow = cNaplesYellow;
-var cNavajoWhite = 'NavajoWhite';
+var cNavajoWhite = 'NavajoWhite'; // NavajoWhite
+
 exports.cNavajoWhite = cNavajoWhite;
-var cNavyBlue = 'NavyBlue';
+var cNavyBlue = 'NavyBlue'; // NavyBlue
+
 exports.cNavyBlue = cNavyBlue;
-var cNavyBlueCrayola = 'NavyBlueCrayola';
+var cNavyBlueCrayola = 'NavyBlueCrayola'; // NavyBlueCrayola
+
 exports.cNavyBlueCrayola = cNavyBlueCrayola;
-var cNeonBlue = 'NeonBlue';
+var cNeonBlue = 'NeonBlue'; // NeonBlue
+
 exports.cNeonBlue = cNeonBlue;
-var cNeonCarrot = 'NeonCarrot';
+var cNeonCarrot = 'NeonCarrot'; // NeonCarrot
+
 exports.cNeonCarrot = cNeonCarrot;
-var cNeonGreen = 'NeonGreen';
+var cNeonGreen = 'NeonGreen'; // NeonGreen
+
 exports.cNeonGreen = cNeonGreen;
-var cNeonFuchsia = 'NeonFuchsia';
+var cNeonFuchsia = 'NeonFuchsia'; // NeonFuchsia
+
 exports.cNeonFuchsia = cNeonFuchsia;
-var cNewYorkPink = 'NewYorkPink';
+var cNewYorkPink = 'NewYorkPink'; // NewYorkPink
+
 exports.cNewYorkPink = cNewYorkPink;
-var cNickel = 'Nickel';
+var cNickel = 'Nickel'; // Nickel
+
 exports.cNickel = cNickel;
-var cNonPhotoBlue = 'NonPhotoBlue';
+var cNonPhotoBlue = 'NonPhotoBlue'; // NonPhotoBlue
+
 exports.cNonPhotoBlue = cNonPhotoBlue;
-var cNyanza = 'Nyanza';
+var cNyanza = 'Nyanza'; // Nyanza
+
 exports.cNyanza = cNyanza;
-var cOceanBlue = 'OceanBlue';
+var cOceanBlue = 'OceanBlue'; // OceanBlue
+
 exports.cOceanBlue = cOceanBlue;
-var cOceanGreen = 'OceanGreen';
+var cOceanGreen = 'OceanGreen'; // OceanGreen
+
 exports.cOceanGreen = cOceanGreen;
-var cOchre = 'Ochre';
+var cOchre = 'Ochre'; // Ochre
+
 exports.cOchre = cOchre;
-var cOldBurgundy = 'OldBurgundy';
+var cOldBurgundy = 'OldBurgundy'; // OldBurgundy
+
 exports.cOldBurgundy = cOldBurgundy;
-var cOldGold = 'OldGold';
+var cOldGold = 'OldGold'; // OldGold
+
 exports.cOldGold = cOldGold;
-var cOldLace = 'OldLace';
+var cOldLace = 'OldLace'; // OldLace
+
 exports.cOldLace = cOldLace;
-var cOldLavender = 'OldLavender';
+var cOldLavender = 'OldLavender'; // OldLavender
+
 exports.cOldLavender = cOldLavender;
-var cOldMauve = 'OldMauve';
+var cOldMauve = 'OldMauve'; // OldMauve
+
 exports.cOldMauve = cOldMauve;
-var cOldRose = 'OldRose';
+var cOldRose = 'OldRose'; // OldRose
+
 exports.cOldRose = cOldRose;
-var cOldSilver = 'OldSilver';
+var cOldSilver = 'OldSilver'; // OldSilver
+
 exports.cOldSilver = cOldSilver;
-var cOlive = 'Olive';
+var cOlive = 'Olive'; // Olive
+
 exports.cOlive = cOlive;
-var cOliveDrab3 = 'OliveDrab3';
+var cOliveDrab3 = 'OliveDrab3'; // OliveDrab3
+
 exports.cOliveDrab3 = cOliveDrab3;
-var cOliveDrab7 = 'OliveDrab7';
+var cOliveDrab7 = 'OliveDrab7'; // OliveDrab7
+
 exports.cOliveDrab7 = cOliveDrab7;
-var cOliveGreen = 'OliveGreen';
+var cOliveGreen = 'OliveGreen'; // OliveGreen
+
 exports.cOliveGreen = cOliveGreen;
-var cOlivine = 'Olivine';
+var cOlivine = 'Olivine'; // Olivine
+
 exports.cOlivine = cOlivine;
-var cOnyx = 'Onyx';
+var cOnyx = 'Onyx'; // Onyx
+
 exports.cOnyx = cOnyx;
-var cOpal = 'Opal';
+var cOpal = 'Opal'; // Opal
+
 exports.cOpal = cOpal;
-var cOperaMauve = 'OperaMauve';
+var cOperaMauve = 'OperaMauve'; // OperaMauve
+
 exports.cOperaMauve = cOperaMauve;
-var cOrangeCrayola = 'OrangeCrayola';
+var cOrangeCrayola = 'OrangeCrayola'; // OrangeCrayola
+
 exports.cOrangeCrayola = cOrangeCrayola;
-var cOrangePantone = 'OrangePantone';
+var cOrangePantone = 'OrangePantone'; // OrangePantone
+
 exports.cOrangePantone = cOrangePantone;
-var cOrangeWeb = 'OrangeWeb';
+var cOrangeWeb = 'OrangeWeb'; // OrangeWeb
+
 exports.cOrangeWeb = cOrangeWeb;
-var cOrangePeel = 'OrangePeel';
+var cOrangePeel = 'OrangePeel'; // OrangePeel
+
 exports.cOrangePeel = cOrangePeel;
-var cOrangeRed = 'OrangeRed';
+var cOrangeRed = 'OrangeRed'; // OrangeRed
+
 exports.cOrangeRed = cOrangeRed;
-var cOrangeRedCrayola = 'OrangeRedCrayola';
+var cOrangeRedCrayola = 'OrangeRedCrayola'; // OrangeRedCrayola
+
 exports.cOrangeRedCrayola = cOrangeRedCrayola;
-var cOrangeSoda = 'OrangeSoda';
+var cOrangeSoda = 'OrangeSoda'; // OrangeSoda
+
 exports.cOrangeSoda = cOrangeSoda;
-var cOrangeYellow = 'OrangeYellow';
+var cOrangeYellow = 'OrangeYellow'; // OrangeYellow
+
 exports.cOrangeYellow = cOrangeYellow;
-var cOrangeYellowCrayola = 'OrangeYellowCrayola';
+var cOrangeYellowCrayola = 'OrangeYellowCrayola'; // OrangeYellowCrayola
+
 exports.cOrangeYellowCrayola = cOrangeYellowCrayola;
-var cOrchid = 'Orchid';
+var cOrchid = 'Orchid'; // Orchid
+
 exports.cOrchid = cOrchid;
-var cOrchidPink = 'OrchidPink';
+var cOrchidPink = 'OrchidPink'; // OrchidPink
+
 exports.cOrchidPink = cOrchidPink;
-var cOrchidCrayola = 'OrchidCrayola';
+var cOrchidCrayola = 'OrchidCrayola'; // OrchidCrayola
+
 exports.cOrchidCrayola = cOrchidCrayola;
-var cOuterSpaceCrayola = 'OuterSpaceCrayola';
+var cOuterSpaceCrayola = 'OuterSpaceCrayola'; // OuterSpaceCrayola
+
 exports.cOuterSpaceCrayola = cOuterSpaceCrayola;
-var cOutrageousOrange = 'OutrageousOrange';
+var cOutrageousOrange = 'OutrageousOrange'; // OutrageousOrange
+
 exports.cOutrageousOrange = cOutrageousOrange;
-var cOxBlood = 'OxBlood';
+var cOxBlood = 'OxBlood'; // OxBlood
+
 exports.cOxBlood = cOxBlood;
-var cOxfordBlue = 'OxfordBlue';
+var cOxfordBlue = 'OxfordBlue'; // OxfordBlue
+
 exports.cOxfordBlue = cOxfordBlue;
-var cOUCrimsonRed = 'OUCrimsonRed';
+var cOUCrimsonRed = 'OUCrimsonRed'; // OUCrimsonRed
+
 exports.cOUCrimsonRed = cOUCrimsonRed;
-var cPacificBlue = 'PacificBlue';
+var cPacificBlue = 'PacificBlue'; // PacificBlue
+
 exports.cPacificBlue = cPacificBlue;
-var cPakistanGreen = 'PakistanGreen';
+var cPakistanGreen = 'PakistanGreen'; // PakistanGreen
+
 exports.cPakistanGreen = cPakistanGreen;
-var cPalatinatePurple = 'PalatinatePurple';
+var cPalatinatePurple = 'PalatinatePurple'; // PalatinatePurple
+
 exports.cPalatinatePurple = cPalatinatePurple;
-var cPaleAqua = 'PaleAqua';
+var cPaleAqua = 'PaleAqua'; // PaleAqua
+
 exports.cPaleAqua = cPaleAqua;
-var cPaleCerulean = 'PaleCerulean';
+var cPaleCerulean = 'PaleCerulean'; // PaleCerulean
+
 exports.cPaleCerulean = cPaleCerulean;
-var cPalePink = 'PalePink';
+var cPalePink = 'PalePink'; // PalePink
+
 exports.cPalePink = cPalePink;
-var cPalePurplePantone = 'PalePurplePantone';
+var cPalePurplePantone = 'PalePurplePantone'; // PalePurplePantone
+
 exports.cPalePurplePantone = cPalePurplePantone;
-var cPaleSilver = 'PaleSilver';
+var cPaleSilver = 'PaleSilver'; // PaleSilver
+
 exports.cPaleSilver = cPaleSilver;
-var cPaleSpringBud = 'PaleSpringBud';
+var cPaleSpringBud = 'PaleSpringBud'; // PaleSpringBud
+
 exports.cPaleSpringBud = cPaleSpringBud;
-var cPansyPurple = 'PansyPurple';
+var cPansyPurple = 'PansyPurple'; // PansyPurple
+
 exports.cPansyPurple = cPansyPurple;
-var cPaoloVeroneseGreen = 'PaoloVeroneseGreen';
+var cPaoloVeroneseGreen = 'PaoloVeroneseGreen'; // PaoloVeroneseGreen
+
 exports.cPaoloVeroneseGreen = cPaoloVeroneseGreen;
-var cPapayaWhip = 'PapayaWhip';
+var cPapayaWhip = 'PapayaWhip'; // PapayaWhip
+
 exports.cPapayaWhip = cPapayaWhip;
-var cParadisePink = 'ParadisePink';
+var cParadisePink = 'ParadisePink'; // ParadisePink
+
 exports.cParadisePink = cParadisePink;
-var cParisGreen = 'ParisGreen';
+var cParisGreen = 'ParisGreen'; // ParisGreen
+
 exports.cParisGreen = cParisGreen;
-var cPastelPink = 'PastelPink';
+var cPastelPink = 'PastelPink'; // PastelPink
+
 exports.cPastelPink = cPastelPink;
-var cPatriarch = 'Patriarch';
+var cPatriarch = 'Patriarch'; // Patriarch
+
 exports.cPatriarch = cPatriarch;
-var cPaynesGrey = 'PaynesGrey';
+var cPaynesGrey = 'PaynesGrey'; // PaynesGrey
+
 exports.cPaynesGrey = cPaynesGrey;
-var cPeach = 'Peach';
+var cPeach = 'Peach'; // Peach
+
 exports.cPeach = cPeach;
-var cPeachCrayola = 'PeachCrayola';
+var cPeachCrayola = 'PeachCrayola'; // PeachCrayola
+
 exports.cPeachCrayola = cPeachCrayola;
-var cPeachPuff = 'PeachPuff';
+var cPeachPuff = 'PeachPuff'; // PeachPuff
+
 exports.cPeachPuff = cPeachPuff;
-var cPear = 'Pear';
+var cPear = 'Pear'; // Pear
+
 exports.cPear = cPear;
-var cPearlyPurple = 'PearlyPurple';
+var cPearlyPurple = 'PearlyPurple'; // PearlyPurple
+
 exports.cPearlyPurple = cPearlyPurple;
-var cPeriwinkle = 'Periwinkle';
+var cPeriwinkle = 'Periwinkle'; // Periwinkle
+
 exports.cPeriwinkle = cPeriwinkle;
-var cPeriwinkleCrayola = 'PeriwinkleCrayola';
+var cPeriwinkleCrayola = 'PeriwinkleCrayola'; // PeriwinkleCrayola
+
 exports.cPeriwinkleCrayola = cPeriwinkleCrayola;
-var cPermanentGeraniumLake = 'PermanentGeraniumLake';
+var cPermanentGeraniumLake = 'PermanentGeraniumLake'; // PermanentGeraniumLake
+
 exports.cPermanentGeraniumLake = cPermanentGeraniumLake;
-var cPersianBlue = 'PersianBlue';
+var cPersianBlue = 'PersianBlue'; // PersianBlue
+
 exports.cPersianBlue = cPersianBlue;
-var cPersianGreen = 'PersianGreen';
+var cPersianGreen = 'PersianGreen'; // PersianGreen
+
 exports.cPersianGreen = cPersianGreen;
-var cPersianIndigo = 'PersianIndigo';
+var cPersianIndigo = 'PersianIndigo'; // PersianIndigo
+
 exports.cPersianIndigo = cPersianIndigo;
-var cPersianOrange = 'PersianOrange';
+var cPersianOrange = 'PersianOrange'; // PersianOrange
+
 exports.cPersianOrange = cPersianOrange;
-var cPersianPink = 'PersianPink';
+var cPersianPink = 'PersianPink'; // PersianPink
+
 exports.cPersianPink = cPersianPink;
-var cPersianPlum = 'PersianPlum';
+var cPersianPlum = 'PersianPlum'; // PersianPlum
+
 exports.cPersianPlum = cPersianPlum;
-var cPersianRed = 'PersianRed';
+var cPersianRed = 'PersianRed'; // PersianRed
+
 exports.cPersianRed = cPersianRed;
-var cPersianRose = 'PersianRose';
+var cPersianRose = 'PersianRose'; // PersianRose
+
 exports.cPersianRose = cPersianRose;
-var cPersimmon = 'Persimmon';
+var cPersimmon = 'Persimmon'; // Persimmon
+
 exports.cPersimmon = cPersimmon;
-var cPewterBlue = 'PewterBlue';
+var cPewterBlue = 'PewterBlue'; // PewterBlue
+
 exports.cPewterBlue = cPewterBlue;
-var cPhlox = 'Phlox';
+var cPhlox = 'Phlox'; // Phlox
+
 exports.cPhlox = cPhlox;
-var cPhthaloBlue = 'PhthaloBlue';
+var cPhthaloBlue = 'PhthaloBlue'; // PhthaloBlue
+
 exports.cPhthaloBlue = cPhthaloBlue;
-var cPhthaloGreen = 'PhthaloGreen';
+var cPhthaloGreen = 'PhthaloGreen'; // PhthaloGreen
+
 exports.cPhthaloGreen = cPhthaloGreen;
-var cPicoteeBlue = 'PicoteeBlue';
+var cPicoteeBlue = 'PicoteeBlue'; // PicoteeBlue
+
 exports.cPicoteeBlue = cPicoteeBlue;
-var cPictorialCarmine = 'PictorialCarmine';
+var cPictorialCarmine = 'PictorialCarmine'; // PictorialCarmine
+
 exports.cPictorialCarmine = cPictorialCarmine;
-var cPiggyPink = 'PiggyPink';
+var cPiggyPink = 'PiggyPink'; // PiggyPink
+
 exports.cPiggyPink = cPiggyPink;
-var cPineGreen = 'PineGreen';
+var cPineGreen = 'PineGreen'; // PineGreen
+
 exports.cPineGreen = cPineGreen;
-var cPineTree = 'PineTree';
+var cPineTree = 'PineTree'; // PineTree
+
 exports.cPineTree = cPineTree;
-var cPink = 'Pink';
+var cPink = 'Pink'; // Pink
+
 exports.cPink = cPink;
-var cPinkPantone = 'PinkPantone';
+var cPinkPantone = 'PinkPantone'; // PinkPantone
+
 exports.cPinkPantone = cPinkPantone;
-var cPinkFlamingo = 'PinkFlamingo';
+var cPinkFlamingo = 'PinkFlamingo'; // PinkFlamingo
+
 exports.cPinkFlamingo = cPinkFlamingo;
-var cPinkLace = 'PinkLace';
+var cPinkLace = 'PinkLace'; // PinkLace
+
 exports.cPinkLace = cPinkLace;
-var cPinkLavender = 'PinkLavender';
+var cPinkLavender = 'PinkLavender'; // PinkLavender
+
 exports.cPinkLavender = cPinkLavender;
-var cPinkSherbet = 'PinkSherbet';
+var cPinkSherbet = 'PinkSherbet'; // PinkSherbet
+
 exports.cPinkSherbet = cPinkSherbet;
-var cPistachio = 'Pistachio';
+var cPistachio = 'Pistachio'; // Pistachio
+
 exports.cPistachio = cPistachio;
-var cPlatinum = 'Platinum';
+var cPlatinum = 'Platinum'; // Platinum
+
 exports.cPlatinum = cPlatinum;
-var cPlum = 'Plum';
+var cPlum = 'Plum'; // Plum
+
 exports.cPlum = cPlum;
-var cPlumWeb = 'PlumWeb';
+var cPlumWeb = 'PlumWeb'; // PlumWeb
+
 exports.cPlumWeb = cPlumWeb;
-var cPlumpPurple = 'PlumpPurple';
+var cPlumpPurple = 'PlumpPurple'; // PlumpPurple
+
 exports.cPlumpPurple = cPlumpPurple;
-var cPolishedPine = 'PolishedPine';
+var cPolishedPine = 'PolishedPine'; // PolishedPine
+
 exports.cPolishedPine = cPolishedPine;
-var cPompAndPower = 'PompAndPower';
+var cPompAndPower = 'PompAndPower'; // PompAndPower
+
 exports.cPompAndPower = cPompAndPower;
-var cPopstar = 'Popstar';
+var cPopstar = 'Popstar'; // Popstar
+
 exports.cPopstar = cPopstar;
-var cPortlandOrange = 'PortlandOrange';
+var cPortlandOrange = 'PortlandOrange'; // PortlandOrange
+
 exports.cPortlandOrange = cPortlandOrange;
-var cPowderBlue = 'PowderBlue';
+var cPowderBlue = 'PowderBlue'; // PowderBlue
+
 exports.cPowderBlue = cPowderBlue;
-var cPrincetonOrange = 'PrincetonOrange';
+var cPrincetonOrange = 'PrincetonOrange'; // PrincetonOrange
+
 exports.cPrincetonOrange = cPrincetonOrange;
-var cPrune = 'Prune';
+var cPrune = 'Prune'; // Prune
+
 exports.cPrune = cPrune;
-var cPrussianBlue = 'PrussianBlue';
+var cPrussianBlue = 'PrussianBlue'; // PrussianBlue
+
 exports.cPrussianBlue = cPrussianBlue;
-var cPsychedelicPurple = 'PsychedelicPurple';
+var cPsychedelicPurple = 'PsychedelicPurple'; // PsychedelicPurple
+
 exports.cPsychedelicPurple = cPsychedelicPurple;
-var cPuce = 'Puce';
+var cPuce = 'Puce'; // Puce
+
 exports.cPuce = cPuce;
-var cPullmanBrown = 'PullmanBrown';
+var cPullmanBrown = 'PullmanBrown'; // PullmanBrown
+
 exports.cPullmanBrown = cPullmanBrown;
-var cPumpkin = 'Pumpkin';
+var cPumpkin = 'Pumpkin'; // Pumpkin
+
 exports.cPumpkin = cPumpkin;
-var cPurple = 'Purple';
+var cPurple = 'Purple'; // Purple
+
 exports.cPurple = cPurple;
-var cPurpleWeb = 'PurpleWeb';
+var cPurpleWeb = 'PurpleWeb'; // PurpleWeb
+
 exports.cPurpleWeb = cPurpleWeb;
-var cPurpleMunsell = 'PurpleMunsell';
+var cPurpleMunsell = 'PurpleMunsell'; // PurpleMunsell
+
 exports.cPurpleMunsell = cPurpleMunsell;
-var cPurpleX11 = 'PurpleX11';
+var cPurpleX11 = 'PurpleX11'; // PurpleX11
+
 exports.cPurpleX11 = cPurpleX11;
-var cPurpleMountainMajesty = 'PurpleMountainMajesty';
+var cPurpleMountainMajesty = 'PurpleMountainMajesty'; // PurpleMountainMajesty
+
 exports.cPurpleMountainMajesty = cPurpleMountainMajesty;
-var cPurpleNavy = 'PurpleNavy';
+var cPurpleNavy = 'PurpleNavy'; // PurpleNavy
+
 exports.cPurpleNavy = cPurpleNavy;
-var cPurplePizzazz = 'PurplePizzazz';
+var cPurplePizzazz = 'PurplePizzazz'; // PurplePizzazz
+
 exports.cPurplePizzazz = cPurplePizzazz;
-var cPurplePlum = 'PurplePlum';
+var cPurplePlum = 'PurplePlum'; // PurplePlum
+
 exports.cPurplePlum = cPurplePlum;
-var cPurpureus = 'Purpureus';
+var cPurpureus = 'Purpureus'; // Purpureus
+
 exports.cPurpureus = cPurpureus;
-var cQueenBlue = 'QueenBlue';
+var cQueenBlue = 'QueenBlue'; // QueenBlue
+
 exports.cQueenBlue = cQueenBlue;
-var cQueenPink = 'QueenPink';
+var cQueenPink = 'QueenPink'; // QueenPink
+
 exports.cQueenPink = cQueenPink;
-var cQuickSilver = 'QuickSilver';
+var cQuickSilver = 'QuickSilver'; // QuickSilver
+
 exports.cQuickSilver = cQuickSilver;
-var cQuinacridoneMagenta = 'QuinacridoneMagenta';
+var cQuinacridoneMagenta = 'QuinacridoneMagenta'; // QuinacridoneMagenta
+
 exports.cQuinacridoneMagenta = cQuinacridoneMagenta;
-var cRadicalRed = 'RadicalRed';
+var cRadicalRed = 'RadicalRed'; // RadicalRed
+
 exports.cRadicalRed = cRadicalRed;
-var cRaisinBlack = 'RaisinBlack';
+var cRaisinBlack = 'RaisinBlack'; // RaisinBlack
+
 exports.cRaisinBlack = cRaisinBlack;
-var cRajah = 'Rajah';
+var cRajah = 'Rajah'; // Rajah
+
 exports.cRajah = cRajah;
-var cRaspberry = 'Raspberry';
+var cRaspberry = 'Raspberry'; // Raspberry
+
 exports.cRaspberry = cRaspberry;
-var cRaspberryGlace = 'RaspberryGlace';
+var cRaspberryGlace = 'RaspberryGlace'; // RaspberryGlace
+
 exports.cRaspberryGlace = cRaspberryGlace;
-var cRaspberryRose = 'RaspberryRose';
+var cRaspberryRose = 'RaspberryRose'; // RaspberryRose
+
 exports.cRaspberryRose = cRaspberryRose;
-var cRawSienna = 'RawSienna';
+var cRawSienna = 'RawSienna'; // RawSienna
+
 exports.cRawSienna = cRawSienna;
-var cRawUmber = 'RawUmber';
+var cRawUmber = 'RawUmber'; // RawUmber
+
 exports.cRawUmber = cRawUmber;
-var cRazzleDazzleRose = 'RazzleDazzleRose';
+var cRazzleDazzleRose = 'RazzleDazzleRose'; // RazzleDazzleRose
+
 exports.cRazzleDazzleRose = cRazzleDazzleRose;
-var cRazzmatazz = 'Razzmatazz';
+var cRazzmatazz = 'Razzmatazz'; // Razzmatazz
+
 exports.cRazzmatazz = cRazzmatazz;
-var cRazzmicBerry = 'RazzmicBerry';
+var cRazzmicBerry = 'RazzmicBerry'; // RazzmicBerry
+
 exports.cRazzmicBerry = cRazzmicBerry;
-var cRebeccaPurple = 'RebeccaPurple';
+var cRebeccaPurple = 'RebeccaPurple'; // RebeccaPurple
+
 exports.cRebeccaPurple = cRebeccaPurple;
-var cRedCrayola = 'RedCrayola';
+var cRedCrayola = 'RedCrayola'; // RedCrayola
+
 exports.cRedCrayola = cRedCrayola;
-var cRedMunsell = 'RedMunsell';
+var cRedMunsell = 'RedMunsell'; // RedMunsell
+
 exports.cRedMunsell = cRedMunsell;
-var cRedNCS = 'RedNCS';
+var cRedNCS = 'RedNCS'; // RedNCS
+
 exports.cRedNCS = cRedNCS;
-var cRedPantone = 'RedPantone';
+var cRedPantone = 'RedPantone'; // RedPantone
+
 exports.cRedPantone = cRedPantone;
-var cRedPigment = 'RedPigment';
+var cRedPigment = 'RedPigment'; // RedPigment
+
 exports.cRedPigment = cRedPigment;
-var cRedRYB = 'RedRYB';
+var cRedRYB = 'RedRYB'; // RedRYB
+
 exports.cRedRYB = cRedRYB;
-var cRedOrange = 'RedOrange';
+var cRedOrange = 'RedOrange'; // RedOrange
+
 exports.cRedOrange = cRedOrange;
-var cRedOrangeCrayola = 'RedOrangeCrayola';
+var cRedOrangeCrayola = 'RedOrangeCrayola'; // RedOrangeCrayola
+
 exports.cRedOrangeCrayola = cRedOrangeCrayola;
-var cRedOrangeColorWheel = 'RedOrangeColorWheel';
+var cRedOrangeColorWheel = 'RedOrangeColorWheel'; // RedOrangeColorWheel
+
 exports.cRedOrangeColorWheel = cRedOrangeColorWheel;
-var cRedPurple = 'RedPurple';
+var cRedPurple = 'RedPurple'; // RedPurple
+
 exports.cRedPurple = cRedPurple;
-var cRedSalsa = 'RedSalsa';
+var cRedSalsa = 'RedSalsa'; // RedSalsa
+
 exports.cRedSalsa = cRedSalsa;
-var cRedViolet = 'RedViolet';
+var cRedViolet = 'RedViolet'; // RedViolet
+
 exports.cRedViolet = cRedViolet;
-var cRedVioletCrayola = 'RedVioletCrayola';
+var cRedVioletCrayola = 'RedVioletCrayola'; // RedVioletCrayola
+
 exports.cRedVioletCrayola = cRedVioletCrayola;
-var cRedVioletColorWheel = 'RedVioletColorWheel';
+var cRedVioletColorWheel = 'RedVioletColorWheel'; // RedVioletColorWheel
+
 exports.cRedVioletColorWheel = cRedVioletColorWheel;
-var cRedwood = 'Redwood';
+var cRedwood = 'Redwood'; // Redwood
+
 exports.cRedwood = cRedwood;
-var cResolutionBlue = 'ResolutionBlue';
+var cResolutionBlue = 'ResolutionBlue'; // ResolutionBlue
+
 exports.cResolutionBlue = cResolutionBlue;
-var cRhythm = 'Rhythm';
+var cRhythm = 'Rhythm'; // Rhythm
+
 exports.cRhythm = cRhythm;
-var cRichBlack = 'RichBlack';
+var cRichBlack = 'RichBlack'; // RichBlack
+
 exports.cRichBlack = cRichBlack;
-var cRichBlackFOGRA29 = 'RichBlackFOGRA29';
+var cRichBlackFOGRA29 = 'RichBlackFOGRA29'; // RichBlackFOGRA29
+
 exports.cRichBlackFOGRA29 = cRichBlackFOGRA29;
-var cRichBlackFOGRA39 = 'RichBlackFOGRA39';
+var cRichBlackFOGRA39 = 'RichBlackFOGRA39'; // RichBlackFOGRA39
+
 exports.cRichBlackFOGRA39 = cRichBlackFOGRA39;
-var cRifleGreen = 'RifleGreen';
+var cRifleGreen = 'RifleGreen'; // RifleGreen
+
 exports.cRifleGreen = cRifleGreen;
-var cRobinEggBlue = 'RobinEggBlue';
+var cRobinEggBlue = 'RobinEggBlue'; // RobinEggBlue
+
 exports.cRobinEggBlue = cRobinEggBlue;
-var cRocketMetallic = 'RocketMetallic';
+var cRocketMetallic = 'RocketMetallic'; // RocketMetallic
+
 exports.cRocketMetallic = cRocketMetallic;
-var cRomanSilver = 'RomanSilver';
+var cRomanSilver = 'RomanSilver'; // RomanSilver
+
 exports.cRomanSilver = cRomanSilver;
-var cRose = 'Rose';
+var cRose = 'Rose'; // Rose
+
 exports.cRose = cRose;
-var cRoseBonbon = 'RoseBonbon';
+var cRoseBonbon = 'RoseBonbon'; // RoseBonbon
+
 exports.cRoseBonbon = cRoseBonbon;
-var cRoseDust = 'RoseDust';
+var cRoseDust = 'RoseDust'; // RoseDust
+
 exports.cRoseDust = cRoseDust;
-var cRoseEbony = 'RoseEbony';
+var cRoseEbony = 'RoseEbony'; // RoseEbony
+
 exports.cRoseEbony = cRoseEbony;
-var cRoseMadder = 'RoseMadder';
+var cRoseMadder = 'RoseMadder'; // RoseMadder
+
 exports.cRoseMadder = cRoseMadder;
-var cRosePink = 'RosePink';
+var cRosePink = 'RosePink'; // RosePink
+
 exports.cRosePink = cRosePink;
-var cRoseQuartz = 'RoseQuartz';
+var cRoseQuartz = 'RoseQuartz'; // RoseQuartz
+
 exports.cRoseQuartz = cRoseQuartz;
-var cRoseRed = 'RoseRed';
+var cRoseRed = 'RoseRed'; // RoseRed
+
 exports.cRoseRed = cRoseRed;
-var cRoseTaupe = 'RoseTaupe';
+var cRoseTaupe = 'RoseTaupe'; // RoseTaupe
+
 exports.cRoseTaupe = cRoseTaupe;
-var cRoseVale = 'RoseVale';
+var cRoseVale = 'RoseVale'; // RoseVale
+
 exports.cRoseVale = cRoseVale;
-var cRosewood = 'Rosewood';
+var cRosewood = 'Rosewood'; // Rosewood
+
 exports.cRosewood = cRosewood;
-var cRossoCorsa = 'RossoCorsa';
+var cRossoCorsa = 'RossoCorsa'; // RossoCorsa
+
 exports.cRossoCorsa = cRossoCorsa;
-var cRosyBrown = 'RosyBrown';
+var cRosyBrown = 'RosyBrown'; // RosyBrown
+
 exports.cRosyBrown = cRosyBrown;
-var cRoyalBlueDark = 'RoyalBlueDark';
+var cRoyalBlueDark = 'RoyalBlueDark'; // RoyalBlueDark
+
 exports.cRoyalBlueDark = cRoyalBlueDark;
-var cRoyalBlueLight = 'RoyalBlueLight';
+var cRoyalBlueLight = 'RoyalBlueLight'; // RoyalBlueLight
+
 exports.cRoyalBlueLight = cRoyalBlueLight;
-var cRoyalPurple = 'RoyalPurple';
+var cRoyalPurple = 'RoyalPurple'; // RoyalPurple
+
 exports.cRoyalPurple = cRoyalPurple;
-var cRoyalYellow = 'RoyalYellow';
+var cRoyalYellow = 'RoyalYellow'; // RoyalYellow
+
 exports.cRoyalYellow = cRoyalYellow;
-var cRuber = 'Ruber';
+var cRuber = 'Ruber'; // Ruber
+
 exports.cRuber = cRuber;
-var cRubineRed = 'RubineRed';
+var cRubineRed = 'RubineRed'; // RubineRed
+
 exports.cRubineRed = cRubineRed;
-var cRuby = 'Ruby';
+var cRuby = 'Ruby'; // Ruby
+
 exports.cRuby = cRuby;
-var cRubyRed = 'RubyRed';
+var cRubyRed = 'RubyRed'; // RubyRed
+
 exports.cRubyRed = cRubyRed;
-var cRufous = 'Rufous';
+var cRufous = 'Rufous'; // Rufous
+
 exports.cRufous = cRufous;
-var cRusset = 'Russet';
+var cRusset = 'Russet'; // Russet
+
 exports.cRusset = cRusset;
-var cRussianGreen = 'RussianGreen';
+var cRussianGreen = 'RussianGreen'; // RussianGreen
+
 exports.cRussianGreen = cRussianGreen;
-var cRussianViolet = 'RussianViolet';
+var cRussianViolet = 'RussianViolet'; // RussianViolet
+
 exports.cRussianViolet = cRussianViolet;
-var cRust = 'Rust';
+var cRust = 'Rust'; // Rust
+
 exports.cRust = cRust;
-var cRustyRed = 'RustyRed';
+var cRustyRed = 'RustyRed'; // RustyRed
+
 exports.cRustyRed = cRustyRed;
-var cSacramentoStateGreen = 'SacramentoStateGreen';
+var cSacramentoStateGreen = 'SacramentoStateGreen'; // SacramentoStateGreen
+
 exports.cSacramentoStateGreen = cSacramentoStateGreen;
-var cSaddleBrown = 'SaddleBrown';
+var cSaddleBrown = 'SaddleBrown'; // SaddleBrown
+
 exports.cSaddleBrown = cSaddleBrown;
-var cSafetyOrange = 'SafetyOrange';
+var cSafetyOrange = 'SafetyOrange'; // SafetyOrange
+
 exports.cSafetyOrange = cSafetyOrange;
-var cBlazeOrange = 'BlazeOrange';
+var cBlazeOrange = 'BlazeOrange'; // BlazeOrange
+
 exports.cBlazeOrange = cBlazeOrange;
-var cSafetyYellow = 'SafetyYellow';
+var cSafetyYellow = 'SafetyYellow'; // SafetyYellow
+
 exports.cSafetyYellow = cSafetyYellow;
-var cSaffron = 'Saffron';
+var cSaffron = 'Saffron'; // Saffron
+
 exports.cSaffron = cSaffron;
-var cSage = 'Sage';
+var cSage = 'Sage'; // Sage
+
 exports.cSage = cSage;
-var cStPatricksBlue = 'StPatricksBlue';
+var cStPatricksBlue = 'StPatricksBlue'; // StPatricksBlue
+
 exports.cStPatricksBlue = cStPatricksBlue;
-var cSalmon = 'Salmon';
+var cSalmon = 'Salmon'; // Salmon
+
 exports.cSalmon = cSalmon;
-var cSalmonPink = 'SalmonPink';
+var cSalmonPink = 'SalmonPink'; // SalmonPink
+
 exports.cSalmonPink = cSalmonPink;
-var cSand = 'Sand';
+var cSand = 'Sand'; // Sand
+
 exports.cSand = cSand;
-var cSandDune = 'SandDune';
+var cSandDune = 'SandDune'; // SandDune
+
 exports.cSandDune = cSandDune;
-var cSandyBrown = 'SandyBrown';
+var cSandyBrown = 'SandyBrown'; // SandyBrown
+
 exports.cSandyBrown = cSandyBrown;
-var cSapGreen = 'SapGreen';
+var cSapGreen = 'SapGreen'; // SapGreen
+
 exports.cSapGreen = cSapGreen;
-var cSapphire = 'Sapphire';
+var cSapphire = 'Sapphire'; // Sapphire
+
 exports.cSapphire = cSapphire;
-var cSapphireBlue = 'SapphireBlue';
+var cSapphireBlue = 'SapphireBlue'; // SapphireBlue
+
 exports.cSapphireBlue = cSapphireBlue;
-var cSapphireCrayola = 'SapphireCrayola';
+var cSapphireCrayola = 'SapphireCrayola'; // SapphireCrayola
+
 exports.cSapphireCrayola = cSapphireCrayola;
-var cSatinSheenGold = 'SatinSheenGold';
+var cSatinSheenGold = 'SatinSheenGold'; // SatinSheenGold
+
 exports.cSatinSheenGold = cSatinSheenGold;
-var cScarlet = 'Scarlet';
+var cScarlet = 'Scarlet'; // Scarlet
+
 exports.cScarlet = cScarlet;
-var cSchaussPink = 'SchaussPink';
+var cSchaussPink = 'SchaussPink'; // SchaussPink
+
 exports.cSchaussPink = cSchaussPink;
-var cSchoolBusYellow = 'SchoolBusYellow';
+var cSchoolBusYellow = 'SchoolBusYellow'; // SchoolBusYellow
+
 exports.cSchoolBusYellow = cSchoolBusYellow;
-var cScreaminGreen = 'ScreaminGreen';
+var cScreaminGreen = 'ScreaminGreen'; // ScreaminGreen
+
 exports.cScreaminGreen = cScreaminGreen;
-var cSeaGreen = 'SeaGreen';
+var cSeaGreen = 'SeaGreen'; // SeaGreen
+
 exports.cSeaGreen = cSeaGreen;
-var cSeaGreenCrayola = 'SeaGreenCrayola';
+var cSeaGreenCrayola = 'SeaGreenCrayola'; // SeaGreenCrayola
+
 exports.cSeaGreenCrayola = cSeaGreenCrayola;
-var cSealBrown = 'SealBrown';
+var cSealBrown = 'SealBrown'; // SealBrown
+
 exports.cSealBrown = cSealBrown;
-var cSeashell = 'Seashell';
+var cSeashell = 'Seashell'; // Seashell
+
 exports.cSeashell = cSeashell;
-var cSelectiveYellow = 'SelectiveYellow';
+var cSelectiveYellow = 'SelectiveYellow'; // SelectiveYellow
+
 exports.cSelectiveYellow = cSelectiveYellow;
-var cSepia = 'Sepia';
+var cSepia = 'Sepia'; // Sepia
+
 exports.cSepia = cSepia;
-var cShadow = 'Shadow';
+var cShadow = 'Shadow'; // Shadow
+
 exports.cShadow = cShadow;
-var cShadowBlue = 'ShadowBlue';
+var cShadowBlue = 'ShadowBlue'; // ShadowBlue
+
 exports.cShadowBlue = cShadowBlue;
-var cShamrockGreen = 'ShamrockGreen';
+var cShamrockGreen = 'ShamrockGreen'; // ShamrockGreen
+
 exports.cShamrockGreen = cShamrockGreen;
-var cSheenGreen = 'SheenGreen';
+var cSheenGreen = 'SheenGreen'; // SheenGreen
+
 exports.cSheenGreen = cSheenGreen;
-var cShimmeringBlush = 'ShimmeringBlush';
+var cShimmeringBlush = 'ShimmeringBlush'; // ShimmeringBlush
+
 exports.cShimmeringBlush = cShimmeringBlush;
-var cShinyShamrock = 'ShinyShamrock';
+var cShinyShamrock = 'ShinyShamrock'; // ShinyShamrock
+
 exports.cShinyShamrock = cShinyShamrock;
-var cShockingPink = 'ShockingPink';
+var cShockingPink = 'ShockingPink'; // ShockingPink
+
 exports.cShockingPink = cShockingPink;
-var cShockingPinkCrayola = 'ShockingPinkCrayola';
+var cShockingPinkCrayola = 'ShockingPinkCrayola'; // ShockingPinkCrayola
+
 exports.cShockingPinkCrayola = cShockingPinkCrayola;
-var cSienna = 'Sienna';
+var cSienna = 'Sienna'; // Sienna
+
 exports.cSienna = cSienna;
-var cSilver = 'Silver';
+var cSilver = 'Silver'; // Silver
+
 exports.cSilver = cSilver;
-var cSilverCrayola = 'SilverCrayola';
+var cSilverCrayola = 'SilverCrayola'; // SilverCrayola
+
 exports.cSilverCrayola = cSilverCrayola;
-var cSilverMetallic = 'SilverMetallic';
+var cSilverMetallic = 'SilverMetallic'; // SilverMetallic
+
 exports.cSilverMetallic = cSilverMetallic;
-var cSilverChalice = 'SilverChalice';
+var cSilverChalice = 'SilverChalice'; // SilverChalice
+
 exports.cSilverChalice = cSilverChalice;
-var cSilverPink = 'SilverPink';
+var cSilverPink = 'SilverPink'; // SilverPink
+
 exports.cSilverPink = cSilverPink;
-var cSilverSand = 'SilverSand';
+var cSilverSand = 'SilverSand'; // SilverSand
+
 exports.cSilverSand = cSilverSand;
-var cSinopia = 'Sinopia';
+var cSinopia = 'Sinopia'; // Sinopia
+
 exports.cSinopia = cSinopia;
-var cSizzlingRed = 'SizzlingRed';
+var cSizzlingRed = 'SizzlingRed'; // SizzlingRed
+
 exports.cSizzlingRed = cSizzlingRed;
-var cSizzlingSunrise = 'SizzlingSunrise';
+var cSizzlingSunrise = 'SizzlingSunrise'; // SizzlingSunrise
+
 exports.cSizzlingSunrise = cSizzlingSunrise;
-var cSkobeloff = 'Skobeloff';
+var cSkobeloff = 'Skobeloff'; // Skobeloff
+
 exports.cSkobeloff = cSkobeloff;
-var cSkyBlue = 'SkyBlue';
+var cSkyBlue = 'SkyBlue'; // SkyBlue
+
 exports.cSkyBlue = cSkyBlue;
-var cSkyBlueCrayola = 'SkyBlueCrayola';
+var cSkyBlueCrayola = 'SkyBlueCrayola'; // SkyBlueCrayola
+
 exports.cSkyBlueCrayola = cSkyBlueCrayola;
-var cSkyMagenta = 'SkyMagenta';
+var cSkyMagenta = 'SkyMagenta'; // SkyMagenta
+
 exports.cSkyMagenta = cSkyMagenta;
-var cSlateBlue = 'SlateBlue';
+var cSlateBlue = 'SlateBlue'; // SlateBlue
+
 exports.cSlateBlue = cSlateBlue;
-var cSlateGray = 'SlateGray';
+var cSlateGray = 'SlateGray'; // SlateGray
+
 exports.cSlateGray = cSlateGray;
-var cSlimyGreen = 'SlimyGreen';
+var cSlimyGreen = 'SlimyGreen'; // SlimyGreen
+
 exports.cSlimyGreen = cSlimyGreen;
-var cSmitten = 'Smitten';
+var cSmitten = 'Smitten'; // Smitten
+
 exports.cSmitten = cSmitten;
-var cSmokyBlack = 'SmokyBlack';
+var cSmokyBlack = 'SmokyBlack'; // SmokyBlack
+
 exports.cSmokyBlack = cSmokyBlack;
-var cSnow = 'Snow';
+var cSnow = 'Snow'; // Snow
+
 exports.cSnow = cSnow;
-var cSolidPink = 'SolidPink';
+var cSolidPink = 'SolidPink'; // SolidPink
+
 exports.cSolidPink = cSolidPink;
-var cSonicSilver = 'SonicSilver';
+var cSonicSilver = 'SonicSilver'; // SonicSilver
+
 exports.cSonicSilver = cSonicSilver;
-var cSpaceCadet = 'SpaceCadet';
+var cSpaceCadet = 'SpaceCadet'; // SpaceCadet
+
 exports.cSpaceCadet = cSpaceCadet;
-var cSpanishBistre = 'SpanishBistre';
+var cSpanishBistre = 'SpanishBistre'; // SpanishBistre
+
 exports.cSpanishBistre = cSpanishBistre;
-var cSpanishBlue = 'SpanishBlue';
+var cSpanishBlue = 'SpanishBlue'; // SpanishBlue
+
 exports.cSpanishBlue = cSpanishBlue;
-var cSpanishCarmine = 'SpanishCarmine';
+var cSpanishCarmine = 'SpanishCarmine'; // SpanishCarmine
+
 exports.cSpanishCarmine = cSpanishCarmine;
-var cSpanishGray = 'SpanishGray';
+var cSpanishGray = 'SpanishGray'; // SpanishGray
+
 exports.cSpanishGray = cSpanishGray;
-var cSpanishGreen = 'SpanishGreen';
+var cSpanishGreen = 'SpanishGreen'; // SpanishGreen
+
 exports.cSpanishGreen = cSpanishGreen;
-var cSpanishOrange = 'SpanishOrange';
+var cSpanishOrange = 'SpanishOrange'; // SpanishOrange
+
 exports.cSpanishOrange = cSpanishOrange;
-var cSpanishPink = 'SpanishPink';
+var cSpanishPink = 'SpanishPink'; // SpanishPink
+
 exports.cSpanishPink = cSpanishPink;
-var cSpanishRed = 'SpanishRed';
+var cSpanishRed = 'SpanishRed'; // SpanishRed
+
 exports.cSpanishRed = cSpanishRed;
-var cSpanishSkyBlue = 'SpanishSkyBlue';
+var cSpanishSkyBlue = 'SpanishSkyBlue'; // SpanishSkyBlue
+
 exports.cSpanishSkyBlue = cSpanishSkyBlue;
-var cSpanishViolet = 'SpanishViolet';
+var cSpanishViolet = 'SpanishViolet'; // SpanishViolet
+
 exports.cSpanishViolet = cSpanishViolet;
-var cSpanishViridian = 'SpanishViridian';
+var cSpanishViridian = 'SpanishViridian'; // SpanishViridian
+
 exports.cSpanishViridian = cSpanishViridian;
-var cSpringBud = 'SpringBud';
+var cSpringBud = 'SpringBud'; // SpringBud
+
 exports.cSpringBud = cSpringBud;
-var cSpringFrost = 'SpringFrost';
+var cSpringFrost = 'SpringFrost'; // SpringFrost
+
 exports.cSpringFrost = cSpringFrost;
-var cSpringGreen = 'SpringGreen';
+var cSpringGreen = 'SpringGreen'; // SpringGreen
+
 exports.cSpringGreen = cSpringGreen;
-var cSpringGreenCrayola = 'SpringGreenCrayola';
+var cSpringGreenCrayola = 'SpringGreenCrayola'; // SpringGreenCrayola
+
 exports.cSpringGreenCrayola = cSpringGreenCrayola;
-var cStarCommandBlue = 'StarCommandBlue';
+var cStarCommandBlue = 'StarCommandBlue'; // StarCommandBlue
+
 exports.cStarCommandBlue = cStarCommandBlue;
-var cSteelBlue = 'SteelBlue';
+var cSteelBlue = 'SteelBlue'; // SteelBlue
+
 exports.cSteelBlue = cSteelBlue;
-var cSteelPink = 'SteelPink';
+var cSteelPink = 'SteelPink'; // SteelPink
+
 exports.cSteelPink = cSteelPink;
-var cSteelTeal = 'SteelTeal';
+var cSteelTeal = 'SteelTeal'; // SteelTeal
+
 exports.cSteelTeal = cSteelTeal;
-var cStilDeGrainYellow = 'StilDeGrainYellow';
+var cStilDeGrainYellow = 'StilDeGrainYellow'; // StilDeGrainYellow
+
 exports.cStilDeGrainYellow = cStilDeGrainYellow;
-var cStraw = 'Straw';
+var cStraw = 'Straw'; // Straw
+
 exports.cStraw = cStraw;
-var cSugarPlum = 'SugarPlum';
+var cSugarPlum = 'SugarPlum'; // SugarPlum
+
 exports.cSugarPlum = cSugarPlum;
-var cSunglow = 'Sunglow';
+var cSunglow = 'Sunglow'; // Sunglow
+
 exports.cSunglow = cSunglow;
-var cSunray = 'Sunray';
+var cSunray = 'Sunray'; // Sunray
+
 exports.cSunray = cSunray;
-var cSunset = 'Sunset';
+var cSunset = 'Sunset'; // Sunset
+
 exports.cSunset = cSunset;
-var cSuperPink = 'SuperPink';
+var cSuperPink = 'SuperPink'; // SuperPink
+
 exports.cSuperPink = cSuperPink;
-var cSweetBrown = 'SweetBrown';
+var cSweetBrown = 'SweetBrown'; // SweetBrown
+
 exports.cSweetBrown = cSweetBrown;
-var cTan = 'Tan';
+var cTan = 'Tan'; // Tan
+
 exports.cTan = cTan;
-var cTanCrayola = 'TanCrayola';
+var cTanCrayola = 'TanCrayola'; // TanCrayola
+
 exports.cTanCrayola = cTanCrayola;
-var cTangerine = 'Tangerine';
+var cTangerine = 'Tangerine'; // Tangerine
+
 exports.cTangerine = cTangerine;
-var cTangoPink = 'TangoPink';
+var cTangoPink = 'TangoPink'; // TangoPink
+
 exports.cTangoPink = cTangoPink;
-var cTartOrange = 'TartOrange';
+var cTartOrange = 'TartOrange'; // TartOrange
+
 exports.cTartOrange = cTartOrange;
-var cTaupe = 'Taupe';
+var cTaupe = 'Taupe'; // Taupe
+
 exports.cTaupe = cTaupe;
-var cTaupeGray = 'TaupeGray';
+var cTaupeGray = 'TaupeGray'; // TaupeGray
+
 exports.cTaupeGray = cTaupeGray;
-var cTeaGreen = 'TeaGreen';
+var cTeaGreen = 'TeaGreen'; // TeaGreen
+
 exports.cTeaGreen = cTeaGreen;
-var cTeaRose = 'TeaRose';
+var cTeaRose = 'TeaRose'; // TeaRose
+
 exports.cTeaRose = cTeaRose;
-var cTeaRoseWeb = 'TeaRoseWeb';
+var cTeaRoseWeb = 'TeaRoseWeb'; // TeaRoseWeb
+
 exports.cTeaRoseWeb = cTeaRoseWeb;
-var cTeal = 'Teal';
+var cTeal = 'Teal'; // Teal
+
 exports.cTeal = cTeal;
-var cTealBlue = 'TealBlue';
+var cTealBlue = 'TealBlue'; // TealBlue
+
 exports.cTealBlue = cTealBlue;
-var cTelemagenta = 'Telemagenta';
+var cTelemagenta = 'Telemagenta'; // Telemagenta
+
 exports.cTelemagenta = cTelemagenta;
-var cTawny = 'Tawny';
+var cTawny = 'Tawny'; // Tawny
+
 exports.cTawny = cTawny;
-var cTerraCotta = 'TerraCotta';
+var cTerraCotta = 'TerraCotta'; // TerraCotta
+
 exports.cTerraCotta = cTerraCotta;
-var cThistle = 'Thistle';
+var cThistle = 'Thistle'; // Thistle
+
 exports.cThistle = cThistle;
-var cThulianPink = 'ThulianPink';
+var cThulianPink = 'ThulianPink'; // ThulianPink
+
 exports.cThulianPink = cThulianPink;
-var cTickleMePink = 'TickleMePink';
+var cTickleMePink = 'TickleMePink'; // TickleMePink
+
 exports.cTickleMePink = cTickleMePink;
-var cTiffanyBlue = 'TiffanyBlue';
+var cTiffanyBlue = 'TiffanyBlue'; // TiffanyBlue
+
 exports.cTiffanyBlue = cTiffanyBlue;
-var cTimberwolf = 'Timberwolf';
+var cTimberwolf = 'Timberwolf'; // Timberwolf
+
 exports.cTimberwolf = cTimberwolf;
-var cTitaniumYellow = 'TitaniumYellow';
+var cTitaniumYellow = 'TitaniumYellow'; // TitaniumYellow
+
 exports.cTitaniumYellow = cTitaniumYellow;
-var cTomato = 'Tomato';
+var cTomato = 'Tomato'; // Tomato
+
 exports.cTomato = cTomato;
-var cTropicalRainforest = 'TropicalRainforest';
+var cTropicalRainforest = 'TropicalRainforest'; // TropicalRainforest
+
 exports.cTropicalRainforest = cTropicalRainforest;
-var cTrueBlue = 'TrueBlue';
+var cTrueBlue = 'TrueBlue'; // TrueBlue
+
 exports.cTrueBlue = cTrueBlue;
-var cTrypanBlue = 'TrypanBlue';
+var cTrypanBlue = 'TrypanBlue'; // TrypanBlue
+
 exports.cTrypanBlue = cTrypanBlue;
-var cTuftsBlue = 'TuftsBlue';
+var cTuftsBlue = 'TuftsBlue'; // TuftsBlue
+
 exports.cTuftsBlue = cTuftsBlue;
-var cTumbleweed = 'Tumbleweed';
+var cTumbleweed = 'Tumbleweed'; // Tumbleweed
+
 exports.cTumbleweed = cTumbleweed;
-var cTurquoise = 'Turquoise';
+var cTurquoise = 'Turquoise'; // Turquoise
+
 exports.cTurquoise = cTurquoise;
-var cTurquoiseBlue = 'TurquoiseBlue';
+var cTurquoiseBlue = 'TurquoiseBlue'; // TurquoiseBlue
+
 exports.cTurquoiseBlue = cTurquoiseBlue;
-var cTurquoiseGreen = 'TurquoiseGreen';
+var cTurquoiseGreen = 'TurquoiseGreen'; // TurquoiseGreen
+
 exports.cTurquoiseGreen = cTurquoiseGreen;
-var cTurtleGreen = 'TurtleGreen';
+var cTurtleGreen = 'TurtleGreen'; // TurtleGreen
+
 exports.cTurtleGreen = cTurtleGreen;
-var cTuscan = 'Tuscan';
+var cTuscan = 'Tuscan'; // Tuscan
+
 exports.cTuscan = cTuscan;
-var cTuscanBrown = 'TuscanBrown';
+var cTuscanBrown = 'TuscanBrown'; // TuscanBrown
+
 exports.cTuscanBrown = cTuscanBrown;
-var cTuscanRed = 'TuscanRed';
+var cTuscanRed = 'TuscanRed'; // TuscanRed
+
 exports.cTuscanRed = cTuscanRed;
-var cTuscanTan = 'TuscanTan';
+var cTuscanTan = 'TuscanTan'; // TuscanTan
+
 exports.cTuscanTan = cTuscanTan;
-var cTuscany = 'Tuscany';
+var cTuscany = 'Tuscany'; // Tuscany
+
 exports.cTuscany = cTuscany;
-var cTwilightLavender = 'TwilightLavender';
+var cTwilightLavender = 'TwilightLavender'; // TwilightLavender
+
 exports.cTwilightLavender = cTwilightLavender;
-var cTyrianPurple = 'TyrianPurple';
+var cTyrianPurple = 'TyrianPurple'; // TyrianPurple
+
 exports.cTyrianPurple = cTyrianPurple;
-var cUABlue = 'UABlue';
+var cUABlue = 'UABlue'; // UABlue
+
 exports.cUABlue = cUABlue;
-var cUARed = 'UARed';
+var cUARed = 'UARed'; // UARed
+
 exports.cUARed = cUARed;
-var cUltramarine = 'Ultramarine';
+var cUltramarine = 'Ultramarine'; // Ultramarine
+
 exports.cUltramarine = cUltramarine;
-var cUltramarineBlue = 'UltramarineBlue';
+var cUltramarineBlue = 'UltramarineBlue'; // UltramarineBlue
+
 exports.cUltramarineBlue = cUltramarineBlue;
-var cUltraPink = 'UltraPink';
+var cUltraPink = 'UltraPink'; // UltraPink
+
 exports.cUltraPink = cUltraPink;
-var cUltraRed = 'UltraRed';
+var cUltraRed = 'UltraRed'; // UltraRed
+
 exports.cUltraRed = cUltraRed;
-var cUmber = 'Umber';
+var cUmber = 'Umber'; // Umber
+
 exports.cUmber = cUmber;
-var cUnbleachedSilk = 'UnbleachedSilk';
+var cUnbleachedSilk = 'UnbleachedSilk'; // UnbleachedSilk
+
 exports.cUnbleachedSilk = cUnbleachedSilk;
-var cUnitedNationsBlue = 'UnitedNationsBlue';
+var cUnitedNationsBlue = 'UnitedNationsBlue'; // UnitedNationsBlue
+
 exports.cUnitedNationsBlue = cUnitedNationsBlue;
-var cUnmellowYellow = 'UnmellowYellow';
+var cUnmellowYellow = 'UnmellowYellow'; // UnmellowYellow
+
 exports.cUnmellowYellow = cUnmellowYellow;
-var cUPForestGreen = 'UPForestGreen';
+var cUPForestGreen = 'UPForestGreen'; // UPForestGreen
+
 exports.cUPForestGreen = cUPForestGreen;
-var cUPMaroon = 'UPMaroon';
+var cUPMaroon = 'UPMaroon'; // UPMaroon
+
 exports.cUPMaroon = cUPMaroon;
-var cUpsdellRed = 'UpsdellRed';
+var cUpsdellRed = 'UpsdellRed'; // UpsdellRed
+
 exports.cUpsdellRed = cUpsdellRed;
-var cUranianBlue = 'UranianBlue';
+var cUranianBlue = 'UranianBlue'; // UranianBlue
+
 exports.cUranianBlue = cUranianBlue;
-var cUSAFABlue = 'USAFABlue';
+var cUSAFABlue = 'USAFABlue'; // USAFABlue
+
 exports.cUSAFABlue = cUSAFABlue;
-var cVanDykeBrown = 'VanDykeBrown';
+var cVanDykeBrown = 'VanDykeBrown'; // VanDykeBrown
+
 exports.cVanDykeBrown = cVanDykeBrown;
-var cVanilla = 'Vanilla';
+var cVanilla = 'Vanilla'; // Vanilla
+
 exports.cVanilla = cVanilla;
-var cVanillaIce = 'VanillaIce';
+var cVanillaIce = 'VanillaIce'; // VanillaIce
+
 exports.cVanillaIce = cVanillaIce;
-var cVegasGold = 'VegasGold';
+var cVegasGold = 'VegasGold'; // VegasGold
+
 exports.cVegasGold = cVegasGold;
-var cVenetianRed = 'VenetianRed';
+var cVenetianRed = 'VenetianRed'; // VenetianRed
+
 exports.cVenetianRed = cVenetianRed;
-var cVerdigris = 'Verdigris';
+var cVerdigris = 'Verdigris'; // Verdigris
+
 exports.cVerdigris = cVerdigris;
-var cVermilion = 'Vermilion';
+var cVermilion = 'Vermilion'; // Vermilion
+
 exports.cVermilion = cVermilion;
-var cVermilionWeb = 'VermilionWeb';
+var cVermilionWeb = 'VermilionWeb'; // VermilionWeb
+
 exports.cVermilionWeb = cVermilionWeb;
-var cVeronica = 'Veronica';
+var cVeronica = 'Veronica'; // Veronica
+
 exports.cVeronica = cVeronica;
-var cViolet = 'Violet';
+var cViolet = 'Violet'; // Violet
+
 exports.cViolet = cViolet;
-var cVioletColorWheel = 'VioletColorWheel';
+var cVioletColorWheel = 'VioletColorWheel'; // VioletColorWheel
+
 exports.cVioletColorWheel = cVioletColorWheel;
-var cVioletCrayola = 'VioletCrayola';
+var cVioletCrayola = 'VioletCrayola'; // VioletCrayola
+
 exports.cVioletCrayola = cVioletCrayola;
-var cVioletRYB = 'VioletRYB';
+var cVioletRYB = 'VioletRYB'; // VioletRYB
+
 exports.cVioletRYB = cVioletRYB;
-var cVioletWeb = 'VioletWeb';
+var cVioletWeb = 'VioletWeb'; // VioletWeb
+
 exports.cVioletWeb = cVioletWeb;
-var cVioletBlue = 'VioletBlue';
+var cVioletBlue = 'VioletBlue'; // VioletBlue
+
 exports.cVioletBlue = cVioletBlue;
-var cVioletBlueCrayola = 'VioletBlueCrayola';
+var cVioletBlueCrayola = 'VioletBlueCrayola'; // VioletBlueCrayola
+
 exports.cVioletBlueCrayola = cVioletBlueCrayola;
-var cVioletRed = 'VioletRed';
+var cVioletRed = 'VioletRed'; // VioletRed
+
 exports.cVioletRed = cVioletRed;
-var cViridian = 'Viridian';
+var cViridian = 'Viridian'; // Viridian
+
 exports.cViridian = cViridian;
-var cViridianGreen = 'ViridianGreen';
+var cViridianGreen = 'ViridianGreen'; // ViridianGreen
+
 exports.cViridianGreen = cViridianGreen;
-var cVividBurgundy = 'VividBurgundy';
+var cVividBurgundy = 'VividBurgundy'; // VividBurgundy
+
 exports.cVividBurgundy = cVividBurgundy;
-var cVividSkyBlue = 'VividSkyBlue';
+var cVividSkyBlue = 'VividSkyBlue'; // VividSkyBlue
+
 exports.cVividSkyBlue = cVividSkyBlue;
-var cVividTangerine = 'VividTangerine';
+var cVividTangerine = 'VividTangerine'; // VividTangerine
+
 exports.cVividTangerine = cVividTangerine;
-var cVividViolet = 'VividViolet';
+var cVividViolet = 'VividViolet'; // VividViolet
+
 exports.cVividViolet = cVividViolet;
-var cVolt = 'Volt';
+var cVolt = 'Volt'; // Volt
+
 exports.cVolt = cVolt;
-var cWarmBlack = 'WarmBlack';
+var cWarmBlack = 'WarmBlack'; // WarmBlack
+
 exports.cWarmBlack = cWarmBlack;
-var cWheat = 'Wheat';
+var cWheat = 'Wheat'; // Wheat
+
 exports.cWheat = cWheat;
-var cWildBlueYonder = 'WildBlueYonder';
+var cWildBlueYonder = 'WildBlueYonder'; // WildBlueYonder
+
 exports.cWildBlueYonder = cWildBlueYonder;
-var cWildOrchid = 'WildOrchid';
+var cWildOrchid = 'WildOrchid'; // WildOrchid
+
 exports.cWildOrchid = cWildOrchid;
-var cWildStrawberry = 'WildStrawberry';
+var cWildStrawberry = 'WildStrawberry'; // WildStrawberry
+
 exports.cWildStrawberry = cWildStrawberry;
-var cWildWatermelon = 'WildWatermelon';
+var cWildWatermelon = 'WildWatermelon'; // WildWatermelon
+
 exports.cWildWatermelon = cWildWatermelon;
-var cWindsorTan = 'WindsorTan';
+var cWindsorTan = 'WindsorTan'; // WindsorTan
+
 exports.cWindsorTan = cWindsorTan;
-var cWine = 'Wine';
+var cWine = 'Wine'; // Wine
+
 exports.cWine = cWine;
-var cWineDregs = 'WineDregs';
+var cWineDregs = 'WineDregs'; // WineDregs
+
 exports.cWineDregs = cWineDregs;
-var cWinterSky = 'WinterSky';
+var cWinterSky = 'WinterSky'; // WinterSky
+
 exports.cWinterSky = cWinterSky;
-var cWintergreenDream = 'WintergreenDream';
+var cWintergreenDream = 'WintergreenDream'; // WintergreenDream
+
 exports.cWintergreenDream = cWintergreenDream;
-var cWisteria = 'Wisteria';
+var cWisteria = 'Wisteria'; // Wisteria
+
 exports.cWisteria = cWisteria;
-var cWoodBrown = 'WoodBrown';
+var cWoodBrown = 'WoodBrown'; // WoodBrown
+
 exports.cWoodBrown = cWoodBrown;
-var cXanthic = 'Xanthic';
+var cXanthic = 'Xanthic'; // Xanthic
+
 exports.cXanthic = cXanthic;
-var cXanadu = 'Xanadu';
+var cXanadu = 'Xanadu'; // Xanadu
+
 exports.cXanadu = cXanadu;
-var cYaleBlue = 'YaleBlue';
+var cYaleBlue = 'YaleBlue'; // YaleBlue
+
 exports.cYaleBlue = cYaleBlue;
-var cYellowCrayola = 'YellowCrayola';
+var cYellowCrayola = 'YellowCrayola'; //YellowCrayola
+
 exports.cYellowCrayola = cYellowCrayola;
-var cYellowMunsell = 'YellowMunsell';
+var cYellowMunsell = 'YellowMunsell'; // YellowMunsell
+
 exports.cYellowMunsell = cYellowMunsell;
-var cYellowNCS = 'YellowNCS';
+var cYellowNCS = 'YellowNCS'; // YellowNCS
+
 exports.cYellowNCS = cYellowNCS;
-var cYellowPantone = 'YellowPantone';
+var cYellowPantone = 'YellowPantone'; // YellowPantone
+
 exports.cYellowPantone = cYellowPantone;
-var cYellowProcess = 'YellowProcess';
+var cYellowProcess = 'YellowProcess'; // YellowProcess
+
 exports.cYellowProcess = cYellowProcess;
-var cYellowRYB = 'YellowRYB';
+var cYellowRYB = 'YellowRYB'; // YellowRYB
+
 exports.cYellowRYB = cYellowRYB;
-var cYellowGreen = 'YellowGreen';
+var cYellowGreen = 'YellowGreen'; // YellowGreen
+
 exports.cYellowGreen = cYellowGreen;
-var cYellowGreenCrayola = 'YellowGreenCrayola';
+var cYellowGreenCrayola = 'YellowGreenCrayola'; // YellowGreenCrayola
+
 exports.cYellowGreenCrayola = cYellowGreenCrayola;
-var cYellowGreenColorWheel = 'YellowGreenColorWheel';
+var cYellowGreenColorWheel = 'YellowGreenColorWheel'; // YellowGreenColorWheel
+
 exports.cYellowGreenColorWheel = cYellowGreenColorWheel;
-var cYellowOrange = 'YellowOrange';
+var cYellowOrange = 'YellowOrange'; // YellowOrange
+
 exports.cYellowOrange = cYellowOrange;
-var cYellowOrangeColorWheel = 'YellowOrangeColorWheel';
+var cYellowOrangeColorWheel = 'YellowOrangeColorWheel'; // YellowOrangeColorWheel
+
 exports.cYellowOrangeColorWheel = cYellowOrangeColorWheel;
-var cYellowSunshine = 'YellowSunshine';
+var cYellowSunshine = 'YellowSunshine'; // YellowSunshine
+
 exports.cYellowSunshine = cYellowSunshine;
-var cYInMnBlue = 'YInMnBlue';
+var cYInMnBlue = 'YInMnBlue'; // YInMnBlue
+
 exports.cYInMnBlue = cYInMnBlue;
-var cZaffre = 'Zaffre';
+var cZaffre = 'Zaffre'; // Zaffre
+
 exports.cZaffre = cZaffre;
-var cZomp = 'Zomp';
+var cZomp = 'Zomp'; // Zomp
+
 exports.cZomp = cZomp;

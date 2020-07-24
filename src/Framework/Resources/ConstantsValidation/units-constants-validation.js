@@ -17,7 +17,7 @@ import * as u from '../../../Constants/units.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const unitsConstantsValidation [
+ export const unitsConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

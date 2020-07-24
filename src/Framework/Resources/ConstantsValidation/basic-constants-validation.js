@@ -16,7 +16,7 @@ import * as b from '../../../Constants/basic.constants';
 * @author Seth Hollingsead
 * @date 2020/07/23
 */
-export const basicConstantsValidation [
+export const basicConstantsValidation = [
   {Actual: b.cDemo, Expected: 'Demo'},
 
   // export const cSpace = ' ';

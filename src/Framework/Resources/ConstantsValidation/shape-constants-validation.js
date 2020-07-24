@@ -16,7 +16,7 @@ import * as sh from '../../../Constants/shape.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const shapeConstantsValidation [
+ export const shapeConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];

@@ -16,7 +16,7 @@ import * as i from '../../../Constants/isotope.constants';
  * @author Seth Hollingsead
  * @date 2020/07/23
  */
- export const isotopeConstantsValidation [
+ export const isotopeConstantsValidation = [
    {Actual: b.cDemo, Expected: 'Demo'},
-   
+
  ];
