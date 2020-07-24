@@ -1,7 +1,7 @@
 /**
  * @file element.constants.js
  * @module element-constants
- * @description Contains named elements & isotopes.
+ * @description Contains named elements.
  * @requires module:basic-constants
  * @requires module:phonics-constants
  * @requires module:generic-constants
