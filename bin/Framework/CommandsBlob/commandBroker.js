@@ -424,9 +424,14 @@ function executeCommand(commandString) {
   } else if (commandToExecute !== false && commandArgs === false) {
     // This could be a command without any arguments.
     returnValue = D[w.cCommands][commandToExecute]('', '');
+  } else {
+    // This command does not exist, nothing to execute, but we don't want the application to exit.
+    // An error message should have already been thrown, but we should throw another one here.
+    console.log('WARNING: Command does not exist, please enter a valid command and try again!');
+    returnValue = true;
   }
 
-  if (commandMetricsEnabled === true) {
+  if (commandMetricsEnabled === true && commandToExecute !== '' && commandToExecute !== false) {
     var performanceTrackingObject = {};
     commandEndTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
 

@@ -247,6 +247,8 @@ function saveRootPath(rootPath) {
 
   if (_configurator["default"].getConfigurationSetting(s.cEnableConstantsValidation) === true) {
     _chiefData["default"].setupConstantsValidationData();
+
+    _configurator["default"].setConfigurationSetting(s.cConstantsPath, cleanedRootPath + s.cConstantsPathActual);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.saveRootPath function');
