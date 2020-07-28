@@ -180,6 +180,7 @@ function saveRootPath(rootPath) {
   configurator.setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
   if (configurator.getConfigurationSetting(s.cEnableConstantsValidation) === true) {
       chiefData.setupConstantsValidationData();
+      configurator.setConfigurationSetting(s.cConstantsPath, cleanedRootPath + s.cConstantsPathActual);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('END warden.saveRootPath function');

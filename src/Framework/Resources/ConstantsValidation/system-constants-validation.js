@@ -515,6 +515,7 @@ export const systemConstantsValidation = [
    {Name: 'cWorkflowDataPath', Actual: s.cWorkflowDataPath, Expected: 'WorkflowDataPath'},
    {Name: 'cKeywordsDataPath', Actual: s.cKeywordsDataPath, Expected: 'KeywordsDataPath'},
    {Name: 'cLocatorsDataPath', Actual: s.cLocatorsDataPath, Expected: 'LocatorsDataPath'},
+   {Name: 'cConstantsPathActual', Actual: s.cConstantsPathActual, Expected: 'bin/Framework/Constants/'},
    {Name: 'cclientRulesLibrary', Actual: s.cclientRulesLibrary, Expected: 'clientRulesLibrary'},
    {Name: 'cCommandQueue', Actual: s.cCommandQueue, Expected: 'CommandQueue'},
    {Name: 'cConstantsValidationData', Actual: s.cConstantsValidationData, Expected: 'ConstantsValidationData'},
@@ -529,6 +530,19 @@ export const systemConstantsValidation = [
    {Name: 'cSystemConstantsValidation', Actual: s.cSystemConstantsValidation, Expected: 'SystemConstantsValidation'},
    {Name: 'cUnitsConstantsValidation', Actual: s.cUnitsConstantsValidation, Expected: 'UnitsConstantsValidation'},
    {Name: 'cWordConstantsValidation', Actual: s.cWordConstantsValidation, Expected: 'WordConstantsValidation'},
+
+   // Constants Filenames
+   {Name: 'cbasic_constants_js', Actual: s.cbasic_constants_js, Expected: 'basic.constants.js'},
+   {Name: 'ccolor_constants_js', Actual: s.ccolor_constants_js, Expected: 'color.constants.js'},
+   {Name: 'celement_constants_js', Actual: s.celement_constants_js, Expected: 'element.constants.js'},
+   {Name: 'cgeneric_constants_js', Actual: s.cgeneric_constants_js, Expected: 'generic.constants.js'},
+   {Name: 'cisotope_constants_js', Actual: s.cisotope_constants_js, Expected: 'isotope.constants.js'},
+   {Name: 'cnumeric_constants_js', Actual: s.cnumeric_constants_js, Expected: 'numeric.constants.js'},
+   {Name: 'cphonics_constants_js', Actual: s.cphonics_constants_js, Expected: 'phonics.constants.js'},
+   {Name: 'cshape_constants_js', Actual: s.cshape_constants_js, Expected: 'shape.constants.js'},
+   {Name: 'csystem_constants_js', Actual: s.csystem_constants_js, Expected: 'system.constants.js'},
+   {Name: 'cunits_constants_js', Actual: s.cunits_constants_js, Expected: 'units.constants.js'},
+   {Name: 'cword_constants_js', Actual: s.cword_constants_js, Expected: 'word.constants.js'},
 
    // Configuration Settings
    {Name: 'cArgumentDrivenInterface', Actual: s.cArgumentDrivenInterface, Expected: 'ArgumentDrivenInterface'},

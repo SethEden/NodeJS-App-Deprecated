@@ -515,6 +515,7 @@ export const cPageDataPath = w.cPage + w.cDataPath; // PageDataPath
 export const cWorkflowDataPath = w.cWorkflow + w.cDataPath; // WorkflowDataPath
 export const cKeywordsDataPath = w.cKeywords + w.cDataPath; // KeywordsDataPath
 export const cLocatorsDataPath = w.cLocators + w.cDataPath; // LocatorsDataPath
+export const cConstantsPathActual = w.cbin + b.cForwardSlash + cFramework + b.cForwardSlash + w.cConstants + b.cForwardSlash; // bin/Framework/Constants/
 export const cclientRulesLibrary = w.cclient + w.cRules + w.cLibrary; // clientRulesLibrary
 export const cCommandQueue = w.cCommand + w.cQueue; // CommandQueue
 export const cConstantsValidationData = w.cConstants + w.cValidation + w.cData; // ConstantsValidationData
@@ -530,7 +531,18 @@ export const cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidati
 export const cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
 export const cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
 
-
+// Constants Filenames
+export const cbasic_constants_js = w.cbasic + b.cDot + w.cconstants + b.cDot + b.cjs; // basic.constants.js
+export const ccolor_constants_js = w.ccolor + b.cDot + w.cconstants + b.cDot + b.cjs; // color.constants.js
+export const celement_constants_js = w.celement + b.cDot + w.cconstants + b.cDot + b.cjs; // element.constants.js
+export const cgeneric_constants_js = w.cgeneric + b.cDot + w.cconstants + b.cDot + b.cjs; // generic.constants.js
+export const cisotope_constants_js = w.cisotope + b.cDot + w.cconstants + b.cDot + b.cjs; // isotope.constants.js
+export const cnumeric_constants_js = w.cnumeric + b.cDot + w.cconstants + b.cDot + b.cjs; // numeric.constants.js
+export const cphonics_constants_js = w.cphonics + b.cDot + w.cconstants + b.cDot + b.cjs; // phonics.constants.js
+export const cshape_constants_js = w.cshape + b.cDot + w.cconstants + b.cDot + b.cjs; // shape.constants.js
+export const csystem_constants_js = w.csystem + b.cDot + w.cconstants + b.cDot + b.cjs; // system.constants.js
+export const cunits_constants_js = w.cunits + b.cDot + w.cconstants + b.cDot + b.cjs; // units.constants.js
+export const cword_constants_js = w.cword + b.cDot + w.cconstants + b.cDot + b.cjs; // word.constants.js
 
 // Configuration Settings
 export const cArgumentDrivenInterface = w.cArgument + w.cDriven + w.cInterface; // ArgumentDrivenInterface
