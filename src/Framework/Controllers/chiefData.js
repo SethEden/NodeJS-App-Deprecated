@@ -126,9 +126,24 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
   return loadedAndMergedDataAllFiles;
 };
 
+/**
+ * @function setupConstantsValidationData
+ * @description Initializes all of the constants validation data so that it can be used to validate all of the constants.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/07/27
+ */
+function setupConstantsValidationData() {
+  let functionName = setupAllCsvData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  loggers.consoleLog(baseFileName = b.cDot + functionName, s.cEND_Function);
+};
+
 export default {
   getAndProcessCsvData,
   getAndProcessXmlData,
   setupAllCsvData,
-  setupAllXmlData
+  setupAllXmlData,
+  setupConstantsValidationData
 };

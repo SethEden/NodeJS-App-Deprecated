@@ -527,6 +527,7 @@ export const systemConstantsValidation = [
    {Name: 'cEnableBusinessRuleOutput', Actual: b.cEnableBusinessRuleOutput, Expected: 'EnableBusinessRuleOutput'},
    {Name: 'cEnableBusinessRulePerformanceMetrics', Actual: b.cEnableBusinessRulePerformanceMetrics, Expected: 'EnableBusinessRulePerformanceMetrics'},
    {Name: 'cEnableCommandPerformanceMetrics', Actual: b.cEnableCommandPerformanceMetrics, Expected: 'EnableCommandPerformanceMetrics'},
+   {Name: 'cEnableConstantsValidation', Actual: b.cEnableConstantsValidation, Expected: 'EnableConstantsValidation'},
 
    // Test Time Tracking
    {Name: 'cBeginDateTimeStamp', Actual: b.cBeginDateTimeStamp, Expected: 'BeginDateTimeStamp'},

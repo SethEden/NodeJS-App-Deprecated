@@ -31,6 +31,7 @@ import configurator from '../Executrix/configurator';
 import timers from '../Executrix/timers';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import dataBroker from '../Executrix/dataBroker';
+import chiefData from './chiefData';
 import fileBroker from '../Executrix/fileBroker';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
@@ -177,6 +178,9 @@ function saveRootPath(rootPath) {
   configurator.setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
   // console.log('set the application description as a configuration setting');
   configurator.setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
+  if (configurator.getConfigurationSetting(s.cEnableConstantsValidation) === true) {
+      chiefData.setupConstantsValidationData();
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('END warden.saveRootPath function');
 };
