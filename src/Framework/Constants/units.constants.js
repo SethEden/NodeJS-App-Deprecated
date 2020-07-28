@@ -19,7 +19,7 @@ export const cFemto = b.cFe + b.cmt + b.co; // Femto
 export const cPico = b.cPi + b.cco; // Pico
 export const cNano = b.cNa + b.cno; // Nano
 export const cMicro = b.cMi + b.ccr + b.co; // Micro
-export const cMill = b.cMi + b.cll // Mill
+export const cMill = b.cMi + b.cll; // Mill
 export const cMilli = cMill + b.ci; // Milli
 
 // Units of Time
