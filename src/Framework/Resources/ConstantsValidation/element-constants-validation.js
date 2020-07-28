@@ -7,7 +7,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as e from '../../../Constants/element.constants';
+import * as e from '../../Constants/element.constants';
 
  /**
  * @function elementConstantsValidation
@@ -107,7 +107,7 @@ import * as e from '../../../Constants/element.constants';
    {Name: 'cRa', Actual: e.cRa, Expected: 'Ra'},
    {Name: 'cAc', Actual: e.cAc, Expected: 'Ac'},
    {Name: 'cTh', Actual: e.cTh, Expected: 'Th'},
-   {Name: 'cPa', Actual: e.cPa, Expected: 'Pa
+   {Name: 'cPa', Actual: e.cPa, Expected: 'Pa'},
    {Name: 'cU', Actual: e.cU, Expected: 'U'},
    {Name: 'cNp', Actual: e.cNp, Expected: 'Np'},
    {Name: 'cPu', Actual: e.cPu, Expected: 'Pu'},

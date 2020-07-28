@@ -7,7 +7,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as i from '../../../Constants/isotope.constants';
+import * as i from '../../Constants/isotope.constants';
 
  /**
  * @function isotopeConstantsValidation

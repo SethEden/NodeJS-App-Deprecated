@@ -8,7 +8,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as p from '../../../Constants/phonics.constants';
+import * as p from '../../Constants/phonics.constants';
 
  /**
  * @function phonicsConstantsValidation
@@ -353,5 +353,13 @@ export const phonicsConstantsValidation = [
    {Name: 'cUni', Actual: p.cUni, Expected: 'Uni'},
    {Name: 'chyper', Actual: p.chyper, Expected: 'hyper'},
    {Name: 'cHyper', Actual: p.cHyper, Expected: 'Hyper'},
-   {Name: 'cbola', Actual: p.cbola, Expected: 'bola'}
+   {Name: 'cbola', Actual: p.cbola, Expected: 'bola'},
+   {Name: 'cstant', Actual: p.cstant, Expected: 'stant'},
+   {Name: 'ciso', Actual: p.ciso, Expected: 'iso'},
+   {Name: 'cIso', Actual: p.cIso, Expected: 'Iso'},
+   {Name: 'ctope', Actual: p.ctope, Expected: 'tope'},
+   {Name: 'cphon', Actual: p.cphon, Expected: 'phon'},
+   {Name: 'cPhon', Actual: p.cPhon, Expected: 'Phon'},
+   {Name: 'cics', Actual: p.cics, Expected: 'ics'},
+   {Name: 'csha', Actual: p.csha, Expected: 'sha'}
  ];

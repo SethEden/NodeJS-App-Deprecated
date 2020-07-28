@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.systemConstantsValidation = void 0;
 
-var s = _interopRequireWildcard(require("../../../Constants/system.constants"));
+var s = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -34,8 +34,2607 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 * @author Seth Hollingsead
 * @date 2020/07/23
 */
-var systemConstantsValidation = [{
-  Actual: b.cDemo,
-  Expected: 'Demo'
+var systemConstantsValidation = [// Miscelaneious
+{
+  Name: 'cENV',
+  Actual: s.cENV,
+  Expected: 'ENV'
+}, {
+  Name: 'cLOG',
+  Actual: s.cLOG,
+  Expected: 'LOG'
+}, {
+  Name: 'cENVIRONMENT',
+  Actual: s.cENVIRONMENT,
+  Expected: 'ENVIRONMENT'
+}, {
+  Name: 'cITERATION',
+  Actual: s.cITERATION,
+  Expected: 'ITERATION'
+}, {
+  Name: 'cSTYLE',
+  Actual: s.cSTYLE,
+  Expected: 'STYLE'
+}, // Compound System Words
+{
+  Name: 'cunderline',
+  Actual: s.cunderline,
+  Expected: 'underline'
+}, {
+  Name: 'cUnderline',
+  Actual: s.cUnderline,
+  Expected: 'Underline'
+}, {
+  Name: 'cwithText',
+  Actual: s.cwithText,
+  Expected: 'withText'
+}, {
+  Name: 'cWithText',
+  Actual: s.cWithText,
+  Expected: 'WithText'
+}, {
+  Name: 'cDebugTest',
+  Actual: s.cDebugTest,
+  Expected: 'DebugTest'
+}, {
+  Name: 'cDebugPage',
+  Actual: s.cDebugPage,
+  Expected: 'DebugPage'
+}, {
+  Name: 'cDebugTestExhaustive',
+  Actual: s.cDebugTestExhaustive,
+  Expected: 'DebugTestExhaustive'
+}, {
+  Name: 'cDebugTestData',
+  Actual: s.cDebugTestData,
+  Expected: 'DebugTestData'
+}, {
+  Name: 'cDebugPageScripts',
+  Actual: s.cDebugPageScripts,
+  Expected: 'DebugPageScripts'
+}, {
+  Name: 'cDebugPageData',
+  Actual: s.cDebugPageData,
+  Expected: 'DebugPageData'
+}, {
+  Name: 'cDebugKeywords',
+  Actual: s.cDebugKeywords,
+  Expected: 'DebugKeywords'
+}, {
+  Name: 'cLogBrowserActions',
+  Actual: s.cLogBrowserActions,
+  Expected: 'LogBrowserActions'
+}, {
+  Name: 'cJournalBrowserActions',
+  Actual: s.cJournalBrowserActions,
+  Expected: 'JournalBrowserActions'
+}, {
+  Name: 'cDebugBrowserActions',
+  Actual: s.cDebugBrowserActions,
+  Expected: 'DebugBrowserActions'
+}, {
+  Name: 'cDebugSelectors',
+  Actual: s.cDebugSelectors,
+  Expected: 'DebugSelectors'
+}, {
+  Name: 'cDebugFunctions',
+  Actual: s.cDebugFunctions,
+  Expected: 'DebugFunctions'
+}, {
+  Name: 'cDebugFiles',
+  Actual: s.cDebugFiles,
+  Expected: 'DebugFiles'
+}, {
+  Name: 'cTestAutomation',
+  Actual: s.cTestAutomation,
+  Expected: 'TestAutomation'
+}, {
+  Name: 'cNumberOfRows',
+  Actual: s.cNumberOfRows,
+  Expected: 'NumberOfRows'
+}, {
+  Name: 'cMasterRowNumber',
+  Actual: s.cMasterRowNumber,
+  Expected: 'MasterRowNumber'
+}, {
+  Name: 'cEnvironmentRow',
+  Actual: s.cEnvironmentRow,
+  Expected: 'EnvironmentRow'
+}, {
+  Name: 'cEnvironmentRowNumber',
+  Actual: s.cEnvironmentRowNumber,
+  Expected: 'EnvironmentRowNumber'
+}, {
+  Name: 'cPageScript',
+  Actual: s.cPageScript,
+  Expected: 'PageScript'
+}, {
+  Name: 'cIntermediatePath',
+  Actual: s.cIntermediatePath,
+  Expected: 'IntermediatePath'
+}, {
+  Name: 'cTimeStamp',
+  Actual: s.cTimeStamp,
+  Expected: 'TimeStamp'
+}, {
+  Name: 'cPageScriptTimeStamp',
+  Actual: s.cPageScriptTimeStamp,
+  Expected: 'PageScriptTimeStamp'
+}, {
+  Name: 'cDateTimeStamp',
+  Actual: s.cDateTimeStamp,
+  Expected: 'DateTimeStamp'
+}, {
+  Name: 'cScriptDateStamp',
+  Actual: s.cScriptDateStamp,
+  Expected: 'ScriptDateStamp'
+}, {
+  Name: 'cScriptTimeStamp',
+  Actual: s.cScriptTimeStamp,
+  Expected: 'ScriptTimeStamp'
+}, {
+  Name: 'cKeywordTimeStamp',
+  Actual: s.cKeywordTimeStamp,
+  Expected: 'KeywordTimeStamp'
+}, {
+  Name: 'cTestTimeStamp',
+  Actual: s.cTestTimeStamp,
+  Expected: 'TestTimeStamp'
+}, {
+  Name: 'cScriptDateTimeStamp',
+  Actual: s.cScriptDateTimeStamp,
+  Expected: 'ScriptDateTimeStamp'
+}, {
+  Name: 'cBeginScriptTimeStamp',
+  Actual: s.cBeginScriptTimeStamp,
+  Expected: 'BeginScriptTimeStamp'
+}, {
+  Name: 'cEndScriptTimeStamp',
+  Actual: s.cEndScriptTimeStamp,
+  Expected: 'EndScriptTimeStamp'
+}, {
+  Name: 'cBeginTestTimeStamp',
+  Actual: s.cBeginTestTimeStamp,
+  Expected: 'BeginTestTimeStamp'
+}, {
+  Name: 'cEndTestTimeStamp',
+  Actual: s.cEndTestTimeStamp,
+  Expected: 'EndTestTimeStamp'
+}, {
+  Name: 'cBeginPageScriptTimeStamp',
+  Actual: s.cBeginPageScriptTimeStamp,
+  Expected: 'BeginPageScriptTimeStamp'
+}, {
+  Name: 'cEndPageScriptTimeStamp',
+  Actual: s.cEndPageScriptTimeStamp,
+  Expected: 'EndPageScriptTimeStamp'
+}, {
+  Name: 'cBeginKeywordTimeStamp',
+  Actual: s.cBeginKeywordTimeStamp,
+  Expected: 'BeginKeywordTimeStamp'
+}, {
+  Name: 'cEndKeywordTimeStamp',
+  Actual: s.cEndKeywordTimeStamp,
+  Expected: 'EndKeywordTimeStamp'
+}, {
+  Name: 'cRuntime',
+  Actual: s.cRuntime,
+  Expected: 'Runtime'
+}, {
+  Name: 'cRunTime',
+  Actual: s.cRunTime,
+  Expected: 'RunTime'
+}, {
+  Name: 'cBrowserName',
+  Actual: s.cBrowserName,
+  Expected: 'BrowserName'
+}, {
+  Name: 'cHostName',
+  Actual: s.cHostName,
+  Expected: 'HostName'
+}, {
+  Name: 'cTestRunID',
+  Actual: s.cTestRunID,
+  Expected: 'TestRunID'
+}, {
+  Name: 'cfilesLists',
+  Actual: s.cfilesLists,
+  Expected: 'filesLists'
+}, {
+  Name: 'cFileTypes',
+  Actual: s.cFileTypes,
+  Expected: 'FileTypes'
+}, {
+  Name: 'cfilename',
+  Actual: s.cfilename,
+  Expected: 'filename'
+}, {
+  Name: 'cFilename',
+  Actual: s.cFilename,
+  Expected: 'Filename'
+}, {
+  Name: 'cFileName',
+  Actual: s.cFileName,
+  Expected: 'FileName'
+}, {
+  Name: 'cfilenames',
+  Actual: s.cfilenames,
+  Expected: 'filenames'
+}, {
+  Name: 'cFilenames',
+  Actual: s.cFilenames,
+  Expected: 'Filenames'
+}, {
+  Name: 'cFileNames',
+  Actual: s.cFileNames,
+  Expected: 'FileNames'
+}, {
+  Name: 'cPreValidateFileName',
+  Actual: s.cPreValidateFileName,
+  Expected: 'PreValidateFileName'
+}, {
+  Name: 'cAsynchSingular',
+  Actual: s.cAsynchSingular,
+  Expected: 'AsynchSingular'
+}, {
+  Name: 'cSynchSingular',
+  Actual: s.cSynchSingular,
+  Expected: 'SynchSingular'
+}, {
+  Name: 'cParallelMultiUnified',
+  Actual: s.cParallelMultiUnified,
+  Expected: 'ParallelMultiUnified'
+}, {
+  Name: 'cAllowableCharacters',
+  Actual: s.cAllowableCharacters,
+  Expected: 'AllowableCharacters'
+}, {
+  Name: 'cSpecialCharacters',
+  Actual: s.cSpecialCharacters,
+  Expected: 'SpecialCharacters'
+}, {
+  Name: 'cTimeoutOverride',
+  Actual: s.cTimeoutOverride,
+  Expected: 'TimeoutOverride'
+}, {
+  Name: 'cDwellTime',
+  Actual: s.cDwellTime,
+  Expected: 'DwellTime'
+}, {
+  Name: 'cLogFilePathAndName',
+  Actual: s.cLogFilePathAndName,
+  Expected: 'LogFilePathAndName'
+}, {
+  Name: 'cDataLogFilePathAndName',
+  Actual: s.cDataLogFilePathAndName,
+  Expected: 'DataLogFilePathAndName'
+}, {
+  Name: 'cExecutionJournalFilePathAndName',
+  Actual: s.cExecutionJournalFilePathAndName,
+  Expected: 'ExecutionJournalFilePathAndName'
+}, {
+  Name: 'cResultsLogFilePathAndName',
+  Actual: s.cResultsLogFilePathAndName,
+  Expected: 'ResultsLogFilePathAndName'
+}, {
+  Name: 'cTestDataPath',
+  Actual: s.cTestDataPath,
+  Expected: 'TestDataPath'
+}, {
+  Name: 'cLogFileEnabled',
+  Actual: s.cLogFileEnabled,
+  Expected: 'LogFileEnabled'
+}, {
+  Name: 'cFileCounter',
+  Actual: s.cFileCounter,
+  Expected: 'FileCounter'
+}, {
+  Name: 'cDeltaT',
+  Actual: s.cDeltaT,
+  Expected: 'DeltaT'
+}, {
+  Name: 'cvisibilityCheck',
+  Actual: s.cvisibilityCheck,
+  Expected: 'visibilityCheck'
+}, {
+  Name: 'cVisibilityCheck',
+  Actual: s.cVisibilityCheck,
+  Expected: 'VisibilityCheck'
+}, {
+  Name: 'cOperatingSystem',
+  Actual: s.cOperatingSystem,
+  Expected: 'OperatingSystem'
+}, {
+  Name: 'cinnerText',
+  Actual: s.cinnerText,
+  Expected: 'innerText'
+}, {
+  Name: 'cInnerText',
+  Actual: s.cInnerText,
+  Expected: 'InnerText'
+}, {
+  Name: 'cinnerHTML',
+  Actual: s.cinnerHTML,
+  Expected: 'innerHTML'
+}, {
+  Name: 'cInnerHTML',
+  Actual: s.cInnerHTML,
+  Expected: 'InnerHTML'
+}, {
+  Name: 'cTestData',
+  Actual: s.cTestData,
+  Expected: 'TestData'
+}, {
+  Name: 'cProcessingTimeout',
+  Actual: s.cProcessingTimeout,
+  Expected: 'ProcessingTimeout'
+}, {
+  Name: 'cIngestionCompleteDwellTime',
+  Actual: s.cIngestionCompleteDwellTime,
+  Expected: 'IngestionCompleteDwellTime'
+}, {
+  Name: 'cRowNumber',
+  Actual: s.cRowNumber,
+  Expected: 'RowNumber'
+}, {
+  Name: 'cUsername',
+  Actual: s.cUsername,
+  Expected: 'Username'
+}, {
+  Name: 'cPassword',
+  Actual: s.cPassword,
+  Expected: 'Password'
+}, {
+  Name: 'cProjectName',
+  Actual: s.cProjectName,
+  Expected: 'ProjectName'
+}, {
+  Name: 'cProjectDescription',
+  Actual: s.cProjectDescription,
+  Expected: 'ProjectDescription'
+}, {
+  Name: 'cTestDataFileName',
+  Actual: s.cTestDataFileName,
+  Expected: 'TestDataFileName'
+}, {
+  Name: 'cShareEmail',
+  Actual: s.cShareEmail,
+  Expected: 'ShareEmail'
+}, {
+  Name: 'cAccessLevel',
+  Actual: s.cAccessLevel,
+  Expected: 'AccessLevel'
+}, {
+  Name: 'cFileNumber',
+  Actual: s.cFileNumber,
+  Expected: 'FileNumber'
+}, {
+  Name: 'cConfigurationName',
+  Actual: s.cConfigurationName,
+  Expected: 'ConfigurationName'
+}, {
+  Name: 'cConfigurationElement',
+  Actual: s.cConfigurationElement,
+  Expected: 'ConfigurationElement'
+}, {
+  Name: 'cConfigurationElements',
+  Actual: s.cConfigurationElements,
+  Expected: 'ConfigurationElements'
+}, {
+  Name: 'cVersionControl',
+  Actual: s.cVersionControl,
+  Expected: 'VersionControl'
+}, {
+  Name: 'cScriptRunTime',
+  Actual: s.cScriptRunTime,
+  Expected: 'ScriptRunTime'
+}, {
+  Name: 'cTestRunTime',
+  Actual: s.cTestRunTime,
+  Expected: 'TestRunTime'
+}, {
+  Name: 'ctypeText',
+  Actual: s.ctypeText,
+  Expected: 'typeText'
+}, {
+  Name: 'cTypeText',
+  Actual: s.cTypeText,
+  Expected: 'TypeText'
+}, {
+  Name: 'cAbreviatedSelectors',
+  Actual: s.cAbreviatedSelectors,
+  Expected: 'AbreviatedSelectors'
+}, {
+  Name: 'cAbreviatedSelectorsInLogs',
+  Actual: s.cAbreviatedSelectorsInLogs,
+  Expected: 'AbreviatedSelectorsInLogs'
+}, {
+  Name: 'cselectorTimeout',
+  Actual: s.cselectorTimeout,
+  Expected: 'selectorTimeout'
+}, {
+  Name: 'cchildElementCount',
+  Actual: s.cchildElementCount,
+  Expected: 'childElementCount'
+}, {
+  Name: 'cUnderscore',
+  Actual: s.cUnderscore,
+  Expected: 'Underscore'
+}, {
+  Name: 'cTestBureau',
+  Actual: s.cTestBureau,
+  Expected: 'TestBureau'
+}, {
+  Name: 'caddWithText',
+  Actual: s.caddWithText,
+  Expected: 'addWithText'
+}, {
+  Name: 'caddTimeout',
+  Actual: s.caddTimeout,
+  Expected: 'addTimeout'
+}, {
+  Name: 'caddParent',
+  Actual: s.caddParent,
+  Expected: 'addParent'
+}, {
+  Name: 'caddFindValue',
+  Actual: s.caddFindValue,
+  Expected: 'addFindValue'
+}, {
+  Name: 'caddNth',
+  Actual: s.caddNth,
+  Expected: 'addNth'
+}, {
+  Name: 'caddSibling',
+  Actual: s.caddSibling,
+  Expected: 'addSibling'
+}, {
+  Name: 'caddFilter',
+  Actual: s.caddFilter,
+  Expected: 'addFilter'
+}, {
+  Name: 'cgenerateRandom',
+  Actual: s.cgenerateRandom,
+  Expected: 'generateRandom'
+}, {
+  Name: 'crandomlyGenerate',
+  Actual: s.crandomlyGenerate,
+  Expected: 'randomlyGenerate'
+}, {
+  Name: 'cMixedCase',
+  Actual: s.cMixedCase,
+  Expected: 'MixedCase'
+}, {
+  Name: 'cUpperCase',
+  Actual: s.cUpperCase,
+  Expected: 'UpperCase'
+}, {
+  Name: 'cLowerCase',
+  Actual: s.cLowerCase,
+  Expected: 'LowerCase'
+}, {
+  Name: 'cByLength',
+  Actual: s.cByLength,
+  Expected: 'ByLength'
+}, {
+  Name: 'cSpecialCharacter',
+  Actual: s.cSpecialCharacter,
+  Expected: 'SpecialCharacter'
+}, {
+  Name: 'cWithSpecialCharacters',
+  Actual: s.cWithSpecialCharacters,
+  Expected: 'WithSpecialCharacters'
+}, {
+  Name: 'cTextByLength',
+  Actual: s.cTextByLength,
+  Expected: 'TextByLength'
+}, {
+  Name: 'cTextWithSpecialCharacters',
+  Actual: s.cTextWithSpecialCharacters,
+  Expected: 'TextWithSpecialCharacters'
+}, {
+  Name: 'cTextWithSpecialCharactersByLength',
+  Actual: s.cTextWithSpecialCharactersByLength,
+  Expected: 'TextWithSpecialCharactersByLength'
+}, {
+  Name: 'cAlphaNumeric',
+  Actual: s.cAlphaNumeric,
+  Expected: 'AlphaNumeric'
+}, {
+  Name: 'cAlphaNumericCode',
+  Actual: s.cAlphaNumericCode,
+  Expected: 'AlphaNumericCode'
+}, {
+  Name: 'cAlphaNumericCodeByLength',
+  Actual: s.cAlphaNumericCodeByLength,
+  Expected: 'AlphaNumericCodeByLength'
+}, {
+  Name: 'cNumericCode',
+  Actual: s.cNumericCode,
+  Expected: 'NumericCode'
+}, {
+  Name: 'cNumericCodeByLength',
+  Actual: s.cNumericCodeByLength,
+  Expected: 'NumericCodeByLength'
+}, {
+  Name: 'cAlphaNumericCodeWithSpecialCharacters',
+  Actual: s.cAlphaNumericCodeWithSpecialCharacters,
+  Expected: 'AlphaNumericCodeWithSpecialCharacters'
+}, {
+  Name: 'cAlphaNumericCodeWithSpecialCharactersByLength',
+  Actual: s.cAlphaNumericCodeWithSpecialCharactersByLength,
+  Expected: 'AlphaNumericCodeWithSpecialCharactersByLength'
+}, {
+  Name: 'cSpecialCharacterCodeByLength',
+  Actual: s.cSpecialCharacterCodeByLength,
+  Expected: 'SpecialCharacterCodeByLength'
+}, {
+  Name: 'cvalidEmail',
+  Actual: s.cvalidEmail,
+  Expected: 'validEmail'
+}, {
+  Name: 'cValidEmail',
+  Actual: s.cValidEmail,
+  Expected: 'ValidEmail'
+}, {
+  Name: 'cInvalidEmail',
+  Actual: s.cInvalidEmail,
+  Expected: 'InvalidEmail'
+}, {
+  Name: 'cLetterOr',
+  Actual: s.cLetterOr,
+  Expected: 'LetterOr'
+}, {
+  Name: 'cLetterOrSpecialCharacter',
+  Actual: s.cLetterOrSpecialCharacter,
+  Expected: 'LetterOrSpecialCharacter'
+}, {
+  Name: 'cLetterOrNumberOrSpecialCharacter',
+  Actual: s.cLetterOrNumberOrSpecialCharacter,
+  Expected: 'LetterOrNumberOrSpecialCharacter'
+}, {
+  Name: 'cAlphaNumericCharacter',
+  Actual: s.cAlphaNumericCharacter,
+  Expected: 'AlphaNumericCharacter'
+}, {
+  Name: 'cNumericCharacter',
+  Actual: s.cNumericCharacter,
+  Expected: 'NumericCharacter'
+}, {
+  Name: 'cNumberInRange',
+  Actual: s.cNumberInRange,
+  Expected: 'NumberInRange'
+}, {
+  Name: 'cBooleanValue',
+  Actual: s.cBooleanValue,
+  Expected: 'BooleanValue'
+}, {
+  Name: 'cAlphabeticCharacter',
+  Actual: s.cAlphabeticCharacter,
+  Expected: 'AlphabeticCharacter'
+}, {
+  Name: 'cCarriageReturn',
+  Actual: s.cCarriageReturn,
+  Expected: 'CarriageReturn'
+}, {
+  Name: 'cDashboardLogs',
+  Actual: s.cDashboardLogs,
+  Expected: 'DashboardLogs'
+}, {
+  Name: 'cVideoLogs',
+  Actual: s.cVideoLogs,
+  Expected: 'VideoLogs'
+}, {
+  Name: 'cForwardSlash',
+  Actual: s.cForwardSlash,
+  Expected: 'ForwardSlash'
+}, {
+  Name: 'cBackSlash',
+  Actual: s.cBackSlash,
+  Expected: 'BackSlash'
+}, {
+  Name: 'cPage_Keywords',
+  Actual: s.cPage_Keywords,
+  Expected: 'Page_Keywords'
+}, {
+  Name: 'cnavigateTo',
+  Actual: s.cnavigateTo,
+  Expected: 'navigateTo'
+}, {
+  Name: 'cNavigateTo',
+  Actual: s.cNavigateTo,
+  Expected: 'NavigateTo'
+}, {
+  Name: 'cBrowserRefresh',
+  Actual: s.cBrowserRefresh,
+  Expected: 'BrowserRefresh'
+}, {
+  Name: 'cSpaceIsColonSpace',
+  Actual: s.cSpaceIsColonSpace,
+  Expected: ' Is: '
+}, {
+  Name: 'cdeployApplication',
+  Actual: s.cdeployApplication,
+  Expected: 'deployApplication'
+}, {
+  Name: 'creleaseApplication',
+  Actual: s.creleaseApplication,
+  Expected: 'releaseApplication'
+}, {
+  Name: 'cbackground',
+  Actual: s.cbackground,
+  Expected: 'background'
+}, {
+  Name: 'cBackground',
+  Actual: s.cBackground,
+  Expected: 'Background'
+}, {
+  Name: 'cConfiguration_Colors',
+  Actual: s.cConfiguration_Colors,
+  Expected: 'Configuration_Colors'
+}, {
+  Name: 'cColorData',
+  Actual: s.cColorData,
+  Expected: 'ColorData'
+}, {
+  Name: 'cColorName',
+  Actual: s.cColorName,
+  Expected: 'ColorName'
+}, {
+  Name: 'cbusinessRule',
+  Actual: s.cbusinessRule,
+  Expected: 'businessRule'
+}, {
+  Name: 'cBusinessRule',
+  Actual: s.cBusinessRule,
+  Expected: 'BusinessRule'
+}, {
+  Name: 'cbusinessRules',
+  Actual: s.cbusinessRules,
+  Expected: 'businessRules'
+}, {
+  Name: 'cBusinessRules',
+  Actual: s.cBusinessRules,
+  Expected: 'BusinessRules'
+}, {
+  Name: 'crulesLibrary',
+  Actual: s.crulesLibrary,
+  Expected: 'rulesLibrary'
+}, {
+  Name: 'cframework',
+  Actual: s.cframework,
+  Expected: 'framework'
+}, {
+  Name: 'cFramework',
+  Actual: s.cFramework,
+  Expected: 'Framework'
+}, {
+  Name: 'cCommandsAliases',
+  Actual: s.cCommandsAliases,
+  Expected: 'CommandsAliases'
+}, {
+  Name: 'cCommandWorkflows',
+  Actual: s.cCommandWorkflows,
+  Expected: 'CommandWorkflows'
+}, {
+  Name: 'cStandardDeviation',
+  Actual: s.cStandardDeviation,
+  Expected: 'StandardDeviation'
+}, {
+  Name: 'cHexValue',
+  Actual: s.cHexValue,
+  Expected: 'HexValue'
+}, // Logging Constants
+{
+  Name: 'cBEGIN_Function',
+  Actual: s.cBEGIN_Function,
+  Expected: 'BEGIN %% Function'
+}, {
+  Name: 'cEND_Function',
+  Actual: s.cEND_Function,
+  Expected: 'END %% Function'
+}, {
+  Name: 'cinputDataIs',
+  Actual: s.cinputDataIs,
+  Expected: 'input Data is: '
+}, {
+  Name: 'cinputMetaDataIs',
+  Actual: s.cinputMetaDataIs,
+  Expected: 'input MetaData is: '
+}, {
+  Name: 'creturnDataIs',
+  Actual: s.creturnDataIs,
+  Expected: 'return Data is: '
+}, {
+  Name: 'cLogBasicSystemEvents',
+  Actual: s.cLogBasicSystemEvents,
+  Expected: 'LogBasicSystemEvents'
+}, {
+  Name: 'cLogWarnings',
+  Actual: s.cLogWarnings,
+  Expected: 'LogWarnings'
+}, // Logging Styles Constants
+{
+  Name: 'cModuleFontStyle',
+  Actual: s.cModuleFontStyle,
+  Expected: 'ModuleFontStyle'
+}, {
+  Name: 'cFunctionFontStyle',
+  Actual: s.cFunctionFontStyle,
+  Expected: 'FunctionFontStyle'
+}, {
+  Name: 'cMessageFontStyle',
+  Actual: s.cMessageFontStyle,
+  Expected: 'MessageFontStyle'
+}, {
+  Name: 'cDataFontStyle',
+  Actual: s.cDataFontStyle,
+  Expected: 'DataFontStyle'
+}, {
+  Name: 'cModuleFontColor',
+  Actual: s.cModuleFontColor,
+  Expected: 'ModuleFontColor'
+}, {
+  Name: 'cFunctionFontColor',
+  Actual: s.cFunctionFontColor,
+  Expected: 'FunctionFontColor'
+}, {
+  Name: 'cMessageFontColor',
+  Actual: s.cMessageFontColor,
+  Expected: 'MessageFontColor'
+}, {
+  Name: 'cDataFontColor',
+  Actual: s.cDataFontColor,
+  Expected: 'DataFontColor'
+}, {
+  Name: 'cModuleFontBackgroundColor',
+  Actual: s.cModuleFontBackgroundColor,
+  Expected: 'ModuleFontBackgroundColor'
+}, {
+  Name: 'cFunctionFontBackgroundColor',
+  Actual: s.cFunctionFontBackgroundColor,
+  Expected: 'FunctionFontBackgroundColor'
+}, {
+  Name: 'cMessageFontBackgroundColor',
+  Actual: s.cMessageFontBackgroundColor,
+  Expected: 'MessageFontBackgroundColor'
+}, {
+  Name: 'cDataFontBackgroundColor',
+  Actual: s.cDataFontBackgroundColor,
+  Expected: 'DataFontBackgroundColor'
+}, // File Types
+{
+  Name: 'cCatia',
+  Actual: s.cCatia,
+  Expected: 'Catia'
+}, {
+  Name: 'cDocument',
+  Actual: s.cDocument,
+  Expected: 'Document'
+}, {
+  Name: 'cDocuments',
+  Actual: s.cDocuments,
+  Expected: 'Documents'
+}, {
+  Name: 'cDraft',
+  Actual: s.cDraft,
+  Expected: 'Draft'
+}, {
+  Name: 'cDWG',
+  Actual: s.cDWG,
+  Expected: 'DWG'
+}, {
+  Name: 'cHoops',
+  Actual: s.cHoops,
+  Expected: 'Hoops'
+}, {
+  Name: 'cHOOPS',
+  Actual: s.cHOOPS,
+  Expected: 'HOOPS'
+}, {
+  Name: 'cImage',
+  Actual: s.cImage,
+  Expected: 'Image'
+}, {
+  Name: 'cImages',
+  Actual: s.cImages,
+  Expected: 'Images'
+}, {
+  Name: 'cInventor',
+  Actual: s.cInventor,
+  Expected: 'Inventor'
+}, {
+  Name: 'cNeutral',
+  Actual: s.cNeutral,
+  Expected: 'Neutral'
+}, {
+  Name: 'cNX',
+  Actual: s.cNX,
+  Expected: 'NX'
+}, {
+  Name: 'cParasolid',
+  Actual: s.cParasolid,
+  Expected: 'Parasolid'
+}, {
+  Name: 'cProE',
+  Actual: s.cProE,
+  Expected: 'ProE'
+}, {
+  Name: 'cRhino',
+  Actual: s.cRhino,
+  Expected: 'Rhino'
+}, {
+  Name: 'cSolidEdge',
+  Actual: s.cSolidEdge,
+  Expected: 'SolidEdge'
+}, {
+  Name: 'cSolidWorks',
+  Actual: s.cSolidWorks,
+  Expected: 'SolidWorks'
+}, {
+  Name: 'cvrml',
+  Actual: s.cvrml,
+  Expected: 'vrml'
+}, {
+  Name: 'cVrml',
+  Actual: s.cVrml,
+  Expected: 'Vrml'
+}, {
+  Name: 'cVRML',
+  Actual: s.cVRML,
+  Expected: 'VRML'
+}, // Countires
+// TODO: Need to come back and generalize thse with constants re-use.
+{
+  Name: 'cAfghanistan',
+  Actual: s.cAfghanistan,
+  Expected: 'Afghanistan'
+}, {
+  Name: 'cAlbania',
+  Actual: s.cAlbania,
+  Expected: 'Albania'
+}, {
+  Name: 'cAlgeria',
+  Actual: s.cAlgeria,
+  Expected: 'Algeria'
+}, {
+  Name: 'cAndorra',
+  Actual: s.cAndorra,
+  Expected: 'Andorra'
+}, {
+  Name: 'cAngola',
+  Actual: s.cAngola,
+  Expected: 'Angola'
+}, {
+  Name: 'cAntigua',
+  Actual: s.cAntigua,
+  Expected: 'Antigua'
+}, {
+  Name: 'cArgentina',
+  Actual: s.cArgentina,
+  Expected: 'Argentina'
+}, {
+  Name: 'cArmenia',
+  Actual: s.cArmenia,
+  Expected: 'Armenia'
+}, {
+  Name: 'cAustralia',
+  Actual: s.cAustralia,
+  Expected: 'Australia'
+}, {
+  Name: 'cAustria',
+  Actual: s.cAustria,
+  Expected: 'Austria'
+}, {
+  Name: 'cAzerbaijan',
+  Actual: s.cAxerbaijan,
+  Expected: 'Axerbaijan'
+}, {
+  Name: 'cBahamas',
+  Actual: s.cBahamas,
+  Expected: 'Bahamas'
+}, {
+  Name: 'cBahrain',
+  Actual: s.cBahrain,
+  Expected: 'Bahrain'
+}, {
+  Name: 'cBangladesh',
+  Actual: s.cBangladesh,
+  Expected: 'Bangladesh'
+}, {
+  Name: 'cBarbados',
+  Actual: s.cBarbados,
+  Expected: 'Barbados'
+}, {
+  Name: 'cBarbuda',
+  Actual: s.cBarbuda,
+  Expected: 'Barbuda'
+}, {
+  Name: 'cBelarus',
+  Actual: s.cBelarus,
+  Expected: 'Belarus'
+}, {
+  Name: 'cBelgium',
+  Actual: s.cBelgium,
+  Expected: 'Belgium'
+}, {
+  Name: 'cBelize',
+  Actual: s.cBelize,
+  Expected: 'Belize'
+}, {
+  Name: 'cBenin',
+  Actual: s.cBenin,
+  Expected: 'Benin'
+}, {
+  Name: 'cBhutan',
+  Actual: s.cBhutan,
+  Expected: 'Bhutan'
+}, {
+  Name: 'cBolivia',
+  Actual: s.cBolivia,
+  Expected: 'Bolivia'
+}, {
+  Name: 'cBosnia',
+  Actual: s.cBosnia,
+  Expected: 'Bosnia'
+}, {
+  Name: 'cBotswana',
+  Actual: s.cBotswana,
+  Expected: 'Botswana'
+}, {
+  Name: 'cBrazil',
+  Actual: s.cBrazil,
+  Expected: 'Brazil'
+}, {
+  Name: 'cBrunei',
+  Actual: s.cBrunei,
+  Expected: 'Brunei'
+}, {
+  Name: 'cBulgaria',
+  Actual: s.cBulgaria,
+  Expected: 'Bulgaria'
+}, {
+  Name: 'cBurkinaFaso',
+  Actual: s.cBurkinaFaso,
+  Expected: 'BurkinaFaso'
+}, {
+  Name: 'cBurundi',
+  Actual: s.cBurundi,
+  Expected: 'Burundi'
+}, {
+  Name: 'cCotedlvoire',
+  Actual: s.cCotedlvoire,
+  Expected: 'Cotedlvoire'
+}, {
+  Name: 'cCaboVerde',
+  Actual: s.cCaboVerde,
+  Expected: 'CaboVerde'
+}, {
+  Name: 'cCambodia',
+  Actual: s.cCambodia,
+  Expected: 'Cambodia'
+}, {
+  Name: 'cCameroon',
+  Actual: s.cCameroon,
+  Expected: 'Cameroon'
+}, {
+  Name: 'cCanada',
+  Actual: s.cCanada,
+  Expected: 'Canada'
+}, {
+  Name: 'cCentralAfricanRepublic',
+  Actual: s.cCentralAfricanRepublic,
+  Expected: 'CentralAfricanRepublic'
+}, {
+  Name: 'cChad',
+  Actual: s.cChad,
+  Expected: 'Chad'
+}, {
+  Name: 'cChile',
+  Actual: s.cChile,
+  Expected: 'Chile'
+}, {
+  Name: 'cChina',
+  Actual: s.cChina,
+  Expected: 'China'
+}, {
+  Name: 'cColombia',
+  Actual: s.cColombia,
+  Expected: 'Colombia'
+}, {
+  Name: 'cComoros',
+  Actual: s.cComoros,
+  Expected: 'Comoros'
+}, {
+  Name: 'cCongo',
+  Actual: s.cCongo,
+  Expected: 'Congo'
+}, {
+  Name: 'cCostaRica',
+  Actual: s.cCostaRica,
+  Expected: 'CostaRica'
+}, {
+  Name: 'cCroatia',
+  Actual: s.cCroatia,
+  Expected: 'Croatia'
+}, {
+  Name: 'cCuba',
+  Actual: s.cCuba,
+  Expected: 'Cuba'
+}, {
+  Name: 'cCyprus',
+  Actual: s.cCyprus,
+  Expected: 'Cyprus'
+}, {
+  Name: 'cCzechia',
+  Actual: s.cCzechia,
+  Expected: 'Czechia'
+}, {
+  Name: 'cDemocraticRepublicOfTheCongo',
+  Actual: s.cDemocraticRepublicOfTheCongo,
+  Expected: 'DemocraticRepublicOfTheCongo'
+}, {
+  Name: 'cDenmark',
+  Actual: s.cDenmark,
+  Expected: 'Denmark'
+}, {
+  Name: 'cDjibouti',
+  Actual: s.cDjibouti,
+  Expected: 'Djibouti'
+}, {
+  Name: 'cDominica',
+  Actual: s.cDominica,
+  Expected: 'Dominica'
+}, {
+  Name: 'cDominicanRepublic',
+  Actual: s.cDominicanRepublic,
+  Expected: 'DominicanRepublic'
+}, {
+  Name: 'cEcuador',
+  Actual: s.cEcuador,
+  Expected: 'Ecuador'
+}, {
+  Name: 'cEgypt',
+  Actual: s.cEgypt,
+  Expected: 'Egypt'
+}, {
+  Name: 'cElSalvador',
+  Actual: s.cElSalvador,
+  Expected: 'ElSalvador'
+}, {
+  Name: 'cEquatorialGuinea',
+  Actual: s.cEquatorialGuinea,
+  Expected: 'EquatorialGuinea'
+}, {
+  Name: 'cEritrea',
+  Actual: s.cEritrea,
+  Expected: 'Eritrea'
+}, {
+  Name: 'cEstonia',
+  Actual: s.cEstonia,
+  Expected: 'Estonia'
+}, {
+  Name: 'cEswatini',
+  Actual: s.cEswatini,
+  Expected: 'Eswatini'
+}, // -- Formerly Swaziland
+{
+  Name: 'cEthiopia',
+  Actual: s.cEthiopia,
+  Expected: 'Ethiopia'
+}, {
+  Name: 'cFiji',
+  Actual: s.cFiji,
+  Expected: 'Fiji'
+}, {
+  Name: 'cFinland',
+  Actual: s.cFinland,
+  Expected: 'Finland'
+}, {
+  Name: 'cFrance',
+  Actual: s.cFrance,
+  Expected: 'France'
+}, {
+  Name: 'cGabon',
+  Actual: s.cGabon,
+  Expected: 'Gabon'
+}, {
+  Name: 'cGambia',
+  Actual: s.cGambia,
+  Expected: 'Gambia'
+}, {
+  Name: 'cGeorgia',
+  Actual: s.cGeorgia,
+  Expected: 'Georgia'
+}, {
+  Name: 'cGerman',
+  Actual: s.cGerman,
+  Expected: 'German'
+}, {
+  Name: 'cGermany',
+  Actual: s.cGermany,
+  Expected: 'Germany'
+}, {
+  Name: 'cGhana',
+  Actual: s.cGhana,
+  Expected: 'Ghana'
+}, {
+  Name: 'cGreece',
+  Actual: s.cGreece,
+  Expected: 'Greece'
+}, {
+  Name: 'cGrenada',
+  Actual: s.cGrenada,
+  Expected: 'Grenada'
+}, {
+  Name: 'cGuatemala',
+  Actual: s.cGuatemala,
+  Expected: 'Guatemala'
+}, {
+  Name: 'cGuinea',
+  Actual: s.cGuinea,
+  Expected: 'Guinea'
+}, {
+  Name: 'cGuineaBissau',
+  Actual: s.cGuineaBissau,
+  Expected: 'GuineaBissau'
+}, {
+  Name: 'cGuyana',
+  Actual: s.cGuyana,
+  Expected: 'Guyana'
+}, {
+  Name: 'cHaiti',
+  Actual: s.cHaiti,
+  Expected: 'Haiti'
+}, {
+  Name: 'cHerzegovina',
+  Actual: s.cHerzegovina,
+  Expected: 'Herzegovina'
+}, {
+  Name: 'cHolySee',
+  Actual: s.cHolySee,
+  Expected: 'HolySee'
+}, {
+  Name: 'cHonduras',
+  Actual: s.cHonduras,
+  Expected: 'Honduras'
+}, {
+  Name: 'cHungary',
+  Actual: s.cHungary,
+  Expected: 'Hungary'
+}, {
+  Name: 'cIceland',
+  Actual: s.cIceland,
+  Expected: 'Iceland'
+}, {
+  Name: 'cIndia',
+  Actual: s.cIndia,
+  Expected: 'India'
+}, {
+  Name: 'cIndonesia',
+  Actual: s.cIndonesia,
+  Expected: 'Indonesia'
+}, {
+  Name: 'cIran',
+  Actual: s.cIran,
+  Expected: 'Iran'
+}, {
+  Name: 'cIraq',
+  Actual: s.cIraq,
+  Expected: 'Iraq'
+}, {
+  Name: 'cIreland',
+  Actual: s.cIreland,
+  Expected: 'Ireland'
+}, {
+  Name: 'cIsrael',
+  Actual: s.cIsrael,
+  Expected: 'Israel'
+}, {
+  Name: 'cItaly',
+  Actual: s.cItaly,
+  Expected: 'Italy'
+}, {
+  Name: 'cJamaica',
+  Actual: s.cJamaica,
+  Expected: 'Jamaica'
+}, {
+  Name: 'cJapan',
+  Actual: s.cJapan,
+  Expected: 'Japan'
+}, {
+  Name: 'cJordan',
+  Actual: s.cJordan,
+  Expected: 'Jordan'
+}, {
+  Name: 'cKazakhstan',
+  Actual: s.cKazakhstan,
+  Expected: 'Kazakhstan'
+}, {
+  Name: 'cKenya',
+  Actual: s.cKenya,
+  Expected: 'Kenya'
+}, {
+  Name: 'cKiribati',
+  Actual: s.cKiribati,
+  Expected: 'Kiribati'
+}, {
+  Name: 'cKuwait',
+  Actual: s.cKuwait,
+  Expected: 'Kuwait'
+}, {
+  Name: 'cKyrgyzstan',
+  Actual: s.cKyrgyzstan,
+  Expected: 'Kyrgyzstan'
+}, {
+  Name: 'cLaos',
+  Actual: s.cLaos,
+  Expected: 'Laos'
+}, {
+  Name: 'cLatvia',
+  Actual: s.cLatvia,
+  Expected: 'Latvia'
+}, {
+  Name: 'cLebanon',
+  Actual: s.cLebanon,
+  Expected: 'Lebanon'
+}, {
+  Name: 'cLesotho',
+  Actual: s.cLesotho,
+  Expected: 'Lesotho'
+}, {
+  Name: 'cLiberia',
+  Actual: s.cLiberia,
+  Expected: 'Liberia'
+}, {
+  Name: 'cLibya',
+  Actual: s.cLibya,
+  Expected: 'Libya'
+}, {
+  Name: 'cLiechtenstein',
+  Actual: s.cLiechtenstein,
+  Expected: 'Liechtenstein'
+}, {
+  Name: 'cLithuania',
+  Actual: s.cLithuania,
+  Expected: 'Lithuania'
+}, {
+  Name: 'cLuxembourg',
+  Actual: s.cLuxembourg,
+  Expected: 'Luxembourg'
+}, {
+  Name: 'cMadagascar',
+  Actual: s.cMadagascar,
+  Expected: 'Madagascar'
+}, {
+  Name: 'cMalawi',
+  Actual: s.cMalawi,
+  Expected: 'Malawi'
+}, {
+  Name: 'cMalaysia',
+  Actual: s.cMalaysia,
+  Expected: 'Malaysia'
+}, {
+  Name: 'cMaldives',
+  Actual: s.cMaldives,
+  Expected: 'Maldives'
+}, {
+  Name: 'cMali',
+  Actual: s.cMali,
+  Expected: 'Mali'
+}, {
+  Name: 'cMalta',
+  Actual: s.cMalta,
+  Expected: 'Malta'
+}, {
+  Name: 'cMarshallIslands',
+  Actual: s.cMarshallIslands,
+  Expected: 'MarshallIslands'
+}, {
+  Name: 'cMauritania',
+  Actual: s.cMauritania,
+  Expected: 'Mauritania'
+}, {
+  Name: 'cMauritius',
+  Actual: s.cMauritius,
+  Expected: 'Mauritius'
+}, {
+  Name: 'cMexico',
+  Actual: s.cMexico,
+  Expected: 'Mexico'
+}, {
+  Name: 'cMicronesia',
+  Actual: s.cMicronesia,
+  Expected: 'Micronesia'
+}, {
+  Name: 'cMoldova',
+  Actual: s.cMoldova,
+  Expected: 'Moldova'
+}, {
+  Name: 'cMonaco',
+  Actual: s.cMonaco,
+  Expected: 'Monaco'
+}, {
+  Name: 'cMongolia',
+  Actual: s.cMongolia,
+  Expected: 'Mongolia'
+}, {
+  Name: 'cMontenegro',
+  Actual: s.cMontenegro,
+  Expected: 'Montenegro'
+}, {
+  Name: 'cMorocco',
+  Actual: s.cMorocco,
+  Expected: 'Morocco'
+}, {
+  Name: 'cMozambique',
+  Actual: s.cMozambique,
+  Expected: 'Mozambique'
+}, {
+  Name: 'cMyanmar',
+  Actual: s.cMyanmar,
+  Expected: 'Myanmar'
+}, {
+  Name: 'cNamibia',
+  Actual: s.cNamibia,
+  Expected: 'Namibia'
+}, {
+  Name: 'cNauru',
+  Actual: s.cNauru,
+  Expected: 'Nauru'
+}, {
+  Name: 'cNepal',
+  Actual: s.cNepal,
+  Expected: 'Nepal'
+}, {
+  Name: 'cNetherlands',
+  Actual: s.cNetherlands,
+  Expected: 'Netherlands'
+}, {
+  Name: 'cNewZealand',
+  Actual: s.cNewZealand,
+  Expected: 'NewZealand'
+}, {
+  Name: 'cNevis',
+  Actual: s.cNevis,
+  Expected: 'Nevis'
+}, {
+  Name: 'cNicaragua',
+  Actual: s.cNicaragua,
+  Expected: 'Nicaragua'
+}, {
+  Name: 'cNiger',
+  Actual: s.cNiger,
+  Expected: 'Niger'
+}, {
+  Name: 'cNigeria',
+  Actual: s.cNigeria,
+  Expected: 'Nigeria'
+}, {
+  Name: 'cNorthKorea',
+  Actual: s.cNorthKorea,
+  Expected: 'NorthKorea'
+}, {
+  Name: 'cNorthMacedonia',
+  Actual: s.cNorthMacedonia,
+  Expected: 'NorthMacedonia'
+}, {
+  Name: 'cNorway',
+  Actual: s.cNorway,
+  Expected: 'Norway'
+}, {
+  Name: 'cOman',
+  Actual: s.cOman,
+  Expected: 'Oman'
+}, {
+  Name: 'cPakistan',
+  Actual: s.cPakistan,
+  Expected: 'Pakistan'
+}, {
+  Name: 'cPalau',
+  Actual: s.cPalau,
+  Expected: 'Palau'
+}, {
+  Name: 'cPalestine',
+  Actual: s.cPalestine,
+  Expected: 'Palestine'
+}, {
+  Name: 'cPanama',
+  Actual: s.cPanama,
+  Expected: 'Panama'
+}, {
+  Name: 'cPapuaNewGuinea',
+  Actual: s.cPapuaNewGuinea,
+  Expected: 'PapuaNewGuinea'
+}, {
+  Name: 'cParaguay',
+  Actual: s.cParaguay,
+  Expected: 'Paraguay'
+}, {
+  Name: 'cPeru',
+  Actual: s.cPeru,
+  Expected: 'Peru'
+}, {
+  Name: 'cPhilippines',
+  Actual: s.cPhilippines,
+  Expected: 'Philippines'
+}, {
+  Name: 'cPoland',
+  Actual: s.cPoland,
+  Expected: 'Poland'
+}, {
+  Name: 'cPortugal',
+  Actual: s.cPortugal,
+  Expected: 'Portugal'
+}, {
+  Name: 'cPrincipe',
+  Actual: s.cPrincipe,
+  Expected: 'Principe'
+}, {
+  Name: 'cQatar',
+  Actual: s.cQatar,
+  Expected: 'Qatar'
+}, {
+  Name: 'cRomania',
+  Actual: s.cRomania,
+  Expected: 'Romania'
+}, {
+  Name: 'cRussia',
+  Actual: s.cRussia,
+  Expected: 'Russia'
+}, {
+  Name: 'cRwanda',
+  Actual: s.cRwanda,
+  Expected: 'Rwanda'
+}, {
+  Name: 'cSaintKitts',
+  Actual: s.cSaintKitts,
+  Expected: 'SaintKitts'
+}, {
+  Name: 'cSaintLucia',
+  Actual: s.cSaintLucia,
+  Expected: 'SaintLucia'
+}, {
+  Name: 'cSaintVincent',
+  Actual: s.cSaintVincent,
+  Expected: 'SaintVincent'
+}, {
+  Name: 'cSomoa',
+  Actual: s.cSomoa,
+  Expected: 'Somoa'
+}, {
+  Name: 'cSanMarino',
+  Actual: s.cSanMarino,
+  Expected: 'SanMarino'
+}, {
+  Name: 'cSaoTome',
+  Actual: s.cSaoTome,
+  Expected: 'SaoTome'
+}, {
+  Name: 'cSaudiArabia',
+  Actual: s.cSaudiArabia,
+  Expected: 'SaudiArabia'
+}, {
+  Name: 'cSenegal',
+  Actual: s.cSenegal,
+  Expected: 'Senegal'
+}, {
+  Name: 'cSerbia',
+  Actual: s.cSerbia,
+  Expected: 'Serbia'
+}, {
+  Name: 'cSeychelles',
+  Actual: s.cSeychelles,
+  Expected: 'Seychelles'
+}, {
+  Name: 'cSierraLeone',
+  Actual: s.cSierraLeone,
+  Expected: 'SierraLeone'
+}, {
+  Name: 'cSingapore',
+  Actual: s.cSingapore,
+  Expected: 'Singapore'
+}, {
+  Name: 'cSlovakia',
+  Actual: s.cSlovakia,
+  Expected: 'Slovakia'
+}, {
+  Name: 'cSlovenia',
+  Actual: s.cSlovenia,
+  Expected: 'Slovenia'
+}, {
+  Name: 'cSolomonIslands',
+  Actual: s.cSolomonIslands,
+  Expected: 'SolomonIslands'
+}, {
+  Name: 'cSomalia',
+  Actual: s.cSomalia,
+  Expected: 'Somalia'
+}, {
+  Name: 'cSouthAfrica',
+  Actual: s.cSouthAfrica,
+  Expected: 'SouthAfrica'
+}, {
+  Name: 'cSouthKorea',
+  Actual: s.cSouthKorea,
+  Expected: 'SouthKorea'
+}, {
+  Name: 'cSouthSudan',
+  Actual: s.cSouthSudan,
+  Expected: 'SouthSudan'
+}, {
+  Name: 'cSpain',
+  Actual: s.cSpain,
+  Expected: 'Spain'
+}, {
+  Name: 'cSriLanka',
+  Actual: s.cSriLanka,
+  Expected: 'SriLanka'
+}, {
+  Name: 'cSudan',
+  Actual: s.cSudan,
+  Expected: 'Sudan'
+}, {
+  Name: 'cSuriname',
+  Actual: s.cSuriname,
+  Expected: 'Suriname'
+}, {
+  Name: 'cSweden',
+  Actual: s.cSweden,
+  Expected: 'Sweden'
+}, {
+  Name: 'cSwitzerland',
+  Actual: s.cSwitzerland,
+  Expected: 'Switzerland'
+}, {
+  Name: 'cSyria',
+  Actual: s.cSyria,
+  Expected: 'Syria'
+}, {
+  Name: 'cTajikistan',
+  Actual: s.cTajikistan,
+  Expected: 'Tajikistan'
+}, {
+  Name: 'cTanzania',
+  Actual: s.cTanzania,
+  Expected: 'Tanzania'
+}, {
+  Name: 'cThailand',
+  Actual: s.cThailand,
+  Expected: 'Thailand'
+}, {
+  Name: 'cTimorLeste',
+  Actual: s.cTimorLeste,
+  Expected: 'TimorLeste'
+}, {
+  Name: 'cTogo',
+  Actual: s.cTogo,
+  Expected: 'Togo'
+}, {
+  Name: 'cTonga',
+  Actual: s.cTonga,
+  Expected: 'Tonga'
+}, {
+  Name: 'cTrinidadAndTabago',
+  Actual: s.cTrinidadAndTabago,
+  Expected: 'TrinidadAndTabago'
+}, {
+  Name: 'cTunisia',
+  Actual: s.cTunisia,
+  Expected: 'Tunisia'
+}, {
+  Name: 'cTurkey',
+  Actual: s.cTurkey,
+  Expected: 'Turkey'
+}, {
+  Name: 'cTurkmenistan',
+  Actual: s.cTurkmenistan,
+  Expected: 'Turkmenistan'
+}, {
+  Name: 'cTuvalu',
+  Actual: s.cTuvalu,
+  Expected: 'Tuvalu'
+}, {
+  Name: 'cUganda',
+  Actual: s.cUganda,
+  Expected: 'Uganda'
+}, {
+  Name: 'cUkraine',
+  Actual: s.cUkraine,
+  Expected: 'Ukraine'
+}, {
+  Name: 'cUnitedArabEmirates',
+  Actual: s.cUnitedArabEmirates,
+  Expected: 'UnitedArabEmirates'
+}, {
+  Name: 'cUnitedKingdom',
+  Actual: s.cUnitedKingdom,
+  Expected: 'UnitedKingdom'
+}, {
+  Name: 'cUnitedStatesOfAmerica',
+  Actual: s.cUnitedStatesOfAmerica,
+  Expected: 'UnitedStatesOfAmerica'
+}, {
+  Name: 'cUruguay',
+  Actual: s.cUruguay,
+  Expected: 'Uruguay'
+}, {
+  Name: 'cUzbekistan',
+  Actual: s.cUzbekistan,
+  Expected: 'Uzbekistan'
+}, {
+  Name: 'cVanuatu',
+  Actual: s.cVanuatu,
+  Expected: 'Vanuatu'
+}, {
+  Name: 'cVenezuela',
+  Actual: s.cVenezuela,
+  Expected: 'Venezuela'
+}, {
+  Name: 'cVietnam',
+  Actual: s.cVietnam,
+  Expected: 'Vietnam'
+}, {
+  Name: 'cYemen',
+  Actual: s.cYemen,
+  Expected: 'Yemen'
+}, {
+  Name: 'cZambia',
+  Actual: s.cZambia,
+  Expected: 'Zambia'
+}, {
+  Name: 'cZimbabwe',
+  Actual: s.cZimbabwe,
+  Expected: 'Zimbabwe'
+}, // Languages
+{
+  Name: 'cChinese',
+  Actual: s.cChinese,
+  Expected: 'Chinese'
+}, {
+  Name: 'cChineseSimplified',
+  Actual: s.cChineseSimplified,
+  Expected: 'ChineseSimplified'
+}, {
+  Name: 'cChineseTraditional',
+  Actual: s.cChineseTraditional,
+  Expected: 'ChineseTraditional'
+}, {
+  Name: 'cCzech',
+  Actual: s.cCzech,
+  Expected: 'Czech'
+}, {
+  Name: 'cEnglish',
+  Actual: s.cEnglish,
+  Expected: 'English'
+}, {
+  Name: 'cFrench',
+  Actual: s.cFrench,
+  Expected: 'French'
+}, // {Name: 'cGerman', Actual: s.   s.cGe + s.cr + cman, Expected: 'German // Defined above in the countries section
+{
+  Name: 'cHungarian',
+  Actual: s.cHungarian,
+  Expected: 'Hungarian'
+}, {
+  Name: 'cItalian',
+  Actual: s.cItalian,
+  Expected: 'Italian'
+}, {
+  Name: 'cJapanese',
+  Actual: s.cJapanese,
+  Expected: 'Japanese'
+}, {
+  Name: 'cKorean',
+  Actual: s.cKorean,
+  Expected: 'Korean'
+}, {
+  Name: 'cMiscellaneous',
+  Actual: s.cMiscellaneous,
+  Expected: 'Miscellaneous'
+}, {
+  Name: 'cPolish',
+  Actual: s.cPolish,
+  Expected: 'Polish'
+}, {
+  Name: 'cPortuguese',
+  Actual: s.cPortuguese,
+  Expected: 'Portuguese'
+}, {
+  Name: 'cRussian',
+  Actual: s.cRussian,
+  Expected: 'Russian'
+}, {
+  Name: 'cSpanish',
+  Actual: s.cSpanish,
+  Expected: 'Spanish'
+}, // UI Element Types
+{
+  Name: 'cButton',
+  Actual: s.cButton,
+  Expected: 'Button'
+}, // Environment Variables
+{
+  Name: 'cQA',
+  Actual: s.cQA,
+  Expected: 'QA'
+}, {
+  Name: 'cDEV',
+  Actual: s.cDEV,
+  Expected: 'DEV'
+}, {
+  Name: 'cProd',
+  Actual: s.cProd,
+  Expected: 'Prod'
+}, {
+  Name: 'cPROD',
+  Actual: s.cPROD,
+  Expected: 'PROD'
+}, {
+  Name: 'cPre',
+  Actual: s.cPre,
+  Expected: 'Pre'
+}, {
+  Name: 'cPRE',
+  Actual: s.cPRE,
+  Expected: 'PRE'
+}, {
+  Name: 'cPreProd',
+  Actual: s.cPreProd,
+  Expected: 'PreProd'
+}, {
+  Name: 'cPREPROD',
+  Actual: s.cPREPROD,
+  Expected: 'PREPROD'
+}, // Key Combinations
+{
+  Name: 'cctrl_a',
+  Actual: s.cctrl_a,
+  Expected: 'ctrl+a'
+}, {
+  Name: 'cctrl_b',
+  Actual: s.cctrl_b,
+  Expected: 'ctrl+b'
+}, {
+  Name: 'cctrl_c',
+  Actual: s.cctrl_c,
+  Expected: 'ctrl+c'
+}, {
+  Name: 'cctrl_d',
+  Actual: s.cctrl_d,
+  Expected: 'ctrl+d'
+}, {
+  Name: 'cctrl_e',
+  Actual: s.cctrl_e,
+  Expected: 'ctrl+e'
+}, {
+  Name: 'cctrl_f',
+  Actual: s.cctrl_f,
+  Expected: 'ctrl+f'
+}, {
+  Name: 'cctrl_g',
+  Actual: s.cctrl_g,
+  Expected: 'ctrl+g'
+}, {
+  Name: 'cctrl_h',
+  Actual: s.cctrl_h,
+  Expected: 'ctrl+h'
+}, {
+  Name: 'cctrl_i',
+  Actual: s.cctrl_i,
+  Expected: 'ctrl+i'
+}, {
+  Name: 'cctrl_j',
+  Actual: s.cctrl_j,
+  Expected: 'ctrl+j'
+}, {
+  Name: 'cctrl_k',
+  Actual: s.cctrl_k,
+  Expected: 'ctrl+k'
+}, {
+  Name: 'cctrl_l',
+  Actual: s.cctrl_l,
+  Expected: 'ctrl+l'
+}, {
+  Name: 'cctrl_m',
+  Actual: s.cctrl_m,
+  Expected: 'ctrl+m'
+}, {
+  Name: 'cctrl_n',
+  Actual: s.cctrl_n,
+  Expected: 'ctrl+n'
+}, {
+  Name: 'cctrl_o',
+  Actual: s.cctrl_o,
+  Expected: 'ctrl+o'
+}, {
+  Name: 'cctrl_p',
+  Actual: s.cctrl_p,
+  Expected: 'ctrl+p'
+}, {
+  Name: 'cctrl_q',
+  Actual: s.cctrl_q,
+  Expected: 'ctrl+q'
+}, {
+  Name: 'cctrl_r',
+  Actual: s.cctrl_r,
+  Expected: 'ctrl+r'
+}, {
+  Name: 'cctrl_s',
+  Actual: s.cctrl_s,
+  Expected: 'ctrl+s'
+}, {
+  Name: 'cctrl_t',
+  Actual: s.cctrl_t,
+  Expected: 'ctrl+t'
+}, {
+  Name: 'cctrl_u',
+  Actual: s.cctrl_u,
+  Expected: 'ctrl+u'
+}, {
+  Name: 'cctrl_v',
+  Actual: s.cctrl_v,
+  Expected: 'ctrl+v'
+}, {
+  Name: 'cctrl_w',
+  Actual: s.cctrl_w,
+  Expected: 'ctrl+w'
+}, {
+  Name: 'cctrl_x',
+  Actual: s.cctrl_x,
+  Expected: 'ctrl+x'
+}, {
+  Name: 'cctrl_y',
+  Actual: s.cctrl_y,
+  Expected: 'ctrl+y'
+}, {
+  Name: 'cctrl_z',
+  Actual: s.cctrl_z,
+  Expected: 'ctrl+z'
+}, {
+  Name: 'cApplicationName',
+  Actual: s.cApplicationName,
+  Expected: 'ApplicationName'
+}, {
+  Name: 'cApplicationRootPath',
+  Actual: s.cApplicationRootPath,
+  Expected: 'ApplicationRootPath'
+}, {
+  Name: 'cApplicationCleanedRootPath',
+  Actual: s.cApplicationCleanedRootPath,
+  Expected: 'ApplicationCleanedRootPath'
+}, {
+  Name: 'cConfigurationPath',
+  Actual: s.cConfigurationPath,
+  Expected: 'ConfigurationPath'
+}, {
+  Name: 'cApplicationVersionNumber',
+  Actual: s.cApplicationVersionNumber,
+  Expected: 'ApplicationVersionNumber'
+}, {
+  Name: 'cApplicationDescription',
+  Actual: s.cApplicationDescription,
+  Expected: 'ApplicationDescription'
+}, {
+  Name: 'cDataPath',
+  Actual: s.cDataPath,
+  Expected: 'DataPath'
+}, {
+  Name: 'cCtempPath',
+  Actual: s.cCtempPath,
+  Expected: 'c:/temp/'
+}, {
+  Name: 'cPageDataPath',
+  Actual: s.cPageDataPath,
+  Expected: 'PageDataPath'
+}, {
+  Name: 'cWorkflowDataPath',
+  Actual: s.cWorkflowDataPath,
+  Expected: 'WorkflowDataPath'
+}, {
+  Name: 'cKeywordsDataPath',
+  Actual: s.cKeywordsDataPath,
+  Expected: 'KeywordsDataPath'
+}, {
+  Name: 'cLocatorsDataPath',
+  Actual: s.cLocatorsDataPath,
+  Expected: 'LocatorsDataPath'
+}, {
+  Name: 'cclientRulesLibrary',
+  Actual: s.cclientRulesLibrary,
+  Expected: 'clientRulesLibrary'
+}, {
+  Name: 'cCommandQueue',
+  Actual: s.cCommandQueue,
+  Expected: 'CommandQueue'
+}, {
+  Name: 'cConstantsValidationData',
+  Actual: s.cConstantsValidationData,
+  Expected: 'ConstantsValidationData'
+}, {
+  Name: 'cBasicConstantsValidation',
+  Actual: s.cBasicConstantsValidation,
+  Expected: 'BasicConstantsValidation'
+}, {
+  Name: 'cColorConstantsValidation',
+  Actual: s.cColorConstantsValidation,
+  Expected: 'ColorConstantsValidation'
+}, {
+  Name: 'cElementConstantsValidation',
+  Actual: s.cElementConstantsValidation,
+  Expected: 'ElementConstantsValidation'
+}, {
+  Name: 'cGenericConstantsValidation',
+  Actual: s.cGenericConstantsValidation,
+  Expected: 'GenericConstantsValidation'
+}, {
+  Name: 'cIsotopeConstantsValidation',
+  Actual: s.cIsotopeConstantsValidation,
+  Expected: 'IsotopeConstantsValidation'
+}, {
+  Name: 'cNumericConstantsValidation',
+  Actual: s.cNumericConstantsValidation,
+  Expected: 'NumericConstantsValidation'
+}, {
+  Name: 'cPhonicsConstantsValidation',
+  Actual: s.cPhonicsConstantsValidation,
+  Expected: 'PhonicsConstantsValidation'
+}, {
+  Name: 'cShapeConstantsValidation',
+  Actual: s.cShapeConstantsValidation,
+  Expected: 'ShapeConstantsValidation'
+}, {
+  Name: 'cSystemConstantsValidation',
+  Actual: s.cSystemConstantsValidation,
+  Expected: 'SystemConstantsValidation'
+}, {
+  Name: 'cUnitsConstantsValidation',
+  Actual: s.cUnitsConstantsValidation,
+  Expected: 'UnitsConstantsValidation'
+}, {
+  Name: 'cWordConstantsValidation',
+  Actual: s.cWordConstantsValidation,
+  Expected: 'WordConstantsValidation'
+}, // Configuration Settings
+{
+  Name: 'cArgumentDrivenInterface',
+  Actual: s.cArgumentDrivenInterface,
+  Expected: 'ArgumentDrivenInterface'
+}, {
+  Name: 'cFigletFont',
+  Actual: s.cFigletFont,
+  Expected: 'FigletFont'
+}, {
+  Name: 'cPrimaryCommandDelimiter',
+  Actual: s.cPrimaryCommandDelimiter,
+  Expected: 'PrimaryCommandDelimiter'
+}, {
+  Name: 'cSecondaryCommandDelimiter',
+  Actual: s.cSecondaryCommandDelimiter,
+  Expected: 'SecondaryCommandDelimiter'
+}, {
+  Name: 'cTertiaryCommandDelimiter',
+  Actual: s.cTertiaryCommandDelimiter,
+  Expected: 'TertiaryCommandDelimiter'
+}, {
+  Name: 'cEnableBusinessRuleOutput',
+  Actual: s.cEnableBusinessRuleOutput,
+  Expected: 'EnableBusinessRuleOutput'
+}, {
+  Name: 'cEnableBusinessRulePerformanceMetrics',
+  Actual: s.cEnableBusinessRulePerformanceMetrics,
+  Expected: 'EnableBusinessRulePerformanceMetrics'
+}, {
+  Name: 'cEnableCommandPerformanceMetrics',
+  Actual: s.cEnableCommandPerformanceMetrics,
+  Expected: 'EnableCommandPerformanceMetrics'
+}, {
+  Name: 'cEnableConstantsValidation',
+  Actual: s.cEnableConstantsValidation,
+  Expected: 'EnableConstantsValidation'
+}, // Test Time Tracking
+{
+  Name: 'cBeginDateTimeStamp',
+  Actual: s.cBeginDateTimeStamp,
+  Expected: 'BeginDateTimeStamp'
+}, {
+  Name: 'cEndDateTimeStamp',
+  Actual: s.cEndDateTimeStamp,
+  Expected: 'EndDateTimeStamp'
+}, {
+  Name: 'cItemsIndividuallySynch',
+  Actual: s.cItemsIndividuallySynch,
+  Expected: 'ItemsIndividuallySynch'
+}, {
+  Name: 'cTimeStampVariableName',
+  Actual: s.cTimeStampVariableName,
+  Expected: 'TimeStampVariableName'
+}, {
+  Name: 'cBeginTimeStampVariableName',
+  Actual: s.cBeginTimeStampVariableName,
+  Expected: 'BeginTimeStampVariableName'
+}, {
+  Name: 'cEndTimeStampVariableName',
+  Actual: s.cEndTimeStampVariableName,
+  Expected: 'EndTimeStampVariableName'
+}, {
+  Name: 'cBusinessRulePerformanceTrackingStack',
+  Actual: s.cBusinessRulePerformanceTrackingStack,
+  Expected: 'BusinessRulePerformanceTrackingStack'
+}, {
+  Name: 'cBusinessRuleNamesPerformanceTrackingStack',
+  Actual: s.cBusinessRuleNamesPerformanceTrackingStack,
+  Expected: 'BusinessRuleNamesPerformanceTrackingStack'
+}, {
+  Name: 'cBusinessRulesPerformanceAnalysisStack',
+  Actual: s.cBusinessRulesPerformanceAnalysisStack,
+  Expected: 'BusinessRulesPerformanceAnalysisStack'
+}, {
+  Name: 'cClearBusinessRulesPerformanceDataAfterAnalysis',
+  Actual: s.cClearBusinessRulesPerformanceDataAfterAnalysis,
+  Expected: 'ClearBusinessRulesPerformanceDataAfterAnalysis'
+}, {
+  Name: 'cCommandPerformanceTrackingStack',
+  Actual: s.cCommandPerformanceTrackingStack,
+  Expected: 'CommandPerformanceTrackingStack'
+}, {
+  Name: 'cCommandNamesPerformanceTrackingStack',
+  Actual: s.cCommandNamesPerformanceTrackingStack,
+  Expected: 'CommandNamesPerformanceTrackingStack'
+}, {
+  Name: 'cCommandsPerformanceAnalysisStack',
+  Actual: s.cCommandsPerformanceAnalysisStack,
+  Expected: 'CommandsPerformanceAnalysisStack'
+}, {
+  Name: 'cClearCommandPerformanceDataAfterAnalysis',
+  Actual: s.cClearCommandPerformanceDataAfterAnalysis,
+  Expected: 'ClearCommandPerformanceDataAfterAnalysis'
+}, // Business Rules
+{
+  Name: 'cecho',
+  Actual: s.cecho,
+  Expected: 'echo'
+}, {
+  Name: 'cEcho',
+  Actual: s.cEcho,
+  Expected: 'Echo'
+}, // ********************************
+// StringParsing rules in order
+// ********************************
+{
+  Name: 'cstringToBoolean',
+  Actual: s.cstringToBoolean,
+  Expected: 'stringToBoolean'
+}, {
+  Name: 'cstringToDataType',
+  Actual: s.cstringToDataType,
+  Expected: 'stringToDataType'
+}, {
+  Name: 'cdetermineObjectDataType',
+  Actual: s.cdetermineObjectDataType,
+  Expected: 'determineObjectDataType'
+}, {
+  Name: 'cisBoolean',
+  Actual: s.cisBoolean,
+  Expected: 'isBoolean'
+}, {
+  Name: 'cisInteger',
+  Actual: s.cisInteger,
+  Expected: 'isInteger'
+}, {
+  Name: 'cisFloat',
+  Actual: s.cisFloat,
+  Expected: 'isFloat'
+}, {
+  Name: 'cisString',
+  Actual: s.cisString,
+  Expected: 'isString'
+}, {
+  Name: 'csingleQuoteSwapAfterEquals',
+  Actual: s.csingleQuoteSwapAfterEquals,
+  Expected: 'singleQuoteSwapAfterEquals'
+}, {
+  Name: 'cswapForwardSlashToBackSlash',
+  Actual: s.cswapForwardSlashToBackSlash,
+  Expected: 'swapForwadSlashToBackSlash'
+}, {
+  Name: 'cswapBackSlashToForwardSlash',
+  Actual: s.cswapBackSlashToForwardSlash,
+  Expected: 'swapBackSlashToForwardSlash'
+}, {
+  Name: 'cswapDoubleForwardSlashToSingleForwardSlash',
+  Actual: s.cswapDoubleForwardSlashToSingleForwardSlash,
+  Expected: 'swapDoubleForwardSlashToSingleForwardSlash'
+}, {
+  Name: 'cswapDoubleBackSlashToSingleBackSlash',
+  Actual: s.cswapDoubleBackSlashToSingleBackSlash,
+  Expected: 'swapDoubleBackSlashToSingleBackSlash'
+}, {
+  Name: 'cgetUserNameFromEmail',
+  Actual: s.cgetUserNameFromEmail,
+  Expected: 'getUserNameFromEmail'
+}, {
+  Name: 'creplaceSpacesWithPlus',
+  Actual: s.creplaceSpacesWithPlus,
+  Expected: 'replaceSpacesWithPlus'
+}, {
+  Name: 'creplaceColonWithUnderscore',
+  Actual: s.creplaceColonWithUnderscore,
+  Expected: 'replaceColonWithUnderscore'
+}, {
+  Name: 'creplaceCharacterWithCharacter',
+  Actual: s.creplaceCharacterWithCharacter,
+  Expected: 'replaceCharacterWithCharacter'
+}, {
+  Name: 'ccleanCarriageReturnFromString',
+  Actual: s.ccleanCarriageReturnFromString,
+  Expected: 'cleanCarriageReturnFromString'
+}, {
+  Name: 'cconvertStringToLowerCase',
+  Actual: s.cconvertStringToLowerCase,
+  Expected: 'convertStringToLowerCase'
+}, {
+  Name: 'cconvertStringToUpperCase',
+  Actual: s.cconvertStringToUpperCase,
+  Expected: 'convertStringToUpperCase'
+}, {
+  Name: 'cgetFileNameFromPath',
+  Actual: s.cgetFileNameFromPath,
+  Expected: 'getFileNameFromPath'
+}, {
+  Name: 'cgetFileExtension',
+  Actual: s.cgetFileExtension,
+  Expected: 'getFileExtension'
+}, {
+  Name: 'cremoveDotFromFileExtension',
+  Actual: s.cremoveDotFromFileExtension,
+  Expected: 'removeDotFromFileExtension'
+}, {
+  Name: 'cremoveFileExtensionFromFileName',
+  Actual: s.cremoveFileExtensionFromFileName,
+  Expected: 'removeFileExtensionFromFileName'
+}, {
+  Name: 'cgetValueFromAssignmentOperationString',
+  Actual: s.cgetValueFromAssignmentOperationString,
+  Expected: 'getValueFromAssignmentOperationString'
+}, {
+  Name: 'caggregateNumericalDifferenceBetweenTwoStrings',
+  Actual: s.caggregateNumericalDifferenceBetweenTwoStrings,
+  Expected: 'aggregateNumericalDifferenceBetweenTwoStrings'
+}, {
+  Name: 'cconvertCamelCaseStringToArray',
+  Actual: s.cconvertCamelCaseStringToArray,
+  Expected: 'convertCamelCaseStringToArray'
+}, {
+  Name: 'cconvertArrayToCamelCaseString',
+  Actual: s.cconvertArrayToCamelCaseString,
+  Expected: 'convertArrayToCamelCaseString'
+}, {
+  Name: 'cmapWordToCamelCaseWord',
+  Actual: s.cmapWordToCamelCaseWord,
+  Expected: 'mapWordToCamelCaseWord'
+}, {
+  Name: 'csimplifyAndConsolidateString',
+  Actual: s.csimplifyAndConsolidateString,
+  Expected: 'simplifyAndConsolidateString'
+}, {
+  Name: 'ccompareSimplifiedAndConsolidatedStrings',
+  Actual: s.ccompareSimplifiedAndConsolidatedStrings,
+  Expected: 'compareSimplifiedAndConsolidatedStrings'
+}, {
+  Name: 'cdoesArrayContainLowerCaseConsolidatedString',
+  Actual: s.cdoesArrayContainLowerCaseConsolidatedString,
+  Expected: 'doesArrayContainLowerCaseConsolidatedString'
+}, {
+  Name: 'cdoesArrayContainCharacter',
+  Actual: s.cdoesArrayContainCharacter,
+  Expected: 'doesArrayContainCharacter'
+}, {
+  Name: 'cremoveCharacterFromArray',
+  Actual: s.cremoveCharacterFromArray,
+  Expected: 'removeCharacterFromArray'
+}, {
+  Name: 'cascertainMatchingFilenames',
+  Actual: s.cascertainMatchingFilenames,
+  Expected: 'ascertainMatchingFilenames'
+}, {
+  Name: 'cdoesArrayContainFilename',
+  Actual: s.cdoesArrayContainFilename,
+  Expected: 'doesArrayContainFilename'
+}, {
+  Name: 'cgetDataCatagoryFromDataContextName',
+  Actual: s.cgetDataCatagoryFromDataContextName,
+  Expected: 'getDataCatagoryFromDataContextName'
+}, {
+  Name: 'cgetDataCatagoryDetailNameFromDataContextName',
+  Actual: s.cgetDataCatagoryDetailNameFromDataContextName,
+  Expected: 'getDataCatagoryDetailNameFromDataContextName'
+}, {
+  Name: 'cgetKeywordNameFromDataContextName',
+  Actual: s.cgetKeywordNameFromDataContextName,
+  Expected: 'getKeywordNameFromDataContextName'
+}, {
+  Name: 'cparseSystemRootPath',
+  Actual: s.cparseSystemRootPath,
+  Expected: 'parseSystemRootPath'
+}, {
+  Name: 'creplaceDoublePercentWithMessage',
+  Actual: s.creplaceDoublePercentWithMessage,
+  Expected: 'replaceDoublePercentWithMessage'
+}, {
+  Name: 'cremoveXnumberOfFoldersFromEndOfPath',
+  Actual: s.cremoveXnumberOfFoldersFromEndOfPath,
+  Expected: 'removeXnumberOfFoldersFromEndOfPath'
+}, {
+  Name: 'cgetFirstTopLevelFolderFromPath',
+  Actual: s.cgetFirstTopLevelFolderFromPath,
+  Expected: 'getFirstTopLevelFolderFromPath'
+}, {
+  Name: 'cisOdd',
+  Actual: s.cisOdd,
+  Expected: 'isOdd'
+}, {
+  Name: 'cisEven',
+  Actual: s.cisEven,
+  Expected: 'isEven'
+}, {
+  Name: 'creplaceCharacterAtIndex',
+  Actual: s.creplaceCharacterAtIndex,
+  Expected: 'replaceCharacterAtIndex'
+}, // *********************************
+// StringGeneration rules in order
+// *********************************
+{
+  Name: 'cgenerateRandomMixedCaseTextByLength1',
+  Actual: s.cgenerateRandomMixedCaseTextByLength1,
+  Expected: 'generateRandomMixedCaseTextByLength1'
+}, {
+  Name: 'cgenerateRandomMixedCaseTextByLength2',
+  Actual: s.cgenerateRandomMixedCaseTextByLength2,
+  Expected: 'generateRandomMixedCaseTextByLength2'
+}, {
+  Name: 'cgenerateRandomUpperCaseTextByLength1',
+  Actual: s.cgenerateRandomUpperCaseTextByLength1,
+  Expected: 'generateRandomUpperCaseTextByLength1'
+}, {
+  Name: 'cgenerateRandomUpperCaseTextByLength2',
+  Actual: s.cgenerateRandomUpperCaseTextByLength2,
+  Expected: 'generateRandomUpperCaseTextByLength2'
+}, {
+  Name: 'cgenerateRandomLowerCaseTextByLength1',
+  Actual: s.cgenerateRandomLowerCaseTextByLength1,
+  Expected: 'generateRandomLowerCaseTextByLength1'
+}, {
+  Name: 'cgenerateRandomLowerCaseTextByLength2',
+  Actual: s.cgenerateRandomLowerCaseTextByLength2,
+  Expected: 'generateRandomLowerCaseTextByLength2'
+}, {
+  Name: 'cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1',
+  Actual: s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1,
+  Expected: 'generateRandomMixedCaseTextWithSpecialCharactersByLength1'
+}, {
+  Name: 'cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2',
+  Actual: s.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2,
+  Expected: 'generateRandomMixedCaseTextWithSpecialCharactersByLength2'
+}, {
+  Name: 'cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1',
+  Actual: s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1,
+  Expected: 'generateRandomUpperCaseTextWithSpecialCharactersByLength1'
+}, {
+  Name: 'cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2',
+  Actual: s.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2,
+  Expected: 'generateRandomUpperCaseTextWithSpecialCharactersByLength2'
+}, {
+  Name: 'cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1',
+  Actual: s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1,
+  Expected: 'generateRandomLowerCaseTextWithSpecialCharactersByLength1'
+}, {
+  Name: 'cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2',
+  Actual: s.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2,
+  Expected: 'generateRandomLowerCaseTextWithSpecialCharactersByLength2'
+}, {
+  Name: 'cgenerateRandomMixedCaseAlphaNumericCodeByLength1',
+  Actual: s.cgenerateRandomMixedCaseAlphaNumericCodeByLength1,
+  Expected: 'generateRandomMixedCaseAlphaNumericCodeByLength1'
+}, {
+  Name: 'cgenerateRandomMixedCaseAlphaNumericCodeByLength2',
+  Actual: s.cgenerateRandomMixedCaseAlphaNumericCodeByLength2,
+  Expected: 'generateRandomMixedCaseAlphaNumericCodeByLength2'
+}, {
+  Name: 'cgenerateRandomUpperCaseAlphaNumericCodeByLength1',
+  Actual: s.cgenerateRandomUpperCaseAlphaNumericCodeByLength1,
+  Expected: 'generateRandomUpperCaseAlphaNumericCodeByLength1'
+}, {
+  Name: 'cgenerateRandomUpperCaseAlphaNumericCodeByLength2',
+  Actual: s.cgenerateRandomUpperCaseAlphaNumericCodeByLength2,
+  Expected: 'generateRandomUpperCaseAlphaNumericCodeByLength2'
+}, {
+  Name: 'cgenerateRandomLowerCaseAlphaNumericCodeByLength1',
+  Actual: s.cgenerateRandomLowerCaseAlphaNumericCodeByLength1,
+  Expected: 'generateRandomLowerCaseAlphaNumericCodeByLength1'
+}, {
+  Name: 'cgenerateRandomLowerCaseAlphaNumericCodeByLength2',
+  Actual: s.cgenerateRandomLowerCaseAlphaNumericCodeByLength2,
+  Expected: 'generateRandomLowerCaseAlphaNumericCodeByLength2'
+}, {
+  Name: 'cgenerateRandomNumericCodeByLength1',
+  Actual: s.cgenerateRandomNumericCodeByLength1,
+  Expected: 'generateRandomNumericCodeByLength1'
+}, {
+  Name: 'cgenerateRandomNumericCodeByLength2',
+  Actual: s.cgenerateRandomNumericCodeByLength2,
+  Expected: 'generateRandomNumericCodeByLength2'
+}, {
+  Name: 'cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1',
+  Actual: s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1,
+  Expected: 'generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1'
+}, {
+  Name: 'cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2',
+  Actual: s.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2,
+  Expected: 'generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2'
+}, {
+  Name: 'cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1',
+  Actual: s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1,
+  Expected: 'generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1'
+}, {
+  Name: 'cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2',
+  Actual: s.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2,
+  Expected: 'generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2'
+}, {
+  Name: 'cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1',
+  Actual: s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1,
+  Expected: 'generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1'
+}, {
+  Name: 'cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2',
+  Actual: s.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2,
+  Expected: 'generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2'
+}, {
+  Name: 'cgenerateRandomSpecialCharacterCodeByLength1',
+  Actual: s.cgenerateRandomSpecialCharacterCodeByLength1,
+  Expected: 'generateRandomSpecialCharacterCodeByLength1'
+}, {
+  Name: 'cgenerateRandomSpecialCharacterCodeByLength2',
+  Actual: s.cgenerateRandomSpecialCharacterCodeByLength2,
+  Expected: 'generateRandomSpecialCharacterCodeByLength2'
+}, {
+  Name: 'cgenerateValidEmail1',
+  Actual: s.cgenerateValidEmail1,
+  Expected: 'generateValidEmail1'
+}, {
+  Name: 'cgenerateValidEmail2',
+  Actual: s.cgenerateValidEmail2,
+  Expected: 'generateValidEmail2'
+}, {
+  Name: 'cgenerateInvalidEmail1',
+  Actual: s.cgenerateInvalidEmail1,
+  Expected: 'generateInvalidEmail1'
+}, {
+  Name: 'cgenerateInvalidEmail2',
+  Actual: s.cgenerateInvalidEmail2,
+  Expected: 'generateInvalidEmail2'
+}, // *********************************
+// CharacterGeneration rules in order
+// *********************************
+{
+  Name: 'crandomlyGenerateMixedCaseLetterOrSpecialCharacter1',
+  Actual: s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1,
+  Expected: 'randomlyGenerateMixedCaseLetterOrSpecialCharacter1'
+}, {
+  Name: 'crandomlyGenerateMixedCaseLetterOrSpecialCharacter2',
+  Actual: s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2,
+  Expected: 'randomlyGenerateMixedCaseLetterOrSpecialCharacter2'
+}, {
+  Name: 'crandomlyGenerateUpperCaseLetterOrSpecialCharacter1',
+  Actual: s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1,
+  Expected: 'randomlyGenerateUpperCaseLetterOrSpecialCharacter1'
+}, {
+  Name: 'crandomlyGenerateUpperCaseLetterOrSpecialCharacter2',
+  Actual: s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2,
+  Expected: 'randomlyGenerateUpperCaseLetterOrSpecialCharacter2'
+}, {
+  Name: 'crandomlyGenerateLowerCaseLetterOrSpecialCharacter1',
+  Actual: s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1,
+  Expected: 'randomlyGenerateLowerCaseLetterOrSpecialCharacter1'
+}, {
+  Name: 'crandomlyGenerateLowerCaseLetterOrSpecialCharacter2',
+  Actual: s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2,
+  Expected: 'randomlyGenerateLowerCaseLetterOrSpecialCharacter2'
+}, {
+  Name: 'crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1',
+  Actual: s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1,
+  Expected: 'randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1'
+}, {
+  Name: 'crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2',
+  Actual: s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2,
+  Expected: 'randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2'
+}, {
+  Name: 'crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1',
+  Actual: s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1,
+  Expected: 'randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1'
+}, {
+  Name: 'crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2',
+  Actual: s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2,
+  Expected: 'randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2'
+}, {
+  Name: 'crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1',
+  Actual: s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1,
+  Expected: 'randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1'
+}, {
+  Name: 'crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2',
+  Actual: s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2,
+  Expected: 'randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2'
+}, {
+  Name: 'crandomlyGenerateMixedCaseAlphaNumericCharacter1',
+  Actual: s.crandomlyGenerateMixedCaseAlphaNumericCharacter1,
+  Expected: 'randomlyGenerateMixedCaseAlphaNumericCharacter1'
+}, {
+  Name: 'crandomlyGenerateMixedCaseAlphaNumericCharacter2',
+  Actual: s.crandomlyGenerateMixedCaseAlphaNumericCharacter2,
+  Expected: 'randomlyGenerateMixedCaseAlphaNumericCharacter2'
+}, {
+  Name: 'crandomlyGenerateUpperCaseAlphaNumericCharacter1',
+  Actual: s.crandomlyGenerateUpperCaseAlphaNumericCharacter1,
+  Expected: 'randomlyGenerateUpperCaseAlphaNumericCharacter1'
+}, {
+  Name: 'crandomlyGenerateUpperCaseAlphaNumericCharacter2',
+  Actual: s.crandomlyGenerateUpperCaseAlphaNumericCharacter2,
+  Expected: 'randomlyGenerateUpperCaseAlphaNumericCharacter2'
+}, {
+  Name: 'crandomlyGenerateLowerCaseAlphaNumericCharacter1',
+  Actual: s.crandomlyGenerateLowerCaseAlphaNumericCharacter1,
+  Expected: 'randomlyGenerateLowerCaseAlphaNumericCharacter1'
+}, {
+  Name: 'crandomlyGenerateLowerCaseAlphaNumericCharacter2',
+  Actual: s.crandomlyGenerateLowerCaseAlphaNumericCharacter2,
+  Expected: 'randomlyGenerateLowerCaseAlphaNumericCharacter2'
+}, {
+  Name: 'crandomlyGenerateNumericCharacter1',
+  Actual: s.crandomlyGenerateNumericCharacter1,
+  Expected: 'randomlyGenerateNumericCharacter1'
+}, {
+  Name: 'crandomlyGenerateNumericCharacter2',
+  Actual: s.crandomlyGenerateNumericCharacter2,
+  Expected: 'randomlyGenerateNumericCharacter2'
+}, {
+  Name: 'crandomlyGenerateSpecialCharacter1',
+  Actual: s.crandomlyGenerateSpecialCharacter1,
+  Expected: 'randomlyGenerateSpecialCharacter1'
+}, {
+  Name: 'crandomlyGenerateSpecialCharacter2',
+  Actual: s.crandomlyGenerateSpecialCharacter2,
+  Expected: 'randomlyGenerateSpecialCharacter2'
+}, {
+  Name: 'crandomlyGenerateNumberInRange1',
+  Actual: s.crandomlyGenerateNumberInRange1,
+  Expected: 'randomlyGenerateNumberInRange1'
+}, {
+  Name: 'crandomlyGenerateNumberInRange2',
+  Actual: s.crandomlyGenerateNumberInRange2,
+  Expected: 'randomlyGenerateNumberInRange2'
+}, {
+  Name: 'crandomlyGenerateBooleanValue1',
+  Actual: s.crandomlyGenerateBooleanValue1,
+  Expected: 'randomlyGenerateBooleanValue1'
+}, {
+  Name: 'crandomlyGenerateBooleanValue2',
+  Actual: s.crandomlyGenerateBooleanValue2,
+  Expected: 'randomlyGenerateBooleanValue2'
+}, {
+  Name: 'crandomlyGenerateMixedCaseAlphabeticCharacter1',
+  Actual: s.crandomlyGenerateMixedCaseAlphabeticCharacter1,
+  Expected: 'randomlyGenerateMixedCaseAlphabeticCharacter1'
+}, {
+  Name: 'crandomlyGenerateMixedCaseAlphabeticCharacter2',
+  Actual: s.crandomlyGenerateMixedCaseAlphabeticCharacter2,
+  Expected: 'randomlyGenerateMixedCaseAlphabeticCharacter2'
+}, {
+  Name: 'crandomlyGenerateLowerCaseLetter1',
+  Actual: s.crandomlyGenerateLowerCaseLetter1,
+  Expected: 'randomlyGenerateLowerCaseLetter1'
+}, {
+  Name: 'crandomlyGenerateLowerCaseLetter2',
+  Actual: s.crandomlyGenerateLowerCaseLetter2,
+  Expected: 'randomlyGenerateLowerCaseLetter2'
+}, {
+  Name: 'crandomlyGenerateUpperCaseLetter1',
+  Actual: s.crandomlyGenerateUpperCaseLetter1,
+  Expected: 'randomlyGenerateUpperCaseLetter1'
+}, {
+  Name: 'crandomlyGenerateUpperCaseLetter2',
+  Actual: s.crandomlyGenerateUpperCaseLetter2,
+  Expected: 'randomlyGenerateUpperCaseLetter2'
+}, {
+  Name: 'cconvertNumberToUpperCaseLetter',
+  Actual: s.cconvertNumberToUpperCaseLetter,
+  Expected: 'convertNumberToUpperCaseLetter'
+}, {
+  Name: 'cconvertNumberToLowerCaseLetter',
+  Actual: s.cconvertNumberToLowerCaseLetter,
+  Expected: 'convertNumberToLowerCaseLetter'
+}, // *********************************
+// mathOperations rules in order
+// *********************************
+{
+  Name: 'chex2rgbConversion',
+  Actual: s.chex2rgbConversion,
+  Expected: 'hex2rgbConversion'
+}, // Commands
+{
+  Name: 'cSystemCommandsAliasesActualPath',
+  Actual: s.cSystemCommandsAliasesActualPath,
+  Expected: 'src/Framework/Commands/Blob/'
+}, {
+  Name: 'cSystemWorkflowsActualPath',
+  Actual: s.cSystemWorkflowsActualPath,
+  Expected: 'src/Framework/Resources/Workflows/'
+}, {
+  Name: 'cSystemCommandsAliasesPath',
+  Actual: s.cSystemCommandsAliasesPath,
+  Expected: 'System'
+}, {
+  Name: 'cClientCommandsAliasesPath',
+  Actual: s.cClientCommandsAliasesPath,
+  Expected: 'ClientCommandsAliasesPath'
+}, {
+  Name: 'cSystemWorkflowsPath',
+  Actual: s.cSystemWorkflowsPath,
+  Expected: 'SystemWorkflowsPath'
+}, {
+  Name: 'cClientWorkflowsPath',
+  Actual: s.cClientWorkflowsPath,
+  Expected: 'ClientWorkflowsPath'
+}, // ********************************
+// Nominal Commands in order
+// ********************************
+{
+  Name: 'cechoCommand',
+  Actual: s.cechoCommand,
+  Expected: 'echoCommand'
+}, {
+  Name: 'cEchoCommand',
+  Actual: s.cEchoCommand,
+  Expected: 'EchoCommand'
+}, {
+  Name: 'cworkflowHelp',
+  Actual: s.cworkflowHelp,
+  Expected: 'workflowHelp'
+}, {
+  Name: 'ccommandSequencer',
+  Actual: s.ccommandSequencer,
+  Expected: 'commandSequencer'
+}, {
+  Name: 'cprintDataHive',
+  Actual: s.cprintDataHive,
+  Expected: 'printDataHive'
+}, {
+  Name: 'ccommandGenerator',
+  Actual: s.ccommandGenerator,
+  Expected: 'commandGenerator'
+}, {
+  Name: 'cbusinessRulesMetrics',
+  Actual: s.cbusinessRulesMetrics,
+  Expected: 'businessRulesMetrics'
+}, {
+  Name: 'ccommandMetrics',
+  Actual: s.ccommandMetrics,
+  Expected: 'commandMetrics'
+}, {
+  Name: 'cconvertColors',
+  Actual: s.cconvertColors,
+  Expected: 'convertColors'
+}, // ********************************
+// Unit Test Constants commands in order
+// ********************************
+{
+  Name: 'cvalidateConstants',
+  Actual: s.cvalidateConstants,
+  Expected: 'validateConstants'
+}, // ********************************
+// System defined workflows
+// ********************************
+{
+  Name: 'cStartupWorkflow',
+  Actual: s.cStartupWorkflow,
+  Expected: 'StartupWorkflow'
 }];
 exports.systemConstantsValidation = systemConstantsValidation;

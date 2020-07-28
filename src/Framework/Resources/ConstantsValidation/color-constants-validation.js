@@ -7,7 +7,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as clr from '../../../Constants/color.constants';
+import * as clr from '../../Constants/color.constants';
 
  /**
  * @function colorConstantsValidation
@@ -972,7 +972,7 @@ export const colorConstantsValidation = [
    {Name: 'cXanthic', Actual: clr.Xanthic, Expected: 'Xanthic'},
    {Name: 'cXanadu', Actual: clr.Xanadu, Expected: 'Xanadu'},
    {Name: 'cYaleBlue', Actual: clr.YaleBlue, Expected: 'YaleBlue'},
-   {Name: 'cYellowCrayola', Actual: clr.YellowCrayola'; //YellowCrayola'},
+   {Name: 'cYellowCrayola', Actual: clr.YellowCrayola, Expected: 'YellowCrayola'},
    {Name: 'cYellowMunsell', Actual: clr.YellowMunsell, Expected: 'YellowMunsell'},
    {Name: 'cYellowNCS', Actual: clr.YellowNCS, Expected: 'YellowNCS'},
    {Name: 'cYellowPantone', Actual: clr.YellowPantone, Expected: 'YellowPantone'},

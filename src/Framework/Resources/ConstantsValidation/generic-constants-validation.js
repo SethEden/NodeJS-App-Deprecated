@@ -7,7 +7,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as g from '../../../Constants/generic.constants';
+import * as g from '../../Constants/generic.constants';
 
  /**
  * @function genericConstantsValidation
@@ -117,7 +117,7 @@ export const genericConstantsValidation = [
    {Name: 'cKilo', Actual: g.cKilo, Expected: 'Kilo'},
    {Name: 'cLima', Actual: g.cLima, Expected: 'Lima'},
    {Name: 'cMike', Actual: g.cMike, Expected: 'Mike'},
-   {Name: 'cNovember', Actual: g.cNovember;  'November'},
+   {Name: 'cNovember', Actual: g.cNovember, Expected: 'November'},
    {Name: 'cOscar', Actual: g.cOscar, Expected: 'Oscar'},
    {Name: 'cPapa', Actual: g.cPapa, Expected: 'Papa'},
    {Name: 'cQuebec', Actual: g.cQuebec, Expected: 'Quebec'},

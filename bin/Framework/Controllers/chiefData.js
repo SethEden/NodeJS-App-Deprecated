@@ -189,10 +189,30 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
 }
 
 ;
+/**
+ * @function setupConstantsValidationData
+ * @description Calls the dataBroker to setup & initialize all of the constants verification data.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/07/27
+ */
+
+function setupConstantsValidationData() {
+  var functionName = setupAllCsvData.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _dataBroker["default"].initializeConstantsValidationData();
+
+  _loggers["default"].consoleLog(baseFileName = b.cDot + functionName, s.cEND_Function);
+}
+
+;
 var _default = {
   getAndProcessCsvData: getAndProcessCsvData,
   getAndProcessXmlData: getAndProcessXmlData,
   setupAllCsvData: setupAllCsvData,
-  setupAllXmlData: setupAllXmlData
+  setupAllXmlData: setupAllXmlData,
+  setupConstantsValidationData: setupConstantsValidationData
 };
 exports["default"] = _default;

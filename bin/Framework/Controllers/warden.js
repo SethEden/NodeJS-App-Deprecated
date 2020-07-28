@@ -23,6 +23,8 @@ var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"))
 
 var _dataBroker = _interopRequireDefault(require("../Executrix/dataBroker"));
 
+var _chiefData = _interopRequireDefault(require("./chiefData"));
+
 var _fileBroker = _interopRequireDefault(require("../Executrix/fileBroker"));
 
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
@@ -242,6 +244,10 @@ function saveRootPath(rootPath) {
 
 
   _configurator["default"].setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
+
+  if (_configurator["default"].getConfigurationSetting(s.cEnableConstantsValidation) === true) {
+    _chiefData["default"].setupConstantsValidationData();
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.saveRootPath function');
 

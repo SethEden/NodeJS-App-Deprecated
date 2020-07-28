@@ -517,6 +517,20 @@ export const cKeywordsDataPath = w.cKeywords + w.cDataPath; // KeywordsDataPath
 export const cLocatorsDataPath = w.cLocators + w.cDataPath; // LocatorsDataPath
 export const cclientRulesLibrary = w.cclient + w.cRules + w.cLibrary; // clientRulesLibrary
 export const cCommandQueue = w.cCommand + w.cQueue; // CommandQueue
+export const cConstantsValidationData = w.cConstants + w.cValidation + w.cData; // ConstantsValidationData
+export const cBasicConstantsValidation = w.cBasic + w.cConstants + w.cValidation; // BasicConstantsValidation
+export const cColorConstantsValidation = w.cColor + w.cConstants + w.cValidation; // ColorConstantsValidation
+export const cElementConstantsValidation = w.cElement + w.cConstants + w.cValidation; // ElementConstantsValidation
+export const cGenericConstantsValidation = w.cGeneric + w.cConstants + w.cValidation; // GenericConstantsValidation
+export const cIsotopeConstantsValidation = w.cIsotope + w.cConstants + w.cValidation; // IsotopeConstantsValidation
+export const cNumericConstantsValidation = w.cNumeric + w.cConstants + w.cValidation; // NumericConstantsValidation
+export const cPhonicsConstantsValidation = w.cPhonics + w.cConstants + w.cValidation; // PhonicsConstantsValidation
+export const cShapeConstantsValidation = w.cShape + w.cConstants + w.cValidation; // ShapeConstantsValidation
+export const cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidation; // SystemConstantsValidation
+export const cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
+export const cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
+
+
 
 // Configuration Settings
 export const cArgumentDrivenInterface = w.cArgument + w.cDriven + w.cInterface; // ArgumentDrivenInterface
@@ -695,6 +709,10 @@ export const ccommandGenerator = w.ccommand + w.cGenerator; // commandGenerator
 export const cbusinessRulesMetrics = w.cbusiness + w.cRules + w.cMetrics; // businessRulesMetrics
 export const ccommandMetrics = w.ccommand + w.cMetrics; // commandMetrics
 export const cconvertColors = w.cconvert + w.cColors; // convertColors
+// ********************************
+// Unit Test Constants commands in order
+// ********************************
+export const cvalidateConstants = w.cvalidate + w.cConstants; // validateConstants
 
 // ********************************
 // System defined workflows

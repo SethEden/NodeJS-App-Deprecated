@@ -14,6 +14,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as nominalCommands from './Commands/nominal';
+import * as unitTestConstants from './Commands/unitTestConstants';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as w from '../Constants/word.constants';
@@ -52,7 +53,12 @@ export const initCommandsLibrary = function() {
     [s.ccommandGenerator]: (inputData, inputMetaData) => nominalCommands.commandGenerator(inputData, inputMetaData),
     [s.cbusinessRulesMetrics]: (inputData, inputMetaData) => nominalCommands.businessRulesMetrics(inputData, inputMetaData),
     [s.ccommandMetrics]: (inputData, inputMetaData) => nominalCommands.commandMetrics(inputData, inputMetaData),
-    [s.cconvertColors]: (inputData, inputMetaData) => nominalCommands.convertColors(inputData, inputMetaData)
+    [s.cconvertColors]: (inputData, inputMetaData) => nominalCommands.convertColors(inputData, inputMetaData),
+
+    // ********************************
+    // Unit Test Constants commands in order
+    // ********************************
+    [s.cvalidateConstants]: (inputData, inputMetaData) => unitTestConstants.validateConstants(inputData, inputMetaData)
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

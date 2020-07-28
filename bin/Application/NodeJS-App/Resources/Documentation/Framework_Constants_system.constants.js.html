@@ -59,8 +59,8 @@ export const cSTYLE = b.cST + b.cYL + b.cE; // STYLE
 // Compound System Words
 export const cunderline = w.cunder + w.cline; // underline
 export const cUnderline = w.cUnder + w.cline; // Underline
-export const cWithText = w.cWith + w.cText; // WithText
 export const cwithText = w.cwith + w.cText; // withText
+export const cWithText = w.cWith + w.cText; // WithText
 export const cDebugTest = w.cDebug + w.cTest; // DebugTest
 export const cDebugPage = w.cDebug + w.cPage; // DebugPage
 export const cDebugTestExhaustive = cDebugTest + w.cExhaustive; // DebugTestExhaustive
@@ -97,8 +97,8 @@ export const cBeginPageScriptTimeStamp = w.cBegin + cPageScriptTimeStamp; // Beg
 export const cEndPageScriptTimeStamp = w.cEnd + cPageScriptTimeStamp; // EndPageScriptTimeStamp
 export const cBeginKeywordTimeStamp = w.cBegin + cKeywordTimeStamp; // BeginKeywordTimeStamp
 export const cEndKeywordTimeStamp = w.cEnd + cKeywordTimeStamp; // EndKeywordTimeStamp
-export const cRunTime = w.cRun + w.cTime; // RunTime
 export const cRuntime = w.cRun + w.ctime; // Runtime
+export const cRunTime = w.cRun + w.cTime; // RunTime
 export const cBrowserName = w.cBrowser + w.cName; // BrowserName
 export const cHostName = w.cHost + w.cName; // HostName
 export const cTestRunID = w.cTest + w.cRun + w.cID; // TestRunID
@@ -496,8 +496,8 @@ export const cButton = b.cBu + b.ctt + b.con; // Button
 // Environment Variables
 export const cQA = b.cQA; // QA
 export const cDEV = b.cDE + b.cV; // DEV
-export const cPROD = p.cPRO + b.cD; // PROD
 export const cProd = p.cPro + b.cd; // Prod
+export const cPROD = p.cPRO + b.cD; // PROD
 export const cPre = p.cPre; // Pre
 export const cPRE = p.cPRE; // PRE
 export const cPreProd = p.cPre + p.cProd; // PreProd
@@ -545,6 +545,20 @@ export const cKeywordsDataPath = w.cKeywords + w.cDataPath; // KeywordsDataPath
 export const cLocatorsDataPath = w.cLocators + w.cDataPath; // LocatorsDataPath
 export const cclientRulesLibrary = w.cclient + w.cRules + w.cLibrary; // clientRulesLibrary
 export const cCommandQueue = w.cCommand + w.cQueue; // CommandQueue
+export const cConstantsValidationData = w.cConstants + w.cValidation + w.cData; // ConstantsValidationData
+export const cBasicConstantsValidation = w.cBasic + w.cConstants + w.cValidation; // BasicConstantsValidation
+export const cColorConstantsValidation = w.cColor + w.cConstants + w.cValidation; // ColorConstantsValidation
+export const cElementConstantsValidation = w.cElement + w.cConstants + w.cValidation; // ElementConstantsValidation
+export const cGenericConstantsValidation = w.cGeneric + w.cConstants + w.cValidation; // GenericConstantsValidation
+export const cIsotopeConstantsValidation = w.cIsotope + w.cConstants + w.cValidation; // IsotopeConstantsValidation
+export const cNumericConstantsValidation = w.cNumeric + w.cConstants + w.cValidation; // NumericConstantsValidation
+export const cPhonicsConstantsValidation = w.cPhonics + w.cConstants + w.cValidation; // PhonicsConstantsValidation
+export const cShapeConstantsValidation = w.cShape + w.cConstants + w.cValidation; // ShapeConstantsValidation
+export const cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidation; // SystemConstantsValidation
+export const cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
+export const cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
+
+
 
 // Configuration Settings
 export const cArgumentDrivenInterface = w.cArgument + w.cDriven + w.cInterface; // ArgumentDrivenInterface
@@ -555,6 +569,7 @@ export const cTertiaryCommandDelimiter = w.cTertiary + w.cCommand + w.cDelimiter
 export const cEnableBusinessRuleOutput = w.cEnable + w.cBusiness + w.cRule + w.cOutput; // EnableBusinessRuleOutput
 export const cEnableBusinessRulePerformanceMetrics = w.cEnable + w.cBusiness + w.cRule + w.cPerformance + w.cMetrics; // EnableBusinessRulePerformanceMetrics
 export const cEnableCommandPerformanceMetrics = w.cEnable + w.cCommand + w.cPerformance + w.cMetrics; // EnableCommandPerformanceMetrics
+export const cEnableConstantsValidation = w.cEnable + w.cConstants + w.cValidation; // EnableConstantsValidation
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = w.cBegin + cDateTimeStamp; // BeginDateTimeStamp
@@ -722,6 +737,10 @@ export const ccommandGenerator = w.ccommand + w.cGenerator; // commandGenerator
 export const cbusinessRulesMetrics = w.cbusiness + w.cRules + w.cMetrics; // businessRulesMetrics
 export const ccommandMetrics = w.ccommand + w.cMetrics; // commandMetrics
 export const cconvertColors = w.cconvert + w.cColors; // convertColors
+// ********************************
+// Unit Test Constants commands in order
+// ********************************
+export const cvalidateConstants = w.cvalidate + w.cConstants; // validateConstants
 
 // ********************************
 // System defined workflows
@@ -743,7 +762,7 @@ export const cStartupWorkflow = w.cWorkflow + b.cSpace + w.cstartup; // StartupW
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jul 23 2020 20:11:25 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jul 28 2020 13:22:20 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

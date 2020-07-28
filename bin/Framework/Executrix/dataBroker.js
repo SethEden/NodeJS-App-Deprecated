@@ -23,6 +23,28 @@ var w = _interopRequireWildcard(require("../Constants/word.constants"));
 
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
+var bcv = _interopRequireWildcard(require("../Resources/ConstantsValidation/basic-constants-validation"));
+
+var ccv = _interopRequireWildcard(require("../Resources/ConstantsValidation/color-constants-validation"));
+
+var ecv = _interopRequireWildcard(require("../Resources/ConstantsValidation/element-constants-validation"));
+
+var gcv = _interopRequireWildcard(require("../Resources/ConstantsValidation/generic-constants-validation"));
+
+var icv = _interopRequireWildcard(require("../Resources/ConstantsValidation/isotope-constants-validation"));
+
+var ncv = _interopRequireWildcard(require("../Resources/ConstantsValidation/numeric-constants-validation"));
+
+var pcv = _interopRequireWildcard(require("../Resources/ConstantsValidation/phonics-constants-validation"));
+
+var shcv = _interopRequireWildcard(require("../Resources/ConstantsValidation/shape-constants-validation"));
+
+var scv = _interopRequireWildcard(require("../Resources/ConstantsValidation/system-constants-validation"));
+
+var ucv = _interopRequireWildcard(require("../Resources/ConstantsValidation/units-constants-validation"));
+
+var wcv = _interopRequireWildcard(require("../Resources/ConstantsValidation/word-constants-validation"));
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -42,6 +64,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module.generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:basic-constants-validation
+ * @requires module:color-constants-validation
+ * @requires module:element-constants-validation
+ * @requires module:generic-constants-validation
+ * @requires module:isotope-constants-validation
+ * @requires module:numeric-constants-validation
+ * @requires module:phonics-constants-validation
+ * @requires module:shape-constants-validation
+ * @requires module:system-constants-validation
+ * @requires module:units-constants-validation
+ * @requires module:word-constants-validation
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -676,10 +709,52 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
 }
 
 ;
+/**
+ * @function initializeConstantsValidationData
+ * @description Initializes all of the constants validation data so that it can be used to validate all of the constants.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/07/28
+ */
+
+function initializeConstantsValidationData() {
+  var functionName = getDataElementCount.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  D[s.cConstantsValidationData] = {};
+  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cColorConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cElementConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cWordConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = bcv.basicConstantsValidation;
+  D[s.cConstantsValidationData][s.cColorConstantsValidation] = ccv.colorConstantsValidation;
+  D[s.cConstantsValidationData][s.cElementConstantsValidation] = ecv.elementConstantsValidation;
+  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = gcv.genericConstantsValidation;
+  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = icv.isotopeConstantsValidation;
+  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = ncv.numericConstantsValidation;
+  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = pcv.phonicsConstantsValidation;
+  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = shcv.shapeConstantsValidation;
+  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = scv.systemConstantsValidation;
+  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = ucv.unitsConstantsValidation;
+  D[s.cConstantsValidationData][s.cWordConstantsValidation] = wcv.wordConstantsValidation;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
 var _default = {
   scanDataPath: scanDataPath,
   loadAllCsvData: loadAllCsvData,
   loadAllXmlData: loadAllXmlData,
-  processCsvData: processCsvData
+  processCsvData: processCsvData,
+  initializeConstantsValidationData: initializeConstantsValidationData
 };
 exports["default"] = _default;

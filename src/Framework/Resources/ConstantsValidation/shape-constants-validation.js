@@ -7,7 +7,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as sh from '../../../Constants/shape.constants';
+import * as sh from '../../Constants/shape.constants';
 
  /**
  * @function shapeConstantsValidation

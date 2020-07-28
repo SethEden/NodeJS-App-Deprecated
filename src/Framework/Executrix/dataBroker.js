@@ -11,6 +11,17 @@
  * @requires module.generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:basic-constants-validation
+ * @requires module:color-constants-validation
+ * @requires module:element-constants-validation
+ * @requires module:generic-constants-validation
+ * @requires module:isotope-constants-validation
+ * @requires module:numeric-constants-validation
+ * @requires module:phonics-constants-validation
+ * @requires module:shape-constants-validation
+ * @requires module:system-constants-validation
+ * @requires module:units-constants-validation
+ * @requires module:word-constants-validation
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -25,6 +36,17 @@ import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
 import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
+import * as bcv from '../Resources/ConstantsValidation/basic-constants-validation';
+import * as ccv from '../Resources/ConstantsValidation/color-constants-validation';
+import * as ecv from '../Resources/ConstantsValidation/element-constants-validation';
+import * as gcv from '../Resources/ConstantsValidation/generic-constants-validation';
+import * as icv from '../Resources/ConstantsValidation/isotope-constants-validation';
+import * as ncv from '../Resources/ConstantsValidation/numeric-constants-validation';
+import * as pcv from '../Resources/ConstantsValidation/phonics-constants-validation';
+import * as shcv from '../Resources/ConstantsValidation/shape-constants-validation';
+import * as scv from '../Resources/ConstantsValidation/system-constants-validation';
+import * as ucv from '../Resources/ConstantsValidation/units-constants-validation';
+import * as wcv from '../Resources/ConstantsValidation/word-constants-validation';
 var D = require('../Resources/data');
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -496,9 +518,47 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
   return elementCount;
 };
 
+/**
+ * @function initializeConstantsValidationData
+ * @description Initializes all of the constants validation data so that it can be used to validate all of the constants.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/07/28
+ */
+function initializeConstantsValidationData() {
+  let functionName = getDataElementCount.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  D[s.cConstantsValidationData] = {};
+  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cColorConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cElementConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cWordConstantsValidation] = {};
+
+  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = bcv.basicConstantsValidation;
+  D[s.cConstantsValidationData][s.cColorConstantsValidation] = ccv.colorConstantsValidation;
+  D[s.cConstantsValidationData][s.cElementConstantsValidation] = ecv.elementConstantsValidation;
+  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = gcv.genericConstantsValidation;
+  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = icv.isotopeConstantsValidation;
+  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = ncv.numericConstantsValidation;
+  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = pcv.phonicsConstantsValidation;
+  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = shcv.shapeConstantsValidation;
+  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = scv.systemConstantsValidation;
+  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = ucv.unitsConstantsValidation;
+  D[s.cConstantsValidationData][s.cWordConstantsValidation] = wcv.wordConstantsValidation;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
 export default {
   scanDataPath,
   loadAllCsvData,
   loadAllXmlData,
-  processCsvData
+  processCsvData,
+  initializeConstantsValidationData
 };
