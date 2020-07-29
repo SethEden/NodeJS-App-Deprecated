@@ -92,6 +92,7 @@ export const genericConstantsValidation = [
    {Name: 'cDotTxt', Actual: g.cDotTxt, Expected: '.Txt'},
    {Name: 'cDotXml', Actual: g.cDotXml, Expected: '.Xml'},
    {Name: 'cDotxml', Actual: g.cDotxml, Expected: '.xml'},
+   {Name: 'cascii', Actual: g.cascii, Expected: 'ascii'},
 
    // Time Formatting
    {Name: 'cYYYY', Actual: g.cYYYY, Expected: 'YYYY'},
@@ -175,4 +176,6 @@ export const genericConstantsValidation = [
 
    // Miscelanious
    {Name: 'cress', Actual: g.cress, Expected: 'cress'},
+   {Name: 'cconst', Actual: g.cconst, Expected: 'const'},
+   {Name: 'cConst', Actual: g.cConst, Expected: 'Const'}
  ];

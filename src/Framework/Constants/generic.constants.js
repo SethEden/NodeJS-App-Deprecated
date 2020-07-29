@@ -90,6 +90,7 @@ export const cDotzip = b.cDot + czip; // .zip
 export const cDotTxt = b.cDot + cTxt; // .Txt
 export const cDotXml = b.cDot + cXml; // .Xml
 export const cDotxml = b.cDot + cxml; // .xml
+export const cascii = b.cas + b.cci + b.ci; // ascii
 
 // Time Formatting
 export const cYYYY = b.cYY + b.cYY; // YYYY
@@ -173,3 +174,5 @@ export const cDecember = b.cDe + b.cc + b.cemb + b.cer; // December
 
 // Miscelanious
 export const cress = b.cre + b.css;
+export const cconst = p.ccon + b.cst;
+export const cConst = p.cCon + b.cst;

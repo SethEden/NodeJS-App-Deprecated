@@ -12,9 +12,11 @@
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -25,9 +27,11 @@ import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
 import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
+const lineByLine = require('n-readlines');
 const _ = require('lodash');
 var path = require('path');
 var math = require('mathjs');
+var D = require('../../../Framework/Resources/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
@@ -1065,6 +1069,79 @@ export const doesArrayContainFilename = function(inputData, inputMetaData) {
   //     break;
   //   }
   // }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function validateConstantsDataValidation
+ * @description Validates that validation data to ensure that all the contents of the
+ * constants validation data matches with the actual constants definitions.
+ * @param {string} inputData The path of the constants file that should be validated.
+ * @param {string} inputMetaData The name of the data hive that contains the appropriate matching constants validation data.
+ * @return {boolean} True or False to indicate if all of the contents of the constants are fully validated or not.
+ * @author Seth Hollingsead
+ * @date 2020/07/28
+ */
+export const validateConstantsDataValidation = function(inputData, inputMetaData) {
+  let functionName = s.cvalidateConstantsDataValidation;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false; // Set it to false and we will prove if it should be true.
+  let foundAFailure = false;
+  const liner = new lineByLine(inputData);
+  let line;
+
+  while (line = liner.next()) {
+    // console.log(line.toString(g.cascii));
+    let lineInCode = line.toString(g.cascii);
+    let foundConstant = false;
+    if (lineInCode.includes(s.cexportconst) === true) {
+      let lineArray = lineInCode.split(b.cSpace);
+      // console.log('lineArray[2] is: ' + lineArray[2]);
+      foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
+      if (foundConstant === true) {
+        // console.log('PASS: ' + lineArray[2] + ' PASS');
+        loggers.consoleLog(baseFileName + b.cDot + functionName, w.cPASS + b.cSpace + lineArray[2] + b.cSpace + w.cPASS);
+      } else {
+        // console.log('FAIL: ' + lineArray[2] + ' FAIL');
+        loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+        foundAFailure = true;
+      }
+    }
+  }
+  if (foundAFailure === false) {
+    returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function validateConstantsDataValidationLineItemName
+ * @description Loops through all of the constants validation data and verifies if a matching constant definition can be found, or not found.
+ * @param {string} inputData The constant definition that should be searched for.
+ * @param {string} inputMetaData  The name of the data hive that contains the appropriate matching constants validation data.
+ * @return {boolean} True or False to indicate if a match was found or not found.
+ * @author Seth Hollingsead
+ * @date 2020/07/28
+ */
+export const validateConstantsDataValidationLineItemName = function(inputData, inputMetaData) {
+  let functionName = s.cvalidateConstantsDataValidationLineItemName;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false;
+  for (let i = 0; i < D[s.cConstantsValidationData][inputMetaData].length; i++) {
+    let validationLineItem = D[s.cConstantsValidationData][inputMetaData][i];
+    if (inputData === validationLineItem.Name) {
+      returnData = true;
+      break;
+    }
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

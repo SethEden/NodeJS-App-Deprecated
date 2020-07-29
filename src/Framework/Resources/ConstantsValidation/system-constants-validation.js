@@ -196,6 +196,8 @@ export const systemConstantsValidation = [
    {Name: 'cCommandWorkflows', Actual: s.cCommandWorkflows, Expected: 'CommandWorkflows'},
    {Name: 'cStandardDeviation', Actual: s.cStandardDeviation, Expected: 'StandardDeviation'},
    {Name: 'cHexValue', Actual: s.cHexValue, Expected: 'HexValue'},
+   {Name: 'cexportconst', Actual: s.cexportconst, Expected: 'export const'},
+   {Name: 'cExportConst', Actual: s.cExportConst, Expected: 'Export Const'},
 
    // Logging Constants
    {Name: 'cBEGIN_Function', Actual: s.cBEGIN_Function, Expected: 'BEGIN %% Function'},
@@ -515,7 +517,7 @@ export const systemConstantsValidation = [
    {Name: 'cWorkflowDataPath', Actual: s.cWorkflowDataPath, Expected: 'WorkflowDataPath'},
    {Name: 'cKeywordsDataPath', Actual: s.cKeywordsDataPath, Expected: 'KeywordsDataPath'},
    {Name: 'cLocatorsDataPath', Actual: s.cLocatorsDataPath, Expected: 'LocatorsDataPath'},
-   {Name: 'cConstantsPathActual', Actual: s.cConstantsPathActual, Expected: 'bin/Framework/Constants/'},
+   {Name: 'cConstantsPathActual', Actual: s.cConstantsPathActual, Expected: 'src/Framework/Constants/'},
    {Name: 'cclientRulesLibrary', Actual: s.cclientRulesLibrary, Expected: 'clientRulesLibrary'},
    {Name: 'cCommandQueue', Actual: s.cCommandQueue, Expected: 'CommandQueue'},
    {Name: 'cConstantsValidationData', Actual: s.cConstantsValidationData, Expected: 'ConstantsValidationData'},
@@ -612,6 +614,8 @@ export const systemConstantsValidation = [
    {Name: 'cremoveCharacterFromArray', Actual: s.cremoveCharacterFromArray, Expected: 'removeCharacterFromArray'},
    {Name: 'cascertainMatchingFilenames', Actual: s.cascertainMatchingFilenames, Expected: 'ascertainMatchingFilenames'},
    {Name: 'cdoesArrayContainFilename', Actual: s.cdoesArrayContainFilename, Expected: 'doesArrayContainFilename'},
+   {Name: 'cvalidateConstantsDataValidation', Actual: s.cvalidateConstantsDataValidation, Expected: 'validateConstantsDataValidation'},
+   {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: s.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
    {Name: 'cgetDataCatagoryFromDataContextName', Actual: s.cgetDataCatagoryFromDataContextName, Expected: 'getDataCatagoryFromDataContextName'},
    {Name: 'cgetDataCatagoryDetailNameFromDataContextName', Actual: s.cgetDataCatagoryDetailNameFromDataContextName, Expected: 'getDataCatagoryDetailNameFromDataContextName'},
    {Name: 'cgetKeywordNameFromDataContextName', Actual: s.cgetKeywordNameFromDataContextName, Expected: 'getKeywordNameFromDataContextName'},

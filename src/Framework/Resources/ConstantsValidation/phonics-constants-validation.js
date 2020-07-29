@@ -336,6 +336,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cear', Actual: p.cear, Expected: 'ear'},
    {Name: 'crgb', Actual: p.crgb, Expected: 'rgb'},
    {Name: 'cass', Actual: p.cass, Expected: 'ass'},
+   {Name: 'cASS', Actual: p.cASS, Expected: 'ASS'},
    {Name: 'cind', Actual: p.cind, Expected: 'ind'},
    {Name: 'clin', Actual: p.clin, Expected: 'lin'},
    {Name: 'cLin', Actual: p.cLin, Expected: 'Lin'},
@@ -361,5 +362,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cphon', Actual: p.cphon, Expected: 'phon'},
    {Name: 'cPhon', Actual: p.cPhon, Expected: 'Phon'},
    {Name: 'cics', Actual: p.cics, Expected: 'ics'},
-   {Name: 'csha', Actual: p.csha, Expected: 'sha'}
+   {Name: 'csha', Actual: p.csha, Expected: 'sha'},
+   {Name: 'cail', Actual: p.cail, Expected: 'ail'},
+   {Name: 'cAIL', Actual: p.cAIL, Expected: 'AIL'}
  ];

@@ -111,7 +111,7 @@ export const caa = ca + ca; // aa
 export const cab = ca + cb; // ab
 export const cac = ca + cc; // ac
 // NOTE: Have to watch out for the rest of these 'ca' constants, could have problems with them in the future.
-// export const clmn1rt3 = 'ad'; // 'ca' & 'cd' is some how a reserved word.
+// clmn1rt3 = 'ad'; // 'ca' & 'cd' is some how a reserved word.
 export const cae = ca + ce; // ae
 export const caf = ca + cf; // af
 export const cag = ca + cg; // ag
@@ -154,7 +154,7 @@ export const cAp = cA + cp; // Ap
 export const cAq = cA + cq; // Aq
 export const cAr = cA + cr; // Ar
 export const cAs = cA + cs; // As
-// export const cAt = cA + ct; // We've already defined At = @
+// cAt = cA + ct; // We've already defined At = @
 export const cAu = cA + cu; // Au
 export const cAv = cA + cv; // Av
 export const cAw = cA + cw; // Aw

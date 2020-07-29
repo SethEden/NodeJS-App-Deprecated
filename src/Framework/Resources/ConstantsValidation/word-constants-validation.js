@@ -822,6 +822,10 @@ export const wordConstantsValidation = [
    {Name: 'cConversion', Actual: w.cConversion, Expected: 'Conversion'},
    {Name: 'cpass', Actual: w.cpass, Expected: 'pass'},
    {Name: 'cPass', Actual: w.cPass, Expected: 'Pass'},
+   {Name: 'cPASS', Actual: w.cPASS, Expected: 'PASS'},
+   {Name: 'cfail', Actual: w.cfail, Expected: 'fail'},
+   {Name: 'cFail', Actual: w.cFail, Expected: 'Fail'},
+   {Name: 'cFAIL', Actual: w.cFAIL, Expected: 'FAIL'},
    {Name: 'cSimplified', Actual: w.cSimplified, Expected: 'Simplified'},
    {Name: 'cTraditional', Actual: w.cTraditional, Expected: 'Traditional'},
    {Name: 'cground', Actual: w.cground, Expected: 'ground'},
@@ -847,5 +851,7 @@ export const wordConstantsValidation = [
    {Name: 'cphonics', Actual: w.cphonics, Expected: 'phonics'},
    {Name: 'cPhonics', Actual: w.cPhonics, Expected: 'Phonics'},
    {Name: 'cshape', Actual: w.cshape, Expected: 'shape'},
-   {Name: 'cShape', Actual: w.cShape, Expected: 'Shape'}
+   {Name: 'cShape', Actual: w.cShape, Expected: 'Shape'},
+   {Name: 'cexport', Actual: w.cexport, Expected: 'export'},
+   {Name: 'cExport', Actual: w.cExport, Expected: 'Export'}
  ];
