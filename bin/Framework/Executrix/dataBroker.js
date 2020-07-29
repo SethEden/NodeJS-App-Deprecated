@@ -723,17 +723,17 @@ function initializeConstantsValidationData() {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
   D[s.cConstantsValidationData] = {};
-  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cColorConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cElementConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = {};
-  D[s.cConstantsValidationData][s.cWordConstantsValidation] = {};
+  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cColorConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cElementConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = [];
+  D[s.cConstantsValidationData][s.cWordConstantsValidation] = [];
   D[s.cConstantsValidationData][s.cBasicConstantsValidation] = bcv.basicConstantsValidation;
   D[s.cConstantsValidationData][s.cColorConstantsValidation] = ccv.colorConstantsValidation;
   D[s.cConstantsValidationData][s.cElementConstantsValidation] = ecv.elementConstantsValidation;

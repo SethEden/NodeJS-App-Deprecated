@@ -3240,6 +3240,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cPass,
   Expected: 'Pass'
 }, {
+  Name: 'cPASS',
+  Actual: w.cPASS,
+  Expected: 'PASS'
+}, {
+  Name: 'cfail',
+  Actual: w.cfail,
+  Expected: 'fail'
+}, {
+  Name: 'cFail',
+  Actual: w.cFail,
+  Expected: 'Fail'
+}, {
+  Name: 'cFAIL',
+  Actual: w.cFAIL,
+  Expected: 'FAIL'
+}, {
   Name: 'cSimplified',
   Actual: w.cSimplified,
   Expected: 'Simplified'
@@ -3343,5 +3359,13 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cShape',
   Actual: w.cShape,
   Expected: 'Shape'
+}, {
+  Name: 'cexport',
+  Actual: w.cexport,
+  Expected: 'export'
+}, {
+  Name: 'cExport',
+  Actual: w.cExport,
+  Expected: 'Export'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

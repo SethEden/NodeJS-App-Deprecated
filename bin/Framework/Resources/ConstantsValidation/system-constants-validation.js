@@ -724,6 +724,14 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cHexValue',
   Actual: s.cHexValue,
   Expected: 'HexValue'
+}, {
+  Name: 'cexportconst',
+  Actual: s.cexportconst,
+  Expected: 'export const'
+}, {
+  Name: 'cExportConst',
+  Actual: s.cExportConst,
+  Expected: 'Export Const'
 }, // Logging Constants
 {
   Name: 'cBEGIN_Function',
@@ -1942,7 +1950,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cConstantsPathActual',
   Actual: s.cConstantsPathActual,
-  Expected: 'bin/Framework/Constants/'
+  Expected: 'src/Framework/Constants/'
 }, {
   Name: 'cclientRulesLibrary',
   Actual: s.cclientRulesLibrary,
@@ -2290,6 +2298,14 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cdoesArrayContainFilename',
   Actual: s.cdoesArrayContainFilename,
   Expected: 'doesArrayContainFilename'
+}, {
+  Name: 'cvalidateConstantsDataValidation',
+  Actual: s.cvalidateConstantsDataValidation,
+  Expected: 'validateConstantsDataValidation'
+}, {
+  Name: 'cvalidateConstantsDataValidationLineItemName',
+  Actual: s.cvalidateConstantsDataValidationLineItemName,
+  Expected: 'validateConstantsDataValidationLineItemName'
 }, {
   Name: 'cgetDataCatagoryFromDataContextName',
   Actual: s.cgetDataCatagoryFromDataContextName,

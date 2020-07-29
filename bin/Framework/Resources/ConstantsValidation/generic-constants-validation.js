@@ -295,6 +295,10 @@ var genericConstantsValidation = [{
   Name: 'cDotxml',
   Actual: g.cDotxml,
   Expected: '.xml'
+}, {
+  Name: 'cascii',
+  Actual: g.cascii,
+  Expected: 'ascii'
 }, // Time Formatting
 {
   Name: 'cYYYY',
@@ -592,5 +596,13 @@ var genericConstantsValidation = [{
   Name: 'cress',
   Actual: g.cress,
   Expected: 'cress'
+}, {
+  Name: 'cconst',
+  Actual: g.cconst,
+  Expected: 'const'
+}, {
+  Name: 'cConst',
+  Actual: g.cConst,
+  Expected: 'Const'
 }];
 exports.genericConstantsValidation = genericConstantsValidation;

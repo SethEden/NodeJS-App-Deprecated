@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValidationLineItemName = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -39,18 +39,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
+ * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
+var lineByLine = require('n-readlines');
+
 var _ = require('lodash');
 
 var path = require('path');
 
 var math = require('mathjs');
+
+var D = require('../../../Framework/Resources/data');
 
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
@@ -1548,6 +1554,106 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
   return returnData;
+};
+/**
+ * @function validateConstantsDataValidation
+ * @description Validates that validation data to ensure that all the contents of the
+ * constants validation data matches with the actual constants definitions.
+ * @param {string} inputData The path of the constants file that should be validated.
+ * @param {string} inputMetaData The name of the data hive that contains the appropriate matching constants validation data.
+ * @return {boolean} True or False to indicate if all of the contents of the constants are fully validated or not.
+ * @author Seth Hollingsead
+ * @date 2020/07/28
+ */
+
+
+exports.doesArrayContainFilename = doesArrayContainFilename;
+
+var validateConstantsDataValidation = function validateConstantsDataValidation(inputData, inputMetaData) {
+  var functionName = s.cvalidateConstantsDataValidation;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false; // Set it to false and we will prove if it should be true.
+
+  var foundAFailure = false;
+  var liner = new lineByLine(inputData);
+  var line;
+
+  while (line = liner.next()) {
+    // console.log(line.toString(g.cascii));
+    var lineInCode = line.toString(g.cascii);
+    var foundConstant = false;
+
+    if (lineInCode.includes(s.cexportconst) === true) {
+      var lineArray = lineInCode.split(b.cSpace); // console.log('lineArray[2] is: ' + lineArray[2]);
+
+      foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
+
+      if (foundConstant === true) {
+        // console.log('PASS: ' + lineArray[2] + ' PASS');
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, w.cPASS + b.cSpace + lineArray[2] + b.cSpace + w.cPASS);
+      } else {
+        // console.log('FAIL: ' + lineArray[2] + ' FAIL');
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+
+        foundAFailure = true;
+      }
+    }
+  }
+
+  if (foundAFailure === false) {
+    returnData = true;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function validateConstantsDataValidationLineItemName
+ * @description Loops through all of the constants validation data and verifies if a matching constant definition can be found, or not found.
+ * @param {string} inputData The constant definition that should be searched for.
+ * @param {string} inputMetaData  The name of the data hive that contains the appropriate matching constants validation data.
+ * @return {boolean} True or False to indicate if a match was found or not found.
+ * @author Seth Hollingsead
+ * @date 2020/07/28
+ */
+
+
+exports.validateConstantsDataValidation = validateConstantsDataValidation;
+
+var validateConstantsDataValidationLineItemName = function validateConstantsDataValidationLineItemName(inputData, inputMetaData) {
+  var functionName = s.cvalidateConstantsDataValidationLineItemName;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  for (var i = 0; i < D[s.cConstantsValidationData][inputMetaData].length; i++) {
+    var validationLineItem = D[s.cConstantsValidationData][inputMetaData][i];
+
+    if (inputData === validationLineItem.Name) {
+      returnData = true;
+      break;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
 }; // ******************************************************
 // The following functions are more domain specific
 // ******************************************************
@@ -1563,7 +1669,7 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
  */
 
 
-exports.doesArrayContainFilename = doesArrayContainFilename;
+exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
 
 var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContextName(inputData, inputMetaData) {
   var functionName = s.cgetDataCatagoryFromDataContextName;

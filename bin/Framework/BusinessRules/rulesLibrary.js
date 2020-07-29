@@ -110,6 +110,10 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.ascertainMatchingFilenames(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainFilename, function (inputData, inputMetaData) {
     return stringParsing.doesArrayContainFilename(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidation, function (inputData, inputMetaData) {
+    return stringParsing.validateConstantsDataValidation(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidationLineItemName, function (inputData, inputMetaData) {
+    return stringParsing.validateConstantsDataValidationLineItemName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {
     return stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryDetailNameFromDataContextName, function (inputData, inputMetaData) {

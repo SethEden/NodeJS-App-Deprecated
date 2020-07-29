@@ -9,6 +9,8 @@ exports.validateConstants = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
+var _ruleBroker = _interopRequireDefault(require("../../BusinessRules/ruleBroker"));
+
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
@@ -26,6 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 * @module nominal
 * @description Contains all of the commands to validate constants.
 * @requires module:configurator
+* @requires module:ruleBroker
 * @requires module:loggers
 * @requires module:basic-constants
 * @requires module:system-constants
@@ -62,7 +65,25 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   var constantsPath = _configurator["default"].getConfigurationSetting(s.cConstantsPath);
 
-  console.log('constantsPath is: ' + constantsPath); // export const cbasic_constants_js = w.cbasic + b.cDot + w.cconstants + b.cDot + b.cjs; // basic.constants.js
+  console.log('constantsPath is: ' + constantsPath);
+  var rules = {};
+  rules[0] = s.cvalidateConstantsDataValidation;
+
+  var basicConstantsValidationPhase1Result = _ruleBroker["default"].processRules(constantsPath + s.cbasic_constants_js, s.cBasicConstantsValidation, rules);
+
+  if (basicConstantsValidationPhase1Result === true) {
+    console.log('PASSED -- Basic Constants Phase 1 Validation -- PASSED');
+  } else {
+    console.log('FAILED -- Basic Constants Pase 1 Validation -- FAILED');
+  }
+
+  var colorConstantsValidationPhase1Result = _ruleBroker["default"].processRules(constantsPath + s.ccolor_constants_js, s.cColorConstantsValidation, rules);
+
+  if (colorConstantsValidationPhase1Result === true) {
+    console.log('PASSED -- Color Constants Phase 1 Validation -- PASSED');
+  } else {
+    console.log('FAILED -- Color Constants Pase 1 Validation -- FAILED');
+  } // export const cbasic_constants_js = w.cbasic + b.cDot + w.cconstants + b.cDot + b.cjs; // basic.constants.js
   // export const ccolor_constants_js = w.ccolor + b.cDot + w.cconstants + b.cDot + b.cjs; // color.constants.js
   // export const celement_constants_js = w.celement + b.cDot + w.cconstants + b.cDot + b.cjs; // element.constants.js
   // export const cgeneric_constants_js = w.cgeneric + b.cDot + w.cconstants + b.cDot + b.cjs; // generic.constants.js
@@ -73,6 +94,19 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   // export const csystem_constants_js = w.csystem + b.cDot + w.cconstants + b.cDot + b.cjs; // system.constants.js
   // export const cunits_constants_js = w.cunits + b.cDot + w.cconstants + b.cDot + b.cjs; // units.constants.js
   // export const cword_constants_js = w.cword + b.cDot + w.cconstants + b.cDot + b.cjs; // word.constants.js
+  //
+  // export const cBasicConstantsValidation = w.cBasic + w.cConstants + w.cValidation; // BasicConstantsValidation
+  // export const cColorConstantsValidation = w.cColor + w.cConstants + w.cValidation; // ColorConstantsValidation
+  // export const cElementConstantsValidation = w.cElement + w.cConstants + w.cValidation; // ElementConstantsValidation
+  // export const cGenericConstantsValidation = w.cGeneric + w.cConstants + w.cValidation; // GenericConstantsValidation
+  // export const cIsotopeConstantsValidation = w.cIsotope + w.cConstants + w.cValidation; // IsotopeConstantsValidation
+  // export const cNumericConstantsValidation = w.cNumeric + w.cConstants + w.cValidation; // NumericConstantsValidation
+  // export const cPhonicsConstantsValidation = w.cPhonics + w.cConstants + w.cValidation; // PhonicsConstantsValidation
+  // export const cShapeConstantsValidation = w.cShape + w.cConstants + w.cValidation; // ShapeConstantsValidation
+  // export const cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidation; // SystemConstantsValidation
+  // export const cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
+  // export const cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
+
 
   console.log('END Phase 1 Constants Validation'); // Phase 2 Constants Validation
 

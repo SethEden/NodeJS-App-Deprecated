@@ -1302,6 +1302,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cass,
   Expected: 'ass'
 }, {
+  Name: 'cASS',
+  Actual: p.cASS,
+  Expected: 'ASS'
+}, {
   Name: 'cind',
   Actual: p.cind,
   Expected: 'ind'
@@ -1405,5 +1409,13 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'csha',
   Actual: p.csha,
   Expected: 'sha'
+}, {
+  Name: 'cail',
+  Actual: p.cail,
+  Expected: 'ail'
+}, {
+  Name: 'cAIL',
+  Actual: p.cAIL,
+  Expected: 'AIL'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

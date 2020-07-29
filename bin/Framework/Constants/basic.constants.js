@@ -328,7 +328,7 @@ var cab = ca + cb; // ab
 exports.cab = cab;
 var cac = ca + cc; // ac
 // NOTE: Have to watch out for the rest of these 'ca' constants, could have problems with them in the future.
-// export const clmn1rt3 = 'ad'; // 'ca' & 'cd' is some how a reserved word.
+// clmn1rt3 = 'ad'; // 'ca' & 'cd' is some how a reserved word.
 
 exports.cac = cac;
 var cae = ca + ce; // ae
@@ -452,7 +452,7 @@ var cAr = cA + cr; // Ar
 
 exports.cAr = cAr;
 var cAs = cA + cs; // As
-// export const cAt = cA + ct; // We've already defined At = @
+// cAt = cA + ct; // We've already defined At = @
 
 exports.cAs = cAs;
 var cAu = cA + cu; // Au
