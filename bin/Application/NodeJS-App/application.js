@@ -13,7 +13,6 @@
  * @requires module:generic-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
- * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -45,8 +44,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var prompt = require('prompt-sync')();
-
-var figlet = require('figlet');
 
 var path = require('path');
 

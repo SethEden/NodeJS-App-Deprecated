@@ -2940,3 +2940,5 @@ export const cZW = cZ + cW; // ZW
 export const cZX = cZ + cX; // ZX
 export const cZY = cZ + cY; // ZY
 export const cZZ = cZ + cZ; // ZZ
+
+// inducedConstantsFailure = 'inducedConstantsFailure';

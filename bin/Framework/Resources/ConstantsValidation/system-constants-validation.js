@@ -2105,6 +2105,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cDisplaySummaryConstantsValidationFailMessages',
   Actual: s.cDisplaySummaryConstantsValidationFailMessages,
   Expected: 'DisplaySummaryConstantsValidationFailMessages'
+}, {
+  Name: 'cPassAllConstantsValidations',
+  Actual: s.cPassAllConstantsValidations,
+  Expected: 'PassAllConstantsValidations'
 }, // Test Time Tracking
 {
   Name: 'cBeginDateTimeStamp',
@@ -2725,5 +2729,13 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cStartupWorkflow',
   Actual: s.cStartupWorkflow,
   Expected: 'Workflow startup'
+}, {
+  Name: 'cBuildWorkflow',
+  Actual: s.cBuildWorkflow,
+  Expected: 'Workflow build'
+}, {
+  Name: 'cReleaseWorkflow',
+  Actual: s.cReleaseWorkflow,
+  Expected: 'Workflow release'
 }];
 exports.systemConstantsValidation = systemConstantsValidation;

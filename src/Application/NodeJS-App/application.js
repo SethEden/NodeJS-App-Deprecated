@@ -13,7 +13,6 @@
  * @requires module:generic-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
- * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -28,7 +27,6 @@ import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
 import * as b from '../../Framework/Constants/basic.constants';
 const prompt = require('prompt-sync')();
-const figlet = require('figlet');
 var path = require('path');
 var D = require('../../Framework/Resources/data');
 global.appRoot = path.resolve(__dirname);

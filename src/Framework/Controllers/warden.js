@@ -324,6 +324,7 @@ function enqueueCommand(command) {
   // console.log('command is: ' + command);
   let functionName = enqueueCommand.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'command is: ' + command);
   chiefCommander.enqueueCommand(command);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('END warden.enqueueCommand function');

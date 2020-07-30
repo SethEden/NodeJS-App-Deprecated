@@ -19,7 +19,7 @@
         <ConfigurationElement Name="ClearBusinessRulesPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="ClearCommandPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableConstantsValidation" Type="Default" Value="True" Version="3"/>
-        <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="DisplayIndividualConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplaySummaryConstantsValidationPassMessages" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplaySummaryConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>

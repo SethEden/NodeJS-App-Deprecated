@@ -26,6 +26,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 var _warden = _interopRequireDefault(require("../../Framework/Controllers/warden"));
 
+var _clientRulesLibrary = _interopRequireDefault(require("./BusinessRules/clientRulesLibrary"));
+
+var _clientCommandsLibrary = _interopRequireDefault(require("./Commands/clientCommandsLibrary"));
+
 var c = _interopRequireWildcard(require("./Constants/application.constants"));
 
 var s = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
@@ -63,6 +67,14 @@ function bootStrapApplicationDeployment() {
   _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
 
   _warden["default"].saveRootPath(rootPath);
+
+  _warden["default"].mergeClientBusinessRules(_clientRulesLibrary["default"].initClientRulesLibrary());
+
+  _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
+
+  _warden["default"].loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
+
+  _warden["default"].loadCommandWorkflows(s.cSystemWorkflowsActualPath, c.cClientWorkflowsActualPath);
 }
 
 ;
@@ -87,11 +99,27 @@ function deployApplication() {
 
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    copyResult = _warden["default"].deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath); // console.log('Deployment was completed: ' + copyResult);
+    _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
 
-    _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
+    _warden["default"].enqueueCommand(s.cBuildWorkflow);
 
-    _warden["default"].setConfigurationSetting('deploymentCompleted', copyResult);
+    var commandResult = true;
+
+    while (_warden["default"].isCommandQueueEmpty() === false) {
+      commandResult = true;
+      commandResult = _warden["default"].processCommandQueue();
+    }
+
+    if (_warden["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+      console.log('SUCCESS: Constants Validation PASSED!!');
+      copyResult = _warden["default"].deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath); // console.log('Deployment was completed: ' + copyResult);
+
+      _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
+
+      _warden["default"].setConfigurationSetting('deploymentCompleted', copyResult);
+    } else {
+      console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    }
   } catch (err) {
     console.error(err);
 
@@ -118,9 +146,25 @@ function releaseApplication() {
   var releaseResult;
 
   try {
-    releaseResult = _warden["default"].releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
+    _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
 
-    _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+    _warden["default"].enqueueCommand(s.cReleaseWorkflow);
+
+    var commandResult = true;
+
+    while (_warden["default"].isCommandQueueEmpty() === false) {
+      commandResult = true;
+      commandResult = _warden["default"].processCommandQueue();
+    }
+
+    if (_warden["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+      console.log('SUCCESS: Constants Validation PASSED!!');
+      releaseResult = _warden["default"].releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
+
+      _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+    } else {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
   } catch (err) {
     console.error(err);
   }

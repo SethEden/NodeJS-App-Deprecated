@@ -52,7 +52,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 var validateConstants = function validateConstants(inputData, inputMetaData) {
-  var functionName = s.validateConstants;
+  var functionName = s.cvalidateConstants;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -168,6 +168,12 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   _loggers["default"].constantsValidationSummaryLog('Units Constants Phase 2 Validation', unitsConstantsValidationPhase2Result);
 
   _loggers["default"].constantsValidationSummaryLog('Word Constants Phase 2 Validation', wordConstantsValidationPhase2Result);
+
+  if (basicConstantsValidationPhase1Result === true && colorConstantsValidationPhase1Result === true && elementConstantsValidationPhase1Result === true && genericConstantsValidationPhase1Result === true && isotopeConstantsValidationPhase1Result === true && numericConstantsValidationPhase1Result === true && phonicsConstantsValidationPhase1Result === true && shapeConstantsValidationPhase1Result === true && systemConstantsValidationPhase1Result === true && unitsConstantsValidationPhase1Result === true && wordConstantsValidationPhase1Result === true && basicConstantsValidationPhase2Result === true && colorConstantsValidationPhase2Result === true && elementConstantsValidationPhase2Result === true && genericConstantsValidationPhase2Result === true && isotopeConstantsValidationPhase2Result === true && numericConstantsValidationPhase2Result === true && phonicsConstantsValidationPhase2Result === true && shapeConstantsValidationPhase2Result === true && systemConstantsValidationPhase2Result === true && unitsConstantsValidationPhase2Result === true && wordConstantsValidationPhase2Result === true) {
+    _configurator["default"].setConfigurationSetting(s.cPassAllConstantsValidations, true);
+  } else {
+    _configurator["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

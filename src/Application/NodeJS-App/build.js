@@ -21,6 +21,8 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import warden from '../../Framework/Controllers/warden';
+import clientRules from './BusinessRules/clientRulesLibrary';
+import clientCommands from './Commands/clientCommandsLibrary';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
@@ -70,7 +72,10 @@ function deployApplication() {
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
     warden.enqueueCommand(s.cBuildWorkflow);
     let commandResult = true;
-    commandResult = warden.processCommandQueue();
+    while(warden.isCommandQueueEmpty() === false) {
+      commandResult = true;
+      commandResult = warden.processCommandQueue();
+    }
     if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
       console.log('SUCCESS: Constants Validation PASSED!!');
       copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
@@ -102,7 +107,10 @@ function releaseApplication() {
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
     warden.enqueueCommand(s.cReleaseWorkflow);
     let commandResult = true;
-    commandResult = warden.processCommandQueue();
+    while(warden.isCommandQueueEmpty() === false) {
+      commandResult = true;
+      commandResult = warden.processCommandQueue();
+    }
     if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
       console.log('SUCCESS: Constants Validation PASSED!!');
       releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);

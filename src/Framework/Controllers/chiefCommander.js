@@ -118,6 +118,7 @@ function processCommandQueue() {
   let commandToExecute;
   let returnValue;
   commandToExecute = queue.dequeue(s.cCommandQueue);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
   returnValue = commandBroker.executeCommand(commandToExecute);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

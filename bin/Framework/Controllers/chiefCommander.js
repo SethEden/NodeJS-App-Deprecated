@@ -171,6 +171,9 @@ function processCommandQueue() {
   var commandToExecute;
   var returnValue;
   commandToExecute = _queue["default"].dequeue(s.cCommandQueue);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
+
   returnValue = _commandBroker["default"].executeCommand(commandToExecute);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
