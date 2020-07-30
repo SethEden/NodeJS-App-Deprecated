@@ -1433,7 +1433,7 @@ export const basicConstantsValidation = [
   {Name: 'cmf', Actual: b.cmf, Expected: 'mf'},
   {Name: 'cmg', Actual: b.cmg, Expected: 'mg'},
   {Name: 'cmh', Actual: b.cmh, Expected: 'mh'},
-  {Name: 'cmi', Actual: b.cmi, Expected: 'mi'},
+  {Name: 'camai', Actual: b.camai, Expected: 'mi'},
   {Name: 'cmj', Actual: b.cmj, Expected: 'mj'},
   {Name: 'cmk', Actual: b.cmk, Expected: 'mk'},
   {Name: 'cml', Actual: b.cml, Expected: 'ml'},

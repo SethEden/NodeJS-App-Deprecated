@@ -107,7 +107,7 @@ export const cinnerHTML = w.cinner + w.cHTML; // innerHTML
 export const cInnerHTML = w.cInner + w.cHTML; // InnerHTML
 export const cTestData = w.cTest + w.cData; // TestData
 export const cProcessingTimeout = w.cProcessing + w.cTimeout; // ProcessingTimeout
-export const cIngestionCompleteDwellTime = w.cIngestion + w.cComplete + w.cDwellTime; // IngestionCompleteDwellTime
+export const cIngestionCompleteDwellTime = w.cIngestion + w.cComplete + cDwellTime; // IngestionCompleteDwellTime
 export const cRowNumber = w.cRow + w.cNumber; // RowNumber
 export const cUsername = w.cUser + w.cname; // Username
 export const cPassword = w.cPass + w.cword; // Password
@@ -121,8 +121,8 @@ export const cConfigurationName = w.cConfiguration + w.cName; // ConfigurationNa
 export const cConfigurationElement = w.cConfiguration + w.cElement; // ConfigurationElement
 export const cConfigurationElements = cConfigurationElement + b.cs; // ConfigurationElements
 export const cVersionControl = w.cVersion + w.cControl; // VersionControl
-export const cScriptRunTime = w.cScript + cRuntime; // ScriptRunTime
-export const cTestRunTime = w.cTest + cRuntime; // TestRunTime
+export const cScriptRunTime = w.cScript + cRunTime; // ScriptRunTime
+export const cTestRunTime = w.cTest + cRunTime; // TestRunTime
 export const ctypeText = w.ctype + w.cText; // typeText
 export const cTypeText = w.cType + w.cText; // TypeText
 export const cAbreviatedSelectors = w.cAbreviated + w.cSelectors; // AbreviatedSelectors
@@ -195,8 +195,8 @@ export const cFramework = w.cFrame + w.cwork; // Framework
 export const cCommandsAliases = w.cCommands + w.cAliases; // CommandsAliases
 export const cCommandWorkflows = w.cCommand + w.cWorkflows; // CommandWorkflows
 export const cStandardDeviation = w.cStandard + w.cDeviation; // StandardDeviation
-export const cHexValue = g.cHex + w.cValue; // HexValue
-export const cexportconst = w.cexport + b.cSpace + g.cconst; // export const
+export const cHexValue = p.cHex + w.cValue; // HexValue
+export const cexportconst = w.cexport + b.cSpace + g.cconst; // export-const // With a space not a dash, but the validation code is looking for that exact string.
 export const cExportConst = w.cExport + b.cSpace + g.cConst; // Export Const
 
 // Logging Constants
@@ -223,14 +223,14 @@ export const cDataFontBackgroundColor = w.cData + w.cFont + cBackground + w.cCol
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia
-export const cDocument = g.cDoc + b.cu + p.cment; // Document
-export const cDocuments = w.cDocument + b.cs; // Documents
+export const cDocument = w.cDocument; // Document
+export const cDocuments = cDocument + b.cs; // Documents
 export const cDraft = b.cDr + p.caft; // Draft
 export const cDWG = b.cDW + b.cG; // DWG
 export const cHoops = b.cH + w.coops; // Hoops
 export const cHOOPS = b.cH + w.cOOPS; // HOOPS
 export const cImage = b.cIm + p.cage; // Image
-export const cImages = w.cImage + b.cs; // Images
+export const cImages = cImage + b.cs; // Images
 export const cInventor = p.cInv + b.cen + p.ctor; // Inventor
 export const cNeutral = b.cNe + b.cut + p.cral; // Neutral
 export const cNX = b.cNX; // NX
@@ -255,7 +255,7 @@ export const cArgentina = 'Argentina'; // Argentina
 export const cArmenia = 'Armenia'; // Armenia
 export const cAustralia = 'Australia'; // Australia
 export const cAustria = 'Austria'; // Austria
-export const cAzerbaijan = 'Axerbaijan'; // Axerbaijan
+export const cAzerbaijan = 'Azerbaijan'; // Azerbaijan
 export const cBahamas = 'Bahamas'; // Bahamas
 export const cBahrain = 'Bahrain'; // Bahrain
 export const cBangladesh = 'Bangladesh'; // Bangladesh
@@ -453,7 +453,7 @@ export const cChineseTraditional = cChinese + w.cTraditional; // ChineseTraditio
 export const cCzech = b.cCz + b.ce + b.cch; // Czech
 export const cEnglish = b.cEn + b.cgl + p.cish; // English
 export const cFrench = b.cFr + b.cen + b.cch; // French
-// export const cGerman = b.cGe + b.cr + cman; // German // Defined above in the countries section
+// cGerman = b.cGe + b.cr + cman; // German // Defined above in the countries section
 export const cHungarian = w.cHung + b.car + p.cian; // Hungarian
 export const cItalian = b.cIt + b.cal + p.cian; // Italian
 export const cJapanese = cJapan + p.cese; // Japanese
@@ -474,8 +474,8 @@ export const cProd = p.cPro + b.cd; // Prod
 export const cPROD = p.cPRO + b.cD; // PROD
 export const cPre = p.cPre; // Pre
 export const cPRE = p.cPRE; // PRE
-export const cPreProd = p.cPre + p.cProd; // PreProd
-export const cPREPROD = p.cPRE + p.cPROD; // PREPROD
+export const cPreProd = p.cPre + cProd; // PreProd
+export const cPREPROD = p.cPRE + cPROD; // PREPROD
 
 // Key Combinations
 export const cctrl_a = p.cctrl + b.cPlus + b.ca; // ctrl+a
@@ -513,10 +513,10 @@ export const cApplicationVersionNumber = w.cApplication + w.cVersion + w.cNumber
 export const cApplicationDescription = w.cApplication + w.cDescription; // ApplicationDescription
 export const cDataPath = w.cData + w.cPath; // DataPath
 export const cCtempPath = b.cc + b.cColon + b.cForwardSlash + p.ctemp + b.cForwardSlash; // CtempPath
-export const cPageDataPath = w.cPage + w.cDataPath; // PageDataPath
-export const cWorkflowDataPath = w.cWorkflow + w.cDataPath; // WorkflowDataPath
-export const cKeywordsDataPath = w.cKeywords + w.cDataPath; // KeywordsDataPath
-export const cLocatorsDataPath = w.cLocators + w.cDataPath; // LocatorsDataPath
+export const cPageDataPath = w.cPage + cDataPath; // PageDataPath
+export const cWorkflowDataPath = w.cWorkflow + cDataPath; // WorkflowDataPath
+export const cKeywordsDataPath = w.cKeywords + cDataPath; // KeywordsDataPath
+export const cLocatorsDataPath = w.cLocators + cDataPath; // LocatorsDataPath
 export const cConstantsPathActual = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cConstants + b.cForwardSlash; // src/Framework/Constants/
 export const cclientRulesLibrary = w.cclient + w.cRules + w.cLibrary; // clientRulesLibrary
 export const cCommandQueue = w.cCommand + w.cQueue; // CommandQueue
@@ -556,6 +556,10 @@ export const cEnableBusinessRuleOutput = w.cEnable + w.cBusiness + w.cRule + w.c
 export const cEnableBusinessRulePerformanceMetrics = w.cEnable + w.cBusiness + w.cRule + w.cPerformance + w.cMetrics; // EnableBusinessRulePerformanceMetrics
 export const cEnableCommandPerformanceMetrics = w.cEnable + w.cCommand + w.cPerformance + w.cMetrics; // EnableCommandPerformanceMetrics
 export const cEnableConstantsValidation = w.cEnable + w.cConstants + w.cValidation; // EnableConstantsValidation
+export const cDisplayIndividualConstantsValidationPassMessages = w.cDisplay + w.cIndividual + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplayIndividualConstantsValidationPassMessages
+export const cDisplayIndividualConstantsValidationFailMessages = w.cDisplay + w.cIndividual + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplayIndividualConstantsValidationFailMessages
+export const cDisplaySummaryConstantsValidationPassMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplaySummaryConstantsValidationPassMessages
+export const cDisplaySummaryConstantsValidationFailMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplaySummaryConstantsValidationFailMessages
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = w.cBegin + cDateTimeStamp; // BeginDateTimeStamp
@@ -615,7 +619,9 @@ export const cremoveCharacterFromArray = w.cremove + w.cCharacter + w.cFrom + w.
 export const cascertainMatchingFilenames = w.cascertain + w.cMatching + cFilenames; // ascertainMatchingFilenames
 export const cdoesArrayContainFilename = w.cdoes + w.cArray + w.cContain + cFilename; // doesArrayContainFilename
 export const cvalidateConstantsDataValidation = w.cvalidate + w.cConstants + w.cData + w.cValidation; // validateConstantsDataValidation
+export const cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
 export const cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidation + w.cLine + w.cItem + w.cName; // validateConstantsDataValidationLineItemName
+export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
 export const cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
 export const cgetDataCatagoryDetailNameFromDataContextName = w.cget + w.cData + w.cCatagory + w.cDetail + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryDetailNameFromDataContextName
 export const cgetKeywordNameFromDataContextName = w.cget + w.cKeyword + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getKeywordNameFromDataContextName
@@ -704,7 +710,7 @@ export const cconvertNumberToLowerCaseLetter = w.cconvert + w.cNumber + w.cTo + 
 // *********************************
 // mathOperations rules in order
 // *********************************
-export const chex2rgbConversion = p.chex + b.c2 + p.crgb + w.cConversion; // hex2rgbConversion
+export const chex2rgbConversion = p.chex + n.c2 + p.crgb + w.cConversion; // hex2rgbConversion
 
 // Commands
 export const cSystemCommandsAliasesActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cCommands + w.cBlob + b.cForwardSlash; // SystemCommandsAliasesActualPath
@@ -716,8 +722,8 @@ export const cClientWorkflowsPath = w.cClient + w.cWorkflows + w.cPath; // Clien
 // ********************************
 // Nominal Commands in order
 // ********************************
-export const cechoCommand = w.cecho + w.cCommand; // echoCommand
-export const cEchoCommand = w.cEcho + w.cCommand; // EchoCommand
+export const cechoCommand = cecho + w.cCommand; // echoCommand
+export const cEchoCommand = cEcho + w.cCommand; // EchoCommand
 export const cworkflowHelp = w.cworkflow + w.cHelp; // workflowHelp
 export const ccommandSequencer = w.ccommand + w.cSequencer; // commandSequencer
 export const cprintDataHive = w.cprint + w.cData + w.cHive; // printDataHive

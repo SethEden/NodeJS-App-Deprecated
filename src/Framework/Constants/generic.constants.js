@@ -78,13 +78,13 @@ export const cTxt = b.cT + b.cxt; // Txt
 export const cTXT = b.cT + b.cXT; // TXT
 export const ccsv = b.ccs + b.cv; // csv
 export const cCsv = b.cCs + b.cv; // Csv
-export const cCSV = b.cCS + b.cv; // CSV
+export const cCSV = b.cCS + b.cV; // CSV
 export const cxml = b.cxm + b.cl; // xml
 export const cXml = b.cXm + b.cl; // Xml
 export const cXML = b.cXM + b.cL; // XML
 
 export const cDotCSV = b.cDot + ccsv; // .csv
-export const cDotCom = b.cDot + cCom; // .com
+export const cDotCom = b.cDot + cCom; // .Com
 export const cDotZip = b.cDot + cZip; // .Zip
 export const cDotzip = b.cDot + czip; // .zip
 export const cDotTxt = b.cDot + cTxt; // .Txt
@@ -169,10 +169,9 @@ export const cJuly = b.cJu + b.cly; // July
 export const cAugust = b.cAu + b.cgu + b.cst; // August
 export const cSeptember = b.cSe + b.cpt + p.cemb + b.cer; // September
 export const cOctober = b.cOc + b.cto + b.cb + b.cer; // October
-// export const cNovember = b.cNo + b.cv + b.cemb + b.cer; // November
-export const cDecember = b.cDe + b.cc + b.cemb + b.cer; // December
+// cNovember = b.cNo + b.cv + b.cemb + b.cer; // November
+export const cDecember = b.cDe + b.cc + p.cemb + b.cer; // December
 
 // Miscelanious
-export const cress = b.cre + b.css;
 export const cconst = p.ccon + b.cst;
 export const cConst = p.cCon + b.cst;

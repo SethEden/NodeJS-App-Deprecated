@@ -86,7 +86,7 @@ export const genericConstantsValidation = [
    {Name: 'cXML', Actual: g.cXML, Expected: 'XML'},
 
    {Name: 'cDotCSV', Actual: g.cDotCSV, Expected: '.csv'},
-   {Name: 'cDotCom', Actual: g.cDotCom, Expected: '.com'},
+   {Name: 'cDotCom', Actual: g.cDotCom, Expected: '.Com'},
    {Name: 'cDotZip', Actual: g.cDotZip, Expected: '.Zip'},
    {Name: 'cDotzip', Actual: g.cDotzip, Expected: '.zip'},
    {Name: 'cDotTxt', Actual: g.cDotTxt, Expected: '.Txt'},
@@ -99,13 +99,13 @@ export const genericConstantsValidation = [
    {Name: 'cSSS', Actual: g.cSSS, Expected: 'SSS'},
    {Name: 'cYYYYMMDD', Actual: g.cYYYYMMDD, Expected: 'YYYYMMDD'},
    {Name: 'cHHmmss', Actual: g.cHHmmss, Expected: 'HHmmss'},
-   {Name: 'cHHmmss_SSS', Actual: g.cHHmmss_SSS, Expected: 'HHmmss_SSS'},
-   {Name: 'cYYYYMMDD_HHmmss ', Actual: g.cYYYYMMDD_HHmmss, Expected: 'YYYYMMDD_HHmmss'},
-   {Name: 'cYYYYMMDD_HHmmss_SSS', Actual: g.cYYYYMMDD_HHmmss_SSS, Expected: 'YYYYMMDD_HHmmss_SSS'},
-   {Name: 'cYYYY_MM_DD_HH_mm_ss_SSS', Actual: g.cYYYY_MM_DD_HH_mm_ss_SSS, Expected: 'YYYY_MM_DD_HH_mm_ss_SSS'},
+   {Name: 'cHHmmss_SSS', Actual: g.cHHmmss_SSS, Expected: 'HHmmss-SSS'},
+   {Name: 'cYYYYMMDD_HHmmss', Actual: g.cYYYYMMDD_HHmmss, Expected: 'YYYYMMDD-HHmmss'},
+   {Name: 'cYYYYMMDD_HHmmss_SSS', Actual: g.cYYYYMMDD_HHmmss_SSS, Expected: 'YYYYMMDD-HHmmssSSS'},
+   {Name: 'cYYYY_MM_DD_HH_mm_ss_SSS', Actual: g.cYYYY_MM_DD_HH_mm_ss_SSS, Expected: 'YYYY:MM:DD-HH:mm:ss:SSS'},
 
    // Naval & Military Codes
-   {Name: 'cAlfa', Actual: g.cAlfa, Expected: ' Alfa'},
+   {Name: 'cAlfa', Actual: g.cAlfa, Expected: 'Alfa'},
    {Name: 'cBravo', Actual: g.cBravo, Expected: 'Bravo'},
    {Name: 'cCharlie', Actual: g.cCharlie, Expected: 'Charlie'},
    {Name: 'cDelta', Actual: g.cDelta, Expected: 'Delta'},
@@ -175,7 +175,6 @@ export const genericConstantsValidation = [
    {Name: 'cDecember', Actual: g.cDecember, Expected: 'December'},
 
    // Miscelanious
-   {Name: 'cress', Actual: g.cress, Expected: 'cress'},
    {Name: 'cconst', Actual: g.cconst, Expected: 'const'},
    {Name: 'cConst', Actual: g.cConst, Expected: 'Const'}
  ];

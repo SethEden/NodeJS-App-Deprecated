@@ -16,6 +16,7 @@
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
+ * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -31,6 +32,7 @@ const lineByLine = require('n-readlines');
 const _ = require('lodash');
 var path = require('path');
 var math = require('mathjs');
+var chalk = require('chalk');
 var D = require('../../../Framework/Resources/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -1095,25 +1097,73 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
   let line;
 
   while (line = liner.next()) {
-    // console.log(line.toString(g.cascii));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, line.toString(g.cascii));
     let lineInCode = line.toString(g.cascii);
     let foundConstant = false;
     if (lineInCode.includes(s.cexportconst) === true) {
       let lineArray = lineInCode.split(b.cSpace);
-      // console.log('lineArray[2] is: ' + lineArray[2]);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'lineArray[2] is: ' + lineArray[2]);
       foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
       if (foundConstant === true) {
-        // console.log('PASS: ' + lineArray[2] + ' PASS');
-        loggers.consoleLog(baseFileName + b.cDot + functionName, w.cPASS + b.cSpace + lineArray[2] + b.cSpace + w.cPASS);
+        if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          let passMessage = 'PASS: ' + lineArray[2] + ' PASS';
+          passMessage = chalk.rgb(0,0,0)(passMessage);
+          passMessage = chalk.bgRgb(0,255,0)(passMessage);
+          console.log(passMessage);
+        }
       } else {
-        // console.log('FAIL: ' + lineArray[2] + ' FAIL');
-        loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+        if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          let failMessage = 'FAIL: ' + lineArray[2] + ' FAIL';
+          failMessage = chalk.rgb(0,0,0)(failMessage);
+          failMessage = chalk.bgRgb(255,0,0)(failMessage);
+          console.log(failMessage);
+          // loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+          // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
+          let suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], '');
+          if (suggestedLineOfCode !== '') {
+            suggestedLineOfCode = chalk.rgb(0,0,0)(suggestedLineOfCode);
+            suggestedLineOfCode = chalk.bgRgb(255,0,0)(suggestedLineOfCode);
+            console.log('Suggested line of code is: ' + suggestedLineOfCode);
+          }
+        }
         foundAFailure = true;
       }
     }
   }
   if (foundAFailure === false) {
     returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function determineSuggestedConstantsValidationLineOfCode
+ * @description Takes the name of the missing constant and determines a suggested line of code to add to the appropriate constants validation file.
+ * This will make it really easy for developers to maintain the constants validation system.
+ * @param {string} inputData The name of the constant that is missing and should have a line of code generated for it.
+ * @param {string} inputMetaData Not used for this one.
+ * @return {string} The suggested line of code that should be added to the appropriate constants validation code file.
+ * @author Seth Hollingsead
+ * @date 2020/07/29
+ */
+export const determineSuggestedConstantsValidationLineOfCode = function(inputData, inputMetaData) {
+  let functionName = s.cdetermineSuggestedConstantsValidationLineOfCode;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = inputData;
+  // Input: cZZTopIntentionalFailure
+  // Output: {Name: 'cZZTopIntentionalFailure', Actual: w.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
+  if (inputData.charAt(0) === b.cc) {
+    let literalValue = inputData.substr(1);
+    returnData = `{Name: '${inputData}', Actual: w.${inputData}, Expected: '${literalValue}'}`;
+  } else {
+    console.log('ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
+    'but the constant is not formatted correctly, it should begin with a lower case "c". ' +
+    'Please reformat the constant correctly so a line of code can be generated for you.');
+    returnData = '';
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1140,6 +1190,45 @@ export const validateConstantsDataValidationLineItemName = function(inputData, i
     if (inputData === validationLineItem.Name) {
       returnData = true;
       break;
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function validateConstantsDataValues
+ * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content..
+ * @param {string} inputData The name of the data-hive that should contain all of the validation data that should be used to execute the validation procedures.
+ * @param {string} inputMetaData Not used for this function.
+ * @return {[type]} True or False to indicate if the validation passed for the entire data hive or if it did not pass.
+ * @author Seth Hollingsead
+ * @date 2020/07/29
+ */
+export const validateConstantsDataValues = function(inputData, inputMetaData) {
+  let functionName = s.cvalidateConstantsDataValues;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  for (let i = 0; i < D[s.cConstantsValidationData][inputData].length; i++) {
+    let validationLineItem = D[s.cConstantsValidationData][inputData][i];
+    if (validationLineItem.Actual === validationLineItem.Expected) {
+      if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+        let passMessage = `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
+        passMessage = chalk.rgb(0,0,0)(passMessage);
+        passMessage = chalk.bgRgb(0,255,0)(passMessage);
+        console.log(passMessage);
+      }
+    } else {
+      returnData = false;
+      if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+        let passMessage = `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
+        passMessage = chalk.rgb(0,0,0)(passMessage);
+        passMessage = chalk.bgRgb(255,0,0)(passMessage);
+        console.log(passMessage);
+      }
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
