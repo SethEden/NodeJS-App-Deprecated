@@ -63,58 +63,69 @@ export const validateConstants = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   // Phase 1 Constants Validation
-  console.log('BEGIN Phase 1 Constants Validation');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN Phase 1 Constants Validation');
   // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
   let constantsPath = configurator.getConfigurationSetting(s.cConstantsPath);
-  console.log('constantsPath is: ' + constantsPath);
-  let rules = {};
-  rules[0] = s.cvalidateConstantsDataValidation;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsPath is: ' + constantsPath);
+  let rulesPhase1 = [];
+  let rulesPhase2 = [];
+  rulesPhase1[0] = s.cvalidateConstantsDataValidation;
+  rulesPhase2[0] = s.cvalidateConstantsDataValues;
 
-  let basicConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cbasic_constants_js, s.cBasicConstantsValidation, rules);
-  if (basicConstantsValidationPhase1Result === true) {
-    console.log('PASSED -- Basic Constants Phase 1 Validation -- PASSED');
-  } else {
-    console.log('FAILED -- Basic Constants Pase 1 Validation -- FAILED');
-  }
-
-  let colorConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.ccolor_constants_js, s.cColorConstantsValidation, rules);
-  if (colorConstantsValidationPhase1Result === true) {
-    console.log('PASSED -- Color Constants Phase 1 Validation -- PASSED');
-  } else {
-    console.log('FAILED -- Color Constants Pase 1 Validation -- FAILED');
-  }
-
-  // export const cbasic_constants_js = w.cbasic + b.cDot + w.cconstants + b.cDot + b.cjs; // basic.constants.js
-  // export const ccolor_constants_js = w.ccolor + b.cDot + w.cconstants + b.cDot + b.cjs; // color.constants.js
-  // export const celement_constants_js = w.celement + b.cDot + w.cconstants + b.cDot + b.cjs; // element.constants.js
-  // export const cgeneric_constants_js = w.cgeneric + b.cDot + w.cconstants + b.cDot + b.cjs; // generic.constants.js
-  // export const cisotope_constants_js = w.cisotope + b.cDot + w.cconstants + b.cDot + b.cjs; // isotope.constants.js
-  // export const cnumeric_constants_js = w.cnumeric + b.cDot + w.cconstants + b.cDot + b.cjs; // numeric.constants.js
-  // export const cphonics_constants_js = w.cphonics + b.cDot + w.cconstants + b.cDot + b.cjs; // phonics.constants.js
-  // export const cshape_constants_js = w.cshape + b.cDot + w.cconstants + b.cDot + b.cjs; // shape.constants.js
-  // export const csystem_constants_js = w.csystem + b.cDot + w.cconstants + b.cDot + b.cjs; // system.constants.js
-  // export const cunits_constants_js = w.cunits + b.cDot + w.cconstants + b.cDot + b.cjs; // units.constants.js
-  // export const cword_constants_js = w.cword + b.cDot + w.cconstants + b.cDot + b.cjs; // word.constants.js
-  //
-  // export const cBasicConstantsValidation = w.cBasic + w.cConstants + w.cValidation; // BasicConstantsValidation
-  // export const cColorConstantsValidation = w.cColor + w.cConstants + w.cValidation; // ColorConstantsValidation
-  // export const cElementConstantsValidation = w.cElement + w.cConstants + w.cValidation; // ElementConstantsValidation
-  // export const cGenericConstantsValidation = w.cGeneric + w.cConstants + w.cValidation; // GenericConstantsValidation
-  // export const cIsotopeConstantsValidation = w.cIsotope + w.cConstants + w.cValidation; // IsotopeConstantsValidation
-  // export const cNumericConstantsValidation = w.cNumeric + w.cConstants + w.cValidation; // NumericConstantsValidation
-  // export const cPhonicsConstantsValidation = w.cPhonics + w.cConstants + w.cValidation; // PhonicsConstantsValidation
-  // export const cShapeConstantsValidation = w.cShape + w.cConstants + w.cValidation; // ShapeConstantsValidation
-  // export const cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidation; // SystemConstantsValidation
-  // export const cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
-  // export const cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
-
-  console.log('END Phase 1 Constants Validation');
+  let basicConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cbasic_constants_js, s.cBasicConstantsValidation, rulesPhase1);
+  let colorConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.ccolor_constants_js, s.cColorConstantsValidation, rulesPhase1);
+  let elementConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.celement_constants_js, s.cElementConstantsValidation, rulesPhase1);
+  let genericConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cgeneric_constants_js, s.cGenericConstantsValidation, rulesPhase1);
+  let isotopeConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cisotope_constants_js, s.cIsotopeConstantsValidation, rulesPhase1);
+  let numericConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cnumeric_constants_js, s.cNumericConstantsValidation, rulesPhase1);
+  let phonicsConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cphonics_constants_js, s.cPhonicsConstantsValidation, rulesPhase1);
+  let shapeConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cshape_constants_js, s.cShapeConstantsValidation, rulesPhase1);
+  let systemConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.csystem_constants_js, s.cSystemConstantsValidation, rulesPhase1);
+  let unitsConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cunits_constants_js, s.cUnitsConstantsValidation, rulesPhase1);
+  let wordConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cword_constants_js, s.cWordConstantsValidation, rulesPhase1);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'END Phase 1 Constants Validation');
 
   // Phase 2 Constants Validation
-  console.log('BEGIN Phase 2 Constants Validation');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN Phase 2 Constants Validation');
   // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
 
-  console.log('END Phase 2 Constants Validation');
+  let basicConstantsValidationPhase2Result = ruleBroker.processRules(s.cBasicConstantsValidation, '', rulesPhase2);
+  let colorConstantsValidationPhase2Result = ruleBroker.processRules(s.cColorConstantsValidation, '', rulesPhase2);
+  let elementConstantsValidationPhase2Result = ruleBroker.processRules(s.cElementConstantsValidation, '', rulesPhase2);
+  let genericConstantsValidationPhase2Result = ruleBroker.processRules(s.cGenericConstantsValidation, '', rulesPhase2);
+  let isotopeConstantsValidationPhase2Result = ruleBroker.processRules(s.cIsotopeConstantsValidation, '', rulesPhase2);
+  let numericConstantsValidationPhase2Result = ruleBroker.processRules(s.cNumericConstantsValidation, '', rulesPhase2);
+  let phonicsConstantsValidationPhase2Result = ruleBroker.processRules(s.cPhonicsConstantsValidation, '', rulesPhase2);
+  let shapeConstantsValidationPhase2Result = ruleBroker.processRules(s.cShapeConstantsValidation, '', rulesPhase2);
+  let systemConstantsValidationPhase2Result = ruleBroker.processRules(s.cSystemConstantsValidation, '', rulesPhase2);
+  let unitsConstantsValidationPhase2Result = ruleBroker.processRules(s.cUnitsConstantsValidation, '', rulesPhase2);
+  let wordConstantsValidationPhase2Result = ruleBroker.processRules(s.cWordConstantsValidation, '', rulesPhase2);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'END Phase 2 Constants Validation');
+
+  loggers.constantsValidationSummaryLog('Basic Constants Phase 1 Validation', basicConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Color Constants Phase 1 Validation', colorConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Element Constants Phase 1 Validation', elementConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Generic Constants Phase 1 Validation', genericConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Isotope Constants Phase 1 Validation', isotopeConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Numerical Constants Phase 1 Validation', numericConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Phonics Constants Phase 1 Validation', phonicsConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Shape Constants Phase 1 Validation', shapeConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('System Constants Phase 1 Validation', systemConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Units Constants Phase 1 Validation', unitsConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog('Word Constants Phase 1 Validation', wordConstantsValidationPhase1Result);
+
+  loggers.constantsValidationSummaryLog('Basic Constants Phase 2 Validation', basicConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Color Constants Phase 2 Validation', colorConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Element Constants Phase 2 Validation', elementConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Generic Constants Phase 2 Validation', genericConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Isotope Constants Phase 2 Validation', isotopeConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Numerical Constants Phase 2 Validation', numericConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Phonics Constants Phase 2 Validation', phonicsConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Shape Constants Phase 2 Validation', shapeConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('System Constants Phase 2 Validation', systemConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Units Constants Phase 2 Validation', unitsConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog('Word Constants Phase 2 Validation', wordConstantsValidationPhase2Result);
+
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 </code></pre>
@@ -133,7 +144,7 @@ export const validateConstants = function(inputData, inputMetaData) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Jul 28 2020 19:23:46 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jul 29 2020 23:12:27 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

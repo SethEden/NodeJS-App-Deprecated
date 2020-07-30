@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = exports.cYYYY = exports.cascii = exports.cDotxml = exports.cDotXml = exports.cDotTxt = exports.cDotzip = exports.cDotZip = exports.cDotCom = exports.cDotCSV = exports.cXML = exports.cXml = exports.cxml = exports.cCSV = exports.cCsv = exports.ccsv = exports.cTXT = exports.cTxt = exports.ctxt = exports.cZIP = exports.cZip = exports.czip = exports.cCOM = exports.cCom = exports.ccom = exports.cDOC = exports.cDoc = exports.cdoc = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
-exports.cConst = exports.cconst = exports.cress = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = void 0;
+exports.cConst = exports.cconst = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = void 0;
 
 var b = _interopRequireWildcard(require("../constants/basic.constants"));
 
@@ -195,7 +195,7 @@ exports.ccsv = ccsv;
 var cCsv = b.cCs + b.cv; // Csv
 
 exports.cCsv = cCsv;
-var cCSV = b.cCS + b.cv; // CSV
+var cCSV = b.cCS + b.cV; // CSV
 
 exports.cCSV = cCSV;
 var cxml = b.cxm + b.cl; // xml
@@ -210,7 +210,7 @@ exports.cXML = cXML;
 var cDotCSV = b.cDot + ccsv; // .csv
 
 exports.cDotCSV = cDotCSV;
-var cDotCom = b.cDot + cCom; // .com
+var cDotCom = b.cDot + cCom; // .Com
 
 exports.cDotCom = cDotCom;
 var cDotZip = b.cDot + cZip; // .Zip
@@ -445,15 +445,13 @@ var cSeptember = b.cSe + b.cpt + p.cemb + b.cer; // September
 
 exports.cSeptember = cSeptember;
 var cOctober = b.cOc + b.cto + b.cb + b.cer; // October
-// export const cNovember = b.cNo + b.cv + b.cemb + b.cer; // November
+// cNovember = b.cNo + b.cv + b.cemb + b.cer; // November
 
 exports.cOctober = cOctober;
-var cDecember = b.cDe + b.cc + b.cemb + b.cer; // December
+var cDecember = b.cDe + b.cc + p.cemb + b.cer; // December
 // Miscelanious
 
 exports.cDecember = cDecember;
-var cress = b.cre + b.css;
-exports.cress = cress;
 var cconst = p.ccon + b.cst;
 exports.cconst = cconst;
 var cConst = p.cCon + b.cst;

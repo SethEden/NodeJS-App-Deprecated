@@ -19,6 +19,10 @@
         <ConfigurationElement Name="ClearBusinessRulesPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="ClearCommandPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableConstantsValidation" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="DisplayIndividualConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="DisplaySummaryConstantsValidationPassMessages" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="DisplaySummaryConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DebugFiles" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="application@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -1884,7 +1888,7 @@
           <ConfigurationElement Name="stringParsing.doesArrayContainFilename@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.doesArrayContainFilename@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringParsing.validateConstantsDataValidation" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValidation" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1898,7 +1902,21 @@
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1911,6 +1929,20 @@
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidationLineItemName@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.validateConstantsDataValues@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

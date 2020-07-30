@@ -5435,8 +5435,8 @@ var basicConstantsValidation = [{
   Actual: b.cmh,
   Expected: 'mh'
 }, {
-  Name: 'cmi',
-  Actual: b.cmi,
+  Name: 'camai',
+  Actual: b.camai,
   Expected: 'mi'
 }, {
   Name: 'cmj',

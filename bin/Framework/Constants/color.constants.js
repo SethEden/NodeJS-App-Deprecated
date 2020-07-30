@@ -1246,7 +1246,7 @@ exports.cIcterine = cIcterine;
 var cIlluminatingEmerald = 'IlluminatingEmerald'; // IlluminatingEmerald
 
 exports.cIlluminatingEmerald = cIlluminatingEmerald;
-var cImperialRed = 'cmperialRed'; // cmperialRed
+var cImperialRed = 'cImperialRed'; // cmperialRed
 
 exports.cImperialRed = cImperialRed;
 var cInchworm = 'Inchworm'; // Inchworm

@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValidationLineItemName = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -43,6 +43,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
+ * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -55,6 +56,8 @@ var _ = require('lodash');
 var path = require('path');
 
 var math = require('mathjs');
+
+var chalk = require('chalk');
 
 var D = require('../../../Framework/Resources/data');
 
@@ -1585,21 +1588,41 @@ var validateConstantsDataValidation = function validateConstantsDataValidation(i
   var line;
 
   while (line = liner.next()) {
-    // console.log(line.toString(g.cascii));
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, line.toString(g.cascii));
+
     var lineInCode = line.toString(g.cascii);
     var foundConstant = false;
 
     if (lineInCode.includes(s.cexportconst) === true) {
-      var lineArray = lineInCode.split(b.cSpace); // console.log('lineArray[2] is: ' + lineArray[2]);
+      var lineArray = lineInCode.split(b.cSpace);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'lineArray[2] is: ' + lineArray[2]);
 
       foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
 
       if (foundConstant === true) {
-        // console.log('PASS: ' + lineArray[2] + ' PASS');
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, w.cPASS + b.cSpace + lineArray[2] + b.cSpace + w.cPASS);
+        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          var passMessage = 'PASS: ' + lineArray[2] + ' PASS';
+          passMessage = chalk.rgb(0, 0, 0)(passMessage);
+          passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+          console.log(passMessage);
+        }
       } else {
-        // console.log('FAIL: ' + lineArray[2] + ' FAIL');
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          var failMessage = 'FAIL: ' + lineArray[2] + ' FAIL';
+          failMessage = chalk.rgb(0, 0, 0)(failMessage);
+          failMessage = chalk.bgRgb(255, 0, 0)(failMessage);
+          console.log(failMessage); // loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+          // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
+
+          var suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], '');
+
+          if (suggestedLineOfCode !== '') {
+            suggestedLineOfCode = chalk.rgb(0, 0, 0)(suggestedLineOfCode);
+            suggestedLineOfCode = chalk.bgRgb(255, 0, 0)(suggestedLineOfCode);
+            console.log('Suggested line of code is: ' + suggestedLineOfCode);
+          }
+        }
 
         foundAFailure = true;
       }
@@ -1608,6 +1631,46 @@ var validateConstantsDataValidation = function validateConstantsDataValidation(i
 
   if (foundAFailure === false) {
     returnData = true;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function determineSuggestedConstantsValidationLineOfCode
+ * @description Takes the name of the missing constant and determines a suggested line of code to add to the appropriate constants validation file.
+ * This will make it really easy for developers to maintain the constants validation system.
+ * @param {string} inputData The name of the constant that is missing and should have a line of code generated for it.
+ * @param {string} inputMetaData Not used for this one.
+ * @return {string} The suggested line of code that should be added to the appropriate constants validation code file.
+ * @author Seth Hollingsead
+ * @date 2020/07/29
+ */
+
+
+exports.validateConstantsDataValidation = validateConstantsDataValidation;
+
+var determineSuggestedConstantsValidationLineOfCode = function determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData) {
+  var functionName = s.cdetermineSuggestedConstantsValidationLineOfCode;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = inputData; // Input: cZZTopIntentionalFailure
+  // Output: {Name: 'cZZTopIntentionalFailure', Actual: w.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
+
+  if (inputData.charAt(0) === b.cc) {
+    var literalValue = inputData.substr(1);
+    returnData = "{Name: '".concat(inputData, "', Actual: w.").concat(inputData, ", Expected: '").concat(literalValue, "'}");
+  } else {
+    console.log('ERROR: Attempted to generate a suggested line of code to validate the constant, ' + 'but the constant is not formatted correctly, it should begin with a lower case "c". ' + 'Please reformat the constant correctly so a line of code can be generated for you.');
+    returnData = '';
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1627,7 +1690,7 @@ var validateConstantsDataValidation = function validateConstantsDataValidation(i
  */
 
 
-exports.validateConstantsDataValidation = validateConstantsDataValidation;
+exports.determineSuggestedConstantsValidationLineOfCode = determineSuggestedConstantsValidationLineOfCode;
 
 var validateConstantsDataValidationLineItemName = function validateConstantsDataValidationLineItemName(inputData, inputMetaData) {
   var functionName = s.cvalidateConstantsDataValidationLineItemName;
@@ -1654,6 +1717,59 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
   return returnData;
+};
+/**
+ * @function validateConstantsDataValues
+ * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content..
+ * @param {string} inputData The name of the data-hive that should contain all of the validation data that should be used to execute the validation procedures.
+ * @param {string} inputMetaData Not used for this function.
+ * @return {boolean} True or False to indicate if the validation passed for the entire data hive or if it did not pass.
+ * @author Seth Hollingsead
+ * @date 2020/07/29
+ */
+
+
+exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
+
+var validateConstantsDataValues = function validateConstantsDataValues(inputData, inputMetaData) {
+  var functionName = s.cvalidateConstantsDataValues;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  for (var i = 0; i < D[s.cConstantsValidationData][inputData].length; i++) {
+    var validationLineItem = D[s.cConstantsValidationData][inputData][i];
+
+    if (validationLineItem.Actual === validationLineItem.Expected) {
+      if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+        var passMessage = "PASS -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- PASS");
+        passMessage = chalk.rgb(0, 0, 0)(passMessage);
+        passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+        console.log(passMessage);
+      }
+    } else {
+      returnData = false;
+
+      if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+        var _passMessage = "FAIL -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- FAIL");
+
+        _passMessage = chalk.rgb(0, 0, 0)(_passMessage);
+        _passMessage = chalk.bgRgb(255, 0, 0)(_passMessage);
+        console.log(_passMessage);
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
 }; // ******************************************************
 // The following functions are more domain specific
 // ******************************************************
@@ -1669,7 +1785,7 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
  */
 
 
-exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
+exports.validateConstantsDataValues = validateConstantsDataValues;
 
 var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContextName(inputData, inputMetaData) {
   var functionName = s.cgetDataCatagoryFromDataContextName;

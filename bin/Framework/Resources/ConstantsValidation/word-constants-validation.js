@@ -33,7 +33,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var wordConstantsValidation = [// Miscelaneious Words
 {
   Name: 'c1a1d',
-  Actual: w.ad,
+  Actual: w.c1a1d,
   Expected: 'ad'
 }, // 'ca' & 'cd' is some how a reserved word.
 {
@@ -809,6 +809,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cMessage,
   Expected: 'Message'
 }, {
+  Name: 'cmessages',
+  Actual: w.cmessages,
+  Expected: 'messages'
+}, {
+  Name: 'cMessages',
+  Actual: w.cMessages,
+  Expected: 'Messages'
+}, {
   Name: 'cScript',
   Actual: w.cScript,
   Expected: 'Script'
@@ -1395,6 +1403,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cValue,
   Expected: 'Value'
 }, {
+  Name: 'cvalues',
+  Actual: w.cvalues,
+  Expected: 'values'
+}, {
+  Name: 'cValues',
+  Actual: w.cValues,
+  Expected: 'Values'
+}, {
   Name: 'cfind',
   Actual: w.cfind,
   Expected: 'find'
@@ -1422,6 +1438,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cRange',
   Actual: w.cRange,
   Expected: 'Range'
+}, {
+  Name: 'cnumeric',
+  Actual: w.cnumeric,
+  Expected: 'numeric'
 }, {
   Name: 'cNumeric',
   Actual: w.cNumeric,
@@ -1531,9 +1551,33 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cOperating,
   Expected: 'Operating'
 }, {
+  Name: 'csystem',
+  Actual: w.csystem,
+  Expected: 'system'
+}, {
   Name: 'cSystem',
   Actual: w.cSystem,
   Expected: 'System'
+}, {
+  Name: 'csign',
+  Actual: w.csign,
+  Expected: 'sign'
+}, {
+  Name: 'cSign',
+  Actual: w.cSign,
+  Expected: 'Sign'
+}, {
+  Name: 'cassign',
+  Actual: w.cassign,
+  Expected: 'assign'
+}, {
+  Name: 'cAssign',
+  Actual: w.cAssign,
+  Expected: 'Assign'
+}, {
+  Name: 'cassignment',
+  Actual: w.cassignment,
+  Expected: 'assignment'
 }, {
   Name: 'cAssignment',
   Actual: w.cAssignment,
@@ -2051,6 +2095,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cchecked',
   Actual: w.cchecked,
   Expected: 'checked'
+}, {
+  Name: 'celement',
+  Actual: w.celement,
+  Expected: 'element'
 }, {
   Name: 'cElement',
   Actual: w.cElement,
@@ -3367,5 +3415,69 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cExport',
   Actual: w.cExport,
   Expected: 'Export'
+}, {
+  Name: 'cplay',
+  Actual: w.cplay,
+  Expected: 'play'
+}, {
+  Name: 'cPlay',
+  Actual: w.cPlay,
+  Expected: 'Play'
+}, {
+  Name: 'cdisplay',
+  Actual: w.cdisplay,
+  Expected: 'display'
+}, {
+  Name: 'cDisplay',
+  Actual: w.cDisplay,
+  Expected: 'Display'
+}, {
+  Name: 'csum',
+  Actual: w.csum,
+  Expected: 'sum'
+}, {
+  Name: 'cSum',
+  Actual: w.cSum,
+  Expected: 'Sum'
+}, {
+  Name: 'csummary',
+  Actual: w.csummary,
+  Expected: 'summary'
+}, {
+  Name: 'cSummary',
+  Actual: w.cSummary,
+  Expected: 'Summary'
+}, {
+  Name: 'csuggest',
+  Actual: w.csuggest,
+  Expected: 'suggest'
+}, {
+  Name: 'cSuggest',
+  Actual: w.cSuggest,
+  Expected: 'Suggest'
+}, {
+  Name: 'csuggested',
+  Actual: w.csuggested,
+  Expected: 'suggested'
+}, {
+  Name: 'cSuggested',
+  Actual: w.cSuggested,
+  Expected: 'Suggested'
+}, {
+  Name: 'cline',
+  Actual: w.cline,
+  Expected: 'line'
+}, {
+  Name: 'cLine',
+  Actual: w.cLine,
+  Expected: 'Line'
+}, {
+  Name: 'cdocument',
+  Actual: w.cdocument,
+  Expected: 'document'
+}, {
+  Name: 'cDocument',
+  Actual: w.cDocument,
+  Expected: 'Document'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

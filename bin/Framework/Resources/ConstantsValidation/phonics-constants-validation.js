@@ -589,7 +589,7 @@ var phonicsConstantsValidation = [// Reusable Grammer
 }, {
   Name: 'crate',
   Actual: p.crate,
-  Expected: 'crate'
+  Expected: 'rate'
 }, {
   Name: 'cenerate',
   Actual: p.cenerate,
@@ -606,6 +606,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'create',
   Actual: p.create,
   Expected: 'reate'
+}, {
+  Name: 'carn',
+  Actual: p.carn,
+  Expected: 'arn'
 }, {
   Name: 'carning',
   Actual: p.carning,
@@ -883,6 +887,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cess,
   Expected: 'ess'
 }, {
+  Name: 'cress',
+  Actual: p.cress,
+  Expected: 'ress'
+}, {
   Name: 'ceat',
   Actual: p.ceat,
   Expected: 'eat'
@@ -1021,7 +1029,7 @@ var phonicsConstantsValidation = [// Reusable Grammer
 }, {
   Name: 'cvent',
   Actual: p.cvent,
-  Expected: 'vent;'
+  Expected: 'vent'
 }, {
   Name: 'carg',
   Actual: p.carg,
@@ -1046,6 +1054,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'ccond',
   Actual: p.ccond,
   Expected: 'cond'
+}, {
+  Name: 'cieth',
+  Actual: p.cieth,
+  Expected: 'ieth'
 }, {
   Name: 'ctieth',
   Actual: p.ctieth,
@@ -1410,6 +1422,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.csha,
   Expected: 'sha'
 }, {
+  Name: 'cSha',
+  Actual: p.cSha,
+  Expected: 'Sha'
+}, {
   Name: 'cail',
   Actual: p.cail,
   Expected: 'ail'
@@ -1417,5 +1433,57 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cAIL',
   Actual: p.cAIL,
   Expected: 'AIL'
+}, {
+  Name: 'clay',
+  Actual: p.clay,
+  Expected: 'lay'
+}, {
+  Name: 'cLay',
+  Actual: p.cLay,
+  Expected: 'Lay'
+}, {
+  Name: 'csug',
+  Actual: p.csug,
+  Expected: 'sug'
+}, {
+  Name: 'cSug',
+  Actual: p.cSug,
+  Expected: 'Sug'
+}, {
+  Name: 'cgest',
+  Actual: p.cgest,
+  Expected: 'gest'
+}, {
+  Name: 'cGest',
+  Actual: p.cGest,
+  Expected: 'Gest'
+}, {
+  Name: 'cect',
+  Actual: p.cect,
+  Expected: 'ect'
+}, {
+  Name: 'croject',
+  Actual: p.croject,
+  Expected: 'roject'
+}, {
+  Name: 'cell',
+  Actual: p.cell,
+  Expected: 'ell'
+}, {
+  Name: 'cnion',
+  Actual: p.cnion,
+  Expected: 'nion'
+}, {
+  Name: 'ceta',
+  Actual: p.ceta,
+  Expected: 'eta'
+}, {
+  Name: 'ccent',
+  Actual: p.ccent,
+  Expected: 'cent'
+}, {
+  Name: 'cChi',
+  Actual: p.cChi,
+  Expected: 'Chi'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

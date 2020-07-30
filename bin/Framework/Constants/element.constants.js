@@ -288,7 +288,7 @@ exports.cBi = cBi;
 var cPo = b.cPo; // Po
 
 exports.cPo = cPo;
-var cAt = b.cAt; // At
+var cAt = b.cA + b.ct; // At
 
 exports.cAt = cAt;
 var cRn = b.cRn; // Rn

@@ -39,9 +39,9 @@ exports.c263Db = exports.c262Db = exports.c261Db = exports.c260Db = exports.c259
 exports.c294Ts = exports.c293Ts = exports.c294Lv = exports.c293Lv = exports.c292Lv = exports.c291Lv = exports.c290Lv = exports.c290Mc = exports.c289Mc = exports.c288Mc = exports.c287Mc = exports.c290Fl = exports.c289Fl = exports.c288Fl = exports.c287Fl = exports.c286Fl = exports.c285Fl = exports.c284Fl = exports.c290Nh = exports.c287Nh = exports.c286Nh = exports.c285Nh = exports.c284Nh = exports.c283Nh = exports.c282Nh = exports.c278Nh = exports.c286Cn = exports.c285Cn = exports.c284Cn = exports.c283Cn = exports.c282Cn = exports.c281Cn = exports.c277Cn = exports.c286Rg = exports.c283Rg = exports.c282Rg = exports.c281Rg = exports.c280Rg = exports.c279Rg = exports.c278Rg = exports.c274Rg = exports.c272Rg = exports.c281Ds = exports.c280Ds = exports.c279Ds = exports.c277Ds = exports.c273Ds = exports.c271Ds = exports.c270Ds = exports.c269Ds = exports.c267Ds = exports.c282Mt = exports.c278Mt = exports.c277Mt = exports.c276Mt = exports.c275Mt = exports.c274Mt = exports.c270Mt = exports.c268Mt = exports.c266Mt = exports.c277Hs = exports.c275Hs = exports.c273Hs = exports.c271Hs = exports.c270Hs = exports.c269Hs = exports.c268Hs = exports.c267Hs = exports.c266Hs = exports.c265Hs = exports.c264Hs = exports.c263Hs = exports.c278Bh = exports.c274Bh = exports.c272Bh = exports.c271Bh = exports.c270Bh = exports.c267Bh = exports.c266Bh = exports.c265Bh = exports.c264Bh = exports.c262Bh = exports.c261Bh = exports.c260Bh = exports.c271Sg = exports.c269Sg = exports.c267Sg = exports.c266Sg = exports.c265Sg = exports.c264Sg = exports.c263Sg = exports.c262Sg = exports.c261Sg = exports.c260Sg = exports.c259Sg = exports.c258Sg = exports.c270Db = exports.c268Db = exports.c267Db = exports.c266Db = void 0;
 exports.c24Oxygen = exports.c23Oxygen = exports.c22Oxygen = exports.c21Oxygen = exports.c20Oxygen = exports.c19Oxygen = exports.c18Oxygen = exports.c17Oxygen = exports.c16Oxygen = exports.c15Oxygen = exports.c14Oxygen = exports.c13Oxygen = exports.c12Oxygen = exports.c11Oxygen = exports.c25Nitrogen = exports.c24Nitrogen = exports.c23Nitrogen = exports.c22Nitrogen = exports.c21Nitrogen = exports.c20Nitrogen = exports.c19Nitrogen = exports.c18Nitrogen = exports.c17Nitrogen = exports.c16Nitrogen = exports.c15Nitrogen = exports.c14Nitrogen = exports.c13Nitrogen = exports.c12Nitrogen = exports.c11Nitrogen = exports.c10Nitrogen = exports.c22Carbon = exports.c21Carbon = exports.c20Carbon = exports.c19Carbon = exports.c18Carbon = exports.c17Carbon = exports.c16Carbon = exports.c15Carbon = exports.c14Carbon = exports.c13Carbon = exports.c12Carbon = exports.c11Carbon = exports.c10Carbon = exports.c9Carbon = exports.c8Carbon = exports.c21Boron = exports.c20Boron = exports.c19Boron = exports.c18Boron = exports.c17Boron = exports.c16Boron = exports.c15Boron = exports.c14Boron = exports.c13Boron = exports.c12Boron = exports.c11Boron = exports.c10Boron = exports.c9Boron = exports.c8Boron = exports.c7Boron = exports.c16Beryllium = exports.c15Beryllium = exports.c14Beryllium = exports.c13Beryllium = exports.c12Beryllium = exports.c11Beryllium = exports.c10Beryllium = exports.c9Beryllium = exports.c8Beryllium = exports.c7Beryllium = exports.c6Beryllium = exports.c13Lithium = exports.c12Lithium = exports.c11Lithium = exports.c10Lithium = exports.c9Lithium = exports.c8Lithium = exports.c7Lithium = exports.c6Lithium = exports.c5Lithium = exports.c4Lithium = exports.c3Lithium = exports.c10Helium = exports.c9Helium = exports.c8Helium = exports.c7Helium = exports.c6Helium = exports.c5Helium = exports.c4Helium = exports.c3Helium = exports.c2Helium = exports.c7Hydrogen = exports.c6Hydrogen = exports.c5Hydrogen = exports.c4Hydrogen = exports.c3Hydrogen = exports.c2Hydrogen = exports.c1Hydrogen = exports.c295Og = exports.c294Og = void 0;
 exports.c42Aluminum = exports.c41Aluminum = exports.c40Aluminum = exports.c39Aluminum = exports.c38Aluminum = exports.c37Aluminum = exports.c36Aluminum = exports.c35Aluminum = exports.c34Aluminum = exports.c33Aluminum = exports.c32Aluminum = exports.c31Aluminum = exports.c30Aluminum = exports.c29Aluminum = exports.c28Aluminum = exports.c27Aluminum = exports.c26Aluminum = exports.c25Aluminum = exports.c24Aluminum = exports.c23Aluminum = exports.c22Aluminum = exports.c40Magnesium = exports.c38Magnesium = exports.c37Magnesium = exports.c36Magnesium = exports.c35Magnesium = exports.c34Magnesium = exports.c33Magnesium = exports.c32Magnesium = exports.c31Magnesium = exports.c30Magnesium = exports.c29Magnesium = exports.c28Magnesium = exports.c27Magnesium = exports.c26Magnesium = exports.c25Magnesium = exports.c24Magnesium = exports.c23Magnesium = exports.c22Magnesium = exports.c21Magnesium = exports.c20Magnesium = exports.c19Magnesium = exports.c39Sodium = exports.c37Sodium = exports.c35Sodium = exports.c34Sodium = exports.c33Sodium = exports.c32Sodium = exports.c31Sodium = exports.c30Sodium = exports.c29Sodium = exports.c28Sodium = exports.c27Sodium = exports.c26Sodium = exports.c25Sodium = exports.c24Sodium = exports.c23Sodium = exports.c22Sodium = exports.c21Sodium = exports.c20Sodium = exports.c19Sodium = exports.c18Sodium = exports.c34Neon = exports.c32Neon = exports.c31Neon = exports.c30Neon = exports.c29Neon = exports.c28Neon = exports.c27Neon = exports.c26Neon = exports.c25Neon = exports.c24Neon = exports.c23Neon = exports.c22Neon = exports.c21Neon = exports.c20Neon = exports.c19Neon = exports.c18Neon = exports.c17Neon = exports.c16Neon = exports.c15Neon = exports.c31Florine = exports.c29Florine = exports.c28Florine = exports.c27Florine = exports.c26Florine = exports.c25Florine = exports.c24Florine = exports.c23Florine = exports.c22Florine = exports.c21Florine = exports.c20Florine = exports.c19Florine = exports.c18Florine = exports.c17Florine = exports.c16Florine = exports.c15Florine = exports.c14Florine = exports.c26Oxygen = exports.c25Oxygen = void 0;
-exports.c33Argon = exports.c32Argon = exports.c31Argon = exports.c30Argon = exports.c29Argon = exports.c52Clorine = exports.c51Clorine = exports.c50Clorine = exports.c49Clorine = exports.c48Clorine = exports.c47Clorine = exports.c46Clorine = exports.c45Clorine = exports.c44Clorine = exports.c43Clorine = exports.c42Clorine = exports.c41Clorine = exports.c40Clorine = exports.c39Clorine = exports.c38Clorine = exports.c37Clorine = exports.c36Clorine = exports.c35Clorine = exports.c34Clorine = exports.c33Clorine = exports.c32Clorine = exports.c31Clorine = exports.c30Clorine = exports.c29Clorine = exports.c28Clorine = exports.c49Sulfer = exports.c48Sulfer = exports.c47Sulfer = exports.c46Sulfer = exports.c45Sulfer = exports.c44Sulfer = exports.c43Sulfer = exports.c42Sulfer = exports.c41Sulfer = exports.c40Sulfer = exports.c39Sulfer = exports.c38Sulfer = exports.c37Sulfer = exports.c36Sulfer = exports.c35Sulfer = exports.c34Sulfer = exports.c33Sulfer = exports.c32Sulfer = exports.c31Sulfer = exports.c30Sulfer = exports.c29Sulfer = exports.c28Sulfer = exports.c27Sulfer = exports.c47Phosphorus = exports.c46Phosphorus = exports.c45Phosphorus = exports.c44Phosphorus = exports.c43Phosphorus = exports.c42Phosphorus = exports.c41Phosphorus = exports.c40Phosphorus = exports.c39Phosphorus = exports.c38Phosphorus = exports.c37Phosphorus = exports.c36Phosphorus = exports.c35Phosphorus = exports.c34Phosphorus = exports.c33Phosphorus = exports.c32Phosphorus = exports.c31Phosphorus = exports.c30Phosphorus = exports.c29Phosphorus = exports.c28Phosphorus = exports.c27Phosphorus = exports.c26Phosphorus = exports.c25Phosphorus = exports.c44Silicon = exports.c43Silicon = exports.c42Silicon = exports.c41Silicon = exports.c40Silicon = exports.c39Silicon = exports.c38Silicon = exports.c37Silicon = exports.c36Silicon = exports.c35Silicon = exports.c34Silicon = exports.c33Silicon = exports.c32Silicon = exports.c31Silicon = exports.c30Silicon = exports.c29Silicon = exports.c28Silicon = exports.c27Silicon = exports.c26Silicon = exports.c25Silicon = exports.c24Silicon = exports.c23Silicon = exports.c22Silicon = exports.c43Aluminum = void 0;
+exports.c33Argon = exports.c32Argon = exports.c31Argon = exports.c30Argon = exports.c29Argon = exports.c52Clorine = exports.c51Clorine = exports.c50Clorine = exports.c49Clorine = exports.c48Clorine = exports.c47Clorine = exports.c46Clorine = exports.c45Clorine = exports.c44Clorine = exports.c43Clorine = exports.c42Clorine = exports.c41Clorine = exports.c40Clorine = exports.c39Clorine = exports.c38Clorine = exports.c37Clorine = exports.c36Clorine = exports.c35Clorine = exports.c34Clorine = exports.c33Clorine = exports.c32Clorine = exports.c31Clorine = exports.c30Clorine = exports.c29Clorine = exports.c28Clorine = exports.c49Sulfur = exports.c48Sulfur = exports.c47Sulfur = exports.c46Sulfur = exports.c45Sulfur = exports.c44Sulfur = exports.c43Sulfur = exports.c42Sulfur = exports.c41Sulfur = exports.c40Sulfur = exports.c39Sulfur = exports.c38Sulfur = exports.c37Sulfur = exports.c36Sulfur = exports.c35Sulfur = exports.c34Sulfur = exports.c33Sulfur = exports.c32Sulfur = exports.c31Sulfur = exports.c30Sulfur = exports.c29Sulfur = exports.c28Sulfur = exports.c27Sulfur = exports.c47Phosphorus = exports.c46Phosphorus = exports.c45Phosphorus = exports.c44Phosphorus = exports.c43Phosphorus = exports.c42Phosphorus = exports.c41Phosphorus = exports.c40Phosphorus = exports.c39Phosphorus = exports.c38Phosphorus = exports.c37Phosphorus = exports.c36Phosphorus = exports.c35Phosphorus = exports.c34Phosphorus = exports.c33Phosphorus = exports.c32Phosphorus = exports.c31Phosphorus = exports.c30Phosphorus = exports.c29Phosphorus = exports.c28Phosphorus = exports.c27Phosphorus = exports.c26Phosphorus = exports.c25Phosphorus = exports.c44Silicon = exports.c43Silicon = exports.c42Silicon = exports.c41Silicon = exports.c40Silicon = exports.c39Silicon = exports.c38Silicon = exports.c37Silicon = exports.c36Silicon = exports.c35Silicon = exports.c34Silicon = exports.c33Silicon = exports.c32Silicon = exports.c31Silicon = exports.c30Silicon = exports.c29Silicon = exports.c28Silicon = exports.c27Silicon = exports.c26Silicon = exports.c25Silicon = exports.c24Silicon = exports.c23Silicon = exports.c22Silicon = exports.c43Aluminum = void 0;
 exports.c41Titanium = exports.c40Titanium = exports.c39Titanium = exports.c38Titanium = exports.c61Scandium = exports.c60Scandium = exports.c59Scandium = exports.c58Scandium = exports.c57Scandium = exports.c56Scandium = exports.c55Scandium = exports.c54Scandium = exports.c53Scandium = exports.c52Scandium = exports.c51Scandium = exports.c50Scandium = exports.c49Scandium = exports.c48Scandium = exports.c47Scandium = exports.c46Scandium = exports.c45Scandium = exports.c44Scandium = exports.c43Scandium = exports.c42Scandium = exports.c41Scandium = exports.c40Scandium = exports.c39Scandium = exports.c60Calcium = exports.c59Calcium = exports.c58Calcium = exports.c57Calcium = exports.c56Calcium = exports.c55Calcium = exports.c54Calcium = exports.c53Calcium = exports.c52Calcium = exports.c51Calcium = exports.c50Calcium = exports.c49Calcium = exports.c48Calcium = exports.c47Calcium = exports.c46Calcium = exports.c45Calcium = exports.c44Calcium = exports.c43Calcium = exports.c42Calcium = exports.c41Calcium = exports.c40Calcium = exports.c39Calcium = exports.c38Calcium = exports.c37Calcium = exports.c36Calcium = exports.c35Calcium = exports.c59Potassium = exports.c57Potassium = exports.c56Potassium = exports.c55Potassium = exports.c54Potassium = exports.c53Potassium = exports.c52Potassium = exports.c51Potassium = exports.c50Potassium = exports.c49Potassium = exports.c48Potassium = exports.c47Potassium = exports.c46Potassium = exports.c45Potassium = exports.c44Potassium = exports.c43Potassium = exports.c42Potassium = exports.c41Potassium = exports.c40Potassium = exports.c39Potassium = exports.c38Potassium = exports.c37Potassium = exports.c36Potassium = exports.c35Potassium = exports.c34Potassium = exports.c33Potassium = exports.c54Argon = exports.c53Argon = exports.c52Argon = exports.c51Argon = exports.c50Argon = exports.c49Argon = exports.c48Argon = exports.c47Argon = exports.c46Argon = exports.c45Argon = exports.c44Argon = exports.c43Argon = exports.c42Argon = exports.c41Argon = exports.c40Argon = exports.c39Argon = exports.c38Argon = exports.c37Argon = exports.c36Argon = exports.c35Argon = exports.c34Argon = void 0;
-exports.c69Manganese = exports.c68Manganese = exports.c67Manganese = exports.c66Manganese = exports.c65Manganese = exports.c64Manganese = exports.c63Manganese = exports.c62Manganese = exports.c61Manganese = exports.c60Manganese = exports.c59Manganese = exports.c58Manganese = exports.c57Manganese = exports.c56Manganese = exports.c55Manganese = exports.c54Manganese = exports.c53Manganese = exports.c52Manganese = exports.c51Manganese = exports.c50Manganese = exports.c49Manganese = exports.c48Manganese = exports.c47Manganese = exports.c46Manganese = exports.c45Manganese = exports.c44Manganese = exports.c67Chromium = exports.c66Chromium = exports.c65Chromium = exports.c64Chromium = exports.c63Chromium = exports.c62Chromium = exports.c61Chromium = exports.c60Chromium = exports.c59Chromium = exports.c58Chromium = exports.c57Chromium = exports.c56Chromium = exports.c55Chromium = exports.c54Chromium = exports.c53Chromium = exports.c52Chromium = exports.c51Chromium = exports.c50Chromium = exports.c49Chromium = exports.c48Chromium = exports.c47Chromium = exports.c46Chromium = exports.c45Chromium = exports.c44Chromium = exports.c43Chromium = exports.c42Chromium = exports.c65Vandium = exports.c64Vandium = exports.c63Vandium = exports.c62Vandium = exports.c61Vandium = exports.c60Vandium = exports.c59Vandium = exports.c58Vandium = exports.c57Vandium = exports.c56Vandium = exports.c55Vandium = exports.c54Vandium = exports.c53Vandium = exports.c52Vandium = exports.c51Vandium = exports.c50Vandium = exports.c49Vandium = exports.c48Vandium = exports.c47Vandium = exports.c46Vandium = exports.c45Vandium = exports.c44Vandium = exports.c43Vandium = exports.c42Vandium = exports.c41Vandium = exports.c40Vandium = exports.c63Titanium = exports.c62Titanium = exports.c61Titanium = exports.c60Titanium = exports.c59Titanium = exports.c58Titanium = exports.c57Titanium = exports.c56Titanium = exports.c55Titanium = exports.c54Titanium = exports.c53Titanium = exports.c52Titanium = exports.c51Titanium = exports.c50Titanium = exports.c49Titanium = exports.c48Titanium = exports.c47Titanium = exports.c46Titanium = exports.c45Titanium = exports.c44Titanium = exports.c43Titanium = exports.c42Titanium = void 0;
+exports.c69Manganese = exports.c68Manganese = exports.c67Manganese = exports.c66Manganese = exports.c65Manganese = exports.c64Manganese = exports.c63Manganese = exports.c62Manganese = exports.c61Manganese = exports.c60Manganese = exports.c59Manganese = exports.c58Manganese = exports.c57Manganese = exports.c56Manganese = exports.c55Manganese = exports.c54Manganese = exports.c53Manganese = exports.c52Manganese = exports.c51Manganese = exports.c50Manganese = exports.c49Manganese = exports.c48Manganese = exports.c47Manganese = exports.c46Manganese = exports.c45Manganese = exports.c44Manganese = exports.c67Chromium = exports.c66Chromium = exports.c65Chromium = exports.c64Chromium = exports.c63Chromium = exports.c62Chromium = exports.c61Chromium = exports.c60Chromium = exports.c59Chromium = exports.c58Chromium = exports.c57Chromium = exports.c56Chromium = exports.c55Chromium = exports.c54Chromium = exports.c53Chromium = exports.c52Chromium = exports.c51Chromium = exports.c50Chromium = exports.c49Chromium = exports.c48Chromium = exports.c47Chromium = exports.c46Chromium = exports.c45Chromium = exports.c44Chromium = exports.c43Chromium = exports.c42Chromium = exports.c65Vanadium = exports.c64Vanadium = exports.c63Vanadium = exports.c62Vanadium = exports.c61Vanadium = exports.c60Vanadium = exports.c59Vanadium = exports.c58Vanadium = exports.c57Vanadium = exports.c56Vanadium = exports.c55Vanadium = exports.c54Vanadium = exports.c53Vanadium = exports.c52Vanadium = exports.c51Vanadium = exports.c50Vanadium = exports.c49Vanadium = exports.c48Vanadium = exports.c47Vanadium = exports.c46Vanadium = exports.c45Vanadium = exports.c44Vanadium = exports.c43Vanadium = exports.c42Vanadium = exports.c41Vanadium = exports.c40Vanadium = exports.c63Titanium = exports.c62Titanium = exports.c61Titanium = exports.c60Titanium = exports.c59Titanium = exports.c58Titanium = exports.c57Titanium = exports.c56Titanium = exports.c55Titanium = exports.c54Titanium = exports.c53Titanium = exports.c52Titanium = exports.c51Titanium = exports.c50Titanium = exports.c49Titanium = exports.c48Titanium = exports.c47Titanium = exports.c46Titanium = exports.c45Titanium = exports.c44Titanium = exports.c43Titanium = exports.c42Titanium = void 0;
 exports.c61Copper = exports.c60Copper = exports.c59Copper = exports.c58Copper = exports.c57Copper = exports.c56Copper = exports.c55Copper = exports.c54Copper = exports.c53Copper = exports.c52Copper = exports.c80Nickel = exports.c79Nickel = exports.c78Nickel = exports.c77Nickel = exports.c76Nickel = exports.c75Nickel = exports.c74Nickel = exports.c73Nickel = exports.c72Nickel = exports.c71Nickel = exports.c70Nickel = exports.c69Nickel = exports.c68Nickel = exports.c67Nickel = exports.c66Nickel = exports.c65Nickel = exports.c64Nickel = exports.c63Nickel = exports.c62Nickel = exports.c61Nickel = exports.c60Nickel = exports.c59Nickel = exports.c58Nickel = exports.c57Nickel = exports.c56Nickel = exports.c55Nickel = exports.c54Nickel = exports.c53Nickel = exports.c52Nickel = exports.c51Nickel = exports.c50Nickel = exports.c49Nickel = exports.c48Nickel = exports.c75Cobalt = exports.c74Cobalt = exports.c73Cobalt = exports.c72Cobalt = exports.c71Cobalt = exports.c70Cobalt = exports.c69Cobalt = exports.c68Cobalt = exports.c67Cobalt = exports.c66Cobalt = exports.c65Cobalt = exports.c64Cobalt = exports.c63Cobalt = exports.c62Cobalt = exports.c61Cobalt = exports.c60Cobalt = exports.c59Cobalt = exports.c58Cobalt = exports.c57Cobalt = exports.c56Cobalt = exports.c55Cobalt = exports.c54Cobalt = exports.c53Cobalt = exports.c52Cobalt = exports.c51Cobalt = exports.c50Cobalt = exports.c49Cobalt = exports.c48Cobalt = exports.c47Cobalt = exports.c72Iron = exports.c71Iron = exports.c70Iron = exports.c69Iron = exports.c68Iron = exports.c67Iron = exports.c66Iron = exports.c65Iron = exports.c64Iron = exports.c63Iron = exports.c62Iron = exports.c61Iron = exports.c60Iron = exports.c59Iron = exports.c58Iron = exports.c57Iron = exports.c56Iron = exports.c55Iron = exports.c54Iron = exports.c53Iron = exports.c52Iron = exports.c51Iron = exports.c50Iron = exports.c49Iron = exports.c48Iron = exports.c47Iron = exports.c46Iron = exports.c45Iron = void 0;
 exports.c77Germanium = exports.c76Germanium = exports.c75Germanium = exports.c74Germanium = exports.c73Germanium = exports.c72Germanium = exports.c71Germanium = exports.c70Germanium = exports.c69Germanium = exports.c68Germanium = exports.c67Germanium = exports.c66Germanium = exports.c65Germanium = exports.c64Germanium = exports.c63Germanium = exports.c62Germanium = exports.c61Germanium = exports.c60Germanium = exports.c59Germanium = exports.c58Germanium = exports.c86Gallium = exports.c85Gallium = exports.c84Gallium = exports.c83Gallium = exports.c82Gallium = exports.c81Gallium = exports.c80Gallium = exports.c79Gallium = exports.c78Gallium = exports.c77Gallium = exports.c76Gallium = exports.c75Gallium = exports.c74Gallium = exports.c73Gallium = exports.c72Gallium = exports.c71Gallium = exports.c70Gallium = exports.c69Gallium = exports.c68Gallium = exports.c67Gallium = exports.c66Gallium = exports.c65Gallium = exports.c64Gallium = exports.c63Gallium = exports.c62Gallium = exports.c61Gallium = exports.c60Gallium = exports.c59Gallium = exports.c58Gallium = exports.c57Gallium = exports.c56Gallium = exports.c83Zinc = exports.c82Zinc = exports.c81Zinc = exports.c80Zinc = exports.c79Zinc = exports.c78Zinc = exports.c77Zinc = exports.c76Zinc = exports.c75Zinc = exports.c74Zinc = exports.c73Zinc = exports.c72Zinc = exports.c71Zinc = exports.c70Zinc = exports.c69Zinc = exports.c68Zinc = exports.c67Zinc = exports.c66Zinc = exports.c65Zinc = exports.c64Zinc = exports.c63Zinc = exports.c62Zinc = exports.c61Zinc = exports.c60Zinc = exports.c59Zinc = exports.c58Zinc = exports.c57Zinc = exports.c56Zinc = exports.c55Zinc = exports.c54Zinc = exports.c80Copper = exports.c79Copper = exports.c78Copper = exports.c77Copper = exports.c76Copper = exports.c75Copper = exports.c74Copper = exports.c73Copper = exports.c72Copper = exports.c71Copper = exports.c70Copper = exports.c69Copper = exports.c68Copper = exports.c67Copper = exports.c66Copper = exports.c65Copper = exports.c64Copper = exports.c63Copper = exports.c62Copper = void 0;
 exports.c92Bromine = exports.c91Bromine = exports.c90Bromine = exports.c89Bromine = exports.c88Bromine = exports.c87Bromine = exports.c86Bromine = exports.c85Bromine = exports.c84Bromine = exports.c83Bromine = exports.c82Bromine = exports.c81Bromine = exports.c80Bromine = exports.c79Bromine = exports.c78Bromine = exports.c77Bromine = exports.c76Bromine = exports.c75Bromine = exports.c74Bromine = exports.c73Bromine = exports.c72Bromine = exports.c71Bromine = exports.c70Bromine = exports.c69Bromine = exports.c68Bromine = exports.c94Selenium = exports.c93Selenium = exports.c92Selenium = exports.c91Selenium = exports.c90Selenium = exports.c89Selenium = exports.c88Selenium = exports.c87Selenium = exports.c86Selenium = exports.c85Selenium = exports.c84Selenium = exports.c83Selenium = exports.c82Selenium = exports.c81Selenium = exports.c80Selenium = exports.c79Selenium = exports.c78Selenium = exports.c77Selenium = exports.c76Selenium = exports.c75Selenium = exports.c74Selenium = exports.c73Selenium = exports.c72Selenium = exports.c71Selenium = exports.c70Selenium = exports.c69Selenium = exports.c68Selenium = exports.c67Selenium = exports.c66Selenium = exports.c65Selenium = exports.c92Arsenic = exports.c91Arsenic = exports.c90Arsenic = exports.c89Arsenic = exports.c88Arsenic = exports.c87Arsenic = exports.c86Arsenic = exports.c85Arsenic = exports.c84Arsenic = exports.c83Arsenic = exports.c82Arsenic = exports.c81Arsenic = exports.c80Arsenic = exports.c79Arsenic = exports.c78Arsenic = exports.c77Arsenic = exports.c76Arsenic = exports.c75Arsenic = exports.c74Arsenic = exports.c73Arsenic = exports.c72Arsenic = exports.c71Arsenic = exports.c70Arsenic = exports.c69Arsenic = exports.c68Arsenic = exports.c67Arsenic = exports.c66Arsenic = exports.c65Arsenic = exports.c64Arsenic = exports.c63Arsenic = exports.c62Arsenic = exports.c61Arsenic = exports.c60Arsenic = exports.c89Germanium = exports.c88Germanium = exports.c87Germanium = exports.c86Germanium = exports.c85Germanium = exports.c84Germanium = exports.c83Germanium = exports.c82Germanium = exports.c81Germanium = exports.c80Germanium = exports.c79Germanium = exports.c78Germanium = void 0;
@@ -53,8 +53,8 @@ exports.c104Tin = exports.c103Tin = exports.c102Tin = exports.c101Tin = exports.
 exports.c131Tellurium = exports.c130Tellurium = exports.c129Tellurium = exports.c128Tellurium = exports.c127Tellurium = exports.c126Tellurium = exports.c125Tellurium = exports.c124Tellurium = exports.c123Tellurium = exports.c122Tellurium = exports.c121Tellurium = exports.c120Tellurium = exports.c119Tellurium = exports.c118Tellurium = exports.c117Tellurium = exports.c116Tellurium = exports.c115Tellurium = exports.c114Tellurium = exports.c113Tellurium = exports.c112Tellurium = exports.c111Tellurium = exports.c110Tellurium = exports.c109Tellurium = exports.c108Tellurium = exports.c107Tellurium = exports.c106Tellurium = exports.c105Tellurium = exports.c104Tellurium = exports.c139Antimony = exports.c138Antimony = exports.c137Antimony = exports.c136Antimony = exports.c135Antimony = exports.c134Antimony = exports.c133Antimony = exports.c132Antimony = exports.c131Antimony = exports.c130Antimony = exports.c129Antimony = exports.c128Antimony = exports.c127Antimony = exports.c126Antimony = exports.c125Antimony = exports.c124Antimony = exports.c123Antimony = exports.c122Antimony = exports.c121Antimony = exports.c120Antimony = exports.c119Antimony = exports.c118Antimony = exports.c117Antimony = exports.c116Antimony = exports.c115Antimony = exports.c114Antimony = exports.c113Antimony = exports.c112Antimony = exports.c111Antimony = exports.c110Antimony = exports.c109Antimony = exports.c108Antimony = exports.c107Antimony = exports.c106Antimony = exports.c105Antimony = exports.c104Antimony = exports.c103Antimony = exports.c139Tin = exports.c138Tin = exports.c137Tin = exports.c136Tin = exports.c135Tin = exports.c134Tin = exports.c133Tin = exports.c132Tin = exports.c131Tin = exports.c130Tin = exports.c129Tin = exports.c128Tin = exports.c127Tin = exports.c126Tin = exports.c125Tin = exports.c124Tin = exports.c123Tin = exports.c122Tin = exports.c121Tin = exports.c120Tin = exports.c119Tin = exports.c118Tin = exports.c117Tin = exports.c116Tin = exports.c115Tin = exports.c114Tin = exports.c113Tin = exports.c112Tin = exports.c111Tin = exports.c110Tin = exports.c109Tin = exports.c108Tin = exports.c107Tin = exports.c106Tin = exports.c105Tin = void 0;
 exports.c123Cesium = exports.c122Cesium = exports.c121Cesium = exports.c120Cesium = exports.c119Cesium = exports.c118Cesium = exports.c117Cesium = exports.c116Cesium = exports.c115Cesium = exports.c114Cesium = exports.c113Cesium = exports.c112Cesium = exports.c147Xenon = exports.c146Xenon = exports.c145Xenon = exports.c144Xenon = exports.c143Xenon = exports.c142Xenon = exports.c141Xenon = exports.c140Xenon = exports.c139Xenon = exports.c138Xenon = exports.c137Xenon = exports.c136Xenon = exports.c135Xenon = exports.c134Xenon = exports.c133Xenon = exports.c132Xenon = exports.c131Xenon = exports.c130Xenon = exports.c129Xenon = exports.c128Xenon = exports.c127Xenon = exports.c126Xenon = exports.c125Xenon = exports.c124Xenon = exports.c123Xenon = exports.c122Xenon = exports.c121Xenon = exports.c120Xenon = exports.c119Xenon = exports.c118Xenon = exports.c117Xenon = exports.c116Xenon = exports.c115Xenon = exports.c114Xenon = exports.c113Xenon = exports.c112Xenon = exports.c111Xenon = exports.c110Xenon = exports.c109Xenon = exports.c108Xenon = exports.c144Iodine = exports.c143Iodine = exports.c142Iodine = exports.c141Iodine = exports.c140Iodine = exports.c139Iodine = exports.c138Iodine = exports.c137Iodine = exports.c136Iodine = exports.c135Iodine = exports.c134Iodine = exports.c133Iodine = exports.c132Iodine = exports.c131Iodine = exports.c130Iodine = exports.c129Iodine = exports.c128Iodine = exports.c127Iodine = exports.c126Iodine = exports.c125Iodine = exports.c124Iodine = exports.c123Iodine = exports.c122Iodine = exports.c121Iodine = exports.c120Iodine = exports.c119Iodine = exports.c118Iodine = exports.c117Iodine = exports.c116Iodine = exports.c115Iodine = exports.c114Iodine = exports.c113Iodine = exports.c112Iodine = exports.c111Iodine = exports.c110Iodine = exports.c109Iodine = exports.c108Iodine = exports.c142Tellurium = exports.c141Tellurium = exports.c140Tellurium = exports.c139Tellurium = exports.c138Tellurium = exports.c137Tellurium = exports.c136Tellurium = exports.c135Tellurium = exports.c134Tellurium = exports.c133Tellurium = exports.c132Tellurium = void 0;
 exports.c148Lanthanum = exports.c147Lanthanum = exports.c146Lanthanum = exports.c145Lanthanum = exports.c144Lanthanum = exports.c143Lanthanum = exports.c142Lanthanum = exports.c141Lanthanum = exports.c140Lanthanum = exports.c139Lanthanum = exports.c138Lanthanum = exports.c137Lanthanum = exports.c136Lanthanum = exports.c135Lanthanum = exports.c134Lanthanum = exports.c133Lanthanum = exports.c132Lanthanum = exports.c131Lanthanum = exports.c130Lanthanum = exports.c129Lanthanum = exports.c128Lanthanum = exports.c127Lanthanum = exports.c126Lanthanum = exports.c125Lanthanum = exports.c124Lanthanum = exports.c123Lanthanum = exports.c122Lanthanum = exports.c121Lanthanum = exports.c120Lanthanum = exports.c119Lanthanum = exports.c118Lanthanum = exports.c117Lanthanum = exports.c153Barium = exports.c152Barium = exports.c151Barium = exports.c150Barium = exports.c149Barium = exports.c148Barium = exports.c147Barium = exports.c146Barium = exports.c145Barium = exports.c144Barium = exports.c143Barium = exports.c142Barium = exports.c141Barium = exports.c140Barium = exports.c139Barium = exports.c138Barium = exports.c137Barium = exports.c136Barium = exports.c135Barium = exports.c134Barium = exports.c133Barium = exports.c132Barium = exports.c131Barium = exports.c130Barium = exports.c129Barium = exports.c128Barium = exports.c127Barium = exports.c126Barium = exports.c125Barium = exports.c124Barium = exports.c123Barium = exports.c122Barium = exports.c121Barium = exports.c120Barium = exports.c119Barium = exports.c118Barium = exports.c117Barium = exports.c116Barium = exports.c115Barium = exports.c114Barium = exports.c151Cesium = exports.c150Cesium = exports.c149Cesium = exports.c148Cesium = exports.c147Cesium = exports.c146Cesium = exports.c145Cesium = exports.c144Cesium = exports.c143Cesium = exports.c142Cesium = exports.c141Cesium = exports.c140Cesium = exports.c139Cesium = exports.c138Cesium = exports.c137Cesium = exports.c136Cesium = exports.c135Cesium = exports.c134Cesium = exports.c133Cesium = exports.c132Cesium = exports.c131Cesium = exports.c130Cesium = exports.c129Cesium = exports.c128Cesium = exports.c127Cesium = exports.c126Cesium = exports.c125Cesium = exports.c124Cesium = void 0;
-exports.c138Neonodymium = exports.c137Neonodymium = exports.c136Neonodymium = exports.c135Neonodymium = exports.c134Neonodymium = exports.c133Neonodymium = exports.c132Neonodymium = exports.c131Neonodymium = exports.c130Neonodymium = exports.c129Neonodymium = exports.c128Neonodymium = exports.c127Neonodymium = exports.c126Neonodymium = exports.c125Neonodymium = exports.c124Neonodymium = exports.c159Praseodymium = exports.c158Praseodymium = exports.c157Praseodymium = exports.c156Praseodymium = exports.c155Praseodymium = exports.c154Praseodymium = exports.c153Praseodymium = exports.c152Praseodymium = exports.c151Praseodymium = exports.c150Praseodymium = exports.c149Praseodymium = exports.c148Praseodymium = exports.c147Praseodymium = exports.c146Praseodymium = exports.c145Praseodymium = exports.c144Praseodymium = exports.c143Praseodymium = exports.c142Praseodymium = exports.c141Praseodymium = exports.c140Praseodymium = exports.c139Praseodymium = exports.c138Praseodymium = exports.c137Praseodymium = exports.c136Praseodymium = exports.c135Praseodymium = exports.c134Praseodymium = exports.c133Praseodymium = exports.c132Praseodymium = exports.c131Praseodymium = exports.c130Praseodymium = exports.c129Praseodymium = exports.c128Praseodymium = exports.c127Praseodymium = exports.c126Praseodymium = exports.c125Praseodymium = exports.c124Praseodymium = exports.c123Praseodymium = exports.c122Praseodymium = exports.c121Praseodymium = exports.c157Cerium = exports.c156Cerium = exports.c155Cerium = exports.c154Cerium = exports.c153Cerium = exports.c152Cerium = exports.c151Cerium = exports.c150Cerium = exports.c149Cerium = exports.c148Cerium = exports.c147Cerium = exports.c146Cerium = exports.c145Cerium = exports.c144Cerium = exports.c143Cerium = exports.c142Cerium = exports.c141Cerium = exports.c140Cerium = exports.c139Cerium = exports.c138Cerium = exports.c137Cerium = exports.c136Cerium = exports.c135Cerium = exports.c134Cerium = exports.c133Cerium = exports.c132Cerium = exports.c131Cerium = exports.c130Cerium = exports.c129Cerium = exports.c128Cerium = exports.c127Cerium = exports.c126Cerium = exports.c125Cerium = exports.c124Cerium = exports.c123Cerium = exports.c122Cerium = exports.c121Cerium = exports.c120Cerium = exports.c119Cerium = exports.c155Lanthanum = exports.c154Lanthanum = exports.c153Lanthanum = exports.c152Lanthanum = exports.c151Lanthanum = exports.c150Lanthanum = exports.c149Lanthanum = void 0;
-exports.c130Europium = exports.c165Samarium = exports.c164Samarium = exports.c163Samarium = exports.c162Samarium = exports.c161Samarium = exports.c160Samarium = exports.c159Samarium = exports.c158Samarium = exports.c157Samarium = exports.c156Samarium = exports.c155Samarium = exports.c154Samarium = exports.c153Samarium = exports.c152Samarium = exports.c151Samarium = exports.c150Samarium = exports.c149Samarium = exports.c148Samarium = exports.c147Samarium = exports.c146Samarium = exports.c145Samarium = exports.c144Samarium = exports.c143Samarium = exports.c142Samarium = exports.c141Samarium = exports.c140Samarium = exports.c139Samarium = exports.c138Samarium = exports.c137Samarium = exports.c136Samarium = exports.c135Samarium = exports.c134Samarium = exports.c133Samarium = exports.c132Samarium = exports.c131Samarium = exports.c130Samarium = exports.c129Samarium = exports.c128Samarium = exports.c163Promethium = exports.c162Promethium = exports.c161Promethium = exports.c160Promethium = exports.c159Promethium = exports.c158Promethium = exports.c157Promethium = exports.c156Promethium = exports.c155Promethium = exports.c154Promethium = exports.c153Promethium = exports.c152Promethium = exports.c151Promethium = exports.c150Promethium = exports.c149Promethium = exports.c148Promethium = exports.c147Promethium = exports.c146Promethium = exports.c145Promethium = exports.c144Promethium = exports.c143Promethium = exports.c142Promethium = exports.c141Promethium = exports.c140Promethium = exports.c139Promethium = exports.c138Promethium = exports.c137Promethium = exports.c136Promethium = exports.c135Promethium = exports.c134Promethium = exports.c133Promethium = exports.c132Promethium = exports.c131Promethium = exports.c130Promethium = exports.c129Promethium = exports.c128Promethium = exports.c127Promethium = exports.c126Promethium = exports.c161Neonodymium = exports.c160Neonodymium = exports.c159Neonodymium = exports.c158Neonodymium = exports.c157Neonodymium = exports.c156Neonodymium = exports.c155Neonodymium = exports.c154Neonodymium = exports.c153Neonodymium = exports.c152Neonodymium = exports.c151Neonodymium = exports.c150Neonodymium = exports.c149Neonodymium = exports.c148Neonodymium = exports.c147Neonodymium = exports.c146Neonodymium = exports.c145Neonodymium = exports.c144Neonodymium = exports.c143Neonodymium = exports.c142Neonodymium = exports.c141Neonodymium = exports.c140Neonodymium = exports.c139Neonodymium = void 0;
+exports.c138Neodymium = exports.c137Neodymium = exports.c136Neodymium = exports.c135Neodymium = exports.c134Neodymium = exports.c133Neodymium = exports.c132Neodymium = exports.c131Neodymium = exports.c130Neodymium = exports.c129Neodymium = exports.c128Neodymium = exports.c127Neodymium = exports.c126Neodymium = exports.c125Neodymium = exports.c124Neodymium = exports.c159Praseodymium = exports.c158Praseodymium = exports.c157Praseodymium = exports.c156Praseodymium = exports.c155Praseodymium = exports.c154Praseodymium = exports.c153Praseodymium = exports.c152Praseodymium = exports.c151Praseodymium = exports.c150Praseodymium = exports.c149Praseodymium = exports.c148Praseodymium = exports.c147Praseodymium = exports.c146Praseodymium = exports.c145Praseodymium = exports.c144Praseodymium = exports.c143Praseodymium = exports.c142Praseodymium = exports.c141Praseodymium = exports.c140Praseodymium = exports.c139Praseodymium = exports.c138Praseodymium = exports.c137Praseodymium = exports.c136Praseodymium = exports.c135Praseodymium = exports.c134Praseodymium = exports.c133Praseodymium = exports.c132Praseodymium = exports.c131Praseodymium = exports.c130Praseodymium = exports.c129Praseodymium = exports.c128Praseodymium = exports.c127Praseodymium = exports.c126Praseodymium = exports.c125Praseodymium = exports.c124Praseodymium = exports.c123Praseodymium = exports.c122Praseodymium = exports.c121Praseodymium = exports.c157Cerium = exports.c156Cerium = exports.c155Cerium = exports.c154Cerium = exports.c153Cerium = exports.c152Cerium = exports.c151Cerium = exports.c150Cerium = exports.c149Cerium = exports.c148Cerium = exports.c147Cerium = exports.c146Cerium = exports.c145Cerium = exports.c144Cerium = exports.c143Cerium = exports.c142Cerium = exports.c141Cerium = exports.c140Cerium = exports.c139Cerium = exports.c138Cerium = exports.c137Cerium = exports.c136Cerium = exports.c135Cerium = exports.c134Cerium = exports.c133Cerium = exports.c132Cerium = exports.c131Cerium = exports.c130Cerium = exports.c129Cerium = exports.c128Cerium = exports.c127Cerium = exports.c126Cerium = exports.c125Cerium = exports.c124Cerium = exports.c123Cerium = exports.c122Cerium = exports.c121Cerium = exports.c120Cerium = exports.c119Cerium = exports.c155Lanthanum = exports.c154Lanthanum = exports.c153Lanthanum = exports.c152Lanthanum = exports.c151Lanthanum = exports.c150Lanthanum = exports.c149Lanthanum = void 0;
+exports.c130Europium = exports.c165Samarium = exports.c164Samarium = exports.c163Samarium = exports.c162Samarium = exports.c161Samarium = exports.c160Samarium = exports.c159Samarium = exports.c158Samarium = exports.c157Samarium = exports.c156Samarium = exports.c155Samarium = exports.c154Samarium = exports.c153Samarium = exports.c152Samarium = exports.c151Samarium = exports.c150Samarium = exports.c149Samarium = exports.c148Samarium = exports.c147Samarium = exports.c146Samarium = exports.c145Samarium = exports.c144Samarium = exports.c143Samarium = exports.c142Samarium = exports.c141Samarium = exports.c140Samarium = exports.c139Samarium = exports.c138Samarium = exports.c137Samarium = exports.c136Samarium = exports.c135Samarium = exports.c134Samarium = exports.c133Samarium = exports.c132Samarium = exports.c131Samarium = exports.c130Samarium = exports.c129Samarium = exports.c128Samarium = exports.c163Promethium = exports.c162Promethium = exports.c161Promethium = exports.c160Promethium = exports.c159Promethium = exports.c158Promethium = exports.c157Promethium = exports.c156Promethium = exports.c155Promethium = exports.c154Promethium = exports.c153Promethium = exports.c152Promethium = exports.c151Promethium = exports.c150Promethium = exports.c149Promethium = exports.c148Promethium = exports.c147Promethium = exports.c146Promethium = exports.c145Promethium = exports.c144Promethium = exports.c143Promethium = exports.c142Promethium = exports.c141Promethium = exports.c140Promethium = exports.c139Promethium = exports.c138Promethium = exports.c137Promethium = exports.c136Promethium = exports.c135Promethium = exports.c134Promethium = exports.c133Promethium = exports.c132Promethium = exports.c131Promethium = exports.c130Promethium = exports.c129Promethium = exports.c128Promethium = exports.c127Promethium = exports.c126Promethium = exports.c161Neodymium = exports.c160Neodymium = exports.c159Neodymium = exports.c158Neodymium = exports.c157Neodymium = exports.c156Neodymium = exports.c155Neodymium = exports.c154Neodymium = exports.c153Neodymium = exports.c152Neodymium = exports.c151Neodymium = exports.c150Neodymium = exports.c149Neodymium = exports.c148Neodymium = exports.c147Neodymium = exports.c146Neodymium = exports.c145Neodymium = exports.c144Neodymium = exports.c143Neodymium = exports.c142Neodymium = exports.c141Neodymium = exports.c140Neodymium = exports.c139Neodymium = void 0;
 exports.c161Terbium = exports.c160Terbium = exports.c159Terbium = exports.c158Terbium = exports.c157Terbium = exports.c156Terbium = exports.c155Terbium = exports.c154Terbium = exports.c153Terbium = exports.c152Terbium = exports.c151Terbium = exports.c150Terbium = exports.c149Terbium = exports.c148Terbium = exports.c147Terbium = exports.c146Terbium = exports.c145Terbium = exports.c144Terbium = exports.c143Terbium = exports.c142Terbium = exports.c141Terbium = exports.c140Terbium = exports.c139Terbium = exports.c138Terbium = exports.c137Terbium = exports.c136Terbium = exports.c135Terbium = exports.c169Gadolinium = exports.c168Gadolinium = exports.c167Gadolinium = exports.c166Gadolinium = exports.c165Gadolinium = exports.c164Gadolinium = exports.c163Gadolinium = exports.c162Gadolinium = exports.c161Gadolinium = exports.c160Gadolinium = exports.c159Gadolinium = exports.c158Gadolinium = exports.c157Gadolinium = exports.c156Gadolinium = exports.c155Gadolinium = exports.c154Gadolinium = exports.c153Gadolinium = exports.c152Gadolinium = exports.c151Gadolinium = exports.c150Gadolinium = exports.c149Gadolinium = exports.c148Gadolinium = exports.c147Gadolinium = exports.c146Gadolinium = exports.c145Gadolinium = exports.c144Gadolinium = exports.c143Gadolinium = exports.c142Gadolinium = exports.c141Gadolinium = exports.c140Gadolinium = exports.c139Gadolinium = exports.c138Gadolinium = exports.c137Gadolinium = exports.c136Gadolinium = exports.c135Gadolinium = exports.c134Gadolinium = exports.c167Europium = exports.c166Europium = exports.c165Europium = exports.c164Europium = exports.c163Europium = exports.c162Europium = exports.c161Europium = exports.c160Europium = exports.c159Europium = exports.c158Europium = exports.c157Europium = exports.c156Europium = exports.c155Europium = exports.c154Europium = exports.c153Europium = exports.c152Europium = exports.c151Europium = exports.c150Europium = exports.c149Europium = exports.c148Europium = exports.c147Europium = exports.c146Europium = exports.c145Europium = exports.c144Europium = exports.c143Europium = exports.c142Europium = exports.c141Europium = exports.c140Europium = exports.c139Europium = exports.c138Europium = exports.c137Europium = exports.c136Europium = exports.c135Europium = exports.c134Europium = exports.c133Europium = exports.c132Europium = exports.c131Europium = void 0;
 exports.c159Erbium = exports.c158Erbium = exports.c157Erbium = exports.c156Erbium = exports.c155Erbium = exports.c154Erbium = exports.c153Erbium = exports.c152Erbium = exports.c151Erbium = exports.c150Erbium = exports.c149Erbium = exports.c148Erbium = exports.c147Erbium = exports.c146Erbium = exports.c145Erbium = exports.c144Erbium = exports.c143Erbium = exports.c142Erbium = exports.c175Holmium = exports.c174Holmium = exports.c173Holmium = exports.c172Holmium = exports.c171Holmium = exports.c170Holmium = exports.c169Holmium = exports.c168Holmium = exports.c167Holmium = exports.c166Holmium = exports.c165Holmium = exports.c164Holmium = exports.c163Holmium = exports.c162Holmium = exports.c161Holmium = exports.c160Holmium = exports.c159Holmium = exports.c158Holmium = exports.c157Holmium = exports.c156Holmium = exports.c155Holmium = exports.c154Holmium = exports.c153Holmium = exports.c152Holmium = exports.c151Holmium = exports.c150Holmium = exports.c149Holmium = exports.c148Holmium = exports.c147Holmium = exports.c146Holmium = exports.c145Holmium = exports.c144Holmium = exports.c143Holmium = exports.c142Holmium = exports.c141Holmium = exports.c140Holmium = exports.c173Dysprosium = exports.c172Dysprosium = exports.c171Dysprosium = exports.c170Dysprosium = exports.c169Dysprosium = exports.c168Dysprosium = exports.c167Dysprosium = exports.c166Dysprosium = exports.c165Dysprosium = exports.c164Dysprosium = exports.c163Dysprosium = exports.c162Dysprosium = exports.c161Dysprosium = exports.c160Dysprosium = exports.c159Dysprosium = exports.c158Dysprosium = exports.c157Dysprosium = exports.c156Dysprosium = exports.c155Dysprosium = exports.c154Dysprosium = exports.c153Dysprosium = exports.c152Dysprosium = exports.c151Dysprosium = exports.c150Dysprosium = exports.c149Dysprosium = exports.c148Dysprosium = exports.c147Dysprosium = exports.c146Dysprosium = exports.c145Dysprosium = exports.c144Dysprosium = exports.c143Dysprosium = exports.c142Dysprosium = exports.c141Dysprosium = exports.c140Dysprosium = exports.c139Dysprosium = exports.c138Dysprosium = exports.c171Terbium = exports.c170Terbium = exports.c169Terbium = exports.c168Terbium = exports.c167Terbium = exports.c166Terbium = exports.c165Terbium = exports.c164Terbium = exports.c163Terbium = exports.c162Terbium = void 0;
 exports.c161Lutetium = exports.c160Lutetium = exports.c159Lutetium = exports.c158Lutetium = exports.c157Lutetium = exports.c156Lutetium = exports.c155Lutetium = exports.c154Lutetium = exports.c153Lutetium = exports.c152Lutetium = exports.c151Lutetium = exports.c150Lutetium = exports.c182Ytterbium = exports.c181Ytterbium = exports.c180Ytterbium = exports.c179Ytterbium = exports.c178Ytterbium = exports.c177Ytterbium = exports.c176Ytterbium = exports.c175Ytterbium = exports.c174Ytterbium = exports.c173Ytterbium = exports.c172Ytterbium = exports.c171Ytterbium = exports.c170Ytterbium = exports.c169Ytterbium = exports.c168Ytterbium = exports.c167Ytterbium = exports.c166Ytterbium = exports.c165Ytterbium = exports.c164Ytterbium = exports.c163Ytterbium = exports.c162Ytterbium = exports.c161Ytterbium = exports.c160Ytterbium = exports.c159Ytterbium = exports.c158Ytterbium = exports.c157Ytterbium = exports.c156Ytterbium = exports.c155Ytterbium = exports.c154Ytterbium = exports.c153Ytterbium = exports.c152Ytterbium = exports.c151Ytterbium = exports.c150Ytterbium = exports.c149Ytterbium = exports.c148Ytterbium = exports.c179Thulium = exports.c178Thulium = exports.c177Thulium = exports.c176Thulium = exports.c175Thulium = exports.c174Thulium = exports.c173Thulium = exports.c172Thulium = exports.c171Thulium = exports.c170Thulium = exports.c169Thulium = exports.c168Thulium = exports.c167Thulium = exports.c166Thulium = exports.c165Thulium = exports.c164Thulium = exports.c163Thulium = exports.c162Thulium = exports.c161Thulium = exports.c160Thulium = exports.c159Thulium = exports.c158Thulium = exports.c157Thulium = exports.c156Thulium = exports.c155Thulium = exports.c154Thulium = exports.c153Thulium = exports.c152Thulium = exports.c151Thulium = exports.c150Thulium = exports.c149Thulium = exports.c148Thulium = exports.c147Thulium = exports.c146Thulium = exports.c145Thulium = exports.c177Erbium = exports.c176Erbium = exports.c175Erbium = exports.c174Erbium = exports.c173Erbium = exports.c172Erbium = exports.c171Erbium = exports.c170Erbium = exports.c169Erbium = exports.c168Erbium = exports.c167Erbium = exports.c166Erbium = exports.c165Erbium = exports.c164Erbium = exports.c163Erbium = exports.c162Erbium = exports.c161Erbium = exports.c160Erbium = void 0;
@@ -65,8 +65,8 @@ exports.c209Thallium = exports.c208Thallium = exports.c207Thallium = exports.c20
 exports.c200Polonium = exports.c199Polonium = exports.c198Polonium = exports.c197Polonium = exports.c196Polonium = exports.c195Polonium = exports.c194Polonium = exports.c193Polonium = exports.c192Polonium = exports.c191Polonium = exports.c190Polonium = exports.c189Polonium = exports.c188Polonium = exports.c187Polonium = exports.c186Polonium = exports.c220Bismuth = exports.c219Bismuth = exports.c218Bismuth = exports.c217Bismuth = exports.c216Bismuth = exports.c215Bismuth = exports.c214Bismuth = exports.c213Bismuth = exports.c212Bismuth = exports.c211Bismuth = exports.c210Bismuth = exports.c209Bismuth = exports.c208Bismuth = exports.c207Bismuth = exports.c206Bismuth = exports.c205Bismuth = exports.c204Bismuth = exports.c203Bismuth = exports.c202Bismuth = exports.c201Bismuth = exports.c200Bismuth = exports.c199Bismuth = exports.c198Bismuth = exports.c197Bismuth = exports.c196Bismuth = exports.c195Bismuth = exports.c194Bismuth = exports.c193Bismuth = exports.c192Bismuth = exports.c191Bismuth = exports.c190Bismuth = exports.c189Bismuth = exports.c188Bismuth = exports.c187Bismuth = exports.c186Bismuth = exports.c185Bismuth = exports.c184Bismuth = exports.c218Lead = exports.c217Lead = exports.c216Lead = exports.c215Lead = exports.c214Lead = exports.c213Lead = exports.c212Lead = exports.c211Lead = exports.c210Lead = exports.c209Lead = exports.c208Lead = exports.c207Lead = exports.c206Lead = exports.c205Lead = exports.c204Lead = exports.c203Lead = exports.c202Lead = exports.c201Lead = exports.c200Lead = exports.c199Lead = exports.c198Lead = exports.c197Lead = exports.c196Lead = exports.c195Lead = exports.c194Lead = exports.c193Lead = exports.c192Lead = exports.c191Lead = exports.c190Lead = exports.c189Lead = exports.c188Lead = exports.c187Lead = exports.c186Lead = exports.c185Lead = exports.c184Lead = exports.c183Lead = exports.c182Lead = exports.c181Lead = exports.c180Lead = exports.c179Lead = exports.c178Lead = exports.c216Thallium = exports.c215Thallium = exports.c214Thallium = exports.c213Thallium = exports.c212Thallium = exports.c211Thallium = exports.c210Thallium = void 0;
 exports.c206Francium = exports.c205Francium = exports.c204Francium = exports.c203Francium = exports.c202Francium = exports.c201Francium = exports.c200Francium = exports.c199Francium = exports.c231Radon = exports.c230Radon = exports.c229Radon = exports.c228Radon = exports.c227Radon = exports.c226Radon = exports.c225Radon = exports.c224Radon = exports.c223Radon = exports.c222Radon = exports.c221Radon = exports.c220Radon = exports.c219Radon = exports.c218Radon = exports.c217Radon = exports.c216Radon = exports.c215Radon = exports.c214Radon = exports.c213Radon = exports.c212Radon = exports.c211Radon = exports.c210Radon = exports.c209Radon = exports.c208Radon = exports.c207Radon = exports.c206Radon = exports.c205Radon = exports.c204Radon = exports.c203Radon = exports.c202Radon = exports.c201Radon = exports.c200Radon = exports.c199Radon = exports.c198Radon = exports.c197Radon = exports.c196Radon = exports.c195Radon = exports.c223Astatine = exports.c222Astatine = exports.c221Astatine = exports.c220Astatine = exports.c219Astatine = exports.c218Astatine = exports.c217Astatine = exports.c216Astatine = exports.c215Astatine = exports.c214Astatine = exports.c213Astatine = exports.c212Astatine = exports.c211Astatine = exports.c210Astatine = exports.c209Astatine = exports.c208Astatine = exports.c207Astatine = exports.c206Astatine = exports.c205Astatine = exports.c204Astatine = exports.c203Astatine = exports.c202Astatine = exports.c201Astatine = exports.c200Astatine = exports.c199Astatine = exports.c198Astatine = exports.c197Astatine = exports.c196Astatine = exports.c195Astatine = exports.c194Astatine = exports.c193Astatine = exports.c192Astatine = exports.c191Astatine = exports.c222Polonium = exports.c221Polonium = exports.c220Polonium = exports.c219Polonium = exports.c218Polonium = exports.c217Polonium = exports.c216Polonium = exports.c215Polonium = exports.c214Polonium = exports.c213Polonium = exports.c212Polonium = exports.c211Polonium = exports.c210Polonium = exports.c209Polonium = exports.c208Polonium = exports.c207Polonium = exports.c206Polonium = exports.c205Polonium = exports.c204Polonium = exports.c203Polonium = exports.c202Polonium = exports.c201Polonium = void 0;
 exports.c216Thorium = exports.c215Thorium = exports.c214Thorium = exports.c213Thorium = exports.c212Thorium = exports.c211Thorium = exports.c210Thorium = exports.c209Thorium = exports.c208Thorium = exports.c236Actinium = exports.c235Actinium = exports.c234Actinium = exports.c233Actinium = exports.c232Actinium = exports.c231Actinium = exports.c230Actinium = exports.c229Actinium = exports.c228Actinium = exports.c227Actinium = exports.c226Actinium = exports.c225Actinium = exports.c224Actinium = exports.c223Actinium = exports.c222Actinium = exports.c221Actinium = exports.c220Actinium = exports.c219Actinium = exports.c218Actinium = exports.c217Actinium = exports.c216Actinium = exports.c215Actinium = exports.c214Actinium = exports.c213Actinium = exports.c212Actinium = exports.c211Actinium = exports.c210Actinium = exports.c209Actinium = exports.c208Actinium = exports.c207Actinium = exports.c206Actinium = exports.c205Actinium = exports.c234Radium = exports.c233Radium = exports.c232Radium = exports.c231Radium = exports.c230Radium = exports.c229Radium = exports.c228Radium = exports.c227Radium = exports.c226Radium = exports.c225Radium = exports.c224Radium = exports.c223Radium = exports.c222Radium = exports.c221Radium = exports.c220Radium = exports.c219Radium = exports.c218Radium = exports.c217Radium = exports.c216Radium = exports.c215Radium = exports.c214Radium = exports.c213Radium = exports.c212Radium = exports.c211Radium = exports.c210Radium = exports.c209Radium = exports.c208Radium = exports.c207Radium = exports.c206Radium = exports.c205Radium = exports.c204Radium = exports.c203Radium = exports.c202Radium = exports.c232Francium = exports.c231Francium = exports.c230Francium = exports.c229Francium = exports.c228Francium = exports.c227Francium = exports.c226Francium = exports.c225Francium = exports.c224Francium = exports.c223Francium = exports.c222Francium = exports.c221Francium = exports.c220Francium = exports.c219Francium = exports.c218Francium = exports.c217Francium = exports.c216Francium = exports.c215Francium = exports.c214Francium = exports.c213Francium = exports.c212Francium = exports.c211Francium = exports.c210Francium = exports.c209Francium = exports.c208Francium = exports.c207Francium = void 0;
-exports.c243Neonptunium = exports.c242Neonptunium = exports.c241Neonptunium = exports.c240Neonptunium = exports.c239Neonptunium = exports.c238Neonptunium = exports.c237Neonptunium = exports.c236Neonptunium = exports.c235Neonptunium = exports.c234Neonptunium = exports.c233Neonptunium = exports.c232Neonptunium = exports.c231Neonptunium = exports.c230Neonptunium = exports.c229Neonptunium = exports.c228Neonptunium = exports.c227Neonptunium = exports.c226Neonptunium = exports.c225Neonptunium = exports.c224Neonptunium = exports.c223Neonptunium = exports.c220Neonptunium = exports.c219Neonptunium = exports.c242Uranium = exports.c240Uranium = exports.c239Uranium = exports.c238Uranium = exports.c237Uranium = exports.c236Uranium = exports.c235Uranium = exports.c234Uranium = exports.c233Uranium = exports.c232Uranium = exports.c231Uranium = exports.c230Uranium = exports.c229Uranium = exports.c228Uranium = exports.c227Uranium = exports.c226Uranium = exports.c225Uranium = exports.c224Uranium = exports.c223Uranium = exports.c222Uranium = exports.c221Uranium = exports.c219Uranium = exports.c218Uranium = exports.c217Uranium = exports.c216Uranium = exports.c215Uranium = exports.c240Protactinium = exports.c239Protactinium = exports.c238Protactinium = exports.c237Protactinium = exports.c236Protactinium = exports.c235Protactinium = exports.c234Protactinium = exports.c233Protactinium = exports.c232Protactinium = exports.c231Protactinium = exports.c230Protactinium = exports.c229Protactinium = exports.c228Protactinium = exports.c227Protactinium = exports.c226Protactinium = exports.c225Protactinium = exports.c224Protactinium = exports.c223Protactinium = exports.c222Protactinium = exports.c221Protactinium = exports.c220Protactinium = exports.c219Protactinium = exports.c218Protactinium = exports.c217Protactinium = exports.c216Protactinium = exports.c215Protactinium = exports.c214Protactinium = exports.c213Protactinium = exports.c212Protactinium = exports.c238Thorium = exports.c237Thorium = exports.c236Thorium = exports.c235Thorium = exports.c234Thorium = exports.c233Thorium = exports.c232Thorium = exports.c231Thorium = exports.c230Thorium = exports.c229Thorium = exports.c228Thorium = exports.c227Thorium = exports.c226Thorium = exports.c225Thorium = exports.c224Thorium = exports.c223Thorium = exports.c222Thorium = exports.c221Thorium = exports.c220Thorium = exports.c219Thorium = exports.c218Thorium = exports.c217Thorium = void 0;
-exports.c242Einsteinium = exports.c241Einsteinium = exports.c240Einsteinium = exports.c256Californium = exports.c255Californium = exports.c254Californium = exports.c253Californium = exports.c252Californium = exports.c251Californium = exports.c250Californium = exports.c249Californium = exports.c248Californium = exports.c247Californium = exports.c246Californium = exports.c245Californium = exports.c244Californium = exports.c243Californium = exports.c242Californium = exports.c241Californium = exports.c240Californium = exports.c239Californium = exports.c238Californium = exports.c237Californium = exports.c253Berkelium = exports.c252Berkelium = exports.c251Berkelium = exports.c250Berkelium = exports.c249Berkelium = exports.c248Berkelium = exports.c247Berkelium = exports.c246Berkelium = exports.c245Berkelium = exports.c244Berkelium = exports.c243Berkelium = exports.c242Berkelium = exports.c241Berkelium = exports.c240Berkelium = exports.c238Berkelium = exports.c236Berkelium = exports.c234Berkelium = exports.c233Berkelium = exports.c251Curium = exports.c250Curium = exports.c249Curium = exports.c248Curium = exports.c247Curium = exports.c246Curium = exports.c245Curium = exports.c244Curium = exports.c243Curium = exports.c242Curium = exports.c241Curium = exports.c240Curium = exports.c239Curium = exports.c238Curium = exports.c237Curium = exports.c236Curium = exports.c235Curium = exports.c234Curium = exports.c233Curium = exports.c247Americium = exports.c246Americium = exports.c245Americium = exports.c244Americium = exports.c243Americium = exports.c242Americium = exports.c241Americium = exports.c240Americium = exports.c239Americium = exports.c238Americium = exports.c237Americium = exports.c236Americium = exports.c235Americium = exports.c234Americium = exports.c233Americium = exports.c232Americium = exports.c230Americium = exports.c229Americium = exports.c223Americium = exports.c247Plutonium = exports.c246Plutonium = exports.c245Plutonium = exports.c244Plutonium = exports.c243Plutonium = exports.c242Plutonium = exports.c241Plutonium = exports.c240Plutonium = exports.c239Plutonium = exports.c238Plutonium = exports.c237Plutonium = exports.c236Plutonium = exports.c235Plutonium = exports.c234Plutonium = exports.c233Plutonium = exports.c232Plutonium = exports.c231Plutonium = exports.c230Plutonium = exports.c229Plutonium = exports.c228Plutonium = exports.c244Neonptunium = void 0;
+exports.c243Neptunium = exports.c242Neptunium = exports.c241Neptunium = exports.c240Neptunium = exports.c239Neptunium = exports.c238Neptunium = exports.c237Neptunium = exports.c236Neptunium = exports.c235Neptunium = exports.c234Neptunium = exports.c233Neptunium = exports.c232Neptunium = exports.c231Neptunium = exports.c230Neptunium = exports.c229Neptunium = exports.c228Neptunium = exports.c227Neptunium = exports.c226Neptunium = exports.c225Neptunium = exports.c224Neptunium = exports.c223Neptunium = exports.c220Neptunium = exports.c219Neptunium = exports.c242Uranium = exports.c240Uranium = exports.c239Uranium = exports.c238Uranium = exports.c237Uranium = exports.c236Uranium = exports.c235Uranium = exports.c234Uranium = exports.c233Uranium = exports.c232Uranium = exports.c231Uranium = exports.c230Uranium = exports.c229Uranium = exports.c228Uranium = exports.c227Uranium = exports.c226Uranium = exports.c225Uranium = exports.c224Uranium = exports.c223Uranium = exports.c222Uranium = exports.c221Uranium = exports.c219Uranium = exports.c218Uranium = exports.c217Uranium = exports.c216Uranium = exports.c215Uranium = exports.c240Protactinium = exports.c239Protactinium = exports.c238Protactinium = exports.c237Protactinium = exports.c236Protactinium = exports.c235Protactinium = exports.c234Protactinium = exports.c233Protactinium = exports.c232Protactinium = exports.c231Protactinium = exports.c230Protactinium = exports.c229Protactinium = exports.c228Protactinium = exports.c227Protactinium = exports.c226Protactinium = exports.c225Protactinium = exports.c224Protactinium = exports.c223Protactinium = exports.c222Protactinium = exports.c221Protactinium = exports.c220Protactinium = exports.c219Protactinium = exports.c218Protactinium = exports.c217Protactinium = exports.c216Protactinium = exports.c215Protactinium = exports.c214Protactinium = exports.c213Protactinium = exports.c212Protactinium = exports.c238Thorium = exports.c237Thorium = exports.c236Thorium = exports.c235Thorium = exports.c234Thorium = exports.c233Thorium = exports.c232Thorium = exports.c231Thorium = exports.c230Thorium = exports.c229Thorium = exports.c228Thorium = exports.c227Thorium = exports.c226Thorium = exports.c225Thorium = exports.c224Thorium = exports.c223Thorium = exports.c222Thorium = exports.c221Thorium = exports.c220Thorium = exports.c219Thorium = exports.c218Thorium = exports.c217Thorium = void 0;
+exports.c242Einsteinium = exports.c241Einsteinium = exports.c240Einsteinium = exports.c256Californium = exports.c255Californium = exports.c254Californium = exports.c253Californium = exports.c252Californium = exports.c251Californium = exports.c250Californium = exports.c249Californium = exports.c248Californium = exports.c247Californium = exports.c246Californium = exports.c245Californium = exports.c244Californium = exports.c243Californium = exports.c242Californium = exports.c241Californium = exports.c240Californium = exports.c239Californium = exports.c238Californium = exports.c237Californium = exports.c253Berkelium = exports.c252Berkelium = exports.c251Berkelium = exports.c250Berkelium = exports.c249Berkelium = exports.c248Berkelium = exports.c247Berkelium = exports.c246Berkelium = exports.c245Berkelium = exports.c244Berkelium = exports.c243Berkelium = exports.c242Berkelium = exports.c241Berkelium = exports.c240Berkelium = exports.c238Berkelium = exports.c236Berkelium = exports.c234Berkelium = exports.c233Berkelium = exports.c251Curium = exports.c250Curium = exports.c249Curium = exports.c248Curium = exports.c247Curium = exports.c246Curium = exports.c245Curium = exports.c244Curium = exports.c243Curium = exports.c242Curium = exports.c241Curium = exports.c240Curium = exports.c239Curium = exports.c238Curium = exports.c237Curium = exports.c236Curium = exports.c235Curium = exports.c234Curium = exports.c233Curium = exports.c247Americium = exports.c246Americium = exports.c245Americium = exports.c244Americium = exports.c243Americium = exports.c242Americium = exports.c241Americium = exports.c240Americium = exports.c239Americium = exports.c238Americium = exports.c237Americium = exports.c236Americium = exports.c235Americium = exports.c234Americium = exports.c233Americium = exports.c232Americium = exports.c230Americium = exports.c229Americium = exports.c223Americium = exports.c247Plutonium = exports.c246Plutonium = exports.c245Plutonium = exports.c244Plutonium = exports.c243Plutonium = exports.c242Plutonium = exports.c241Plutonium = exports.c240Plutonium = exports.c239Plutonium = exports.c238Plutonium = exports.c237Plutonium = exports.c236Plutonium = exports.c235Plutonium = exports.c234Plutonium = exports.c233Plutonium = exports.c232Plutonium = exports.c231Plutonium = exports.c230Plutonium = exports.c229Plutonium = exports.c228Plutonium = exports.c244Neptunium = void 0;
 exports.c261Dubnium = exports.c260Dubnium = exports.c259Dubnium = exports.c258Dubnium = exports.c257Dubnium = exports.c256Dubnium = exports.c255Dubnium = exports.c270Rutherfordium = exports.c268Rutherfordium = exports.c267Rutherfordium = exports.c266Rutherfordium = exports.c265Rutherfordium = exports.c263Rutherfordium = exports.c262Rutherfordium = exports.c261Rutherfordium = exports.c260Rutherfordium = exports.c259Rutherfordium = exports.c258Rutherfordium = exports.c257Rutherfordium = exports.c256Rutherfordium = exports.c255Rutherfordium = exports.c254Rutherfordium = exports.c253Rutherfordium = exports.c266Lawrencium = exports.c262Lawrencium = exports.c261Lawrencium = exports.c260Lawrencium = exports.c259Lawrencium = exports.c258Lawrencium = exports.c257Lawrencium = exports.c256Lawrencium = exports.c255Lawrencium = exports.c254Lawrencium = exports.c253Lawrencium = exports.c252Lawrencium = exports.c251Lawrencium = exports.c262Nobelium = exports.c260Nobelium = exports.c259Nobelium = exports.c258Nobelium = exports.c257Nobelium = exports.c256Nobelium = exports.c255Nobelium = exports.c254Nobelium = exports.c253Nobelium = exports.c252Nobelium = exports.c251Nobelium = exports.c250Nobelium = exports.c260Mendelevium = exports.c259Mendelevium = exports.c258Mendelevium = exports.c257Mendelevium = exports.c256Mendelevium = exports.c255Mendelevium = exports.c254Mendelevium = exports.c253Mendelevium = exports.c252Mendelevium = exports.c251Mendelevium = exports.c250Mendelevium = exports.c249Mendelevium = exports.c248Mendelevium = exports.c247Mendelevium = exports.c246Mendelevium = exports.c245Mendelevium = exports.c244Mendelevium = exports.c260Fermium = exports.c259Fermium = exports.c258Fermium = exports.c257Fermium = exports.c256Fermium = exports.c255Fermium = exports.c254Fermium = exports.c253Fermium = exports.c252Fermium = exports.c251Fermium = exports.c250Fermium = exports.c249Fermium = exports.c248Fermium = exports.c247Fermium = exports.c246Fermium = exports.c245Fermium = exports.c244Fermium = exports.c243Fermium = exports.c242Fermium = exports.c241Fermium = exports.c257Einsteinium = exports.c256Einsteinium = exports.c255Einsteinium = exports.c254Einsteinium = exports.c253Einsteinium = exports.c252Einsteinium = exports.c251Einsteinium = exports.c250Einsteinium = exports.c249Einsteinium = exports.c248Einsteinium = exports.c247Einsteinium = exports.c246Einsteinium = exports.c245Einsteinium = exports.c244Einsteinium = exports.c243Einsteinium = void 0;
 exports.c294Livermorium = exports.c293Livermorium = exports.c292Livermorium = exports.c291Livermorium = exports.c290Livermorium = exports.c290Moscovium = exports.c289Moscovium = exports.c288Moscovium = exports.c287Moscovium = exports.c290Flerovium = exports.c289Flerovium = exports.c288Flerovium = exports.c287Flerovium = exports.c286Flerovium = exports.c285Flerovium = exports.c284Flerovium = exports.c290Nihonium = exports.c287Nihonium = exports.c286Nihonium = exports.c285Nihonium = exports.c284Nihonium = exports.c283Nihonium = exports.c282Nihonium = exports.c278Nihonium = exports.c286Copernicium = exports.c285Copernicium = exports.c284Copernicium = exports.c283Copernicium = exports.c282Copernicium = exports.c281Copernicium = exports.c277Copernicium = exports.c286Roentgenium = exports.c283Roentgenium = exports.c282Roentgenium = exports.c281Roentgenium = exports.c280Roentgenium = exports.c279Roentgenium = exports.c278Roentgenium = exports.c274Roentgenium = exports.c272Roentgenium = exports.c281Darmstatium = exports.c280Darmstatium = exports.c279Darmstatium = exports.c277Darmstatium = exports.c273Darmstatium = exports.c271Darmstatium = exports.c270Darmstatium = exports.c269Darmstatium = exports.c267Darmstatium = exports.c282Meitnerium = exports.c278Meitnerium = exports.c277Meitnerium = exports.c276Meitnerium = exports.c275Meitnerium = exports.c274Meitnerium = exports.c270Meitnerium = exports.c268Meitnerium = exports.c266Meitnerium = exports.c277Hassium = exports.c275Hassium = exports.c273Hassium = exports.c271Hassium = exports.c270Hassium = exports.c269Hassium = exports.c268Hassium = exports.c267Hassium = exports.c266Hassium = exports.c265Hassium = exports.c264Hassium = exports.c263Hassium = exports.c278Bohrium = exports.c274Bohrium = exports.c272Bohrium = exports.c271Bohrium = exports.c270Bohrium = exports.c267Bohrium = exports.c266Bohrium = exports.c265Bohrium = exports.c264Bohrium = exports.c262Bohrium = exports.c261Bohrium = exports.c260Bohrium = exports.c271Seaborgium = exports.c269Seaborgium = exports.c267Seaborgium = exports.c266Seaborgium = exports.c265Seaborgium = exports.c264Seaborgium = exports.c263Seaborgium = exports.c262Seaborgium = exports.c261Seaborgium = exports.c260Seaborgium = exports.c259Seaborgium = exports.c258Seaborgium = exports.c270Dubnium = exports.c268Dubnium = exports.c267Dubnium = exports.c266Dubnium = exports.c263Dubnium = exports.c262Dubnium = void 0;
 exports.c295Oganesson = exports.c294Oganesson = exports.c294Tennessine = exports.c293Tennessine = void 0;
@@ -88,18 +88,18 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 /**
- * @file element.constants.js
- * @module element-constants
- * @description Contains named isotopes.
- * @requires module:basic-constants
- * @requires module:phonics-constants
- * @requires module:generic-constants
- * @requires module:word-constants
- * @author Seth Hollingsead
- * @date 2020/07/16
- * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
- * {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
- */
+* @file element.constants.js
+* @module element-constants
+* @description Contains named isotopes.
+* @requires module:basic-constants
+* @requires module:phonics-constants
+* @requires module:generic-constants
+* @requires module:word-constants
+* @author Seth Hollingsead
+* @date 2020/07/16
+* @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+* {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
+*/
 // Hydrogen - H
 var c1H = n.c1 + e.cH; // 1H
 
@@ -9826,25 +9826,25 @@ var c295Og = n.c295 + e.cOg; // 295Og
 // Hydrogen - H
 
 exports.c295Og = c295Og;
-var c1Hydrogen = n.c1 + e.cHydrogen; // 1 1Hydrogen
+var c1Hydrogen = n.c1 + e.cHydrogen; // 11Hydrogen
 
 exports.c1Hydrogen = c1Hydrogen;
-var c2Hydrogen = n.c2 + e.cHydrogen; // 2 1Hydrogen
+var c2Hydrogen = n.c2 + e.cHydrogen; // 21Hydrogen
 
 exports.c2Hydrogen = c2Hydrogen;
-var c3Hydrogen = n.c3 + e.cHydrogen; // 3 1Hydrogen
+var c3Hydrogen = n.c3 + e.cHydrogen; // 31Hydrogen
 
 exports.c3Hydrogen = c3Hydrogen;
-var c4Hydrogen = n.c4 + e.cHydrogen; // 4 1Hydrogen
+var c4Hydrogen = n.c4 + e.cHydrogen; // 41Hydrogen
 
 exports.c4Hydrogen = c4Hydrogen;
-var c5Hydrogen = n.c5 + e.cHydrogen; // 5 1Hydrogen
+var c5Hydrogen = n.c5 + e.cHydrogen; // 51Hydrogen
 
 exports.c5Hydrogen = c5Hydrogen;
-var c6Hydrogen = n.c6 + e.cHydrogen; // 6 1Hydrogen
+var c6Hydrogen = n.c6 + e.cHydrogen; // 61Hydrogen
 
 exports.c6Hydrogen = c6Hydrogen;
-var c7Hydrogen = n.c7 + e.cHydrogen; // 7 1Hydrogen
+var c7Hydrogen = n.c7 + e.cHydrogen; // 71Hydrogen
 // Helium - He
 
 exports.c7Hydrogen = c7Hydrogen;
@@ -10576,76 +10576,76 @@ var c47Phosphorus = n.c47 + e.cPhosphorus; // 47 Phosphorus
 // Sulfur - S
 
 exports.c47Phosphorus = c47Phosphorus;
-var c27Sulfer = n.c27 + e.cSulfer; // 27Sulfur
+var c27Sulfur = n.c27 + e.cSulfur; // 27Sulfur
 
-exports.c27Sulfer = c27Sulfer;
-var c28Sulfer = n.c28 + e.cSulfer; // 28Sulfur
+exports.c27Sulfur = c27Sulfur;
+var c28Sulfur = n.c28 + e.cSulfur; // 28Sulfur
 
-exports.c28Sulfer = c28Sulfer;
-var c29Sulfer = n.c29 + e.cSulfer; // 29Sulfur
+exports.c28Sulfur = c28Sulfur;
+var c29Sulfur = n.c29 + e.cSulfur; // 29Sulfur
 
-exports.c29Sulfer = c29Sulfer;
-var c30Sulfer = n.c30 + e.cSulfer; // 30Sulfur
+exports.c29Sulfur = c29Sulfur;
+var c30Sulfur = n.c30 + e.cSulfur; // 30Sulfur
 
-exports.c30Sulfer = c30Sulfer;
-var c31Sulfer = n.c31 + e.cSulfer; // 31Sulfur
+exports.c30Sulfur = c30Sulfur;
+var c31Sulfur = n.c31 + e.cSulfur; // 31Sulfur
 
-exports.c31Sulfer = c31Sulfer;
-var c32Sulfer = n.c32 + e.cSulfer; // 32Sulfur
+exports.c31Sulfur = c31Sulfur;
+var c32Sulfur = n.c32 + e.cSulfur; // 32Sulfur
 
-exports.c32Sulfer = c32Sulfer;
-var c33Sulfer = n.c33 + e.cSulfer; // 33Sulfur
+exports.c32Sulfur = c32Sulfur;
+var c33Sulfur = n.c33 + e.cSulfur; // 33Sulfur
 
-exports.c33Sulfer = c33Sulfer;
-var c34Sulfer = n.c34 + e.cSulfer; // 34Sulfur
+exports.c33Sulfur = c33Sulfur;
+var c34Sulfur = n.c34 + e.cSulfur; // 34Sulfur
 
-exports.c34Sulfer = c34Sulfer;
-var c35Sulfer = n.c35 + e.cSulfer; // 35Sulfur
+exports.c34Sulfur = c34Sulfur;
+var c35Sulfur = n.c35 + e.cSulfur; // 35Sulfur
 
-exports.c35Sulfer = c35Sulfer;
-var c36Sulfer = n.c36 + e.cSulfer; // 36Sulfur
+exports.c35Sulfur = c35Sulfur;
+var c36Sulfur = n.c36 + e.cSulfur; // 36Sulfur
 
-exports.c36Sulfer = c36Sulfer;
-var c37Sulfer = n.c37 + e.cSulfer; // 37Sulfur
+exports.c36Sulfur = c36Sulfur;
+var c37Sulfur = n.c37 + e.cSulfur; // 37Sulfur
 
-exports.c37Sulfer = c37Sulfer;
-var c38Sulfer = n.c38 + e.cSulfer; // 38Sulfur
+exports.c37Sulfur = c37Sulfur;
+var c38Sulfur = n.c38 + e.cSulfur; // 38Sulfur
 
-exports.c38Sulfer = c38Sulfer;
-var c39Sulfer = n.c39 + e.cSulfer; // 39Sulfur
+exports.c38Sulfur = c38Sulfur;
+var c39Sulfur = n.c39 + e.cSulfur; // 39Sulfur
 
-exports.c39Sulfer = c39Sulfer;
-var c40Sulfer = n.c40 + e.cSulfer; // 40Sulfur
+exports.c39Sulfur = c39Sulfur;
+var c40Sulfur = n.c40 + e.cSulfur; // 40Sulfur
 
-exports.c40Sulfer = c40Sulfer;
-var c41Sulfer = n.c41 + e.cSulfer; // 41Sulfur
+exports.c40Sulfur = c40Sulfur;
+var c41Sulfur = n.c41 + e.cSulfur; // 41Sulfur
 
-exports.c41Sulfer = c41Sulfer;
-var c42Sulfer = n.c42 + e.cSulfer; // 42Sulfur
+exports.c41Sulfur = c41Sulfur;
+var c42Sulfur = n.c42 + e.cSulfur; // 42Sulfur
 
-exports.c42Sulfer = c42Sulfer;
-var c43Sulfer = n.c43 + e.cSulfer; // 43Sulfur
+exports.c42Sulfur = c42Sulfur;
+var c43Sulfur = n.c43 + e.cSulfur; // 43Sulfur
 
-exports.c43Sulfer = c43Sulfer;
-var c44Sulfer = n.c44 + e.cSulfer; // 44Sulfur
+exports.c43Sulfur = c43Sulfur;
+var c44Sulfur = n.c44 + e.cSulfur; // 44Sulfur
 
-exports.c44Sulfer = c44Sulfer;
-var c45Sulfer = n.c45 + e.cSulfer; // 45Sulfur
+exports.c44Sulfur = c44Sulfur;
+var c45Sulfur = n.c45 + e.cSulfur; // 45Sulfur
 
-exports.c45Sulfer = c45Sulfer;
-var c46Sulfer = n.c46 + e.cSulfer; // 46Sulfur
+exports.c45Sulfur = c45Sulfur;
+var c46Sulfur = n.c46 + e.cSulfur; // 46Sulfur
 
-exports.c46Sulfer = c46Sulfer;
-var c47Sulfer = n.c47 + e.cSulfer; // 47Sulfur
+exports.c46Sulfur = c46Sulfur;
+var c47Sulfur = n.c47 + e.cSulfur; // 47Sulfur
 
-exports.c47Sulfer = c47Sulfer;
-var c48Sulfer = n.c48 + e.cSulfer; // 48Sulfur
+exports.c47Sulfur = c47Sulfur;
+var c48Sulfur = n.c48 + e.cSulfur; // 48Sulfur
 
-exports.c48Sulfer = c48Sulfer;
-var c49Sulfer = n.c49 + e.cSulfer; // 49Sulfur
+exports.c48Sulfur = c48Sulfur;
+var c49Sulfur = n.c49 + e.cSulfur; // 49Sulfur
 // Clorine - Cl
 
-exports.c49Sulfer = c49Sulfer;
+exports.c49Sulfur = c49Sulfur;
 var c28Clorine = n.c28 + e.cClorine; // 28Clorine
 
 exports.c28Clorine = c28Clorine;
@@ -11108,85 +11108,85 @@ var c63Titanium = n.c63 + e.cTitanium; // 63Titanium
 // Vanadium - V
 
 exports.c63Titanium = c63Titanium;
-var c40Vandium = n.c40 + e.cVandium; // 40Vanadium
+var c40Vanadium = n.c40 + e.cVanadium; // 40Vanadium
 
-exports.c40Vandium = c40Vandium;
-var c41Vandium = n.c41 + e.cVandium; // 41Vanadium
+exports.c40Vanadium = c40Vanadium;
+var c41Vanadium = n.c41 + e.cVanadium; // 41Vanadium
 
-exports.c41Vandium = c41Vandium;
-var c42Vandium = n.c42 + e.cVandium; // 42Vanadium
+exports.c41Vanadium = c41Vanadium;
+var c42Vanadium = n.c42 + e.cVanadium; // 42Vanadium
 
-exports.c42Vandium = c42Vandium;
-var c43Vandium = n.c43 + e.cVandium; // 43Vanadium
+exports.c42Vanadium = c42Vanadium;
+var c43Vanadium = n.c43 + e.cVanadium; // 43Vanadium
 
-exports.c43Vandium = c43Vandium;
-var c44Vandium = n.c44 + e.cVandium; // 44Vanadium
+exports.c43Vanadium = c43Vanadium;
+var c44Vanadium = n.c44 + e.cVanadium; // 44Vanadium
 
-exports.c44Vandium = c44Vandium;
-var c45Vandium = n.c45 + e.cVandium; // 45Vanadium
+exports.c44Vanadium = c44Vanadium;
+var c45Vanadium = n.c45 + e.cVanadium; // 45Vanadium
 
-exports.c45Vandium = c45Vandium;
-var c46Vandium = n.c46 + e.cVandium; // 46Vanadium
+exports.c45Vanadium = c45Vanadium;
+var c46Vanadium = n.c46 + e.cVanadium; // 46Vanadium
 
-exports.c46Vandium = c46Vandium;
-var c47Vandium = n.c47 + e.cVandium; // 47Vanadium
+exports.c46Vanadium = c46Vanadium;
+var c47Vanadium = n.c47 + e.cVanadium; // 47Vanadium
 
-exports.c47Vandium = c47Vandium;
-var c48Vandium = n.c48 + e.cVandium; // 48Vanadium
+exports.c47Vanadium = c47Vanadium;
+var c48Vanadium = n.c48 + e.cVanadium; // 48Vanadium
 
-exports.c48Vandium = c48Vandium;
-var c49Vandium = n.c49 + e.cVandium; // 49Vanadium
+exports.c48Vanadium = c48Vanadium;
+var c49Vanadium = n.c49 + e.cVanadium; // 49Vanadium
 
-exports.c49Vandium = c49Vandium;
-var c50Vandium = n.c50 + e.cVandium; // 50Vanadium
+exports.c49Vanadium = c49Vanadium;
+var c50Vanadium = n.c50 + e.cVanadium; // 50Vanadium
 
-exports.c50Vandium = c50Vandium;
-var c51Vandium = n.c51 + e.cVandium; // 51Vanadium
+exports.c50Vanadium = c50Vanadium;
+var c51Vanadium = n.c51 + e.cVanadium; // 51Vanadium
 
-exports.c51Vandium = c51Vandium;
-var c52Vandium = n.c52 + e.cVandium; // 52Vanadium
+exports.c51Vanadium = c51Vanadium;
+var c52Vanadium = n.c52 + e.cVanadium; // 52Vanadium
 
-exports.c52Vandium = c52Vandium;
-var c53Vandium = n.c53 + e.cVandium; // 53Vanadium
+exports.c52Vanadium = c52Vanadium;
+var c53Vanadium = n.c53 + e.cVanadium; // 53Vanadium
 
-exports.c53Vandium = c53Vandium;
-var c54Vandium = n.c54 + e.cVandium; // 54Vanadium
+exports.c53Vanadium = c53Vanadium;
+var c54Vanadium = n.c54 + e.cVanadium; // 54Vanadium
 
-exports.c54Vandium = c54Vandium;
-var c55Vandium = n.c55 + e.cVandium; // 55Vanadium
+exports.c54Vanadium = c54Vanadium;
+var c55Vanadium = n.c55 + e.cVanadium; // 55Vanadium
 
-exports.c55Vandium = c55Vandium;
-var c56Vandium = n.c56 + e.cVandium; // 56Vanadium
+exports.c55Vanadium = c55Vanadium;
+var c56Vanadium = n.c56 + e.cVanadium; // 56Vanadium
 
-exports.c56Vandium = c56Vandium;
-var c57Vandium = n.c57 + e.cVandium; // 57Vanadium
+exports.c56Vanadium = c56Vanadium;
+var c57Vanadium = n.c57 + e.cVanadium; // 57Vanadium
 
-exports.c57Vandium = c57Vandium;
-var c58Vandium = n.c58 + e.cVandium; // 58Vanadium
+exports.c57Vanadium = c57Vanadium;
+var c58Vanadium = n.c58 + e.cVanadium; // 58Vanadium
 
-exports.c58Vandium = c58Vandium;
-var c59Vandium = n.c59 + e.cVandium; // 59Vanadium
+exports.c58Vanadium = c58Vanadium;
+var c59Vanadium = n.c59 + e.cVanadium; // 59Vanadium
 
-exports.c59Vandium = c59Vandium;
-var c60Vandium = n.c60 + e.cVandium; // 60Vanadium
+exports.c59Vanadium = c59Vanadium;
+var c60Vanadium = n.c60 + e.cVanadium; // 60Vanadium
 
-exports.c60Vandium = c60Vandium;
-var c61Vandium = n.c61 + e.cVandium; // 61Vanadium
+exports.c60Vanadium = c60Vanadium;
+var c61Vanadium = n.c61 + e.cVanadium; // 61Vanadium
 
-exports.c61Vandium = c61Vandium;
-var c62Vandium = n.c62 + e.cVandium; // 62Vanadium
+exports.c61Vanadium = c61Vanadium;
+var c62Vanadium = n.c62 + e.cVanadium; // 62Vanadium
 
-exports.c62Vandium = c62Vandium;
-var c63Vandium = n.c63 + e.cVandium; // 63Vanadium
+exports.c62Vanadium = c62Vanadium;
+var c63Vanadium = n.c63 + e.cVanadium; // 63Vanadium
 
-exports.c63Vandium = c63Vandium;
-var c64Vandium = n.c64 + e.cVandium; // 64Vanadium
+exports.c63Vanadium = c63Vanadium;
+var c64Vanadium = n.c64 + e.cVanadium; // 64Vanadium
 
-exports.c64Vandium = c64Vandium;
-var c65Vandium = n.c65 + e.cVandium; // 65Vanadium
+exports.c64Vanadium = c64Vanadium;
+var c65Vanadium = n.c65 + e.cVanadium; // 65Vanadium
 // Chromium - Cr
 
-exports.c65Vandium = c65Vandium;
+exports.c65Vanadium = c65Vanadium;
 var c42Chromium = n.c42 + e.cChromium; // 42Chromium
 
 exports.c42Chromium = c42Chromium;
@@ -14931,124 +14931,124 @@ var c158Praseodymium = n.c158 + e.cPraseodymium; // 158Praseodymium
 
 exports.c158Praseodymium = c158Praseodymium;
 var c159Praseodymium = n.c159 + e.cPraseodymium; // 159Praseodymium
-// 124 - 161 = 37 // Neonodymium - Nd
+// 124 - 161 = 37 // Neodymium - Nd
 
 exports.c159Praseodymium = c159Praseodymium;
-var c124Neonodymium = n.c124 + e.cNeonodymium; // 124Neonodymium
+var c124Neodymium = n.c124 + e.cNeodymium; // 124Neodymium
 
-exports.c124Neonodymium = c124Neonodymium;
-var c125Neonodymium = n.c125 + e.cNeonodymium; // 125Neonodymium
+exports.c124Neodymium = c124Neodymium;
+var c125Neodymium = n.c125 + e.cNeodymium; // 125Neodymium
 
-exports.c125Neonodymium = c125Neonodymium;
-var c126Neonodymium = n.c126 + e.cNeonodymium; // 126Neonodymium
+exports.c125Neodymium = c125Neodymium;
+var c126Neodymium = n.c126 + e.cNeodymium; // 126Neodymium
 
-exports.c126Neonodymium = c126Neonodymium;
-var c127Neonodymium = n.c127 + e.cNeonodymium; // 127Neonodymium
+exports.c126Neodymium = c126Neodymium;
+var c127Neodymium = n.c127 + e.cNeodymium; // 127Neodymium
 
-exports.c127Neonodymium = c127Neonodymium;
-var c128Neonodymium = n.c128 + e.cNeonodymium; // 128Neonodymium
+exports.c127Neodymium = c127Neodymium;
+var c128Neodymium = n.c128 + e.cNeodymium; // 128Neodymium
 
-exports.c128Neonodymium = c128Neonodymium;
-var c129Neonodymium = n.c129 + e.cNeonodymium; // 129Neonodymium
+exports.c128Neodymium = c128Neodymium;
+var c129Neodymium = n.c129 + e.cNeodymium; // 129Neodymium
 
-exports.c129Neonodymium = c129Neonodymium;
-var c130Neonodymium = n.c130 + e.cNeonodymium; // 130Neonodymium
+exports.c129Neodymium = c129Neodymium;
+var c130Neodymium = n.c130 + e.cNeodymium; // 130Neodymium
 
-exports.c130Neonodymium = c130Neonodymium;
-var c131Neonodymium = n.c131 + e.cNeonodymium; // 131Neonodymium
+exports.c130Neodymium = c130Neodymium;
+var c131Neodymium = n.c131 + e.cNeodymium; // 131Neodymium
 
-exports.c131Neonodymium = c131Neonodymium;
-var c132Neonodymium = n.c132 + e.cNeonodymium; // 132Neonodymium
+exports.c131Neodymium = c131Neodymium;
+var c132Neodymium = n.c132 + e.cNeodymium; // 132Neodymium
 
-exports.c132Neonodymium = c132Neonodymium;
-var c133Neonodymium = n.c133 + e.cNeonodymium; // 133Neonodymium
+exports.c132Neodymium = c132Neodymium;
+var c133Neodymium = n.c133 + e.cNeodymium; // 133Neodymium
 
-exports.c133Neonodymium = c133Neonodymium;
-var c134Neonodymium = n.c134 + e.cNeonodymium; // 134Neonodymium
+exports.c133Neodymium = c133Neodymium;
+var c134Neodymium = n.c134 + e.cNeodymium; // 134Neodymium
 
-exports.c134Neonodymium = c134Neonodymium;
-var c135Neonodymium = n.c135 + e.cNeonodymium; // 135Neonodymium
+exports.c134Neodymium = c134Neodymium;
+var c135Neodymium = n.c135 + e.cNeodymium; // 135Neodymium
 
-exports.c135Neonodymium = c135Neonodymium;
-var c136Neonodymium = n.c136 + e.cNeonodymium; // 136Neonodymium
+exports.c135Neodymium = c135Neodymium;
+var c136Neodymium = n.c136 + e.cNeodymium; // 136Neodymium
 
-exports.c136Neonodymium = c136Neonodymium;
-var c137Neonodymium = n.c137 + e.cNeonodymium; // 137Neonodymium
+exports.c136Neodymium = c136Neodymium;
+var c137Neodymium = n.c137 + e.cNeodymium; // 137Neodymium
 
-exports.c137Neonodymium = c137Neonodymium;
-var c138Neonodymium = n.c138 + e.cNeonodymium; // 138Neonodymium
+exports.c137Neodymium = c137Neodymium;
+var c138Neodymium = n.c138 + e.cNeodymium; // 138Neodymium
 
-exports.c138Neonodymium = c138Neonodymium;
-var c139Neonodymium = n.c139 + e.cNeonodymium; // 139Neonodymium
+exports.c138Neodymium = c138Neodymium;
+var c139Neodymium = n.c139 + e.cNeodymium; // 139Neodymium
 
-exports.c139Neonodymium = c139Neonodymium;
-var c140Neonodymium = n.c140 + e.cNeonodymium; // 140Neonodymium
+exports.c139Neodymium = c139Neodymium;
+var c140Neodymium = n.c140 + e.cNeodymium; // 140Neodymium
 
-exports.c140Neonodymium = c140Neonodymium;
-var c141Neonodymium = n.c141 + e.cNeonodymium; // 141Neonodymium
+exports.c140Neodymium = c140Neodymium;
+var c141Neodymium = n.c141 + e.cNeodymium; // 141Neodymium
 
-exports.c141Neonodymium = c141Neonodymium;
-var c142Neonodymium = n.c142 + e.cNeonodymium; // 142Neonodymium
+exports.c141Neodymium = c141Neodymium;
+var c142Neodymium = n.c142 + e.cNeodymium; // 142Neodymium
 
-exports.c142Neonodymium = c142Neonodymium;
-var c143Neonodymium = n.c143 + e.cNeonodymium; // 143Neonodymium
+exports.c142Neodymium = c142Neodymium;
+var c143Neodymium = n.c143 + e.cNeodymium; // 143Neodymium
 
-exports.c143Neonodymium = c143Neonodymium;
-var c144Neonodymium = n.c144 + e.cNeonodymium; // 144Neonodymium
+exports.c143Neodymium = c143Neodymium;
+var c144Neodymium = n.c144 + e.cNeodymium; // 144Neodymium
 
-exports.c144Neonodymium = c144Neonodymium;
-var c145Neonodymium = n.c145 + e.cNeonodymium; // 145Neonodymium
+exports.c144Neodymium = c144Neodymium;
+var c145Neodymium = n.c145 + e.cNeodymium; // 145Neodymium
 
-exports.c145Neonodymium = c145Neonodymium;
-var c146Neonodymium = n.c146 + e.cNeonodymium; // 146Neonodymium
+exports.c145Neodymium = c145Neodymium;
+var c146Neodymium = n.c146 + e.cNeodymium; // 146Neodymium
 
-exports.c146Neonodymium = c146Neonodymium;
-var c147Neonodymium = n.c147 + e.cNeonodymium; // 147Neonodymium
+exports.c146Neodymium = c146Neodymium;
+var c147Neodymium = n.c147 + e.cNeodymium; // 147Neodymium
 
-exports.c147Neonodymium = c147Neonodymium;
-var c148Neonodymium = n.c148 + e.cNeonodymium; // 148Neonodymium
+exports.c147Neodymium = c147Neodymium;
+var c148Neodymium = n.c148 + e.cNeodymium; // 148Neodymium
 
-exports.c148Neonodymium = c148Neonodymium;
-var c149Neonodymium = n.c149 + e.cNeonodymium; // 149Neonodymium
+exports.c148Neodymium = c148Neodymium;
+var c149Neodymium = n.c149 + e.cNeodymium; // 149Neodymium
 
-exports.c149Neonodymium = c149Neonodymium;
-var c150Neonodymium = n.c150 + e.cNeonodymium; // 150Neonodymium
+exports.c149Neodymium = c149Neodymium;
+var c150Neodymium = n.c150 + e.cNeodymium; // 150Neodymium
 
-exports.c150Neonodymium = c150Neonodymium;
-var c151Neonodymium = n.c151 + e.cNeonodymium; // 151Neonodymium
+exports.c150Neodymium = c150Neodymium;
+var c151Neodymium = n.c151 + e.cNeodymium; // 151Neodymium
 
-exports.c151Neonodymium = c151Neonodymium;
-var c152Neonodymium = n.c152 + e.cNeonodymium; // 152Neonodymium
+exports.c151Neodymium = c151Neodymium;
+var c152Neodymium = n.c152 + e.cNeodymium; // 152Neodymium
 
-exports.c152Neonodymium = c152Neonodymium;
-var c153Neonodymium = n.c153 + e.cNeonodymium; // 153Neonodymium
+exports.c152Neodymium = c152Neodymium;
+var c153Neodymium = n.c153 + e.cNeodymium; // 153Neodymium
 
-exports.c153Neonodymium = c153Neonodymium;
-var c154Neonodymium = n.c154 + e.cNeonodymium; // 154Neonodymium
+exports.c153Neodymium = c153Neodymium;
+var c154Neodymium = n.c154 + e.cNeodymium; // 154Neodymium
 
-exports.c154Neonodymium = c154Neonodymium;
-var c155Neonodymium = n.c155 + e.cNeonodymium; // 155Neonodymium
+exports.c154Neodymium = c154Neodymium;
+var c155Neodymium = n.c155 + e.cNeodymium; // 155Neodymium
 
-exports.c155Neonodymium = c155Neonodymium;
-var c156Neonodymium = n.c156 + e.cNeonodymium; // 156Neonodymium
+exports.c155Neodymium = c155Neodymium;
+var c156Neodymium = n.c156 + e.cNeodymium; // 156Neodymium
 
-exports.c156Neonodymium = c156Neonodymium;
-var c157Neonodymium = n.c157 + e.cNeonodymium; // 157Neonodymium
+exports.c156Neodymium = c156Neodymium;
+var c157Neodymium = n.c157 + e.cNeodymium; // 157Neodymium
 
-exports.c157Neonodymium = c157Neonodymium;
-var c158Neonodymium = n.c158 + e.cNeonodymium; // 158Neonodymium
+exports.c157Neodymium = c157Neodymium;
+var c158Neodymium = n.c158 + e.cNeodymium; // 158Neodymium
 
-exports.c158Neonodymium = c158Neonodymium;
-var c159Neonodymium = n.c159 + e.cNeonodymium; // 159Neonodymium
+exports.c158Neodymium = c158Neodymium;
+var c159Neodymium = n.c159 + e.cNeodymium; // 159Neodymium
 
-exports.c159Neonodymium = c159Neonodymium;
-var c160Neonodymium = n.c160 + e.cNeonodymium; // 160Neonodymium
+exports.c159Neodymium = c159Neodymium;
+var c160Neodymium = n.c160 + e.cNeodymium; // 160Neodymium
 
-exports.c160Neonodymium = c160Neonodymium;
-var c161Neonodymium = n.c161 + e.cNeonodymium; // 161Neonodymium
+exports.c160Neodymium = c160Neodymium;
+var c161Neodymium = n.c161 + e.cNeodymium; // 161Neodymium
 // 126 - 163 = 37 // Promethium - Pm
 
-exports.c161Neonodymium = c161Neonodymium;
+exports.c161Neodymium = c161Neodymium;
 var c126Promethium = n.c126 + e.cPromethium; // 126Promethium
 
 exports.c126Promethium = c126Promethium;
@@ -16690,115 +16690,115 @@ var c194Rhenium = n.c194 + e.cRhenium; // 194Rhenium
 // 161 - 197 = 36 // Osmium - Os
 
 exports.c194Rhenium = c194Rhenium;
-var c161Osmium = n.c161 + e.cOsmium; // 161Osmiummium
+var c161Osmium = n.c161 + e.cOsmium; // 161Osmium
 
 exports.c161Osmium = c161Osmium;
-var c162Osmium = n.c162 + e.cOsmium; // 162Osmiummium
+var c162Osmium = n.c162 + e.cOsmium; // 162Osmium
 
 exports.c162Osmium = c162Osmium;
-var c163Osmium = n.c163 + e.cOsmium; // 163Osmiummium
+var c163Osmium = n.c163 + e.cOsmium; // 163Osmium
 
 exports.c163Osmium = c163Osmium;
-var c164Osmium = n.c164 + e.cOsmium; // 164Osmiummium
+var c164Osmium = n.c164 + e.cOsmium; // 164Osmium
 
 exports.c164Osmium = c164Osmium;
-var c165Osmium = n.c165 + e.cOsmium; // 165Osmiummium
+var c165Osmium = n.c165 + e.cOsmium; // 165Osmium
 
 exports.c165Osmium = c165Osmium;
-var c166Osmium = n.c166 + e.cOsmium; // 166Osmiummium
+var c166Osmium = n.c166 + e.cOsmium; // 166Osmium
 
 exports.c166Osmium = c166Osmium;
-var c167Osmium = n.c167 + e.cOsmium; // 167Osmiummium
+var c167Osmium = n.c167 + e.cOsmium; // 167Osmium
 
 exports.c167Osmium = c167Osmium;
-var c168Osmium = n.c168 + e.cOsmium; // 168Osmiummium
+var c168Osmium = n.c168 + e.cOsmium; // 168Osmium
 
 exports.c168Osmium = c168Osmium;
-var c169Osmium = n.c169 + e.cOsmium; // 169Osmiummium
+var c169Osmium = n.c169 + e.cOsmium; // 169Osmium
 
 exports.c169Osmium = c169Osmium;
-var c170Osmium = n.c170 + e.cOsmium; // 170Osmiummium
+var c170Osmium = n.c170 + e.cOsmium; // 170Osmium
 
 exports.c170Osmium = c170Osmium;
-var c171Osmium = n.c171 + e.cOsmium; // 171Osmiummium
+var c171Osmium = n.c171 + e.cOsmium; // 171Osmium
 
 exports.c171Osmium = c171Osmium;
-var c172Osmium = n.c172 + e.cOsmium; // 172Osmiummium
+var c172Osmium = n.c172 + e.cOsmium; // 172Osmium
 
 exports.c172Osmium = c172Osmium;
-var c173Osmium = n.c173 + e.cOsmium; // 173Osmiummium
+var c173Osmium = n.c173 + e.cOsmium; // 173Osmium
 
 exports.c173Osmium = c173Osmium;
-var c174Osmium = n.c174 + e.cOsmium; // 174Osmiummium
+var c174Osmium = n.c174 + e.cOsmium; // 174Osmium
 
 exports.c174Osmium = c174Osmium;
-var c175Osmium = n.c175 + e.cOsmium; // 175Osmiummium
+var c175Osmium = n.c175 + e.cOsmium; // 175Osmium
 
 exports.c175Osmium = c175Osmium;
-var c176Osmium = n.c176 + e.cOsmium; // 176Osmiummium
+var c176Osmium = n.c176 + e.cOsmium; // 176Osmium
 
 exports.c176Osmium = c176Osmium;
-var c177Osmium = n.c177 + e.cOsmium; // 177Osmiummium
+var c177Osmium = n.c177 + e.cOsmium; // 177Osmium
 
 exports.c177Osmium = c177Osmium;
-var c178Osmium = n.c178 + e.cOsmium; // 178Osmiummium
+var c178Osmium = n.c178 + e.cOsmium; // 178Osmium
 
 exports.c178Osmium = c178Osmium;
-var c179Osmium = n.c179 + e.cOsmium; // 179Osmiummium
+var c179Osmium = n.c179 + e.cOsmium; // 179Osmium
 
 exports.c179Osmium = c179Osmium;
-var c180Osmium = n.c180 + e.cOsmium; // 180Osmiummium
+var c180Osmium = n.c180 + e.cOsmium; // 180Osmium
 
 exports.c180Osmium = c180Osmium;
-var c181Osmium = n.c181 + e.cOsmium; // 181Osmiummium
+var c181Osmium = n.c181 + e.cOsmium; // 181Osmium
 
 exports.c181Osmium = c181Osmium;
-var c182Osmium = n.c182 + e.cOsmium; // 182Osmiummium
+var c182Osmium = n.c182 + e.cOsmium; // 182Osmium
 
 exports.c182Osmium = c182Osmium;
-var c183Osmium = n.c183 + e.cOsmium; // 183Osmiummium
+var c183Osmium = n.c183 + e.cOsmium; // 183Osmium
 
 exports.c183Osmium = c183Osmium;
-var c184Osmium = n.c184 + e.cOsmium; // 184Osmiummium
+var c184Osmium = n.c184 + e.cOsmium; // 184Osmium
 
 exports.c184Osmium = c184Osmium;
-var c185Osmium = n.c185 + e.cOsmium; // 185Osmiummium
+var c185Osmium = n.c185 + e.cOsmium; // 185Osmium
 
 exports.c185Osmium = c185Osmium;
-var c186Osmium = n.c186 + e.cOsmium; // 186Osmiummium
+var c186Osmium = n.c186 + e.cOsmium; // 186Osmium
 
 exports.c186Osmium = c186Osmium;
-var c187Osmium = n.c187 + e.cOsmium; // 187Osmiummium
+var c187Osmium = n.c187 + e.cOsmium; // 187Osmium
 
 exports.c187Osmium = c187Osmium;
-var c188Osmium = n.c188 + e.cOsmium; // 188Osmiummium
+var c188Osmium = n.c188 + e.cOsmium; // 188Osmium
 
 exports.c188Osmium = c188Osmium;
-var c189Osmium = n.c189 + e.cOsmium; // 189Osmiummium
+var c189Osmium = n.c189 + e.cOsmium; // 189Osmium
 
 exports.c189Osmium = c189Osmium;
-var c190Osmium = n.c190 + e.cOsmium; // 190Osmiummium
+var c190Osmium = n.c190 + e.cOsmium; // 190Osmium
 
 exports.c190Osmium = c190Osmium;
-var c191Osmium = n.c191 + e.cOsmium; // 191Osmiummium
+var c191Osmium = n.c191 + e.cOsmium; // 191Osmium
 
 exports.c191Osmium = c191Osmium;
-var c192Osmium = n.c192 + e.cOsmium; // 192Osmiummium
+var c192Osmium = n.c192 + e.cOsmium; // 192Osmium
 
 exports.c192Osmium = c192Osmium;
-var c193Osmium = n.c193 + e.cOsmium; // 193Osmiummium
+var c193Osmium = n.c193 + e.cOsmium; // 193Osmium
 
 exports.c193Osmium = c193Osmium;
-var c194Osmium = n.c194 + e.cOsmium; // 194Osmiummium
+var c194Osmium = n.c194 + e.cOsmium; // 194Osmium
 
 exports.c194Osmium = c194Osmium;
-var c195Osmium = n.c195 + e.cOsmium; // 195Osmiummium
+var c195Osmium = n.c195 + e.cOsmium; // 195Osmium
 
 exports.c195Osmium = c195Osmium;
-var c196Osmium = n.c196 + e.cOsmium; // 196Osmiummium
+var c196Osmium = n.c196 + e.cOsmium; // 196Osmium
 
 exports.c196Osmium = c196Osmium;
-var c197Osmium = n.c197 + e.cOsmium; // 197Osmiummium
+var c197Osmium = n.c197 + e.cOsmium; // 197Osmium
 // 164 - 202 = 38 // Iridium - Ir
 
 exports.c197Osmium = c197Osmium;
@@ -18540,82 +18540,82 @@ var c240Uranium = n.c240 + e.cUranium; // 240Uranium
 
 exports.c240Uranium = c240Uranium;
 var c242Uranium = n.c242 + e.cUranium; // 242Uranium
-// 219 - 220, 223 - 244 = 23 // Neonptunium - Np
+// 219 - 220, 223 - 244 = 23 // Neptunium - Np
 
 exports.c242Uranium = c242Uranium;
-var c219Neonptunium = n.c219 + e.cNeonptunium; // 219Neonptunium
+var c219Neptunium = n.c219 + e.cNeptunium; // 219Neptunium
 
-exports.c219Neonptunium = c219Neonptunium;
-var c220Neonptunium = n.c220 + e.cNeonptunium; // 220Neonptunium
+exports.c219Neptunium = c219Neptunium;
+var c220Neptunium = n.c220 + e.cNeptunium; // 220Neptunium
 
-exports.c220Neonptunium = c220Neonptunium;
-var c223Neonptunium = n.c223 + e.cNeonptunium; // 223Neonptunium
+exports.c220Neptunium = c220Neptunium;
+var c223Neptunium = n.c223 + e.cNeptunium; // 223Neptunium
 
-exports.c223Neonptunium = c223Neonptunium;
-var c224Neonptunium = n.c224 + e.cNeonptunium; // 224Neonptunium
+exports.c223Neptunium = c223Neptunium;
+var c224Neptunium = n.c224 + e.cNeptunium; // 224Neptunium
 
-exports.c224Neonptunium = c224Neonptunium;
-var c225Neonptunium = n.c225 + e.cNeonptunium; // 225Neonptunium
+exports.c224Neptunium = c224Neptunium;
+var c225Neptunium = n.c225 + e.cNeptunium; // 225Neptunium
 
-exports.c225Neonptunium = c225Neonptunium;
-var c226Neonptunium = n.c226 + e.cNeonptunium; // 226Neonptunium
+exports.c225Neptunium = c225Neptunium;
+var c226Neptunium = n.c226 + e.cNeptunium; // 226Neptunium
 
-exports.c226Neonptunium = c226Neonptunium;
-var c227Neonptunium = n.c227 + e.cNeonptunium; // 227Neonptunium
+exports.c226Neptunium = c226Neptunium;
+var c227Neptunium = n.c227 + e.cNeptunium; // 227Neptunium
 
-exports.c227Neonptunium = c227Neonptunium;
-var c228Neonptunium = n.c228 + e.cNeonptunium; // 228Neonptunium
+exports.c227Neptunium = c227Neptunium;
+var c228Neptunium = n.c228 + e.cNeptunium; // 228Neptunium
 
-exports.c228Neonptunium = c228Neonptunium;
-var c229Neonptunium = n.c229 + e.cNeonptunium; // 229Neonptunium
+exports.c228Neptunium = c228Neptunium;
+var c229Neptunium = n.c229 + e.cNeptunium; // 229Neptunium
 
-exports.c229Neonptunium = c229Neonptunium;
-var c230Neonptunium = n.c230 + e.cNeonptunium; // 230Neonptunium
+exports.c229Neptunium = c229Neptunium;
+var c230Neptunium = n.c230 + e.cNeptunium; // 230Neptunium
 
-exports.c230Neonptunium = c230Neonptunium;
-var c231Neonptunium = n.c231 + e.cNeonptunium; // 231Neonptunium
+exports.c230Neptunium = c230Neptunium;
+var c231Neptunium = n.c231 + e.cNeptunium; // 231Neptunium
 
-exports.c231Neonptunium = c231Neonptunium;
-var c232Neonptunium = n.c232 + e.cNeonptunium; // 232Neonptunium
+exports.c231Neptunium = c231Neptunium;
+var c232Neptunium = n.c232 + e.cNeptunium; // 232Neptunium
 
-exports.c232Neonptunium = c232Neonptunium;
-var c233Neonptunium = n.c233 + e.cNeonptunium; // 233Neonptunium
+exports.c232Neptunium = c232Neptunium;
+var c233Neptunium = n.c233 + e.cNeptunium; // 233Neptunium
 
-exports.c233Neonptunium = c233Neonptunium;
-var c234Neonptunium = n.c234 + e.cNeonptunium; // 234Neonptunium
+exports.c233Neptunium = c233Neptunium;
+var c234Neptunium = n.c234 + e.cNeptunium; // 234Neptunium
 
-exports.c234Neonptunium = c234Neonptunium;
-var c235Neonptunium = n.c235 + e.cNeonptunium; // 235Neonptunium
+exports.c234Neptunium = c234Neptunium;
+var c235Neptunium = n.c235 + e.cNeptunium; // 235Neptunium
 
-exports.c235Neonptunium = c235Neonptunium;
-var c236Neonptunium = n.c236 + e.cNeonptunium; // 236Neonptunium
+exports.c235Neptunium = c235Neptunium;
+var c236Neptunium = n.c236 + e.cNeptunium; // 236Neptunium
 
-exports.c236Neonptunium = c236Neonptunium;
-var c237Neonptunium = n.c237 + e.cNeonptunium; // 237Neonptunium
+exports.c236Neptunium = c236Neptunium;
+var c237Neptunium = n.c237 + e.cNeptunium; // 237Neptunium
 
-exports.c237Neonptunium = c237Neonptunium;
-var c238Neonptunium = n.c238 + e.cNeonptunium; // 238Neonptunium
+exports.c237Neptunium = c237Neptunium;
+var c238Neptunium = n.c238 + e.cNeptunium; // 238Neptunium
 
-exports.c238Neonptunium = c238Neonptunium;
-var c239Neonptunium = n.c239 + e.cNeonptunium; // 239Neonptunium
+exports.c238Neptunium = c238Neptunium;
+var c239Neptunium = n.c239 + e.cNeptunium; // 239Neptunium
 
-exports.c239Neonptunium = c239Neonptunium;
-var c240Neonptunium = n.c240 + e.cNeonptunium; // 240Neonptunium
+exports.c239Neptunium = c239Neptunium;
+var c240Neptunium = n.c240 + e.cNeptunium; // 240Neptunium
 
-exports.c240Neonptunium = c240Neonptunium;
-var c241Neonptunium = n.c241 + e.cNeonptunium; // 241Neonptunium
+exports.c240Neptunium = c240Neptunium;
+var c241Neptunium = n.c241 + e.cNeptunium; // 241Neptunium
 
-exports.c241Neonptunium = c241Neonptunium;
-var c242Neonptunium = n.c242 + e.cNeonptunium; // 242Neonptunium
+exports.c241Neptunium = c241Neptunium;
+var c242Neptunium = n.c242 + e.cNeptunium; // 242Neptunium
 
-exports.c242Neonptunium = c242Neonptunium;
-var c243Neonptunium = n.c243 + e.cNeonptunium; // 243Neonptunium
+exports.c242Neptunium = c242Neptunium;
+var c243Neptunium = n.c243 + e.cNeptunium; // 243Neptunium
 
-exports.c243Neonptunium = c243Neonptunium;
-var c244Neonptunium = n.c244 + e.cNeonptunium; // 244Neonptunium
+exports.c243Neptunium = c243Neptunium;
+var c244Neptunium = n.c244 + e.cNeptunium; // 244Neptunium
 // 228 - 247 = 19 // Plutonium - Pu
 
-exports.c244Neonptunium = c244Neonptunium;
+exports.c244Neptunium = c244Neptunium;
 var c228Plutonium = n.c228 + e.cPlutonium; // 228Plutonium
 
 exports.c228Plutonium = c228Plutonium;
@@ -19485,25 +19485,25 @@ var c290Nihonium = n.c290 + e.cNihonium; // 290Nihonium
 // 284 - 290 = 6 // Flerovium - Fl
 
 exports.c290Nihonium = c290Nihonium;
-var c284Flerovium = n.c284 + e.cFlerovium; // 284Fleroviumerovium
+var c284Flerovium = n.c284 + e.cFlerovium; // 284Flerovium
 
 exports.c284Flerovium = c284Flerovium;
-var c285Flerovium = n.c285 + e.cFlerovium; // 285Fleroviumerovium
+var c285Flerovium = n.c285 + e.cFlerovium; // 285Flerovium
 
 exports.c285Flerovium = c285Flerovium;
-var c286Flerovium = n.c286 + e.cFlerovium; // 286Fleroviumerovium
+var c286Flerovium = n.c286 + e.cFlerovium; // 286Flerovium
 
 exports.c286Flerovium = c286Flerovium;
-var c287Flerovium = n.c287 + e.cFlerovium; // 287Fleroviumerovium
+var c287Flerovium = n.c287 + e.cFlerovium; // 287Flerovium
 
 exports.c287Flerovium = c287Flerovium;
-var c288Flerovium = n.c288 + e.cFlerovium; // 288Fleroviumerovium
+var c288Flerovium = n.c288 + e.cFlerovium; // 288Flerovium
 
 exports.c288Flerovium = c288Flerovium;
-var c289Flerovium = n.c289 + e.cFlerovium; // 289Fleroviumerovium
+var c289Flerovium = n.c289 + e.cFlerovium; // 289Flerovium
 
 exports.c289Flerovium = c289Flerovium;
-var c290Flerovium = n.c290 + e.cFlerovium; // 290Fleroviumerovium
+var c290Flerovium = n.c290 + e.cFlerovium; // 290Flerovium
 // 287- 290 = 3 // Moscovium - Mc
 
 exports.c290Flerovium = c290Flerovium;

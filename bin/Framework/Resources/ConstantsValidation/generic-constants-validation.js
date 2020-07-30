@@ -274,7 +274,7 @@ var genericConstantsValidation = [{
 }, {
   Name: 'cDotCom',
   Actual: g.cDotCom,
-  Expected: '.com'
+  Expected: '.Com'
 }, {
   Name: 'cDotZip',
   Actual: g.cDotZip,
@@ -319,24 +319,24 @@ var genericConstantsValidation = [{
 }, {
   Name: 'cHHmmss_SSS',
   Actual: g.cHHmmss_SSS,
-  Expected: 'HHmmss_SSS'
+  Expected: 'HHmmss-SSS'
 }, {
-  Name: 'cYYYYMMDD_HHmmss ',
+  Name: 'cYYYYMMDD_HHmmss',
   Actual: g.cYYYYMMDD_HHmmss,
-  Expected: 'YYYYMMDD_HHmmss'
+  Expected: 'YYYYMMDD-HHmmss'
 }, {
   Name: 'cYYYYMMDD_HHmmss_SSS',
   Actual: g.cYYYYMMDD_HHmmss_SSS,
-  Expected: 'YYYYMMDD_HHmmss_SSS'
+  Expected: 'YYYYMMDD-HHmmssSSS'
 }, {
   Name: 'cYYYY_MM_DD_HH_mm_ss_SSS',
   Actual: g.cYYYY_MM_DD_HH_mm_ss_SSS,
-  Expected: 'YYYY_MM_DD_HH_mm_ss_SSS'
+  Expected: 'YYYY:MM:DD-HH:mm:ss:SSS'
 }, // Naval & Military Codes
 {
   Name: 'cAlfa',
   Actual: g.cAlfa,
-  Expected: ' Alfa'
+  Expected: 'Alfa'
 }, {
   Name: 'cBravo',
   Actual: g.cBravo,
@@ -593,10 +593,6 @@ var genericConstantsValidation = [{
   Expected: 'December'
 }, // Miscelanious
 {
-  Name: 'cress',
-  Actual: g.cress,
-  Expected: 'cress'
-}, {
   Name: 'cconst',
   Actual: g.cconst,
   Expected: 'const'

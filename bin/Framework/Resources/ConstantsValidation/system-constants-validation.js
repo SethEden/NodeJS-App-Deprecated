@@ -744,15 +744,15 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cinputDataIs',
   Actual: s.cinputDataIs,
-  Expected: 'input Data is: '
+  Expected: 'inputData Is: '
 }, {
   Name: 'cinputMetaDataIs',
   Actual: s.cinputMetaDataIs,
-  Expected: 'input MetaData is: '
+  Expected: 'inputMetaData Is: '
 }, {
   Name: 'creturnDataIs',
   Actual: s.creturnDataIs,
-  Expected: 'return Data is: '
+  Expected: 'returnData Is: '
 }, {
   Name: 'cLogBasicSystemEvents',
   Actual: s.cLogBasicSystemEvents,
@@ -935,8 +935,8 @@ var systemConstantsValidation = [// Miscelaneious
   Expected: 'Austria'
 }, {
   Name: 'cAzerbaijan',
-  Actual: s.cAxerbaijan,
-  Expected: 'Axerbaijan'
+  Actual: s.cAzerbaijan,
+  Expected: 'Azerbaijan'
 }, {
   Name: 'cBahamas',
   Actual: s.cBahamas,
@@ -1012,11 +1012,11 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cCotedlvoire',
   Actual: s.cCotedlvoire,
-  Expected: 'Cotedlvoire'
+  Expected: 'Cote dlvoire'
 }, {
   Name: 'cCaboVerde',
   Actual: s.cCaboVerde,
-  Expected: 'CaboVerde'
+  Expected: 'Cabo Verde'
 }, {
   Name: 'cCambodia',
   Actual: s.cCambodia,
@@ -1032,7 +1032,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cCentralAfricanRepublic',
   Actual: s.cCentralAfricanRepublic,
-  Expected: 'CentralAfricanRepublic'
+  Expected: 'Central African Republic'
 }, {
   Name: 'cChad',
   Actual: s.cChad,
@@ -1060,7 +1060,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cCostaRica',
   Actual: s.cCostaRica,
-  Expected: 'CostaRica'
+  Expected: 'Costa Rica'
 }, {
   Name: 'cCroatia',
   Actual: s.cCroatia,
@@ -1080,7 +1080,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cDemocraticRepublicOfTheCongo',
   Actual: s.cDemocraticRepublicOfTheCongo,
-  Expected: 'DemocraticRepublicOfTheCongo'
+  Expected: 'Democratic Republic of the Congo'
 }, {
   Name: 'cDenmark',
   Actual: s.cDenmark,
@@ -1096,7 +1096,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cDominicanRepublic',
   Actual: s.cDominicanRepublic,
-  Expected: 'DominicanRepublic'
+  Expected: 'Dominican Republic'
 }, {
   Name: 'cEcuador',
   Actual: s.cEcuador,
@@ -1108,11 +1108,11 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cElSalvador',
   Actual: s.cElSalvador,
-  Expected: 'ElSalvador'
+  Expected: 'El Salvador'
 }, {
   Name: 'cEquatorialGuinea',
   Actual: s.cEquatorialGuinea,
-  Expected: 'EquatorialGuinea'
+  Expected: 'Equatorial Guinea'
 }, {
   Name: 'cEritrea',
   Actual: s.cEritrea,
@@ -1185,7 +1185,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cGuineaBissau',
   Actual: s.cGuineaBissau,
-  Expected: 'GuineaBissau'
+  Expected: 'Guinea-Bissau'
 }, {
   Name: 'cGuyana',
   Actual: s.cGuyana,
@@ -1201,7 +1201,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cHolySee',
   Actual: s.cHolySee,
-  Expected: 'HolySee'
+  Expected: 'Holy See'
 }, {
   Name: 'cHonduras',
   Actual: s.cHonduras,
@@ -1337,7 +1337,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cMarshallIslands',
   Actual: s.cMarshallIslands,
-  Expected: 'MarshallIslands'
+  Expected: 'Marshall Islands'
 }, {
   Name: 'cMauritania',
   Actual: s.cMauritania,
@@ -1401,7 +1401,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cNewZealand',
   Actual: s.cNewZealand,
-  Expected: 'NewZealand'
+  Expected: 'New Zealand'
 }, {
   Name: 'cNevis',
   Actual: s.cNevis,
@@ -1421,11 +1421,11 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cNorthKorea',
   Actual: s.cNorthKorea,
-  Expected: 'NorthKorea'
+  Expected: 'North Korea'
 }, {
   Name: 'cNorthMacedonia',
   Actual: s.cNorthMacedonia,
-  Expected: 'NorthMacedonia'
+  Expected: 'North Macedonia'
 }, {
   Name: 'cNorway',
   Actual: s.cNorway,
@@ -1453,7 +1453,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cPapuaNewGuinea',
   Actual: s.cPapuaNewGuinea,
-  Expected: 'PapuaNewGuinea'
+  Expected: 'Papua New Guinea'
 }, {
   Name: 'cParaguay',
   Actual: s.cParaguay,
@@ -1497,15 +1497,15 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSaintKitts',
   Actual: s.cSaintKitts,
-  Expected: 'SaintKitts'
+  Expected: 'Saint Kitts'
 }, {
   Name: 'cSaintLucia',
   Actual: s.cSaintLucia,
-  Expected: 'SaintLucia'
+  Expected: 'Saint Lucia'
 }, {
   Name: 'cSaintVincent',
   Actual: s.cSaintVincent,
-  Expected: 'SaintVincent'
+  Expected: 'Saint Vincent'
 }, {
   Name: 'cSomoa',
   Actual: s.cSomoa,
@@ -1513,15 +1513,15 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSanMarino',
   Actual: s.cSanMarino,
-  Expected: 'SanMarino'
+  Expected: 'San Marino'
 }, {
   Name: 'cSaoTome',
   Actual: s.cSaoTome,
-  Expected: 'SaoTome'
+  Expected: 'Sao Tome'
 }, {
   Name: 'cSaudiArabia',
   Actual: s.cSaudiArabia,
-  Expected: 'SaudiArabia'
+  Expected: 'Saudi Arabia'
 }, {
   Name: 'cSenegal',
   Actual: s.cSenegal,
@@ -1537,7 +1537,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSierraLeone',
   Actual: s.cSierraLeone,
-  Expected: 'SierraLeone'
+  Expected: 'Sierra Leone'
 }, {
   Name: 'cSingapore',
   Actual: s.cSingapore,
@@ -1553,7 +1553,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSolomonIslands',
   Actual: s.cSolomonIslands,
-  Expected: 'SolomonIslands'
+  Expected: 'Solomon Islands'
 }, {
   Name: 'cSomalia',
   Actual: s.cSomalia,
@@ -1561,15 +1561,15 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSouthAfrica',
   Actual: s.cSouthAfrica,
-  Expected: 'SouthAfrica'
+  Expected: 'South Africa'
 }, {
   Name: 'cSouthKorea',
   Actual: s.cSouthKorea,
-  Expected: 'SouthKorea'
+  Expected: 'South Korea'
 }, {
   Name: 'cSouthSudan',
   Actual: s.cSouthSudan,
-  Expected: 'SouthSudan'
+  Expected: 'South Sudan'
 }, {
   Name: 'cSpain',
   Actual: s.cSpain,
@@ -1577,7 +1577,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSriLanka',
   Actual: s.cSriLanka,
-  Expected: 'SriLanka'
+  Expected: 'Sri Lanka'
 }, {
   Name: 'cSudan',
   Actual: s.cSudan,
@@ -1613,7 +1613,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cTimorLeste',
   Actual: s.cTimorLeste,
-  Expected: 'TimorLeste'
+  Expected: 'Timor-Leste'
 }, {
   Name: 'cTogo',
   Actual: s.cTogo,
@@ -1625,7 +1625,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cTrinidadAndTabago',
   Actual: s.cTrinidadAndTabago,
-  Expected: 'TrinidadAndTabago'
+  Expected: 'Trinidad and Tabago'
 }, {
   Name: 'cTunisia',
   Actual: s.cTunisia,
@@ -1653,15 +1653,15 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cUnitedArabEmirates',
   Actual: s.cUnitedArabEmirates,
-  Expected: 'UnitedArabEmirates'
+  Expected: 'United Arab Emirates'
 }, {
   Name: 'cUnitedKingdom',
   Actual: s.cUnitedKingdom,
-  Expected: 'UnitedKingdom'
+  Expected: 'United Kingdom'
 }, {
   Name: 'cUnitedStatesOfAmerica',
   Actual: s.cUnitedStatesOfAmerica,
-  Expected: 'UnitedStatesOfAmerica'
+  Expected: 'United States of America'
 }, {
   Name: 'cUruguay',
   Actual: s.cUruguay,
@@ -2089,6 +2089,22 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cEnableConstantsValidation',
   Actual: s.cEnableConstantsValidation,
   Expected: 'EnableConstantsValidation'
+}, {
+  Name: 'cDisplayIndividualConstantsValidationPassMessages',
+  Actual: s.cDisplayIndividualConstantsValidationPassMessages,
+  Expected: 'DisplayIndividualConstantsValidationPassMessages'
+}, {
+  Name: 'cDisplayIndividualConstantsValidationFailMessages',
+  Actual: s.cDisplayIndividualConstantsValidationFailMessages,
+  Expected: 'DisplayIndividualConstantsValidationFailMessages'
+}, {
+  Name: 'cDisplaySummaryConstantsValidationPassMessages',
+  Actual: s.cDisplaySummaryConstantsValidationPassMessages,
+  Expected: 'DisplaySummaryConstantsValidationPassMessages'
+}, {
+  Name: 'cDisplaySummaryConstantsValidationFailMessages',
+  Actual: s.cDisplaySummaryConstantsValidationFailMessages,
+  Expected: 'DisplaySummaryConstantsValidationFailMessages'
 }, // Test Time Tracking
 {
   Name: 'cBeginDateTimeStamp',
@@ -2193,7 +2209,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cswapForwardSlashToBackSlash',
   Actual: s.cswapForwardSlashToBackSlash,
-  Expected: 'swapForwadSlashToBackSlash'
+  Expected: 'swapForwardSlashToBackSlash'
 }, {
   Name: 'cswapBackSlashToForwardSlash',
   Actual: s.cswapBackSlashToForwardSlash,
@@ -2303,9 +2319,17 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cvalidateConstantsDataValidation,
   Expected: 'validateConstantsDataValidation'
 }, {
+  Name: 'cdetermineSuggestedConstantsValidationLineOfCode',
+  Actual: s.cdetermineSuggestedConstantsValidationLineOfCode,
+  Expected: 'determineSuggestedConstantsValidationLineOfCode'
+}, {
   Name: 'cvalidateConstantsDataValidationLineItemName',
   Actual: s.cvalidateConstantsDataValidationLineItemName,
   Expected: 'validateConstantsDataValidationLineItemName'
+}, {
+  Name: 'cvalidateConstantsDataValues',
+  Actual: s.cvalidateConstantsDataValues,
+  Expected: 'validateConstantsDataValues'
 }, {
   Name: 'cgetDataCatagoryFromDataContextName',
   Actual: s.cgetDataCatagoryFromDataContextName,
@@ -2627,7 +2651,7 @@ var systemConstantsValidation = [// Miscelaneious
 {
   Name: 'cSystemCommandsAliasesActualPath',
   Actual: s.cSystemCommandsAliasesActualPath,
-  Expected: 'src/Framework/Commands/Blob/'
+  Expected: 'src/Framework/CommandsBlob/'
 }, {
   Name: 'cSystemWorkflowsActualPath',
   Actual: s.cSystemWorkflowsActualPath,
@@ -2635,7 +2659,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSystemCommandsAliasesPath',
   Actual: s.cSystemCommandsAliasesPath,
-  Expected: 'System'
+  Expected: 'SystemCommandsAliasesPath'
 }, {
   Name: 'cClientCommandsAliasesPath',
   Actual: s.cClientCommandsAliasesPath,
@@ -2700,6 +2724,6 @@ var systemConstantsValidation = [// Miscelaneious
 {
   Name: 'cStartupWorkflow',
   Actual: s.cStartupWorkflow,
-  Expected: 'StartupWorkflow'
+  Expected: 'Workflow startup'
 }];
 exports.systemConstantsValidation = systemConstantsValidation;

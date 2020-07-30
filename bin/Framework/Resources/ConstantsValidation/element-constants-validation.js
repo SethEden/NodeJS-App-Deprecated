@@ -505,475 +505,475 @@ var elementConstantsValidation = [{
 }, // *****************************************************
 {
   Name: 'cHydrogen',
-  Actual: e.Hydrogen,
+  Actual: e.cHydrogen,
   Expected: 'Hydrogen'
 }, {
   Name: 'cHelium',
-  Actual: e.Helium,
+  Actual: e.cHelium,
   Expected: 'Helium'
 }, {
   Name: 'cLithium',
-  Actual: e.Lithium,
+  Actual: e.cLithium,
   Expected: 'Lithium'
 }, {
   Name: 'cBeryllium',
-  Actual: e.Beryllium,
+  Actual: e.cBeryllium,
   Expected: 'Beryllium'
 }, {
   Name: 'cBoron',
-  Actual: e.Boron,
+  Actual: e.cBoron,
   Expected: 'Boron'
 }, {
   Name: 'cCarbon',
-  Actual: e.Carbon,
+  Actual: e.cCarbon,
   Expected: 'Carbon'
 }, {
   Name: 'cNitrogen',
-  Actual: e.Nitrogen,
+  Actual: e.cNitrogen,
   Expected: 'Nitrogen'
 }, {
   Name: 'cOxygen',
-  Actual: e.Oxygen,
+  Actual: e.cOxygen,
   Expected: 'Oxygen'
 }, {
   Name: 'cFlorine',
-  Actual: e.Florine,
+  Actual: e.cFlorine,
   Expected: 'Florine'
 }, {
   Name: 'cNeon',
-  Actual: e.Neon,
+  Actual: e.cNeon,
   Expected: 'Neon'
 }, {
   Name: 'cSodium',
-  Actual: e.Sodium,
+  Actual: e.cSodium,
   Expected: 'Sodium'
 }, {
   Name: 'cMagnesium',
-  Actual: e.Magnesium,
+  Actual: e.cMagnesium,
   Expected: 'Magnesium'
 }, {
   Name: 'cAluminum',
-  Actual: e.Aluminum,
+  Actual: e.cAluminum,
   Expected: 'Aluminum'
 }, {
   Name: 'cSilicon',
-  Actual: e.Silicon,
+  Actual: e.cSilicon,
   Expected: 'Silicon'
 }, {
   Name: 'cPhosphorus',
-  Actual: e.Phosphorus,
+  Actual: e.cPhosphorus,
   Expected: 'Phosphorus'
 }, {
   Name: 'cSulfur',
-  Actual: e.Sulfur,
+  Actual: e.cSulfur,
   Expected: 'Sulfur'
 }, {
   Name: 'cClorine',
-  Actual: e.Clorine,
+  Actual: e.cClorine,
   Expected: 'Clorine'
 }, {
   Name: 'cArgon',
-  Actual: e.Argon,
+  Actual: e.cArgon,
   Expected: 'Argon'
 }, {
   Name: 'cPotassium',
-  Actual: e.Potassium,
+  Actual: e.cPotassium,
   Expected: 'Potassium'
 }, {
   Name: 'cCalcium',
-  Actual: e.Calcium,
+  Actual: e.cCalcium,
   Expected: 'Calcium'
 }, {
   Name: 'cScandium',
-  Actual: e.Scandium,
+  Actual: e.cScandium,
   Expected: 'Scandium'
 }, {
   Name: 'cTitanium',
-  Actual: e.Titanium,
+  Actual: e.cTitanium,
   Expected: 'Titanium'
 }, {
   Name: 'cVanadium',
-  Actual: e.Vanadium,
+  Actual: e.cVanadium,
   Expected: 'Vanadium'
 }, {
   Name: 'cChromium',
-  Actual: e.Chromium,
+  Actual: e.cChromium,
   Expected: 'Chromium'
 }, {
   Name: 'cManganese',
-  Actual: e.Manganese,
+  Actual: e.cManganese,
   Expected: 'Manganese'
 }, {
   Name: 'cIron',
-  Actual: e.Iron,
+  Actual: e.cIron,
   Expected: 'Iron'
 }, {
   Name: 'cCobalt',
-  Actual: e.Cobalt,
+  Actual: e.cCobalt,
   Expected: 'Cobalt'
 }, {
   Name: 'cNickel',
-  Actual: e.Nickel,
+  Actual: e.cNickel,
   Expected: 'Nickel'
 }, {
   Name: 'cCopper',
-  Actual: e.Copper,
+  Actual: e.cCopper,
   Expected: 'Copper'
 }, {
   Name: 'cZinc',
-  Actual: e.Zinc,
+  Actual: e.cZinc,
   Expected: 'Zinc'
 }, {
   Name: 'cGallium',
-  Actual: e.Gallium,
+  Actual: e.cGallium,
   Expected: 'Gallium'
 }, {
   Name: 'cGermanium',
-  Actual: e.Germanium,
+  Actual: e.cGermanium,
   Expected: 'Germanium'
 }, {
   Name: 'cArsenic',
-  Actual: e.Arsenic,
+  Actual: e.cArsenic,
   Expected: 'Arsenic'
 }, {
   Name: 'cSelenium',
-  Actual: e.Selenium,
+  Actual: e.cSelenium,
   Expected: 'Selenium'
 }, {
   Name: 'cBromine',
-  Actual: e.Bromine,
+  Actual: e.cBromine,
   Expected: 'Bromine'
 }, {
   Name: 'cKrypton',
-  Actual: e.Krypton,
+  Actual: e.cKrypton,
   Expected: 'Krypton'
 }, {
   Name: 'cRubidium',
-  Actual: e.Rubidium,
+  Actual: e.cRubidium,
   Expected: 'Rubidium'
 }, {
   Name: 'cStrontium',
-  Actual: e.Strontium,
+  Actual: e.cStrontium,
   Expected: 'Strontium'
 }, {
   Name: 'cYttrium',
-  Actual: e.Yttrium,
+  Actual: e.cYttrium,
   Expected: 'Yttrium'
 }, {
   Name: 'cZirconium',
-  Actual: e.Zirconium,
+  Actual: e.cZirconium,
   Expected: 'Zirconium'
 }, {
   Name: 'cNiobium',
-  Actual: e.Niobium,
+  Actual: e.cNiobium,
   Expected: 'Niobium'
 }, {
   Name: 'cMolybdenum',
-  Actual: e.Molybdenum,
+  Actual: e.cMolybdenum,
   Expected: 'Molybdenum'
 }, {
   Name: 'cTechnetium',
-  Actual: e.Technetium,
+  Actual: e.cTechnetium,
   Expected: 'Technetium'
 }, {
   Name: 'cRuthenium',
-  Actual: e.Ruthenium,
+  Actual: e.cRuthenium,
   Expected: 'Ruthenium'
 }, {
   Name: 'cRhodium',
-  Actual: e.Rhodium,
+  Actual: e.cRhodium,
   Expected: 'Rhodium'
 }, {
   Name: 'cPalladium',
-  Actual: e.Palladium,
+  Actual: e.cPalladium,
   Expected: 'Palladium'
 }, {
   Name: 'cSilver',
-  Actual: e.Silver,
+  Actual: e.cSilver,
   Expected: 'Silver'
 }, {
   Name: 'cCadmium',
-  Actual: e.Cadmium,
+  Actual: e.cCadmium,
   Expected: 'Cadmium'
 }, {
   Name: 'cIndium',
-  Actual: e.Indium,
+  Actual: e.cIndium,
   Expected: 'Indium'
 }, {
   Name: 'cTin',
-  Actual: e.Tin,
+  Actual: e.cTin,
   Expected: 'Tin'
 }, {
   Name: 'cAntimony',
-  Actual: e.Antimony,
+  Actual: e.cAntimony,
   Expected: 'Antimony'
 }, {
   Name: 'cTellurium',
-  Actual: e.Tellurium,
+  Actual: e.cTellurium,
   Expected: 'Tellurium'
 }, {
   Name: 'cIodine',
-  Actual: e.Iodine,
+  Actual: e.cIodine,
   Expected: 'Iodine'
 }, {
   Name: 'cXenon',
-  Actual: e.Xenon,
+  Actual: e.cXenon,
   Expected: 'Xenon'
 }, {
   Name: 'cCesium',
-  Actual: e.Cesium,
+  Actual: e.cCesium,
   Expected: 'Cesium'
 }, {
   Name: 'cBarium',
-  Actual: e.Barium,
+  Actual: e.cBarium,
   Expected: 'Barium'
 }, {
   Name: 'cLanthanum',
-  Actual: e.Lanthanum,
+  Actual: e.cLanthanum,
   Expected: 'Lanthanum'
 }, {
   Name: 'cCerium',
-  Actual: e.Cerium,
+  Actual: e.cCerium,
   Expected: 'Cerium'
 }, {
   Name: 'cPraseodymium',
-  Actual: e.Praseodymium,
+  Actual: e.cPraseodymium,
   Expected: 'Praseodymium'
 }, {
   Name: 'cNeodymium',
-  Actual: e.Neodymium,
+  Actual: e.cNeodymium,
   Expected: 'Neodymium'
 }, {
   Name: 'cPromethium',
-  Actual: e.Promethium,
+  Actual: e.cPromethium,
   Expected: 'Promethium'
 }, {
   Name: 'cSamarium',
-  Actual: e.Samarium,
+  Actual: e.cSamarium,
   Expected: 'Samarium'
 }, {
   Name: 'cEuropium',
-  Actual: e.Europium,
+  Actual: e.cEuropium,
   Expected: 'Europium'
 }, {
   Name: 'cGadolinium',
-  Actual: e.Gadolinium,
+  Actual: e.cGadolinium,
   Expected: 'Gadolinium'
 }, {
   Name: 'cTerbium',
-  Actual: e.Terbium,
+  Actual: e.cTerbium,
   Expected: 'Terbium'
 }, {
   Name: 'cDysprosium',
-  Actual: e.Dysprosium,
+  Actual: e.cDysprosium,
   Expected: 'Dysprosium'
 }, {
   Name: 'cHolmium',
-  Actual: e.Holmium,
+  Actual: e.cHolmium,
   Expected: 'Holmium'
 }, {
   Name: 'cErbium',
-  Actual: e.Erbium,
+  Actual: e.cErbium,
   Expected: 'Erbium'
 }, {
   Name: 'cThulium',
-  Actual: e.Thulium,
+  Actual: e.cThulium,
   Expected: 'Thulium'
 }, {
   Name: 'cYtterbium',
-  Actual: e.Ytterbium,
+  Actual: e.cYtterbium,
   Expected: 'Ytterbium'
 }, {
   Name: 'cLutetium',
-  Actual: e.Lutetium,
+  Actual: e.cLutetium,
   Expected: 'Lutetium'
 }, {
   Name: 'cHafnium',
-  Actual: e.Hafnium,
+  Actual: e.cHafnium,
   Expected: 'Hafnium'
 }, {
   Name: 'cTantalum',
-  Actual: e.Tantalum,
+  Actual: e.cTantalum,
   Expected: 'Tantalum'
 }, {
   Name: 'cTungsten',
-  Actual: e.Tungsten,
+  Actual: e.cTungsten,
   Expected: 'Tungsten'
 }, {
   Name: 'cRhenium',
-  Actual: e.Rhenium,
+  Actual: e.cRhenium,
   Expected: 'Rhenium'
 }, {
   Name: 'cOsmium',
-  Actual: e.Osmium,
+  Actual: e.cOsmium,
   Expected: 'Osmium'
 }, {
   Name: 'cIridium',
-  Actual: e.Iridium,
+  Actual: e.cIridium,
   Expected: 'Iridium'
 }, {
   Name: 'cPlatinum',
-  Actual: e.Platinum,
+  Actual: e.cPlatinum,
   Expected: 'Platinum'
 }, {
   Name: 'cGold',
-  Actual: e.Gold,
+  Actual: e.cGold,
   Expected: 'Gold'
 }, {
   Name: 'cMercury',
-  Actual: e.Mercury,
+  Actual: e.cMercury,
   Expected: 'Mercury'
 }, {
   Name: 'cThallium',
-  Actual: e.Thallium,
+  Actual: e.cThallium,
   Expected: 'Thallium'
 }, {
   Name: 'cLead',
-  Actual: e.Lead,
+  Actual: e.cLead,
   Expected: 'Lead'
 }, {
   Name: 'cBismuth',
-  Actual: e.Bismuth,
+  Actual: e.cBismuth,
   Expected: 'Bismuth'
 }, {
   Name: 'cPolonium',
-  Actual: e.Polonium,
+  Actual: e.cPolonium,
   Expected: 'Polonium'
 }, {
   Name: 'cAstatine',
-  Actual: e.Astatine,
+  Actual: e.cAstatine,
   Expected: 'Astatine'
 }, {
   Name: 'cRadon',
-  Actual: e.Radon,
+  Actual: e.cRadon,
   Expected: 'Radon'
 }, {
   Name: 'cFrancium',
-  Actual: e.Francium,
+  Actual: e.cFrancium,
   Expected: 'Francium'
 }, {
   Name: 'cRadium',
-  Actual: e.Radium,
+  Actual: e.cRadium,
   Expected: 'Radium'
 }, {
   Name: 'cActinium',
-  Actual: e.Actinium,
+  Actual: e.cActinium,
   Expected: 'Actinium'
 }, {
   Name: 'cThorium',
-  Actual: e.Thorium,
+  Actual: e.cThorium,
   Expected: 'Thorium'
 }, {
   Name: 'cProtactinium',
-  Actual: e.Protactinium,
+  Actual: e.cProtactinium,
   Expected: 'Protactinium'
 }, {
   Name: 'cUranium',
-  Actual: e.Uranium,
+  Actual: e.cUranium,
   Expected: 'Uranium'
 }, {
   Name: 'cNeptunium',
-  Actual: e.Neptunium,
+  Actual: e.cNeptunium,
   Expected: 'Neptunium'
 }, {
   Name: 'cPlutonium',
-  Actual: e.Plutonium,
+  Actual: e.cPlutonium,
   Expected: 'Plutonium'
 }, {
   Name: 'cAmericium',
-  Actual: e.Americium,
+  Actual: e.cAmericium,
   Expected: 'Americium'
 }, {
   Name: 'cCurium',
-  Actual: e.Curium,
+  Actual: e.cCurium,
   Expected: 'Curium'
 }, {
   Name: 'cBerkelium',
-  Actual: e.Berkelium,
+  Actual: e.cBerkelium,
   Expected: 'Berkelium'
 }, {
   Name: 'cCalifornium',
-  Actual: e.Californium,
+  Actual: e.cCalifornium,
   Expected: 'Californium'
 }, {
   Name: 'cEinsteinium',
-  Actual: e.Einsteinium,
+  Actual: e.cEinsteinium,
   Expected: 'Einsteinium'
 }, {
   Name: 'cFermium',
-  Actual: e.Fermium,
+  Actual: e.cFermium,
   Expected: 'Fermium'
 }, {
   Name: 'cMendelevium',
-  Actual: e.Mendelevium,
+  Actual: e.cMendelevium,
   Expected: 'Mendelevium'
 }, {
   Name: 'cNobelium',
-  Actual: e.Nobelium,
+  Actual: e.cNobelium,
   Expected: 'Nobelium'
 }, {
   Name: 'cLawrencium',
-  Actual: e.Lawrencium,
+  Actual: e.cLawrencium,
   Expected: 'Lawrencium'
 }, {
   Name: 'cRutherfordium',
-  Actual: e.Rutherfordium,
+  Actual: e.cRutherfordium,
   Expected: 'Rutherfordium'
 }, {
   Name: 'cDubnium',
-  Actual: e.Dubnium,
+  Actual: e.cDubnium,
   Expected: 'Dubnium'
 }, {
   Name: 'cSeaborgium',
-  Actual: e.Seaborgium,
+  Actual: e.cSeaborgium,
   Expected: 'Seaborgium'
 }, {
   Name: 'cBohrium',
-  Actual: e.Bohrium,
+  Actual: e.cBohrium,
   Expected: 'Bohrium'
 }, {
   Name: 'cHassium',
-  Actual: e.Hassium,
+  Actual: e.cHassium,
   Expected: 'Hassium'
 }, {
   Name: 'cMeitnerium',
-  Actual: e.Meitnerium,
+  Actual: e.cMeitnerium,
   Expected: 'Meitnerium'
 }, {
   Name: 'cDarmstatium',
-  Actual: e.Darmstatium,
+  Actual: e.cDarmstatium,
   Expected: 'Darmstatium'
 }, {
   Name: 'cRoentgenium',
-  Actual: e.Roentgenium,
+  Actual: e.cRoentgenium,
   Expected: 'Roentgenium'
 }, {
   Name: 'cCopernicium',
-  Actual: e.Copernicium,
+  Actual: e.cCopernicium,
   Expected: 'Copernicium'
 }, {
   Name: 'cNihonium',
-  Actual: e.Nihonium,
+  Actual: e.cNihonium,
   Expected: 'Nihonium'
 }, {
   Name: 'cFlerovium',
-  Actual: e.Flerovium,
+  Actual: e.cFlerovium,
   Expected: 'Flerovium'
 }, {
   Name: 'cMoscovium',
-  Actual: e.Moscovium,
+  Actual: e.cMoscovium,
   Expected: 'Moscovium'
 }, {
   Name: 'cLivermorium',
-  Actual: e.Livermorium,
+  Actual: e.cLivermorium,
   Expected: 'Livermorium'
 }, {
   Name: 'cTennessine',
-  Actual: e.Tennessine,
+  Actual: e.cTennessine,
   Expected: 'Tennessine'
 }, {
   Name: 'cOganesson',
-  Actual: e.Oganesson,
+  Actual: e.cOganesson,
   Expected: 'Oganesson'
 }];
 exports.elementConstantsValidation = elementConstantsValidation;

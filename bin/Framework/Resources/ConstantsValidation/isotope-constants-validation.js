@@ -12967,31 +12967,31 @@ var isotopeConstantsValidation = [// Hydrogen - H
 {
   Name: 'c1Hydrogen',
   Actual: i.c1Hydrogen,
-  Expected: '11Hydrogen'
+  Expected: '1Hydrogen'
 }, {
   Name: 'c2Hydrogen',
   Actual: i.c2Hydrogen,
-  Expected: '21Hydrogen'
+  Expected: '2Hydrogen'
 }, {
   Name: 'c3Hydrogen',
   Actual: i.c3Hydrogen,
-  Expected: '31Hydrogen'
+  Expected: '3Hydrogen'
 }, {
   Name: 'c4Hydrogen',
   Actual: i.c4Hydrogen,
-  Expected: '41Hydrogen'
+  Expected: '4Hydrogen'
 }, {
   Name: 'c5Hydrogen',
   Actual: i.c5Hydrogen,
-  Expected: '51Hydrogen'
+  Expected: '5Hydrogen'
 }, {
   Name: 'c6Hydrogen',
   Actual: i.c6Hydrogen,
-  Expected: '61Hydrogen'
+  Expected: '6Hydrogen'
 }, {
   Name: 'c7Hydrogen',
   Actual: i.c7Hydrogen,
-  Expected: '71Hydrogen'
+  Expected: '7Hydrogen'
 }, // Helium - He
 {
   Name: 'c2Helium',
@@ -13965,96 +13965,96 @@ var isotopeConstantsValidation = [// Hydrogen - H
   Expected: '47Phosphorus'
 }, // Sulfur - S
 {
-  Name: 'c27Sulfer',
-  Actual: i.c27Sulfer,
+  Name: 'c27Sulfur',
+  Actual: i.c27Sulfur,
   Expected: '27Sulfur'
 }, {
-  Name: 'c28Sulfer',
-  Actual: i.c28Sulfer,
+  Name: 'c28Sulfur',
+  Actual: i.c28Sulfur,
   Expected: '28Sulfur'
 }, {
-  Name: 'c29Sulfer',
-  Actual: i.c29Sulfer,
+  Name: 'c29Sulfur',
+  Actual: i.c29Sulfur,
   Expected: '29Sulfur'
 }, {
-  Name: 'c30Sulfer',
-  Actual: i.c30Sulfer,
+  Name: 'c30Sulfur',
+  Actual: i.c30Sulfur,
   Expected: '30Sulfur'
 }, {
-  Name: 'c31Sulfer',
-  Actual: i.c31Sulfer,
+  Name: 'c31Sulfur',
+  Actual: i.c31Sulfur,
   Expected: '31Sulfur'
 }, {
-  Name: 'c32Sulfer',
-  Actual: i.c32Sulfer,
+  Name: 'c32Sulfur',
+  Actual: i.c32Sulfur,
   Expected: '32Sulfur'
 }, {
-  Name: 'c33Sulfer',
-  Actual: i.c33Sulfer,
+  Name: 'c33Sulfur',
+  Actual: i.c33Sulfur,
   Expected: '33Sulfur'
 }, {
-  Name: 'c34Sulfer',
-  Actual: i.c34Sulfer,
+  Name: 'c34Sulfur',
+  Actual: i.c34Sulfur,
   Expected: '34Sulfur'
 }, {
-  Name: 'c35Sulfer',
-  Actual: i.c35Sulfer,
+  Name: 'c35Sulfur',
+  Actual: i.c35Sulfur,
   Expected: '35Sulfur'
 }, {
-  Name: 'c36Sulfer',
-  Actual: i.c36Sulfer,
+  Name: 'c36Sulfur',
+  Actual: i.c36Sulfur,
   Expected: '36Sulfur'
 }, {
-  Name: 'c37Sulfer',
-  Actual: i.c37Sulfer,
+  Name: 'c37Sulfur',
+  Actual: i.c37Sulfur,
   Expected: '37Sulfur'
 }, {
-  Name: 'c38Sulfer',
-  Actual: i.c38Sulfer,
+  Name: 'c38Sulfur',
+  Actual: i.c38Sulfur,
   Expected: '38Sulfur'
 }, {
-  Name: 'c39Sulfer',
-  Actual: i.c39Sulfer,
+  Name: 'c39Sulfur',
+  Actual: i.c39Sulfur,
   Expected: '39Sulfur'
 }, {
-  Name: 'c40Sulfer',
-  Actual: i.c40Sulfer,
+  Name: 'c40Sulfur',
+  Actual: i.c40Sulfur,
   Expected: '40Sulfur'
 }, {
-  Name: 'c41Sulfer',
-  Actual: i.c41Sulfer,
+  Name: 'c41Sulfur',
+  Actual: i.c41Sulfur,
   Expected: '41Sulfur'
 }, {
-  Name: 'c42Sulfer',
-  Actual: i.c42Sulfer,
+  Name: 'c42Sulfur',
+  Actual: i.c42Sulfur,
   Expected: '42Sulfur'
 }, {
-  Name: 'c43Sulfer',
-  Actual: i.c43Sulfer,
+  Name: 'c43Sulfur',
+  Actual: i.c43Sulfur,
   Expected: '43Sulfur'
 }, {
-  Name: 'c44Sulfer',
-  Actual: i.c44Sulfer,
+  Name: 'c44Sulfur',
+  Actual: i.c44Sulfur,
   Expected: '44Sulfur'
 }, {
-  Name: 'c45Sulfer',
-  Actual: i.c45Sulfer,
+  Name: 'c45Sulfur',
+  Actual: i.c45Sulfur,
   Expected: '45Sulfur'
 }, {
-  Name: 'c46Sulfer',
-  Actual: i.c46Sulfer,
+  Name: 'c46Sulfur',
+  Actual: i.c46Sulfur,
   Expected: '46Sulfur'
 }, {
-  Name: 'c47Sulfer',
-  Actual: i.c47Sulfer,
+  Name: 'c47Sulfur',
+  Actual: i.c47Sulfur,
   Expected: '47Sulfur'
 }, {
-  Name: 'c48Sulfer',
-  Actual: i.c48Sulfer,
+  Name: 'c48Sulfur',
+  Actual: i.c48Sulfur,
   Expected: '48Sulfur'
 }, {
-  Name: 'c49Sulfer',
-  Actual: i.c49Sulfer,
+  Name: 'c49Sulfur',
+  Actual: i.c49Sulfur,
   Expected: '49Sulfur'
 }, // Clorine - Cl
 {
@@ -14673,108 +14673,108 @@ var isotopeConstantsValidation = [// Hydrogen - H
   Expected: '63Titanium'
 }, // Vanadium - V
 {
-  Name: 'c40Vandium',
-  Actual: i.c40Vandium,
+  Name: 'c40Vanadium',
+  Actual: i.c40Vanadium,
   Expected: '40Vanadium'
 }, {
-  Name: 'c41Vandium',
-  Actual: i.c41Vandium,
+  Name: 'c41Vanadium',
+  Actual: i.c41Vanadium,
   Expected: '41Vanadium'
 }, {
-  Name: 'c42Vandium',
-  Actual: i.c42Vandium,
+  Name: 'c42Vanadium',
+  Actual: i.c42Vanadium,
   Expected: '42Vanadium'
 }, {
-  Name: 'c43Vandium',
-  Actual: i.c43Vandium,
+  Name: 'c43Vanadium',
+  Actual: i.c43Vanadium,
   Expected: '43Vanadium'
 }, {
-  Name: 'c44Vandium',
-  Actual: i.c44Vandium,
+  Name: 'c44Vanadium',
+  Actual: i.c44Vanadium,
   Expected: '44Vanadium'
 }, {
-  Name: 'c45Vandium',
-  Actual: i.c45Vandium,
+  Name: 'c45Vanadium',
+  Actual: i.c45Vanadium,
   Expected: '45Vanadium'
 }, {
-  Name: 'c46Vandium',
-  Actual: i.c46Vandium,
+  Name: 'c46Vanadium',
+  Actual: i.c46Vanadium,
   Expected: '46Vanadium'
 }, {
-  Name: 'c47Vandium',
-  Actual: i.c47Vandium,
+  Name: 'c47Vanadium',
+  Actual: i.c47Vanadium,
   Expected: '47Vanadium'
 }, {
-  Name: 'c48Vandium',
-  Actual: i.c48Vandium,
+  Name: 'c48Vanadium',
+  Actual: i.c48Vanadium,
   Expected: '48Vanadium'
 }, {
-  Name: 'c49Vandium',
-  Actual: i.c49Vandium,
+  Name: 'c49Vanadium',
+  Actual: i.c49Vanadium,
   Expected: '49Vanadium'
 }, {
-  Name: 'c50Vandium',
-  Actual: i.c50Vandium,
+  Name: 'c50Vanadium',
+  Actual: i.c50Vanadium,
   Expected: '50Vanadium'
 }, {
-  Name: 'c51Vandium',
-  Actual: i.c51Vandium,
+  Name: 'c51Vanadium',
+  Actual: i.c51Vanadium,
   Expected: '51Vanadium'
 }, {
-  Name: 'c52Vandium',
-  Actual: i.c52Vandium,
+  Name: 'c52Vanadium',
+  Actual: i.c52Vanadium,
   Expected: '52Vanadium'
 }, {
-  Name: 'c53Vandium',
-  Actual: i.c53Vandium,
+  Name: 'c53Vanadium',
+  Actual: i.c53Vanadium,
   Expected: '53Vanadium'
 }, {
-  Name: 'c54Vandium',
-  Actual: i.c54Vandium,
+  Name: 'c54Vanadium',
+  Actual: i.c54Vanadium,
   Expected: '54Vanadium'
 }, {
-  Name: 'c55Vandium',
-  Actual: i.c55Vandium,
+  Name: 'c55Vanadium',
+  Actual: i.c55Vanadium,
   Expected: '55Vanadium'
 }, {
-  Name: 'c56Vandium',
-  Actual: i.c56Vandium,
+  Name: 'c56Vanadium',
+  Actual: i.c56Vanadium,
   Expected: '56Vanadium'
 }, {
-  Name: 'c57Vandium',
-  Actual: i.c57Vandium,
+  Name: 'c57Vanadium',
+  Actual: i.c57Vanadium,
   Expected: '57Vanadium'
 }, {
-  Name: 'c58Vandium',
-  Actual: i.c58Vandium,
+  Name: 'c58Vanadium',
+  Actual: i.c58Vanadium,
   Expected: '58Vanadium'
 }, {
-  Name: 'c59Vandium',
-  Actual: i.c59Vandium,
+  Name: 'c59Vanadium',
+  Actual: i.c59Vanadium,
   Expected: '59Vanadium'
 }, {
-  Name: 'c60Vandium',
-  Actual: i.c60Vandium,
+  Name: 'c60Vanadium',
+  Actual: i.c60Vanadium,
   Expected: '60Vanadium'
 }, {
-  Name: 'c61Vandium',
-  Actual: i.c61Vandium,
+  Name: 'c61Vanadium',
+  Actual: i.c61Vanadium,
   Expected: '61Vanadium'
 }, {
-  Name: 'c62Vandium',
-  Actual: i.c62Vandium,
+  Name: 'c62Vanadium',
+  Actual: i.c62Vanadium,
   Expected: '62Vanadium'
 }, {
-  Name: 'c63Vandium',
-  Actual: i.c63Vandium,
+  Name: 'c63Vanadium',
+  Actual: i.c63Vanadium,
   Expected: '63Vanadium'
 }, {
-  Name: 'c64Vandium',
-  Actual: i.c64Vandium,
+  Name: 'c64Vanadium',
+  Actual: i.c64Vanadium,
   Expected: '64Vanadium'
 }, {
-  Name: 'c65Vandium',
-  Actual: i.c65Vandium,
+  Name: 'c65Vanadium',
+  Actual: i.c65Vanadium,
   Expected: '65Vanadium'
 }, // Chromium - Cr
 {
@@ -19760,159 +19760,159 @@ var isotopeConstantsValidation = [// Hydrogen - H
   Name: 'c159Praseodymium',
   Actual: i.c159Praseodymium,
   Expected: '159Praseodymium'
-}, // 124 - 161', Actual: 37 // Neonodymium - Nd
+}, // 124 - 161', Actual: 37 // Neodymium - Nd
 {
-  Name: 'c124Neonodymium',
-  Actual: i.c124Neonodymium,
-  Expected: '124Neonodymium'
+  Name: 'c124Neodymium',
+  Actual: i.c124Neodymium,
+  Expected: '124Neodymium'
 }, {
-  Name: 'c125Neonodymium',
-  Actual: i.c125Neonodymium,
-  Expected: '125Neonodymium'
+  Name: 'c125Neodymium',
+  Actual: i.c125Neodymium,
+  Expected: '125Neodymium'
 }, {
-  Name: 'c126Neonodymium',
-  Actual: i.c126Neonodymium,
-  Expected: '126Neonodymium'
+  Name: 'c126Neodymium',
+  Actual: i.c126Neodymium,
+  Expected: '126Neodymium'
 }, {
-  Name: 'c127Neonodymium',
-  Actual: i.c127Neonodymium,
-  Expected: '127Neonodymium'
+  Name: 'c127Neodymium',
+  Actual: i.c127Neodymium,
+  Expected: '127Neodymium'
 }, {
-  Name: 'c128Neonodymium',
-  Actual: i.c128Neonodymium,
-  Expected: '128Neonodymium'
+  Name: 'c128Neodymium',
+  Actual: i.c128Neodymium,
+  Expected: '128Neodymium'
 }, {
-  Name: 'c129Neonodymium',
-  Actual: i.c129Neonodymium,
-  Expected: '129Neonodymium'
+  Name: 'c129Neodymium',
+  Actual: i.c129Neodymium,
+  Expected: '129Neodymium'
 }, {
-  Name: 'c130Neonodymium',
-  Actual: i.c130Neonodymium,
-  Expected: '130Neonodymium'
+  Name: 'c130Neodymium',
+  Actual: i.c130Neodymium,
+  Expected: '130Neodymium'
 }, {
-  Name: 'c131Neonodymium',
-  Actual: i.c131Neonodymium,
-  Expected: '131Neonodymium'
+  Name: 'c131Neodymium',
+  Actual: i.c131Neodymium,
+  Expected: '131Neodymium'
 }, {
-  Name: 'c132Neonodymium',
-  Actual: i.c132Neonodymium,
-  Expected: '132Neonodymium'
+  Name: 'c132Neodymium',
+  Actual: i.c132Neodymium,
+  Expected: '132Neodymium'
 }, {
-  Name: 'c133Neonodymium',
-  Actual: i.c133Neonodymium,
-  Expected: '133Neonodymium'
+  Name: 'c133Neodymium',
+  Actual: i.c133Neodymium,
+  Expected: '133Neodymium'
 }, {
-  Name: 'c134Neonodymium',
-  Actual: i.c134Neonodymium,
-  Expected: '134Neonodymium'
+  Name: 'c134Neodymium',
+  Actual: i.c134Neodymium,
+  Expected: '134Neodymium'
 }, {
-  Name: 'c135Neonodymium',
-  Actual: i.c135Neonodymium,
-  Expected: '135Neonodymium'
+  Name: 'c135Neodymium',
+  Actual: i.c135Neodymium,
+  Expected: '135Neodymium'
 }, {
-  Name: 'c136Neonodymium',
-  Actual: i.c136Neonodymium,
-  Expected: '136Neonodymium'
+  Name: 'c136Neodymium',
+  Actual: i.c136Neodymium,
+  Expected: '136Neodymium'
 }, {
-  Name: 'c137Neonodymium',
-  Actual: i.c137Neonodymium,
-  Expected: '137Neonodymium'
+  Name: 'c137Neodymium',
+  Actual: i.c137Neodymium,
+  Expected: '137Neodymium'
 }, {
-  Name: 'c138Neonodymium',
-  Actual: i.c138Neonodymium,
-  Expected: '138Neonodymium'
+  Name: 'c138Neodymium',
+  Actual: i.c138Neodymium,
+  Expected: '138Neodymium'
 }, {
-  Name: 'c139Neonodymium',
-  Actual: i.c139Neonodymium,
-  Expected: '139Neonodymium'
+  Name: 'c139Neodymium',
+  Actual: i.c139Neodymium,
+  Expected: '139Neodymium'
 }, {
-  Name: 'c140Neonodymium',
-  Actual: i.c140Neonodymium,
-  Expected: '140Neonodymium'
+  Name: 'c140Neodymium',
+  Actual: i.c140Neodymium,
+  Expected: '140Neodymium'
 }, {
-  Name: 'c141Neonodymium',
-  Actual: i.c141Neonodymium,
-  Expected: '141Neonodymium'
+  Name: 'c141Neodymium',
+  Actual: i.c141Neodymium,
+  Expected: '141Neodymium'
 }, {
-  Name: 'c142Neonodymium',
-  Actual: i.c142Neonodymium,
-  Expected: '142Neonodymium'
+  Name: 'c142Neodymium',
+  Actual: i.c142Neodymium,
+  Expected: '142Neodymium'
 }, {
-  Name: 'c143Neonodymium',
-  Actual: i.c143Neonodymium,
-  Expected: '143Neonodymium'
+  Name: 'c143Neodymium',
+  Actual: i.c143Neodymium,
+  Expected: '143Neodymium'
 }, {
-  Name: 'c144Neonodymium',
-  Actual: i.c144Neonodymium,
-  Expected: '144Neonodymium'
+  Name: 'c144Neodymium',
+  Actual: i.c144Neodymium,
+  Expected: '144Neodymium'
 }, {
-  Name: 'c145Neonodymium',
-  Actual: i.c145Neonodymium,
-  Expected: '145Neonodymium'
+  Name: 'c145Neodymium',
+  Actual: i.c145Neodymium,
+  Expected: '145Neodymium'
 }, {
-  Name: 'c146Neonodymium',
-  Actual: i.c146Neonodymium,
-  Expected: '146Neonodymium'
+  Name: 'c146Neodymium',
+  Actual: i.c146Neodymium,
+  Expected: '146Neodymium'
 }, {
-  Name: 'c147Neonodymium',
-  Actual: i.c147Neonodymium,
-  Expected: '147Neonodymium'
+  Name: 'c147Neodymium',
+  Actual: i.c147Neodymium,
+  Expected: '147Neodymium'
 }, {
-  Name: 'c148Neonodymium',
-  Actual: i.c148Neonodymium,
-  Expected: '148Neonodymium'
+  Name: 'c148Neodymium',
+  Actual: i.c148Neodymium,
+  Expected: '148Neodymium'
 }, {
-  Name: 'c149Neonodymium',
-  Actual: i.c149Neonodymium,
-  Expected: '149Neonodymium'
+  Name: 'c149Neodymium',
+  Actual: i.c149Neodymium,
+  Expected: '149Neodymium'
 }, {
-  Name: 'c150Neonodymium',
-  Actual: i.c150Neonodymium,
-  Expected: '150Neonodymium'
+  Name: 'c150Neodymium',
+  Actual: i.c150Neodymium,
+  Expected: '150Neodymium'
 }, {
-  Name: 'c151Neonodymium',
-  Actual: i.c151Neonodymium,
-  Expected: '151Neonodymium'
+  Name: 'c151Neodymium',
+  Actual: i.c151Neodymium,
+  Expected: '151Neodymium'
 }, {
-  Name: 'c152Neonodymium',
-  Actual: i.c152Neonodymium,
-  Expected: '152Neonodymium'
+  Name: 'c152Neodymium',
+  Actual: i.c152Neodymium,
+  Expected: '152Neodymium'
 }, {
-  Name: 'c153Neonodymium',
-  Actual: i.c153Neonodymium,
-  Expected: '153Neonodymium'
+  Name: 'c153Neodymium',
+  Actual: i.c153Neodymium,
+  Expected: '153Neodymium'
 }, {
-  Name: 'c154Neonodymium',
-  Actual: i.c154Neonodymium,
-  Expected: '154Neonodymium'
+  Name: 'c154Neodymium',
+  Actual: i.c154Neodymium,
+  Expected: '154Neodymium'
 }, {
-  Name: 'c155Neonodymium',
-  Actual: i.c155Neonodymium,
-  Expected: '155Neonodymium'
+  Name: 'c155Neodymium',
+  Actual: i.c155Neodymium,
+  Expected: '155Neodymium'
 }, {
-  Name: 'c156Neonodymium',
-  Actual: i.c156Neonodymium,
-  Expected: '156Neonodymium'
+  Name: 'c156Neodymium',
+  Actual: i.c156Neodymium,
+  Expected: '156Neodymium'
 }, {
-  Name: 'c157Neonodymium',
-  Actual: i.c157Neonodymium,
-  Expected: '157Neonodymium'
+  Name: 'c157Neodymium',
+  Actual: i.c157Neodymium,
+  Expected: '157Neodymium'
 }, {
-  Name: 'c158Neonodymium',
-  Actual: i.c158Neonodymium,
-  Expected: '158Neonodymium'
+  Name: 'c158Neodymium',
+  Actual: i.c158Neodymium,
+  Expected: '158Neodymium'
 }, {
-  Name: 'c159Neonodymium',
-  Actual: i.c159Neonodymium,
-  Expected: '159Neonodymium'
+  Name: 'c159Neodymium',
+  Actual: i.c159Neodymium,
+  Expected: '159Neodymium'
 }, {
-  Name: 'c160Neonodymium',
-  Actual: i.c160Neonodymium,
-  Expected: '160Neonodymium'
+  Name: 'c160Neodymium',
+  Actual: i.c160Neodymium,
+  Expected: '160Neodymium'
 }, {
-  Name: 'c161Neonodymium',
-  Actual: i.c161Neonodymium,
-  Expected: '161Neonodymium'
+  Name: 'c161Neodymium',
+  Actual: i.c161Neodymium,
+  Expected: '161Neodymium'
 }, // 126 - 163', Actual: 37 // Promethium - Pm
 {
   Name: 'c126Promethium',
@@ -22100,151 +22100,151 @@ var isotopeConstantsValidation = [// Hydrogen - H
 {
   Name: 'c161Osmium',
   Actual: i.c161Osmium,
-  Expected: '161Osmiummium'
+  Expected: '161Osmium'
 }, {
   Name: 'c162Osmium',
   Actual: i.c162Osmium,
-  Expected: '162Osmiummium'
+  Expected: '162Osmium'
 }, {
   Name: 'c163Osmium',
   Actual: i.c163Osmium,
-  Expected: '163Osmiummium'
+  Expected: '163Osmium'
 }, {
   Name: 'c164Osmium',
   Actual: i.c164Osmium,
-  Expected: '164Osmiummium'
+  Expected: '164Osmium'
 }, {
   Name: 'c165Osmium',
   Actual: i.c165Osmium,
-  Expected: '165Osmiummium'
+  Expected: '165Osmium'
 }, {
   Name: 'c166Osmium',
   Actual: i.c166Osmium,
-  Expected: '166Osmiummium'
+  Expected: '166Osmium'
 }, {
   Name: 'c167Osmium',
   Actual: i.c167Osmium,
-  Expected: '167Osmiummium'
+  Expected: '167Osmium'
 }, {
   Name: 'c168Osmium',
   Actual: i.c168Osmium,
-  Expected: '168Osmiummium'
+  Expected: '168Osmium'
 }, {
   Name: 'c169Osmium',
   Actual: i.c169Osmium,
-  Expected: '169Osmiummium'
+  Expected: '169Osmium'
 }, {
   Name: 'c170Osmium',
   Actual: i.c170Osmium,
-  Expected: '170Osmiummium'
+  Expected: '170Osmium'
 }, {
   Name: 'c171Osmium',
   Actual: i.c171Osmium,
-  Expected: '171Osmiummium'
+  Expected: '171Osmium'
 }, {
   Name: 'c172Osmium',
   Actual: i.c172Osmium,
-  Expected: '172Osmiummium'
+  Expected: '172Osmium'
 }, {
   Name: 'c173Osmium',
   Actual: i.c173Osmium,
-  Expected: '173Osmiummium'
+  Expected: '173Osmium'
 }, {
   Name: 'c174Osmium',
   Actual: i.c174Osmium,
-  Expected: '174Osmiummium'
+  Expected: '174Osmium'
 }, {
   Name: 'c175Osmium',
   Actual: i.c175Osmium,
-  Expected: '175Osmiummium'
+  Expected: '175Osmium'
 }, {
   Name: 'c176Osmium',
   Actual: i.c176Osmium,
-  Expected: '176Osmiummium'
+  Expected: '176Osmium'
 }, {
   Name: 'c177Osmium',
   Actual: i.c177Osmium,
-  Expected: '177Osmiummium'
+  Expected: '177Osmium'
 }, {
   Name: 'c178Osmium',
   Actual: i.c178Osmium,
-  Expected: '178Osmiummium'
+  Expected: '178Osmium'
 }, {
   Name: 'c179Osmium',
   Actual: i.c179Osmium,
-  Expected: '179Osmiummium'
+  Expected: '179Osmium'
 }, {
   Name: 'c180Osmium',
   Actual: i.c180Osmium,
-  Expected: '180Osmiummium'
+  Expected: '180Osmium'
 }, {
   Name: 'c181Osmium',
   Actual: i.c181Osmium,
-  Expected: '181Osmiummium'
+  Expected: '181Osmium'
 }, {
   Name: 'c182Osmium',
   Actual: i.c182Osmium,
-  Expected: '182Osmiummium'
+  Expected: '182Osmium'
 }, {
   Name: 'c183Osmium',
   Actual: i.c183Osmium,
-  Expected: '183Osmiummium'
+  Expected: '183Osmium'
 }, {
   Name: 'c184Osmium',
   Actual: i.c184Osmium,
-  Expected: '184Osmiummium'
+  Expected: '184Osmium'
 }, {
   Name: 'c185Osmium',
   Actual: i.c185Osmium,
-  Expected: '185Osmiummium'
+  Expected: '185Osmium'
 }, {
   Name: 'c186Osmium',
   Actual: i.c186Osmium,
-  Expected: '186Osmiummium'
+  Expected: '186Osmium'
 }, {
   Name: 'c187Osmium',
   Actual: i.c187Osmium,
-  Expected: '187Osmiummium'
+  Expected: '187Osmium'
 }, {
   Name: 'c188Osmium',
   Actual: i.c188Osmium,
-  Expected: '188Osmiummium'
+  Expected: '188Osmium'
 }, {
   Name: 'c189Osmium',
   Actual: i.c189Osmium,
-  Expected: '189Osmiummium'
+  Expected: '189Osmium'
 }, {
   Name: 'c190Osmium',
   Actual: i.c190Osmium,
-  Expected: '190Osmiummium'
+  Expected: '190Osmium'
 }, {
   Name: 'c191Osmium',
   Actual: i.c191Osmium,
-  Expected: '191Osmiummium'
+  Expected: '191Osmium'
 }, {
   Name: 'c192Osmium',
   Actual: i.c192Osmium,
-  Expected: '192Osmiummium'
+  Expected: '192Osmium'
 }, {
   Name: 'c193Osmium',
   Actual: i.c193Osmium,
-  Expected: '193Osmiummium'
+  Expected: '193Osmium'
 }, {
   Name: 'c194Osmium',
   Actual: i.c194Osmium,
-  Expected: '194Osmiummium'
+  Expected: '194Osmium'
 }, {
   Name: 'c195Osmium',
   Actual: i.c195Osmium,
-  Expected: '195Osmiummium'
+  Expected: '195Osmium'
 }, {
   Name: 'c196Osmium',
   Actual: i.c196Osmium,
-  Expected: '196Osmiummium'
+  Expected: '196Osmium'
 }, {
   Name: 'c197Osmium',
   Actual: i.c197Osmium,
-  Expected: '197Osmiummium'
+  Expected: '197Osmium'
 }, // 164 - 202', Actual: 38 // Iridium - Ir
 {
   Name: 'c164Iridium',
@@ -24561,103 +24561,103 @@ var isotopeConstantsValidation = [// Hydrogen - H
   Name: 'c242Uranium',
   Actual: i.c242Uranium,
   Expected: '242Uranium'
-}, // 219 - 220, 223 - 244', Actual: 23 // Neonptunium - Np
+}, // 219 - 220, 223 - 244', Actual: 23 // Neptunium - Np
 {
-  Name: 'c219Neonptunium',
-  Actual: i.c219Neonptunium,
-  Expected: '219Neonptunium'
+  Name: 'c219Neptunium',
+  Actual: i.c219Neptunium,
+  Expected: '219Neptunium'
 }, {
-  Name: 'c220Neonptunium',
-  Actual: i.c220Neonptunium,
-  Expected: '220Neonptunium'
+  Name: 'c220Neptunium',
+  Actual: i.c220Neptunium,
+  Expected: '220Neptunium'
 }, {
-  Name: 'c223Neonptunium',
-  Actual: i.c223Neonptunium,
-  Expected: '223Neonptunium'
+  Name: 'c223Neptunium',
+  Actual: i.c223Neptunium,
+  Expected: '223Neptunium'
 }, {
-  Name: 'c224Neonptunium',
-  Actual: i.c224Neonptunium,
-  Expected: '224Neonptunium'
+  Name: 'c224Neptunium',
+  Actual: i.c224Neptunium,
+  Expected: '224Neptunium'
 }, {
-  Name: 'c225Neonptunium',
-  Actual: i.c225Neonptunium,
-  Expected: '225Neonptunium'
+  Name: 'c225Neptunium',
+  Actual: i.c225Neptunium,
+  Expected: '225Neptunium'
 }, {
-  Name: 'c226Neonptunium',
-  Actual: i.c226Neonptunium,
-  Expected: '226Neonptunium'
+  Name: 'c226Neptunium',
+  Actual: i.c226Neptunium,
+  Expected: '226Neptunium'
 }, {
-  Name: 'c227Neonptunium',
-  Actual: i.c227Neonptunium,
-  Expected: '227Neonptunium'
+  Name: 'c227Neptunium',
+  Actual: i.c227Neptunium,
+  Expected: '227Neptunium'
 }, {
-  Name: 'c228Neonptunium',
-  Actual: i.c228Neonptunium,
-  Expected: '228Neonptunium'
+  Name: 'c228Neptunium',
+  Actual: i.c228Neptunium,
+  Expected: '228Neptunium'
 }, {
-  Name: 'c229Neonptunium',
-  Actual: i.c229Neonptunium,
-  Expected: '229Neonptunium'
+  Name: 'c229Neptunium',
+  Actual: i.c229Neptunium,
+  Expected: '229Neptunium'
 }, {
-  Name: 'c230Neonptunium',
-  Actual: i.c230Neonptunium,
-  Expected: '230Neonptunium'
+  Name: 'c230Neptunium',
+  Actual: i.c230Neptunium,
+  Expected: '230Neptunium'
 }, {
-  Name: 'c231Neonptunium',
-  Actual: i.c231Neonptunium,
-  Expected: '231Neonptunium'
+  Name: 'c231Neptunium',
+  Actual: i.c231Neptunium,
+  Expected: '231Neptunium'
 }, {
-  Name: 'c232Neonptunium',
-  Actual: i.c232Neonptunium,
-  Expected: '232Neonptunium'
+  Name: 'c232Neptunium',
+  Actual: i.c232Neptunium,
+  Expected: '232Neptunium'
 }, {
-  Name: 'c233Neonptunium',
-  Actual: i.c233Neonptunium,
-  Expected: '233Neonptunium'
+  Name: 'c233Neptunium',
+  Actual: i.c233Neptunium,
+  Expected: '233Neptunium'
 }, {
-  Name: 'c234Neonptunium',
-  Actual: i.c234Neonptunium,
-  Expected: '234Neonptunium'
+  Name: 'c234Neptunium',
+  Actual: i.c234Neptunium,
+  Expected: '234Neptunium'
 }, {
-  Name: 'c235Neonptunium',
-  Actual: i.c235Neonptunium,
-  Expected: '235Neonptunium'
+  Name: 'c235Neptunium',
+  Actual: i.c235Neptunium,
+  Expected: '235Neptunium'
 }, {
-  Name: 'c236Neonptunium',
-  Actual: i.c236Neonptunium,
-  Expected: '236Neonptunium'
+  Name: 'c236Neptunium',
+  Actual: i.c236Neptunium,
+  Expected: '236Neptunium'
 }, {
-  Name: 'c237Neonptunium',
-  Actual: i.c237Neonptunium,
-  Expected: '237Neonptunium'
+  Name: 'c237Neptunium',
+  Actual: i.c237Neptunium,
+  Expected: '237Neptunium'
 }, {
-  Name: 'c238Neonptunium',
-  Actual: i.c238Neonptunium,
-  Expected: '238Neonptunium'
+  Name: 'c238Neptunium',
+  Actual: i.c238Neptunium,
+  Expected: '238Neptunium'
 }, {
-  Name: 'c239Neonptunium',
-  Actual: i.c239Neonptunium,
-  Expected: '239Neonptunium'
+  Name: 'c239Neptunium',
+  Actual: i.c239Neptunium,
+  Expected: '239Neptunium'
 }, {
-  Name: 'c240Neonptunium',
-  Actual: i.c240Neonptunium,
-  Expected: '240Neonptunium'
+  Name: 'c240Neptunium',
+  Actual: i.c240Neptunium,
+  Expected: '240Neptunium'
 }, {
-  Name: 'c241Neonptunium',
-  Actual: i.c241Neonptunium,
-  Expected: '241Neonptunium'
+  Name: 'c241Neptunium',
+  Actual: i.c241Neptunium,
+  Expected: '241Neptunium'
 }, {
-  Name: 'c242Neonptunium',
-  Actual: i.c242Neonptunium,
-  Expected: '242Neonptunium'
+  Name: 'c242Neptunium',
+  Actual: i.c242Neptunium,
+  Expected: '242Neptunium'
 }, {
-  Name: 'c243Neonptunium',
-  Actual: i.c243Neonptunium,
-  Expected: '243Neonptunium'
+  Name: 'c243Neptunium',
+  Actual: i.c243Neptunium,
+  Expected: '243Neptunium'
 }, {
-  Name: 'c244Neonptunium',
-  Actual: i.c244Neonptunium,
-  Expected: '244Neonptunium'
+  Name: 'c244Neptunium',
+  Actual: i.c244Neptunium,
+  Expected: '244Neptunium'
 }, // 228 - 247', Actual: 19 // Plutonium - Pu
 {
   Name: 'c228Plutonium',
@@ -25814,31 +25814,31 @@ var isotopeConstantsValidation = [// Hydrogen - H
 {
   Name: 'c284Flerovium',
   Actual: i.c284Flerovium,
-  Expected: '284Fleroviumerovium'
+  Expected: '284Flerovium'
 }, {
   Name: 'c285Flerovium',
   Actual: i.c285Flerovium,
-  Expected: '285Fleroviumerovium'
+  Expected: '285Flerovium'
 }, {
   Name: 'c286Flerovium',
   Actual: i.c286Flerovium,
-  Expected: '286Fleroviumerovium'
+  Expected: '286Flerovium'
 }, {
   Name: 'c287Flerovium',
   Actual: i.c287Flerovium,
-  Expected: '287Fleroviumerovium'
+  Expected: '287Flerovium'
 }, {
   Name: 'c288Flerovium',
   Actual: i.c288Flerovium,
-  Expected: '288Fleroviumerovium'
+  Expected: '288Flerovium'
 }, {
   Name: 'c289Flerovium',
   Actual: i.c289Flerovium,
-  Expected: '289Fleroviumerovium'
+  Expected: '289Flerovium'
 }, {
   Name: 'c290Flerovium',
   Actual: i.c290Flerovium,
-  Expected: '290Fleroviumerovium'
+  Expected: '290Flerovium'
 }, // 287- 290', Actual: 3 // Moscovium - Mc
 {
   Name: 'c287Moscovium',
@@ -25890,10 +25890,10 @@ var isotopeConstantsValidation = [// Hydrogen - H
 {
   Name: 'c294Oganesson',
   Actual: i.c294Oganesson,
-  Expected: '294Oganessonanesson'
+  Expected: '294Oganesson'
 }, {
   Name: 'c295Oganesson',
   Actual: i.c295Oganesson,
-  Expected: '295Oganessonanesson'
+  Expected: '295Oganesson'
 }];
 exports.isotopeConstantsValidation = isotopeConstantsValidation;

@@ -93,10 +93,10 @@ exports.chexagon = chexagon;
 var cHexagon = p.cHex + b.ca + p.cgon; // Hexagon
 
 exports.cHexagon = cHexagon;
-var cheptagon = p.chep + b.ca + p.cgon; // heptagon
+var cheptagon = p.chep + b.cta + p.cgon; // heptagon
 
 exports.cheptagon = cheptagon;
-var cHeptagon = p.cHep + b.ca + p.cgon; // Heptagon
+var cHeptagon = p.cHep + b.cta + p.cgon; // Heptagon
 
 exports.cHeptagon = cHeptagon;
 var cnonagon = p.cnon + b.ca + p.cgon; // nonagon

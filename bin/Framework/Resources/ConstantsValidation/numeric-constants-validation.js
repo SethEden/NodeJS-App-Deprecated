@@ -872,6 +872,10 @@ var numericConstantsValidation = [// Numbers
   Actual: n.c199,
   Expected: '199'
 }, {
+  Name: 'c200',
+  Actual: n.c200,
+  Expected: '200'
+}, {
   Name: 'c201',
   Actual: n.c201,
   Expected: '201'
@@ -1267,6 +1271,10 @@ var numericConstantsValidation = [// Numbers
   Name: 'c299',
   Actual: n.c299,
   Expected: '299'
+}, {
+  Name: 'c300',
+  Actual: n.c300,
+  Expected: '300'
 }, {
   Name: 'c301',
   Actual: n.c301,
@@ -1664,6 +1672,10 @@ var numericConstantsValidation = [// Numbers
   Actual: n.c399,
   Expected: '399'
 }, {
+  Name: 'c400',
+  Actual: n.c400,
+  Expected: '400'
+}, {
   Name: 'c401',
   Actual: n.c401,
   Expected: '401'
@@ -2059,6 +2071,10 @@ var numericConstantsValidation = [// Numbers
   Name: 'c499',
   Actual: n.c499,
   Expected: '499'
+}, {
+  Name: 'c500',
+  Actual: n.c500,
+  Expected: '500'
 }, {
   Name: 'c501',
   Actual: n.c501,
@@ -2456,6 +2472,10 @@ var numericConstantsValidation = [// Numbers
   Actual: n.c599,
   Expected: '599'
 }, {
+  Name: 'c600',
+  Actual: n.c600,
+  Expected: '600'
+}, {
   Name: 'c601',
   Actual: n.c601,
   Expected: '601'
@@ -2851,6 +2871,10 @@ var numericConstantsValidation = [// Numbers
   Name: 'c699',
   Actual: n.c699,
   Expected: '699'
+}, {
+  Name: 'c700',
+  Actual: n.c700,
+  Expected: '700'
 }, {
   Name: 'c701',
   Actual: n.c701,
@@ -3248,6 +3272,10 @@ var numericConstantsValidation = [// Numbers
   Actual: n.c799,
   Expected: '799'
 }, {
+  Name: 'c800',
+  Actual: n.c800,
+  Expected: '800'
+}, {
   Name: 'c801',
   Actual: n.c801,
   Expected: '801'
@@ -3643,6 +3671,10 @@ var numericConstantsValidation = [// Numbers
   Name: 'c899',
   Actual: n.c899,
   Expected: '899'
+}, {
+  Name: 'c900',
+  Actual: n.c900,
+  Expected: '900'
 }, {
   Name: 'c901',
   Actual: n.c901,

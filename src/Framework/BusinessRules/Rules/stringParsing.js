@@ -1202,7 +1202,7 @@ export const validateConstantsDataValidationLineItemName = function(inputData, i
  * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content..
  * @param {string} inputData The name of the data-hive that should contain all of the validation data that should be used to execute the validation procedures.
  * @param {string} inputMetaData Not used for this function.
- * @return {[type]} True or False to indicate if the validation passed for the entire data hive or if it did not pass.
+ * @return {boolean} True or False to indicate if the validation passed for the entire data hive or if it did not pass.
  * @author Seth Hollingsead
  * @date 2020/07/29
  */

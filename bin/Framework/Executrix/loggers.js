@@ -39,12 +39,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var fs = require('fs');
+
+var chalk = require('chalk');
 
 var D = require('../Resources/data');
 /**
@@ -102,6 +105,37 @@ function consoleLog(classPath, message) {
 
 function consoleTableLog(classPath, tableData, columnNames) {
   console.table(tableData, columnNames);
+}
+
+;
+/**
+ * @function constantsValidationSummaryLog
+ * @description Displays a constants log validation summary pass-fail result depending on the appropriate settings flag, which is passed in by the caller.
+ * @param {string} message The message that should be displayed, if the setting determines that it should be displayed.
+ * @param {boolean} passFail True or False to indicate if the pass or fail message should be displayed to the console log.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/07/29
+ */
+
+function constantsValidationSummaryLog(message, passFail) {
+  var outputMessage = '';
+
+  if (passFail === true) {
+    if (_configurator["default"].getConfigurationSetting(s.cDisplaySummaryConstantsValidationPassMessages) === true) {
+      outputMessage = "PASSED -- ".concat(message, " -- PASSED");
+      outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
+      outputMessage = chalk.bgRgb(0, 255, 0)(outputMessage);
+      console.log(outputMessage);
+    }
+  } else {
+    if (_configurator["default"].getConfigurationSetting(s.cDisplaySummaryConstantsValidationFailMessages) === true) {
+      outputMessage = "FAILED -- ".concat(message, " -- FAILED");
+      outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
+      outputMessage = chalk.bgRgb(255, 0, 0)(outputMessage);
+      console.log(outputMessage);
+    }
+  }
 }
 
 ;
@@ -361,6 +395,7 @@ function printMessageToFile(file, message) {
 ;
 var _default = {
   consoleLog: consoleLog,
-  consoleTableLog: consoleTableLog
+  consoleTableLog: consoleTableLog,
+  constantsValidationSummaryLog: constantsValidationSummaryLog
 };
 exports["default"] = _default;

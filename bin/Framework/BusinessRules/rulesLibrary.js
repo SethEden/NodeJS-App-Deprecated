@@ -112,8 +112,12 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.doesArrayContainFilename(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidation, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidation(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdetermineSuggestedConstantsValidationLineOfCode, function (inputData, inputMetaData) {
+    return stringParsing.determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidationLineItemName, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidationLineItemName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValues, function (inputData, inputMetaData) {
+    return stringParsing.validateConstantsDataValues(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {
     return stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryDetailNameFromDataContextName, function (inputData, inputMetaData) {
