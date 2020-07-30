@@ -70,6 +70,8 @@ function deployApplication() {
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(s.cSourceResourcesPath, c.cSourceResourcesPath);
+    warden.setConfigurationSetting(s.cBinaryResourcesPath, c.cBinaryResourcesPath);
     warden.enqueueCommand(s.cBuildWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
@@ -77,11 +79,11 @@ function deployApplication() {
       commandResult = warden.processCommandQueue();
     }
     if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-      console.log('SUCCESS: Constants Validation PASSED!!');
-      copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
-      // console.log('Deployment was completed: ' + copyResult);
-      warden.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
-      warden.setConfigurationSetting('deploymentCompleted', copyResult);
+      // console.log('SUCCESS: Constants Validation PASSED!!');
+      // copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
+      // // console.log('Deployment was completed: ' + copyResult);
+      // warden.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
+      // warden.setConfigurationSetting('deploymentCompleted', copyResult);
     } else {
       console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
     }
@@ -105,6 +107,8 @@ function releaseApplication() {
   let releaseResult;
   try {
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(s.cBinaryRootPath, c.cBinaryRootPath);
+    warden.setConfigurationSetting(s.cBinaryReleasePath, c.cBinaryReleasePath);
     warden.enqueueCommand(s.cReleaseWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
@@ -112,9 +116,9 @@ function releaseApplication() {
       commandResult = warden.processCommandQueue();
     }
     if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-      console.log('SUCCESS: Constants Validation PASSED!!');
-      releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
-      warden.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+      // console.log('SUCCESS: Constants Validation PASSED!!');
+      // releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
+      // warden.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
     } else {
       console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
     }

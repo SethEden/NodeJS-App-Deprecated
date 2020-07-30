@@ -55,7 +55,7 @@ function deployApplication(source, destination) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destination is: ' + destination);
-  let deploymentSuccessfull;
+  let deploymentSuccessfull = false;
   deploymentSuccessfull = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(source, destination);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'deploymentSuccessfull is: ' + deploymentSuccessfull);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -79,8 +79,8 @@ function releaseApplication(source, release) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'release is: ' + release);
-  let releaseSuccessfull;
-   releaseSuccessfull = fileBroker.buildReleasePackage(source, release)
+  let releaseSuccessfull = false;
+  releaseSuccessfull = fileBroker.buildReleasePackage(source, release)
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'releaseSuccessfull is: ' + releaseSuccessfull);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return releaseSuccessfull;

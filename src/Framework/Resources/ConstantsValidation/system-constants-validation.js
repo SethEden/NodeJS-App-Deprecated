@@ -532,6 +532,10 @@ export const systemConstantsValidation = [
    {Name: 'cSystemConstantsValidation', Actual: s.cSystemConstantsValidation, Expected: 'SystemConstantsValidation'},
    {Name: 'cUnitsConstantsValidation', Actual: s.cUnitsConstantsValidation, Expected: 'UnitsConstantsValidation'},
    {Name: 'cWordConstantsValidation', Actual: s.cWordConstantsValidation, Expected: 'WordConstantsValidation'},
+   {Name: 'cSourceResourcesPath', Actual: s.cSourceResourcesPath, Expected: 'SourceResourcesPath'},
+   {Name: 'cBinaryResourcesPath', Actual: s.cBinaryResourcesPath, Expected: 'BinaryResourcesPath'},
+   {Name: 'cBinaryRootPath', Actual: s.cBinaryRootPath, Expected: 'BinaryRootPath'},
+   {Name: 'cBinaryReleasePath', Actual: s.cBinaryReleasePath, Expected: 'BinaryReleasePath'},
 
    // Constants Filenames
    {Name: 'cbasic_constants_js', Actual: s.cbasic_constants_js, Expected: 'basic.constants.js'},

@@ -532,6 +532,10 @@ export const cShapeConstantsValidation = w.cShape + w.cConstants + w.cValidation
 export const cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidation; // SystemConstantsValidation
 export const cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
 export const cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
+export const cSourceResourcesPath = w.cSource + w.cResources + w.cPath; // SourceResourcesPath
+export const cBinaryResourcesPath = w.cBinary + w.cResources + w.cPath; // BinaryResourcesPath
+export const cBinaryRootPath = w.cBinary + w.cRoot + w.cPath; // BinaryRootPath
+export const cBinaryReleasePath = w.cBinary + w.cRelease + w.cPath; // BinaryReleasePath
 
 // Constants Filenames
 export const cbasic_constants_js = w.cbasic + b.cDot + w.cconstants + b.cDot + b.cjs; // basic.constants.js
