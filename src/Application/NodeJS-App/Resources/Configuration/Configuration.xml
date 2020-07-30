@@ -390,34 +390,6 @@
           <ConfigurationElement Name="build.releaseApplication@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="build.releaseApplication@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="warden.deployApplication" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@MessageFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@DataFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.deployApplication@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-
-          <ConfigurationElement Name="warden.releaseApplication" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@MessageFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@DataFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.releaseApplication@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-
           <ConfigurationElement Name="warden.bootStrapApplication" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.bootStrapApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.bootStrapApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
