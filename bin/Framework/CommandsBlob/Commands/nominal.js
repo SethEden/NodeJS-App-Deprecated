@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -14,6 +14,8 @@ var _lexical = _interopRequireDefault(require("../../Executrix/lexical"));
 var _commandBroker = _interopRequireDefault(require("../commandBroker"));
 
 var _ruleBroker = _interopRequireDefault(require("../../BusinessRules/ruleBroker"));
+
+var _fileBroker = _interopRequireDefault(require("../../Executrix/fileBroker"));
 
 var _workflowBroker = _interopRequireDefault(require("../../Executrix/workflowBroker"));
 
@@ -45,6 +47,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @description Contains all of the nominal system commands.
  * @requires module:configurator
  * @requires module:lexical
+ * @requires module:fileBroker
  * @requires module:commandBroker
  * @requires module:ruleBroker
  * @requires module:workflowBroker
@@ -256,6 +259,104 @@ var name = function name(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function deployApplication
+ * @description Executes the deployment of the application, part of the build-deploy-release cycle.
+ * @param {string} inputData The path the non-code files should be copied from. (SOURCE)
+ * @param {string} inputMetaData The path the non-code files should be copied to. (DESTINATION)
+ * @return {boolean} A TRUE or FALSE value to indicate if the deployment was successful or not.
+ * @author Seth Hollingsead
+ * @date 2020/07/30
+ */
+
+
+exports.name = name;
+
+var deployApplication = function deployApplication(inputData, inputMetaData) {
+  var functionName = s.cdeployApplication;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    console.log('DEPLOY APPLICATION');
+
+    var sourcePath = _configurator["default"].getConfigurationSetting(s.cSourceResourcesPath);
+
+    var destinationPath = _configurator["default"].getConfigurationSetting(s.cBinaryResourcesPath);
+
+    var deploymentStatus = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
+
+    console.log('Deployment was completed: ' + deploymentStatus);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + deploymentStatus);
+
+    _configurator["default"].setConfigurationSetting('deploymentCompleted', deploymentStatus);
+  } else {
+    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function releaseApplication
+ * @description Executes the release of the application, part of the build-deploy-release cycle.
+ * Scans the specified release folder path and determines if
+ * there is a zip file for the current release or not. If there is not,
+ * then the system will build a zip file from the bin folder excluding the release folder
+ * and save the resulting archive to the release folder.
+ * @param {string} inputData The path for the bin folder where the latest source code will have been deployed. (SOURCE)
+ * @param {string} inputMetaData The path for the release folder where the release zip archive file should be saved. (RELEASE)
+ * @return {boolean} A TRUE or FALSE value to indicate if the zip archive was created successfully or not.
+ * @author Seth Hollingsead
+ * @date 2020/07/30
+ */
+
+
+exports.deployApplication = deployApplication;
+
+var releaseApplication = function releaseApplication(inputData, inputMetaData) {
+  var functionName = s.creleaseApplication;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    console.log('RELEASE APPLICATION');
+
+    var sourcePath = _configurator["default"].getConfigurationSetting(s.cBinaryRootPath);
+
+    var destinationPath = _configurator["default"].getConfigurationSetting(s.cBinaryReleasePath);
+
+    var releaseResult = _fileBroker["default"].buildReleasePackage(sourcePath, destinationPath);
+
+    console.log('Release was completed: ' + releaseResult);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+  } else {
+    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function help
  * @description Displays all the information about all of the commands in the system,
  * including both system defined commands & client defined commands.
@@ -268,7 +369,7 @@ var name = function name(inputData, inputMetaData) {
  */
 
 
-exports.name = name;
+exports.releaseApplication = releaseApplication;
 
 var help = function help(inputData, inputMetaData) {
   var functionName = w.chelp;

@@ -229,6 +229,8 @@
         
             <li><a href="module-lexical.html">module:lexical</a></li>
         
+            <li><a href="module-fileBroker.html">module:fileBroker</a></li>
+        
             <li><a href="module-commandBroker.html">module:commandBroker</a></li>
         
             <li><a href="module-ruleBroker.html">module:ruleBroker</a></li>
@@ -412,7 +414,7 @@ inputData[0] === 'about'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line113">line 113</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line115">line 115</a>
     </li></ul></dd>
     
 
@@ -614,7 +616,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line337">line 337</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line404">line 404</a>
     </li></ul></dd>
     
 
@@ -803,7 +805,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line515">line 515</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line582">line 582</a>
     </li></ul></dd>
     
 
@@ -994,7 +996,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line446">line 446</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line513">line 513</a>
     </li></ul></dd>
     
 
@@ -1183,7 +1185,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line587">line 587</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line654">line 654</a>
     </li></ul></dd>
     
 
@@ -1375,7 +1377,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line217">line 217</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line284">line 284</a>
     </li></ul></dd>
     
 
@@ -1564,7 +1566,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line659">line 659</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line726">line 726</a>
     </li></ul></dd>
     
 
@@ -1601,6 +1603,195 @@ inputData[n] === command string n</p></td>
     <dd>
         
 <span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~deployApplication"><span class="type-signature">(inner) </span>deployApplication<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Executes the deployment of the application, part of the build-deploy-release cycle.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path the non-code files should be copied from. (SOURCE)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path the non-code files should be copied to. (DESTINATION)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line173">line 173</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A TRUE or FALSE value to indicate if the deployment was successful or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1750,7 +1941,7 @@ inputData[0] === 'echoCommand'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line45">line 45</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -1940,7 +2131,7 @@ inputData[0] === 'exit'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line70">line 70</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -2131,7 +2322,7 @@ inputData[0] = 'help'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line171">line 171</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line238">line 238</a>
     </li></ul></dd>
     
 
@@ -2324,7 +2515,7 @@ inputData[1] === 'true|false' (optional)</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line135">line 135</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line137">line 137</a>
     </li></ul></dd>
     
 
@@ -2519,7 +2710,7 @@ inputData[1] === dataHiveName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line306">line 306</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line373">line 373</a>
     </li></ul></dd>
     
 
@@ -2560,6 +2751,199 @@ inputData[1] === dataHiveName</p></td>
     <dd>
         
 <span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~releaseApplication"><span class="type-signature">(inner) </span>releaseApplication<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Executes the release of the application, part of the build-deploy-release cycle.
+Scans the specified release folder path and determines if
+there is a zip file for the current release or not. If there is not,
+then the system will build a zip file from the bin folder excluding the release folder
+and save the resulting archive to the release folder.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path for the bin folder where the latest source code will have been deployed. (SOURCE)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path for the release folder where the release zip archive file should be saved. (RELEASE)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line204">line 204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A TRUE or FALSE value to indicate if the zip archive was created successfully or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2891,7 +3275,7 @@ inputData[0] === 'version'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line91">line 91</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line93">line 93</a>
     </li></ul></dd>
     
 
@@ -3086,7 +3470,7 @@ inputData[1] === workflowName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line271">line 271</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line338">line 338</a>
     </li></ul></dd>
     
 
@@ -3277,7 +3661,7 @@ inputData[0] === 'workflowHelp'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line194">line 194</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line261">line 261</a>
     </li></ul></dd>
     
 
@@ -3713,7 +4097,7 @@ inputData[0] === 'about'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line113">line 113</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line115">line 115</a>
     </li></ul></dd>
     
 
@@ -3915,7 +4299,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line337">line 337</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line404">line 404</a>
     </li></ul></dd>
     
 
@@ -4104,7 +4488,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line515">line 515</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line582">line 582</a>
     </li></ul></dd>
     
 
@@ -4295,7 +4679,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line446">line 446</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line513">line 513</a>
     </li></ul></dd>
     
 
@@ -4484,7 +4868,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line587">line 587</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line654">line 654</a>
     </li></ul></dd>
     
 
@@ -4676,7 +5060,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line217">line 217</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line284">line 284</a>
     </li></ul></dd>
     
 
@@ -4865,7 +5249,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line659">line 659</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line726">line 726</a>
     </li></ul></dd>
     
 
@@ -4902,6 +5286,195 @@ inputData[n] === command string n</p></td>
     <dd>
         
 <span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~deployApplication"><span class="type-signature">(inner) </span>deployApplication<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Executes the deployment of the application, part of the build-deploy-release cycle.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path the non-code files should be copied from. (SOURCE)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path the non-code files should be copied to. (DESTINATION)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line173">line 173</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A TRUE or FALSE value to indicate if the deployment was successful or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -5051,7 +5624,7 @@ inputData[0] === 'echoCommand'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line45">line 45</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -5241,7 +5814,7 @@ inputData[0] === 'exit'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line70">line 70</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -5432,7 +6005,7 @@ inputData[0] = 'help'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line171">line 171</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line238">line 238</a>
     </li></ul></dd>
     
 
@@ -5625,7 +6198,7 @@ inputData[1] === 'true|false' (optional)</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line135">line 135</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line137">line 137</a>
     </li></ul></dd>
     
 
@@ -5820,7 +6393,7 @@ inputData[1] === dataHiveName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line306">line 306</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line373">line 373</a>
     </li></ul></dd>
     
 
@@ -5861,6 +6434,199 @@ inputData[1] === dataHiveName</p></td>
     <dd>
         
 <span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~releaseApplication"><span class="type-signature">(inner) </span>releaseApplication<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Executes the release of the application, part of the build-deploy-release cycle.
+Scans the specified release folder path and determines if
+there is a zip file for the current release or not. If there is not,
+then the system will build a zip file from the bin folder excluding the release folder
+and save the resulting archive to the release folder.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path for the bin folder where the latest source code will have been deployed. (SOURCE)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path for the release folder where the release zip archive file should be saved. (RELEASE)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line204">line 204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A TRUE or FALSE value to indicate if the zip archive was created successfully or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -6192,7 +6958,7 @@ inputData[0] === 'version'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line91">line 91</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line93">line 93</a>
     </li></ul></dd>
     
 
@@ -6387,7 +7153,7 @@ inputData[1] === workflowName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line271">line 271</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line338">line 338</a>
     </li></ul></dd>
     
 
@@ -6578,7 +7344,7 @@ inputData[0] === 'workflowHelp'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line194">line 194</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line261">line 261</a>
     </li></ul></dd>
     
 
@@ -6652,7 +7418,7 @@ inputData[0] === 'workflowHelp'</p></td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jul 30 2020 09:27:32 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Jul 30 2020 16:48:58 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

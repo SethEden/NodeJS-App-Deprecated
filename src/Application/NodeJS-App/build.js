@@ -78,15 +78,15 @@ function deployApplication() {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-      // console.log('SUCCESS: Constants Validation PASSED!!');
-      // copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
-      // // console.log('Deployment was completed: ' + copyResult);
-      // warden.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
-      // warden.setConfigurationSetting('deploymentCompleted', copyResult);
-    } else {
-      console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
-    }
+    // if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    //   // console.log('SUCCESS: Constants Validation PASSED!!');
+    //   // copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
+    //   // // console.log('Deployment was completed: ' + copyResult);
+    //   // warden.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
+    //   // warden.setConfigurationSetting('deploymentCompleted', copyResult);
+    // } else {
+    //   console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    // }
   } catch (err) {
     console.error(err);
     warden.setConfigurationSetting('deploymentCompleted', false);
@@ -115,13 +115,13 @@ function releaseApplication() {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-      // console.log('SUCCESS: Constants Validation PASSED!!');
-      // releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
-      // warden.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
-    } else {
-      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
-    }
+    // if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    //   // console.log('SUCCESS: Constants Validation PASSED!!');
+    //   // releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
+    //   // warden.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+    // } else {
+    //   console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    // }
   } catch (err) {
     console.error(err);
   }

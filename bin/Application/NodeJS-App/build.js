@@ -101,6 +101,10 @@ function deployApplication() {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
 
+    _warden["default"].setConfigurationSetting(s.cSourceResourcesPath, c.cSourceResourcesPath);
+
+    _warden["default"].setConfigurationSetting(s.cBinaryResourcesPath, c.cBinaryResourcesPath);
+
     _warden["default"].enqueueCommand(s.cBuildWorkflow);
 
     var commandResult = true;
@@ -108,18 +112,16 @@ function deployApplication() {
     while (_warden["default"].isCommandQueueEmpty() === false) {
       commandResult = true;
       commandResult = _warden["default"].processCommandQueue();
-    }
+    } // if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    //   // console.log('SUCCESS: Constants Validation PASSED!!');
+    //   // copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
+    //   // // console.log('Deployment was completed: ' + copyResult);
+    //   // warden.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
+    //   // warden.setConfigurationSetting('deploymentCompleted', copyResult);
+    // } else {
+    //   console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    // }
 
-    if (_warden["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-      console.log('SUCCESS: Constants Validation PASSED!!');
-      copyResult = _warden["default"].deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath); // console.log('Deployment was completed: ' + copyResult);
-
-      _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + copyResult);
-
-      _warden["default"].setConfigurationSetting('deploymentCompleted', copyResult);
-    } else {
-      console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
-    }
   } catch (err) {
     console.error(err);
 
@@ -148,6 +150,10 @@ function releaseApplication() {
   try {
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
 
+    _warden["default"].setConfigurationSetting(s.cBinaryRootPath, c.cBinaryRootPath);
+
+    _warden["default"].setConfigurationSetting(s.cBinaryReleasePath, c.cBinaryReleasePath);
+
     _warden["default"].enqueueCommand(s.cReleaseWorkflow);
 
     var commandResult = true;
@@ -155,16 +161,14 @@ function releaseApplication() {
     while (_warden["default"].isCommandQueueEmpty() === false) {
       commandResult = true;
       commandResult = _warden["default"].processCommandQueue();
-    }
+    } // if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    //   // console.log('SUCCESS: Constants Validation PASSED!!');
+    //   // releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
+    //   // warden.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+    // } else {
+    //   console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    // }
 
-    if (_warden["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-      console.log('SUCCESS: Constants Validation PASSED!!');
-      releaseResult = _warden["default"].releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);
-
-      _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
-    } else {
-      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
-    }
   } catch (err) {
     console.error(err);
   }

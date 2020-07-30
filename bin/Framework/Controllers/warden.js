@@ -90,7 +90,7 @@ function deployApplication(source, destination) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'destination is: ' + destination);
 
-  var deploymentSuccessfull;
+  var deploymentSuccessfull = false;
   deploymentSuccessfull = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(source, destination);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deploymentSuccessfull is: ' + deploymentSuccessfull);
@@ -123,7 +123,7 @@ function releaseApplication(source, release) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release is: ' + release);
 
-  var releaseSuccessfull;
+  var releaseSuccessfull = false;
   releaseSuccessfull = _fileBroker["default"].buildReleasePackage(source, release);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseSuccessfull is: ' + releaseSuccessfull);

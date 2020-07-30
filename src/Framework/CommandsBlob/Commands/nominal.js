@@ -4,6 +4,7 @@
  * @description Contains all of the nominal system commands.
  * @requires module:configurator
  * @requires module:lexical
+ * @requires module:fileBroker
  * @requires module:commandBroker
  * @requires module:ruleBroker
  * @requires module:workflowBroker
@@ -27,6 +28,7 @@ import configurator from '../../Executrix/configurator';
 import lexical from '../../Executrix/lexical';
 import commandBroker from '../commandBroker';
 import ruleBroker from '../../BusinessRules/ruleBroker';
+import fileBroker from '../../Executrix/fileBroker';
 import workflowBroker from '../../Executrix/workflowBroker';
 import queue from '../../Resources/queue';
 import stack from '../../Resources/stack';
@@ -178,12 +180,21 @@ export const name = function(inputData, inputMetaData) {
  * @date 2020/07/30
  */
 export const deployApplication = function(inputData, inputMetaData) {
-  let functionName = w.cdeployApplication;
+  let functionName = s.cdeployApplication;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-    
+  let returnData = true;
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    console.log('DEPLOY APPLICATION');
+    let sourcePath = configurator.getConfigurationSetting(s.cSourceResourcesPath);
+    let destinationPath = configurator.getConfigurationSetting(s.cBinaryResourcesPath);
+    let deploymentStatus = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
+    console.log('Deployment was completed: ' + deploymentStatus);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + deploymentStatus);
+    configurator.setConfigurationSetting('deploymentCompleted', deploymentStatus);
+  } else {
+    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -204,12 +215,20 @@ export const deployApplication = function(inputData, inputMetaData) {
  * @date 2020/07/30
  */
 export const releaseApplication = function(inputData, inputMetaData) {
-  let functionName = w.creleaseApplication;
+  let functionName = s.creleaseApplication;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
-
+  let returnData = true;
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+    console.log('RELEASE APPLICATION');
+    let sourcePath = configurator.getConfigurationSetting(s.cBinaryRootPath);
+    let destinationPath = configurator.getConfigurationSetting(s.cBinaryReleasePath);
+    let releaseResult = fileBroker.buildReleasePackage(sourcePath, destinationPath);
+    console.log('Release was completed: ' + releaseResult);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+  } else {
+    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

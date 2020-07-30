@@ -58,6 +58,10 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.about(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, w.cname, function (inputData, inputMetaData) {
     return nominalCommands.name(inputData, inputMetaData);
+  }), _defineProperty(_D$w$cCommands, s.cdeployApplication, function (inputData, inputMetaData) {
+    return nominalCommands.deployApplication(inputData, inputMetaData);
+  }), _defineProperty(_D$w$cCommands, s.creleaseApplication, function (inputData, inputMetaData) {
+    return nominalCommands.releaseApplication(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, w.chelp, function (inputData, inputMetaData) {
     return nominalCommands.help(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.cworkflowHelp, function (inputData, inputMetaData) {
