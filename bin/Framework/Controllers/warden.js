@@ -70,50 +70,7 @@ var path = require('path');
 
 var D = require('../Resources/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename)); // /**
-//  * @function deployApplication
-//  * @description Copys all non-source code files and folders from the source path to the destination path.
-//  * @param {string} source The path the non-code files should be copied from.
-//  * @param {string} destination The path the non-code files should be copied to.
-//  * @return {boolean} A TRUE or FALSE value to indicate if the deployment was successful or not.
-//  * @author Seth Hollingsead
-//  * @date 2020/06/02
-//  */
-// function deployApplication(source, destination) {
-//   let functionName = deployApplication.name;
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destination is: ' + destination);
-//   let deploymentSuccessfull = false;
-//   deploymentSuccessfull = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(source, destination);
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, 'deploymentSuccessfull is: ' + deploymentSuccessfull);
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-//   return deploymentSuccessfull;
-// };
-// /**
-//  * @function releaseApplication
-//  * @description Scans the specified release folder path and determines if
-//  * there is a zip file for the current release or not. If there is not,
-//  * then the system will build a zip file from the bin folder excluding the release folder
-//  * and save the resulting archive to the release folder.
-//  * @param {string} source The path for the bin folder where the latest source code will have been deployed.
-//  * @param {string} release The path for the release folder where the release zip archive file should be saved.
-//  * @return {boolean} A TRUE or FALSE value to indicate if the zip archive was created successfully or not.
-//  * @author Seth Hollingsead
-//  * @date 2020/06/02
-//  */
-// function releaseApplication(source, release) {
-//   let functionName = releaseApplication.name;
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, 'release is: ' + release);
-//   let releaseSuccessfull = false;
-//   releaseSuccessfull = fileBroker.buildReleasePackage(source, release)
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, 'releaseSuccessfull is: ' + releaseSuccessfull);
-//   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-//   return releaseSuccessfull;
-// };
-
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function bootStrapApplication
  * @description Do all of the activities to setup the application system to run whatever actions the application will run.

@@ -9,9 +9,10 @@
  * @requires module:warden
  * @requires module:clientRulesLibrary
  * @requires module:application-constants
- * @requires module:system-constants
- * @requires module:generic-constants
  * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:word-constants
+ * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -31,11 +32,13 @@ var _clientCommandsLibrary = _interopRequireDefault(require("./Commands/clientCo
 
 var c = _interopRequireWildcard(require("./Constants/application.constants"));
 
-var s = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
+var b = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Framework/Constants/generic.constants"));
 
-var b = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
+var w = _interopRequireWildcard(require("../../Framework/Constants/word.constants"));
+
+var s = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -87,7 +90,7 @@ function bootStrapApplication() {
  */
 
 function application() {
-  var functionName = s.capplication;
+  var functionName = w.capplication;
   var argumentDrivenInterface = true;
   var commandInput;
   var commandResult;

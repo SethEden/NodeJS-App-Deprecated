@@ -9,9 +9,10 @@
  * @requires module:warden
  * @requires module:clientRulesLibrary
  * @requires module:application-constants
- * @requires module:system-constants
- * @requires module:generic-constants
  * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:word-constants
+ * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -23,9 +24,10 @@ import warden from '../../Framework/Controllers/warden';
 import clientRules from './BusinessRules/clientRulesLibrary';
 import clientCommands from './Commands/clientCommandsLibrary';
 import * as c from './Constants/application.constants';
-import * as s from '../../Framework/Constants/system.constants';
-import * as g from '../../Framework/Constants/generic.constants';
 import * as b from '../../Framework/Constants/basic.constants';
+import * as g from '../../Framework/Constants/generic.constants';
+import * as w from '../../Framework/Constants/word.constants';
+import * as s from '../../Framework/Constants/system.constants';
 const prompt = require('prompt-sync')();
 var path = require('path');
 var D = require('../../Framework/Resources/data');
@@ -59,7 +61,7 @@ function bootStrapApplication() {
  * @date 2020/05/21
  */
 function application() {
-  let functionName = s.capplication;
+  let functionName = w.capplication;
   let argumentDrivenInterface = true;
   let commandInput;
   let commandResult;
