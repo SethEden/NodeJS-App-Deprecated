@@ -366,6 +366,8 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
       console.error(err.stack);
       process.exit(1);
     });
+  } else {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'current version already released');
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);

@@ -289,13 +289,12 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
     var destinationPath = _configurator["default"].getConfigurationSetting(s.cBinaryResourcesPath);
 
-    var deploymentStatus = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
+    var deploymentStatus = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath); // console.log('Deployment was completed: ' + deploymentStatus);
 
-    console.log('Deployment was completed: ' + deploymentStatus);
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + deploymentStatus);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + true);
 
-    _configurator["default"].setConfigurationSetting('deploymentCompleted', deploymentStatus);
+    _configurator["default"].setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
     console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
   }
@@ -341,11 +340,12 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 
     var destinationPath = _configurator["default"].getConfigurationSetting(s.cBinaryReleasePath);
 
-    var releaseResult = _fileBroker["default"].buildReleasePackage(sourcePath, destinationPath);
+    var releaseResult = _fileBroker["default"].buildReleasePackage(sourcePath, destinationPath); // console.log('Release was completed: ' + releaseResult);
 
-    console.log('Release was completed: ' + releaseResult);
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Release was completed: ' + true);
+
+    _configurator["default"].setConfigurationSetting(s.creleaseCompleted, true);
   } else {
     console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
   }

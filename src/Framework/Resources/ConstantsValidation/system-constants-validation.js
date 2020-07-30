@@ -565,6 +565,8 @@ export const systemConstantsValidation = [
    {Name: 'cDisplaySummaryConstantsValidationPassMessages', Actual: s.cDisplaySummaryConstantsValidationPassMessages, Expected: 'DisplaySummaryConstantsValidationPassMessages'},
    {Name: 'cDisplaySummaryConstantsValidationFailMessages', Actual: s.cDisplaySummaryConstantsValidationFailMessages, Expected: 'DisplaySummaryConstantsValidationFailMessages'},
    {Name: 'cPassAllConstantsValidations', Actual: s.cPassAllConstantsValidations, Expected: 'PassAllConstantsValidations'},
+   {Name: 'cdeploymentCompleted', Actual: s.cdeploymentCompleted, Expected: 'deploymentCompleted'},
+   {Name: 'creleaseCompleted', Actual: s.creleaseCompleted, Expected: 'releaseCompleted'},
 
    // Test Time Tracking
    {Name: 'cBeginDateTimeStamp', Actual: s.cBeginDateTimeStamp, Expected: 'BeginDateTimeStamp'},

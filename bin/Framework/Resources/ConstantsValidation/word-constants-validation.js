@@ -1171,6 +1171,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cComplete,
   Expected: 'Complete'
 }, {
+  Name: 'cCompleted',
+  Actual: w.cCompleted,
+  Expected: 'Completed'
+}, {
   Name: 'cand',
   Actual: w.cand,
   Expected: 'and'
@@ -2647,6 +2651,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cDeploy',
   Actual: w.cDeploy,
   Expected: 'Deploy'
+}, {
+  Name: 'cdeployment',
+  Actual: w.cdeployment,
+  Expected: 'deployment'
+}, {
+  Name: 'cDeployment',
+  Actual: w.cDeployment,
+  Expected: 'Deployment'
 }, {
   Name: 'clease',
   Actual: w.clease,

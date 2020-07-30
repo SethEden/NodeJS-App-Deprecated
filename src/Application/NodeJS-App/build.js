@@ -78,6 +78,8 @@ function deployApplication() {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
+    let deploymentResult = warden.getConfigurationSetting(s.cdeploymentCompleted);
+    console.log('Deployment was completed: ' + deploymentResult);
     // if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
     //   // console.log('SUCCESS: Constants Validation PASSED!!');
     //   // copyResult = warden.deployApplication(c.cSourceResourcesPath, c.cBinaryResourcesPath);
@@ -115,6 +117,8 @@ function releaseApplication() {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
+    let releaseResult = warden.getConfigurationSetting(s.creleaseCompleted);
+    console.log('Release was completed: ' + releaseResult);
     // if (warden.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
     //   // console.log('SUCCESS: Constants Validation PASSED!!');
     //   // releaseResult = warden.releaseApplication(c.cBinaryRootPath, c.cBinaryReleasePath);

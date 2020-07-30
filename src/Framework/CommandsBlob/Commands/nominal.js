@@ -190,9 +190,9 @@ export const deployApplication = function(inputData, inputMetaData) {
     let sourcePath = configurator.getConfigurationSetting(s.cSourceResourcesPath);
     let destinationPath = configurator.getConfigurationSetting(s.cBinaryResourcesPath);
     let deploymentStatus = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
-    console.log('Deployment was completed: ' + deploymentStatus);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + deploymentStatus);
-    configurator.setConfigurationSetting('deploymentCompleted', deploymentStatus);
+    // console.log('Deployment was completed: ' + deploymentStatus);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + true);
+    configurator.setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
     console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
   }
@@ -225,8 +225,9 @@ export const releaseApplication = function(inputData, inputMetaData) {
     let sourcePath = configurator.getConfigurationSetting(s.cBinaryRootPath);
     let destinationPath = configurator.getConfigurationSetting(s.cBinaryReleasePath);
     let releaseResult = fileBroker.buildReleasePackage(sourcePath, destinationPath);
-    console.log('Release was completed: ' + releaseResult);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'releaseResult is: ' + releaseResult);
+    // console.log('Release was completed: ' + releaseResult);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Release was completed: ' + true);
+    configurator.setConfigurationSetting(s.creleaseCompleted, true);
   } else {
     console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
   }

@@ -164,7 +164,7 @@
           <ConfigurationElement Name="dataBroker@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="dataBroker@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="fileBroker" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="fileBroker" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="fileBroker@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="fileBroker@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>

@@ -565,6 +565,8 @@ export const cDisplayIndividualConstantsValidationFailMessages = w.cDisplay + w.
 export const cDisplaySummaryConstantsValidationPassMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplaySummaryConstantsValidationPassMessages
 export const cDisplaySummaryConstantsValidationFailMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplaySummaryConstantsValidationFailMessages
 export const cPassAllConstantsValidations = w.cPass + w.cAll + w.cConstants + w.cValidations; // PassAllConstantsValidations
+export const cdeploymentCompleted = w.cdeployment + w.cCompleted; // deploymentCompleted
+export const creleaseCompleted = w.crelease + w.cCompleted; // releaseCompleted
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = w.cBegin + cDateTimeStamp; // BeginDateTimeStamp
