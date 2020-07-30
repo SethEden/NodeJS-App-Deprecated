@@ -560,6 +560,7 @@ export const systemConstantsValidation = [
    {Name: 'cDisplayIndividualConstantsValidationFailMessages', Actual: s.cDisplayIndividualConstantsValidationFailMessages, Expected: 'DisplayIndividualConstantsValidationFailMessages'},
    {Name: 'cDisplaySummaryConstantsValidationPassMessages', Actual: s.cDisplaySummaryConstantsValidationPassMessages, Expected: 'DisplaySummaryConstantsValidationPassMessages'},
    {Name: 'cDisplaySummaryConstantsValidationFailMessages', Actual: s.cDisplaySummaryConstantsValidationFailMessages, Expected: 'DisplaySummaryConstantsValidationFailMessages'},
+   {Name: 'cPassAllConstantsValidations', Actual: s.cPassAllConstantsValidations, Expected: 'PassAllConstantsValidations'},
 
    // Test Time Tracking
    {Name: 'cBeginDateTimeStamp', Actual: s.cBeginDateTimeStamp, Expected: 'BeginDateTimeStamp'},
@@ -739,5 +740,7 @@ export const systemConstantsValidation = [
    // ********************************
    // System defined workflows
    // ********************************
-   {Name: 'cStartupWorkflow', Actual: s.cStartupWorkflow, Expected: 'Workflow startup'}
+   {Name: 'cStartupWorkflow', Actual: s.cStartupWorkflow, Expected: 'Workflow startup'},
+   {Name: 'cBuildWorkflow', Actual: s.cBuildWorkflow, Expected: 'Workflow build'},
+   {Name: 'cReleaseWorkflow', Actual: s.cReleaseWorkflow, Expected: 'Workflow release'}
  ];

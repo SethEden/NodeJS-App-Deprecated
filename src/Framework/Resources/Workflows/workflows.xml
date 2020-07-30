@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><CommandWorkflows>
   <Workflow Name="startup" Value="commandSequencer name,true version about"/>
+  <Workflow Name="build" Value="commandSequencer validateConstants"/>
+  <Workflow Name="release" Value="commandSequencer validateConstants"/>
   <Workflow Name="details" Value="commandSequencer name version about"/>
   <Workflow Name="stringToBoolean" Value="cmdgen bizrul,stringToBoolean,T 4"/>
   <Workflow Name="stringToDataType" Value="cmdgen bizrul,stringToDataType,1 4"/>

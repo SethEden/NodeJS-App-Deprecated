@@ -30,7 +30,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @return {boolean} True to indicate that the application should not exit.
  */
 export const validateConstants = function(inputData, inputMetaData) {
-  let functionName = s.validateConstants;
+  let functionName = s.cvalidateConstants;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
@@ -60,7 +60,6 @@ export const validateConstants = function(inputData, inputMetaData) {
   // Phase 2 Constants Validation
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN Phase 2 Constants Validation');
   // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
-
   let basicConstantsValidationPhase2Result = ruleBroker.processRules(s.cBasicConstantsValidation, '', rulesPhase2);
   let colorConstantsValidationPhase2Result = ruleBroker.processRules(s.cColorConstantsValidation, '', rulesPhase2);
   let elementConstantsValidationPhase2Result = ruleBroker.processRules(s.cElementConstantsValidation, '', rulesPhase2);
@@ -98,5 +97,33 @@ export const validateConstants = function(inputData, inputMetaData) {
   loggers.constantsValidationSummaryLog('Units Constants Phase 2 Validation', unitsConstantsValidationPhase2Result);
   loggers.constantsValidationSummaryLog('Word Constants Phase 2 Validation', wordConstantsValidationPhase2Result);
 
+  if (
+    basicConstantsValidationPhase1Result === true &&
+    colorConstantsValidationPhase1Result === true &&
+    elementConstantsValidationPhase1Result === true &&
+    genericConstantsValidationPhase1Result === true &&
+    isotopeConstantsValidationPhase1Result === true &&
+    numericConstantsValidationPhase1Result === true &&
+    phonicsConstantsValidationPhase1Result === true &&
+    shapeConstantsValidationPhase1Result === true &&
+    systemConstantsValidationPhase1Result === true &&
+    unitsConstantsValidationPhase1Result === true &&
+    wordConstantsValidationPhase1Result === true &&
+    basicConstantsValidationPhase2Result === true &&
+    colorConstantsValidationPhase2Result === true &&
+    elementConstantsValidationPhase2Result === true &&
+    genericConstantsValidationPhase2Result === true &&
+    isotopeConstantsValidationPhase2Result === true &&
+    numericConstantsValidationPhase2Result === true &&
+    phonicsConstantsValidationPhase2Result === true &&
+    shapeConstantsValidationPhase2Result === true &&
+    systemConstantsValidationPhase2Result === true &&
+    unitsConstantsValidationPhase2Result === true &&
+    wordConstantsValidationPhase2Result === true
+  ) {
+    configurator.setConfigurationSetting(s.cPassAllConstantsValidations, true);
+  } else {
+    configurator.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

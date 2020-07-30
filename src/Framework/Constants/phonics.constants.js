@@ -374,3 +374,4 @@ export const cnion = b.cni + b.con; // nion
 export const ceta = b.cet + b.ca; // eta
 export const ccent = b.cce + b.cnt; // cent
 export const cChi = b.cCh + b.ci; // Chi
+export const cild = b.cil + b.cd; // ild

@@ -560,6 +560,7 @@ export const cDisplayIndividualConstantsValidationPassMessages = w.cDisplay + w.
 export const cDisplayIndividualConstantsValidationFailMessages = w.cDisplay + w.cIndividual + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplayIndividualConstantsValidationFailMessages
 export const cDisplaySummaryConstantsValidationPassMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplaySummaryConstantsValidationPassMessages
 export const cDisplaySummaryConstantsValidationFailMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplaySummaryConstantsValidationFailMessages
+export const cPassAllConstantsValidations = w.cPass + w.cAll + w.cConstants + w.cValidations; // PassAllConstantsValidations
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = w.cBegin + cDateTimeStamp; // BeginDateTimeStamp
@@ -739,4 +740,6 @@ export const cvalidateConstants = w.cvalidate + w.cConstants; // validateConstan
 // ********************************
 // System defined workflows
 // ********************************
-export const cStartupWorkflow = w.cWorkflow + b.cSpace + w.cstartup; // StartupWorkflow
+export const cStartupWorkflow = w.cWorkflow + b.cSpace + w.cstartup; // Workflow startup
+export const cBuildWorkflow = w.cWorkflow + b.cSpace + w.cbuild; // Workflow build
+export const cReleaseWorkflow = w.cWorkflow + b.cSpace + w.crelease; // Workflow release

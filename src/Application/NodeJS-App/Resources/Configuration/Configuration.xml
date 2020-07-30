@@ -19,7 +19,7 @@
         <ConfigurationElement Name="ClearBusinessRulesPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="ClearCommandPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableConstantsValidation" Type="Default" Value="True" Version="3"/>
-        <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="DisplayIndividualConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplaySummaryConstantsValidationPassMessages" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplaySummaryConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>
@@ -318,7 +318,7 @@
           <ConfigurationElement Name="nominal@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="nominal@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="unitTestConstants" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="unitTestConstants" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="unitTestConstants@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="unitTestConstants@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
           <ConfigurationElement Name="unitTestConstants@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
