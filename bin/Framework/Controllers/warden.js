@@ -94,9 +94,11 @@ function bootStrapApplication(pathAndFilename) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
 
-  _chiefConfiguration["default"].setupConfiguration(pathAndFilename); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log('contents of D are: ' + JSON.stringify(D));
+  _chiefConfiguration["default"].setupConfiguration(pathAndFilename);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('contents of D are: ' + JSON.stringify(D));
   // console.log('END warden.bootStrapApplication function');
 
 }

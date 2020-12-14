@@ -70,7 +70,7 @@ exports.cthreePointAverage = cthreePointAverage;
 var carrayCounter = w.carray + w.cCounter; // Client Commands
 
 exports.carrayCounter = carrayCounter;
-var cClientCommandAliasesActualPath = w.csrc + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cCommands + b.cForwardSlash;
+var cClientCommandAliasesActualPath = cSourceResourcesPath + w.cCommands + b.cForwardSlash;
 exports.cClientCommandAliasesActualPath = cClientCommandAliasesActualPath;
 var cClientWorkflowsActualPath = cSourceResourcesPath + w.cWorkflows + b.cForwardSlash; // ********************************
 // Client Commands in order

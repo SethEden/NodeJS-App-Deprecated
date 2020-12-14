@@ -720,7 +720,7 @@ export const cconvertNumberToLowerCaseLetter = w.cconvert + w.cNumber + w.cTo + 
 export const chex2rgbConversion = p.chex + n.c2 + p.crgb + w.cConversion; // hex2rgbConversion
 
 // Commands
-export const cSystemCommandsAliasesActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cCommands + w.cBlob + b.cForwardSlash; // SystemCommandsAliasesActualPath
+export const cSystemCommandsAliasesActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cCommands + b.cForwardSlash; // SystemCommandsAliasesActualPath
 export const cSystemWorkflowsActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cWorkflows + b.cForwardSlash; // SystemWorkflowsActualPath
 export const cSystemCommandsAliasesPath = w.cSystem + w.cCommands + w.cAliases + w.cPath; // SystemCommandsAliasesPath
 export const cClientCommandsAliasesPath = w.cClient + w.cCommands + w.cAliases + w.cPath; // ClientCommandsAliasesPath

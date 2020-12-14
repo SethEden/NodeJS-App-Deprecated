@@ -68,8 +68,8 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function setupConfiguration(pathAndFilename) {
-  // console.log('BEGIN chiefConfiguration.setupConfiguration function');
-  // console.log('pathAndFilename is: ' + pathAndFilename);
+  console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  console.log('pathAndFilename is: ' + pathAndFilename);
   var functionName = 'setupTestConfiguration';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -92,9 +92,10 @@ function setupConfiguration(pathAndFilename) {
 
   _loggers["default"].consoleLog(s.cLogFileEnabled, _configurator["default"].getConfigurationSetting(s.cDateTimeSTamp));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
-  // console.log('END chiefConfiguration.setupTestConfiguration function');
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
+  console.log(_configurator["default"].getConfigurationSetting(s.cDateTimeSTamp));
+  console.log('END chiefConfiguration.setupTestConfiguration function');
 }
 
 ;
@@ -147,7 +148,7 @@ function parseLoadedConfigurationData(allConfigurationData) {
   rules[1] = s.cstringToDataType; // First we need to pull out all the high level configuration meta-data
   // about the rest of the cofiguration elements we are about to process.
 
-  highLevelConfigurationContainer = allConfigurationData[w.cApplication][w.cConfigurations][w.cConfiguration];
+  highLevelConfigurationContainer = allConfigurationData[w.cPage][w.cApplication][w.cConfigurations][w.cConfiguration];
   configurationsName = highLevelConfigurationContainer[s.cConfigurationName]; // console.log('configurationsName is: ' + configurationsName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsName is: ' + configurationsName);
 

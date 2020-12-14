@@ -28,6 +28,7 @@ export const cSourceResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash +
 
 // Binary Resources Path
 export const cBinaryResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+
 export const cBinaryRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
 export const cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
 
@@ -43,7 +44,7 @@ export const cthreePointAverage = g.cthree + w.cPoint + w.cAverage;
 export const carrayCounter = w.carray + w.cCounter;
 
 // Client Commands
-export const cClientCommandAliasesActualPath = w.csrc + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cCommands + b.cForwardSlash;
+export const cClientCommandAliasesActualPath = cSourceResourcesPath + w.cCommands + b.cForwardSlash;
 export const cClientWorkflowsActualPath = cSourceResourcesPath + w.cWorkflows + b.cForwardSlash;
 // ********************************
 // Client Commands in order

@@ -720,7 +720,7 @@ export const systemConstantsValidation = [
    {Name: 'chex2rgbConversion', Actual: s.chex2rgbConversion, Expected: 'hex2rgbConversion'},
 
    // Commands
-   {Name: 'cSystemCommandsAliasesActualPath', Actual: s.cSystemCommandsAliasesActualPath, Expected: 'src/Framework/CommandsBlob/'},
+   {Name: 'cSystemCommandsAliasesActualPath', Actual: s.cSystemCommandsAliasesActualPath, Expected: 'src/Framework/Resources/Commands/'},
    {Name: 'cSystemWorkflowsActualPath', Actual: s.cSystemWorkflowsActualPath, Expected: 'src/Framework/Resources/Workflows/'},
    {Name: 'cSystemCommandsAliasesPath', Actual: s.cSystemCommandsAliasesPath, Expected: 'SystemCommandsAliasesPath'},
    {Name: 'cClientCommandsAliasesPath', Actual: s.cClientCommandsAliasesPath, Expected: 'ClientCommandsAliasesPath'},

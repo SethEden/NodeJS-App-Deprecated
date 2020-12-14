@@ -2679,7 +2679,7 @@ var systemConstantsValidation = [// Miscelaneious
 {
   Name: 'cSystemCommandsAliasesActualPath',
   Actual: s.cSystemCommandsAliasesActualPath,
-  Expected: 'src/Framework/CommandsBlob/'
+  Expected: 'src/Framework/Resources/Commands/'
 }, {
   Name: 'cSystemWorkflowsActualPath',
   Actual: s.cSystemWorkflowsActualPath,

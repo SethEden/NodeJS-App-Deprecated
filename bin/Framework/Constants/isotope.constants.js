@@ -98,7 +98,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 * @author Seth Hollingsead
 * @date 2020/07/16
 * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
-* {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
 */
 // Hydrogen - H
 var c1H = n.c1 + e.cH; // 1H

@@ -2032,7 +2032,7 @@ var chex2rgbConversion = p.chex + n.c2 + p.crgb + w.cConversion; // hex2rgbConve
 // Commands
 
 exports.chex2rgbConversion = chex2rgbConversion;
-var cSystemCommandsAliasesActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cCommands + w.cBlob + b.cForwardSlash; // SystemCommandsAliasesActualPath
+var cSystemCommandsAliasesActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cCommands + b.cForwardSlash; // SystemCommandsAliasesActualPath
 
 exports.cSystemCommandsAliasesActualPath = cSystemCommandsAliasesActualPath;
 var cSystemWorkflowsActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cWorkflows + b.cForwardSlash; // SystemWorkflowsActualPath

@@ -160,6 +160,9 @@ function loadAllXmlData(filesToLoad, contextName) {
   fileExtensionRules[0] = s.cgetFileExtension;
   fileExtensionRules[1] = s.cremoveDotFromFileExtension;
   for (let i = 0; i < filesToLoad.length; i++) {
+    // console.log('****************************************************');
+    // console.log('BEGIN i-th iteration of the loop: ' + i);
+    // console.log('****************************************************');
     let fileToLoad = filesToLoad[i];
     // console.log('execute business rules: ' + JSON.stringify(filePathRules));
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(filePathRules));
@@ -183,18 +186,24 @@ function loadAllXmlData(filesToLoad, contextName) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'loaded file data is: ' + JSON.stringify(dataFile));
       // console.log('BEGIN PROCESSING ADDITIONAL DATA');
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN PROCESSING ADDITIONAL DATA');
+      // console.log('j merge controller is: ' + j);
       if (j === 0) {
         j++;
         multiMergedData = dataFile;
       } else {
         j++;
-        multiMergedData = mergeData(multiMergedData, w.cPage, '', 0, dataFile);
+        multiMergedData = mergeData(multiMergedData, w.cPage, '', dataFile);
       }
       // console.log('DONE PROCESSING ADDITIONAL DATA');
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE PROCESSING ADDITIONAL DATA');
       // console.log('MERGED data is: ' + JSON.stringify(multiMergedData));
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'MERGED data is: ' + JSON.stringify(multiMergedData));
+      dataFile = {};
     }
+    // console.log('MERGED data is: ' + JSON.stringify(multiMergedData));
+    // console.log('****************************************************');
+    // console.log('END i-th iteration of the loop: ' + i);
+    // console.log('****************************************************');
   }
   parsedDataFile = {}; // Clear it, so we can re-assign it to the merged locator data from all the files.
   parsedDataFile = multiMergedData;
@@ -406,47 +415,77 @@ function extractDataFromPapaParseObject(data, contextName) {
 function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
   let functionName = mergeData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // console.log('BEGIN dataBroker.mergeData function');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData is: ' + JSON.stringify(targetData));
+  // console.log('targetData is: ' + JSON.stringify(targetData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is: ' + dataCatagory);
+  // console.log('dataCatagory is: ' + dataCatagory);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
+  // console.log('pageName is: ' + pageName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'data to Merge is: ' + JSON.stringify(dataToMerge));
+  // console.log('data to Merge is: ' + JSON.stringify(dataToMerge));
   let dataToMergeElementCount = getDataElementCount(dataToMerge, '', '');
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToMergeElementCount is: ' + dataToMergeElementCount);
+  // console.log('dataToMergeElementCount is: ' + dataToMergeElementCount);
   if (dataToMergeElementCount === 1) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToMergeElementCount is 1');
+    // console.log('dataToMergeElementCount is 1');
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'check if the pageName is not an empty string');
+    // console.log('check if the pageName is not an empty string');
     if (pageName !== '') {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is not an empty string');
+      // console.log('pageName is not an empty string');
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'Check if the dataCatagory is an empty string or not');
+      // console.log('Check if the dataCatagory is an empty string or not');
       if (dataCatagory !== '') {
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is not an empty string!!');
+        // console.log('dataCatagory is not an empty string!!');
         Object.assign(targetData[dataCatagory][pageName], dataToMerge);
       } else {
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory IS an empty string!!!!');
+        // console.log('dataCatagory IS an empty string!!!!');
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'data to Merge is: ' + JSON.stringify(dataToMerge));
+        // console.log('data to Merge is: ' + JSON.stringify(dataToMerge));
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData content is: ' + JSON.stringify(targetData));
+        // console.log('targetData content is: ' + JSON.stringify(targetData));
         Object.assign(targetData[pageName], dataToMerge);
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'after attempt to merge, results are: ');
+        // console.log('after attempt to merge, results are: ');
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'Merged data is: ' + JSON.stringify(dataToMerge));
+        // console.log('Merged data is: ' + JSON.stringify(dataToMerge));
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData content is: ' + JSON.stringify(targetData));
+        // console.log('targetData content is: ' + JSON.stringify(targetData));
       }
     } else {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is an empty string');
+      // console.log('pageName is an empty string');
+      if (targetData[dataCatagory] === undefined) {
+        targetData[dataCatagory] = {}; // Make sure to create a landing place for it, before we attempt to dump the data over there.
+      }
+      // Otherwise it will just throw an error.
       Object.assign(targetData[dataCatagory], dataToMerge);
     }
   } else {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Caught the special case that we are merging a flat list.');
+    // console.log('Caught the special case that we are merging a flat list.');
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData content is: ' + JSON.stringify(targetData));
+    // console.log('targetData content is: ' + JSON.stringify(targetData));
     for (let key in dataToMerge) {
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'inside the for-loop');
+      // console.log('inside the for-loop');
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'key is: ' + key);
+      // console.log('key is: ' + key);
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
+      // console.log('pageName is: ' + pageName);
       targetData[pageName][key] = dataToMerge[key];
     }
   }
 
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData is modified in the input pass-by-reference variable content is: ' +
     JSON.stringify(targetData));
+  // console.log('targetData is modified in the input pass-by-reference variable content is: ' + JSON.stringify(targetData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // console.log('END dataBroker.mergeData function');
   return targetData;
 };
 

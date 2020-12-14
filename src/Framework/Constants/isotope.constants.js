@@ -9,7 +9,6 @@
 * @author Seth Hollingsead
 * @date 2020/07/16
 * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
-* {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
 */
 
 import * as b from './basic.constants';
