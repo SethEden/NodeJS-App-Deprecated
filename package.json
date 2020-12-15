@@ -5,13 +5,14 @@
   "main": "src/Application/NodeJS-App/application.js",
   "scripts": {
     "build": "babel src --out-dir bin",
-    "deploy": "npm run build && npm run docs && babel-node src/Application/NodeJS-App/build.js",
+    "deploy": "npm run build && npm run clean && npm run docs && babel-node src/Application/NodeJS-App/build.js",
     "predev": "npm run build && babel-node src/Application/NodeJS-App/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node bin/Application/NodeJS-App/application.js",
     "vers": "standard-version -m \"chore(release) version %s \"",
     "start": "babel-node src/Application/NodeJS-App/application.js",
-    "docs": "jsdoc -c jsdoc.json"
+    "docs": "jsdoc -c jsdoc.json",
+    "clean": "trash ./src/Application/NodeJS-App/Resources/Documentation/**/*"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "bestzip": ">=2.1.7",
+    "del-cli": "^3.0.1",
     "jsdoc": "^3.6.4",
     "nexe": "^3.3.7",
     "standard-version": ">=8.0.1",
