@@ -1,18 +1,21 @@
 {
   "name": "NodeJS-App",
-  "version": "1.2.0",
+  "version": "1.3.3",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
-  "main": "src/Application/NodeJS-App/application.js",
+  "main": "./src/Application/NodeJS-App/application.js",
+  "bin": "./bin/Application/NodeJS-App/application.js",
   "scripts": {
-    "build": "babel src --out-dir bin",
+    "build": "npm run metadata && babel src --out-dir bin",
     "deploy": "npm run build && npm run clean && npm run docs && babel-node src/Application/NodeJS-App/build.js",
+    "release": "pkg package.json --out-path ./bin/",
     "predev": "npm run build && babel-node src/Application/NodeJS-App/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node bin/Application/NodeJS-App/application.js",
     "vers": "standard-version -m \"chore(release) version %s \"",
     "start": "babel-node src/Application/NodeJS-App/application.js",
     "docs": "jsdoc -c jsdoc.json",
-    "clean": "trash ./src/Application/NodeJS-App/Resources/Documentation/**/*"
+    "clean": "trash ./src/Application/NodeJS-App/Resources/Documentation/**/*",
+    "metadata": "jq.exe -r \".|{name,version,description}\" package.json > src/Application/NodeJS-App/Resources/metaData.json"
   },
   "repository": {
     "type": "git",
@@ -24,15 +27,23 @@
     "url": "https://github.com/SethEden/NodeJS-App/issues"
   },
   "homepage": "https://github.com/SethEden/NodeJS-App#readme",
+  "pkg": {
+    "assets": [
+      "/bin/Application/NodeJS-App/Resources/**/*",
+      "/bin/Application/NodeJS-App/Resources/Commands/**/*",
+      "/bin/Application/NodeJS-App/Resources/Configuration/**/*",
+      "/bin/Application/NodeJS-App/Resources/Workflows/**/*",
+      "/node_modules/figlet/fonts/**/*",
+      "/bin/Framework/Resources/**/*"
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.10.1",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "bestzip": ">=2.1.7",
-    "del-cli": "^3.0.1",
     "jsdoc": "^3.6.4",
-    "nexe": "^3.3.7",
     "standard-version": ">=8.0.1",
     "trash-cli": "^4.0.0"
   },

@@ -2070,6 +2070,10 @@ var systemConstantsValidation = [// Miscelaneious
   Expected: 'word.constants.js'
 }, // Configuration Settings
 {
+  Name: 'cmetaDataDotJson',
+  Actual: s.cmetaDataDotJson,
+  Expected: 'metaData.json'
+}, {
   Name: 'cArgumentDrivenInterface',
   Actual: s.cArgumentDrivenInterface,
   Expected: 'ArgumentDrivenInterface'
@@ -2346,6 +2350,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cvalidateConstantsDataValidation',
   Actual: s.cvalidateConstantsDataValidation,
   Expected: 'validateConstantsDataValidation'
+}, {
+  Name: 'cdetermineConstantsContextQualifiedPrefix',
+  Actual: s.cdetermineConstantsContextQualifiedPrefix,
+  Expected: 'determineConstantsContextQualifiedPrefix'
 }, {
   Name: 'cdetermineSuggestedConstantsValidationLineOfCode',
   Actual: s.cdetermineSuggestedConstantsValidationLineOfCode,

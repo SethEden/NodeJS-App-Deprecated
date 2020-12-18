@@ -48,7 +48,7 @@ var path = require('path');
 
 var D = require('../../Framework/Resources/data');
 
-global.appRoot = path.resolve(__dirname);
+global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var copyResult = false;
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -61,8 +61,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function bootStrapApplicationDeployment() {
-  rootPath = path.resolve(__dirname);
+  rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath;
+  console.log('rootPath is: ' + rootPath);
   rootPath = _warden["default"].processRootPath(rootPath);
+  console.log('processed rootPath is: ' + rootPath);
 
   _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
 

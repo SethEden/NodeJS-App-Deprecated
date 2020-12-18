@@ -32,6 +32,8 @@ export const cBinaryResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash +
 export const cBinaryRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
 export const cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
 
+export const cApplicationBinaryRootPath = cBinaryRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
+
 // Client Business Rules
 export const cclientEcho = w.cclient + s.cEcho;
 // ********************************

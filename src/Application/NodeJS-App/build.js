@@ -29,7 +29,7 @@ import * as g from '../../Framework/Constants/generic.constants';
 import * as b from '../../Framework/Constants/basic.constants';
 var path = require('path');
 var D = require('../../Framework/Resources/data');
-global.appRoot = path.resolve(__dirname);
+global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var copyResult = false;
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -42,8 +42,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/06/01
  */
 function bootStrapApplicationDeployment() {
-  rootPath = path.resolve(__dirname);
+  rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath;
+  console.log('rootPath is: ' + rootPath);
   rootPath = warden.processRootPath(rootPath);
+  console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());

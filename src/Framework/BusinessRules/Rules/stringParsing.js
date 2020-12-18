@@ -1104,22 +1104,24 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
       let lineArray = lineInCode.split(b.cSpace);
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'lineArray[2] is: ' + lineArray[2]);
       foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
+      let qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
       if (foundConstant === true) {
         if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
           let passMessage = 'PASS: ' + lineArray[2] + ' PASS';
           passMessage = chalk.rgb(0,0,0)(passMessage);
           passMessage = chalk.bgRgb(0,255,0)(passMessage);
-          console.log(passMessage);
+          console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + passMessage);
         }
       } else {
         if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
           let failMessage = 'FAIL: ' + lineArray[2] + ' FAIL';
           failMessage = chalk.rgb(0,0,0)(failMessage);
           failMessage = chalk.bgRgb(255,0,0)(failMessage);
-          console.log(failMessage);
+          let qualifiedConstantsPrefix = determineConstantsContextQualifiedPrefix(qualifiedConstantsFilename, '');
+          console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + failMessage);
           // loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
           // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
-          let suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], '');
+          let suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], qualifiedConstantsPrefix);
           if (suggestedLineOfCode !== '') {
             suggestedLineOfCode = chalk.rgb(0,0,0)(suggestedLineOfCode);
             suggestedLineOfCode = chalk.bgRgb(255,0,0)(suggestedLineOfCode);
@@ -1139,11 +1141,58 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
 };
 
 /**
+ * @function determineConstantsContextQualifiedPrefix
+ * @description Takes the filename to a constants file and determines
+ * the standard prefix that should be used in the code to referance that constants file.
+ * @param {string} inputData The filename of the constants file or
+ * the full path and file name of the constants file. (Should work just the same with either one)
+ * @param {string} inputMetaData Not used for this one.
+ * @return {string} A single character string that represents the standard character used in the code to referance a constants file.
+ * @author Seth Hollingsead
+ * @date 2020/12/18
+ */
+export const determineConstantsContextQualifiedPrefix = function(inputData, inputMetaData) {
+  let functionName = s.cdetermineConstantsContextQualifiedPrefix;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = inputData;
+  if (inputData.includes(w.cbasic) === true) {
+    returnData = b.cb;
+  } else if (inputData.includes(w.ccolor) === true) {
+    returnData = p.ccolr;
+  } else if (inputData.includes(w.celement) === true) {
+    returnData = b.ce;
+  } else if (inputData.includes(w.cgeneric) === true) {
+    returnData = b.cg;
+  } else if (inputData.includes(w.cisotope) === true) {
+    returnData = b.ci;
+  } else if (inputData.includes(w.cnumeric) === true) {
+    returnData = b.cn;
+  } else if (inputData.includes(w.cphonics) === true) {
+    returnData = b.cp;
+  } else if (inputData.includes(w.cshape) === true) {
+    returnData = p.cshp;
+  } else if (inputData.includes(w.csystem) === true) {
+    returnData = b.cs;
+  } else if (inputData.includes(w.cunits) === true) {
+    returnData = b.cu;
+  } else if (inputData.includes(w.cword) === true) {
+    returnData = b.cw;
+  } else {
+    console.log('ERROR: Unknown constant file.');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function determineSuggestedConstantsValidationLineOfCode
  * @description Takes the name of the missing constant and determines a suggested line of code to add to the appropriate constants validation file.
  * This will make it really easy for developers to maintain the constants validation system.
  * @param {string} inputData The name of the constant that is missing and should have a line of code generated for it.
- * @param {string} inputMetaData Not used for this one.
+ * @param {string} inputMetaData The prefix used to referance the constants file in the code.
  * @return {string} The suggested line of code that should be added to the appropriate constants validation code file.
  * @author Seth Hollingsead
  * @date 2020/07/29
@@ -1158,7 +1207,7 @@ export const determineSuggestedConstantsValidationLineOfCode = function(inputDat
   // Output: {Name: 'cZZTopIntentionalFailure', Actual: w.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
   if (inputData.charAt(0) === b.cc) {
     let literalValue = inputData.substr(1);
-    returnData = `{Name: '${inputData}', Actual: w.${inputData}, Expected: '${literalValue}'}`;
+    returnData = `{Name: '${inputData}', Actual: ${inputMetaData}.${inputData}, Expected: '${literalValue}'}`;
   } else {
     console.log('ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
     'but the constant is not formatted correctly, it should begin with a lower case "c". ' +

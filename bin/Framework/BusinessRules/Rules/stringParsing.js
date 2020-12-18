@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -1599,23 +1599,25 @@ var validateConstantsDataValidation = function validateConstantsDataValidation(i
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'lineArray[2] is: ' + lineArray[2]);
 
       foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
+      var qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
 
       if (foundConstant === true) {
         if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
           var passMessage = 'PASS: ' + lineArray[2] + ' PASS';
           passMessage = chalk.rgb(0, 0, 0)(passMessage);
           passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
-          console.log(passMessage);
+          console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + passMessage);
         }
       } else {
         if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
           var failMessage = 'FAIL: ' + lineArray[2] + ' FAIL';
           failMessage = chalk.rgb(0, 0, 0)(failMessage);
           failMessage = chalk.bgRgb(255, 0, 0)(failMessage);
-          console.log(failMessage); // loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+          var qualifiedConstantsPrefix = determineConstantsContextQualifiedPrefix(qualifiedConstantsFilename, '');
+          console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + failMessage); // loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
           // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
 
-          var suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], '');
+          var suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], qualifiedConstantsPrefix);
 
           if (suggestedLineOfCode !== '') {
             suggestedLineOfCode = chalk.rgb(0, 0, 0)(suggestedLineOfCode);
@@ -1640,18 +1642,76 @@ var validateConstantsDataValidation = function validateConstantsDataValidation(i
   return returnData;
 };
 /**
+ * @function determineConstantsContextQualifiedPrefix
+ * @description Takes the filename to a constants file and determines
+ * the standard prefix that should be used in the code to referance that constants file.
+ * @param {string} inputData The filename of the constants file or
+ * the full path and file name of the constants file. (Should work just the same with either one)
+ * @param {string} inputMetaData Not used for this one.
+ * @return {string} A single character string that represents the standard character used in the code to referance a constants file.
+ * @author Seth Hollingsead
+ * @date 2020/12/18
+ */
+
+
+exports.validateConstantsDataValidation = validateConstantsDataValidation;
+
+var determineConstantsContextQualifiedPrefix = function determineConstantsContextQualifiedPrefix(inputData, inputMetaData) {
+  var functionName = s.cdetermineConstantsContextQualifiedPrefix;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = inputData;
+
+  if (inputData.includes(w.cbasic) === true) {
+    returnData = b.cb;
+  } else if (inputData.includes(w.ccolor) === true) {
+    returnData = p.ccolr;
+  } else if (inputData.includes(w.celement) === true) {
+    returnData = b.ce;
+  } else if (inputData.includes(w.cgeneric) === true) {
+    returnData = b.cg;
+  } else if (inputData.includes(w.cisotope) === true) {
+    returnData = b.ci;
+  } else if (inputData.includes(w.cnumeric) === true) {
+    returnData = b.cn;
+  } else if (inputData.includes(w.cphonics) === true) {
+    returnData = b.cp;
+  } else if (inputData.includes(w.cshape) === true) {
+    returnData = p.cshp;
+  } else if (inputData.includes(w.csystem) === true) {
+    returnData = b.cs;
+  } else if (inputData.includes(w.cunits) === true) {
+    returnData = b.cu;
+  } else if (inputData.includes(w.cword) === true) {
+    returnData = b.cw;
+  } else {
+    console.log('ERROR: Unknown constant file.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function determineSuggestedConstantsValidationLineOfCode
  * @description Takes the name of the missing constant and determines a suggested line of code to add to the appropriate constants validation file.
  * This will make it really easy for developers to maintain the constants validation system.
  * @param {string} inputData The name of the constant that is missing and should have a line of code generated for it.
- * @param {string} inputMetaData Not used for this one.
+ * @param {string} inputMetaData The prefix used to referance the constants file in the code.
  * @return {string} The suggested line of code that should be added to the appropriate constants validation code file.
  * @author Seth Hollingsead
  * @date 2020/07/29
  */
 
 
-exports.validateConstantsDataValidation = validateConstantsDataValidation;
+exports.determineConstantsContextQualifiedPrefix = determineConstantsContextQualifiedPrefix;
 
 var determineSuggestedConstantsValidationLineOfCode = function determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData) {
   var functionName = s.cdetermineSuggestedConstantsValidationLineOfCode;
@@ -1667,7 +1727,7 @@ var determineSuggestedConstantsValidationLineOfCode = function determineSuggeste
 
   if (inputData.charAt(0) === b.cc) {
     var literalValue = inputData.substr(1);
-    returnData = "{Name: '".concat(inputData, "', Actual: w.").concat(inputData, ", Expected: '").concat(literalValue, "'}");
+    returnData = "{Name: '".concat(inputData, "', Actual: ").concat(inputMetaData, ".").concat(inputData, ", Expected: '").concat(literalValue, "'}");
   } else {
     console.log('ERROR: Attempted to generate a suggested line of code to validate the constant, ' + 'but the constant is not formatted correctly, it should begin with a lower case "c". ' + 'Please reformat the constant correctly so a line of code can be generated for you.');
     returnData = '';

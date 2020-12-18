@@ -268,6 +268,18 @@ var genericConstantsValidation = [{
   Actual: g.cXML,
   Expected: 'XML'
 }, {
+  Name: 'cjson',
+  Actual: g.cjson,
+  Expected: 'json'
+}, {
+  Name: 'cJson',
+  Actual: g.cJson,
+  Expected: 'Json'
+}, {
+  Name: 'cJSON',
+  Actual: g.cJSON,
+  Expected: 'JSON'
+}, {
   Name: 'cDotCSV',
   Actual: g.cDotCSV,
   Expected: '.csv'

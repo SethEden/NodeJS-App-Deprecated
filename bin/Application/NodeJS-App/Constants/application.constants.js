@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ccustomEchoCommand = exports.cClientWorkflowsActualPath = exports.cClientCommandAliasesActualPath = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
+exports.ccustomEchoCommand = exports.cClientWorkflowsActualPath = exports.cClientCommandAliasesActualPath = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cApplicationBinaryRootPath = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
 var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
@@ -51,9 +51,11 @@ var cBinaryResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cAppli
 exports.cBinaryResourcesPath = cBinaryResourcesPath;
 var cBinaryRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
 exports.cBinaryRootPath = cBinaryRootPath;
-var cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash; // Client Business Rules
-
+var cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
 exports.cBinaryReleasePath = cBinaryReleasePath;
+var cApplicationBinaryRootPath = cBinaryRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // Client Business Rules
+
+exports.cApplicationBinaryRootPath = cApplicationBinaryRootPath;
 var cclientEcho = w.cclient + s.cEcho; // ********************************
 // ClientStringParsing rules in order
 // ********************************

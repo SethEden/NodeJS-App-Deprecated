@@ -82,6 +82,9 @@ export const cCSV = b.cCS + b.cV; // CSV
 export const cxml = b.cxm + b.cl; // xml
 export const cXml = b.cXm + b.cl; // Xml
 export const cXML = b.cXM + b.cL; // XML
+export const cjson = b.cjs + b.con; // json
+export const cJson = b.cJs + b.con; // Json
+export const cJSON = b.cJS + b.cON; // JSON
 
 export const cDotCSV = b.cDot + ccsv; // .csv
 export const cDotCom = b.cDot + cCom; // .Com

@@ -155,6 +155,37 @@ function getCsvData(pathAndFilename) {
 
 ;
 /**
+ * @function getJsonData
+ * @description Loads the specified file and parses it into a JSON object(s).
+ * @param {string} pathAndFilename The path and file name of the CSV file that should be loaded and parsed into JSON objects.
+ * @return {object} The JSON object as it was loaded from the file with minimal to no additional processing.
+ * @author Seth Hollingsead
+ * @date 2020/12/18
+ */
+
+function getJsonData(pathAndFilename) {
+  var functionName = getJsonData.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+
+  var rawData = fs.readFileSync(pathAndFilename, {
+    encoding: 'UTF8'
+  });
+  var parsedData = JSON.parse(rawData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE loading data from: ' + pathAndFilename);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(parsedData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return parsedData;
+}
+
+;
+/**
  * @function readDirectoryContents
  * @description This function acts as a wrapper for calling readDirectorySynchronously since that function is recursive.
  * Also that function doesn't technically return anything, it works with a global variable that
@@ -404,7 +435,7 @@ function cleanRootPath() {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
 
-  rootPath = _ruleBroker["default"].processRules(rootPath, 3, cleanRootPathRules);
+  rootPath = _ruleBroker["default"].processRules(rootPath, 4, cleanRootPathRules);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
 
@@ -530,8 +561,9 @@ function copyFolderRecursiveSync(source, target) {
 
 ;
 var _default = {
-  getCsvData: getCsvData,
   getXmlData: getXmlData,
+  getCsvData: getCsvData,
+  getJsonData: getJsonData,
   readDirectoryContents: readDirectoryContents,
   copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder,
   buildReleasePackage: buildReleasePackage,

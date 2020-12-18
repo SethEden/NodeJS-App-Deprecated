@@ -68,8 +68,8 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function setupConfiguration(pathAndFilename) {
-  console.log('BEGIN chiefConfiguration.setupConfiguration function');
-  console.log('pathAndFilename is: ' + pathAndFilename);
+  // console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  // console.log('pathAndFilename is: ' + pathAndFilename);
   var functionName = 'setupTestConfiguration';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
@@ -92,10 +92,9 @@ function setupConfiguration(pathAndFilename) {
 
   _loggers["default"].consoleLog(s.cLogFileEnabled, _configurator["default"].getConfigurationSetting(s.cDateTimeSTamp));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
+  // console.log('END chiefConfiguration.setupTestConfiguration function');
 
-  console.log(_configurator["default"].getConfigurationSetting(s.cDateTimeSTamp));
-  console.log('END chiefConfiguration.setupTestConfiguration function');
 }
 
 ;

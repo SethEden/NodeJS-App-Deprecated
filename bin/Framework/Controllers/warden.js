@@ -33,6 +33,8 @@ var b = _interopRequireWildcard(require("../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -58,6 +60,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -171,18 +174,21 @@ function saveRootPath(rootPath) {
 
   var cleanedRootPath; // console.log('calling file broker to clean the root path.');
 
-  cleanedRootPath = _fileBroker["default"].cleanRootPath(rootPath); // console.log('set the cleaned root path as a configuration setting');
+  cleanedRootPath = _fileBroker["default"].cleanRootPath(rootPath); // console.log('set the cleaned root path as a configuration setting, cleanedRootPath is: ' + cleanedRootPath);
+
+  var applicationData = _fileBroker["default"].getJsonData(rootPath + w.cResources + b.cForwardSlash + s.cmetaDataDotJson); // console.log('loaded application meta-data is: ' + JSON.stringify(applicationData));
+
 
   _configurator["default"].setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath); // console.log('set the application name as a configuration setting');
 
 
-  _configurator["default"].setConfigurationSetting(s.cApplicationName, process.env.npm_package_name); // console.log('set the application version number as a configuration setting');
+  _configurator["default"].setConfigurationSetting(s.cApplicationName, applicationData[w.cname]); // console.log('set the application version number as a configuration setting');
 
 
-  _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version); // console.log('set the application description as a configuration setting');
+  _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, applicationData[w.cversion]); // console.log('set the application description as a configuration setting');
 
 
-  _configurator["default"].setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
+  _configurator["default"].setConfigurationSetting(s.cApplicationDescription, applicationData[w.cdescription]);
 
   if (_configurator["default"].getConfigurationSetting(s.cEnableConstantsValidation) === true) {
     _chiefData["default"].setupConstantsValidationData();
@@ -214,8 +220,9 @@ function mergeClientBusinessRules(clientBusinessRules) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'clientBusinessRules are: ' + JSON.stringify(clientBusinessRules));
 
-  _ruleBroker["default"].addClientRules(clientBusinessRules); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  _ruleBroker["default"].addClientRules(clientBusinessRules);
 
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.mergeClientBusinessRules function');
 
@@ -236,11 +243,13 @@ function mergeClientCommands(clientCommands) {
   // console.log('BEGIN warden.mergeClientCommands function');
   var functionName = mergeClientCommands.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
 
-  _commandBroker["default"].addClientCommands(clientCommands); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  _commandBroker["default"].addClientCommands(clientCommands);
 
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('END warden.mergeClientCommands function');
 

@@ -43,8 +43,8 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function setupConfiguration(pathAndFilename) {
-  console.log('BEGIN chiefConfiguration.setupConfiguration function');
-  console.log('pathAndFilename is: ' + pathAndFilename);
+  // console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  // console.log('pathAndFilename is: ' + pathAndFilename);
   let functionName = 'setupTestConfiguration';
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
@@ -63,8 +63,8 @@ function setupConfiguration(pathAndFilename) {
   // Get the operating system envrionment variable here and setup how to setup the log files.
   loggers.consoleLog(s.cLogFileEnabled, configurator.getConfigurationSetting(s.cDateTimeSTamp));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
-  console.log('END chiefConfiguration.setupTestConfiguration function');
+  // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
+  // console.log('END chiefConfiguration.setupTestConfiguration function');
 };
 
 /**

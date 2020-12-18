@@ -112,6 +112,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.doesArrayContainFilename(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidation, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidation(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdetermineConstantsContextQualifiedPrefix, function (inputData, inputMetaData) {
+    return stringParsing.determineConstantsContextQualifiedPrefix(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdetermineSuggestedConstantsValidationLineOfCode, function (inputData, inputMetaData) {
     return stringParsing.determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidationLineItemName, function (inputData, inputMetaData) {

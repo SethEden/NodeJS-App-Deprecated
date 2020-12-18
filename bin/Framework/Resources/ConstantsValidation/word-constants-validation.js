@@ -1920,6 +1920,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cInput,
   Expected: 'Input'
 }, {
+  Name: 'cdescription',
+  Actual: w.cdescription,
+  Expected: 'description'
+}, {
   Name: 'cDescription',
   Actual: w.cDescription,
   Expected: 'Description'
@@ -3507,5 +3511,29 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cDocument',
   Actual: w.cDocument,
   Expected: 'Document'
+}, {
+  Name: 'cqualified',
+  Actual: w.cqualified,
+  Expected: 'qualified'
+}, {
+  Name: 'cQualified',
+  Actual: w.cQualified,
+  Expected: 'Qualified'
+}, {
+  Name: 'cfix',
+  Actual: w.cfix,
+  Expected: 'fix'
+}, {
+  Name: 'cFix',
+  Actual: w.cFix,
+  Expected: 'Fix'
+}, {
+  Name: 'cprefix',
+  Actual: w.cprefix,
+  Expected: 'prefix'
+}, {
+  Name: 'cPrefix',
+  Actual: w.cPrefix,
+  Expected: 'Prefix'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

@@ -382,5 +382,10 @@ export const phonicsConstantsValidation = [
    {Name: 'ceta', Actual: p.ceta, Expected: 'eta'},
    {Name: 'ccent', Actual: p.ccent, Expected: 'cent'},
    {Name: 'cChi', Actual: p.cChi, Expected: 'Chi'},
-   {Name: 'cild', Actual: p.cild, Expected: 'ild'}
+   {Name: 'cild', Actual: p.cild, Expected: 'ild'},
+   {Name: 'ccolr', Actual: p.ccolr, Expected: 'colr'},
+   {Name: 'cshp', Actual: p.cshp, Expected: 'shp'},
+   {Name: 'cual', Actual: p.cual, Expected: 'ual'},
+   {Name: 'cied', Actual: p.cied, Expected: 'ied'},
+   {Name: 'cified', Actual: p.cified, Expected: 'ified'}
  ];

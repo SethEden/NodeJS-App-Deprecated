@@ -551,6 +551,7 @@ export const cunits_constants_js = w.cunits + b.cDot + w.cconstants + b.cDot + b
 export const cword_constants_js = w.cword + b.cDot + w.cconstants + b.cDot + b.cjs; // word.constants.js
 
 // Configuration Settings
+export const cmetaDataDotJson = w.cmeta + w.cData + b.cDot + g.cjson; // metaData.json
 export const cArgumentDrivenInterface = w.cArgument + w.cDriven + w.cInterface; // ArgumentDrivenInterface
 export const cFigletFont = w.cFiglet + w.cFont; // FigletFont
 export const cPrimaryCommandDelimiter = w.cPrimary + w.cCommand + w.cDelimiter; // PrimaryCommandDelimiter
@@ -626,6 +627,7 @@ export const cremoveCharacterFromArray = w.cremove + w.cCharacter + w.cFrom + w.
 export const cascertainMatchingFilenames = w.cascertain + w.cMatching + cFilenames; // ascertainMatchingFilenames
 export const cdoesArrayContainFilename = w.cdoes + w.cArray + w.cContain + cFilename; // doesArrayContainFilename
 export const cvalidateConstantsDataValidation = w.cvalidate + w.cConstants + w.cData + w.cValidation; // validateConstantsDataValidation
+export const cdetermineConstantsContextQualifiedPrefix = w.cdetermine + w.cConstants + w.cContext + w.cQualified + w.cPrefix; // determineConstantsContextQualifiedPrefix
 export const cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
 export const cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidation + w.cLine + w.cItem + w.cName; // validateConstantsDataValidationLineItemName
 export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues

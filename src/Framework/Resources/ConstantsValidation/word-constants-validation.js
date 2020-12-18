@@ -492,6 +492,7 @@ export const wordConstantsValidation = [
    {Name: 'cContext', Actual: w.cContext, Expected: 'Context'},
    {Name: 'cinput', Actual: w.cinput, Expected: 'input'},
    {Name: 'cInput', Actual: w.cInput, Expected: 'Input'},
+   {Name: 'cdescription', Actual: w.cdescription, Expected: 'description'},
    {Name: 'cDescription', Actual: w.cDescription, Expected: 'Description'},
    {Name: 'cconstant', Actual: w.cconstant, Expected: 'constant'},
    {Name: 'cConstant', Actual: w.cConstant, Expected: 'Constant'},
@@ -888,5 +889,11 @@ export const wordConstantsValidation = [
    {Name: 'cline', Actual: w.cline, Expected: 'line'},
    {Name: 'cLine', Actual: w.cLine, Expected: 'Line'},
    {Name: 'cdocument', Actual: w.cdocument, Expected: 'document'},
-   {Name: 'cDocument', Actual: w.cDocument, Expected: 'Document'}
+   {Name: 'cDocument', Actual: w.cDocument, Expected: 'Document'},
+   {Name: 'cqualified', Actual: w.cqualified, Expected: 'qualified'},
+   {Name: 'cQualified', Actual: w.cQualified, Expected: 'Qualified'},
+   {Name: 'cfix', Actual: w.cfix, Expected: 'fix'},
+   {Name: 'cFix', Actual: w.cFix, Expected: 'Fix'},
+   {Name: 'cprefix', Actual: w.cprefix, Expected: 'prefix'},
+   {Name: 'cPrefix', Actual: w.cPrefix, Expected: 'Prefix'}
  ];

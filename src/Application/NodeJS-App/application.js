@@ -31,7 +31,8 @@ import * as s from '../../Framework/Constants/system.constants';
 const prompt = require('prompt-sync')();
 var path = require('path');
 var D = require('../../Framework/Resources/data');
-global.appRoot = path.resolve(__dirname);
+// global.appRoot = path.resolve(__dirname);
+global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -43,8 +44,11 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/01/30
  */
 function bootStrapApplication() {
-  rootPath = path.resolve(__dirname);
+  // rootPath = path.resolve(__dirname);
+  rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath;
+  console.log('rootPath is: ' + rootPath);
   rootPath = warden.processRootPath(rootPath);
+  console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
@@ -91,7 +95,7 @@ function application() {
     }
   } else { // argument driven interface / execution is handled here.
     console.log('argument driven execution');
-    
+
   }
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

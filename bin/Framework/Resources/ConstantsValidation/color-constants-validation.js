@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.colorConstantsValidation = void 0;
 
-var clr = _interopRequireWildcard(require("../../Constants/color.constants"));
+var colr = _interopRequireWildcard(require("../../Constants/color.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -33,3864 +33,3864 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var colorConstantsValidation = [// Primary Colors
 {
   Name: 'cred',
-  Actual: clr.cred,
+  Actual: colr.cred,
   Expected: 'red'
 }, {
   Name: 'cRed',
-  Actual: clr.cRed,
+  Actual: colr.cRed,
   Expected: 'Red'
 }, {
   Name: 'cgreen',
-  Actual: clr.cgreen,
+  Actual: colr.cgreen,
   Expected: 'green'
 }, {
   Name: 'cGreen',
-  Actual: clr.cGreen,
+  Actual: colr.cGreen,
   Expected: 'Green'
 }, {
   Name: 'cblue',
-  Actual: clr.cblue,
+  Actual: colr.cblue,
   Expected: 'blue'
 }, {
   Name: 'cBlue',
-  Actual: clr.cBlue,
+  Actual: colr.cBlue,
   Expected: 'Blue'
 }, // Secondary Colors CMYK
 {
   Name: 'ccyan',
-  Actual: clr.ccyan,
+  Actual: colr.ccyan,
   Expected: 'cyan'
 }, {
   Name: 'cCyan',
-  Actual: clr.cCyan,
+  Actual: colr.cCyan,
   Expected: 'Cyan'
 }, {
   Name: 'cmagenta',
-  Actual: clr.cmagenta,
+  Actual: colr.cmagenta,
   Expected: 'magenta'
 }, {
   Name: 'cMagenta',
-  Actual: clr.cMagenta,
+  Actual: colr.cMagenta,
   Expected: 'Magenta'
 }, {
   Name: 'cyellow',
-  Actual: clr.cyellow,
+  Actual: colr.cyellow,
   Expected: 'yellow'
 }, {
   Name: 'cYellow',
-  Actual: clr.cYellow,
+  Actual: colr.cYellow,
   Expected: 'Yellow'
 }, {
   Name: 'cblack',
-  Actual: clr.cblack,
+  Actual: colr.cblack,
   Expected: 'black'
 }, {
   Name: 'cBlack',
-  Actual: clr.cBlack,
+  Actual: colr.cBlack,
   Expected: 'Black'
 }, {
   Name: 'cwhite',
-  Actual: clr.cwhite,
+  Actual: colr.cwhite,
   Expected: 'white'
 }, {
   Name: 'cWhite',
-  Actual: clr.cWhite,
+  Actual: colr.cWhite,
   Expected: 'White'
 }, {
   Name: 'corange',
-  Actual: clr.corange,
+  Actual: colr.corange,
   Expected: 'orange'
 }, {
   Name: 'cOrange',
-  Actual: clr.cOrange,
+  Actual: colr.cOrange,
   Expected: 'Orange'
 }, // Tertiary Named Colors
 // https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F
 {
   Name: 'cAbsoluteZero',
-  Actual: clr.cAbsoluteZero,
+  Actual: colr.cAbsoluteZero,
   Expected: 'AbsoluteZero'
 }, {
   Name: 'cAcidGreen',
-  Actual: clr.cAcidGreen,
+  Actual: colr.cAcidGreen,
   Expected: 'AcidGreen'
 }, {
   Name: 'cAero',
-  Actual: clr.cAero,
+  Actual: colr.cAero,
   Expected: 'Aero'
 }, {
   Name: 'cAeroBlue',
-  Actual: clr.cAeroBlue,
+  Actual: colr.cAeroBlue,
   Expected: 'AeroBlue'
 }, {
   Name: 'cAfricanViolet',
-  Actual: clr.cAfricanViolet,
+  Actual: colr.cAfricanViolet,
   Expected: 'AfricanViolet'
 }, {
   Name: 'cAirSuperiorityBlue',
-  Actual: clr.cAirSuperiorityBlue,
+  Actual: colr.cAirSuperiorityBlue,
   Expected: 'AirSuperiorityBlue'
 }, {
   Name: 'cAlabaster',
-  Actual: clr.cAlabaster,
+  Actual: colr.cAlabaster,
   Expected: 'Alabaster'
 }, {
   Name: 'cAliceBlue',
-  Actual: clr.cAliceBlue,
+  Actual: colr.cAliceBlue,
   Expected: 'AliceBlue'
 }, {
   Name: 'cAlloyOrange',
-  Actual: clr.cAlloyOrange,
+  Actual: colr.cAlloyOrange,
   Expected: 'AlloyOrange'
 }, {
   Name: 'cAlmond',
-  Actual: clr.cAlmond,
+  Actual: colr.cAlmond,
   Expected: 'Almond'
 }, {
   Name: 'cAmaranth',
-  Actual: clr.cAmaranth,
+  Actual: colr.cAmaranth,
   Expected: 'Amaranth'
 }, {
   Name: 'cAmaranthMP',
-  Actual: clr.cAmaranthMP,
+  Actual: colr.cAmaranthMP,
   Expected: 'AmaranthMP'
 }, {
   Name: 'cAmaranthPink',
-  Actual: clr.cAmaranthPink,
+  Actual: colr.cAmaranthPink,
   Expected: 'AmaranthPink'
 }, {
   Name: 'cAmaranthPurple',
-  Actual: clr.cAmaranthPurple,
+  Actual: colr.cAmaranthPurple,
   Expected: 'AmaranthPurple'
 }, {
   Name: 'cAmaranthRed',
-  Actual: clr.cAmaranthRed,
+  Actual: colr.cAmaranthRed,
   Expected: 'AmaranthRed'
 }, {
   Name: 'cAmazon',
-  Actual: clr.cAmazon,
+  Actual: colr.cAmazon,
   Expected: 'Amazon'
 }, {
   Name: 'cAmber',
-  Actual: clr.cAmber,
+  Actual: colr.cAmber,
   Expected: 'Amber'
 }, {
   Name: 'cAmberSAEECE',
-  Actual: clr.cAmberSAEECE,
+  Actual: colr.cAmberSAEECE,
   Expected: 'AmberSAEECE'
 }, {
   Name: 'cAmethyst',
-  Actual: clr.cAmethyst,
+  Actual: colr.cAmethyst,
   Expected: 'Amethyst'
 }, {
   Name: 'cAndroidGreen',
-  Actual: clr.cAndroidGreen,
+  Actual: colr.cAndroidGreen,
   Expected: 'AndroidGreen'
 }, {
   Name: 'cAntiqueBrass',
-  Actual: clr.cAntiqueBrass,
+  Actual: colr.cAntiqueBrass,
   Expected: 'AntiqueBrass'
 }, {
   Name: 'cAntiqueBronze',
-  Actual: clr.cAntiqueBronze,
+  Actual: colr.cAntiqueBronze,
   Expected: 'AntiqueBronze'
 }, {
   Name: 'cAntiqueFuchsia',
-  Actual: clr.cAntiqueFuchsia,
+  Actual: colr.cAntiqueFuchsia,
   Expected: 'AntiqueFuchsia'
 }, {
   Name: 'cAntiqueRuby',
-  Actual: clr.cAntiqueRuby,
+  Actual: colr.cAntiqueRuby,
   Expected: 'AntiqueRuby'
 }, {
   Name: 'cAntiqueWhite',
-  Actual: clr.cAntiqueWhite,
+  Actual: colr.cAntiqueWhite,
   Expected: 'AntiqueWhite'
 }, {
   Name: 'cAoEnglish',
-  Actual: clr.cAoEnglish,
+  Actual: colr.cAoEnglish,
   Expected: 'AoEnglish'
 }, {
   Name: 'cAppleGreen',
-  Actual: clr.cAppleGreen,
+  Actual: colr.cAppleGreen,
   Expected: 'AppleGreen'
 }, {
   Name: 'cApricot',
-  Actual: clr.cApricot,
+  Actual: colr.cApricot,
   Expected: 'Apricot'
 }, {
   Name: 'cAqua',
-  Actual: clr.cAqua,
+  Actual: colr.cAqua,
   Expected: 'Aqua'
 }, {
   Name: 'cAquamarine',
-  Actual: clr.cAquamarine,
+  Actual: colr.cAquamarine,
   Expected: 'Aquamarine'
 }, {
   Name: 'cArcticLime',
-  Actual: clr.cArcticLime,
+  Actual: colr.cArcticLime,
   Expected: 'ArcticLime'
 }, {
   Name: 'cArmyGreen',
-  Actual: clr.cArmyGreen,
+  Actual: colr.cArmyGreen,
   Expected: 'ArmyGreen'
 }, {
   Name: 'cArtichoke',
-  Actual: clr.cArtichoke,
+  Actual: colr.cArtichoke,
   Expected: 'Artichoke'
 }, {
   Name: 'cArylideYellow',
-  Actual: clr.cArylideYellow,
+  Actual: colr.cArylideYellow,
   Expected: 'ArylideYellow'
 }, {
   Name: 'cAshGray',
-  Actual: clr.cAshGray,
+  Actual: colr.cAshGray,
   Expected: 'AshGray'
 }, {
   Name: 'cAsparagus',
-  Actual: clr.cAsparagus,
+  Actual: colr.cAsparagus,
   Expected: 'Asparagus'
 }, {
   Name: 'cAtomicTangerine',
-  Actual: clr.cAtomicTangerine,
+  Actual: colr.cAtomicTangerine,
   Expected: 'AtomicTangerine'
 }, {
   Name: 'cAuburn',
-  Actual: clr.cAuburn,
+  Actual: colr.cAuburn,
   Expected: 'Auburn'
 }, {
   Name: 'cAureolin',
-  Actual: clr.cAureolin,
+  Actual: colr.cAureolin,
   Expected: 'Aureolin'
 }, {
   Name: 'cAvocado',
-  Actual: clr.cAvocado,
+  Actual: colr.cAvocado,
   Expected: 'Avocado'
 }, {
   Name: 'cAzure',
-  Actual: clr.cAzure,
+  Actual: colr.cAzure,
   Expected: 'Azure'
 }, {
   Name: 'cAzureWeb',
-  Actual: clr.cAzureWeb,
+  Actual: colr.cAzureWeb,
   Expected: 'AzureWeb'
 }, {
   Name: 'cBabyBlue',
-  Actual: clr.cBabyBlue,
+  Actual: colr.cBabyBlue,
   Expected: 'BabyBlue'
 }, {
   Name: 'cBabyBlueEyes',
-  Actual: clr.cBabyBlueEyes,
+  Actual: colr.cBabyBlueEyes,
   Expected: 'BabyBlueEyes'
 }, {
   Name: 'cBabyPink',
-  Actual: clr.cBabyPink,
+  Actual: colr.cBabyPink,
   Expected: 'BabyPink'
 }, {
   Name: 'cBabyPowder',
-  Actual: clr.cBabyPowder,
+  Actual: colr.cBabyPowder,
   Expected: 'BabyPowder'
 }, {
   Name: 'cBakerMillerPink',
-  Actual: clr.cBakerMillerPink,
+  Actual: colr.cBakerMillerPink,
   Expected: 'BakerMillerPink'
 }, {
   Name: 'cBananaMania',
-  Actual: clr.cBananaMania,
+  Actual: colr.cBananaMania,
   Expected: 'BananaMania'
 }, {
   Name: 'cBarbiePink',
-  Actual: clr.cBarbiePink,
+  Actual: colr.cBarbiePink,
   Expected: 'BarbiePink'
 }, {
   Name: 'cBarnRed',
-  Actual: clr.cBarnRed,
+  Actual: colr.cBarnRed,
   Expected: 'BarnRed'
 }, {
   Name: 'cBattleshipGrey',
-  Actual: clr.cBattleshipGrey,
+  Actual: colr.cBattleshipGrey,
   Expected: 'BattleshipGrey'
 }, {
   Name: 'cBeauBlue',
-  Actual: clr.cBeauBlue,
+  Actual: colr.cBeauBlue,
   Expected: 'BeauBlue'
 }, {
   Name: 'cBeaver',
-  Actual: clr.cBeaver,
+  Actual: colr.cBeaver,
   Expected: 'Beaver'
 }, {
   Name: 'cBeige',
-  Actual: clr.cBeige,
+  Actual: colr.cBeige,
   Expected: 'Beige'
 }, {
   Name: 'cBDazzledBlue',
-  Actual: clr.cBDazzledBlue,
+  Actual: colr.cBDazzledBlue,
   Expected: 'BDazzledBlue'
 }, {
   Name: 'cBigDipORuby',
-  Actual: clr.cBigDipORuby,
+  Actual: colr.cBigDipORuby,
   Expected: 'BigDipORuby'
 }, {
   Name: 'cBisque',
-  Actual: clr.cBisque,
+  Actual: colr.cBisque,
   Expected: 'Bisque'
 }, {
   Name: 'cBistre',
-  Actual: clr.cBistre,
+  Actual: colr.cBistre,
   Expected: 'Bistre'
 }, {
   Name: 'cBistreBrown',
-  Actual: clr.cBistreBrown,
+  Actual: colr.cBistreBrown,
   Expected: 'BistreBrown'
 }, {
   Name: 'cBitterLemon',
-  Actual: clr.cBitterLemon,
+  Actual: colr.cBitterLemon,
   Expected: 'BitterLemon'
 }, {
   Name: 'cBitterLime',
-  Actual: clr.cBitterLime,
+  Actual: colr.cBitterLime,
   Expected: 'BitterLime'
 }, {
   Name: 'cBittersweet',
-  Actual: clr.cBittersweet,
+  Actual: colr.cBittersweet,
   Expected: 'Bittersweet'
 }, {
   Name: 'cBittersweetShimmer',
-  Actual: clr.cBittersweetShimmer,
+  Actual: colr.cBittersweetShimmer,
   Expected: 'BittersweetShimmer'
 }, {
   Name: 'cBlackBean',
-  Actual: clr.cBlackBean,
+  Actual: colr.cBlackBean,
   Expected: 'BlackBean'
 }, {
   Name: 'cBlackChocolate',
-  Actual: clr.cBlackChocolate,
+  Actual: colr.cBlackChocolate,
   Expected: 'BlackChocolate'
 }, {
   Name: 'cBlackCoffee',
-  Actual: clr.cBlackCoffee,
+  Actual: colr.cBlackCoffee,
   Expected: 'BlackCoffee'
 }, {
   Name: 'cBlackCoral',
-  Actual: clr.cBlackCoral,
+  Actual: colr.cBlackCoral,
   Expected: 'BlackCoral'
 }, {
   Name: 'cBlackOlive',
-  Actual: clr.cBlackOlive,
+  Actual: colr.cBlackOlive,
   Expected: 'BlackOlive'
 }, {
   Name: 'cBlackShadows',
-  Actual: clr.cBlackShadows,
+  Actual: colr.cBlackShadows,
   Expected: 'BlackShadows'
 }, {
   Name: 'cBlanchedAlmond',
-  Actual: clr.cBlanchedAlmond,
+  Actual: colr.cBlanchedAlmond,
   Expected: 'BlanchedAlmond'
 }, {
   Name: 'cBlastOffBronze',
-  Actual: clr.cBlastOffBronze,
+  Actual: colr.cBlastOffBronze,
   Expected: 'BlastOffBronze'
 }, {
   Name: 'cBleuDeFrance',
-  Actual: clr.cBleuDeFrance,
+  Actual: colr.cBleuDeFrance,
   Expected: 'BleuDeFrance'
 }, {
   Name: 'cBlizzardBlue',
-  Actual: clr.cBlizzardBlue,
+  Actual: colr.cBlizzardBlue,
   Expected: 'BlizzardBlue'
 }, {
   Name: 'cBlond',
-  Actual: clr.cBlond,
+  Actual: colr.cBlond,
   Expected: 'Blond'
 }, {
   Name: 'cBloodRed',
-  Actual: clr.cBloodRed,
+  Actual: colr.cBloodRed,
   Expected: 'BloodRed'
 }, {
   Name: 'cBlueCrayola',
-  Actual: clr.cBlueCrayola,
+  Actual: colr.cBlueCrayola,
   Expected: 'BlueCrayola'
 }, {
   Name: 'cBlueMunsell',
-  Actual: clr.cBlueMunsell,
+  Actual: colr.cBlueMunsell,
   Expected: 'BlueMunsell'
 }, {
   Name: 'cBlueNCS',
-  Actual: clr.cBlueNCS,
+  Actual: colr.cBlueNCS,
   Expected: 'BlueNCS'
 }, {
   Name: 'cBluePantone',
-  Actual: clr.cBluePantone,
+  Actual: colr.cBluePantone,
   Expected: 'BluePantone'
 }, {
   Name: 'cBluePigment',
-  Actual: clr.cBluePigment,
+  Actual: colr.cBluePigment,
   Expected: 'BluePigment'
 }, {
   Name: 'cBlueRYB',
-  Actual: clr.cBlueRYB,
+  Actual: colr.cBlueRYB,
   Expected: 'BlueRYB'
 }, {
   Name: 'cBlueBell',
-  Actual: clr.cBlueBell,
+  Actual: colr.cBlueBell,
   Expected: 'BlueBell'
 }, {
   Name: 'cBlueGray',
-  Actual: clr.cBlueGray,
+  Actual: colr.cBlueGray,
   Expected: 'BlueGray'
 }, {
   Name: 'cBlueGreen',
-  Actual: clr.cBlueGreen,
+  Actual: colr.cBlueGreen,
   Expected: 'BlueGreen'
 }, {
   Name: 'cBlueGreenColorWheel',
-  Actual: clr.cBlueGreenColorWheel,
+  Actual: colr.cBlueGreenColorWheel,
   Expected: 'BlueGreenColorWheel'
 }, {
   Name: 'cBlueJeans',
-  Actual: clr.cBlueJeans,
+  Actual: colr.cBlueJeans,
   Expected: 'BlueJeans'
 }, {
   Name: 'cBlueSapphire',
-  Actual: clr.cBlueSapphire,
+  Actual: colr.cBlueSapphire,
   Expected: 'BlueSapphire'
 }, {
   Name: 'cBlueViolet',
-  Actual: clr.cBlueViolet,
+  Actual: colr.cBlueViolet,
   Expected: 'BlueViolet'
 }, {
   Name: 'cBlueVioletCrayola',
-  Actual: clr.cBlueVioletCrayola,
+  Actual: colr.cBlueVioletCrayola,
   Expected: 'BlueVioletCrayola'
 }, {
   Name: 'cBlueVioletColorWheel',
-  Actual: clr.cBlueVioletColorWheel,
+  Actual: colr.cBlueVioletColorWheel,
   Expected: 'BlueVioletColorWheel'
 }, {
   Name: 'cBlueYonder',
-  Actual: clr.cBlueYonder,
+  Actual: colr.cBlueYonder,
   Expected: 'BlueYonder'
 }, {
   Name: 'cBluetiful',
-  Actual: clr.cBluetiful,
+  Actual: colr.cBluetiful,
   Expected: 'Bluetiful'
 }, {
   Name: 'cBlush',
-  Actual: clr.cBlush,
+  Actual: colr.cBlush,
   Expected: 'Blush'
 }, {
   Name: 'cBole',
-  Actual: clr.cBole,
+  Actual: colr.cBole,
   Expected: 'Bole'
 }, {
   Name: 'cBone',
-  Actual: clr.cBone,
+  Actual: colr.cBone,
   Expected: 'Bone'
 }, {
   Name: 'cBottleGreen',
-  Actual: clr.cBottleGreen,
+  Actual: colr.cBottleGreen,
   Expected: 'BottleGreen'
 }, {
   Name: 'cBrandy',
-  Actual: clr.cBrandy,
+  Actual: colr.cBrandy,
   Expected: 'Brandy'
 }, {
   Name: 'cBrickRed',
-  Actual: clr.cBrickRed,
+  Actual: colr.cBrickRed,
   Expected: 'BrickRed'
 }, {
   Name: 'cBrightGreen',
-  Actual: clr.cBrightGreen,
+  Actual: colr.cBrightGreen,
   Expected: 'BrightGreen'
 }, {
   Name: 'cBrightLilac',
-  Actual: clr.cBrightLilac,
+  Actual: colr.cBrightLilac,
   Expected: 'BrightLilac'
 }, {
   Name: 'cBrightMaroon',
-  Actual: clr.cBrightMaroon,
+  Actual: colr.cBrightMaroon,
   Expected: 'BrightMaroon'
 }, {
   Name: 'cBrightNavyBlue',
-  Actual: clr.cBrightNavyBlue,
+  Actual: colr.cBrightNavyBlue,
   Expected: 'BrightNavyBlue'
 }, {
   Name: 'cBrightYellowCrayola',
-  Actual: clr.cBrightYellowCrayola,
+  Actual: colr.cBrightYellowCrayola,
   Expected: 'BrightYellowCrayola'
 }, {
   Name: 'cBrilliantRose',
-  Actual: clr.cBrilliantRose,
+  Actual: colr.cBrilliantRose,
   Expected: 'BrilliantRose'
 }, {
   Name: 'cBrinkPink',
-  Actual: clr.cBrinkPink,
+  Actual: colr.cBrinkPink,
   Expected: 'BrinkPink'
 }, {
   Name: 'cBritishRacingGreen',
-  Actual: clr.cBritishRacingGreen,
+  Actual: colr.cBritishRacingGreen,
   Expected: 'BritishRacingGreen'
 }, {
   Name: 'cBronze',
-  Actual: clr.cBronze,
+  Actual: colr.cBronze,
   Expected: 'Bronze'
 }, {
   Name: 'cBrown',
-  Actual: clr.cBrown,
+  Actual: colr.cBrown,
   Expected: 'Brown'
 }, {
   Name: 'cBrownSugar',
-  Actual: clr.cBrownSugar,
+  Actual: colr.cBrownSugar,
   Expected: 'BrownSugar'
 }, {
   Name: 'cBrunswickGreen',
-  Actual: clr.cBrunswickGreen,
+  Actual: colr.cBrunswickGreen,
   Expected: 'BrunswickGreen'
 }, {
   Name: 'cBudGreen',
-  Actual: clr.cBudGreen,
+  Actual: colr.cBudGreen,
   Expected: 'BudGreen'
 }, {
   Name: 'cBuff',
-  Actual: clr.cBuff,
+  Actual: colr.cBuff,
   Expected: 'Buff'
 }, {
   Name: 'cBurgundy',
-  Actual: clr.cBurgundy,
+  Actual: colr.cBurgundy,
   Expected: 'Burgundy'
 }, {
   Name: 'cBurlywood',
-  Actual: clr.cBurlywood,
+  Actual: colr.cBurlywood,
   Expected: 'Burlywood'
 }, {
   Name: 'cBurnishedBrown',
-  Actual: clr.cBurnishedBrown,
+  Actual: colr.cBurnishedBrown,
   Expected: 'BurnishedBrown'
 }, {
   Name: 'cBurntOrange',
-  Actual: clr.cBurntOrange,
+  Actual: colr.cBurntOrange,
   Expected: 'BurntOrange'
 }, {
   Name: 'cBurntSienna',
-  Actual: clr.cBurntSienna,
+  Actual: colr.cBurntSienna,
   Expected: 'BurntSienna'
 }, {
   Name: 'cBurntUmber',
-  Actual: clr.cBurntUmber,
+  Actual: colr.cBurntUmber,
   Expected: 'BurntUmber'
 }, {
   Name: 'cByzantine',
-  Actual: clr.cByzantine,
+  Actual: colr.cByzantine,
   Expected: 'Byzantine'
 }, {
   Name: 'cByzantium',
-  Actual: clr.cByzantium,
+  Actual: colr.cByzantium,
   Expected: 'Byzantium'
 }, {
   Name: 'cCadet',
-  Actual: clr.cCadet,
+  Actual: colr.cCadet,
   Expected: 'Cadet'
 }, {
   Name: 'cCadetBlue',
-  Actual: clr.cCadetBlue,
+  Actual: colr.cCadetBlue,
   Expected: 'CadetBlue'
 }, {
   Name: 'cCadetBlueCrayola',
-  Actual: clr.cCadetBlueCrayola,
+  Actual: colr.cCadetBlueCrayola,
   Expected: 'CadetBlueCrayola'
 }, {
   Name: 'cCadetGrey',
-  Actual: clr.cCadetGrey,
+  Actual: colr.cCadetGrey,
   Expected: 'CadetGrey'
 }, {
   Name: 'cCadmiumGreen',
-  Actual: clr.cCadmiumGreen,
+  Actual: colr.cCadmiumGreen,
   Expected: 'CadmiumGreen'
 }, {
   Name: 'cCadmiumOrange',
-  Actual: clr.cCadmiumOrange,
+  Actual: colr.cCadmiumOrange,
   Expected: 'CadmiumOrange'
 }, {
   Name: 'cCadmiumRed',
-  Actual: clr.cCadmiumRed,
+  Actual: colr.cCadmiumRed,
   Expected: 'CadmiumRed'
 }, {
   Name: 'cCadmiumYellow',
-  Actual: clr.cCadmiumYellow,
+  Actual: colr.cCadmiumYellow,
   Expected: 'CadmiumYellow'
 }, {
   Name: 'cCafeAuLait',
-  Actual: clr.cCafeAuLait,
+  Actual: colr.cCafeAuLait,
   Expected: 'CafeAuLait'
 }, {
   Name: 'cCafeNoir',
-  Actual: clr.cCafeNoir,
+  Actual: colr.cCafeNoir,
   Expected: 'CafeNoir'
 }, {
   Name: 'cCambridgeBlue',
-  Actual: clr.cCambridgeBlue,
+  Actual: colr.cCambridgeBlue,
   Expected: 'CambridgeBlue'
 }, {
   Name: 'cCameoPink',
-  Actual: clr.cCameoPink,
+  Actual: colr.cCameoPink,
   Expected: 'CameoPink'
 }, {
   Name: 'cCanary',
-  Actual: clr.cCanary,
+  Actual: colr.cCanary,
   Expected: 'Canary'
 }, {
   Name: 'cCanaryYellow',
-  Actual: clr.cCanaryYellow,
+  Actual: colr.cCanaryYellow,
   Expected: 'CanaryYellow'
 }, {
   Name: 'cCandyAppleRed',
-  Actual: clr.cCandyAppleRed,
+  Actual: colr.cCandyAppleRed,
   Expected: 'CandyAppleRed'
 }, {
   Name: 'cCandyPink',
-  Actual: clr.cCandyPink,
+  Actual: colr.cCandyPink,
   Expected: 'CandyPink'
 }, {
   Name: 'cCapri',
-  Actual: clr.cCapri,
+  Actual: colr.cCapri,
   Expected: 'Capri'
 }, {
   Name: 'cCaputMortuum',
-  Actual: clr.cCaputMortuum,
+  Actual: colr.cCaputMortuum,
   Expected: 'CaputMortuum'
 }, {
   Name: 'cCardinal',
-  Actual: clr.cCardinal,
+  Actual: colr.cCardinal,
   Expected: 'Cardinal'
 }, {
   Name: 'cCaribbeanGreen',
-  Actual: clr.cCaribbeanGreen,
+  Actual: colr.cCaribbeanGreen,
   Expected: 'CaribbeanGreen'
 }, {
   Name: 'cCarmine',
-  Actual: clr.cCarmine,
+  Actual: colr.cCarmine,
   Expected: 'Carmine'
 }, {
   Name: 'cCarmineMP',
-  Actual: clr.cCarmineMP,
+  Actual: colr.cCarmineMP,
   Expected: 'CarmineMP'
 }, {
   Name: 'cCarnationPink',
-  Actual: clr.cCarnationPink,
+  Actual: colr.cCarnationPink,
   Expected: 'CarnationPink'
 }, {
   Name: 'cCarnelian',
-  Actual: clr.cCarnelian,
+  Actual: colr.cCarnelian,
   Expected: 'Carnelian'
 }, {
   Name: 'cCarolinaBlue',
-  Actual: clr.cCarolinaBlue,
+  Actual: colr.cCarolinaBlue,
   Expected: 'CarolinaBlue'
 }, {
   Name: 'cCarrotOrange',
-  Actual: clr.cCarrotOrange,
+  Actual: colr.cCarrotOrange,
   Expected: 'CarrotOrange'
 }, {
   Name: 'cCastletonGreen',
-  Actual: clr.cCastletonGreen,
+  Actual: colr.cCastletonGreen,
   Expected: 'CastletonGreen'
 }, {
   Name: 'cCatawba',
-  Actual: clr.cCatawba,
+  Actual: colr.cCatawba,
   Expected: 'Catawba'
 }, {
   Name: 'cCedarChest',
-  Actual: clr.cCedarChest,
+  Actual: colr.cCedarChest,
   Expected: 'CedarChest'
 }, {
   Name: 'cCeladon',
-  Actual: clr.cCeladon,
+  Actual: colr.cCeladon,
   Expected: 'Celadon'
 }, {
   Name: 'cCeladonBlue',
-  Actual: clr.cCeladonBlue,
+  Actual: colr.cCeladonBlue,
   Expected: 'CeladonBlue'
 }, {
   Name: 'cCeladonGreen',
-  Actual: clr.cCeladonGreen,
+  Actual: colr.cCeladonGreen,
   Expected: 'CeladonGreen'
 }, {
   Name: 'cCeleste',
-  Actual: clr.cCeleste,
+  Actual: colr.cCeleste,
   Expected: 'Celeste'
 }, {
   Name: 'cCelticBlue',
-  Actual: clr.cCelticBlue,
+  Actual: colr.cCelticBlue,
   Expected: 'CelticBlue'
 }, {
   Name: 'cCerise',
-  Actual: clr.cCerise,
+  Actual: colr.cCerise,
   Expected: 'Cerise'
 }, {
   Name: 'cCerulean',
-  Actual: clr.cCerulean,
+  Actual: colr.cCerulean,
   Expected: 'Cerulean'
 }, {
   Name: 'cCeruleanBlue',
-  Actual: clr.cCeruleanBlue,
+  Actual: colr.cCeruleanBlue,
   Expected: 'CeruleanBlue'
 }, {
   Name: 'cCeruleanFrost',
-  Actual: clr.cCeruleanFrost,
+  Actual: colr.cCeruleanFrost,
   Expected: 'CeruleanFrost'
 }, {
   Name: 'cCeruleanCrayola',
-  Actual: clr.cCeruleanCrayola,
+  Actual: colr.cCeruleanCrayola,
   Expected: 'CeruleanCrayola'
 }, {
   Name: 'cCGBlue',
-  Actual: clr.cCGBlue,
+  Actual: colr.cCGBlue,
   Expected: 'CGBlue'
 }, {
   Name: 'cCGRed',
-  Actual: clr.cCGRed,
+  Actual: colr.cCGRed,
   Expected: 'CGRed'
 }, {
   Name: 'cChampagne',
-  Actual: clr.cChampagne,
+  Actual: colr.cChampagne,
   Expected: 'Champagne'
 }, {
   Name: 'cChampagnePink',
-  Actual: clr.cChampagnePink,
+  Actual: colr.cChampagnePink,
   Expected: 'ChampagnePink'
 }, {
   Name: 'cCharcoal',
-  Actual: clr.cCharcoal,
+  Actual: colr.cCharcoal,
   Expected: 'Charcoal'
 }, {
   Name: 'cCharlestonGreen',
-  Actual: clr.cCharlestonGreen,
+  Actual: colr.cCharlestonGreen,
   Expected: 'CharlestonGreen'
 }, {
   Name: 'cCharmPink',
-  Actual: clr.cCharmPink,
+  Actual: colr.cCharmPink,
   Expected: 'CharmPink'
 }, {
   Name: 'cChartreuseTraditional',
-  Actual: clr.cChartreuseTraditional,
+  Actual: colr.cChartreuseTraditional,
   Expected: 'ChartreuseTraditional'
 }, {
   Name: 'cChartreuseWeb',
-  Actual: clr.cChartreuseWeb,
+  Actual: colr.cChartreuseWeb,
   Expected: 'ChartreuseWeb'
 }, {
   Name: 'cCherryBlossomPink',
-  Actual: clr.cCherryBlossomPink,
+  Actual: colr.cCherryBlossomPink,
   Expected: 'CherryBlossomPink'
 }, {
   Name: 'cChestnut',
-  Actual: clr.cChestnut,
+  Actual: colr.cChestnut,
   Expected: 'Chestnut'
 }, {
   Name: 'cChinaPink',
-  Actual: clr.cChinaPink,
+  Actual: colr.cChinaPink,
   Expected: 'ChinaPink'
 }, {
   Name: 'cChinaRose',
-  Actual: clr.cChinaRose,
+  Actual: colr.cChinaRose,
   Expected: 'ChinaRose'
 }, {
   Name: 'cChineseRed',
-  Actual: clr.cChineseRed,
+  Actual: colr.cChineseRed,
   Expected: 'ChineseRed'
 }, {
   Name: 'cChineseViolet',
-  Actual: clr.cChineseViolet,
+  Actual: colr.cChineseViolet,
   Expected: 'ChineseViolet'
 }, {
   Name: 'cChineseYellow',
-  Actual: clr.cChineseYellow,
+  Actual: colr.cChineseYellow,
   Expected: 'ChineseYellow'
 }, {
   Name: 'cChocolateTraditional',
-  Actual: clr.cChocolateTraditional,
+  Actual: colr.cChocolateTraditional,
   Expected: 'ChocolateTraditional'
 }, {
   Name: 'cChocolateWeb',
-  Actual: clr.cChocolateWeb,
+  Actual: colr.cChocolateWeb,
   Expected: 'ChocolateWeb'
 }, {
   Name: 'cChromeYellow',
-  Actual: clr.cChromeYellow,
+  Actual: colr.cChromeYellow,
   Expected: 'ChromeYellow'
 }, {
   Name: 'cCinereous',
-  Actual: clr.cCinereous,
+  Actual: colr.cCinereous,
   Expected: 'Cinereous'
 }, {
   Name: 'cCinnabar',
-  Actual: clr.cCinnabar,
+  Actual: colr.cCinnabar,
   Expected: 'Cinnabar'
 }, {
   Name: 'cCinnamonSatin',
-  Actual: clr.cCinnamonSatin,
+  Actual: colr.cCinnamonSatin,
   Expected: 'CinnamonSatin'
 }, {
   Name: 'cCitrine',
-  Actual: clr.cCitrine,
+  Actual: colr.cCitrine,
   Expected: 'Citrine'
 }, {
   Name: 'cCitron',
-  Actual: clr.cCitron,
+  Actual: colr.cCitron,
   Expected: 'Citron'
 }, {
   Name: 'cClaret',
-  Actual: clr.cClaret,
+  Actual: colr.cClaret,
   Expected: 'Claret'
 }, {
   Name: 'cCobaltBlue',
-  Actual: clr.cCobaltBlue,
+  Actual: colr.cCobaltBlue,
   Expected: 'CobaltBlue'
 }, {
   Name: 'cCocoaBrown',
-  Actual: clr.cCocoaBrown,
+  Actual: colr.cCocoaBrown,
   Expected: 'CocoaBrown'
 }, {
   Name: 'cCoffee',
-  Actual: clr.cCoffee,
+  Actual: colr.cCoffee,
   Expected: 'Coffee'
 }, {
   Name: 'cColumbiaBlue',
-  Actual: clr.cColumbiaBlue,
+  Actual: colr.cColumbiaBlue,
   Expected: 'ColumbiaBlue'
 }, {
   Name: 'cCongoPink',
-  Actual: clr.cCongoPink,
+  Actual: colr.cCongoPink,
   Expected: 'CongoPink'
 }, {
   Name: 'cCoolGrey',
-  Actual: clr.cCoolGrey,
+  Actual: colr.cCoolGrey,
   Expected: 'CoolGrey'
 }, {
   Name: 'cCopper',
-  Actual: clr.cCopper,
+  Actual: colr.cCopper,
   Expected: 'Copper'
 }, {
   Name: 'cCopperCrayola',
-  Actual: clr.cCopperCrayola,
+  Actual: colr.cCopperCrayola,
   Expected: 'CopperCrayola'
 }, {
   Name: 'cCopperPenny',
-  Actual: clr.cCopperPenny,
+  Actual: colr.cCopperPenny,
   Expected: 'CopperPenny'
 }, {
   Name: 'cCopperRed',
-  Actual: clr.cCopperRed,
+  Actual: colr.cCopperRed,
   Expected: 'CopperRed'
 }, {
   Name: 'cCopperRose',
-  Actual: clr.cCopperRose,
+  Actual: colr.cCopperRose,
   Expected: 'CopperRose'
 }, {
   Name: 'cCoquelicot',
-  Actual: clr.cCoquelicot,
+  Actual: colr.cCoquelicot,
   Expected: 'Coquelicot'
 }, {
   Name: 'cCoral',
-  Actual: clr.cCoral,
+  Actual: colr.cCoral,
   Expected: 'Coral'
 }, {
   Name: 'cCoralPink',
-  Actual: clr.cCoralPink,
+  Actual: colr.cCoralPink,
   Expected: 'CoralPink'
 }, {
   Name: 'cCordovan',
-  Actual: clr.cCordovan,
+  Actual: colr.cCordovan,
   Expected: 'Cordovan'
 }, {
   Name: 'cCorn',
-  Actual: clr.cCorn,
+  Actual: colr.cCorn,
   Expected: 'Corn'
 }, {
   Name: 'cCornflowerBlue',
-  Actual: clr.cCornflowerBlue,
+  Actual: colr.cCornflowerBlue,
   Expected: 'CornflowerBlue'
 }, {
   Name: 'cCornsilk',
-  Actual: clr.cCornsilk,
+  Actual: colr.cCornsilk,
   Expected: 'Cornsilk'
 }, {
   Name: 'cCosmicCobalt',
-  Actual: clr.cCosmicCobalt,
+  Actual: colr.cCosmicCobalt,
   Expected: 'CosmicCobalt'
 }, {
   Name: 'cCosmicLatte',
-  Actual: clr.cCosmicLatte,
+  Actual: colr.cCosmicLatte,
   Expected: 'CosmicLatte'
 }, {
   Name: 'cCoyoteBrown',
-  Actual: clr.cCoyoteBrown,
+  Actual: colr.cCoyoteBrown,
   Expected: 'CoyoteBrown'
 }, {
   Name: 'cCottonCandy',
-  Actual: clr.cCottonCandy,
+  Actual: colr.cCottonCandy,
   Expected: 'CottonCandy'
 }, {
   Name: 'cCream',
-  Actual: clr.cCream,
+  Actual: colr.cCream,
   Expected: 'Cream'
 }, {
   Name: 'cCrimson',
-  Actual: clr.cCrimson,
+  Actual: colr.cCrimson,
   Expected: 'Crimson'
 }, {
   Name: 'cCrimsonUA',
-  Actual: clr.cCrimsonUA,
+  Actual: colr.cCrimsonUA,
   Expected: 'CrimsonUA'
 }, {
   Name: 'cCultured',
-  Actual: clr.cCultured,
+  Actual: colr.cCultured,
   Expected: 'Cultured'
 }, {
   Name: 'cCyanProcess',
-  Actual: clr.cCyanProcess,
+  Actual: colr.cCyanProcess,
   Expected: 'CyanProcess'
 }, {
   Name: 'cCyberGrape',
-  Actual: clr.cCyberGrape,
+  Actual: colr.cCyberGrape,
   Expected: 'CyberGrape'
 }, {
   Name: 'cCyberYellow',
-  Actual: clr.cCyberYellow,
+  Actual: colr.cCyberYellow,
   Expected: 'CyberYellow'
 }, {
   Name: 'cCyclamen',
-  Actual: clr.cCyclamen,
+  Actual: colr.cCyclamen,
   Expected: 'Cyclamen'
 }, {
   Name: 'cDarkBlueGray',
-  Actual: clr.cDarkBlueGray,
+  Actual: colr.cDarkBlueGray,
   Expected: 'DarkBlueGray'
 }, {
   Name: 'cDarkBrown',
-  Actual: clr.cDarkBrown,
+  Actual: colr.cDarkBrown,
   Expected: 'DarkBrown'
 }, {
   Name: 'cDarkByzantium',
-  Actual: clr.cDarkByzantium,
+  Actual: colr.cDarkByzantium,
   Expected: 'DarkByzantium'
 }, {
   Name: 'cDarkCornflowerBlue',
-  Actual: clr.cDarkCornflowerBlue,
+  Actual: colr.cDarkCornflowerBlue,
   Expected: 'DarkCornflowerBlue'
 }, {
   Name: 'cDarkCyan',
-  Actual: clr.cDarkCyan,
+  Actual: colr.cDarkCyan,
   Expected: 'DarkCyan'
 }, {
   Name: 'cDarkElectricBlue',
-  Actual: clr.cDarkElectricBlue,
+  Actual: colr.cDarkElectricBlue,
   Expected: 'DarkElectricBlue'
 }, {
   Name: 'cDarkGoldenrod',
-  Actual: clr.cDarkGoldenrod,
+  Actual: colr.cDarkGoldenrod,
   Expected: 'DarkGoldenrod'
 }, {
   Name: 'cDarkGreen',
-  Actual: clr.cDarkGreen,
+  Actual: colr.cDarkGreen,
   Expected: 'DarkGreen'
 }, {
   Name: 'cDarkGreenX11',
-  Actual: clr.cDarkGreenX11,
+  Actual: colr.cDarkGreenX11,
   Expected: 'DarkGreenX11'
 }, {
   Name: 'cDarkJungleGreen',
-  Actual: clr.cDarkJungleGreen,
+  Actual: colr.cDarkJungleGreen,
   Expected: 'DarkJungleGreen'
 }, {
   Name: 'cDarkKhaki',
-  Actual: clr.cDarkKhaki,
+  Actual: colr.cDarkKhaki,
   Expected: 'DarkKhaki'
 }, {
   Name: 'cDarkLava',
-  Actual: clr.cDarkLava,
+  Actual: colr.cDarkLava,
   Expected: 'DarkLava'
 }, {
   Name: 'cDarkLiver',
-  Actual: clr.cDarkLiver,
+  Actual: colr.cDarkLiver,
   Expected: 'DarkLiver'
 }, {
   Name: 'cDarkLiverHorses',
-  Actual: clr.cDarkLiverHorses,
+  Actual: colr.cDarkLiverHorses,
   Expected: 'DarkLiverHorses'
 }, {
   Name: 'cDarkMagenta',
-  Actual: clr.cDarkMagenta,
+  Actual: colr.cDarkMagenta,
   Expected: 'DarkMagenta'
 }, {
   Name: 'cDarkMossGreen',
-  Actual: clr.cDarkMossGreen,
+  Actual: colr.cDarkMossGreen,
   Expected: 'DarkMossGreen'
 }, {
   Name: 'cDarkOliveGreen',
-  Actual: clr.cDarkOliveGreen,
+  Actual: colr.cDarkOliveGreen,
   Expected: 'DarkOliveGreen'
 }, {
   Name: 'cDarkOrange',
-  Actual: clr.cDarkOrange,
+  Actual: colr.cDarkOrange,
   Expected: 'DarkOrange'
 }, {
   Name: 'cDarkOrchid',
-  Actual: clr.cDarkOrchid,
+  Actual: colr.cDarkOrchid,
   Expected: 'DarkOrchid'
 }, {
   Name: 'cDarkPastelGreen',
-  Actual: clr.cDarkPastelGreen,
+  Actual: colr.cDarkPastelGreen,
   Expected: 'DarkPastelGreen'
 }, {
   Name: 'cDarkPurple',
-  Actual: clr.cDarkPurple,
+  Actual: colr.cDarkPurple,
   Expected: 'DarkPurple'
 }, {
   Name: 'cDarkRed',
-  Actual: clr.cDarkRed,
+  Actual: colr.cDarkRed,
   Expected: 'DarkRed'
 }, {
   Name: 'cDarkSalmon',
-  Actual: clr.cDarkSalmon,
+  Actual: colr.cDarkSalmon,
   Expected: 'DarkSalmon'
 }, {
   Name: 'cDarkSeaGreen',
-  Actual: clr.cDarkSeaGreen,
+  Actual: colr.cDarkSeaGreen,
   Expected: 'DarkSeaGreen'
 }, {
   Name: 'cDarkSienna',
-  Actual: clr.cDarkSienna,
+  Actual: colr.cDarkSienna,
   Expected: 'DarkSienna'
 }, {
   Name: 'cDarkSkyBlue',
-  Actual: clr.cDarkSkyBlue,
+  Actual: colr.cDarkSkyBlue,
   Expected: 'DarkSkyBlue'
 }, {
   Name: 'cDarkSlateBlue',
-  Actual: clr.cDarkSlateBlue,
+  Actual: colr.cDarkSlateBlue,
   Expected: 'DarkSlateBlue'
 }, {
   Name: 'cDarkSlateGray',
-  Actual: clr.cDarkSlateGray,
+  Actual: colr.cDarkSlateGray,
   Expected: 'DarkSlateGray'
 }, {
   Name: 'cDarkSpringGreen',
-  Actual: clr.cDarkSpringGreen,
+  Actual: colr.cDarkSpringGreen,
   Expected: 'DarkSpringGreen'
 }, {
   Name: 'cDarkTurquoise',
-  Actual: clr.cDarkTurquoise,
+  Actual: colr.cDarkTurquoise,
   Expected: 'DarkTurquoise'
 }, {
   Name: 'cDarkViolet',
-  Actual: clr.cDarkViolet,
+  Actual: colr.cDarkViolet,
   Expected: 'DarkViolet'
 }, {
   Name: 'cDartmouthGreen',
-  Actual: clr.cDartmouthGreen,
+  Actual: colr.cDartmouthGreen,
   Expected: 'DartmouthGreen'
 }, {
   Name: 'cDavysGrey',
-  Actual: clr.cDavysGrey,
+  Actual: colr.cDavysGrey,
   Expected: 'DavysGrey'
 }, {
   Name: 'cDeepCerise',
-  Actual: clr.cDeepCerise,
+  Actual: colr.cDeepCerise,
   Expected: 'DeepCerise'
 }, {
   Name: 'cDeepChampagne',
-  Actual: clr.cDeepChampagne,
+  Actual: colr.cDeepChampagne,
   Expected: 'DeepChampagne'
 }, {
   Name: 'cDeepChestnut',
-  Actual: clr.cDeepChestnut,
+  Actual: colr.cDeepChestnut,
   Expected: 'DeepChestnut'
 }, {
   Name: 'cDeepJungleGreen',
-  Actual: clr.cDeepJungleGreen,
+  Actual: colr.cDeepJungleGreen,
   Expected: 'DeepJungleGreen'
 }, {
   Name: 'cDeepPink',
-  Actual: clr.cDeepPink,
+  Actual: colr.cDeepPink,
   Expected: 'DeepPink'
 }, {
   Name: 'cDeepSaffron',
-  Actual: clr.cDeepSaffron,
+  Actual: colr.cDeepSaffron,
   Expected: 'DeepSaffron'
 }, {
   Name: 'cDeepSkyBlue',
-  Actual: clr.cDeepSkyBlue,
+  Actual: colr.cDeepSkyBlue,
   Expected: 'DeepSkyBlue'
 }, {
   Name: 'cDeepSpaceSparkle',
-  Actual: clr.cDeepSpaceSparkle,
+  Actual: colr.cDeepSpaceSparkle,
   Expected: 'DeepSpaceSparkle'
 }, {
   Name: 'cDeepTaupe',
-  Actual: clr.cDeepTaupe,
+  Actual: colr.cDeepTaupe,
   Expected: 'DeepTaupe'
 }, {
   Name: 'cDenim',
-  Actual: clr.cDenim,
+  Actual: colr.cDenim,
   Expected: 'Denim'
 }, {
   Name: 'cDenimBlue',
-  Actual: clr.cDenimBlue,
+  Actual: colr.cDenimBlue,
   Expected: 'DenimBlue'
 }, {
   Name: 'cDesert',
-  Actual: clr.cDesert,
+  Actual: colr.cDesert,
   Expected: 'Desert'
 }, {
   Name: 'cDesertSand',
-  Actual: clr.cDesertSand,
+  Actual: colr.cDesertSand,
   Expected: 'DesertSand'
 }, {
   Name: 'cDimGray',
-  Actual: clr.cDimGray,
+  Actual: colr.cDimGray,
   Expected: 'DimGray'
 }, {
   Name: 'cDodgerBlue',
-  Actual: clr.cDodgerBlue,
+  Actual: colr.cDodgerBlue,
   Expected: 'DodgerBlue'
 }, {
   Name: 'cDogwoodRose',
-  Actual: clr.cDogwoodRose,
+  Actual: colr.cDogwoodRose,
   Expected: 'DogwoodRose'
 }, {
   Name: 'cDrab',
-  Actual: clr.cDrab,
+  Actual: colr.cDrab,
   Expected: 'Drab'
 }, {
   Name: 'cDukeBlue',
-  Actual: clr.cDukeBlue,
+  Actual: colr.cDukeBlue,
   Expected: 'DukeBlue'
 }, {
   Name: 'cDutchWhite',
-  Actual: clr.cDutchWhite,
+  Actual: colr.cDutchWhite,
   Expected: 'DutchWhite'
 }, {
   Name: 'cEarthYellow',
-  Actual: clr.cEarthYellow,
+  Actual: colr.cEarthYellow,
   Expected: 'EarthYellow'
 }, {
   Name: 'cEbony',
-  Actual: clr.cEbony,
+  Actual: colr.cEbony,
   Expected: 'Ebony'
 }, {
   Name: 'cEcru',
-  Actual: clr.cEcru,
+  Actual: colr.cEcru,
   Expected: 'Ecru'
 }, {
   Name: 'cEerieBlack',
-  Actual: clr.cEerieBlack,
+  Actual: colr.cEerieBlack,
   Expected: 'EerieBlack'
 }, {
   Name: 'cEggplant',
-  Actual: clr.cEggplant,
+  Actual: colr.cEggplant,
   Expected: 'Eggplant'
 }, {
   Name: 'cEggshell',
-  Actual: clr.cEggshell,
+  Actual: colr.cEggshell,
   Expected: 'Eggshell'
 }, {
   Name: 'cEgyptianBlue',
-  Actual: clr.cEgyptianBlue,
+  Actual: colr.cEgyptianBlue,
   Expected: 'EgyptianBlue'
 }, {
   Name: 'cElectricBlue',
-  Actual: clr.cElectricBlue,
+  Actual: colr.cElectricBlue,
   Expected: 'ElectricBlue'
 }, {
   Name: 'cElectricGreen',
-  Actual: clr.cElectricGreen,
+  Actual: colr.cElectricGreen,
   Expected: 'ElectricGreen'
 }, {
   Name: 'cElectricIndigo',
-  Actual: clr.cElectricIndigo,
+  Actual: colr.cElectricIndigo,
   Expected: 'ElectricIndigo'
 }, {
   Name: 'cElectricLime',
-  Actual: clr.cElectricLime,
+  Actual: colr.cElectricLime,
   Expected: 'ElectricLime'
 }, {
   Name: 'cElectricPurple',
-  Actual: clr.cElectricPurple,
+  Actual: colr.cElectricPurple,
   Expected: 'ElectricPurple'
 }, {
   Name: 'cElectricViolet',
-  Actual: clr.cElectricViolet,
+  Actual: colr.cElectricViolet,
   Expected: 'ElectricViolet'
 }, {
   Name: 'cEmerald',
-  Actual: clr.cEmerald,
+  Actual: colr.cEmerald,
   Expected: 'Emerald'
 }, {
   Name: 'cEminence',
-  Actual: clr.cEminence,
+  Actual: colr.cEminence,
   Expected: 'Eminence'
 }, {
   Name: 'cEnglishGreen',
-  Actual: clr.cEnglishGreen,
+  Actual: colr.cEnglishGreen,
   Expected: 'EnglishGreen'
 }, {
   Name: 'cEnglishLavender',
-  Actual: clr.cEnglishLavender,
+  Actual: colr.cEnglishLavender,
   Expected: 'EnglishLavender'
 }, {
   Name: 'cEnglishRed',
-  Actual: clr.cEnglishRed,
+  Actual: colr.cEnglishRed,
   Expected: 'EnglishRed'
 }, {
   Name: 'cEnglishVermillion',
-  Actual: clr.cEnglishVermillion,
+  Actual: colr.cEnglishVermillion,
   Expected: 'EnglishVermillion'
 }, {
   Name: 'cEnglishViolet',
-  Actual: clr.cEnglishViolet,
+  Actual: colr.cEnglishViolet,
   Expected: 'EnglishViolet'
 }, {
   Name: 'cErin',
-  Actual: clr.cErin,
+  Actual: colr.cErin,
   Expected: 'Erin'
 }, {
   Name: 'cEtonBlue',
-  Actual: clr.cEtonBlue,
+  Actual: colr.cEtonBlue,
   Expected: 'EtonBlue'
 }, {
   Name: 'cFallow',
-  Actual: clr.cFallow,
+  Actual: colr.cFallow,
   Expected: 'Fallow'
 }, {
   Name: 'cFaluRed',
-  Actual: clr.cFaluRed,
+  Actual: colr.cFaluRed,
   Expected: 'FaluRed'
 }, {
   Name: 'cFandango',
-  Actual: clr.cFandango,
+  Actual: colr.cFandango,
   Expected: 'Fandango'
 }, {
   Name: 'cFandangoPink',
-  Actual: clr.cFandangoPink,
+  Actual: colr.cFandangoPink,
   Expected: 'FandangoPink'
 }, {
   Name: 'cFashionFuchsia',
-  Actual: clr.cFashionFuchsia,
+  Actual: colr.cFashionFuchsia,
   Expected: 'FashionFuchsia'
 }, {
   Name: 'cFawn',
-  Actual: clr.cFawn,
+  Actual: colr.cFawn,
   Expected: 'Fawn'
 }, {
   Name: 'cFeldgrau',
-  Actual: clr.cFeldgrau,
+  Actual: colr.cFeldgrau,
   Expected: 'Feldgrau'
 }, {
   Name: 'cFernGreen',
-  Actual: clr.cFernGreen,
+  Actual: colr.cFernGreen,
   Expected: 'FernGreen'
 }, {
   Name: 'cFieldDrab',
-  Actual: clr.cFieldDrab,
+  Actual: colr.cFieldDrab,
   Expected: 'FieldDrab'
 }, {
   Name: 'cFieryRose',
-  Actual: clr.cFieryRose,
+  Actual: colr.cFieryRose,
   Expected: 'FieryRose'
 }, {
   Name: 'cFirebrick',
-  Actual: clr.cFirebrick,
+  Actual: colr.cFirebrick,
   Expected: 'Firebrick'
 }, {
   Name: 'cFireEngineRed',
-  Actual: clr.cFireEngineRed,
+  Actual: colr.cFireEngineRed,
   Expected: 'FireEngineRed'
 }, {
   Name: 'cFireOpal',
-  Actual: clr.cFireOpal,
+  Actual: colr.cFireOpal,
   Expected: 'FireOpal'
 }, {
   Name: 'cFlame',
-  Actual: clr.cFlame,
+  Actual: colr.cFlame,
   Expected: 'Flame'
 }, {
   Name: 'cFlax',
-  Actual: clr.cFlax,
+  Actual: colr.cFlax,
   Expected: 'Flax'
 }, {
   Name: 'cFlirt',
-  Actual: clr.cFlirt,
+  Actual: colr.cFlirt,
   Expected: 'Flirt'
 }, {
   Name: 'cFloralWhite',
-  Actual: clr.cFloralWhite,
+  Actual: colr.cFloralWhite,
   Expected: 'FloralWhite'
 }, {
   Name: 'cFluorescentBlue',
-  Actual: clr.cFluorescentBlue,
+  Actual: colr.cFluorescentBlue,
   Expected: 'FluorescentBlue'
 }, {
   Name: 'cForestGreenCrayola',
-  Actual: clr.cForestGreenCrayola,
+  Actual: colr.cForestGreenCrayola,
   Expected: 'ForestGreenCrayola'
 }, {
   Name: 'cForestGreenTraditional',
-  Actual: clr.cForestGreenTraditional,
+  Actual: colr.cForestGreenTraditional,
   Expected: 'ForestGreenTraditional'
 }, {
   Name: 'cForestGreenWeb',
-  Actual: clr.cForestGreenWeb,
+  Actual: colr.cForestGreenWeb,
   Expected: 'ForestGreenWeb'
 }, {
   Name: 'cFrenchBeige',
-  Actual: clr.cFrenchBeige,
+  Actual: colr.cFrenchBeige,
   Expected: 'FrenchBeige'
 }, {
   Name: 'cFrenchBistre',
-  Actual: clr.cFrenchBistre,
+  Actual: colr.cFrenchBistre,
   Expected: 'FrenchBistre'
 }, {
   Name: 'cFrenchBlue',
-  Actual: clr.cFrenchBlue,
+  Actual: colr.cFrenchBlue,
   Expected: 'FrenchBlue'
 }, {
   Name: 'cFrenchFuchsia',
-  Actual: clr.cFrenchFuchsia,
+  Actual: colr.cFrenchFuchsia,
   Expected: 'FrenchFuchsia'
 }, {
   Name: 'cFrenchLilac',
-  Actual: clr.cFrenchLilac,
+  Actual: colr.cFrenchLilac,
   Expected: 'FrenchLilac'
 }, {
   Name: 'cFrenchLime',
-  Actual: clr.cFrenchLime,
+  Actual: colr.cFrenchLime,
   Expected: 'FrenchLime'
 }, {
   Name: 'cFrenchMauve',
-  Actual: clr.cFrenchMauve,
+  Actual: colr.cFrenchMauve,
   Expected: 'FrenchMauve'
 }, {
   Name: 'cFrenchPink',
-  Actual: clr.cFrenchPink,
+  Actual: colr.cFrenchPink,
   Expected: 'FrenchPink'
 }, {
   Name: 'cFrenchRaspberry',
-  Actual: clr.cFrenchRaspberry,
+  Actual: colr.cFrenchRaspberry,
   Expected: 'FrenchRaspberry'
 }, {
   Name: 'cFrenchRose',
-  Actual: clr.cFrenchRose,
+  Actual: colr.cFrenchRose,
   Expected: 'FrenchRose'
 }, {
   Name: 'cFrenchSkyBlue',
-  Actual: clr.cFrenchSkyBlue,
+  Actual: colr.cFrenchSkyBlue,
   Expected: 'FrenchSkyBlue'
 }, {
   Name: 'cFrenchViolet',
-  Actual: clr.cFrenchViolet,
+  Actual: colr.cFrenchViolet,
   Expected: 'FrenchViolet'
 }, {
   Name: 'cFrostbite',
-  Actual: clr.cFrostbite,
+  Actual: colr.cFrostbite,
   Expected: 'Frostbite'
 }, {
   Name: 'cFuchsia',
-  Actual: clr.cFuchsia,
+  Actual: colr.cFuchsia,
   Expected: 'Fuchsia'
 }, {
   Name: 'cFuchsiaCrayola',
-  Actual: clr.cFuchsiaCrayola,
+  Actual: colr.cFuchsiaCrayola,
   Expected: 'FuchsiaCrayola'
 }, {
   Name: 'cFuchsiaPurple',
-  Actual: clr.cFuchsiaPurple,
+  Actual: colr.cFuchsiaPurple,
   Expected: 'FuchsiaPurple'
 }, {
   Name: 'cFuchsiaRose',
-  Actual: clr.cFuchsiaRose,
+  Actual: colr.cFuchsiaRose,
   Expected: 'FuchsiaRose'
 }, {
   Name: 'cFulvous',
-  Actual: clr.cFulvous,
+  Actual: colr.cFulvous,
   Expected: 'Fulvous'
 }, {
   Name: 'cFuzzyWuzzy',
-  Actual: clr.cFuzzyWuzzy,
+  Actual: colr.cFuzzyWuzzy,
   Expected: 'FuzzyWuzzy'
 }, // https://en.wikipedia.org/wiki/List_of_colors:_G%E2%80%93M
 {
   Name: 'cGainsboro',
-  Actual: clr.cGainsboro,
+  Actual: colr.cGainsboro,
   Expected: 'Gainsboro'
 }, {
   Name: 'cGamboge',
-  Actual: clr.cGamboge,
+  Actual: colr.cGamboge,
   Expected: 'Gamboge'
 }, {
   Name: 'cGenericViridian',
-  Actual: clr.cGenericViridian,
+  Actual: colr.cGenericViridian,
   Expected: 'GenericViridian'
 }, {
   Name: 'cGhostWhite',
-  Actual: clr.cGhostWhite,
+  Actual: colr.cGhostWhite,
   Expected: 'GhostWhite'
 }, {
   Name: 'cGlaucous',
-  Actual: clr.cGlaucous,
+  Actual: colr.cGlaucous,
   Expected: 'Glaucous'
 }, {
   Name: 'cGlossyGrape',
-  Actual: clr.cGlossyGrape,
+  Actual: colr.cGlossyGrape,
   Expected: 'GlossyGrape'
 }, {
   Name: 'cGOGreen',
-  Actual: clr.cGOGreen,
+  Actual: colr.cGOGreen,
   Expected: 'GOGreen'
 }, {
   Name: 'cGold',
-  Actual: clr.cGold,
+  Actual: colr.cGold,
   Expected: 'Gold'
 }, {
   Name: 'cGoldMetallic',
-  Actual: clr.cGoldMetallic,
+  Actual: colr.cGoldMetallic,
   Expected: 'GoldMetallic'
 }, {
   Name: 'cGoldWebGolden',
-  Actual: clr.cGoldWebGolden,
+  Actual: colr.cGoldWebGolden,
   Expected: 'GoldWebGolden'
 }, {
   Name: 'cGoldCrayola',
-  Actual: clr.cGoldCrayola,
+  Actual: colr.cGoldCrayola,
   Expected: 'GoldCrayola'
 }, {
   Name: 'cGoldFusion',
-  Actual: clr.cGoldFusion,
+  Actual: colr.cGoldFusion,
   Expected: 'GoldFusion'
 }, {
   Name: 'cGoldenBrown',
-  Actual: clr.cGoldenBrown,
+  Actual: colr.cGoldenBrown,
   Expected: 'GoldenBrown'
 }, {
   Name: 'cGoldenPoppy',
-  Actual: clr.cGoldenPoppy,
+  Actual: colr.cGoldenPoppy,
   Expected: 'GoldenPoppy'
 }, {
   Name: 'cGoldenYellow',
-  Actual: clr.cGoldenYellow,
+  Actual: colr.cGoldenYellow,
   Expected: 'GoldenYellow'
 }, {
   Name: 'cGoldenrod',
-  Actual: clr.cGoldenrod,
+  Actual: colr.cGoldenrod,
   Expected: 'Goldenrod'
 }, {
   Name: 'cGraniteGray',
-  Actual: clr.cGraniteGray,
+  Actual: colr.cGraniteGray,
   Expected: 'GraniteGray'
 }, {
   Name: 'cGrannySmithApple',
-  Actual: clr.cGrannySmithApple,
+  Actual: colr.cGrannySmithApple,
   Expected: 'GrannySmithApple'
 }, {
   Name: 'cGrayWeb',
-  Actual: clr.cGrayWeb,
+  Actual: colr.cGrayWeb,
   Expected: 'GrayWeb'
 }, {
   Name: 'cGrayX11',
-  Actual: clr.cGrayX11,
+  Actual: colr.cGrayX11,
   Expected: 'GrayX11'
 }, {
   Name: 'cGreenCrayola',
-  Actual: clr.cGreenCrayola,
+  Actual: colr.cGreenCrayola,
   Expected: 'GreenCrayola'
 }, {
   Name: 'cGreenWeb',
-  Actual: clr.cGreenWeb,
+  Actual: colr.cGreenWeb,
   Expected: 'GreenWeb'
 }, {
   Name: 'cGreenMunsell',
-  Actual: clr.cGreenMunsell,
+  Actual: colr.cGreenMunsell,
   Expected: 'GreenMunsell'
 }, {
   Name: 'cGreenNCS',
-  Actual: clr.cGreenNCS,
+  Actual: colr.cGreenNCS,
   Expected: 'GreenNCS'
 }, {
   Name: 'cGreenPantone',
-  Actual: clr.cGreenPantone,
+  Actual: colr.cGreenPantone,
   Expected: 'GreenPantone'
 }, {
   Name: 'cGreenPigment',
-  Actual: clr.cGreenPigment,
+  Actual: colr.cGreenPigment,
   Expected: 'GreenPigment'
 }, {
   Name: 'cGreenRYB',
-  Actual: clr.cGreenRYB,
+  Actual: colr.cGreenRYB,
   Expected: 'GreenRYB'
 }, {
   Name: 'cGreenBlue',
-  Actual: clr.cGreenBlue,
+  Actual: colr.cGreenBlue,
   Expected: 'GreenBlue'
 }, {
   Name: 'cGreenBlueCrayola',
-  Actual: clr.cGreenBlueCrayola,
+  Actual: colr.cGreenBlueCrayola,
   Expected: 'GreenBlueCrayola'
 }, {
   Name: 'cGreenCyan',
-  Actual: clr.cGreenCyan,
+  Actual: colr.cGreenCyan,
   Expected: 'GreenCyan'
 }, {
   Name: 'cGreenLizard',
-  Actual: clr.cGreenLizard,
+  Actual: colr.cGreenLizard,
   Expected: 'GreenLizard'
 }, {
   Name: 'cGreenSheen',
-  Actual: clr.cGreenSheen,
+  Actual: colr.cGreenSheen,
   Expected: 'GreenSheen'
 }, {
   Name: 'cGreenYellow',
-  Actual: clr.cGreenYellow,
+  Actual: colr.cGreenYellow,
   Expected: 'GreenYellow'
 }, {
   Name: 'cGreenYellowCrayola',
-  Actual: clr.cGreenYellowCrayola,
+  Actual: colr.cGreenYellowCrayola,
   Expected: 'GreenYellowCrayola'
 }, {
   Name: 'cGrullo',
-  Actual: clr.cGrullo,
+  Actual: colr.cGrullo,
   Expected: 'Grullo'
 }, {
   Name: 'cGunmetal',
-  Actual: clr.cGunmetal,
+  Actual: colr.cGunmetal,
   Expected: 'Gunmetal'
 }, {
   Name: 'cHanBlue',
-  Actual: clr.cHanBlue,
+  Actual: colr.cHanBlue,
   Expected: 'HanBlue'
 }, {
   Name: 'cHanPurple',
-  Actual: clr.cHanPurple,
+  Actual: colr.cHanPurple,
   Expected: 'HanPurple'
 }, {
   Name: 'cHansaYellow',
-  Actual: clr.cHansaYellow,
+  Actual: colr.cHansaYellow,
   Expected: 'HansaYellow'
 }, {
   Name: 'cHarlequin',
-  Actual: clr.cHarlequin,
+  Actual: colr.cHarlequin,
   Expected: 'Harlequin'
 }, {
   Name: 'cHarvestGold',
-  Actual: clr.cHarvestGold,
+  Actual: colr.cHarvestGold,
   Expected: 'HarvestGold'
 }, {
   Name: 'cHeatWave',
-  Actual: clr.cHeatWave,
+  Actual: colr.cHeatWave,
   Expected: 'HeatWave'
 }, {
   Name: 'cHeliotrope',
-  Actual: clr.cHeliotrope,
+  Actual: colr.cHeliotrope,
   Expected: 'Heliotrope'
 }, {
   Name: 'cHeliotropeGray',
-  Actual: clr.cHeliotropeGray,
+  Actual: colr.cHeliotropeGray,
   Expected: 'HeliotropeGray'
 }, {
   Name: 'cHollywoodCerise',
-  Actual: clr.cHollywoodCerise,
+  Actual: colr.cHollywoodCerise,
   Expected: 'HollywoodCerise'
 }, {
   Name: 'cHoneydew',
-  Actual: clr.cHoneydew,
+  Actual: colr.cHoneydew,
   Expected: 'Honeydew'
 }, {
   Name: 'cHonoluluBlue',
-  Actual: clr.cHonoluluBlue,
+  Actual: colr.cHonoluluBlue,
   Expected: 'HonoluluBlue'
 }, {
   Name: 'cHookersGreen',
-  Actual: clr.cHookersGreen,
+  Actual: colr.cHookersGreen,
   Expected: 'HookersGreen'
 }, {
   Name: 'cHotMagenta',
-  Actual: clr.cHotMagenta,
+  Actual: colr.cHotMagenta,
   Expected: 'HotMagenta'
 }, {
   Name: 'cHotPink',
-  Actual: clr.cHotPink,
+  Actual: colr.cHotPink,
   Expected: 'HotPink'
 }, {
   Name: 'cHunterGreen',
-  Actual: clr.cHunterGreen,
+  Actual: colr.cHunterGreen,
   Expected: 'HunterGreen'
 }, {
   Name: 'cIceberg',
-  Actual: clr.cIceberg,
+  Actual: colr.cIceberg,
   Expected: 'Iceberg'
 }, {
   Name: 'cIcterine',
-  Actual: clr.cIcterine,
+  Actual: colr.cIcterine,
   Expected: 'Icterine'
 }, {
   Name: 'cIlluminatingEmerald',
-  Actual: clr.cIlluminatingEmerald,
+  Actual: colr.cIlluminatingEmerald,
   Expected: 'IlluminatingEmerald'
 }, {
   Name: 'cImperialRed',
-  Actual: clr.cImperialRed,
+  Actual: colr.cImperialRed,
   Expected: 'cImperialRed'
 }, {
   Name: 'cInchworm',
-  Actual: clr.cInchworm,
+  Actual: colr.cInchworm,
   Expected: 'Inchworm'
 }, {
   Name: 'cIndependence',
-  Actual: clr.cIndependence,
+  Actual: colr.cIndependence,
   Expected: 'Independence'
 }, {
   Name: 'cIndiaGreen',
-  Actual: clr.cIndiaGreen,
+  Actual: colr.cIndiaGreen,
   Expected: 'IndiaGreen'
 }, {
   Name: 'cIndianRed',
-  Actual: clr.cIndianRed,
+  Actual: colr.cIndianRed,
   Expected: 'IndianRed'
 }, {
   Name: 'cIndianYellow',
-  Actual: clr.cIndianYellow,
+  Actual: colr.cIndianYellow,
   Expected: 'IndianYellow'
 }, {
   Name: 'cIndigo',
-  Actual: clr.cIndigo,
+  Actual: colr.cIndigo,
   Expected: 'Indigo'
 }, {
   Name: 'cIndigoDye',
-  Actual: clr.cIndigoDye,
+  Actual: colr.cIndigoDye,
   Expected: 'IndigoDye'
 }, {
   Name: 'cInternationalOrangeAerospace',
-  Actual: clr.cInternationalOrangeAerospace,
+  Actual: colr.cInternationalOrangeAerospace,
   Expected: 'InternationalOrangeAerospace'
 }, {
   Name: 'cInternationalOrangeEngineering',
-  Actual: clr.cInternationalOrangeEngineering,
+  Actual: colr.cInternationalOrangeEngineering,
   Expected: 'InternationalOrangeEngineering'
 }, {
   Name: 'cInternationalOrangeGoldenGateBridge',
-  Actual: clr.cInternationalOrangeGoldenGateBridge,
+  Actual: colr.cInternationalOrangeGoldenGateBridge,
   Expected: 'InternationalOrangeGoldenGateBridge'
 }, {
   Name: 'cIris',
-  Actual: clr.cIris,
+  Actual: colr.cIris,
   Expected: 'Iris'
 }, {
   Name: 'cIrresistible',
-  Actual: clr.cIrresistible,
+  Actual: colr.cIrresistible,
   Expected: 'Irresistible'
 }, {
   Name: 'cIsabelline',
-  Actual: clr.cIsabelline,
+  Actual: colr.cIsabelline,
   Expected: 'Isabelline'
 }, {
   Name: 'cItalianSkyBlue',
-  Actual: clr.cItalianSkyBlue,
+  Actual: colr.cItalianSkyBlue,
   Expected: 'ItalianSkyBlue'
 }, {
   Name: 'cIvory',
-  Actual: clr.cIvory,
+  Actual: colr.cIvory,
   Expected: 'Ivory'
 }, {
   Name: 'cJade',
-  Actual: clr.cJade,
+  Actual: colr.cJade,
   Expected: 'Jade'
 }, {
   Name: 'cJapaneseCarmine',
-  Actual: clr.cJapaneseCarmine,
+  Actual: colr.cJapaneseCarmine,
   Expected: 'JapaneseCarmine'
 }, {
   Name: 'cJapaneseViolet',
-  Actual: clr.cJapaneseViolet,
+  Actual: colr.cJapaneseViolet,
   Expected: 'JapaneseViolet'
 }, {
   Name: 'cJasmine',
-  Actual: clr.cJasmine,
+  Actual: colr.cJasmine,
   Expected: 'Jasmine'
 }, {
   Name: 'cJazzberryJam',
-  Actual: clr.cJazzberryJam,
+  Actual: colr.cJazzberryJam,
   Expected: 'JazzberryJam'
 }, {
   Name: 'cJet',
-  Actual: clr.cJet,
+  Actual: colr.cJet,
   Expected: 'Jet'
 }, {
   Name: 'cJonquil',
-  Actual: clr.cJonquil,
+  Actual: colr.cJonquil,
   Expected: 'Jonquil'
 }, {
   Name: 'cJuneBud',
-  Actual: clr.cJuneBud,
+  Actual: colr.cJuneBud,
   Expected: 'JuneBud'
 }, {
   Name: 'cJungleGreen',
-  Actual: clr.cJungleGreen,
+  Actual: colr.cJungleGreen,
   Expected: 'JungleGreen'
 }, {
   Name: 'cKellyGreen',
-  Actual: clr.cKellyGreen,
+  Actual: colr.cKellyGreen,
   Expected: 'KellyGreen'
 }, {
   Name: 'cKeppel',
-  Actual: clr.cKeppel,
+  Actual: colr.cKeppel,
   Expected: 'Keppel'
 }, {
   Name: 'cKeyLime',
-  Actual: clr.cKeyLime,
+  Actual: colr.cKeyLime,
   Expected: 'KeyLime'
 }, {
   Name: 'cKhakiWeb',
-  Actual: clr.cKhakiWeb,
+  Actual: colr.cKhakiWeb,
   Expected: 'KhakiWeb'
 }, {
   Name: 'cKhakiX11',
-  Actual: clr.cKhakiX11,
+  Actual: colr.cKhakiX11,
   Expected: 'KhakiX11'
 }, {
   Name: 'cKobe',
-  Actual: clr.cKobe,
+  Actual: colr.cKobe,
   Expected: 'Kobe'
 }, {
   Name: 'cKobi',
-  Actual: clr.cKobi,
+  Actual: colr.cKobi,
   Expected: 'Kobi'
 }, {
   Name: 'cKobicha',
-  Actual: clr.cKobicha,
+  Actual: colr.cKobicha,
   Expected: 'Kobicha'
 }, {
   Name: 'cKombuGreen',
-  Actual: clr.cKombuGreen,
+  Actual: colr.cKombuGreen,
   Expected: 'KombuGreen'
 }, {
   Name: 'cKSUPurple',
-  Actual: clr.cKSUPurple,
+  Actual: colr.cKSUPurple,
   Expected: 'KSUPurple'
 }, {
   Name: 'cLanguidLavender',
-  Actual: clr.cLanguidLavender,
+  Actual: colr.cLanguidLavender,
   Expected: 'LanguidLavender'
 }, {
   Name: 'cLapisLazuli',
-  Actual: clr.cLapisLazuli,
+  Actual: colr.cLapisLazuli,
   Expected: 'LapisLazuli'
 }, {
   Name: 'cLaserLemon',
-  Actual: clr.cLaserLemon,
+  Actual: colr.cLaserLemon,
   Expected: 'LaserLemon'
 }, {
   Name: 'cLaurelGreen',
-  Actual: clr.cLaurelGreen,
+  Actual: colr.cLaurelGreen,
   Expected: 'LaurelGreen'
 }, {
   Name: 'cLava',
-  Actual: clr.cLava,
+  Actual: colr.cLava,
   Expected: 'Lava'
 }, {
   Name: 'cLavenderFloral',
-  Actual: clr.cLavenderFloral,
+  Actual: colr.cLavenderFloral,
   Expected: 'LavenderFloral'
 }, {
   Name: 'cLavenderWeb',
-  Actual: clr.cLavenderWeb,
+  Actual: colr.cLavenderWeb,
   Expected: 'LavenderWeb'
 }, {
   Name: 'cLavenderBlue',
-  Actual: clr.cLavenderBlue,
+  Actual: colr.cLavenderBlue,
   Expected: 'LavenderBlue'
 }, {
   Name: 'cLavenderBlush',
-  Actual: clr.cLavenderBlush,
+  Actual: colr.cLavenderBlush,
   Expected: 'LavenderBlush'
 }, {
   Name: 'cLavenderGray',
-  Actual: clr.cLavenderGray,
+  Actual: colr.cLavenderGray,
   Expected: 'LavenderGray'
 }, {
   Name: 'cLawnGreen',
-  Actual: clr.cLawnGreen,
+  Actual: colr.cLawnGreen,
   Expected: 'LawnGreen'
 }, {
   Name: 'cLemon',
-  Actual: clr.cLemon,
+  Actual: colr.cLemon,
   Expected: 'Lemon'
 }, {
   Name: 'cLemonChiffon',
-  Actual: clr.cLemonChiffon,
+  Actual: colr.cLemonChiffon,
   Expected: 'LemonChiffon'
 }, {
   Name: 'cLemonCurry',
-  Actual: clr.cLemonCurry,
+  Actual: colr.cLemonCurry,
   Expected: 'LemonCurry'
 }, {
   Name: 'cLemonGlacier',
-  Actual: clr.cLemonGlacier,
+  Actual: colr.cLemonGlacier,
   Expected: 'LemonGlacier'
 }, {
   Name: 'cLemonMeringue',
-  Actual: clr.cLemonMeringue,
+  Actual: colr.cLemonMeringue,
   Expected: 'LemonMeringue'
 }, {
   Name: 'cLemonYellow',
-  Actual: clr.cLemonYellow,
+  Actual: colr.cLemonYellow,
   Expected: 'LemonYellow'
 }, {
   Name: 'cLemonYellowCrayola',
-  Actual: clr.cLemonYellowCrayola,
+  Actual: colr.cLemonYellowCrayola,
   Expected: 'LemonYellowCrayola'
 }, {
   Name: 'cLiberty',
-  Actual: clr.cLiberty,
+  Actual: colr.cLiberty,
   Expected: 'Liberty'
 }, {
   Name: 'cLightBlue',
-  Actual: clr.cLightBlue,
+  Actual: colr.cLightBlue,
   Expected: 'LightBlue'
 }, {
   Name: 'cLightCoral',
-  Actual: clr.cLightCoral,
+  Actual: colr.cLightCoral,
   Expected: 'LightCoral'
 }, {
   Name: 'cLightCornflowerBlue',
-  Actual: clr.cLightCornflowerBlue,
+  Actual: colr.cLightCornflowerBlue,
   Expected: 'LightCornflowerBlue'
 }, {
   Name: 'cLightCyan',
-  Actual: clr.cLightCyan,
+  Actual: colr.cLightCyan,
   Expected: 'LightCyan'
 }, {
   Name: 'cLightFrenchBeige',
-  Actual: clr.cLightFrenchBeige,
+  Actual: colr.cLightFrenchBeige,
   Expected: 'LightFrenchBeige'
 }, {
   Name: 'cLightGoldenrodYellow',
-  Actual: clr.cLightGoldenrodYellow,
+  Actual: colr.cLightGoldenrodYellow,
   Expected: 'LightGoldenrodYellow'
 }, {
   Name: 'cLightGray',
-  Actual: clr.cLightGray,
+  Actual: colr.cLightGray,
   Expected: 'LightGray'
 }, {
   Name: 'cLightGreen',
-  Actual: clr.cLightGreen,
+  Actual: colr.cLightGreen,
   Expected: 'LightGreen'
 }, {
   Name: 'cLightOrange',
-  Actual: clr.cLightOrange,
+  Actual: colr.cLightOrange,
   Expected: 'LightOrange'
 }, {
   Name: 'cLightPeriwinkle',
-  Actual: clr.cLightPeriwinkle,
+  Actual: colr.cLightPeriwinkle,
   Expected: 'LightPeriwinkle'
 }, {
   Name: 'cLightPink',
-  Actual: clr.cLightPink,
+  Actual: colr.cLightPink,
   Expected: 'LightPink'
 }, {
   Name: 'cLightSalmon',
-  Actual: clr.cLightSalmon,
+  Actual: colr.cLightSalmon,
   Expected: 'LightSalmon'
 }, {
   Name: 'cLightSeaGreen',
-  Actual: clr.cLightSeaGreen,
+  Actual: colr.cLightSeaGreen,
   Expected: 'LightSeaGreen'
 }, {
   Name: 'cLightSkyBlue',
-  Actual: clr.cLightSkyBlue,
+  Actual: colr.cLightSkyBlue,
   Expected: 'LightSkyBlue'
 }, {
   Name: 'cLightSlateGray',
-  Actual: clr.cLightSlateGray,
+  Actual: colr.cLightSlateGray,
   Expected: 'LightSlateGray'
 }, {
   Name: 'cLightSteelBlue',
-  Actual: clr.cLightSteelBlue,
+  Actual: colr.cLightSteelBlue,
   Expected: 'LightSteelBlue'
 }, {
   Name: 'cLightYellow',
-  Actual: clr.cLightYellow,
+  Actual: colr.cLightYellow,
   Expected: 'LightYellow'
 }, {
   Name: 'cLilac',
-  Actual: clr.cLilac,
+  Actual: colr.cLilac,
   Expected: 'Lilac'
 }, {
   Name: 'cLilacLuster',
-  Actual: clr.cLilacLuster,
+  Actual: colr.cLilacLuster,
   Expected: 'LilacLuster'
 }, {
   Name: 'cLimeColorWheel',
-  Actual: clr.cLimeColorWheel,
+  Actual: colr.cLimeColorWheel,
   Expected: 'LimeColorWheel'
 }, {
   Name: 'cLimeWeb',
-  Actual: clr.cLimeWeb,
+  Actual: colr.cLimeWeb,
   Expected: 'LimeWeb'
 }, {
   Name: 'cLimeGreen',
-  Actual: clr.cLimeGreen,
+  Actual: colr.cLimeGreen,
   Expected: 'LimeGreen'
 }, {
   Name: 'cLincolnGreen',
-  Actual: clr.cLincolnGreen,
+  Actual: colr.cLincolnGreen,
   Expected: 'LincolnGreen'
 }, {
   Name: 'cLinen',
-  Actual: clr.cLinen,
+  Actual: colr.cLinen,
   Expected: 'Linen'
 }, {
   Name: 'cLion',
-  Actual: clr.cLion,
+  Actual: colr.cLion,
   Expected: 'Lion'
 }, {
   Name: 'cLiseranPurple',
-  Actual: clr.cLiseranPurple,
+  Actual: colr.cLiseranPurple,
   Expected: 'LiseranPurple'
 }, {
   Name: 'cLittleBoyBlue',
-  Actual: clr.cLittleBoyBlue,
+  Actual: colr.cLittleBoyBlue,
   Expected: 'LittleBoyBlue'
 }, {
   Name: 'cLiver',
-  Actual: clr.cLiver,
+  Actual: colr.cLiver,
   Expected: 'Liver'
 }, {
   Name: 'cLiverDogs',
-  Actual: clr.cLiverDogs,
+  Actual: colr.cLiverDogs,
   Expected: 'LiverDogs'
 }, {
   Name: 'cLiverOrgan',
-  Actual: clr.cLiverOrgan,
+  Actual: colr.cLiverOrgan,
   Expected: 'LiverOrgan'
 }, {
   Name: 'cLiverChestnut',
-  Actual: clr.cLiverChestnut,
+  Actual: colr.cLiverChestnut,
   Expected: 'LiverChestnut'
 }, {
   Name: 'cLivid',
-  Actual: clr.cLivid,
+  Actual: colr.cLivid,
   Expected: 'Livid'
 }, {
   Name: 'cMacaroniAndCheese',
-  Actual: clr.cMacaroniAndCheese,
+  Actual: colr.cMacaroniAndCheese,
   Expected: 'MacaroniAndCheese'
 }, {
   Name: 'cMadderLake',
-  Actual: clr.cMadderLake,
+  Actual: colr.cMadderLake,
   Expected: 'MadderLake'
 }, {
   Name: 'cMagentaCrayola',
-  Actual: clr.cMagentaCrayola,
+  Actual: colr.cMagentaCrayola,
   Expected: 'MagentaCrayola'
 }, {
   Name: 'cMagentaDye',
-  Actual: clr.cMagentaDye,
+  Actual: colr.cMagentaDye,
   Expected: 'MagentaDye'
 }, {
   Name: 'cMagentaPantone',
-  Actual: clr.cMagentaPantone,
+  Actual: colr.cMagentaPantone,
   Expected: 'MagentaPantone'
 }, {
   Name: 'cMagentaProcess',
-  Actual: clr.cMagentaProcess,
+  Actual: colr.cMagentaProcess,
   Expected: 'MagentaProcess'
 }, {
   Name: 'cMagentaHaze',
-  Actual: clr.cMagentaHaze,
+  Actual: colr.cMagentaHaze,
   Expected: 'MagentaHaze'
 }, {
   Name: 'cMagicMint',
-  Actual: clr.cMagicMint,
+  Actual: colr.cMagicMint,
   Expected: 'MagicMint'
 }, {
   Name: 'cMagnolia',
-  Actual: clr.cMagnolia,
+  Actual: colr.cMagnolia,
   Expected: 'Magnolia'
 }, {
   Name: 'cMahogany',
-  Actual: clr.cMahogany,
+  Actual: colr.cMahogany,
   Expected: 'Mahogany'
 }, {
   Name: 'cMaize',
-  Actual: clr.cMaize,
+  Actual: colr.cMaize,
   Expected: 'Maize'
 }, {
   Name: 'cMaizeCrayola',
-  Actual: clr.cMaizeCrayola,
+  Actual: colr.cMaizeCrayola,
   Expected: 'MaizeCrayola'
 }, {
   Name: 'cMajorelleBlue',
-  Actual: clr.cMajorelleBlue,
+  Actual: colr.cMajorelleBlue,
   Expected: 'MajorelleBlue'
 }, {
   Name: 'cMalachite',
-  Actual: clr.cMalachite,
+  Actual: colr.cMalachite,
   Expected: 'Malachite'
 }, {
   Name: 'cManatee',
-  Actual: clr.cManatee,
+  Actual: colr.cManatee,
   Expected: 'Manatee'
 }, {
   Name: 'cMandarin',
-  Actual: clr.cMandarin,
+  Actual: colr.cMandarin,
   Expected: 'Mandarin'
 }, {
   Name: 'cMango',
-  Actual: clr.cMango,
+  Actual: colr.cMango,
   Expected: 'Mango'
 }, {
   Name: 'cMangoTango',
-  Actual: clr.cMangoTango,
+  Actual: colr.cMangoTango,
   Expected: 'MangoTango'
 }, {
   Name: 'cMantis',
-  Actual: clr.cMantis,
+  Actual: colr.cMantis,
   Expected: 'Mantis'
 }, {
   Name: 'cMardiGras',
-  Actual: clr.cMardiGras,
+  Actual: colr.cMardiGras,
   Expected: 'MardiGras'
 }, {
   Name: 'cMarigold',
-  Actual: clr.cMarigold,
+  Actual: colr.cMarigold,
   Expected: 'Marigold'
 }, {
   Name: 'cMaroonCrayola',
-  Actual: clr.cMaroonCrayola,
+  Actual: colr.cMaroonCrayola,
   Expected: 'MaroonCrayola'
 }, {
   Name: 'cMaroonWeb',
-  Actual: clr.cMaroonWeb,
+  Actual: colr.cMaroonWeb,
   Expected: 'MaroonWeb'
 }, {
   Name: 'cMaroonX11',
-  Actual: clr.cMaroonX11,
+  Actual: colr.cMaroonX11,
   Expected: 'MaroonX11'
 }, {
   Name: 'cMauve',
-  Actual: clr.cMauve,
+  Actual: colr.cMauve,
   Expected: 'Mauve'
 }, {
   Name: 'cMauveTaupe',
-  Actual: clr.cMauveTaupe,
+  Actual: colr.cMauveTaupe,
   Expected: 'MauveTaupe'
 }, {
   Name: 'cMauvelous',
-  Actual: clr.cMauvelous,
+  Actual: colr.cMauvelous,
   Expected: 'Mauvelous'
 }, {
   Name: 'cMaximumBlue',
-  Actual: clr.cMaximumBlue,
+  Actual: colr.cMaximumBlue,
   Expected: 'MaximumBlue'
 }, {
   Name: 'cMaximumBlueGreen',
-  Actual: clr.cMaximumBlueGreen,
+  Actual: colr.cMaximumBlueGreen,
   Expected: 'MaximumBlueGreen'
 }, {
   Name: 'cMaximumBluePurple',
-  Actual: clr.cMaximumBluePurple,
+  Actual: colr.cMaximumBluePurple,
   Expected: 'MaximumBluePurple'
 }, {
   Name: 'cMaximumGreen',
-  Actual: clr.cMaximumGreen,
+  Actual: colr.cMaximumGreen,
   Expected: 'MaximumGreen'
 }, {
   Name: 'cMaximumGreenYellow',
-  Actual: clr.cMaximumGreenYellow,
+  Actual: colr.cMaximumGreenYellow,
   Expected: 'MaximumGreenYellow'
 }, {
   Name: 'cMaximumPurple',
-  Actual: clr.cMaximumPurple,
+  Actual: colr.cMaximumPurple,
   Expected: 'MaximumPurple'
 }, {
   Name: 'cMaximumRed',
-  Actual: clr.cMaximumRed,
+  Actual: colr.cMaximumRed,
   Expected: 'MaximumRed'
 }, {
   Name: 'cMaximumRedPurple',
-  Actual: clr.cMaximumRedPurple,
+  Actual: colr.cMaximumRedPurple,
   Expected: 'MaximumRedPurple'
 }, {
   Name: 'cMaximumYellow',
-  Actual: clr.cMaximumYellow,
+  Actual: colr.cMaximumYellow,
   Expected: 'MaximumYellow'
 }, {
   Name: 'cMaximumYellowRed',
-  Actual: clr.cMaximumYellowRed,
+  Actual: colr.cMaximumYellowRed,
   Expected: 'MaximumYellowRed'
 }, {
   Name: 'cMayGreen',
-  Actual: clr.cMayGreen,
+  Actual: colr.cMayGreen,
   Expected: 'MayGreen'
 }, {
   Name: 'cMayaBlue',
-  Actual: clr.cMayaBlue,
+  Actual: colr.cMayaBlue,
   Expected: 'MayaBlue'
 }, {
   Name: 'cMediumAquamarine',
-  Actual: clr.cMediumAquamarine,
+  Actual: colr.cMediumAquamarine,
   Expected: 'MediumAquamarine'
 }, {
   Name: 'cMediumBlue',
-  Actual: clr.cMediumBlue,
+  Actual: colr.cMediumBlue,
   Expected: 'MediumBlue'
 }, {
   Name: 'cMediumCandyAppleRed',
-  Actual: clr.cMediumCandyAppleRed,
+  Actual: colr.cMediumCandyAppleRed,
   Expected: 'MediumCandyAppleRed'
 }, {
   Name: 'cMediumCarmine',
-  Actual: clr.cMediumCarmine,
+  Actual: colr.cMediumCarmine,
   Expected: 'MediumCarmine'
 }, {
   Name: 'cMediumChampagne',
-  Actual: clr.cMediumChampagne,
+  Actual: colr.cMediumChampagne,
   Expected: 'MediumChampagne'
 }, {
   Name: 'cMediumOrchid',
-  Actual: clr.cMediumOrchid,
+  Actual: colr.cMediumOrchid,
   Expected: 'MediumOrchid'
 }, {
   Name: 'cMediumPurple',
-  Actual: clr.cMediumPurple,
+  Actual: colr.cMediumPurple,
   Expected: 'MediumPurple'
 }, {
   Name: 'cMediumSeaGreen',
-  Actual: clr.cMediumSeaGreen,
+  Actual: colr.cMediumSeaGreen,
   Expected: 'MediumSeaGreen'
 }, {
   Name: 'cMediumSlateBlue',
-  Actual: clr.cMediumSlateBlue,
+  Actual: colr.cMediumSlateBlue,
   Expected: 'MediumSlateBlue'
 }, {
   Name: 'cMediumSpringGreen',
-  Actual: clr.cMediumSpringGreen,
+  Actual: colr.cMediumSpringGreen,
   Expected: 'MediumSpringGreen'
 }, {
   Name: 'cMediumTurquoise',
-  Actual: clr.cMediumTurquoise,
+  Actual: colr.cMediumTurquoise,
   Expected: 'MediumTurquoise'
 }, {
   Name: 'cMediumVioletRed',
-  Actual: clr.cMediumVioletRed,
+  Actual: colr.cMediumVioletRed,
   Expected: 'MediumVioletRed'
 }, {
   Name: 'cMellowApricot',
-  Actual: clr.cMellowApricot,
+  Actual: colr.cMellowApricot,
   Expected: 'MellowApricot'
 }, {
   Name: 'cMellowYellow',
-  Actual: clr.cMellowYellow,
+  Actual: colr.cMellowYellow,
   Expected: 'MellowYellow'
 }, {
   Name: 'cMelon',
-  Actual: clr.cMelon,
+  Actual: colr.cMelon,
   Expected: 'Melon'
 }, {
   Name: 'cMetallicGold',
-  Actual: clr.cMetallicGold,
+  Actual: colr.cMetallicGold,
   Expected: 'MetallicGold'
 }, {
   Name: 'cMetallicSeaweed',
-  Actual: clr.cMetallicSeaweed,
+  Actual: colr.cMetallicSeaweed,
   Expected: 'MetallicSeaweed'
 }, {
   Name: 'cMetallicSunburst',
-  Actual: clr.cMetallicSunburst,
+  Actual: colr.cMetallicSunburst,
   Expected: 'MetallicSunburst'
 }, {
   Name: 'cMexicanPink',
-  Actual: clr.cMexicanPink,
+  Actual: colr.cMexicanPink,
   Expected: 'MexicanPink'
 }, {
   Name: 'cMiddleBlue',
-  Actual: clr.cMiddleBlue,
+  Actual: colr.cMiddleBlue,
   Expected: 'MiddleBlue'
 }, {
   Name: 'cMiddleBlueGreen',
-  Actual: clr.cMiddleBlueGreen,
+  Actual: colr.cMiddleBlueGreen,
   Expected: 'MiddleBlueGreen'
 }, {
   Name: 'cMiddleBluePurple',
-  Actual: clr.cMiddleBluePurple,
+  Actual: colr.cMiddleBluePurple,
   Expected: 'MiddleBluePurple'
 }, {
   Name: 'cMiddleGrey',
-  Actual: clr.cMiddleGrey,
+  Actual: colr.cMiddleGrey,
   Expected: 'MiddleGrey'
 }, {
   Name: 'cMiddleGreen',
-  Actual: clr.cMiddleGreen,
+  Actual: colr.cMiddleGreen,
   Expected: 'MiddleGreen'
 }, {
   Name: 'cMiddleGreenYellow',
-  Actual: clr.cMiddleGreenYellow,
+  Actual: colr.cMiddleGreenYellow,
   Expected: 'MiddleGreenYellow'
 }, {
   Name: 'cMiddlePurple',
-  Actual: clr.cMiddlePurple,
+  Actual: colr.cMiddlePurple,
   Expected: 'MiddlePurple'
 }, {
   Name: 'cMiddleRed',
-  Actual: clr.cMiddleRed,
+  Actual: colr.cMiddleRed,
   Expected: 'MiddleRed'
 }, {
   Name: 'cMiddleRedPurple',
-  Actual: clr.cMiddleRedPurple,
+  Actual: colr.cMiddleRedPurple,
   Expected: 'MiddleRedPurple'
 }, {
   Name: 'cMiddleYellow',
-  Actual: clr.cMiddleYellow,
+  Actual: colr.cMiddleYellow,
   Expected: 'MiddleYellow'
 }, {
   Name: 'cMiddleYellowRed',
-  Actual: clr.cMiddleYellowRed,
+  Actual: colr.cMiddleYellowRed,
   Expected: 'MiddleYellowRed'
 }, {
   Name: 'cMidnight',
-  Actual: clr.cMidnight,
+  Actual: colr.cMidnight,
   Expected: 'Midnight'
 }, {
   Name: 'cMidnightBlue',
-  Actual: clr.cMidnightBlue,
+  Actual: colr.cMidnightBlue,
   Expected: 'MidnightBlue'
 }, {
   Name: 'cMidnightGreen',
-  Actual: clr.cMidnightGreen,
+  Actual: colr.cMidnightGreen,
   Expected: 'MidnightGreen'
 }, {
   Name: 'cMikadoYellow',
-  Actual: clr.cMikadoYellow,
+  Actual: colr.cMikadoYellow,
   Expected: 'MikadoYellow'
 }, {
   Name: 'cMimiPink',
-  Actual: clr.cMimiPink,
+  Actual: colr.cMimiPink,
   Expected: 'MimiPink'
 }, {
   Name: 'cMindaro',
-  Actual: clr.cMindaro,
+  Actual: colr.cMindaro,
   Expected: 'Mindaro'
 }, {
   Name: 'cMing',
-  Actual: clr.cMing,
+  Actual: colr.cMing,
   Expected: 'Ming'
 }, {
   Name: 'cMinionYellow',
-  Actual: clr.cMinionYellow,
+  Actual: colr.cMinionYellow,
   Expected: 'MinionYellow'
 }, {
   Name: 'cMint',
-  Actual: clr.cMint,
+  Actual: colr.cMint,
   Expected: 'Mint'
 }, {
   Name: 'cMintCream',
-  Actual: clr.cMintCream,
+  Actual: colr.cMintCream,
   Expected: 'MintCream'
 }, {
   Name: 'cMintGreen',
-  Actual: clr.cMintGreen,
+  Actual: colr.cMintGreen,
   Expected: 'MintGreen'
 }, {
   Name: 'cMistyMoss',
-  Actual: clr.cMistyMoss,
+  Actual: colr.cMistyMoss,
   Expected: 'MistyMoss'
 }, {
   Name: 'cMistyRose',
-  Actual: clr.cMistyRose,
+  Actual: colr.cMistyRose,
   Expected: 'MistyRose'
 }, {
   Name: 'cModeBeige',
-  Actual: clr.cModeBeige,
+  Actual: colr.cModeBeige,
   Expected: 'ModeBeige'
 }, {
   Name: 'cMorningBlue',
-  Actual: clr.cMorningBlue,
+  Actual: colr.cMorningBlue,
   Expected: 'MorningBlue'
 }, {
   Name: 'cMossGreen',
-  Actual: clr.cMossGreen,
+  Actual: colr.cMossGreen,
   Expected: 'MossGreen'
 }, {
   Name: 'cMountainMeadow',
-  Actual: clr.cMountainMeadow,
+  Actual: colr.cMountainMeadow,
   Expected: 'MountainMeadow'
 }, {
   Name: 'cMountbattenPink',
-  Actual: clr.cMountbattenPink,
+  Actual: colr.cMountbattenPink,
   Expected: 'MountbattenPink'
 }, {
   Name: 'cMSUGreen',
-  Actual: clr.cMSUGreen,
+  Actual: colr.cMSUGreen,
   Expected: 'MSUGreen'
 }, {
   Name: 'cMulberry',
-  Actual: clr.cMulberry,
+  Actual: colr.cMulberry,
   Expected: 'Mulberry'
 }, {
   Name: 'cMulberryCrayola',
-  Actual: clr.cMulberryCrayola,
+  Actual: colr.cMulberryCrayola,
   Expected: 'MulberryCrayola'
 }, {
   Name: 'cMustard',
-  Actual: clr.cMustard,
+  Actual: colr.cMustard,
   Expected: 'Mustard'
 }, {
   Name: 'cMyrtleGreen',
-  Actual: clr.cMyrtleGreen,
+  Actual: colr.cMyrtleGreen,
   Expected: 'MyrtleGreen'
 }, {
   Name: 'cMystic',
-  Actual: clr.cMystic,
+  Actual: colr.cMystic,
   Expected: 'Mystic'
 }, {
   Name: 'cMysticMaroon',
-  Actual: clr.cMysticMaroon,
+  Actual: colr.cMysticMaroon,
   Expected: 'MysticMaroon'
 }, // https://en.wikipedia.org/wiki/List_of_colors:_N%E2%80%93Z
 {
   Name: 'cNadeshikoPink',
-  Actual: clr.cNadeshikoPink,
+  Actual: colr.cNadeshikoPink,
   Expected: 'NadeshikoPink'
 }, {
   Name: 'cNaplesYellow',
-  Actual: clr.cNaplesYellow,
+  Actual: colr.cNaplesYellow,
   Expected: 'NaplesYellow'
 }, {
   Name: 'cNavajoWhite',
-  Actual: clr.cNavajoWhite,
+  Actual: colr.cNavajoWhite,
   Expected: 'NavajoWhite'
 }, {
   Name: 'cNavyBlue',
-  Actual: clr.cNavyBlue,
+  Actual: colr.cNavyBlue,
   Expected: 'NavyBlue'
 }, {
   Name: 'cNavyBlueCrayola',
-  Actual: clr.cNavyBlueCrayola,
+  Actual: colr.cNavyBlueCrayola,
   Expected: 'NavyBlueCrayola'
 }, {
   Name: 'cNeonBlue',
-  Actual: clr.cNeonBlue,
+  Actual: colr.cNeonBlue,
   Expected: 'NeonBlue'
 }, {
   Name: 'cNeonCarrot',
-  Actual: clr.cNeonCarrot,
+  Actual: colr.cNeonCarrot,
   Expected: 'NeonCarrot'
 }, {
   Name: 'cNeonGreen',
-  Actual: clr.cNeonGreen,
+  Actual: colr.cNeonGreen,
   Expected: 'NeonGreen'
 }, {
   Name: 'cNeonFuchsia',
-  Actual: clr.cNeonFuchsia,
+  Actual: colr.cNeonFuchsia,
   Expected: 'NeonFuchsia'
 }, {
   Name: 'cNewYorkPink',
-  Actual: clr.cNewYorkPink,
+  Actual: colr.cNewYorkPink,
   Expected: 'NewYorkPink'
 }, {
   Name: 'cNickel',
-  Actual: clr.cNickel,
+  Actual: colr.cNickel,
   Expected: 'Nickel'
 }, {
   Name: 'cNonPhotoBlue',
-  Actual: clr.cNonPhotoBlue,
+  Actual: colr.cNonPhotoBlue,
   Expected: 'NonPhotoBlue'
 }, {
   Name: 'cNyanza',
-  Actual: clr.cNyanza,
+  Actual: colr.cNyanza,
   Expected: 'Nyanza'
 }, {
   Name: 'cOceanBlue',
-  Actual: clr.cOceanBlue,
+  Actual: colr.cOceanBlue,
   Expected: 'OceanBlue'
 }, {
   Name: 'cOceanGreen',
-  Actual: clr.cOceanGreen,
+  Actual: colr.cOceanGreen,
   Expected: 'OceanGreen'
 }, {
   Name: 'cOchre',
-  Actual: clr.cOchre,
+  Actual: colr.cOchre,
   Expected: 'Ochre'
 }, {
   Name: 'cOldBurgundy',
-  Actual: clr.cOldBurgundy,
+  Actual: colr.cOldBurgundy,
   Expected: 'OldBurgundy'
 }, {
   Name: 'cOldGold',
-  Actual: clr.cOldGold,
+  Actual: colr.cOldGold,
   Expected: 'OldGold'
 }, {
   Name: 'cOldLace',
-  Actual: clr.cOldLace,
+  Actual: colr.cOldLace,
   Expected: 'OldLace'
 }, {
   Name: 'cOldLavender',
-  Actual: clr.cOldLavender,
+  Actual: colr.cOldLavender,
   Expected: 'OldLavender'
 }, {
   Name: 'cOldMauve',
-  Actual: clr.cOldMauve,
+  Actual: colr.cOldMauve,
   Expected: 'OldMauve'
 }, {
   Name: 'cOldRose',
-  Actual: clr.cOldRose,
+  Actual: colr.cOldRose,
   Expected: 'OldRose'
 }, {
   Name: 'cOldSilver',
-  Actual: clr.cOldSilver,
+  Actual: colr.cOldSilver,
   Expected: 'OldSilver'
 }, {
   Name: 'cOlive',
-  Actual: clr.cOlive,
+  Actual: colr.cOlive,
   Expected: 'Olive'
 }, {
   Name: 'cOliveDrab3',
-  Actual: clr.cOliveDrab3,
+  Actual: colr.cOliveDrab3,
   Expected: 'OliveDrab3'
 }, {
   Name: 'cOliveDrab7',
-  Actual: clr.cOliveDrab7,
+  Actual: colr.cOliveDrab7,
   Expected: 'OliveDrab7'
 }, {
   Name: 'cOliveGreen',
-  Actual: clr.cOliveGreen,
+  Actual: colr.cOliveGreen,
   Expected: 'OliveGreen'
 }, {
   Name: 'cOlivine',
-  Actual: clr.cOlivine,
+  Actual: colr.cOlivine,
   Expected: 'Olivine'
 }, {
   Name: 'cOnyx',
-  Actual: clr.cOnyx,
+  Actual: colr.cOnyx,
   Expected: 'Onyx'
 }, {
   Name: 'cOpal',
-  Actual: clr.cOpal,
+  Actual: colr.cOpal,
   Expected: 'Opal'
 }, {
   Name: 'cOperaMauve',
-  Actual: clr.cOperaMauve,
+  Actual: colr.cOperaMauve,
   Expected: 'OperaMauve'
 }, {
   Name: 'cOrangeCrayola',
-  Actual: clr.cOrangeCrayola,
+  Actual: colr.cOrangeCrayola,
   Expected: 'OrangeCrayola'
 }, {
   Name: 'cOrangePantone',
-  Actual: clr.cOrangePantone,
+  Actual: colr.cOrangePantone,
   Expected: 'OrangePantone'
 }, {
   Name: 'cOrangeWeb',
-  Actual: clr.cOrangeWeb,
+  Actual: colr.cOrangeWeb,
   Expected: 'OrangeWeb'
 }, {
   Name: 'cOrangePeel',
-  Actual: clr.cOrangePeel,
+  Actual: colr.cOrangePeel,
   Expected: 'OrangePeel'
 }, {
   Name: 'cOrangeRed',
-  Actual: clr.cOrangeRed,
+  Actual: colr.cOrangeRed,
   Expected: 'OrangeRed'
 }, {
   Name: 'cOrangeRedCrayola',
-  Actual: clr.cOrangeRedCrayola,
+  Actual: colr.cOrangeRedCrayola,
   Expected: 'OrangeRedCrayola'
 }, {
   Name: 'cOrangeSoda',
-  Actual: clr.cOrangeSoda,
+  Actual: colr.cOrangeSoda,
   Expected: 'OrangeSoda'
 }, {
   Name: 'cOrangeYellow',
-  Actual: clr.cOrangeYellow,
+  Actual: colr.cOrangeYellow,
   Expected: 'OrangeYellow'
 }, {
   Name: 'cOrangeYellowCrayola',
-  Actual: clr.cOrangeYellowCrayola,
+  Actual: colr.cOrangeYellowCrayola,
   Expected: 'OrangeYellowCrayola'
 }, {
   Name: 'cOrchid',
-  Actual: clr.cOrchid,
+  Actual: colr.cOrchid,
   Expected: 'Orchid'
 }, {
   Name: 'cOrchidPink',
-  Actual: clr.cOrchidPink,
+  Actual: colr.cOrchidPink,
   Expected: 'OrchidPink'
 }, {
   Name: 'cOrchidCrayola',
-  Actual: clr.cOrchidCrayola,
+  Actual: colr.cOrchidCrayola,
   Expected: 'OrchidCrayola'
 }, {
   Name: 'cOuterSpaceCrayola',
-  Actual: clr.cOuterSpaceCrayola,
+  Actual: colr.cOuterSpaceCrayola,
   Expected: 'OuterSpaceCrayola'
 }, {
   Name: 'cOutrageousOrange',
-  Actual: clr.cOutrageousOrange,
+  Actual: colr.cOutrageousOrange,
   Expected: 'OutrageousOrange'
 }, {
   Name: 'cOxBlood',
-  Actual: clr.cOxBlood,
+  Actual: colr.cOxBlood,
   Expected: 'OxBlood'
 }, {
   Name: 'cOxfordBlue',
-  Actual: clr.cOxfordBlue,
+  Actual: colr.cOxfordBlue,
   Expected: 'OxfordBlue'
 }, {
   Name: 'cOUCrimsonRed',
-  Actual: clr.cOUCrimsonRed,
+  Actual: colr.cOUCrimsonRed,
   Expected: 'OUCrimsonRed'
 }, {
   Name: 'cPacificBlue',
-  Actual: clr.cPacificBlue,
+  Actual: colr.cPacificBlue,
   Expected: 'PacificBlue'
 }, {
   Name: 'cPakistanGreen',
-  Actual: clr.cPakistanGreen,
+  Actual: colr.cPakistanGreen,
   Expected: 'PakistanGreen'
 }, {
   Name: 'cPalatinatePurple',
-  Actual: clr.cPalatinatePurple,
+  Actual: colr.cPalatinatePurple,
   Expected: 'PalatinatePurple'
 }, {
   Name: 'cPaleAqua',
-  Actual: clr.cPaleAqua,
+  Actual: colr.cPaleAqua,
   Expected: 'PaleAqua'
 }, {
   Name: 'cPaleCerulean',
-  Actual: clr.cPaleCerulean,
+  Actual: colr.cPaleCerulean,
   Expected: 'PaleCerulean'
 }, {
   Name: 'cPalePink',
-  Actual: clr.cPalePink,
+  Actual: colr.cPalePink,
   Expected: 'PalePink'
 }, {
   Name: 'cPalePurplePantone',
-  Actual: clr.cPalePurplePantone,
+  Actual: colr.cPalePurplePantone,
   Expected: 'PalePurplePantone'
 }, {
   Name: 'cPaleSilver',
-  Actual: clr.cPaleSilver,
+  Actual: colr.cPaleSilver,
   Expected: 'PaleSilver'
 }, {
   Name: 'cPaleSpringBud',
-  Actual: clr.cPaleSpringBud,
+  Actual: colr.cPaleSpringBud,
   Expected: 'PaleSpringBud'
 }, {
   Name: 'cPansyPurple',
-  Actual: clr.cPansyPurple,
+  Actual: colr.cPansyPurple,
   Expected: 'PansyPurple'
 }, {
   Name: 'cPaoloVeroneseGreen',
-  Actual: clr.cPaoloVeroneseGreen,
+  Actual: colr.cPaoloVeroneseGreen,
   Expected: 'PaoloVeroneseGreen'
 }, {
   Name: 'cPapayaWhip',
-  Actual: clr.cPapayaWhip,
+  Actual: colr.cPapayaWhip,
   Expected: 'PapayaWhip'
 }, {
   Name: 'cParadisePink',
-  Actual: clr.cParadisePink,
+  Actual: colr.cParadisePink,
   Expected: 'ParadisePink'
 }, {
   Name: 'cParisGreen',
-  Actual: clr.cParisGreen,
+  Actual: colr.cParisGreen,
   Expected: 'ParisGreen'
 }, {
   Name: 'cPastelPink',
-  Actual: clr.cPastelPink,
+  Actual: colr.cPastelPink,
   Expected: 'PastelPink'
 }, {
   Name: 'cPatriarch',
-  Actual: clr.cPatriarch,
+  Actual: colr.cPatriarch,
   Expected: 'Patriarch'
 }, {
   Name: 'cPaynesGrey',
-  Actual: clr.cPaynesGrey,
+  Actual: colr.cPaynesGrey,
   Expected: 'PaynesGrey'
 }, {
   Name: 'cPeach',
-  Actual: clr.cPeach,
+  Actual: colr.cPeach,
   Expected: 'Peach'
 }, {
   Name: 'cPeachCrayola',
-  Actual: clr.cPeachCrayola,
+  Actual: colr.cPeachCrayola,
   Expected: 'PeachCrayola'
 }, {
   Name: 'cPeachPuff',
-  Actual: clr.cPeachPuff,
+  Actual: colr.cPeachPuff,
   Expected: 'PeachPuff'
 }, {
   Name: 'cPear',
-  Actual: clr.cPear,
+  Actual: colr.cPear,
   Expected: 'Pear'
 }, {
   Name: 'cPearlyPurple',
-  Actual: clr.cPearlyPurple,
+  Actual: colr.cPearlyPurple,
   Expected: 'PearlyPurple'
 }, {
   Name: 'cPeriwinkle',
-  Actual: clr.cPeriwinkle,
+  Actual: colr.cPeriwinkle,
   Expected: 'Periwinkle'
 }, {
   Name: 'cPeriwinkleCrayola',
-  Actual: clr.cPeriwinkleCrayola,
+  Actual: colr.cPeriwinkleCrayola,
   Expected: 'PeriwinkleCrayola'
 }, {
   Name: 'cPermanentGeraniumLake',
-  Actual: clr.cPermanentGeraniumLake,
+  Actual: colr.cPermanentGeraniumLake,
   Expected: 'PermanentGeraniumLake'
 }, {
   Name: 'cPersianBlue',
-  Actual: clr.cPersianBlue,
+  Actual: colr.cPersianBlue,
   Expected: 'PersianBlue'
 }, {
   Name: 'cPersianGreen',
-  Actual: clr.cPersianGreen,
+  Actual: colr.cPersianGreen,
   Expected: 'PersianGreen'
 }, {
   Name: 'cPersianIndigo',
-  Actual: clr.cPersianIndigo,
+  Actual: colr.cPersianIndigo,
   Expected: 'PersianIndigo'
 }, {
   Name: 'cPersianOrange',
-  Actual: clr.cPersianOrange,
+  Actual: colr.cPersianOrange,
   Expected: 'PersianOrange'
 }, {
   Name: 'cPersianPink',
-  Actual: clr.cPersianPink,
+  Actual: colr.cPersianPink,
   Expected: 'PersianPink'
 }, {
   Name: 'cPersianPlum',
-  Actual: clr.cPersianPlum,
+  Actual: colr.cPersianPlum,
   Expected: 'PersianPlum'
 }, {
   Name: 'cPersianRed',
-  Actual: clr.cPersianRed,
+  Actual: colr.cPersianRed,
   Expected: 'PersianRed'
 }, {
   Name: 'cPersianRose',
-  Actual: clr.cPersianRose,
+  Actual: colr.cPersianRose,
   Expected: 'PersianRose'
 }, {
   Name: 'cPersimmon',
-  Actual: clr.cPersimmon,
+  Actual: colr.cPersimmon,
   Expected: 'Persimmon'
 }, {
   Name: 'cPewterBlue',
-  Actual: clr.cPewterBlue,
+  Actual: colr.cPewterBlue,
   Expected: 'PewterBlue'
 }, {
   Name: 'cPhlox',
-  Actual: clr.cPhlox,
+  Actual: colr.cPhlox,
   Expected: 'Phlox'
 }, {
   Name: 'cPhthaloBlue',
-  Actual: clr.cPhthaloBlue,
+  Actual: colr.cPhthaloBlue,
   Expected: 'PhthaloBlue'
 }, {
   Name: 'cPhthaloGreen',
-  Actual: clr.cPhthaloGreen,
+  Actual: colr.cPhthaloGreen,
   Expected: 'PhthaloGreen'
 }, {
   Name: 'cPicoteeBlue',
-  Actual: clr.cPicoteeBlue,
+  Actual: colr.cPicoteeBlue,
   Expected: 'PicoteeBlue'
 }, {
   Name: 'cPictorialCarmine',
-  Actual: clr.cPictorialCarmine,
+  Actual: colr.cPictorialCarmine,
   Expected: 'PictorialCarmine'
 }, {
   Name: 'cPiggyPink',
-  Actual: clr.cPiggyPink,
+  Actual: colr.cPiggyPink,
   Expected: 'PiggyPink'
 }, {
   Name: 'cPineGreen',
-  Actual: clr.cPineGreen,
+  Actual: colr.cPineGreen,
   Expected: 'PineGreen'
 }, {
   Name: 'cPineTree',
-  Actual: clr.cPineTree,
+  Actual: colr.cPineTree,
   Expected: 'PineTree'
 }, {
   Name: 'cPink',
-  Actual: clr.cPink,
+  Actual: colr.cPink,
   Expected: 'Pink'
 }, {
   Name: 'cPinkPantone',
-  Actual: clr.cPinkPantone,
+  Actual: colr.cPinkPantone,
   Expected: 'PinkPantone'
 }, {
   Name: 'cPinkFlamingo',
-  Actual: clr.cPinkFlamingo,
+  Actual: colr.cPinkFlamingo,
   Expected: 'PinkFlamingo'
 }, {
   Name: 'cPinkLace',
-  Actual: clr.cPinkLace,
+  Actual: colr.cPinkLace,
   Expected: 'PinkLace'
 }, {
   Name: 'cPinkLavender',
-  Actual: clr.cPinkLavender,
+  Actual: colr.cPinkLavender,
   Expected: 'PinkLavender'
 }, {
   Name: 'cPinkSherbet',
-  Actual: clr.cPinkSherbet,
+  Actual: colr.cPinkSherbet,
   Expected: 'PinkSherbet'
 }, {
   Name: 'cPistachio',
-  Actual: clr.cPistachio,
+  Actual: colr.cPistachio,
   Expected: 'Pistachio'
 }, {
   Name: 'cPlatinum',
-  Actual: clr.cPlatinum,
+  Actual: colr.cPlatinum,
   Expected: 'Platinum'
 }, {
   Name: 'cPlum',
-  Actual: clr.cPlum,
+  Actual: colr.cPlum,
   Expected: 'Plum'
 }, {
   Name: 'cPlumWeb',
-  Actual: clr.cPlumWeb,
+  Actual: colr.cPlumWeb,
   Expected: 'PlumWeb'
 }, {
   Name: 'cPlumpPurple',
-  Actual: clr.cPlumpPurple,
+  Actual: colr.cPlumpPurple,
   Expected: 'PlumpPurple'
 }, {
   Name: 'cPolishedPine',
-  Actual: clr.cPolishedPine,
+  Actual: colr.cPolishedPine,
   Expected: 'PolishedPine'
 }, {
   Name: 'cPompAndPower',
-  Actual: clr.cPompAndPower,
+  Actual: colr.cPompAndPower,
   Expected: 'PompAndPower'
 }, {
   Name: 'cPopstar',
-  Actual: clr.cPopstar,
+  Actual: colr.cPopstar,
   Expected: 'Popstar'
 }, {
   Name: 'cPortlandOrange',
-  Actual: clr.cPortlandOrange,
+  Actual: colr.cPortlandOrange,
   Expected: 'PortlandOrange'
 }, {
   Name: 'cPowderBlue',
-  Actual: clr.cPowderBlue,
+  Actual: colr.cPowderBlue,
   Expected: 'PowderBlue'
 }, {
   Name: 'cPrincetonOrange',
-  Actual: clr.cPrincetonOrange,
+  Actual: colr.cPrincetonOrange,
   Expected: 'PrincetonOrange'
 }, {
   Name: 'cPrune',
-  Actual: clr.cPrune,
+  Actual: colr.cPrune,
   Expected: 'Prune'
 }, {
   Name: 'cPrussianBlue',
-  Actual: clr.cPrussianBlue,
+  Actual: colr.cPrussianBlue,
   Expected: 'PrussianBlue'
 }, {
   Name: 'cPsychedelicPurple',
-  Actual: clr.cPsychedelicPurple,
+  Actual: colr.cPsychedelicPurple,
   Expected: 'PsychedelicPurple'
 }, {
   Name: 'cPuce',
-  Actual: clr.cPuce,
+  Actual: colr.cPuce,
   Expected: 'Puce'
 }, {
   Name: 'cPullmanBrown',
-  Actual: clr.cPullmanBrown,
+  Actual: colr.cPullmanBrown,
   Expected: 'PullmanBrown'
 }, {
   Name: 'cPumpkin',
-  Actual: clr.cPumpkin,
+  Actual: colr.cPumpkin,
   Expected: 'Pumpkin'
 }, {
   Name: 'cPurple',
-  Actual: clr.cPurple,
+  Actual: colr.cPurple,
   Expected: 'Purple'
 }, {
   Name: 'cPurpleWeb',
-  Actual: clr.cPurpleWeb,
+  Actual: colr.cPurpleWeb,
   Expected: 'PurpleWeb'
 }, {
   Name: 'cPurpleMunsell',
-  Actual: clr.cPurpleMunsell,
+  Actual: colr.cPurpleMunsell,
   Expected: 'PurpleMunsell'
 }, {
   Name: 'cPurpleX11',
-  Actual: clr.cPurpleX11,
+  Actual: colr.cPurpleX11,
   Expected: 'PurpleX11'
 }, {
   Name: 'cPurpleMountainMajesty',
-  Actual: clr.cPurpleMountainMajesty,
+  Actual: colr.cPurpleMountainMajesty,
   Expected: 'PurpleMountainMajesty'
 }, {
   Name: 'cPurpleNavy',
-  Actual: clr.cPurpleNavy,
+  Actual: colr.cPurpleNavy,
   Expected: 'PurpleNavy'
 }, {
   Name: 'cPurplePizzazz',
-  Actual: clr.cPurplePizzazz,
+  Actual: colr.cPurplePizzazz,
   Expected: 'PurplePizzazz'
 }, {
   Name: 'cPurplePlum',
-  Actual: clr.cPurplePlum,
+  Actual: colr.cPurplePlum,
   Expected: 'PurplePlum'
 }, {
   Name: 'cPurpureus',
-  Actual: clr.cPurpureus,
+  Actual: colr.cPurpureus,
   Expected: 'Purpureus'
 }, {
   Name: 'cQueenBlue',
-  Actual: clr.cQueenBlue,
+  Actual: colr.cQueenBlue,
   Expected: 'QueenBlue'
 }, {
   Name: 'cQueenPink',
-  Actual: clr.cQueenPink,
+  Actual: colr.cQueenPink,
   Expected: 'QueenPink'
 }, {
   Name: 'cQuickSilver',
-  Actual: clr.cQuickSilver,
+  Actual: colr.cQuickSilver,
   Expected: 'QuickSilver'
 }, {
   Name: 'cQuinacridoneMagenta',
-  Actual: clr.cQuinacridoneMagenta,
+  Actual: colr.cQuinacridoneMagenta,
   Expected: 'QuinacridoneMagenta'
 }, {
   Name: 'cRadicalRed',
-  Actual: clr.cRadicalRed,
+  Actual: colr.cRadicalRed,
   Expected: 'RadicalRed'
 }, {
   Name: 'cRaisinBlack',
-  Actual: clr.cRaisinBlack,
+  Actual: colr.cRaisinBlack,
   Expected: 'RaisinBlack'
 }, {
   Name: 'cRajah',
-  Actual: clr.cRajah,
+  Actual: colr.cRajah,
   Expected: 'Rajah'
 }, {
   Name: 'cRaspberry',
-  Actual: clr.cRaspberry,
+  Actual: colr.cRaspberry,
   Expected: 'Raspberry'
 }, {
   Name: 'cRaspberryGlace',
-  Actual: clr.cRaspberryGlace,
+  Actual: colr.cRaspberryGlace,
   Expected: 'RaspberryGlace'
 }, {
   Name: 'cRaspberryRose',
-  Actual: clr.cRaspberryRose,
+  Actual: colr.cRaspberryRose,
   Expected: 'RaspberryRose'
 }, {
   Name: 'cRawSienna',
-  Actual: clr.cRawSienna,
+  Actual: colr.cRawSienna,
   Expected: 'RawSienna'
 }, {
   Name: 'cRawUmber',
-  Actual: clr.cRawUmber,
+  Actual: colr.cRawUmber,
   Expected: 'RawUmber'
 }, {
   Name: 'cRazzleDazzleRose',
-  Actual: clr.cRazzleDazzleRose,
+  Actual: colr.cRazzleDazzleRose,
   Expected: 'RazzleDazzleRose'
 }, {
   Name: 'cRazzmatazz',
-  Actual: clr.cRazzmatazz,
+  Actual: colr.cRazzmatazz,
   Expected: 'Razzmatazz'
 }, {
   Name: 'cRazzmicBerry',
-  Actual: clr.cRazzmicBerry,
+  Actual: colr.cRazzmicBerry,
   Expected: 'RazzmicBerry'
 }, {
   Name: 'cRebeccaPurple',
-  Actual: clr.cRebeccaPurple,
+  Actual: colr.cRebeccaPurple,
   Expected: 'RebeccaPurple'
 }, {
   Name: 'cRedCrayola',
-  Actual: clr.cRedCrayola,
+  Actual: colr.cRedCrayola,
   Expected: 'RedCrayola'
 }, {
   Name: 'cRedMunsell',
-  Actual: clr.cRedMunsell,
+  Actual: colr.cRedMunsell,
   Expected: 'RedMunsell'
 }, {
   Name: 'cRedNCS',
-  Actual: clr.cRedNCS,
+  Actual: colr.cRedNCS,
   Expected: 'RedNCS'
 }, {
   Name: 'cRedPantone',
-  Actual: clr.cRedPantone,
+  Actual: colr.cRedPantone,
   Expected: 'RedPantone'
 }, {
   Name: 'cRedPigment',
-  Actual: clr.cRedPigment,
+  Actual: colr.cRedPigment,
   Expected: 'RedPigment'
 }, {
   Name: 'cRedRYB',
-  Actual: clr.cRedRYB,
+  Actual: colr.cRedRYB,
   Expected: 'RedRYB'
 }, {
   Name: 'cRedOrange',
-  Actual: clr.cRedOrange,
+  Actual: colr.cRedOrange,
   Expected: 'RedOrange'
 }, {
   Name: 'cRedOrangeCrayola',
-  Actual: clr.cRedOrangeCrayola,
+  Actual: colr.cRedOrangeCrayola,
   Expected: 'RedOrangeCrayola'
 }, {
   Name: 'cRedOrangeColorWheel',
-  Actual: clr.cRedOrangeColorWheel,
+  Actual: colr.cRedOrangeColorWheel,
   Expected: 'RedOrangeColorWheel'
 }, {
   Name: 'cRedPurple',
-  Actual: clr.cRedPurple,
+  Actual: colr.cRedPurple,
   Expected: 'RedPurple'
 }, {
   Name: 'cRedSalsa',
-  Actual: clr.cRedSalsa,
+  Actual: colr.cRedSalsa,
   Expected: 'RedSalsa'
 }, {
   Name: 'cRedViolet',
-  Actual: clr.cRedViolet,
+  Actual: colr.cRedViolet,
   Expected: 'RedViolet'
 }, {
   Name: 'cRedVioletCrayola',
-  Actual: clr.cRedVioletCrayola,
+  Actual: colr.cRedVioletCrayola,
   Expected: 'RedVioletCrayola'
 }, {
   Name: 'cRedVioletColorWheel',
-  Actual: clr.cRedVioletColorWheel,
+  Actual: colr.cRedVioletColorWheel,
   Expected: 'RedVioletColorWheel'
 }, {
   Name: 'cRedwood',
-  Actual: clr.cRedwood,
+  Actual: colr.cRedwood,
   Expected: 'Redwood'
 }, {
   Name: 'cResolutionBlue',
-  Actual: clr.cResolutionBlue,
+  Actual: colr.cResolutionBlue,
   Expected: 'ResolutionBlue'
 }, {
   Name: 'cRhythm',
-  Actual: clr.cRhythm,
+  Actual: colr.cRhythm,
   Expected: 'Rhythm'
 }, {
   Name: 'cRichBlack',
-  Actual: clr.cRichBlack,
+  Actual: colr.cRichBlack,
   Expected: 'RichBlack'
 }, {
   Name: 'cRichBlackFOGRA29',
-  Actual: clr.cRichBlackFOGRA29,
+  Actual: colr.cRichBlackFOGRA29,
   Expected: 'RichBlackFOGRA29'
 }, {
   Name: 'cRichBlackFOGRA39',
-  Actual: clr.cRichBlackFOGRA39,
+  Actual: colr.cRichBlackFOGRA39,
   Expected: 'RichBlackFOGRA39'
 }, {
   Name: 'cRifleGreen',
-  Actual: clr.cRifleGreen,
+  Actual: colr.cRifleGreen,
   Expected: 'RifleGreen'
 }, {
   Name: 'cRobinEggBlue',
-  Actual: clr.cRobinEggBlue,
+  Actual: colr.cRobinEggBlue,
   Expected: 'RobinEggBlue'
 }, {
   Name: 'cRocketMetallic',
-  Actual: clr.cRocketMetallic,
+  Actual: colr.cRocketMetallic,
   Expected: 'RocketMetallic'
 }, {
   Name: 'cRomanSilver',
-  Actual: clr.cRomanSilver,
+  Actual: colr.cRomanSilver,
   Expected: 'RomanSilver'
 }, {
   Name: 'cRose',
-  Actual: clr.cRose,
+  Actual: colr.cRose,
   Expected: 'Rose'
 }, {
   Name: 'cRoseBonbon',
-  Actual: clr.cRoseBonbon,
+  Actual: colr.cRoseBonbon,
   Expected: 'RoseBonbon'
 }, {
   Name: 'cRoseDust',
-  Actual: clr.cRoseDust,
+  Actual: colr.cRoseDust,
   Expected: 'RoseDust'
 }, {
   Name: 'cRoseEbony',
-  Actual: clr.cRoseEbony,
+  Actual: colr.cRoseEbony,
   Expected: 'RoseEbony'
 }, {
   Name: 'cRoseMadder',
-  Actual: clr.cRoseMadder,
+  Actual: colr.cRoseMadder,
   Expected: 'RoseMadder'
 }, {
   Name: 'cRosePink',
-  Actual: clr.cRosePink,
+  Actual: colr.cRosePink,
   Expected: 'RosePink'
 }, {
   Name: 'cRoseQuartz',
-  Actual: clr.cRoseQuartz,
+  Actual: colr.cRoseQuartz,
   Expected: 'RoseQuartz'
 }, {
   Name: 'cRoseRed',
-  Actual: clr.cRoseRed,
+  Actual: colr.cRoseRed,
   Expected: 'RoseRed'
 }, {
   Name: 'cRoseTaupe',
-  Actual: clr.cRoseTaupe,
+  Actual: colr.cRoseTaupe,
   Expected: 'RoseTaupe'
 }, {
   Name: 'cRoseVale',
-  Actual: clr.cRoseVale,
+  Actual: colr.cRoseVale,
   Expected: 'RoseVale'
 }, {
   Name: 'cRosewood',
-  Actual: clr.cRosewood,
+  Actual: colr.cRosewood,
   Expected: 'Rosewood'
 }, {
   Name: 'cRossoCorsa',
-  Actual: clr.cRossoCorsa,
+  Actual: colr.cRossoCorsa,
   Expected: 'RossoCorsa'
 }, {
   Name: 'cRosyBrown',
-  Actual: clr.cRosyBrown,
+  Actual: colr.cRosyBrown,
   Expected: 'RosyBrown'
 }, {
   Name: 'cRoyalBlueDark',
-  Actual: clr.cRoyalBlueDark,
+  Actual: colr.cRoyalBlueDark,
   Expected: 'RoyalBlueDark'
 }, {
   Name: 'cRoyalBlueLight',
-  Actual: clr.cRoyalBlueLight,
+  Actual: colr.cRoyalBlueLight,
   Expected: 'RoyalBlueLight'
 }, {
   Name: 'cRoyalPurple',
-  Actual: clr.cRoyalPurple,
+  Actual: colr.cRoyalPurple,
   Expected: 'RoyalPurple'
 }, {
   Name: 'cRoyalYellow',
-  Actual: clr.cRoyalYellow,
+  Actual: colr.cRoyalYellow,
   Expected: 'RoyalYellow'
 }, {
   Name: 'cRuber',
-  Actual: clr.cRuber,
+  Actual: colr.cRuber,
   Expected: 'Ruber'
 }, {
   Name: 'cRubineRed',
-  Actual: clr.cRubineRed,
+  Actual: colr.cRubineRed,
   Expected: 'RubineRed'
 }, {
   Name: 'cRuby',
-  Actual: clr.cRuby,
+  Actual: colr.cRuby,
   Expected: 'Ruby'
 }, {
   Name: 'cRubyRed',
-  Actual: clr.cRubyRed,
+  Actual: colr.cRubyRed,
   Expected: 'RubyRed'
 }, {
   Name: 'cRufous',
-  Actual: clr.cRufous,
+  Actual: colr.cRufous,
   Expected: 'Rufous'
 }, {
   Name: 'cRusset',
-  Actual: clr.cRusset,
+  Actual: colr.cRusset,
   Expected: 'Russet'
 }, {
   Name: 'cRussianGreen',
-  Actual: clr.cRussianGreen,
+  Actual: colr.cRussianGreen,
   Expected: 'RussianGreen'
 }, {
   Name: 'cRussianViolet',
-  Actual: clr.cRussianViolet,
+  Actual: colr.cRussianViolet,
   Expected: 'RussianViolet'
 }, {
   Name: 'cRust',
-  Actual: clr.cRust,
+  Actual: colr.cRust,
   Expected: 'Rust'
 }, {
   Name: 'cRustyRed',
-  Actual: clr.cRustyRed,
+  Actual: colr.cRustyRed,
   Expected: 'RustyRed'
 }, {
   Name: 'cSacramentoStateGreen',
-  Actual: clr.cSacramentoStateGreen,
+  Actual: colr.cSacramentoStateGreen,
   Expected: 'SacramentoStateGreen'
 }, {
   Name: 'cSaddleBrown',
-  Actual: clr.cSaddleBrown,
+  Actual: colr.cSaddleBrown,
   Expected: 'SaddleBrown'
 }, {
   Name: 'cSafetyOrange',
-  Actual: clr.cSafetyOrange,
+  Actual: colr.cSafetyOrange,
   Expected: 'SafetyOrange'
 }, {
   Name: 'cBlazeOrange',
-  Actual: clr.cBlazeOrange,
+  Actual: colr.cBlazeOrange,
   Expected: 'BlazeOrange'
 }, {
   Name: 'cSafetyYellow',
-  Actual: clr.cSafetyYellow,
+  Actual: colr.cSafetyYellow,
   Expected: 'SafetyYellow'
 }, {
   Name: 'cSaffron',
-  Actual: clr.cSaffron,
+  Actual: colr.cSaffron,
   Expected: 'Saffron'
 }, {
   Name: 'cSage',
-  Actual: clr.cSage,
+  Actual: colr.cSage,
   Expected: 'Sage'
 }, {
   Name: 'cStPatricksBlue',
-  Actual: clr.cStPatricksBlue,
+  Actual: colr.cStPatricksBlue,
   Expected: 'StPatricksBlue'
 }, {
   Name: 'cSalmon',
-  Actual: clr.cSalmon,
+  Actual: colr.cSalmon,
   Expected: 'Salmon'
 }, {
   Name: 'cSalmonPink',
-  Actual: clr.cSalmonPink,
+  Actual: colr.cSalmonPink,
   Expected: 'SalmonPink'
 }, {
   Name: 'cSand',
-  Actual: clr.cSand,
+  Actual: colr.cSand,
   Expected: 'Sand'
 }, {
   Name: 'cSandDune',
-  Actual: clr.cSandDune,
+  Actual: colr.cSandDune,
   Expected: 'SandDune'
 }, {
   Name: 'cSandyBrown',
-  Actual: clr.cSandyBrown,
+  Actual: colr.cSandyBrown,
   Expected: 'SandyBrown'
 }, {
   Name: 'cSapGreen',
-  Actual: clr.cSapGreen,
+  Actual: colr.cSapGreen,
   Expected: 'SapGreen'
 }, {
   Name: 'cSapphire',
-  Actual: clr.cSapphire,
+  Actual: colr.cSapphire,
   Expected: 'Sapphire'
 }, {
   Name: 'cSapphireBlue',
-  Actual: clr.cSapphireBlue,
+  Actual: colr.cSapphireBlue,
   Expected: 'SapphireBlue'
 }, {
   Name: 'cSapphireCrayola',
-  Actual: clr.cSapphireCrayola,
+  Actual: colr.cSapphireCrayola,
   Expected: 'SapphireCrayola'
 }, {
   Name: 'cSatinSheenGold',
-  Actual: clr.cSatinSheenGold,
+  Actual: colr.cSatinSheenGold,
   Expected: 'SatinSheenGold'
 }, {
   Name: 'cScarlet',
-  Actual: clr.cScarlet,
+  Actual: colr.cScarlet,
   Expected: 'Scarlet'
 }, {
   Name: 'cSchaussPink',
-  Actual: clr.cSchaussPink,
+  Actual: colr.cSchaussPink,
   Expected: 'SchaussPink'
 }, {
   Name: 'cSchoolBusYellow',
-  Actual: clr.cSchoolBusYellow,
+  Actual: colr.cSchoolBusYellow,
   Expected: 'SchoolBusYellow'
 }, {
   Name: 'cScreaminGreen',
-  Actual: clr.cScreaminGreen,
+  Actual: colr.cScreaminGreen,
   Expected: 'ScreaminGreen'
 }, {
   Name: 'cSeaGreen',
-  Actual: clr.cSeaGreen,
+  Actual: colr.cSeaGreen,
   Expected: 'SeaGreen'
 }, {
   Name: 'cSeaGreenCrayola',
-  Actual: clr.cSeaGreenCrayola,
+  Actual: colr.cSeaGreenCrayola,
   Expected: 'SeaGreenCrayola'
 }, {
   Name: 'cSealBrown',
-  Actual: clr.cSealBrown,
+  Actual: colr.cSealBrown,
   Expected: 'SealBrown'
 }, {
   Name: 'cSeashell',
-  Actual: clr.cSeashell,
+  Actual: colr.cSeashell,
   Expected: 'Seashell'
 }, {
   Name: 'cSelectiveYellow',
-  Actual: clr.cSelectiveYellow,
+  Actual: colr.cSelectiveYellow,
   Expected: 'SelectiveYellow'
 }, {
   Name: 'cSepia',
-  Actual: clr.cSepia,
+  Actual: colr.cSepia,
   Expected: 'Sepia'
 }, {
   Name: 'cShadow',
-  Actual: clr.cShadow,
+  Actual: colr.cShadow,
   Expected: 'Shadow'
 }, {
   Name: 'cShadowBlue',
-  Actual: clr.cShadowBlue,
+  Actual: colr.cShadowBlue,
   Expected: 'ShadowBlue'
 }, {
   Name: 'cShamrockGreen',
-  Actual: clr.cShamrockGreen,
+  Actual: colr.cShamrockGreen,
   Expected: 'ShamrockGreen'
 }, {
   Name: 'cSheenGreen',
-  Actual: clr.cSheenGreen,
+  Actual: colr.cSheenGreen,
   Expected: 'SheenGreen'
 }, {
   Name: 'cShimmeringBlush',
-  Actual: clr.cShimmeringBlush,
+  Actual: colr.cShimmeringBlush,
   Expected: 'ShimmeringBlush'
 }, {
   Name: 'cShinyShamrock',
-  Actual: clr.cShinyShamrock,
+  Actual: colr.cShinyShamrock,
   Expected: 'ShinyShamrock'
 }, {
   Name: 'cShockingPink',
-  Actual: clr.cShockingPink,
+  Actual: colr.cShockingPink,
   Expected: 'ShockingPink'
 }, {
   Name: 'cShockingPinkCrayola',
-  Actual: clr.cShockingPinkCrayola,
+  Actual: colr.cShockingPinkCrayola,
   Expected: 'ShockingPinkCrayola'
 }, {
   Name: 'cSienna',
-  Actual: clr.cSienna,
+  Actual: colr.cSienna,
   Expected: 'Sienna'
 }, {
   Name: 'cSilver',
-  Actual: clr.cSilver,
+  Actual: colr.cSilver,
   Expected: 'Silver'
 }, {
   Name: 'cSilverCrayola',
-  Actual: clr.cSilverCrayola,
+  Actual: colr.cSilverCrayola,
   Expected: 'SilverCrayola'
 }, {
   Name: 'cSilverMetallic',
-  Actual: clr.cSilverMetallic,
+  Actual: colr.cSilverMetallic,
   Expected: 'SilverMetallic'
 }, {
   Name: 'cSilverChalice',
-  Actual: clr.cSilverChalice,
+  Actual: colr.cSilverChalice,
   Expected: 'SilverChalice'
 }, {
   Name: 'cSilverPink',
-  Actual: clr.cSilverPink,
+  Actual: colr.cSilverPink,
   Expected: 'SilverPink'
 }, {
   Name: 'cSilverSand',
-  Actual: clr.cSilverSand,
+  Actual: colr.cSilverSand,
   Expected: 'SilverSand'
 }, {
   Name: 'cSinopia',
-  Actual: clr.cSinopia,
+  Actual: colr.cSinopia,
   Expected: 'Sinopia'
 }, {
   Name: 'cSizzlingRed',
-  Actual: clr.cSizzlingRed,
+  Actual: colr.cSizzlingRed,
   Expected: 'SizzlingRed'
 }, {
   Name: 'cSizzlingSunrise',
-  Actual: clr.cSizzlingSunrise,
+  Actual: colr.cSizzlingSunrise,
   Expected: 'SizzlingSunrise'
 }, {
   Name: 'cSkobeloff',
-  Actual: clr.cSkobeloff,
+  Actual: colr.cSkobeloff,
   Expected: 'Skobeloff'
 }, {
   Name: 'cSkyBlue',
-  Actual: clr.cSkyBlue,
+  Actual: colr.cSkyBlue,
   Expected: 'SkyBlue'
 }, {
   Name: 'cSkyBlueCrayola',
-  Actual: clr.cSkyBlueCrayola,
+  Actual: colr.cSkyBlueCrayola,
   Expected: 'SkyBlueCrayola'
 }, {
   Name: 'cSkyMagenta',
-  Actual: clr.cSkyMagenta,
+  Actual: colr.cSkyMagenta,
   Expected: 'SkyMagenta'
 }, {
   Name: 'cSlateBlue',
-  Actual: clr.cSlateBlue,
+  Actual: colr.cSlateBlue,
   Expected: 'SlateBlue'
 }, {
   Name: 'cSlateGray',
-  Actual: clr.cSlateGray,
+  Actual: colr.cSlateGray,
   Expected: 'SlateGray'
 }, {
   Name: 'cSlimyGreen',
-  Actual: clr.cSlimyGreen,
+  Actual: colr.cSlimyGreen,
   Expected: 'SlimyGreen'
 }, {
   Name: 'cSmitten',
-  Actual: clr.cSmitten,
+  Actual: colr.cSmitten,
   Expected: 'Smitten'
 }, {
   Name: 'cSmokyBlack',
-  Actual: clr.cSmokyBlack,
+  Actual: colr.cSmokyBlack,
   Expected: 'SmokyBlack'
 }, {
   Name: 'cSnow',
-  Actual: clr.cSnow,
+  Actual: colr.cSnow,
   Expected: 'Snow'
 }, {
   Name: 'cSolidPink',
-  Actual: clr.cSolidPink,
+  Actual: colr.cSolidPink,
   Expected: 'SolidPink'
 }, {
   Name: 'cSonicSilver',
-  Actual: clr.cSonicSilver,
+  Actual: colr.cSonicSilver,
   Expected: 'SonicSilver'
 }, {
   Name: 'cSpaceCadet',
-  Actual: clr.cSpaceCadet,
+  Actual: colr.cSpaceCadet,
   Expected: 'SpaceCadet'
 }, {
   Name: 'cSpanishBistre',
-  Actual: clr.cSpanishBistre,
+  Actual: colr.cSpanishBistre,
   Expected: 'SpanishBistre'
 }, {
   Name: 'cSpanishBlue',
-  Actual: clr.cSpanishBlue,
+  Actual: colr.cSpanishBlue,
   Expected: 'SpanishBlue'
 }, {
   Name: 'cSpanishCarmine',
-  Actual: clr.cSpanishCarmine,
+  Actual: colr.cSpanishCarmine,
   Expected: 'SpanishCarmine'
 }, {
   Name: 'cSpanishGray',
-  Actual: clr.cSpanishGray,
+  Actual: colr.cSpanishGray,
   Expected: 'SpanishGray'
 }, {
   Name: 'cSpanishGreen',
-  Actual: clr.cSpanishGreen,
+  Actual: colr.cSpanishGreen,
   Expected: 'SpanishGreen'
 }, {
   Name: 'cSpanishOrange',
-  Actual: clr.cSpanishOrange,
+  Actual: colr.cSpanishOrange,
   Expected: 'SpanishOrange'
 }, {
   Name: 'cSpanishPink',
-  Actual: clr.cSpanishPink,
+  Actual: colr.cSpanishPink,
   Expected: 'SpanishPink'
 }, {
   Name: 'cSpanishRed',
-  Actual: clr.cSpanishRed,
+  Actual: colr.cSpanishRed,
   Expected: 'SpanishRed'
 }, {
   Name: 'cSpanishSkyBlue',
-  Actual: clr.cSpanishSkyBlue,
+  Actual: colr.cSpanishSkyBlue,
   Expected: 'SpanishSkyBlue'
 }, {
   Name: 'cSpanishViolet',
-  Actual: clr.cSpanishViolet,
+  Actual: colr.cSpanishViolet,
   Expected: 'SpanishViolet'
 }, {
   Name: 'cSpanishViridian',
-  Actual: clr.cSpanishViridian,
+  Actual: colr.cSpanishViridian,
   Expected: 'SpanishViridian'
 }, {
   Name: 'cSpringBud',
-  Actual: clr.cSpringBud,
+  Actual: colr.cSpringBud,
   Expected: 'SpringBud'
 }, {
   Name: 'cSpringFrost',
-  Actual: clr.cSpringFrost,
+  Actual: colr.cSpringFrost,
   Expected: 'SpringFrost'
 }, {
   Name: 'cSpringGreen',
-  Actual: clr.cSpringGreen,
+  Actual: colr.cSpringGreen,
   Expected: 'SpringGreen'
 }, {
   Name: 'cSpringGreenCrayola',
-  Actual: clr.cSpringGreenCrayola,
+  Actual: colr.cSpringGreenCrayola,
   Expected: 'SpringGreenCrayola'
 }, {
   Name: 'cStarCommandBlue',
-  Actual: clr.cStarCommandBlue,
+  Actual: colr.cStarCommandBlue,
   Expected: 'StarCommandBlue'
 }, {
   Name: 'cSteelBlue',
-  Actual: clr.cSteelBlue,
+  Actual: colr.cSteelBlue,
   Expected: 'SteelBlue'
 }, {
   Name: 'cSteelPink',
-  Actual: clr.cSteelPink,
+  Actual: colr.cSteelPink,
   Expected: 'SteelPink'
 }, {
   Name: 'cSteelTeal',
-  Actual: clr.cSteelTeal,
+  Actual: colr.cSteelTeal,
   Expected: 'SteelTeal'
 }, {
   Name: 'cStilDeGrainYellow',
-  Actual: clr.cStilDeGrainYellow,
+  Actual: colr.cStilDeGrainYellow,
   Expected: 'StilDeGrainYellow'
 }, {
   Name: 'cStraw',
-  Actual: clr.cStraw,
+  Actual: colr.cStraw,
   Expected: 'Straw'
 }, {
   Name: 'cSugarPlum',
-  Actual: clr.cSugarPlum,
+  Actual: colr.cSugarPlum,
   Expected: 'SugarPlum'
 }, {
   Name: 'cSunglow',
-  Actual: clr.cSunglow,
+  Actual: colr.cSunglow,
   Expected: 'Sunglow'
 }, {
   Name: 'cSunray',
-  Actual: clr.cSunray,
+  Actual: colr.cSunray,
   Expected: 'Sunray'
 }, {
   Name: 'cSunset',
-  Actual: clr.cSunset,
+  Actual: colr.cSunset,
   Expected: 'Sunset'
 }, {
   Name: 'cSuperPink',
-  Actual: clr.cSuperPink,
+  Actual: colr.cSuperPink,
   Expected: 'SuperPink'
 }, {
   Name: 'cSweetBrown',
-  Actual: clr.cSweetBrown,
+  Actual: colr.cSweetBrown,
   Expected: 'SweetBrown'
 }, {
   Name: 'cTan',
-  Actual: clr.cTan,
+  Actual: colr.cTan,
   Expected: 'Tan'
 }, {
   Name: 'cTanCrayola',
-  Actual: clr.cTanCrayola,
+  Actual: colr.cTanCrayola,
   Expected: 'TanCrayola'
 }, {
   Name: 'cTangerine',
-  Actual: clr.cTangerine,
+  Actual: colr.cTangerine,
   Expected: 'Tangerine'
 }, {
   Name: 'cTangoPink',
-  Actual: clr.cTangoPink,
+  Actual: colr.cTangoPink,
   Expected: 'TangoPink'
 }, {
   Name: 'cTartOrange',
-  Actual: clr.cTartOrange,
+  Actual: colr.cTartOrange,
   Expected: 'TartOrange'
 }, {
   Name: 'cTaupe',
-  Actual: clr.cTaupe,
+  Actual: colr.cTaupe,
   Expected: 'Taupe'
 }, {
   Name: 'cTaupeGray',
-  Actual: clr.cTaupeGray,
+  Actual: colr.cTaupeGray,
   Expected: 'TaupeGray'
 }, {
   Name: 'cTeaGreen',
-  Actual: clr.cTeaGreen,
+  Actual: colr.cTeaGreen,
   Expected: 'TeaGreen'
 }, {
   Name: 'cTeaRose',
-  Actual: clr.cTeaRose,
+  Actual: colr.cTeaRose,
   Expected: 'TeaRose'
 }, {
   Name: 'cTeaRoseWeb',
-  Actual: clr.cTeaRoseWeb,
+  Actual: colr.cTeaRoseWeb,
   Expected: 'TeaRoseWeb'
 }, {
   Name: 'cTeal',
-  Actual: clr.cTeal,
+  Actual: colr.cTeal,
   Expected: 'Teal'
 }, {
   Name: 'cTealBlue',
-  Actual: clr.cTealBlue,
+  Actual: colr.cTealBlue,
   Expected: 'TealBlue'
 }, {
   Name: 'cTelemagenta',
-  Actual: clr.cTelemagenta,
+  Actual: colr.cTelemagenta,
   Expected: 'Telemagenta'
 }, {
   Name: 'cTawny',
-  Actual: clr.cTawny,
+  Actual: colr.cTawny,
   Expected: 'Tawny'
 }, {
   Name: 'cTerraCotta',
-  Actual: clr.cTerraCotta,
+  Actual: colr.cTerraCotta,
   Expected: 'TerraCotta'
 }, {
   Name: 'cThistle',
-  Actual: clr.cThistle,
+  Actual: colr.cThistle,
   Expected: 'Thistle'
 }, {
   Name: 'cThulianPink',
-  Actual: clr.cThulianPink,
+  Actual: colr.cThulianPink,
   Expected: 'ThulianPink'
 }, {
   Name: 'cTickleMePink',
-  Actual: clr.cTickleMePink,
+  Actual: colr.cTickleMePink,
   Expected: 'TickleMePink'
 }, {
   Name: 'cTiffanyBlue',
-  Actual: clr.cTiffanyBlue,
+  Actual: colr.cTiffanyBlue,
   Expected: 'TiffanyBlue'
 }, {
   Name: 'cTimberwolf',
-  Actual: clr.cTimberwolf,
+  Actual: colr.cTimberwolf,
   Expected: 'Timberwolf'
 }, {
   Name: 'cTitaniumYellow',
-  Actual: clr.cTitaniumYellow,
+  Actual: colr.cTitaniumYellow,
   Expected: 'TitaniumYellow'
 }, {
   Name: 'cTomato',
-  Actual: clr.cTomato,
+  Actual: colr.cTomato,
   Expected: 'Tomato'
 }, {
   Name: 'cTropicalRainforest',
-  Actual: clr.cTropicalRainforest,
+  Actual: colr.cTropicalRainforest,
   Expected: 'TropicalRainforest'
 }, {
   Name: 'cTrueBlue',
-  Actual: clr.cTrueBlue,
+  Actual: colr.cTrueBlue,
   Expected: 'TrueBlue'
 }, {
   Name: 'cTrypanBlue',
-  Actual: clr.cTrypanBlue,
+  Actual: colr.cTrypanBlue,
   Expected: 'TrypanBlue'
 }, {
   Name: 'cTuftsBlue',
-  Actual: clr.cTuftsBlue,
+  Actual: colr.cTuftsBlue,
   Expected: 'TuftsBlue'
 }, {
   Name: 'cTumbleweed',
-  Actual: clr.cTumbleweed,
+  Actual: colr.cTumbleweed,
   Expected: 'Tumbleweed'
 }, {
   Name: 'cTurquoise',
-  Actual: clr.cTurquoise,
+  Actual: colr.cTurquoise,
   Expected: 'Turquoise'
 }, {
   Name: 'cTurquoiseBlue',
-  Actual: clr.cTurquoiseBlue,
+  Actual: colr.cTurquoiseBlue,
   Expected: 'TurquoiseBlue'
 }, {
   Name: 'cTurquoiseGreen',
-  Actual: clr.cTurquoiseGreen,
+  Actual: colr.cTurquoiseGreen,
   Expected: 'TurquoiseGreen'
 }, {
   Name: 'cTurtleGreen',
-  Actual: clr.cTurtleGreen,
+  Actual: colr.cTurtleGreen,
   Expected: 'TurtleGreen'
 }, {
   Name: 'cTuscan',
-  Actual: clr.cTuscan,
+  Actual: colr.cTuscan,
   Expected: 'Tuscan'
 }, {
   Name: 'cTuscanBrown',
-  Actual: clr.cTuscanBrown,
+  Actual: colr.cTuscanBrown,
   Expected: 'TuscanBrown'
 }, {
   Name: 'cTuscanRed',
-  Actual: clr.cTuscanRed,
+  Actual: colr.cTuscanRed,
   Expected: 'TuscanRed'
 }, {
   Name: 'cTuscanTan',
-  Actual: clr.cTuscanTan,
+  Actual: colr.cTuscanTan,
   Expected: 'TuscanTan'
 }, {
   Name: 'cTuscany',
-  Actual: clr.cTuscany,
+  Actual: colr.cTuscany,
   Expected: 'Tuscany'
 }, {
   Name: 'cTwilightLavender',
-  Actual: clr.cTwilightLavender,
+  Actual: colr.cTwilightLavender,
   Expected: 'TwilightLavender'
 }, {
   Name: 'cTyrianPurple',
-  Actual: clr.cTyrianPurple,
+  Actual: colr.cTyrianPurple,
   Expected: 'TyrianPurple'
 }, {
   Name: 'cUABlue',
-  Actual: clr.cUABlue,
+  Actual: colr.cUABlue,
   Expected: 'UABlue'
 }, {
   Name: 'cUARed',
-  Actual: clr.cUARed,
+  Actual: colr.cUARed,
   Expected: 'UARed'
 }, {
   Name: 'cUltramarine',
-  Actual: clr.cUltramarine,
+  Actual: colr.cUltramarine,
   Expected: 'Ultramarine'
 }, {
   Name: 'cUltramarineBlue',
-  Actual: clr.cUltramarineBlue,
+  Actual: colr.cUltramarineBlue,
   Expected: 'UltramarineBlue'
 }, {
   Name: 'cUltraPink',
-  Actual: clr.cUltraPink,
+  Actual: colr.cUltraPink,
   Expected: 'UltraPink'
 }, {
   Name: 'cUltraRed',
-  Actual: clr.cUltraRed,
+  Actual: colr.cUltraRed,
   Expected: 'UltraRed'
 }, {
   Name: 'cUmber',
-  Actual: clr.cUmber,
+  Actual: colr.cUmber,
   Expected: 'Umber'
 }, {
   Name: 'cUnbleachedSilk',
-  Actual: clr.cUnbleachedSilk,
+  Actual: colr.cUnbleachedSilk,
   Expected: 'UnbleachedSilk'
 }, {
   Name: 'cUnitedNationsBlue',
-  Actual: clr.cUnitedNationsBlue,
+  Actual: colr.cUnitedNationsBlue,
   Expected: 'UnitedNationsBlue'
 }, {
   Name: 'cUnmellowYellow',
-  Actual: clr.cUnmellowYellow,
+  Actual: colr.cUnmellowYellow,
   Expected: 'UnmellowYellow'
 }, {
   Name: 'cUPForestGreen',
-  Actual: clr.cUPForestGreen,
+  Actual: colr.cUPForestGreen,
   Expected: 'UPForestGreen'
 }, {
   Name: 'cUPMaroon',
-  Actual: clr.cUPMaroon,
+  Actual: colr.cUPMaroon,
   Expected: 'UPMaroon'
 }, {
   Name: 'cUpsdellRed',
-  Actual: clr.cUpsdellRed,
+  Actual: colr.cUpsdellRed,
   Expected: 'UpsdellRed'
 }, {
   Name: 'cUranianBlue',
-  Actual: clr.cUranianBlue,
+  Actual: colr.cUranianBlue,
   Expected: 'UranianBlue'
 }, {
   Name: 'cUSAFABlue',
-  Actual: clr.cUSAFABlue,
+  Actual: colr.cUSAFABlue,
   Expected: 'USAFABlue'
 }, {
   Name: 'cVanDykeBrown',
-  Actual: clr.cVanDykeBrown,
+  Actual: colr.cVanDykeBrown,
   Expected: 'VanDykeBrown'
 }, {
   Name: 'cVanilla',
-  Actual: clr.cVanilla,
+  Actual: colr.cVanilla,
   Expected: 'Vanilla'
 }, {
   Name: 'cVanillaIce',
-  Actual: clr.cVanillaIce,
+  Actual: colr.cVanillaIce,
   Expected: 'VanillaIce'
 }, {
   Name: 'cVegasGold',
-  Actual: clr.cVegasGold,
+  Actual: colr.cVegasGold,
   Expected: 'VegasGold'
 }, {
   Name: 'cVenetianRed',
-  Actual: clr.cVenetianRed,
+  Actual: colr.cVenetianRed,
   Expected: 'VenetianRed'
 }, {
   Name: 'cVerdigris',
-  Actual: clr.cVerdigris,
+  Actual: colr.cVerdigris,
   Expected: 'Verdigris'
 }, {
   Name: 'cVermilion',
-  Actual: clr.cVermilion,
+  Actual: colr.cVermilion,
   Expected: 'Vermilion'
 }, {
   Name: 'cVermilionWeb',
-  Actual: clr.cVermilionWeb,
+  Actual: colr.cVermilionWeb,
   Expected: 'VermilionWeb'
 }, {
   Name: 'cVeronica',
-  Actual: clr.cVeronica,
+  Actual: colr.cVeronica,
   Expected: 'Veronica'
 }, {
   Name: 'cViolet',
-  Actual: clr.cViolet,
+  Actual: colr.cViolet,
   Expected: 'Violet'
 }, {
   Name: 'cVioletColorWheel',
-  Actual: clr.cVioletColorWheel,
+  Actual: colr.cVioletColorWheel,
   Expected: 'VioletColorWheel'
 }, {
   Name: 'cVioletCrayola',
-  Actual: clr.cVioletCrayola,
+  Actual: colr.cVioletCrayola,
   Expected: 'VioletCrayola'
 }, {
   Name: 'cVioletRYB',
-  Actual: clr.cVioletRYB,
+  Actual: colr.cVioletRYB,
   Expected: 'VioletRYB'
 }, {
   Name: 'cVioletWeb',
-  Actual: clr.cVioletWeb,
+  Actual: colr.cVioletWeb,
   Expected: 'VioletWeb'
 }, {
   Name: 'cVioletBlue',
-  Actual: clr.cVioletBlue,
+  Actual: colr.cVioletBlue,
   Expected: 'VioletBlue'
 }, {
   Name: 'cVioletBlueCrayola',
-  Actual: clr.cVioletBlueCrayola,
+  Actual: colr.cVioletBlueCrayola,
   Expected: 'VioletBlueCrayola'
 }, {
   Name: 'cVioletRed',
-  Actual: clr.cVioletRed,
+  Actual: colr.cVioletRed,
   Expected: 'VioletRed'
 }, {
   Name: 'cViridian',
-  Actual: clr.cViridian,
+  Actual: colr.cViridian,
   Expected: 'Viridian'
 }, {
   Name: 'cViridianGreen',
-  Actual: clr.cViridianGreen,
+  Actual: colr.cViridianGreen,
   Expected: 'ViridianGreen'
 }, {
   Name: 'cVividBurgundy',
-  Actual: clr.cVividBurgundy,
+  Actual: colr.cVividBurgundy,
   Expected: 'VividBurgundy'
 }, {
   Name: 'cVividSkyBlue',
-  Actual: clr.cVividSkyBlue,
+  Actual: colr.cVividSkyBlue,
   Expected: 'VividSkyBlue'
 }, {
   Name: 'cVividTangerine',
-  Actual: clr.cVividTangerine,
+  Actual: colr.cVividTangerine,
   Expected: 'VividTangerine'
 }, {
   Name: 'cVividViolet',
-  Actual: clr.cVividViolet,
+  Actual: colr.cVividViolet,
   Expected: 'VividViolet'
 }, {
   Name: 'cVolt',
-  Actual: clr.cVolt,
+  Actual: colr.cVolt,
   Expected: 'Volt'
 }, {
   Name: 'cWarmBlack',
-  Actual: clr.cWarmBlack,
+  Actual: colr.cWarmBlack,
   Expected: 'WarmBlack'
 }, {
   Name: 'cWheat',
-  Actual: clr.cWheat,
+  Actual: colr.cWheat,
   Expected: 'Wheat'
 }, {
   Name: 'cWildBlueYonder',
-  Actual: clr.cWildBlueYonder,
+  Actual: colr.cWildBlueYonder,
   Expected: 'WildBlueYonder'
 }, {
   Name: 'cWildOrchid',
-  Actual: clr.cWildOrchid,
+  Actual: colr.cWildOrchid,
   Expected: 'WildOrchid'
 }, {
   Name: 'cWildStrawberry',
-  Actual: clr.cWildStrawberry,
+  Actual: colr.cWildStrawberry,
   Expected: 'WildStrawberry'
 }, {
   Name: 'cWildWatermelon',
-  Actual: clr.cWildWatermelon,
+  Actual: colr.cWildWatermelon,
   Expected: 'WildWatermelon'
 }, {
   Name: 'cWindsorTan',
-  Actual: clr.cWindsorTan,
+  Actual: colr.cWindsorTan,
   Expected: 'WindsorTan'
 }, {
   Name: 'cWine',
-  Actual: clr.cWine,
+  Actual: colr.cWine,
   Expected: 'Wine'
 }, {
   Name: 'cWineDregs',
-  Actual: clr.cWineDregs,
+  Actual: colr.cWineDregs,
   Expected: 'WineDregs'
 }, {
   Name: 'cWinterSky',
-  Actual: clr.cWinterSky,
+  Actual: colr.cWinterSky,
   Expected: 'WinterSky'
 }, {
   Name: 'cWintergreenDream',
-  Actual: clr.cWintergreenDream,
+  Actual: colr.cWintergreenDream,
   Expected: 'WintergreenDream'
 }, {
   Name: 'cWisteria',
-  Actual: clr.cWisteria,
+  Actual: colr.cWisteria,
   Expected: 'Wisteria'
 }, {
   Name: 'cWoodBrown',
-  Actual: clr.cWoodBrown,
+  Actual: colr.cWoodBrown,
   Expected: 'WoodBrown'
 }, {
   Name: 'cXanthic',
-  Actual: clr.cXanthic,
+  Actual: colr.cXanthic,
   Expected: 'Xanthic'
 }, {
   Name: 'cXanadu',
-  Actual: clr.cXanadu,
+  Actual: colr.cXanadu,
   Expected: 'Xanadu'
 }, {
   Name: 'cYaleBlue',
-  Actual: clr.cYaleBlue,
+  Actual: colr.cYaleBlue,
   Expected: 'YaleBlue'
 }, {
   Name: 'cYellowCrayola',
-  Actual: clr.cYellowCrayola,
+  Actual: colr.cYellowCrayola,
   Expected: 'YellowCrayola'
 }, {
   Name: 'cYellowMunsell',
-  Actual: clr.cYellowMunsell,
+  Actual: colr.cYellowMunsell,
   Expected: 'YellowMunsell'
 }, {
   Name: 'cYellowNCS',
-  Actual: clr.cYellowNCS,
+  Actual: colr.cYellowNCS,
   Expected: 'YellowNCS'
 }, {
   Name: 'cYellowPantone',
-  Actual: clr.cYellowPantone,
+  Actual: colr.cYellowPantone,
   Expected: 'YellowPantone'
 }, {
   Name: 'cYellowProcess',
-  Actual: clr.cYellowProcess,
+  Actual: colr.cYellowProcess,
   Expected: 'YellowProcess'
 }, {
   Name: 'cYellowRYB',
-  Actual: clr.cYellowRYB,
+  Actual: colr.cYellowRYB,
   Expected: 'YellowRYB'
 }, {
   Name: 'cYellowGreen',
-  Actual: clr.cYellowGreen,
+  Actual: colr.cYellowGreen,
   Expected: 'YellowGreen'
 }, {
   Name: 'cYellowGreenCrayola',
-  Actual: clr.cYellowGreenCrayola,
+  Actual: colr.cYellowGreenCrayola,
   Expected: 'YellowGreenCrayola'
 }, {
   Name: 'cYellowGreenColorWheel',
-  Actual: clr.cYellowGreenColorWheel,
+  Actual: colr.cYellowGreenColorWheel,
   Expected: 'YellowGreenColorWheel'
 }, {
   Name: 'cYellowOrange',
-  Actual: clr.cYellowOrange,
+  Actual: colr.cYellowOrange,
   Expected: 'YellowOrange'
 }, {
   Name: 'cYellowOrangeColorWheel',
-  Actual: clr.cYellowOrangeColorWheel,
+  Actual: colr.cYellowOrangeColorWheel,
   Expected: 'YellowOrangeColorWheel'
 }, {
   Name: 'cYellowSunshine',
-  Actual: clr.cYellowSunshine,
+  Actual: colr.cYellowSunshine,
   Expected: 'YellowSunshine'
 }, {
   Name: 'cYInMnBlue',
-  Actual: clr.cYInMnBlue,
+  Actual: colr.cYInMnBlue,
   Expected: 'YInMnBlue'
 }, {
   Name: 'cZaffre',
-  Actual: clr.cZaffre,
+  Actual: colr.cZaffre,
   Expected: 'Zaffre'
 }, {
   Name: 'cZomp',
-  Actual: clr.cZomp,
+  Actual: colr.cZomp,
   Expected: 'Zomp'
 }];
 exports.colorConstantsValidation = colorConstantsValidation;

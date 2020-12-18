@@ -15,6 +15,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -36,6 +37,7 @@ import fileBroker from '../Executrix/fileBroker';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as g from '../Constants/generic.constants';
+import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
@@ -125,14 +127,16 @@ function saveRootPath(rootPath) {
   let cleanedRootPath;
   // console.log('calling file broker to clean the root path.');
   cleanedRootPath = fileBroker.cleanRootPath(rootPath);
-  // console.log('set the cleaned root path as a configuration setting');
+  // console.log('set the cleaned root path as a configuration setting, cleanedRootPath is: ' + cleanedRootPath);
+  let applicationData = fileBroker.getJsonData(rootPath + w.cResources + b.cForwardSlash + s.cmetaDataDotJson);
+  // console.log('loaded application meta-data is: ' + JSON.stringify(applicationData));
   configurator.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
   // console.log('set the application name as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationName, process.env.npm_package_name);
+  configurator.setConfigurationSetting(s.cApplicationName, applicationData[w.cname]);
   // console.log('set the application version number as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationVersionNumber, process.env.npm_package_version);
+  configurator.setConfigurationSetting(s.cApplicationVersionNumber, applicationData[w.cversion]);
   // console.log('set the application description as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationDescription, process.env.npm_package_description);
+  configurator.setConfigurationSetting(s.cApplicationDescription, applicationData[w.cdescription]);
   if (configurator.getConfigurationSetting(s.cEnableConstantsValidation) === true) {
       chiefData.setupConstantsValidationData();
       configurator.setConfigurationSetting(s.cConstantsPath, cleanedRootPath + s.cConstantsPathActual);
@@ -159,7 +163,7 @@ function mergeClientBusinessRules(clientBusinessRules) {
 
   ruleBroker.addClientRules(clientBusinessRules);
 
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('END warden.mergeClientBusinessRules function');
 };
@@ -177,11 +181,11 @@ function mergeClientCommands(clientCommands) {
   // console.log('BEGIN warden.mergeClientCommands function');
   let functionName = mergeClientCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommands are: ' + JSON.stringify(clientCommands));
 
   commandBroker.addClientCommands(clientCommands);
 
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('END warden.mergeClientCommands function');
 };

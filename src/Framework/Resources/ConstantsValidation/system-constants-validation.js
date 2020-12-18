@@ -551,6 +551,7 @@ export const systemConstantsValidation = [
    {Name: 'cword_constants_js', Actual: s.cword_constants_js, Expected: 'word.constants.js'},
 
    // Configuration Settings
+   {Name: 'cmetaDataDotJson', Actual: s.cmetaDataDotJson, Expected: 'metaData.json'},
    {Name: 'cArgumentDrivenInterface', Actual: s.cArgumentDrivenInterface, Expected: 'ArgumentDrivenInterface'},
    {Name: 'cFigletFont', Actual: s.cFigletFont, Expected: 'FigletFont'},
    {Name: 'cPrimaryCommandDelimiter', Actual: s.cPrimaryCommandDelimiter, Expected: 'PrimaryCommandDelimiter'},
@@ -626,6 +627,7 @@ export const systemConstantsValidation = [
    {Name: 'cascertainMatchingFilenames', Actual: s.cascertainMatchingFilenames, Expected: 'ascertainMatchingFilenames'},
    {Name: 'cdoesArrayContainFilename', Actual: s.cdoesArrayContainFilename, Expected: 'doesArrayContainFilename'},
    {Name: 'cvalidateConstantsDataValidation', Actual: s.cvalidateConstantsDataValidation, Expected: 'validateConstantsDataValidation'},
+   {Name: 'cdetermineConstantsContextQualifiedPrefix', Actual: s.cdetermineConstantsContextQualifiedPrefix, Expected: 'determineConstantsContextQualifiedPrefix'},
    {Name: 'cdetermineSuggestedConstantsValidationLineOfCode', Actual: s.cdetermineSuggestedConstantsValidationLineOfCode, Expected: 'determineSuggestedConstantsValidationLineOfCode'},
    {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: s.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
    {Name: 'cvalidateConstantsDataValues', Actual: s.cvalidateConstantsDataValues, Expected: 'validateConstantsDataValues'},

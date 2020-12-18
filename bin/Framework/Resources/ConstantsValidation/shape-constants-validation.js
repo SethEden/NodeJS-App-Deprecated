@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.shapeConstantsValidation = void 0;
 
-var sh = _interopRequireWildcard(require("../../Constants/shape.constants"));
+var shp = _interopRequireWildcard(require("../../Constants/shape.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -33,5228 +33,5228 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var shapeConstantsValidation = [// Basic Shapes
 {
   Name: 'cline',
-  Actual: sh.cline,
+  Actual: shp.cline,
   Expected: 'line'
 }, {
   Name: 'cLine',
-  Actual: sh.cLine,
+  Actual: shp.cLine,
   Expected: 'Line'
 }, {
   Name: 'ccircle',
-  Actual: sh.ccircle,
+  Actual: shp.ccircle,
   Expected: 'circle'
 }, {
   Name: 'cCircle',
-  Actual: sh.cCircle,
+  Actual: shp.cCircle,
   Expected: 'Circle'
 }, {
   Name: 'coval',
-  Actual: sh.coval,
+  Actual: shp.coval,
   Expected: 'oval'
 }, {
   Name: 'cOval',
-  Actual: sh.cOval,
+  Actual: shp.cOval,
   Expected: 'Oval'
 }, {
   Name: 'csquare',
-  Actual: sh.csquare,
+  Actual: shp.csquare,
   Expected: 'square'
 }, {
   Name: 'cSquare',
-  Actual: sh.cSquare,
+  Actual: shp.cSquare,
   Expected: 'Square'
 }, {
   Name: 'ctriangle',
-  Actual: sh.ctriangle,
+  Actual: shp.ctriangle,
   Expected: 'triangle'
 }, {
   Name: 'cTriangle',
-  Actual: sh.cTriangle,
+  Actual: shp.cTriangle,
   Expected: 'Triangle'
 }, {
   Name: 'crectangle',
-  Actual: sh.crectangle,
+  Actual: shp.crectangle,
   Expected: 'rectangle'
 }, {
   Name: 'cRectangle',
-  Actual: sh.cRectangle,
+  Actual: shp.cRectangle,
   Expected: 'Rectangle'
 }, {
   Name: 'coctagon',
-  Actual: sh.coctagon,
+  Actual: shp.coctagon,
   Expected: 'octagon'
 }, {
   Name: 'cOctagon',
-  Actual: sh.cOctagon,
+  Actual: shp.cOctagon,
   Expected: 'Octagon'
 }, {
   Name: 'chexagon',
-  Actual: sh.chexagon,
+  Actual: shp.chexagon,
   Expected: 'hexagon'
 }, {
   Name: 'cHexagon',
-  Actual: sh.cHexagon,
+  Actual: shp.cHexagon,
   Expected: 'Hexagon'
 }, {
   Name: 'cheptagon',
-  Actual: sh.cheptagon,
+  Actual: shp.cheptagon,
   Expected: 'heptagon'
 }, {
   Name: 'cHeptagon',
-  Actual: sh.cHeptagon,
+  Actual: shp.cHeptagon,
   Expected: 'Heptagon'
 }, {
   Name: 'cnonagon',
-  Actual: sh.cnonagon,
+  Actual: shp.cnonagon,
   Expected: 'nonagon'
 }, {
   Name: 'cNonagon',
-  Actual: sh.cNonagon,
+  Actual: shp.cNonagon,
   Expected: 'Nonagon'
 }, {
   Name: 'ctrapezoid',
-  Actual: sh.ctrapezoid,
+  Actual: shp.ctrapezoid,
   Expected: 'trapezoid'
 }, {
   Name: 'cTrapezoid',
-  Actual: sh.cTrapezoid,
+  Actual: shp.cTrapezoid,
   Expected: 'Trapezoid'
 }, {
   Name: 'ccube',
-  Actual: sh.ccube,
+  Actual: shp.ccube,
   Expected: 'cube'
 }, {
   Name: 'cCube',
-  Actual: sh.cCube,
+  Actual: shp.cCube,
   Expected: 'Cube'
 }, // This could go on forever!!
 // https://en.wikipedia.org/wiki/List_of_mathematical_shapes
 // Miscellaneous
 {
   Name: 'ccubic',
-  Actual: sh.ccubic,
+  Actual: shp.ccubic,
   Expected: 'cubic'
 }, {
   Name: 'cCubic',
-  Actual: sh.cCubic,
+  Actual: shp.cCubic,
   Expected: 'Cubic'
 }, {
   Name: 'cplane',
-  Actual: sh.cplane,
+  Actual: shp.cplane,
   Expected: 'plane'
 }, {
   Name: 'cPlane',
-  Actual: sh.cPlane,
+  Actual: shp.cPlane,
   Expected: 'Plane'
 }, {
   Name: 'ccurve',
-  Actual: sh.ccurve,
+  Actual: shp.ccurve,
   Expected: 'curve'
 }, {
   Name: 'cCurve',
-  Actual: sh.cCurve,
+  Actual: shp.cCurve,
   Expected: 'Curve'
 }, {
   Name: 'cquartic',
-  Actual: sh.cquartic,
+  Actual: shp.cquartic,
   Expected: 'quartic'
 }, {
   Name: 'cQuartic',
-  Actual: sh.cQuartic,
+  Actual: shp.cQuartic,
   Expected: 'Quartic'
 }, {
   Name: 'cconic',
-  Actual: sh.cconic,
+  Actual: shp.cconic,
   Expected: 'conic'
 }, {
   Name: 'cConic',
-  Actual: sh.cConic,
+  Actual: shp.cConic,
   Expected: 'Conic'
 }, // Algebraic Curves
 {
   Name: 'ccubicPlaneCurve',
-  Actual: sh.ccubicPlaneCurve,
+  Actual: shp.ccubicPlaneCurve,
   Expected: 'cubicPlaneCurve'
 }, {
   Name: 'cCubicPlaneCurve',
-  Actual: sh.cCubicPlaneCurve,
+  Actual: shp.cCubicPlaneCurve,
   Expected: 'CubicPlaneCurve'
 }, {
   Name: 'cquarticPlaneCurve',
-  Actual: sh.cquarticPlaneCurve,
+  Actual: shp.cquarticPlaneCurve,
   Expected: 'quarticPlaneCurve'
 }, {
   Name: 'cQuarticPlaneCurve',
-  Actual: sh.cQuarticPlaneCurve,
+  Actual: shp.cQuarticPlaneCurve,
   Expected: 'QuarticPlaneCurve'
 }, // 2nd Degree Curves
 {
   Name: 'cconicSection',
-  Actual: sh.cconicSection,
+  Actual: shp.cconicSection,
   Expected: 'conicSection'
 }, {
   Name: 'cConicSection',
-  Actual: sh.cConicSection,
+  Actual: shp.cConicSection,
   Expected: 'ConicSection'
 }, {
   Name: 'cunitCircle',
-  Actual: sh.cunitCircle,
+  Actual: shp.cunitCircle,
   Expected: 'unitCircle'
 }, {
   Name: 'cUnitCircle',
-  Actual: sh.cUnitCircle,
+  Actual: shp.cUnitCircle,
   Expected: 'UnitCircle'
 }, {
   Name: 'cunitHyperbola',
-  Actual: sh.cunitHyperbola,
+  Actual: shp.cunitHyperbola,
   Expected: 'unitHyperbola'
 }, {
   Name: 'cUnitHyperbola',
-  Actual: sh.cUnitHyperbola,
+  Actual: shp.cUnitHyperbola,
   Expected: 'UnitHyperbola'
 }, // 3rd Degree Curves
 {
   Name: 'cFoliumOfDescartes',
-  Actual: sh.cFoliumOfDescartes,
+  Actual: shp.cFoliumOfDescartes,
   Expected: 'FoliumOfDescartes'
 }, {
   Name: 'cCissoidOfDiocles',
-  Actual: sh.cCissoidOfDiocles,
+  Actual: shp.cCissoidOfDiocles,
   Expected: 'CissoidOfDiocles'
 }, {
   Name: 'cConchoidOfDeSluze',
-  Actual: sh.cConchoidOfDeSluze,
+  Actual: shp.cConchoidOfDeSluze,
   Expected: 'ConchoidOfDeSluze'
 }, {
   Name: 'cRightStrophoid',
-  Actual: sh.cRightStrophoid,
+  Actual: shp.cRightStrophoid,
   Expected: 'RightStrophoid'
 }, {
   Name: 'cSemicubicalParabola',
-  Actual: sh.cSemicubicalParabola,
+  Actual: shp.cSemicubicalParabola,
   Expected: 'SemicubicalParabola'
 }, {
   Name: 'cSerpentineCurve',
-  Actual: sh.cSerpentineCurve,
+  Actual: shp.cSerpentineCurve,
   Expected: 'SerpentineCurve'
 }, {
   Name: 'cTridentCurve',
-  Actual: sh.cTridentCurve,
+  Actual: shp.cTridentCurve,
   Expected: 'TridentCurve'
 }, {
   Name: 'cTrisectrixOfMaclaurin',
-  Actual: sh.cTrisectrixOfMaclaurin,
+  Actual: shp.cTrisectrixOfMaclaurin,
   Expected: 'TrisectrixOfMaclaurin'
 }, {
   Name: 'cTschirnhausenCubic',
-  Actual: sh.cTschirnhausenCubic,
+  Actual: shp.cTschirnhausenCubic,
   Expected: 'TschirnhausenCubic'
 }, {
   Name: 'cWitchOfAgnesi',
-  Actual: sh.cWitchOfAgnesi,
+  Actual: shp.cWitchOfAgnesi,
   Expected: 'WitchOfAgnesi'
 }, // 4th Degree Curves
 {
   Name: 'cAmpersandCurve',
-  Actual: sh.cAmpersandCurve,
+  Actual: shp.cAmpersandCurve,
   Expected: 'AmpersandCurve'
 }, {
   Name: 'cBeanCurve',
-  Actual: sh.cBeanCurve,
+  Actual: shp.cBeanCurve,
   Expected: 'BeanCurve'
 }, {
   Name: 'cBicorn',
-  Actual: sh.cBicorn,
+  Actual: shp.cBicorn,
   Expected: 'Bicorn'
 }, {
   Name: 'cBowCurve',
-  Actual: sh.cBowCurve,
+  Actual: shp.cBowCurve,
   Expected: 'BowCurve'
 }, {
   Name: 'cBulletNoseCurve',
-  Actual: sh.cBulletNoseCurve,
+  Actual: shp.cBulletNoseCurve,
   Expected: 'BulletNoseCurve'
 }, {
   Name: 'cCruciformCurve',
-  Actual: sh.cCruciformCurve,
+  Actual: shp.cCruciformCurve,
   Expected: 'CruciformCurve'
 }, {
   Name: 'cDeltoidCurve',
-  Actual: sh.cDeltoidCurve,
+  Actual: shp.cDeltoidCurve,
   Expected: 'DeltoidCurve'
 }, {
   Name: 'cDevilsCurve',
-  Actual: sh.cDevilsCurve,
+  Actual: shp.cDevilsCurve,
   Expected: 'DevilsCurve'
 }, {
   Name: 'cHippopede',
-  Actual: sh.cHippopede,
+  Actual: shp.cHippopede,
   Expected: 'Hippopede'
 }, {
   Name: 'cKampyleOfEudoxus',
-  Actual: sh.cKampyleOfEudoxus,
+  Actual: shp.cKampyleOfEudoxus,
   Expected: 'KampyleOfEudoxus'
 }, {
   Name: 'cKappaCurve',
-  Actual: sh.cKappaCurve,
+  Actual: shp.cKappaCurve,
   Expected: 'KappaCurve'
 }, {
   Name: 'cLemniscateOfBooth',
-  Actual: sh.cLemniscateOfBooth,
+  Actual: shp.cLemniscateOfBooth,
   Expected: 'LemniscateOfBooth'
 }, {
   Name: 'cLemniscateOfGerono',
-  Actual: sh.cLemniscateOfGerono,
+  Actual: shp.cLemniscateOfGerono,
   Expected: 'LemniscateOfGerono'
 }, {
   Name: 'cLemniscateOfBernoulli',
-  Actual: sh.cLemniscateOfBernoulli,
+  Actual: shp.cLemniscateOfBernoulli,
   Expected: 'LemniscateOfBernoulli'
 }, {
   Name: 'cLimacon',
-  Actual: sh.cLimacon,
+  Actual: shp.cLimacon,
   Expected: 'Limacon'
 }, {
   Name: 'cCardioid',
-  Actual: sh.cCardioid,
+  Actual: shp.cCardioid,
   Expected: 'Cardioid'
 }, {
   Name: 'cLimaconTrisectrix',
-  Actual: sh.cLimaconTrisectrix,
+  Actual: shp.cLimaconTrisectrix,
   Expected: 'LimaconTrisectrix'
 }, {
   Name: 'cTrifoliumCurve',
-  Actual: sh.cTrifoliumCurve,
+  Actual: shp.cTrifoliumCurve,
   Expected: 'TrifoliumCurve'
 }, // 5th Degree Curves
 {
   Name: 'cQuinticOfLHospital',
-  Actual: sh.cQuinticOfLHospital,
+  Actual: shp.cQuinticOfLHospital,
   Expected: 'QuinticOfLHospital'
 }, // 6th Degree Curves
 {
   Name: 'cAstroid',
-  Actual: sh.cAstroid,
+  Actual: shp.cAstroid,
   Expected: 'Astroid'
 }, {
   Name: 'cAtriphtaloid',
-  Actual: sh.cAtriphtaloid,
+  Actual: shp.cAtriphtaloid,
   Expected: 'Atriphtaloid'
 }, {
   Name: 'cNephroid',
-  Actual: sh.cNephroid,
+  Actual: shp.cNephroid,
   Expected: 'Nephroid'
 }, {
   Name: 'cQuadrifolium',
-  Actual: sh.cQuadrifolium,
+  Actual: shp.cQuadrifolium,
   Expected: 'Quadrifolium'
 }, // Families of Variable Degree
 {
   Name: 'cEpicycloid',
-  Actual: sh.cEpicycloid,
+  Actual: shp.cEpicycloid,
   Expected: 'Epicycloid'
 }, {
   Name: 'cEpispiral',
-  Actual: sh.cEpispiral,
+  Actual: shp.cEpispiral,
   Expected: 'Epispiral'
 }, {
   Name: 'cEpitrochoid',
-  Actual: sh.cEpitrochoid,
+  Actual: shp.cEpitrochoid,
   Expected: 'Epitrochoid'
 }, {
   Name: 'cHypocycloid',
-  Actual: sh.cHypocycloid,
+  Actual: shp.cHypocycloid,
   Expected: 'Hypocycloid'
 }, {
   Name: 'cLissajousCurve',
-  Actual: sh.cLissajousCurve,
+  Actual: shp.cLissajousCurve,
   Expected: 'LissajousCurve'
 }, {
   Name: 'cPoinsotsSpirals',
-  Actual: sh.cPoinsotsSpirals,
+  Actual: shp.cPoinsotsSpirals,
   Expected: 'PoinsotsSpirals'
 }, {
   Name: 'cRationalNormalCurve',
-  Actual: sh.cRationalNormalCurve,
+  Actual: shp.cRationalNormalCurve,
   Expected: 'RationalNormalCurve'
 }, {
   Name: 'cRoseCurve',
-  Actual: sh.cRoseCurve,
+  Actual: shp.cRoseCurve,
   Expected: 'RoseCurve'
 }, // Curves of Genus One
 {
   Name: 'cBicuspidCurve',
-  Actual: sh.cBicuspidCurve,
+  Actual: shp.cBicuspidCurve,
   Expected: 'BicuspidCurve'
 }, {
   Name: 'cCassiniOval',
-  Actual: sh.cCassiniOval,
+  Actual: shp.cCassiniOval,
   Expected: 'CassiniOval'
 }, {
   Name: 'cCassinoide',
-  Actual: sh.cCassinoide,
+  Actual: shp.cCassinoide,
   Expected: 'Cassinoide'
 }, {
   Name: 'cCubicCurve',
-  Actual: sh.cCubicCurve,
+  Actual: shp.cCubicCurve,
   Expected: 'CubicCurve'
 }, {
   Name: 'cEllipticCurve',
-  Actual: sh.cEllipticCurve,
+  Actual: shp.cEllipticCurve,
   Expected: 'EllipticCurve'
 }, {
   Name: 'cWattsCurve',
-  Actual: sh.cWattsCurve,
+  Actual: shp.cWattsCurve,
   Expected: 'WattsCurve'
 }, // Curves with Genus Greater than One
 {
   Name: 'cButterflyCurve',
-  Actual: sh.cButterflyCurve,
+  Actual: shp.cButterflyCurve,
   Expected: 'ButterflyCurve'
 }, {
   Name: 'cElkiesTrinomialCurves',
-  Actual: sh.cElkiesTrinomialCurves,
+  Actual: shp.cElkiesTrinomialCurves,
   Expected: 'ElkiesTrinomialCurves'
 }, {
   Name: 'cHyperellipticCurve',
-  Actual: sh.cHyperellipticCurve,
+  Actual: shp.cHyperellipticCurve,
   Expected: 'HyperellipticCurve'
 }, {
   Name: 'cKleinQuartic',
-  Actual: sh.cKleinQuartic,
+  Actual: shp.cKleinQuartic,
   Expected: 'KleinQuartic'
 }, {
   Name: 'cClassicalModularCurve',
-  Actual: sh.cClassicalModularCurve,
+  Actual: shp.cClassicalModularCurve,
   Expected: 'ClassicalModularCurve'
 }, {
   Name: 'cBolzaSurface',
-  Actual: sh.cBolzaSurface,
+  Actual: shp.cBolzaSurface,
   Expected: 'BolzaSurface'
 }, {
   Name: 'cMacbeathSurface',
-  Actual: sh.cMacbeathSurface,
+  Actual: shp.cMacbeathSurface,
   Expected: 'MacbeathSurface'
 }, // Curve Families with Variable Genus
 {
   Name: 'cPolynomialLemniscate',
-  Actual: sh.cPolynomialLemniscate,
+  Actual: shp.cPolynomialLemniscate,
   Expected: 'PolynomialLemniscate'
 }, {
   Name: 'cFermatCurve',
-  Actual: sh.cFermatCurve,
+  Actual: shp.cFermatCurve,
   Expected: 'FermatCurve'
 }, {
   Name: 'cSinusoidalSpiral',
-  Actual: sh.cSinusoidalSpiral,
+  Actual: shp.cSinusoidalSpiral,
   Expected: 'SinusoidalSpiral'
 }, {
   Name: 'cSuperellipse',
-  Actual: sh.cSuperellipse,
+  Actual: shp.cSuperellipse,
   Expected: 'Superellipse'
 }, {
   Name: 'cHurwitzSurface',
-  Actual: sh.cHurwitzSurface,
+  Actual: shp.cHurwitzSurface,
   Expected: 'HurwitzSurface'
 }, // Transcendental Curves
 {
   Name: 'cBowditchCurve',
-  Actual: sh.cBowditchCurve,
+  Actual: shp.cBowditchCurve,
   Expected: 'BowditchCurve'
 }, {
   Name: 'cBrachistochrone',
-  Actual: sh.cBrachistochrone,
+  Actual: shp.cBrachistochrone,
   Expected: 'Brachistochrone'
 }, {
   Name: 'cCatenary',
-  Actual: sh.cCatenary,
+  Actual: shp.cCatenary,
   Expected: 'Catenary'
 }, {
   Name: 'cClelies',
-  Actual: sh.cClelies,
+  Actual: shp.cClelies,
   Expected: 'Clelies'
 }, {
   Name: 'cCochleoid',
-  Actual: sh.cCochleoid,
+  Actual: shp.cCochleoid,
   Expected: 'Cochleoid'
 }, {
   Name: 'cCycloid',
-  Actual: sh.cCycloid,
+  Actual: shp.cCycloid,
   Expected: 'Cycloid'
 }, {
   Name: 'cHoropter',
-  Actual: sh.cHoropter,
+  Actual: shp.cHoropter,
   Expected: 'Horopter'
 }, {
   Name: 'cIsochrone',
-  Actual: sh.cIsochrone,
+  Actual: shp.cIsochrone,
   Expected: 'Isochrone'
 }, {
   Name: 'cTautochrone',
-  Actual: sh.cTautochrone,
+  Actual: shp.cTautochrone,
   Expected: 'Tautochrone'
 }, {
   Name: 'cIsochroneOfLeibniz',
-  Actual: sh.cIsochroneOfLeibniz,
+  Actual: shp.cIsochroneOfLeibniz,
   Expected: 'IsochroneOfLeibniz'
 }, {
   Name: 'cIsochroneOfVarignon',
-  Actual: sh.cIsochroneOfVarignon,
+  Actual: shp.cIsochroneOfVarignon,
   Expected: 'IsochroneOfVarignon'
 }, {
   Name: 'cLameCurve',
-  Actual: sh.cLameCurve,
+  Actual: shp.cLameCurve,
   Expected: 'LameCurve'
 }, {
   Name: 'cPursuitCurve',
-  Actual: sh.cPursuitCurve,
+  Actual: shp.cPursuitCurve,
   Expected: 'PursuitCurve'
 }, {
   Name: 'cRhumbLine',
-  Actual: sh.cRhumbLine,
+  Actual: shp.cRhumbLine,
   Expected: 'RhumbLine'
 }, {
   Name: 'cSpirals',
-  Actual: sh.cSpirals,
+  Actual: shp.cSpirals,
   Expected: 'Spirals'
 }, {
   Name: 'cArchimedeanSpiral',
-  Actual: sh.cArchimedeanSpiral,
+  Actual: shp.cArchimedeanSpiral,
   Expected: 'ArchimedeanSpiral'
 }, {
   Name: 'cCornuSpiral',
-  Actual: sh.cCornuSpiral,
+  Actual: shp.cCornuSpiral,
   Expected: 'CornuSpiral'
 }, {
   Name: 'cCotesSpiral',
-  Actual: sh.cCotesSpiral,
+  Actual: shp.cCotesSpiral,
   Expected: 'CotesSpiral'
 }, {
   Name: 'cFermatsSpiral',
-  Actual: sh.cFermatsSpiral,
+  Actual: shp.cFermatsSpiral,
   Expected: 'FermatsSpiral'
 }, {
   Name: 'cGalileosSpiral',
-  Actual: sh.cGalileosSpiral,
+  Actual: shp.cGalileosSpiral,
   Expected: 'GalileosSpiral'
 }, {
   Name: 'cHyperbolicSpiral',
-  Actual: sh.cHyperbolicSpiral,
+  Actual: shp.cHyperbolicSpiral,
   Expected: 'HyperbolicSpiral'
 }, {
   Name: 'cLituus',
-  Actual: sh.cLituus,
+  Actual: shp.cLituus,
   Expected: 'Lituus'
 }, {
   Name: 'cLogarithmicSpiral',
-  Actual: sh.cLogarithmicSpiral,
+  Actual: shp.cLogarithmicSpiral,
   Expected: 'LogarithmicSpiral'
 }, {
   Name: 'cNielsensSpiral',
-  Actual: sh.cNielsensSpiral,
+  Actual: shp.cNielsensSpiral,
   Expected: 'NielsensSpiral'
 }, {
   Name: 'cSyntractrix',
-  Actual: sh.cSyntractrix,
+  Actual: shp.cSyntractrix,
   Expected: 'Syntractrix'
 }, {
   Name: 'cTractrix',
-  Actual: sh.cTractrix,
+  Actual: shp.cTractrix,
   Expected: 'Tractrix'
 }, {
   Name: 'cTrochoid',
-  Actual: sh.cTrochoid,
+  Actual: shp.cTrochoid,
   Expected: 'Trochoid'
 }, // Piecewise Constructions Curves
 {
   Name: 'cBezierCurve',
-  Actual: sh.cBezierCurve,
+  Actual: shp.cBezierCurve,
   Expected: 'BezierCurve'
 }, {
   Name: 'cSplines',
-  Actual: sh.cSplines,
+  Actual: shp.cSplines,
   Expected: 'Splines'
 }, {
   Name: 'cBSpline',
-  Actual: sh.cBSpline,
+  Actual: shp.cBSpline,
   Expected: 'BSpline'
 }, {
   Name: 'cNonuniformRationalBSpline',
-  Actual: sh.cNonuniformRationalBSpline,
+  Actual: shp.cNonuniformRationalBSpline,
   Expected: 'NonuniformRationalBSpline'
 }, {
   Name: 'cNURBS',
-  Actual: sh.cNURBS,
+  Actual: shp.cNURBS,
   Expected: 'NURBS'
 }, {
   Name: 'cOgee',
-  Actual: sh.cOgee,
+  Actual: shp.cOgee,
   Expected: 'Ogee'
 }, {
   Name: 'cLoessCurve',
-  Actual: sh.cLoessCurve,
+  Actual: shp.cLoessCurve,
   Expected: 'LoessCurve'
 }, {
   Name: 'cLowess',
-  Actual: sh.cLowess,
+  Actual: shp.cLowess,
   Expected: 'Lowess'
 }, {
   Name: 'cPolygonalCurve',
-  Actual: sh.cPolygonalCurve,
+  Actual: shp.cPolygonalCurve,
   Expected: 'PolygonalCurve'
 }, {
   Name: 'cMaurerRose',
-  Actual: sh.cMaurerRose,
+  Actual: shp.cMaurerRose,
   Expected: 'MaurerRose'
 }, {
   Name: 'cReuleauxTriangle',
-  Actual: sh.cReuleauxTriangle,
+  Actual: shp.cReuleauxTriangle,
   Expected: 'ReuleauxTriangle'
 }, {
   Name: 'cBezierTriangle',
-  Actual: sh.cBezierTriangle,
+  Actual: shp.cBezierTriangle,
   Expected: 'BezierTriangle'
 }, // Curves Generated by Other Curves
 {
   Name: 'cCaustic',
-  Actual: sh.cCaustic,
+  Actual: shp.cCaustic,
   Expected: 'Caustic'
 }, {
   Name: 'cCatacaustic',
-  Actual: sh.cCatacaustic,
+  Actual: shp.cCatacaustic,
   Expected: 'Catacaustic'
 }, {
   Name: 'cDiacaustic',
-  Actual: sh.cDiacaustic,
+  Actual: shp.cDiacaustic,
   Expected: 'Diacaustic'
 }, {
   Name: 'cCissoid',
-  Actual: sh.cCissoid,
+  Actual: shp.cCissoid,
   Expected: 'Cissoid'
 }, {
   Name: 'cConchoid',
-  Actual: sh.cConchoid,
+  Actual: shp.cConchoid,
   Expected: 'Conchoid'
 }, {
   Name: 'cEvolute',
-  Actual: sh.cEvolute,
+  Actual: shp.cEvolute,
   Expected: 'Evolute'
 }, {
   Name: 'cGlissette',
-  Actual: sh.cGlissette,
+  Actual: shp.cGlissette,
   Expected: 'Glissette'
 }, {
   Name: 'cInverseCurve',
-  Actual: sh.cInverseCurve,
+  Actual: shp.cInverseCurve,
   Expected: 'InverseCurve'
 }, {
   Name: 'cInvolute',
-  Actual: sh.cInvolute,
+  Actual: shp.cInvolute,
   Expected: 'Involute'
 }, {
   Name: 'cIsoptic',
-  Actual: sh.cIsoptic,
+  Actual: shp.cIsoptic,
   Expected: 'Isoptic'
 }, {
   Name: 'cOrthoptic',
-  Actual: sh.cOrthoptic,
+  Actual: shp.cOrthoptic,
   Expected: 'Orthoptic'
 }, {
   Name: 'cOrthotomic',
-  Actual: sh.cOrthotomic,
+  Actual: shp.cOrthotomic,
   Expected: 'Orthotomic'
 }, {
   Name: 'cNegativePedalCurve',
-  Actual: sh.cNegativePedalCurve,
+  Actual: shp.cNegativePedalCurve,
   Expected: 'NegativePedalCurve'
 }, {
   Name: 'cPedalCurve',
-  Actual: sh.cPedalCurve,
+  Actual: shp.cPedalCurve,
   Expected: 'PedalCurve'
 }, {
   Name: 'cParallelCurve',
-  Actual: sh.cParallelCurve,
+  Actual: shp.cParallelCurve,
   Expected: 'ParallelCurve'
 }, {
   Name: 'cRadialCurve',
-  Actual: sh.cRadialCurve,
+  Actual: shp.cRadialCurve,
   Expected: 'RadialCurve'
 }, {
   Name: 'cRoulette',
-  Actual: sh.cRoulette,
+  Actual: shp.cRoulette,
   Expected: 'Roulette'
 }, {
   Name: 'cStrophoid',
-  Actual: sh.cStrophoid,
+  Actual: shp.cStrophoid,
   Expected: 'Strophoid'
 }, // Space Curves
 {
   Name: 'cConchospiral',
-  Actual: sh.cConchospiral,
+  Actual: shp.cConchospiral,
   Expected: 'Conchospiral'
 }, {
   Name: 'cHelix',
-  Actual: sh.cHelix,
+  Actual: shp.cHelix,
   Expected: 'Helix'
 }, {
   Name: 'cTendrilPerversion',
-  Actual: sh.cTendrilPerversion,
+  Actual: shp.cTendrilPerversion,
   Expected: 'TendrilPerversion'
 }, {
   Name: 'cHemihelix',
-  Actual: sh.cHemihelix,
+  Actual: shp.cHemihelix,
   Expected: 'Hemihelix'
 }, {
   Name: 'cSeiffertsSpiral',
-  Actual: sh.cSeiffertsSpiral,
+  Actual: shp.cSeiffertsSpiral,
   Expected: 'SeiffertsSpiral'
 }, {
   Name: 'cSlinkySpiral',
-  Actual: sh.cSlinkySpiral,
+  Actual: shp.cSlinkySpiral,
   Expected: 'SlinkySpiral'
 }, {
   Name: 'cTwistedCubic',
-  Actual: sh.cTwistedCubic,
+  Actual: shp.cTwistedCubic,
   Expected: 'TwistedCubic'
 }, {
   Name: 'cVivianisCurve',
-  Actual: sh.cVivianisCurve,
+  Actual: shp.cVivianisCurve,
   Expected: 'VivianisCurve'
 }, // Surfaces in 3D Space
 {
   Name: 'cQuadricSurfaces',
-  Actual: sh.cQuadricSurfaces,
+  Actual: shp.cQuadricSurfaces,
   Expected: 'QuadricSurfaces'
 }, {
   Name: 'cCone',
-  Actual: sh.cCone,
+  Actual: shp.cCone,
   Expected: 'Cone'
 }, {
   Name: 'cCylinder',
-  Actual: sh.cCylinder,
+  Actual: shp.cCylinder,
   Expected: 'Cylinder'
 }, {
   Name: 'cEllipsoid',
-  Actual: sh.cEllipsoid,
+  Actual: shp.cEllipsoid,
   Expected: 'Ellipsoid'
 }, {
   Name: 'cSpheroid',
-  Actual: sh.cSpheroid,
+  Actual: shp.cSpheroid,
   Expected: 'Spheroid'
 }, {
   Name: 'cSphere',
-  Actual: sh.cSphere,
+  Actual: shp.cSphere,
   Expected: 'Sphere'
 }, {
   Name: 'cHyperboloid',
-  Actual: sh.cHyperboloid,
+  Actual: shp.cHyperboloid,
   Expected: 'Hyperboloid'
 }, {
   Name: 'cParaboloid',
-  Actual: sh.cParaboloid,
+  Actual: shp.cParaboloid,
   Expected: 'Paraboloid'
 }, {
   Name: 'cMobiusStrip',
-  Actual: sh.cMobiusStrip,
+  Actual: shp.cMobiusStrip,
   Expected: 'MobiusStrip'
 }, {
   Name: 'cTorus',
-  Actual: sh.cTorus,
+  Actual: shp.cTorus,
   Expected: 'Torus'
 }, // Minimal Surfaces
 {
   Name: 'cCatalansMinimalSurface',
-  Actual: sh.cCatalansMinimalSurface,
+  Actual: shp.cCatalansMinimalSurface,
   Expected: 'CatalansMinimalSurface'
 }, {
   Name: 'cCostasMinimalSurface',
-  Actual: sh.cCostasMinimalSurface,
+  Actual: shp.cCostasMinimalSurface,
   Expected: 'CostasMinimalSurface'
 }, {
   Name: 'cCatenoid',
-  Actual: sh.cCatenoid,
+  Actual: shp.cCatenoid,
   Expected: 'Catenoid'
 }, {
   Name: 'cEnneperSurface',
-  Actual: sh.cEnneperSurface,
+  Actual: shp.cEnneperSurface,
   Expected: 'EnneperSurface'
 }, {
   Name: 'cGyroid',
-  Actual: sh.cGyroid,
+  Actual: shp.cGyroid,
   Expected: 'Gyroid'
 }, {
   Name: 'cHelicoid',
-  Actual: sh.cHelicoid,
+  Actual: shp.cHelicoid,
   Expected: 'Helicoid'
 }, {
   Name: 'cLidinoid',
-  Actual: sh.cLidinoid,
+  Actual: shp.cLidinoid,
   Expected: 'Lidinoid'
 }, {
   Name: 'cRiemannsMinimalSurface',
-  Actual: sh.cRiemannsMinimalSurface,
+  Actual: shp.cRiemannsMinimalSurface,
   Expected: 'RiemannsMinimalSurface'
 }, {
   Name: 'cSaddleTower',
-  Actual: sh.cSaddleTower,
+  Actual: shp.cSaddleTower,
   Expected: 'SaddleTower'
 }, {
   Name: 'cScherkSurface',
-  Actual: sh.cScherkSurface,
+  Actual: shp.cScherkSurface,
   Expected: 'ScherkSurface'
 }, {
   Name: 'cSchwarzMinimalSurface',
-  Actual: sh.cSchwarzMinimalSurface,
+  Actual: shp.cSchwarzMinimalSurface,
   Expected: 'SchwarzMinimalSurface'
 }, {
   Name: 'cTriplyPeriodicMinimalSurface',
-  Actual: sh.cTriplyPeriodicMinimalSurface,
+  Actual: shp.cTriplyPeriodicMinimalSurface,
   Expected: 'TriplyPeriodicMinimalSurface'
 }, // Non-Orientable Surfaces
 {
   Name: 'cKleinBottle',
-  Actual: sh.cKleinBottle,
+  Actual: shp.cKleinBottle,
   Expected: 'KleinBottle'
 }, {
   Name: 'cRealProjectivePlane',
-  Actual: sh.cRealProjectivePlane,
+  Actual: shp.cRealProjectivePlane,
   Expected: 'RealProjectivePlane'
 }, {
   Name: 'cCrossCap',
-  Actual: sh.cCrossCap,
+  Actual: shp.cCrossCap,
   Expected: 'CrossCap'
 }, {
   Name: 'cRomanSurface',
-  Actual: sh.cRomanSurface,
+  Actual: shp.cRomanSurface,
   Expected: 'RomanSurface'
 }, {
   Name: 'cBoysSurface',
-  Actual: sh.cBoysSurface,
+  Actual: shp.cBoysSurface,
   Expected: 'BoysSurface'
 }, // Quadrics
 {
   Name: 'cOblateSpheroid',
-  Actual: sh.cOblateSpheroid,
+  Actual: shp.cOblateSpheroid,
   Expected: 'OblateSpheroid'
 }, {
   Name: 'cHyperboloidOfOneSheet',
-  Actual: sh.cHyperboloidOfOneSheet,
+  Actual: shp.cHyperboloidOfOneSheet,
   Expected: 'HyperboloidOfOneSheet'
 }, {
   Name: 'cHyperboloidOfTwoSheets',
-  Actual: sh.cHyperboloidOfTwoSheets,
+  Actual: shp.cHyperboloidOfTwoSheets,
   Expected: 'HyperboloidOfTwoSheets'
 }, {
   Name: 'cHyperbolicParaboloid',
-  Actual: sh.cHyperbolicParaboloid,
+  Actual: shp.cHyperbolicParaboloid,
   Expected: 'HyperbolicParaboloid'
 }, {
   Name: 'cSphericon',
-  Actual: sh.cSphericon,
+  Actual: shp.cSphericon,
   Expected: 'Sphericon'
 }, {
   Name: 'cOloid',
-  Actual: sh.cOloid,
+  Actual: shp.cOloid,
   Expected: 'Oloid'
 }, // Pseudospherical Surfaces
 {
   Name: 'cDinisSurface',
-  Actual: sh.cDinisSurface,
+  Actual: shp.cDinisSurface,
   Expected: 'DinisSurface'
 }, {
   Name: 'cPseudosphere',
-  Actual: sh.cPseudosphere,
+  Actual: shp.cPseudosphere,
   Expected: 'Pseudosphere'
 }, // Algebraic Surfaces
 {
   Name: 'cCayleyCubic',
-  Actual: sh.cCayleyCubic,
+  Actual: shp.cCayleyCubic,
   Expected: 'CayleyCubic'
 }, {
   Name: 'cBarthSextic',
-  Actual: sh.cBarthSextic,
+  Actual: shp.cBarthSextic,
   Expected: 'BarthSextic'
 }, {
   Name: 'cClebschCubic',
-  Actual: sh.cClebschCubic,
+  Actual: shp.cClebschCubic,
   Expected: 'ClebschCubic'
 }, {
   Name: 'cMonkeySaddle',
-  Actual: sh.cMonkeySaddle,
+  Actual: shp.cMonkeySaddle,
   Expected: 'MonkeySaddle'
 }, {
   Name: 'cDupinCyclide',
-  Actual: sh.cDupinCyclide,
+  Actual: shp.cDupinCyclide,
   Expected: 'DupinCyclide'
 }, {
   Name: 'cWhitneyUmbrella',
-  Actual: sh.cWhitneyUmbrella,
+  Actual: shp.cWhitneyUmbrella,
   Expected: 'WhitneyUmbrella'
 }, // Miscellaneous Surfaces
 {
   Name: 'cRightConoid',
-  Actual: sh.cRightConoid,
+  Actual: shp.cRightConoid,
   Expected: 'RightConoid'
 }, // Fractals
 {
   Name: 'cApollonianGasket',
-  Actual: sh.cApollonianGasket,
+  Actual: shp.cApollonianGasket,
   Expected: 'ApollonianGasket'
 }, {
   Name: 'cApollonianSpherePacking',
-  Actual: sh.cApollonianSpherePacking,
+  Actual: shp.cApollonianSpherePacking,
   Expected: 'ApollonianSpherePacking'
 }, {
   Name: 'cBlancmangeCurve',
-  Actual: sh.cBlancmangeCurve,
+  Actual: shp.cBlancmangeCurve,
   Expected: 'BlancmangeCurve'
 }, {
   Name: 'cCantorDust',
-  Actual: sh.cCantorDust,
+  Actual: shp.cCantorDust,
   Expected: 'CantorDust'
 }, {
   Name: 'cCantorSet',
-  Actual: sh.cCantorSet,
+  Actual: shp.cCantorSet,
   Expected: 'CantorSet'
 }, {
   Name: 'cCantorTesseract',
-  Actual: sh.cCantorTesseract,
+  Actual: shp.cCantorTesseract,
   Expected: 'CantorTesseract'
 }, {
   Name: 'cCircleInversionFractal',
-  Actual: sh.cCircleInversionFractal,
+  Actual: shp.cCircleInversionFractal,
   Expected: 'CircleInversionFractal'
 }, {
   Name: 'cDeRhamCurve',
-  Actual: sh.cDeRhamCurve,
+  Actual: shp.cDeRhamCurve,
   Expected: 'DeRhamCurve'
 }, {
   Name: 'cDouadyRabbit',
-  Actual: sh.cDouadyRabbit,
+  Actual: shp.cDouadyRabbit,
   Expected: 'DouadyRabbit'
 }, {
   Name: 'cDragonCurve',
-  Actual: sh.cDragonCurve,
+  Actual: shp.cDragonCurve,
   Expected: 'DragonCurve'
 }, {
   Name: 'cFibonacciWordFractal',
-  Actual: sh.cFibonacciWordFractal,
+  Actual: shp.cFibonacciWordFractal,
   Expected: 'FibonacciWordFractal'
 }, {
   Name: 'cFlameFractal',
-  Actual: sh.cFlameFractal,
+  Actual: shp.cFlameFractal,
   Expected: 'FlameFractal'
 }, {
   Name: 'cFractalCurve',
-  Actual: sh.cFractalCurve,
+  Actual: shp.cFractalCurve,
   Expected: 'FractalCurve'
 }, {
   Name: 'cGosperCurve',
-  Actual: sh.cGosperCurve,
+  Actual: shp.cGosperCurve,
   Expected: 'GosperCurve'
 }, {
   Name: 'cGosperIsland',
-  Actual: sh.cGosperIsland,
+  Actual: shp.cGosperIsland,
   Expected: 'GosperIsland'
 }, {
   Name: 'cHFractal',
-  Actual: sh.cHFractal,
+  Actual: shp.cHFractal,
   Expected: 'HFractal'
 }, {
   Name: 'cHenonMap',
-  Actual: sh.cHenonMap,
+  Actual: shp.cHenonMap,
   Expected: 'HenonMap'
 }, {
   Name: 'cHexaflake',
-  Actual: sh.cHexaflake,
+  Actual: shp.cHexaflake,
   Expected: 'Hexaflake'
 }, {
   Name: 'cHilbertCurve',
-  Actual: sh.cHilbertCurve,
+  Actual: shp.cHilbertCurve,
   Expected: 'HilbertCurve'
 }, {
   Name: 'cIkedaMapAttractor',
-  Actual: sh.cIkedaMapAttractor,
+  Actual: shp.cIkedaMapAttractor,
   Expected: 'IkedaMapAttractor'
 }, {
   Name: 'cIteratedFunctionSystem',
-  Actual: sh.cIteratedFunctionSystem,
+  Actual: shp.cIteratedFunctionSystem,
   Expected: 'IteratedFunctionSystem'
 }, {
   Name: 'cJerusalemCube',
-  Actual: sh.cJerusalemCube,
+  Actual: shp.cJerusalemCube,
   Expected: 'JerusalemCube'
 }, {
   Name: 'cJuliaSet',
-  Actual: sh.cJuliaSet,
+  Actual: shp.cJuliaSet,
   Expected: 'JuliaSet'
 }, {
   Name: 'cKochCurve',
-  Actual: sh.cKochCurve,
+  Actual: shp.cKochCurve,
   Expected: 'KochCurve'
 }, {
   Name: 'cKochSnowflake',
-  Actual: sh.cKochSnowflake,
+  Actual: shp.cKochSnowflake,
   Expected: 'KochSnowflake'
 }, {
   Name: 'cLSystem',
-  Actual: sh.cLSystem,
+  Actual: shp.cLSystem,
   Expected: 'LSystem'
 }, {
   Name: 'cLevyCCurve',
-  Actual: sh.cLevyCCurve,
+  Actual: shp.cLevyCCurve,
   Expected: 'LevyCCurve'
 }, {
   Name: 'cFeigenbaumAttractor',
-  Actual: sh.cFeigenbaumAttractor,
+  Actual: shp.cFeigenbaumAttractor,
   Expected: 'FeigenbaumAttractor'
 }, {
   Name: 'cLorenzAttractor',
-  Actual: sh.cLorenzAttractor,
+  Actual: shp.cLorenzAttractor,
   Expected: 'LorenzAttractor'
 }, {
   Name: 'cLyapunovFractal',
-  Actual: sh.cLyapunovFractal,
+  Actual: shp.cLyapunovFractal,
   Expected: 'LyapunovFractal'
 }, {
   Name: 'cMandelbrotSet',
-  Actual: sh.cMandelbrotSet,
+  Actual: shp.cMandelbrotSet,
   Expected: 'MandelbrotSet'
 }, {
   Name: 'cMandelbrotTree',
-  Actual: sh.cMandelbrotTree,
+  Actual: shp.cMandelbrotTree,
   Expected: 'MandelbrotTree'
 }, {
   Name: 'cMandelbulb',
-  Actual: sh.cMandelbulb,
+  Actual: shp.cMandelbulb,
   Expected: 'Mandelbulb'
 }, {
   Name: 'cMengerSponge',
-  Actual: sh.cMengerSponge,
+  Actual: shp.cMengerSponge,
   Expected: 'MengerSponge'
 }, {
   Name: 'cMonkeysTree',
-  Actual: sh.cMonkeysTree,
+  Actual: shp.cMonkeysTree,
   Expected: 'MonkeysTree'
 }, {
   Name: 'cMooreCurve',
-  Actual: sh.cMooreCurve,
+  Actual: shp.cMooreCurve,
   Expected: 'MooreCurve'
 }, {
   Name: 'cNFlake',
-  Actual: sh.cNFlake,
+  Actual: shp.cNFlake,
   Expected: 'NFlake'
 }, {
   Name: 'cPascalTriangle',
-  Actual: sh.cPascalTriangle,
+  Actual: shp.cPascalTriangle,
   Expected: 'PascalTriangle'
 }, {
   Name: 'cPeanoCurve',
-  Actual: sh.cPeanoCurve,
+  Actual: shp.cPeanoCurve,
   Expected: 'PeanoCurve'
 }, {
   Name: 'cPenroseTiling',
-  Actual: sh.cPenroseTiling,
+  Actual: shp.cPenroseTiling,
   Expected: 'PenroseTiling'
 }, {
   Name: 'cPinwheelTiling',
-  Actual: sh.cPinwheelTiling,
+  Actual: shp.cPinwheelTiling,
   Expected: 'PinwheelTiling'
 }, {
   Name: 'cPythagorasTree',
-  Actual: sh.cPythagorasTree,
+  Actual: shp.cPythagorasTree,
   Expected: 'PythagorasTree'
 }, {
   Name: 'cRauzyFractal',
-  Actual: sh.cRauzyFractal,
+  Actual: shp.cRauzyFractal,
   Expected: 'RauzyFractal'
 }, {
   Name: 'cRosslerAttractor',
-  Actual: sh.cRosslerAttractor,
+  Actual: shp.cRosslerAttractor,
   Expected: 'RosslerAttractor'
 }, {
   Name: 'cSierpinskiArrowheadCurve',
-  Actual: sh.cSierpinskiArrowheadCurve,
+  Actual: shp.cSierpinskiArrowheadCurve,
   Expected: 'SierpinskiArrowheadCurve'
 }, {
   Name: 'cSierpinskiCarpet',
-  Actual: sh.cSierpinskiCarpet,
+  Actual: shp.cSierpinskiCarpet,
   Expected: 'SierpinskiCarpet'
 }, {
   Name: 'cSierpinskiCurve',
-  Actual: sh.cSierpinskiCurve,
+  Actual: shp.cSierpinskiCurve,
   Expected: 'SierpinskiCurve'
 }, {
   Name: 'cSierpinskiTriangle',
-  Actual: sh.cSierpinskiTriangle,
+  Actual: shp.cSierpinskiTriangle,
   Expected: 'SierpinskiTriangle'
 }, {
   Name: 'cSmithVolterraCantorSet',
-  Actual: sh.cSmithVolterraCantorSet,
+  Actual: shp.cSmithVolterraCantorSet,
   Expected: 'SmithVolterraCantorSet'
 }, {
   Name: 'cTSquare',
-  Actual: sh.cTSquare,
+  Actual: shp.cTSquare,
   Expected: 'TSquare'
 }, {
   Name: 'cTakagiCurve',
-  Actual: sh.cTakagiCurve,
+  Actual: shp.cTakagiCurve,
   Expected: 'TakagiCurve'
 }, {
   Name: 'cTriflake',
-  Actual: sh.cTriflake,
+  Actual: shp.cTriflake,
   Expected: 'Triflake'
 }, {
   Name: 'cVicsekFractal',
-  Actual: sh.cVicsekFractal,
+  Actual: shp.cVicsekFractal,
   Expected: 'VicsekFractal'
 }, {
   Name: 'cVonKochCurve',
-  Actual: sh.cVonKochCurve,
+  Actual: shp.cVonKochCurve,
   Expected: 'VonKochCurve'
 }, {
   Name: 'cWeierstrassFunction',
-  Actual: sh.cWeierstrassFunction,
+  Actual: shp.cWeierstrassFunction,
   Expected: 'WeierstrassFunction'
 }, {
   Name: 'cZOrderCurve',
-  Actual: sh.cZOrderCurve,
+  Actual: shp.cZOrderCurve,
   Expected: 'ZOrderCurve'
 }, // Random Fractals
 {
   Name: 'cVonKochCurveWithRandomInterval',
-  Actual: sh.cVonKochCurveWithRandomInterval,
+  Actual: shp.cVonKochCurveWithRandomInterval,
   Expected: 'VonKochCurveWithRandomInterval'
 }, {
   Name: 'cVonKochCurveWithRandomOrientation',
-  Actual: sh.cVonKochCurveWithRandomOrientation,
+  Actual: shp.cVonKochCurveWithRandomOrientation,
   Expected: 'VonKochCurveWithRandomOrientation'
 }, {
   Name: 'cBoundaryOfBrownianMotion',
-  Actual: sh.cBoundaryOfBrownianMotion,
+  Actual: shp.cBoundaryOfBrownianMotion,
   Expected: 'BoundaryOfBrownianMotion'
 }, {
   Name: 'c2DPolymer',
-  Actual: sh.c2DPolymer,
+  Actual: shp.c2DPolymer,
   Expected: '2DPolymer'
 }, {
   Name: 'cPercolationFrontIn2D',
-  Actual: sh.cPercolationFrontIn2D,
+  Actual: shp.cPercolationFrontIn2D,
   Expected: 'PercolationFrontIn2D'
 }, {
   Name: 'cCorrosionFrontIn2D',
-  Actual: sh.cCorrosionFrontIn2D,
+  Actual: shp.cCorrosionFrontIn2D,
   Expected: 'CorrosionFrontIn2D'
 }, {
   Name: 'cDiffusionLimitedAggregation',
-  Actual: sh.cDiffusionLimitedAggregation,
+  Actual: shp.cDiffusionLimitedAggregation,
   Expected: 'DiffusionLimitedAggregation'
 }, {
   Name: 'cRandomWalkWithNoSelfIntersection',
-  Actual: sh.cRandomWalkWithNoSelfIntersection,
+  Actual: shp.cRandomWalkWithNoSelfIntersection,
   Expected: 'RandomWalkWithNoSelfIntersection'
 }, {
   Name: 'c3DPolymer',
-  Actual: sh.c3DPolymer,
+  Actual: shp.c3DPolymer,
   Expected: '3DPolymer'
 }, {
   Name: 'c2DPercolationClusterHull',
-  Actual: sh.c2DPercolationClusterHull,
+  Actual: shp.c2DPercolationClusterHull,
   Expected: '2DPercolationClusterHull'
 }, {
   Name: 'c2DPercolationCluster',
-  Actual: sh.c2DPercolationCluster,
+  Actual: shp.c2DPercolationCluster,
   Expected: '2DPercolationCluster'
 }, {
   Name: 'cBrownianMotion',
-  Actual: sh.cBrownianMotion,
+  Actual: shp.cBrownianMotion,
   Expected: 'BrownianMotion'
 }, {
   Name: 'cLichtenbergFigure',
-  Actual: sh.cLichtenbergFigure,
+  Actual: shp.cLichtenbergFigure,
   Expected: 'LichtenbergFigure'
 }, {
   Name: 'cPercolationTheory',
-  Actual: sh.cPercolationTheory,
+  Actual: shp.cPercolationTheory,
   Expected: 'PercolationTheory'
 }, {
   Name: 'cMultiplicativeCascade',
-  Actual: sh.cMultiplicativeCascade,
+  Actual: shp.cMultiplicativeCascade,
   Expected: 'MultiplicativeCascade'
 }, // 2D Regular Polytopes
 {
   Name: 'cPolygon',
-  Actual: sh.cPolygon,
+  Actual: shp.cPolygon,
   Expected: 'Polygon'
 }, {
   Name: 'cEquilateral',
-  Actual: sh.cEquilateral,
+  Actual: shp.cEquilateral,
   Expected: 'Equilateral'
 }, {
   Name: 'cCyclicPolygon',
-  Actual: sh.cCyclicPolygon,
+  Actual: shp.cCyclicPolygon,
   Expected: 'CyclicPolygon'
 }, {
   Name: 'cConvexPolygon',
-  Actual: sh.cConvexPolygon,
+  Actual: shp.cConvexPolygon,
   Expected: 'ConvexPolygon'
 }, {
   Name: 'cStarPolygon',
-  Actual: sh.cStarPolygon,
+  Actual: shp.cStarPolygon,
   Expected: 'StarPolygon'
 }, {
   Name: 'cPentagram',
-  Actual: sh.cPentagram,
+  Actual: shp.cPentagram,
   Expected: 'Pentagram'
 }, // 2D Convex Polytopes
 {
   Name: 'cRegularPolygon',
-  Actual: sh.cRegularPolygon,
+  Actual: shp.cRegularPolygon,
   Expected: 'RegularPolygon'
 }, {
   Name: 'cEquilateralTriangle',
-  Actual: sh.cEquilateralTriangle,
+  Actual: shp.cEquilateralTriangle,
   Expected: 'EquilateralTriangle'
 }, {
   Name: 'cSimplex',
-  Actual: sh.cSimplex,
+  Actual: shp.cSimplex,
   Expected: 'Simplex'
 }, {
   Name: 'cCrossPolytope',
-  Actual: sh.cCrossPolytope,
+  Actual: shp.cCrossPolytope,
   Expected: 'CrossPolytope'
 }, {
   Name: 'cHypercube',
-  Actual: sh.cHypercube,
+  Actual: shp.cHypercube,
   Expected: 'Hypercube'
 }, {
   Name: 'cPentagon',
-  Actual: sh.cPentagon,
+  Actual: shp.cPentagon,
   Expected: 'Pentagon'
 }, {
   Name: 'cEnneagon',
-  Actual: sh.cEnneagon,
+  Actual: shp.cEnneagon,
   Expected: 'Enneagon'
 }, {
   Name: 'cDecagon',
-  Actual: sh.cDecagon,
+  Actual: shp.cDecagon,
   Expected: 'Decagon'
 }, {
   Name: 'cHendecagon',
-  Actual: sh.cHendecagon,
+  Actual: shp.cHendecagon,
   Expected: 'Hendecagon'
 }, {
   Name: 'cDodecagon',
-  Actual: sh.cDodecagon,
+  Actual: shp.cDodecagon,
   Expected: 'Dodecagon'
 }, {
   Name: 'cTridecagon',
-  Actual: sh.cTridecagon,
+  Actual: shp.cTridecagon,
   Expected: 'Tridecagon'
 }, {
   Name: 'cTetradecagon',
-  Actual: sh.cTetradecagon,
+  Actual: shp.cTetradecagon,
   Expected: 'Tetradecagon'
 }, {
   Name: 'cPentadecagon',
-  Actual: sh.cPentadecagon,
+  Actual: shp.cPentadecagon,
   Expected: 'Pentadecagon'
 }, {
   Name: 'cHexadecagon',
-  Actual: sh.cHexadecagon,
+  Actual: shp.cHexadecagon,
   Expected: 'Hexadecagon'
 }, {
   Name: 'cHeptadecagon',
-  Actual: sh.cHeptadecagon,
+  Actual: shp.cHeptadecagon,
   Expected: 'Heptadecagon'
 }, {
   Name: 'cOctadecagon',
-  Actual: sh.cOctadecagon,
+  Actual: shp.cOctadecagon,
   Expected: 'Octadecagon'
 }, {
   Name: 'cEnneadecagon',
-  Actual: sh.cEnneadecagon,
+  Actual: shp.cEnneadecagon,
   Expected: 'Enneadecagon'
 }, {
   Name: 'cIcosagon',
-  Actual: sh.cIcosagon,
+  Actual: shp.cIcosagon,
   Expected: 'Icosagon'
 }, {
   Name: 'cHectogon',
-  Actual: sh.cHectogon,
+  Actual: shp.cHectogon,
   Expected: 'Hectogon'
 }, {
   Name: 'cChiliagon',
-  Actual: sh.cChiliagon,
+  Actual: shp.cChiliagon,
   Expected: 'Chiliagon'
 }, // 2D Degenerate Spherical Polytopes
 {
   Name: 'cMonogon',
-  Actual: sh.cMonogon,
+  Actual: shp.cMonogon,
   Expected: 'Monogon'
 }, {
   Name: 'cDigon',
-  Actual: sh.cDigon,
+  Actual: shp.cDigon,
   Expected: 'Digon'
 }, // 2D Non-Convex Polytopes
 {
   Name: 'cHeptagram',
-  Actual: sh.cHeptagram,
+  Actual: shp.cHeptagram,
   Expected: 'Heptagram'
 }, {
   Name: 'cOctagram',
-  Actual: sh.cOctagram,
+  Actual: shp.cOctagram,
   Expected: 'Octagram'
 }, {
   Name: 'cEnneagram',
-  Actual: sh.cEnneagram,
+  Actual: shp.cEnneagram,
   Expected: 'Enneagram'
 }, {
   Name: 'cDecagram',
-  Actual: sh.cDecagram,
+  Actual: shp.cDecagram,
   Expected: 'Decagram'
 }, // 2D Tessellation Polytopes
 {
   Name: 'cApeirogon',
-  Actual: sh.cApeirogon,
+  Actual: shp.cApeirogon,
   Expected: 'Apeirogon'
 }, // 3D Regular Polytopes
 {
   Name: 'cPolyhedron',
-  Actual: sh.cPolyhedron,
+  Actual: shp.cPolyhedron,
   Expected: 'Polyhedron'
 }, // 3D Convex Polytopes
 {
   Name: 'cPlatonicSolid',
-  Actual: sh.cPlatonicSolid,
+  Actual: shp.cPlatonicSolid,
   Expected: 'PlatonicSolid'
 }, {
   Name: 'cTetrahedron',
-  Actual: sh.cTetrahedron,
+  Actual: shp.cTetrahedron,
   Expected: 'Tetrahedron'
 }, {
   Name: 'cOctahedron',
-  Actual: sh.cOctahedron,
+  Actual: shp.cOctahedron,
   Expected: 'Octahedron'
 }, {
   Name: 'cDodecahedron',
-  Actual: sh.cDodecahedron,
+  Actual: shp.cDodecahedron,
   Expected: 'Dodecahedron'
 }, {
   Name: 'cIcosahedron',
-  Actual: sh.cIcosahedron,
+  Actual: shp.cIcosahedron,
   Expected: 'Icosahedron'
 }, // 3D Degenerate Spherical Polytopes
 {
   Name: 'cHosohedron',
-  Actual: sh.cHosohedron,
+  Actual: shp.cHosohedron,
   Expected: 'Hosohedron'
 }, {
   Name: 'cDihedron',
-  Actual: sh.cDihedron,
+  Actual: shp.cDihedron,
   Expected: 'Dihedron'
 }, {
   Name: 'cHenagon',
-  Actual: sh.cHenagon,
+  Actual: shp.cHenagon,
   Expected: 'Henagon'
 }, // 3D Non-Convex Polytopes
 {
   Name: 'cKeplerPoinsotPolyhedra',
-  Actual: sh.cKeplerPoinsotPolyhedra,
+  Actual: shp.cKeplerPoinsotPolyhedra,
   Expected: 'KeplerPoinsotPolyhedra'
 }, {
   Name: 'cSmallStellatedDodecahedron',
-  Actual: sh.cSmallStellatedDodecahedron,
+  Actual: shp.cSmallStellatedDodecahedron,
   Expected: 'SmallStellatedDodecahedron'
 }, {
   Name: 'cGreatDodecahedron',
-  Actual: sh.cGreatDodecahedron,
+  Actual: shp.cGreatDodecahedron,
   Expected: 'GreatDodecahedron'
 }, {
   Name: 'cGreatStellatedDodecahedron',
-  Actual: sh.cGreatStellatedDodecahedron,
+  Actual: shp.cGreatStellatedDodecahedron,
   Expected: 'GreatStellatedDodecahedron'
 }, {
   Name: 'cGreatIcosahedron',
-  Actual: sh.cGreatIcosahedron,
+  Actual: shp.cGreatIcosahedron,
   Expected: 'GreatIcosahedron'
 }, // Euclidean Tilings
 {
   Name: 'cSquareTiling',
-  Actual: sh.cSquareTiling,
+  Actual: shp.cSquareTiling,
   Expected: 'SquareTiling'
 }, {
   Name: 'cGrid',
-  Actual: sh.cGrid,
+  Actual: shp.cGrid,
   Expected: 'Grid'
 }, {
   Name: 'cTriangularTiling',
-  Actual: sh.cTriangularTiling,
+  Actual: shp.cTriangularTiling,
   Expected: 'TriangularTiling'
 }, {
   Name: 'cHexagonalTiling',
-  Actual: sh.cHexagonalTiling,
+  Actual: shp.cHexagonalTiling,
   Expected: 'HexagonalTiling'
 }, // Hyperbolic Tilings
 {
   Name: 'cLobachevskiPlane',
-  Actual: sh.cLobachevskiPlane,
+  Actual: shp.cLobachevskiPlane,
   Expected: 'LobachevskiPlane'
 }, {
   Name: 'cHyperbolicTiling',
-  Actual: sh.cHyperbolicTiling,
+  Actual: shp.cHyperbolicTiling,
   Expected: 'HyperbolicTiling'
 }, // Hyperbolic Star-Tilings
 {
   Name: 'cOrder7HeptagrammicTiling',
-  Actual: sh.cOrder7HeptagrammicTiling,
+  Actual: shp.cOrder7HeptagrammicTiling,
   Expected: 'Order7HeptagrammicTiling'
 }, {
   Name: 'cHeptagrammicOrderHeptagonalTiling',
-  Actual: sh.cHeptagrammicOrderHeptagonalTiling,
+  Actual: shp.cHeptagrammicOrderHeptagonalTiling,
   Expected: 'HeptagrammicOrderHeptagonalTiling'
 }, {
   Name: 'cOrder9EnneagrammicTiling',
-  Actual: sh.cOrder9EnneagrammicTiling,
+  Actual: shp.cOrder9EnneagrammicTiling,
   Expected: 'Order9EnneagrammicTiling'
 }, {
   Name: 'cEnneagrammicOrderEnneagonalTiling',
-  Actual: sh.cEnneagrammicOrderEnneagonalTiling,
+  Actual: shp.cEnneagrammicOrderEnneagonalTiling,
   Expected: 'EnneagrammicOrderEnneagonalTiling'
 }, // 4D Regular Polytopes
 {
   Name: 'c4DSpaceSimplex',
-  Actual: sh.c4DSpaceSimplex,
+  Actual: shp.c4DSpaceSimplex,
   Expected: '4DSpaceSimplex'
 }, {
   Name: 'c4DHypercube',
-  Actual: sh.c4DHypercube,
+  Actual: shp.c4DHypercube,
   Expected: '4DHypercube'
 }, {
   Name: 'c4DCrossPolytope',
-  Actual: sh.c4DCrossPolytope,
+  Actual: shp.c4DCrossPolytope,
   Expected: '4DCrossPolytope'
 }, {
   Name: 'c24Cell',
-  Actual: sh.c24Cell,
+  Actual: shp.c24Cell,
   Expected: '24Cell'
 }, {
   Name: 'c120Cell',
-  Actual: sh.c120Cell,
+  Actual: shp.c120Cell,
   Expected: '120Cell'
 }, {
   Name: 'c600Cell',
-  Actual: sh.c600Cell,
+  Actual: shp.c600Cell,
   Expected: '600Cell'
 }, // 4D Degenerate Spherical Polytopes
 {
   Name: 'cDitope',
-  Actual: sh.cDitope,
+  Actual: shp.cDitope,
   Expected: 'Ditope'
 }, {
   Name: 'cHosotope',
-  Actual: sh.cHosotope,
+  Actual: shp.cHosotope,
   Expected: 'Hosotope'
 }, {
   Name: 'c3Sphere',
-  Actual: sh.c3Sphere,
+  Actual: shp.c3Sphere,
   Expected: '3Sphere'
 }, {
   Name: 'cHyperSphere',
-  Actual: sh.cHyperSphere,
+  Actual: shp.cHyperSphere,
   Expected: 'HyperSphere'
 }, // 4D Non-Convex Polytopes
 {
   Name: 'cIcosahedral120Cell',
-  Actual: sh.cIcosahedral120Cell,
+  Actual: shp.cIcosahedral120Cell,
   Expected: 'Icosahedral120Cell'
 }, {
   Name: 'cSmallStellated120Cell',
-  Actual: sh.cSmallStellated120Cell,
+  Actual: shp.cSmallStellated120Cell,
   Expected: 'SmallStellated120Cell'
 }, {
   Name: 'cGreat120Cell',
-  Actual: sh.cGreat120Cell,
+  Actual: shp.cGreat120Cell,
   Expected: 'Great120Cell'
 }, {
   Name: 'cGrand120Cell',
-  Actual: sh.cGrand120Cell,
+  Actual: shp.cGrand120Cell,
   Expected: 'Grand120Cell'
 }, {
   Name: 'cGreatStellated120Cell',
-  Actual: sh.cGreatStellated120Cell,
+  Actual: shp.cGreatStellated120Cell,
   Expected: 'GreatStellated120Cell'
 }, {
   Name: 'cGrandStellated120Cell',
-  Actual: sh.cGrandStellated120Cell,
+  Actual: shp.cGrandStellated120Cell,
   Expected: 'GrandStellated120Cell'
 }, {
   Name: 'cGreatGrand120Cell',
-  Actual: sh.cGreatGrand120Cell,
+  Actual: shp.cGreatGrand120Cell,
   Expected: 'GreatGrand120Cell'
 }, {
   Name: 'cGreatIcosahedral120Cell',
-  Actual: sh.cGreatIcosahedral120Cell,
+  Actual: shp.cGreatIcosahedral120Cell,
   Expected: 'GreatIcosahedral120Cell'
 }, {
   Name: 'cGrand600Cell',
-  Actual: sh.cGrand600Cell,
+  Actual: shp.cGrand600Cell,
   Expected: 'Grand600Cell'
 }, {
   Name: 'cGreatGrandStellated120Cell',
-  Actual: sh.cGreatGrandStellated120Cell,
+  Actual: shp.cGreatGrandStellated120Cell,
   Expected: 'GreatGrandStellated120Cell'
 }, // Tessellations of Euclidean 3D
 {
   Name: 'cHoneycomb',
-  Actual: sh.cHoneycomb,
+  Actual: shp.cHoneycomb,
   Expected: 'Honeycomb'
 }, {
   Name: 'cCubicHoneycomb',
-  Actual: sh.cCubicHoneycomb,
+  Actual: shp.cCubicHoneycomb,
   Expected: 'CubicHoneycomb'
 }, // Degenerate tessellations of Euclidean 3D
 {
   Name: 'cOrder2ApeirogonalTiling',
-  Actual: sh.cOrder2ApeirogonalTiling,
+  Actual: shp.cOrder2ApeirogonalTiling,
   Expected: 'Order2ApeirogonalTiling'
 }, {
   Name: 'cApeirogonalHosohedron',
-  Actual: sh.cApeirogonalHosohedron,
+  Actual: shp.cApeirogonalHosohedron,
   Expected: 'ApeirogonalHosohedron'
 }, {
   Name: 'cOrder4SquareHosohedralHoneycomb',
-  Actual: sh.cOrder4SquareHosohedralHoneycomb,
+  Actual: shp.cOrder4SquareHosohedralHoneycomb,
   Expected: 'Order4SquareHosohedralHoneycomb'
 }, {
   Name: 'cOrder6TriangularHosohedralHoneycomb',
-  Actual: sh.cOrder6TriangularHosohedralHoneycomb,
+  Actual: shp.cOrder6TriangularHosohedralHoneycomb,
   Expected: 'Order6TriangularHosohedralHoneycomb'
 }, {
   Name: 'cHexagonalHosohedralHoneycomb',
-  Actual: sh.cHexagonalHosohedralHoneycomb,
+  Actual: shp.cHexagonalHosohedralHoneycomb,
   Expected: 'HexagonalHosohedralHoneycomb'
 }, {
   Name: 'cOrder2SquareTilingHoneycomb',
-  Actual: sh.cOrder2SquareTilingHoneycomb,
+  Actual: shp.cOrder2SquareTilingHoneycomb,
   Expected: 'Order2SquareTilingHoneycomb'
 }, {
   Name: 'cOrder2TriangularTilingHoneycomb',
-  Actual: sh.cOrder2TriangularTilingHoneycomb,
+  Actual: shp.cOrder2TriangularTilingHoneycomb,
   Expected: 'Order2TriangularTilingHoneycomb'
 }, {
   Name: 'cOrder2HexagonalTilingHoneycomb',
-  Actual: sh.cOrder2HexagonalTilingHoneycomb,
+  Actual: shp.cOrder2HexagonalTilingHoneycomb,
   Expected: 'Order2HexagonalTilingHoneycomb'
 }, // Tessellations of Hyperbolic 3D
 {
   Name: 'cOrder4DodecahedralHoneycomb',
-  Actual: sh.cOrder4DodecahedralHoneycomb,
+  Actual: shp.cOrder4DodecahedralHoneycomb,
   Expected: 'Order4DodecahedralHoneycomb'
 }, {
   Name: 'cOrder5DodecahedralHoneycomb',
-  Actual: sh.cOrder5DodecahedralHoneycomb,
+  Actual: shp.cOrder5DodecahedralHoneycomb,
   Expected: 'Order5DodecahedralHoneycomb'
 }, {
   Name: 'cOrder5CubicHoneycomb',
-  Actual: sh.cOrder5CubicHoneycomb,
+  Actual: shp.cOrder5CubicHoneycomb,
   Expected: 'Order5CubicHoneycomb'
 }, {
   Name: 'cIcosahedralHoneycomb',
-  Actual: sh.cIcosahedralHoneycomb,
+  Actual: shp.cIcosahedralHoneycomb,
   Expected: 'IcosahedralHoneycomb'
 }, {
   Name: 'cOrder3IcosahedralHoneycomb',
-  Actual: sh.cOrder3IcosahedralHoneycomb,
+  Actual: shp.cOrder3IcosahedralHoneycomb,
   Expected: 'Order3IcosahedralHoneycomb'
 }, {
   Name: 'cOrder4OctahedralHoneycomb',
-  Actual: sh.cOrder4OctahedralHoneycomb,
+  Actual: shp.cOrder4OctahedralHoneycomb,
   Expected: 'Order4OctahedralHoneycomb'
 }, {
   Name: 'cTriangularTilingHoneycomb',
-  Actual: sh.cTriangularTilingHoneycomb,
+  Actual: shp.cTriangularTilingHoneycomb,
   Expected: 'TriangularTilingHoneycomb'
 }, {
   Name: 'cSquareTilingHoneycomb',
-  Actual: sh.cSquareTilingHoneycomb,
+  Actual: shp.cSquareTilingHoneycomb,
   Expected: 'SquareTilingHoneycomb'
 }, {
   Name: 'cOrder4SquareTilingHoneycomb',
-  Actual: sh.cOrder4SquareTilingHoneycomb,
+  Actual: shp.cOrder4SquareTilingHoneycomb,
   Expected: 'Order4SquareTilingHoneycomb'
 }, {
   Name: 'cOrder6TetrahedralHoneycomb',
-  Actual: sh.cOrder6TetrahedralHoneycomb,
+  Actual: shp.cOrder6TetrahedralHoneycomb,
   Expected: 'Order6TetrahedralHoneycomb'
 }, {
   Name: 'cOrder6CubicHoneycomb',
-  Actual: sh.cOrder6CubicHoneycomb,
+  Actual: shp.cOrder6CubicHoneycomb,
   Expected: 'Order6CubicHoneycomb'
 }, {
   Name: 'cOrder6DodecahedralHoneycomb',
-  Actual: sh.cOrder6DodecahedralHoneycomb,
+  Actual: shp.cOrder6DodecahedralHoneycomb,
   Expected: 'Order6DodecahedralHoneycomb'
 }, {
   Name: 'cHexagonalTilingHoneycomb',
-  Actual: sh.cHexagonalTilingHoneycomb,
+  Actual: shp.cHexagonalTilingHoneycomb,
   Expected: 'HexagonalTilingHoneycomb'
 }, {
   Name: 'cOrder4HexagonalTilingHoneycomb',
-  Actual: sh.cOrder4HexagonalTilingHoneycomb,
+  Actual: shp.cOrder4HexagonalTilingHoneycomb,
   Expected: 'Order4HexagonalTilingHoneycomb'
 }, {
   Name: 'cOrder5HexagonalTilingHoneycomb',
-  Actual: sh.cOrder5HexagonalTilingHoneycomb,
+  Actual: shp.cOrder5HexagonalTilingHoneycomb,
   Expected: 'Order5HexagonalTilingHoneycomb'
 }, {
   Name: 'cOrder6HexagonalTilingHoneycomb',
-  Actual: sh.cOrder6HexagonalTilingHoneycomb,
+  Actual: shp.cOrder6HexagonalTilingHoneycomb,
   Expected: 'Order6HexagonalTilingHoneycomb'
 }, // 5D Regular Polytopes and Higher
 {
   Name: 'c5Polytope',
-  Actual: sh.c5Polytope,
+  Actual: shp.c5Polytope,
   Expected: '5Polytope'
 }, {
   Name: 'cTetracomb',
-  Actual: sh.cTetracomb,
+  Actual: shp.cTetracomb,
   Expected: 'Tetracomb'
 }, {
   Name: 'cSimplexHypercubeCrossPolytope',
-  Actual: sh.cSimplexHypercubeCrossPolytope,
+  Actual: shp.cSimplexHypercubeCrossPolytope,
   Expected: 'SimplexHypercubeCrossPolytope'
 }, {
   Name: 'c5Simplex',
-  Actual: sh.c5Simplex,
+  Actual: shp.c5Simplex,
   Expected: '5Simplex'
 }, {
   Name: 'c5Cube',
-  Actual: sh.c5Cube,
+  Actual: shp.c5Cube,
   Expected: '5Cube'
 }, {
   Name: 'c5Orthoplex',
-  Actual: sh.c5Orthoplex,
+  Actual: shp.c5Orthoplex,
   Expected: '5Orthoplex'
 }, {
   Name: 'c6Simplex',
-  Actual: sh.c6Simplex,
+  Actual: shp.c6Simplex,
   Expected: '6Simplex'
 }, {
   Name: 'c6Cube',
-  Actual: sh.c6Cube,
+  Actual: shp.c6Cube,
   Expected: '6Cube'
 }, {
   Name: 'c6Orthoplex',
-  Actual: sh.c6Orthoplex,
+  Actual: shp.c6Orthoplex,
   Expected: '6Orthoplex'
 }, {
   Name: 'c7Simplex',
-  Actual: sh.c7Simplex,
+  Actual: shp.c7Simplex,
   Expected: '7Simplex'
 }, {
   Name: 'c7Cube',
-  Actual: sh.c7Cube,
+  Actual: shp.c7Cube,
   Expected: '7Cube'
 }, {
   Name: 'c7Orthoplex',
-  Actual: sh.c7Orthoplex,
+  Actual: shp.c7Orthoplex,
   Expected: '7Orthoplex'
 }, {
   Name: 'c8Simplex',
-  Actual: sh.c8Simplex,
+  Actual: shp.c8Simplex,
   Expected: '8Simplex'
 }, {
   Name: 'c8Cube',
-  Actual: sh.c8Cube,
+  Actual: shp.c8Cube,
   Expected: '8Cube'
 }, {
   Name: 'c8Orthoplex',
-  Actual: sh.c8Orthoplex,
+  Actual: shp.c8Orthoplex,
   Expected: '8Orthoplex'
 }, {
   Name: 'c9Simplex',
-  Actual: sh.c9Simplex,
+  Actual: shp.c9Simplex,
   Expected: '9Simplex'
 }, {
   Name: 'c9Cube',
-  Actual: sh.c9Cube,
+  Actual: shp.c9Cube,
   Expected: '9Cube'
 }, {
   Name: 'c9Orthoplex',
-  Actual: sh.c9Orthoplex,
+  Actual: shp.c9Orthoplex,
   Expected: '9Orthoplex'
 }, {
   Name: 'c10Simplex',
-  Actual: sh.c10Simplex,
+  Actual: shp.c10Simplex,
   Expected: '10Simplex'
 }, {
   Name: 'c10Cube',
-  Actual: sh.c10Cube,
+  Actual: shp.c10Cube,
   Expected: '10Cube'
 }, {
   Name: 'c10Orthoplex',
-  Actual: sh.c10Orthoplex,
+  Actual: shp.c10Orthoplex,
   Expected: '10Orthoplex'
 }, {
   Name: 'c11Simplex',
-  Actual: sh.c11Simplex,
+  Actual: shp.c11Simplex,
   Expected: '11Simplex'
 }, {
   Name: 'c11Cube',
-  Actual: sh.c11Cube,
+  Actual: shp.c11Cube,
   Expected: '11Cube'
 }, {
   Name: 'c11Orthoplex',
-  Actual: sh.c11Orthoplex,
+  Actual: shp.c11Orthoplex,
   Expected: '11Orthoplex'
 }, // Tessellations of Euclidean 4D
 {
   Name: 'cHoneycombs',
-  Actual: sh.cHoneycombs,
+  Actual: shp.cHoneycombs,
   Expected: 'Honeycombs'
 }, {
   Name: 'cTesseracticHoneycomb',
-  Actual: sh.cTesseracticHoneycomb,
+  Actual: shp.cTesseracticHoneycomb,
   Expected: 'TesseracticHoneycomb'
 }, {
   Name: 'c16CellHoneycomb',
-  Actual: sh.c16CellHoneycomb,
+  Actual: shp.c16CellHoneycomb,
   Expected: '16CellHoneycomb'
 }, {
   Name: 'c24CellHoneycomb',
-  Actual: sh.c24CellHoneycomb,
+  Actual: shp.c24CellHoneycomb,
   Expected: '24CellHoneycomb'
 }, // Tessellations of Euclidean 5D and Higher
 {
   Name: 'cHypercubicHoneycomb',
-  Actual: sh.cHypercubicHoneycomb,
+  Actual: shp.cHypercubicHoneycomb,
   Expected: 'HypercubicHoneycomb'
 }, {
   Name: 'c5CubeHoneycomb',
-  Actual: sh.c5CubeHoneycomb,
+  Actual: shp.c5CubeHoneycomb,
   Expected: '5CubeHoneycomb'
 }, {
   Name: 'c6CubeHoneycomb',
-  Actual: sh.c6CubeHoneycomb,
+  Actual: shp.c6CubeHoneycomb,
   Expected: '6CubeHoneycomb'
 }, {
   Name: 'c7CubeHoneycomb',
-  Actual: sh.c7CubeHoneycomb,
+  Actual: shp.c7CubeHoneycomb,
   Expected: '7CubeHoneycomb'
 }, {
   Name: 'c8CubeHoneycomb',
-  Actual: sh.c8CubeHoneycomb,
+  Actual: shp.c8CubeHoneycomb,
   Expected: '8CubeHoneycomb'
 }, // Tessellations of Hyperbolic 4D
 {
   Name: 'cOrder5_5CellHoneycomb',
-  Actual: sh.cOrder5_5CellHoneycomb,
+  Actual: shp.cOrder5_5CellHoneycomb,
   Expected: 'Order5_5CellHoneycomb'
 }, {
   Name: 'c120CellHoneycomb',
-  Actual: sh.c120CellHoneycomb,
+  Actual: shp.c120CellHoneycomb,
   Expected: '120CellHoneycomb'
 }, {
   Name: 'cOrder5TesseracticHoneycomb',
-  Actual: sh.cOrder5TesseracticHoneycomb,
+  Actual: shp.cOrder5TesseracticHoneycomb,
   Expected: 'Order5TesseracticHoneycomb'
 }, {
   Name: 'cOrder4_120CellHoneycomb',
-  Actual: sh.cOrder4_120CellHoneycomb,
+  Actual: shp.cOrder4_120CellHoneycomb,
   Expected: 'Order4_120CellHoneycomb'
 }, {
   Name: 'cOrder5_120CellHoneycomb',
-  Actual: sh.cOrder5_120CellHoneycomb,
+  Actual: shp.cOrder5_120CellHoneycomb,
   Expected: 'Order5_120CellHoneycomb'
 }, {
   Name: 'cOrder4_24CellHoneycomb',
-  Actual: sh.cOrder4_24CellHoneycomb,
+  Actual: shp.cOrder4_24CellHoneycomb,
   Expected: 'Order4_24CellHoneycomb'
 }, {
   Name: 'cSmallStellated120CellHoneycomb',
-  Actual: sh.cSmallStellated120CellHoneycomb,
+  Actual: shp.cSmallStellated120CellHoneycomb,
   Expected: 'SmallStellated120CellHoneycomb'
 }, {
   Name: 'cPentagrammicOrder600CellHoneycomb',
-  Actual: sh.cPentagrammicOrder600CellHoneycomb,
+  Actual: shp.cPentagrammicOrder600CellHoneycomb,
   Expected: 'PentagrammicOrder600CellHoneycomb'
 }, {
   Name: 'cOrder5Icosahedral120CellHoneycomb',
-  Actual: sh.cOrder5Icosahedral120CellHoneycomb,
+  Actual: shp.cOrder5Icosahedral120CellHoneycomb,
   Expected: 'Order5Icosahedral120CellHoneycomb'
 }, {
   Name: 'cGreat120CellHoneycomb',
-  Actual: sh.cGreat120CellHoneycomb,
+  Actual: shp.cGreat120CellHoneycomb,
   Expected: 'Great120CellHoneycomb'
 }, // Tessellations of Hyperbolic 5D
 {
   Name: 'c5OrthoplexHoneycomb',
-  Actual: sh.c5OrthoplexHoneycomb,
+  Actual: shp.c5OrthoplexHoneycomb,
   Expected: '5OrthoplexHoneycomb'
 }, {
   Name: 'c24CellHoneycombHoneycomb',
-  Actual: sh.c24CellHoneycombHoneycomb,
+  Actual: shp.c24CellHoneycombHoneycomb,
   Expected: '24CellHoneycombHoneycomb'
 }, {
   Name: 'c16CellHoneycombHoneycomb',
-  Actual: sh.c16CellHoneycombHoneycomb,
+  Actual: shp.c16CellHoneycombHoneycomb,
   Expected: '16CellHoneycombHoneycomb'
 }, // Apeirotopes
 {
   Name: 'cApeirotope',
-  Actual: sh.cApeirotope,
+  Actual: shp.cApeirotope,
   Expected: 'Apeirotope'
 }, {
   Name: 'cApeirohedron',
-  Actual: sh.cApeirohedron,
+  Actual: shp.cApeirohedron,
   Expected: 'Apeirohedron'
 }, {
   Name: 'cRegularSkewPolyhedron',
-  Actual: sh.cRegularSkewPolyhedron,
+  Actual: shp.cRegularSkewPolyhedron,
   Expected: 'RegularSkewPolyhedron'
 }, // Abstract Polytopes
 {
   Name: 'cAbstractPolytope',
-  Actual: sh.cAbstractPolytope,
+  Actual: shp.cAbstractPolytope,
   Expected: 'AbstractPolytope'
 }, {
   Name: 'c11Cell',
-  Actual: sh.c11Cell,
+  Actual: shp.c11Cell,
   Expected: '11Cell'
 }, {
   Name: 'c57Cell',
-  Actual: sh.c57Cell,
+  Actual: shp.c57Cell,
   Expected: '57Cell'
 }, // 2D with 1D Surface
 {
   Name: 'cConcavePolygon',
-  Actual: sh.cConcavePolygon,
+  Actual: shp.cConcavePolygon,
   Expected: 'ConcavePolygon'
 }, {
   Name: 'cConstructiblePolygon',
-  Actual: sh.cConstructiblePolygon,
+  Actual: shp.cConstructiblePolygon,
   Expected: 'ConstructiblePolygon'
 }, {
   Name: 'cEquiangularPolygon',
-  Actual: sh.cEquiangularPolygon,
+  Actual: shp.cEquiangularPolygon,
   Expected: 'EquiangularPolygon'
 }, {
   Name: 'cEquilateralPolygon',
-  Actual: sh.cEquilateralPolygon,
+  Actual: shp.cEquilateralPolygon,
   Expected: 'EquilateralPolygon'
 }, {
   Name: 'cPenroseTile',
-  Actual: sh.cPenroseTile,
+  Actual: shp.cPenroseTile,
   Expected: 'PenroseTile'
 }, {
   Name: 'cPolyform',
-  Actual: sh.cPolyform,
+  Actual: shp.cPolyform,
   Expected: 'Polyform'
 }, {
   Name: 'cBalbis',
-  Actual: sh.cBalbis,
+  Actual: shp.cBalbis,
   Expected: 'Balbis'
 }, {
   Name: 'cGnomon',
-  Actual: sh.cGnomon,
+  Actual: shp.cGnomon,
   Expected: 'Gnomon'
 }, {
   Name: 'cGolygon',
-  Actual: sh.cGolygon,
+  Actual: shp.cGolygon,
   Expected: 'Golygon'
 }, {
   Name: 'cStar',
-  Actual: sh.cStar,
+  Actual: shp.cStar,
   Expected: 'Star'
 }, {
   Name: 'cHexagram',
-  Actual: sh.cHexagram,
+  Actual: shp.cHexagram,
   Expected: 'Hexagram'
 }, {
   Name: 'cStarOfDavid',
-  Actual: sh.cStarOfDavid,
+  Actual: shp.cStarOfDavid,
   Expected: 'StarOfDavid'
 }, {
   Name: 'cStarOfLakshmi',
-  Actual: sh.cStarOfLakshmi,
+  Actual: shp.cStarOfLakshmi,
   Expected: 'StarOfLakshmi'
 }, // Polygons named for their number of sides
 {
   Name: 'cAcuteTriangle',
-  Actual: sh.cAcuteTriangle,
+  Actual: shp.cAcuteTriangle,
   Expected: 'AcuteTriangle'
 }, {
   Name: 'cIsoscelesTriangle',
-  Actual: sh.cIsoscelesTriangle,
+  Actual: shp.cIsoscelesTriangle,
   Expected: 'IsoscelesTriangle'
 }, {
   Name: 'cObtuseTriangle',
-  Actual: sh.cObtuseTriangle,
+  Actual: shp.cObtuseTriangle,
   Expected: 'ObtuseTriangle'
 }, {
   Name: 'cRationalTriangle',
-  Actual: sh.cRationalTriangle,
+  Actual: shp.cRationalTriangle,
   Expected: 'RationalTriangle'
 }, {
   Name: 'cRightTriangle',
-  Actual: sh.cRightTriangle,
+  Actual: shp.cRightTriangle,
   Expected: 'RightTriangle'
 }, {
   Name: 'c30_60_90Triangle',
-  Actual: sh.c30_60_90Triangle,
+  Actual: shp.c30_60_90Triangle,
   Expected: '30_60_90Triangle'
 }, {
   Name: 'cIsoscelesRightTriangle',
-  Actual: sh.cIsoscelesRightTriangle,
+  Actual: shp.cIsoscelesRightTriangle,
   Expected: 'IsoscelesRightTriangle'
 }, {
   Name: 'cKeplerTriangle',
-  Actual: sh.cKeplerTriangle,
+  Actual: shp.cKeplerTriangle,
   Expected: 'KeplerTriangle'
 }, {
   Name: 'cScaleneTriangle',
-  Actual: sh.cScaleneTriangle,
+  Actual: shp.cScaleneTriangle,
   Expected: 'ScaleneTriangle'
 }, {
   Name: 'cQuadrilateral',
-  Actual: sh.cQuadrilateral,
+  Actual: shp.cQuadrilateral,
   Expected: 'Quadrilateral'
 }, {
   Name: 'cCyclicQuadrilateral',
-  Actual: sh.cCyclicQuadrilateral,
+  Actual: shp.cCyclicQuadrilateral,
   Expected: 'CyclicQuadrilateral'
 }, {
   Name: 'cKite',
-  Actual: sh.cKite,
+  Actual: shp.cKite,
   Expected: 'Kite'
 }, {
   Name: 'cParallelogram',
-  Actual: sh.cParallelogram,
+  Actual: shp.cParallelogram,
   Expected: 'Parallelogram'
 }, {
   Name: 'cRhombus',
-  Actual: sh.cRhombus,
+  Actual: shp.cRhombus,
   Expected: 'Rhombus'
 }, {
   Name: 'cEquilateralParallelogram',
-  Actual: sh.cEquilateralParallelogram,
+  Actual: shp.cEquilateralParallelogram,
   Expected: 'EquilateralParallelogram'
 }, {
   Name: 'cLozenge',
-  Actual: sh.cLozenge,
+  Actual: shp.cLozenge,
   Expected: 'Lozenge'
 }, {
   Name: 'cRhomboid',
-  Actual: sh.cRhomboid,
+  Actual: shp.cRhomboid,
   Expected: 'Rhomboid'
 }, {
   Name: 'cTangentialQuadrilateral',
-  Actual: sh.cTangentialQuadrilateral,
+  Actual: shp.cTangentialQuadrilateral,
   Expected: 'TangentialQuadrilateral'
 }, {
   Name: 'cTrapezium',
-  Actual: sh.cTrapezium,
+  Actual: shp.cTrapezium,
   Expected: 'Trapezium'
 }, {
   Name: 'cIsoscelesTrapezoid',
-  Actual: sh.cIsoscelesTrapezoid,
+  Actual: shp.cIsoscelesTrapezoid,
   Expected: 'IsoscelesTrapezoid'
 }, {
   Name: 'cRegularPentagon',
-  Actual: sh.cRegularPentagon,
+  Actual: shp.cRegularPentagon,
   Expected: 'RegularPentagon'
 }, {
   Name: 'cLemoineHexagon',
-  Actual: sh.cLemoineHexagon,
+  Actual: shp.cLemoineHexagon,
   Expected: 'LemoineHexagon'
 }, {
   Name: 'cRegularOctagon',
-  Actual: sh.cRegularOctagon,
+  Actual: shp.cRegularOctagon,
   Expected: 'RegularOctagon'
 }, {
   Name: 'cRegularDecagon',
-  Actual: sh.cRegularDecagon,
+  Actual: shp.cRegularDecagon,
   Expected: 'RegularDecagon'
 }, {
   Name: 'cTriskaidecagon',
-  Actual: sh.cTriskaidecagon,
+  Actual: shp.cTriskaidecagon,
   Expected: 'Triskaidecagon'
 }, {
   Name: 'cTriacontagon',
-  Actual: sh.cTriacontagon,
+  Actual: shp.cTriacontagon,
   Expected: 'Triacontagon'
 }, {
   Name: 'cTetracontagon',
-  Actual: sh.cTetracontagon,
+  Actual: shp.cTetracontagon,
   Expected: 'Tetracontagon'
 }, {
   Name: 'cPentacontagon',
-  Actual: sh.cPentacontagon,
+  Actual: shp.cPentacontagon,
   Expected: 'Pentacontagon'
 }, {
   Name: 'cHexacontagon',
-  Actual: sh.cHexacontagon,
+  Actual: shp.cHexacontagon,
   Expected: 'Hexacontagon'
 }, {
   Name: 'cHeptacontagon',
-  Actual: sh.cHeptacontagon,
+  Actual: shp.cHeptacontagon,
   Expected: 'Heptacontagon'
 }, {
   Name: 'cOctacontagon',
-  Actual: sh.cOctacontagon,
+  Actual: shp.cOctacontagon,
   Expected: 'Octacontagon'
 }, {
   Name: 'cEnneacontagon',
-  Actual: sh.cEnneacontagon,
+  Actual: shp.cEnneacontagon,
   Expected: 'Enneacontagon'
 }, {
   Name: 'c257Gon',
-  Actual: sh.c257Gon,
+  Actual: shp.c257Gon,
   Expected: '257Gon'
 }, {
   Name: 'cMyriagon',
-  Actual: sh.cMyriagon,
+  Actual: shp.cMyriagon,
   Expected: 'Myriagon'
 }, {
   Name: 'c65537Gon',
-  Actual: sh.c65537Gon,
+  Actual: shp.c65537Gon,
   Expected: '65537Gon'
 }, {
   Name: 'cMegagon',
-  Actual: sh.cMegagon,
+  Actual: shp.cMegagon,
   Expected: 'Megagon'
 }, // Tilings
 {
   Name: 'cArchimedeanTiling',
-  Actual: sh.cArchimedeanTiling,
+  Actual: shp.cArchimedeanTiling,
   Expected: 'ArchimedeanTiling'
 }, {
   Name: 'cTruncatedSquareTiling',
-  Actual: sh.cTruncatedSquareTiling,
+  Actual: shp.cTruncatedSquareTiling,
   Expected: 'TruncatedSquareTiling'
 }, {
   Name: 'cSnubSquareTiling',
-  Actual: sh.cSnubSquareTiling,
+  Actual: shp.cSnubSquareTiling,
   Expected: 'SnubSquareTiling'
 }, {
   Name: 'cTrihexagonalTiling',
-  Actual: sh.cTrihexagonalTiling,
+  Actual: shp.cTrihexagonalTiling,
   Expected: 'TrihexagonalTiling'
 }, {
   Name: 'cTruncatedHexagonalTiling',
-  Actual: sh.cTruncatedHexagonalTiling,
+  Actual: shp.cTruncatedHexagonalTiling,
   Expected: 'TruncatedHexagonalTiling'
 }, {
   Name: 'cRhombitriHexagonalTiling',
-  Actual: sh.cRhombitriHexagonalTiling,
+  Actual: shp.cRhombitriHexagonalTiling,
   Expected: 'RhombitriHexagonalTiling'
 }, {
   Name: 'cTruncatedTriHexagonalTiling',
-  Actual: sh.cTruncatedTriHexagonalTiling,
+  Actual: shp.cTruncatedTriHexagonalTiling,
   Expected: 'TruncatedTriHexagonalTiling'
 }, {
   Name: 'cSnubHexagonalTiling',
-  Actual: sh.cSnubHexagonalTiling,
+  Actual: shp.cSnubHexagonalTiling,
   Expected: 'SnubHexagonalTiling'
 }, {
   Name: 'cElongatedTriangularTiling',
-  Actual: sh.cElongatedTriangularTiling,
+  Actual: shp.cElongatedTriangularTiling,
   Expected: 'ElongatedTriangularTiling'
 }, // Uniform Polyhedra
 {
   Name: 'cHemicube',
-  Actual: sh.cHemicube,
+  Actual: shp.cHemicube,
   Expected: 'Hemicube'
 }, {
   Name: 'cHemiOctahedron',
-  Actual: sh.cHemiOctahedron,
+  Actual: shp.cHemiOctahedron,
   Expected: 'HemiOctahedron'
 }, {
   Name: 'cHemiDodecahedron',
-  Actual: sh.cHemiDodecahedron,
+  Actual: shp.cHemiDodecahedron,
   Expected: 'HemiDodecahedron'
 }, {
   Name: 'cHemiIcosahedron',
-  Actual: sh.cHemiIcosahedron,
+  Actual: shp.cHemiIcosahedron,
   Expected: 'HemiIcosahedron'
 }, {
   Name: 'cTruncatedTetrahedron',
-  Actual: sh.cTruncatedTetrahedron,
+  Actual: shp.cTruncatedTetrahedron,
   Expected: 'TruncatedTetrahedron'
 }, {
   Name: 'cCuboctahedron',
-  Actual: sh.cCuboctahedron,
+  Actual: shp.cCuboctahedron,
   Expected: 'Cuboctahedron'
 }, {
   Name: 'cTruncatedCube',
-  Actual: sh.cTruncatedCube,
+  Actual: shp.cTruncatedCube,
   Expected: 'TruncatedCube'
 }, {
   Name: 'cTruncatedOctahedron',
-  Actual: sh.cTruncatedOctahedron,
+  Actual: shp.cTruncatedOctahedron,
   Expected: 'TruncatedOctahedron'
 }, {
   Name: 'cRhombicubOctahedron',
-  Actual: sh.cRhombicubOctahedron,
+  Actual: shp.cRhombicubOctahedron,
   Expected: 'RhombicubOctahedron'
 }, {
   Name: 'cTruncatedCuboctahedron',
-  Actual: sh.cTruncatedCuboctahedron,
+  Actual: shp.cTruncatedCuboctahedron,
   Expected: 'TruncatedCuboctahedron'
 }, {
   Name: 'cSnubCube',
-  Actual: sh.cSnubCube,
+  Actual: shp.cSnubCube,
   Expected: 'SnubCube'
 }, {
   Name: 'cIcosidodecahedron',
-  Actual: sh.cIcosidodecahedron,
+  Actual: shp.cIcosidodecahedron,
   Expected: 'Icosidodecahedron'
 }, {
   Name: 'cTruncatedDodecahedron',
-  Actual: sh.cTruncatedDodecahedron,
+  Actual: shp.cTruncatedDodecahedron,
   Expected: 'TruncatedDodecahedron'
 }, {
   Name: 'cTruncatedIcosahedron',
-  Actual: sh.cTruncatedIcosahedron,
+  Actual: shp.cTruncatedIcosahedron,
   Expected: 'TruncatedIcosahedron'
 }, {
   Name: 'cRhombicosidodecahedron',
-  Actual: sh.cRhombicosidodecahedron,
+  Actual: shp.cRhombicosidodecahedron,
   Expected: 'Rhombicosidodecahedron'
 }, {
   Name: 'cTruncatedIcosidodecahedron',
-  Actual: sh.cTruncatedIcosidodecahedron,
+  Actual: shp.cTruncatedIcosidodecahedron,
   Expected: 'TruncatedIcosidodecahedron'
 }, {
   Name: 'cSnubDodecahedron',
-  Actual: sh.cSnubDodecahedron,
+  Actual: shp.cSnubDodecahedron,
   Expected: 'SnubDodecahedron'
 }, {
   Name: 'cPrism',
-  Actual: sh.cPrism,
+  Actual: shp.cPrism,
   Expected: 'Prism'
 }, {
   Name: 'cAntiprism',
-  Actual: sh.cAntiprism,
+  Actual: shp.cAntiprism,
   Expected: 'Antiprism'
 }, {
   Name: 'cCubitruncatedCuboctahedron',
-  Actual: sh.cCubitruncatedCuboctahedron,
+  Actual: shp.cCubitruncatedCuboctahedron,
   Expected: 'CubitruncatedCuboctahedron'
 }, {
   Name: 'cCubohemioctahedron',
-  Actual: sh.cCubohemioctahedron,
+  Actual: shp.cCubohemioctahedron,
   Expected: 'Cubohemioctahedron'
 }, {
   Name: 'cDitrigonalDodecadodecahedron',
-  Actual: sh.cDitrigonalDodecadodecahedron,
+  Actual: shp.cDitrigonalDodecadodecahedron,
   Expected: 'DitrigonalDodecadodecahedron'
 }, {
   Name: 'cDodecadodecahedron',
-  Actual: sh.cDodecadodecahedron,
+  Actual: shp.cDodecadodecahedron,
   Expected: 'Dodecadodecahedron'
 }, {
   Name: 'cGreatCubicuboctahedron',
-  Actual: sh.cGreatCubicuboctahedron,
+  Actual: shp.cGreatCubicuboctahedron,
   Expected: 'GreatCubicuboctahedron'
 }, {
   Name: 'cGreatDirhombicosidodecahedron',
-  Actual: sh.cGreatDirhombicosidodecahedron,
+  Actual: shp.cGreatDirhombicosidodecahedron,
   Expected: 'GreatDirhombicosidodecahedron'
 }, {
   Name: 'cGreatDisnubDirhombidodecahedron',
-  Actual: sh.cGreatDisnubDirhombidodecahedron,
+  Actual: shp.cGreatDisnubDirhombidodecahedron,
   Expected: 'GreatDisnubDirhombidodecahedron'
 }, {
   Name: 'cGreatDitrigonalDodecicosidodecahedron',
-  Actual: sh.cGreatDitrigonalDodecicosidodecahedron,
+  Actual: shp.cGreatDitrigonalDodecicosidodecahedron,
   Expected: 'GreatDitrigonalDodecicosidodecahedron'
 }, {
   Name: 'cGreatDitrigonalIcosidodecahedron',
-  Actual: sh.cGreatDitrigonalIcosidodecahedron,
+  Actual: shp.cGreatDitrigonalIcosidodecahedron,
   Expected: 'GreatDitrigonalIcosidodecahedron'
 }, {
   Name: 'cGreatDodecahemicosahedron',
-  Actual: sh.cGreatDodecahemicosahedron,
+  Actual: shp.cGreatDodecahemicosahedron,
   Expected: 'GreatDodecahemicosahedron'
 }, {
   Name: 'cGreatDodecahemidodecahedron',
-  Actual: sh.cGreatDodecahemidodecahedron,
+  Actual: shp.cGreatDodecahemidodecahedron,
   Expected: 'GreatDodecahemidodecahedron'
 }, {
   Name: 'cGreatDodecicosahedron',
-  Actual: sh.cGreatDodecicosahedron,
+  Actual: shp.cGreatDodecicosahedron,
   Expected: 'GreatDodecicosahedron'
 }, {
   Name: 'cGreatDodecicosidodecahedron',
-  Actual: sh.cGreatDodecicosidodecahedron,
+  Actual: shp.cGreatDodecicosidodecahedron,
   Expected: 'GreatDodecicosidodecahedron'
 }, {
   Name: 'cGreatIcosicosidodecahedron',
-  Actual: sh.cGreatIcosicosidodecahedron,
+  Actual: shp.cGreatIcosicosidodecahedron,
   Expected: 'GreatIcosicosidodecahedron'
 }, {
   Name: 'cGreatIcosidodecahedron',
-  Actual: sh.cGreatIcosidodecahedron,
+  Actual: shp.cGreatIcosidodecahedron,
   Expected: 'GreatIcosidodecahedron'
 }, {
   Name: 'cGreatIcosihemidodecahedron',
-  Actual: sh.cGreatIcosihemidodecahedron,
+  Actual: shp.cGreatIcosihemidodecahedron,
   Expected: 'GreatIcosihemidodecahedron'
 }, {
   Name: 'cGreatInvertedSnubIcosidodecahedron',
-  Actual: sh.cGreatInvertedSnubIcosidodecahedron,
+  Actual: shp.cGreatInvertedSnubIcosidodecahedron,
   Expected: 'GreatInvertedSnubIcosidodecahedron'
 }, {
   Name: 'cGreatRetrosnubIcosidodecahedron',
-  Actual: sh.cGreatRetrosnubIcosidodecahedron,
+  Actual: shp.cGreatRetrosnubIcosidodecahedron,
   Expected: 'GreatRetrosnubIcosidodecahedron'
 }, {
   Name: 'cGreatRhombidodecahedron',
-  Actual: sh.cGreatRhombidodecahedron,
+  Actual: shp.cGreatRhombidodecahedron,
   Expected: 'GreatRhombidodecahedron'
 }, {
   Name: 'cGreatRhombihexahedron',
-  Actual: sh.cGreatRhombihexahedron,
+  Actual: shp.cGreatRhombihexahedron,
   Expected: 'GreatRhombihexahedron'
 }, {
   Name: 'cGreatSnubDodecicosidodecahedron',
-  Actual: sh.cGreatSnubDodecicosidodecahedron,
+  Actual: shp.cGreatSnubDodecicosidodecahedron,
   Expected: 'GreatSnubDodecicosidodecahedron'
 }, {
   Name: 'cGreatSnubIcosidodecahedron',
-  Actual: sh.cGreatSnubIcosidodecahedron,
+  Actual: shp.cGreatSnubIcosidodecahedron,
   Expected: 'GreatSnubIcosidodecahedron'
 }, {
   Name: 'cGreatStellatedTruncatedDodecahedron',
-  Actual: sh.cGreatStellatedTruncatedDodecahedron,
+  Actual: shp.cGreatStellatedTruncatedDodecahedron,
   Expected: 'GreatStellatedTruncatedDodecahedron'
 }, {
   Name: 'cGreatTruncatedCuboctahedron',
-  Actual: sh.cGreatTruncatedCuboctahedron,
+  Actual: shp.cGreatTruncatedCuboctahedron,
   Expected: 'GreatTruncatedCuboctahedron'
 }, {
   Name: 'cGreatTruncatedIcosidodecahedron',
-  Actual: sh.cGreatTruncatedIcosidodecahedron,
+  Actual: shp.cGreatTruncatedIcosidodecahedron,
   Expected: 'GreatTruncatedIcosidodecahedron'
 }, {
   Name: 'cIcosidodecadodecahedron',
-  Actual: sh.cIcosidodecadodecahedron,
+  Actual: shp.cIcosidodecadodecahedron,
   Expected: 'Icosidodecadodecahedron'
 }, {
   Name: 'cIcositruncatedDodecadodecahedron',
-  Actual: sh.cIcositruncatedDodecadodecahedron,
+  Actual: shp.cIcositruncatedDodecadodecahedron,
   Expected: 'IcositruncatedDodecadodecahedron'
 }, {
   Name: 'cInvertedSnubDodecadodecahedron',
-  Actual: sh.cInvertedSnubDodecadodecahedron,
+  Actual: shp.cInvertedSnubDodecadodecahedron,
   Expected: 'InvertedSnubDodecadodecahedron'
 }, {
   Name: 'cNonconvexGreatRhombicosidodecahedron',
-  Actual: sh.cNonconvexGreatRhombicosidodecahedron,
+  Actual: shp.cNonconvexGreatRhombicosidodecahedron,
   Expected: 'NonconvexGreatRhombicosidodecahedron'
 }, {
   Name: 'cNonconvexGreatRhombicuboctahedron',
-  Actual: sh.cNonconvexGreatRhombicuboctahedron,
+  Actual: shp.cNonconvexGreatRhombicuboctahedron,
   Expected: 'NonconvexGreatRhombicuboctahedron'
 }, {
   Name: 'cOctahemioctahedron',
-  Actual: sh.cOctahemioctahedron,
+  Actual: shp.cOctahemioctahedron,
   Expected: 'Octahemioctahedron'
 }, {
   Name: 'cRhombicosahedron',
-  Actual: sh.cRhombicosahedron,
+  Actual: shp.cRhombicosahedron,
   Expected: 'Rhombicosahedron'
 }, {
   Name: 'cRhombidodecadodecahedron',
-  Actual: sh.cRhombidodecadodecahedron,
+  Actual: shp.cRhombidodecadodecahedron,
   Expected: 'Rhombidodecadodecahedron'
 }, {
   Name: 'cSmallCubicuboctahedron',
-  Actual: sh.cSmallCubicuboctahedron,
+  Actual: shp.cSmallCubicuboctahedron,
   Expected: 'SmallCubicuboctahedron'
 }, {
   Name: 'cSmallDitrigonalDodecicosidodecahedron',
-  Actual: sh.cSmallDitrigonalDodecicosidodecahedron,
+  Actual: shp.cSmallDitrigonalDodecicosidodecahedron,
   Expected: 'SmallDitrigonalDodecicosidodecahedron'
 }, {
   Name: 'cSmallDitrigonalIcosidodecahedron',
-  Actual: sh.cSmallDitrigonalIcosidodecahedron,
+  Actual: shp.cSmallDitrigonalIcosidodecahedron,
   Expected: 'SmallDitrigonalIcosidodecahedron'
 }, {
   Name: 'cSmallDodecahemicosahedron',
-  Actual: sh.cSmallDodecahemicosahedron,
+  Actual: shp.cSmallDodecahemicosahedron,
   Expected: 'SmallDodecahemicosahedron'
 }, {
   Name: 'cSmallDodecahemidodecahedron',
-  Actual: sh.cSmallDodecahemidodecahedron,
+  Actual: shp.cSmallDodecahemidodecahedron,
   Expected: 'SmallDodecahemidodecahedron'
 }, {
   Name: 'cSmallDodecicosahedron',
-  Actual: sh.cSmallDodecicosahedron,
+  Actual: shp.cSmallDodecicosahedron,
   Expected: 'SmallDodecicosahedron'
 }, {
   Name: 'cSmallDodecicosidodecahedron',
-  Actual: sh.cSmallDodecicosidodecahedron,
+  Actual: shp.cSmallDodecicosidodecahedron,
   Expected: 'SmallDodecicosidodecahedron'
 }, {
   Name: 'cSmallIcosicosidodecahedron',
-  Actual: sh.cSmallIcosicosidodecahedron,
+  Actual: shp.cSmallIcosicosidodecahedron,
   Expected: 'SmallIcosicosidodecahedron'
 }, {
   Name: 'cSmallIcosihemidodecahedron',
-  Actual: sh.cSmallIcosihemidodecahedron,
+  Actual: shp.cSmallIcosihemidodecahedron,
   Expected: 'SmallIcosihemidodecahedron'
 }, {
   Name: 'cSmallRetrosnubIcosicosidodecahedron',
-  Actual: sh.cSmallRetrosnubIcosicosidodecahedron,
+  Actual: shp.cSmallRetrosnubIcosicosidodecahedron,
   Expected: 'SmallRetrosnubIcosicosidodecahedron'
 }, {
   Name: 'cSmallRhombidodecahedron',
-  Actual: sh.cSmallRhombidodecahedron,
+  Actual: shp.cSmallRhombidodecahedron,
   Expected: 'SmallRhombidodecahedron'
 }, {
   Name: 'cSmallRhombihexahedron',
-  Actual: sh.cSmallRhombihexahedron,
+  Actual: shp.cSmallRhombihexahedron,
   Expected: 'SmallRhombihexahedron'
 }, {
   Name: 'cSmallSnubIcosicosidodecahedron',
-  Actual: sh.cSmallSnubIcosicosidodecahedron,
+  Actual: shp.cSmallSnubIcosicosidodecahedron,
   Expected: 'SmallSnubIcosicosidodecahedron'
 }, {
   Name: 'cSmallStellatedTruncatedDodecahedron',
-  Actual: sh.cSmallStellatedTruncatedDodecahedron,
+  Actual: shp.cSmallStellatedTruncatedDodecahedron,
   Expected: 'SmallStellatedTruncatedDodecahedron'
 }, {
   Name: 'cSnubDodecadodecahedron',
-  Actual: sh.cSnubDodecadodecahedron,
+  Actual: shp.cSnubDodecadodecahedron,
   Expected: 'SnubDodecadodecahedron'
 }, {
   Name: 'cSnubIcosidodecadodecahedron',
-  Actual: sh.cSnubIcosidodecadodecahedron,
+  Actual: shp.cSnubIcosidodecadodecahedron,
   Expected: 'SnubIcosidodecadodecahedron'
 }, {
   Name: 'cStellatedTruncatedHexahedron',
-  Actual: sh.cStellatedTruncatedHexahedron,
+  Actual: shp.cStellatedTruncatedHexahedron,
   Expected: 'StellatedTruncatedHexahedron'
 }, {
   Name: 'cTetrahemihexahedron',
-  Actual: sh.cTetrahemihexahedron,
+  Actual: shp.cTetrahemihexahedron,
   Expected: 'Tetrahemihexahedron'
 }, {
   Name: 'cTruncatedDodecadodecahedron',
-  Actual: sh.cTruncatedDodecadodecahedron,
+  Actual: shp.cTruncatedDodecadodecahedron,
   Expected: 'TruncatedDodecadodecahedron'
 }, {
   Name: 'cTruncatedGreatDodecahedron',
-  Actual: sh.cTruncatedGreatDodecahedron,
+  Actual: shp.cTruncatedGreatDodecahedron,
   Expected: 'TruncatedGreatDodecahedron'
 }, {
   Name: 'cTruncatedGreatIcosahedron',
-  Actual: sh.cTruncatedGreatIcosahedron,
+  Actual: shp.cTruncatedGreatIcosahedron,
   Expected: 'TruncatedGreatIcosahedron'
 }, // Duals of Uniform Polyhedra
 {
   Name: 'cCatalanSolid',
-  Actual: sh.cCatalanSolid,
+  Actual: shp.cCatalanSolid,
   Expected: 'CatalanSolid'
 }, {
   Name: 'cTriakisTetrahedron',
-  Actual: sh.cTriakisTetrahedron,
+  Actual: shp.cTriakisTetrahedron,
   Expected: 'TriakisTetrahedron'
 }, {
   Name: 'cRhombicDodecahedron',
-  Actual: sh.cRhombicDodecahedron,
+  Actual: shp.cRhombicDodecahedron,
   Expected: 'RhombicDodecahedron'
 }, {
   Name: 'cTriakisOctahedron',
-  Actual: sh.cTriakisOctahedron,
+  Actual: shp.cTriakisOctahedron,
   Expected: 'TriakisOctahedron'
 }, {
   Name: 'cTetrakisHexahedron',
-  Actual: sh.cTetrakisHexahedron,
+  Actual: shp.cTetrakisHexahedron,
   Expected: 'TetrakisHexahedron'
 }, {
   Name: 'cDeltoidalIcositetrahedron',
-  Actual: sh.cDeltoidalIcositetrahedron,
+  Actual: shp.cDeltoidalIcositetrahedron,
   Expected: 'DeltoidalIcositetrahedron'
 }, {
   Name: 'cDisdyakisDodecahedron',
-  Actual: sh.cDisdyakisDodecahedron,
+  Actual: shp.cDisdyakisDodecahedron,
   Expected: 'DisdyakisDodecahedron'
 }, {
   Name: 'cPentagonalIcositetrahedron',
-  Actual: sh.cPentagonalIcositetrahedron,
+  Actual: shp.cPentagonalIcositetrahedron,
   Expected: 'PentagonalIcositetrahedron'
 }, {
   Name: 'cRhombicTriacontahedron',
-  Actual: sh.cRhombicTriacontahedron,
+  Actual: shp.cRhombicTriacontahedron,
   Expected: 'RhombicTriacontahedron'
 }, {
   Name: 'cTriakisIcosahedron',
-  Actual: sh.cTriakisIcosahedron,
+  Actual: shp.cTriakisIcosahedron,
   Expected: 'TriakisIcosahedron'
 }, {
   Name: 'cPentakisDodecahedron',
-  Actual: sh.cPentakisDodecahedron,
+  Actual: shp.cPentakisDodecahedron,
   Expected: 'PentakisDodecahedron'
 }, {
   Name: 'cDeltoidalHexecontahedron',
-  Actual: sh.cDeltoidalHexecontahedron,
+  Actual: shp.cDeltoidalHexecontahedron,
   Expected: 'DeltoidalHexecontahedron'
 }, {
   Name: 'cDisdyakisTriacontahedron',
-  Actual: sh.cDisdyakisTriacontahedron,
+  Actual: shp.cDisdyakisTriacontahedron,
   Expected: 'DisdyakisTriacontahedron'
 }, {
   Name: 'cPentagonalHexecontahedron',
-  Actual: sh.cPentagonalHexecontahedron,
+  Actual: shp.cPentagonalHexecontahedron,
   Expected: 'PentagonalHexecontahedron'
 }, {
   Name: 'cGreatComplexIcosidodecahedron',
-  Actual: sh.cGreatComplexIcosidodecahedron,
+  Actual: shp.cGreatComplexIcosidodecahedron,
   Expected: 'GreatComplexIcosidodecahedron'
 }, {
   Name: 'cGreatDeltoidalHexecontahedron',
-  Actual: sh.cGreatDeltoidalHexecontahedron,
+  Actual: shp.cGreatDeltoidalHexecontahedron,
   Expected: 'GreatDeltoidalHexecontahedron'
 }, {
   Name: 'cGreatDeltoidalIcositetrahedron',
-  Actual: sh.cGreatDeltoidalIcositetrahedron,
+  Actual: shp.cGreatDeltoidalIcositetrahedron,
   Expected: 'GreatDeltoidalIcositetrahedron'
 }, {
   Name: 'cGreatDirhombicosidodecacron',
-  Actual: sh.cGreatDirhombicosidodecacron,
+  Actual: shp.cGreatDirhombicosidodecacron,
   Expected: 'GreatDirhombicosidodecacron'
 }, {
   Name: 'cGreatDisdyakisDodecahedron',
-  Actual: sh.cGreatDisdyakisDodecahedron,
+  Actual: shp.cGreatDisdyakisDodecahedron,
   Expected: 'GreatDisdyakisDodecahedron'
 }, {
   Name: 'cGreatDisdyakisTriacontahedron',
-  Actual: sh.cGreatDisdyakisTriacontahedron,
+  Actual: shp.cGreatDisdyakisTriacontahedron,
   Expected: 'GreatDisdyakisTriacontahedron'
 }, {
   Name: 'cGreatDisnubDirhombidodecacron',
-  Actual: sh.cGreatDisnubDirhombidodecacron,
+  Actual: shp.cGreatDisnubDirhombidodecacron,
   Expected: 'GreatDisnubDirhombidodecacron'
 }, {
   Name: 'cGreatDitrigonalDodecacronicHexecontahedron',
-  Actual: sh.cGreatDitrigonalDodecacronicHexecontahedron,
+  Actual: shp.cGreatDitrigonalDodecacronicHexecontahedron,
   Expected: 'GreatDitrigonalDodecacronicHexecontahedron'
 }, {
   Name: 'cGreatDodecacronicHexecontahedron',
-  Actual: sh.cGreatDodecacronicHexecontahedron,
+  Actual: shp.cGreatDodecacronicHexecontahedron,
   Expected: 'GreatDodecacronicHexecontahedron'
 }, {
   Name: 'cGreatDodecahemicosacron',
-  Actual: sh.cGreatDodecahemicosacron,
+  Actual: shp.cGreatDodecahemicosacron,
   Expected: 'GreatDodecahemicosacron'
 }, {
   Name: 'cGreatDodecicosacron',
-  Actual: sh.cGreatDodecicosacron,
+  Actual: shp.cGreatDodecicosacron,
   Expected: 'GreatDodecicosacron'
 }, {
   Name: 'cGreatHexacronicIcositetrahedron',
-  Actual: sh.cGreatHexacronicIcositetrahedron,
+  Actual: shp.cGreatHexacronicIcositetrahedron,
   Expected: 'GreatHexacronicIcositetrahedron'
 }, {
   Name: 'cGreatHexagonalHexecontahedron',
-  Actual: sh.cGreatHexagonalHexecontahedron,
+  Actual: shp.cGreatHexagonalHexecontahedron,
   Expected: 'GreatHexagonalHexecontahedron'
 }, {
   Name: 'cGreatIcosacronicHexecontahedron',
-  Actual: sh.cGreatIcosacronicHexecontahedron,
+  Actual: shp.cGreatIcosacronicHexecontahedron,
   Expected: 'GreatIcosacronicHexecontahedron'
 }, {
   Name: 'cGreatIcosihemidodecacron',
-  Actual: sh.cGreatIcosihemidodecacron,
+  Actual: shp.cGreatIcosihemidodecacron,
   Expected: 'GreatIcosihemidodecacron'
 }, {
   Name: 'cGreatInvertedPentagonalHexecontahedron',
-  Actual: sh.cGreatInvertedPentagonalHexecontahedron,
+  Actual: shp.cGreatInvertedPentagonalHexecontahedron,
   Expected: 'GreatInvertedPentagonalHexecontahedron'
 }, {
   Name: 'cGreatPentagonalHexecontahedron',
-  Actual: sh.cGreatPentagonalHexecontahedron,
+  Actual: shp.cGreatPentagonalHexecontahedron,
   Expected: 'GreatPentagonalHexecontahedron'
 }, {
   Name: 'cGreatPentagrammicHexecontahedron',
-  Actual: sh.cGreatPentagrammicHexecontahedron,
+  Actual: shp.cGreatPentagrammicHexecontahedron,
   Expected: 'GreatPentagrammicHexecontahedron'
 }, {
   Name: 'cGreatPentakisDodecahedron',
-  Actual: sh.cGreatPentakisDodecahedron,
+  Actual: shp.cGreatPentakisDodecahedron,
   Expected: 'GreatPentakisDodecahedron'
 }, {
   Name: 'cGreatRhombicTriacontahedron',
-  Actual: sh.cGreatRhombicTriacontahedron,
+  Actual: shp.cGreatRhombicTriacontahedron,
   Expected: 'GreatRhombicTriacontahedron'
 }, {
   Name: 'cGreatRhombidodecacron',
-  Actual: sh.cGreatRhombidodecacron,
+  Actual: shp.cGreatRhombidodecacron,
   Expected: 'GreatRhombidodecacron'
 }, {
   Name: 'cGreatRhombihexacron',
-  Actual: sh.cGreatRhombihexacron,
+  Actual: shp.cGreatRhombihexacron,
   Expected: 'GreatRhombihexacron'
 }, {
   Name: 'cGreatStellapentakisDodecahedron',
-  Actual: sh.cGreatStellapentakisDodecahedron,
+  Actual: shp.cGreatStellapentakisDodecahedron,
   Expected: 'GreatStellapentakisDodecahedron'
 }, {
   Name: 'cGreatTriakisIcosahedron',
-  Actual: sh.cGreatTriakisIcosahedron,
+  Actual: shp.cGreatTriakisIcosahedron,
   Expected: 'GreatTriakisIcosahedron'
 }, {
   Name: 'cGreatTriakisOctahedron',
-  Actual: sh.cGreatTriakisOctahedron,
+  Actual: shp.cGreatTriakisOctahedron,
   Expected: 'GreatTriakisOctahedron'
 }, {
   Name: 'cGreatTriambicIcosahedron',
-  Actual: sh.cGreatTriambicIcosahedron,
+  Actual: shp.cGreatTriambicIcosahedron,
   Expected: 'GreatTriambicIcosahedron'
 }, {
   Name: 'cMedialDeltoidalHexecontahedron',
-  Actual: sh.cMedialDeltoidalHexecontahedron,
+  Actual: shp.cMedialDeltoidalHexecontahedron,
   Expected: 'MedialDeltoidalHexecontahedron'
 }, {
   Name: 'cMedialDisdyakisTriacontahedron',
-  Actual: sh.cMedialDisdyakisTriacontahedron,
+  Actual: shp.cMedialDisdyakisTriacontahedron,
   Expected: 'MedialDisdyakisTriacontahedron'
 }, {
   Name: 'cMedialHexagonalHexecontahedron',
-  Actual: sh.cMedialHexagonalHexecontahedron,
+  Actual: shp.cMedialHexagonalHexecontahedron,
   Expected: 'MedialHexagonalHexecontahedron'
 }, {
   Name: 'cMedialIcosacronicHexecontahedron',
-  Actual: sh.cMedialIcosacronicHexecontahedron,
+  Actual: shp.cMedialIcosacronicHexecontahedron,
   Expected: 'MedialIcosacronicHexecontahedron'
 }, {
   Name: 'cMedialInvertedPentagonalHexecontahedron',
-  Actual: sh.cMedialInvertedPentagonalHexecontahedron,
+  Actual: shp.cMedialInvertedPentagonalHexecontahedron,
   Expected: 'MedialInvertedPentagonalHexecontahedron'
 }, {
   Name: 'cMedialPentagonalHexecontahedron',
-  Actual: sh.cMedialPentagonalHexecontahedron,
+  Actual: shp.cMedialPentagonalHexecontahedron,
   Expected: 'MedialPentagonalHexecontahedron'
 }, {
   Name: 'cMedialRhombicTriacontahedron',
-  Actual: sh.cMedialRhombicTriacontahedron,
+  Actual: shp.cMedialRhombicTriacontahedron,
   Expected: 'MedialRhombicTriacontahedron'
 }, {
   Name: 'cHexahemioctacron',
-  Actual: sh.cHexahemioctacron,
+  Actual: shp.cHexahemioctacron,
   Expected: 'Hexahemioctacron'
 }, {
   Name: 'cHemipolyhedron',
-  Actual: sh.cHemipolyhedron,
+  Actual: shp.cHemipolyhedron,
   Expected: 'Hemipolyhedron'
 }, {
   Name: 'cOctahemioctacron',
-  Actual: sh.cOctahemioctacron,
+  Actual: shp.cOctahemioctacron,
   Expected: 'Octahemioctacron'
 }, {
   Name: 'cRhombicosacron',
-  Actual: sh.cRhombicosacron,
+  Actual: shp.cRhombicosacron,
   Expected: 'Rhombicosacron'
 }, {
   Name: 'cSmallComplexIcosidodecahedron',
-  Actual: sh.cSmallComplexIcosidodecahedron,
+  Actual: shp.cSmallComplexIcosidodecahedron,
   Expected: 'SmallComplexIcosidodecahedron'
 }, {
   Name: 'cSmallDitrigonalDodecacronicHexecontahedron',
-  Actual: sh.cSmallDitrigonalDodecacronicHexecontahedron,
+  Actual: shp.cSmallDitrigonalDodecacronicHexecontahedron,
   Expected: 'SmallDitrigonalDodecacronicHexecontahedron'
 }, {
   Name: 'cSmallDodecacronicHexecontahedron',
-  Actual: sh.cSmallDodecacronicHexecontahedron,
+  Actual: shp.cSmallDodecacronicHexecontahedron,
   Expected: 'SmallDodecacronicHexecontahedron'
 }, {
   Name: 'cSmallDodecahemicosacron',
-  Actual: sh.cSmallDodecahemicosacron,
+  Actual: shp.cSmallDodecahemicosacron,
   Expected: 'SmallDodecahemicosacron'
 }, {
   Name: 'cSmallDodecahemidodecacron',
-  Actual: sh.cSmallDodecahemidodecacron,
+  Actual: shp.cSmallDodecahemidodecacron,
   Expected: 'SmallDodecahemidodecacron'
 }, {
   Name: 'cSmallDodecicosacron',
-  Actual: sh.cSmallDodecicosacron,
+  Actual: shp.cSmallDodecicosacron,
   Expected: 'SmallDodecicosacron'
 }, {
   Name: 'cSmallHexacronicIcositetrahedron',
-  Actual: sh.cSmallHexacronicIcositetrahedron,
+  Actual: shp.cSmallHexacronicIcositetrahedron,
   Expected: 'SmallHexacronicIcositetrahedron'
 }, {
   Name: 'cSmallHexagonalHexecontahedron',
-  Actual: sh.cSmallHexagonalHexecontahedron,
+  Actual: shp.cSmallHexagonalHexecontahedron,
   Expected: 'SmallHexagonalHexecontahedron'
 }, {
   Name: 'cSmallHexagrammicHexecontahedron',
-  Actual: sh.cSmallHexagrammicHexecontahedron,
+  Actual: shp.cSmallHexagrammicHexecontahedron,
   Expected: 'SmallHexagrammicHexecontahedron'
 }, {
   Name: 'cSmallIcosacronicHexecontahedron',
-  Actual: sh.cSmallIcosacronicHexecontahedron,
+  Actual: shp.cSmallIcosacronicHexecontahedron,
   Expected: 'SmallIcosacronicHexecontahedron'
 }, {
   Name: 'cSmallIcosihemidodecacron',
-  Actual: sh.cSmallIcosihemidodecacron,
+  Actual: shp.cSmallIcosihemidodecacron,
   Expected: 'SmallIcosihemidodecacron'
 }, {
   Name: 'cSmallRhombidodecacron',
-  Actual: sh.cSmallRhombidodecacron,
+  Actual: shp.cSmallRhombidodecacron,
   Expected: 'SmallRhombidodecacron'
 }, {
   Name: 'cSmallRhombihexacron',
-  Actual: sh.cSmallRhombihexacron,
+  Actual: shp.cSmallRhombihexacron,
   Expected: 'SmallRhombihexacron'
 }, {
   Name: 'cSmallStellapentakisDodecahedron',
-  Actual: sh.cSmallStellapentakisDodecahedron,
+  Actual: shp.cSmallStellapentakisDodecahedron,
   Expected: 'SmallStellapentakisDodecahedron'
 }, {
   Name: 'cSmallTriambicIcosahedron',
-  Actual: sh.cSmallTriambicIcosahedron,
+  Actual: shp.cSmallTriambicIcosahedron,
   Expected: 'SmallTriambicIcosahedron'
 }, {
   Name: 'cTetrahemihexacron',
-  Actual: sh.cTetrahemihexacron,
+  Actual: shp.cTetrahemihexacron,
   Expected: 'Tetrahemihexacron'
 }, // Johnson Solids
 {
   Name: 'cAugmentedDodecahedron',
-  Actual: sh.cAugmentedDodecahedron,
+  Actual: shp.cAugmentedDodecahedron,
   Expected: 'AugmentedDodecahedron'
 }, {
   Name: 'cAugmentedHexagonalPrism',
-  Actual: sh.cAugmentedHexagonalPrism,
+  Actual: shp.cAugmentedHexagonalPrism,
   Expected: 'AugmentedHexagonalPrism'
 }, {
   Name: 'cAugmentedPentagonalPrism',
-  Actual: sh.cAugmentedPentagonalPrism,
+  Actual: shp.cAugmentedPentagonalPrism,
   Expected: 'AugmentedPentagonalPrism'
 }, {
   Name: 'cAugmentedSphenocorona',
-  Actual: sh.cAugmentedSphenocorona,
+  Actual: shp.cAugmentedSphenocorona,
   Expected: 'AugmentedSphenocorona'
 }, {
   Name: 'cAugmentedTriangularPrism',
-  Actual: sh.cAugmentedTriangularPrism,
+  Actual: shp.cAugmentedTriangularPrism,
   Expected: 'AugmentedTriangularPrism'
 }, {
   Name: 'cAugmentedTridiminishedIcosahedron',
-  Actual: sh.cAugmentedTridiminishedIcosahedron,
+  Actual: shp.cAugmentedTridiminishedIcosahedron,
   Expected: 'AugmentedTridiminishedIcosahedron'
 }, {
   Name: 'cAugmentedTruncatedCube',
-  Actual: sh.cAugmentedTruncatedCube,
+  Actual: shp.cAugmentedTruncatedCube,
   Expected: 'AugmentedTruncatedCube'
 }, {
   Name: 'cAugmentedTruncatedDodecahedron',
-  Actual: sh.cAugmentedTruncatedDodecahedron,
+  Actual: shp.cAugmentedTruncatedDodecahedron,
   Expected: 'AugmentedTruncatedDodecahedron'
 }, {
   Name: 'cAugmentedTruncatedTetrahedron',
-  Actual: sh.cAugmentedTruncatedTetrahedron,
+  Actual: shp.cAugmentedTruncatedTetrahedron,
   Expected: 'AugmentedTruncatedTetrahedron'
 }, {
   Name: 'cBiaugmentedPentagonalPrism',
-  Actual: sh.cBiaugmentedPentagonalPrism,
+  Actual: shp.cBiaugmentedPentagonalPrism,
   Expected: 'BiaugmentedPentagonalPrism'
 }, {
   Name: 'cBiaugmentedTriangularPrism',
-  Actual: sh.cBiaugmentedTriangularPrism,
+  Actual: shp.cBiaugmentedTriangularPrism,
   Expected: 'BiaugmentedTriangularPrism'
 }, {
   Name: 'cBiaugmentedTruncatedCube',
-  Actual: sh.cBiaugmentedTruncatedCube,
+  Actual: shp.cBiaugmentedTruncatedCube,
   Expected: 'BiaugmentedTruncatedCube'
 }, {
   Name: 'cBigyrateDiminishedRhombicosidodecahedron',
-  Actual: sh.cBigyrateDiminishedRhombicosidodecahedron,
+  Actual: shp.cBigyrateDiminishedRhombicosidodecahedron,
   Expected: 'BigyrateDiminishedRhombicosidodecahedron'
 }, {
   Name: 'cBilunabirotunda',
-  Actual: sh.cBilunabirotunda,
+  Actual: shp.cBilunabirotunda,
   Expected: 'Bilunabirotunda'
 }, {
   Name: 'cDiminishedRhombicosidodecahedron',
-  Actual: sh.cDiminishedRhombicosidodecahedron,
+  Actual: shp.cDiminishedRhombicosidodecahedron,
   Expected: 'DiminishedRhombicosidodecahedron'
 }, {
   Name: 'cDisphenocingulum',
-  Actual: sh.cDisphenocingulum,
+  Actual: shp.cDisphenocingulum,
   Expected: 'Disphenocingulum'
 }, {
   Name: 'cElongatedPentagonalBipyramid',
-  Actual: sh.cElongatedPentagonalBipyramid,
+  Actual: shp.cElongatedPentagonalBipyramid,
   Expected: 'ElongatedPentagonalBipyramid'
 }, {
   Name: 'cElongatedPentagonalCupola',
-  Actual: sh.cElongatedPentagonalCupola,
+  Actual: shp.cElongatedPentagonalCupola,
   Expected: 'ElongatedPentagonalCupola'
 }, {
   Name: 'cElongatedPentagonalGyrobicupola',
-  Actual: sh.cElongatedPentagonalGyrobicupola,
+  Actual: shp.cElongatedPentagonalGyrobicupola,
   Expected: 'ElongatedPentagonalGyrobicupola'
 }, {
   Name: 'cElongatedPentagonalGyrobirotunda',
-  Actual: sh.cElongatedPentagonalGyrobirotunda,
+  Actual: shp.cElongatedPentagonalGyrobirotunda,
   Expected: 'ElongatedPentagonalGyrobirotunda'
 }, {
   Name: 'cElongatedPentagonalGyrocupolarotunda',
-  Actual: sh.cElongatedPentagonalGyrocupolarotunda,
+  Actual: shp.cElongatedPentagonalGyrocupolarotunda,
   Expected: 'ElongatedPentagonalGyrocupolarotunda'
 }, {
   Name: 'cElongatedPentagonalOrthobicupola',
-  Actual: sh.cElongatedPentagonalOrthobicupola,
+  Actual: shp.cElongatedPentagonalOrthobicupola,
   Expected: 'ElongatedPentagonalOrthobicupola'
 }, {
   Name: 'cElongatedPentagonalOrthobirotunda',
-  Actual: sh.cElongatedPentagonalOrthobirotunda,
+  Actual: shp.cElongatedPentagonalOrthobirotunda,
   Expected: 'ElongatedPentagonalOrthobirotunda'
 }, {
   Name: 'cElongatedPentagonalOrthocupolarotunda',
-  Actual: sh.cElongatedPentagonalOrthocupolarotunda,
+  Actual: shp.cElongatedPentagonalOrthocupolarotunda,
   Expected: 'ElongatedPentagonalOrthocupolarotunda'
 }, {
   Name: 'cElongatedPentagonalPyramid',
-  Actual: sh.cElongatedPentagonalPyramid,
+  Actual: shp.cElongatedPentagonalPyramid,
   Expected: 'ElongatedPentagonalPyramid'
 }, {
   Name: 'cElongatedPentagonalRotunda',
-  Actual: sh.cElongatedPentagonalRotunda,
+  Actual: shp.cElongatedPentagonalRotunda,
   Expected: 'ElongatedPentagonalRotunda'
 }, {
   Name: 'cElongatedSquareBipyramid',
-  Actual: sh.cElongatedSquareBipyramid,
+  Actual: shp.cElongatedSquareBipyramid,
   Expected: 'ElongatedSquareBipyramid'
 }, {
   Name: 'cElongatedSquareCupola',
-  Actual: sh.cElongatedSquareCupola,
+  Actual: shp.cElongatedSquareCupola,
   Expected: 'ElongatedSquareCupola'
 }, {
   Name: 'cElongatedSquareGyrobicupola',
-  Actual: sh.cElongatedSquareGyrobicupola,
+  Actual: shp.cElongatedSquareGyrobicupola,
   Expected: 'ElongatedSquareGyrobicupola'
 }, {
   Name: 'cElongatedSquarePyramid',
-  Actual: sh.cElongatedSquarePyramid,
+  Actual: shp.cElongatedSquarePyramid,
   Expected: 'ElongatedSquarePyramid'
 }, {
   Name: 'cElongatedTriangularBipyramid',
-  Actual: sh.cElongatedTriangularBipyramid,
+  Actual: shp.cElongatedTriangularBipyramid,
   Expected: 'ElongatedTriangularBipyramid'
 }, {
   Name: 'cElongatedTriangularCupola',
-  Actual: sh.cElongatedTriangularCupola,
+  Actual: shp.cElongatedTriangularCupola,
   Expected: 'ElongatedTriangularCupola'
 }, {
   Name: 'cElongatedTriangularGyrobicupola',
-  Actual: sh.cElongatedTriangularGyrobicupola,
+  Actual: shp.cElongatedTriangularGyrobicupola,
   Expected: 'ElongatedTriangularGyrobicupola'
 }, {
   Name: 'cElongatedTriangularOrthobicupola',
-  Actual: sh.cElongatedTriangularOrthobicupola,
+  Actual: shp.cElongatedTriangularOrthobicupola,
   Expected: 'ElongatedTriangularOrthobicupola'
 }, {
   Name: 'cElongatedTriangularPyramid',
-  Actual: sh.cElongatedTriangularPyramid,
+  Actual: shp.cElongatedTriangularPyramid,
   Expected: 'ElongatedTriangularPyramid'
 }, {
   Name: 'cGyrateBidiminishedRhombicosidodecahedron',
-  Actual: sh.cGyrateBidiminishedRhombicosidodecahedron,
+  Actual: shp.cGyrateBidiminishedRhombicosidodecahedron,
   Expected: 'GyrateBidiminishedRhombicosidodecahedron'
 }, {
   Name: 'cGyrateRhombicosidodecahedron',
-  Actual: sh.cGyrateRhombicosidodecahedron,
+  Actual: shp.cGyrateRhombicosidodecahedron,
   Expected: 'GyrateRhombicosidodecahedron'
 }, {
   Name: 'cGyrobifastigium',
-  Actual: sh.cGyrobifastigium,
+  Actual: shp.cGyrobifastigium,
   Expected: 'Gyrobifastigium'
 }, {
   Name: 'cGyroelongatedPentagonalBicupola',
-  Actual: sh.cGyroelongatedPentagonalBicupola,
+  Actual: shp.cGyroelongatedPentagonalBicupola,
   Expected: 'GyroelongatedPentagonalBicupola'
 }, {
   Name: 'cGyroelongatedPentagonalBirotunda',
-  Actual: sh.cGyroelongatedPentagonalBirotunda,
+  Actual: shp.cGyroelongatedPentagonalBirotunda,
   Expected: 'GyroelongatedPentagonalBirotunda'
 }, {
   Name: 'cGyroelongatedPentagonalCupola',
-  Actual: sh.cGyroelongatedPentagonalCupola,
+  Actual: shp.cGyroelongatedPentagonalCupola,
   Expected: 'GyroelongatedPentagonalCupola'
 }, {
   Name: 'cGyroelongatedPentagonalCupolarotunda',
-  Actual: sh.cGyroelongatedPentagonalCupolarotunda,
+  Actual: shp.cGyroelongatedPentagonalCupolarotunda,
   Expected: 'GyroelongatedPentagonalCupolarotunda'
 }, {
   Name: 'cGyroelongatedPentagonalPyramid',
-  Actual: sh.cGyroelongatedPentagonalPyramid,
+  Actual: shp.cGyroelongatedPentagonalPyramid,
   Expected: 'GyroelongatedPentagonalPyramid'
 }, {
   Name: 'cGyroelongatedPentagonalRotunda',
-  Actual: sh.cGyroelongatedPentagonalRotunda,
+  Actual: shp.cGyroelongatedPentagonalRotunda,
   Expected: 'GyroelongatedPentagonalRotunda'
 }, {
   Name: 'cGyroelongatedSquareBicupola',
-  Actual: sh.cGyroelongatedSquareBicupola,
+  Actual: shp.cGyroelongatedSquareBicupola,
   Expected: 'GyroelongatedSquareBicupola'
 }, {
   Name: 'cGyroelongatedSquareBipyramid',
-  Actual: sh.cGyroelongatedSquareBipyramid,
+  Actual: shp.cGyroelongatedSquareBipyramid,
   Expected: 'GyroelongatedSquareBipyramid'
 }, {
   Name: 'cGyroelongatedSquareCupola',
-  Actual: sh.cGyroelongatedSquareCupola,
+  Actual: shp.cGyroelongatedSquareCupola,
   Expected: 'GyroelongatedSquareCupola'
 }, {
   Name: 'cGyroelongatedSquarePyramid',
-  Actual: sh.cGyroelongatedSquarePyramid,
+  Actual: shp.cGyroelongatedSquarePyramid,
   Expected: 'GyroelongatedSquarePyramid'
 }, {
   Name: 'cGyroelongatedTriangularBicupola',
-  Actual: sh.cGyroelongatedTriangularBicupola,
+  Actual: shp.cGyroelongatedTriangularBicupola,
   Expected: 'GyroelongatedTriangularBicupola'
 }, {
   Name: 'cGyroelongatedTriangularCupola',
-  Actual: sh.cGyroelongatedTriangularCupola,
+  Actual: shp.cGyroelongatedTriangularCupola,
   Expected: 'GyroelongatedTriangularCupola'
 }, {
   Name: 'cHebesphenomegacorona',
-  Actual: sh.cHebesphenomegacorona,
+  Actual: shp.cHebesphenomegacorona,
   Expected: 'Hebesphenomegacorona'
 }, {
   Name: 'cMetabiaugmentedDodecahedron',
-  Actual: sh.cMetabiaugmentedDodecahedron,
+  Actual: shp.cMetabiaugmentedDodecahedron,
   Expected: 'MetabiaugmentedDodecahedron'
 }, {
   Name: 'cMetabiaugmentedHexagonalPrism',
-  Actual: sh.cMetabiaugmentedHexagonalPrism,
+  Actual: shp.cMetabiaugmentedHexagonalPrism,
   Expected: 'MetabiaugmentedHexagonalPrism'
 }, {
   Name: 'cMetabiaugmentedTruncatedDodecahedron',
-  Actual: sh.cMetabiaugmentedTruncatedDodecahedron,
+  Actual: shp.cMetabiaugmentedTruncatedDodecahedron,
   Expected: 'MetabiaugmentedTruncatedDodecahedron'
 }, {
   Name: 'cMetabidiminishedIcosahedron',
-  Actual: sh.cMetabidiminishedIcosahedron,
+  Actual: shp.cMetabidiminishedIcosahedron,
   Expected: 'MetabidiminishedIcosahedron'
 }, {
   Name: 'cMetabidiminishedRhombicosidodecahedron',
-  Actual: sh.cMetabidiminishedRhombicosidodecahedron,
+  Actual: shp.cMetabidiminishedRhombicosidodecahedron,
   Expected: 'MetabidiminishedRhombicosidodecahedron'
 }, {
   Name: 'cMetabigyrateRhombicosidodecahedron',
-  Actual: sh.cMetabigyrateRhombicosidodecahedron,
+  Actual: shp.cMetabigyrateRhombicosidodecahedron,
   Expected: 'MetabigyrateRhombicosidodecahedron'
 }, {
   Name: 'cMetagyrateDiminishedRhombicosidodecahedron',
-  Actual: sh.cMetagyrateDiminishedRhombicosidodecahedron,
+  Actual: shp.cMetagyrateDiminishedRhombicosidodecahedron,
   Expected: 'MetagyrateDiminishedRhombicosidodecahedron'
 }, {
   Name: 'cParabiaugmentedDodecahedron',
-  Actual: sh.cParabiaugmentedDodecahedron,
+  Actual: shp.cParabiaugmentedDodecahedron,
   Expected: 'ParabiaugmentedDodecahedron'
 }, {
   Name: 'cParabiaugmentedHexagonalPrism',
-  Actual: sh.cParabiaugmentedHexagonalPrism,
+  Actual: shp.cParabiaugmentedHexagonalPrism,
   Expected: 'ParabiaugmentedHexagonalPrism'
 }, {
   Name: 'cParabiaugmentedTruncatedDodecahedron',
-  Actual: sh.cParabiaugmentedTruncatedDodecahedron,
+  Actual: shp.cParabiaugmentedTruncatedDodecahedron,
   Expected: 'ParabiaugmentedTruncatedDodecahedron'
 }, {
   Name: 'cParabidiminishedRhombicosidodecahedron',
-  Actual: sh.cParabidiminishedRhombicosidodecahedron,
+  Actual: shp.cParabidiminishedRhombicosidodecahedron,
   Expected: 'ParabidiminishedRhombicosidodecahedron'
 }, {
   Name: 'cParabigyrateRhombicosidodecahedron',
-  Actual: sh.cParabigyrateRhombicosidodecahedron,
+  Actual: shp.cParabigyrateRhombicosidodecahedron,
   Expected: 'ParabigyrateRhombicosidodecahedron'
 }, {
   Name: 'cParagyrateDiminishedRhombicosidodecahedron',
-  Actual: sh.cParagyrateDiminishedRhombicosidodecahedron,
+  Actual: shp.cParagyrateDiminishedRhombicosidodecahedron,
   Expected: 'ParagyrateDiminishedRhombicosidodecahedron'
 }, {
   Name: 'cPentagonalBipyramid',
-  Actual: sh.cPentagonalBipyramid,
+  Actual: shp.cPentagonalBipyramid,
   Expected: 'PentagonalBipyramid'
 }, {
   Name: 'cPentagonalCupola',
-  Actual: sh.cPentagonalCupola,
+  Actual: shp.cPentagonalCupola,
   Expected: 'PentagonalCupola'
 }, {
   Name: 'cPentagonalGyrobicupola',
-  Actual: sh.cPentagonalGyrobicupola,
+  Actual: shp.cPentagonalGyrobicupola,
   Expected: 'PentagonalGyrobicupola'
 }, {
   Name: 'cPentagonalGyrocupolarotunda',
-  Actual: sh.cPentagonalGyrocupolarotunda,
+  Actual: shp.cPentagonalGyrocupolarotunda,
   Expected: 'PentagonalGyrocupolarotunda'
 }, {
   Name: 'cPentagonalOrthobicupola',
-  Actual: sh.cPentagonalOrthobicupola,
+  Actual: shp.cPentagonalOrthobicupola,
   Expected: 'PentagonalOrthobicupola'
 }, {
   Name: 'cPentagonalOrthobirotunda',
-  Actual: sh.cPentagonalOrthobirotunda,
+  Actual: shp.cPentagonalOrthobirotunda,
   Expected: 'PentagonalOrthobirotunda'
 }, {
   Name: 'cPentagonalOrthocupolarotunda',
-  Actual: sh.cPentagonalOrthocupolarotunda,
+  Actual: shp.cPentagonalOrthocupolarotunda,
   Expected: 'PentagonalOrthocupolarotunda'
 }, {
   Name: 'cPentagonalPyramid',
-  Actual: sh.cPentagonalPyramid,
+  Actual: shp.cPentagonalPyramid,
   Expected: 'PentagonalPyramid'
 }, {
   Name: 'cPentagonalRotunda',
-  Actual: sh.cPentagonalRotunda,
+  Actual: shp.cPentagonalRotunda,
   Expected: 'PentagonalRotunda'
 }, {
   Name: 'cSnubDisphenoid',
-  Actual: sh.cSnubDisphenoid,
+  Actual: shp.cSnubDisphenoid,
   Expected: 'SnubDisphenoid'
 }, {
   Name: 'cSnubSquareAntiprism',
-  Actual: sh.cSnubSquareAntiprism,
+  Actual: shp.cSnubSquareAntiprism,
   Expected: 'SnubSquareAntiprism'
 }, {
   Name: 'cSphenocorona',
-  Actual: sh.cSphenocorona,
+  Actual: shp.cSphenocorona,
   Expected: 'Sphenocorona'
 }, {
   Name: 'cSphenomegacorona',
-  Actual: sh.cSphenomegacorona,
+  Actual: shp.cSphenomegacorona,
   Expected: 'Sphenomegacorona'
 }, {
   Name: 'cSquareCupola',
-  Actual: sh.cSquareCupola,
+  Actual: shp.cSquareCupola,
   Expected: 'SquareCupola'
 }, {
   Name: 'cSquareGyrobicupola',
-  Actual: sh.cSquareGyrobicupola,
+  Actual: shp.cSquareGyrobicupola,
   Expected: 'SquareGyrobicupola'
 }, {
   Name: 'cSquareOrthobicupola',
-  Actual: sh.cSquareOrthobicupola,
+  Actual: shp.cSquareOrthobicupola,
   Expected: 'SquareOrthobicupola'
 }, {
   Name: 'cSquarePyramid',
-  Actual: sh.cSquarePyramid,
+  Actual: shp.cSquarePyramid,
   Expected: 'SquarePyramid'
 }, {
   Name: 'cTriangularBipyramid',
-  Actual: sh.cTriangularBipyramid,
+  Actual: shp.cTriangularBipyramid,
   Expected: 'TriangularBipyramid'
 }, {
   Name: 'cTriangularCupola',
-  Actual: sh.cTriangularCupola,
+  Actual: shp.cTriangularCupola,
   Expected: 'TriangularCupola'
 }, {
   Name: 'cTriangularHebesphenorotunda',
-  Actual: sh.cTriangularHebesphenorotunda,
+  Actual: shp.cTriangularHebesphenorotunda,
   Expected: 'TriangularHebesphenorotunda'
 }, {
   Name: 'cTriangularOrthobicupola',
-  Actual: sh.cTriangularOrthobicupola,
+  Actual: shp.cTriangularOrthobicupola,
   Expected: 'TriangularOrthobicupola'
 }, {
   Name: 'cTriaugmentedDodecahedron',
-  Actual: sh.cTriaugmentedDodecahedron,
+  Actual: shp.cTriaugmentedDodecahedron,
   Expected: 'TriaugmentedDodecahedron'
 }, {
   Name: 'cTriaugmentedHexagonalPrism',
-  Actual: sh.cTriaugmentedHexagonalPrism,
+  Actual: shp.cTriaugmentedHexagonalPrism,
   Expected: 'TriaugmentedHexagonalPrism'
 }, {
   Name: 'cTriaugmentedTriangularPrism',
-  Actual: sh.cTriaugmentedTriangularPrism,
+  Actual: shp.cTriaugmentedTriangularPrism,
   Expected: 'TriaugmentedTriangularPrism'
 }, {
   Name: 'cTriaugmentedTruncatedDodecahedron',
-  Actual: sh.cTriaugmentedTruncatedDodecahedron,
+  Actual: shp.cTriaugmentedTruncatedDodecahedron,
   Expected: 'TriaugmentedTruncatedDodecahedron'
 }, {
   Name: 'cTridiminishedIcosahedron',
-  Actual: sh.cTridiminishedIcosahedron,
+  Actual: shp.cTridiminishedIcosahedron,
   Expected: 'TridiminishedIcosahedron'
 }, {
   Name: 'cTridiminishedRhombicosidodecahedron',
-  Actual: sh.cTridiminishedRhombicosidodecahedron,
+  Actual: shp.cTridiminishedRhombicosidodecahedron,
   Expected: 'TridiminishedRhombicosidodecahedron'
 }, {
   Name: 'cTrigyrateRhombicosidodecahedron',
-  Actual: sh.cTrigyrateRhombicosidodecahedron,
+  Actual: shp.cTrigyrateRhombicosidodecahedron,
   Expected: 'TrigyrateRhombicosidodecahedron'
 }, // Other Non-Uniform Polyhedra
 {
   Name: 'cPyramid',
-  Actual: sh.cPyramid,
+  Actual: shp.cPyramid,
   Expected: 'Pyramid'
 }, {
   Name: 'cBipyramid',
-  Actual: sh.cBipyramid,
+  Actual: shp.cBipyramid,
   Expected: 'Bipyramid'
 }, {
   Name: 'cDisphenoid',
-  Actual: sh.cDisphenoid,
+  Actual: shp.cDisphenoid,
   Expected: 'Disphenoid'
 }, {
   Name: 'cParallelepiped',
-  Actual: sh.cParallelepiped,
+  Actual: shp.cParallelepiped,
   Expected: 'Parallelepiped'
 }, {
   Name: 'cCuboid',
-  Actual: sh.cCuboid,
+  Actual: shp.cCuboid,
   Expected: 'Cuboid'
 }, {
   Name: 'cRhombohedron',
-  Actual: sh.cRhombohedron,
+  Actual: shp.cRhombohedron,
   Expected: 'Rhombohedron'
 }, {
   Name: 'cTrapezohedron',
-  Actual: sh.cTrapezohedron,
+  Actual: shp.cTrapezohedron,
   Expected: 'Trapezohedron'
 }, {
   Name: 'cFrustum',
-  Actual: sh.cFrustum,
+  Actual: shp.cFrustum,
   Expected: 'Frustum'
 }, {
   Name: 'cTrapezoRhombicDodecahedron',
-  Actual: sh.cTrapezoRhombicDodecahedron,
+  Actual: shp.cTrapezoRhombicDodecahedron,
   Expected: 'TrapezoRhombicDodecahedron'
 }, {
   Name: 'cRhomboHexagonalDodecahedron',
-  Actual: sh.cRhomboHexagonalDodecahedron,
+  Actual: shp.cRhomboHexagonalDodecahedron,
   Expected: 'RhomboHexagonalDodecahedron'
 }, {
   Name: 'cTruncatedTrapezohedron',
-  Actual: sh.cTruncatedTrapezohedron,
+  Actual: shp.cTruncatedTrapezohedron,
   Expected: 'TruncatedTrapezohedron'
 }, {
   Name: 'cDeltahedron',
-  Actual: sh.cDeltahedron,
+  Actual: shp.cDeltahedron,
   Expected: 'Deltahedron'
 }, {
   Name: 'cZonohedron',
-  Actual: sh.cZonohedron,
+  Actual: shp.cZonohedron,
   Expected: 'Zonohedron'
 }, {
   Name: 'cPrismatoid',
-  Actual: sh.cPrismatoid,
+  Actual: shp.cPrismatoid,
   Expected: 'Prismatoid'
 }, {
   Name: 'cCupola',
-  Actual: sh.cCupola,
+  Actual: shp.cCupola,
   Expected: 'Cupola'
 }, {
   Name: 'cBicupola',
-  Actual: sh.cBicupola,
+  Actual: shp.cBicupola,
   Expected: 'Bicupola'
 }, // Honeycombs
 {
   Name: 'cTruncatedCubicHoneycomb',
-  Actual: sh.cTruncatedCubicHoneycomb,
+  Actual: shp.cTruncatedCubicHoneycomb,
   Expected: 'TruncatedCubicHoneycomb'
 }, {
   Name: 'cBitruncatedCubicHoneycomb',
-  Actual: sh.cBitruncatedCubicHoneycomb,
+  Actual: shp.cBitruncatedCubicHoneycomb,
   Expected: 'BitruncatedCubicHoneycomb'
 }, {
   Name: 'cCantellatedCubicHoneycomb',
-  Actual: sh.cCantellatedCubicHoneycomb,
+  Actual: shp.cCantellatedCubicHoneycomb,
   Expected: 'CantellatedCubicHoneycomb'
 }, {
   Name: 'cCantitruncatedCubicHoneycomb',
-  Actual: sh.cCantitruncatedCubicHoneycomb,
+  Actual: shp.cCantitruncatedCubicHoneycomb,
   Expected: 'CantitruncatedCubicHoneycomb'
 }, {
   Name: 'cRectifiedCubicHoneycomb',
-  Actual: sh.cRectifiedCubicHoneycomb,
+  Actual: shp.cRectifiedCubicHoneycomb,
   Expected: 'RectifiedCubicHoneycomb'
 }, {
   Name: 'cRuncitruncatedCubicHoneycomb',
-  Actual: sh.cRuncitruncatedCubicHoneycomb,
+  Actual: shp.cRuncitruncatedCubicHoneycomb,
   Expected: 'RuncitruncatedCubicHoneycomb'
 }, {
   Name: 'cOmnitruncatedCubicHoneycomb',
-  Actual: sh.cOmnitruncatedCubicHoneycomb,
+  Actual: shp.cOmnitruncatedCubicHoneycomb,
   Expected: 'OmnitruncatedCubicHoneycomb'
 }, {
   Name: 'cTetrahedralOctahedralHoneycomb',
-  Actual: sh.cTetrahedralOctahedralHoneycomb,
+  Actual: shp.cTetrahedralOctahedralHoneycomb,
   Expected: 'TetrahedralOctahedralHoneycomb'
 }, {
   Name: 'cTruncatedAlternatedCubicHoneycomb',
-  Actual: sh.cTruncatedAlternatedCubicHoneycomb,
+  Actual: shp.cTruncatedAlternatedCubicHoneycomb,
   Expected: 'TruncatedAlternatedCubicHoneycomb'
 }, {
   Name: 'cCantitruncatedAlternatedCubicHoneycomb',
-  Actual: sh.cCantitruncatedAlternatedCubicHoneycomb,
+  Actual: shp.cCantitruncatedAlternatedCubicHoneycomb,
   Expected: 'CantitruncatedAlternatedCubicHoneycomb'
 }, {
   Name: 'cRuncinatedAlternatedCubicHoneycomb',
-  Actual: sh.cRuncinatedAlternatedCubicHoneycomb,
+  Actual: shp.cRuncinatedAlternatedCubicHoneycomb,
   Expected: 'RuncinatedAlternatedCubicHoneycomb'
 }, {
   Name: 'cQuarterCubicHoneycomb',
-  Actual: sh.cQuarterCubicHoneycomb,
+  Actual: shp.cQuarterCubicHoneycomb,
   Expected: 'QuarterCubicHoneycomb'
 }, {
   Name: 'cGyratedTetrahedralOctahedralHoneycomb',
-  Actual: sh.cGyratedTetrahedralOctahedralHoneycomb,
+  Actual: shp.cGyratedTetrahedralOctahedralHoneycomb,
   Expected: 'GyratedTetrahedralOctahedralHoneycomb'
 }, {
   Name: 'cGyratedTriangularPrismaticHoneycomb',
-  Actual: sh.cGyratedTriangularPrismaticHoneycomb,
+  Actual: shp.cGyratedTriangularPrismaticHoneycomb,
   Expected: 'GyratedTriangularPrismaticHoneycomb'
 }, {
   Name: 'cGyroelongatedAlternatedCubicHoneycomb',
-  Actual: sh.cGyroelongatedAlternatedCubicHoneycomb,
+  Actual: shp.cGyroelongatedAlternatedCubicHoneycomb,
   Expected: 'GyroelongatedAlternatedCubicHoneycomb'
 }, {
   Name: 'cGyroelongatedTriangularPrismaticHoneycomb',
-  Actual: sh.cGyroelongatedTriangularPrismaticHoneycomb,
+  Actual: shp.cGyroelongatedTriangularPrismaticHoneycomb,
   Expected: 'GyroelongatedTriangularPrismaticHoneycomb'
 }, {
   Name: 'cElongatedTriangularPrismaticHoneycomb',
-  Actual: sh.cElongatedTriangularPrismaticHoneycomb,
+  Actual: shp.cElongatedTriangularPrismaticHoneycomb,
   Expected: 'ElongatedTriangularPrismaticHoneycomb'
 }, {
   Name: 'cElongatedAlternatedCubicHoneycomb',
-  Actual: sh.cElongatedAlternatedCubicHoneycomb,
+  Actual: shp.cElongatedAlternatedCubicHoneycomb,
   Expected: 'ElongatedAlternatedCubicHoneycomb'
 }, {
   Name: 'cHexagonalPrismaticHoneycomb',
-  Actual: sh.cHexagonalPrismaticHoneycomb,
+  Actual: shp.cHexagonalPrismaticHoneycomb,
   Expected: 'HexagonalPrismaticHoneycomb'
 }, {
   Name: 'cTriangularPrismaticHoneycomb',
-  Actual: sh.cTriangularPrismaticHoneycomb,
+  Actual: shp.cTriangularPrismaticHoneycomb,
   Expected: 'TriangularPrismaticHoneycomb'
 }, {
   Name: 'cTriangularHexagonalPrismaticHoneycomb',
-  Actual: sh.cTriangularHexagonalPrismaticHoneycomb,
+  Actual: shp.cTriangularHexagonalPrismaticHoneycomb,
   Expected: 'TriangularHexagonalPrismaticHoneycomb'
 }, {
   Name: 'cTruncatedHexagonalPrismaticHoneycomb',
-  Actual: sh.cTruncatedHexagonalPrismaticHoneycomb,
+  Actual: shp.cTruncatedHexagonalPrismaticHoneycomb,
   Expected: 'TruncatedHexagonalPrismaticHoneycomb'
 }, {
   Name: 'cTruncatedSquarePrismaticHoneycomb',
-  Actual: sh.cTruncatedSquarePrismaticHoneycomb,
+  Actual: shp.cTruncatedSquarePrismaticHoneycomb,
   Expected: 'TruncatedSquarePrismaticHoneycomb'
 }, {
   Name: 'cRhombitriangularHexagonalPrismaticHoneycomb',
-  Actual: sh.cRhombitriangularHexagonalPrismaticHoneycomb,
+  Actual: shp.cRhombitriangularHexagonalPrismaticHoneycomb,
   Expected: 'RhombitriangularHexagonalPrismaticHoneycomb'
 }, {
   Name: 'cOmnitruncatedTriangularHexagonalPrismaticHoneycomb',
-  Actual: sh.cOmnitruncatedTriangularHexagonalPrismaticHoneycomb,
+  Actual: shp.cOmnitruncatedTriangularHexagonalPrismaticHoneycomb,
   Expected: 'OmnitruncatedTriangularHexagonalPrismaticHoneycomb'
 }, {
   Name: 'cSnubTriangularHexagonalPrismaticHoneycomb',
-  Actual: sh.cSnubTriangularHexagonalPrismaticHoneycomb,
+  Actual: shp.cSnubTriangularHexagonalPrismaticHoneycomb,
   Expected: 'SnubTriangularHexagonalPrismaticHoneycomb'
 }, {
   Name: 'cSnubSquarePrismaticHoneycomb',
-  Actual: sh.cSnubSquarePrismaticHoneycomb,
+  Actual: shp.cSnubSquarePrismaticHoneycomb,
   Expected: 'SnubSquarePrismaticHoneycomb'
 }, // Dual Uniform Honeycomb
 {
   Name: 'cDisphenoidTetrahedralHoneycomb',
-  Actual: sh.cDisphenoidTetrahedralHoneycomb,
+  Actual: shp.cDisphenoidTetrahedralHoneycomb,
   Expected: 'DisphenoidTetrahedralHoneycomb'
 }, {
   Name: 'cRhombicDodecahedralHoneycomb',
-  Actual: sh.cRhombicDodecahedralHoneycomb,
+  Actual: shp.cRhombicDodecahedralHoneycomb,
   Expected: 'RhombicDodecahedralHoneycomb'
 }, // Others Honeycombs
 {
   Name: 'cTrapezoRhombicDodecahedralHoneycomb',
-  Actual: sh.cTrapezoRhombicDodecahedralHoneycomb,
+  Actual: shp.cTrapezoRhombicDodecahedralHoneycomb,
   Expected: 'TrapezoRhombicDodecahedralHoneycomb'
 }, {
   Name: 'cWeairePhelanStructure',
-  Actual: sh.cWeairePhelanStructure,
+  Actual: shp.cWeairePhelanStructure,
   Expected: 'WeairePhelanStructure'
 }, // Other Prismatic Geometries
 {
   Name: 'cApeirogonalPrism',
-  Actual: sh.cApeirogonalPrism,
+  Actual: shp.cApeirogonalPrism,
   Expected: 'ApeirogonalPrism'
 }, {
   Name: 'cBifrustum',
-  Actual: sh.cBifrustum,
+  Actual: shp.cBifrustum,
   Expected: 'Bifrustum'
 }, {
   Name: 'cBoerdijkCoxeterHelix',
-  Actual: sh.cBoerdijkCoxeterHelix,
+  Actual: shp.cBoerdijkCoxeterHelix,
   Expected: 'BoerdijkCoxeterHelix'
 }, {
   Name: 'cCsaszarPolyhedron',
-  Actual: sh.cCsaszarPolyhedron,
+  Actual: shp.cCsaszarPolyhedron,
   Expected: 'CsaszarPolyhedron'
 }, {
   Name: 'cFlexiblePolyhedron',
-  Actual: sh.cFlexiblePolyhedron,
+  Actual: shp.cFlexiblePolyhedron,
   Expected: 'FlexiblePolyhedron'
 }, {
   Name: 'cGyroelongatedSquareDipyramid',
-  Actual: sh.cGyroelongatedSquareDipyramid,
+  Actual: shp.cGyroelongatedSquareDipyramid,
   Expected: 'GyroelongatedSquareDipyramid'
 }, {
   Name: 'cHeronianTetrahedron',
-  Actual: sh.cHeronianTetrahedron,
+  Actual: shp.cHeronianTetrahedron,
   Expected: 'HeronianTetrahedron'
 }, {
   Name: 'cHexagonalBifrustum',
-  Actual: sh.cHexagonalBifrustum,
+  Actual: shp.cHexagonalBifrustum,
   Expected: 'HexagonalBifrustum'
 }, {
   Name: 'cHexagonalTruncatedTrapezohedron',
-  Actual: sh.cHexagonalTruncatedTrapezohedron,
+  Actual: shp.cHexagonalTruncatedTrapezohedron,
   Expected: 'HexagonalTruncatedTrapezohedron'
 }, {
   Name: 'cHillTetrahedron',
-  Actual: sh.cHillTetrahedron,
+  Actual: shp.cHillTetrahedron,
   Expected: 'HillTetrahedron'
 }, {
   Name: 'cHolyhedron',
-  Actual: sh.cHolyhedron,
+  Actual: shp.cHolyhedron,
   Expected: 'Holyhedron'
 }, {
   Name: 'cInfiniteSkewPolyhedron',
-  Actual: sh.cInfiniteSkewPolyhedron,
+  Actual: shp.cInfiniteSkewPolyhedron,
   Expected: 'InfiniteSkewPolyhedron'
 }, {
   Name: 'cJessensIcosahedron',
-  Actual: sh.cJessensIcosahedron,
+  Actual: shp.cJessensIcosahedron,
   Expected: 'JessensIcosahedron'
 }, {
   Name: 'cNearMissJohnsonSolid',
-  Actual: sh.cNearMissJohnsonSolid,
+  Actual: shp.cNearMissJohnsonSolid,
   Expected: 'NearMissJohnsonSolid'
 }, {
   Name: 'cPentagonalBifrustum',
-  Actual: sh.cPentagonalBifrustum,
+  Actual: shp.cPentagonalBifrustum,
   Expected: 'PentagonalBifrustum'
 }, {
   Name: 'cPolytetrahedron',
-  Actual: sh.cPolytetrahedron,
+  Actual: shp.cPolytetrahedron,
   Expected: 'Polytetrahedron'
 }, {
   Name: 'cPyritohedron',
-  Actual: sh.cPyritohedron,
+  Actual: shp.cPyritohedron,
   Expected: 'Pyritohedron'
 }, {
   Name: 'cRhombicEnneacontahedron',
-  Actual: sh.cRhombicEnneacontahedron,
+  Actual: shp.cRhombicEnneacontahedron,
   Expected: 'RhombicEnneacontahedron'
 }, {
   Name: 'cRhombicIcosahedron',
-  Actual: sh.cRhombicIcosahedron,
+  Actual: shp.cRhombicIcosahedron,
   Expected: 'RhombicIcosahedron'
 }, {
   Name: 'cScalenohedron',
-  Actual: sh.cScalenohedron,
+  Actual: shp.cScalenohedron,
   Expected: 'Scalenohedron'
 }, {
   Name: 'cSchonhardtPolyhedron',
-  Actual: sh.cSchonhardtPolyhedron,
+  Actual: shp.cSchonhardtPolyhedron,
   Expected: 'SchonhardtPolyhedron'
 }, {
   Name: 'cSquareBifrustum',
-  Actual: sh.cSquareBifrustum,
+  Actual: shp.cSquareBifrustum,
   Expected: 'SquareBifrustum'
 }, {
   Name: 'cSquareTruncatedTrapezohedron',
-  Actual: sh.cSquareTruncatedTrapezohedron,
+  Actual: shp.cSquareTruncatedTrapezohedron,
   Expected: 'SquareTruncatedTrapezohedron'
 }, {
   Name: 'cSzilassiPolyhedron',
-  Actual: sh.cSzilassiPolyhedron,
+  Actual: shp.cSzilassiPolyhedron,
   Expected: 'SzilassiPolyhedron'
 }, {
   Name: 'cTetradecahedron',
-  Actual: sh.cTetradecahedron,
+  Actual: shp.cTetradecahedron,
   Expected: 'Tetradecahedron'
 }, {
   Name: 'cTetradyakisHexahedron',
-  Actual: sh.cTetradyakisHexahedron,
+  Actual: shp.cTetradyakisHexahedron,
   Expected: 'TetradyakisHexahedron'
 }, {
   Name: 'cTetratedDodecahedron',
-  Actual: sh.cTetratedDodecahedron,
+  Actual: shp.cTetratedDodecahedron,
   Expected: 'TetratedDodecahedron'
 }, {
   Name: 'cTriangularBifrustum',
-  Actual: sh.cTriangularBifrustum,
+  Actual: shp.cTriangularBifrustum,
   Expected: 'TriangularBifrustum'
 }, {
   Name: 'cTruncatedRhombicDodecahedron',
-  Actual: sh.cTruncatedRhombicDodecahedron,
+  Actual: shp.cTruncatedRhombicDodecahedron,
   Expected: 'TruncatedRhombicDodecahedron'
 }, {
   Name: 'cTruncatedTriakisTetrahedron',
-  Actual: sh.cTruncatedTriakisTetrahedron,
+  Actual: shp.cTruncatedTriakisTetrahedron,
   Expected: 'TruncatedTriakisTetrahedron'
 }, {
   Name: 'cTridyakisIcosahedron',
-  Actual: sh.cTridyakisIcosahedron,
+  Actual: shp.cTridyakisIcosahedron,
   Expected: 'TridyakisIcosahedron'
 }, {
   Name: 'cTrigonalTrapezohedron',
-  Actual: sh.cTrigonalTrapezohedron,
+  Actual: shp.cTrigonalTrapezohedron,
   Expected: 'TrigonalTrapezohedron'
 }, {
   Name: 'cWatermanPolyhedron',
-  Actual: sh.cWatermanPolyhedron,
+  Actual: shp.cWatermanPolyhedron,
   Expected: 'WatermanPolyhedron'
 }, {
   Name: 'cWedge',
-  Actual: sh.cWedge,
+  Actual: shp.cWedge,
   Expected: 'Wedge'
 }, // Regular and Uniform Compound Polyhedra
 {
   Name: 'cCompoundOfCubeAndOctahedron',
-  Actual: sh.cCompoundOfCubeAndOctahedron,
+  Actual: shp.cCompoundOfCubeAndOctahedron,
   Expected: 'CompoundOfCubeAndOctahedron'
 }, {
   Name: 'cCompoundOfDodecahedronAndIcosahedron',
-  Actual: sh.cCompoundOfDodecahedronAndIcosahedron,
+  Actual: shp.cCompoundOfDodecahedronAndIcosahedron,
   Expected: 'CompoundOfDodecahedronAndIcosahedron'
 }, {
   Name: 'cCompoundOfEightOctahedraWithRotationalFreedom',
-  Actual: sh.cCompoundOfEightOctahedraWithRotationalFreedom,
+  Actual: shp.cCompoundOfEightOctahedraWithRotationalFreedom,
   Expected: 'CompoundOfEightOctahedraWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfEightTriangularPrisms',
-  Actual: sh.cCompoundOfEightTriangularPrisms,
+  Actual: shp.cCompoundOfEightTriangularPrisms,
   Expected: 'CompoundOfEightTriangularPrisms'
 }, {
   Name: 'cCompoundOfFiveCubes',
-  Actual: sh.cCompoundOfFiveCubes,
+  Actual: shp.cCompoundOfFiveCubes,
   Expected: 'CompoundOfFiveCubes'
 }, {
   Name: 'cCompoundOfFiveCuboctahedra',
-  Actual: sh.cCompoundOfFiveCuboctahedra,
+  Actual: shp.cCompoundOfFiveCuboctahedra,
   Expected: 'CompoundOfFiveCuboctahedra'
 }, {
   Name: 'cCompoundOfFiveCubohemioctahedra',
-  Actual: sh.cCompoundOfFiveCubohemioctahedra,
+  Actual: shp.cCompoundOfFiveCubohemioctahedra,
   Expected: 'CompoundOfFiveCubohemioctahedra'
 }, {
   Name: 'cCompoundOfFiveGreatCubicuboctahedra',
-  Actual: sh.cCompoundOfFiveGreatCubicuboctahedra,
+  Actual: shp.cCompoundOfFiveGreatCubicuboctahedra,
   Expected: 'CompoundOfFiveGreatCubicuboctahedra'
 }, {
   Name: 'cCompoundOfFiveGreatDodecahedra',
-  Actual: sh.cCompoundOfFiveGreatDodecahedra,
+  Actual: shp.cCompoundOfFiveGreatDodecahedra,
   Expected: 'CompoundOfFiveGreatDodecahedra'
 }, {
   Name: 'cCompoundOfFiveGreatIcosahedra',
-  Actual: sh.cCompoundOfFiveGreatIcosahedra,
+  Actual: shp.cCompoundOfFiveGreatIcosahedra,
   Expected: 'CompoundOfFiveGreatIcosahedra'
 }, {
   Name: 'cCompoundOfFiveGreatRhombihexahedra',
-  Actual: sh.cCompoundOfFiveGreatRhombihexahedra,
+  Actual: shp.cCompoundOfFiveGreatRhombihexahedra,
   Expected: 'CompoundOfFiveGreatRhombihexahedra'
 }, {
   Name: 'cCompoundOfFiveIcosahedra',
-  Actual: sh.cCompoundOfFiveIcosahedra,
+  Actual: shp.cCompoundOfFiveIcosahedra,
   Expected: 'CompoundOfFiveIcosahedra'
 }, {
   Name: 'cCompoundOfFiveOctahedra',
-  Actual: sh.cCompoundOfFiveOctahedra,
+  Actual: shp.cCompoundOfFiveOctahedra,
   Expected: 'CompoundOfFiveOctahedra'
 }, {
   Name: 'cCompoundOfFiveOctahemioctahedra',
-  Actual: sh.cCompoundOfFiveOctahemioctahedra,
+  Actual: shp.cCompoundOfFiveOctahemioctahedra,
   Expected: 'CompoundOfFiveOctahemioctahedra'
 }, {
   Name: 'cCompoundOfFiveSmallCubicuboctahedra',
-  Actual: sh.cCompoundOfFiveSmallCubicuboctahedra,
+  Actual: shp.cCompoundOfFiveSmallCubicuboctahedra,
   Expected: 'CompoundOfFiveSmallCubicuboctahedra'
 }, {
   Name: 'cCompoundOfFiveSmallRhombicuboctahedra',
-  Actual: sh.cCompoundOfFiveSmallRhombicuboctahedra,
+  Actual: shp.cCompoundOfFiveSmallRhombicuboctahedra,
   Expected: 'CompoundOfFiveSmallRhombicuboctahedra'
 }, {
   Name: 'cCompoundOfFiveSmallRhombihexahedra',
-  Actual: sh.cCompoundOfFiveSmallRhombihexahedra,
+  Actual: shp.cCompoundOfFiveSmallRhombihexahedra,
   Expected: 'CompoundOfFiveSmallRhombihexahedra'
 }, {
   Name: 'cCompoundOfFiveSmallStellatedDodecahedra',
-  Actual: sh.cCompoundOfFiveSmallStellatedDodecahedra,
+  Actual: shp.cCompoundOfFiveSmallStellatedDodecahedra,
   Expected: 'CompoundOfFiveSmallStellatedDodecahedra'
 }, {
   Name: 'cCompoundOfFiveStellatedTruncatedCubes',
-  Actual: sh.cCompoundOfFiveStellatedTruncatedCubes,
+  Actual: shp.cCompoundOfFiveStellatedTruncatedCubes,
   Expected: 'CompoundOfFiveStellatedTruncatedCubes'
 }, {
   Name: 'cCompoundOfFiveTetrahedra',
-  Actual: sh.cCompoundOfFiveTetrahedra,
+  Actual: shp.cCompoundOfFiveTetrahedra,
   Expected: 'CompoundOfFiveTetrahedra'
 }, {
   Name: 'cCompoundOfFiveTetrahemihexahedra',
-  Actual: sh.cCompoundOfFiveTetrahemihexahedra,
+  Actual: shp.cCompoundOfFiveTetrahemihexahedra,
   Expected: 'CompoundOfFiveTetrahemihexahedra'
 }, {
   Name: 'cCompoundOfFiveTruncatedCubes',
-  Actual: sh.cCompoundOfFiveTruncatedCubes,
+  Actual: shp.cCompoundOfFiveTruncatedCubes,
   Expected: 'CompoundOfFiveTruncatedCubes'
 }, {
   Name: 'cCompoundOfFiveTruncatedTetrahedra',
-  Actual: sh.cCompoundOfFiveTruncatedTetrahedra,
+  Actual: shp.cCompoundOfFiveTruncatedTetrahedra,
   Expected: 'CompoundOfFiveTruncatedTetrahedra'
 }, {
   Name: 'cCompoundOfFiveUniformGreatRhombicuboctahedra',
-  Actual: sh.cCompoundOfFiveUniformGreatRhombicuboctahedra,
+  Actual: shp.cCompoundOfFiveUniformGreatRhombicuboctahedra,
   Expected: 'CompoundOfFiveUniformGreatRhombicuboctahedra'
 }, {
   Name: 'cCompoundOfFourHexagonalPrisms',
-  Actual: sh.cCompoundOfFourHexagonalPrisms,
+  Actual: shp.cCompoundOfFourHexagonalPrisms,
   Expected: 'CompoundOfFourHexagonalPrisms'
 }, {
   Name: 'cCompoundOfFourOctahedra',
-  Actual: sh.cCompoundOfFourOctahedra,
+  Actual: shp.cCompoundOfFourOctahedra,
   Expected: 'CompoundOfFourOctahedra'
 }, {
   Name: 'cCompoundOfFourOctahedraWithRotationalFreedom',
-  Actual: sh.cCompoundOfFourOctahedraWithRotationalFreedom,
+  Actual: shp.cCompoundOfFourOctahedraWithRotationalFreedom,
   Expected: 'CompoundOfFourOctahedraWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfFourTetrahedra',
-  Actual: sh.cCompoundOfFourTetrahedra,
+  Actual: shp.cCompoundOfFourTetrahedra,
   Expected: 'CompoundOfFourTetrahedra'
 }, {
   Name: 'cCompoundOfFourTriangularPrisms',
-  Actual: sh.cCompoundOfFourTriangularPrisms,
+  Actual: shp.cCompoundOfFourTriangularPrisms,
   Expected: 'CompoundOfFourTriangularPrisms'
 }, {
   Name: 'cCompoundOfGreatIcosahedronAndGreatStellatedDodecahedron',
-  Actual: sh.cCompoundOfGreatIcosahedronAndGreatStellatedDodecahedron,
+  Actual: shp.cCompoundOfGreatIcosahedronAndGreatStellatedDodecahedron,
   Expected: 'CompoundOfGreatIcosahedronAndGreatStellatedDodecahedron'
 }, {
   Name: 'cCompoundOfSixCubesWithRotationalFreedom',
-  Actual: sh.cCompoundOfSixCubesWithRotationalFreedom,
+  Actual: shp.cCompoundOfSixCubesWithRotationalFreedom,
   Expected: 'CompoundOfSixCubesWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfSixDecagonalPrisms',
-  Actual: sh.cCompoundOfSixDecagonalPrisms,
+  Actual: shp.cCompoundOfSixDecagonalPrisms,
   Expected: 'CompoundOfSixDecagonalPrisms'
 }, {
   Name: 'cCompoundOfSixDecagrammicPrisms',
-  Actual: sh.cCompoundOfSixDecagrammicPrisms,
+  Actual: shp.cCompoundOfSixDecagrammicPrisms,
   Expected: 'CompoundOfSixDecagrammicPrisms'
 }, {
   Name: 'cCompoundOfSixPentagonalAntiprisms',
-  Actual: sh.cCompoundOfSixPentagonalAntiprisms,
+  Actual: shp.cCompoundOfSixPentagonalAntiprisms,
   Expected: 'CompoundOfSixPentagonalAntiprisms'
 }, {
   Name: 'cCompoundOfSixPentagonalPrisms',
-  Actual: sh.cCompoundOfSixPentagonalPrisms,
+  Actual: shp.cCompoundOfSixPentagonalPrisms,
   Expected: 'CompoundOfSixPentagonalPrisms'
 }, {
   Name: 'cCompoundOfSixPentagrammicAntiprisms',
-  Actual: sh.cCompoundOfSixPentagrammicAntiprisms,
+  Actual: shp.cCompoundOfSixPentagrammicAntiprisms,
   Expected: 'CompoundOfSixPentagrammicAntiprisms'
 }, {
   Name: 'cCompoundOfSixPentagrammicCrossedAntiprisms',
-  Actual: sh.cCompoundOfSixPentagrammicCrossedAntiprisms,
+  Actual: shp.cCompoundOfSixPentagrammicCrossedAntiprisms,
   Expected: 'CompoundOfSixPentagrammicCrossedAntiprisms'
 }, {
   Name: 'cCompoundOfSixPentagrammicPrisms',
-  Actual: sh.cCompoundOfSixPentagrammicPrisms,
+  Actual: shp.cCompoundOfSixPentagrammicPrisms,
   Expected: 'CompoundOfSixPentagrammicPrisms'
 }, {
   Name: 'cCompoundOfSixSquareAntiprisms',
-  Actual: sh.cCompoundOfSixSquareAntiprisms,
+  Actual: shp.cCompoundOfSixSquareAntiprisms,
   Expected: 'CompoundOfSixSquareAntiprisms'
 }, {
   Name: 'cCompoundOfSixTetrahedra',
-  Actual: sh.cCompoundOfSixTetrahedra,
+  Actual: shp.cCompoundOfSixTetrahedra,
   Expected: 'CompoundOfSixTetrahedra'
 }, {
   Name: 'cCompoundOfSixTetrahedraWithRotationalFreedom',
-  Actual: sh.cCompoundOfSixTetrahedraWithRotationalFreedom,
+  Actual: shp.cCompoundOfSixTetrahedraWithRotationalFreedom,
   Expected: 'CompoundOfSixTetrahedraWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfSmallStellatedDodecahedronAndGreatDodecahedron',
-  Actual: sh.cCompoundOfSmallStellatedDodecahedronAndGreatDodecahedron,
+  Actual: shp.cCompoundOfSmallStellatedDodecahedronAndGreatDodecahedron,
   Expected: 'CompoundOfSmallStellatedDodecahedronAndGreatDodecahedron'
 }, {
   Name: 'cCompoundOfTenHexagonalPrisms',
-  Actual: sh.cCompoundOfTenHexagonalPrisms,
+  Actual: shp.cCompoundOfTenHexagonalPrisms,
   Expected: 'CompoundOfTenHexagonalPrisms'
 }, {
   Name: 'cCompoundOfTenOctahedra',
-  Actual: sh.cCompoundOfTenOctahedra,
+  Actual: shp.cCompoundOfTenOctahedra,
   Expected: 'CompoundOfTenOctahedra'
 }, {
   Name: 'cCompoundOfTenTetrahedra',
-  Actual: sh.cCompoundOfTenTetrahedra,
+  Actual: shp.cCompoundOfTenTetrahedra,
   Expected: 'CompoundOfTenTetrahedra'
 }, {
   Name: 'cCompoundOfTenTriangularPrisms',
-  Actual: sh.cCompoundOfTenTriangularPrisms,
+  Actual: shp.cCompoundOfTenTriangularPrisms,
   Expected: 'CompoundOfTenTriangularPrisms'
 }, {
   Name: 'cCompoundOfTenTruncatedTetrahedra',
-  Actual: sh.cCompoundOfTenTruncatedTetrahedra,
+  Actual: shp.cCompoundOfTenTruncatedTetrahedra,
   Expected: 'CompoundOfTenTruncatedTetrahedra'
 }, {
   Name: 'cCompoundOfThreeCubes',
-  Actual: sh.cCompoundOfThreeCubes,
+  Actual: shp.cCompoundOfThreeCubes,
   Expected: 'CompoundOfThreeCubes'
 }, {
   Name: 'cCompoundOfThreeSquareAntiprisms',
-  Actual: sh.cCompoundOfThreeSquareAntiprisms,
+  Actual: shp.cCompoundOfThreeSquareAntiprisms,
   Expected: 'CompoundOfThreeSquareAntiprisms'
 }, {
   Name: 'cCompoundOfThreeTetrahedra',
-  Actual: sh.cCompoundOfThreeTetrahedra,
+  Actual: shp.cCompoundOfThreeTetrahedra,
   Expected: 'CompoundOfThreeTetrahedra'
 }, {
   Name: 'cCompoundOfTwelvePentagonalAntiprismsWithRotationalFreedom',
-  Actual: sh.cCompoundOfTwelvePentagonalAntiprismsWithRotationalFreedom,
+  Actual: shp.cCompoundOfTwelvePentagonalAntiprismsWithRotationalFreedom,
   Expected: 'CompoundOfTwelvePentagonalAntiprismsWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfTwelvePentagonalPrisms',
-  Actual: sh.cCompoundOfTwelvePentagonalPrisms,
+  Actual: shp.cCompoundOfTwelvePentagonalPrisms,
   Expected: 'CompoundOfTwelvePentagonalPrisms'
 }, {
   Name: 'cCompoundOfTwelvePentagrammicAntiprisms',
-  Actual: sh.cCompoundOfTwelvePentagrammicAntiprisms,
+  Actual: shp.cCompoundOfTwelvePentagrammicAntiprisms,
   Expected: 'CompoundOfTwelvePentagrammicAntiprisms'
 }, {
   Name: 'cCompoundOfTwelvePentagrammicCrossedAntiprismsWithRotationalFreedom',
-  Actual: sh.cCompoundOfTwelvePentagrammicCrossedAntiprismsWithRotationalFreedom,
+  Actual: shp.cCompoundOfTwelvePentagrammicCrossedAntiprismsWithRotationalFreedom,
   Expected: 'CompoundOfTwelvePentagrammicCrossedAntiprismsWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfTwelvePentagrammicPrisms',
-  Actual: sh.cCompoundOfTwelvePentagrammicPrisms,
+  Actual: shp.cCompoundOfTwelvePentagrammicPrisms,
   Expected: 'CompoundOfTwelvePentagrammicPrisms'
 }, {
   Name: 'cCompoundOfTwelveTetrahedraWithRotationalFreedom',
-  Actual: sh.cCompoundOfTwelveTetrahedraWithRotationalFreedom,
+  Actual: shp.cCompoundOfTwelveTetrahedraWithRotationalFreedom,
   Expected: 'CompoundOfTwelveTetrahedraWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfTwentyOctahedra',
-  Actual: sh.cCompoundOfTwentyOctahedra,
+  Actual: shp.cCompoundOfTwentyOctahedra,
   Expected: 'CompoundOfTwentyOctahedra'
 }, {
   Name: 'cCompoundOfTwentyOctahedraWithRotationalFreedom',
-  Actual: sh.cCompoundOfTwentyOctahedraWithRotationalFreedom,
+  Actual: shp.cCompoundOfTwentyOctahedraWithRotationalFreedom,
   Expected: 'CompoundOfTwentyOctahedraWithRotationalFreedom'
 }, {
   Name: 'cCompoundOfTwentyTetrahemihexahedra',
-  Actual: sh.cCompoundOfTwentyTetrahemihexahedra,
+  Actual: shp.cCompoundOfTwentyTetrahemihexahedra,
   Expected: 'CompoundOfTwentyTetrahemihexahedra'
 }, {
   Name: 'cCompoundOfTwentyTriangularPrisms',
-  Actual: sh.cCompoundOfTwentyTriangularPrisms,
+  Actual: shp.cCompoundOfTwentyTriangularPrisms,
   Expected: 'CompoundOfTwentyTriangularPrisms'
 }, {
   Name: 'cCompoundOfTwoGreatDodecahedra',
-  Actual: sh.cCompoundOfTwoGreatDodecahedra,
+  Actual: shp.cCompoundOfTwoGreatDodecahedra,
   Expected: 'CompoundOfTwoGreatDodecahedra'
 }, {
   Name: 'cCompoundOfTwoGreatIcosahedra',
-  Actual: sh.cCompoundOfTwoGreatIcosahedra,
+  Actual: shp.cCompoundOfTwoGreatIcosahedra,
   Expected: 'CompoundOfTwoGreatIcosahedra'
 }, {
   Name: 'cCompoundOfTwoGreatInvertedSnubIcosidodecahedra',
-  Actual: sh.cCompoundOfTwoGreatInvertedSnubIcosidodecahedra,
+  Actual: shp.cCompoundOfTwoGreatInvertedSnubIcosidodecahedra,
   Expected: 'CompoundOfTwoGreatInvertedSnubIcosidodecahedra'
 }, {
   Name: 'cCompoundOfTwoGreatRetrosnubIcosidodecahedra',
-  Actual: sh.cCompoundOfTwoGreatRetrosnubIcosidodecahedra,
+  Actual: shp.cCompoundOfTwoGreatRetrosnubIcosidodecahedra,
   Expected: 'CompoundOfTwoGreatRetrosnubIcosidodecahedra'
 }, {
   Name: 'cCompoundOfTwoGreatSnubIcosidodecahedra',
-  Actual: sh.cCompoundOfTwoGreatSnubIcosidodecahedra,
+  Actual: shp.cCompoundOfTwoGreatSnubIcosidodecahedra,
   Expected: 'CompoundOfTwoGreatSnubIcosidodecahedra'
 }, {
   Name: 'cCompoundOfTwoIcosahedra',
-  Actual: sh.cCompoundOfTwoIcosahedra,
+  Actual: shp.cCompoundOfTwoIcosahedra,
   Expected: 'CompoundOfTwoIcosahedra'
 }, {
   Name: 'cCompoundOfTwoInvertedSnubDodecadodecahedra',
-  Actual: sh.cCompoundOfTwoInvertedSnubDodecadodecahedra,
+  Actual: shp.cCompoundOfTwoInvertedSnubDodecadodecahedra,
   Expected: 'CompoundOfTwoInvertedSnubDodecadodecahedra'
 }, {
   Name: 'cCompoundOfTwoSmallStellatedDodecahedra',
-  Actual: sh.cCompoundOfTwoSmallStellatedDodecahedra,
+  Actual: shp.cCompoundOfTwoSmallStellatedDodecahedra,
   Expected: 'CompoundOfTwoSmallStellatedDodecahedra'
 }, {
   Name: 'cCompoundOfTwoSnubCubes',
-  Actual: sh.cCompoundOfTwoSnubCubes,
+  Actual: shp.cCompoundOfTwoSnubCubes,
   Expected: 'CompoundOfTwoSnubCubes'
 }, {
   Name: 'cCompoundOfTwoSnubDodecadodecahedra',
-  Actual: sh.cCompoundOfTwoSnubDodecadodecahedra,
+  Actual: shp.cCompoundOfTwoSnubDodecadodecahedra,
   Expected: 'CompoundOfTwoSnubDodecadodecahedra'
 }, {
   Name: 'cCompoundOfTwoSnubDodecahedra',
-  Actual: sh.cCompoundOfTwoSnubDodecahedra,
+  Actual: shp.cCompoundOfTwoSnubDodecahedra,
   Expected: 'CompoundOfTwoSnubDodecahedra'
 }, {
   Name: 'cCompoundOfTwoSnubIcosidodecadodecahedra',
-  Actual: sh.cCompoundOfTwoSnubIcosidodecadodecahedra,
+  Actual: shp.cCompoundOfTwoSnubIcosidodecadodecahedra,
   Expected: 'CompoundOfTwoSnubIcosidodecadodecahedra'
 }, {
   Name: 'cCompoundOfTwoTruncatedTetrahedra',
-  Actual: sh.cCompoundOfTwoTruncatedTetrahedra,
+  Actual: shp.cCompoundOfTwoTruncatedTetrahedra,
   Expected: 'CompoundOfTwoTruncatedTetrahedra'
 }, {
   Name: 'cPrismaticCompoundOfAntiprisms',
-  Actual: sh.cPrismaticCompoundOfAntiprisms,
+  Actual: shp.cPrismaticCompoundOfAntiprisms,
   Expected: 'PrismaticCompoundOfAntiprisms'
 }, {
   Name: 'cPrismaticCompoundOfAntiprismsWithRotationalFreedom',
-  Actual: sh.cPrismaticCompoundOfAntiprismsWithRotationalFreedom,
+  Actual: shp.cPrismaticCompoundOfAntiprismsWithRotationalFreedom,
   Expected: 'PrismaticCompoundOfAntiprismsWithRotationalFreedom'
 }, {
   Name: 'cPrismaticCompoundOfPrisms',
-  Actual: sh.cPrismaticCompoundOfPrisms,
+  Actual: shp.cPrismaticCompoundOfPrisms,
   Expected: 'PrismaticCompoundOfPrisms'
 }, {
   Name: 'cPrismaticCompoundOfPrismsWithRotationalFreedom',
-  Actual: sh.cPrismaticCompoundOfPrismsWithRotationalFreedom,
+  Actual: shp.cPrismaticCompoundOfPrismsWithRotationalFreedom,
   Expected: 'PrismaticCompoundOfPrismsWithRotationalFreedom'
 }, // 4D Polytopes
 {
   Name: 'cHecatonicosachoron',
-  Actual: sh.cHecatonicosachoron,
+  Actual: shp.cHecatonicosachoron,
   Expected: 'Hecatonicosachoron'
 }, {
   Name: 'cHexacosichoron',
-  Actual: sh.cHexacosichoron,
+  Actual: shp.cHexacosichoron,
   Expected: 'Hexacosichoron'
 }, {
   Name: 'cHexadecachoron',
-  Actual: sh.cHexadecachoron,
+  Actual: shp.cHexadecachoron,
   Expected: 'Hexadecachoron'
 }, {
   Name: 'cPentachoron',
-  Actual: sh.cPentachoron,
+  Actual: shp.cPentachoron,
   Expected: 'Pentachoron'
 }, {
   Name: 'cIcositetrachoron',
-  Actual: sh.cIcositetrachoron,
+  Actual: shp.cIcositetrachoron,
   Expected: 'Icositetrachoron'
 }, {
   Name: 'cTesseract',
-  Actual: sh.cTesseract,
+  Actual: shp.cTesseract,
   Expected: 'Tesseract'
 }, // Other Geometry
 {
   Name: 'cSphericalCone',
-  Actual: sh.cSphericalCone,
+  Actual: shp.cSphericalCone,
   Expected: 'SphericalCone'
 }, // Schläfli–Hess 4D Polytope
 {
   Name: 'cIcosahedral_120Cell',
-  Actual: sh.cIcosahedral_120Cell,
+  Actual: shp.cIcosahedral_120Cell,
   Expected: 'Icosahedral_120Cell'
 }, {
   Name: 'cSmallStellated_120Cell',
-  Actual: sh.cSmallStellated_120Cell,
+  Actual: shp.cSmallStellated_120Cell,
   Expected: 'SmallStellated_120Cell'
 }, {
   Name: 'cGreat_120Cell',
-  Actual: sh.cGreat_120Cell,
+  Actual: shp.cGreat_120Cell,
   Expected: 'Great_120Cell'
 }, {
   Name: 'cGrand_120Cell',
-  Actual: sh.cGrand_120Cell,
+  Actual: shp.cGrand_120Cell,
   Expected: 'Grand_120Cell'
 }, {
   Name: 'cGreatStellated_120Cell',
-  Actual: sh.cGreatStellated_120Cell,
+  Actual: shp.cGreatStellated_120Cell,
   Expected: 'GreatStellated_120Cell'
 }, {
   Name: 'cGrandStellated_120Cell',
-  Actual: sh.cGrandStellated_120Cell,
+  Actual: shp.cGrandStellated_120Cell,
   Expected: 'GrandStellated_120Cell'
 }, {
   Name: 'cGreatGrand_120Cell',
-  Actual: sh.cGreatGrand_120Cell,
+  Actual: shp.cGreatGrand_120Cell,
   Expected: 'GreatGrand_120Cell'
 }, {
   Name: 'cGreatIcosahedral_120Cell',
-  Actual: sh.cGreatIcosahedral_120Cell,
+  Actual: shp.cGreatIcosahedral_120Cell,
   Expected: 'GreatIcosahedral_120Cell'
 }, {
   Name: 'cGrand_600Cell',
-  Actual: sh.cGrand_600Cell,
+  Actual: shp.cGrand_600Cell,
   Expected: 'Grand_600Cell'
 }, {
   Name: 'cGreatGrandStellated_120Cell',
-  Actual: sh.cGreatGrandStellated_120Cell,
+  Actual: shp.cGreatGrandStellated_120Cell,
   Expected: 'GreatGrandStellated_120Cell'
 }, // Uniform 4D Polytope
 {
   Name: 'cRectified_5Cell',
-  Actual: sh.cRectified_5Cell,
+  Actual: shp.cRectified_5Cell,
   Expected: 'Rectified_5Cell'
 }, {
   Name: 'cTruncated_5Cell',
-  Actual: sh.cTruncated_5Cell,
+  Actual: shp.cTruncated_5Cell,
   Expected: 'Truncated_5Cell'
 }, {
   Name: 'cCantellated_5Cell',
-  Actual: sh.cCantellated_5Cell,
+  Actual: shp.cCantellated_5Cell,
   Expected: 'Cantellated_5Cell'
 }, {
   Name: 'cRuncinated_5Cell',
-  Actual: sh.cRuncinated_5Cell,
+  Actual: shp.cRuncinated_5Cell,
   Expected: 'Runcinated_5Cell'
 }, {
   Name: 'cRectifiedTesseract',
-  Actual: sh.cRectifiedTesseract,
+  Actual: shp.cRectifiedTesseract,
   Expected: 'RectifiedTesseract'
 }, {
   Name: 'cTruncatedTesseract',
-  Actual: sh.cTruncatedTesseract,
+  Actual: shp.cTruncatedTesseract,
   Expected: 'TruncatedTesseract'
 }, {
   Name: 'cCantellatedTesseract',
-  Actual: sh.cCantellatedTesseract,
+  Actual: shp.cCantellatedTesseract,
   Expected: 'CantellatedTesseract'
 }, {
   Name: 'cRuncinatedTesseract',
-  Actual: sh.cRuncinatedTesseract,
+  Actual: shp.cRuncinatedTesseract,
   Expected: 'RuncinatedTesseract'
 }, {
   Name: 'cRectified_16Cell',
-  Actual: sh.cRectified_16Cell,
+  Actual: shp.cRectified_16Cell,
   Expected: 'Rectified_16Cell'
 }, {
   Name: 'cTruncated_16Cell',
-  Actual: sh.cTruncated_16Cell,
+  Actual: shp.cTruncated_16Cell,
   Expected: 'Truncated_16Cell'
 }, {
   Name: 'cRectified_24Cell',
-  Actual: sh.cRectified_24Cell,
+  Actual: shp.cRectified_24Cell,
   Expected: 'Rectified_24Cell'
 }, {
   Name: 'cTruncated_24Cell',
-  Actual: sh.cTruncated_24Cell,
+  Actual: shp.cTruncated_24Cell,
   Expected: 'Truncated_24Cell'
 }, {
   Name: 'cCantellated_24Cell',
-  Actual: sh.cCantellated_24Cell,
+  Actual: shp.cCantellated_24Cell,
   Expected: 'Cantellated_24Cell'
 }, {
   Name: 'cRuncinated_24Cell',
-  Actual: sh.cRuncinated_24Cell,
+  Actual: shp.cRuncinated_24Cell,
   Expected: 'Runcinated_24Cell'
 }, {
   Name: 'cSnub_24Cell',
-  Actual: sh.cSnub_24Cell,
+  Actual: shp.cSnub_24Cell,
   Expected: 'Snub_24Cell'
 }, {
   Name: 'cRectified_120Cell',
-  Actual: sh.cRectified_120Cell,
+  Actual: shp.cRectified_120Cell,
   Expected: 'Rectified_120Cell'
 }, {
   Name: 'cTruncated_120Cell',
-  Actual: sh.cTruncated_120Cell,
+  Actual: shp.cTruncated_120Cell,
   Expected: 'Truncated_120Cell'
 }, {
   Name: 'cCantellated_120Cell',
-  Actual: sh.cCantellated_120Cell,
+  Actual: shp.cCantellated_120Cell,
   Expected: 'Cantellated_120Cell'
 }, {
   Name: 'cRuncinated_120Cell',
-  Actual: sh.cRuncinated_120Cell,
+  Actual: shp.cRuncinated_120Cell,
   Expected: 'Runcinated_120Cell'
 }, {
   Name: 'cRectified_600Cell',
-  Actual: sh.cRectified_600Cell,
+  Actual: shp.cRectified_600Cell,
   Expected: 'Rectified_600Cell'
 }, {
   Name: 'cTruncated_600Cell',
-  Actual: sh.cTruncated_600Cell,
+  Actual: shp.cTruncated_600Cell,
   Expected: 'Truncated_600Cell'
 }, {
   Name: 'cCantellated_600Cell',
-  Actual: sh.cCantellated_600Cell,
+  Actual: shp.cCantellated_600Cell,
   Expected: 'Cantellated_600Cell'
 }, // Prismatic Uniform Polychoron
 {
   Name: 'cGrandAntiprism',
-  Actual: sh.cGrandAntiprism,
+  Actual: shp.cGrandAntiprism,
   Expected: 'GrandAntiprism'
 }, {
   Name: 'cDuoprism',
-  Actual: sh.cDuoprism,
+  Actual: shp.cDuoprism,
   Expected: 'Duoprism'
 }, {
   Name: 'cTetrahedralPrism',
-  Actual: sh.cTetrahedralPrism,
+  Actual: shp.cTetrahedralPrism,
   Expected: 'TetrahedralPrism'
 }, {
   Name: 'cTruncatedTetrahedralPrism',
-  Actual: sh.cTruncatedTetrahedralPrism,
+  Actual: shp.cTruncatedTetrahedralPrism,
   Expected: 'TruncatedTetrahedralPrism'
 }, {
   Name: 'cTruncatedCubicPrism',
-  Actual: sh.cTruncatedCubicPrism,
+  Actual: shp.cTruncatedCubicPrism,
   Expected: 'TruncatedCubicPrism'
 }, {
   Name: 'cTruncatedOctahedralPrism',
-  Actual: sh.cTruncatedOctahedralPrism,
+  Actual: shp.cTruncatedOctahedralPrism,
   Expected: 'TruncatedOctahedralPrism'
 }, {
   Name: 'cCuboctahedralPrism',
-  Actual: sh.cCuboctahedralPrism,
+  Actual: shp.cCuboctahedralPrism,
   Expected: 'CuboctahedralPrism'
 }, {
   Name: 'cRhombicuboctahedralPrism',
-  Actual: sh.cRhombicuboctahedralPrism,
+  Actual: shp.cRhombicuboctahedralPrism,
   Expected: 'RhombicuboctahedralPrism'
 }, {
   Name: 'cTruncatedCuboctahedralPrism',
-  Actual: sh.cTruncatedCuboctahedralPrism,
+  Actual: shp.cTruncatedCuboctahedralPrism,
   Expected: 'TruncatedCuboctahedralPrism'
 }, {
   Name: 'cSnubCubicPrism',
-  Actual: sh.cSnubCubicPrism,
+  Actual: shp.cSnubCubicPrism,
   Expected: 'SnubCubicPrism'
 }, {
   Name: 'cTruncatedDodecahedralPrism',
-  Actual: sh.cTruncatedDodecahedralPrism,
+  Actual: shp.cTruncatedDodecahedralPrism,
   Expected: 'TruncatedDodecahedralPrism'
 }, {
   Name: 'cTruncatedIcosahedralPrism',
-  Actual: sh.cTruncatedIcosahedralPrism,
+  Actual: shp.cTruncatedIcosahedralPrism,
   Expected: 'TruncatedIcosahedralPrism'
 }, {
   Name: 'cIcosidodecahedralPrism',
-  Actual: sh.cIcosidodecahedralPrism,
+  Actual: shp.cIcosidodecahedralPrism,
   Expected: 'IcosidodecahedralPrism'
 }, {
   Name: 'cRhombicosidodecahedralPrism',
-  Actual: sh.cRhombicosidodecahedralPrism,
+  Actual: shp.cRhombicosidodecahedralPrism,
   Expected: 'RhombicosidodecahedralPrism'
 }, {
   Name: 'cTruncatedIcosidodecahedralPrism',
-  Actual: sh.cTruncatedIcosidodecahedralPrism,
+  Actual: shp.cTruncatedIcosidodecahedralPrism,
   Expected: 'TruncatedIcosidodecahedralPrism'
 }, {
   Name: 'cSnubDodecahedralPrism',
-  Actual: sh.cSnubDodecahedralPrism,
+  Actual: shp.cSnubDodecahedralPrism,
   Expected: 'SnubDodecahedralPrism'
 }, {
   Name: 'cUniformAntiprismaticPrism',
-  Actual: sh.cUniformAntiprismaticPrism,
+  Actual: shp.cUniformAntiprismaticPrism,
   Expected: 'UniformAntiprismaticPrism'
 }, // 5D Space, 5D Polytope and Uniform 5D Polytope
 {
   Name: 'cRectified_5Simplex',
-  Actual: sh.cRectified_5Simplex,
+  Actual: shp.cRectified_5Simplex,
   Expected: 'Rectified_5Simplex'
 }, {
   Name: 'cTruncated_5Simplex',
-  Actual: sh.cTruncated_5Simplex,
+  Actual: shp.cTruncated_5Simplex,
   Expected: 'Truncated_5Simplex'
 }, {
   Name: 'cCantellated_5Simplex',
-  Actual: sh.cCantellated_5Simplex,
+  Actual: shp.cCantellated_5Simplex,
   Expected: 'Cantellated_5Simplex'
 }, {
   Name: 'cRuncinated_5Simplex',
-  Actual: sh.cRuncinated_5Simplex,
+  Actual: shp.cRuncinated_5Simplex,
   Expected: 'Runcinated_5Simplex'
 }, {
   Name: 'cStericated_5Simplex',
-  Actual: sh.cStericated_5Simplex,
+  Actual: shp.cStericated_5Simplex,
   Expected: 'Stericated_5Simplex'
 }, {
   Name: 'c5Demicube',
-  Actual: sh.c5Demicube,
+  Actual: shp.c5Demicube,
   Expected: '5Demicube'
 }, {
   Name: 'cTruncated_5Demicube',
-  Actual: sh.cTruncated_5Demicube,
+  Actual: shp.cTruncated_5Demicube,
   Expected: 'Truncated_5Demicube'
 }, {
   Name: 'cCantellated_5Demicube',
-  Actual: sh.cCantellated_5Demicube,
+  Actual: shp.cCantellated_5Demicube,
   Expected: 'Cantellated_5Demicube'
 }, {
   Name: 'cRuncinated_5Demicube',
-  Actual: sh.cRuncinated_5Demicube,
+  Actual: shp.cRuncinated_5Demicube,
   Expected: 'Runcinated_5Demicube'
 }, {
   Name: 'cRectified_5Cube',
-  Actual: sh.cRectified_5Cube,
+  Actual: shp.cRectified_5Cube,
   Expected: 'Rectified_5Cube'
 }, {
   Name: 'cTruncated_5Cube',
-  Actual: sh.cTruncated_5Cube,
+  Actual: shp.cTruncated_5Cube,
   Expected: 'Truncated_5Cube'
 }, {
   Name: 'cCantellated_5Cube',
-  Actual: sh.cCantellated_5Cube,
+  Actual: shp.cCantellated_5Cube,
   Expected: 'Cantellated_5Cube'
 }, {
   Name: 'cRuncinated_5Cube',
-  Actual: sh.cRuncinated_5Cube,
+  Actual: shp.cRuncinated_5Cube,
   Expected: 'Runcinated_5Cube'
 }, {
   Name: 'cStericated_5Cube',
-  Actual: sh.cStericated_5Cube,
+  Actual: shp.cStericated_5Cube,
   Expected: 'Stericated_5Cube'
 }, {
   Name: 'cRectified_5Orthoplex',
-  Actual: sh.cRectified_5Orthoplex,
+  Actual: shp.cRectified_5Orthoplex,
   Expected: 'Rectified_5Orthoplex'
 }, {
   Name: 'cTruncated_5Orthoplex',
-  Actual: sh.cTruncated_5Orthoplex,
+  Actual: shp.cTruncated_5Orthoplex,
   Expected: 'Truncated_5Orthoplex'
 }, {
   Name: 'cCantellated_5Orthoplex',
-  Actual: sh.cCantellated_5Orthoplex,
+  Actual: shp.cCantellated_5Orthoplex,
   Expected: 'Cantellated_5Orthoplex'
 }, {
   Name: 'cRuncinated_5Orthoplex',
-  Actual: sh.cRuncinated_5Orthoplex,
+  Actual: shp.cRuncinated_5Orthoplex,
   Expected: 'Runcinated_5Orthoplex'
 }, // 5D Honeycombs
 {
   Name: 'c5CubicHoneycomb',
-  Actual: sh.c5CubicHoneycomb,
+  Actual: shp.c5CubicHoneycomb,
   Expected: '5CubicHoneycomb'
 }, {
   Name: 'c5SimplexHoneycomb',
-  Actual: sh.c5SimplexHoneycomb,
+  Actual: shp.c5SimplexHoneycomb,
   Expected: '5SimplexHoneycomb'
 }, {
   Name: 'cTruncated_5SimplexHoneycomb',
-  Actual: sh.cTruncated_5SimplexHoneycomb,
+  Actual: shp.cTruncated_5SimplexHoneycomb,
   Expected: 'Truncated_5SimplexHoneycomb'
 }, {
   Name: 'c5DemicubicHoneycomb',
-  Actual: sh.c5DemicubicHoneycomb,
+  Actual: shp.c5DemicubicHoneycomb,
   Expected: '5DemicubicHoneycomb'
 }, // 6D Space, 6D Polytope and Uniform 6D Polytope
 {
   Name: 'cRectified_6Simplex',
-  Actual: sh.cRectified_6Simplex,
+  Actual: shp.cRectified_6Simplex,
   Expected: 'Rectified_6Simplex'
 }, {
   Name: 'cTruncated_6Simplex',
-  Actual: sh.cTruncated_6Simplex,
+  Actual: shp.cTruncated_6Simplex,
   Expected: 'Truncated_6Simplex'
 }, {
   Name: 'cCantellated_6Simplex',
-  Actual: sh.cCantellated_6Simplex,
+  Actual: shp.cCantellated_6Simplex,
   Expected: 'Cantellated_6Simplex'
 }, {
   Name: 'cRuncinated_6Simplex',
-  Actual: sh.cRuncinated_6Simplex,
+  Actual: shp.cRuncinated_6Simplex,
   Expected: 'Runcinated_6Simplex'
 }, {
   Name: 'cStericated_6Simplex',
-  Actual: sh.cStericated_6Simplex,
+  Actual: shp.cStericated_6Simplex,
   Expected: 'Stericated_6Simplex'
 }, {
   Name: 'cPentellated_6Simplex',
-  Actual: sh.cPentellated_6Simplex,
+  Actual: shp.cPentellated_6Simplex,
   Expected: 'Pentellated_6Simplex'
 }, {
   Name: 'c6Demicube',
-  Actual: sh.c6Demicube,
+  Actual: shp.c6Demicube,
   Expected: '6Demicube'
 }, {
   Name: 'cTruncated_6Demicube',
-  Actual: sh.cTruncated_6Demicube,
+  Actual: shp.cTruncated_6Demicube,
   Expected: 'Truncated_6Demicube'
 }, {
   Name: 'cCantellated_6Demicube',
-  Actual: sh.cCantellated_6Demicube,
+  Actual: shp.cCantellated_6Demicube,
   Expected: 'Cantellated_6Demicube'
 }, {
   Name: 'cRuncinated_6Demicube',
-  Actual: sh.cRuncinated_6Demicube,
+  Actual: shp.cRuncinated_6Demicube,
   Expected: 'Runcinated_6Demicube'
 }, {
   Name: 'cStericated_6Demicube',
-  Actual: sh.cStericated_6Demicube,
+  Actual: shp.cStericated_6Demicube,
   Expected: 'Stericated_6Demicube'
 }, {
   Name: 'cRectified_6Cube',
-  Actual: sh.cRectified_6Cube,
+  Actual: shp.cRectified_6Cube,
   Expected: 'Rectified_6Cube'
 }, {
   Name: 'cTruncated_6Cube',
-  Actual: sh.cTruncated_6Cube,
+  Actual: shp.cTruncated_6Cube,
   Expected: 'Truncated_6Cube'
 }, {
   Name: 'cCantellated_6Cube',
-  Actual: sh.cCantellated_6Cube,
+  Actual: shp.cCantellated_6Cube,
   Expected: 'Cantellated_6Cube'
 }, {
   Name: 'cRuncinated_6Cube',
-  Actual: sh.cRuncinated_6Cube,
+  Actual: shp.cRuncinated_6Cube,
   Expected: 'Runcinated_6Cube'
 }, {
   Name: 'cStericated_6Cube',
-  Actual: sh.cStericated_6Cube,
+  Actual: shp.cStericated_6Cube,
   Expected: 'Stericated_6Cube'
 }, {
   Name: 'cPentellated_6Cube',
-  Actual: sh.cPentellated_6Cube,
+  Actual: shp.cPentellated_6Cube,
   Expected: 'Pentellated_6Cube'
 }, {
   Name: 'cRectified_6Orthoplex',
-  Actual: sh.cRectified_6Orthoplex,
+  Actual: shp.cRectified_6Orthoplex,
   Expected: 'Rectified_6Orthoplex'
 }, {
   Name: 'cTruncated_6Orthoplex',
-  Actual: sh.cTruncated_6Orthoplex,
+  Actual: shp.cTruncated_6Orthoplex,
   Expected: 'Truncated_6Orthoplex'
 }, {
   Name: 'cCantellated_6Orthoplex',
-  Actual: sh.cCantellated_6Orthoplex,
+  Actual: shp.cCantellated_6Orthoplex,
   Expected: 'Cantellated_6Orthoplex'
 }, {
   Name: 'cRuncinated_6Orthoplex',
-  Actual: sh.cRuncinated_6Orthoplex,
+  Actual: shp.cRuncinated_6Orthoplex,
   Expected: 'Runcinated_6Orthoplex'
 }, {
   Name: 'cStericated_6Orthoplex',
-  Actual: sh.cStericated_6Orthoplex,
+  Actual: shp.cStericated_6Orthoplex,
   Expected: 'Stericated_6Orthoplex'
 }, // 6D Honeycomb
 {
   Name: 'c6CubicHoneycomb',
-  Actual: sh.c6CubicHoneycomb,
+  Actual: shp.c6CubicHoneycomb,
   Expected: '6CubicHoneycomb'
 }, {
   Name: 'c6SimplexHoneycomb',
-  Actual: sh.c6SimplexHoneycomb,
+  Actual: shp.c6SimplexHoneycomb,
   Expected: '6SimplexHoneycomb'
 }, {
   Name: 'c6DemicubicHoneycomb',
-  Actual: sh.c6DemicubicHoneycomb,
+  Actual: shp.c6DemicubicHoneycomb,
   Expected: '6DemicubicHoneycomb'
 }, // 7D Space, Uniform 7D Polytope
 {
   Name: 'cRectified_7Simplex',
-  Actual: sh.cRectified_7Simplex,
+  Actual: shp.cRectified_7Simplex,
   Expected: 'Rectified_7Simplex'
 }, {
   Name: 'cTruncated_7Simplex',
-  Actual: sh.cTruncated_7Simplex,
+  Actual: shp.cTruncated_7Simplex,
   Expected: 'Truncated_7Simplex'
 }, {
   Name: 'cCantellated_7Simplex',
-  Actual: sh.cCantellated_7Simplex,
+  Actual: shp.cCantellated_7Simplex,
   Expected: 'Cantellated_7Simplex'
 }, {
   Name: 'cRuncinated_7Simplex',
-  Actual: sh.cRuncinated_7Simplex,
+  Actual: shp.cRuncinated_7Simplex,
   Expected: 'Runcinated_7Simplex'
 }, {
   Name: 'cStericated_7Simplex',
-  Actual: sh.cStericated_7Simplex,
+  Actual: shp.cStericated_7Simplex,
   Expected: 'Stericated_7Simplex'
 }, {
   Name: 'cPentellated_7Simplex',
-  Actual: sh.cPentellated_7Simplex,
+  Actual: shp.cPentellated_7Simplex,
   Expected: 'Pentellated_7Simplex'
 }, {
   Name: 'cHexicated_7Simplex',
-  Actual: sh.cHexicated_7Simplex,
+  Actual: shp.cHexicated_7Simplex,
   Expected: 'Hexicated_7Simplex'
 }, {
   Name: 'c7Demicube',
-  Actual: sh.c7Demicube,
+  Actual: shp.c7Demicube,
   Expected: '7Demicube'
 }, {
   Name: 'cTruncated_7Demicube',
-  Actual: sh.cTruncated_7Demicube,
+  Actual: shp.cTruncated_7Demicube,
   Expected: 'Truncated_7Demicube'
 }, {
   Name: 'cCantellated_7Demicube',
-  Actual: sh.cCantellated_7Demicube,
+  Actual: shp.cCantellated_7Demicube,
   Expected: 'Cantellated_7Demicube'
 }, {
   Name: 'cRuncinated_7Demicube',
-  Actual: sh.cRuncinated_7Demicube,
+  Actual: shp.cRuncinated_7Demicube,
   Expected: 'Runcinated_7Demicube'
 }, {
   Name: 'cStericated_7Demicube',
-  Actual: sh.cStericated_7Demicube,
+  Actual: shp.cStericated_7Demicube,
   Expected: 'Stericated_7Demicube'
 }, {
   Name: 'cPentellated_7Demicube',
-  Actual: sh.cPentellated_7Demicube,
+  Actual: shp.cPentellated_7Demicube,
   Expected: 'Pentellated_7Demicube'
 }, {
   Name: 'cRectified_7Cube',
-  Actual: sh.cRectified_7Cube,
+  Actual: shp.cRectified_7Cube,
   Expected: 'Rectified_7Cube'
 }, {
   Name: 'cTruncated_7Cube',
-  Actual: sh.cTruncated_7Cube,
+  Actual: shp.cTruncated_7Cube,
   Expected: 'Truncated_7Cube'
 }, {
   Name: 'cCantellated_7Cube',
-  Actual: sh.cCantellated_7Cube,
+  Actual: shp.cCantellated_7Cube,
   Expected: 'Cantellated_7Cube'
 }, {
   Name: 'cRuncinated_7Cube',
-  Actual: sh.cRuncinated_7Cube,
+  Actual: shp.cRuncinated_7Cube,
   Expected: 'Runcinated_7Cube'
 }, {
   Name: 'cStericated_7Cube',
-  Actual: sh.cStericated_7Cube,
+  Actual: shp.cStericated_7Cube,
   Expected: 'Stericated_7Cube'
 }, {
   Name: 'cPentellated_7Cube',
-  Actual: sh.cPentellated_7Cube,
+  Actual: shp.cPentellated_7Cube,
   Expected: 'Pentellated_7Cube'
 }, {
   Name: 'cHexicated_7Cube',
-  Actual: sh.cHexicated_7Cube,
+  Actual: shp.cHexicated_7Cube,
   Expected: 'Hexicated_7Cube'
 }, {
   Name: 'cRectified_7Orthoplex',
-  Actual: sh.cRectified_7Orthoplex,
+  Actual: shp.cRectified_7Orthoplex,
   Expected: 'Rectified_7Orthoplex'
 }, {
   Name: 'cTruncated_7Orthoplex',
-  Actual: sh.cTruncated_7Orthoplex,
+  Actual: shp.cTruncated_7Orthoplex,
   Expected: 'Truncated_7Orthoplex'
 }, {
   Name: 'cCantellated_7Orthoplex',
-  Actual: sh.cCantellated_7Orthoplex,
+  Actual: shp.cCantellated_7Orthoplex,
   Expected: 'Cantellated_7Orthoplex'
 }, {
   Name: 'cRuncinated_7Orthoplex',
-  Actual: sh.cRuncinated_7Orthoplex,
+  Actual: shp.cRuncinated_7Orthoplex,
   Expected: 'Runcinated_7Orthoplex'
 }, {
   Name: 'cStericated_7Orthoplex',
-  Actual: sh.cStericated_7Orthoplex,
+  Actual: shp.cStericated_7Orthoplex,
   Expected: 'Stericated_7Orthoplex'
 }, {
   Name: 'cPentellated_7Orthoplex',
-  Actual: sh.cPentellated_7Orthoplex,
+  Actual: shp.cPentellated_7Orthoplex,
   Expected: 'Pentellated_7Orthoplex'
 }, // 7D Honeycombs
 {
   Name: 'c7CubicHoneycomb',
-  Actual: sh.c7CubicHoneycomb,
+  Actual: shp.c7CubicHoneycomb,
   Expected: '7CubicHoneycomb'
 }, {
   Name: 'c7DemicubicHoneycomb',
-  Actual: sh.c7DemicubicHoneycomb,
+  Actual: shp.c7DemicubicHoneycomb,
   Expected: '7DemicubicHoneycomb'
 }, // 8D Space, Uniform 8D Polytope
 {
   Name: 'cRectified_8Simplex',
-  Actual: sh.cRectified_8Simplex,
+  Actual: shp.cRectified_8Simplex,
   Expected: 'Rectified_8Simplex'
 }, {
   Name: 'cTruncated_8Simplex',
-  Actual: sh.cTruncated_8Simplex,
+  Actual: shp.cTruncated_8Simplex,
   Expected: 'Truncated_8Simplex'
 }, {
   Name: 'cCantellated_8Simplex',
-  Actual: sh.cCantellated_8Simplex,
+  Actual: shp.cCantellated_8Simplex,
   Expected: 'Cantellated_8Simplex'
 }, {
   Name: 'cRuncinated_8Simplex',
-  Actual: sh.cRuncinated_8Simplex,
+  Actual: shp.cRuncinated_8Simplex,
   Expected: 'Runcinated_8Simplex'
 }, {
   Name: 'cStericated_8Simplex',
-  Actual: sh.cStericated_8Simplex,
+  Actual: shp.cStericated_8Simplex,
   Expected: 'Stericated_8Simplex'
 }, {
   Name: 'cPentellated_8Simplex',
-  Actual: sh.cPentellated_8Simplex,
+  Actual: shp.cPentellated_8Simplex,
   Expected: 'Pentellated_8Simplex'
 }, {
   Name: 'cHexicated_8Simplex',
-  Actual: sh.cHexicated_8Simplex,
+  Actual: shp.cHexicated_8Simplex,
   Expected: 'Hexicated_8Simplex'
 }, {
   Name: 'cHeptellated_8Simplex',
-  Actual: sh.cHeptellated_8Simplex,
+  Actual: shp.cHeptellated_8Simplex,
   Expected: 'Heptellated_8Simplex'
 }, {
   Name: 'cRectified_8Orthoplex',
-  Actual: sh.cRectified_8Orthoplex,
+  Actual: shp.cRectified_8Orthoplex,
   Expected: 'Rectified_8Orthoplex'
 }, {
   Name: 'cTruncated_8Orthoplex',
-  Actual: sh.cTruncated_8Orthoplex,
+  Actual: shp.cTruncated_8Orthoplex,
   Expected: 'Truncated_8Orthoplex'
 }, {
   Name: 'cCantellated_8Orthoplex',
-  Actual: sh.cCantellated_8Orthoplex,
+  Actual: shp.cCantellated_8Orthoplex,
   Expected: 'Cantellated_8Orthoplex'
 }, {
   Name: 'cRuncinated_8Orthoplex',
-  Actual: sh.cRuncinated_8Orthoplex,
+  Actual: shp.cRuncinated_8Orthoplex,
   Expected: 'Runcinated_8Orthoplex'
 }, {
   Name: 'cStericated_8Orthoplex',
-  Actual: sh.cStericated_8Orthoplex,
+  Actual: shp.cStericated_8Orthoplex,
   Expected: 'Stericated_8Orthoplex'
 }, {
   Name: 'cPentellated_8Orthoplex',
-  Actual: sh.cPentellated_8Orthoplex,
+  Actual: shp.cPentellated_8Orthoplex,
   Expected: 'Pentellated_8Orthoplex'
 }, {
   Name: 'cHexicated_8Orthoplex',
-  Actual: sh.cHexicated_8Orthoplex,
+  Actual: shp.cHexicated_8Orthoplex,
   Expected: 'Hexicated_8Orthoplex'
 }, {
   Name: 'cRectified_8Cube',
-  Actual: sh.cRectified_8Cube,
+  Actual: shp.cRectified_8Cube,
   Expected: 'Rectified_8Cube'
 }, {
   Name: 'cTruncated_8Cube',
-  Actual: sh.cTruncated_8Cube,
+  Actual: shp.cTruncated_8Cube,
   Expected: 'Truncated_8Cube'
 }, {
   Name: 'cCantellated_8Cube',
-  Actual: sh.cCantellated_8Cube,
+  Actual: shp.cCantellated_8Cube,
   Expected: 'Cantellated_8Cube'
 }, {
   Name: 'cRuncinated_8Cube',
-  Actual: sh.cRuncinated_8Cube,
+  Actual: shp.cRuncinated_8Cube,
   Expected: 'Runcinated_8Cube'
 }, {
   Name: 'cStericated_8Cube',
-  Actual: sh.cStericated_8Cube,
+  Actual: shp.cStericated_8Cube,
   Expected: 'Stericated_8Cube'
 }, {
   Name: 'cPentellated_8Cube',
-  Actual: sh.cPentellated_8Cube,
+  Actual: shp.cPentellated_8Cube,
   Expected: 'Pentellated_8Cube'
 }, {
   Name: 'cHexicated_8Cube',
-  Actual: sh.cHexicated_8Cube,
+  Actual: shp.cHexicated_8Cube,
   Expected: 'Hexicated_8Cube'
 }, {
   Name: 'cHeptellated_8Cube',
-  Actual: sh.cHeptellated_8Cube,
+  Actual: shp.cHeptellated_8Cube,
   Expected: 'Heptellated_8Cube'
 }, {
   Name: 'c8Demicube',
-  Actual: sh.c8Demicube,
+  Actual: shp.c8Demicube,
   Expected: '8Demicube'
 }, {
   Name: 'cTruncated_8Demicube',
-  Actual: sh.cTruncated_8Demicube,
+  Actual: shp.cTruncated_8Demicube,
   Expected: 'Truncated_8Demicube'
 }, {
   Name: 'cCantellated_8Demicube',
-  Actual: sh.cCantellated_8Demicube,
+  Actual: shp.cCantellated_8Demicube,
   Expected: 'Cantellated_8Demicube'
 }, {
   Name: 'cRuncinated_8Demicube',
-  Actual: sh.cRuncinated_8Demicube,
+  Actual: shp.cRuncinated_8Demicube,
   Expected: 'Runcinated_8Demicube'
 }, {
   Name: 'cStericated_8Demicube',
-  Actual: sh.cStericated_8Demicube,
+  Actual: shp.cStericated_8Demicube,
   Expected: 'Stericated_8Demicube'
 }, {
   Name: 'cPentellated_8Demicube',
-  Actual: sh.cPentellated_8Demicube,
+  Actual: shp.cPentellated_8Demicube,
   Expected: 'Pentellated_8Demicube'
 }, {
   Name: 'cHexicated_8Demicube',
-  Actual: sh.cHexicated_8Demicube,
+  Actual: shp.cHexicated_8Demicube,
   Expected: 'Hexicated_8Demicube'
 }, // 8D Honeycombs
 {
   Name: 'c8CubicHoneycomb',
-  Actual: sh.c8CubicHoneycomb,
+  Actual: shp.c8CubicHoneycomb,
   Expected: '8CubicHoneycomb'
 }, {
   Name: 'c8DemicubicHoneycomb',
-  Actual: sh.c8DemicubicHoneycomb,
+  Actual: shp.c8DemicubicHoneycomb,
   Expected: '8DemicubicHoneycomb'
 }, // 9D Polytope
 {
   Name: 'c9Demicube',
-  Actual: sh.c9Demicube,
+  Actual: shp.c9Demicube,
   Expected: '9Demicube'
 }, // 10D Polytope
 {
   Name: 'c10Demicube',
-  Actual: sh.c10Demicube,
+  Actual: shp.c10Demicube,
   Expected: '10Demicube'
 }, // Geometry and other areas of mathematics
 {
   Name: 'cAnnulus',
-  Actual: sh.cAnnulus,
+  Actual: shp.cAnnulus,
   Expected: 'Annulus'
 }, {
   Name: 'cApollonianCircles',
-  Actual: sh.cApollonianCircles,
+  Actual: shp.cApollonianCircles,
   Expected: 'ApollonianCircles'
 }, {
   Name: 'cArbelos',
-  Actual: sh.cArbelos,
+  Actual: shp.cArbelos,
   Expected: 'Arbelos'
 }, {
   Name: 'cBorromeanRings',
-  Actual: sh.cBorromeanRings,
+  Actual: shp.cBorromeanRings,
   Expected: 'BorromeanRings'
 }, {
   Name: 'cCircularSector',
-  Actual: sh.cCircularSector,
+  Actual: shp.cCircularSector,
   Expected: 'CircularSector'
 }, {
   Name: 'cCircularSegment',
-  Actual: sh.cCircularSegment,
+  Actual: shp.cCircularSegment,
   Expected: 'CircularSegment'
 }, {
   Name: 'cDeferent',
-  Actual: sh.cDeferent,
+  Actual: shp.cDeferent,
   Expected: 'Deferent'
 }, {
   Name: 'cEpicycle',
-  Actual: sh.cEpicycle,
+  Actual: shp.cEpicycle,
   Expected: 'Epicycle'
 }, {
   Name: 'cExTangentialQuadrilateral',
-  Actual: sh.cExTangentialQuadrilateral,
+  Actual: shp.cExTangentialQuadrilateral,
   Expected: 'ExTangentialQuadrilateral'
 }, {
   Name: 'cHorocycle',
-  Actual: sh.cHorocycle,
+  Actual: shp.cHorocycle,
   Expected: 'Horocycle'
 }, {
   Name: 'cHypotrochoid',
-  Actual: sh.cHypotrochoid,
+  Actual: shp.cHypotrochoid,
   Expected: 'Hypotrochoid'
 }, {
   Name: 'cLune',
-  Actual: sh.cLune,
+  Actual: shp.cLune,
   Expected: 'Lune'
 }, {
   Name: 'cPappusChain',
-  Actual: sh.cPappusChain,
+  Actual: shp.cPappusChain,
   Expected: 'PappusChain'
 }, {
   Name: 'cPeaucellierLipkinLinkage',
-  Actual: sh.cPeaucellierLipkinLinkage,
+  Actual: shp.cPeaucellierLipkinLinkage,
   Expected: 'PeaucellierLipkinLinkage'
 }, {
   Name: 'cRobbinsPentagon',
-  Actual: sh.cRobbinsPentagon,
+  Actual: shp.cRobbinsPentagon,
   Expected: 'RobbinsPentagon'
 }, {
   Name: 'cSalinon',
-  Actual: sh.cSalinon,
+  Actual: shp.cSalinon,
   Expected: 'Salinon'
 }, {
   Name: 'cSemicircle',
-  Actual: sh.cSemicircle,
+  Actual: shp.cSemicircle,
   Expected: 'Semicircle'
 }, {
   Name: 'cSquircle',
-  Actual: sh.cSquircle,
+  Actual: shp.cSquircle,
   Expected: 'Squircle'
 }, {
   Name: 'cSteinerChain',
-  Actual: sh.cSteinerChain,
+  Actual: shp.cSteinerChain,
   Expected: 'SteinerChain'
 }, {
   Name: 'cBicentricQuadrilateral',
-  Actual: sh.cBicentricQuadrilateral,
+  Actual: shp.cBicentricQuadrilateral,
   Expected: 'BicentricQuadrilateral'
 }, // Glyphs and Symbols
 {
   Name: 'cCrescent',
-  Actual: sh.cCrescent,
+  Actual: shp.cCrescent,
   Expected: 'Crescent'
 }, {
   Name: 'cVesicaPiscis',
-  Actual: sh.cVesicaPiscis,
+  Actual: shp.cVesicaPiscis,
   Expected: 'VesicaPiscis'
 }, {
   Name: 'cArc',
-  Actual: sh.cArc,
+  Actual: shp.cArc,
   Expected: 'Arc'
 }, {
   Name: 'cCubicHermiteCurve',
-  Actual: sh.cCubicHermiteCurve,
+  Actual: shp.cCubicHermiteCurve,
   Expected: 'CubicHermiteCurve'
 }, {
   Name: 'cCurveOfConstantWidth',
-  Actual: sh.cCurveOfConstantWidth,
+  Actual: shp.cCurveOfConstantWidth,
   Expected: 'CurveOfConstantWidth'
 }, {
   Name: 'cHedgehog',
-  Actual: sh.cHedgehog,
+  Actual: shp.cHedgehog,
   Expected: 'Hedgehog'
 }, {
   Name: 'cParametricCurve',
-  Actual: sh.cParametricCurve,
+  Actual: shp.cParametricCurve,
   Expected: 'ParametricCurve'
 }, {
   Name: 'cSpline',
-  Actual: sh.cSpline,
+  Actual: shp.cSpline,
   Expected: 'Spline'
 }, {
   Name: 'cHermiteSpline',
-  Actual: sh.cHermiteSpline,
+  Actual: shp.cHermiteSpline,
   Expected: 'HermiteSpline'
 }, {
   Name: 'cBetaSpline',
-  Actual: sh.cBetaSpline,
+  Actual: shp.cBetaSpline,
   Expected: 'BetaSpline'
 }, {
   Name: 'cHigherOrderSpline',
-  Actual: sh.cHigherOrderSpline,
+  Actual: shp.cHigherOrderSpline,
   Expected: 'HigherOrderSpline'
 }, {
   Name: 'cRay',
-  Actual: sh.cRay,
+  Actual: shp.cRay,
   Expected: 'Ray'
 }, {
   Name: 'cRibaucourCurve',
-  Actual: sh.cRibaucourCurve,
+  Actual: shp.cRibaucourCurve,
   Expected: 'RibaucourCurve'
 }, // Knots
 {
   Name: 'cAdjustableGripHitch',
-  Actual: sh.cAdjustableGripHitch,
+  Actual: shp.cAdjustableGripHitch,
   Expected: 'AdjustableGripHitch'
 }, {
   Name: 'cAdjustableSling',
-  Actual: sh.cAdjustableSling,
+  Actual: shp.cAdjustableSling,
   Expected: 'AdjustableSling'
 }, {
   Name: 'cAlbrightKnot',
-  Actual: sh.cAlbrightKnot,
+  Actual: shp.cAlbrightKnot,
   Expected: 'AlbrightKnot'
 }, {
   Name: 'cAlpineButterflyBend',
-  Actual: sh.cAlpineButterflyBend,
+  Actual: shp.cAlpineButterflyBend,
   Expected: 'AlpineButterflyBend'
 }, {
   Name: 'cAplineButterflyLoop',
-  Actual: sh.cAplineButterflyLoop,
+  Actual: shp.cAplineButterflyLoop,
   Expected: 'AplineButterflyLoop'
 }, {
   Name: 'cAnchorHitch',
-  Actual: sh.cAnchorHitch,
+  Actual: shp.cAnchorHitch,
   Expected: 'AnchorHitch'
 }, {
   Name: 'cArborKnot',
-  Actual: sh.cArborKnot,
+  Actual: shp.cArborKnot,
   Expected: 'ArborKnot'
 }, {
   Name: 'cAshleyBend',
-  Actual: sh.cAshleyBend,
+  Actual: shp.cAshleyBend,
   Expected: 'AshleyBend'
 }, {
   Name: 'cAshleyStopper',
-  Actual: sh.cAshleyStopper,
+  Actual: shp.cAshleyStopper,
   Expected: 'AshleyStopper'
 }, {
   Name: 'cAustralianBraidKnot',
-  Actual: sh.cAustralianBraidKnot,
+  Actual: shp.cAustralianBraidKnot,
   Expected: 'AustralianBraidKnot'
 }, {
   Name: 'cBackSplice',
-  Actual: sh.cBackSplice,
+  Actual: shp.cBackSplice,
   Expected: 'BackSplice'
 }, {
   Name: 'cBarrelHitch',
-  Actual: sh.cBarrelHitch,
+  Actual: shp.cBarrelHitch,
   Expected: 'BarrelHitch'
 }, {
   Name: 'cBasketHitch',
-  Actual: sh.cBasketHitch,
+  Actual: shp.cBasketHitch,
   Expected: 'BasketHitch'
 }, {
   Name: 'cBeerKnot',
-  Actual: sh.cBeerKnot,
+  Actual: shp.cBeerKnot,
   Expected: 'BeerKnot'
 }, {
   Name: 'cBiminiTwistKnot',
-  Actual: sh.cBiminiTwistKnot,
+  Actual: shp.cBiminiTwistKnot,
   Expected: 'BiminiTwistKnot'
 }, {
   Name: 'cBlakesHitch',
-  Actual: sh.cBlakesHitch,
+  Actual: shp.cBlakesHitch,
   Expected: 'BlakesHitch'
 }, {
   Name: 'cBloodKnot',
-  Actual: sh.cBloodKnot,
+  Actual: shp.cBloodKnot,
   Expected: 'BloodKnot'
 }, {
   Name: 'cBoomHitch',
-  Actual: sh.cBoomHitch,
+  Actual: shp.cBoomHitch,
   Expected: 'BoomHitch'
 }, {
   Name: 'cBottleSling',
-  Actual: sh.cBottleSling,
+  Actual: shp.cBottleSling,
   Expected: 'BottleSling'
 }, {
   Name: 'cBowTie',
-  Actual: sh.cBowTie,
+  Actual: shp.cBowTie,
   Expected: 'BowTie'
 }, {
   Name: 'cBowlineKnot',
-  Actual: sh.cBowlineKnot,
+  Actual: shp.cBowlineKnot,
   Expected: 'BowlineKnot'
 }, {
   Name: 'cBowlineOnABight',
-  Actual: sh.cBowlineOnABight,
+  Actual: shp.cBowlineOnABight,
   Expected: 'BowlineOnABight'
 }, {
   Name: 'cBrummelSplice',
-  Actual: sh.cBrummelSplice,
+  Actual: shp.cBrummelSplice,
   Expected: 'BrummelSplice'
 }, {
   Name: 'cBrummelSpliceDemo',
-  Actual: sh.cBrummelSpliceDemo,
+  Actual: shp.cBrummelSpliceDemo,
   Expected: 'BrummelSpliceDemo'
 }, {
   Name: 'cBuntlineHitch',
-  Actual: sh.cBuntlineHitch,
+  Actual: shp.cBuntlineHitch,
   Expected: 'BuntlineHitch'
 }, {
   Name: 'cButchersKnot',
-  Actual: sh.cButchersKnot,
+  Actual: shp.cButchersKnot,
   Expected: 'ButchersKnot'
 }, {
   Name: 'cCarrickBend',
-  Actual: sh.cCarrickBend,
+  Actual: shp.cCarrickBend,
   Expected: 'CarrickBend'
 }, {
   Name: 'cCarrickBendMat',
-  Actual: sh.cCarrickBendMat,
+  Actual: shp.cCarrickBendMat,
   Expected: 'CarrickBendMat'
 }, {
   Name: 'cCelticKnot',
-  Actual: sh.cCelticKnot,
+  Actual: shp.cCelticKnot,
   Expected: 'CelticKnot'
 }, {
   Name: 'cChainSinnet',
-  Actual: sh.cChainSinnet,
+  Actual: shp.cChainSinnet,
   Expected: 'ChainSinnet'
 }, {
   Name: 'cChainSplice',
-  Actual: sh.cChainSplice,
+  Actual: shp.cChainSplice,
   Expected: 'ChainSplice'
 }, {
   Name: 'cCleatHitch',
-  Actual: sh.cCleatHitch,
+  Actual: shp.cCleatHitch,
   Expected: 'CleatHitch'
 }, {
   Name: 'cDockLine',
-  Actual: sh.cDockLine,
+  Actual: shp.cDockLine,
   Expected: 'DockLine'
 }, {
   Name: 'cHalyard',
-  Actual: sh.cHalyard,
+  Actual: shp.cHalyard,
   Expected: 'Halyard'
 }, {
   Name: 'cCloveHitch',
-  Actual: sh.cCloveHitch,
+  Actual: shp.cCloveHitch,
   Expected: 'CloveHitch'
 }, {
   Name: 'cHitches',
-  Actual: sh.cHitches,
+  Actual: shp.cHitches,
   Expected: 'Hitches'
 }, {
   Name: 'cLoops',
-  Actual: sh.cLoops,
+  Actual: shp.cLoops,
   Expected: 'Loops'
 }, {
   Name: 'cRopeEnd',
-  Actual: sh.cRopeEnd,
+  Actual: shp.cRopeEnd,
   Expected: 'RopeEnd'
 }, {
   Name: 'cCobraKnot',
-  Actual: sh.cCobraKnot,
+  Actual: shp.cCobraKnot,
   Expected: 'CobraKnot'
 }, {
   Name: 'cCoilAttachedRope',
-  Actual: sh.cCoilAttachedRope,
+  Actual: shp.cCoilAttachedRope,
   Expected: 'CoilAttachedRope'
 }, {
   Name: 'cCoilUnattachedRope',
-  Actual: sh.cCoilUnattachedRope,
+  Actual: shp.cCoilUnattachedRope,
   Expected: 'CoilUnattachedRope'
 }, {
   Name: 'cCommonWipping',
-  Actual: sh.cCommonWipping,
+  Actual: shp.cCommonWipping,
   Expected: 'CommonWipping'
 }, {
   Name: 'cConstrictor',
-  Actual: sh.cConstrictor,
+  Actual: shp.cConstrictor,
   Expected: 'Constrictor'
 }, {
   Name: 'cConstrictorSlide',
-  Actual: sh.cConstrictorSlide,
+  Actual: shp.cConstrictorSlide,
   Expected: 'ConstrictorSlide'
 }, {
   Name: 'cSlide',
-  Actual: sh.cSlide,
+  Actual: shp.cSlide,
   Expected: 'Slide'
 }, {
   Name: 'cConstrictorHoward',
-  Actual: sh.cConstrictorHoward,
+  Actual: shp.cConstrictorHoward,
   Expected: 'ConstrictorHoward'
 }, {
   Name: 'cHoward',
-  Actual: sh.cHoward,
+  Actual: shp.cHoward,
   Expected: 'Howard'
 }, {
   Name: 'cConstrictorEnd',
-  Actual: sh.cConstrictorEnd,
+  Actual: shp.cConstrictorEnd,
   Expected: 'ConstrictorEnd'
 }, {
   Name: 'cEnd',
-  Actual: sh.cEnd,
+  Actual: shp.cEnd,
   Expected: 'End'
 }, {
   Name: 'cConstrictorFolding',
-  Actual: sh.cConstrictorFolding,
+  Actual: shp.cConstrictorFolding,
   Expected: 'ConstrictorFolding'
 }, {
   Name: 'cFolding',
-  Actual: sh.cFolding,
+  Actual: shp.cFolding,
   Expected: 'Folding'
 }, {
   Name: 'cConstrictorRopeEnd',
-  Actual: sh.cConstrictorRopeEnd,
+  Actual: shp.cConstrictorRopeEnd,
   Expected: 'ConstrictorRopeEnd'
 }, {
   Name: 'cConstrictorTwist',
-  Actual: sh.cConstrictorTwist,
+  Actual: shp.cConstrictorTwist,
   Expected: 'ConstrictorTwist'
 }, {
   Name: 'cTwist',
-  Actual: sh.cTwist,
+  Actual: shp.cTwist,
   Expected: 'Twist'
 }, {
   Name: 'cCowHitch',
-  Actual: sh.cCowHitch,
+  Actual: shp.cCowHitch,
   Expected: 'CowHitch'
 }, {
   Name: 'cCowHitchEnds',
-  Actual: sh.cCowHitchEnds,
+  Actual: shp.cCowHitchEnds,
   Expected: 'CowHitchEnds'
 }, {
   Name: 'cChowHitchLoops',
-  Actual: sh.cChowHitchLoops,
+  Actual: shp.cChowHitchLoops,
   Expected: 'ChowHitchLoops'
 }, {
   Name: 'cCrownKnot',
-  Actual: sh.cCrownKnot,
+  Actual: shp.cCrownKnot,
   Expected: 'CrownKnot'
 }, {
   Name: 'cCrownSinnet',
-  Actual: sh.cCrownSinnet,
+  Actual: shp.cCrownSinnet,
   Expected: 'CrownSinnet'
 }, {
   Name: 'cCurtainTieBack',
-  Actual: sh.cCurtainTieBack,
+  Actual: shp.cCurtainTieBack,
   Expected: 'CurtainTieBack'
 }, {
   Name: 'cDavyKnot',
-  Actual: sh.cDavyKnot,
+  Actual: shp.cDavyKnot,
   Expected: 'DavyKnot'
 }, {
   Name: 'cDistelHitch',
-  Actual: sh.cDistelHitch,
+  Actual: shp.cDistelHitch,
   Expected: 'DistelHitch'
 }, {
   Name: 'cDoubleAlpineButterfly',
-  Actual: sh.cDoubleAlpineButterfly,
+  Actual: shp.cDoubleAlpineButterfly,
   Expected: 'DoubleAlpineButterfly'
 }, {
   Name: 'cDoubleDavyKnot',
-  Actual: sh.cDoubleDavyKnot,
+  Actual: shp.cDoubleDavyKnot,
   Expected: 'DoubleDavyKnot'
 }, {
   Name: 'cDoubleDragonLoop',
-  Actual: sh.cDoubleDragonLoop,
+  Actual: shp.cDoubleDragonLoop,
   Expected: 'DoubleDragonLoop'
 }, {
   Name: 'cDoubleFishermans',
-  Actual: sh.cDoubleFishermans,
+  Actual: shp.cDoubleFishermans,
   Expected: 'DoubleFishermans'
 }, {
   Name: 'cDoubleMatthewWalker',
-  Actual: sh.cDoubleMatthewWalker,
+  Actual: shp.cDoubleMatthewWalker,
   Expected: 'DoubleMatthewWalker'
 }, {
   Name: 'cDoubleOverhandStopper',
-  Actual: sh.cDoubleOverhandStopper,
+  Actual: shp.cDoubleOverhandStopper,
   Expected: 'DoubleOverhandStopper'
 }, {
   Name: 'cDoubleTurtleKnot',
-  Actual: sh.cDoubleTurtleKnot,
+  Actual: shp.cDoubleTurtleKnot,
   Expected: 'DoubleTurtleKnot'
 }, {
   Name: 'cDropperLoopKnot',
-  Actual: sh.cDropperLoopKnot,
+  Actual: shp.cDropperLoopKnot,
   Expected: 'DropperLoopKnot'
 }, {
   Name: 'cEggLoopKnot',
-  Actual: sh.cEggLoopKnot,
+  Actual: shp.cEggLoopKnot,
   Expected: 'EggLoopKnot'
 }, {
   Name: 'cEstarStopperKnot',
-  Actual: sh.cEstarStopperKnot,
+  Actual: shp.cEstarStopperKnot,
   Expected: 'EstarStopperKnot'
 }, {
   Name: 'cEyeSplice',
-  Actual: sh.cEyeSplice,
+  Actual: shp.cEyeSplice,
   Expected: 'EyeSplice'
 }, {
   Name: 'cFarmersLoopKnot',
-  Actual: sh.cFarmersLoopKnot,
+  Actual: shp.cFarmersLoopKnot,
   Expected: 'FarmersLoopKnot'
 }, {
   Name: 'cFarrimondHitch',
-  Actual: sh.cFarrimondHitch,
+  Actual: shp.cFarrimondHitch,
   Expected: 'FarrimondHitch'
 }, {
   Name: 'cFgKnot',
-  Actual: sh.cFgKnot,
+  Actual: shp.cFgKnot,
   Expected: 'FgKnot'
 }, {
   Name: 'cFiadorKnot',
-  Actual: sh.cFiadorKnot,
+  Actual: shp.cFiadorKnot,
   Expected: 'FiadorKnot'
 }, {
   Name: 'cFigure8Bend',
-  Actual: sh.cFigure8Bend,
+  Actual: shp.cFigure8Bend,
   Expected: 'Figure8Bend'
 }, {
   Name: 'cFigure8DirectionLoop',
-  Actual: sh.cFigure8DirectionLoop,
+  Actual: shp.cFigure8DirectionLoop,
   Expected: 'Figure8DirectionLoop'
 }, {
   Name: 'cFigure8DoubleLoop',
-  Actual: sh.cFigure8DoubleLoop,
+  Actual: shp.cFigure8DoubleLoop,
   Expected: 'Figure8DoubleLoop'
 }, {
   Name: 'cFigure8Flake',
-  Actual: sh.cFigure8Flake,
+  Actual: shp.cFigure8Flake,
   Expected: 'Figure8Flake'
 }, {
   Name: 'cFigure8FollowLoop',
-  Actual: sh.cFigure8FollowLoop,
+  Actual: shp.cFigure8FollowLoop,
   Expected: 'Figure8FollowLoop'
 }, {
   Name: 'cFigure8Loop',
-  Actual: sh.cFigure8Loop,
+  Actual: shp.cFigure8Loop,
   Expected: 'Figure8Loop'
 }, {
   Name: 'cFigure9Loop',
-  Actual: sh.cFigure9Loop,
+  Actual: shp.cFigure9Loop,
   Expected: 'Figure9Loop'
 }, {
   Name: 'cFlatOverhandBend',
-  Actual: sh.cFlatOverhandBend,
+  Actual: shp.cFlatOverhandBend,
   Expected: 'FlatOverhandBend'
 }, {
   Name: 'cFlemishFlakeCoil',
-  Actual: sh.cFlemishFlakeCoil,
+  Actual: shp.cFlemishFlakeCoil,
   Expected: 'FlemishFlakeCoil'
 }, {
   Name: 'c4StrandSinnet',
-  Actual: sh.c4StrandSinnet,
+  Actual: shp.c4StrandSinnet,
   Expected: '4StrandSinnet'
 }, {
   Name: 'c4StrandSquareSinnet',
-  Actual: sh.c4StrandSquareSinnet,
+  Actual: shp.c4StrandSquareSinnet,
   Expected: '4StrandSquareSinnet'
 }, {
   Name: 'cFourInHandNeckTie',
-  Actual: sh.cFourInHandNeckTie,
+  Actual: shp.cFourInHandNeckTie,
   Expected: 'FourInHandNeckTie'
 }, {
   Name: 'cFrenchSinnetOne',
-  Actual: sh.cFrenchSinnetOne,
+  Actual: shp.cFrenchSinnetOne,
   Expected: 'FrenchSinnetOne'
 }, {
   Name: 'cFrenchSinnetTwo',
-  Actual: sh.cFrenchSinnetTwo,
+  Actual: shp.cFrenchSinnetTwo,
   Expected: 'FrenchSinnetTwo'
 }, {
   Name: 'cGirthHitch',
-  Actual: sh.cGirthHitch,
+  Actual: shp.cGirthHitch,
   Expected: 'GirthHitch'
 }, {
   Name: 'cGnatHitch',
-  Actual: sh.cGnatHitch,
+  Actual: shp.cGnatHitch,
   Expected: 'GnatHitch'
 }, {
   Name: 'cGrogSlidingSplice',
-  Actual: sh.cGrogSlidingSplice,
+  Actual: shp.cGrogSlidingSplice,
   Expected: 'GrogSlidingSplice'
 }, {
   Name: 'cGrogSling',
-  Actual: sh.cGrogSling,
+  Actual: shp.cGrogSling,
   Expected: 'GrogSling'
 }, {
   Name: 'cHalfHitch',
-  Actual: sh.cHalfHitch,
+  Actual: shp.cHalfHitch,
   Expected: 'HalfHitch'
 }, {
   Name: 'cHalfKnot',
-  Actual: sh.cHalfKnot,
+  Actual: shp.cHalfKnot,
   Expected: 'HalfKnot'
 }, {
   Name: 'cHalfWindsorNecktie',
-  Actual: sh.cHalfWindsorNecktie,
+  Actual: shp.cHalfWindsorNecktie,
   Expected: 'HalfWindsorNecktie'
 }, {
   Name: 'cHalterHitch',
-  Actual: sh.cHalterHitch,
+  Actual: shp.cHalterHitch,
   Expected: 'HalterHitch'
 }, {
   Name: 'cHalyardHitch',
-  Actual: sh.cHalyardHitch,
+  Actual: shp.cHalyardHitch,
   Expected: 'HalyardHitch'
 }, {
   Name: 'cHandcuffKnot',
-  Actual: sh.cHandcuffKnot,
+  Actual: shp.cHandcuffKnot,
   Expected: 'HandcuffKnot'
 }, {
   Name: 'cHastyHarness',
-  Actual: sh.cHastyHarness,
+  Actual: shp.cHastyHarness,
   Expected: 'HastyHarness'
 }, {
   Name: 'cHeavingLineKnot',
-  Actual: sh.cHeavingLineKnot,
+  Actual: shp.cHeavingLineKnot,
   Expected: 'HeavingLineKnot'
 }, {
   Name: 'cHighwaymansHitch',
-  Actual: sh.cHighwaymansHitch,
+  Actual: shp.cHighwaymansHitch,
   Expected: 'HighwaymansHitch'
 }, {
   Name: 'cHondaKnot',
-  Actual: sh.cHondaKnot,
+  Actual: shp.cHondaKnot,
   Expected: 'HondaKnot'
 }, {
   Name: 'cHuntersBend',
-  Actual: sh.cHuntersBend,
+  Actual: shp.cHuntersBend,
   Expected: 'HuntersBend'
 }, {
   Name: 'cIcicleHitchEnd',
-  Actual: sh.cIcicleHitchEnd,
+  Actual: shp.cIcicleHitchEnd,
   Expected: 'IcicleHitchEnd'
 }, {
   Name: 'cIcicleHitchLoop',
-  Actual: sh.cIcicleHitchLoop,
+  Actual: shp.cIcicleHitchLoop,
   Expected: 'IcicleHitchLoop'
 }, {
   Name: 'cImproveClinchKnot',
-  Actual: sh.cImproveClinchKnot,
+  Actual: shp.cImproveClinchKnot,
   Expected: 'ImproveClinchKnot'
 }, {
   Name: 'cKlemheistKnot',
-  Actual: sh.cKlemheistKnot,
+  Actual: shp.cKlemheistKnot,
   Expected: 'KlemheistKnot'
 }, {
   Name: 'cLanyardKnot',
-  Actual: sh.cLanyardKnot,
+  Actual: shp.cLanyardKnot,
   Expected: 'LanyardKnot'
 }, {
   Name: 'cLashingDiagonal',
-  Actual: sh.cLashingDiagonal,
+  Actual: shp.cLashingDiagonal,
   Expected: 'LashingDiagonal'
 }, {
   Name: 'cLashingRound',
-  Actual: sh.cLashingRound,
+  Actual: shp.cLashingRound,
   Expected: 'LashingRound'
 }, {
   Name: 'cLashingSheer',
-  Actual: sh.cLashingSheer,
+  Actual: shp.cLashingSheer,
   Expected: 'LashingSheer'
 }, {
   Name: 'cLashingSquare',
-  Actual: sh.cLashingSquare,
+  Actual: shp.cLashingSquare,
   Expected: 'LashingSquare'
 }, {
   Name: 'cLashingTripod',
-  Actual: sh.cLashingTripod,
+  Actual: shp.cLashingTripod,
   Expected: 'LashingTripod'
 }, {
   Name: 'cLigatureInstrument',
-  Actual: sh.cLigatureInstrument,
+  Actual: shp.cLigatureInstrument,
   Expected: 'LigatureInstrument'
 }, {
   Name: 'cLigatureOneHand',
-  Actual: sh.cLigatureOneHand,
+  Actual: shp.cLigatureOneHand,
   Expected: 'LigatureOneHand'
 }, {
   Name: 'cLigatureTwoHands',
-  Actual: sh.cLigatureTwoHands,
+  Actual: shp.cLigatureTwoHands,
   Expected: 'LigatureTwoHands'
 }, {
   Name: 'cLightermansHitch',
-  Actual: sh.cLightermansHitch,
+  Actual: shp.cLightermansHitch,
   Expected: 'LightermansHitch'
 }, {
   Name: 'cLongBurySplice',
-  Actual: sh.cLongBurySplice,
+  Actual: shp.cLongBurySplice,
   Expected: 'LongBurySplice'
 }, {
   Name: 'cManagerHitch',
-  Actual: sh.cManagerHitch,
+  Actual: shp.cManagerHitch,
   Expected: 'ManagerHitch'
 }, {
   Name: 'cMarlinSpikeHitch',
-  Actual: sh.cMarlinSpikeHitch,
+  Actual: shp.cMarlinSpikeHitch,
   Expected: 'MarlinSpikeHitch'
 }, {
   Name: 'cMastheadKnotMat',
-  Actual: sh.cMastheadKnotMat,
+  Actual: shp.cMastheadKnotMat,
   Expected: 'MastheadKnotMat'
 }, {
   Name: 'cMcdonaldBrummel',
-  Actual: sh.cMcdonaldBrummel,
+  Actual: shp.cMcdonaldBrummel,
   Expected: 'McdonaldBrummel'
 }, {
   Name: 'cMidshipmansHitch',
-  Actual: sh.cMidshipmansHitch,
+  Actual: shp.cMidshipmansHitch,
   Expected: 'MidshipmansHitch'
 }, {
   Name: 'cMillersKnot',
-  Actual: sh.cMillersKnot,
+  Actual: shp.cMillersKnot,
   Expected: 'MillersKnot'
 }, {
   Name: 'cMonkeysFistKnot',
-  Actual: sh.cMonkeysFistKnot,
+  Actual: shp.cMonkeysFistKnot,
   Expected: 'MonkeysFistKnot'
 }, {
   Name: 'cMooringsHitch',
-  Actual: sh.cMooringsHitch,
+  Actual: shp.cMooringsHitch,
   Expected: 'MooringsHitch'
 }, {
   Name: 'cMunterMuleCombo',
-  Actual: sh.cMunterMuleCombo,
+  Actual: shp.cMunterMuleCombo,
   Expected: 'MunterMuleCombo'
 }, {
   Name: 'cNailKnot',
-  Actual: sh.cNailKnot,
+  Actual: shp.cNailKnot,
   Expected: 'NailKnot'
 }, {
   Name: 'cNonSlipMonoKnot',
-  Actual: sh.cNonSlipMonoKnot,
+  Actual: shp.cNonSlipMonoKnot,
   Expected: 'NonSlipMonoKnot'
 }, {
   Name: 'cNooseKnot',
-  Actual: sh.cNooseKnot,
+  Actual: shp.cNooseKnot,
   Expected: 'NooseKnot'
 }, {
   Name: 'cOceanPlaitMat',
-  Actual: sh.cOceanPlaitMat,
+  Actual: shp.cOceanPlaitMat,
   Expected: 'OceanPlaitMat'
 }, {
   Name: 'cOneHandedBowline',
-  Actual: sh.cOneHandedBowline,
+  Actual: shp.cOneHandedBowline,
   Expected: 'OneHandedBowline'
 }, {
   Name: 'cOrvisKnot',
-  Actual: sh.cOrvisKnot,
+  Actual: shp.cOrvisKnot,
   Expected: 'OrvisKnot'
 }, {
   Name: 'cOverhandKnot',
-  Actual: sh.cOverhandKnot,
+  Actual: shp.cOverhandKnot,
   Expected: 'OverhandKnot'
 }, {
   Name: 'cPackageTyingKnot',
-  Actual: sh.cPackageTyingKnot,
+  Actual: shp.cPackageTyingKnot,
   Expected: 'PackageTyingKnot'
 }, {
   Name: 'cPalomarKnot',
-  Actual: sh.cPalomarKnot,
+  Actual: shp.cPalomarKnot,
   Expected: 'PalomarKnot'
 }, {
   Name: 'cPerfectionLoop',
-  Actual: sh.cPerfectionLoop,
+  Actual: shp.cPerfectionLoop,
   Expected: 'PerfectionLoop'
 }, {
   Name: 'cPileHitch',
-  Actual: sh.cPileHitch,
+  Actual: shp.cPileHitch,
   Expected: 'PileHitch'
 }, {
   Name: 'cPoachersKnot',
-  Actual: sh.cPoachersKnot,
+  Actual: shp.cPoachersKnot,
   Expected: 'PoachersKnot'
 }, {
   Name: 'cPrattNecktie',
-  Actual: sh.cPrattNecktie,
+  Actual: shp.cPrattNecktie,
   Expected: 'PrattNecktie'
 }, {
   Name: 'cPrusikKnot',
-  Actual: sh.cPrusikKnot,
+  Actual: shp.cPrusikKnot,
   Expected: 'PrusikKnot'
 }, {
   Name: 'cPurcellPrusikKnot',
-  Actual: sh.cPurcellPrusikKnot,
+  Actual: shp.cPurcellPrusikKnot,
   Expected: 'PurcellPrusikKnot'
 }, {
   Name: 'cQuickHitch',
-  Actual: sh.cQuickHitch,
+  Actual: shp.cQuickHitch,
   Expected: 'QuickHitch'
 }, {
   Name: 'cRadiumReleaseHitch',
-  Actual: sh.cRadiumReleaseHitch,
+  Actual: shp.cRadiumReleaseHitch,
   Expected: 'RadiumReleaseHitch'
 }, {
   Name: 'cRapalaKnot',
-  Actual: sh.cRapalaKnot,
+  Actual: shp.cRapalaKnot,
   Expected: 'RapalaKnot'
 }, {
   Name: 'cRatTailStopperKnot',
-  Actual: sh.cRatTailStopperKnot,
+  Actual: shp.cRatTailStopperKnot,
   Expected: 'RatTailStopperKnot'
 }, {
   Name: 'cRingHitch',
-  Actual: sh.cRingHitch,
+  Actual: shp.cRingHitch,
   Expected: 'RingHitch'
 }, {
   Name: 'cRollingHitch',
-  Actual: sh.cRollingHitch,
+  Actual: shp.cRollingHitch,
   Expected: 'RollingHitch'
 }, {
   Name: 'cRoundTurnHitches',
-  Actual: sh.cRoundTurnHitches,
+  Actual: shp.cRoundTurnHitches,
   Expected: 'RoundTurnHitches'
 }, {
   Name: 'cRunningBowline',
-  Actual: sh.cRunningBowline,
+  Actual: shp.cRunningBowline,
   Expected: 'RunningBowline'
 }, {
   Name: 'cSailmakersWhipping',
-  Actual: sh.cSailmakersWhipping,
+  Actual: shp.cSailmakersWhipping,
   Expected: 'SailmakersWhipping'
 }, {
   Name: 'cSanDiegoJamKnot',
-  Actual: sh.cSanDiegoJamKnot,
+  Actual: shp.cSanDiegoJamKnot,
   Expected: 'SanDiegoJamKnot'
 }, {
   Name: 'cSheepShank',
-  Actual: sh.cSheepShank,
+  Actual: shp.cSheepShank,
   Expected: 'SheepShank'
 }, {
   Name: 'cSheetBend',
-  Actual: sh.cSheetBend,
+  Actual: shp.cSheetBend,
   Expected: 'SheetBend'
 }, {
   Name: 'cShoelaceBow',
-  Actual: sh.cShoelaceBow,
+  Actual: shp.cShoelaceBow,
   Expected: 'ShoelaceBow'
 }, {
   Name: 'cShoelaceBowFieggen',
-  Actual: sh.cShoelaceBowFieggen,
+  Actual: shp.cShoelaceBowFieggen,
   Expected: 'ShoelaceBowFieggen'
 }, {
   Name: 'cShoelaceBowSurgeon',
-  Actual: sh.cShoelaceBowSurgeon,
+  Actual: shp.cShoelaceBowSurgeon,
   Expected: 'ShoelaceBowSurgeon'
 }, {
   Name: 'cShortSplice',
-  Actual: sh.cShortSplice,
+  Actual: shp.cShortSplice,
   Expected: 'ShortSplice'
 }, {
   Name: 'cSiberianHitch',
-  Actual: sh.cSiberianHitch,
+  Actual: shp.cSiberianHitch,
   Expected: 'SiberianHitch'
 }, {
   Name: 'cSingleRopeBraid',
-  Actual: sh.cSingleRopeBraid,
+  Actual: shp.cSingleRopeBraid,
   Expected: 'SingleRopeBraid'
 }, {
   Name: 'cSlidingDoubleFishermans',
-  Actual: sh.cSlidingDoubleFishermans,
+  Actual: shp.cSlidingDoubleFishermans,
   Expected: 'SlidingDoubleFishermans'
 }, {
   Name: 'cSlimBeautyKnot',
-  Actual: sh.cSlimBeautyKnot,
+  Actual: shp.cSlimBeautyKnot,
   Expected: 'SlimBeautyKnot'
 }, {
   Name: 'cSlipKnot',
-  Actual: sh.cSlipKnot,
+  Actual: shp.cSlipKnot,
   Expected: 'SlipKnot'
 }, {
   Name: 'cSnellKnot',
-  Actual: sh.cSnellKnot,
+  Actual: shp.cSnellKnot,
   Expected: 'SnellKnot'
 }, {
   Name: 'cSoftShackle',
-  Actual: sh.cSoftShackle,
+  Actual: shp.cSoftShackle,
   Expected: 'SoftShackle'
 }, {
   Name: 'cSoftShackleEdwards',
-  Actual: sh.cSoftShackleEdwards,
+  Actual: shp.cSoftShackleEdwards,
   Expected: 'SoftShackleEdwards'
 }, {
   Name: 'cSoftShackleStronger',
-  Actual: sh.cSoftShackleStronger,
+  Actual: shp.cSoftShackleStronger,
   Expected: 'SoftShackleStronger'
 }, {
   Name: 'cSpanishBowline',
-  Actual: sh.cSpanishBowline,
+  Actual: shp.cSpanishBowline,
   Expected: 'SpanishBowline'
 }, {
   Name: 'cSquareKnot',
-  Actual: sh.cSquareKnot,
+  Actual: shp.cSquareKnot,
   Expected: 'SquareKnot'
 }, {
   Name: 'cStevedoreStopper',
-  Actual: sh.cStevedoreStopper,
+  Actual: shp.cStevedoreStopper,
   Expected: 'StevedoreStopper'
 }, {
   Name: 'cStopperLoop',
-  Actual: sh.cStopperLoop,
+  Actual: shp.cStopperLoop,
   Expected: 'StopperLoop'
 }, {
   Name: 'cStrangleKnotEnd',
-  Actual: sh.cStrangleKnotEnd,
+  Actual: shp.cStrangleKnotEnd,
   Expected: 'StrangleKnotEnd'
 }, {
   Name: 'cStrangleKnotOverhand',
-  Actual: sh.cStrangleKnotOverhand,
+  Actual: shp.cStrangleKnotOverhand,
   Expected: 'StrangleKnotOverhand'
 }, {
   Name: 'cSuperMunterHitch',
-  Actual: sh.cSuperMunterHitch,
+  Actual: shp.cSuperMunterHitch,
   Expected: 'SuperMunterHitch'
 }, {
   Name: 'cSurgeonsJoinKnot',
-  Actual: sh.cSurgeonsJoinKnot,
+  Actual: shp.cSurgeonsJoinKnot,
   Expected: 'SurgeonsJoinKnot'
 }, {
   Name: 'cSurgeonsLoopKnot',
-  Actual: sh.cSurgeonsLoopKnot,
+  Actual: shp.cSurgeonsLoopKnot,
   Expected: 'SurgeonsLoopKnot'
 }, {
   Name: 'cSurgicalSlipTie',
-  Actual: sh.cSurgicalSlipTie,
+  Actual: shp.cSurgicalSlipTie,
   Expected: 'SurgicalSlipTie'
 }, {
   Name: 'cSurgicalTieInsturmental',
-  Actual: sh.cSurgicalTieInsturmental,
+  Actual: shp.cSurgicalTieInsturmental,
   Expected: 'SurgicalTieInsturmental'
 }, {
   Name: 'cSurgicalTieOneHand',
-  Actual: sh.cSurgicalTieOneHand,
+  Actual: shp.cSurgicalTieOneHand,
   Expected: 'SurgicalTieOneHand'
 }, {
   Name: 'cSurgicalTieTwoHands',
-  Actual: sh.cSurgicalTieTwoHands,
+  Actual: shp.cSurgicalTieTwoHands,
   Expected: 'SurgicalTieTwoHands'
 }, {
   Name: 'cTensionlessHitch',
-  Actual: sh.cTensionlessHitch,
+  Actual: shp.cTensionlessHitch,
   Expected: 'TensionlessHitch'
 }, {
   Name: 'c3StrandBraid',
-  Actual: sh.c3StrandBraid,
+  Actual: shp.c3StrandBraid,
   Expected: '3StrandBraid'
 }, {
   Name: 'c3StrandBraidAlternate',
-  Actual: sh.c3StrandBraidAlternate,
+  Actual: shp.c3StrandBraidAlternate,
   Expected: '3StrandBraidAlternate'
 }, {
   Name: 'cTimberHitch',
-  Actual: sh.cTimberHitch,
+  Actual: shp.cTimberHitch,
   Expected: 'TimberHitch'
 }, {
   Name: 'cTreeSwing',
-  Actual: sh.cTreeSwing,
+  Actual: shp.cTreeSwing,
   Expected: 'TreeSwing'
 }, {
   Name: 'cTrileneKnot',
-  Actual: sh.cTrileneKnot,
+  Actual: shp.cTrileneKnot,
   Expected: 'TrileneKnot'
 }, {
   Name: 'cTruckersHitch',
-  Actual: sh.cTruckersHitch,
+  Actual: shp.cTruckersHitch,
   Expected: 'TruckersHitch'
 }, {
   Name: 'cTruckersHitchQuick',
-  Actual: sh.cTruckersHitchQuick,
+  Actual: shp.cTruckersHitchQuick,
   Expected: 'TruckersHitchQuick'
 }, {
   Name: 'cTumbleHitch',
-  Actual: sh.cTumbleHitch,
+  Actual: shp.cTumbleHitch,
   Expected: 'TumbleHitch'
 }, {
   Name: 'cTurksHead',
-  Actual: sh.cTurksHead,
+  Actual: shp.cTurksHead,
   Expected: 'TurksHead'
 }, {
   Name: 'cTwoHalfHitches',
-  Actual: sh.cTwoHalfHitches,
+  Actual: shp.cTwoHalfHitches,
   Expected: 'TwoHalfHitches'
 }, {
   Name: 'cUnderwritersKnot',
-  Actual: sh.cUnderwritersKnot,
+  Actual: shp.cUnderwritersKnot,
   Expected: 'UnderwritersKnot'
 }, {
   Name: 'cUniKNot',
-  Actual: sh.cUniKNot,
+  Actual: shp.cUniKNot,
   Expected: 'UniKNot'
 }, {
   Name: 'cWallCrownKnot',
-  Actual: sh.cWallCrownKnot,
+  Actual: shp.cWallCrownKnot,
   Expected: 'WallCrownKnot'
 }, {
   Name: 'cWallKnot',
-  Actual: sh.cWallKnot,
+  Actual: shp.cWallKnot,
   Expected: 'WallKnot'
 }, {
   Name: 'cWaterBowline',
-  Actual: sh.cWaterBowline,
+  Actual: shp.cWaterBowline,
   Expected: 'WaterBowline'
 }, {
   Name: 'cWaterKnot',
-  Actual: sh.cWaterKnot,
+  Actual: shp.cWaterKnot,
   Expected: 'WaterKnot'
 }, {
   Name: 'cWestCountryWipping',
-  Actual: sh.cWestCountryWipping,
+  Actual: shp.cWestCountryWipping,
   Expected: 'WestCountryWipping'
 }, {
   Name: 'cWhoopieSling',
-  Actual: sh.cWhoopieSling,
+  Actual: shp.cWhoopieSling,
   Expected: 'WhoopieSling'
 }, {
   Name: 'cWindsorNecktie',
-  Actual: sh.cWindsorNecktie,
+  Actual: shp.cWindsorNecktie,
   Expected: 'WindsorNecktie'
 }, {
   Name: 'cZeppelinBend',
-  Actual: sh.cZeppelinBend,
+  Actual: shp.cZeppelinBend,
   Expected: 'ZeppelinBend'
 }];
 exports.shapeConstantsValidation = shapeConstantsValidation;

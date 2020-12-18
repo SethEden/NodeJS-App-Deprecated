@@ -978,6 +978,20 @@
           <ConfigurationElement Name="fileBroker.getCsvData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.getCsvData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="fileBroker.getJsonData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.getJsonData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="fileBroker.readDirectoryContents" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectoryContents@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectoryContents@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
