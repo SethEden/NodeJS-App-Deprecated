@@ -62,7 +62,7 @@ function bootStrapApplication() {
  * @author Seth Hollingsead
  * @date 2020/05/21
  */
-async function application() {
+function application() {
   let functionName = w.capplication;
   let argumentDrivenInterface = true;
   let commandInput;
@@ -119,6 +119,6 @@ async function application() {
 
 // Launch the application!!
 let programRunning = false;
-bootStrapApplication() // Call to the function above to do initial pre-setup for the application.
+bootStrapApplication(); // Call to the function above to do initial pre-setup for the application.
 programRunning = true;
 application(); // Call to the function above to actually execute the application.
