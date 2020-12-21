@@ -641,6 +641,8 @@ export const cgetFirstTopLevelFolderFromPath = w.cget + n.cFirst + w.cTop + w.cL
 export const cisOdd = b.cis + w.cOdd; // isOdd
 export const cisEven = b.cis + w.cEven; // isEven
 export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
+export const ccleanCommandInput = w.cclean + w.cCommand + w.cInput; // cleanCommandInput
+export const caggregateCommandArguments = w.caggregate + w.cCommand + w.cArguments; // aggregateCommandArguments
 
 // *********************************
 // StringGeneration rules in order

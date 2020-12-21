@@ -31,7 +31,6 @@ import * as s from '../../Framework/Constants/system.constants';
 const prompt = require('prompt-sync')();
 var path = require('path');
 var D = require('../../Framework/Resources/data');
-// global.appRoot = path.resolve(__dirname);
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -44,11 +43,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/01/30
  */
 function bootStrapApplication() {
-  // rootPath = path.resolve(__dirname);
   rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath;
-  console.log('rootPath is: ' + rootPath);
+  // console.log('rootPath is: ' + rootPath);
   rootPath = warden.processRootPath(rootPath);
-  console.log('processed rootPath is: ' + rootPath);
+  // console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
@@ -64,7 +62,7 @@ function bootStrapApplication() {
  * @author Seth Hollingsead
  * @date 2020/05/21
  */
-function application() {
+async function application() {
   let functionName = w.capplication;
   let argumentDrivenInterface = true;
   let commandInput;
@@ -94,8 +92,27 @@ function application() {
       }
     }
   } else { // argument driven interface / execution is handled here.
-    console.log('argument driven execution');
+    // console.log('argument driven execution');
+    // console.log(process.argv);
+    // console.log('command to execute is: ' + process.argv[2]);
+    // We need to strip off the preceeding "--" before we try to process it as an actual command.
+    // Also need to make sure that the command to execute actually contains the "--".
+    let commandToExecute = '';
+    // Make sure we execute any and all commands so the command queue is empty before
+    // we process the command args and add more commands to the command queue.
+    // Really this is about getting out the application name, version and about message.
+    while(warden.isCommandQueueEmpty() === false) {
+      commandResult = warden.processCommandQueue();
+    }
 
+    // NOW process the command args and add them to the command queue for execution.
+    if (process.argv[2].includes(b.cDash + b.cDash) === true) {
+      commandToExecute = warden.executeBusinessRule(s.caggregateCommandArguments, process.argv, '');
+    }
+    warden.enqueueCommand(commandToExecute);
+    while(warden.isCommandQueueEmpty() === false) {
+      commandResult = warden.processCommandQueue();
+    }
   }
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

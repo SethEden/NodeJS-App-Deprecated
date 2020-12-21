@@ -641,6 +641,8 @@ export const systemConstantsValidation = [
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},
    {Name: 'cisEven', Actual: s.cisEven, Expected: 'isEven'},
    {Name: 'creplaceCharacterAtIndex', Actual: s.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},
+   {Name: 'ccleanCommandInput', Actual: s.ccleanCommandInput, Expected: 'cleanCommandInput'},
+   {Name: 'caggregateCommandArguments', Actual: s.caggregateCommandArguments, Expected: 'aggregateCommandArguments'},
 
    // *********************************
    // StringGeneration rules in order

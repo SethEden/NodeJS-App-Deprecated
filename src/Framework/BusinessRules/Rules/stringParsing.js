@@ -1674,6 +1674,69 @@ export const replaceCharacterAtIndex = function(inputData, inputMetaData) {
   return returnData;
 };
 
+/**
+ * @function cleanCommandInput
+ * @description Removes any "--" from the command to make it a valid command.
+ * @param {string} inputData The string that should have the "--" removed from it.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input, but with the "--" removed.
+ * @author Seth Hollingsead
+ * @date 2020/12/21
+ */
+export const cleanCommandInput = function(inputData, inputMetaData) {
+  let functionName = s.ccleanCommandInput;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  let returnData = inputData;
+  returnData = replaceCharacterWithCharacter(inputData, [/--/g, '']);
+  returnData = replaceCharacterWithCharacter(returnData, [/\[/g, '']);
+  returnData = replaceCharacterWithCharacter(returnData, [/\]/g, '']);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function aggregateCommandArguments
+ * @description Combines all of the input arguments into a single command line to be executed by the command parser.
+ * @param {array<string>} inputData An array of strings that represents the command and command parameters to execute.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A single string command line of code that should be sent to the command parser.
+ * @author Seth Hollingsead
+ * @date 2020/12/21
+ */
+export const aggregateCommandArguments = function(inputData, inputMetaData) {
+  let functionName = s.caggregateCommandArguments;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (!inputData) {
+    return false;
+  }
+  let returnData = '';
+  if (inputData.length > 3) {
+    for (let i = 2; i < inputData.length; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+      if (i === 2) {
+        returnData = cleanCommandInput(inputData[i]);
+      } else {
+        returnData = returnData + b.cSpace + cleanCommandInput(inputData[i]);
+      }
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+  } else {
+    returnData = cleanCommandInput(inputData[2]);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
 // ******************************************************
 // Internal functions
 // ******************************************************

@@ -474,7 +474,7 @@
           <ConfigurationElement Name="warden.loadCommandWorkflows@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.loadCommandWorkflows@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="warden.executeBusinessRule" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="warden.executeBusinessRule" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.executeBusinessRule@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2069,6 +2069,34 @@
           <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.replaceCharacterAtIndex@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.cleanCommandInput" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.cleanCommandInput@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.aggregateCommandArguments@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringGeneration.createNdigitStringFromNumber@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

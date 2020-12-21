@@ -2406,6 +2406,14 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'creplaceCharacterAtIndex',
   Actual: s.creplaceCharacterAtIndex,
   Expected: 'replaceCharacterAtIndex'
+}, {
+  Name: 'ccleanCommandInput',
+  Actual: s.ccleanCommandInput,
+  Expected: 'cleanCommandInput'
+}, {
+  Name: 'caggregateCommandArguments',
+  Actual: s.caggregateCommandArguments,
+  Expected: 'aggregateCommandArguments'
 }, // *********************************
 // StringGeneration rules in order
 // *********************************

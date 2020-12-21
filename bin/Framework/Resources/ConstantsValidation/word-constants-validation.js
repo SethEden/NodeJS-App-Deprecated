@@ -2576,6 +2576,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cAggregate,
   Expected: 'Aggregate'
 }, {
+  Name: 'carguments',
+  Actual: w.carguments,
+  Expected: 'arguments'
+}, {
+  Name: 'cArguments',
+  Actual: w.cArguments,
+  Expected: 'Arguments'
+}, {
   Name: 'cDifference',
   Actual: w.cDifference,
   Expected: 'Difference'

@@ -656,6 +656,8 @@ export const wordConstantsValidation = [
    {Name: 'cProduct', Actual: w.cProduct, Expected: 'Product'},
    {Name: 'caggregate', Actual: w.caggregate, Expected: 'aggregate'},
    {Name: 'cAggregate', Actual: w.cAggregate, Expected: 'Aggregate'},
+   {Name: 'carguments', Actual: w.carguments, Expected: 'arguments'},
+   {Name: 'cArguments', Actual: w.cArguments, Expected: 'Arguments'},
    {Name: 'cDifference', Actual: w.cDifference, Expected: 'Difference'},
    {Name: 'cbet', Actual: w.cbet, Expected: 'bet'},
    {Name: 'cBet', Actual: w.cBet, Expected: 'Bet'},

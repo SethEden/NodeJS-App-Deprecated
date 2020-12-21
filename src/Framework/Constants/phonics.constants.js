@@ -380,3 +380,4 @@ export const cshp = b.csh + b.cp; // shp
 export const cual = b.cua + b.cl; // ual
 export const cied = b.cie + b.cd; // ied
 export const cified = b.cif + cied; // ified
+export const cments = b.cme + b.cnt + b.cs; // ments

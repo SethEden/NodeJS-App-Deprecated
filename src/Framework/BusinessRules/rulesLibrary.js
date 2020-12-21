@@ -86,6 +86,8 @@ export const initRulesLibrary = function() {
     [s.cisOdd]: (inputData, inputMetaData) => stringParsing.isOdd(inputData, inputMetaData),
     [s.cisEven]: (inputData, inputMetaData) => stringParsing.isEven(inputData, inputMetaData),
     [s.creplaceCharacterAtIndex]: (inputData, inputMetaData) => stringParsing.replaceCharacterAtIndex(inputData, inputMetaData),
+    [s.ccleanCommandInput]: (inputData, inputMetaData) => stringParsing.cleanCommandInput(inputData, inputMetaData),
+    [s.caggregateCommandArguments]: (inputData, inputMetaData) => stringParsing.aggregateCommandArguments(inputData, inputMetaData),
 
     // *********************************
     // StringGeneration rules in order

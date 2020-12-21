@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -2357,6 +2357,95 @@ var replaceCharacterAtIndex = function replaceCharacterAtIndex(inputData, inputM
 
 
   return returnData;
+};
+/**
+ * @function cleanCommandInput
+ * @description Removes any "--" from the command to make it a valid command.
+ * @param {string} inputData The string that should have the "--" removed from it.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The same as the input, but with the "--" removed.
+ * @author Seth Hollingsead
+ * @date 2020/12/21
+ */
+
+
+exports.replaceCharacterAtIndex = replaceCharacterAtIndex;
+
+var cleanCommandInput = function cleanCommandInput(inputData, inputMetaData) {
+  var functionName = s.ccleanCommandInput;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (!inputData) {
+    return false;
+  }
+
+  var returnData = inputData;
+  returnData = replaceCharacterWithCharacter(inputData, [/--/g, '']);
+  returnData = replaceCharacterWithCharacter(returnData, [/\[/g, '']);
+  returnData = replaceCharacterWithCharacter(returnData, [/\]/g, '']);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function aggregateCommandArguments
+ * @description Combines all of the input arguments into a single command line to be executed by the command parser.
+ * @param {array<string>} inputData An array of strings that represents the command and command parameters to execute.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A single string command line of code that should be sent to the command parser.
+ * @author Seth Hollingsead
+ * @date 2020/12/21
+ */
+
+
+exports.cleanCommandInput = cleanCommandInput;
+
+var aggregateCommandArguments = function aggregateCommandArguments(inputData, inputMetaData) {
+  var functionName = s.caggregateCommandArguments;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (!inputData) {
+    return false;
+  }
+
+  var returnData = '';
+
+  if (inputData.length > 3) {
+    for (var i = 2; i < inputData.length; i++) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+
+      if (i === 2) {
+        returnData = cleanCommandInput(inputData[i]);
+      } else {
+        returnData = returnData + b.cSpace + cleanCommandInput(inputData[i]);
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+  } else {
+    returnData = cleanCommandInput(inputData[2]);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
 }; // ******************************************************
 // Internal functions
 // ******************************************************
@@ -2375,7 +2464,7 @@ var replaceCharacterAtIndex = function replaceCharacterAtIndex(inputData, inputM
  */
 
 
-exports.replaceCharacterAtIndex = replaceCharacterAtIndex;
+exports.aggregateCommandArguments = aggregateCommandArguments;
 
 function doesArrayContainValue(array, value, myFunction) {
   var functionName = 'doesArrayContainValue';
