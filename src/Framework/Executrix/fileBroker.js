@@ -343,8 +343,13 @@ function copyFileSync(source, target) {
     }
   }
   try {
-    fs.writeFileSync(targetFile, fs.readFileSync(source));
-    successfullCopy = true;
+    if (source.includes(b.cDot + g.cenv) === false) {
+      console.log('Did not detect the .env file, continue with copy operation, source is: ' + source);
+      fs.writeFileSync(targetFile, fs.readFileSync(source));
+      successfullCopy = true;
+    } else {
+      console.log('Detected the .env file, and avoided it!');
+    }
   } catch(err) {
     console.log('ERROR: Could not copy file: ' + source);
     successfullCopy = false;

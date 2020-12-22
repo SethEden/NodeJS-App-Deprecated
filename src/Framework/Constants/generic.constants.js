@@ -85,6 +85,9 @@ export const cXML = b.cXM + b.cL; // XML
 export const cjson = b.cjs + b.con; // json
 export const cJson = b.cJs + b.con; // Json
 export const cJSON = b.cJS + b.cON; // JSON
+export const cenv = b.cen + b.cv; // env
+export const cEnv = b.cEn + b.cv; // Env
+export const cENV = b.cEN + b.cV; // ENV
 
 export const cDotCSV = b.cDot + ccsv; // .csv
 export const cDotCom = b.cDot + cCom; // .Com

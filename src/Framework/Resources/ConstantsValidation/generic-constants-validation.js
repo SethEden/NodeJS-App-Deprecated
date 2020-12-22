@@ -87,6 +87,9 @@ export const genericConstantsValidation = [
    {Name: 'cjson', Actual: g.cjson, Expected: 'json'},
    {Name: 'cJson', Actual: g.cJson, Expected: 'Json'},
    {Name: 'cJSON', Actual: g.cJSON, Expected: 'JSON'},
+   {Name: 'cenv', Actual: g.cenv, Expected: 'env'},
+   {Name: 'cEnv', Actual: g.cEnv, Expected: 'Env'},
+   {Name: 'cENV', Actual: g.cENV, Expected: 'ENV'},
 
    {Name: 'cDotCSV', Actual: g.cDotCSV, Expected: '.csv'},
    {Name: 'cDotCom', Actual: g.cDotCom, Expected: '.Com'},
