@@ -525,8 +525,12 @@ export const wordConstantsValidation = [
    {Name: 'ccert', Actual: w.ccert, Expected: 'cert'},
    {Name: 'csrc', Actual: w.csrc, Expected: 'src'},
    {Name: 'cbin', Actual: w.cbin, Expected: 'bin'},
+   {Name: 'cnation', Actual: w.cnation, Expected: 'nation'},
+   {Name: 'cNation', Actual: w.cNation, Expected: 'Nation'},
    {Name: 'csource', Actual: w.csource, Expected: 'source'},
    {Name: 'cSource', Actual: w.cSource, Expected: 'Source'},
+   {Name: 'cdestination', Actual: w.cdestination, Expected: 'destination'},
+   {Name: 'cDestination', Actual: w.cDestination, Expected: 'Destination'},
    {Name: 'cresource', Actual: w.cresource, Expected: 'resource'},
    {Name: 'cResource', Actual: w.cResource, Expected: 'Resource'},
    {Name: 'cresources', Actual: w.cresources, Expected: 'resources'},
@@ -897,5 +901,14 @@ export const wordConstantsValidation = [
    {Name: 'cfix', Actual: w.cfix, Expected: 'fix'},
    {Name: 'cFix', Actual: w.cFix, Expected: 'Fix'},
    {Name: 'cprefix', Actual: w.cprefix, Expected: 'prefix'},
-   {Name: 'cPrefix', Actual: w.cPrefix, Expected: 'Prefix'}
+   {Name: 'cPrefix', Actual: w.cPrefix, Expected: 'Prefix'},
+   {Name: 'cdevelop', Actual: w.cdevelop, Expected: 'develop'},
+   {Name: 'cDevelop', Actual: w.cDevelop, Expected: 'Develop'},
+   {Name: 'cDEVELOP', Actual: w.cDEVELOP, Expected: 'DEVELOP'},
+   {Name: 'cdevelopment', Actual: w.cdevelopment, Expected: 'development'},
+   {Name: 'cDevelopment', Actual: w.cDevelopment, Expected: 'Development'},
+   {Name: 'cDEVELOPMENT', Actual: w.cDEVELOPMENT, Expected: 'DEVELOPMENT'},
+   {Name: 'cproduction', Actual: w.cproduction, Expected: 'production'},
+   {Name: 'cProduction', Actual: w.cProduction, Expected: 'Production'},
+   {Name: 'cPRODUCTION', Actual: w.cPRODUCTION, Expected: 'PRODUCTION'}
  ];

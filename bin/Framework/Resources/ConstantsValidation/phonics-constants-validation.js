@@ -121,6 +121,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cion,
   Expected: 'ion'
 }, {
+  Name: 'cION',
+  Actual: p.cION,
+  Expected: 'ION'
+}, {
   Name: 'csion',
   Actual: p.csion,
   Expected: 'sion'
@@ -140,6 +144,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'ction',
   Actual: p.ction,
   Expected: 'tion'
+}, {
+  Name: 'cTION',
+  Actual: p.cTION,
+  Expected: 'TION'
 }, {
   Name: 'cction',
   Actual: p.cction,
@@ -1286,6 +1294,22 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cDev,
   Expected: 'Dev'
 }, {
+  Name: 'cDEV',
+  Actual: p.cDEV,
+  Expected: 'DEV'
+}, {
+  Name: 'cprod',
+  Actual: p.cprod,
+  Expected: 'prod'
+}, {
+  Name: 'cProd',
+  Actual: p.cProd,
+  Expected: 'Prod'
+}, {
+  Name: 'cPROD',
+  Actual: p.cPROD,
+  Expected: 'PROD'
+}, {
   Name: 'cana',
   Actual: p.cana,
   Expected: 'ana'
@@ -1513,5 +1537,21 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cments',
   Actual: p.cments,
   Expected: 'ments'
+}, {
+  Name: 'clop',
+  Actual: p.clop,
+  Expected: 'lop'
+}, {
+  Name: 'cLOP',
+  Actual: p.cLOP,
+  Expected: 'LOP'
+}, {
+  Name: 'cdest',
+  Actual: p.cdest,
+  Expected: 'dest'
+}, {
+  Name: 'cDest',
+  Actual: p.cDest,
+  Expected: 'Dest'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

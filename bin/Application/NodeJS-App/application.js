@@ -46,6 +46,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+require('dotenv').config();
+
+var NODE_ENV = process.env.NODE_ENV;
+
 var prompt = require('prompt-sync')();
 
 var path = require('path');
@@ -64,7 +68,12 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function bootStrapApplication() {
-  rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath; // console.log('rootPath is: ' + rootPath);
+  if (NODE_ENV === w.cdevelopment) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
+  } else if (NODE_ENV === w.cproduction) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  } // console.log('rootPath is: ' + rootPath);
+
 
   rootPath = _warden["default"].processRootPath(rootPath); // console.log('processed rootPath is: ' + rootPath);
 
@@ -76,9 +85,15 @@ function bootStrapApplication() {
 
   _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
 
-  _warden["default"].loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
+  if (NODE_ENV === w.cdevelopment) {
+    _warden["default"].loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
 
-  _warden["default"].loadCommandWorkflows(s.cSystemWorkflowsActualPath, c.cClientWorkflowsActualPath);
+    _warden["default"].loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
+  } else if (NODE_ENV === w.cproduction) {
+    _warden["default"].loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+
+    _warden["default"].loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+  }
 }
 
 ;

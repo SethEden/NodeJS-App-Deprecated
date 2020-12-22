@@ -2012,9 +2012,9 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cSourceResourcesPath,
   Expected: 'SourceResourcesPath'
 }, {
-  Name: 'cBinaryResourcesPath',
-  Actual: s.cBinaryResourcesPath,
-  Expected: 'BinaryResourcesPath'
+  Name: 'cDestinationResourcesPath',
+  Actual: s.cDestinationResourcesPath,
+  Expected: 'DestinationResourcesPath'
 }, {
   Name: 'cBinaryRootPath',
   Actual: s.cBinaryRootPath,
@@ -2695,11 +2695,27 @@ var systemConstantsValidation = [// Miscelaneious
 {
   Name: 'cSystemCommandsAliasesActualPath',
   Actual: s.cSystemCommandsAliasesActualPath,
-  Expected: 'src/Framework/Resources/Commands/'
+  Expected: '/Framework/Resources/Commands/'
 }, {
   Name: 'cSystemWorkflowsActualPath',
   Actual: s.cSystemWorkflowsActualPath,
+  Expected: '/Framework/Resources/Workflows/'
+}, {
+  Name: 'cDevSystemCommandsAliasesActualPath',
+  Actual: s.cDevSystemCommandsAliasesActualPath,
+  Expected: 'src/Framework/Resources/Commands/'
+}, {
+  Name: 'cDevSystemWorkflowsActualPath',
+  Actual: s.cDevSystemWorkflowsActualPath,
   Expected: 'src/Framework/Resources/Workflows/'
+}, {
+  Name: 'cProdSystemCommandsAliasesActualPath',
+  Actual: s.cProdSystemCommandsAliasesActualPath,
+  Expected: 'bin/Framework/Resources/Commands/'
+}, {
+  Name: 'cProdSystemWorkflowsActualPath',
+  Actual: s.cProdSystemWorkflowsActualPath,
+  Expected: 'bin/Framework/Resources/Workflows/'
 }, {
   Name: 'cSystemCommandsAliasesPath',
   Actual: s.cSystemCommandsAliasesPath,

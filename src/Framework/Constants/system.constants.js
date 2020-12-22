@@ -533,7 +533,7 @@ export const cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidati
 export const cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
 export const cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
 export const cSourceResourcesPath = w.cSource + w.cResources + w.cPath; // SourceResourcesPath
-export const cBinaryResourcesPath = w.cBinary + w.cResources + w.cPath; // BinaryResourcesPath
+export const cDestinationResourcesPath = w.cDestination + w.cResources + w.cPath; // BinaryResourcesPath
 export const cBinaryRootPath = w.cBinary + w.cRoot + w.cPath; // BinaryRootPath
 export const cBinaryReleasePath = w.cBinary + w.cRelease + w.cPath; // BinaryReleasePath
 
@@ -724,8 +724,12 @@ export const cconvertNumberToLowerCaseLetter = w.cconvert + w.cNumber + w.cTo + 
 export const chex2rgbConversion = p.chex + n.c2 + p.crgb + w.cConversion; // hex2rgbConversion
 
 // Commands
-export const cSystemCommandsAliasesActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cCommands + b.cForwardSlash; // SystemCommandsAliasesActualPath
-export const cSystemWorkflowsActualPath = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cWorkflows + b.cForwardSlash; // SystemWorkflowsActualPath
+export const cSystemCommandsAliasesActualPath = b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cCommands + b.cForwardSlash; // SystemCommandsAliasesActualPath
+export const cSystemWorkflowsActualPath = b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cWorkflows + b.cForwardSlash; // SystemWorkflowsActualPath
+export const cDevSystemCommandsAliasesActualPath = w.csrc + cSystemCommandsAliasesActualPath; // DevSystemCommandsAliasesActualPath
+export const cDevSystemWorkflowsActualPath = w.csrc + cSystemWorkflowsActualPath; // DevSystemWorkflowsActualPath
+export const cProdSystemCommandsAliasesActualPath = w.cbin + cSystemCommandsAliasesActualPath; // ProdSystemCommasAliasesActualPath
+export const cProdSystemWorkflowsActualPath = w.cbin + cSystemWorkflowsActualPath; // ProdSystemWorkflowsActualPath
 export const cSystemCommandsAliasesPath = w.cSystem + w.cCommands + w.cAliases + w.cPath; // SystemCommandsAliasesPath
 export const cClientCommandsAliasesPath = w.cClient + w.cCommands + w.cAliases + w.cPath; // ClientCommandsAliasesPath
 export const cSystemWorkflowsPath = w.cSystem + w.cWorkflows + w.cPath; // SystemWorkflowsPath

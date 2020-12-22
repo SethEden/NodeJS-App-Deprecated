@@ -188,7 +188,7 @@ export const deployApplication = function(inputData, inputMetaData) {
   if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
     console.log('DEPLOY APPLICATION');
     let sourcePath = configurator.getConfigurationSetting(s.cSourceResourcesPath);
-    let destinationPath = configurator.getConfigurationSetting(s.cBinaryResourcesPath);
+    let destinationPath = configurator.getConfigurationSetting(s.cDestinationResourcesPath);
     let deploymentStatus = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
     // console.log('Deployment was completed: ' + deploymentStatus);
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + true);

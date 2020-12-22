@@ -533,7 +533,7 @@ export const systemConstantsValidation = [
    {Name: 'cUnitsConstantsValidation', Actual: s.cUnitsConstantsValidation, Expected: 'UnitsConstantsValidation'},
    {Name: 'cWordConstantsValidation', Actual: s.cWordConstantsValidation, Expected: 'WordConstantsValidation'},
    {Name: 'cSourceResourcesPath', Actual: s.cSourceResourcesPath, Expected: 'SourceResourcesPath'},
-   {Name: 'cBinaryResourcesPath', Actual: s.cBinaryResourcesPath, Expected: 'BinaryResourcesPath'},
+   {Name: 'cDestinationResourcesPath', Actual: s.cDestinationResourcesPath, Expected: 'DestinationResourcesPath'},
    {Name: 'cBinaryRootPath', Actual: s.cBinaryRootPath, Expected: 'BinaryRootPath'},
    {Name: 'cBinaryReleasePath', Actual: s.cBinaryReleasePath, Expected: 'BinaryReleasePath'},
 
@@ -724,8 +724,12 @@ export const systemConstantsValidation = [
    {Name: 'chex2rgbConversion', Actual: s.chex2rgbConversion, Expected: 'hex2rgbConversion'},
 
    // Commands
-   {Name: 'cSystemCommandsAliasesActualPath', Actual: s.cSystemCommandsAliasesActualPath, Expected: 'src/Framework/Resources/Commands/'},
-   {Name: 'cSystemWorkflowsActualPath', Actual: s.cSystemWorkflowsActualPath, Expected: 'src/Framework/Resources/Workflows/'},
+   {Name: 'cSystemCommandsAliasesActualPath', Actual: s.cSystemCommandsAliasesActualPath, Expected: '/Framework/Resources/Commands/'},
+   {Name: 'cSystemWorkflowsActualPath', Actual: s.cSystemWorkflowsActualPath, Expected: '/Framework/Resources/Workflows/'},
+   {Name: 'cDevSystemCommandsAliasesActualPath', Actual: s.cDevSystemCommandsAliasesActualPath, Expected: 'src/Framework/Resources/Commands/'},
+   {Name: 'cDevSystemWorkflowsActualPath', Actual: s.cDevSystemWorkflowsActualPath, Expected: 'src/Framework/Resources/Workflows/'},
+   {Name: 'cProdSystemCommandsAliasesActualPath', Actual: s.cProdSystemCommandsAliasesActualPath, Expected: 'bin/Framework/Resources/Commands/'},
+   {Name: 'cProdSystemWorkflowsActualPath', Actual: s.cProdSystemWorkflowsActualPath, Expected: 'bin/Framework/Resources/Workflows/'},
    {Name: 'cSystemCommandsAliasesPath', Actual: s.cSystemCommandsAliasesPath, Expected: 'SystemCommandsAliasesPath'},
    {Name: 'cClientCommandsAliasesPath', Actual: s.cClientCommandsAliasesPath, Expected: 'ClientCommandsAliasesPath'},
    {Name: 'cSystemWorkflowsPath', Actual: s.cSystemWorkflowsPath, Expected: 'SystemWorkflowsPath'},

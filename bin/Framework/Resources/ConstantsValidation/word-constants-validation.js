@@ -2052,6 +2052,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cbin,
   Expected: 'bin'
 }, {
+  Name: 'cnation',
+  Actual: w.cnation,
+  Expected: 'nation'
+}, {
+  Name: 'cNation',
+  Actual: w.cNation,
+  Expected: 'Nation'
+}, {
   Name: 'csource',
   Actual: w.csource,
   Expected: 'source'
@@ -2059,6 +2067,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cSource',
   Actual: w.cSource,
   Expected: 'Source'
+}, {
+  Name: 'cdestination',
+  Actual: w.cdestination,
+  Expected: 'destination'
+}, {
+  Name: 'cDestination',
+  Actual: w.cDestination,
+  Expected: 'Destination'
 }, {
   Name: 'cresource',
   Actual: w.cresource,
@@ -3543,5 +3559,41 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cPrefix',
   Actual: w.cPrefix,
   Expected: 'Prefix'
+}, {
+  Name: 'cdevelop',
+  Actual: w.cdevelop,
+  Expected: 'develop'
+}, {
+  Name: 'cDevelop',
+  Actual: w.cDevelop,
+  Expected: 'Develop'
+}, {
+  Name: 'cDEVELOP',
+  Actual: w.cDEVELOP,
+  Expected: 'DEVELOP'
+}, {
+  Name: 'cdevelopment',
+  Actual: w.cdevelopment,
+  Expected: 'development'
+}, {
+  Name: 'cDevelopment',
+  Actual: w.cDevelopment,
+  Expected: 'Development'
+}, {
+  Name: 'cDEVELOPMENT',
+  Actual: w.cDEVELOPMENT,
+  Expected: 'DEVELOPMENT'
+}, {
+  Name: 'cproduction',
+  Actual: w.cproduction,
+  Expected: 'production'
+}, {
+  Name: 'cProduction',
+  Actual: w.cProduction,
+  Expected: 'Production'
+}, {
+  Name: 'cPRODUCTION',
+  Actual: w.cPRODUCTION,
+  Expected: 'PRODUCTION'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

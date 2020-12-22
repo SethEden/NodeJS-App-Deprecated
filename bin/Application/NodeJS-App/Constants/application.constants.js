@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ccustomEchoCommand = exports.cClientWorkflowsActualPath = exports.cClientCommandAliasesActualPath = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cApplicationBinaryRootPath = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cBinaryResourcesPath = exports.cSourceResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
+exports.ccustomEchoCommand = exports.cProdClientWorkflowsActualPath = exports.cProdClientCommandAliasesActualPath = exports.cDevClientWorkflowsActualPath = exports.cDevClientCommandAliasesActualPath = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cApplicationProductionRootPath = exports.cApplicationDevelopRootPath = exports.cReleasePath = exports.cProductionRootPath = exports.cDevelopRootPath = exports.cProductionResourcesPath = exports.cDevelopResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
 var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
@@ -42,20 +42,24 @@ exports.cConfigurationDataLookupPrefixPath = cConfigurationDataLookupPrefixPath;
 var cResourcesCommonPath = w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cResources + b.cForwardSlash; // Source Resources Path
 
 exports.cResourcesCommonPath = cResourcesCommonPath;
-var cSourceResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash + cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+var cDevelopResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash + cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
 // Binary Resources Path
 
-exports.cSourceResourcesPath = cSourceResourcesPath;
-var cBinaryResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+exports.cDevelopResourcesPath = cDevelopResourcesPath;
+var cProductionResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 
-exports.cBinaryResourcesPath = cBinaryResourcesPath;
-var cBinaryRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
-exports.cBinaryRootPath = cBinaryRootPath;
-var cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
-exports.cBinaryReleasePath = cBinaryReleasePath;
-var cApplicationBinaryRootPath = cBinaryRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // Client Business Rules
+exports.cProductionResourcesPath = cProductionResourcesPath;
+var cDevelopRootPath = b.cForwardSlash + w.csrc + b.cForwardSlash;
+exports.cDevelopRootPath = cDevelopRootPath;
+var cProductionRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
+exports.cProductionRootPath = cProductionRootPath;
+var cReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
+exports.cReleasePath = cReleasePath;
+var cApplicationDevelopRootPath = cDevelopRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
+exports.cApplicationDevelopRootPath = cApplicationDevelopRootPath;
+var cApplicationProductionRootPath = cProductionRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // Client Business Rules
 
-exports.cApplicationBinaryRootPath = cApplicationBinaryRootPath;
+exports.cApplicationProductionRootPath = cApplicationProductionRootPath;
 var cclientEcho = w.cclient + s.cEcho; // ********************************
 // ClientStringParsing rules in order
 // ********************************
@@ -72,12 +76,16 @@ exports.cthreePointAverage = cthreePointAverage;
 var carrayCounter = w.carray + w.cCounter; // Client Commands
 
 exports.carrayCounter = carrayCounter;
-var cClientCommandAliasesActualPath = cSourceResourcesPath + w.cCommands + b.cForwardSlash;
-exports.cClientCommandAliasesActualPath = cClientCommandAliasesActualPath;
-var cClientWorkflowsActualPath = cSourceResourcesPath + w.cWorkflows + b.cForwardSlash; // ********************************
+var cDevClientCommandAliasesActualPath = cDevelopResourcesPath + w.cCommands + b.cForwardSlash;
+exports.cDevClientCommandAliasesActualPath = cDevClientCommandAliasesActualPath;
+var cDevClientWorkflowsActualPath = cDevelopResourcesPath + w.cWorkflows + b.cForwardSlash;
+exports.cDevClientWorkflowsActualPath = cDevClientWorkflowsActualPath;
+var cProdClientCommandAliasesActualPath = cProductionResourcesPath + w.cCommands + b.cForwardSlash;
+exports.cProdClientCommandAliasesActualPath = cProdClientCommandAliasesActualPath;
+var cProdClientWorkflowsActualPath = cProductionResourcesPath + w.cWorkflows + b.cForwardSlash; // ********************************
 // Client Commands in order
 // ********************************
 
-exports.cClientWorkflowsActualPath = cClientWorkflowsActualPath;
+exports.cProdClientWorkflowsActualPath = cProdClientWorkflowsActualPath;
 var ccustomEchoCommand = w.ccustom + s.cEcho + w.cCommand;
 exports.ccustomEchoCommand = ccustomEchoCommand;

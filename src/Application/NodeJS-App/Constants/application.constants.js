@@ -24,15 +24,17 @@ export const cConfigurationDataLookupPrefixPath = b.cForwardSlash + w.cResources
 export const cResourcesCommonPath = w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cResources + b.cForwardSlash;
 
 // Source Resources Path
-export const cSourceResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash +  cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+export const cDevelopResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash +  cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
 
 // Binary Resources Path
-export const cBinaryResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+export const cProductionResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 
-export const cBinaryRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
-export const cBinaryReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
+export const cDevelopRootPath = b.cForwardSlash + w.csrc + b.cForwardSlash;
+export const cProductionRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
+export const cReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
 
-export const cApplicationBinaryRootPath = cBinaryRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
+export const cApplicationDevelopRootPath = cDevelopRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
+export const cApplicationProductionRootPath = cProductionRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
 
 // Client Business Rules
 export const cclientEcho = w.cclient + s.cEcho;
@@ -46,8 +48,10 @@ export const cthreePointAverage = g.cthree + w.cPoint + w.cAverage;
 export const carrayCounter = w.carray + w.cCounter;
 
 // Client Commands
-export const cClientCommandAliasesActualPath = cSourceResourcesPath + w.cCommands + b.cForwardSlash;
-export const cClientWorkflowsActualPath = cSourceResourcesPath + w.cWorkflows + b.cForwardSlash;
+export const cDevClientCommandAliasesActualPath = cDevelopResourcesPath + w.cCommands + b.cForwardSlash;
+export const cDevClientWorkflowsActualPath = cDevelopResourcesPath + w.cWorkflows + b.cForwardSlash;
+export const cProdClientCommandAliasesActualPath = cProductionResourcesPath + w.cCommands + b.cForwardSlash;
+export const cProdClientWorkflowsActualPath = cProductionResourcesPath + w.cWorkflows + b.cForwardSlash;
 // ********************************
 // Client Commands in order
 // ********************************

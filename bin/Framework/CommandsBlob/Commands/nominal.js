@@ -287,7 +287,7 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cSourceResourcesPath);
 
-    var destinationPath = _configurator["default"].getConfigurationSetting(s.cBinaryResourcesPath);
+    var destinationPath = _configurator["default"].getConfigurationSetting(s.cDestinationResourcesPath);
 
     var deploymentStatus = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath); // console.log('Deployment was completed: ' + deploymentStatus);
 

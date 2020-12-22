@@ -13,6 +13,7 @@
  * @requires module:application-constants
  * @requires module:system-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -36,6 +37,8 @@ var s = _interopRequireWildcard(require("../../Framework/Constants/system.consta
 
 var g = _interopRequireWildcard(require("../../Framework/Constants/generic.constants"));
 
+var w = _interopRequireWildcard(require("../../Framework/Constants/word.constants"));
+
 var b = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -43,6 +46,10 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+require('dotenv').config();
+
+var NODE_ENV = process.env.NODE_ENV;
 
 var path = require('path');
 
@@ -61,10 +68,14 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function bootStrapApplicationDeployment() {
-  rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath;
-  console.log('rootPath is: ' + rootPath);
-  rootPath = _warden["default"].processRootPath(rootPath);
-  console.log('processed rootPath is: ' + rootPath);
+  if (NODE_ENV === w.cdevelopment) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
+  } else if (NODE_ENV === w.cproduction) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  } // console.log('rootPath is: ' + rootPath);
+
+
+  rootPath = _warden["default"].processRootPath(rootPath); // console.log('processed rootPath is: ' + rootPath);
 
   _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
 
@@ -74,9 +85,15 @@ function bootStrapApplicationDeployment() {
 
   _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
 
-  _warden["default"].loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
+  if (NODE_ENV === w.cdevelopment) {
+    _warden["default"].loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
 
-  _warden["default"].loadCommandWorkflows(s.cSystemWorkflowsActualPath, c.cClientWorkflowsActualPath);
+    _warden["default"].loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
+  } else if (NODE_ENV === w.cproduction) {
+    _warden["default"].loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+
+    _warden["default"].loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+  }
 }
 
 ;
@@ -103,9 +120,9 @@ function deployApplication() {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
 
-    _warden["default"].setConfigurationSetting(s.cSourceResourcesPath, c.cSourceResourcesPath);
+    _warden["default"].setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
 
-    _warden["default"].setConfigurationSetting(s.cBinaryResourcesPath, c.cBinaryResourcesPath);
+    _warden["default"].setConfigurationSetting(s.cDestinationResourcesPath, c.cProductionResourcesPath);
 
     _warden["default"].enqueueCommand(s.cBuildWorkflow);
 
@@ -147,9 +164,9 @@ function releaseApplication() {
   try {
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
 
-    _warden["default"].setConfigurationSetting(s.cBinaryRootPath, c.cBinaryRootPath);
+    _warden["default"].setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
 
-    _warden["default"].setConfigurationSetting(s.cBinaryReleasePath, c.cBinaryReleasePath);
+    _warden["default"].setConfigurationSetting(s.cBinaryReleasePath, c.cReleasePath);
 
     _warden["default"].enqueueCommand(s.cReleaseWorkflow);
 

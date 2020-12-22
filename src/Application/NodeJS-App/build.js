@@ -13,6 +13,7 @@
  * @requires module:application-constants
  * @requires module:system-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:basic-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -26,7 +27,10 @@ import clientCommands from './Commands/clientCommandsLibrary';
 import * as c from './Constants/application.constants';
 import * as s from '../../Framework/Constants/system.constants';
 import * as g from '../../Framework/Constants/generic.constants';
+import * as w from '../../Framework/Constants/word.constants';
 import * as b from '../../Framework/Constants/basic.constants';
+require('dotenv').config();
+const {NODE_ENV} = process.env;
 var path = require('path');
 var D = require('../../Framework/Resources/data');
 global.appRoot = path.resolve(process.cwd());
@@ -42,16 +46,25 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/06/01
  */
 function bootStrapApplicationDeployment() {
-  rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath;
-  console.log('rootPath is: ' + rootPath);
+  if (NODE_ENV === w.cdevelopment) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
+  } else if (NODE_ENV === w.cproduction) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  }
+  // console.log('rootPath is: ' + rootPath);
   rootPath = warden.processRootPath(rootPath);
-  console.log('processed rootPath is: ' + rootPath);
+  // console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
-  warden.loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
-  warden.loadCommandWorkflows(s.cSystemWorkflowsActualPath, c.cClientWorkflowsActualPath);
+  if (NODE_ENV === w.cdevelopment) {
+    warden.loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
+  } else if (NODE_ENV === w.cproduction) {
+    warden.loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+  }
 };
 
 /**
@@ -72,8 +85,8 @@ function deployApplication() {
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(s.cSourceResourcesPath, c.cSourceResourcesPath);
-    warden.setConfigurationSetting(s.cBinaryResourcesPath, c.cBinaryResourcesPath);
+    warden.setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
+    warden.setConfigurationSetting(s.cDestinationResourcesPath, c.cProductionResourcesPath);
     warden.enqueueCommand(s.cBuildWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
@@ -102,8 +115,8 @@ function releaseApplication() {
   let releaseResult;
   try {
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(s.cBinaryRootPath, c.cBinaryRootPath);
-    warden.setConfigurationSetting(s.cBinaryReleasePath, c.cBinaryReleasePath);
+    warden.setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
+    warden.setConfigurationSetting(s.cBinaryReleasePath, c.cReleasePath);
     warden.enqueueCommand(s.cReleaseWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {

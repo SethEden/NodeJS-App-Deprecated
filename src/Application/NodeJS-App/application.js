@@ -28,6 +28,8 @@ import * as b from '../../Framework/Constants/basic.constants';
 import * as g from '../../Framework/Constants/generic.constants';
 import * as w from '../../Framework/Constants/word.constants';
 import * as s from '../../Framework/Constants/system.constants';
+require('dotenv').config();
+const {NODE_ENV} = process.env;
 const prompt = require('prompt-sync')();
 var path = require('path');
 var D = require('../../Framework/Resources/data');
@@ -43,7 +45,11 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/01/30
  */
 function bootStrapApplication() {
-  rootPath = path.resolve(process.cwd()) + c.cApplicationBinaryRootPath;
+  if (NODE_ENV === w.cdevelopment) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
+  } else if (NODE_ENV === w.cproduction) {
+    rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  }
   // console.log('rootPath is: ' + rootPath);
   rootPath = warden.processRootPath(rootPath);
   // console.log('processed rootPath is: ' + rootPath);
@@ -51,8 +57,13 @@ function bootStrapApplication() {
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
-  warden.loadCommandAliases(s.cSystemCommandsAliasesActualPath, c.cClientCommandAliasesActualPath);
-  warden.loadCommandWorkflows(s.cSystemWorkflowsActualPath, c.cClientWorkflowsActualPath);
+  if (NODE_ENV === w.cdevelopment) {
+    warden.loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
+  } else if (NODE_ENV === w.cproduction) {
+    warden.loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+  }
 };
 
 /**
