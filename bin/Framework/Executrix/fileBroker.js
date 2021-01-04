@@ -240,7 +240,15 @@ function readDirectorySynchronously(directory) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
 
   var currentDirectoryPath = directory;
-  var currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
+  var currentDirectory = '';
+
+  try {
+    currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
+  } catch (e) {
+    fs.mkdirSync(currentDirectoryPath);
+    currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
+  }
+
   currentDirectory.forEach(function (file) {
     var filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
     var pathOfCurrentItem = directory + '/' + file;
@@ -248,7 +256,20 @@ function readDirectorySynchronously(directory) {
     if (!filesShouldBeSkipped && fs.statSync(pathOfCurrentItem).isFile()) {
       filesCollection.push(pathOfCurrentItem);
     } else if (!filesShouldBeSkipped) {
-      var directoryPath = path.join(directory + '\\' + file);
+      // NOTE: There is a difference in how paths are handled in Windows VS Mac/Linux,
+      // So for now I'm putting this code here like this to handle both situations.
+      // The ideal solution would be to detect which OS the code is being run on.
+      // Then handle each case appropriately.
+      var directoryPath = '';
+
+      try {
+        directoryPath = path.join(directory + '\\' + file);
+      } catch (e) {
+        directoryPath = path.join(directory + '/' + file);
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'directoryPath is: ' + directoryPath);
+
       readDirectorySynchronously(directoryPath);
     }
   });

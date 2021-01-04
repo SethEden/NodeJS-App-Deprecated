@@ -13,6 +13,7 @@
  */
 import * as b from '../../../Framework/Constants/basic.constants';
 import * as g from '../../../Framework/Constants/generic.constants';
+import * as n from '../../../Framework/Constants/numeric.constants';
 import * as w from '../../../Framework/Constants/word.constants';
 import * as s from '../../../Framework/Constants/system.constants';
 

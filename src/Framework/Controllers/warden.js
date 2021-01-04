@@ -99,6 +99,7 @@ function processRootPath(systemRootPath) {
   ruleBroker.bootStrapBusinessRules();
   chiefCommander.bootStrapCommands();
   let rootPath = ruleBroker.processRules(systemRootPath, '', rules);
+  dataBroker.setupDataStorage();
   // console.log('systemRootPath after business rule processing is: ' + rootPath);
   // console.log('END warden.processRootPath function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

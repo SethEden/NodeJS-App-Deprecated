@@ -656,6 +656,11 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cNew,
   Expected: 'New'
 }, {
+  Name: 'cload',
+  Actual: w.cload,
+  Expected: 'load'
+}, // NOTE: Apparently 'cad' is also a reserved word.
+{
   Name: 'cLoad',
   Actual: w.cLoad,
   Expected: 'Load'
@@ -1751,11 +1756,6 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cOnce,
   Expected: 'Once'
 }, {
-  Name: 'cload',
-  Actual: w.cload,
-  Expected: 'load'
-}, // NOTE: Apparently 'cad' is also a reserved word.
-{
   Name: 'cUpload',
   Actual: w.cUpload,
   Expected: 'Upload'
@@ -3595,5 +3595,21 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cPRODUCTION',
   Actual: w.cPRODUCTION,
   Expected: 'PRODUCTION'
+}, {
+  Name: 'cstorage',
+  Actual: w.cstorage,
+  Expected: 'storage'
+}, {
+  Name: 'cStorage',
+  Actual: w.cStorage,
+  Expected: 'Storage'
+}, {
+  Name: 'cstored',
+  Actual: w.cstored,
+  Expected: 'stored'
+}, {
+  Name: 'cStored',
+  Actual: w.cStored,
+  Expected: 'Stored'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

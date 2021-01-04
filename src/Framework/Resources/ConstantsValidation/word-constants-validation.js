@@ -177,6 +177,7 @@ export const wordConstantsValidation = [
    {Name: 'cview', Actual: w.cview, Expected: 'view'},
    {Name: 'cView', Actual: w.cView, Expected: 'View'},
    {Name: 'cNew', Actual: w.cNew, Expected: 'New'},
+   {Name: 'cload', Actual: w.cload, Expected: 'load'}, // NOTE: Apparently 'cad' is also a reserved word.
    {Name: 'cLoad', Actual: w.cLoad, Expected: 'Load'}, // NOTE: Apparently 'cad' is also a reserved word.
    {Name: 'cclick', Actual: w.cclick, Expected: 'click'},
    {Name: 'cClick', Actual: w.cClick, Expected: 'Click'},
@@ -450,7 +451,6 @@ export const wordConstantsValidation = [
    {Name: 'cSwap', Actual: w.cSwap, Expected: 'Swap'},
    {Name: 'cAfter', Actual: w.cAfter, Expected: 'After'},
    {Name: 'cOnce', Actual: w.cOnce, Expected: 'Once'},
-   {Name: 'cload', Actual: w.cload, Expected: 'load'}, // NOTE: Apparently 'cad' is also a reserved word.
    {Name: 'cUpload', Actual: w.cUpload, Expected: 'Upload'},
    {Name: 'cStyle', Actual: w.cStyle, Expected: 'Style'},
    {Name: 'cAssert', Actual: w.cAssert, Expected: 'Assert'},
@@ -910,5 +910,9 @@ export const wordConstantsValidation = [
    {Name: 'cDEVELOPMENT', Actual: w.cDEVELOPMENT, Expected: 'DEVELOPMENT'},
    {Name: 'cproduction', Actual: w.cproduction, Expected: 'production'},
    {Name: 'cProduction', Actual: w.cProduction, Expected: 'Production'},
-   {Name: 'cPRODUCTION', Actual: w.cPRODUCTION, Expected: 'PRODUCTION'}
+   {Name: 'cPRODUCTION', Actual: w.cPRODUCTION, Expected: 'PRODUCTION'},
+   {Name: 'cstorage', Actual: w.cstorage, Expected: 'storage'},
+   {Name: 'cStorage', Actual: w.cStorage, Expected: 'Storage'},
+   {Name: 'cstored', Actual: w.cstored, Expected: 'stored'},
+   {Name: 'cStored', Actual: w.cStored, Expected: 'Stored'}
  ];

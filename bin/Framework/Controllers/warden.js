@@ -140,7 +140,9 @@ function processRootPath(systemRootPath) {
 
   _chiefCommander["default"].bootStrapCommands();
 
-  var rootPath = _ruleBroker["default"].processRules(systemRootPath, '', rules); // console.log('systemRootPath after business rule processing is: ' + rootPath);
+  var rootPath = _ruleBroker["default"].processRules(systemRootPath, '', rules);
+
+  _dataBroker["default"].setupDataStorage(); // console.log('systemRootPath after business rule processing is: ' + rootPath);
   // console.log('END warden.processRootPath function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 

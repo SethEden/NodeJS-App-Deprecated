@@ -9,6 +9,8 @@ exports.customEchoCommand = void 0;
 
 var _warden = _interopRequireDefault(require("../../../../Framework/Controllers/warden"));
 
+var _queue = _interopRequireDefault(require("../../../../Framework/Resources/queue"));
+
 var c = _interopRequireWildcard(require("../../Constants/application.constants"));
 
 var s = _interopRequireWildcard(require("../../../../Framework/Constants/system.constants"));
@@ -26,6 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @module clientCommands
  * @description Contains all client defined commands for execution client actions with various operations.
  * @requires module:warden
+ * @requires module:queue
  * @requires module:application-constants
  * @requires module:system-constants
  * @requires module:basic-constants

@@ -198,6 +198,9 @@ export const systemConstantsValidation = [
    {Name: 'cHexValue', Actual: s.cHexValue, Expected: 'HexValue'},
    {Name: 'cexportconst', Actual: s.cexportconst, Expected: 'export const'},
    {Name: 'cExportConst', Actual: s.cExportConst, Expected: 'Export Const'},
+   {Name: 'cDataStorage', Actual: s.cDataStorage, Expected: 'DataStorage'},
+   {Name: 'cSource1', Actual: s.cSource1, Expected: 'Source1'},
+   {Name: 'cSource2', Actual: s.cSource2, Expected: 'Source2'},
 
    // Logging Constants
    {Name: 'cBEGIN_Function', Actual: s.cBEGIN_Function, Expected: 'BEGIN %% Function'},
@@ -638,6 +641,8 @@ export const systemConstantsValidation = [
    {Name: 'creplaceDoublePercentWithMessage', Actual: s.creplaceDoublePercentWithMessage, Expected: 'replaceDoublePercentWithMessage'},
    {Name: 'cremoveXnumberOfFoldersFromEndOfPath', Actual: s.cremoveXnumberOfFoldersFromEndOfPath, Expected: 'removeXnumberOfFoldersFromEndOfPath'},
    {Name: 'cgetFirstTopLevelFolderFromPath', Actual: s.cgetFirstTopLevelFolderFromPath, Expected: 'getFirstTopLevelFolderFromPath'},
+   {Name: 'cloadDataFile', Actual: s.cloadDataFile, Expected: 'loadDataFile'},
+   {Name: 'cgetStoredData', Actual: s.cgetStoredData, Expected: 'getStoredData'},
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},
    {Name: 'cisEven', Actual: s.cisEven, Expected: 'isEven'},
    {Name: 'creplaceCharacterAtIndex', Actual: s.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},
@@ -742,6 +747,7 @@ export const systemConstantsValidation = [
    {Name: 'cworkflowHelp', Actual: s.cworkflowHelp, Expected: 'workflowHelp'},
    {Name: 'ccommandSequencer', Actual: s.ccommandSequencer, Expected: 'commandSequencer'},
    {Name: 'cprintDataHive', Actual: s.cprintDataHive, Expected: 'printDataHive'},
+   {Name: 'cclearDataStorage', Actual: s.cclearDataStorage, Expected: 'clearDataStorage'},
    {Name: 'ccommandGenerator', Actual: s.ccommandGenerator, Expected: 'commandGenerator'},
    {Name: 'cbusinessRulesMetrics', Actual: s.cbusinessRulesMetrics, Expected: 'businessRulesMetrics'},
    {Name: 'ccommandMetrics', Actual: s.ccommandMetrics, Expected: 'commandMetrics'},
