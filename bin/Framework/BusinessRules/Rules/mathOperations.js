@@ -63,32 +63,32 @@ var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
   var returnData;
 
   if (!inputData) {
-    return false;
-  } // A few different ways to implement this business rule, see link above.
-  // Personally I like the version that doesn't have a big ugly regular expression that is impossible to understand and debug.
-  // But that is just a personal/professional opinion,
-  // I am sure others have their own reasons to choose the regular expression technique,
-  // perhaps performance constraints, etc...
-  // I am including the alternate algorthim below as reference in case someone ever wants/needs it,
-  // as an alternative to the below implementation.
-  // function hexToRgb(hex) {
-  //   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  //   return result ? {
-  //     r: parseInt(result[1], 16),
-  //     g: parseInt(result[2], 16),
-  //     b: parseInt(result[3], 16)
-  //   } : null;
-  // }
+    returnData = false;
+  } else {
+    // A few different ways to implement this business rule, see link above.
+    // Personally I like the version that doesn't have a big ugly regular expression that is impossible to understand and debug.
+    // But that is just a personal/professional opinion,
+    // I am sure others have their own reasons to choose the regular expression technique,
+    // perhaps performance constraints, etc...
+    // I am including the alternate algorthim below as reference in case someone ever wants/needs it,
+    // as an alternative to the below implementation.
+    // function hexToRgb(hex) {
+    //   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    //   return result ? {
+    //     r: parseInt(result[1], 16),
+    //     g: parseInt(result[2], 16),
+    //     b: parseInt(result[3], 16)
+    //   } : null;
+    // }
+    var bigInteger = parseInt(inputData, 16);
 
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'bigInteger is: ' + bigInteger);
 
-  var bigInteger = parseInt(inputData, 16);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'bigInteger is: ' + bigInteger);
-
-  var red = bigInteger >> 16 & 255;
-  var green = bigInteger >> 8 & 255;
-  var blue = bigInteger & 255;
-  returnData = [red, green, blue];
+    var red = bigInteger >> 16 & 255;
+    var green = bigInteger >> 8 & 255;
+    var blue = bigInteger & 255;
+    returnData = [red, green, blue];
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
 

@@ -689,10 +689,14 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
-  let inputDataLength = inputData.length.toString();
-  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
-  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
-  returnData = inputData.substring(number - 1, number);
+  if (!inputData) {
+	  returnData = '';
+  } else {
+	  let inputDataLength = inputData.length.toString();
+	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+	  returnData = inputData.substring(number - 1, number);
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -717,10 +721,14 @@ export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaDa
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
-  let inputDataLength = inputData.length.toString();
-  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
-  // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
-  returnData = inputData.substring(number - 1, number);
+  if (!inputData) {
+	  returnData = '';
+  } else {
+	  let inputDataLength = inputData.length.toString();
+	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+	  returnData = inputData.substring(number - 1, number);
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -745,22 +753,26 @@ export const randomlyGenerateNumberInRange1 = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = '';
-  let minimum = parseInt(inputData);
-  let maximum = parseInt(inputMetaData[0]);
-  let addOne = stringToBoolean(inputMetaData[1], '');
-  let addMinimum = stringToBoolean(inputMetaData[2], '');
-  if (addOne === true) {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1));
-    }
+  if (!inputData &amp;&amp; !inputMetaData) {
+	  returnData = '';
   } else {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum));
-    }
+	  let minimum = parseInt(inputData);
+	  let maximum = parseInt(inputMetaData[0]);
+	  let addOne = stringToBoolean(inputMetaData[1], '');
+	  let addMinimum = stringToBoolean(inputMetaData[2], '');
+	  if (addOne === true) {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1));
+		}
+	  } else {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum));
+		}
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -787,22 +799,26 @@ export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  let minimum = parseInt(inputData);
-  let maximum = parseInt(inputMetaData[0]);
-  let addOne = stringToBoolean(inputMetaData[1]);
-  let addMinimum = stringToBoolean(inputMetaData[2]);
-  if (addOne === true) {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1));
-    }
+  if (!inputData &amp;&amp; !inputMetaData) {
+	  returnData = '';
   } else {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum));
-    }
+	  let minimum = parseInt(inputData);
+	  let maximum = parseInt(inputMetaData[0]);
+	  let addOne = stringToBoolean(inputMetaData[1]);
+	  let addMinimum = stringToBoolean(inputMetaData[2]);
+	  if (addOne === true) {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1));
+		}
+	  } else {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum));
+		}
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1011,13 +1027,17 @@ export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  let number = parseInt(inputData);
-  number--;
-  // console.log('number is: ' + number.toString(10));
-  if (number > 25 || number &lt; 0) {
-    returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+  if (!inputData) {
+	  returnData = '';
   } else {
-    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+	  let number = parseInt(inputData);
+	  number--;
+	  // console.log('number is: ' + number.toString(10));
+	  if (number > 25 || number &lt; 0) {
+		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+	  } else {
+		returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1039,13 +1059,17 @@ export const convertNumberToLowerCaseLetter = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  let number = parseInt(inputData);
-  number--;
-  // console.log('number is: ' + number.toString(10));
-  if (number > 25 || number &lt; 0) {
-    returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+  if (!inputData) {
+	  returnData = '';
   } else {
-    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+	  let number = parseInt(inputData);
+	  number--;
+	  // console.log('number is: ' + number.toString(10));
+	  if (number > 25 || number &lt; 0) {
+		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+	  } else {
+		returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1061,13 +1085,13 @@ export const convertNumberToLowerCaseLetter = function(inputData, inputMetaData)
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Dec 22 2020 15:38:59 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jan 04 2021 09:31:59 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

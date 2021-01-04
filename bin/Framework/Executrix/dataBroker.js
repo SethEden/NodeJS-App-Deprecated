@@ -369,6 +369,110 @@ function processCsvData(data, contextName) {
 // };
 
 /**
+ * @function setupDataStorage
+ * @description Does the initial setup of data storage on the D data structure.
+ * @return {void} Nothing to return.
+ * @author Seth Hollingsead
+ * @date 2020/12/28
+ */
+
+function setupDataStorage() {
+  var functionName = storeData.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  D[s.cDataStorage] = {};
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
+ * @function storeData
+ * @description Stores some data in a data storage hive on the D data structure, under a caller specified sub-data storage hive name.
+ * @param {string} dataStorageContextName The sub-data storage hive under-which the data should be stored.
+ * @return {boolean} A True or False to indicate if the data storage was successfull or not.
+ * @author Seth Hollingsead
+ * @date 2020/12/28
+ */
+
+function storeData(dataStorageContextName, dataToStore) {
+  var functionName = storeData.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dataStorageContextName is: ' + dataStorageContextName);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dataToStore is: ' + JSON.stringify(dataToStore));
+
+  var returnData = false;
+  D[s.cDataStorage][dataStorageContextName] = {};
+  D[s.cDataStorage][dataStorageContextName] = dataToStore;
+  returnData = true;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+}
+
+;
+/**
+ * @function getData
+ * @description Gets some data from a caller specified sub-data storage hive name.
+ * @param {string} dataStorageContextName The sub-data storage hive which should be retrieved.
+ * @return {object} The data that is found, if any at the specified location on the data storage hive.
+ * @author Seth Hollingsead
+ * @date 2020/12/28
+ */
+
+function getData(dataStorageContextName) {
+  var functionName = storeData.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dataStorageContextName is: ' + dataStorageContextName);
+
+  var returnData = false;
+
+  if (D[s.cDataStorage][dataStorageContextName] !== null && !!D[s.cDataStorage][dataStorageContextName]) {
+    returnData = D[s.cDataStorage][dataStorageContextName];
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+}
+
+;
+/**
+ * @function clearData
+ * @description Clears out all of the data stored in the DataStorage data hive of the D data structure.
+ * @param {string} dataStorageContextName (OPTIONAL) The sub-data storage hive which should be cleared.
+ * @return {void} Nothing to return.
+ * @author Seth Hollingsead
+ * @date 2020/12/29
+ */
+
+function clearData(dataStorageContextName) {
+  var functionName = clearData.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  if (D[s.cDataStorage][dataStorageContextName] !== null && !!D[s.cDataStorage][dataStorageContextName] && dataStorageContextName !== '') {
+    D[s.cDataStorage][dataStorageContextName] = {};
+  } else {
+    D[s.cDataStorage] = {};
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
+/**
  * @function getDataCatagoryFromContextName
  * @description Gets the data catagory, give the context name.
  * @param {string} contextName The cotext name which will be something like Application_xxxx or Script_nnnn or Command_yyyy
@@ -797,6 +901,10 @@ var _default = {
   loadAllCsvData: loadAllCsvData,
   loadAllXmlData: loadAllXmlData,
   processCsvData: processCsvData,
+  setupDataStorage: setupDataStorage,
+  storeData: storeData,
+  getData: getData,
+  clearData: clearData,
   initializeConstantsValidationData: initializeConstantsValidationData
 };
 exports["default"] = _default;

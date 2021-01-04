@@ -38,31 +38,32 @@ export const hex2rgbConversion = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData;
   if (!inputData) {
-    return false;
+    returnData = false;
+  } else {
+    // A few different ways to implement this business rule, see link above.
+    // Personally I like the version that doesn't have a big ugly regular expression that is impossible to understand and debug.
+    // But that is just a personal/professional opinion,
+    // I am sure others have their own reasons to choose the regular expression technique,
+    // perhaps performance constraints, etc...
+    // I am including the alternate algorthim below as reference in case someone ever wants/needs it,
+    // as an alternative to the below implementation.
+
+    // function hexToRgb(hex) {
+    //   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    //   return result ? {
+    //     r: parseInt(result[1], 16),
+    //     g: parseInt(result[2], 16),
+    //     b: parseInt(result[3], 16)
+    //   } : null;
+    // }
+
+    let bigInteger = parseInt(inputData, 16);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'bigInteger is: ' + bigInteger);
+    let red = (bigInteger >> 16) & 255;
+    let green = (bigInteger >> 8) & 255;
+    let blue = bigInteger & 255;
+    returnData = [red, green, blue];
   }
-  // A few different ways to implement this business rule, see link above.
-  // Personally I like the version that doesn't have a big ugly regular expression that is impossible to understand and debug.
-  // But that is just a personal/professional opinion,
-  // I am sure others have their own reasons to choose the regular expression technique,
-  // perhaps performance constraints, etc...
-  // I am including the alternate algorthim below as reference in case someone ever wants/needs it,
-  // as an alternative to the below implementation.
-
-  // function hexToRgb(hex) {
-  //   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  //   return result ? {
-  //     r: parseInt(result[1], 16),
-  //     g: parseInt(result[2], 16),
-  //     b: parseInt(result[3], 16)
-  //   } : null;
-  // }
-
-  let bigInteger = parseInt(inputData, 16);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'bigInteger is: ' + bigInteger);
-  let red = (bigInteger >> 16) & 255;
-  let green = (bigInteger >> 8) & 255;
-  let blue = bigInteger & 255;
-  returnData = [red, green, blue];
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

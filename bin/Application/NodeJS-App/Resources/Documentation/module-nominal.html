@@ -231,6 +231,8 @@
         
             <li><a href="module-fileBroker.html">module:fileBroker</a></li>
         
+            <li><a href="module-dataBroker.html">module:dataBroker</a></li>
+        
             <li><a href="module-commandBroker.html">module:commandBroker</a></li>
         
             <li><a href="module-ruleBroker.html">module:ruleBroker</a></li>
@@ -414,7 +416,7 @@ inputData[0] === 'about'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line115">line 115</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -472,7 +474,7 @@ inputData[0] === 'about'</p></td>
     
 
     
-    <h4 class="name" id="~businessRule"><span class="type-signature">(inner) </span>businessRule<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~businessRule"><span class="type-signature">(inner) </span>businessRule<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -616,7 +618,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line405">line 405</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line426">line 426</a>
     </li></ul></dd>
     
 
@@ -656,7 +658,7 @@ to call a series of business rules each with their own inputs.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -674,7 +676,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
 
     
-    <h4 class="name" id="~businessRulesMetrics"><span class="type-signature">(inner) </span>businessRulesMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~businessRulesMetrics"><span class="type-signature">(inner) </span>businessRulesMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -805,7 +807,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line583">line 583</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line604">line 604</a>
     </li></ul></dd>
     
 
@@ -833,6 +835,10 @@ to call a series of business rules each with their own inputs.</p></td>
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
 
 
 <dl>
@@ -841,7 +847,7 @@ to call a series of business rules each with their own inputs.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -859,7 +865,189 @@ to call a series of business rules each with their own inputs.</p></td>
     
 
     
-    <h4 class="name" id="~commandGenerator"><span class="type-signature">(inner) </span>commandGenerator<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~clearDataStorage"><span class="type-signature">(inner) </span>clearDataStorage<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Completely wipes out all the data stored in the DataStorage data hive of the D data structure.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>[description]</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>[description]</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line407">line 407</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~commandGenerator"><span class="type-signature">(inner) </span>commandGenerator<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -996,7 +1184,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line514">line 514</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line535">line 535</a>
     </li></ul></dd>
     
 
@@ -1036,7 +1224,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1054,7 +1242,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
 
     
-    <h4 class="name" id="~commandMetrics"><span class="type-signature">(inner) </span>commandMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~commandMetrics"><span class="type-signature">(inner) </span>commandMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -1185,7 +1373,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line655">line 655</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line676">line 676</a>
     </li></ul></dd>
     
 
@@ -1213,6 +1401,10 @@ inputData[2] === number of times to enqueue the above command string</p></td>
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
 
 
 <dl>
@@ -1221,7 +1413,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1377,7 +1569,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line285">line 285</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line287">line 287</a>
     </li></ul></dd>
     
 
@@ -1435,7 +1627,7 @@ inputData[n] === command string n</p></td>
     
 
     
-    <h4 class="name" id="~convertColors"><span class="type-signature">(inner) </span>convertColors<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~convertColors"><span class="type-signature">(inner) </span>convertColors<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -1566,7 +1758,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line727">line 727</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line748">line 748</a>
     </li></ul></dd>
     
 
@@ -1594,6 +1786,10 @@ inputData[n] === command string n</p></td>
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
 
 
 <dl>
@@ -1602,7 +1798,7 @@ inputData[n] === command string n</p></td>
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -1751,7 +1947,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line173">line 173</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -1809,7 +2005,7 @@ inputData[n] === command string n</p></td>
     
 
     
-    <h4 class="name" id="~echoCommand"><span class="type-signature">(inner) </span>echoCommand<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~echoCommand"><span class="type-signature">(inner) </span>echoCommand<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -1941,7 +2137,7 @@ inputData[0] === 'echoCommand'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line47">line 47</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -1970,7 +2166,7 @@ inputData[0] === 'echoCommand'</p></td>
 
         
 <div class="param-desc">
-    <p>The same as the input string.</p>
+    <p>True to indicate that the application should not exit.</p>
 </div>
 
 
@@ -1981,7 +2177,7 @@ inputData[0] === 'echoCommand'</p></td>
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2131,7 +2327,7 @@ inputData[0] === 'exit'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line72">line 72</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line74">line 74</a>
     </li></ul></dd>
     
 
@@ -2322,7 +2518,7 @@ inputData[0] = 'help'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line239">line 239</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line241">line 241</a>
     </li></ul></dd>
     
 
@@ -2515,7 +2711,7 @@ inputData[1] === 'true|false' (optional)</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line137">line 137</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line139">line 139</a>
     </li></ul></dd>
     
 
@@ -2573,7 +2769,7 @@ inputData[1] === 'true|false' (optional)</p></td>
     
 
     
-    <h4 class="name" id="~printDataHive"><span class="type-signature">(inner) </span>printDataHive<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~printDataHive"><span class="type-signature">(inner) </span>printDataHive<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -2710,7 +2906,7 @@ inputData[1] === dataHiveName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line374">line 374</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line376">line 376</a>
     </li></ul></dd>
     
 
@@ -2750,7 +2946,7 @@ inputData[1] === dataHiveName</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2903,7 +3099,7 @@ and save the resulting archive to the release folder.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line204">line 204</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -3275,7 +3471,7 @@ inputData[0] === 'version'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line93">line 93</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -3333,7 +3529,7 @@ inputData[0] === 'version'</p></td>
     
 
     
-    <h4 class="name" id="~workflow"><span class="type-signature">(inner) </span>workflow<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~workflow"><span class="type-signature">(inner) </span>workflow<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -3470,7 +3666,7 @@ inputData[1] === workflowName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line339">line 339</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line341">line 341</a>
     </li></ul></dd>
     
 
@@ -3510,7 +3706,7 @@ inputData[1] === workflowName</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -3661,7 +3857,7 @@ inputData[0] === 'workflowHelp'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line262">line 262</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line264">line 264</a>
     </li></ul></dd>
     
 
@@ -4097,7 +4293,7 @@ inputData[0] === 'about'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line115">line 115</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -4155,7 +4351,7 @@ inputData[0] === 'about'</p></td>
     
 
     
-    <h4 class="name" id="~businessRule"><span class="type-signature">(inner) </span>businessRule<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~businessRule"><span class="type-signature">(inner) </span>businessRule<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -4299,7 +4495,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line405">line 405</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line426">line 426</a>
     </li></ul></dd>
     
 
@@ -4339,7 +4535,7 @@ to call a series of business rules each with their own inputs.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -4357,7 +4553,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
 
     
-    <h4 class="name" id="~businessRulesMetrics"><span class="type-signature">(inner) </span>businessRulesMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~businessRulesMetrics"><span class="type-signature">(inner) </span>businessRulesMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -4488,7 +4684,7 @@ to call a series of business rules each with their own inputs.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line583">line 583</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line604">line 604</a>
     </li></ul></dd>
     
 
@@ -4516,6 +4712,10 @@ to call a series of business rules each with their own inputs.</p></td>
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
 
 
 <dl>
@@ -4524,7 +4724,7 @@ to call a series of business rules each with their own inputs.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -4542,7 +4742,189 @@ to call a series of business rules each with their own inputs.</p></td>
     
 
     
-    <h4 class="name" id="~commandGenerator"><span class="type-signature">(inner) </span>commandGenerator<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~clearDataStorage"><span class="type-signature">(inner) </span>clearDataStorage<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Completely wipes out all the data stored in the DataStorage data hive of the D data structure.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>[description]</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>[description]</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line407">line 407</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~commandGenerator"><span class="type-signature">(inner) </span>commandGenerator<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -4679,7 +5061,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line514">line 514</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line535">line 535</a>
     </li></ul></dd>
     
 
@@ -4719,7 +5101,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -4737,7 +5119,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
 
     
-    <h4 class="name" id="~commandMetrics"><span class="type-signature">(inner) </span>commandMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~commandMetrics"><span class="type-signature">(inner) </span>commandMetrics<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -4868,7 +5250,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line655">line 655</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line676">line 676</a>
     </li></ul></dd>
     
 
@@ -4896,6 +5278,10 @@ inputData[2] === number of times to enqueue the above command string</p></td>
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
 
 
 <dl>
@@ -4904,7 +5290,7 @@ inputData[2] === number of times to enqueue the above command string</p></td>
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -5060,7 +5446,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line285">line 285</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line287">line 287</a>
     </li></ul></dd>
     
 
@@ -5118,7 +5504,7 @@ inputData[n] === command string n</p></td>
     
 
     
-    <h4 class="name" id="~convertColors"><span class="type-signature">(inner) </span>convertColors<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~convertColors"><span class="type-signature">(inner) </span>convertColors<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -5249,7 +5635,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line727">line 727</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line748">line 748</a>
     </li></ul></dd>
     
 
@@ -5277,6 +5663,10 @@ inputData[n] === command string n</p></td>
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    <p>True to indicate that the application should not exit.</p>
+</div>
+
 
 
 <dl>
@@ -5285,7 +5675,7 @@ inputData[n] === command string n</p></td>
     </dt>
     <dd>
         
-<span class="param-type">void</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -5434,7 +5824,7 @@ inputData[n] === command string n</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line173">line 173</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line175">line 175</a>
     </li></ul></dd>
     
 
@@ -5492,7 +5882,7 @@ inputData[n] === command string n</p></td>
     
 
     
-    <h4 class="name" id="~echoCommand"><span class="type-signature">(inner) </span>echoCommand<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~echoCommand"><span class="type-signature">(inner) </span>echoCommand<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -5624,7 +6014,7 @@ inputData[0] === 'echoCommand'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line47">line 47</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line49">line 49</a>
     </li></ul></dd>
     
 
@@ -5653,7 +6043,7 @@ inputData[0] === 'echoCommand'</p></td>
 
         
 <div class="param-desc">
-    <p>The same as the input string.</p>
+    <p>True to indicate that the application should not exit.</p>
 </div>
 
 
@@ -5664,7 +6054,7 @@ inputData[0] === 'echoCommand'</p></td>
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -5814,7 +6204,7 @@ inputData[0] === 'exit'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line72">line 72</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line74">line 74</a>
     </li></ul></dd>
     
 
@@ -6005,7 +6395,7 @@ inputData[0] = 'help'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line239">line 239</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line241">line 241</a>
     </li></ul></dd>
     
 
@@ -6198,7 +6588,7 @@ inputData[1] === 'true|false' (optional)</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line137">line 137</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line139">line 139</a>
     </li></ul></dd>
     
 
@@ -6256,7 +6646,7 @@ inputData[1] === 'true|false' (optional)</p></td>
     
 
     
-    <h4 class="name" id="~printDataHive"><span class="type-signature">(inner) </span>printDataHive<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~printDataHive"><span class="type-signature">(inner) </span>printDataHive<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -6393,7 +6783,7 @@ inputData[1] === dataHiveName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line374">line 374</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line376">line 376</a>
     </li></ul></dd>
     
 
@@ -6433,7 +6823,7 @@ inputData[1] === dataHiveName</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -6586,7 +6976,7 @@ and save the resulting archive to the release folder.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line204">line 204</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -6958,7 +7348,7 @@ inputData[0] === 'version'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line93">line 93</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -7016,7 +7406,7 @@ inputData[0] === 'version'</p></td>
     
 
     
-    <h4 class="name" id="~workflow"><span class="type-signature">(inner) </span>workflow<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    <h4 class="name" id="~workflow"><span class="type-signature">(inner) </span>workflow<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -7153,7 +7543,7 @@ inputData[1] === workflowName</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line339">line 339</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line341">line 341</a>
     </li></ul></dd>
     
 
@@ -7193,7 +7583,7 @@ inputData[1] === workflowName</p></td>
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -7344,7 +7734,7 @@ inputData[0] === 'workflowHelp'</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line262">line 262</a>
+        <a href="Framework_CommandsBlob_Commands_nominal.js.html">Framework/CommandsBlob/Commands/nominal.js</a>, <a href="Framework_CommandsBlob_Commands_nominal.js.html#line264">line 264</a>
     </li></ul></dd>
     
 
@@ -7412,13 +7802,13 @@ inputData[0] === 'workflowHelp'</p></td>
 </div>
 
 <nav>
-    <h2><a href="index.html">NodeJS-App Documentation</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Dec 22 2020 15:38:59 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jan 04 2021 09:31:59 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

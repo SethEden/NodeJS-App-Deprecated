@@ -198,6 +198,9 @@ export const cStandardDeviation = w.cStandard + w.cDeviation; // StandardDeviati
 export const cHexValue = p.cHex + w.cValue; // HexValue
 export const cexportconst = w.cexport + b.cSpace + g.cconst; // export-const // With a space not a dash, but the validation code is looking for that exact string.
 export const cExportConst = w.cExport + b.cSpace + g.cConst; // Export Const
+export const cDataStorage = w.cData + w.cStorage; // DataStorage
+export const cSource1 = w.cSource + n.c1; // Source1
+export const cSource2 = w.cSource + n.c2; // Source2
 
 // Logging Constants
 export const cBEGIN_Function = w.cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + w.cFunction; // BEGIN %% Function
@@ -638,6 +641,8 @@ export const cparseSystemRootPath = w.cparse + w.cSystem + w.cRoot + w.cPath; //
 export const creplaceDoublePercentWithMessage = w.creplace + w.cDouble + w.cPercent + w.cWith + w.cMessage; // replaceDoublePercentWithMessage
 export const cremoveXnumberOfFoldersFromEndOfPath = w.cremove + b.cX + w.cnumber + b.cOf + w.cFolders + w.cFrom + w.cEnd + b.cOf + w.cPath; // removeXnumberOfFoldersFromEndOfPath
 export const cgetFirstTopLevelFolderFromPath = w.cget + n.cFirst + w.cTop + w.cLevel + w.cFolder + w.cFrom + w.cPath; // getFirstTopLevelFolderFromPath
+export const cloadDataFile = w.cload + w.cData + w.cFile; // loadDataFile
+export const cgetStoredData = w.cget + w.cStored + w.cData; // getStoredData
 export const cisOdd = b.cis + w.cOdd; // isOdd
 export const cisEven = b.cis + w.cEven; // isEven
 export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
@@ -742,6 +747,7 @@ export const cEchoCommand = cEcho + w.cCommand; // EchoCommand
 export const cworkflowHelp = w.cworkflow + w.cHelp; // workflowHelp
 export const ccommandSequencer = w.ccommand + w.cSequencer; // commandSequencer
 export const cprintDataHive = w.cprint + w.cData + w.cHive; // printDataHive
+export const cclearDataStorage = w.cclear + w.cData + w.cStorage; // clearDataStorage
 export const ccommandGenerator = w.ccommand + w.cGenerator; // commandGenerator
 export const cbusinessRulesMetrics = w.cbusiness + w.cRules + w.cMetrics; // businessRulesMetrics
 export const ccommandMetrics = w.ccommand + w.cMetrics; // commandMetrics

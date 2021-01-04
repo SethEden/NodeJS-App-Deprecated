@@ -271,6 +271,82 @@ function processCsvData(data, contextName) {
 // };
 
 /**
+ * @function setupDataStorage
+ * @description Does the initial setup of data storage on the D data structure.
+ * @return {void} Nothing to return.
+ * @author Seth Hollingsead
+ * @date 2020/12/28
+ */
+function setupDataStorage() {
+  let functionName = storeData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  D[s.cDataStorage] = {};
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
+ * @function storeData
+ * @description Stores some data in a data storage hive on the D data structure, under a caller specified sub-data storage hive name.
+ * @param {string} dataStorageContextName The sub-data storage hive under-which the data should be stored.
+ * @return {boolean} A True or False to indicate if the data storage was successfull or not.
+ * @author Seth Hollingsead
+ * @date 2020/12/28
+ */
+function storeData(dataStorageContextName, dataToStore) {
+  let functionName = storeData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataStorageContextName is: ' + dataStorageContextName);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToStore is: ' + JSON.stringify(dataToStore));
+  let returnData = false;
+  D[s.cDataStorage][dataStorageContextName] = {};
+  D[s.cDataStorage][dataStorageContextName] = dataToStore;
+  returnData = true;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getData
+ * @description Gets some data from a caller specified sub-data storage hive name.
+ * @param {string} dataStorageContextName The sub-data storage hive which should be retrieved.
+ * @return {object} The data that is found, if any at the specified location on the data storage hive.
+ * @author Seth Hollingsead
+ * @date 2020/12/28
+ */
+function getData(dataStorageContextName) {
+  let functionName = storeData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataStorageContextName is: ' + dataStorageContextName);
+  let returnData = false;
+  if (D[s.cDataStorage][dataStorageContextName] !== null && !!D[s.cDataStorage][dataStorageContextName]) {
+    returnData = D[s.cDataStorage][dataStorageContextName];
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function clearData
+ * @description Clears out all of the data stored in the DataStorage data hive of the D data structure.
+ * @param {string} dataStorageContextName (OPTIONAL) The sub-data storage hive which should be cleared.
+ * @return {void} Nothing to return.
+ * @author Seth Hollingsead
+ * @date 2020/12/29
+ */
+function clearData(dataStorageContextName) {
+  let functionName = clearData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  if (D[s.cDataStorage][dataStorageContextName] !== null && !!D[s.cDataStorage][dataStorageContextName] && dataStorageContextName !== '') {
+    D[s.cDataStorage][dataStorageContextName] = {};
+  } else {
+    D[s.cDataStorage] = {};
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
  * @function getDataCatagoryFromContextName
  * @description Gets the data catagory, give the context name.
  * @param {string} contextName The cotext name which will be something like Application_xxxx or Script_nnnn or Command_yyyy
@@ -599,5 +675,9 @@ export default {
   loadAllCsvData,
   loadAllXmlData,
   processCsvData,
+  setupDataStorage,
+  storeData,
+  getData,
+  clearData,
   initializeConstantsValidationData
 };

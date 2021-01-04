@@ -89,13 +89,22 @@ export const cenv = b.cen + b.cv; // env
 export const cEnv = b.cEn + b.cv; // Env
 export const cENV = b.cEN + b.cV; // ENV
 
-export const cDotCSV = b.cDot + ccsv; // .csv
+export const cDotcsv = b.cDot + ccsv; // .csv
+export const cDotCsv = b.cDot + cCsv; // .Csv
+export const cDotCSV = b.cDot + cCSV; // .CSV
 export const cDotCom = b.cDot + cCom; // .Com
-export const cDotZip = b.cDot + cZip; // .Zip
 export const cDotzip = b.cDot + czip; // .zip
+export const cDotZip = b.cDot + cZip; // .Zip
+export const cDotZIP = b.cDot + cZIP; // .ZIP
+export const cDottxt = b.cDot + ctxt; // .txt
 export const cDotTxt = b.cDot + cTxt; // .Txt
-export const cDotXml = b.cDot + cXml; // .Xml
+export const cDotTXT = b.cDot + cTXT; // .TXT
 export const cDotxml = b.cDot + cxml; // .xml
+export const cDotXml = b.cDot + cXml; // .Xml
+export const cDotXML = b.cDot + cXML; // .XML
+export const cDotjson = b.cDot + cjson; // .json
+export const cDotJson = b.cDot + cJson; // .Json
+export const cDotJSON = b.cDot + cJSON; // .JSON
 export const cascii = b.cas + b.cci + b.ci; // ascii
 
 // Time Formatting

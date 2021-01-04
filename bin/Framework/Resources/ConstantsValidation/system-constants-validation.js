@@ -732,6 +732,18 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cExportConst',
   Actual: s.cExportConst,
   Expected: 'Export Const'
+}, {
+  Name: 'cDataStorage',
+  Actual: s.cDataStorage,
+  Expected: 'DataStorage'
+}, {
+  Name: 'cSource1',
+  Actual: s.cSource1,
+  Expected: 'Source1'
+}, {
+  Name: 'cSource2',
+  Actual: s.cSource2,
+  Expected: 'Source2'
 }, // Logging Constants
 {
   Name: 'cBEGIN_Function',
@@ -2395,6 +2407,14 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cgetFirstTopLevelFolderFromPath,
   Expected: 'getFirstTopLevelFolderFromPath'
 }, {
+  Name: 'cloadDataFile',
+  Actual: s.cloadDataFile,
+  Expected: 'loadDataFile'
+}, {
+  Name: 'cgetStoredData',
+  Actual: s.cgetStoredData,
+  Expected: 'getStoredData'
+}, {
   Name: 'cisOdd',
   Actual: s.cisOdd,
   Expected: 'isOdd'
@@ -2755,6 +2775,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cprintDataHive',
   Actual: s.cprintDataHive,
   Expected: 'printDataHive'
+}, {
+  Name: 'cclearDataStorage',
+  Actual: s.cclearDataStorage,
+  Expected: 'clearDataStorage'
 }, {
   Name: 'ccommandGenerator',
   Actual: s.ccommandGenerator,

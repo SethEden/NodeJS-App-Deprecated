@@ -292,33 +292,69 @@ var genericConstantsValidation = [{
   Actual: g.cENV,
   Expected: 'ENV'
 }, {
+  Name: 'cDotcsv',
+  Actual: g.cDotcsv,
+  Expected: '.csv'
+}, {
+  Name: 'cDotCsv',
+  Actual: g.cDotCsv,
+  Expected: '.Csv'
+}, {
   Name: 'cDotCSV',
   Actual: g.cDotCSV,
-  Expected: '.csv'
+  Expected: '.CSV'
 }, {
   Name: 'cDotCom',
   Actual: g.cDotCom,
   Expected: '.Com'
 }, {
+  Name: 'cDotzip',
+  Actual: g.cDotzip,
+  Expected: '.zip'
+}, {
   Name: 'cDotZip',
   Actual: g.cDotZip,
   Expected: '.Zip'
 }, {
-  Name: 'cDotzip',
-  Actual: g.cDotzip,
-  Expected: '.zip'
+  Name: 'cDotZIP',
+  Actual: g.cDotZIP,
+  Expected: '.ZIP'
+}, {
+  Name: 'cDottxt',
+  Actual: g.cDottxt,
+  Expected: '.txt'
 }, {
   Name: 'cDotTxt',
   Actual: g.cDotTxt,
   Expected: '.Txt'
 }, {
-  Name: 'cDotXml',
-  Actual: g.cDotXml,
-  Expected: '.Xml'
+  Name: 'cDotTXT',
+  Actual: g.cDotTXT,
+  Expected: '.TXT'
 }, {
   Name: 'cDotxml',
   Actual: g.cDotxml,
   Expected: '.xml'
+}, {
+  Name: 'cDotXml',
+  Actual: g.cDotXml,
+  Expected: '.Xml'
+}, {
+  Name: 'cDotXML',
+  Actual: g.cDotXML,
+  Expected: '.XML'
+}, {
+  Name: 'cDotjson',
+  Actual: g.cDotjson,
+  Expected: '.json'
+}, {
+  Name: 'cDotJson',
+  Actual: g.cDotJson,
+  Expected: '.Json'
+}, {
+  Name: 'cDotJSON',
+  Actual: g.cDotJSON,
+  Expected: '.JSON'
 }, {
   Name: 'cascii',
   Actual: g.cascii,

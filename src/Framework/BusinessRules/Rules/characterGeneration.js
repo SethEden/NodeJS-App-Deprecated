@@ -661,10 +661,14 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
-  let inputDataLength = inputData.length.toString();
-  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
-  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
-  returnData = inputData.substring(number - 1, number);
+  if (!inputData) {
+	  returnData = '';
+  } else {
+	  let inputDataLength = inputData.length.toString();
+	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+	  returnData = inputData.substring(number - 1, number);
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -689,10 +693,14 @@ export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaDa
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
-  let inputDataLength = inputData.length.toString();
-  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
-  // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
-  returnData = inputData.substring(number - 1, number);
+  if (!inputData) {
+	  returnData = '';
+  } else {
+	  let inputDataLength = inputData.length.toString();
+	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+	  returnData = inputData.substring(number - 1, number);
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -717,22 +725,26 @@ export const randomlyGenerateNumberInRange1 = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = '';
-  let minimum = parseInt(inputData);
-  let maximum = parseInt(inputMetaData[0]);
-  let addOne = stringToBoolean(inputMetaData[1], '');
-  let addMinimum = stringToBoolean(inputMetaData[2], '');
-  if (addOne === true) {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1));
-    }
+  if (!inputData && !inputMetaData) {
+	  returnData = '';
   } else {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum));
-    }
+	  let minimum = parseInt(inputData);
+	  let maximum = parseInt(inputMetaData[0]);
+	  let addOne = stringToBoolean(inputMetaData[1], '');
+	  let addMinimum = stringToBoolean(inputMetaData[2], '');
+	  if (addOne === true) {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1));
+		}
+	  } else {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum));
+		}
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -759,22 +771,26 @@ export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  let minimum = parseInt(inputData);
-  let maximum = parseInt(inputMetaData[0]);
-  let addOne = stringToBoolean(inputMetaData[1]);
-  let addMinimum = stringToBoolean(inputMetaData[2]);
-  if (addOne === true) {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1));
-    }
+  if (!inputData && !inputMetaData) {
+	  returnData = '';
   } else {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum));
-    }
+	  let minimum = parseInt(inputData);
+	  let maximum = parseInt(inputMetaData[0]);
+	  let addOne = stringToBoolean(inputMetaData[1]);
+	  let addMinimum = stringToBoolean(inputMetaData[2]);
+	  if (addOne === true) {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum + 1));
+		}
+	  } else {
+		if (addMinimum === true) {
+		  returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+		} else {
+		  returnData = Math.floor(Math.random() * (maximum - minimum));
+		}
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -983,13 +999,17 @@ export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  let number = parseInt(inputData);
-  number--;
-  // console.log('number is: ' + number.toString(10));
-  if (number > 25 || number < 0) {
-    returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+  if (!inputData) {
+	  returnData = '';
   } else {
-    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+	  let number = parseInt(inputData);
+	  number--;
+	  // console.log('number is: ' + number.toString(10));
+	  if (number > 25 || number < 0) {
+		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+	  } else {
+		returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1011,13 +1031,17 @@ export const convertNumberToLowerCaseLetter = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  let number = parseInt(inputData);
-  number--;
-  // console.log('number is: ' + number.toString(10));
-  if (number > 25 || number < 0) {
-    returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+  if (!inputData) {
+	  returnData = '';
   } else {
-    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+	  let number = parseInt(inputData);
+	  number--;
+	  // console.log('number is: ' + number.toString(10));
+	  if (number > 25 || number < 0) {
+		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+	  } else {
+		returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

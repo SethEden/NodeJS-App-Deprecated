@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -16,6 +16,8 @@ var _commandBroker = _interopRequireDefault(require("../commandBroker"));
 var _ruleBroker = _interopRequireDefault(require("../../BusinessRules/ruleBroker"));
 
 var _fileBroker = _interopRequireDefault(require("../../Executrix/fileBroker"));
+
+var _dataBroker = _interopRequireDefault(require("../../Executrix/dataBroker"));
 
 var _workflowBroker = _interopRequireDefault(require("../../Executrix/workflowBroker"));
 
@@ -48,6 +50,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:configurator
  * @requires module:lexical
  * @requires module:fileBroker
+ * @requires module:dataBroker
  * @requires module:commandBroker
  * @requires module:ruleBroker
  * @requires module:workflowBroker
@@ -82,7 +85,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @param {array<boolean|string|integer>} inputData String that should be echoed.
  * inputData[0] === 'echoCommand'
  * @param {string} inputMetaData Not used for this business rule.
- * @return {string} The same as the input string.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/19
  */
@@ -508,7 +511,7 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
  * inputData[0] === 'workflow'
  * inputData[1] === workflowName
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/22
  */
@@ -553,7 +556,7 @@ var workflow = function workflow(inputData, inputMetaData) {
  * inputData[0] === 'printDataHive'
  * inputData[1] === dataHiveName
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/22
  */
@@ -585,6 +588,36 @@ var printDataHive = function printDataHive(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function clearDataStorage
+ * @description Completely wipes out all the data stored in the DataStorage data hive of the D data structure.
+ * @param {string} inputData     [description]
+ * @param {string} inputMetaData [description]
+ * @return {boolean} True to indicate that the application should not exit.
+ */
+
+
+exports.printDataHive = printDataHive;
+
+var clearDataStorage = function clearDataStorage(inputData, inputMetaData) {
+  var functionName = s.cclearDataStorage;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  _dataBroker["default"].clearData('');
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function businessRule
  * @description Executes a user specified business rule with some input.
  * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
@@ -602,13 +635,13 @@ var printDataHive = function printDataHive(inputData, inputMetaData) {
  * Then the user should use the command sequencer in combination with this function
  * to call a series of business rules each with their own inputs.
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/23
  */
 
 
-exports.printDataHive = printDataHive;
+exports.clearDataStorage = clearDataStorage;
 
 var businessRule = function businessRule(inputData, inputMetaData) {
   var functionName = s.cbusinessRule;
@@ -740,7 +773,7 @@ var businessRule = function businessRule(inputData, inputMetaData) {
  * inputData[1] === command String
  * inputData[2] === number of times to enqueue the above command string
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/23
  */
@@ -827,7 +860,7 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
  * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
- * @return {void}
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/30
  */
@@ -934,7 +967,7 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
  * @description A command to compute command metrics for each of the commands that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
- * @return {void}
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/30
  */
@@ -1040,7 +1073,7 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
  * @description Converts all of the color hexidecimal values into RGB color values.
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
- * @return {void}
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/07/01
  * {@link: https://github.com/paularmstrong/normalizr/issues/15}

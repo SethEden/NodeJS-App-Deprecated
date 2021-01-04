@@ -11,6 +11,8 @@ var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.cons
 
 var g = _interopRequireWildcard(require("../../../Framework/Constants/generic.constants"));
 
+var n = _interopRequireWildcard(require("../../../Framework/Constants/numeric.constants"));
+
 var w = _interopRequireWildcard(require("../../../Framework/Constants/word.constants"));
 
 var s = _interopRequireWildcard(require("../../../Framework/Constants/system.constants"));

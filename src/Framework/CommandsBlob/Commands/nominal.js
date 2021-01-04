@@ -5,6 +5,7 @@
  * @requires module:configurator
  * @requires module:lexical
  * @requires module:fileBroker
+ * @requires module:dataBroker
  * @requires module:commandBroker
  * @requires module:ruleBroker
  * @requires module:workflowBroker
@@ -29,6 +30,7 @@ import lexical from '../../Executrix/lexical';
 import commandBroker from '../commandBroker';
 import ruleBroker from '../../BusinessRules/ruleBroker';
 import fileBroker from '../../Executrix/fileBroker';
+import dataBroker from '../../Executrix/dataBroker';
 import workflowBroker from '../../Executrix/workflowBroker';
 import queue from '../../Resources/queue';
 import stack from '../../Resources/stack';
@@ -50,7 +52,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
   * @param {array<boolean|string|integer>} inputData String that should be echoed.
   * inputData[0] === 'echoCommand'
   * @param {string} inputMetaData Not used for this business rule.
-  * @return {string} The same as the input string.
+  * @return {boolean} True to indicate that the application should not exit.
   * @author Seth Hollingsead
   * @date 2020/06/19
   */
@@ -347,7 +349,7 @@ export const commandSequencer = function(inputData, inputMetaData) {
  * inputData[0] === 'workflow'
  * inputData[1] === workflowName
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/22
  */
@@ -382,7 +384,7 @@ export const workflow = function(inputData, inputMetaData) {
  * inputData[0] === 'printDataHive'
  * inputData[1] === dataHiveName
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/22
  */
@@ -397,6 +399,25 @@ export const printDataHive = function(inputData, inputMetaData) {
   } else {
     console.log('contents of D are: ' + JSON.stringify(D));
   }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function clearDataStorage
+ * @description Completely wipes out all the data stored in the DataStorage data hive of the D data structure.
+ * @param {string} inputData     [description]
+ * @param {string} inputMetaData [description]
+ * @return {boolean} True to indicate that the application should not exit.
+ */
+export const clearDataStorage = function(inputData, inputMetaData) {
+  let functionName = s.cclearDataStorage;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  dataBroker.clearData('');
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -420,7 +441,7 @@ export const printDataHive = function(inputData, inputMetaData) {
  * Then the user should use the command sequencer in combination with this function
  * to call a series of business rules each with their own inputs.
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/23
  */
@@ -522,7 +543,7 @@ export const businessRule = function(inputData, inputMetaData) {
  * inputData[1] === command String
  * inputData[2] === number of times to enqueue the above command string
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the application should not exit.
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/23
  */
@@ -585,7 +606,7 @@ export const commandGenerator = function(inputData, inputMetaData) {
  * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
- * @return {void}
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/30
  */
@@ -657,7 +678,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
  * @description A command to compute command metrics for each of the commands that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
- * @return {void}
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/06/30
  */
@@ -729,7 +750,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
  * @description Converts all of the color hexidecimal values into RGB color values.
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
- * @return {void}
+ * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2020/07/01
  * {@link: https://github.com/paularmstrong/normalizr/issues/15}

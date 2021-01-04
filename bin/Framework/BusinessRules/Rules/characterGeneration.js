@@ -928,10 +928,15 @@ var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacte
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
   var cTrue = g.cTrue;
-  var inputDataLength = inputData.length.toString();
-  var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 
-  returnData = inputData.substring(number - 1, number);
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var inputDataLength = inputData.length.toString();
+    var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+
+    returnData = inputData.substring(number - 1, number);
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -966,10 +971,15 @@ var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacte
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
   var cTrue = g.cTrue;
-  var inputDataLength = inputData.length.toString();
-  var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The STring.length() above is a 1-base count, the STring.substring is zero-based.
 
-  returnData = inputData.substring(number - 1, number);
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var inputDataLength = inputData.length.toString();
+    var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+
+    returnData = inputData.substring(number - 1, number);
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1004,22 +1014,27 @@ var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inp
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = '';
-  var minimum = parseInt(inputData);
-  var maximum = parseInt(inputMetaData[0]);
-  var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1], '');
-  var addMinimum = (0, _stringParsing.stringToBoolean)(inputMetaData[2], '');
 
-  if (addOne === true) {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1));
-    }
+  if (!inputData && !inputMetaData) {
+    returnData = '';
   } else {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+    var minimum = parseInt(inputData);
+    var maximum = parseInt(inputMetaData[0]);
+    var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1], '');
+    var addMinimum = (0, _stringParsing.stringToBoolean)(inputMetaData[2], '');
+
+    if (addOne === true) {
+      if (addMinimum === true) {
+        returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+      } else {
+        returnData = Math.floor(Math.random() * (maximum - minimum + 1));
+      }
     } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum));
+      if (addMinimum === true) {
+        returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+      } else {
+        returnData = Math.floor(Math.random() * (maximum - minimum));
+      }
     }
   }
 
@@ -1057,22 +1072,27 @@ var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inp
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var minimum = parseInt(inputData);
-  var maximum = parseInt(inputMetaData[0]);
-  var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1]);
-  var addMinimum = (0, _stringParsing.stringToBoolean)(inputMetaData[2]);
 
-  if (addOne === true) {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum + 1));
-    }
+  if (!inputData && !inputMetaData) {
+    returnData = '';
   } else {
-    if (addMinimum === true) {
-      returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+    var minimum = parseInt(inputData);
+    var maximum = parseInt(inputMetaData[0]);
+    var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1]);
+    var addMinimum = (0, _stringParsing.stringToBoolean)(inputMetaData[2]);
+
+    if (addOne === true) {
+      if (addMinimum === true) {
+        returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+      } else {
+        returnData = Math.floor(Math.random() * (maximum - minimum + 1));
+      }
     } else {
-      returnData = Math.floor(Math.random() * (maximum - minimum));
+      if (addMinimum === true) {
+        returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+      } else {
+        returnData = Math.floor(Math.random() * (maximum - minimum));
+      }
     }
   }
 
@@ -1373,13 +1393,18 @@ var convertNumberToUpperCaseLetter = function convertNumberToUpperCaseLetter(inp
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var number = parseInt(inputData);
-  number--; // console.log('number is: ' + number.toString(10));
 
-  if (number > 25 || number < 0) {
-    returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+  if (!inputData) {
+    returnData = '';
   } else {
-    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+    var number = parseInt(inputData);
+    number--; // console.log('number is: ' + number.toString(10));
+
+    if (number > 25 || number < 0) {
+      returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+    } else {
+      returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1411,13 +1436,18 @@ var convertNumberToLowerCaseLetter = function convertNumberToLowerCaseLetter(inp
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var number = parseInt(inputData);
-  number--; // console.log('number is: ' + number.toString(10));
 
-  if (number > 25 || number < 0) {
-    returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+  if (!inputData) {
+    returnData = '';
   } else {
-    returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+    var number = parseInt(inputData);
+    number--; // console.log('number is: ' + number.toString(10));
+
+    if (number > 25 || number < 0) {
+      returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+    } else {
+      returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

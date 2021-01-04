@@ -134,6 +134,10 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.removeXnumberOfFoldersFromEndOfPath(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetFirstTopLevelFolderFromPath, function (inputData, inputMetaData) {
     return stringParsing.getFirstTopLevelFolderFromPath(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cloadDataFile, function (inputData, inputMetaData) {
+    return stringParsing.loadDataFile(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetStoredData, function (inputData, inputMetaData) {
+    return stringParsing.getStoredData(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisOdd, function (inputData, inputMetaData) {
     return stringParsing.isOdd(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisEven, function (inputData, inputMetaData) {

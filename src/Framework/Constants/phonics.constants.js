@@ -391,3 +391,5 @@ export const clop = b.clo + b.cp; // lop
 export const cLOP = b.cLO + b.cP; // LOP
 export const cdest = b.cde + b.cst; // dest
 export const cDest = b.cDe + b.cst; // Dest
+export const cstor = b.cst + b.cor; // stor
+export const cStor = b.cSt + b.cor; // Stor

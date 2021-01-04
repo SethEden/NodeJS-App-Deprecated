@@ -166,10 +166,15 @@ var generateRandomMixedCaseTextByLength1 = function generateRandomMixedCaseTextB
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -202,10 +207,15 @@ var generateRandomMixedCaseTextByLength2 = function generateRandomMixedCaseTextB
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -238,10 +248,15 @@ var generateRandomUpperCaseTextByLength1 = function generateRandomUpperCaseTextB
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -274,10 +289,15 @@ var generateRandomUpperCaseTextByLength2 = function generateRandomUpperCaseTextB
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -310,10 +330,15 @@ var generateRandomLowerCaseTextByLength1 = function generateRandomLowerCaseTextB
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -346,10 +371,15 @@ var generateRandomLowerCaseTextByLength2 = function generateRandomLowerCaseTextB
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -382,10 +412,15 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function generat
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -418,10 +453,15 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function generat
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -454,10 +494,15 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function generat
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -490,10 +535,15 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function generat
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+  if (!inputDAta) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -526,10 +576,15 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function generat
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -562,10 +617,15 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function generat
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -598,10 +658,15 @@ var generateRandomMixedCaseAlphaNumericCodeByLength1 = function generateRandomMi
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -634,10 +699,15 @@ var generateRandomMixedCaseAlphaNumericCodeByLength2 = function generateRandomMi
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -670,10 +740,15 @@ var generateRandomUpperCaseAlphaNumericCodeByLength1 = function generateRandomUp
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -706,10 +781,15 @@ var generateRandomUpperCaseAlphaNumericCodeByLength2 = function generateRandomUp
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -742,10 +822,15 @@ var generateRandomLowerCaseAlphaNumericCodeByLength1 = function generateRandomLo
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -778,10 +863,15 @@ var generateRandomLowerCaseAlphaNumericCodeByLength2 = function generateRandomLo
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -814,10 +904,15 @@ var generateRandomNumericCodeByLength1 = function generateRandomNumericCodeByLen
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -850,10 +945,15 @@ var generateRandomNumericCodeByLength2 = function generateRandomNumericCodeByLen
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -887,10 +987,15 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -924,10 +1029,15 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -961,10 +1071,15 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -998,10 +1113,15 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1035,10 +1155,15 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1072,10 +1197,15 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1108,10 +1238,15 @@ var generateRandomSpecialCharacterCodeByLength1 = function generateRandomSpecial
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1144,10 +1279,15 @@ var generateRandomSpecialCharacterCodeByLength2 = function generateRandomSpecial
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var numberOfCharactersToGenerate = parseInt(inputData);
 
-  for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-    returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
+  if (!inputData) {
+    returnData = '';
+  } else {
+    var numberOfCharactersToGenerate = parseInt(inputData);
+
+    for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
+      returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

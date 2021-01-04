@@ -72,6 +72,8 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.workflow(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.cprintDataHive, function (inputData, inputMetaData) {
     return nominalCommands.printDataHive(inputData, inputMetaData);
+  }), _defineProperty(_D$w$cCommands, s.cclearDataStorage, function (inputData, inputMetaData) {
+    return nominalCommands.clearDataStorage(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.cbusinessRule, function (inputData, inputMetaData) {
     return nominalCommands.businessRule(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.ccommandGenerator, function (inputData, inputMetaData) {
