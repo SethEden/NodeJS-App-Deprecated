@@ -536,7 +536,7 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function generat
 
   var returnData = '';
 
-  if (!inputDAta) {
+  if (!inputData) {
     returnData = '';
   } else {
     var numberOfCharactersToGenerate = parseInt(inputData);
