@@ -72,6 +72,9 @@ function bootStrapApplicationDeployment() {
     rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
   } else if (NODE_ENV === w.cproduction) {
     rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  } else {
+    console.log('WARNING: No .env file found! going to default to the DEVELOPMENT ENVIRONMENT!!!!!!!!!');
+    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
   } // console.log('rootPath is: ' + rootPath);
 
 

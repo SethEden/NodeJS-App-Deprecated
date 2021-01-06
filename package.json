@@ -1,6 +1,6 @@
 {
   "name": "NodeJS-App",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "./src/Application/NodeJS-App/application.js",
   "bin": "./bin/Application/NodeJS-App/application.js",
@@ -15,7 +15,7 @@
     "start": "babel-node src/Application/NodeJS-App/application.js",
     "docs": "jsdoc -c jsdoc.json",
     "clean": "trash ./src/Application/NodeJS-App/Resources/Documentation/**/*",
-    "metadata": "jq.exe -r \".|{name,version,description}\" package.json > src/Application/NodeJS-App/Resources/metaData.json"
+    "metadata": "node_modules\\node-jq\\bin\\jq.exe -r \".|{name,version,description}\" package.json > src/Application/NodeJS-App/Resources/metaData.json"
   },
   "repository": {
     "type": "git",
@@ -44,6 +44,7 @@
     "@babel/preset-env": "^7.9.6",
     "bestzip": ">=2.1.7",
     "jsdoc": "^3.6.4",
+    "node-jq": "^1.11.3",
     "standard-version": ">=8.0.1",
     "trash-cli": "^4.0.0"
   },
