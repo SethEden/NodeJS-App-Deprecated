@@ -521,6 +521,7 @@ export const cPageDataPath = w.cPage + cDataPath; // PageDataPath
 export const cWorkflowDataPath = w.cWorkflow + cDataPath; // WorkflowDataPath
 export const cKeywordsDataPath = w.cKeywords + cDataPath; // KeywordsDataPath
 export const cLocatorsDataPath = w.cLocators + cDataPath; // LocatorsDataPath
+export const cConstantsPath = w.cConstants + w.cPath;
 export const cConstantsPathActual = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cConstants + b.cForwardSlash; // src/Framework/Constants/
 export const cclientRulesLibrary = w.cclient + w.cRules + w.cLibrary; // clientRulesLibrary
 export const cCommandQueue = w.cCommand + w.cQueue; // CommandQueue
