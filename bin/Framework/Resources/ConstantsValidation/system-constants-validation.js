@@ -1964,6 +1964,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cLocatorsDataPath,
   Expected: 'LocatorsDataPath'
 }, {
+  Name: 'cConstantsPath',
+  Actual: s.cConstantsPath,
+  Expected: 'ConstantsPath'
+}, {
   Name: 'cConstantsPathActual',
   Actual: s.cConstantsPathActual,
   Expected: 'src/Framework/Constants/'

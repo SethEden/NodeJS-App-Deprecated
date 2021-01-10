@@ -521,6 +521,7 @@ export const systemConstantsValidation = [
    {Name: 'cWorkflowDataPath', Actual: s.cWorkflowDataPath, Expected: 'WorkflowDataPath'},
    {Name: 'cKeywordsDataPath', Actual: s.cKeywordsDataPath, Expected: 'KeywordsDataPath'},
    {Name: 'cLocatorsDataPath', Actual: s.cLocatorsDataPath, Expected: 'LocatorsDataPath'},
+   {Name: 'cConstantsPath', Actual: s.cConstantsPath, Expected: 'ConstantsPath'},
    {Name: 'cConstantsPathActual', Actual: s.cConstantsPathActual, Expected: 'src/Framework/Constants/'},
    {Name: 'cclientRulesLibrary', Actual: s.cclientRulesLibrary, Expected: 'clientRulesLibrary'},
    {Name: 'cCommandQueue', Actual: s.cCommandQueue, Expected: 'CommandQueue'},
