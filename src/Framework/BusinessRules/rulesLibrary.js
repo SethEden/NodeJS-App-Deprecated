@@ -85,6 +85,7 @@ export const initRulesLibrary = function() {
     [s.cgetFirstTopLevelFolderFromPath]: (inputData, inputMetaData) => stringParsing.getFirstTopLevelFolderFromPath(inputData, inputMetaData),
     [s.cloadDataFile]: (inputData, inputMetaData) => stringParsing.loadDataFile(inputData, inputMetaData),
     [s.cgetStoredData]: (inputData, inputMetaData) => stringParsing.getStoredData(inputData, inputMetaData),
+    [s.cstoreData]: (inputData, inputMetaData) => stringParsing.storeData(inputData, inputMetaData),
     [s.cisOdd]: (inputData, inputMetaData) => stringParsing.isOdd(inputData, inputMetaData),
     [s.cisEven]: (inputData, inputMetaData) => stringParsing.isEven(inputData, inputMetaData),
     [s.creplaceCharacterAtIndex]: (inputData, inputMetaData) => stringParsing.replaceCharacterAtIndex(inputData, inputMetaData),

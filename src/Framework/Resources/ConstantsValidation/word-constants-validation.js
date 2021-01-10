@@ -228,6 +228,7 @@ export const wordConstantsValidation = [
    {Name: 'cKeywords', Actual: w.cKeywords, Expected: 'Keywords'},
    {Name: 'cdata', Actual: w.cdata, Expected: 'data'},
    {Name: 'cData', Actual: w.cData, Expected: 'Data'},
+   {Name: 'cresults', Actual: w.cresults, Expected: 'results'},
    {Name: 'cResults', Actual: w.cResults, Expected: 'Results'},
    {Name: 'cwork', Actual: w.cwork, Expected: 'work'},
    {Name: 'cWork', Actual: w.cWork, Expected: 'Work'},
@@ -401,6 +402,8 @@ export const wordConstantsValidation = [
    {Name: 'cequal', Actual: w.cequal, Expected: 'equal'},
    {Name: 'cEqual', Actual: w.cEqual, Expected: 'Equal'},
    {Name: 'cEquals', Actual: w.cEquals, Expected: 'Equals'},
+   {Name: 'cequivalence', Actual: w.cequivalence, Expected: 'equivalence'},
+   {Name: 'cEquivalence', Actual: w.cEquivalence, Expected: 'Equivalence'},
    {Name: 'cRaw', Actual: w.cRaw, Expected: 'Raw'},
    {Name: 'cOperation', Actual: w.cOperation, Expected: 'Operation'},
    {Name: 'cOperating', Actual: w.cOperating, Expected: 'Operating'},
@@ -453,6 +456,7 @@ export const wordConstantsValidation = [
    {Name: 'cOnce', Actual: w.cOnce, Expected: 'Once'},
    {Name: 'cUpload', Actual: w.cUpload, Expected: 'Upload'},
    {Name: 'cStyle', Actual: w.cStyle, Expected: 'Style'},
+   {Name: 'cassert', Actual: w.cassert, Expected: 'assert'},
    {Name: 'cAssert', Actual: w.cAssert, Expected: 'Assert'},
    {Name: 'cless', Actual: w.cless, Expected: 'less'},
    {Name: 'cLess', Actual: w.cLess, Expected: 'Less'},
@@ -913,6 +917,8 @@ export const wordConstantsValidation = [
    {Name: 'cPRODUCTION', Actual: w.cPRODUCTION, Expected: 'PRODUCTION'},
    {Name: 'cstorage', Actual: w.cstorage, Expected: 'storage'},
    {Name: 'cStorage', Actual: w.cStorage, Expected: 'Storage'},
+   {Name: 'cstore', Actual: w.cstore, Expected: 'store'},
+   {Name: 'cStore', Actual: w.cStore, Expected: 'Store'},
    {Name: 'cstored', Actual: w.cstored, Expected: 'stored'},
    {Name: 'cStored', Actual: w.cStored, Expected: 'Stored'}
  ];

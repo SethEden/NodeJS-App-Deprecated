@@ -1687,6 +1687,32 @@ export const getStoredData = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function storeData
+ * @description Stores some data using the DataStorage data hive on the D data store.
+ * @param {string} inputData The context name that the data should be stored with.
+ * @param {string/integer/boolean/object/array} inputMetaData The data that should be stored.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/01/05
+ */
+export const storeData = function(inputData, inputMetaData) {
+  let functionName = s.cstoreData;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = false;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    dataBroker.storeData(inputData, inputMetaData);
+    returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function isOdd
  * @description Determines if the input value is an odd number or not an odd number.
  * @param {string} inputData The value that should be evaluated to determine if it is odd or not odd.

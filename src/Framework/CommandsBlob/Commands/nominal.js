@@ -204,6 +204,27 @@ export const deployApplication = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function deployMetaData
+ * @description Copies application meta-data from the source to the destination.
+ * @param {object} inputData The data that should be transfered to the output file & path.
+ * @param {string} inputMetaData The path the data should be written out to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the data was copied succesful or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/08
+ */
+export const deployMetaData = function(inputData, inputMetaData) {
+  let functionName = s.cdeployMetaData;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function releaseApplication
  * @description Executes the release of the application, part of the build-deploy-release cycle.
  * Scans the specified release folder path and determines if

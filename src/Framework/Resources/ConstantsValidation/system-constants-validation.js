@@ -643,6 +643,7 @@ export const systemConstantsValidation = [
    {Name: 'cgetFirstTopLevelFolderFromPath', Actual: s.cgetFirstTopLevelFolderFromPath, Expected: 'getFirstTopLevelFolderFromPath'},
    {Name: 'cloadDataFile', Actual: s.cloadDataFile, Expected: 'loadDataFile'},
    {Name: 'cgetStoredData', Actual: s.cgetStoredData, Expected: 'getStoredData'},
+   {Name: 'cstoreData', Actual: s.cstoreData, Expected: 'storeData'},
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},
    {Name: 'cisEven', Actual: s.cisEven, Expected: 'isEven'},
    {Name: 'creplaceCharacterAtIndex', Actual: s.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},

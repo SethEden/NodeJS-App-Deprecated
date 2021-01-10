@@ -55,6 +55,7 @@ function getXmlData(pathAndFilename) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
   let returnData;
+  pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let data = fs.readFileSync(pathAndFilename, {encoding: 'UTF8' });
   let xml;
   xml2js.parseString(data,
@@ -88,6 +89,7 @@ function getCsvData(pathAndFilename) {
   let functionName = getCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+  pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let data = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
   let parsedData = Papa.parse(data, {
     delimiter: ',',
@@ -114,6 +116,7 @@ function getJsonData(pathAndFilename) {
   let functionName = getJsonData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+  pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let rawData = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
   let parsedData = JSON.parse(rawData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE loading data from: ' + pathAndFilename);
@@ -137,6 +140,7 @@ function readDirectoryContents(directory) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
   let filesFound = [];
+  directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   readDirectorySynchronously(directory);
   filesFound = filesCollection; // Copy the data into a local variable first.
   filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
@@ -162,6 +166,7 @@ function readDirectorySynchronously(directory) {
   let functionName = readDirectorySynchronously.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
+  directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let currentDirectoryPath = directory;
   let currentDirectory = '';
   try {
@@ -181,11 +186,7 @@ function readDirectorySynchronously(directory) {
       // The ideal solution would be to detect which OS the code is being run on.
       // Then handle each case appropriately.
       let directoryPath = '';
-      try {
-        directoryPath = path.join(directory + '\\' + file);
-      } catch (e) {
-        directoryPath = path.join(directory + '/' + file);
-      }
+      directoryPath = path.resolve(directory + b.cForwardSlash + file);
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'directoryPath is: ' + directoryPath);
       readDirectorySynchronously(directoryPath);
     }
@@ -216,7 +217,9 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   let copySuccess = false;
   let rootPath = cleanRootPath();
   sourceFolder = rootPath + sourceFolder;
+  sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   destinationFolder = rootPath + destinationFolder
+  destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
   copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder);
@@ -263,7 +266,9 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   let releaseDateTimeStamp;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
   sourceFolder = rootPath + sourceFolder;
+  sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   destinationFolder = rootPath + destinationFolder
+  destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   releaseFiles = readDirectoryContents(sourceFolder);
   releasedArchiveFiles = readDirectoryContents(destinationFolder);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'released archive files list is: ' + JSON.stringify(releasedArchiveFiles));
@@ -319,14 +324,14 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
  * @date 2020/06/02
  */
 function cleanRootPath() {
-  let functionName = buildReleasePackage.name;
+  let functionName = cleanRootPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   let rootPath;
   rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
   let cleanRootPathRules = {};
   cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
-  rootPath = ruleBroker.processRules(rootPath, 4, cleanRootPathRules);
+  rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return rootPath;

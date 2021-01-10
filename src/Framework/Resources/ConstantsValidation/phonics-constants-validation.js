@@ -400,5 +400,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cdest', Actual: p.cdest, Expected: 'dest'},
    {Name: 'cDest', Actual: p.cDest, Expected: 'Dest'},
    {Name: 'cstor', Actual: p.cstor, Expected: 'stor'},
-   {Name: 'cStor', Actual: p.cStor, Expected: 'Stor'}
+   {Name: 'cStor', Actual: p.cStor, Expected: 'Stor'},
+   {Name: 'cequ', Actual: p.cequ, Expected: 'equ'},
+   {Name: 'cEqu', Actual: p.cEqu, Expected: 'Equ'}
  ];
