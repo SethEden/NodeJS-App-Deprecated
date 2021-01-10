@@ -97,6 +97,7 @@ export const phonicsConstantsValidation = [
    {Name: 'check', Actual: p.check, Expected: 'heck'},
    {Name: 'child', Actual: p.child, Expected: 'hild'},
    {Name: 'cibling', Actual: p.cibling, Expected: 'ibling'},
+   {Name: 'cttribute', Actual: p.cttribute, Expected: 'ttribute'},
    {Name: 'cttributes', Actual: p.cttributes, Expected: 'ttributes'},
    {Name: 'cisabled', Actual: p.cisabled, Expected: 'isabled'},
    {Name: 'cilter', Actual: p.cilter, Expected: 'ilter'},

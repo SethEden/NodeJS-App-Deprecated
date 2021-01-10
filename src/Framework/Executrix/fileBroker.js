@@ -126,6 +126,31 @@ function getJsonData(pathAndFilename) {
 };
 
 /**
+ * @function writeJsonData
+ * @description writes out JSON data to the specified file and path location, it will automatically over-write any existing file.
+ * @param {string} pathAndFilename The path and file name for the file that should have data written to it.
+ * @param {object} dataToWrite The data that should be written to the specified file.
+ * @return {boolean} True or False to indicate if the file was written out successfully or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+function writeJsonData(pathAndFilename, dataToWrite) {
+  let functionName = writeJsonData.name;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to write data to is: ' + pathAndFilename);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'data to write is: ' + JSON.stringify(dataToWrite));
+  let outputSuccess = false;
+  try {
+    fs.writeFileSync(pathAndFilename, JSON.stringify(dataToWrite, null, 2))
+    outputSuccess = true;
+  } catch (err) {
+    console.error('ERROR: ' + err)
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Data was written to the file: ' + outputSuccess);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
  * @function readDirectoryContents
  * @description This function acts as a wrapper for calling readDirectorySynchronously since that function is recursive.
  * Also that function doesn't technically return anything, it works with a global variable that
@@ -290,7 +315,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
     // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
     let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore + applicationName;
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName);
-    let fullReleasePath = destinationFolder + releaseFileName + g.cDotzip;
+    let fullReleasePath = path.resolve(destinationFolder + b.cForwardSlash + releaseFileName + g.cDotzip);
     zip({
       source: sourceFolder + '/*',
       destination: fullReleasePath
@@ -443,6 +468,7 @@ export default {
   getXmlData,
   getCsvData,
   getJsonData,
+  writeJsonData,
   readDirectoryContents,
   copyAllFilesAndFoldersFromFolderToFolder,
   buildReleasePackage,

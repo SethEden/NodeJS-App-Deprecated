@@ -581,6 +581,8 @@ export const wordConstantsValidation = [
    {Name: 'cChild', Actual: w.cChild, Expected: 'Child'},
    {Name: 'cfilter', Actual: w.cfilter, Expected: 'filter'},
    {Name: 'cFilter', Actual: w.cFilter, Expected: 'Filter'},
+   {Name: 'cattribute', Actual: w.cattribute, Expected: 'attribute'},
+   {Name: 'cAttribute', Actual: w.cAttribute, Expected: 'Attribute'},
    {Name: 'cattributes', Actual: w.cattributes, Expected: 'attributes'},
    {Name: 'cAttributes', Actual: w.cAttributes, Expected: 'Attributes'},
    {Name: 'cdisabled', Actual: w.cdisabled, Expected: 'disabled'},

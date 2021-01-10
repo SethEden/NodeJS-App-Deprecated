@@ -66,17 +66,20 @@ npm run start</p>
 <p>If you want to run from a production binary EXE or Mac/Linux binary you should:</p>
 <ol>
 <li>Open the .env file and change the NODE_ENV=production &amp; save the file.</li>
-<li>Enter the command: npm run deploy</li>
-<li>Enter the command (yes again): npm run deploy</li>
-<li>enter the command: npm run release</li>
+<li>Enter the command:
+npm run deploy</li>
+<li>Enter the command (yes again):
+npm run deploy</li>
+<li>enter the command:
+npm run release</li>
 <li>You will find binary files packaged in the root of the bin folder, and also delivered as part of the zip package in the Release folder.</li>
 </ol>
 <p>Simply run this exe from the command prompt and the application will start.</p>
 <p>There are two different modes the application can run. It is set to default to the interactive command prompt mode.
 If you open the file: ./src/Application/nodeJS-App/Resources/Configuration/Configuration.xml and look for the setting: ArgumentDrivenInterface change the value=&quot;False&quot; to value=&quot;True&quot; then the application will run in an argument driven mode.
 NOTE: You will need to run the Deploy-Build-Release workflow detailed above again if you wish to execute the binary file using the ArgumentDrivenInterface.</p>
-<p>NOTE: When you fun the npm run deploy command step above, it will output a validation of the constants system:
-BEGIN build.deployApplication Function
+<p>NOTE: When you fun the npm run deploy command step above, it will output a validation of the constants system:</p>
+<pre class="prettyprint source"><code>BEGIN build.deployApplication Function
 PASSED -- Basic Constants Phase 1 Validation -- PASSED
 PASSED -- Color Constants Phase 1 Validation -- PASSED
 PASSED -- Element Constants Phase 1 Validation -- PASSED
@@ -127,7 +130,8 @@ PASSED -- Units Constants Phase 2 Validation -- PASSED
 PASSED -- Word Constants Phase 2 Validation -- PASSED
 RELEASE APPLICATION
 Release was completed: true
-END build.releaseApplication Function</p>
+END build.releaseApplication Function
+</code></pre>
 <p>This is a static-code analysis tool that runs and validates the contents of the constants files in the code base of the application.
 If you launch the application you can actually run this validation yourself manually:
 validateConstants</p>
@@ -137,21 +141,24 @@ Second it will validate each constant to confirm that the constant resolves to t
 <p>I will assume you are still running in the ArgumentDrivenInterface value=&quot;False&quot; mode for this tutorial.
 Once you enter the command: npm run start
 The application will display the application name, version number and application description:</p>
-<p>BEGIN application.application Function
+<pre class="prettyprint source"><code>BEGIN application.application Function
 BEGIN main program loop
 BEGIN command parser
-.__   <strong>.   ______    _______   _______        __       <em><strong><strong><strong>.          ___      .</strong></strong></strong>   .</em></strong>___
-|  \ |  |  /  __  \  |       \ |   <strong><strong>|      |  |     /       |         /   \     |   _  \  |   _  <br>
-|   |  | |  |  |  | |  .--.  ||  |</strong>         |  |    |   (----<code>______ /  ^  \    |  |_)  | |  |_)  | |  .</code>  | |  |  |  | |  |  |  ||   <strong>|  .--.  |  |     \   \    |</strong></strong><em><em>/  /</em>\  \   |   <em><strong>/  |   <em><strong>/
-|  |\   | |  <code>--'  | |  '--'  ||  |____ |  </code>--'  | .----)   |         /  _____  \  |  |      |  |
-|</strong>| _</em>|  _</strong></em></em><em>/  |<em><strong><strong><strong>/ |</strong></strong></strong></em>| _</em>__<strong>/  |_______/         /</strong>/     __\ | _|      | _|</p>
-<p>1.4.0
-A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.</p>
-<blockquote></blockquote>
+.__   __.   ______    _______   _______        __       _______.          ___      .______   .______
+|  \ |  |  /  __  \  |       \ |   ____|      |  |     /       |         /   \     |   _  \  |   _  \
+|   \|  | |  |  |  | |  .--.  ||  |__         |  |    |   (----` ______ /  ^  \    |  |_)  | |  |_)  |
+|  . `  | |  |  |  | |  |  |  ||   __|  .--.  |  |     \   \    |______/  /_\  \   |   ___/  |   ___/
+|  |\   | |  `--'  | |  '--'  ||  |____ |  `--'  | .----)   |         /  _____  \  |  |      |  |
+|__| \__|  \______/  |_______/ |_______| \______/  |_______/         /__/     \__\ | _|      | _|
+
+1.4.0
+A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.
+>
+</code></pre>
 <p>The application is now running and awaiting input.
 If you are not sure what you can do, you can type the command: ? and press enter.
-You should see a table of commands:
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+You should see a table of commands:</p>
+<pre class="prettyprint source"><code>+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 � (index) �            Name            �                                                          Description                                                          �
 +---------+----------------------------+-------------------------------------------------------------------------------------------------------------------------------�
 �    0    �       'echoCommand'        �                                        'Echos back whatever is input to the command.'                                         �
@@ -174,8 +181,9 @@ You should see a table of commands:
 �   17    �      'convertColors'       �                         'Converts all the colors in the color library from hex values to RGB values.'                         �
 �   18    �    'validateConstants'     �                                'Validates all constants with a 2-phase verification process.'                                 �
 �   19    �    'customEchoCommand'     �                    'A client defined custom Echo command that echos back the input plus something extra.'                     �
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+</p>
-<p>One thing you can do is type: workflow? and press enter.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+One thing you can do is type: workflow? and press enter.
 This will display a list of all the workflows the application supports:
 +----------------------------------------------------------------------------------+
 � (index) �                                  Name                                  �
@@ -276,7 +284,8 @@ This will display a list of all the workflows the application supports:
 �   93    �                          'hex2rgbConversion'                           �
 �   94    �                              'workflow1'                               �
 �   95    �                              'workflow2'                               �
-+----------------------------------------------------------------------------------+</p>
++----------------------------------------------------------------------------------+
+</code></pre>
 <p>You can run any of these workflows simply by typing the command:
 workflow <Workflow-Name> and press enter.
 I recommend the following command:
@@ -284,8 +293,8 @@ workflow stringParsingCharacterAndStringGeneration</p>
 <p>This will run all of the business rules sequentially.
 After this you can run the command:
 businessRulesMetrics</p>
-<p>This will display a table of performance statistics from the workflow you just performed:
-+------------------------------------------------------------------------------------------------------------------+
+<p>This will display a table of performance statistics from the workflow you just performed:</p>
+<pre class="prettyprint source"><code>+------------------------------------------------------------------------------------------------------------------+
 � (index) �                                  Name                                  � Average �  StandardDeviation  �
 +---------+------------------------------------------------------------------------+---------+---------------------�
 �    0    �                           'stringToBoolean'                            �    0    �          0          �
@@ -363,35 +372,36 @@ businessRulesMetrics</p>
 �   72    �              'generateRandomSpecialCharacterCodeByLength'              �   4.7   � 0.45825756949558405 �
 �   73    �                          'generateValidEmail'                          �   5.7   � 0.5567764362830021  �
 �   74    �                         'generateInvalidEmail'                         �  3.25   �  3.031088913245535  �
-+------------------------------------------------------------------------------------------------------------------+</p>
++------------------------------------------------------------------------------------------------------------------+
+</code></pre>
 <h1>Exit / Quit</h1>
 <p>To exit the application simply type the command:
 x
 or X, or exit or Exit or quit</p>
 <p>You should see the following output on exit:</p>
-<blockquote>
-<p>x
+<pre class="prettyprint source"><code>>x
 END command parser
 END main program loop
-Exiting, Good bye, Have a nice day &amp; stay safe!
-END application.application Function</p>
-</blockquote>
+Exiting, Good bye, Have a nice day & stay safe!
+END application.application Function
+</code></pre>
 <h1>Debugging</h1>
 <p>If you want to or need to debug any part of the application, or you are building on some business rules and adding functions that you want to debug.
 Simply continue to follow the existing patterns in the code then add your functions to the Configuration.xml file with a color schema for your logs:</p>
-<ConfigurationElement Name="nominal.name" Type="Default" Value="False" Version="3"/>
-<ConfigurationElement Name="nominal.name@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
-<ConfigurationElement Name="nominal.name@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
-<ConfigurationElement Name="nominal.name@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
-<ConfigurationElement Name="nominal.name@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
-<ConfigurationElement Name="nominal.name@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="nominal.name@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="nominal.name@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="nominal.name@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+<pre class="prettyprint source"><code>&lt;ConfigurationElement Name=&quot;nominal.name&quot; Type=&quot;Default&quot; Value=&quot;False&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@ModuleFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Default&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@FunctionFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Default&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@MessageFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Default&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@DataFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Default&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@ModuleFontColor&quot; Type=&quot;Default&quot; Value=&quot;Blue&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@FunctionFontColor&quot; Type=&quot;Default&quot; Value=&quot;Blue&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@MessageFontColor&quot; Type=&quot;Default&quot; Value=&quot;Blue&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@DataFontColor&quot; Type=&quot;Default&quot; Value=&quot;Yellow&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@ModuleFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@FunctionFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@MessageFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;nominal.name@DataFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+</code></pre>
 <p>If you want to debug any function in the entire framework you can find it listed here, just change the Value=&quot;False&quot; to Value=&quot;True&quot; like so:
 From:
 <ConfigurationElement Name="nominal.name" Type="Default" Value="False" Version="3"/>
@@ -399,23 +409,26 @@ To:
 <ConfigurationElement Name="nominal.name" Type="Default" Value="True" Version="3"/></p>
 <p>Save the file, and if you are running from a binary file you will need to re-run the Deploy-Build-Release workflow detailed above.
 In any event, when you run the application again you should see this function logged every time it is called. In this case the function is a command.
-The output should look something like this on startup:
-BEGIN application.application Function
+The output should look something like this on startup:</p>
+<pre class="prettyprint source"><code>BEGIN application.application Function
 BEGIN main program loop
 BEGIN command parser
 BEGIN nominal.name Function
 inputData Is: [&quot;name&quot;,&quot;true&quot;]
 inputMetaData Is:
-.__   <strong>.   ______    _______   _______        __       <em><strong><strong><strong>.          ___      .</strong></strong></strong>   .</em></strong>___
-|  \ |  |  /  __  \  |       \ |   <strong><strong>|      |  |     /       |         /   \     |   _  \  |   _  <br>
-|   |  | |  |  |  | |  .--.  ||  |</strong>         |  |    |   (----<code>______ /  ^  \    |  |_)  | |  |_)  | |  .</code>  | |  |  |  | |  |  |  ||   <strong>|  .--.  |  |     \   \    |</strong></strong><em><em>/  /</em>\  \   |   <em><strong>/  |   <em><strong>/
-|  |\   | |  <code>--'  | |  '--'  ||  |____ |  </code>--'  | .----)   |         /  _____  \  |  |      |  |
-|</strong>| _</em>|  _</strong></em></em><em>/  |<em><strong><strong><strong>/ |</strong></strong></strong></em>| _</em>__<strong>/  |_______/         /</strong>/     __\ | _|      | _|</p>
-<p>returnData Is: true
+.__   __.   ______    _______   _______        __       _______.          ___      .______   .______
+|  \ |  |  /  __  \  |       \ |   ____|      |  |     /       |         /   \     |   _  \  |   _  \
+|   \|  | |  |  |  | |  .--.  ||  |__         |  |    |   (----` ______ /  ^  \    |  |_)  | |  |_)  |
+|  . `  | |  |  |  | |  |  |  ||   __|  .--.  |  |     \   \    |______/  /_\  \   |   ___/  |   ___/
+|  |\   | |  `--'  | |  '--'  ||  |____ |  `--'  | .----)   |         /  _____  \  |  |      |  |
+|__| \__|  \______/  |_______/ |_______| \______/  |_______/         /__/     \__\ | _|      | _|
+
+returnData Is: true
 END nominal.name Function
 1.4.0
-A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.</p>
-<blockquote></blockquote>
+A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.
+>
+</code></pre>
 <p>Notice this time we have the following output lines:
 BEGIN nominal.name Function
 inputData Is: [&quot;name&quot;,&quot;true&quot;]
@@ -427,30 +440,32 @@ END nominal.name Function</p>
 BEGIN nominal.name Function - is logged from when the execution of the function begins.
 inputData Is: [&quot;name&quot;,&quot;true&quot;] - logs the first input to the function.
 inputMetaData Is: - logs the second input to the function, in this case it's an empty string because we don't use the second input.</p>
-<p>returnData Is: true - logs the return from the function. In the case of commands they should always return true to indicate that the application should continue to execute, provided it is in the interactive mode and the ArgumentDrivenInterface configuration setting is set to False. The only time a command function should return false is if it is going to exit, which is exactly what the Exit command does.
-END nominal.name Function - logs the end of the function 1 line of code before the actual return/end of the function.</p>
+<pre><code>returnData Is: true - logs the return from the function. In the case of commands they should always return true to indicate that the application should continue to execute, provided it is in the interactive mode and the ArgumentDrivenInterface configuration setting is set to False. The only time a command function should return false is if it is going to exit, which is exactly what the Exit command does.
+END nominal.name Function - logs the end of the function 1 line of code before the actual return/end of the function.
+</code></pre>
 <p>You can also enable logging for an entire file/class of functions simply by changing the configuration setting for a particular file/class.
-Here you can see the configuration setting for the warden.js which acts as a central control manager for execution of the entire application/framework:
-<ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
-<ConfigurationElement Name="warden@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
-<ConfigurationElement Name="warden@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
-<ConfigurationElement Name="warden@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
-<ConfigurationElement Name="warden@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
-<ConfigurationElement Name="warden@ModuleFontColor" Type="Default" Value="Red" Version="3"/>
-<ConfigurationElement Name="warden@FunctionFontColor" Type="Default" Value="Red" Version="3"/>
-<ConfigurationElement Name="warden@MessageFontColor" Type="Default" Value="Red" Version="3"/>
-<ConfigurationElement Name="warden@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
-<ConfigurationElement Name="warden@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="warden@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="warden@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="warden@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/></p>
+Here you can see the configuration setting for the warden.js which acts as a central control manager for execution of the entire application/framework:</p>
+<pre class="prettyprint source"><code>&lt;ConfigurationElement Name=&quot;warden&quot; Type=&quot;Default&quot; Value=&quot;False&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@ModuleFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Bold|Underline&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@FunctionFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Bold|Underline&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@MessageFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Underline&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@DataFontStyle&quot; Type=&quot;Default&quot; Value=&quot;Bold&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@ModuleFontColor&quot; Type=&quot;Default&quot; Value=&quot;Red&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@FunctionFontColor&quot; Type=&quot;Default&quot; Value=&quot;Red&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@MessageFontColor&quot; Type=&quot;Default&quot; Value=&quot;Red&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@DataFontColor&quot; Type=&quot;Default&quot; Value=&quot;Yellow&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@ModuleFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@FunctionFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@MessageFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+&lt;ConfigurationElement Name=&quot;warden@DataFontBackgroundColor&quot; Type=&quot;Default&quot; Value=&quot;Black&quot; Version=&quot;3&quot;/>
+</code></pre>
 <p>If I change the Value=&quot;False&quot; to Value=&quot;True&quot; such as: (NOTE: I have reverted the name debugging setting above for nominal.name, changed it back to &quot;False&quot;)
 From:
 <ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
 To:
 <ConfigurationElement Name="warden" Type="Default" Value="True" Version="3"/></p>
-<p>Save the file and then re-run the application the startup should log something like this:
-END warden.mergeClientCommands Function
+<p>Save the file and then re-run the application the startup should log something like this:</p>
+<pre class="prettyprint source"><code>END warden.mergeClientCommands Function
 BEGIN warden.loadCommandAliases Function
 systemCommandsAliasesPath is: src/Framework/Resources/Commands/
 clientCommandsAliasesPath is: /src/Application/nodeJS-App/Resources/Commands/
@@ -485,12 +500,14 @@ BEGIN warden.isCommandQueueEmpty Function
 returnValue is: false
 END warden.isCommandQueueEmpty Function
 BEGIN warden.processCommandQueue Function
-.__   <strong>.   ______    _______   _______        __       <em><strong><strong><strong>.          ___      .</strong></strong></strong>   .</em></strong>___
-|  \ |  |  /  __  \  |       \ |   <strong><strong>|      |  |     /       |         /   \     |   _  \  |   _  <br>
-|   |  | |  |  |  | |  .--.  ||  |</strong>         |  |    |   (----<code>______ /  ^  \    |  |_)  | |  |_)  | |  .</code>  | |  |  |  | |  |  |  ||   <strong>|  .--.  |  |     \   \    |</strong></strong><em><em>/  /</em>\  \   |   <em><strong>/  |   <em><strong>/
-|  |\   | |  <code>--'  | |  '--'  ||  |____ |  </code>--'  | .----)   |         /  _____  \  |  |      |  |
-|</strong>| _</em>|  _</strong></em></em><em>/  |<em><strong><strong><strong>/ |</strong></strong></strong></em>| _</em>__<strong>/  |_______/         /</strong>/     __\ | _|      | _|</p>
-<p>returnValue is: true
+.__   __.   ______    _______   _______        __       _______.          ___      .______   .______
+|  \ |  |  /  __  \  |       \ |   ____|      |  |     /       |         /   \     |   _  \  |   _  \
+|   \|  | |  |  |  | |  .--.  ||  |__         |  |    |   (----` ______ /  ^  \    |  |_)  | |  |_)  |
+|  . `  | |  |  |  | |  |  |  ||   __|  .--.  |  |     \   \    |______/  /_\  \   |   ___/  |   ___/
+|  |\   | |  `--'  | |  '--'  ||  |____ |  `--'  | .----)   |         /  _____  \  |  |      |  |
+|__| \__|  \______/  |_______/ |_______| \______/  |_______/         /__/     \__\ | _|      | _|
+
+returnValue is: true
 END warden.processCommandQueue Function
 BEGIN warden.isCommandQueueEmpty Function
 returnValue is: false
@@ -508,8 +525,9 @@ returnValue is: true
 END warden.processCommandQueue Function
 BEGIN warden.isCommandQueueEmpty Function
 returnValue is: true
-END warden.isCommandQueueEmpty Function</p>
-<blockquote></blockquote>
+END warden.isCommandQueueEmpty Function
+>
+</code></pre>
 <p>Here you can see that a large number of functions have been called, as well as the inputs to some functions and also some of the variables that are being set and processed inside some functions. So if you want to see what is going on inside the application while it is running this is an excellent developers tool that allows you to control what is logged from where and when and even in what color/font-style.</p></article>
     </section>
 
@@ -527,7 +545,7 @@ END warden.isCommandQueueEmpty Function</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jan 06 2021 10:31:37 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jan 10 2021 15:17:14 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

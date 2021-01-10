@@ -1713,6 +1713,64 @@ export const storeData = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function getAttributeName
+ * @description Takes a string representation of a JSON attribute and gets the name (left hand assignment key).
+ * @param {string} inputData The string representation of the JSON attribute that should be parsed.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The name of the attribute.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+export const getAttributeName = function(inputData, inputMetaData) {
+  let functionName = s.cgetAttributeName;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = false;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    let attributeArray = inputData.split(b.cColon);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[0]);
+    returnData = replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
+    returnData = returnData.trim();
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getAttributeValue
+ * @description Takes a string representation of a JSON attribute and gets the value (Right hand assignment value).
+ * @param {string} inputData The string representation of the JSON attribute that should be parsed.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The value of the attribute.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+export const getAttributeValue = function(inputData, inputMetaData) {
+  let functionName = s.cgetAttributeValue;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = false;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    let attributeArray = inputData.split(b.cColon);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[1]);
+    returnData = replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
+    returnData = returnData.trim();
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function isOdd
  * @description Determines if the input value is an odd number or not an odd number.
  * @param {string} inputData The value that should be evaluated to determine if it is odd or not odd.

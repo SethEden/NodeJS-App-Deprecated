@@ -131,15 +131,16 @@ function saveRootPath(rootPath) {
   cleanedRootPath = fileBroker.cleanRootPath(rootPath);
   cleanedRootPath = path.resolve(cleanedRootPath);
   // console.log('set the cleaned root path as a configuration setting, cleanedRootPath is: ' + cleanedRootPath);
-  let applicationData = fileBroker.getJsonData(rootPath + b.cForwardSlash + w.cResources + b.cForwardSlash + s.cmetaDataDotJson);
+  let applicationMetaDataPathAndFilename = path.resolve(rootPath + b.cForwardSlash + w.cResources + b.cForwardSlash + s.cmetaDataDotJson);
+  let applicationData = fileBroker.getJsonData(applicationMetaDataPathAndFilename);
   // console.log('loaded application meta-data is: ' + JSON.stringify(applicationData));
   configurator.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
-  // console.log('set the application name as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationName, applicationData[w.cname]);
-  // console.log('set the application version number as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationVersionNumber, applicationData[w.cversion]);
-  // console.log('set the application description as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationDescription, applicationData[w.cdescription]);
+  // console.log('set the application name as a configuration setting: ' + applicationData[w.cName]);
+  configurator.setConfigurationSetting(s.cApplicationName, applicationData[w.cName]);
+  // console.log('set the application version number as a configuration setting: ' + applicationData[w.cVersion]);
+  configurator.setConfigurationSetting(s.cApplicationVersionNumber, applicationData[w.cVersion]);
+  // console.log('set the application description as a configuration setting: ' + applicationData[w.cDescription]);
+  configurator.setConfigurationSetting(s.cApplicationDescription, applicationData[w.cDescription]);
   if (configurator.getConfigurationSetting(s.cEnableConstantsValidation) === true) {
       chiefData.setupConstantsValidationData();
       let resolvedConstantsPathActual = path.resolve(cleanedRootPath + b.cForwardSlash + s.cConstantsPathActual)

@@ -99,7 +99,7 @@ function recount(node) {
  * @function rbTree
  * @description Builds a Red-Black binary search tree (RB-BST) with an optional custom compare method for comparing nodes.
  * @param {function} compare The function that should be used to compare node values.
- * @param {[type]} root The root node of the new tree.
+ * @param {object} root The root node of the new tree.
  * @return {void} Nothing to return.
  * @author Seth Hollingsead
  * @date 2020/01/06

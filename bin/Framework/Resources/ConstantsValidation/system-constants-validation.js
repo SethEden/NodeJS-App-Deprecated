@@ -657,6 +657,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cdeployApplication,
   Expected: 'deployApplication'
 }, {
+  Name: 'cdeployMetaData',
+  Actual: s.cdeployMetaData,
+  Expected: 'deployMetaData'
+}, {
   Name: 'creleaseApplication',
   Actual: s.creleaseApplication,
   Expected: 'releaseApplication'
@@ -2414,6 +2418,18 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cgetStoredData',
   Actual: s.cgetStoredData,
   Expected: 'getStoredData'
+}, {
+  Name: 'cstoreData',
+  Actual: s.cstoreData,
+  Expected: 'storeData'
+}, {
+  Name: 'cgetAttributeName',
+  Actual: s.cgetAttributeName,
+  Expected: 'getAttributeName'
+}, {
+  Name: 'cgetAttributeValue',
+  Actual: s.cgetAttributeValue,
+  Expected: 'getAttributeValue'
 }, {
   Name: 'cisOdd',
   Actual: s.cisOdd,

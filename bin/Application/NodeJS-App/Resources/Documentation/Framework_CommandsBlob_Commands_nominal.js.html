@@ -232,6 +232,78 @@ export const deployApplication = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function deployMetaData
+ * @description Copies application meta-data from the source to the destination.
+ * @param {object} inputData The data that should be transfered to the output file &amp; path.
+ * @param {string} inputMetaData The path the data should be written out to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the data was copied succesful or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/08
+ */
+export const deployMetaData = function(inputData, inputMetaData) {
+  let functionName = s.cdeployMetaData;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  returnData = true;
+  if (!inputData || inputData === null || inputData === undefined) {
+    returnData = false;
+  } else {
+    let aggregateCommandString = '';
+    let getAttributeNameRule = [];
+    let getAttributeValueRule = [];
+    getAttributeNameRule[0] = s.cgetAttributeName;
+    getAttributeValueRule[0] = s.cgetAttributeValue;
+    for (let i = 1; i &lt; inputData.length; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'inputData[i] is: ' + inputData[i]);
+      aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'aggregateCommandString is: ' + aggregateCommandString);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+    let metaDataParameters = aggregateCommandString.split(b.cComa);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters is: ' + metaDataParameters);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters length is: ' + metaDataParameters.length);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[0] is: ' + metaDataParameters[0]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[1] is: ' + metaDataParameters[1]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[2] is: ' + metaDataParameters[2]);
+    let appNameJsonString = metaDataParameters[0];
+    let appVersionJsonString = metaDataParameters[1];
+    let appDescriptionJsonString = metaDataParameters[2];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appName is: ' + appNameJsonString);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersion is: ' + appVersionJsonString);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescription is: ' + appDescriptionJsonString);
+
+    let appNameAttributeName = ruleBroker.processRules(appNameJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeName is: ' + appNameAttributeName);
+    let appVersionAttributeName = ruleBroker.processRules(appVersionJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeName is: ' + appVersionAttributeName);
+    let appDescriptionAttributeName = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeName is: ' + appDescriptionAttributeName);
+
+    let appNameAttributeValue = ruleBroker.processRules(appNameJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationName, appNameAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeValue is: ' + appNameAttributeValue);
+    let appVersionAttributeValue = ruleBroker.processRules(appVersionJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationVersionNumber, appVersionAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeValue is: ' + appVersionAttributeValue);
+    let appDescriptionAttributeValue = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationDescription, appDescriptionAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeValue is: ' + appDescriptionAttributeValue);
+
+    let metaDataOutput = {[appNameAttributeName]: appNameAttributeValue, [appVersionAttributeName]: appVersionAttributeValue, [appDescriptionAttributeName]: appDescriptionAttributeValue};
+    let metaDataPathAndFilename = configurator.getConfigurationSetting(s.cConfigurationPath);
+    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataPathAndFilename is: ' + metaDataPathAndFilename);
+    fileBroker.writeJsonData(metaDataPathAndFilename, metaDataOutput);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function releaseApplication
  * @description Executes the release of the application, part of the build-deploy-release cycle.
  * Scans the specified release folder path and determines if
@@ -826,7 +898,7 @@ export const convertColors = function(inputData, inputMetaData) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jan 06 2021 10:31:37 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jan 10 2021 15:17:14 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

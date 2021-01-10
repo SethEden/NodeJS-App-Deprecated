@@ -87,6 +87,8 @@ function getXmlData(pathAndFilename) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
 
   var returnData;
+  pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   var data = fs.readFileSync(pathAndFilename, {
     encoding: 'UTF8'
   });
@@ -133,6 +135,8 @@ function getCsvData(pathAndFilename) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
 
+  pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   var data = fs.readFileSync(pathAndFilename, {
     encoding: 'UTF8'
   });
@@ -170,6 +174,8 @@ function getJsonData(pathAndFilename) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
 
+  pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   var rawData = fs.readFileSync(pathAndFilename, {
     encoding: 'UTF8'
   });
@@ -182,6 +188,40 @@ function getJsonData(pathAndFilename) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
   return parsedData;
+}
+
+;
+/**
+ * @function writeJsonData
+ * @description writes out JSON data to the specified file and path location, it will automatically over-write any existing file.
+ * @param {string} pathAndFilename The path and file name for the file that should have data written to it.
+ * @param {object} dataToWrite The data that should be written to the specified file.
+ * @return {boolean} True or False to indicate if the file was written out successfully or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+
+function writeJsonData(pathAndFilename, dataToWrite) {
+  var functionName = writeJsonData.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'file and path to write data to is: ' + pathAndFilename);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'data to write is: ' + JSON.stringify(dataToWrite));
+
+  var outputSuccess = false;
+
+  try {
+    fs.writeFileSync(pathAndFilename, JSON.stringify(dataToWrite, null, 2));
+    outputSuccess = true;
+  } catch (err) {
+    console.error('ERROR: ' + err);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Data was written to the file: ' + outputSuccess);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 }
 
 ;
@@ -204,6 +244,8 @@ function readDirectoryContents(directory) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
 
   var filesFound = [];
+  directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   readDirectorySynchronously(directory);
   filesFound = filesCollection; // Copy the data into a local variable first.
 
@@ -239,6 +281,8 @@ function readDirectorySynchronously(directory) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
 
+  directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   var currentDirectoryPath = directory;
   var currentDirectory = '';
 
@@ -261,12 +305,7 @@ function readDirectorySynchronously(directory) {
       // The ideal solution would be to detect which OS the code is being run on.
       // Then handle each case appropriately.
       var directoryPath = '';
-
-      try {
-        directoryPath = path.join(directory + '\\' + file);
-      } catch (e) {
-        directoryPath = path.join(directory + '/' + file);
-      }
+      directoryPath = path.resolve(directory + b.cForwardSlash + file);
 
       _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'directoryPath is: ' + directoryPath);
 
@@ -306,7 +345,10 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   var copySuccess = false;
   var rootPath = cleanRootPath();
   sourceFolder = rootPath + sourceFolder;
+  sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   destinationFolder = rootPath + destinationFolder;
+  destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
 
@@ -370,7 +412,11 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
 
   sourceFolder = rootPath + sourceFolder;
+  sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   destinationFolder = rootPath + destinationFolder;
+  destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
   releaseFiles = readDirectoryContents(sourceFolder);
   releasedArchiveFiles = readDirectoryContents(destinationFolder);
 
@@ -404,7 +450,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
     _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName);
 
-    var fullReleasePath = destinationFolder + releaseFileName + g.cDotzip;
+    var fullReleasePath = path.resolve(destinationFolder + b.cForwardSlash + releaseFileName + g.cDotzip);
     zip({
       source: sourceFolder + '/*',
       destination: fullReleasePath
@@ -445,7 +491,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
  */
 
 function cleanRootPath() {
-  var functionName = buildReleasePackage.name;
+  var functionName = cleanRootPath.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -456,7 +502,7 @@ function cleanRootPath() {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
 
-  rootPath = _ruleBroker["default"].processRules(rootPath, 4, cleanRootPathRules);
+  rootPath = _ruleBroker["default"].processRules(rootPath, 3, cleanRootPathRules);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
 
@@ -589,6 +635,7 @@ var _default = {
   getXmlData: getXmlData,
   getCsvData: getCsvData,
   getJsonData: getJsonData,
+  writeJsonData: writeJsonData,
   readDirectoryContents: readDirectoryContents,
   copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder,
   buildReleasePackage: buildReleasePackage,
