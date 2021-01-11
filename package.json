@@ -44,7 +44,8 @@
     "bestzip": ">=2.1.7",
     "jsdoc": "^3.6.4",
     "standard-version": ">=8.0.1",
-    "trash-cli": "^4.0.0"
+    "trash-cli": "^4.0.0",
+    "pkg": ">=4.4.9"
   },
   "dependencies": {
     "chalk": "^4.0.0",
