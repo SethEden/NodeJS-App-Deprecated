@@ -761,6 +761,7 @@ export const cconvertColors = w.cconvert + w.cColors; // convertColors
 // Unit Test Constants commands in order
 // ********************************
 export const cvalidateConstants = w.cvalidate + w.cConstants; // validateConstants
+export const cvalidateCommandAliases = w.cvalidate + w.cCommand + w.cAliases; // validateCommandAliases
 
 // ********************************
 // System defined workflows

@@ -2822,6 +2822,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cvalidateConstants',
   Actual: s.cvalidateConstants,
   Expected: 'validateConstants'
+}, {
+  Name: 'cvalidateCommandAliases',
+  Actual: s.cvalidateCommandAliases,
+  Expected: 'validateCommandAliases'
 }, // ********************************
 // System defined workflows
 // ********************************

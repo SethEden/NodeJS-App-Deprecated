@@ -86,6 +86,37 @@ function application() {
   warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
   argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
   warden.enqueueCommand(s.cStartupWorkflow);
+
+  // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
+  // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
+  //
+  // console.log('argument driven execution');
+  // console.log(process.argv);
+  // console.log('command to execute is: ' + process.argv[2]);
+  // We need to strip off the preceeding "--" before we try to process it as an actual command.
+  // Also need to make sure that the command to execute actually contains the "--".
+  let commandToExecute = '';
+  // Make sure we execute any and all commands so the command queue is empty before
+  // we process the command args and add more commands to the command queue.
+  // Really this is about getting out the application name, version and about message.
+  while(warden.isCommandQueueEmpty() === false) {
+    commandResult = warden.processCommandQueue();
+  }
+
+  // NOW process the command args and add them to the command queue for execution.
+  if (!process.argv && process.argv.length > 0) {
+    if (process.argv[2].includes(b.cDash) === true ||
+    process.argv[2].includes(b.cForwardSlash) === true ||
+    process.argv[2].includes(b.cBackSlash) === true) {
+      commandToExecute = warden.executeBusinessRule(s.caggregateCommandArguments, process.argv, '');
+    }
+    warden.enqueueCommand(commandToExecute);
+    while(warden.isCommandQueueEmpty() === false) {
+      commandResult = warden.processCommandQueue();
+    }
+  }
+
+  // NOW the application can continue with the interactive interface if the flag was set to false.
   if (argumentDrivenInterface === false) {
     while(programRunning === true) {
       if (warden.isCommandQueueEmpty() === true) {
@@ -104,28 +135,6 @@ function application() {
         // console.log('contents of D are: ' + JSON.stringify(D));
         // console.log(result);
       }
-    }
-  } else { // argument driven interface / execution is handled here.
-    // console.log('argument driven execution');
-    // console.log(process.argv);
-    // console.log('command to execute is: ' + process.argv[2]);
-    // We need to strip off the preceeding "--" before we try to process it as an actual command.
-    // Also need to make sure that the command to execute actually contains the "--".
-    let commandToExecute = '';
-    // Make sure we execute any and all commands so the command queue is empty before
-    // we process the command args and add more commands to the command queue.
-    // Really this is about getting out the application name, version and about message.
-    while(warden.isCommandQueueEmpty() === false) {
-      commandResult = warden.processCommandQueue();
-    }
-
-    // NOW process the command args and add them to the command queue for execution.
-    if (process.argv[2].includes(b.cDash + b.cDash) === true) {
-      commandToExecute = warden.executeBusinessRule(s.caggregateCommandArguments, process.argv, '');
-    }
-    warden.enqueueCommand(commandToExecute);
-    while(warden.isCommandQueueEmpty() === false) {
-      commandResult = warden.processCommandQueue();
     }
   }
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

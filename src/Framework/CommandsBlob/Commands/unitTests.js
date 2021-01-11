@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Source: Framework/CommandsBlob/Commands/unitTestConstants.js</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-
-<body>
-
-<div id="main">
-
-    <h1 class="page-title">Source: Framework/CommandsBlob/Commands/unitTestConstants.js</h1>
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
-* @file nominal.js
-* @module nominal
-* @description Contains all of the commands to validate constants.
+/**
+* @file unitTests.js
+* @module unitTests
+* @description Contains all of the commands to validate various components of the system.
 * @requires module:configurator
 * @requires module:ruleBroker
 * @requires module:loggers
@@ -56,6 +28,8 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/09/11
  */
 export const validateConstants = function(inputData, inputMetaData) {
   let functionName = s.cvalidateConstants;
@@ -149,27 +123,27 @@ export const validateConstants = function(inputData, inputMetaData) {
   loggers.constantsValidationSummaryLog('Word Constants Phase 2 Validation', wordConstantsValidationPhase2Result);
 
   if (
-    basicConstantsValidationPhase1Result === true &amp;&amp;
-    colorConstantsValidationPhase1Result === true &amp;&amp;
-    elementConstantsValidationPhase1Result === true &amp;&amp;
-    genericConstantsValidationPhase1Result === true &amp;&amp;
-    isotopeConstantsValidationPhase1Result === true &amp;&amp;
-    numericConstantsValidationPhase1Result === true &amp;&amp;
-    phonicsConstantsValidationPhase1Result === true &amp;&amp;
-    shapeConstantsValidationPhase1Result === true &amp;&amp;
-    systemConstantsValidationPhase1Result === true &amp;&amp;
-    unitsConstantsValidationPhase1Result === true &amp;&amp;
-    wordConstantsValidationPhase1Result === true &amp;&amp;
-    basicConstantsValidationPhase2Result === true &amp;&amp;
-    colorConstantsValidationPhase2Result === true &amp;&amp;
-    elementConstantsValidationPhase2Result === true &amp;&amp;
-    genericConstantsValidationPhase2Result === true &amp;&amp;
-    isotopeConstantsValidationPhase2Result === true &amp;&amp;
-    numericConstantsValidationPhase2Result === true &amp;&amp;
-    phonicsConstantsValidationPhase2Result === true &amp;&amp;
-    shapeConstantsValidationPhase2Result === true &amp;&amp;
-    systemConstantsValidationPhase2Result === true &amp;&amp;
-    unitsConstantsValidationPhase2Result === true &amp;&amp;
+    basicConstantsValidationPhase1Result === true &&
+    colorConstantsValidationPhase1Result === true &&
+    elementConstantsValidationPhase1Result === true &&
+    genericConstantsValidationPhase1Result === true &&
+    isotopeConstantsValidationPhase1Result === true &&
+    numericConstantsValidationPhase1Result === true &&
+    phonicsConstantsValidationPhase1Result === true &&
+    shapeConstantsValidationPhase1Result === true &&
+    systemConstantsValidationPhase1Result === true &&
+    unitsConstantsValidationPhase1Result === true &&
+    wordConstantsValidationPhase1Result === true &&
+    basicConstantsValidationPhase2Result === true &&
+    colorConstantsValidationPhase2Result === true &&
+    elementConstantsValidationPhase2Result === true &&
+    genericConstantsValidationPhase2Result === true &&
+    isotopeConstantsValidationPhase2Result === true &&
+    numericConstantsValidationPhase2Result === true &&
+    phonicsConstantsValidationPhase2Result === true &&
+    shapeConstantsValidationPhase2Result === true &&
+    systemConstantsValidationPhase2Result === true &&
+    unitsConstantsValidationPhase2Result === true &&
     wordConstantsValidationPhase2Result === true
   ) {
     configurator.setConfigurationSetting(s.cPassAllConstantsValidations, true);
@@ -178,26 +152,21 @@ export const validateConstants = function(inputData, inputMetaData) {
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
-</code></pre>
-        </article>
-    </section>
 
+/**
+ * @function validateCommandAliases
+ * @description VAlidates all command aliases have no duplicates within a command, but also between commands.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/10/01
+ */
+export const validateCommandAliases = function(inputData, inputMetaData) {
+  let functionName = s.cvalidateCommandAliases;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jan 10 2021 15:33:15 GMT-0600 (Central Standard Time)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
-</body>
-</html>
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};

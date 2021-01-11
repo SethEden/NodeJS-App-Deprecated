@@ -9,7 +9,7 @@ exports.initCommandsLibrary = void 0;
 
 var nominalCommands = _interopRequireWildcard(require("./Commands/nominal"));
 
-var unitTestConstants = _interopRequireWildcard(require("./Commands/unitTestConstants"));
+var unitTests = _interopRequireWildcard(require("./Commands/unitTests"));
 
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
@@ -87,7 +87,9 @@ var initCommandsLibrary = function initCommandsLibrary() {
   }), _defineProperty(_D$w$cCommands, s.cconvertColors, function (inputData, inputMetaData) {
     return nominalCommands.convertColors(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.cvalidateConstants, function (inputData, inputMetaData) {
-    return unitTestConstants.validateConstants(inputData, inputMetaData);
+    return unitTests.validateConstants(inputData, inputMetaData);
+  }), _defineProperty(_D$w$cCommands, s.cvalidateCommandAliases, function (inputData, inputMetaData) {
+    return unitTests.validateCommandAliases(inputData, inputMetaData);
   }), _D$w$cCommands);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

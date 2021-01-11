@@ -761,6 +761,7 @@ export const systemConstantsValidation = [
    // Unit Test Constants commands in order
    // ********************************
    {Name: 'cvalidateConstants', Actual: s.cvalidateConstants, Expected: 'validateConstants'},
+   {Name: 'cvalidateCommandAliases', Actual: s.cvalidateCommandAliases, Expected: 'validateCommandAliases'},
 
    // ********************************
    // System defined workflows
