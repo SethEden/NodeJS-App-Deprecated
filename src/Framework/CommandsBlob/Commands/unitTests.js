@@ -167,6 +167,6 @@ export const validateCommandAliases = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
+  
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
