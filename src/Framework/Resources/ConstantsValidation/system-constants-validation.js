@@ -179,6 +179,7 @@ export const systemConstantsValidation = [
    {Name: 'cBrowserRefresh', Actual: s.cBrowserRefresh, Expected: 'BrowserRefresh'},
    {Name: 'cSpaceIsColonSpace', Actual: s.cSpaceIsColonSpace, Expected: ' Is: '},
    {Name: 'cdeployApplication', Actual: s.cdeployApplication, Expected: 'deployApplication'},
+   {Name: 'cdeployMetaData', Actual: s.cdeployMetaData, Expected: 'deployMetaData'},
    {Name: 'creleaseApplication', Actual: s.creleaseApplication, Expected: 'releaseApplication'},
    {Name: 'cbackground', Actual: s.cbackground, Expected: 'background'},
    {Name: 'cBackground', Actual: s.cBackground, Expected: 'Background'},
@@ -520,6 +521,7 @@ export const systemConstantsValidation = [
    {Name: 'cWorkflowDataPath', Actual: s.cWorkflowDataPath, Expected: 'WorkflowDataPath'},
    {Name: 'cKeywordsDataPath', Actual: s.cKeywordsDataPath, Expected: 'KeywordsDataPath'},
    {Name: 'cLocatorsDataPath', Actual: s.cLocatorsDataPath, Expected: 'LocatorsDataPath'},
+   {Name: 'cConstantsPath', Actual: s.cConstantsPath, Expected: 'ConstantsPath'},
    {Name: 'cConstantsPathActual', Actual: s.cConstantsPathActual, Expected: 'src/Framework/Constants/'},
    {Name: 'cclientRulesLibrary', Actual: s.cclientRulesLibrary, Expected: 'clientRulesLibrary'},
    {Name: 'cCommandQueue', Actual: s.cCommandQueue, Expected: 'CommandQueue'},
@@ -569,6 +571,7 @@ export const systemConstantsValidation = [
    {Name: 'cDisplaySummaryConstantsValidationPassMessages', Actual: s.cDisplaySummaryConstantsValidationPassMessages, Expected: 'DisplaySummaryConstantsValidationPassMessages'},
    {Name: 'cDisplaySummaryConstantsValidationFailMessages', Actual: s.cDisplaySummaryConstantsValidationFailMessages, Expected: 'DisplaySummaryConstantsValidationFailMessages'},
    {Name: 'cPassAllConstantsValidations', Actual: s.cPassAllConstantsValidations, Expected: 'PassAllConstantsValidations'},
+   {Name: 'cPassedAllCommandAliasesDuplicateChecks', Actual: s.cPassedAllCommandAliasesDuplicateChecks, Expected: 'PassedAllCommandAliasesDuplicateChecks'},
    {Name: 'cdeploymentCompleted', Actual: s.cdeploymentCompleted, Expected: 'deploymentCompleted'},
    {Name: 'creleaseCompleted', Actual: s.creleaseCompleted, Expected: 'releaseCompleted'},
 
@@ -634,6 +637,7 @@ export const systemConstantsValidation = [
    {Name: 'cdetermineSuggestedConstantsValidationLineOfCode', Actual: s.cdetermineSuggestedConstantsValidationLineOfCode, Expected: 'determineSuggestedConstantsValidationLineOfCode'},
    {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: s.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
    {Name: 'cvalidateConstantsDataValues', Actual: s.cvalidateConstantsDataValues, Expected: 'validateConstantsDataValues'},
+   {Name: 'ccountDuplicateCommandAliases', Actual: s.ccountDuplicateCommandAliases, Expected: 'countDuplicateCommandAliases'},
    {Name: 'cgetDataCatagoryFromDataContextName', Actual: s.cgetDataCatagoryFromDataContextName, Expected: 'getDataCatagoryFromDataContextName'},
    {Name: 'cgetDataCatagoryDetailNameFromDataContextName', Actual: s.cgetDataCatagoryDetailNameFromDataContextName, Expected: 'getDataCatagoryDetailNameFromDataContextName'},
    {Name: 'cgetKeywordNameFromDataContextName', Actual: s.cgetKeywordNameFromDataContextName, Expected: 'getKeywordNameFromDataContextName'},
@@ -643,6 +647,9 @@ export const systemConstantsValidation = [
    {Name: 'cgetFirstTopLevelFolderFromPath', Actual: s.cgetFirstTopLevelFolderFromPath, Expected: 'getFirstTopLevelFolderFromPath'},
    {Name: 'cloadDataFile', Actual: s.cloadDataFile, Expected: 'loadDataFile'},
    {Name: 'cgetStoredData', Actual: s.cgetStoredData, Expected: 'getStoredData'},
+   {Name: 'cstoreData', Actual: s.cstoreData, Expected: 'storeData'},
+   {Name: 'cgetAttributeName', Actual: s.cgetAttributeName, Expected: 'getAttributeName'},
+   {Name: 'cgetAttributeValue', Actual: s.cgetAttributeValue, Expected: 'getAttributeValue'},
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},
    {Name: 'cisEven', Actual: s.cisEven, Expected: 'isEven'},
    {Name: 'creplaceCharacterAtIndex', Actual: s.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},
@@ -756,6 +763,7 @@ export const systemConstantsValidation = [
    // Unit Test Constants commands in order
    // ********************************
    {Name: 'cvalidateConstants', Actual: s.cvalidateConstants, Expected: 'validateConstants'},
+   {Name: 'cvalidateCommandAliases', Actual: s.cvalidateCommandAliases, Expected: 'validateCommandAliases'},
 
    // ********************************
    // System defined workflows

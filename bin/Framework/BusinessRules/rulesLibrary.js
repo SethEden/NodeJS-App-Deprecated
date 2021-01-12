@@ -120,6 +120,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.validateConstantsDataValidationLineItemName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValues, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValues(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.ccountDuplicateCommandAliases, function (inputData, inputMetaData) {
+    return stringParsing.countDuplicateCommandAliases(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {
     return stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryDetailNameFromDataContextName, function (inputData, inputMetaData) {
@@ -138,6 +140,12 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.loadDataFile(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetStoredData, function (inputData, inputMetaData) {
     return stringParsing.getStoredData(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cstoreData, function (inputData, inputMetaData) {
+    return stringParsing.storeData(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetAttributeName, function (inputData, inputMetaData) {
+    return stringParsing.getAttributeName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetAttributeValue, function (inputData, inputMetaData) {
+    return stringParsing.getAttributeValue(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisOdd, function (inputData, inputMetaData) {
     return stringParsing.isOdd(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisEven, function (inputData, inputMetaData) {

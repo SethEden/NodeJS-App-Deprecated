@@ -1,11 +1,11 @@
 {
   "name": "NodeJS-App",
-  "version": "1.5.0",
+  "version": "1.5.4",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "./src/Application/NodeJS-App/application.js",
   "bin": "./bin/Application/NodeJS-App/application.js",
   "scripts": {
-    "build": "npm run metadata && babel src --out-dir bin",
+    "build": "babel src --out-dir bin",
     "deploy": "npm run build && npm run clean && npm run docs && babel-node src/Application/NodeJS-App/build.js",
     "release": "pkg package.json --out-path ./bin/",
     "predev": "npm run build && babel-node src/Application/NodeJS-App/build.js",
@@ -14,8 +14,7 @@
     "vers": "standard-version -m \"chore(release) version %s \"",
     "start": "babel-node src/Application/NodeJS-App/application.js",
     "docs": "jsdoc -c jsdoc.json",
-    "clean": "trash ./src/Application/NodeJS-App/Resources/Documentation/**/*",
-    "metadata": "node_modules\\node-jq\\bin\\jq.exe -r \".|{name,version,description}\" package.json > src/Application/NodeJS-App/Resources/metaData.json"
+    "clean": "trash ./src/Application/NodeJS-App/Resources/Documentation/**/*"
   },
   "repository": {
     "type": "git",
@@ -44,9 +43,9 @@
     "@babel/preset-env": "^7.9.6",
     "bestzip": ">=2.1.7",
     "jsdoc": "^3.6.4",
-    "node-jq": "^1.11.3",
     "standard-version": ">=8.0.1",
-    "trash-cli": "^4.0.0"
+    "trash-cli": "^4.0.0",
+    "pkg": ">=4.4.9"
   },
   "dependencies": {
     "chalk": "^4.0.0",

@@ -150,7 +150,11 @@ export const ccancel = b.cca + b.cnc + b.cel; // cancel
 export const cCancel = b.cCa + b.cnc + b.cel; // Cancel
 export const cconfirm = b.cco + b.cnf + b.cir + b.cm; // confirm
 export const cConfirm = b.cCo + b.cnf + b.cir + b.cm; // Confirm
-export const cAccount = b.cAc + b.cco + b.cun + b.ct; // Account
+export const ccount = b.cco + p.cunt; // count
+export const cCount = b.cCo + p.cunt; // Count
+export const ccounter = ccount + b.cer; // counter
+export const cCounter = cCount + b.cer; // Counter
+export const cAccount = b.cAc + ccount; // Account
 export const cHamburger = b.cHa + b.cmb + b.cur + b.cge + b.cr; // Hamburger
 export const cMe = b.cM + b.ce; // Me
 export const cMenu = cMe + b.cnu; // Menu
@@ -256,6 +260,7 @@ export const ckeywords = ckeyword + b.cs; // keywords
 export const cKeywords = cKeyword + b.cs; // Keywords
 export const cdata = b.cd + p.cata; // data
 export const cData = b.cD + p.cata; // Data
+export const cresults = b.cre + b.csu + b.clt + b.cs; // results
 export const cResults = b.cRe + b.csu + b.clt + b.cs; // Results
 export const cwork = b.cwo + b.crk; // work
 export const cWork = b.cWo + b.crk; // Work
@@ -381,10 +386,6 @@ export const clet = b.cle + b.ct; // let
 export const cLet = b.cLe + b.ct; // Let
 export const cLetter = cLet + b.ct + b.cer; // Letter
 export const cUpper = b.cUp + b.cp + b.cer; // Upper
-export const ccount = b.cco + p.cunt; // count
-export const cCount = b.cCo + p.cunt; // Count
-export const ccounter = ccount + b.cer; // counter
-export const cCounter = cCount + b.cer; // Counter
 export const crandom = b.cr + p.candom; // random
 export const cRandom = b.cR + p.candom; // Random
 export const crandomly = crandom + b.cly; // randomly
@@ -426,9 +427,11 @@ export const clibrary = b.cli + b.cbr + b.car + b.cy; // library
 export const cLibrary = b.cLi + b.cbr + b.car + b.cy; // Library
 export const ctable = b.cta + b.cbl + b.ce; // table
 export const cTable = b.cTa + b.cbl + b.ce; // Table
-export const cequal = b.ceq + b.cua + b.cl; // equal
-export const cEqual = b.cEq + b.cua + b.cl; // Equal
+export const cequal = p.cequ + b.cal; // equal
+export const cEqual = p.cEqu + b.cal; // Equal
 export const cEquals = cEqual + b.cs; // Equals
+export const cequivalence = p.cequ + b.ci + p.cval + p.cence; // equivalence
+export const cEquivalence = p.cEqu + b.ci + p.cval + p.cence; // Equivalence
 export const cRaw = b.cRa + b.cw; // Raw
 export const cOperation = p.cOperat + p.cion; // Operation
 export const cOperating = p.cOperat + p.cing; // Operating
@@ -481,6 +484,7 @@ export const cAfter = b.cAf + b.ct + b.cer; // After
 export const cOnce = b.cOn + b.cce; // Once
 export const cUpload = b.cUp + cload; // Upload
 export const cStyle = b.cSt + b.cyl + b.ce; // Style
+export const cassert = b.cas + b.cse + b.crt; // assert
 export const cAssert = b.cAs + b.cse + b.crt; // Assert
 export const cless = b.cl + p.cess; // less
 export const cLess = b.cL + p.cess; // Less
@@ -571,7 +575,10 @@ export const cIs = b.cIs; // Is
 export const cIS = b.cIS; // IS
 export const ccheck = b.cc + p.check; // check
 export const cCheck = b.cC + p.check; // Check
+export const cchecks = ccheck + b.cs; // checks
+export const cChecks = cCheck + b.cs; // Checks
 export const cchecked = ccheck + b.ced; // checked
+export const cChecked = cCheck + b.ced; // Checked
 export const celement = b.cel + b.ce + p.cment; // element
 export const cElement = b.cEl + b.ce + p.cment; // Element
 export const cElementName = cElement + cName; // ElementName
@@ -605,6 +612,8 @@ export const cchild = b.cc + p.child; // child
 export const cChild = b.cC + p.child; // Child
 export const cfilter = b.cf + p.cilter; // filter
 export const cFilter = b.cF + p.cilter; // Filter
+export const cattribute = b.ca + p.cttribute; // attribute
+export const cAttribute = b.cA + p.cttribute; // Attribute
 export const cattributes = b.ca + p.cttributes; // attributes
 export const cAttributes = b.cA + p.cttributes; // Attributes
 export const cdisabled = b.cd + p.cisabled; // disabled
@@ -877,6 +886,9 @@ export const cConversion = p.cCon + cversion; // Conversion
 export const cpass = b.cp + p.cass; // pass
 export const cPass = b.cP + p.cass; // Pass
 export const cPASS = b.cP + p.cASS; // PASS
+export const cpassed = cpass + b.ced; // passed
+export const cPassed = cPass + b.ced; // Passed
+export const cPASSED = cPASS + b.cED; // PASSED
 export const cfail = b.cf + p.cail; // fail
 export const cFail = b.cF + p.cail; // Fail
 export const cFAIL = b.cF + p.cAIL; // FAIL
@@ -941,8 +953,12 @@ export const cProduction = p.cProd + b.cuc + p.ction; // Production
 export const cPRODUCTION = p.cPROD + b.cUC + p.cTION; // PRODUCTION
 export const cstorage = p.cstor + p.cage; // storage
 export const cStorage = p.cStor + p.cage; // Storage
+export const cstore = p.cstor + b.ce; // store
+export const cStore = p.cStor + b.ce; // Store
 export const cstored = p.cstor + b.ced; // stored
 export const cStored = p.cStor + b.ced; // Stored
+export const cduplicate = p.cdup + b.cli + p.ccate; // duplicate
+export const cDuplicate = p.cDup + b.cli + p.ccate; // Duplicate
 </code></pre>
         </article>
     </section>
@@ -953,13 +969,13 @@ export const cStored = p.cStor + b.ced; // Stored
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jan 06 2021 10:31:37 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jan 11 2021 21:56:35 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

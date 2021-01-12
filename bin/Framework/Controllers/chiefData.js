@@ -60,6 +60,8 @@ function getAndProcessCsvData(pathAndFilename, contextName) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
 
+  pathAndFilename = path.resolve(pathAndFilename);
+
   var loadedData = _dataBroker["default"].getCsvData(pathAndFilename); // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
 
 
@@ -84,6 +86,8 @@ function getAndProcessXmlData(pathAndFilename) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'input pathAndFilename is: ' + pathAndFilename);
+
+  pathAndFilename = path.resolve(pathAndFilename);
 
   var allSystemConfigurations = _dataBroker["default"].getXmlData(pathAndFilename); // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
 
@@ -122,8 +126,9 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
 
   var loadedAndMergedDataAllFiles = {};
 
-  var dataPath = _configurator["default"].getConfigurationSetting(dataPathConfigurationName); // console.log('dataPath is: ' + dataPath);
+  var dataPath = _configurator["default"].getConfigurationSetting(dataPathConfigurationName);
 
+  dataPath = path.resolve(dataPath); // console.log('dataPath is: ' + dataPath);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
 
@@ -167,8 +172,9 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
 
   var loadedAndMergedDataAllFiles = {};
 
-  var dataPath = _configurator["default"].getConfigurationSetting(dataPathConfigurationName); // console.log('dataPath is: ' + dataPath);
+  var dataPath = _configurator["default"].getConfigurationSetting(dataPathConfigurationName);
 
+  dataPath = path.resolve(dataPath); // console.log('dataPath is: ' + dataPath);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
 

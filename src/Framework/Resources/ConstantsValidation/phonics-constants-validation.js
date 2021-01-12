@@ -97,6 +97,7 @@ export const phonicsConstantsValidation = [
    {Name: 'check', Actual: p.check, Expected: 'heck'},
    {Name: 'child', Actual: p.child, Expected: 'hild'},
    {Name: 'cibling', Actual: p.cibling, Expected: 'ibling'},
+   {Name: 'cttribute', Actual: p.cttribute, Expected: 'ttribute'},
    {Name: 'cttributes', Actual: p.cttributes, Expected: 'ttributes'},
    {Name: 'cisabled', Actual: p.cisabled, Expected: 'isabled'},
    {Name: 'cilter', Actual: p.cilter, Expected: 'ilter'},
@@ -400,5 +401,10 @@ export const phonicsConstantsValidation = [
    {Name: 'cdest', Actual: p.cdest, Expected: 'dest'},
    {Name: 'cDest', Actual: p.cDest, Expected: 'Dest'},
    {Name: 'cstor', Actual: p.cstor, Expected: 'stor'},
-   {Name: 'cStor', Actual: p.cStor, Expected: 'Stor'}
+   {Name: 'cStor', Actual: p.cStor, Expected: 'Stor'},
+   {Name: 'cequ', Actual: p.cequ, Expected: 'equ'},
+   {Name: 'cEqu', Actual: p.cEqu, Expected: 'Equ'},
+   {Name: 'cdup', Actual: p.cdup, Expected: 'dup'},
+   {Name: 'cDup', Actual: p.cDup, Expected: 'Dup'},
+   {Name: 'ccate', Actual: p.ccate, Expected: 'cate'}
  ];

@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -43,33 +43,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-/**
- * @file nominal.js
- * @module nominal
- * @description Contains all of the nominal system commands.
- * @requires module:configurator
- * @requires module:lexical
- * @requires module:fileBroker
- * @requires module:dataBroker
- * @requires module:commandBroker
- * @requires module:ruleBroker
- * @requires module:workflowBroker
- * @requires module:queue
- * @requires module:stack
- * @requires module:timers
- * @requires module:loggers
- * @requires module:basic-constants
- * @requires module:generic-constants
- * @requires module:word-constants
- * @requires module:system-constants
- * @requires {@link https://www.npmjs.com/package/figlet|figlet}
- * @requires {@link https://www.npmjs.com/package/path|path}
- * @requires {@link https://mathjs.org/index.html|math}
- * @requires module:data
- * @author Seth Hollingsead
- * @date 2020/06/19
- * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
- */
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var figlet = require('figlet');
 
 var path = require('path');
@@ -285,7 +260,7 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('DEPLOY APPLICATION');
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cSourceResourcesPath);
@@ -299,7 +274,130 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
     _configurator["default"].setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
-    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+
+    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function deployMetaData
+ * @description Copies application meta-data from the source to the destination.
+ * @param {object} inputData The data that should be transfered to the output file & path.
+ * @param {string} inputMetaData The path the data should be written out to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the data was copied succesful or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/08
+ */
+
+
+exports.deployApplication = deployApplication;
+
+var deployMetaData = function deployMetaData(inputData, inputMetaData) {
+  var functionName = s.cdeployMetaData;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  returnData = true;
+
+  if (!inputData || inputData === null || inputData === undefined) {
+    returnData = false;
+  } else {
+    var _metaDataOutput;
+
+    var aggregateCommandString = '';
+    var getAttributeNameRule = [];
+    var getAttributeValueRule = [];
+    getAttributeNameRule[0] = s.cgetAttributeName;
+    getAttributeValueRule[0] = s.cgetAttributeValue;
+
+    for (var i = 1; i < inputData.length; i++) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'inputData[i] is: ' + inputData[i]);
+
+      aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'aggregateCommandString is: ' + aggregateCommandString);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+
+    var metaDataParameters = aggregateCommandString.split(b.cComa);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters is: ' + metaDataParameters);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters length is: ' + metaDataParameters.length);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[0] is: ' + metaDataParameters[0]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[1] is: ' + metaDataParameters[1]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[2] is: ' + metaDataParameters[2]);
+
+    var appNameJsonString = metaDataParameters[0];
+    var appVersionJsonString = metaDataParameters[1];
+    var appDescriptionJsonString = metaDataParameters[2];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appName is: ' + appNameJsonString);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersion is: ' + appVersionJsonString);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescription is: ' + appDescriptionJsonString);
+
+    var appNameAttributeName = _ruleBroker["default"].processRules(appNameJsonString, '', getAttributeNameRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeName is: ' + appNameAttributeName);
+
+    var appVersionAttributeName = _ruleBroker["default"].processRules(appVersionJsonString, '', getAttributeNameRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeName is: ' + appVersionAttributeName);
+
+    var appDescriptionAttributeName = _ruleBroker["default"].processRules(appDescriptionJsonString, '', getAttributeNameRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeName is: ' + appDescriptionAttributeName);
+
+    var appNameAttributeValue = _ruleBroker["default"].processRules(appNameJsonString, '', getAttributeValueRule);
+
+    _configurator["default"].setConfigurationSetting(s.cApplicationName, appNameAttributeValue);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeValue is: ' + appNameAttributeValue);
+
+    var appVersionAttributeValue = _ruleBroker["default"].processRules(appVersionJsonString, '', getAttributeValueRule);
+
+    _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, appVersionAttributeValue);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeValue is: ' + appVersionAttributeValue);
+
+    var appDescriptionAttributeValue = _ruleBroker["default"].processRules(appDescriptionJsonString, '', getAttributeValueRule);
+
+    _configurator["default"].setConfigurationSetting(s.cApplicationDescription, appDescriptionAttributeValue);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeValue is: ' + appDescriptionAttributeValue);
+
+    var metaDataOutput = (_metaDataOutput = {}, _defineProperty(_metaDataOutput, appNameAttributeName, appNameAttributeValue), _defineProperty(_metaDataOutput, appVersionAttributeName, appVersionAttributeValue), _defineProperty(_metaDataOutput, appDescriptionAttributeName, appDescriptionAttributeValue), _metaDataOutput);
+
+    var metaDataPathAndFilename = _configurator["default"].getConfigurationSetting(s.cConfigurationPath);
+
+    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataPathAndFilename is: ' + metaDataPathAndFilename);
+
+    _fileBroker["default"].writeJsonData(metaDataPathAndFilename, metaDataOutput);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -323,7 +421,7 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
  */
 
 
-exports.deployApplication = deployApplication;
+exports.deployMetaData = deployMetaData;
 
 var releaseApplication = function releaseApplication(inputData, inputMetaData) {
   var functionName = s.creleaseApplication;
@@ -336,7 +434,7 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('RELEASE APPLICATION');
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cBinaryRootPath);
@@ -350,7 +448,13 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 
     _configurator["default"].setConfigurationSetting(s.creleaseCompleted, true);
   } else {
-    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+
+    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

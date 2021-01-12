@@ -179,6 +179,7 @@ export const cNavigateTo = w.cNavigate + b.cTo; // NavigateTo
 export const cBrowserRefresh = w.cBrowser + w.cRefresh; // BrowserRefresh
 export const cSpaceIsColonSpace = b.cSpace + b.cIs + b.cColon + b.cSpace; // Is:
 export const cdeployApplication = w.cdeploy + w.cApplication; // deployApplication
+export const cdeployMetaData = w.cdeploy + w.cMetaData // deployMetaData
 export const creleaseApplication = w.crelease + w.cApplication; // releaseApplication
 export const cbackground = w.cback + w.cground; // background
 export const cBackground = w.cBack + w.cground; // Background
@@ -520,6 +521,7 @@ export const cPageDataPath = w.cPage + cDataPath; // PageDataPath
 export const cWorkflowDataPath = w.cWorkflow + cDataPath; // WorkflowDataPath
 export const cKeywordsDataPath = w.cKeywords + cDataPath; // KeywordsDataPath
 export const cLocatorsDataPath = w.cLocators + cDataPath; // LocatorsDataPath
+export const cConstantsPath = w.cConstants + w.cPath;
 export const cConstantsPathActual = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cConstants + b.cForwardSlash; // src/Framework/Constants/
 export const cclientRulesLibrary = w.cclient + w.cRules + w.cLibrary; // clientRulesLibrary
 export const cCommandQueue = w.cCommand + w.cQueue; // CommandQueue
@@ -569,6 +571,7 @@ export const cDisplayIndividualConstantsValidationFailMessages = w.cDisplay + w.
 export const cDisplaySummaryConstantsValidationPassMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplaySummaryConstantsValidationPassMessages
 export const cDisplaySummaryConstantsValidationFailMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplaySummaryConstantsValidationFailMessages
 export const cPassAllConstantsValidations = w.cPass + w.cAll + w.cConstants + w.cValidations; // PassAllConstantsValidations
+export const cPassedAllCommandAliasesDuplicateChecks = w.cPassed + w.cAll + w.cCommand + w.cAliases + w.cDuplicate + w.cChecks
 export const cdeploymentCompleted = w.cdeployment + w.cCompleted; // deploymentCompleted
 export const creleaseCompleted = w.crelease + w.cCompleted; // releaseCompleted
 
@@ -634,6 +637,7 @@ export const cdetermineConstantsContextQualifiedPrefix = w.cdetermine + w.cConst
 export const cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
 export const cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidation + w.cLine + w.cItem + w.cName; // validateConstantsDataValidationLineItemName
 export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
+export const ccountDuplicateCommandAliases = w.ccount + w.cDuplicate + w.cCommand + w.cAliases; // countDuplicateCommandAliases
 export const cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
 export const cgetDataCatagoryDetailNameFromDataContextName = w.cget + w.cData + w.cCatagory + w.cDetail + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryDetailNameFromDataContextName
 export const cgetKeywordNameFromDataContextName = w.cget + w.cKeyword + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getKeywordNameFromDataContextName
@@ -643,6 +647,9 @@ export const cremoveXnumberOfFoldersFromEndOfPath = w.cremove + b.cX + w.cnumber
 export const cgetFirstTopLevelFolderFromPath = w.cget + n.cFirst + w.cTop + w.cLevel + w.cFolder + w.cFrom + w.cPath; // getFirstTopLevelFolderFromPath
 export const cloadDataFile = w.cload + w.cData + w.cFile; // loadDataFile
 export const cgetStoredData = w.cget + w.cStored + w.cData; // getStoredData
+export const cstoreData = w.cstore + w.cData; // storeData
+export const cgetAttributeName = w.cget + w.cAttribute + w.cName; // getAttributeName
+export const cgetAttributeValue = w.cget + w.cAttribute + w.cValue; // getAttributeValue
 export const cisOdd = b.cis + w.cOdd; // isOdd
 export const cisEven = b.cis + w.cEven; // isEven
 export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
@@ -756,6 +763,7 @@ export const cconvertColors = w.cconvert + w.cColors; // convertColors
 // Unit Test Constants commands in order
 // ********************************
 export const cvalidateConstants = w.cvalidate + w.cConstants; // validateConstants
+export const cvalidateCommandAliases = w.cvalidate + w.cCommand + w.cAliases; // validateCommandAliases
 
 // ********************************
 // System defined workflows

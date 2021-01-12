@@ -1329,6 +1329,62 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
   return returnData;
 };
 
+/**
+ * @function countDuplicateCommandAliases
+ * @description Counts the number of command aliases that match the input command alias.
+ * @param {string} inputData The command alias that should be have duplicates counted.
+ * @param {object} inputMetaData The data that contains all of the commands and command aliases,
+ * we should use this to search for duplicate command aliases.
+ * @return {integer} The count of command aliases that match the input command alias.
+ * @author Seth Hollingsead
+ * @date 2021/01/11
+ */
+export const countDuplicateCommandAliases = function(inputData, inputMetaData) {
+  let functionName = s.ccountDuplicateCommandAliases;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = 0;
+  if (!inputData && !inputMetaData) {
+    returnData = 0;
+  } else {
+loop1:
+    for (let i = 0; i < inputMetaData.length; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+      let currentCommand = inputMetaData[i];
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+      let aliasList = currentCommand[w.cAliases];
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+      let arrayOfAliases = aliasList.split(b.cComa);
+loop2:
+      for (let j = 0; j < arrayOfAliases.length; j++) {
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+        let currentAlias = arrayOfAliases[j];
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+        if (currentAlias === inputData) {
+          returnData = returnData + 1;
+        }
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'duplicateAliasCount is: ' + returnData);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
+      }
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+    }
+  }
+  if (returnData > 1) {
+    let duplicateAliasCountMessage = 'duplicateAliasCount is: ' + returnData;
+    duplicateAliasCountMessage = chalk.rgb(0,0,0)(duplicateAliasCountMessage);
+    duplicateAliasCountMessage = chalk.bgRgb(255,0,0)(duplicateAliasCountMessage);
+    console.log(duplicateAliasCountMessage);
+    let duplicateAliasCommandMessage = 'duplicate command alias is: ' + inputData;
+    duplicateAliasCommandMessage = chalk.rgb(0,0,0)(duplicateAliasCommandMessage);
+    duplicateAliasCommandMessage = chalk.bgRgb(255,0,0)(duplicateAliasCommandMessage);
+    console.log(duplicateAliasCommandMessage);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData
+};
+
 // ******************************************************
 // The following functions are more domain specific
 // ******************************************************
@@ -1680,6 +1736,90 @@ export const getStoredData = function(inputData, inputMetaData) {
     returnData = false;
   } else {
     returnData = dataBroker.getData(inputData);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function storeData
+ * @description Stores some data using the DataStorage data hive on the D data store.
+ * @param {string} inputData The context name that the data should be stored with.
+ * @param {string/integer/boolean/object/array} inputMetaData The data that should be stored.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/01/05
+ */
+export const storeData = function(inputData, inputMetaData) {
+  let functionName = s.cstoreData;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = false;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    dataBroker.storeData(inputData, inputMetaData);
+    returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getAttributeName
+ * @description Takes a string representation of a JSON attribute and gets the name (left hand assignment key).
+ * @param {string} inputData The string representation of the JSON attribute that should be parsed.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The name of the attribute.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+export const getAttributeName = function(inputData, inputMetaData) {
+  let functionName = s.cgetAttributeName;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = false;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    let attributeArray = inputData.split(b.cColon);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[0]);
+    returnData = replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
+    returnData = returnData.trim();
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getAttributeValue
+ * @description Takes a string representation of a JSON attribute and gets the value (Right hand assignment value).
+ * @param {string} inputData The string representation of the JSON attribute that should be parsed.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The value of the attribute.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+export const getAttributeValue = function(inputData, inputMetaData) {
+  let functionName = s.cgetAttributeValue;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = false;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    let attributeArray = inputData.split(b.cColon);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[1]);
+    returnData = replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
+    returnData = returnData.trim();
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

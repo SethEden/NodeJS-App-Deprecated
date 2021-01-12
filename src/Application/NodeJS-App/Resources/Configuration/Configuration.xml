@@ -318,19 +318,19 @@
           <ConfigurationElement Name="nominal@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="nominal@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
-          <ConfigurationElement Name="unitTestConstants" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="unitTests" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="unitTests@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="unitTests@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="unitTests@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="unitTests@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="unitTests@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="unitTests@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="unitTests@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="unitTests@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="unitTests@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="unitTests@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="unitTests@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="unitTests@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
           <ConfigurationElement Name="clientCommands" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="clientCommands@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
@@ -1033,6 +1033,20 @@
           <ConfigurationElement Name="fileBroker.getJsonData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.getJsonData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.getJsonData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="fileBroker.writeJsonData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.writeJsonData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="fileBroker.readDirectoryContents" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectoryContents@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1986,6 +2000,20 @@
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="stringParsing.getDataCatagoryDetailNameFromDataContextName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryDetailNameFromDataContextName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryDetailNameFromDataContextName@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2097,6 +2125,48 @@
           <ConfigurationElement Name="stringParsing.getStoredData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getStoredData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getStoredData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.storeData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.storeData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.getAttributeName" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeName@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.getAttributeValue" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.getAttributeValue@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="stringParsing.isOdd" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.isOdd@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -3386,6 +3456,48 @@
           <ConfigurationElement Name="nominal.name@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.name@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
+          <ConfigurationElement Name="nominal.deployApplication" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.deployApplication@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.deployMetaData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.releaseApplication" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.releaseApplication@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
           <ConfigurationElement Name="nominal.help" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.help@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.help@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -3540,19 +3652,33 @@
           <ConfigurationElement Name="nominal.convertColors@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.convertColors@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="unitTestConstants.validateConstants" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-          <ConfigurationElement Name="unitTestConstants.validateConstants@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateConstants@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="unitTests.validateCommandAliases" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="clientCommands.customEchoCommand" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

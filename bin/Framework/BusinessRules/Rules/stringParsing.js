@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.countDuplicateCommandAliases = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -1869,6 +1869,84 @@ var validateConstantsDataValues = function validateConstantsDataValues(inputData
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
   return returnData;
+};
+/**
+ * @function countDuplicateCommandAliases
+ * @description Counts the number of command aliases that match the input command alias.
+ * @param {string} inputData The command alias that should be have duplicates counted.
+ * @param {object} inputMetaData The data that contains all of the commands and command aliases,
+ * we should use this to search for duplicate command aliases.
+ * @return {integer} The count of command aliases that match the input command alias.
+ * @author Seth Hollingsead
+ * @date 2021/01/11
+ */
+
+
+exports.validateConstantsDataValues = validateConstantsDataValues;
+
+var countDuplicateCommandAliases = function countDuplicateCommandAliases(inputData, inputMetaData) {
+  var functionName = s.ccountDuplicateCommandAliases;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = 0;
+
+  if (!inputData && !inputMetaData) {
+    returnData = 0;
+  } else {
+    loop1: for (var i = 0; i < inputMetaData.length; i++) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+
+      var currentCommand = inputMetaData[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+
+      var aliasList = currentCommand[w.cAliases];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+
+      var arrayOfAliases = aliasList.split(b.cComa);
+
+      loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+
+        var currentAlias = arrayOfAliases[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+
+        if (currentAlias === inputData) {
+          returnData = returnData + 1;
+        }
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'duplicateAliasCount is: ' + returnData);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+    }
+  }
+
+  if (returnData > 1) {
+    var duplicateAliasCountMessage = 'duplicateAliasCount is: ' + returnData;
+    duplicateAliasCountMessage = chalk.rgb(0, 0, 0)(duplicateAliasCountMessage);
+    duplicateAliasCountMessage = chalk.bgRgb(255, 0, 0)(duplicateAliasCountMessage);
+    console.log(duplicateAliasCountMessage);
+    var duplicateAliasCommandMessage = 'duplicate command alias is: ' + inputData;
+    duplicateAliasCommandMessage = chalk.rgb(0, 0, 0)(duplicateAliasCommandMessage);
+    duplicateAliasCommandMessage = chalk.bgRgb(255, 0, 0)(duplicateAliasCommandMessage);
+    console.log(duplicateAliasCommandMessage);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
 }; // ******************************************************
 // The following functions are more domain specific
 // ******************************************************
@@ -1884,7 +1962,7 @@ var validateConstantsDataValues = function validateConstantsDataValues(inputData
  */
 
 
-exports.validateConstantsDataValues = validateConstantsDataValues;
+exports.countDuplicateCommandAliases = countDuplicateCommandAliases;
 
 var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContextName(inputData, inputMetaData) {
   var functionName = s.cgetDataCatagoryFromDataContextName;
@@ -2357,6 +2435,130 @@ var getStoredData = function getStoredData(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function storeData
+ * @description Stores some data using the DataStorage data hive on the D data store.
+ * @param {string} inputData The context name that the data should be stored with.
+ * @param {string/integer/boolean/object/array} inputMetaData The data that should be stored.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/01/05
+ */
+
+
+exports.getStoredData = getStoredData;
+
+var storeData = function storeData(inputData, inputMetaData) {
+  var functionName = s.cstoreData;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = false;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    _dataBroker["default"].storeData(inputData, inputMetaData);
+
+    returnData = true;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getAttributeName
+ * @description Takes a string representation of a JSON attribute and gets the name (left hand assignment key).
+ * @param {string} inputData The string representation of the JSON attribute that should be parsed.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The name of the attribute.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+
+
+exports.storeData = storeData;
+
+var getAttributeName = function getAttributeName(inputData, inputMetaData) {
+  var functionName = s.cgetAttributeName;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = false;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    var attributeArray = inputData.split(b.cColon);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[0]);
+
+    returnData = replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
+    returnData = returnData.trim();
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getAttributeValue
+ * @description Takes a string representation of a JSON attribute and gets the value (Right hand assignment value).
+ * @param {string} inputData The string representation of the JSON attribute that should be parsed.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The value of the attribute.
+ * @author Seth Hollingsead
+ * @date 2021/01/10
+ */
+
+
+exports.getAttributeName = getAttributeName;
+
+var getAttributeValue = function getAttributeValue(inputData, inputMetaData) {
+  var functionName = s.cgetAttributeValue;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = false;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    var attributeArray = inputData.split(b.cColon);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[1]);
+
+    returnData = replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
+    returnData = returnData.trim();
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function isOdd
  * @description Determines if the input value is an odd number or not an odd number.
  * @param {string} inputData The value that should be evaluated to determine if it is odd or not odd.
@@ -2368,7 +2570,7 @@ var getStoredData = function getStoredData(inputData, inputMetaData) {
  */
 
 
-exports.getStoredData = getStoredData;
+exports.getAttributeValue = getAttributeValue;
 
 var isOdd = function isOdd(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.isOdd function');

@@ -39,6 +39,7 @@ export const basicConstantsValidation = [
   {Name: 'cPlus', Actual: b.cPlus, Expected: '+'},
   {Name: 'cStar', Actual: b.cStar, Expected: '*'},
   {Name: 'cDash', Actual: b.cDash, Expected: '-'},
+  {Name: 'cDoubleDash', Actual: b.cDoubleDash, Expected: '--'},
   {Name: 'cEqual', Actual: b.cEqual, Expected: '='},
   {Name: 'cEqualEqual', Actual: b.cEqualEqual, Expected: '=='},
   {Name: 'cEqualEqualEqual', Actual: b.cEqualEqualEqual, Expected: '==='},

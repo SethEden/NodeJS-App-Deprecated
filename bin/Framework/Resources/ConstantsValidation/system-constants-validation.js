@@ -657,6 +657,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cdeployApplication,
   Expected: 'deployApplication'
 }, {
+  Name: 'cdeployMetaData',
+  Actual: s.cdeployMetaData,
+  Expected: 'deployMetaData'
+}, {
   Name: 'creleaseApplication',
   Actual: s.creleaseApplication,
   Expected: 'releaseApplication'
@@ -1960,6 +1964,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cLocatorsDataPath,
   Expected: 'LocatorsDataPath'
 }, {
+  Name: 'cConstantsPath',
+  Actual: s.cConstantsPath,
+  Expected: 'ConstantsPath'
+}, {
   Name: 'cConstantsPathActual',
   Actual: s.cConstantsPathActual,
   Expected: 'src/Framework/Constants/'
@@ -2141,6 +2149,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cPassAllConstantsValidations',
   Actual: s.cPassAllConstantsValidations,
   Expected: 'PassAllConstantsValidations'
+}, {
+  Name: 'cPassedAllCommandAliasesDuplicateChecks',
+  Actual: s.cPassedAllCommandAliasesDuplicateChecks,
+  Expected: 'PassedAllCommandAliasesDuplicateChecks'
 }, {
   Name: 'cdeploymentCompleted',
   Actual: s.cdeploymentCompleted,
@@ -2379,6 +2391,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cvalidateConstantsDataValues,
   Expected: 'validateConstantsDataValues'
 }, {
+  Name: 'ccountDuplicateCommandAliases',
+  Actual: s.ccountDuplicateCommandAliases,
+  Expected: 'countDuplicateCommandAliases'
+}, {
   Name: 'cgetDataCatagoryFromDataContextName',
   Actual: s.cgetDataCatagoryFromDataContextName,
   Expected: 'getDataCatagoryFromDataContextName'
@@ -2414,6 +2430,18 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cgetStoredData',
   Actual: s.cgetStoredData,
   Expected: 'getStoredData'
+}, {
+  Name: 'cstoreData',
+  Actual: s.cstoreData,
+  Expected: 'storeData'
+}, {
+  Name: 'cgetAttributeName',
+  Actual: s.cgetAttributeName,
+  Expected: 'getAttributeName'
+}, {
+  Name: 'cgetAttributeValue',
+  Actual: s.cgetAttributeValue,
+  Expected: 'getAttributeValue'
 }, {
   Name: 'cisOdd',
   Actual: s.cisOdd,
@@ -2802,6 +2830,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cvalidateConstants',
   Actual: s.cvalidateConstants,
   Expected: 'validateConstants'
+}, {
+  Name: 'cvalidateCommandAliases',
+  Actual: s.cvalidateCommandAliases,
+  Expected: 'validateCommandAliases'
 }, // ********************************
 // System defined workflows
 // ********************************

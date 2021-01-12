@@ -187,7 +187,8 @@ export const deployApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('DEPLOY APPLICATION');
     let sourcePath = configurator.getConfigurationSetting(s.cSourceResourcesPath);
     let destinationPath = configurator.getConfigurationSetting(s.cDestinationResourcesPath);
@@ -196,7 +197,84 @@ export const deployApplication = function(inputData, inputMetaData) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + true);
     configurator.setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
-    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+    if (configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function deployMetaData
+ * @description Copies application meta-data from the source to the destination.
+ * @param {object} inputData The data that should be transfered to the output file & path.
+ * @param {string} inputMetaData The path the data should be written out to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the data was copied succesful or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/08
+ */
+export const deployMetaData = function(inputData, inputMetaData) {
+  let functionName = s.cdeployMetaData;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  returnData = true;
+  if (!inputData || inputData === null || inputData === undefined) {
+    returnData = false;
+  } else {
+    let aggregateCommandString = '';
+    let getAttributeNameRule = [];
+    let getAttributeValueRule = [];
+    getAttributeNameRule[0] = s.cgetAttributeName;
+    getAttributeValueRule[0] = s.cgetAttributeValue;
+    for (let i = 1; i < inputData.length; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'inputData[i] is: ' + inputData[i]);
+      aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'aggregateCommandString is: ' + aggregateCommandString);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+    let metaDataParameters = aggregateCommandString.split(b.cComa);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters is: ' + metaDataParameters);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters length is: ' + metaDataParameters.length);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[0] is: ' + metaDataParameters[0]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[1] is: ' + metaDataParameters[1]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[2] is: ' + metaDataParameters[2]);
+    let appNameJsonString = metaDataParameters[0];
+    let appVersionJsonString = metaDataParameters[1];
+    let appDescriptionJsonString = metaDataParameters[2];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appName is: ' + appNameJsonString);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersion is: ' + appVersionJsonString);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescription is: ' + appDescriptionJsonString);
+
+    let appNameAttributeName = ruleBroker.processRules(appNameJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeName is: ' + appNameAttributeName);
+    let appVersionAttributeName = ruleBroker.processRules(appVersionJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeName is: ' + appVersionAttributeName);
+    let appDescriptionAttributeName = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeName is: ' + appDescriptionAttributeName);
+
+    let appNameAttributeValue = ruleBroker.processRules(appNameJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationName, appNameAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeValue is: ' + appNameAttributeValue);
+    let appVersionAttributeValue = ruleBroker.processRules(appVersionJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationVersionNumber, appVersionAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeValue is: ' + appVersionAttributeValue);
+    let appDescriptionAttributeValue = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationDescription, appDescriptionAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeValue is: ' + appDescriptionAttributeValue);
+
+    let metaDataOutput = {[appNameAttributeName]: appNameAttributeValue, [appVersionAttributeName]: appVersionAttributeValue, [appDescriptionAttributeName]: appDescriptionAttributeValue};
+    let metaDataPathAndFilename = configurator.getConfigurationSetting(s.cConfigurationPath);
+    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataPathAndFilename is: ' + metaDataPathAndFilename);
+    fileBroker.writeJsonData(metaDataPathAndFilename, metaDataOutput);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -222,7 +300,8 @@ export const releaseApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('RELEASE APPLICATION');
     let sourcePath = configurator.getConfigurationSetting(s.cBinaryRootPath);
     let destinationPath = configurator.getConfigurationSetting(s.cBinaryReleasePath);
@@ -231,7 +310,12 @@ export const releaseApplication = function(inputData, inputMetaData) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Release was completed: ' + true);
     configurator.setConfigurationSetting(s.creleaseCompleted, true);
   } else {
-    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+    if (configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

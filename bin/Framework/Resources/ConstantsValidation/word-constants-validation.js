@@ -436,6 +436,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cConfirm,
   Expected: 'Confirm'
 }, {
+  Name: 'ccount',
+  Actual: w.ccount,
+  Expected: 'count'
+}, {
+  Name: 'cCount',
+  Actual: w.cCount,
+  Expected: 'Count'
+}, {
+  Name: 'ccounter',
+  Actual: w.ccounter,
+  Expected: 'counter'
+}, {
+  Name: 'cCounter',
+  Actual: w.cCounter,
+  Expected: 'Counter'
+}, {
   Name: 'cAccount',
   Actual: w.cAccount,
   Expected: 'Account'
@@ -861,6 +877,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cData',
   Actual: w.cData,
   Expected: 'Data'
+}, {
+  Name: 'cresults',
+  Actual: w.cresults,
+  Expected: 'results'
 }, {
   Name: 'cResults',
   Actual: w.cResults,
@@ -1364,22 +1384,6 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cUpper,
   Expected: 'Upper'
 }, {
-  Name: 'ccount',
-  Actual: w.ccount,
-  Expected: 'count'
-}, {
-  Name: 'cCount',
-  Actual: w.cCount,
-  Expected: 'Count'
-}, {
-  Name: 'ccounter',
-  Actual: w.ccounter,
-  Expected: 'counter'
-}, {
-  Name: 'cCounter',
-  Actual: w.cCounter,
-  Expected: 'Counter'
-}, {
   Name: 'crandom',
   Actual: w.crandom,
   Expected: 'random'
@@ -1555,6 +1559,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cEquals',
   Actual: w.cEquals,
   Expected: 'Equals'
+}, {
+  Name: 'cequivalence',
+  Actual: w.cequivalence,
+  Expected: 'equivalence'
+}, {
+  Name: 'cEquivalence',
+  Actual: w.cEquivalence,
+  Expected: 'Equivalence'
 }, {
   Name: 'cRaw',
   Actual: w.cRaw,
@@ -1763,6 +1775,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cStyle',
   Actual: w.cStyle,
   Expected: 'Style'
+}, {
+  Name: 'cassert',
+  Actual: w.cassert,
+  Expected: 'assert'
 }, {
   Name: 'cAssert',
   Actual: w.cAssert,
@@ -2124,9 +2140,21 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cCheck,
   Expected: 'Check'
 }, {
+  Name: 'cchecks',
+  Actual: w.cchecks,
+  Expected: 'checks'
+}, {
+  Name: 'cChecks',
+  Actual: w.cChecks,
+  Expected: 'Checks'
+}, {
   Name: 'cchecked',
   Actual: w.cchecked,
   Expected: 'checked'
+}, {
+  Name: 'cChecked',
+  Actual: w.cChecked,
+  Expected: 'Checked'
 }, {
   Name: 'celement',
   Actual: w.celement,
@@ -2259,6 +2287,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cFilter',
   Actual: w.cFilter,
   Expected: 'Filter'
+}, {
+  Name: 'cattribute',
+  Actual: w.cattribute,
+  Expected: 'attribute'
+}, {
+  Name: 'cAttribute',
+  Actual: w.cAttribute,
+  Expected: 'Attribute'
 }, {
   Name: 'cattributes',
   Actual: w.cattributes,
@@ -3348,6 +3384,18 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cPASS,
   Expected: 'PASS'
 }, {
+  Name: 'cpassed',
+  Actual: w.cpassed,
+  Expected: 'passed'
+}, {
+  Name: 'cPassed',
+  Actual: w.cPassed,
+  Expected: 'Passed'
+}, {
+  Name: 'cPASSED',
+  Actual: w.cPASSED,
+  Expected: 'PASSED'
+}, {
   Name: 'cfail',
   Actual: w.cfail,
   Expected: 'fail'
@@ -3604,6 +3652,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cStorage,
   Expected: 'Storage'
 }, {
+  Name: 'cstore',
+  Actual: w.cstore,
+  Expected: 'store'
+}, {
+  Name: 'cStore',
+  Actual: w.cStore,
+  Expected: 'Store'
+}, {
   Name: 'cstored',
   Actual: w.cstored,
   Expected: 'stored'
@@ -3611,5 +3667,13 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cStored',
   Actual: w.cStored,
   Expected: 'Stored'
+}, {
+  Name: 'cduplicate',
+  Actual: w.cduplicate,
+  Expected: 'duplicate'
+}, {
+  Name: 'cDuplicate',
+  Actual: w.cDuplicate,
+  Expected: 'Duplicate'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

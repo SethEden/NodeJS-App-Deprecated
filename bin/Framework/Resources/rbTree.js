@@ -46,9 +46,12 @@ var D = require('./data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 var RED = 0;
 var BLACK = 1;
+var root = {};
+var rbTreeCompare;
+var protoTree = rbTree.prototype;
 /**
  * @function cloneNode
- * @description clones a given node and returns the object.
+ * @description Clones a given node and returns the object.
  * @param {object} node The tree node object that should be cloned.
  * @return {object} The newly cloned node object.
  * @author Seth Hollingsead
@@ -56,7 +59,7 @@ var BLACK = 1;
  */
 
 function cloneNode(node) {
-  var functionName = _rbNode["default"].name;
+  var functionName = cloneNode.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
@@ -65,7 +68,7 @@ function cloneNode(node) {
   var returnData = false;
 
   if (node != undefined && node != null && node != '' && _typeof(node) === 'object') {
-    returnData = _rbNode["default"].rbNode(node.nodeColor, node.nodeKey, node.nodeValue, node.nodeLeft, node.nodeRight, node.nodeCount);
+    returnData = _rbNode["default"].rbNodeConstructor(node.nodeColor, node.nodeKey, node.nodeValue, node.nodeLeft, node.nodeRight, node.nodeCount);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
@@ -76,7 +79,96 @@ function cloneNode(node) {
 }
 
 ;
+/**
+ * @function repaint
+ * @description Changes the color of a node.
+ * @param {integer} color The color the node should be changed to.
+ * @param {object} node The node that should have it's color changed.
+ * @return {object} The new node with the color changed.
+ * @author Seth Hollingsead
+ * @date 2020/01/06
+ */
+
+function repaint(color, node) {
+  var functionName = repaint.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'color is: ' + color);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'node is: ' + JSON.stringify(node));
+
+  var returnData = false;
+
+  if (node != undefined && node != null && node != '' && _typeof(node) === 'object') {
+    returnData = _rbNode["default"].rbNodeConstructor(color, node.nodeKey, node.nodeValue, node.nodeLeft, node.nodeRight, node.nodeCount);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+}
+
+;
+/**
+ * @function recount
+ * @description Count all of the child nodes for a given node.
+ * @param {object} node The node who's total child node count should be re-computed.
+ * @return {integer} A count for all the nodes under the node that is passed in.
+ * @author Seth Hollingsead
+ * @date 2020/01/06
+ */
+
+function recount(node) {
+  var functionName = recount.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'node is: ' + JSON.stringify(node));
+
+  var returnData = false;
+
+  if (node != undefined && node != null && node != '' && _typeof(node) === 'object') {
+    node.nodeCount = 1 + (node.nodeLeft ? node.nodeLeft.nodeCount : 0) + (node.nodeRight ? node.nodeRight.nodeCount : 0);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+}
+
+;
+/**
+ * @function rbTree
+ * @description Builds a Red-Black binary search tree (RB-BST) with an optional custom compare method for comparing nodes.
+ * @param {function} compare The function that should be used to compare node values.
+ * @param {object} root The root node of the new tree.
+ * @return {void} Nothing to return.
+ * @author Seth Hollingsead
+ * @date 2020/01/06
+ */
+
+function rbTree(compare, rootNode) {
+  var functionName = rbTree.name;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'node is: ' + JSON.stringify(node));
+
+  var returnData = false;
+  root = rootNode;
+  rbTreeCompare = compare;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+}
+
+;
 var _default = {
-  cloneNode: cloneNode
+  cloneNode: cloneNode,
+  repaint: repaint
 };
 exports["default"] = _default;

@@ -15,6 +15,7 @@
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/dotenv|dotenv}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -48,6 +49,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 require('dotenv').config();
+
+var pjson = require('../../../package.json');
 
 var NODE_ENV = process.env.NODE_ENV;
 
@@ -121,11 +124,21 @@ function deployApplication() {
 
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
+    _warden["default"].setConfigurationSetting(s.creleaseCompleted, false);
+
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
+
+    _warden["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
 
     _warden["default"].setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
 
     _warden["default"].setConfigurationSetting(s.cDestinationResourcesPath, c.cProductionResourcesPath);
+
+    var appName = b.cDoubleQuote + w.cName + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.name + b.cDoubleQuote;
+    var appVersion = b.cDoubleQuote + w.cVersion + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.version + b.cDoubleQuote;
+    var appDescription = b.cDoubleQuote + w.cDescription + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.description + b.cDoubleQuote;
+
+    _warden["default"].enqueueCommand(s.cdeployMetaData + b.cSpace + appName + b.cComa + appVersion + b.cComa + appDescription);
 
     _warden["default"].enqueueCommand(s.cBuildWorkflow);
 
@@ -165,7 +178,11 @@ function releaseApplication() {
   var releaseResult;
 
   try {
+    _warden["default"].setConfigurationSetting(s.creleaseCompleted, false);
+
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
+
+    _warden["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
 
     _warden["default"].setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
 
