@@ -2000,6 +2000,20 @@
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.countDuplicateCommandAliases@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="stringParsing.getDataCatagoryDetailNameFromDataContextName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryDetailNameFromDataContextName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryDetailNameFromDataContextName@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -3652,7 +3666,7 @@
           <ConfigurationElement Name="unitTests.validateConstants@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="unitTests.validateConstants@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="unitTests.validateCommandAliases" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="unitTests.validateCommandAliases" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="unitTests.validateCommandAliases@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="unitTests.validateCommandAliases@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="unitTests.validateCommandAliases@MessageFontStyle" Type="Default" Value="Default" Version="3"/>

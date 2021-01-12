@@ -187,7 +187,8 @@ export const deployApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('DEPLOY APPLICATION');
     let sourcePath = configurator.getConfigurationSetting(s.cSourceResourcesPath);
     let destinationPath = configurator.getConfigurationSetting(s.cDestinationResourcesPath);
@@ -196,7 +197,12 @@ export const deployApplication = function(inputData, inputMetaData) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + true);
     configurator.setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
-    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+    if (configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -294,7 +300,8 @@ export const releaseApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('RELEASE APPLICATION');
     let sourcePath = configurator.getConfigurationSetting(s.cBinaryRootPath);
     let destinationPath = configurator.getConfigurationSetting(s.cBinaryReleasePath);
@@ -303,7 +310,12 @@ export const releaseApplication = function(inputData, inputMetaData) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Release was completed: ' + true);
     configurator.setConfigurationSetting(s.creleaseCompleted, true);
   } else {
-    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+    if (configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

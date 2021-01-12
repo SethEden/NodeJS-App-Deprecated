@@ -17,6 +17,8 @@ import configurator from '../../Executrix/configurator';
 import ruleBroker from '../../BusinessRules/ruleBroker';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
+import * as p from '../../Constants/phonics.constants';
+import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
 var D = require('../../../Framework/Resources/data');
@@ -167,6 +169,31 @@ export const validateCommandAliases = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  
+  let allCommandAliases = D[s.cCommandsAliases][w.cCommand];
+  let passedAllCommandAliasesDuplicateCheck = true;
+  let rules = [];
+  rules[0] = s.ccountDuplicateCommandAliases;
+loop1:
+    for (let i = 0; i < allCommandAliases.length; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+      let currentCommand = allCommandAliases[i];
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+      let aliasList = currentCommand[w.cAliases];
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+      let arrayOfAliases = aliasList.split(b.cComa);
+loop2:
+      for (let j = 0; j < arrayOfAliases.length; j++) {
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+        let currentAlias = arrayOfAliases[j];
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+        let duplicateAliasCount = ruleBroker.processRules(currentAlias, allCommandAliases, rules);
+        if (duplicateAliasCount > 1) {
+          passedAllCommandAliasesDuplicateCheck = false;
+        }
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
+      }
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+    }
+  configurator.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

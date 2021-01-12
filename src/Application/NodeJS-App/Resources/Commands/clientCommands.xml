@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><CommandsAliases>
-  <Command Name="customEchoCommand" Aliases="CECmd,CEcoCmd,CEchoCmd,CECmd,CEcoCmd,CEchoCmd,CustECmd,CustEcoCmd,CustEchoCmd,CustECmd,CustEcoCmd,CustEchoCmd,CustomECmd,CustomEcoCmd,CustomEchoCmd,CustomECmd,CustomEcoCmd,CustomEchoCmd,CustomEchoCmd,CustomEchoCommand" Description="A client defined custom Echo command that echos back the input plus something extra."/>
+  <Command Name="customEchoCommand" Aliases="CECmd,CEcoCmd,CEchoCmd,CustECmd,CustEcoCmd,CustEchoCmd,CustomECmd,CustomEcoCmd,CustomEchoCmd,CustomEchoCommand" Description="A client defined custom Echo command that echos back the input plus something extra."/>
   <Command Name="placeHolder" Aliases="placeHolder" Description="Description of the command, this is just a placeHolder."/>
 </CommandsAliases>

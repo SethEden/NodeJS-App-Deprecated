@@ -436,6 +436,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cConfirm,
   Expected: 'Confirm'
 }, {
+  Name: 'ccount',
+  Actual: w.ccount,
+  Expected: 'count'
+}, {
+  Name: 'cCount',
+  Actual: w.cCount,
+  Expected: 'Count'
+}, {
+  Name: 'ccounter',
+  Actual: w.ccounter,
+  Expected: 'counter'
+}, {
+  Name: 'cCounter',
+  Actual: w.cCounter,
+  Expected: 'Counter'
+}, {
   Name: 'cAccount',
   Actual: w.cAccount,
   Expected: 'Account'
@@ -1368,22 +1384,6 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cUpper,
   Expected: 'Upper'
 }, {
-  Name: 'ccount',
-  Actual: w.ccount,
-  Expected: 'count'
-}, {
-  Name: 'cCount',
-  Actual: w.cCount,
-  Expected: 'Count'
-}, {
-  Name: 'ccounter',
-  Actual: w.ccounter,
-  Expected: 'counter'
-}, {
-  Name: 'cCounter',
-  Actual: w.cCounter,
-  Expected: 'Counter'
-}, {
   Name: 'crandom',
   Actual: w.crandom,
   Expected: 'random'
@@ -2140,9 +2140,21 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cCheck,
   Expected: 'Check'
 }, {
+  Name: 'cchecks',
+  Actual: w.cchecks,
+  Expected: 'checks'
+}, {
+  Name: 'cChecks',
+  Actual: w.cChecks,
+  Expected: 'Checks'
+}, {
   Name: 'cchecked',
   Actual: w.cchecked,
   Expected: 'checked'
+}, {
+  Name: 'cChecked',
+  Actual: w.cChecked,
+  Expected: 'Checked'
 }, {
   Name: 'celement',
   Actual: w.celement,
@@ -3372,6 +3384,18 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cPASS,
   Expected: 'PASS'
 }, {
+  Name: 'cpassed',
+  Actual: w.cpassed,
+  Expected: 'passed'
+}, {
+  Name: 'cPassed',
+  Actual: w.cPassed,
+  Expected: 'Passed'
+}, {
+  Name: 'cPASSED',
+  Actual: w.cPASSED,
+  Expected: 'PASSED'
+}, {
   Name: 'cfail',
   Actual: w.cfail,
   Expected: 'fail'
@@ -3643,5 +3667,13 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cStored',
   Actual: w.cStored,
   Expected: 'Stored'
+}, {
+  Name: 'cduplicate',
+  Actual: w.cduplicate,
+  Expected: 'duplicate'
+}, {
+  Name: 'cDuplicate',
+  Actual: w.cDuplicate,
+  Expected: 'Duplicate'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

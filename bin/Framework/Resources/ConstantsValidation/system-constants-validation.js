@@ -2150,6 +2150,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cPassAllConstantsValidations,
   Expected: 'PassAllConstantsValidations'
 }, {
+  Name: 'cPassedAllCommandAliasesDuplicateChecks',
+  Actual: s.cPassedAllCommandAliasesDuplicateChecks,
+  Expected: 'PassedAllCommandAliasesDuplicateChecks'
+}, {
   Name: 'cdeploymentCompleted',
   Actual: s.cdeploymentCompleted,
   Expected: 'deploymentCompleted'
@@ -2386,6 +2390,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cvalidateConstantsDataValues',
   Actual: s.cvalidateConstantsDataValues,
   Expected: 'validateConstantsDataValues'
+}, {
+  Name: 'ccountDuplicateCommandAliases',
+  Actual: s.ccountDuplicateCommandAliases,
+  Expected: 'countDuplicateCommandAliases'
 }, {
   Name: 'cgetDataCatagoryFromDataContextName',
   Actual: s.cgetDataCatagoryFromDataContextName,

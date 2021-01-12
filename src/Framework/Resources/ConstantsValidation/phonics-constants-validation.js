@@ -403,5 +403,8 @@ export const phonicsConstantsValidation = [
    {Name: 'cstor', Actual: p.cstor, Expected: 'stor'},
    {Name: 'cStor', Actual: p.cStor, Expected: 'Stor'},
    {Name: 'cequ', Actual: p.cequ, Expected: 'equ'},
-   {Name: 'cEqu', Actual: p.cEqu, Expected: 'Equ'}
+   {Name: 'cEqu', Actual: p.cEqu, Expected: 'Equ'},
+   {Name: 'cdup', Actual: p.cdup, Expected: 'dup'},
+   {Name: 'cDup', Actual: p.cDup, Expected: 'Dup'},
+   {Name: 'ccate', Actual: p.ccate, Expected: 'cate'}
  ];

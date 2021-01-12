@@ -571,6 +571,7 @@ export const systemConstantsValidation = [
    {Name: 'cDisplaySummaryConstantsValidationPassMessages', Actual: s.cDisplaySummaryConstantsValidationPassMessages, Expected: 'DisplaySummaryConstantsValidationPassMessages'},
    {Name: 'cDisplaySummaryConstantsValidationFailMessages', Actual: s.cDisplaySummaryConstantsValidationFailMessages, Expected: 'DisplaySummaryConstantsValidationFailMessages'},
    {Name: 'cPassAllConstantsValidations', Actual: s.cPassAllConstantsValidations, Expected: 'PassAllConstantsValidations'},
+   {Name: 'cPassedAllCommandAliasesDuplicateChecks', Actual: s.cPassedAllCommandAliasesDuplicateChecks, Expected: 'PassedAllCommandAliasesDuplicateChecks'},
    {Name: 'cdeploymentCompleted', Actual: s.cdeploymentCompleted, Expected: 'deploymentCompleted'},
    {Name: 'creleaseCompleted', Actual: s.creleaseCompleted, Expected: 'releaseCompleted'},
 
@@ -636,6 +637,7 @@ export const systemConstantsValidation = [
    {Name: 'cdetermineSuggestedConstantsValidationLineOfCode', Actual: s.cdetermineSuggestedConstantsValidationLineOfCode, Expected: 'determineSuggestedConstantsValidationLineOfCode'},
    {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: s.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
    {Name: 'cvalidateConstantsDataValues', Actual: s.cvalidateConstantsDataValues, Expected: 'validateConstantsDataValues'},
+   {Name: 'ccountDuplicateCommandAliases', Actual: s.ccountDuplicateCommandAliases, Expected: 'countDuplicateCommandAliases'},
    {Name: 'cgetDataCatagoryFromDataContextName', Actual: s.cgetDataCatagoryFromDataContextName, Expected: 'getDataCatagoryFromDataContextName'},
    {Name: 'cgetDataCatagoryDetailNameFromDataContextName', Actual: s.cgetDataCatagoryDetailNameFromDataContextName, Expected: 'getDataCatagoryDetailNameFromDataContextName'},
    {Name: 'cgetKeywordNameFromDataContextName', Actual: s.cgetKeywordNameFromDataContextName, Expected: 'getKeywordNameFromDataContextName'},

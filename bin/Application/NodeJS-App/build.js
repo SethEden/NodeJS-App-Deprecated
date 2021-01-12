@@ -124,7 +124,11 @@ function deployApplication() {
 
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
+    _warden["default"].setConfigurationSetting(s.creleaseCompleted, false);
+
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
+
+    _warden["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
 
     _warden["default"].setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
 
@@ -174,7 +178,11 @@ function releaseApplication() {
   var releaseResult;
 
   try {
+    _warden["default"].setConfigurationSetting(s.creleaseCompleted, false);
+
     _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
+
+    _warden["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
 
     _warden["default"].setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
 

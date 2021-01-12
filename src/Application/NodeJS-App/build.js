@@ -89,7 +89,9 @@ function deployApplication() {
   let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
+    warden.setConfigurationSetting(s.creleaseCompleted, false);
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
     warden.setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
     warden.setConfigurationSetting(s.cDestinationResourcesPath, c.cProductionResourcesPath);
     let appName = b.cDoubleQuote + w.cName + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.name + b.cDoubleQuote;
@@ -123,7 +125,9 @@ function releaseApplication() {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   let releaseResult;
   try {
+    warden.setConfigurationSetting(s.creleaseCompleted, false);
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
     warden.setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
     warden.setConfigurationSetting(s.cBinaryReleasePath, c.cReleasePath);
     warden.enqueueCommand(s.cReleaseWorkflow);

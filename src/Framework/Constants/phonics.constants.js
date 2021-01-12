@@ -396,3 +396,6 @@ export const cstor = b.cst + b.cor; // stor
 export const cStor = b.cSt + b.cor; // Stor
 export const cequ = b.ceq + b.cu; // equ
 export const cEqu = b.cEq + b.cu; // Equ
+export const cdup = b.cdu + b.cp; // dup
+export const cDup = b.cDu + b.cp; // Dup
+export const ccate = b.cca + b.cte; // cate

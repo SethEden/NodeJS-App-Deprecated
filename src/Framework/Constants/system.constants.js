@@ -571,6 +571,7 @@ export const cDisplayIndividualConstantsValidationFailMessages = w.cDisplay + w.
 export const cDisplaySummaryConstantsValidationPassMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplaySummaryConstantsValidationPassMessages
 export const cDisplaySummaryConstantsValidationFailMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplaySummaryConstantsValidationFailMessages
 export const cPassAllConstantsValidations = w.cPass + w.cAll + w.cConstants + w.cValidations; // PassAllConstantsValidations
+export const cPassedAllCommandAliasesDuplicateChecks = w.cPassed + w.cAll + w.cCommand + w.cAliases + w.cDuplicate + w.cChecks
 export const cdeploymentCompleted = w.cdeployment + w.cCompleted; // deploymentCompleted
 export const creleaseCompleted = w.crelease + w.cCompleted; // releaseCompleted
 
@@ -636,6 +637,7 @@ export const cdetermineConstantsContextQualifiedPrefix = w.cdetermine + w.cConst
 export const cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
 export const cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidation + w.cLine + w.cItem + w.cName; // validateConstantsDataValidationLineItemName
 export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
+export const ccountDuplicateCommandAliases = w.ccount + w.cDuplicate + w.cCommand + w.cAliases; // countDuplicateCommandAliases
 export const cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
 export const cgetDataCatagoryDetailNameFromDataContextName = w.cget + w.cData + w.cCatagory + w.cDetail + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryDetailNameFromDataContextName
 export const cgetKeywordNameFromDataContextName = w.cget + w.cKeyword + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getKeywordNameFromDataContextName

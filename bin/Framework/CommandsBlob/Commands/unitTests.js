@@ -15,6 +15,10 @@ var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
+var p = _interopRequireWildcard(require("../../Constants/phonics.constants"));
+
+var w = _interopRequireWildcard(require("../../Constants/word.constants"));
+
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -243,6 +247,45 @@ var validateCommandAliases = function validateCommandAliases(inputData, inputMet
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var allCommandAliases = D[s.cCommandsAliases][w.cCommand];
+  var passedAllCommandAliasesDuplicateCheck = true;
+  var rules = [];
+  rules[0] = s.ccountDuplicateCommandAliases;
+
+  loop1: for (var i = 0; i < allCommandAliases.length; i++) {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+
+    var currentCommand = allCommandAliases[i];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+
+    var aliasList = currentCommand[w.cAliases];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+
+    var arrayOfAliases = aliasList.split(b.cComa);
+
+    loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+
+      var currentAlias = arrayOfAliases[j];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+
+      var duplicateAliasCount = _ruleBroker["default"].processRules(currentAlias, allCommandAliases, rules);
+
+      if (duplicateAliasCount > 1) {
+        passedAllCommandAliasesDuplicateCheck = false;
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
+    }
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+  }
+
+  _configurator["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

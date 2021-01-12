@@ -260,7 +260,7 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('DEPLOY APPLICATION');
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cSourceResourcesPath);
@@ -274,7 +274,13 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
     _configurator["default"].setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
-    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+
+    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -428,7 +434,7 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('RELEASE APPLICATION');
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cBinaryRootPath);
@@ -442,7 +448,13 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 
     _configurator["default"].setConfigurationSetting(s.creleaseCompleted, true);
   } else {
-    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+
+    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

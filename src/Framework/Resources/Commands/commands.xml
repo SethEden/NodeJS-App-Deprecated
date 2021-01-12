@@ -8,7 +8,7 @@
   <Command Name="deployMetaData" Aliases="DepMetaDat,DeployMetaDat,DepMetaData,DeployMetaData" Description="Copies application meta-data from the package.json to the metaData.json file."/>
   <Command Name="releaseApplication" Aliases="RelApp,ReleaseApp,RelApplication,ReleaseApplication" Description="Release the application as part of the build-deploy-release cycle."/>
   <Command Name="help" Aliases="H,?,Hlp,Help" Description="Displays all of the commands names and descriptions."/>
-  <Command Name="workflowHelp" Aliases="WorkFlows?,WrkFlo?,WrkFlow?,WorkFlo?,WorkFlow?,WrkFl?,WF?,WrkFloHlp,WorkFloHlp,WorkFlowHlp,WrkFloHlp,WorkFloHlp,WorkFlowHlp,WrkFloHlp,WorkFloHlp,WrkFloHelp,WrkFlowHelp,WorkFloHelp,WorkFlowHelp,WrkFloHelp,WrkFlowHelp,WorkFloHelp,WorkFlowHelp,WrkFloHelp,WrkFlowHelp,WorkFloHelp,WorkFlowHelp" Description="Displays all the workflows, names and values."/>
+  <Command Name="workflowHelp" Aliases="WorkFlows?,WrkFlo?,WrkFlow?,WorkFlo?,WorkFlow?,WrkFl?,WF?,WrkFloHlp,WorkFloHlp,WorkFlowHlp,WrkFloHelp,WrkFlowHelp,WorkFloHelp" Description="Displays all the workflows, names and values."/>
   <Command Name="commandSequencer" Aliases="CmdSeq,CmdSequencer,CommandSeq,CommandSequencer" Description="Takes a sequence of commands/aliases and enqueues all to the command queue."/>
   <Command Name="workflow" Aliases="WorkFlow,WorkFlows,WF,WrkF,WrkFl,WrkFlo,WrkFlow,WorkFlo" Description="Loads the specified workflow, calls the command sequencer to get each commands enqueued."/>
   <Command Name="printDataHive" Aliases="PDH,PDataH,PrintDH,PrintDataH,PDataHive,PrintDHive,PrintDataHive" Description="Prints the specified data hive (CommandWorkflows, CommandsAliases, Colors, Configuration, or root) in the D-data structure."/>
@@ -19,5 +19,5 @@
   <Command Name="commandMetrics" Aliases="CMet,CmdM,CmdMet,CommandMet,CmdMetrics,CommandMetrics" Description="Computes statistics on command performance metrics and displays the results."/>
   <Command Name="convertColors" Aliases="ConvCol,ConvColr,ConvColrs,ConvColors,ConvertColor,ConvertColors" Description="Converts all the colors in the color library from hex values to RGB values."/>
   <Command Name="validateConstants" Aliases="VC,ValC,VConst,ValConst,ValConstants,ValidConst,ValidConstants,VConstants,ValidateConst,ValidateConstants" Description="Validates all constants with a 2-phase verification process."/>
-  <Command Name="validateCommandAliases" Aliases="VCA,ValCA,VCmdA,ValCmdA,ValCmdAliases,VCAliases,VCommandA,ValCmdAliases,ValCommandA,ValidateCommandAliases,ValidateCommandA" Description="Validates all command aliases for duplicates."/>
+  <Command Name="validateCommandAliases" Aliases="VCA,ValCA,VCmdA,ValCmdA,ValCmdAliases,VCAliases,VCommandA,ValCommandA,ValidateCommandAliases,ValidateCommandA" Description="Validates all command aliases for duplicates."/>
 </CommandsAliases>
