@@ -20,4 +20,5 @@
   <Command Name="convertColors" Aliases="ConvCol,ConvColr,ConvColrs,ConvColors,ConvertColor,ConvertColors" Description="Converts all the colors in the color library from hex values to RGB values."/>
   <Command Name="validateConstants" Aliases="VC,ValC,VConst,ValConst,ValConstants,ValidConst,ValidConstants,VConstants,ValidateConst,ValidateConstants" Description="Validates all constants with a 2-phase verification process."/>
   <Command Name="validateCommandAliases" Aliases="VCA,ValCA,VCmdA,ValCmdA,ValCmdAliases,VCAliases,VCommandA,ValCommandA,ValidateCommandAliases,ValidateCommandA" Description="Validates all command aliases for duplicates."/>
+  <Command Name="commandAliasGenerator" Aliases="CAG,CmdAliasGen" Description="Generates command aliases given a command name and a list of word abreviations."/>
 </CommandsAliases>
