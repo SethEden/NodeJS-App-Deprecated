@@ -404,7 +404,13 @@ export const phonicsConstantsValidation = [
    {Name: 'cStor', Actual: p.cStor, Expected: 'Stor'},
    {Name: 'cequ', Actual: p.cequ, Expected: 'equ'},
    {Name: 'cEqu', Actual: p.cEqu, Expected: 'Equ'},
+   {Name: 'cque', Actual: p.cque, Expected: 'que'},
+   {Name: 'cQue', Actual: p.cQue, Expected: 'Que'},
    {Name: 'cdup', Actual: p.cdup, Expected: 'dup'},
    {Name: 'cDup', Actual: p.cDup, Expected: 'Dup'},
-   {Name: 'ccate', Actual: p.ccate, Expected: 'cate'}
+   {Name: 'ccate', Actual: p.ccate, Expected: 'cate'},
+   {Name: 'cere', Actual: p.cere, Expected: 'ere'},
+   {Name: 'cease', Actual: p.cease, Expected: 'ease'},
+   {Name: 'crev', Actual: p.crev, Expected: 'rev'},
+   {Name: 'cron', Actual: p.cron, Expected: 'ron'}
  ];

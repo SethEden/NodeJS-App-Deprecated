@@ -225,6 +225,17 @@ export const systemConstantsValidation = [
    {Name: 'cMessageFontBackgroundColor', Actual: s.cMessageFontBackgroundColor, Expected: 'MessageFontBackgroundColor'},
    {Name: 'cDataFontBackgroundColor', Actual: s.cDataFontBackgroundColor, Expected: 'DataFontBackgroundColor'},
 
+   // System Messages
+   {Name: 'cCommandNamePrompt1', Actual: s.cCommandNamePrompt1, Expected: 'Please enter a named command where '},
+   {Name: 'cCommandNamePrompt2', Actual: s.cCommandNamePrompt2, Expected: 'the first word starts with a '},
+   {Name: 'cCommandNamePrompt3', Actual: s.cCommandNamePrompt3, Expected: 'lower case letter and all other '},
+   {Name: 'cCommandNamePrompt4', Actual: s.cCommandNamePrompt4, Expected: 'words in the named command start '},
+   {Name: 'cCommandNamePrompt5', Actual: s.cCommandNamePrompt5, Expected: 'with an upper case letter:'},
+
+   {Name: 'cCommandWordAliasPrompt1', Actual: s.cCommandWordAliasPrompt1, Expected: 'Please enter a list of command '},
+   {Name: 'cCommandWordAliasPrompt2', Actual: s.cCommandWordAliasPrompt2, Expected: 'word abreviations/acronyms/aliases '},
+   {Name: 'cCommandWordAliasPrompt3', Actual: s.cCommandWordAliasPrompt3, Expected: 'for the command word:'},
+
    // File Types
    {Name: 'cCatia', Actual: s.cCatia, Expected: 'Catia'},
    {Name: 'cDocument', Actual: s.cDocument, Expected: 'Document'},
@@ -623,6 +634,12 @@ export const systemConstantsValidation = [
    {Name: 'cgetValueFromAssignmentOperationString', Actual: s.cgetValueFromAssignmentOperationString, Expected: 'getValueFromAssignmentOperationString'},
    {Name: 'caggregateNumericalDifferenceBetweenTwoStrings', Actual: s.caggregateNumericalDifferenceBetweenTwoStrings, Expected: 'aggregateNumericalDifferenceBetweenTwoStrings'},
    {Name: 'cconvertCamelCaseStringToArray', Actual: s.cconvertCamelCaseStringToArray, Expected: 'convertCamelCaseStringToArray'},
+   {Name: 'cdoesStringContainUpperCaseCharacter', Actual: s.cdoesStringContainUpperCaseCharacter, Expected: 'doesStringContainUpperCaseCharacter'},
+   {Name: 'cdoesStringContainLowerCaseCharacter', Actual: s.cdoesStringContainLowerCaseCharacter, Expected: 'doesStringContainLowerCaseCharacter'},
+   {Name: 'cisFirstCharacterLowerCase', Actual: s.cisFirstCharacterLowerCase, Expected: 'isFirstCharacterLowerCase'},
+   {Name: 'cisFirstCharacterUpperCase', Actual: s.cisFirstCharacterUpperCase, Expected: 'isFirstCharacterUpperCase'},
+   {Name: 'cisStringList', Actual: s.cisStringList, Expected: 'isStringList'},
+   {Name: 'cisStringCamelCase', Actual: s.cisStringCamelCase, Expected: 'isStringCamelCase'},
    {Name: 'cconvertArrayToCamelCaseString', Actual: s.cconvertArrayToCamelCaseString, Expected: 'convertArrayToCamelCaseString'},
    {Name: 'cmapWordToCamelCaseWord', Actual: s.cmapWordToCamelCaseWord, Expected: 'mapWordToCamelCaseWord'},
    {Name: 'csimplifyAndConsolidateString', Actual: s.csimplifyAndConsolidateString, Expected: 'simplifyAndConsolidateString'},
@@ -648,6 +665,13 @@ export const systemConstantsValidation = [
    {Name: 'cloadDataFile', Actual: s.cloadDataFile, Expected: 'loadDataFile'},
    {Name: 'cgetStoredData', Actual: s.cgetStoredData, Expected: 'getStoredData'},
    {Name: 'cstoreData', Actual: s.cstoreData, Expected: 'storeData'},
+   {Name: 'cisObjectEmpty', Actual: s.cisObjectEmpty, Expected: 'isObjectEmpty'},
+   {Name: 'cisArrayEmpty', Actual: s.cisArrayEmpty, Expected: 'isArrayEmpty'},
+   {Name: 'cisArray', Actual: s.cisArray, Expected: 'isArray'},
+   {Name: 'cisNonZeroLengthArray', Actual: s.cisNonZeroLengthArray, Expected: 'isNonZeroLengthArray'},
+   {Name: 'cisObject', Actual: s.cisObject, Expected: 'isObject'},
+   {Name: 'cisArrayOrObject', Actual: s.cisArrayOrObject, Expected: 'isArrayOrObject'},
+   {Name: 'ccommandAliasGenerator', Actual: s.ccommandAliasGenerator, Expected: 'commandAliasGenerator'},
    {Name: 'cgetAttributeName', Actual: s.cgetAttributeName, Expected: 'getAttributeName'},
    {Name: 'cgetAttributeValue', Actual: s.cgetAttributeValue, Expected: 'getAttributeValue'},
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},
@@ -655,6 +679,7 @@ export const systemConstantsValidation = [
    {Name: 'creplaceCharacterAtIndex', Actual: s.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},
    {Name: 'ccleanCommandInput', Actual: s.ccleanCommandInput, Expected: 'cleanCommandInput'},
    {Name: 'caggregateCommandArguments', Actual: s.caggregateCommandArguments, Expected: 'aggregateCommandArguments'},
+   {Name: 'cgenerateCommandAliases', Actual: s.cgenerateCommandAliases, Expected: 'generateCommandAliases'},
 
    // *********************************
    // StringGeneration rules in order

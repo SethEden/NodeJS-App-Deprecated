@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -33,6 +33,8 @@ var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
+var n = _interopRequireWildcard(require("../../Constants/numeric.constants"));
+
 var w = _interopRequireWildcard(require("../../Constants/word.constants"));
 
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
@@ -44,6 +46,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var prompt = require('prompt-sync')();
 
 var figlet = require('figlet');
 
@@ -960,6 +964,103 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function commandAliasGenerator
+ * @description Requests a set of inputs from the users for a command name, and a series of command words and a list of command word acronyms.
+ * The command then calls a series of business rules to in-turn generate all possible combinations of command words and command word acronyms.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+
+
+exports.commandGenerator = commandGenerator;
+
+var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaData) {
+  var functionName = s.ccommandAliasGenerator;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var commandName = '';
+  var commandWordAliasList = '';
+  var validCommandName = false;
+  var validCommandWordAliasList = false;
+  var commandAliasDataStructure = {};
+  var commandNameParsingRule = [];
+  var camelCaseToArrayRule = [];
+  var commandWordAliasListParsingRule = [];
+  var generateCommandAliasesRule = [];
+  commandNameParsingRule[0] = s.cisStringCamelCase;
+  camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
+  commandWordAliasListParsingRule[0] = s.cisStringList;
+  generateCommandAliasesRule[0] = s.cgenerateCommandAliases;
+
+  while (validCommandName === false) {
+    console.log(s.cCommandNamePrompt1);
+    console.log(s.cCommandNamePrompt2);
+    console.log(s.cCommandNamePrompt3);
+    console.log(s.cCommandNamePrompt4);
+    console.log(s.cCommandNamePrompt5);
+    commandName = prompt(b.cGreaterThan);
+    validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
+
+    if (validCommandName === false) {
+      console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+    }
+  }
+
+  var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
+
+  for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
+    var commandWord = camelCaseCommandNameArray[i];
+    console.log('current commandWord is: ' + commandWord);
+    validCommandWordAliasList = false;
+
+    if (commandWord != '') {
+      commandAliasDataStructure[commandWord] = {};
+
+      while (validCommandWordAliasList === false) {
+        console.log(s.cCommandWordAliasPrompt1);
+        console.log(s.cCommandWordAliasPrompt2);
+        console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
+        commandWordAliasList = prompt(b.cGreaterThan);
+        validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
+
+        if (validCommandWordAliasList === false) {
+          console.log('INVALID INPUT: Please enter a valid command word alias list.');
+        } else if (commandWordAliasList != '') {
+          // As long as the user entered something we should be able to proceed!
+          validCommandWordAliasList = true;
+        }
+      } // End while-loop: validCommandWordAliasList
+
+
+      commandAliasDataStructure[commandWord] = commandWordAliasList;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
+  // TODO: Start generating all the possible combinations of the command words and command word aliases.
+  // Pass the data object to a business rule to do the above task.
+
+
+  var commandAliases = _ruleBroker["default"].processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function businessRulesMetrics
  * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
@@ -970,7 +1071,7 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
  */
 
 
-exports.commandGenerator = commandGenerator;
+exports.commandAliasGenerator = commandAliasGenerator;
 
 var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaData) {
   var functionName = s.cbusinessRulesMetrics;

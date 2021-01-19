@@ -1574,6 +1574,14 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cEqu,
   Expected: 'Equ'
 }, {
+  Name: 'cque',
+  Actual: p.cque,
+  Expected: 'que'
+}, {
+  Name: 'cQue',
+  Actual: p.cQue,
+  Expected: 'Que'
+}, {
   Name: 'cdup',
   Actual: p.cdup,
   Expected: 'dup'
@@ -1585,5 +1593,21 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'ccate',
   Actual: p.ccate,
   Expected: 'cate'
+}, {
+  Name: 'cere',
+  Actual: p.cere,
+  Expected: 'ere'
+}, {
+  Name: 'cease',
+  Actual: p.cease,
+  Expected: 'ease'
+}, {
+  Name: 'crev',
+  Actual: p.crev,
+  Expected: 'rev'
+}, {
+  Name: 'cron',
+  Actual: p.cron,
+  Expected: 'ron'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

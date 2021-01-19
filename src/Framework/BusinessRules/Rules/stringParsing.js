@@ -863,13 +863,213 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
     let last = 0;
     let decomposedString = [];
     for (let j = 0; j < caps.length; j++) {
-      decomposedString.push(inputData.slice(last, caps[j]).toLowerCase());
+      decomposedString.push(inputData.slice(last, caps[j]));
       last = caps[j];
     }
-    decomposedString.push(inputData.slice(last).toLowerCase());
+    decomposedString.push(inputData.slice(last));
     returnData = decomposedString;
   } else {
-    returnData = [inputData.toLowerCase()];
+    returnData = [inputData];
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function doesStringContainUpperCaseCharacter
+ * @description Determines if the input string contains at least one upper case character.
+ * @param {string} inputData The string that should be checked for upper case characters.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string contains at least one upper case character or more.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+export const doesStringContainUpperCaseCharacter = function(inputData, inputMetaData) {
+  let functionName = s.cdoesStringContainUpperCaseCharacter;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    for (let i = 1; i < inputData.length; i++) {
+      if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+        returnData = true;
+        break;
+      }
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function doesStringContainLowerCaseCharacter
+ * @description Determines if the input string contains at least one lower case character.
+ * @param {string} inputData The string that should be checked for lower case characters.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string contains at least one lower case character or more.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+export const doesStringContainLowerCaseCharacter = function(inputData, inputMetaData) {
+  let functionName = s.cdoesStringContainLowerCaseCharacter;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    for (let i = 1; i < inputData.length; i++) {
+      if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+        returnData = true;
+        break;
+      }
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isFirstCharacterLowerCase
+ * @description Determines if the first character of the string is a lower case character.
+ * @param {string} inputData The string that should be checked to determine if the first character is lower case or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the first character of the string is a lower case character or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+export const isFirstCharacterLowerCase = function(inputData, inputMetaData) {
+  let functionName = s.cisFirstCharacterLowerCase;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    returnData = g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(0));
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isFirstCharacterUpperCase
+ * @description Determines if the first character of the string is an upper case character.
+ * @param {string} inputData The string that should be checked to determine if the first character is upper case or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the first character of the string is an upper case character or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+export const isFirstCharacterUpperCase = function(inputData, inputMetaData) {
+  let functionName = s.cisFirstCharacterUpperCase;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    returnData = g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(0));
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isStringList
+ * @description Determines if the input string is a list or not.
+ * @param {string} inputData The string that should be checked if it is a list or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input string is a list or not a list.
+ * @author Seth Hollingsead
+ * @date 2021/01/19
+ */
+export const isStringList = function(inputData, inputMetaData) {
+  let functionName = s.cisStringList;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
+    let secondaryCommandDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    if (inputData.includes(primaryCommandDelimiter) === true ||
+    inputData.includes(secondaryCommandDelimiter) === true ||
+    inputData.includes(tertiaryCommandDelimiter) === true) {
+      returnData = true;
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isStringCamelCase
+ * @description Determines if an input string is a camel case string or not.
+ * @param {string} inputData The string that should be for camel case qualification.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string is camel case or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ * @NOTE Even if we have an all upper case acronym at the end of the came case string,
+ * The string itself is still considered camel case.
+ * Valid examples:
+ * myParsedXML
+ * fireflyWonder1996
+ * wonderWoman1984
+ * covidMedicalCase
+ * aBc
+ */
+export const isStringCamelCase = function(inputData, inputMetaData) {
+  let functionName = s.cisStringCamelCase;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false;
+  if (inputData) {
+    let foundFirstCapitalLetter = false;
+    // First make sure the string meets the basic qualifications of a camel case string.
+    // 1. Does not contain underscore or dash word seperators.
+    // 2. Contains at least 1 lower case letter or more.
+    // 3. Contains at least 1 upper case letter or more.
+    // 4. Has a lower case first letter of the first word.
+    if (!inputData.match(/[\s_-]/g) && doesStringContainUpperCaseCharacter(inputData, '') &&
+    doesStringContainLowerCaseCharacter(inputData, '') && isFirstCharacterLowerCase(inputData, '')) {
+      for (let i = 1; i < inputData.length; i++) {
+        // Now check for the final qualification:
+        // 3. Ensure that upper case letters are seperated by lower case letters
+        // (numbers also allowed, but there should be at least some lower case letters)
+        // NOTE: This for-loop is how we iterate over the characters of the string.
+
+        // First we need to look for the first upper case letter.
+        if (foundFirstCapitalLetter === false) {
+          if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+            // Found an upper case letter, ensure the next letter is lower case.
+            foundFirstCapitalLetter = true;
+          }
+        } else if (foundFirstCapitalLetter === true) {
+          if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+            returnData = true;
+            break; // Sufficent evidence to prove this is a camel case string.
+          }
+        }
+      } // End of the for-loop iterating over the characters in the string.
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1385,6 +1585,32 @@ loop2:
   return returnData
 };
 
+/**
+ * @function generateCommandAliases
+ * @description Generates all possible combinations of command aliases given a set of command words and command word abreviations.
+ * @param {object} inputData An object containing all of the meta-data needed for command words and
+ * command abreviations needed to generate every possible combination of command alias.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A coma-separated list of every possible combination of command aliases.
+ * @author Seth Hollingsead
+ * @date 2021/01/19
+ */
+export const generateCommandAliases = function(inputData, inputMetaData) {
+  let functionName = s.cgenerateCommandAliases;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData
+};
+
 // ******************************************************
 // The following functions are more domain specific
 // ******************************************************
@@ -1764,6 +1990,150 @@ export const storeData = function(inputData, inputMetaData) {
     returnData = true;
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isObjectEmpty
+ * @description Determines if a JSON object is empty or not.
+ * @param {object} inputData The object that should be checked for emptyness.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the object is empty or not empty.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+export const isObjectEmpty = function(inputData, inputMetaData) {
+  let functionName = s.cisObjectEmpty;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = true;
+  if (inputData) {
+    for (var key in inputData) {
+      if (inputData.hasOwnProperty(key)) {
+        returnData = false;
+        // It may have a value, but is that value === null, if it is, reset back to true.
+        if (inputData[key] === null) {
+          returnData = true;
+        }
+      }
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isArrayEmpty
+ * @description Determines if a JSON array is empty or not.
+ * @param {array} inputData The array that should be checked for emptyness.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the array is empty or not empty.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+export const isArrayEmpty = function(inputData, inputMetaData) {
+  let functionName = s.cisArrayEmpty;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = true;
+  if (inputData) {
+    returnData = !Object.keys(inputData).length;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isArray
+ * @description Determines if an object is an array or not.
+ * @param {object} inputData The object that should be tested to see if is an array or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is an array or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+export const isArray = function(inputData, inputMetaData) {
+  let functionName = s.cisArray;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false;
+  returnData = Array.isArray(inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isNonZeroLengthArray
+ * @description Determines if an object is an array of length greater than or equal to one or not.
+ * @param {object} inputData The object that should be tested to see if is an array of length greater than or equal to 1 or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is an array of length greater than equal to zero or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+export const isNonZeroLengthArray = function(inputData, inputMetaData) {
+  let functionName = s.cisNonZeroLengthArray;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false;
+  if (isArray(inputData) === true && inputData.length >= 1) {
+    returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isObject
+ * @description Determines if an object is a JSON object or not.
+ * @param {object} inputData The object that should be tested to see if it is a JSON object or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is an array or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+export const isObject = function(inputData, inputMetaData) {
+  let functionName = s.cisObject;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false;
+  if (typeof inputData === 'object') {
+    returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function isArrayOrObject
+ * @description Determines if an input object is either an array or a JSON object.
+ * @param {object} inputData The object that should be tested to see if it is either an array or a JSON object or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is either an array or a JSON object.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+export const isArrayOrObject = function(inputData, inputMetaData) {
+  let functionName = s.cisArrayOrObject;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false;
+  if (isObject(inputData, '') === true || isArray(inputData, '') === true) {
+    returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
 };

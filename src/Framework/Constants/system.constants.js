@@ -225,6 +225,18 @@ export const cFunctionFontBackgroundColor = w.cFunction + w.cFont + cBackground 
 export const cMessageFontBackgroundColor = w.cMessage + w.cFont + cBackground + w.cColor; // MessageFontBackgroundColor
 export const cDataFontBackgroundColor = w.cData + w.cFont + cBackground + w.cColor; // DataFontBackgroundColor
 
+// System Messages
+// Please enter a named command where the first word starts with a lower case letter and all other words in the named command start with an upper case letter.
+export const cCommandNamePrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cnamed + b.cSpace + w.ccommand + b.cSpace + w.cwhere + b.cSpace; // Please enter a named command where
+export const cCommandNamePrompt2 = w.cthe + b.cSpace + n.cfirst + b.cSpace + w.cword + b.cSpace + w.cstarts + b.cSpace + w.cwith + b.cSpace + b.ca + b.cSpace; // the first word starts with a
+export const cCommandNamePrompt3 = w.clower + b.cSpace + w.ccase + b.cSpace + w.cletter + b.cSpace + w.cand + b.cSpace + w.call + b.cSpace + w.cother + b.cSpace; // lower case letter and all other
+export const cCommandNamePrompt4 = w.cwords + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.cnamed + b.cSpace + w.ccommand + b.cSpace + w.cstart + b.cSpace; // words in the named command start
+export const cCommandNamePrompt5 = w.cwith + b.cSpace + b.can + b.cSpace + w.cupper + b.cSpace + w.ccase + b.cSpace + w.cletter + b.cColon; // with an upper case letter:
+// Please enter a list of command word abreviations/acronyms/aliases for the command word:
+export const cCommandWordAliasPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace + w.ccommand + b.cSpace;
+export const cCommandWordAliasPrompt2 = w.cword + b.cSpace + w.cabreviations + b.cForwardSlash + w.cacronyms + b.cForwardSlash + w.caliases + b.cSpace;
+export const cCommandWordAliasPrompt3 = w.cfor + b.cSpace + w.cthe + b.cSpace + w.ccommand + b.cSpace + w.cword + b.cColon;
+
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia
 export const cDocument = w.cDocument; // Document
@@ -614,8 +626,8 @@ export const creplaceSpacesWithPlus = w.creplace + w.cSpaces + w.cWith + w.cPlus
 export const creplaceColonWithUnderscore = w.creplace + w.cColon + w.cWith + cUnderscore; // replaceColonWithUnderscore
 export const creplaceCharacterWithCharacter = w.creplace + w.cCharacter + w.cWith + w.cCharacter; // replaceCharacterWithCharacter
 export const ccleanCarriageReturnFromString = w.cclean + cCarriageReturn + w.cFrom + w.cString; // cleanCarriageReturnFromString
-export const cconvertStringToLowerCase = w.cconvert + w.cString + w.cTo + w.cLower + w.cCase; // convertStringToLowerCase
-export const cconvertStringToUpperCase = w.cconvert + w.cString + w.cTo + w.cUpper + w.cCase; // convertStringToUpperCase
+export const cconvertStringToLowerCase = w.cconvert + w.cString + w.cTo + cLowerCase; // convertStringToLowerCase
+export const cconvertStringToUpperCase = w.cconvert + w.cString + w.cTo + cUpperCase; // convertStringToUpperCase
 export const cgetFileNameFromPath = w.cget + cFileName + w.cFrom + w.cPath; // getFileNameFromPath
 export const cgetFileExtension = w.cget + w.cFile + w.cExtension; // getFileExtension
 export const cremoveDotFromFileExtension = w.cremove + p.cDot + w.cFrom + w.cFile + w.cExtension; // removeDotFromFileExtension
@@ -623,6 +635,12 @@ export const cremoveFileExtensionFromFileName = w.cremove + w.cFile + w.cExtensi
 export const cgetValueFromAssignmentOperationString = w.cget + w.cValue + w.cFrom + w.cAssignment + w.cOperation + w.cString; // getValueFromAssignmentOperationString
 export const caggregateNumericalDifferenceBetweenTwoStrings = w.caggregate + w.cNumerical + w.cDifference + w.cBetween + n.cTwo + w.cStrings; // aggregateNumericalDifferenceBetweenTwoStrings
 export const cconvertCamelCaseStringToArray = w.cconvert + w.cCamel + w.cCase + w.cString + b.cTo + w.cArray; // convertCamelCaseStringToArray
+export const cdoesStringContainUpperCaseCharacter = w.cdoes + w.cString + w.cContain + cUpperCase + w.cCharacter; // doesStringContainUpperCaseCharacter
+export const cdoesStringContainLowerCaseCharacter = w.cdoes + w.cString + w.cContain + cLowerCase + w.cCharacter; // doesStringContainLowerCaseCharacter
+export const cisFirstCharacterLowerCase = b.cis + n.cFirst + w.cCharacter + cLowerCase; // isFirstCharacterLowerCase
+export const cisFirstCharacterUpperCase = b.cis + n.cFirst + w.cCharacter + cUpperCase; // isFirstCharacterUpperCase
+export const cisStringList = b.cis + w.cString + w.cList; // isStringList
+export const cisStringCamelCase = b.cis + w.cString + w.cCamel + w.cCase; // isStringCamelCase
 export const cconvertArrayToCamelCaseString = w.cconvert + w.cArray + b.cTo + w.cCamel + w.cCase + w.cString; // convertArrayToCamelCaseString
 export const cmapWordToCamelCaseWord = p.cmap + w.cWord + b.cTo + w.cCamel + w.cCase + w.cWord; // mapWordToCamelCaseWord
 export const csimplifyAndConsolidateString = w.csimplify + w.cAnd + w.cConsolidate + w.cString; // simplifyAndConsolidateString
@@ -648,6 +666,12 @@ export const cgetFirstTopLevelFolderFromPath = w.cget + n.cFirst + w.cTop + w.cL
 export const cloadDataFile = w.cload + w.cData + w.cFile; // loadDataFile
 export const cgetStoredData = w.cget + w.cStored + w.cData; // getStoredData
 export const cstoreData = w.cstore + w.cData; // storeData
+export const cisObjectEmpty = b.cis + w.cObject + w.cEmpty; // isObjectEmpty
+export const cisArrayEmpty = b.cis + w.cArray + w.cEmpty; // isArrayEmpty
+export const cisArray = b.cis + w.cArray; // isArray
+export const cisNonZeroLengthArray = b.cis + p.cNon + n.cZero + w.cLength + w.cArray; // isNonZeroLengthArray
+export const cisObject = b.cis + w.cObject; // isObject
+export const cisArrayOrObject = b.cis + w.cArray + b.cOr + w.cObject; // isArrayOrObject
 export const cgetAttributeName = w.cget + w.cAttribute + w.cName; // getAttributeName
 export const cgetAttributeValue = w.cget + w.cAttribute + w.cValue; // getAttributeValue
 export const cisOdd = b.cis + w.cOdd; // isOdd
@@ -655,6 +679,7 @@ export const cisEven = b.cis + w.cEven; // isEven
 export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
 export const ccleanCommandInput = w.cclean + w.cCommand + w.cInput; // cleanCommandInput
 export const caggregateCommandArguments = w.caggregate + w.cCommand + w.cArguments; // aggregateCommandArguments
+export const cgenerateCommandAliases = w.cgenerate + w.cCommand + w.cAliases; // generateCommandAliases
 
 // *********************************
 // StringGeneration rules in order
@@ -756,6 +781,7 @@ export const ccommandSequencer = w.ccommand + w.cSequencer; // commandSequencer
 export const cprintDataHive = w.cprint + w.cData + w.cHive; // printDataHive
 export const cclearDataStorage = w.cclear + w.cData + w.cStorage; // clearDataStorage
 export const ccommandGenerator = w.ccommand + w.cGenerator; // commandGenerator
+export const ccommandAliasGenerator = w.ccommand + w.cAlias + w.cGenerator; // commandAliasGenerator
 export const cbusinessRulesMetrics = w.cbusiness + w.cRules + w.cMetrics; // businessRulesMetrics
 export const ccommandMetrics = w.ccommand + w.cMetrics; // commandMetrics
 export const cconvertColors = w.cconvert + w.cColors; // convertColors

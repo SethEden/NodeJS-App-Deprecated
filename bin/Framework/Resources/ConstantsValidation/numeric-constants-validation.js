@@ -4073,6 +4073,14 @@ var numericConstantsValidation = [// Numbers
   Expected: '999'
 }, // String Numbers
 {
+  Name: 'czero',
+  Actual: n.czero,
+  Expected: 'zero'
+}, {
+  Name: 'cZero',
+  Actual: n.cZero,
+  Expected: 'Zero'
+}, {
   Name: 'cone',
   Actual: n.cone,
   Expected: 'one'

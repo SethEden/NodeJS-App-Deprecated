@@ -1,11 +1,9 @@
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.countDuplicateCommandAliases = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -29,32 +27,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// NOTE: DO NOT directly import this library to your script(s).
-// please call via the RuleBroker.js.
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-/**
- * @file stringParsing.js
- * @module stringParsing
- * @description Contains all system defined business rules for parsing strings, values, arrays,
- * values of all kinds, with various operations.
- * @requires module:configurator
- * @requires module:loggers
- * @requires module:dataBroker
- * @requires module:fileBroker
- * @requires module:basic-constants
- * @requires module:generic-constants
- * @requires module:word-constants
- * @requires module:system-constants
- * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
- * @requires {@link https://www.npmjs.com/package/lodash|lodash}
- * @requires {@link https://www.npmjs.com/package/path|path}
- * @requires {@link https://mathjs.org/index.html|math}
- * @requires {@link https://www.npmjs.com/package/chalk|chalk}
- * @requires module:data
- * @author Seth Hollingsead
- * @date 2020/06/04
- * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
- */
 var lineByLine = require('n-readlines');
 
 var _ = require('lodash');
@@ -1233,14 +1207,280 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
     var decomposedString = [];
 
     for (var j = 0; j < caps.length; j++) {
-      decomposedString.push(inputData.slice(last, caps[j]).toLowerCase());
+      decomposedString.push(inputData.slice(last, caps[j]));
       last = caps[j];
     }
 
-    decomposedString.push(inputData.slice(last).toLowerCase());
+    decomposedString.push(inputData.slice(last));
     returnData = decomposedString;
   } else {
-    returnData = [inputData.toLowerCase()];
+    returnData = [inputData];
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function doesStringContainUpperCaseCharacter
+ * @description Determines if the input string contains at least one upper case character.
+ * @param {string} inputData The string that should be checked for upper case characters.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string contains at least one upper case character or more.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+
+
+exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
+
+var doesStringContainUpperCaseCharacter = function doesStringContainUpperCaseCharacter(inputData, inputMetaData) {
+  var functionName = s.cdoesStringContainUpperCaseCharacter;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    for (var i = 1; i < inputData.length; i++) {
+      if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+        returnData = true;
+        break;
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function doesStringContainLowerCaseCharacter
+ * @description Determines if the input string contains at least one lower case character.
+ * @param {string} inputData The string that should be checked for lower case characters.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string contains at least one lower case character or more.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+
+
+exports.doesStringContainUpperCaseCharacter = doesStringContainUpperCaseCharacter;
+
+var doesStringContainLowerCaseCharacter = function doesStringContainLowerCaseCharacter(inputData, inputMetaData) {
+  var functionName = s.cdoesStringContainLowerCaseCharacter;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    for (var i = 1; i < inputData.length; i++) {
+      if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+        returnData = true;
+        break;
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isFirstCharacterLowerCase
+ * @description Determines if the first character of the string is a lower case character.
+ * @param {string} inputData The string that should be checked to determine if the first character is lower case or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the first character of the string is a lower case character or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+
+
+exports.doesStringContainLowerCaseCharacter = doesStringContainLowerCaseCharacter;
+
+var isFirstCharacterLowerCase = function isFirstCharacterLowerCase(inputData, inputMetaData) {
+  var functionName = s.cisFirstCharacterLowerCase;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    returnData = g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(0));
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isFirstCharacterUpperCase
+ * @description Determines if the first character of the string is an upper case character.
+ * @param {string} inputData The string that should be checked to determine if the first character is upper case or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the first character of the string is an upper case character or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+
+
+exports.isFirstCharacterLowerCase = isFirstCharacterLowerCase;
+
+var isFirstCharacterUpperCase = function isFirstCharacterUpperCase(inputData, inputMetaData) {
+  var functionName = s.cisFirstCharacterUpperCase;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    returnData = g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(0));
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isStringList
+ * @description Determines if the input string is a list or not.
+ * @param {string} inputData The string that should be checked if it is a list or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input string is a list or not a list.
+ * @author Seth Hollingsead
+ * @date 2021/01/19
+ */
+
+
+exports.isFirstCharacterUpperCase = isFirstCharacterUpperCase;
+
+var isStringList = function isStringList(inputData, inputMetaData) {
+  var functionName = s.cisStringList;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
+
+    var secondaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
+
+    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter);
+
+    if (inputData.includes(primaryCommandDelimiter) === true || inputData.includes(secondaryCommandDelimiter) === true || inputData.includes(tertiaryCommandDelimiter) === true) {
+      returnData = true;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isStringCamelCase
+ * @description Determines if an input string is a camel case string or not.
+ * @param {string} inputData The string that should be for camel case qualification.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string is camel case or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ * @NOTE Even if we have an all upper case acronym at the end of the came case string,
+ * The string itself is still considered camel case.
+ * Valid examples:
+ * myParsedXML
+ * fireflyWonder1996
+ * wonderWoman1984
+ * covidMedicalCase
+ * aBc
+ */
+
+
+exports.isStringList = isStringList;
+
+var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
+  var functionName = s.cisStringCamelCase;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (inputData) {
+    var foundFirstCapitalLetter = false; // First make sure the string meets the basic qualifications of a camel case string.
+    // 1. Does not contain underscore or dash word seperators.
+    // 2. Contains at least 1 lower case letter or more.
+    // 3. Contains at least 1 upper case letter or more.
+    // 4. Has a lower case first letter of the first word.
+
+    if (!inputData.match(/[\s_-]/g) && doesStringContainUpperCaseCharacter(inputData, '') && doesStringContainLowerCaseCharacter(inputData, '') && isFirstCharacterLowerCase(inputData, '')) {
+      for (var i = 1; i < inputData.length; i++) {
+        // Now check for the final qualification:
+        // 3. Ensure that upper case letters are seperated by lower case letters
+        // (numbers also allowed, but there should be at least some lower case letters)
+        // NOTE: This for-loop is how we iterate over the characters of the string.
+        // First we need to look for the first upper case letter.
+        if (foundFirstCapitalLetter === false) {
+          if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+            // Found an upper case letter, ensure the next letter is lower case.
+            foundFirstCapitalLetter = true;
+          }
+        } else if (foundFirstCapitalLetter === true) {
+          if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+            returnData = true;
+            break; // Sufficent evidence to prove this is a camel case string.
+          }
+        }
+      } // End of the for-loop iterating over the characters in the string.
+
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1260,7 +1500,7 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
  */
 
 
-exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
+exports.isStringCamelCase = isStringCamelCase;
 
 var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(inputData, inputMetaData) {
   var functionName = s.cconvertArrayToCamelCaseString;
@@ -1947,6 +2187,41 @@ var countDuplicateCommandAliases = function countDuplicateCommandAliases(inputDa
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
   return returnData;
+};
+/**
+ * @function generateCommandAliases
+ * @description Generates all possible combinations of command aliases given a set of command words and command word abreviations.
+ * @param {object} inputData An object containing all of the meta-data needed for command words and
+ * command abreviations needed to generate every possible combination of command alias.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A coma-separated list of every possible combination of command aliases.
+ * @author Seth Hollingsead
+ * @date 2021/01/19
+ */
+
+
+exports.countDuplicateCommandAliases = countDuplicateCommandAliases;
+
+var generateCommandAliases = function generateCommandAliases(inputData, inputMetaData) {
+  var functionName = s.cgenerateCommandAliases;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {}
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
 }; // ******************************************************
 // The following functions are more domain specific
 // ******************************************************
@@ -1962,7 +2237,7 @@ var countDuplicateCommandAliases = function countDuplicateCommandAliases(inputDa
  */
 
 
-exports.countDuplicateCommandAliases = countDuplicateCommandAliases;
+exports.generateCommandAliases = generateCommandAliases;
 
 var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContextName(inputData, inputMetaData) {
   var functionName = s.cgetDataCatagoryFromDataContextName;
@@ -2473,6 +2748,215 @@ var storeData = function storeData(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function isObjectEmpty
+ * @description Determines if a JSON object is empty or not.
+ * @param {object} inputData The object that should be checked for emptyness.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the object is empty or not empty.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+
+
+exports.storeData = storeData;
+
+var isObjectEmpty = function isObjectEmpty(inputData, inputMetaData) {
+  var functionName = s.cisObjectEmpty;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = true;
+
+  if (inputData) {
+    for (var key in inputData) {
+      if (inputData.hasOwnProperty(key)) {
+        returnData = false; // It may have a value, but is that value === null, if it is, reset back to true.
+
+        if (inputData[key] === null) {
+          returnData = true;
+        }
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isArrayEmpty
+ * @description Determines if a JSON array is empty or not.
+ * @param {array} inputData The array that should be checked for emptyness.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the array is empty or not empty.
+ * @author Seth Hollingsead
+ * @date 2021/01/15
+ */
+
+
+exports.isObjectEmpty = isObjectEmpty;
+
+var isArrayEmpty = function isArrayEmpty(inputData, inputMetaData) {
+  var functionName = s.cisArrayEmpty;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = true;
+
+  if (inputData) {
+    returnData = !Object.keys(inputData).length;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isArray
+ * @description Determines if an object is an array or not.
+ * @param {object} inputData The object that should be tested to see if is an array or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is an array or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+
+
+exports.isArrayEmpty = isArrayEmpty;
+
+var isArray = function isArray(inputData, inputMetaData) {
+  var functionName = s.cisArray;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+  returnData = Array.isArray(inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isNonZeroLengthArray
+ * @description Determines if an object is an array of length greater than or equal to one or not.
+ * @param {object} inputData The object that should be tested to see if is an array of length greater than or equal to 1 or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is an array of length greater than equal to zero or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+
+
+exports.isArray = isArray;
+
+var isNonZeroLengthArray = function isNonZeroLengthArray(inputData, inputMetaData) {
+  var functionName = s.cisNonZeroLengthArray;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (isArray(inputData) === true && inputData.length >= 1) {
+    returnData = true;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isObject
+ * @description Determines if an object is a JSON object or not.
+ * @param {object} inputData The object that should be tested to see if it is a JSON object or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is an array or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+
+
+exports.isNonZeroLengthArray = isNonZeroLengthArray;
+
+var isObject = function isObject(inputData, inputMetaData) {
+  var functionName = s.cisObject;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (_typeof(inputData) === 'object') {
+    returnData = true;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isArrayOrObject
+ * @description Determines if an input object is either an array or a JSON object.
+ * @param {object} inputData The object that should be tested to see if it is either an array or a JSON object or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input object is either an array or a JSON object.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+
+
+exports.isObject = isObject;
+
+var isArrayOrObject = function isArrayOrObject(inputData, inputMetaData) {
+  var functionName = s.cisArrayOrObject;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (isObject(inputData, '') === true || isArray(inputData, '') === true) {
+    returnData = true;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function getAttributeName
  * @description Takes a string representation of a JSON attribute and gets the name (left hand assignment key).
  * @param {string} inputData The string representation of the JSON attribute that should be parsed.
@@ -2483,7 +2967,7 @@ var storeData = function storeData(inputData, inputMetaData) {
  */
 
 
-exports.storeData = storeData;
+exports.isArrayOrObject = isArrayOrObject;
 
 var getAttributeName = function getAttributeName(inputData, inputMetaData) {
   var functionName = s.cgetAttributeName;

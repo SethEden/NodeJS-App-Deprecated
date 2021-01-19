@@ -1040,6 +1040,8 @@ import * as n from '../../Constants/numeric.constants';
    {Name: 'c999', Actual: n.c999, Expected: '999'},
 
    // String Numbers
+   {Name: 'czero', Actual: n.czero, Expected: 'zero'},
+   {Name: 'cZero', Actual: n.cZero, Expected: 'Zero'},
    {Name: 'cone', Actual: n.cone, Expected: 'one'},
    {Name: 'ctwo', Actual: n.ctwo, Expected: 'two'},
    {Name: 'cthree', Actual: n.cthree, Expected: 'three'},
