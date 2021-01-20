@@ -680,6 +680,9 @@ export const systemConstantsValidation = [
    {Name: 'ccleanCommandInput', Actual: s.ccleanCommandInput, Expected: 'cleanCommandInput'},
    {Name: 'caggregateCommandArguments', Actual: s.caggregateCommandArguments, Expected: 'aggregateCommandArguments'},
    {Name: 'cgenerateCommandAliases', Actual: s.cgenerateCommandAliases, Expected: 'generateCommandAliases'},
+   {Name: 'csolveLehmerCode', Actual: s.csolveLehmerCode, Expected: 'solveLehmerCode'},
+   {Name: 'cgetLehmerCodeValue', Actual: s.cgetLehmerCodeValue, Expected: 'getLehmerCodeValue'},
+   {Name: 'carraysAreEqual', Actual: s.carraysAreEqual, Expected: 'arraysAreEqual'},
 
    // *********************************
    // StringGeneration rules in order

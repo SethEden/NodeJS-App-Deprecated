@@ -412,5 +412,6 @@ export const phonicsConstantsValidation = [
    {Name: 'cere', Actual: p.cere, Expected: 'ere'},
    {Name: 'cease', Actual: p.cease, Expected: 'ease'},
    {Name: 'crev', Actual: p.crev, Expected: 'rev'},
-   {Name: 'cron', Actual: p.cron, Expected: 'ron'}
+   {Name: 'cron', Actual: p.cron, Expected: 'ron'},
+   {Name: 'colve', Actual: p.colve, Expected: 'olve'}
  ];

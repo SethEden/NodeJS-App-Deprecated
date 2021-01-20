@@ -680,6 +680,9 @@ export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.c
 export const ccleanCommandInput = w.cclean + w.cCommand + w.cInput; // cleanCommandInput
 export const caggregateCommandArguments = w.caggregate + w.cCommand + w.cArguments; // aggregateCommandArguments
 export const cgenerateCommandAliases = w.cgenerate + w.cCommand + w.cAliases; // generateCommandAliases
+export const csolveLehmerCode = w.csolve + w.cLehmer + w.cCode; // solveLehmerCode
+export const cgetLehmerCodeValue = w.cget + w.cLehmer + w.cCode + w.cValue; // getLehmerCodeValue
+export const carraysAreEqual = w.carrays + w.cAre + w.cEqual; // arraysAreEqual
 
 // *********************************
 // StringGeneration rules in order

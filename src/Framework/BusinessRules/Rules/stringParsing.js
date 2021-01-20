@@ -1598,13 +1598,216 @@ loop2:
 export const generateCommandAliases = function(inputData, inputMetaData) {
   let functionName = s.cgenerateCommandAliases;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    
+    // {"wonder":"wondr,wundr,wndr","Woman":"wman,wmn,womn","Amazing":"amzing,amzng"}
+    //
+    // {
+    // "wonder": "wondr,wundr,wndr",
+    // "Woman": "wman,wmn,womn",
+    // "Amazing": "amzing,amzng"
+    // }
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
+    let secondaryCommandDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    let commandDelimiter = '';
+    let commandWordsKeys1 = Object.keys(inputData);
+    let commandWordAliasesArray = [];
+    let masterCommandWordAliasesArray = [commandWordsKeys1.length - 1];
+    let masterArrayIndex = [commandWordsKeys1.length - 1];
+    for (let i = 0; i < commandWordsKeys1.length; i++) {
+    // commandWordsKeys1.forEach((key1) => {
+      let key1 = commandWordsKeys1[i];
+      let commandWordAliases = inputData[key1];
+      if (commandWordAliases.includes(primaryCommandDelimiter)) {
+        commandDelimiter = primaryCommandDelimiter;
+      } else if (commandWordAliases.includes(secondaryCommandDelimiter)) {
+        commandDelimiter = secondaryCommandDelimiter;
+      } else if (commandWordAliases.includes(tertiaryCommandDelimiter)) {
+        commandDelimiter = tertiaryCommandDelimiter;
+      }
+      commandWordAliases = commandWordAliases + commandDelimiter + key1;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliases BEFORE CHANGE is: ' + commandWordAliases);
+      commandWordAliasesArray = commandWordAliases.split(commandDelimiter);
+      masterArrayIndex[i] = commandWordAliasesArray.length - 1;
+      for (let j = 0; j < commandWordAliasesArray.length; j++) {
+        let commandAliasWord = commandWordAliasesArray[j];
+        if (isFirstCharacterLowerCase(commandAliasWord, '') === true) {
+          let firstLetterOfCommandAliasWord = commandAliasWord.charAt(0).toUpperCase();
+          commandAliasWord = replaceCharacterAtIndexOfString(commandAliasWord, 0, firstLetterOfCommandAliasWord);
+          commandWordAliasesArray[j] = commandAliasWord; // Saved the changes back to array.
+        }
+      }
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliasesArray AFTER CHANGE is: ' + JSON.stringify(commandWordAliasesArray));
+      masterCommandWordAliasesArray[i] = commandWordAliasesArray; // Try to build an array of arrays (2D)
+    }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterCommandWordAliasesArray is: ' + JSON.stringify(masterCommandWordAliasesArray));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterArrayIndex is: ' + JSON.stringify(masterArrayIndex));
+
+    // NOTES: Console output is:
+    // masterCommandWordAliasesArray is: [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
+    // masterArrayIndex is: [4,4,3]
+    //
+    // We should be able to have 2 nested for-loops, and we will delcare a counter array initialized to [0,0,0] to match the masterArrayIndex above.
+    // The counter array tells us which combination of words we should get.
+    // We can simply push those combination of words as a string on a stack we will make for this business rule.
+    // Then iterate the last array element as long as it's not greater than the number in the master array index and do the same things over again.
+    // When the array index for the last element in the array reaches the masterArrayIndex for the same array index then we increment the second from the last array counter.
+    // And start over again with the last element in the array counter.
+    // This way we should be able to iterate over the entire 2D array and get every combination without having to create x number of nested for-loops.
+    // Essentially we will be having 2-nested for-loops looping over the counter array. The top level loop will be looping over masterArrayIndex.length,
+    // and the second loop will be iterating over the integers in the counter array.
+    // The counter array will tell the algorthim which combination of words to put together and push on the stack.
+    //
+    // NOTE: The algorthim described above is called: Lehmer code
+    // https://en.wikipedia.org/wiki/Lehmer_code
+    let returnData = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData
+};
+
+/**
+ * @function solveLehmerCode
+ * @description Used the inputData as an addressable Lehmer Code to find all possible combinations of array elements.
+ * @param {array<integer>} inputData The Lehmer code addressable index array we will use to permutate over all possible combinations.
+ * @param {array<array<string>>} inputMetaData The nested array that contains all instances of strings that should be used when generating permutations.
+ * @return {string} The delimited list of possible combinations generated by solving the Lehmer Code.
+ * @author Seth Hollingsead
+ * @date 2021/01/20
+ * @NOTE: https://en.wikipedia.org/wiki/Lehmer_code
+ */
+export const solveLehmerCode = function(inputData, inputMetaData) {
+  let functionName = s.csolveLehmerCode;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    // {"wonder":"wondr,wundr,wndr","Woman":"wman,wmn,womn","Amazing":"amzing,amzng"}
+    //
+    // {
+    // "wonder": "wondr,wundr,wndr",
+    // "Woman": "wman,wmn,womn",
+    // "Amazing": "amzing,amzng"
+    // }
+    let lengthOfInputData = inputData.length;
+    let lehmerCodeArray = Array.from(Array(lengthOfInputData), () => 0); // [lengthOfInputData];
+    let lehmerCodePermutation = '';
+    // let lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
+    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
+    // lehmerCodeArray = [0, 0, 1];
+    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
+    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
+    // lehmerCodeArray = [0, 0, 2];
+    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
+    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
+    //
+    // lehmerCodeArray = [0, 1, 0];
+    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
+    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
+    // lehmerCodeArray = [0, 1, 1];
+    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
+    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
+
+    // while(arraysAreEqual(lehmerCodeArray, inputData) === false) {
+      for (let i = lengthOfInputData - 1; i >= 0; i--) {
+        console.log('BEGIN i-th iteration: ' + i);
+        console.log('lehmerCodeArray is: ' + JSON.stringify(lehmerCodeArray));
+        for (let j = 0; j <= inputData[i]; j++) {
+          console.log('BEGIN j-th iteration: ' + j);
+          if (j > 0) {
+            console.log('lehmerCodeArray is: ' + JSON.stringify(lehmerCodeArray));
+            lehmerCodeArray[i] = j;
+            console.log('lehmerCodeArray is: ' + JSON.stringify(lehmerCodeArray));
+          }
+          lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
+          console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
+          console.log('END j-th iteration: ' + j);
+        }
+        console.log('END i-th iteration: ' + i);
+        // lehmerCodeArray[i] += 1;
+        console.log('lehmerCodeArray BEFORE RESET is: ' + JSON.stringify(lehmerCodeArray));
+        // We still need to reset the array we just did, so it can be done over again on the next iteration.
+        if (i === lengthOfInputData - 1) {
+          // We are on the first iteration hence the last array element.
+          // lehmerCodeArray[]
+        }
+      }
+    // }
+
+
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData
+};
+
+/**
+ * @function getLehmerCodeValue
+ * @description Takes a Lehmer code array and an array of arrays and uses the Lehmer Code array to look up the corosponding values in the array of arrays.
+ * @param {array<integer>} inputData The Lehmer code array with indices for values we should get & return.
+ * @param {array<array<string>>} inputMetaData The nested array of arrays with the values we should get and combine then return as a single string.
+ * @return {string} The joined string from each of the array element strings at the Lehmer code indices.
+ * @author Seth Hollingsead
+ * @date 2021/01/20
+ */
+export const getLehmerCodeValue = function(inputData, inputMetaData) {
+  let functionName = s.cgetLehmerCodeValue;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData;
+  if (!inputData) {
+    returnData = false;
+  } else {
+    let lengthOfInputData = inputData.length;
+    returnData = '';
+    for (let i = 0; i < lengthOfInputData; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+      let lookupIndex = inputData[i];
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'lookupIndex is: ' + lookupIndex);
+      let lookupValue = inputMetaData[i][lookupIndex]
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'lookupValue is: ' + lookupValue);
+      returnData = returnData + lookupValue;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData
+};
+
+/**
+ * @function arraysAreEqual
+ * @description Determines if a set of arrays are equal or not.
+ * @param {array} inputData The first array that should be checked for equality.
+ * @param {array} inputMetaData The second array that should be checked for equality.
+ * @return {boolean} True or False to indicate if the arrays are equal or not equal.
+ * @author Seth Hollingsead
+ * @date 2021/01/20
+ * @NOTE: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
+ */
+export const arraysAreEqual = function(inputData, inputMetaData) {
+  let functionName = s.carraysAreEqual;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData;
+  if (!inputData && !inputMetaData) {
+    returnData = false;
+  } else {
+    if (inputData === inputMetaData) { returnData = true; }
+    if (inputData === null || inputMetaData === null) { returnData === false; }
+    if (inputData.length !== inputMetaData.length) { returnData === false; }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -2405,6 +2608,32 @@ function doesArrayContainValue(array, value, myFunction) {
   } else {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'The value was NOT found in the array.');
     returnData = false;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function replaceCharacterAtIndexOfString
+ * @description Replaces the character at a specified index with another character.
+ * @param {string} originalString The string where the replacement should be made.
+ * @param {integer} index The index of the character where the replacement should be made.
+ * @param {string} replacement The character or string that should be inserted at the specified index.
+ * @return {string} The string after the replacement has been made.
+ * @author Seth Hollingsead
+ * @date 2021/01/19
+ * @NOTE: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
+ */
+export const replaceCharacterAtIndexOfString = function(originalString, index, replacement) {
+  let functionName = 'replaceCharacterAtIndexOfString';
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'originalString value is: ' + originalString);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'index value is: ' + index);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'replacement value is: ' + replacement);
+  let returnData;
+  if (originalString != '' && index >= 0 && replacement != '') {
+    returnData = originalString.substr(0, index) + replacement + originalString.substr(index + replacement.length);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

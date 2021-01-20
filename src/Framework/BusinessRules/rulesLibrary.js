@@ -107,6 +107,9 @@ export const initRulesLibrary = function() {
     [s.ccleanCommandInput]: (inputData, inputMetaData) => stringParsing.cleanCommandInput(inputData, inputMetaData),
     [s.caggregateCommandArguments]: (inputData, inputMetaData) => stringParsing.aggregateCommandArguments(inputData, inputMetaData),
     [s.cgenerateCommandAliases]: (inputData, inputMetaData) => stringParsing.generateCommandAliases(inputData, inputMetaData),
+    [s.csolveLehmerCode]: (inputData, inputMetaData) => stringParsing.solveLehmerCode(inputData, inputMetaData),
+    [s.cgetLehmerCodeValue]: (inputData, inputMetaData) => stringParsing.getLehmerCodeValue(inputData, inputMetaData),
+    [s.carraysAreEqual]: (inputData, inputMetaData) => stringParsing.arraysAreEqual(inputData, inputMetaData),
 
     // *********************************
     // StringGeneration rules in order

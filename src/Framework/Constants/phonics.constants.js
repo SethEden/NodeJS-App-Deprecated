@@ -405,3 +405,4 @@ export const cere = b.cer + b.ce; // ere
 export const cease = b.cea + b.cse; // ease
 export const crev = b.cre + b.cv; // rev
 export const cron = b.cro + b.cn; // ron
+export const colve = b.col + b.cve; // olve

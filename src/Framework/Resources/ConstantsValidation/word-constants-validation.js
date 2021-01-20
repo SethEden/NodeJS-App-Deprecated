@@ -415,6 +415,7 @@ export const wordConstantsValidation = [
    {Name: 'cTable', Actual: w.cTable, Expected: 'Table'},
    {Name: 'cequal', Actual: w.cequal, Expected: 'equal'},
    {Name: 'cEqual', Actual: w.cEqual, Expected: 'Equal'},
+   {Name: 'cequals', Actual: w.cequals, Expected: 'equals'},
    {Name: 'cEquals', Actual: w.cEquals, Expected: 'Equals'},
    {Name: 'cequivalence', Actual: w.cequivalence, Expected: 'equivalence'},
    {Name: 'cEquivalence', Actual: w.cEquivalence, Expected: 'Equivalence'},
@@ -631,6 +632,8 @@ export const wordConstantsValidation = [
    {Name: 'cDecompose', Actual: w.cDecompose, Expected: 'Decompose'},
    {Name: 'carray', Actual: w.carray, Expected: 'array'},
    {Name: 'cArray', Actual: w.cArray, Expected: 'Array'},
+   {Name: 'carrays', Actual: w.carrays, Expected: 'arrays'},
+   {Name: 'cArrays', Actual: w.cArrays, Expected: 'Arrays'},
    {Name: 'ccamel', Actual: w.ccamel, Expected: 'camel'},
    {Name: 'cCamel', Actual: w.cCamel, Expected: 'Camel'},
    {Name: 'cround', Actual: w.cround, Expected: 'round'},
@@ -675,6 +678,8 @@ export const wordConstantsValidation = [
    {Name: 'cconsolidate', Actual: w.cconsolidate, Expected: 'consolidate'},
    {Name: 'cConsolidate', Actual: w.cConsolidate, Expected: 'Consolidate'},
    {Name: 'cConsolidated', Actual: w.cConsolidated, Expected: 'Consolidated'},
+   {Name: 'care', Actual: w.care, Expected: 'are'},
+   {Name: 'cAre', Actual: w.cAre, Expected: 'Are'},
    {Name: 'ccompare', Actual: w.ccompare, Expected: 'compare'},
    {Name: 'cCompare', Actual: w.cCompare, Expected: 'Compare'},
    {Name: 'ccontain', Actual: w.ccontain, Expected: 'contain'},
@@ -995,5 +1000,8 @@ export const wordConstantsValidation = [
    {Name: 'cacronym', Actual: w.cacronym, Expected: 'acronym'},
    {Name: 'cAcronym', Actual: w.cAcronym, Expected: 'Acronym'},
    {Name: 'cacronyms', Actual: w.cacronyms, Expected: 'acronyms'},
-   {Name: 'cAcronyms', Actual: w.cAcronyms, Expected: 'Acronyms'}
+   {Name: 'cAcronyms', Actual: w.cAcronyms, Expected: 'Acronyms'},
+   {Name: 'csolve', Actual: w.csolve, Expected: 'solve'},
+   {Name: 'cSolve', Actual: w.cSolve, Expected: 'Solve'},
+   {Name: 'cLehmer', Actual: w.cLehmer, Expected: 'Lehmer'}
  ];
