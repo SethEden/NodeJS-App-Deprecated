@@ -656,6 +656,7 @@ export const cdetermineConstantsContextQualifiedPrefix = w.cdetermine + w.cConst
 export const cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
 export const cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidation + w.cLine + w.cItem + w.cName; // validateConstantsDataValidationLineItemName
 export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
+export const cisValidCommandNameString = b.cis + w.cValid + w.cCommand + w.cName + w.cString; // isValidCommandNameString
 export const ccountDuplicateCommandAliases = w.ccount + w.cDuplicate + w.cCommand + w.cAliases; // countDuplicateCommandAliases
 export const cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
 export const cgetDataCatagoryDetailNameFromDataContextName = w.cget + w.cData + w.cCatagory + w.cDetail + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryDetailNameFromDataContextName

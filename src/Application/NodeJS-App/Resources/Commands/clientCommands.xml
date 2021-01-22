@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><CommandsAliases>
-  <Command Name="customEchoCommand" Aliases="CECmd,CEcoCmd,CEchoCmd,CustECmd,CustEcoCmd,CustEchoCmd,CustomECmd,CustomEcoCmd,CustomEchoCmd,CustomEchoCommand" Description="A client defined custom Echo command that echos back the input plus something extra."/>
-  <Command Name="placeHolder" Aliases="placeHolder" Description="Description of the command, this is just a placeHolder."/>
+  <Command Name="customEchoCommand" Aliases="CustomEchoC,CustomEchoCmd,CustomEchoCommand,CustomEcoC,CustomEcoCmd,CustomEcoCommand,CustomEC,CustomECmd,CustomECommand,CustEchoC,CustEchoCmd,CustEchoCommand,CustEcoC,CustEcoCmd,CustEcoCommand,CustEC,CustECmd,CustECommand,CEchoC,CEchoCmd,CEchoCommand,CEcoC,CEcoCmd,CEcoCommand,CEC,CECmd" Description="A client defined custom Echo command that echos back the input plus something extra."/>
+  <Command Name="placeHolder" Aliases="PlaceH,PlaceHld,PlaceHldr,PlaceHold,PlaceHoldr,PlaceHolder,PlacH,PlacHld,PlacHldr,PlacHold,PlacHoldr,PlacHolder,PlcH,PlcHld,PlcHldr,PlcHold,PlcHoldr,PlcHolder,PlH,PlHld,PlHldr,PlHold,PlHoldr,PlHolder,PH,PHld,PHldr,PHold,PHoldr" Description="Description of the command, this is just a placeHolder."/>
 </CommandsAliases>

@@ -2452,6 +2452,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cvalidateConstantsDataValues,
   Expected: 'validateConstantsDataValues'
 }, {
+  Name: 'cisValidCommandNameString',
+  Actual: s.cisValidCommandNameString,
+  Expected: 'isValidCommandNameString'
+}, {
   Name: 'ccountDuplicateCommandAliases',
   Actual: s.ccountDuplicateCommandAliases,
   Expected: 'countDuplicateCommandAliases'

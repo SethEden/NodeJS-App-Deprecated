@@ -2084,6 +2084,20 @@
           <ConfigurationElement Name="stringParsing.validateConstantsDataValues@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValues@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.isValidCommandNameString@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.getDataCatagoryFromDataContextName@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
