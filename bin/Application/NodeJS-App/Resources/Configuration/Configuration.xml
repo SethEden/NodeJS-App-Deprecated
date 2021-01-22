@@ -3764,6 +3764,20 @@
           <ConfigurationElement Name="nominal.name@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.name@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
+          <ConfigurationElement Name="nominal.clearScreen" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.clearScreen@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
           <ConfigurationElement Name="nominal.deployApplication" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.deployApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.deployApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>

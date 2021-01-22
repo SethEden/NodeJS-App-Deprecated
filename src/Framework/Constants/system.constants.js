@@ -783,6 +783,7 @@ export const cClientWorkflowsPath = w.cClient + w.cWorkflows + w.cPath; // Clien
 // ********************************
 export const cechoCommand = cecho + w.cCommand; // echoCommand
 export const cEchoCommand = cEcho + w.cCommand; // EchoCommand
+export const cclearScreen = w.cclear + w.cScreen; // clearScreen
 export const cworkflowHelp = w.cworkflow + w.cHelp; // workflowHelp
 export const ccommandSequencer = w.ccommand + w.cSequencer; // commandSequencer
 export const cprintDataHive = w.cprint + w.cData + w.cHive; // printDataHive

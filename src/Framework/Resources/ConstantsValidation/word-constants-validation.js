@@ -1015,5 +1015,7 @@ export const wordConstantsValidation = [
    {Name: 'crecursive', Actual: w.crecursive, Expected: 'recursive'},
    {Name: 'cRecursive', Actual: w.cRecursive, Expected: 'Recursive'},
    {Name: 'cexpansion', Actual: w.cexpansion, Expected: 'expansion'},
-   {Name: 'cExpansion', Actual: w.cExpansion, Expected: 'Expansion'}
+   {Name: 'cExpansion', Actual: w.cExpansion, Expected: 'Expansion'},
+   {Name: 'cscreen', Actual: w.cscreen, Expected: 'screen'},
+   {Name: 'cScreen', Actual: w.cScreen, Expected: 'Screen'}
  ];

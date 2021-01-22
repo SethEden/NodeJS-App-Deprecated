@@ -4015,5 +4015,13 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cExpansion',
   Actual: w.cExpansion,
   Expected: 'Expansion'
+}, {
+  Name: 'cscreen',
+  Actual: w.cscreen,
+  Expected: 'screen'
+}, {
+  Name: 'cScreen',
+  Actual: w.cScreen,
+  Expected: 'Screen'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

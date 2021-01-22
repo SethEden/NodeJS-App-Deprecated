@@ -1016,3 +1016,5 @@ export const crecursive = b.cre + ccursive; // recursive
 export const cRecursive = b.cRe + ccursive; // Recursive
 export const cexpansion = p.cexp + b.can + p.csion; // expansion
 export const cExpansion = p.cExp + b.can + p.csion; // Expansion
+export const cscreen = b.csc + p.creen; // screen
+export const cScreen = b.cSc + p.creen; // Screen

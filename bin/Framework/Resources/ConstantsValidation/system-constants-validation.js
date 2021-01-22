@@ -2909,6 +2909,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cEchoCommand,
   Expected: 'EchoCommand'
 }, {
+  Name: 'cclearScreen',
+  Actual: s.cclearScreen,
+  Expected: 'clearScreen'
+}, {
   Name: 'cworkflowHelp',
   Actual: s.cworkflowHelp,
   Expected: 'workflowHelp'

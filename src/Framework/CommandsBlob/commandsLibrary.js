@@ -45,6 +45,7 @@ export const initCommandsLibrary = function() {
     [w.cversion]: (inputData, inputMetaData) => nominalCommands.version(inputData, inputMetaData),
     [w.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
     [w.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData),
+    [s.cclearScreen]: (inputData, inputMetaData) => nominalCommands.clearScreen(inputData, inputMetaData),
     [s.cdeployApplication]: (inputData, inputMetaData) => nominalCommands.deployApplication(inputData, inputMetaData),
     [s.cdeployMetaData]: (inputData, inputMetaData) => nominalCommands.deployMetaData(inputData, inputMetaData),
     [s.creleaseApplication]: (inputData, inputMetaData) => nominalCommands.releaseApplication(inputData, inputMetaData),
