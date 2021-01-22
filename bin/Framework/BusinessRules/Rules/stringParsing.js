@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -2149,6 +2149,57 @@ var validateConstantsDataValues = function validateConstantsDataValues(inputData
   return returnData;
 };
 /**
+ * @function isValidCommandNameString
+ * @description Determines if the command name is a valid command name or not.
+ * @NOTE Not in the sense that it is checking if the command name exists in the system or not,
+ * but is it formatted properly enough to be considered as a command name.
+ * @param {string} inputData The string that should be evaluated if it is sufficently formatted such that it could qualify as a command name.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string is sufficently formatted to be considered as a command name in the system.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+
+
+exports.validateConstantsDataValues = validateConstantsDataValues;
+
+var isValidCommandNameString = function isValidCommandNameString(inputData, inputMetaData) {
+  var functionName = s.cisValidCommandNameString;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = false;
+
+  if (inputData) {
+    // NOTE: The below call to convert the string to a camel-case array doesn't garantee that the string is actually camel-case.
+    // It could actually be a single word, but of course we want to make sure it's more than 3 characters long.
+    // Less than that, shouldn't really be considered a valid word, but could be appropriate as a command alias/abreviation.
+    if (inputData.length > 3) {
+      var camelCaseArray = convertCamelCaseStringToArray(inputData);
+
+      if (camelCaseArray.length === 1) {
+        if (isFirstCharacterLowerCase(inputData) === true) {
+          returnData = true;
+        }
+      } else if (camelCaseArray.length > 1) {
+        if (isStringCamelCase(inputData, '') === true) {
+          returnData = true;
+        }
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function countDuplicateCommandAliases
  * @description Counts the number of command aliases that match the input command alias.
  * @param {string} inputData The command alias that should be have duplicates counted.
@@ -2160,7 +2211,7 @@ var validateConstantsDataValues = function validateConstantsDataValues(inputData
  */
 
 
-exports.validateConstantsDataValues = validateConstantsDataValues;
+exports.isValidCommandNameString = isValidCommandNameString;
 
 var countDuplicateCommandAliases = function countDuplicateCommandAliases(inputData, inputMetaData) {
   var functionName = s.ccountDuplicateCommandAliases;

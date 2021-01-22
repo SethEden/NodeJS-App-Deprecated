@@ -655,6 +655,7 @@ export const systemConstantsValidation = [
    {Name: 'cdetermineSuggestedConstantsValidationLineOfCode', Actual: s.cdetermineSuggestedConstantsValidationLineOfCode, Expected: 'determineSuggestedConstantsValidationLineOfCode'},
    {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: s.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
    {Name: 'cvalidateConstantsDataValues', Actual: s.cvalidateConstantsDataValues, Expected: 'validateConstantsDataValues'},
+   {Name: 'cisValidCommandNameString', Actual: s.cisValidCommandNameString, Expected: 'isValidCommandNameString'},
    {Name: 'ccountDuplicateCommandAliases', Actual: s.ccountDuplicateCommandAliases, Expected: 'countDuplicateCommandAliases'},
    {Name: 'cgetDataCatagoryFromDataContextName', Actual: s.cgetDataCatagoryFromDataContextName, Expected: 'getDataCatagoryFromDataContextName'},
    {Name: 'cgetDataCatagoryDetailNameFromDataContextName', Actual: s.cgetDataCatagoryDetailNameFromDataContextName, Expected: 'getDataCatagoryDetailNameFromDataContextName'},

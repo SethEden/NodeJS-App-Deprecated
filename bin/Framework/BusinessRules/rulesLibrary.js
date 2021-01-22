@@ -134,6 +134,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.validateConstantsDataValidationLineItemName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValues, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValues(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisValidCommandNameString, function (inputData, inputMetaData) {
+    return stringParsing.isValidCommandNameString(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccountDuplicateCommandAliases, function (inputData, inputMetaData) {
     return stringParsing.countDuplicateCommandAliases(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {

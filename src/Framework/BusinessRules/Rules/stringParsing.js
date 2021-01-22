@@ -1555,6 +1555,41 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function isValidCommandNameString
+ * @description Determines if the command name is a valid command name or not.
+ * @NOTE Not in the sense that it is checking if the command name exists in the system or not,
+ * but is it formatted properly enough to be considered as a command name.
+ * @param {string} inputData The string that should be evaluated if it is sufficently formatted such that it could qualify as a command name.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string is sufficently formatted to be considered as a command name in the system.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+export const isValidCommandNameString = function(inputData, inputMetaData) {
+  let functionName = s.cisValidCommandNameString;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = false;
+  if (inputData) {
+    // NOTE: The below call to convert the string to a camel-case array doesn't garantee that the string is actually camel-case.
+    // It could actually be a single word, but of course we want to make sure it's more than 3 characters long.
+    // Less than that, shouldn't really be considered a valid word, but could be appropriate as a command alias/abreviation.
+    if (inputData.length > 3) {
+      let camelCaseArray = convertCamelCaseStringToArray(inputData);
+      if (camelCaseArray.length === 1) {
+        if (isFirstCharacterLowerCase(inputData) === true) { returnData = true; }
+      } else if (camelCaseArray.length > 1) {
+        if (isStringCamelCase(inputData, '') === true) { returnData = true; }
+      }
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function countDuplicateCommandAliases
  * @description Counts the number of command aliases that match the input command alias.
  * @param {string} inputData The command alias that should be have duplicates counted.
