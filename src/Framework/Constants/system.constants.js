@@ -226,7 +226,7 @@ export const cMessageFontBackgroundColor = w.cMessage + w.cFont + cBackground + 
 export const cDataFontBackgroundColor = w.cData + w.cFont + cBackground + w.cColor; // DataFontBackgroundColor
 
 // System Messages
-// Please enter a named command where the first word starts with a lower case letter and all other words in the named command start with an upper case letter.
+// Please enter a named command where the first word starts with a lower case letter and all other words in the named command start with an upper case letter:
 export const cCommandNamePrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cnamed + b.cSpace + w.ccommand + b.cSpace + w.cwhere + b.cSpace; // Please enter a named command where
 export const cCommandNamePrompt2 = w.cthe + b.cSpace + n.cfirst + b.cSpace + w.cword + b.cSpace + w.cstarts + b.cSpace + w.cwith + b.cSpace + b.ca + b.cSpace; // the first word starts with a
 export const cCommandNamePrompt3 = w.clower + b.cSpace + w.ccase + b.cSpace + w.cletter + b.cSpace + w.cand + b.cSpace + w.call + b.cSpace + w.cother + b.cSpace; // lower case letter and all other
@@ -236,6 +236,10 @@ export const cCommandNamePrompt5 = w.cwith + b.cSpace + b.can + b.cSpace + w.cup
 export const cCommandWordAliasPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace + w.ccommand + b.cSpace;
 export const cCommandWordAliasPrompt2 = w.cword + b.cSpace + w.cabreviations + b.cForwardSlash + w.cacronyms + b.cForwardSlash + w.caliases + b.cSpace;
 export const cCommandWordAliasPrompt3 = w.cfor + b.cSpace + w.cthe + b.cSpace + w.ccommand + b.cSpace + w.cword + b.cColon;
+// Please enter a string you would like to define as a constant in the constants system:
+export const cConstantPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cstring + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace; // Please enter a string you would
+export const cConstantPrompt2 = w.clike + b.cSpace + b.cto + b.cSpace + w.cdefine + b.cSpace + b.cas + b.cSpace + b.ca + b.cSpace + w.cconstant + b.cSpace; // like to define as a constant
+export const cConstantPrompt3 = b.cin + b.cSpace + w.cthe + b.cSpace + w.cconstants + b.cSpace + w.csystem + b.cSpace + b.cColon; // in the constants system:
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia

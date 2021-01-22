@@ -807,6 +807,17 @@ export const constantsGenerator = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
+  let validEntry = false;
+  let userDefinedConstant = '';
+
+  while(validEntry === false) {
+    console.log(s.cConstantPrompt1);
+    console.log(s.cConstantPrompt2);
+    console.log(s.cConstantPrompt3);
+    userDefinedConstant = prompt(b.cGreaterThan);
+    console.log('userDefinedConstant is: ' + userDefinedConstant);
+    validEntry = true;
+  }
 
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
