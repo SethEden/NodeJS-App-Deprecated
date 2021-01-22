@@ -1612,6 +1612,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cEqual,
   Expected: 'Equal'
 }, {
+  Name: 'cequals',
+  Actual: w.cequals,
+  Expected: 'equals'
+}, {
   Name: 'cEquals',
   Actual: w.cEquals,
   Expected: 'Equals'
@@ -2220,6 +2224,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cElement,
   Expected: 'Element'
 }, {
+  Name: 'celements',
+  Actual: w.celements,
+  Expected: 'elements'
+}, {
+  Name: 'cElements',
+  Actual: w.cElements,
+  Expected: 'Elements'
+}, {
   Name: 'cElementName',
   Actual: w.cElementName,
   Expected: 'ElementName'
@@ -2476,6 +2488,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cArray,
   Expected: 'Array'
 }, {
+  Name: 'carrays',
+  Actual: w.carrays,
+  Expected: 'arrays'
+}, {
+  Name: 'cArrays',
+  Actual: w.cArrays,
+  Expected: 'Arrays'
+}, {
   Name: 'ccamel',
   Actual: w.ccamel,
   Expected: 'camel'
@@ -2651,6 +2671,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cConsolidated',
   Actual: w.cConsolidated,
   Expected: 'Consolidated'
+}, {
+  Name: 'care',
+  Actual: w.care,
+  Expected: 'are'
+}, {
+  Name: 'cAre',
+  Actual: w.cAre,
+  Expected: 'Are'
 }, {
   Name: 'ccompare',
   Actual: w.ccompare,
@@ -3935,5 +3963,57 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cAcronyms',
   Actual: w.cAcronyms,
   Expected: 'Acronyms'
+}, {
+  Name: 'csolve',
+  Actual: w.csolve,
+  Expected: 'solve'
+}, {
+  Name: 'cSolve',
+  Actual: w.cSolve,
+  Expected: 'Solve'
+}, {
+  Name: 'cLehmer',
+  Actual: w.cLehmer,
+  Expected: 'Lehmer'
+}, {
+  Name: 'cdeep',
+  Actual: w.cdeep,
+  Expected: 'deep'
+}, {
+  Name: 'cDeep',
+  Actual: w.cDeep,
+  Expected: 'Deep'
+}, {
+  Name: 'cclone',
+  Actual: w.cclone,
+  Expected: 'clone'
+}, {
+  Name: 'cClone',
+  Actual: w.cClone,
+  Expected: 'Clone'
+}, {
+  Name: 'ccursive',
+  Actual: w.ccursive,
+  Expected: 'cursive'
+}, {
+  Name: 'cCursive',
+  Actual: w.cCursive,
+  Expected: 'Cursive'
+}, {
+  Name: 'crecursive',
+  Actual: w.crecursive,
+  Expected: 'recursive'
+}, {
+  Name: 'cRecursive',
+  Actual: w.cRecursive,
+  Expected: 'Recursive'
+}, {
+  Name: 'cexpansion',
+  Actual: w.cexpansion,
+  Expected: 'expansion'
+}, {
+  Name: 'cExpansion',
+  Actual: w.cExpansion,
+  Expected: 'Expansion'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

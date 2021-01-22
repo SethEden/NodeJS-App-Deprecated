@@ -7,6 +7,7 @@
  * @description Contains all system defined business rules for parsing strings, values, arrays,
  * values of all kinds, with various operations.
  * @requires module:configurator
+ * @requires module:stack
  * @requires module:loggers
  * @requires module:dataBroker
  * @requires module:fileBroker
@@ -25,6 +26,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import configurator from '../../Executrix/configurator';
+import stack from '../../Resources/stack';
 import loggers from '../../Executrix/loggers';
 import dataBroker from '../../Executrix/dataBroker';
 import fileBroker from '../../Executrix/fileBroker';
@@ -1262,8 +1264,6 @@ export const removeCharacterFromArray = function(inputData, inputMetaData) {
  * @param {string} inputData The first filename and path that should be used in making the file name comparison.
  * @param {string} inputMetaData The second filename and path that should be used in making the file name comparison.
  * @return {boolean} A Boolean value to indicate if the file names are equavalent.
- * @NOTE Duplicated code in the app.js file,
- * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1286,13 +1286,38 @@ export const ascertainMatchingFilenames = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function acertainMatchingElements
+ * @description Determines if two values are identical. Needed for completeness of comparison for nested arrays.
+ * @param {array} inputData An array that should be compared for equality.
+ * @param {array} inputMetaData Second array that should be compared for equality.
+ * @return {boolean} True or False to indicate array equality or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/21
+ */
+export const ascertainMatchingElements = function(inputData, inputMetaData) {
+  let functionName = s.cascertainMatchingElements;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (inputData === inputMetaData) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Array elements match');
+    returnData = true;
+  } else {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Array elements do not match');
+    returnData = false;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function doesArrayContainFilename
  * @description Checks if an array contains a filename, after stripping off the path.
  * @param {array<string>} inputData The Array of file names that should be checked for the input file name we are looking for.
  * @param {string} inputMetaData The file name we are looking for in the input Array.
  * @return {boolean} A Boolean value to indicate if the file name was found or not.
- * @NOTE Duplicated code in the app.js file,
- * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1666,6 +1691,7 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // NOTE: The algorthim described above is called: Lehmer code
     // https://en.wikipedia.org/wiki/Lehmer_code
     let returnData = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
+    console.log('Command Aliases are: ' + returnData);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1691,7 +1717,9 @@ export const solveLehmerCode = function(inputData, inputMetaData) {
   if (!inputData) {
     returnData = false;
   } else {
-    // {"wonder":"wondr,wundr,wndr","Woman":"wman,wmn,womn","Amazing":"amzing,amzng"}
+    returnData = '';
+    // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
+    // [3,3,2]
     //
     // {
     // "wonder": "wondr,wundr,wndr",
@@ -1699,55 +1727,113 @@ export const solveLehmerCode = function(inputData, inputMetaData) {
     // "Amazing": "amzing,amzng"
     // }
     let lengthOfInputData = inputData.length;
-    let lehmerCodeArray = Array.from(Array(lengthOfInputData), () => 0); // [lengthOfInputData];
-    let lehmerCodePermutation = '';
-    // let lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
-    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
-    // lehmerCodeArray = [0, 0, 1];
-    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
-    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
-    // lehmerCodeArray = [0, 0, 2];
-    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
-    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
-    //
-    // lehmerCodeArray = [0, 1, 0];
-    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
-    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
-    // lehmerCodeArray = [0, 1, 1];
-    // lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
-    // console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
+    let expandedLehmerCodeArray = [];
+    let tempArray = [];
+    let lehmerCodeArray = Array.from(Array(lengthOfInputData), () => 0);
+    expandedLehmerCodeArray = arrayDeepClone(recursiveArrayExpansion([0, lehmerCodeArray], inputData));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'expandedLehmerCodeArray is: ' + JSON.stringify(expandedLehmerCodeArray));
 
-    // while(arraysAreEqual(lehmerCodeArray, inputData) === false) {
-      for (let i = lengthOfInputData - 1; i >= 0; i--) {
-        console.log('BEGIN i-th iteration: ' + i);
-        console.log('lehmerCodeArray is: ' + JSON.stringify(lehmerCodeArray));
-        for (let j = 0; j <= inputData[i]; j++) {
-          console.log('BEGIN j-th iteration: ' + j);
-          if (j > 0) {
-            console.log('lehmerCodeArray is: ' + JSON.stringify(lehmerCodeArray));
-            lehmerCodeArray[i] = j;
-            console.log('lehmerCodeArray is: ' + JSON.stringify(lehmerCodeArray));
-          }
-          lehmerCodePermutation = getLehmerCodeValue(lehmerCodeArray, inputMetaData);
-          console.log('lehmerCodePermutation is: ' + lehmerCodePermutation);
-          console.log('END j-th iteration: ' + j);
-        }
-        console.log('END i-th iteration: ' + i);
-        // lehmerCodeArray[i] += 1;
-        console.log('lehmerCodeArray BEFORE RESET is: ' + JSON.stringify(lehmerCodeArray));
-        // We still need to reset the array we just did, so it can be done over again on the next iteration.
-        if (i === lengthOfInputData - 1) {
-          // We are on the first iteration hence the last array element.
-          // lehmerCodeArray[]
-        }
+    // Now we just iterate over each array in expandedLehmerCodeArray and call: getLehmerCodeValue
+    for (let i = 0; i < expandedLehmerCodeArray.length - 1; i++) {
+      let lehmerCodeStringValue = getLehmerCodeValue(expandedLehmerCodeArray[i], inputMetaData);
+      if (i === 0) {
+        returnData = returnData + lehmerCodeStringValue;
+      } else {
+        returnData = returnData + b.cComa + lehmerCodeStringValue;
       }
-    // }
-
-
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return returnData
+  return returnData;
+};
+
+/**
+ * @function recursiveArrayExpansion
+ * @description Recursively expands all possible combinations of an input array given an index of expansion and returns the list of arrays.
+ * @param {array<integer,array<integer>>} inputData The index of expansion and the array to be expanded as an array object.
+ * @param {array<integer>} inputMetaData The Lehmer Codex that should be used to set the limit of expansion based on the index of expansion.
+ * @return {array<array<integer>>} The final list of arrays after the array expansion has completed successfully.
+ * @author Seth Hollingsead
+ * @date 2021/01/21
+ */
+export const recursiveArrayExpansion = function(inputData, inputMetaData) {
+  let functionName = s.crecursiveArrayExpansion;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let returnData = [];
+  if (inputData && inputMetaData && isArray(inputData) === true && isArray(inputMetaData) === true && inputData.length > 0 && inputMetaData.length > 0) {
+    // Setup & parse the inputData & inputMetaData into a format we can use to actually do recursive array expansion.
+    let indexOfExpansion = inputData[0];
+    let arrayToBeExpanded = inputData[1];
+    let limitOfExpansion = inputMetaData[indexOfExpansion];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'indexOfExpansion is: ' + indexOfExpansion);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded is: ' + JSON.stringify(arrayToBeExpanded));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'limitOfExpansion is: ' + limitOfExpansion);
+    let masterTempReturnData = []; // When we are all done we will set the returnData back to the list of arrays in this array.
+
+    // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
+    // [3,3,2]
+    //
+    // {
+    // "wonder": "wondr,wundr,wndr",
+    // "Woman": "wman,wmn,womn",
+    // "Amazing": "amzing,amzng"
+    // }
+
+    // First level array expansion.
+    for (let i = 0; i <= limitOfExpansion; i++) {
+      let lehmerCodeArray1 = arrayDeepClone(arrayToBeExpanded, '');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+      lehmerCodeArray1[indexOfExpansion] = i;
+      if (doesArrayContainValue(returnData, lehmerCodeArray1, ascertainMatchingElements) === false) {
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'pushing lehmerCodeArray1 to returnData value: ' + JSON.stringify(lehmerCodeArray1));
+        returnData.push(lehmerCodeArray1);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData after push is: ' + JSON.stringify(returnData));
+      }
+    }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData after Level 1 is: ' + JSON.stringify(returnData));
+
+    // Second level array expansion, this is where we call recursively.
+    // We need to determine if the index of expansion is equal to the length of the arrayToBeExpanded.
+    // If it is then we have reached our recursive expansion limit.
+    // If NOT then we need to recursively expand some more on each of the arrays that are now in the returnData array.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded.length is: ' + arrayToBeExpanded.length);
+    if (indexOfExpansion < arrayToBeExpanded.length - 1) {
+      // We need to remove arrays from the returnData and recursively call the recursiveArrayExpansion with each array we remove.
+      // The data we get back from each recursive call should be pushed back to masterTempReturnData array
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData.length is: ' + returnData.length);
+      // Make sure we clone the array we will be removing array elements from,
+      // because otherwise we would be looping over the same array we are removing elements from,
+      // which would mean that we would never visit all of the elemtns.
+      // https://stackoverflow.com/questions/54081930/why-array-foreach-array-pop-would-not-empty-the-array
+      let returnDataTemp = arrayDeepClone(returnData, '');
+      returnDataTemp.forEach(function(item) {
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData BEFORE POP is: ' + JSON.stringify(returnData));
+        let lehmerCodeArray2 = arrayDeepClone(returnData.pop(), '');
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData AFTER POP is: ' + JSON.stringify(returnData));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData BEFORE recursive call is: ' + JSON.stringify(masterTempReturnData));
+        let tempReturnData1 = arrayDeepClone(recursiveArrayExpansion([indexOfExpansion + 1, lehmerCodeArray2], inputMetaData), '');
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1 is: ' + JSON.stringify(tempReturnData1));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1.length is: ' + tempReturnData1.length);
+        for (let k = 0; k <= tempReturnData1.length - 1; k++) {
+          loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN k-th iteration: ' + k);
+          if (doesArrayContainValue(masterTempReturnData, tempReturnData1[k], ascertainMatchingElements) === false) {
+            loggers.consoleLog(baseFileName + b.cDot + functionName, 'pushing tempReturnData1[k] value: ' + JSON.stringify(tempReturnData1[k]));
+            masterTempReturnData.push(arrayDeepClone(tempReturnData1[k], ''));
+          }
+          loggers.consoleLog(baseFileName + b.cDot + functionName, 'END k-th iteration: ' + k);
+        }
+        tempReturnData1 = null;
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData AFTER recursive call is: ' + JSON.stringify(masterTempReturnData));
+      });
+      returnData = arrayDeepClone(masterTempReturnData, '');
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
 };
 
 /**
@@ -2289,6 +2375,31 @@ export const isNonZeroLengthArray = function(inputData, inputMetaData) {
   let returnData = false;
   if (isArray(inputData) === true && inputData.length >= 1) {
     returnData = true;
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function arrayDeepClone
+ * @description Clones an array by using JSON.stringify & JSON.parse.
+ * Almost all other methods of cloning an array will actually clone by referance which essentially just clones the pointer to the array.
+ * @NOTE: https://www.freecodecamp.org/news/how-to-clone-an-array-in-javascript-1d3183468f6a/
+ * @param {array} inputData The array that should be deeply cloned.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array} The new array object after being cloned deeply.
+ * @author Seth Hollingsead
+ * @date 2021/01/21
+ */
+export const arrayDeepClone = function(inputData, inputMetaData) {
+  let functionName = s.carrayDeepClone;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  if (inputData && isArray(inputData, '') === true && isArrayEmpty(inputData, '') === false) {
+    returnData = JSON.parse(JSON.stringify(inputData));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

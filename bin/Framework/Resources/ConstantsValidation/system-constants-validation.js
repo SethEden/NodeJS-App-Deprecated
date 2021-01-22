@@ -2424,6 +2424,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cascertainMatchingFilenames,
   Expected: 'ascertainMatchingFilenames'
 }, {
+  Name: 'cascertainMatchingElements',
+  Actual: s.cascertainMatchingElements,
+  Expected: 'ascertainMatchingElements'
+}, {
   Name: 'cdoesArrayContainFilename',
   Actual: s.cdoesArrayContainFilename,
   Expected: 'doesArrayContainFilename'
@@ -2508,6 +2512,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cisNonZeroLengthArray,
   Expected: 'isNonZeroLengthArray'
 }, {
+  Name: 'carrayDeepClone',
+  Actual: s.carrayDeepClone,
+  Expected: 'arrayDeepClone'
+}, {
   Name: 'cisObject',
   Actual: s.cisObject,
   Expected: 'isObject'
@@ -2551,6 +2559,22 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cgenerateCommandAliases',
   Actual: s.cgenerateCommandAliases,
   Expected: 'generateCommandAliases'
+}, {
+  Name: 'csolveLehmerCode',
+  Actual: s.csolveLehmerCode,
+  Expected: 'solveLehmerCode'
+}, {
+  Name: 'crecursiveArrayExpansion',
+  Actual: s.crecursiveArrayExpansion,
+  Expected: 'recursiveArrayExpansion'
+}, {
+  Name: 'cgetLehmerCodeValue',
+  Actual: s.cgetLehmerCodeValue,
+  Expected: 'getLehmerCodeValue'
+}, {
+  Name: 'carraysAreEqual',
+  Actual: s.carraysAreEqual,
+  Expected: 'arraysAreEqual'
 }, // *********************************
 // StringGeneration rules in order
 // *********************************

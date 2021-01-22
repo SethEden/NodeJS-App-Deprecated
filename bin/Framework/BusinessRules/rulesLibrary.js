@@ -120,6 +120,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.removeCharacterFromArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cascertainMatchingFilenames, function (inputData, inputMetaData) {
     return stringParsing.ascertainMatchingFilenames(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cascertainMatchingElements, function (inputData, inputMetaData) {
+    return stringParsing.acertainMatchingElements(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainFilename, function (inputData, inputMetaData) {
     return stringParsing.doesArrayContainFilename(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidation, function (inputData, inputMetaData) {
@@ -162,6 +164,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.isArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisNonZeroLengthArray, function (inputData, inputMetaData) {
     return stringParsing.isNonZeroLengthArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.carrayDeepClone, function (inputData, inputMetaData) {
+    return stringParsing.arrayDeepClone(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisObject, function (inputData, inputMetaData) {
     return stringParsing.isObject(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisArrayOrObject, function (inputData, inputMetaData) {
@@ -182,6 +186,14 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.aggregateCommandArguments(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateCommandAliases, function (inputData, inputMetaData) {
     return stringParsing.generateCommandAliases(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.csolveLehmerCode, function (inputData, inputMetaData) {
+    return stringParsing.solveLehmerCode(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.crecursiveArrayExpansion, function (inputData, inputMetaData) {
+    return stringParsing.recursiveArrayExpansion(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetLehmerCodeValue, function (inputData, inputMetaData) {
+    return stringParsing.getLehmerCodeValue(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.carraysAreEqual, function (inputData, inputMetaData) {
+    return stringParsing.arraysAreEqual(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength1, function (inputData, inputMetaData) {
     return stringGeneration.generateRandomMixedCaseTextByLength1(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength2, function (inputData, inputMetaData) {

@@ -648,6 +648,7 @@ export const systemConstantsValidation = [
    {Name: 'cdoesArrayContainCharacter', Actual: s.cdoesArrayContainCharacter, Expected: 'doesArrayContainCharacter'},
    {Name: 'cremoveCharacterFromArray', Actual: s.cremoveCharacterFromArray, Expected: 'removeCharacterFromArray'},
    {Name: 'cascertainMatchingFilenames', Actual: s.cascertainMatchingFilenames, Expected: 'ascertainMatchingFilenames'},
+   {Name: 'cascertainMatchingElements', Actual: s.cascertainMatchingElements, Expected: 'ascertainMatchingElements'},
    {Name: 'cdoesArrayContainFilename', Actual: s.cdoesArrayContainFilename, Expected: 'doesArrayContainFilename'},
    {Name: 'cvalidateConstantsDataValidation', Actual: s.cvalidateConstantsDataValidation, Expected: 'validateConstantsDataValidation'},
    {Name: 'cdetermineConstantsContextQualifiedPrefix', Actual: s.cdetermineConstantsContextQualifiedPrefix, Expected: 'determineConstantsContextQualifiedPrefix'},
@@ -669,6 +670,7 @@ export const systemConstantsValidation = [
    {Name: 'cisArrayEmpty', Actual: s.cisArrayEmpty, Expected: 'isArrayEmpty'},
    {Name: 'cisArray', Actual: s.cisArray, Expected: 'isArray'},
    {Name: 'cisNonZeroLengthArray', Actual: s.cisNonZeroLengthArray, Expected: 'isNonZeroLengthArray'},
+   {Name: 'carrayDeepClone', Actual: s.carrayDeepClone, Expected: 'arrayDeepClone'},
    {Name: 'cisObject', Actual: s.cisObject, Expected: 'isObject'},
    {Name: 'cisArrayOrObject', Actual: s.cisArrayOrObject, Expected: 'isArrayOrObject'},
    {Name: 'ccommandAliasGenerator', Actual: s.ccommandAliasGenerator, Expected: 'commandAliasGenerator'},
@@ -681,6 +683,7 @@ export const systemConstantsValidation = [
    {Name: 'caggregateCommandArguments', Actual: s.caggregateCommandArguments, Expected: 'aggregateCommandArguments'},
    {Name: 'cgenerateCommandAliases', Actual: s.cgenerateCommandAliases, Expected: 'generateCommandAliases'},
    {Name: 'csolveLehmerCode', Actual: s.csolveLehmerCode, Expected: 'solveLehmerCode'},
+   {Name: 'crecursiveArrayExpansion', Actual: s.crecursiveArrayExpansion, Expected: 'recursiveArrayExpansion'},
    {Name: 'cgetLehmerCodeValue', Actual: s.cgetLehmerCodeValue, Expected: 'getLehmerCodeValue'},
    {Name: 'carraysAreEqual', Actual: s.carraysAreEqual, Expected: 'arraysAreEqual'},
 

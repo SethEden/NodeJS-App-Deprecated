@@ -3,9 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
+
+var _stack = _interopRequireDefault(require("../../Resources/stack"));
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
@@ -1758,8 +1760,6 @@ var removeCharacterFromArray = function removeCharacterFromArray(inputData, inpu
  * @param {string} inputData The first filename and path that should be used in making the file name comparison.
  * @param {string} inputMetaData The second filename and path that should be used in making the file name comparison.
  * @return {boolean} A Boolean value to indicate if the file names are equavalent.
- * @NOTE Duplicated code in the app.js file,
- * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1795,19 +1795,57 @@ var ascertainMatchingFilenames = function ascertainMatchingFilenames(inputData, 
   return returnData;
 };
 /**
+ * @function acertainMatchingElements
+ * @description Determines if two values are identical. Needed for completeness of comparison for nested arrays.
+ * @param {array} inputData An array that should be compared for equality.
+ * @param {array} inputMetaData Second array that should be compared for equality.
+ * @return {boolean} True or False to indicate array equality or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/21
+ */
+
+
+exports.ascertainMatchingFilenames = ascertainMatchingFilenames;
+
+var ascertainMatchingElements = function ascertainMatchingElements(inputData, inputMetaData) {
+  var functionName = s.cascertainMatchingElements;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (inputData === inputMetaData) {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Array elements match');
+
+    returnData = true;
+  } else {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Array elements do not match');
+
+    returnData = false;
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function doesArrayContainFilename
  * @description Checks if an array contains a filename, after stripping off the path.
  * @param {array<string>} inputData The Array of file names that should be checked for the input file name we are looking for.
  * @param {string} inputMetaData The file name we are looking for in the input Array.
  * @return {boolean} A Boolean value to indicate if the file name was found or not.
- * @NOTE Duplicated code in the app.js file,
- * because the app.js code does not support calling and importing ES6 code from CommonJS code.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
 
 
-exports.ascertainMatchingFilenames = ascertainMatchingFilenames;
+exports.ascertainMatchingElements = ascertainMatchingElements;
 
 var doesArrayContainFilename = function doesArrayContainFilename(inputData, inputMetaData) {
   var functionName = s.cdoesArrayContainFilename;
@@ -2207,7 +2245,7 @@ var generateCommandAliases = function generateCommandAliases(inputData, inputMet
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
@@ -2215,7 +2253,375 @@ var generateCommandAliases = function generateCommandAliases(inputData, inputMet
 
   if (!inputData) {
     returnData = false;
-  } else {}
+  } else {
+    // {"wonder":"wondr,wundr,wndr","Woman":"wman,wmn,womn","Amazing":"amzing,amzng"}
+    //
+    // {
+    // "wonder": "wondr,wundr,wndr",
+    // "Woman": "wman,wmn,womn",
+    // "Amazing": "amzing,amzng"
+    // }
+    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
+
+    var secondaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
+
+    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter);
+
+    var commandDelimiter = '';
+    var commandWordsKeys1 = Object.keys(inputData);
+    var commandWordAliasesArray = [];
+    var masterCommandWordAliasesArray = [commandWordsKeys1.length - 1];
+    var masterArrayIndex = [commandWordsKeys1.length - 1];
+
+    for (var i = 0; i < commandWordsKeys1.length; i++) {
+      // commandWordsKeys1.forEach((key1) => {
+      var key1 = commandWordsKeys1[i];
+      var commandWordAliases = inputData[key1];
+
+      if (commandWordAliases.includes(primaryCommandDelimiter)) {
+        commandDelimiter = primaryCommandDelimiter;
+      } else if (commandWordAliases.includes(secondaryCommandDelimiter)) {
+        commandDelimiter = secondaryCommandDelimiter;
+      } else if (commandWordAliases.includes(tertiaryCommandDelimiter)) {
+        commandDelimiter = tertiaryCommandDelimiter;
+      }
+
+      commandWordAliases = commandWordAliases + commandDelimiter + key1;
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliases BEFORE CHANGE is: ' + commandWordAliases);
+
+      commandWordAliasesArray = commandWordAliases.split(commandDelimiter);
+      masterArrayIndex[i] = commandWordAliasesArray.length - 1;
+
+      for (var j = 0; j < commandWordAliasesArray.length; j++) {
+        var commandAliasWord = commandWordAliasesArray[j];
+
+        if (isFirstCharacterLowerCase(commandAliasWord, '') === true) {
+          var firstLetterOfCommandAliasWord = commandAliasWord.charAt(0).toUpperCase();
+          commandAliasWord = replaceCharacterAtIndexOfString(commandAliasWord, 0, firstLetterOfCommandAliasWord);
+          commandWordAliasesArray[j] = commandAliasWord; // Saved the changes back to array.
+        }
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliasesArray AFTER CHANGE is: ' + JSON.stringify(commandWordAliasesArray));
+
+      masterCommandWordAliasesArray[i] = commandWordAliasesArray; // Try to build an array of arrays (2D)
+    }
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterCommandWordAliasesArray is: ' + JSON.stringify(masterCommandWordAliasesArray));
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterArrayIndex is: ' + JSON.stringify(masterArrayIndex)); // NOTES: Console output is:
+    // masterCommandWordAliasesArray is: [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
+    // masterArrayIndex is: [4,4,3]
+    //
+    // We should be able to have 2 nested for-loops, and we will delcare a counter array initialized to [0,0,0] to match the masterArrayIndex above.
+    // The counter array tells us which combination of words we should get.
+    // We can simply push those combination of words as a string on a stack we will make for this business rule.
+    // Then iterate the last array element as long as it's not greater than the number in the master array index and do the same things over again.
+    // When the array index for the last element in the array reaches the masterArrayIndex for the same array index then we increment the second from the last array counter.
+    // And start over again with the last element in the array counter.
+    // This way we should be able to iterate over the entire 2D array and get every combination without having to create x number of nested for-loops.
+    // Essentially we will be having 2-nested for-loops looping over the counter array. The top level loop will be looping over masterArrayIndex.length,
+    // and the second loop will be iterating over the integers in the counter array.
+    // The counter array will tell the algorthim which combination of words to put together and push on the stack.
+    //
+    // NOTE: The algorthim described above is called: Lehmer code
+    // https://en.wikipedia.org/wiki/Lehmer_code
+
+
+    var _returnData2 = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
+
+    console.log('Command Aliases are: ' + _returnData2);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function solveLehmerCode
+ * @description Used the inputData as an addressable Lehmer Code to find all possible combinations of array elements.
+ * @param {array<integer>} inputData The Lehmer code addressable index array we will use to permutate over all possible combinations.
+ * @param {array<array<string>>} inputMetaData The nested array that contains all instances of strings that should be used when generating permutations.
+ * @return {string} The delimited list of possible combinations generated by solving the Lehmer Code.
+ * @author Seth Hollingsead
+ * @date 2021/01/20
+ * @NOTE: https://en.wikipedia.org/wiki/Lehmer_code
+ */
+
+
+exports.generateCommandAliases = generateCommandAliases;
+
+var solveLehmerCode = function solveLehmerCode(inputData, inputMetaData) {
+  var functionName = s.csolveLehmerCode;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    returnData = ''; // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
+    // [3,3,2]
+    //
+    // {
+    // "wonder": "wondr,wundr,wndr",
+    // "Woman": "wman,wmn,womn",
+    // "Amazing": "amzing,amzng"
+    // }
+
+    var lengthOfInputData = inputData.length;
+    var expandedLehmerCodeArray = [];
+    var tempArray = [];
+    var lehmerCodeArray = Array.from(Array(lengthOfInputData), function () {
+      return 0;
+    });
+    expandedLehmerCodeArray = arrayDeepClone(recursiveArrayExpansion([0, lehmerCodeArray], inputData));
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'expandedLehmerCodeArray is: ' + JSON.stringify(expandedLehmerCodeArray)); // Now we just iterate over each array in expandedLehmerCodeArray and call: getLehmerCodeValue
+
+
+    for (var i = 0; i < expandedLehmerCodeArray.length - 1; i++) {
+      var lehmerCodeStringValue = getLehmerCodeValue(expandedLehmerCodeArray[i], inputMetaData);
+
+      if (i === 0) {
+        returnData = returnData + lehmerCodeStringValue;
+      } else {
+        returnData = returnData + b.cComa + lehmerCodeStringValue;
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function recursiveArrayExpansion
+ * @description Recursively expands all possible combinations of an input array given an index of expansion and returns the list of arrays.
+ * @param {array<integer,array<integer>>} inputData The index of expansion and the array to be expanded as an array object.
+ * @param {array<integer>} inputMetaData The Lehmer Codex that should be used to set the limit of expansion based on the index of expansion.
+ * @return {array<array<integer>>} The final list of arrays after the array expansion has completed successfully.
+ * @author Seth Hollingsead
+ * @date 2021/01/21
+ */
+
+
+exports.solveLehmerCode = solveLehmerCode;
+
+var recursiveArrayExpansion = function recursiveArrayExpansion(inputData, inputMetaData) {
+  var functionName = s.crecursiveArrayExpansion;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = [];
+
+  if (inputData && inputMetaData && isArray(inputData) === true && isArray(inputMetaData) === true && inputData.length > 0 && inputMetaData.length > 0) {
+    // Setup & parse the inputData & inputMetaData into a format we can use to actually do recursive array expansion.
+    var indexOfExpansion = inputData[0];
+    var arrayToBeExpanded = inputData[1];
+    var limitOfExpansion = inputMetaData[indexOfExpansion];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'indexOfExpansion is: ' + indexOfExpansion);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded is: ' + JSON.stringify(arrayToBeExpanded));
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'limitOfExpansion is: ' + limitOfExpansion);
+
+    var masterTempReturnData = []; // When we are all done we will set the returnData back to the list of arrays in this array.
+    // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
+    // [3,3,2]
+    //
+    // {
+    // "wonder": "wondr,wundr,wndr",
+    // "Woman": "wman,wmn,womn",
+    // "Amazing": "amzing,amzng"
+    // }
+    // First level array expansion.
+
+    for (var i = 0; i <= limitOfExpansion; i++) {
+      var lehmerCodeArray1 = arrayDeepClone(arrayToBeExpanded, '');
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+
+      lehmerCodeArray1[indexOfExpansion] = i;
+
+      if (doesArrayContainValue(returnData, lehmerCodeArray1, ascertainMatchingElements) === false) {
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pushing lehmerCodeArray1 to returnData value: ' + JSON.stringify(lehmerCodeArray1));
+
+        returnData.push(lehmerCodeArray1);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData after push is: ' + JSON.stringify(returnData));
+      }
+    }
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData after Level 1 is: ' + JSON.stringify(returnData)); // Second level array expansion, this is where we call recursively.
+    // We need to determine if the index of expansion is equal to the length of the arrayToBeExpanded.
+    // If it is then we have reached our recursive expansion limit.
+    // If NOT then we need to recursively expand some more on each of the arrays that are now in the returnData array.
+
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded.length is: ' + arrayToBeExpanded.length);
+
+    if (indexOfExpansion < arrayToBeExpanded.length - 1) {
+      // We need to remove arrays from the returnData and recursively call the recursiveArrayExpansion with each array we remove.
+      // The data we get back from each recursive call should be pushed back to masterTempReturnData array
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData.length is: ' + returnData.length); // Make sure we clone the array we will be removing array elements from,
+      // because otherwise we would be looping over the same array we are removing elements from,
+      // which would mean that we would never visit all of the elemtns.
+      // https://stackoverflow.com/questions/54081930/why-array-foreach-array-pop-would-not-empty-the-array
+
+
+      var returnDataTemp = arrayDeepClone(returnData, '');
+      returnDataTemp.forEach(function (item) {
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData BEFORE POP is: ' + JSON.stringify(returnData));
+
+        var lehmerCodeArray2 = arrayDeepClone(returnData.pop(), '');
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData AFTER POP is: ' + JSON.stringify(returnData));
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData BEFORE recursive call is: ' + JSON.stringify(masterTempReturnData));
+
+        var tempReturnData1 = arrayDeepClone(recursiveArrayExpansion([indexOfExpansion + 1, lehmerCodeArray2], inputMetaData), '');
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1 is: ' + JSON.stringify(tempReturnData1));
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1.length is: ' + tempReturnData1.length);
+
+        for (var k = 0; k <= tempReturnData1.length - 1; k++) {
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN k-th iteration: ' + k);
+
+          if (doesArrayContainValue(masterTempReturnData, tempReturnData1[k], ascertainMatchingElements) === false) {
+            _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pushing tempReturnData1[k] value: ' + JSON.stringify(tempReturnData1[k]));
+
+            masterTempReturnData.push(arrayDeepClone(tempReturnData1[k], ''));
+          }
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END k-th iteration: ' + k);
+        }
+
+        tempReturnData1 = null;
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData AFTER recursive call is: ' + JSON.stringify(masterTempReturnData));
+      });
+      returnData = arrayDeepClone(masterTempReturnData, '');
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getLehmerCodeValue
+ * @description Takes a Lehmer code array and an array of arrays and uses the Lehmer Code array to look up the corosponding values in the array of arrays.
+ * @param {array<integer>} inputData The Lehmer code array with indices for values we should get & return.
+ * @param {array<array<string>>} inputMetaData The nested array of arrays with the values we should get and combine then return as a single string.
+ * @return {string} The joined string from each of the array element strings at the Lehmer code indices.
+ * @author Seth Hollingsead
+ * @date 2021/01/20
+ */
+
+
+exports.recursiveArrayExpansion = recursiveArrayExpansion;
+
+var getLehmerCodeValue = function getLehmerCodeValue(inputData, inputMetaData) {
+  var functionName = s.cgetLehmerCodeValue;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData;
+
+  if (!inputData) {
+    returnData = false;
+  } else {
+    var lengthOfInputData = inputData.length;
+    returnData = '';
+
+    for (var i = 0; i < lengthOfInputData; i++) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+
+      var lookupIndex = inputData[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'lookupIndex is: ' + lookupIndex);
+
+      var lookupValue = inputMetaData[i][lookupIndex];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'lookupValue is: ' + lookupValue);
+
+      returnData = returnData + lookupValue;
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function arraysAreEqual
+ * @description Determines if a set of arrays are equal or not.
+ * @param {array} inputData The first array that should be checked for equality.
+ * @param {array} inputMetaData The second array that should be checked for equality.
+ * @return {boolean} True or False to indicate if the arrays are equal or not equal.
+ * @author Seth Hollingsead
+ * @date 2021/01/20
+ * @NOTE: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
+ */
+
+
+exports.getLehmerCodeValue = getLehmerCodeValue;
+
+var arraysAreEqual = function arraysAreEqual(inputData, inputMetaData) {
+  var functionName = s.carraysAreEqual;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData;
+
+  if (!inputData && !inputMetaData) {
+    returnData = false;
+  } else {
+    if (inputData === inputMetaData) {
+      returnData = true;
+    }
+
+    if (inputData === null || inputMetaData === null) {
+      returnData === false;
+    }
+
+    if (inputData.length !== inputMetaData.length) {
+      returnData === false;
+    }
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -2237,7 +2643,7 @@ var generateCommandAliases = function generateCommandAliases(inputData, inputMet
  */
 
 
-exports.generateCommandAliases = generateCommandAliases;
+exports.arraysAreEqual = arraysAreEqual;
 
 var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContextName(inputData, inputMetaData) {
   var functionName = s.cgetDataCatagoryFromDataContextName;
@@ -2889,6 +3295,42 @@ var isNonZeroLengthArray = function isNonZeroLengthArray(inputData, inputMetaDat
   return returnData;
 };
 /**
+ * @function arrayDeepClone
+ * @description Clones an array by using JSON.stringify & JSON.parse.
+ * Almost all other methods of cloning an array will actually clone by referance which essentially just clones the pointer to the array.
+ * @NOTE: https://www.freecodecamp.org/news/how-to-clone-an-array-in-javascript-1d3183468f6a/
+ * @param {array} inputData The array that should be deeply cloned.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array} The new array object after being cloned deeply.
+ * @author Seth Hollingsead
+ * @date 2021/01/21
+ */
+
+
+exports.isNonZeroLengthArray = isNonZeroLengthArray;
+
+var arrayDeepClone = function arrayDeepClone(inputData, inputMetaData) {
+  var functionName = s.carrayDeepClone;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+
+  if (inputData && isArray(inputData, '') === true && isArrayEmpty(inputData, '') === false) {
+    returnData = JSON.parse(JSON.stringify(inputData));
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function isObject
  * @description Determines if an object is a JSON object or not.
  * @param {object} inputData The object that should be tested to see if it is a JSON object or not.
@@ -2899,7 +3341,7 @@ var isNonZeroLengthArray = function isNonZeroLengthArray(inputData, inputMetaDat
  */
 
 
-exports.isNonZeroLengthArray = isNonZeroLengthArray;
+exports.arrayDeepClone = arrayDeepClone;
 
 var isObject = function isObject(inputData, inputMetaData) {
   var functionName = s.cisObject;
@@ -3338,3 +3780,40 @@ function doesArrayContainValue(array, value, myFunction) {
 }
 
 ;
+/**
+ * @function replaceCharacterAtIndexOfString
+ * @description Replaces the character at a specified index with another character.
+ * @param {string} originalString The string where the replacement should be made.
+ * @param {integer} index The index of the character where the replacement should be made.
+ * @param {string} replacement The character or string that should be inserted at the specified index.
+ * @return {string} The string after the replacement has been made.
+ * @author Seth Hollingsead
+ * @date 2021/01/19
+ * @NOTE: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
+ */
+
+var replaceCharacterAtIndexOfString = function replaceCharacterAtIndexOfString(originalString, index, replacement) {
+  var functionName = 'replaceCharacterAtIndexOfString';
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'originalString value is: ' + originalString);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'index value is: ' + index);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'replacement value is: ' + replacement);
+
+  var returnData;
+
+  if (originalString != '' && index >= 0 && replacement != '') {
+    returnData = originalString.substr(0, index) + replacement + originalString.substr(index + replacement.length);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+
+exports.replaceCharacterAtIndexOfString = replaceCharacterAtIndexOfString;
