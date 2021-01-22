@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -241,6 +241,41 @@ var name = function name(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function clearScreen
+ * @description Clears all data from the console cache by printing a bunch of blank lines to the screen.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+
+
+exports.name = name;
+
+var clearScreen = function clearScreen(inputData, inputMetaData) {
+  var functionName = s.cclearScreen;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true; // Maybe we can find a faster way to do this at some point?!
+  // For now this will have to work.
+
+  for (var i = 0; i <= 10000; i++) {
+    console.log(' ');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function deployApplication
  * @description Executes the deployment of the application, part of the build-deploy-release cycle.
  * @param {string} inputData The path the non-code files should be copied from. (SOURCE)
@@ -251,7 +286,7 @@ var name = function name(inputData, inputMetaData) {
  */
 
 
-exports.name = name;
+exports.clearScreen = clearScreen;
 
 var deployApplication = function deployApplication(inputData, inputMetaData) {
   var functionName = s.cdeployApplication;

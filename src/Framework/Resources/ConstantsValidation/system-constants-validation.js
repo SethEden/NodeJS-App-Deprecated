@@ -783,6 +783,7 @@ export const systemConstantsValidation = [
    // ********************************
    {Name: 'cechoCommand', Actual: s.cechoCommand, Expected: 'echoCommand'},
    {Name: 'cEchoCommand', Actual: s.cEchoCommand, Expected: 'EchoCommand'},
+   {Name: 'cclearScreen', Actual: s.cclearScreen, Expected: 'clearScreen'},
    {Name: 'cworkflowHelp', Actual: s.cworkflowHelp, Expected: 'workflowHelp'},
    {Name: 'ccommandSequencer', Actual: s.ccommandSequencer, Expected: 'commandSequencer'},
    {Name: 'cprintDataHive', Actual: s.cprintDataHive, Expected: 'printDataHive'},

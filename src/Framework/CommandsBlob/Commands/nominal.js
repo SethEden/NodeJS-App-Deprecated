@@ -176,6 +176,31 @@ export const name = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function clearScreen
+ * @description Clears all data from the console cache by printing a bunch of blank lines to the screen.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+export const clearScreen = function(inputData, inputMetaData) {
+  let functionName = s.cclearScreen;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  // Maybe we can find a faster way to do this at some point?!
+  // For now this will have to work.
+  for (let i = 0; i <= 10000; i++) {
+    console.log(' ');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function deployApplication
  * @description Executes the deployment of the application, part of the build-deploy-release cycle.
  * @param {string} inputData The path the non-code files should be copied from. (SOURCE)
