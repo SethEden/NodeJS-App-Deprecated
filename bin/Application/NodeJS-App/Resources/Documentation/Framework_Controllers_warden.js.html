@@ -128,6 +128,7 @@ function processRootPath(systemRootPath) {
   chiefCommander.bootStrapCommands();
   let rootPath = ruleBroker.processRules(systemRootPath, '', rules);
   dataBroker.setupDataStorage();
+  rootPath = path.resolve(rootPath);
   // console.log('systemRootPath after business rule processing is: ' + rootPath);
   // console.log('END warden.processRootPath function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -156,19 +157,23 @@ function saveRootPath(rootPath) {
   let cleanedRootPath;
   // console.log('calling file broker to clean the root path.');
   cleanedRootPath = fileBroker.cleanRootPath(rootPath);
+  cleanedRootPath = path.resolve(cleanedRootPath);
   // console.log('set the cleaned root path as a configuration setting, cleanedRootPath is: ' + cleanedRootPath);
-  let applicationData = fileBroker.getJsonData(rootPath + w.cResources + b.cForwardSlash + s.cmetaDataDotJson);
+  let applicationMetaDataPathAndFilename = path.resolve(rootPath + b.cForwardSlash + w.cResources + b.cForwardSlash + s.cmetaDataDotJson);
+  let applicationData = fileBroker.getJsonData(applicationMetaDataPathAndFilename);
   // console.log('loaded application meta-data is: ' + JSON.stringify(applicationData));
   configurator.setConfigurationSetting(s.cApplicationCleanedRootPath, cleanedRootPath);
-  // console.log('set the application name as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationName, applicationData[w.cname]);
-  // console.log('set the application version number as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationVersionNumber, applicationData[w.cversion]);
-  // console.log('set the application description as a configuration setting');
-  configurator.setConfigurationSetting(s.cApplicationDescription, applicationData[w.cdescription]);
+  // console.log('set the application name as a configuration setting: ' + applicationData[w.cName]);
+  configurator.setConfigurationSetting(s.cApplicationName, applicationData[w.cName]);
+  // console.log('set the application version number as a configuration setting: ' + applicationData[w.cVersion]);
+  configurator.setConfigurationSetting(s.cApplicationVersionNumber, applicationData[w.cVersion]);
+  // console.log('set the application description as a configuration setting: ' + applicationData[w.cDescription]);
+  configurator.setConfigurationSetting(s.cApplicationDescription, applicationData[w.cDescription]);
   if (configurator.getConfigurationSetting(s.cEnableConstantsValidation) === true) {
       chiefData.setupConstantsValidationData();
-      configurator.setConfigurationSetting(s.cConstantsPath, cleanedRootPath + s.cConstantsPathActual);
+      let resolvedConstantsPathActual = path.resolve(cleanedRootPath + b.cForwardSlash + s.cConstantsPathActual)
+      // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
+      configurator.setConfigurationSetting(s.cConstantsPath, resolvedConstantsPathActual);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('END warden.saveRootPath function');
@@ -234,8 +239,12 @@ function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemCommandsAliasesPath is: ' + systemCommandsAliasesPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientCommandsAliasesPath is: ' + clientCommandsAliasesPath);
   let applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
-  configurator.setConfigurationSetting(s.cSystemCommandsAliasesPath, applicationRootPath + systemCommandsAliasesPath);
-  configurator.setConfigurationSetting(s.cClientCommandsAliasesPath, applicationRootPath + clientCommandsAliasesPath);
+  let resolvedSystemCommandsAliasesPath = path.resolve(applicationRootPath + b.cForwardSlash + systemCommandsAliasesPath);
+  let resolvedClientCommandsAliasesPath = path.resolve(applicationRootPath + b.cForwardSlash + clientCommandsAliasesPath);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedSystemCommandsAliasesPath is: ' + resolvedSystemCommandsAliasesPath);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedClientCommandsAliasesPath is: ' + resolvedClientCommandsAliasesPath);
+  configurator.setConfigurationSetting(s.cSystemCommandsAliasesPath, resolvedSystemCommandsAliasesPath);
+  configurator.setConfigurationSetting(s.cClientCommandsAliasesPath, resolvedClientCommandsAliasesPath);
   chiefCommander.loadCommandAliasesFromPath(s.cSystemCommandsAliasesPath);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   chiefCommander.loadCommandAliasesFromPath(s.cClientCommandsAliasesPath);
@@ -258,8 +267,12 @@ function loadCommandWorkflows(systemWorkflowPath, clientWorkflowPath) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'systemWorkflowPath is: ' + systemWorkflowPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientWorkflowPath is: ' + clientWorkflowPath);
   let applicationRootPath = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
-  configurator.setConfigurationSetting(s.cSystemWorkflowsPath, applicationRootPath + systemWorkflowPath);
-  configurator.setConfigurationSetting(s.cClientWorkflowsPath, applicationRootPath + clientWorkflowPath);
+  let resolvedSystemWorkflowsPath = path.resolve(applicationRootPath + b.cForwardSlash + systemWorkflowPath);
+  let resolvedClientWorkflowsPath = path.resolve(applicationRootPath + b.cForwardSlash + clientWorkflowPath);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedSystemWorkflowsPath is: ' + resolvedSystemWorkflowsPath);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedClientWorkflowsPath is: ' + resolvedClientWorkflowsPath);
+  configurator.setConfigurationSetting(s.cSystemWorkflowsPath, resolvedSystemWorkflowsPath);
+  configurator.setConfigurationSetting(s.cClientWorkflowsPath, resolvedClientWorkflowsPath);
   chiefWorkflow.loadCommandWorkflowsFromPath(s.cSystemWorkflowsPath);
   chiefWorkflow.loadCommandWorkflowsFromPath(s.cClientWorkflowsPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -449,13 +462,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jan 06 2021 10:31:37 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jan 22 2021 15:47:00 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

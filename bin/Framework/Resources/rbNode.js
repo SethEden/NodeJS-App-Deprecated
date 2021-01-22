@@ -43,7 +43,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 /**
  * @function rbNodeConstructor
  * @description The Red-Black Node object.
- * @param {string} color The color of this node (Red or Black)
+ * @param {integer} color The color of this node (Red or Black)
  * @param {string} key The key or unique name/ID for this node.
  * @param {string|integer|boolean|array|object} value The value or data-object stored with this node.
  * @param {object} left Referance to the left child from this node.
@@ -55,7 +55,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function rbNodeConstructor(color, key, value, left, right, count) {
-  var functionName = rbNode.name;
+  var functionName = rbNodeConstructor.name;
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 

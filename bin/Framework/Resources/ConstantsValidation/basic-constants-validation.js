@@ -120,6 +120,10 @@ var basicConstantsValidation = [{
   Actual: b.cDash,
   Expected: '-'
 }, {
+  Name: 'cDoubleDash',
+  Actual: b.cDoubleDash,
+  Expected: '--'
+}, {
   Name: 'cEqual',
   Actual: b.cEqual,
   Expected: '='

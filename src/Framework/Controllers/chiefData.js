@@ -35,6 +35,7 @@ function getAndProcessCsvData(pathAndFilename, contextName) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input pathAndFilename is: ' + pathAndFilename);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
+  pathAndFilename = path.resolve(pathAndFilename);
   let loadedData = dataBroker.getCsvData(pathAndFilename);
   // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
   let allLoadedData = dataBroker.getAndProcessCsvData(testData, contextName);
@@ -53,6 +54,7 @@ function getAndProcessXmlData(pathAndFilename) {
   let functionName = getAndProcessXmlData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input pathAndFilename is: ' + pathAndFilename);
+  pathAndFilename = path.resolve(pathAndFilename);
   let allSystemConfigurations = dataBroker.getXmlData(pathAndFilename);
   // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
   allSystemConfigurations = dataBroker.processXmlData(allSystemConfigurations);
@@ -81,6 +83,7 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
   let loadedAndMergedDataAllFiles = {};
   let dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  dataPath = path.resolve(dataPath);
   // console.log('dataPath is: ' + dataPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
   let filesToLoad = dataBroker.scanDataPath(dataPath);
@@ -113,6 +116,7 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
   let loadedAndMergedDataAllFiles = {};
   let dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  dataPath = path.resolve(dataPath);
   // console.log('dataPath is: ' + dataPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
   let filesToLoad = dataBroker.scanDataPath(dataPath);

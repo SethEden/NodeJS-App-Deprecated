@@ -1,7 +1,7 @@
 /**
-* @file nominal.js
-* @module nominal
-* @description Contains all of the commands to validate constants.
+* @file unitTests.js
+* @module unitTests
+* @description Contains all of the commands to validate various components of the system.
 * @requires module:configurator
 * @requires module:ruleBroker
 * @requires module:loggers
@@ -17,6 +17,8 @@ import configurator from '../../Executrix/configurator';
 import ruleBroker from '../../BusinessRules/ruleBroker';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
+import * as p from '../../Constants/phonics.constants';
+import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
 var path = require('path');
 var D = require('../../../Framework/Resources/data');
@@ -28,6 +30,8 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/09/11
  */
 export const validateConstants = function(inputData, inputMetaData) {
   let functionName = s.cvalidateConstants;
@@ -44,17 +48,40 @@ export const validateConstants = function(inputData, inputMetaData) {
   rulesPhase1[0] = s.cvalidateConstantsDataValidation;
   rulesPhase2[0] = s.cvalidateConstantsDataValues;
 
-  let basicConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cbasic_constants_js, s.cBasicConstantsValidation, rulesPhase1);
-  let colorConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.ccolor_constants_js, s.cColorConstantsValidation, rulesPhase1);
-  let elementConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.celement_constants_js, s.cElementConstantsValidation, rulesPhase1);
-  let genericConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cgeneric_constants_js, s.cGenericConstantsValidation, rulesPhase1);
-  let isotopeConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cisotope_constants_js, s.cIsotopeConstantsValidation, rulesPhase1);
-  let numericConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cnumeric_constants_js, s.cNumericConstantsValidation, rulesPhase1);
-  let phonicsConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cphonics_constants_js, s.cPhonicsConstantsValidation, rulesPhase1);
-  let shapeConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cshape_constants_js, s.cShapeConstantsValidation, rulesPhase1);
-  let systemConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.csystem_constants_js, s.cSystemConstantsValidation, rulesPhase1);
-  let unitsConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cunits_constants_js, s.cUnitsConstantsValidation, rulesPhase1);
-  let wordConstantsValidationPhase1Result = ruleBroker.processRules(constantsPath + s.cword_constants_js, s.cWordConstantsValidation, rulesPhase1);
+  let resolvedConstantsPath_Basic = path.resolve(constantsPath + b.cForwardSlash + s.cbasic_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Basic is: ' + resolvedConstantsPath_Basic);
+  let resolvedConstantsPath_Color = path.resolve(constantsPath + b.cForwardSlash + s.ccolor_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Color is: ' + resolvedConstantsPath_Color);
+  let resolvedConstantsPath_Element = path.resolve(constantsPath + b.cForwardSlash + s.celement_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Element is: ' + resolvedConstantsPath_Element);
+  let resolvedConstantsPath_Generic = path.resolve(constantsPath + b.cForwardSlash + s.cgeneric_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Generic is: ' + resolvedConstantsPath_Generic);
+  let resolvedConstantsPath_Isotope = path.resolve(constantsPath + b.cForwardSlash + s.cisotope_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Isotope is: ' + resolvedConstantsPath_Isotope);
+  let resolvedConstantsPath_Numeric = path.resolve(constantsPath + b.cForwardSlash + s.cnumeric_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Numeric is: ' + resolvedConstantsPath_Numeric);
+  let resolvedConstantsPath_Phonics = path.resolve(constantsPath + b.cForwardSlash + s.cphonics_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Phonics is: ' + resolvedConstantsPath_Phonics);
+  let resolvedConstantsPath_Shape = path.resolve(constantsPath + b.cForwardSlash + s.cshape_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Shape is: ' + resolvedConstantsPath_Shape);
+  let resolvedConstantsPath_System = path.resolve(constantsPath + b.cForwardSlash + s.csystem_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_System is: ' + resolvedConstantsPath_System);
+  let resolvedConstantsPath_Units = path.resolve(constantsPath + b.cForwardSlash + s.cunits_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Units is: ' + resolvedConstantsPath_Units);
+  let resolvedConstantsPath_Words = path.resolve(constantsPath + b.cForwardSlash + s.cword_constants_js);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Words is: ' + resolvedConstantsPath_Words);
+
+  let basicConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Basic, s.cBasicConstantsValidation, rulesPhase1);
+  let colorConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Color, s.cColorConstantsValidation, rulesPhase1);
+  let elementConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Element, s.cElementConstantsValidation, rulesPhase1);
+  let genericConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Generic, s.cGenericConstantsValidation, rulesPhase1);
+  let isotopeConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Isotope, s.cIsotopeConstantsValidation, rulesPhase1);
+  let numericConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Numeric, s.cNumericConstantsValidation, rulesPhase1);
+  let phonicsConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Phonics, s.cPhonicsConstantsValidation, rulesPhase1);
+  let shapeConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Shape, s.cShapeConstantsValidation, rulesPhase1);
+  let systemConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_System, s.cSystemConstantsValidation, rulesPhase1);
+  let unitsConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Units, s.cUnitsConstantsValidation, rulesPhase1);
+  let wordConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Words, s.cWordConstantsValidation, rulesPhase1);
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'END Phase 1 Constants Validation');
 
   // Phase 2 Constants Validation
@@ -125,5 +152,51 @@ export const validateConstants = function(inputData, inputMetaData) {
   } else {
     configurator.setConfigurationSetting(s.cPassAllConstantsValidations, false);
   }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+};
+
+/**
+ * @function validateCommandAliases
+ * @description VAlidates all command aliases have no duplicates within a command, but also between commands.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/10/01
+ */
+export const validateCommandAliases = function(inputData, inputMetaData) {
+  let functionName = s.cvalidateCommandAliases;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let allCommandAliases = D[s.cCommandsAliases][w.cCommand];
+  let passedAllCommandAliasesDuplicateCheck = true;
+  let rules = [];
+  rules[0] = s.ccountDuplicateCommandAliases;
+loop1:
+  for (let i = 0; i < allCommandAliases.length; i++) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+    let currentCommand = allCommandAliases[i];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+    let aliasList = currentCommand[w.cAliases];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+    let arrayOfAliases = aliasList.split(b.cComa);
+loop2:
+    for (let j = 0; j < arrayOfAliases.length; j++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+      let currentAlias = arrayOfAliases[j];
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+      let duplicateAliasCount = ruleBroker.processRules(currentAlias, allCommandAliases, rules);
+      if (duplicateAliasCount > 1) {
+        passedAllCommandAliasesDuplicateCheck = false;
+      }
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
+    }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+  }
+  if (passedAllCommandAliasesDuplicateCheck === true) {
+    console.log('PASSED: All duplicate command aliases validation tests!');
+  }
+  configurator.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

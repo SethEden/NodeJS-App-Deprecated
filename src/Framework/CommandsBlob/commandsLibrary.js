@@ -3,6 +3,7 @@
  * @module commandsLibrary
  * @description Contains all of the system defined commands as a map between function names and function calls.
  * @requires module:nominal
+ * @requires module:unitTests
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:word-constants
@@ -14,7 +15,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as nominalCommands from './Commands/nominal';
-import * as unitTestConstants from './Commands/unitTestConstants';
+import * as unitTests from './Commands/unitTests';
 import loggers from '../Executrix/loggers';
 import * as b from '../Constants/basic.constants';
 import * as w from '../Constants/word.constants';
@@ -44,7 +45,9 @@ export const initCommandsLibrary = function() {
     [w.cversion]: (inputData, inputMetaData) => nominalCommands.version(inputData, inputMetaData),
     [w.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
     [w.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData),
+    [s.cclearScreen]: (inputData, inputMetaData) => nominalCommands.clearScreen(inputData, inputMetaData),
     [s.cdeployApplication]: (inputData, inputMetaData) => nominalCommands.deployApplication(inputData, inputMetaData),
+    [s.cdeployMetaData]: (inputData, inputMetaData) => nominalCommands.deployMetaData(inputData, inputMetaData),
     [s.creleaseApplication]: (inputData, inputMetaData) => nominalCommands.releaseApplication(inputData, inputMetaData),
     [w.chelp]: (inputData, inputMetaData) => nominalCommands.help(inputData, inputMetaData),
     [s.cworkflowHelp]: (inputData, inputMetaData) => nominalCommands.workflowHelp(inputData, inputMetaData),
@@ -54,6 +57,7 @@ export const initCommandsLibrary = function() {
     [s.cclearDataStorage]: (inputData, inputMetaData) => nominalCommands.clearDataStorage(inputData, inputMetaData),
     [s.cbusinessRule]: (inputData, inputMetaData) => nominalCommands.businessRule(inputData, inputMetaData),
     [s.ccommandGenerator]: (inputData, inputMetaData) => nominalCommands.commandGenerator(inputData, inputMetaData),
+    [s.ccommandAliasGenerator]: (inputData, inputMetaData) => nominalCommands.commandAliasGenerator(inputData, inputMetaData),
     [s.cbusinessRulesMetrics]: (inputData, inputMetaData) => nominalCommands.businessRulesMetrics(inputData, inputMetaData),
     [s.ccommandMetrics]: (inputData, inputMetaData) => nominalCommands.commandMetrics(inputData, inputMetaData),
     [s.cconvertColors]: (inputData, inputMetaData) => nominalCommands.convertColors(inputData, inputMetaData),
@@ -61,7 +65,8 @@ export const initCommandsLibrary = function() {
     // ********************************
     // Unit Test Constants commands in order
     // ********************************
-    [s.cvalidateConstants]: (inputData, inputMetaData) => unitTestConstants.validateConstants(inputData, inputMetaData)
+    [s.cvalidateConstants]: (inputData, inputMetaData) => unitTests.validateConstants(inputData, inputMetaData),
+    [s.cvalidateCommandAliases]: (inputData, inputMetaData) => unitTests.validateCommandAliases(inputData, inputMetaData)
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };

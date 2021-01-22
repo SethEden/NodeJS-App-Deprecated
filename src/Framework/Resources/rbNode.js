@@ -24,7 +24,7 @@
 /**
  * @function rbNodeConstructor
  * @description The Red-Black Node object.
- * @param {string} color The color of this node (Red or Black)
+ * @param {integer} color The color of this node (Red or Black)
  * @param {string} key The key or unique name/ID for this node.
  * @param {string|integer|boolean|array|object} value The value or data-object stored with this node.
  * @param {object} left Referance to the left child from this node.
@@ -35,7 +35,7 @@
  * @date 2021/01/05
  */
  function rbNodeConstructor(color, key, value, left, right, count) {
-   let functionName = rbNode.name;
+   let functionName = rbNodeConstructor.name;
    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
    loggers.consoleLog(baseFileName + b.cDot + functionName, 'color is: ' + color);
    loggers.consoleLog(baseFileName + b.cDot + functionName, 'key is: ' + key);

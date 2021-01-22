@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployApplication = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -33,6 +33,8 @@ var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
+var n = _interopRequireWildcard(require("../../Constants/numeric.constants"));
+
 var w = _interopRequireWildcard(require("../../Constants/word.constants"));
 
 var s = _interopRequireWildcard(require("../../Constants/system.constants"));
@@ -43,33 +45,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-/**
- * @file nominal.js
- * @module nominal
- * @description Contains all of the nominal system commands.
- * @requires module:configurator
- * @requires module:lexical
- * @requires module:fileBroker
- * @requires module:dataBroker
- * @requires module:commandBroker
- * @requires module:ruleBroker
- * @requires module:workflowBroker
- * @requires module:queue
- * @requires module:stack
- * @requires module:timers
- * @requires module:loggers
- * @requires module:basic-constants
- * @requires module:generic-constants
- * @requires module:word-constants
- * @requires module:system-constants
- * @requires {@link https://www.npmjs.com/package/figlet|figlet}
- * @requires {@link https://www.npmjs.com/package/path|path}
- * @requires {@link https://mathjs.org/index.html|math}
- * @requires module:data
- * @author Seth Hollingsead
- * @date 2020/06/19
- * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
- */
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var prompt = require('prompt-sync')();
+
 var figlet = require('figlet');
 
 var path = require('path');
@@ -262,6 +241,41 @@ var name = function name(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function clearScreen
+ * @description Clears all data from the console cache by printing a bunch of blank lines to the screen.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+
+
+exports.name = name;
+
+var clearScreen = function clearScreen(inputData, inputMetaData) {
+  var functionName = s.cclearScreen;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true; // Maybe we can find a faster way to do this at some point?!
+  // For now this will have to work.
+
+  for (var i = 0; i <= 10000; i++) {
+    console.log(' ');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function deployApplication
  * @description Executes the deployment of the application, part of the build-deploy-release cycle.
  * @param {string} inputData The path the non-code files should be copied from. (SOURCE)
@@ -272,7 +286,7 @@ var name = function name(inputData, inputMetaData) {
  */
 
 
-exports.name = name;
+exports.clearScreen = clearScreen;
 
 var deployApplication = function deployApplication(inputData, inputMetaData) {
   var functionName = s.cdeployApplication;
@@ -285,7 +299,7 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('DEPLOY APPLICATION');
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cSourceResourcesPath);
@@ -299,7 +313,130 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 
     _configurator["default"].setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
-    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+
+    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function deployMetaData
+ * @description Copies application meta-data from the source to the destination.
+ * @param {object} inputData The data that should be transfered to the output file & path.
+ * @param {string} inputMetaData The path the data should be written out to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the data was copied succesful or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/08
+ */
+
+
+exports.deployApplication = deployApplication;
+
+var deployMetaData = function deployMetaData(inputData, inputMetaData) {
+  var functionName = s.cdeployMetaData;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  returnData = true;
+
+  if (!inputData || inputData === null || inputData === undefined) {
+    returnData = false;
+  } else {
+    var _metaDataOutput;
+
+    var aggregateCommandString = '';
+    var getAttributeNameRule = [];
+    var getAttributeValueRule = [];
+    getAttributeNameRule[0] = s.cgetAttributeName;
+    getAttributeValueRule[0] = s.cgetAttributeValue;
+
+    for (var i = 1; i < inputData.length; i++) {
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'inputData[i] is: ' + inputData[i]);
+
+      aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'aggregateCommandString is: ' + aggregateCommandString);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+
+    var metaDataParameters = aggregateCommandString.split(b.cComa);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters is: ' + metaDataParameters);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters length is: ' + metaDataParameters.length);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[0] is: ' + metaDataParameters[0]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[1] is: ' + metaDataParameters[1]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[2] is: ' + metaDataParameters[2]);
+
+    var appNameJsonString = metaDataParameters[0];
+    var appVersionJsonString = metaDataParameters[1];
+    var appDescriptionJsonString = metaDataParameters[2];
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appName is: ' + appNameJsonString);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersion is: ' + appVersionJsonString);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescription is: ' + appDescriptionJsonString);
+
+    var appNameAttributeName = _ruleBroker["default"].processRules(appNameJsonString, '', getAttributeNameRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeName is: ' + appNameAttributeName);
+
+    var appVersionAttributeName = _ruleBroker["default"].processRules(appVersionJsonString, '', getAttributeNameRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeName is: ' + appVersionAttributeName);
+
+    var appDescriptionAttributeName = _ruleBroker["default"].processRules(appDescriptionJsonString, '', getAttributeNameRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeName is: ' + appDescriptionAttributeName);
+
+    var appNameAttributeValue = _ruleBroker["default"].processRules(appNameJsonString, '', getAttributeValueRule);
+
+    _configurator["default"].setConfigurationSetting(s.cApplicationName, appNameAttributeValue);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeValue is: ' + appNameAttributeValue);
+
+    var appVersionAttributeValue = _ruleBroker["default"].processRules(appVersionJsonString, '', getAttributeValueRule);
+
+    _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, appVersionAttributeValue);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeValue is: ' + appVersionAttributeValue);
+
+    var appDescriptionAttributeValue = _ruleBroker["default"].processRules(appDescriptionJsonString, '', getAttributeValueRule);
+
+    _configurator["default"].setConfigurationSetting(s.cApplicationDescription, appDescriptionAttributeValue);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeValue is: ' + appDescriptionAttributeValue);
+
+    var metaDataOutput = (_metaDataOutput = {}, _defineProperty(_metaDataOutput, appNameAttributeName, appNameAttributeValue), _defineProperty(_metaDataOutput, appVersionAttributeName, appVersionAttributeValue), _defineProperty(_metaDataOutput, appDescriptionAttributeName, appDescriptionAttributeValue), _metaDataOutput);
+
+    var metaDataPathAndFilename = _configurator["default"].getConfigurationSetting(s.cConfigurationPath);
+
+    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataPathAndFilename is: ' + metaDataPathAndFilename);
+
+    _fileBroker["default"].writeJsonData(metaDataPathAndFilename, metaDataOutput);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -323,7 +460,7 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
  */
 
 
-exports.deployApplication = deployApplication;
+exports.deployMetaData = deployMetaData;
 
 var releaseApplication = function releaseApplication(inputData, inputMetaData) {
   var functionName = s.creleaseApplication;
@@ -336,7 +473,7 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('RELEASE APPLICATION');
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cBinaryRootPath);
@@ -350,7 +487,13 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 
     _configurator["default"].setConfigurationSetting(s.creleaseCompleted, true);
   } else {
-    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+
+    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -856,6 +999,103 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function commandAliasGenerator
+ * @description Requests a set of inputs from the users for a command name, and a series of command words and a list of command word acronyms.
+ * The command then calls a series of business rules to in-turn generate all possible combinations of command words and command word acronyms.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+
+
+exports.commandGenerator = commandGenerator;
+
+var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaData) {
+  var functionName = s.ccommandAliasGenerator;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var commandName = '';
+  var commandWordAliasList = '';
+  var validCommandName = false;
+  var validCommandWordAliasList = false;
+  var commandAliasDataStructure = {};
+  var commandNameParsingRule = [];
+  var camelCaseToArrayRule = [];
+  var commandWordAliasListParsingRule = [];
+  var generateCommandAliasesRule = [];
+  commandNameParsingRule[0] = s.cisValidCommandNameString;
+  camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
+  commandWordAliasListParsingRule[0] = s.cisStringList;
+  generateCommandAliasesRule[0] = s.cgenerateCommandAliases;
+
+  while (validCommandName === false) {
+    console.log(s.cCommandNamePrompt1);
+    console.log(s.cCommandNamePrompt2);
+    console.log(s.cCommandNamePrompt3);
+    console.log(s.cCommandNamePrompt4);
+    console.log(s.cCommandNamePrompt5);
+    commandName = prompt(b.cGreaterThan);
+    validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
+
+    if (validCommandName === false) {
+      console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+    }
+  }
+
+  var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
+
+  for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
+    var commandWord = camelCaseCommandNameArray[i];
+    console.log('current commandWord is: ' + commandWord);
+    validCommandWordAliasList = false;
+
+    if (commandWord != '') {
+      commandAliasDataStructure[commandWord] = {};
+
+      while (validCommandWordAliasList === false) {
+        console.log(s.cCommandWordAliasPrompt1);
+        console.log(s.cCommandWordAliasPrompt2);
+        console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
+        commandWordAliasList = prompt(b.cGreaterThan);
+        validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
+
+        if (validCommandWordAliasList === false) {
+          console.log('INVALID INPUT: Please enter a valid command word alias list.');
+        } else if (commandWordAliasList != '') {
+          // As long as the user entered something we should be able to proceed!
+          validCommandWordAliasList = true;
+        }
+      } // End while-loop: validCommandWordAliasList
+
+
+      commandAliasDataStructure[commandWord] = commandWordAliasList;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
+  // TODO: Start generating all the possible combinations of the command words and command word aliases.
+  // Pass the data object to a business rule to do the above task.
+
+
+  var commandAliases = _ruleBroker["default"].processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function businessRulesMetrics
  * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
@@ -866,7 +1106,7 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
  */
 
 
-exports.commandGenerator = commandGenerator;
+exports.commandAliasGenerator = commandAliasGenerator;
 
 var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaData) {
   var functionName = s.cbusinessRulesMetrics;

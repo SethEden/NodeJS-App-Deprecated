@@ -17,6 +17,7 @@
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
@@ -38,8 +39,10 @@ import timers from '../../Executrix/timers';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as n from '../../Constants/numeric.constants';
 import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
+const prompt = require('prompt-sync')();
 const figlet = require('figlet');
 var path = require('path');
 var math = require('mathjs');
@@ -173,6 +176,31 @@ export const name = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function clearScreen
+ * @description Clears all data from the console cache by printing a bunch of blank lines to the screen.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+export const clearScreen = function(inputData, inputMetaData) {
+  let functionName = s.cclearScreen;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  // Maybe we can find a faster way to do this at some point?!
+  // For now this will have to work.
+  for (let i = 0; i <= 10000; i++) {
+    console.log(' ');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function deployApplication
  * @description Executes the deployment of the application, part of the build-deploy-release cycle.
  * @param {string} inputData The path the non-code files should be copied from. (SOURCE)
@@ -187,7 +215,8 @@ export const deployApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('DEPLOY APPLICATION');
     let sourcePath = configurator.getConfigurationSetting(s.cSourceResourcesPath);
     let destinationPath = configurator.getConfigurationSetting(s.cDestinationResourcesPath);
@@ -196,7 +225,84 @@ export const deployApplication = function(inputData, inputMetaData) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + true);
     configurator.setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
-    console.log('ERROR: Build failed because of a failure in the constants validation system. Please fix ASAP before attempting another build.');
+    if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+    if (configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function deployMetaData
+ * @description Copies application meta-data from the source to the destination.
+ * @param {object} inputData The data that should be transfered to the output file & path.
+ * @param {string} inputMetaData The path the data should be written out to.
+ * @return {boolean} A TRUE or FALSE value to indicate if the data was copied succesful or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/08
+ */
+export const deployMetaData = function(inputData, inputMetaData) {
+  let functionName = s.cdeployMetaData;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  returnData = true;
+  if (!inputData || inputData === null || inputData === undefined) {
+    returnData = false;
+  } else {
+    let aggregateCommandString = '';
+    let getAttributeNameRule = [];
+    let getAttributeValueRule = [];
+    getAttributeNameRule[0] = s.cgetAttributeName;
+    getAttributeValueRule[0] = s.cgetAttributeValue;
+    for (let i = 1; i < inputData.length; i++) {
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'inputData[i] is: ' + inputData[i]);
+      aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'aggregateCommandString is: ' + aggregateCommandString);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    }
+    let metaDataParameters = aggregateCommandString.split(b.cComa);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters is: ' + metaDataParameters);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters length is: ' + metaDataParameters.length);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[0] is: ' + metaDataParameters[0]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[1] is: ' + metaDataParameters[1]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[2] is: ' + metaDataParameters[2]);
+    let appNameJsonString = metaDataParameters[0];
+    let appVersionJsonString = metaDataParameters[1];
+    let appDescriptionJsonString = metaDataParameters[2];
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appName is: ' + appNameJsonString);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersion is: ' + appVersionJsonString);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescription is: ' + appDescriptionJsonString);
+
+    let appNameAttributeName = ruleBroker.processRules(appNameJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeName is: ' + appNameAttributeName);
+    let appVersionAttributeName = ruleBroker.processRules(appVersionJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeName is: ' + appVersionAttributeName);
+    let appDescriptionAttributeName = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeNameRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeName is: ' + appDescriptionAttributeName);
+
+    let appNameAttributeValue = ruleBroker.processRules(appNameJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationName, appNameAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeValue is: ' + appNameAttributeValue);
+    let appVersionAttributeValue = ruleBroker.processRules(appVersionJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationVersionNumber, appVersionAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeValue is: ' + appVersionAttributeValue);
+    let appDescriptionAttributeValue = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeValueRule);
+    configurator.setConfigurationSetting(s.cApplicationDescription, appDescriptionAttributeValue);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeValue is: ' + appDescriptionAttributeValue);
+
+    let metaDataOutput = {[appNameAttributeName]: appNameAttributeValue, [appVersionAttributeName]: appVersionAttributeValue, [appDescriptionAttributeName]: appDescriptionAttributeValue};
+    let metaDataPathAndFilename = configurator.getConfigurationSetting(s.cConfigurationPath);
+    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'metaDataPathAndFilename is: ' + metaDataPathAndFilename);
+    fileBroker.writeJsonData(metaDataPathAndFilename, metaDataOutput);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -222,7 +328,8 @@ export const releaseApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true) {
+  if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
     console.log('RELEASE APPLICATION');
     let sourcePath = configurator.getConfigurationSetting(s.cBinaryRootPath);
     let destinationPath = configurator.getConfigurationSetting(s.cBinaryReleasePath);
@@ -231,7 +338,12 @@ export const releaseApplication = function(inputData, inputMetaData) {
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Release was completed: ' + true);
     configurator.setConfigurationSetting(s.creleaseCompleted, true);
   } else {
-    console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    if (configurator.getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+    }
+    if (configurator.getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+    }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -596,6 +708,83 @@ export const commandGenerator = function(inputData, inputMetaData) {
     console.log('WARNING: nominal.commandGenerator: The specified command: ' + commandString +
     ' was not found, please enter a valid command and try again.');
   }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function commandAliasGenerator
+ * @description Requests a set of inputs from the users for a command name, and a series of command words and a list of command word acronyms.
+ * The command then calls a series of business rules to in-turn generate all possible combinations of command words and command word acronyms.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+export const commandAliasGenerator = function(inputData, inputMetaData) {
+  let functionName = s.ccommandAliasGenerator;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  let commandName = '';
+  let commandWordAliasList = '';
+  let validCommandName = false;
+  let validCommandWordAliasList = false;
+  let commandAliasDataStructure = {};
+  let commandNameParsingRule = [];
+  let camelCaseToArrayRule = [];
+  let commandWordAliasListParsingRule = [];
+  let generateCommandAliasesRule = [];
+  commandNameParsingRule[0] = s.cisValidCommandNameString;
+  camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
+  commandWordAliasListParsingRule[0] = s.cisStringList;
+  generateCommandAliasesRule[0] = s.cgenerateCommandAliases;
+
+  while(validCommandName === false) {
+    console.log(s.cCommandNamePrompt1);
+    console.log(s.cCommandNamePrompt2);
+    console.log(s.cCommandNamePrompt3);
+    console.log(s.cCommandNamePrompt4);
+    console.log(s.cCommandNamePrompt5);
+    commandName = prompt(b.cGreaterThan);
+    validCommandName = ruleBroker.processRules(commandName, '', commandNameParsingRule);
+    if (validCommandName === false) {
+      console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+    }
+  }
+
+  let camelCaseCommandNameArray = ruleBroker.processRules(commandName, '', camelCaseToArrayRule);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
+
+  for (let i = 0; i < camelCaseCommandNameArray.length; i++) {
+    let commandWord = camelCaseCommandNameArray[i];
+    console.log('current commandWord is: ' + commandWord);
+    validCommandWordAliasList = false;
+    if (commandWord != '') {
+      commandAliasDataStructure[commandWord] = {};
+      while(validCommandWordAliasList === false) {
+        console.log(s.cCommandWordAliasPrompt1);
+        console.log(s.cCommandWordAliasPrompt2);
+        console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
+        commandWordAliasList = prompt(b.cGreaterThan);
+        validCommandWordAliasList = ruleBroker.processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
+        if (validCommandWordAliasList === false) {
+          console.log('INVALID INPUT: Please enter a valid command word alias list.');
+        } else if (commandWordAliasList != '') { // As long as the user entered something we should be able to proceed!
+          validCommandWordAliasList = true;
+        }
+      } // End while-loop: validCommandWordAliasList
+      commandAliasDataStructure[commandWord] = commandWordAliasList;
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure));
+  // At this point the user should have entered all valid data and we should be ready to proceed.
+  // TODO: Start generating all the possible combinations of the command words and command word aliases.
+  // Pass the data object to a business rule to do the above task.
+  let commandAliases = ruleBroker.processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

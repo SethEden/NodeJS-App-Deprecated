@@ -15,6 +15,7 @@
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:basic-constants
+ * @requires {@link https://www.npmjs.com/package/dotenv|dotenv}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -30,6 +31,7 @@ import * as g from '../../Framework/Constants/generic.constants';
 import * as w from '../../Framework/Constants/word.constants';
 import * as b from '../../Framework/Constants/basic.constants';
 require('dotenv').config();
+var pjson = require('../../../package.json');
 const {NODE_ENV} = process.env;
 var path = require('path');
 var D = require('../../Framework/Resources/data');
@@ -87,9 +89,15 @@ function deployApplication() {
   let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
+    warden.setConfigurationSetting(s.creleaseCompleted, false);
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
     warden.setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
     warden.setConfigurationSetting(s.cDestinationResourcesPath, c.cProductionResourcesPath);
+    let appName = b.cDoubleQuote + w.cName + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.name + b.cDoubleQuote;
+    let appVersion = b.cDoubleQuote + w.cVersion + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.version + b.cDoubleQuote;
+    let appDescription = b.cDoubleQuote + w.cDescription + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.description + b.cDoubleQuote;
+    warden.enqueueCommand(s.cdeployMetaData + b.cSpace + appName + b.cComa + appVersion + b.cComa + appDescription);
     warden.enqueueCommand(s.cBuildWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
@@ -117,7 +125,9 @@ function releaseApplication() {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   let releaseResult;
   try {
+    warden.setConfigurationSetting(s.creleaseCompleted, false);
     warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
     warden.setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
     warden.setConfigurationSetting(s.cBinaryReleasePath, c.cReleasePath);
     warden.enqueueCommand(s.cReleaseWorkflow);

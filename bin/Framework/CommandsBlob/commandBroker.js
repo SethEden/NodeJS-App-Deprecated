@@ -160,7 +160,7 @@ function getValidCommand(commandString, commandDelimiter) {
       var arrayOfAliases = aliasList.split(b.cComa);
 
       loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
-        if (commandToExecute === arrayOfAliases[j]) {
+        if (commandToExecute === arrayOfAliases[j] || commandToExecute === b.cDash + arrayOfAliases[j] || commandToExecute === b.cDoubleDash + arrayOfAliases[j] || commandToExecute === b.cForwardSlash + arrayOfAliases[j] || commandToExecute === b.cBackSlash + arrayOfAliases[j] || commandToExecute.toUpperCase() === arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === b.cDash + arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === b.cDoubleDash + arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === b.cForwardSlash + arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === b.cBackSlash + arrayOfAliases[j].toUpperCase() || commandToExecute.toLowerCase() === arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === b.cDash + arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === b.cDoubleDash + arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === b.cForwardSlash + arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === b.cBackSlash + arrayOfAliases[j].toLowerCase()) {
           foundValidCommand = true;
 
           _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute before the Alias is: ' + commandToExecute);

@@ -179,6 +179,7 @@ export const systemConstantsValidation = [
    {Name: 'cBrowserRefresh', Actual: s.cBrowserRefresh, Expected: 'BrowserRefresh'},
    {Name: 'cSpaceIsColonSpace', Actual: s.cSpaceIsColonSpace, Expected: ' Is: '},
    {Name: 'cdeployApplication', Actual: s.cdeployApplication, Expected: 'deployApplication'},
+   {Name: 'cdeployMetaData', Actual: s.cdeployMetaData, Expected: 'deployMetaData'},
    {Name: 'creleaseApplication', Actual: s.creleaseApplication, Expected: 'releaseApplication'},
    {Name: 'cbackground', Actual: s.cbackground, Expected: 'background'},
    {Name: 'cBackground', Actual: s.cBackground, Expected: 'Background'},
@@ -223,6 +224,17 @@ export const systemConstantsValidation = [
    {Name: 'cFunctionFontBackgroundColor', Actual: s.cFunctionFontBackgroundColor, Expected: 'FunctionFontBackgroundColor'},
    {Name: 'cMessageFontBackgroundColor', Actual: s.cMessageFontBackgroundColor, Expected: 'MessageFontBackgroundColor'},
    {Name: 'cDataFontBackgroundColor', Actual: s.cDataFontBackgroundColor, Expected: 'DataFontBackgroundColor'},
+
+   // System Messages
+   {Name: 'cCommandNamePrompt1', Actual: s.cCommandNamePrompt1, Expected: 'Please enter a named command where '},
+   {Name: 'cCommandNamePrompt2', Actual: s.cCommandNamePrompt2, Expected: 'the first word starts with a '},
+   {Name: 'cCommandNamePrompt3', Actual: s.cCommandNamePrompt3, Expected: 'lower case letter and all other '},
+   {Name: 'cCommandNamePrompt4', Actual: s.cCommandNamePrompt4, Expected: 'words in the named command start '},
+   {Name: 'cCommandNamePrompt5', Actual: s.cCommandNamePrompt5, Expected: 'with an upper case letter:'},
+
+   {Name: 'cCommandWordAliasPrompt1', Actual: s.cCommandWordAliasPrompt1, Expected: 'Please enter a list of command '},
+   {Name: 'cCommandWordAliasPrompt2', Actual: s.cCommandWordAliasPrompt2, Expected: 'word abreviations/acronyms/aliases '},
+   {Name: 'cCommandWordAliasPrompt3', Actual: s.cCommandWordAliasPrompt3, Expected: 'for the command word:'},
 
    // File Types
    {Name: 'cCatia', Actual: s.cCatia, Expected: 'Catia'},
@@ -520,6 +532,7 @@ export const systemConstantsValidation = [
    {Name: 'cWorkflowDataPath', Actual: s.cWorkflowDataPath, Expected: 'WorkflowDataPath'},
    {Name: 'cKeywordsDataPath', Actual: s.cKeywordsDataPath, Expected: 'KeywordsDataPath'},
    {Name: 'cLocatorsDataPath', Actual: s.cLocatorsDataPath, Expected: 'LocatorsDataPath'},
+   {Name: 'cConstantsPath', Actual: s.cConstantsPath, Expected: 'ConstantsPath'},
    {Name: 'cConstantsPathActual', Actual: s.cConstantsPathActual, Expected: 'src/Framework/Constants/'},
    {Name: 'cclientRulesLibrary', Actual: s.cclientRulesLibrary, Expected: 'clientRulesLibrary'},
    {Name: 'cCommandQueue', Actual: s.cCommandQueue, Expected: 'CommandQueue'},
@@ -569,6 +582,7 @@ export const systemConstantsValidation = [
    {Name: 'cDisplaySummaryConstantsValidationPassMessages', Actual: s.cDisplaySummaryConstantsValidationPassMessages, Expected: 'DisplaySummaryConstantsValidationPassMessages'},
    {Name: 'cDisplaySummaryConstantsValidationFailMessages', Actual: s.cDisplaySummaryConstantsValidationFailMessages, Expected: 'DisplaySummaryConstantsValidationFailMessages'},
    {Name: 'cPassAllConstantsValidations', Actual: s.cPassAllConstantsValidations, Expected: 'PassAllConstantsValidations'},
+   {Name: 'cPassedAllCommandAliasesDuplicateChecks', Actual: s.cPassedAllCommandAliasesDuplicateChecks, Expected: 'PassedAllCommandAliasesDuplicateChecks'},
    {Name: 'cdeploymentCompleted', Actual: s.cdeploymentCompleted, Expected: 'deploymentCompleted'},
    {Name: 'creleaseCompleted', Actual: s.creleaseCompleted, Expected: 'releaseCompleted'},
 
@@ -620,6 +634,12 @@ export const systemConstantsValidation = [
    {Name: 'cgetValueFromAssignmentOperationString', Actual: s.cgetValueFromAssignmentOperationString, Expected: 'getValueFromAssignmentOperationString'},
    {Name: 'caggregateNumericalDifferenceBetweenTwoStrings', Actual: s.caggregateNumericalDifferenceBetweenTwoStrings, Expected: 'aggregateNumericalDifferenceBetweenTwoStrings'},
    {Name: 'cconvertCamelCaseStringToArray', Actual: s.cconvertCamelCaseStringToArray, Expected: 'convertCamelCaseStringToArray'},
+   {Name: 'cdoesStringContainUpperCaseCharacter', Actual: s.cdoesStringContainUpperCaseCharacter, Expected: 'doesStringContainUpperCaseCharacter'},
+   {Name: 'cdoesStringContainLowerCaseCharacter', Actual: s.cdoesStringContainLowerCaseCharacter, Expected: 'doesStringContainLowerCaseCharacter'},
+   {Name: 'cisFirstCharacterLowerCase', Actual: s.cisFirstCharacterLowerCase, Expected: 'isFirstCharacterLowerCase'},
+   {Name: 'cisFirstCharacterUpperCase', Actual: s.cisFirstCharacterUpperCase, Expected: 'isFirstCharacterUpperCase'},
+   {Name: 'cisStringList', Actual: s.cisStringList, Expected: 'isStringList'},
+   {Name: 'cisStringCamelCase', Actual: s.cisStringCamelCase, Expected: 'isStringCamelCase'},
    {Name: 'cconvertArrayToCamelCaseString', Actual: s.cconvertArrayToCamelCaseString, Expected: 'convertArrayToCamelCaseString'},
    {Name: 'cmapWordToCamelCaseWord', Actual: s.cmapWordToCamelCaseWord, Expected: 'mapWordToCamelCaseWord'},
    {Name: 'csimplifyAndConsolidateString', Actual: s.csimplifyAndConsolidateString, Expected: 'simplifyAndConsolidateString'},
@@ -628,12 +648,15 @@ export const systemConstantsValidation = [
    {Name: 'cdoesArrayContainCharacter', Actual: s.cdoesArrayContainCharacter, Expected: 'doesArrayContainCharacter'},
    {Name: 'cremoveCharacterFromArray', Actual: s.cremoveCharacterFromArray, Expected: 'removeCharacterFromArray'},
    {Name: 'cascertainMatchingFilenames', Actual: s.cascertainMatchingFilenames, Expected: 'ascertainMatchingFilenames'},
+   {Name: 'cascertainMatchingElements', Actual: s.cascertainMatchingElements, Expected: 'ascertainMatchingElements'},
    {Name: 'cdoesArrayContainFilename', Actual: s.cdoesArrayContainFilename, Expected: 'doesArrayContainFilename'},
    {Name: 'cvalidateConstantsDataValidation', Actual: s.cvalidateConstantsDataValidation, Expected: 'validateConstantsDataValidation'},
    {Name: 'cdetermineConstantsContextQualifiedPrefix', Actual: s.cdetermineConstantsContextQualifiedPrefix, Expected: 'determineConstantsContextQualifiedPrefix'},
    {Name: 'cdetermineSuggestedConstantsValidationLineOfCode', Actual: s.cdetermineSuggestedConstantsValidationLineOfCode, Expected: 'determineSuggestedConstantsValidationLineOfCode'},
    {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: s.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
    {Name: 'cvalidateConstantsDataValues', Actual: s.cvalidateConstantsDataValues, Expected: 'validateConstantsDataValues'},
+   {Name: 'cisValidCommandNameString', Actual: s.cisValidCommandNameString, Expected: 'isValidCommandNameString'},
+   {Name: 'ccountDuplicateCommandAliases', Actual: s.ccountDuplicateCommandAliases, Expected: 'countDuplicateCommandAliases'},
    {Name: 'cgetDataCatagoryFromDataContextName', Actual: s.cgetDataCatagoryFromDataContextName, Expected: 'getDataCatagoryFromDataContextName'},
    {Name: 'cgetDataCatagoryDetailNameFromDataContextName', Actual: s.cgetDataCatagoryDetailNameFromDataContextName, Expected: 'getDataCatagoryDetailNameFromDataContextName'},
    {Name: 'cgetKeywordNameFromDataContextName', Actual: s.cgetKeywordNameFromDataContextName, Expected: 'getKeywordNameFromDataContextName'},
@@ -643,11 +666,27 @@ export const systemConstantsValidation = [
    {Name: 'cgetFirstTopLevelFolderFromPath', Actual: s.cgetFirstTopLevelFolderFromPath, Expected: 'getFirstTopLevelFolderFromPath'},
    {Name: 'cloadDataFile', Actual: s.cloadDataFile, Expected: 'loadDataFile'},
    {Name: 'cgetStoredData', Actual: s.cgetStoredData, Expected: 'getStoredData'},
+   {Name: 'cstoreData', Actual: s.cstoreData, Expected: 'storeData'},
+   {Name: 'cisObjectEmpty', Actual: s.cisObjectEmpty, Expected: 'isObjectEmpty'},
+   {Name: 'cisArrayEmpty', Actual: s.cisArrayEmpty, Expected: 'isArrayEmpty'},
+   {Name: 'cisArray', Actual: s.cisArray, Expected: 'isArray'},
+   {Name: 'cisNonZeroLengthArray', Actual: s.cisNonZeroLengthArray, Expected: 'isNonZeroLengthArray'},
+   {Name: 'carrayDeepClone', Actual: s.carrayDeepClone, Expected: 'arrayDeepClone'},
+   {Name: 'cisObject', Actual: s.cisObject, Expected: 'isObject'},
+   {Name: 'cisArrayOrObject', Actual: s.cisArrayOrObject, Expected: 'isArrayOrObject'},
+   {Name: 'ccommandAliasGenerator', Actual: s.ccommandAliasGenerator, Expected: 'commandAliasGenerator'},
+   {Name: 'cgetAttributeName', Actual: s.cgetAttributeName, Expected: 'getAttributeName'},
+   {Name: 'cgetAttributeValue', Actual: s.cgetAttributeValue, Expected: 'getAttributeValue'},
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},
    {Name: 'cisEven', Actual: s.cisEven, Expected: 'isEven'},
    {Name: 'creplaceCharacterAtIndex', Actual: s.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},
    {Name: 'ccleanCommandInput', Actual: s.ccleanCommandInput, Expected: 'cleanCommandInput'},
    {Name: 'caggregateCommandArguments', Actual: s.caggregateCommandArguments, Expected: 'aggregateCommandArguments'},
+   {Name: 'cgenerateCommandAliases', Actual: s.cgenerateCommandAliases, Expected: 'generateCommandAliases'},
+   {Name: 'csolveLehmerCode', Actual: s.csolveLehmerCode, Expected: 'solveLehmerCode'},
+   {Name: 'crecursiveArrayExpansion', Actual: s.crecursiveArrayExpansion, Expected: 'recursiveArrayExpansion'},
+   {Name: 'cgetLehmerCodeValue', Actual: s.cgetLehmerCodeValue, Expected: 'getLehmerCodeValue'},
+   {Name: 'carraysAreEqual', Actual: s.carraysAreEqual, Expected: 'arraysAreEqual'},
 
    // *********************************
    // StringGeneration rules in order
@@ -744,6 +783,7 @@ export const systemConstantsValidation = [
    // ********************************
    {Name: 'cechoCommand', Actual: s.cechoCommand, Expected: 'echoCommand'},
    {Name: 'cEchoCommand', Actual: s.cEchoCommand, Expected: 'EchoCommand'},
+   {Name: 'cclearScreen', Actual: s.cclearScreen, Expected: 'clearScreen'},
    {Name: 'cworkflowHelp', Actual: s.cworkflowHelp, Expected: 'workflowHelp'},
    {Name: 'ccommandSequencer', Actual: s.ccommandSequencer, Expected: 'commandSequencer'},
    {Name: 'cprintDataHive', Actual: s.cprintDataHive, Expected: 'printDataHive'},
@@ -756,6 +796,7 @@ export const systemConstantsValidation = [
    // Unit Test Constants commands in order
    // ********************************
    {Name: 'cvalidateConstants', Actual: s.cvalidateConstants, Expected: 'validateConstants'},
+   {Name: 'cvalidateCommandAliases', Actual: s.cvalidateCommandAliases, Expected: 'validateCommandAliases'},
 
    // ********************************
    // System defined workflows

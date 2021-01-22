@@ -30,6 +30,7 @@ export const cNewLine = '\n'; // \n
 export const cPlus = '+'; // +
 export const cStar = '*'; // *
 export const cDash = '-'; // -
+export const cDoubleDash = cDash + cDash; // --
 export const cEqual = '='; // =
 export const cEqualEqual = cEqual + cEqual; // ==
 export const cEqualEqualEqual = cEqualEqual + cEqual; // ===
