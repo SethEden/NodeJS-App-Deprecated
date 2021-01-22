@@ -675,6 +675,7 @@ export const systemConstantsValidation = [
    {Name: 'cisObject', Actual: s.cisObject, Expected: 'isObject'},
    {Name: 'cisArrayOrObject', Actual: s.cisArrayOrObject, Expected: 'isArrayOrObject'},
    {Name: 'ccommandAliasGenerator', Actual: s.ccommandAliasGenerator, Expected: 'commandAliasGenerator'},
+   {Name: 'cconstantsGenerator', Actual: s.cconstantsGenerator, Expected: 'constantsGenerator'},
    {Name: 'cgetAttributeName', Actual: s.cgetAttributeName, Expected: 'getAttributeName'},
    {Name: 'cgetAttributeValue', Actual: s.cgetAttributeValue, Expected: 'getAttributeValue'},
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},

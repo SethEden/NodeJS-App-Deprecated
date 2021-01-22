@@ -791,6 +791,29 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function constantsGenerator
+ * @description Requests a string input the user would like to have converted into a constant,
+ * while determining the most optimized way to define the new constant based on existing constants.
+ * Also checks to see if that new constant is already defined in the constants system.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+export const constantsGenerator = function(inputData, inputMetaData) {
+  let functionName = s.cconstantsGenerator;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function businessRulesMetrics
  * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.

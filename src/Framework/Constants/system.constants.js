@@ -790,6 +790,7 @@ export const cprintDataHive = w.cprint + w.cData + w.cHive; // printDataHive
 export const cclearDataStorage = w.cclear + w.cData + w.cStorage; // clearDataStorage
 export const ccommandGenerator = w.ccommand + w.cGenerator; // commandGenerator
 export const ccommandAliasGenerator = w.ccommand + w.cAlias + w.cGenerator; // commandAliasGenerator
+export const cconstantsGenerator = w.cconstants + w.cGenerator; // constantsGenerator
 export const cbusinessRulesMetrics = w.cbusiness + w.cRules + w.cMetrics; // businessRulesMetrics
 export const ccommandMetrics = w.ccommand + w.cMetrics; // commandMetrics
 export const cconvertColors = w.cconvert + w.cColors; // convertColors
