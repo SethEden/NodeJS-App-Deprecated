@@ -17,6 +17,7 @@
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
@@ -38,8 +39,10 @@ import timers from '../../Executrix/timers';
 import loggers from '../../Executrix/loggers';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as n from '../../Constants/numeric.constants';
 import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
+const prompt = require('prompt-sync')();
 const figlet = require('figlet');
 var path = require('path');
 var math = require('mathjs');
@@ -680,6 +683,83 @@ export const commandGenerator = function(inputData, inputMetaData) {
     console.log('WARNING: nominal.commandGenerator: The specified command: ' + commandString +
     ' was not found, please enter a valid command and try again.');
   }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function commandAliasGenerator
+ * @description Requests a set of inputs from the users for a command name, and a series of command words and a list of command word acronyms.
+ * The command then calls a series of business rules to in-turn generate all possible combinations of command words and command word acronyms.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/14
+ */
+export const commandAliasGenerator = function(inputData, inputMetaData) {
+  let functionName = s.ccommandAliasGenerator;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  let commandName = '';
+  let commandWordAliasList = '';
+  let validCommandName = false;
+  let validCommandWordAliasList = false;
+  let commandAliasDataStructure = {};
+  let commandNameParsingRule = [];
+  let camelCaseToArrayRule = [];
+  let commandWordAliasListParsingRule = [];
+  let generateCommandAliasesRule = [];
+  commandNameParsingRule[0] = s.cisStringCamelCase;
+  camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
+  commandWordAliasListParsingRule[0] = s.cisStringList;
+  generateCommandAliasesRule[0] = s.cgenerateCommandAliases;
+
+  while(validCommandName === false) {
+    console.log(s.cCommandNamePrompt1);
+    console.log(s.cCommandNamePrompt2);
+    console.log(s.cCommandNamePrompt3);
+    console.log(s.cCommandNamePrompt4);
+    console.log(s.cCommandNamePrompt5);
+    commandName = prompt(b.cGreaterThan);
+    validCommandName = ruleBroker.processRules(commandName, '', commandNameParsingRule);
+    if (validCommandName === false) {
+      console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+    }
+  }
+
+  let camelCaseCommandNameArray = ruleBroker.processRules(commandName, '', camelCaseToArrayRule);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
+
+  for (let i = 0; i < camelCaseCommandNameArray.length; i++) {
+    let commandWord = camelCaseCommandNameArray[i];
+    console.log('current commandWord is: ' + commandWord);
+    validCommandWordAliasList = false;
+    if (commandWord != '') {
+      commandAliasDataStructure[commandWord] = {};
+      while(validCommandWordAliasList === false) {
+        console.log(s.cCommandWordAliasPrompt1);
+        console.log(s.cCommandWordAliasPrompt2);
+        console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
+        commandWordAliasList = prompt(b.cGreaterThan);
+        validCommandWordAliasList = ruleBroker.processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
+        if (validCommandWordAliasList === false) {
+          console.log('INVALID INPUT: Please enter a valid command word alias list.');
+        } else if (commandWordAliasList != '') { // As long as the user entered something we should be able to proceed!
+          validCommandWordAliasList = true;
+        }
+      } // End while-loop: validCommandWordAliasList
+      commandAliasDataStructure[commandWord] = commandWordAliasList;
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure));
+  // At this point the user should have entered all valid data and we should be ready to proceed.
+  // TODO: Start generating all the possible combinations of the command words and command word aliases.
+  // Pass the data object to a business rule to do the above task.
+  let commandAliases = ruleBroker.processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

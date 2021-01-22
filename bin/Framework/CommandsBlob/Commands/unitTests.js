@@ -285,6 +285,10 @@ var validateCommandAliases = function validateCommandAliases(inputData, inputMet
     _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
   }
 
+  if (passedAllCommandAliasesDuplicateCheck === true) {
+    console.log('PASSED: All duplicate command aliases validation tests!');
+  }
+
   _configurator["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

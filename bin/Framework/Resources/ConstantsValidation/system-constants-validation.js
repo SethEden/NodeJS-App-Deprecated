@@ -826,6 +826,39 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cDataFontBackgroundColor',
   Actual: s.cDataFontBackgroundColor,
   Expected: 'DataFontBackgroundColor'
+}, // System Messages
+{
+  Name: 'cCommandNamePrompt1',
+  Actual: s.cCommandNamePrompt1,
+  Expected: 'Please enter a named command where '
+}, {
+  Name: 'cCommandNamePrompt2',
+  Actual: s.cCommandNamePrompt2,
+  Expected: 'the first word starts with a '
+}, {
+  Name: 'cCommandNamePrompt3',
+  Actual: s.cCommandNamePrompt3,
+  Expected: 'lower case letter and all other '
+}, {
+  Name: 'cCommandNamePrompt4',
+  Actual: s.cCommandNamePrompt4,
+  Expected: 'words in the named command start '
+}, {
+  Name: 'cCommandNamePrompt5',
+  Actual: s.cCommandNamePrompt5,
+  Expected: 'with an upper case letter:'
+}, {
+  Name: 'cCommandWordAliasPrompt1',
+  Actual: s.cCommandWordAliasPrompt1,
+  Expected: 'Please enter a list of command '
+}, {
+  Name: 'cCommandWordAliasPrompt2',
+  Actual: s.cCommandWordAliasPrompt2,
+  Expected: 'word abreviations/acronyms/aliases '
+}, {
+  Name: 'cCommandWordAliasPrompt3',
+  Actual: s.cCommandWordAliasPrompt3,
+  Expected: 'for the command word:'
 }, // File Types
 {
   Name: 'cCatia',
@@ -2335,6 +2368,30 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cconvertCamelCaseStringToArray,
   Expected: 'convertCamelCaseStringToArray'
 }, {
+  Name: 'cdoesStringContainUpperCaseCharacter',
+  Actual: s.cdoesStringContainUpperCaseCharacter,
+  Expected: 'doesStringContainUpperCaseCharacter'
+}, {
+  Name: 'cdoesStringContainLowerCaseCharacter',
+  Actual: s.cdoesStringContainLowerCaseCharacter,
+  Expected: 'doesStringContainLowerCaseCharacter'
+}, {
+  Name: 'cisFirstCharacterLowerCase',
+  Actual: s.cisFirstCharacterLowerCase,
+  Expected: 'isFirstCharacterLowerCase'
+}, {
+  Name: 'cisFirstCharacterUpperCase',
+  Actual: s.cisFirstCharacterUpperCase,
+  Expected: 'isFirstCharacterUpperCase'
+}, {
+  Name: 'cisStringList',
+  Actual: s.cisStringList,
+  Expected: 'isStringList'
+}, {
+  Name: 'cisStringCamelCase',
+  Actual: s.cisStringCamelCase,
+  Expected: 'isStringCamelCase'
+}, {
   Name: 'cconvertArrayToCamelCaseString',
   Actual: s.cconvertArrayToCamelCaseString,
   Expected: 'convertArrayToCamelCaseString'
@@ -2366,6 +2423,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cascertainMatchingFilenames',
   Actual: s.cascertainMatchingFilenames,
   Expected: 'ascertainMatchingFilenames'
+}, {
+  Name: 'cascertainMatchingElements',
+  Actual: s.cascertainMatchingElements,
+  Expected: 'ascertainMatchingElements'
 }, {
   Name: 'cdoesArrayContainFilename',
   Actual: s.cdoesArrayContainFilename,
@@ -2435,6 +2496,38 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cstoreData,
   Expected: 'storeData'
 }, {
+  Name: 'cisObjectEmpty',
+  Actual: s.cisObjectEmpty,
+  Expected: 'isObjectEmpty'
+}, {
+  Name: 'cisArrayEmpty',
+  Actual: s.cisArrayEmpty,
+  Expected: 'isArrayEmpty'
+}, {
+  Name: 'cisArray',
+  Actual: s.cisArray,
+  Expected: 'isArray'
+}, {
+  Name: 'cisNonZeroLengthArray',
+  Actual: s.cisNonZeroLengthArray,
+  Expected: 'isNonZeroLengthArray'
+}, {
+  Name: 'carrayDeepClone',
+  Actual: s.carrayDeepClone,
+  Expected: 'arrayDeepClone'
+}, {
+  Name: 'cisObject',
+  Actual: s.cisObject,
+  Expected: 'isObject'
+}, {
+  Name: 'cisArrayOrObject',
+  Actual: s.cisArrayOrObject,
+  Expected: 'isArrayOrObject'
+}, {
+  Name: 'ccommandAliasGenerator',
+  Actual: s.ccommandAliasGenerator,
+  Expected: 'commandAliasGenerator'
+}, {
   Name: 'cgetAttributeName',
   Actual: s.cgetAttributeName,
   Expected: 'getAttributeName'
@@ -2462,6 +2555,26 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'caggregateCommandArguments',
   Actual: s.caggregateCommandArguments,
   Expected: 'aggregateCommandArguments'
+}, {
+  Name: 'cgenerateCommandAliases',
+  Actual: s.cgenerateCommandAliases,
+  Expected: 'generateCommandAliases'
+}, {
+  Name: 'csolveLehmerCode',
+  Actual: s.csolveLehmerCode,
+  Expected: 'solveLehmerCode'
+}, {
+  Name: 'crecursiveArrayExpansion',
+  Actual: s.crecursiveArrayExpansion,
+  Expected: 'recursiveArrayExpansion'
+}, {
+  Name: 'cgetLehmerCodeValue',
+  Actual: s.cgetLehmerCodeValue,
+  Expected: 'getLehmerCodeValue'
+}, {
+  Name: 'carraysAreEqual',
+  Actual: s.carraysAreEqual,
+  Expected: 'arraysAreEqual'
 }, // *********************************
 // StringGeneration rules in order
 // *********************************

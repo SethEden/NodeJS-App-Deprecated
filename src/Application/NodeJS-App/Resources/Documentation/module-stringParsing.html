@@ -140,6 +140,8 @@ values of all kinds, with various operations.</p></div>
         <ul>
             <li><a href="module-configurator.html">module:configurator</a></li>
         
+            <li><a href="module-stack.html">module:stack</a></li>
+        
             <li><a href="module-loggers.html">module:loggers</a></li>
         
             <li><a href="module-dataBroker.html">module:dataBroker</a></li>
@@ -180,6 +182,195 @@ values of all kinds, with various operations.</p></div>
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~acertainMatchingElements"><span class="type-signature">(inner) </span>acertainMatchingElements<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if two values are identical. Needed for completeness of comparison for nested arrays.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array that should be compared for equality.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Second array that should be compared for equality.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1288">line 1288</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate array equality or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
 
         
             
@@ -318,7 +509,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1967">line 1967</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2651">line 2651</a>
     </li></ul></dd>
     
 
@@ -507,7 +698,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line781">line 781</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line783">line 783</a>
     </li></ul></dd>
     
 
@@ -548,6 +739,385 @@ values of all kinds, with various operations.</p></div>
     <dd>
         
 <span class="param-type">integer</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~arrayDeepClone"><span class="type-signature">(inner) </span>arrayDeepClone<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Clones an array by using JSON.stringify &amp; JSON.parse.
+Almost all other methods of cloning an array will actually clone by referance which essentially just clones the pointer to the array.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array that should be deeply cloned.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2384">line 2384</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The new array object after being cloned deeply.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~arraysAreEqual"><span class="type-signature">(inner) </span>arraysAreEqual<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if a set of arrays are equal or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first array that should be checked for equality.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second array that should be checked for equality.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1875">line 1875</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the arrays are equal or not equal.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -696,7 +1266,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1059">line 1059</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1261">line 1261</a>
     </li></ul></dd>
     
 
@@ -885,7 +1455,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line564">line 564</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line566">line 566</a>
     </li></ul></dd>
     
 
@@ -1074,7 +1644,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1939">line 1939</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2623">line 2623</a>
     </li></ul></dd>
     
 
@@ -1263,7 +1833,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line947">line 947</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1149">line 1149</a>
     </li></ul></dd>
     
 
@@ -1452,7 +2022,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line879">line 879</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1081">line 1081</a>
     </li></ul></dd>
     
 
@@ -1641,7 +2211,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line840">line 840</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line842">line 842</a>
     </li></ul></dd>
     
 
@@ -1830,7 +2400,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line589">line 589</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line591">line 591</a>
     </li></ul></dd>
     
 
@@ -2019,7 +2589,7 @@ values of all kinds, with various operations.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line614">line 614</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line616">line 616</a>
     </li></ul></dd>
     
 
@@ -2209,7 +2779,7 @@ we should use this to search for duplicate command aliases.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1332">line 1332</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1557">line 1557</a>
     </li></ul></dd>
     
 
@@ -2400,7 +2970,7 @@ the full path and file name of the constants file. (Should work just the same wi
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1187">line 1187</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1412">line 1412</a>
     </li></ul></dd>
     
 
@@ -2589,7 +3159,7 @@ the full path and file name of the constants file. (Should work just the same wi
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line128">line 128</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -2779,7 +3349,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1234">line 1234</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1459">line 1459</a>
     </li></ul></dd>
     
 
@@ -2977,7 +3547,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line994">line 994</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1196">line 1196</a>
     </li></ul></dd>
     
 
@@ -3166,7 +3736,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1088">line 1088</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1315">line 1315</a>
     </li></ul></dd>
     
 
@@ -3355,7 +3925,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line968">line 968</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1170">line 1170</a>
     </li></ul></dd>
     
 
@@ -3573,7 +4143,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2008">line 2008</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2692">line 2692</a>
     </li></ul></dd>
     
 
@@ -3614,6 +4184,574 @@ This will make it really easy for developers to maintain the constants validatio
     <dd>
         
 <span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~doesStringContainLowerCaseCharacter"><span class="type-signature">(inner) </span>doesStringContainLowerCaseCharacter<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if the input string contains at least one lower case character.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string that should be checked for lower case characters.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line911">line 911</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the string contains at least one lower case character or more.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~doesStringContainUpperCaseCharacter"><span class="type-signature">(inner) </span>doesStringContainUpperCaseCharacter<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if the input string contains at least one upper case character.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string that should be checked for upper case characters.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line881">line 881</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the string contains at least one upper case character or more.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateCommandAliases"><span class="type-signature">(inner) </span>generateCommandAliases<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generates all possible combinations of command aliases given a set of command words and command word abreviations.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An object containing all of the meta-data needed for command words and
+command abreviations needed to generate every possible combination of command alias.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1613">line 1613</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A coma-separated list of every possible combination of command aliases.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
 
 
     </dd>
@@ -3762,7 +4900,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1771">line 1771</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2455">line 2455</a>
     </li></ul></dd>
     
 
@@ -3951,7 +5089,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1800">line 1800</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2484">line 2484</a>
     </li></ul></dd>
     
 
@@ -4140,7 +5278,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1419">line 1419</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1934">line 1934</a>
     </li></ul></dd>
     
 
@@ -4329,7 +5467,7 @@ This will make it really easy for developers to maintain the constants validatio
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1392">line 1392</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1907">line 1907</a>
     </li></ul></dd>
     
 
@@ -4519,7 +5657,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line675">line 675</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line677">line 677</a>
     </li></ul></dd>
     
 
@@ -4708,7 +5846,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line639">line 639</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line641">line 641</a>
     </li></ul></dd>
     
 
@@ -4897,7 +6035,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1635">line 1635</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2150">line 2150</a>
     </li></ul></dd>
     
 
@@ -5086,7 +6224,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1446">line 1446</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1961">line 1961</a>
     </li></ul></dd>
     
 
@@ -5116,6 +6254,195 @@ but regardless it gets the file extension of the file.</p>
         
 <div class="param-desc">
     <p>The keyword name, such as DeleteEntireProject or EditProjectInfoClick.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getLehmerCodeValue"><span class="type-signature">(inner) </span>getLehmerCodeValue<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Takes a Lehmer code array and an array of arrays and uses the Lehmer Code array to look up the corosponding values in the array of arrays.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Lehmer code array with indices for values we should get &amp; return.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;array.&lt;string>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The nested array of arrays with the values we should get and combine then return as a single string.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1839">line 1839</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The joined string from each of the array element strings at the Lehmer code indices.</p>
 </div>
 
 
@@ -5275,7 +6602,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1720">line 1720</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2235">line 2235</a>
     </li></ul></dd>
     
 
@@ -5464,7 +6791,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line449">line 449</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line451">line 451</a>
     </li></ul></dd>
     
 
@@ -5653,7 +6980,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line752">line 752</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line754">line 754</a>
     </li></ul></dd>
     
 
@@ -5694,6 +7021,573 @@ but regardless it gets the file extension of the file.</p>
     <dd>
         
 <span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isArray"><span class="type-signature">(inner) </span>isArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if an object is an array or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object that should be tested to see if is an array or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2340">line 2340</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the input object is an array or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isArrayEmpty"><span class="type-signature">(inner) </span>isArrayEmpty<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if a JSON array is empty or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array that should be checked for emptyness.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2317">line 2317</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the array is empty or not empty.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isArrayOrObject"><span class="type-signature">(inner) </span>isArrayOrObject<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if an input object is either an array or a JSON object.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object that should be tested to see if it is either an array or a JSON object or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2432">line 2432</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the input object is either an array or a JSON object.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -5843,7 +7737,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line166">line 166</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line168">line 168</a>
     </li></ul></dd>
     
 
@@ -6032,7 +7926,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1866">line 1866</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2550">line 2550</a>
     </li></ul></dd>
     
 
@@ -6062,6 +7956,384 @@ but regardless it gets the file extension of the file.</p>
         
 <div class="param-desc">
     <p>True or False to indicate if the value passed in is an even value or not an even value.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isFirstCharacterLowerCase"><span class="type-signature">(inner) </span>isFirstCharacterLowerCase<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if the first character of the string is a lower case character.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string that should be checked to determine if the first character is lower case or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line941">line 941</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the first character of the string is a lower case character or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isFirstCharacterUpperCase"><span class="type-signature">(inner) </span>isFirstCharacterUpperCase<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if the first character of the string is an upper case character.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string that should be checked to determine if the first character is upper case or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line966">line 966</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the first character of the string is an upper case character or not.</p>
 </div>
 
 
@@ -6221,7 +8493,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line237">line 237</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line239">line 239</a>
     </li></ul></dd>
     
 
@@ -6410,7 +8682,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line198">line 198</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line200">line 200</a>
     </li></ul></dd>
     
 
@@ -6440,6 +8712,573 @@ but regardless it gets the file extension of the file.</p>
         
 <div class="param-desc">
     <p>A Boolean value of true or false to indicate if the input string is an integer or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isNonZeroLengthArray"><span class="type-signature">(inner) </span>isNonZeroLengthArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if an object is an array of length greater than or equal to one or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object that should be tested to see if is an array of length greater than or equal to 1 or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2361">line 2361</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the input object is an array of length greater than equal to zero or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isObject"><span class="type-signature">(inner) </span>isObject<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if an object is a JSON object or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object that should be tested to see if it is a JSON object or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2409">line 2409</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the input object is an array or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isObjectEmpty"><span class="type-signature">(inner) </span>isObjectEmpty<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if a JSON object is empty or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object that should be checked for emptyness.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2286">line 2286</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the object is empty or not empty.</p>
 </div>
 
 
@@ -6599,7 +9438,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1829">line 1829</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2513">line 2513</a>
     </li></ul></dd>
     
 
@@ -6788,7 +9627,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line266">line 266</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line268">line 268</a>
     </li></ul></dd>
     
 
@@ -6818,6 +9657,384 @@ but regardless it gets the file extension of the file.</p>
         
 <div class="param-desc">
     <p>A Boolean value of true or false to indicate if the input string is a string and not a Boolean, Integer or Float; or not (meaning it would be one of those 3 data types, discuised as a string).</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isStringCamelCase"><span class="type-signature">(inner) </span>isStringCamelCase<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if an input string is a camel case string or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string that should be for camel case qualification.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1023">line 1023</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the string is camel case or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~isStringList"><span class="type-signature">(inner) </span>isStringList<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if the input string is a list or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string that should be checked if it is a list or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line991">line 991</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the input string is a list or not a list.</p>
 </div>
 
 
@@ -6977,7 +10194,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1677">line 1677</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2192">line 2192</a>
     </li></ul></dd>
     
 
@@ -7166,7 +10383,7 @@ but regardless it gets the file extension of the file.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line900">line 900</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1102">line 1102</a>
     </li></ul></dd>
     
 
@@ -7357,7 +10574,7 @@ and will parse that out to determine where on the hard drive this &quot;AppName&
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1473">line 1473</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1988">line 1988</a>
     </li></ul></dd>
     
 
@@ -7399,6 +10616,195 @@ where ever that is installed on the local system executing the tests.</p>
     <dd>
         
 <span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~recursiveArrayExpansion"><span class="type-signature">(inner) </span>recursiveArrayExpansion<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;array.&lt;integer>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Recursively expands all possible combinations of an input array given an index of expansion and returns the list of arrays.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer, array.&lt;integer>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The index of expansion and the array to be expanded as an array object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Lehmer Codex that should be used to set the limit of expansion based on the index of expansion.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1751">line 1751</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The final list of arrays after the array expansion has completed successfully.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;array.&lt;integer>></span>
 
 
     </dd>
@@ -7560,7 +10966,7 @@ that should be removed from all instances of the input array.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1025">line 1025</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1227">line 1227</a>
     </li></ul></dd>
     
 
@@ -7749,7 +11155,7 @@ that should be removed from all instances of the input array.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line701">line 701</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line703">line 703</a>
     </li></ul></dd>
     
 
@@ -7939,7 +11345,7 @@ Otherwise it will remove all the characters after the last period in the file na
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line726">line 726</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line728">line 728</a>
     </li></ul></dd>
     
 
@@ -8128,7 +11534,7 @@ Otherwise it will remove all the characters after the last period in the file na
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1573">line 1573</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2088">line 2088</a>
     </li></ul></dd>
     
 
@@ -8318,7 +11724,7 @@ and a string with the character or characters that should be inserted at the spe
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1899">line 1899</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2583">line 2583</a>
     </li></ul></dd>
     
 
@@ -8348,6 +11754,218 @@ and a string with the character or characters that should be inserted at the spe
         
 <div class="param-desc">
     <p>The modified string.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~replaceCharacterAtIndexOfString"><span class="type-signature">(inner) </span>replaceCharacterAtIndexOfString<span class="signature">(originalString, index, replacement)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Replaces the character at a specified index with another character.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>originalString</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string where the replacement should be made.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The index of the character where the replacement should be made.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>replacement</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The character or string that should be inserted at the specified index.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2728">line 2728</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The string after the replacement has been made.</p>
 </div>
 
 
@@ -8509,7 +12127,7 @@ inputMetaData[1] === character2Replace - The character that should be used to re
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line527">line 527</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line529">line 529</a>
     </li></ul></dd>
     
 
@@ -8698,7 +12316,7 @@ inputMetaData[1] === character2Replace - The character that should be used to re
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line501">line 501</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line503">line 503</a>
     </li></ul></dd>
     
 
@@ -8888,7 +12506,7 @@ with the input Meta Data string.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1537">line 1537</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2052">line 2052</a>
     </li></ul></dd>
     
 
@@ -9077,7 +12695,7 @@ with the input Meta Data string.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line475">line 475</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line477">line 477</a>
     </li></ul></dd>
     
 
@@ -9266,7 +12884,7 @@ with the input Meta Data string.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line921">line 921</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1123">line 1123</a>
     </li></ul></dd>
     
 
@@ -9457,7 +13075,7 @@ output: 'input[name=&quot;emailAddress&quot;][class=&quot;username&quot;]'</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line295">line 295</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line297">line 297</a>
     </li></ul></dd>
     
 
@@ -9487,6 +13105,195 @@ output: 'input[name=&quot;emailAddress&quot;][class=&quot;username&quot;]'</p>
         
 <div class="param-desc">
     <p>A string that contains text where single quotes have been exchanged for double quotes.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~solveLehmerCode"><span class="type-signature">(inner) </span>solveLehmerCode<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Used the inputData as an addressable Lehmer Code to find all possible combinations of array elements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Lehmer code addressable index array we will use to permutate over all possible combinations.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;array.&lt;string>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The nested array that contains all instances of strings that should be used when generating permutations.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1701">line 1701</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The delimited list of possible combinations generated by solving the Lehmer Code.</p>
 </div>
 
 
@@ -9646,7 +13453,7 @@ output: 'input[name=&quot;emailAddress&quot;][class=&quot;username&quot;]'</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1745">line 1745</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line2260">line 2260</a>
     </li></ul></dd>
     
 
@@ -9831,7 +13638,7 @@ output: 'input[name=&quot;emailAddress&quot;][class=&quot;username&quot;]'</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line43">line 43</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -10025,7 +13832,7 @@ If it's an array of strings, or collection object, it will get returned as the s
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line81">line 81</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line83">line 83</a>
     </li></ul></dd>
     
 
@@ -10223,7 +14030,7 @@ If it's an array of strings, or collection object, it will get returned as the s
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line361">line 361</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line363">line 363</a>
     </li></ul></dd>
     
 
@@ -10413,7 +14220,7 @@ swapped for forward slash characters.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line418">line 418</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line420">line 420</a>
     </li></ul></dd>
     
 
@@ -10603,7 +14410,7 @@ swapped for single back slash characters.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line392">line 392</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line394">line 394</a>
     </li></ul></dd>
     
 
@@ -10793,7 +14600,7 @@ swapped for single forward slash characters.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line335">line 335</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line337">line 337</a>
     </li></ul></dd>
     
 
@@ -10984,7 +14791,7 @@ constants validation data matches with the actual constants definitions.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1123">line 1123</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1348">line 1348</a>
     </li></ul></dd>
     
 
@@ -11173,7 +14980,7 @@ constants validation data matches with the actual constants definitions.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1266">line 1266</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1491">line 1491</a>
     </li></ul></dd>
     
 
@@ -11362,7 +15169,7 @@ constants validation data matches with the actual constants definitions.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1293">line 1293</a>
+        <a href="Framework_BusinessRules_Rules_stringParsing.js.html">Framework/BusinessRules/Rules/stringParsing.js</a>, <a href="Framework_BusinessRules_Rules_stringParsing.js.html#line1518">line 1518</a>
     </li></ul></dd>
     
 
@@ -11436,7 +15243,7 @@ constants validation data matches with the actual constants definitions.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jan 11 2021 21:56:35 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jan 22 2021 07:09:53 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

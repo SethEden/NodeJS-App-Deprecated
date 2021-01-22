@@ -1035,6 +1035,8 @@ export const c998 = c9 + c98; // 998
 export const c999 = c9 + c99; // 999
 
 // String Numbers
+export const czero = b.cze + b.cro; // zero
+export const cZero = b.cZe + b.cro; // Zero
 export const cone = b.co + b.cne; // one
 export const ctwo = b.ct + b.cwo; // two
 export const cthree = b.ct + p.chree; // three

@@ -5,16 +5,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cConfirm = exports.cconfirm = exports.cCancel = exports.ccancel = exports.cSelect = exports.cselect = exports.cAt = exports.cat = exports.cAll = exports.call = exports.cDelete = exports.cdelete = exports.cEdit = exports.cUpdate = exports.cOpen = exports.cClose = exports.cAdded = exports.cAdd = exports.c_add = exports.cSubmit = exports.cCreate = exports.ccreate = exports.cFull = exports.cfull = exports.cEmpty = exports.cempty = exports.cConfigurations = exports.cConfiguration = exports.cOOPS = exports.cOops = exports.coops = exports.cWord = exports.cword = exports.cLinux = exports.clinux = exports.cWindows = exports.cwindows = exports.cWindow = exports.cwindow = exports.cWind = exports.cwind = exports.cObjects = exports.cobjects = exports.cObject = exports.cobject = exports.cBooleans = exports.cbooleans = exports.cBoolean = exports.cboolean = exports.cChars = exports.cchars = exports.cChar = exports.cchar = exports.cDoubles = exports.cdoubles = exports.cDouble = exports.cdouble = exports.cShorts = exports.cshorts = exports.cShort = exports.cshort = exports.cLongs = exports.clongs = exports.cLong = exports.clong = exports.cFloats = exports.cfloats = exports.cFloat = exports.cfloat = exports.cIntegers = exports.cintegers = exports.cInteger = exports.cinteger = exports.cStrings = exports.cstrings = exports.cString = exports.cstring = exports.cFlags = exports.cflags = exports.cFlag = exports.cflag = exports.cRegEx = exports.cregEx = exports.cNth = exports.cnth = exports.cURL = exports.curl = exports.cNode = exports.cnode = exports.cKey = exports.ckey = exports.clogs = exports.cLogs = exports.clog = exports.cLog = exports.cOut = exports.cout = exports.c3D = exports.c3d = exports.c1a1d = void 0;
-exports.cMessage = exports.cmessage = exports.cPages = exports.cpages = exports.cPage = exports.cpage = exports.cDebug = exports.cdebug = exports.cbug = exports.cInvalid = exports.cinvalid = exports.cValidate = exports.cvalidate = exports.cValidations = exports.cvalidations = exports.cValidation = exports.cvalidation = exports.cValid = exports.cvalid = exports.cTypes = exports.cType = exports.ctype = exports.cField = exports.cLabel = exports.cLink = exports.cInfo = exports.cinfo = exports.cEntire = exports.cPositive = exports.cNegative = exports.cDownload = exports.cSave = exports.cNavigate = exports.cnavigate = exports.cexpect = exports.cPressKey = exports.cpressKey = exports.cClick = exports.cclick = exports.cLoad = exports.cload = exports.cNew = exports.cView = exports.cview = exports.cUnShare = exports.cUnshare = exports.cUnshared = exports.cUnShared = exports.cShared = exports.cshared = exports.cshares = exports.cShares = exports.cShare = exports.cshare = exports.cLists = exports.cList = exports.cItems = exports.citems = exports.cItem = exports.citem = exports.cThe = exports.cEnding = exports.cending = exports.cEND = exports.cEnd = exports.cend = exports.cBeginning = exports.cbeginning = exports.cBEGIN = exports.cBegin = exports.cbegin = exports.cBottom = exports.cbottom = exports.cTop = exports.ctop = exports.cTo = exports.cRight = exports.cright = exports.cLeft = exports.cleft = exports.cBack = exports.cback = exports.cFront = exports.cfront = exports.cDetails = exports.cdetails = exports.cDetail = exports.cdetail = exports.cWithout = exports.cwithout = exports.cWith = exports.cwith = exports.cMenu = exports.cMe = exports.cHamburger = exports.cAccount = exports.cCounter = exports.ccounter = exports.cCount = exports.ccount = void 0;
-exports.cFrom = exports.cPut = exports.cput = exports.cGet = exports.cget = exports.cLevel = exports.cAccess = exports.cUser = exports.cAnd = exports.cand = exports.cCompleted = exports.cComplete = exports.cProcessing = exports.cProcess = exports.cGateway = exports.cWay = exports.cway = exports.cGate = exports.cLimit = exports.climit = exports.cPreview = exports.cSetting = exports.csetting = exports.cSet = exports.cset = exports.cBug = exports.cPermission = exports.cViewer = exports.cExit = exports.cexit = exports.cPath = exports.cpath = exports.cIntermediate = exports.cintermediate = exports.cmediate = exports.cStamp = exports.cTime = exports.ctime = exports.cDate = exports.cdate = exports.cReceived = exports.cReceive = exports.cEmails = exports.cEmail = exports.cmail = exports.cID = exports.cId = exports.cid = exports.cPageScriptName = exports.cKeywordName = exports.ckeywordName = exports.cNames = exports.cnames = exports.cName = exports.cname = exports.cEnvironment = exports.cMaster = exports.cRows = exports.cRun = exports.cRow = exports.cOf = exports.cHost = exports.cNumber = exports.cnumber = exports.cAutomation = exports.cActions = exports.cAction = exports.cBrowser = exports.cExhaustive = exports.cBureau = exports.cTestWorkflow = exports.cTestStatusMessage = exports.cTestStatus = exports.cStatus = exports.cTESTS = exports.cTests = exports.ctests = exports.cTEST = exports.cTest = exports.ctest = exports.cWorkflows = exports.cworkflows = exports.cWorkflow = exports.cworkflow = exports.cFlow = exports.cflow = exports.cWork = exports.cwork = exports.cResults = exports.cresults = exports.cData = exports.cdata = exports.cKeywords = exports.ckeywords = exports.cKeyword = exports.ckeyword = exports.cScripts = exports.cScript = exports.cMessages = exports.cmessages = void 0;
-exports.cinner = exports.chtml = exports.cHTML = exports.cawait = exports.cWait = exports.cwait = exports.cAbreviated = exports.cAssignment = exports.cassignment = exports.cAssign = exports.cassign = exports.cSign = exports.csign = exports.cSystem = exports.csystem = exports.cOperating = exports.cOperation = exports.cRaw = exports.cEquivalence = exports.cequivalence = exports.cEquals = exports.cEqual = exports.cequal = exports.cTable = exports.ctable = exports.cLibrary = exports.clibrary = exports.cDialog = exports.cVisibility = exports.cvisibility = exports.cVariable = exports.cDetermine = exports.cdetermine = exports.cEnabled = exports.cenabled = exports.cEnable = exports.cenable = exports.cEither = exports.cCode = exports.ccode = exports.cLength = exports.clength = exports.cNumerical = exports.cNumeric = exports.cnumeric = exports.cRange = exports.crange = exports.cFindValue = exports.cfindValue = exports.cfindvalue = exports.cFind = exports.cfind = exports.cValues = exports.cvalues = exports.cValue = exports.cvalue = exports.cParent = exports.cparent = exports.cGenerate = exports.cgenerate = exports.cRandomly = exports.crandomly = exports.cRandom = exports.crandom = exports.cUpper = exports.cLetter = exports.cLet = exports.clet = exports.cDigit = exports.cdigit = exports.cDig = exports.cdig = exports.cExtension = exports.cRemove = exports.cremove = exports.cmove = exports.cCase = exports.cLower = exports.cLow = exports.cConvert = exports.cconvert = exports.cReturn = exports.creturn = exports.cturn = exports.cCarriage = exports.cCleaned = exports.ccleaned = exports.cClean = exports.cclean = exports.cCatagory = exports.cScore = exports.cscore = exports.cUnder = exports.cunder = exports.cColon = exports.cPlus = exports.cSpaces = exports.cSpace = exports.cReplace = exports.creplace = void 0;
-exports.cFolder = exports.cFold = exports.cfold = exports.cfiles = exports.cfile = exports.cFiles = exports.cFile = exports.cWebkey = exports.cPageName = exports.cTestName = exports.cPageData = exports.cpageData = exports.ctestData = exports.cCreation = exports.cAdvanced = exports.cAdvance = exports.cProjects = exports.cProject = exports.cproject = exports.cIteration = exports.cConstants = exports.cconstants = exports.cConstant = exports.cconstant = exports.cDescription = exports.cdescription = exports.cInput = exports.cinput = exports.cContext = exports.cTEXT = exports.cText = exports.ctext = exports.cAlphabetic = exports.cbetic = exports.cAlpha = exports.calpha = exports.cMixed = exports.cMix = exports.cOR = exports.cor = exports.cOr = exports.cBY = exports.cBy = exports.cby = exports.cAssertionStyle = exports.cUploadStyle = exports.cAssertionType = exports.cAssertion = exports.cAssertValueGreaterThan = exports.cAssertValueLessThan = exports.cAssertValueNotEqual = exports.cAssertValueEqual = exports.cAssertNotExists = exports.cAssertExists = exports.cThan = exports.cthan = exports.cThen = exports.cthen = exports.cGreater = exports.cgreater = exports.cGreat = exports.cgreat = exports.cLess = exports.cless = exports.cAssert = exports.cassert = exports.cStyle = exports.cUpload = exports.cOnce = exports.cAfter = exports.cSwap = exports.cswap = exports.cQuote = exports.cSingle = exports.csingle = exports.cDefault = exports.cdefault = exports.cfault = exports.cUnified = exports.cMulti = exports.cParallel = exports.cSingular = exports.cSynch = exports.cAsynch = exports.cExists = exports.cExist = exports.cIndividually = exports.cIndividual = exports.cSelectors = exports.cSelector = exports.cselector = exports.cLocatorLibrary = exports.cLocators = exports.cLocator = exports.cActionOverride = exports.cOverride = exports.cRide = exports.cride = exports.cOver = exports.cInner = void 0;
-exports.crounded = exports.cRound = exports.cround = exports.cCamel = exports.ccamel = exports.cArray = exports.carray = exports.cDecompose = exports.cdecompose = exports.ccompose = exports.cDashboard = exports.cboard = exports.cDash = exports.cError = exports.cerror = exports.cWarnings = exports.cwarnings = exports.cWarning = exports.cwarning = exports.cWarn = exports.cwarn = exports.cConstructor = exports.cPort = exports.cport = exports.cHung = exports.chung = exports.cCell = exports.ccell = exports.cWoman = exports.cwoman = exports.cMan = exports.cman = exports.cDisabled = exports.cdisabled = exports.cAttributes = exports.cattributes = exports.cAttribute = exports.cattribute = exports.cFilter = exports.cfilter = exports.cChild = exports.cchild = exports.cSibling = exports.csibling = exports.cExecute = exports.cDwell = exports.cTimeOut = exports.cTimeout = exports.cBinary = exports.cSolid = exports.csolid = exports.cWorks = exports.cEdge = exports.cedge = exports.cCharacters = exports.ccharacters = exports.cCharacter = exports.ccharacter = exports.cSpecial = exports.cspecial = exports.cPublic = exports.cpublic = exports.cHome = exports.chome = exports.cAllowable = exports.callowable = exports.cAllow = exports.callow = exports.cElementName = exports.cElement = exports.celement = exports.cChecked = exports.cchecked = exports.cChecks = exports.cchecks = exports.cCheck = exports.ccheck = exports.cIS = exports.cIs = exports.cis = exports.cIngestion = exports.cClass = exports.cclass = exports.cResources = exports.cresources = exports.cResource = exports.cresource = exports.cDestination = exports.cdestination = exports.cSource = exports.csource = exports.cNation = exports.cnation = exports.cbin = exports.csrc = exports.ccert = exports.ccafe = exports.cFolders = exports.cfolders = exports.cfolder = void 0;
-exports.cCommon = exports.ccommon = exports.cDemo = exports.cdemo = exports.cReload = exports.creload = exports.cEval = exports.ceval = exports.cRefresh = exports.crefresh = exports.cfresh = exports.cRule = exports.crule = exports.cBusiness = exports.cbusiness = exports.cMetaData = exports.cMeta = exports.cmeta = exports.cSlash = exports.cslash = exports.cForward = exports.cforward = exports.cParse = exports.cparse = exports.cRoot = exports.croot = exports.cRelease = exports.crelease = exports.clease = exports.cDeployment = exports.cdeployment = exports.cDeploy = exports.cdeploy = exports.cBuild = exports.cbuild = exports.cApplication = exports.capplication = exports.cDoes = exports.cdoes = exports.cMatching = exports.cmatching = exports.cMatch = exports.cmatch = exports.cAscertain = exports.cascertain = exports.ccertain = exports.cBetween = exports.cbetween = exports.cBet = exports.cbet = exports.cDifference = exports.cArguments = exports.carguments = exports.cAggregate = exports.caggregate = exports.cProduct = exports.cVideo = exports.cvideo = exports.cContains = exports.ccontains = exports.cContain = exports.ccontain = exports.cCompare = exports.ccompare = exports.cConsolidated = exports.cConsolidate = exports.cconsolidate = exports.cSimplify = exports.csimplify = exports.cSort = exports.csort = exports.cLocation = exports.clocation = exports.cPoint = exports.cpoint = exports.cTransform = exports.ctransform = exports.cform = exports.cVector = exports.cvector = exports.cFraction = exports.cTrap = exports.ctrap = exports.cAngle = exports.cangle = exports.cDegrees = exports.cdegrees = exports.cDegree = exports.cdegree = exports.cNormalize = exports.cnormalize = exports.cNormal = exports.cnormal = exports.cQuaternion = exports.cquaternion = exports.cQuarter = exports.cquarter = exports.cQuart = exports.cquart = exports.cRounded = void 0;
-exports.cIndex = exports.cindex = exports.cGenerator = exports.cgenerator = exports.cHive = exports.chive = exports.cPrint = exports.cprint = exports.cHelp = exports.chelp = exports.cDelimiter = exports.cdelimiter = exports.cTertiary = exports.ctertiary = exports.cSecondary = exports.csecondary = exports.cPrimary = exports.cprimary = exports.cSequencer = exports.csequencer = exports.cAliases = exports.caliases = exports.cAlias = exports.calias = exports.cFrame = exports.cframe = exports.cBlob = exports.cblob = exports.cQueue = exports.cqueue = exports.cCommands = exports.ccommands = exports.cCommand = exports.ccommand = exports.cCustom = exports.ccustom = exports.cRules = exports.crules = exports.cClient = exports.cclient = exports.cAverage = exports.caverage = exports.cPalindrom = exports.cpalindrom = exports.cPal = exports.cpal = exports.cAlmost = exports.calmost = exports.cPopular = exports.cpopular = exports.cPop = exports.cpop = exports.cMost = exports.cmost = exports.cBold = exports.cbold = exports.cOld = exports.cold = exports.cColors = exports.ccolors = exports.cColor = exports.ccolor = exports.cModule = exports.cmodule = exports.cFont = exports.cfont = exports.cFiglet = exports.cfiglet = exports.cFig = exports.cfig = exports.cInterface = exports.cinterface = exports.cDriven = exports.cdriven = exports.cDrive = exports.cdrive = exports.cArgument = exports.cargument = exports.cFace = exports.cface = exports.cEvents = exports.cevents = exports.cEvent = exports.cevent = exports.cEven = exports.ceven = exports.cOdd = exports.codd = exports.cBasic = exports.cbasic = exports.cPercent = exports.cpercent = exports.cExecution = exports.cJournal = exports.cMultiple = exports.cmultiple = exports.cFunctions = exports.cfunctions = exports.cFunction = exports.cfunction = void 0;
-exports.cProduction = exports.cproduction = exports.cDEVELOPMENT = exports.cDevelopment = exports.cdevelopment = exports.cDEVELOP = exports.cDevelop = exports.cdevelop = exports.cPrefix = exports.cprefix = exports.cFix = exports.cfix = exports.cQualified = exports.cqualified = exports.cDocument = exports.cdocument = exports.cLine = exports.cline = exports.cSuggested = exports.csuggested = exports.cSuggest = exports.csuggest = exports.cSummary = exports.csummary = exports.cSum = exports.csum = exports.cDisplay = exports.cdisplay = exports.cPlay = exports.cplay = exports.cExport = exports.cexport = exports.cShape = exports.cshape = exports.cPhonics = exports.cphonics = exports.cIsotope = exports.cisotope = exports.cGeneric = exports.cgeneric = exports.cUnits = exports.cunits = exports.cUnit = exports.cunit = exports.cSections = exports.csections = exports.cSection = exports.csection = exports.cLane = exports.clane = exports.cLack = exports.clack = exports.cYell = exports.cyell = exports.cGround = exports.cground = exports.cTraditional = exports.cSimplified = exports.cFAIL = exports.cFail = exports.cfail = exports.cPASSED = exports.cPassed = exports.cpassed = exports.cPASS = exports.cPass = exports.cpass = exports.cConversion = exports.cconversion = exports.cPerformance = exports.cControl = exports.cVersion = exports.cversion = exports.cClear = exports.cclear = exports.cAnalysis = exports.canalysis = exports.cDeviation = exports.cdeviation = exports.cStandard = exports.cstandard = exports.cStack = exports.cstack = exports.cTracking = exports.ctracking = exports.cTrack = exports.ctrack = exports.cRack = exports.crack = exports.cMetrics = exports.cmetrics = exports.cMetric = exports.cmetric = exports.cOutput = exports.coutput = exports.cstartup = exports.cStart = exports.cstart = exports.cAbout = exports.cabout = void 0;
-exports.cDuplicate = exports.cduplicate = exports.cStored = exports.cstored = exports.cStore = exports.cstore = exports.cStorage = exports.cstorage = exports.cPRODUCTION = void 0;
+exports.cCancel = exports.ccancel = exports.cSelect = exports.cselect = exports.cAt = exports.cat = exports.cAll = exports.call = exports.cDelete = exports.cdelete = exports.cEdit = exports.cUpdate = exports.cOpen = exports.cClose = exports.cAdded = exports.cAdd = exports.c_add = exports.cSubmit = exports.cCreate = exports.ccreate = exports.cFull = exports.cfull = exports.cEmpty = exports.cempty = exports.cConfigurations = exports.cConfiguration = exports.cOOPS = exports.cOops = exports.coops = exports.cWords = exports.cwords = exports.cWord = exports.cword = exports.cLinux = exports.clinux = exports.cWindows = exports.cwindows = exports.cWindow = exports.cwindow = exports.cWind = exports.cwind = exports.cObjects = exports.cobjects = exports.cObject = exports.cobject = exports.cBooleans = exports.cbooleans = exports.cBoolean = exports.cboolean = exports.cChars = exports.cchars = exports.cChar = exports.cchar = exports.cDoubles = exports.cdoubles = exports.cDouble = exports.cdouble = exports.cShorts = exports.cshorts = exports.cShort = exports.cshort = exports.cLongs = exports.clongs = exports.cLong = exports.clong = exports.cFloats = exports.cfloats = exports.cFloat = exports.cfloat = exports.cIntegers = exports.cintegers = exports.cInteger = exports.cinteger = exports.cStrings = exports.cstrings = exports.cString = exports.cstring = exports.cFlags = exports.cflags = exports.cFlag = exports.cflag = exports.cRegEx = exports.cregEx = exports.cNth = exports.cnth = exports.cURL = exports.curl = exports.cNode = exports.cnode = exports.cKey = exports.ckey = exports.clogs = exports.cLogs = exports.clog = exports.cLog = exports.cOut = exports.cout = exports.c3D = exports.c3d = exports.c1a1d = void 0;
+exports.cdebug = exports.cbug = exports.cInvalid = exports.cinvalid = exports.cValidate = exports.cvalidate = exports.cValidations = exports.cvalidations = exports.cValidation = exports.cvalidation = exports.cValid = exports.cvalid = exports.cTypes = exports.cType = exports.ctype = exports.cField = exports.cLabel = exports.cLink = exports.cInfo = exports.cinfo = exports.cEntire = exports.cPositive = exports.cNegative = exports.cDownload = exports.cSave = exports.cNavigate = exports.cnavigate = exports.cexpect = exports.cPressKey = exports.cpressKey = exports.cClick = exports.cclick = exports.cLoad = exports.cload = exports.cNew = exports.cView = exports.cview = exports.cUnShare = exports.cUnshare = exports.cUnshared = exports.cUnShared = exports.cShared = exports.cshared = exports.cshares = exports.cShares = exports.cShare = exports.cshare = exports.cListed = exports.clisted = exports.cLists = exports.clists = exports.cList = exports.clist = exports.cItems = exports.citems = exports.cItem = exports.citem = exports.cThe = exports.cthe = exports.cEnding = exports.cending = exports.cEND = exports.cEnd = exports.cend = exports.cBeginning = exports.cbeginning = exports.cBEGIN = exports.cBegin = exports.cbegin = exports.cBottom = exports.cbottom = exports.cTop = exports.ctop = exports.cTo = exports.cRight = exports.cright = exports.cLeft = exports.cleft = exports.cBack = exports.cback = exports.cFront = exports.cfront = exports.cDetails = exports.cdetails = exports.cDetail = exports.cdetail = exports.cWithout = exports.cwithout = exports.cWith = exports.cwith = exports.cMenu = exports.cMe = exports.cHamburger = exports.cAccount = exports.cCounter = exports.ccounter = exports.cCount = exports.ccount = exports.cConfirm = exports.cconfirm = void 0;
+exports.cand = exports.cCompleted = exports.cComplete = exports.cProcessing = exports.cProcess = exports.cGateway = exports.cWay = exports.cway = exports.cGate = exports.cLimit = exports.climit = exports.cPreview = exports.cSetting = exports.csetting = exports.cSet = exports.cset = exports.cBug = exports.cPermission = exports.cViewer = exports.cExit = exports.cexit = exports.cPath = exports.cpath = exports.cIntermediate = exports.cintermediate = exports.cmediate = exports.cStamp = exports.cTime = exports.ctime = exports.cDate = exports.cdate = exports.cReceived = exports.cReceive = exports.cEmails = exports.cEmail = exports.cmail = exports.cID = exports.cId = exports.cid = exports.cPageScriptName = exports.cKeywordName = exports.ckeywordName = exports.cNamed = exports.cnamed = exports.cNames = exports.cnames = exports.cName = exports.cname = exports.cEnvironment = exports.cMaster = exports.cRows = exports.cRun = exports.cRow = exports.cOf = exports.cHost = exports.cNumber = exports.cnumber = exports.cAutomation = exports.cActions = exports.cAction = exports.cBrowser = exports.cExhaustive = exports.cBureau = exports.cTestWorkflow = exports.cTestStatusMessage = exports.cTestStatus = exports.cStatus = exports.cTESTS = exports.cTests = exports.ctests = exports.cTEST = exports.cTest = exports.ctest = exports.cWorkflows = exports.cworkflows = exports.cWorkflow = exports.cworkflow = exports.cFlow = exports.cflow = exports.cWork = exports.cwork = exports.cResults = exports.cresults = exports.cData = exports.cdata = exports.cKeywords = exports.ckeywords = exports.cKeyword = exports.ckeyword = exports.cScripts = exports.cScript = exports.cMessages = exports.cmessages = exports.cMessage = exports.cmessage = exports.cPages = exports.cpages = exports.cPage = exports.cpage = exports.cDebug = void 0;
+exports.cOperating = exports.cOperation = exports.cRaw = exports.cEquivalence = exports.cequivalence = exports.cEquals = exports.cequals = exports.cEqual = exports.cequal = exports.cTable = exports.ctable = exports.cLibrary = exports.clibrary = exports.cDialog = exports.cVisibility = exports.cvisibility = exports.cVariable = exports.cDetermine = exports.cdetermine = exports.cEnabled = exports.cenabled = exports.cEnable = exports.cenable = exports.cEither = exports.cCode = exports.ccode = exports.cLength = exports.clength = exports.cNumerical = exports.cNumeric = exports.cnumeric = exports.cRange = exports.crange = exports.cFindValue = exports.cfindValue = exports.cfindvalue = exports.cFind = exports.cfind = exports.cValues = exports.cvalues = exports.cValue = exports.cvalue = exports.cParent = exports.cparent = exports.cGenerate = exports.cgenerate = exports.cRandomly = exports.crandomly = exports.cRandom = exports.crandom = exports.cUpper = exports.cupper = exports.cLetter = exports.cletter = exports.cLet = exports.clet = exports.cDigit = exports.cdigit = exports.cDig = exports.cdig = exports.cExtension = exports.cRemove = exports.cremove = exports.cmove = exports.cCase = exports.ccase = exports.cLower = exports.clower = exports.cLow = exports.clow = exports.cConvert = exports.cconvert = exports.cReturn = exports.creturn = exports.cturn = exports.cCarriage = exports.cCleaned = exports.ccleaned = exports.cClean = exports.cclean = exports.cCatagory = exports.cScore = exports.cscore = exports.cUnder = exports.cunder = exports.cColon = exports.cPlus = exports.cSpaces = exports.cSpace = exports.cReplace = exports.creplace = exports.cFrom = exports.cPut = exports.cput = exports.cGet = exports.cget = exports.cLevel = exports.cAccess = exports.cUser = exports.cAnd = void 0;
+exports.cAdvance = exports.cProjects = exports.cProject = exports.cproject = exports.cIteration = exports.cConstants = exports.cconstants = exports.cConstant = exports.cconstant = exports.cDescription = exports.cdescription = exports.cInput = exports.cinput = exports.cContext = exports.cTEXT = exports.cText = exports.ctext = exports.cAlphabetic = exports.cbetic = exports.cAlpha = exports.calpha = exports.cMixed = exports.cMix = exports.cOR = exports.cor = exports.cOr = exports.cBY = exports.cBy = exports.cby = exports.cAssertionStyle = exports.cUploadStyle = exports.cAssertionType = exports.cAssertion = exports.cAssertValueGreaterThan = exports.cAssertValueLessThan = exports.cAssertValueNotEqual = exports.cAssertValueEqual = exports.cAssertNotExists = exports.cAssertExists = exports.cThan = exports.cthan = exports.cThen = exports.cthen = exports.cGreater = exports.cgreater = exports.cGreat = exports.cgreat = exports.cLess = exports.cless = exports.cAssert = exports.cassert = exports.cStyle = exports.cUpload = exports.cOnce = exports.cAfter = exports.cSwap = exports.cswap = exports.cQuote = exports.cSingle = exports.csingle = exports.cDefault = exports.cdefault = exports.cfault = exports.cUnified = exports.cMulti = exports.cParallel = exports.cSingular = exports.cSynch = exports.cAsynch = exports.cExists = exports.cExist = exports.cIndividually = exports.cIndividual = exports.cSelectors = exports.cSelector = exports.cselector = exports.cLocatorLibrary = exports.cLocators = exports.cLocator = exports.cActionOverride = exports.cOverride = exports.cRide = exports.cride = exports.cOver = exports.cInner = exports.cinner = exports.chtml = exports.cHTML = exports.cawait = exports.cWait = exports.cwait = exports.cAbreviated = exports.cAssignment = exports.cassignment = exports.cAssign = exports.cassign = exports.cSign = exports.csign = exports.cSystem = exports.csystem = void 0;
+exports.cWarning = exports.cwarning = exports.cWarn = exports.cwarn = exports.cConstructor = exports.cPort = exports.cport = exports.cHung = exports.chung = exports.cCell = exports.ccell = exports.cWoman = exports.cwoman = exports.cMan = exports.cman = exports.cDisabled = exports.cdisabled = exports.cAttributes = exports.cattributes = exports.cAttribute = exports.cattribute = exports.cFilter = exports.cfilter = exports.cChild = exports.cchild = exports.cSibling = exports.csibling = exports.cExecute = exports.cDwell = exports.cTimeOut = exports.cTimeout = exports.cBinary = exports.cSolid = exports.csolid = exports.cWorks = exports.cEdge = exports.cedge = exports.cCharacters = exports.ccharacters = exports.cCharacter = exports.ccharacter = exports.cSpecial = exports.cspecial = exports.cPublic = exports.cpublic = exports.cHome = exports.chome = exports.cAllowable = exports.callowable = exports.cAllow = exports.callow = exports.cElementName = exports.cElements = exports.celements = exports.cElement = exports.celement = exports.cChecked = exports.cchecked = exports.cChecks = exports.cchecks = exports.cCheck = exports.ccheck = exports.cIS = exports.cIs = exports.cis = exports.cIngestion = exports.cClass = exports.cclass = exports.cResources = exports.cresources = exports.cResource = exports.cresource = exports.cDestination = exports.cdestination = exports.cSource = exports.csource = exports.cNation = exports.cnation = exports.cbin = exports.csrc = exports.ccert = exports.ccafe = exports.cFolders = exports.cfolders = exports.cfolder = exports.cFolder = exports.cFold = exports.cfold = exports.cfiles = exports.cfile = exports.cFiles = exports.cFile = exports.cWebkey = exports.cPageName = exports.cTestName = exports.cPageData = exports.cpageData = exports.ctestData = exports.cCreation = exports.cAdvanced = void 0;
+exports.cRoot = exports.croot = exports.cRelease = exports.crelease = exports.clease = exports.cDeployment = exports.cdeployment = exports.cDeploy = exports.cdeploy = exports.cBuild = exports.cbuild = exports.cApplication = exports.capplication = exports.cDoes = exports.cdoes = exports.cMatching = exports.cmatching = exports.cMatch = exports.cmatch = exports.cAscertain = exports.cascertain = exports.ccertain = exports.cBetween = exports.cbetween = exports.cBet = exports.cbet = exports.cDifference = exports.cArguments = exports.carguments = exports.cAggregate = exports.caggregate = exports.cProduct = exports.cVideo = exports.cvideo = exports.cContains = exports.ccontains = exports.cContain = exports.ccontain = exports.cCompare = exports.ccompare = exports.cAre = exports.care = exports.cConsolidated = exports.cConsolidate = exports.cconsolidate = exports.cSimplify = exports.csimplify = exports.cSort = exports.csort = exports.cLocation = exports.clocation = exports.cPoint = exports.cpoint = exports.cTransform = exports.ctransform = exports.cForm = exports.cform = exports.cFor = exports.cfor = exports.cVector = exports.cvector = exports.cFraction = exports.cTrap = exports.ctrap = exports.cAngle = exports.cangle = exports.cDegrees = exports.cdegrees = exports.cDegree = exports.cdegree = exports.cNormalize = exports.cnormalize = exports.cNormal = exports.cnormal = exports.cQuaternion = exports.cquaternion = exports.cQuarter = exports.cquarter = exports.cQuart = exports.cquart = exports.cRounded = exports.crounded = exports.cRound = exports.cround = exports.cCamel = exports.ccamel = exports.cArrays = exports.carrays = exports.cArray = exports.carray = exports.cDecompose = exports.cdecompose = exports.ccompose = exports.cDashboard = exports.cboard = exports.cDash = exports.cError = exports.cerror = exports.cWarnings = exports.cwarnings = void 0;
+exports.cFrame = exports.cframe = exports.cBlob = exports.cblob = exports.cQueue = exports.cqueue = exports.cCommands = exports.ccommands = exports.cCommand = exports.ccommand = exports.cCustom = exports.ccustom = exports.cRules = exports.crules = exports.cClient = exports.cclient = exports.cAverage = exports.caverage = exports.cPalindrom = exports.cpalindrom = exports.cPal = exports.cpal = exports.cAlmost = exports.calmost = exports.cPopular = exports.cpopular = exports.cPop = exports.cpop = exports.cMost = exports.cmost = exports.cBold = exports.cbold = exports.cOld = exports.cold = exports.cColors = exports.ccolors = exports.cColor = exports.ccolor = exports.cModule = exports.cmodule = exports.cFont = exports.cfont = exports.cFiglet = exports.cfiglet = exports.cFig = exports.cfig = exports.cInterface = exports.cinterface = exports.cDriven = exports.cdriven = exports.cDrive = exports.cdrive = exports.cArgument = exports.cargument = exports.cFace = exports.cface = exports.cEvents = exports.cevents = exports.cEvent = exports.cevent = exports.cEven = exports.ceven = exports.cOdd = exports.codd = exports.cBasic = exports.cbasic = exports.cPercent = exports.cpercent = exports.cExecution = exports.cJournal = exports.cMultiple = exports.cmultiple = exports.cFunctions = exports.cfunctions = exports.cFunction = exports.cfunction = exports.cCommon = exports.ccommon = exports.cDemo = exports.cdemo = exports.cReload = exports.creload = exports.cEval = exports.ceval = exports.cRefresh = exports.crefresh = exports.cfresh = exports.cRule = exports.crule = exports.cBusiness = exports.cbusiness = exports.cMetaData = exports.cMeta = exports.cmeta = exports.cSlash = exports.cslash = exports.cForward = exports.cforward = exports.cParse = exports.cparse = void 0;
+exports.cPlay = exports.cplay = exports.cExport = exports.cexport = exports.cShape = exports.cshape = exports.cPhonics = exports.cphonics = exports.cIsotope = exports.cisotope = exports.cGeneric = exports.cgeneric = exports.cUnits = exports.cunits = exports.cUnit = exports.cunit = exports.cSections = exports.csections = exports.cSection = exports.csection = exports.cLane = exports.clane = exports.cLack = exports.clack = exports.cYell = exports.cyell = exports.cGround = exports.cground = exports.cTraditional = exports.cSimplified = exports.cFAIL = exports.cFail = exports.cfail = exports.cPASSED = exports.cPassed = exports.cpassed = exports.cPASS = exports.cPass = exports.cpass = exports.cConversion = exports.cconversion = exports.cPerformance = exports.cControl = exports.cVersion = exports.cversion = exports.cClear = exports.cclear = exports.cAnalysis = exports.canalysis = exports.cDeviation = exports.cdeviation = exports.cStandard = exports.cstandard = exports.cStack = exports.cstack = exports.cTracking = exports.ctracking = exports.cTrack = exports.ctrack = exports.cRack = exports.crack = exports.cMetrics = exports.cmetrics = exports.cMetric = exports.cmetric = exports.cOutput = exports.coutput = exports.cstartup = exports.cStarted = exports.cstarted = exports.cStarts = exports.cstarts = exports.cStart = exports.cstart = exports.cAbout = exports.cabout = exports.cIndex = exports.cindex = exports.cGenerator = exports.cgenerator = exports.cHive = exports.chive = exports.cPrint = exports.cprint = exports.cHelp = exports.chelp = exports.cDelimiter = exports.cdelimiter = exports.cTertiary = exports.ctertiary = exports.cSecondary = exports.csecondary = exports.cPrimary = exports.cprimary = exports.cSequencer = exports.csequencer = exports.cAliases = exports.caliases = exports.cAlias = exports.calias = void 0;
+exports.cExpansion = exports.cexpansion = exports.cRecursive = exports.crecursive = exports.cCursive = exports.ccursive = exports.cClone = exports.cclone = exports.cDeep = exports.cdeep = exports.cLehmer = exports.cSolve = exports.csolve = exports.cAcronyms = exports.cacronyms = exports.cAcronym = exports.cacronym = exports.cAbreviations = exports.cabreviations = exports.cAbreviation = exports.cabreviation = exports.cOther = exports.cother = exports.cWhy = exports.cwhy = exports.cHow = exports.chow = exports.cWhat = exports.cwhat = exports.cWhen = exports.cwhen = exports.cThis = exports.cthis = exports.cThat = exports.cthat = exports.cThose = exports.cthose = exports.cThem = exports.cthem = exports.cHis = exports.chis = exports.cHers = exports.chers = exports.cHim = exports.chim = exports.cHer = exports.cher = exports.cWhere = exports.cwhere = exports.cWere = exports.cwere = exports.cEnter = exports.center = exports.cPlease = exports.cplease = exports.cDuplicate = exports.cduplicate = exports.cUnique = exports.cunique = exports.cStored = exports.cstored = exports.cStore = exports.cstore = exports.cStorage = exports.cstorage = exports.cPRODUCTION = exports.cProduction = exports.cproduction = exports.cDEVELOPMENT = exports.cDevelopment = exports.cdevelopment = exports.cDEVELOP = exports.cDevelop = exports.cdevelop = exports.cPrefix = exports.cprefix = exports.cFix = exports.cfix = exports.cQualified = exports.cqualified = exports.cDocument = exports.cdocument = exports.cLine = exports.cline = exports.cSuggested = exports.csuggested = exports.cSuggest = exports.csuggest = exports.cSummary = exports.csummary = exports.cSum = exports.csum = exports.cDisplay = exports.cdisplay = void 0;
 
 var b = _interopRequireWildcard(require("./basic.constants"));
 
@@ -253,6 +253,12 @@ exports.cword = cword;
 var cWord = b.cW + p.cord; // Word
 
 exports.cWord = cWord;
+var cwords = cword + b.cs; // words
+
+exports.cwords = cwords;
+var cWords = cWord + b.cs; // Words
+
+exports.cWords = cWords;
 var coops = b.co + p.cops; // oops
 
 exports.coops = coops;
@@ -463,6 +469,9 @@ exports.cending = cending;
 var cEnding = cEnd + p.cing; // Ending
 
 exports.cEnding = cEnding;
+var cthe = b.cth + b.ce; // the
+
+exports.cthe = cthe;
 var cThe = b.cTh + b.ce; // The
 
 exports.cThe = cThe;
@@ -478,12 +487,24 @@ exports.citems = citems;
 var cItems = cItem + b.cs; // Items
 
 exports.cItems = cItems;
+var clist = b.cli + b.cst; // list
+
+exports.clist = clist;
 var cList = b.cLi + b.cst; // List
 
 exports.cList = cList;
+var clists = clist + b.cs; // lists
+
+exports.clists = clists;
 var cLists = cList + b.cs; // Lists
 
 exports.cLists = cLists;
+var clisted = clist + b.ced; // listed
+
+exports.clisted = clisted;
+var cListed = cList + b.ced; // Listed
+
+exports.cListed = cListed;
 var cshare = b.cs + p.chare; // share
 
 exports.cshare = cshare;
@@ -793,6 +814,12 @@ exports.cnames = cnames;
 var cNames = cName + b.cs; // Names
 
 exports.cNames = cNames;
+var cnamed = cname + b.cd; // named
+
+exports.cnamed = cnamed;
+var cNamed = cName + b.cd; // Named
+
+exports.cNamed = cNamed;
 var ckeywordName = ckeyword + cName; // keywordName
 
 exports.ckeywordName = ckeywordName;
@@ -1009,12 +1036,21 @@ exports.cconvert = cconvert;
 var cConvert = b.cC + p.convert; // Convert
 
 exports.cConvert = cConvert;
+var clow = b.clo + b.cw; // low
+
+exports.clow = clow;
 var cLow = b.cLo + b.cw; // Low
 
 exports.cLow = cLow;
+var clower = clow + b.cer; // lower
+
+exports.clower = clower;
 var cLower = cLow + b.cer; // Lower
 
 exports.cLower = cLower;
+var ccase = b.cc + p.c_ase; // case
+
+exports.ccase = ccase;
 var cCase = b.cC + p.c_ase; // Case
 
 exports.cCase = cCase;
@@ -1048,9 +1084,15 @@ exports.clet = clet;
 var cLet = b.cLe + b.ct; // Let
 
 exports.cLet = cLet;
+var cletter = clet + b.ct + b.cer; // letter
+
+exports.cletter = cletter;
 var cLetter = cLet + b.ct + b.cer; // Letter
 
 exports.cLetter = cLetter;
+var cupper = b.cup + b.cp + b.cer; // upper
+
+exports.cupper = cupper;
 var cUpper = b.cUp + b.cp + b.cer; // Upper
 
 exports.cUpper = cUpper;
@@ -1183,6 +1225,9 @@ exports.cequal = cequal;
 var cEqual = p.cEqu + b.cal; // Equal
 
 exports.cEqual = cEqual;
+var cequals = cequal + b.cs; // equals
+
+exports.cequals = cequals;
 var cEquals = cEqual + b.cs; // Equals
 
 exports.cEquals = cEquals;
@@ -1639,6 +1684,12 @@ exports.celement = celement;
 var cElement = b.cEl + b.ce + p.cment; // Element
 
 exports.cElement = cElement;
+var celements = celement + b.cs; // elements
+
+exports.celements = celements;
+var cElements = cElement + b.cs; // Elements
+
+exports.cElements = cElements;
 var cElementName = cElement + cName; // ElementName
 
 exports.cElementName = cElementName;
@@ -1831,6 +1882,12 @@ exports.carray = carray;
 var cArray = b.cAr + p.cray; // Array
 
 exports.cArray = cArray;
+var carrays = carray + b.cs; // arrays
+
+exports.carrays = carrays;
+var cArrays = cArray + b.cs; // Arrays
+
+exports.cArrays = cArrays;
 var ccamel = b.cca + p.cmel; // camel
 
 exports.ccamel = ccamel;
@@ -1912,9 +1969,18 @@ exports.cvector = cvector;
 var cVector = b.cVe + p.cctor; // Vector
 
 exports.cVector = cVector;
-var cform = b.cfo + b.crm; // form
+var cfor = b.cfo + b.cr; // for
+
+exports.cfor = cfor;
+var cFor = b.cFo + b.cr; // For
+
+exports.cFor = cFor;
+var cform = cfor + b.cm; // form
 
 exports.cform = cform;
+var cForm = cFor + b.cm; // Form
+
+exports.cForm = cForm;
 var ctransform = p.ctrans + cform; // transform
 
 exports.ctransform = ctransform;
@@ -1954,6 +2020,12 @@ exports.cConsolidate = cConsolidate;
 var cConsolidated = cConsolidate + b.cd; // Consolidated
 
 exports.cConsolidated = cConsolidated;
+var care = p.care; // are
+
+exports.care = care;
+var cAre = b.cAr + b.ce; // Are
+
+exports.cAre = cAre;
 var ccompare = p.ccomp + p.care; // compare
 
 exports.ccompare = ccompare;
@@ -2080,10 +2152,10 @@ exports.cparse = cparse;
 var cParse = b.cP + p.carse; // Parse
 
 exports.cParse = cParse;
-var cforward = b.cf + b.cor + p.cward; // forward
+var cforward = cfor + p.cward; // forward
 
 exports.cforward = cforward;
-var cForward = b.cF + b.cor + p.cward; // Forward
+var cForward = cFor + p.cward; // Forward
 
 exports.cForward = cForward;
 var cslash = b.cs + p.clash; // slash
@@ -2458,6 +2530,18 @@ exports.cstart = cstart;
 var cStart = b.cS + p.ctart; // Start
 
 exports.cStart = cStart;
+var cstarts = cstart + b.cs; // starts
+
+exports.cstarts = cstarts;
+var cStarts = cStart + b.cs; // Starts
+
+exports.cStarts = cStarts;
+var cstarted = cstart + b.ced; // started
+
+exports.cstarted = cstarted;
+var cStarted = cStart + b.ced; // Started
+
+exports.cStarted = cStarted;
 var cstartup = cstart + b.cup; // startup
 
 exports.cstartup = cstartup;
@@ -2765,9 +2849,180 @@ exports.cstored = cstored;
 var cStored = p.cStor + b.ced; // Stored
 
 exports.cStored = cStored;
+var cunique = p.cuni + p.cque; // unique
+
+exports.cunique = cunique;
+var cUnique = p.cUni + p.cque; // Unique
+
+exports.cUnique = cUnique;
 var cduplicate = p.cdup + b.cli + p.ccate; // duplicate
 
 exports.cduplicate = cduplicate;
 var cDuplicate = p.cDup + b.cli + p.ccate; // Duplicate
 
 exports.cDuplicate = cDuplicate;
+var cplease = b.cpl + p.cease; // please
+
+exports.cplease = cplease;
+var cPlease = b.cPl + p.cease; // Please
+
+exports.cPlease = cPlease;
+var center = b.cen + p.cter; // enter
+
+exports.center = center;
+var cEnter = b.cEn + p.cter; // Enter
+
+exports.cEnter = cEnter;
+var cwere = b.cw + p.cere; // were
+
+exports.cwere = cwere;
+var cWere = b.cW + p.cere; // Were
+
+exports.cWere = cWere;
+var cwhere = b.cwh + p.cere; // where
+
+exports.cwhere = cwhere;
+var cWhere = b.cWh + p.cere; // Where
+
+exports.cWhere = cWhere;
+var cher = b.che + b.cr; // her
+
+exports.cher = cher;
+var cHer = b.cHe + b.cr; // Her
+
+exports.cHer = cHer;
+var chim = b.chi + b.cm; // him
+
+exports.chim = chim;
+var cHim = b.cHi + b.cm; // Him
+
+exports.cHim = cHim;
+var chers = cher + b.cs; // hers
+
+exports.chers = chers;
+var cHers = cHer + b.cs; // Hers
+
+exports.cHers = cHers;
+var chis = b.chi + b.cs; // his
+
+exports.chis = chis;
+var cHis = b.cHi + b.cs; // His
+
+exports.cHis = cHis;
+var cthem = b.cth + b.cem; // them
+
+exports.cthem = cthem;
+var cThem = b.cTh + b.cem; // Them
+
+exports.cThem = cThem;
+var cthose = b.cth + p.cose; // those
+
+exports.cthose = cthose;
+var cThose = b.cTh + p.cose; // Those
+
+exports.cThose = cThose;
+var cthat = b.cth + b.cat; // that
+
+exports.cthat = cthat;
+var cThat = b.cTh + b.cat; // That
+
+exports.cThat = cThat;
+var cthis = b.ct + chis; // this
+
+exports.cthis = cthis;
+var cThis = b.cT + chis; // This
+
+exports.cThis = cThis;
+var cwhen = b.cwh + b.cen; // when
+
+exports.cwhen = cwhen;
+var cWhen = b.cWh + b.cen; // When
+
+exports.cWhen = cWhen;
+var cwhat = b.cwh + b.cat; // what
+
+exports.cwhat = cwhat;
+var cWhat = b.cWh + b.cat; // What
+
+exports.cWhat = cWhat;
+var chow = b.cho + b.cw; // how
+
+exports.chow = chow;
+var cHow = b.cHo + b.cw; // How
+
+exports.cHow = cHow;
+var cwhy = b.cwh + b.cy; // why
+
+exports.cwhy = cwhy;
+var cWhy = b.cWh + b.cy; // Why
+
+exports.cWhy = cWhy;
+var cother = b.cot + cher; // other
+
+exports.cother = cother;
+var cOther = b.cOt + cher; // Other
+
+exports.cOther = cOther;
+var cabreviation = b.cab + p.crev + b.cia + p.ction; // abreviation
+
+exports.cabreviation = cabreviation;
+var cAbreviation = b.cAb + p.crev + b.cia + p.ction; // Abreviation
+
+exports.cAbreviation = cAbreviation;
+var cabreviations = cabreviation + b.cs; // abreviations
+
+exports.cabreviations = cabreviations;
+var cAbreviations = cAbreviation + b.cs; // Abreviations
+
+exports.cAbreviations = cAbreviations;
+var cacronym = b.cac + p.cron + b.cym; // acronym
+
+exports.cacronym = cacronym;
+var cAcronym = b.cAc + p.cron + b.cym; // Acronym
+
+exports.cAcronym = cAcronym;
+var cacronyms = cacronym + b.cs; // acronyms
+
+exports.cacronyms = cacronyms;
+var cAcronyms = cAcronym + b.cs; // Acronyms
+
+exports.cAcronyms = cAcronyms;
+var csolve = b.cs + p.colve; // solve
+
+exports.csolve = csolve;
+var cSolve = b.cS + p.colve; // Solve
+
+exports.cSolve = cSolve;
+var cLehmer = b.cLe + b.chm + b.cer; // Lehmer
+
+exports.cLehmer = cLehmer;
+var cdeep = b.cd + p.ceep; // deep
+
+exports.cdeep = cdeep;
+var cDeep = b.cD + p.ceep; // Deep
+
+exports.cDeep = cDeep;
+var cclone = b.ccl + n.cone; // clone
+
+exports.cclone = cclone;
+var cClone = b.cCl + n.cone; // Clone
+
+exports.cClone = cClone;
+var ccursive = p.ccur + p.csive; // cursive
+
+exports.ccursive = ccursive;
+var cCursive = p.cCur + p.csive; // Cursive
+
+exports.cCursive = cCursive;
+var crecursive = b.cre + ccursive; // recursive
+
+exports.crecursive = crecursive;
+var cRecursive = b.cRe + ccursive; // Recursive
+
+exports.cRecursive = cRecursive;
+var cexpansion = p.cexp + b.can + p.csion; // expansion
+
+exports.cexpansion = cexpansion;
+var cExpansion = p.cExp + b.can + p.csion; // Expansion
+
+exports.cExpansion = cExpansion;
