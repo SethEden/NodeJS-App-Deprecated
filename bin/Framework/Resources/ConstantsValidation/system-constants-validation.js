@@ -859,6 +859,18 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cCommandWordAliasPrompt3',
   Actual: s.cCommandWordAliasPrompt3,
   Expected: 'for the command word:'
+}, {
+  Name: 'cConstantPrompt1',
+  Actual: s.cConstantPrompt1,
+  Expected: 'Please enter a string you would '
+}, {
+  Name: 'cConstantPrompt2',
+  Actual: s.cConstantPrompt2,
+  Expected: 'like to define as a constant '
+}, {
+  Name: 'cConstantPrompt3',
+  Actual: s.cConstantPrompt3,
+  Expected: 'in the constants system:'
 }, // File Types
 {
   Name: 'cCatia',
@@ -2448,6 +2460,42 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cvalidateConstantsDataValidationLineItemName,
   Expected: 'validateConstantsDataValidationLineItemName'
 }, {
+  Name: 'cdoesConstantExist',
+  Actual: s.cdoesConstantExist,
+  Expected: 'doesConstantExist'
+}, {
+  Name: 'cgetConstantType',
+  Actual: s.cgetConstantType,
+  Expected: 'getConstantType'
+}, {
+  Name: 'cgetConstantActualValue',
+  Actual: s.cgetConstantActualValue,
+  Expected: 'getConstantActualValue'
+}, {
+  Name: 'cgetConstantName',
+  Actual: s.cgetConstantName,
+  Expected: 'getConstantName'
+}, {
+  Name: 'cfindConstantName',
+  Actual: s.cfindConstantName,
+  Expected: 'findConstantName'
+}, {
+  Name: 'cisConstantTypeValid',
+  Actual: s.cisConstantTypeValid,
+  Expected: 'isConstantTypeValid'
+}, {
+  Name: 'cconvertConstantTypeToConstantPrefix',
+  Actual: s.cconvertConstantTypeToConstantPrefix,
+  Expected: 'convertConstantTypeToConstantPrefix'
+}, {
+  Name: 'cconstantsOptimizedFulfillmentSystem',
+  Actual: s.cconstantsOptimizedFulfillmentSystem,
+  Expected: 'constantsOptimizedFulfillmentSystem'
+}, {
+  Name: 'cconstantsFulfillmentSystem',
+  Actual: s.cconstantsFulfillmentSystem,
+  Expected: 'constantsFulfillmentSystem'
+}, {
   Name: 'cvalidateConstantsDataValues',
   Actual: s.cvalidateConstantsDataValues,
   Expected: 'validateConstantsDataValues'
@@ -2455,6 +2503,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cisValidCommandNameString',
   Actual: s.cisValidCommandNameString,
   Expected: 'isValidCommandNameString'
+}, {
+  Name: 'cisConstantValid',
+  Actual: s.cisConstantValid,
+  Expected: 'isConstantValid'
 }, {
   Name: 'ccountDuplicateCommandAliases',
   Actual: s.ccountDuplicateCommandAliases,
@@ -2531,6 +2583,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'ccommandAliasGenerator',
   Actual: s.ccommandAliasGenerator,
   Expected: 'commandAliasGenerator'
+}, {
+  Name: 'cconstantsGenerator',
+  Actual: s.cconstantsGenerator,
+  Expected: 'constantsGenerator'
 }, {
   Name: 'cgetAttributeName',
   Actual: s.cgetAttributeName,

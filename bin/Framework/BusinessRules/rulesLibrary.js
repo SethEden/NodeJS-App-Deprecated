@@ -132,10 +132,30 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidationLineItemName, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidationLineItemName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesConstantExist, function (inputData, inputMetaData) {
+    return stringParsing.doesConstantExist(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetConstantType, function (inputData, inputMetaData) {
+    return stringParsing.getConstantType(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetConstantActualValue, function (inputData, inputMetaData) {
+    return stringParsing.getConstantActualValue(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetConstantName, function (inputData, inputMetaData) {
+    return stringParsing.getConstantName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cfindConstantName, function (inputData, inputMetaData) {
+    return stringParsing.findConstantName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisConstantTypeValid, function (inputData, inputMetaData) {
+    return stringParsing.isConstantTypeValid(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconstantsOptimizedFulfillmentSystem, function (inputData, inputMetaData) {
+    return stringParsing.constantsOptimizedFulfillmentSystem(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconvertConstantTypeToConstantPrefix, function (inputData, inputMetaData) {
+    return stringParsing.convertConstantTypeToConstantPrefix(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconstantsFulfillmentSystem, function (inputData, inputMetaData) {
+    return stringParsing.constantsFulfillmentSystem(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValues, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValues(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisValidCommandNameString, function (inputData, inputMetaData) {
     return stringParsing.isValidCommandNameString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisConstantValid, function (inputData, inputMetaData) {
+    return stringParsing.isConstantValid(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccountDuplicateCommandAliases, function (inputData, inputMetaData) {
     return stringParsing.countDuplicateCommandAliases(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {

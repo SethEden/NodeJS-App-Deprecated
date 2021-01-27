@@ -239,7 +239,7 @@ export const cCommandWordAliasPrompt3 = w.cfor + b.cSpace + w.cthe + b.cSpace + 
 // Please enter a string you would like to define as a constant in the constants system:
 export const cConstantPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cstring + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace; // Please enter a string you would
 export const cConstantPrompt2 = w.clike + b.cSpace + b.cto + b.cSpace + w.cdefine + b.cSpace + b.cas + b.cSpace + b.ca + b.cSpace + w.cconstant + b.cSpace; // like to define as a constant
-export const cConstantPrompt3 = b.cin + b.cSpace + w.cthe + b.cSpace + w.cconstants + b.cSpace + w.csystem + b.cSpace + b.cColon; // in the constants system:
+export const cConstantPrompt3 = b.cin + b.cSpace + w.cthe + b.cSpace + w.cconstants + b.cSpace + w.csystem + b.cColon; // in the constants system:
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia
@@ -659,8 +659,18 @@ export const cvalidateConstantsDataValidation = w.cvalidate + w.cConstants + w.c
 export const cdetermineConstantsContextQualifiedPrefix = w.cdetermine + w.cConstants + w.cContext + w.cQualified + w.cPrefix; // determineConstantsContextQualifiedPrefix
 export const cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
 export const cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidation + w.cLine + w.cItem + w.cName; // validateConstantsDataValidationLineItemName
+export const cdoesConstantExist = w.cdoes + w.cConstant + w.cExist; // doesConstantExist
+export const cgetConstantType = w.cget + w.cConstant + w.cType; // getConstantType
+export const cgetConstantActualValue = w.cget + w.cConstant + w.cActual + w.cValue; // getConstantActualValue
+export const cgetConstantName = w.cget + w.cConstant + w.cName; // getConstantName
+export const cfindConstantName = w.cfind + w.cConstant + w.cName; // findConstantName
+export const cisConstantTypeValid = b.cis + w.cConstant + w.cType + w.cValid; // isConstantTypeValid
+export const cconvertConstantTypeToConstantPrefix = w.cconvert + w.cConstant + w.cType + b.cTo + w.cConstant + w.cPrefix; // convertConstantTypeToConstantPrefix
+export const cconstantsOptimizedFulfillmentSystem = w.cconstants + w.cOptimized + w.cFulfillment + w.cSystem; // constantsOptimizedFulfillmentSystem
+export const cconstantsFulfillmentSystem = w.cconstants + w.cFulfillment + w.cSystem; // constantsFulfillmentSystem
 export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
 export const cisValidCommandNameString = b.cis + w.cValid + w.cCommand + w.cName + w.cString; // isValidCommandNameString
+export const cisConstantValid = b.cis + w.cConstant + w.cValid; // isConstantValid
 export const ccountDuplicateCommandAliases = w.ccount + w.cDuplicate + w.cCommand + w.cAliases; // countDuplicateCommandAliases
 export const cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
 export const cgetDataCatagoryDetailNameFromDataContextName = w.cget + w.cData + w.cCatagory + w.cDetail + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryDetailNameFromDataContextName

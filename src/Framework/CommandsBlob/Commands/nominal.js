@@ -809,16 +809,37 @@ export const constantsGenerator = function(inputData, inputMetaData) {
   let returnData = true;
   let validEntry = false;
   let userDefinedConstant = '';
+  let validConstantRule = [];
+  let doesConstantExistRule = [];
+  let getConstantTypeRule = [];
+  let constantsFulfillmentSystemRule = [];
+  validConstantRule[0] = s.cisConstantValid;
+  doesConstantExistRule[0] = s.cdoesConstantExist;
+  getConstantTypeRule[0] = s.cgetConstantType;
+  constantsFulfillmentSystemRule[0] = s.cconstantsFulfillmentSystem;
 
   while(validEntry === false) {
     console.log(s.cConstantPrompt1);
     console.log(s.cConstantPrompt2);
     console.log(s.cConstantPrompt3);
     userDefinedConstant = prompt(b.cGreaterThan);
-    console.log('userDefinedConstant is: ' + userDefinedConstant);
-    validEntry = true;
+    validEntry = ruleBroker.processRules(userDefinedConstant, '', validConstantRule);
+    if (validEntry === false) {
+      console.log('INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.');
+    }
   }
 
+  // First lets check if the constant is already defined, so we can warn the user.
+  // NOTE: It could be that the developer is just looking to optimize the existing constant,
+  // but if not, a warning to the user would be a good idea!
+  let doesConstantExist = ruleBroker.processRules(userDefinedConstant, '', doesConstantExistRule);
+  if (doesConstantExist === true) {
+    let constantType = ruleBroker.processRules(userDefinedConstant, '', getConstantTypeRule);
+    console.log('WARNING: The constant has already been defined in the following library(ies): ' + constantType);
+  }
+
+  // Now begin the fulfillment algorithm.
+  console.log('Optimized constant definition is: ' + ruleBroker.processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

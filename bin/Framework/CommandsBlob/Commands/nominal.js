@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.constantsGenerator = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -1096,6 +1096,74 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
   return returnData;
 };
 /**
+ * @function constantsGenerator
+ * @description Requests a string input the user would like to have converted into a constant,
+ * while determining the most optimized way to define the new constant based on existing constants.
+ * Also checks to see if that new constant is already defined in the constants system.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
+
+
+exports.commandAliasGenerator = commandAliasGenerator;
+
+var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
+  var functionName = s.cconstantsGenerator;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var validEntry = false;
+  var userDefinedConstant = '';
+  var validConstantRule = [];
+  var doesConstantExistRule = [];
+  var getConstantTypeRule = [];
+  var constantsFulfillmentSystemRule = [];
+  validConstantRule[0] = s.cisConstantValid;
+  doesConstantExistRule[0] = s.cdoesConstantExist;
+  getConstantTypeRule[0] = s.cgetConstantType;
+  constantsFulfillmentSystemRule[0] = s.cconstantsFulfillmentSystem;
+
+  while (validEntry === false) {
+    console.log(s.cConstantPrompt1);
+    console.log(s.cConstantPrompt2);
+    console.log(s.cConstantPrompt3);
+    userDefinedConstant = prompt(b.cGreaterThan);
+    validEntry = _ruleBroker["default"].processRules(userDefinedConstant, '', validConstantRule);
+
+    if (validEntry === false) {
+      console.log('INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.');
+    }
+  } // First lets check if the constant is already defined, so we can warn the user.
+  // NOTE: It could be that the developer is just looking to optimize the existing constant,
+  // but if not, a warning to the user would be a good idea!
+
+
+  var doesConstantExist = _ruleBroker["default"].processRules(userDefinedConstant, '', doesConstantExistRule);
+
+  if (doesConstantExist === true) {
+    var constantType = _ruleBroker["default"].processRules(userDefinedConstant, '', getConstantTypeRule);
+
+    console.log('WARNING: The constant has already been defined in the following library(ies): ' + constantType);
+  } // Now begin the fulfillment algorithm.
+
+
+  console.log('Optimized constant definition is: ' + _ruleBroker["default"].processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function businessRulesMetrics
  * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
@@ -1106,7 +1174,7 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
  */
 
 
-exports.commandAliasGenerator = commandAliasGenerator;
+exports.constantsGenerator = constantsGenerator;
 
 var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaData) {
   var functionName = s.cbusinessRulesMetrics;

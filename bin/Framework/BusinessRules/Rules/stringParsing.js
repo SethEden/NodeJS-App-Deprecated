@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -2096,6 +2096,585 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
   return returnData;
 };
 /**
+ * @function doesConstantExist
+ * @description Walks through all of the constants validation files and
+ * checks to see if any of the expected values match the string that is passed in.
+ * @param {string} inputData The value that should be looked for in all the constants files.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if a matching constant definition was found or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
+
+var doesConstantExist = function doesConstantExist(inputData, inputMetaData) {
+  var functionName = s.cdoesConstantExist;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (inputData) {
+    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+    loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
+      var constantTypeKey = constantsTypesKeys[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+
+      var constantsKeys = Object.keys(constantTypeValues);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+
+      loop2: for (var j = 0; j < constantsKeys.length; j++) {
+        var constantKey = constantsKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+
+        var constantActualValue = constantTypeValues[constantKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+
+        if (inputData === constantActualValue.Actual) {
+          returnData = true;
+          break loop1;
+        }
+      } // for-loop j-th iterator.
+
+    } // for-loop i-th iterator.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getConstantType
+ * @description Determines what constant library a particular constant is defined in.
+ * (This will aid developers who are trying to understand & develop under this complicated constants system.)
+ * NOTE: Just because a constant is found we do not break the loop,
+ * but this function will report back all constants libraries where a particular constant would be defined.
+ * Passing in a True to the inputMetaData will cause the function to exit upon first discovered match.
+ * @param {string} inputData The string value that should be searched in all of the constants libraries.
+ * @param {boolean} inputMetaData True or False to indicate if the function should exit on first discovery or continue to discover all possible matches.
+ * @return {string} A list of constants libraries where the constant was found to be defined in.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.doesConstantExist = doesConstantExist;
+
+var getConstantType = function getConstantType(inputData, inputMetaData) {
+  var functionName = s.cgetConstantType;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+    loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
+      var constantTypeKey = constantsTypesKeys[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+
+      var constantsKeys = Object.keys(constantTypeValues);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+
+      loop2: for (var j = 0; j < constantsKeys.length; j++) {
+        var constantKey = constantsKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+
+        var constantActualValue = constantTypeValues[constantKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+
+        if (inputData === constantActualValue.Actual) {
+          if (returnData === '') {
+            returnData = constantTypeKey; // NOTE: This is our first discovered match. Check the inputMetaData to see if we should exit or continue searching?
+
+            if (inputMetaData === true) {
+              // We are doing it this way so we can re-use this function as part of the optimized constants fulfillment system algorithm.
+              break loop1;
+            }
+          } else {
+            returnData = returnData + b.cComa + constantTypeKey;
+          }
+        }
+      } // for-loop j-th iterator.
+
+    } // for-loop i-th iterator.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getConstantActualValue
+ * @description Determines the actual value of the named constant given the constant type.
+ * @param {string} inputData The name of the constant we are looking for to get the actual value of the constant.
+ * @param {string} inputMetaData (OPTIONAL) The type or library where the constant should be found.
+ * @return {string} The actual value of the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.getConstantType = getConstantType;
+
+var getConstantActualValue = function getConstantActualValue(inputData, inputMetaData) {
+  var functionName = s.cgetConstantActualValue;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    if (isConstantTypeValid(inputMetaData, '') === true) {
+      var constantTypeValues1 = D[s.cConstantsValidationData][inputMetaData];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues1 is: ' + JSON.stringify(constantTypeValues1));
+
+      var constantsKeys1 = Object.keys(constantTypeValues1);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys1 is: ' + JSON.stringify(constantsKeys1));
+
+      loop1: for (var i = 0; i < constantsKeys1.length; i++) {
+        var constantKey1 = constantsKeys1[i];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey1 is: ' + JSON.stringify(constantKey1));
+
+        var constantActualValue1 = constantTypeValues1[constantKey1];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(constantActualValue1));
+
+        if (inputData === constantActualValue1.Name) {
+          returnData = constantActualValue1.Actual;
+        }
+      } // for-loop j-th iterator.
+
+    } else {
+      var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+      loop2: for (var j = 0; j < constantsTypesKeys.length; j++) {
+        var constantTypeKey = constantsTypesKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+        var constantTypeValues2 = D[s.cConstantsValidationData][constantTypeKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues2 is: ' + JSON.stringify(constantTypeValues2));
+
+        var constantsKeys2 = Object.keys(constantTypeValues2);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys2 is: ' + JSON.stringify(constantsKeys2));
+
+        loop3: for (var k = 0; k < constantsKeys2.length; k++) {
+          var constantKey2 = constantsKeys2[k];
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey2 is: ' + JSON.stringify(constantKey2));
+
+          var _constantActualValue = constantTypeValues2[constantKey2];
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(_constantActualValue));
+
+          if (inputData === _constantActualValue.Name) {
+            returnData = _constantActualValue.Actual;
+          }
+        } // for-loop j-th iterator.
+
+      } // for-loop i-th iterator.
+
+    } // else clause for the case that inputMetaData did not match a valid constant type in the system.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getConstantName
+ * @description Gets the constant name given the constant value, or what the constant should resolve as. Can only return the first instance.
+ * @param {string} inputData The constant string value that should be used when getting the constant name.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The name of the constant: eg: cSystem
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.getConstantActualValue = getConstantActualValue;
+
+var getConstantName = function getConstantName(inputData, inputMetaData) {
+  var functionName = s.cgetConstantName;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+    loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
+      var constantTypeKey = constantsTypesKeys[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+
+      var constantsKeys = Object.keys(constantTypeValues);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+
+      loop2: for (var j = 0; j < constantsKeys.length; j++) {
+        var constantKey = constantsKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+
+        var constantActualValue = constantTypeValues[constantKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+
+        if (inputData === constantActualValue.Actual) {
+          returnData = constantActualValue.Name;
+          break loop1;
+        }
+      } // for-loop j-th iterator.
+
+    } // for-loop i-th iterator.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function findConstantName
+ * @description Looks through a string and tries to weed out a constant name.
+ * @param {string} inputData The string that should be searched for a constant name.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The name of the constant that was found.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.getConstantName = getConstantName;
+
+var findConstantName = function findConstantName(inputData, inputMetaData) {
+  var functionName = s.cfindConstantName;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    if (inputData.includes(b.cDot)) {
+      returnData = inputData.substr(inputData.lastIndexOf(b.cDot) + 1, inputData.length);
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isConstantTypeValid
+ * @description Determines if a string is a valid constant type/library or not.
+ * @param {string} inputData The string that should be validated if it is a valid constant type or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string is a valid constant type/library that exists within the system.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.findConstantName = findConstantName;
+
+var isConstantTypeValid = function isConstantTypeValid(inputData, inputMetaData) {
+  var functionName = s.cisConstantTypeValid;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (inputData) {
+    switch (inputData) {
+      case s.cBasicConstantsValidation:
+      case s.cColorConstantsValidation:
+      case s.cElementConstantsValidation:
+      case s.cGenericConstantsValidation:
+      case s.cIsotopeConstantsValidation:
+      case s.cNumericConstantsValidation:
+      case s.cPhonicsConstantsValidation:
+      case s.cShapeConstantsValidation:
+      case s.cSystemConstantsValidation:
+      case s.cUnitsConstantsValidation:
+      case s.cWordConstantsValidation:
+        returnData = true;
+        break;
+
+      default:
+        returnData = false;
+        break;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function convertConstantTypeToConstantPrefix
+ * @description Converts the constant type to a constant prefix so it can be used to assist with defining an optimized constant definition.
+ * @param {string} inputData The constant type that should be used when converting to a constant prefix.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The appropriate constant prefix.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.isConstantTypeValid = isConstantTypeValid;
+
+var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstantPrefix(inputData, inputMetaData) {
+  var functionName = s.cconvertConstantTypeToConstantPrefix;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    returnData = inputData;
+
+    switch (inputData) {
+      case s.cBasicConstantsValidation:
+        returnData = b.cb + b.cDot;
+        break;
+
+      case s.cColorConstantsValidation:
+        returnData = s.ccolr + b.cDot;
+        break;
+
+      case s.cElementConstantsValidation:
+        returnData = b.ce + b.cDot;
+        break;
+
+      case s.cGenericConstantsValidation:
+        returnData = b.cg + b.cDot;
+        break;
+
+      case s.cIsotopeConstantsValidation:
+        returnData = b.ci + b.cDot;
+        break;
+
+      case s.cNumericConstantsValidation:
+        returnData = b.cn + b.cDot;
+        break;
+
+      case s.cPhonicsConstantsValidation:
+        returnData = b.cp + b.cDot;
+        break;
+
+      case s.cShapeConstantsValidation:
+        returnData = s.cshp + b.cDot;
+        break;
+
+      case s.cSystemConstantsValidation:
+        returnData = b.cs + b.cDot;
+        break;
+
+      case s.cUnitsConstantsValidation:
+        returnData = b.cu + b.cDot;
+        break;
+
+      case s.cWordConstantsValidation:
+        returnData = b.cw + b.cDot;
+        break;
+
+      default:
+        returnData = false;
+        break;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function constantsOptimizedFulfillmentSystem
+ * @description Determines what is the most optimized way to define a string using existing constant strings.
+ * @param {string} inputData The string that should be determined or find a constant to fulfill part of the string.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A constant that represents part of the input string.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.convertConstantTypeToConstantPrefix = convertConstantTypeToConstantPrefix;
+
+var constantsOptimizedFulfillmentSystem = function constantsOptimizedFulfillmentSystem(inputData, inputMetaData) {
+  var functionName = s.cconstantsOptimizedFulfillmentSystem;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+  var constantType = '';
+  var constantName = '';
+
+  if (inputData) {
+    if (doesConstantExist(inputData, '') === false) {
+      returnData = constantsOptimizedFulfillmentSystem(inputData.substring(0, inputData.length - 1), inputMetaData);
+    } else {
+      constantType = getConstantType(inputData, true);
+      constantName = getConstantName(inputData, '');
+      var constantPrefix = convertConstantTypeToConstantPrefix(constantType, '');
+      returnData = constantPrefix + constantName;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function constantsFulfillmentSystem
+ * @description Determines what is the most optimized way to define a new constant using existing constant strings.
+ * @param {string} inputData The constant to be defined/fulfilled.
+ * @param {string} inputMetaData The original user-defined constant to be fulfilled,
+ * so the recursive algorithm can continue processing the rest of the string, after a first match is found.
+ * @return {string} The fully optimized definition for the new constant.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.constantsOptimizedFulfillmentSystem = constantsOptimizedFulfillmentSystem;
+
+var constantsFulfillmentSystem = function constantsFulfillmentSystem(inputData, inputMetaData) {
+  var functionName = s.cconstantsFulfillmentSystem;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+  var constantName = '';
+  var constantType = '';
+
+  if (inputData) {
+    returnData = constantsOptimizedFulfillmentSystem(inputData, ''); // We found the first part of the string, now lets continue processing the rest of the string!
+    // First determine how many characters are being returned so we can determine what portion of the string we need to continue processing with.
+
+    constantName = findConstantName(returnData, '');
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantName is: ' + constantName);
+
+    var constantValue = getConstantActualValue(constantName, '');
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantValue is: ' + constantValue);
+
+    var deltaLength = inputData.length - constantValue.length;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deltaLength is: ' + deltaLength);
+
+    if (deltaLength != 0) {
+      var recursiveSubString = inputMetaData.substring(inputMetaData.length - deltaLength, inputMetaData.length);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'recursiveSubString is: ' + recursiveSubString);
+
+      returnData = returnData + b.cSpace + b.cPlus + b.cSpace + constantsFulfillmentSystem(recursiveSubString, inputData);
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function validateConstantsDataValues
  * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content..
  * @param {string} inputData The name of the data-hive that should contain all of the validation data that should be used to execute the validation procedures.
@@ -2106,7 +2685,7 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
  */
 
 
-exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
+exports.constantsFulfillmentSystem = constantsFulfillmentSystem;
 
 var validateConstantsDataValues = function validateConstantsDataValues(inputData, inputMetaData) {
   var functionName = s.cvalidateConstantsDataValues;
@@ -2200,6 +2779,42 @@ var isValidCommandNameString = function isValidCommandNameString(inputData, inpu
   return returnData;
 };
 /**
+ * @function isConstantValid
+ * @description Determines if the user entered some valid input constant string or not. User must have entered more than 4 characters.
+ * @param {string} inputData The value of the constant as a string.
+ * @param {string} inputMetaData Not used for this buisness rule.
+ * @return {boolean} True or False to indicate if the user entered a valid constant or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.isValidCommandNameString = isValidCommandNameString;
+
+var isConstantValid = function isConstantValid(inputData, inputMetaData) {
+  var functionName = s.cisConstantValid;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = false;
+
+  if (inputData) {
+    if (inputData.length >= 4) {
+      returnData = true;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function countDuplicateCommandAliases
  * @description Counts the number of command aliases that match the input command alias.
  * @param {string} inputData The command alias that should be have duplicates counted.
@@ -2211,7 +2826,7 @@ var isValidCommandNameString = function isValidCommandNameString(inputData, inpu
  */
 
 
-exports.isValidCommandNameString = isValidCommandNameString;
+exports.isConstantValid = isConstantValid;
 
 var countDuplicateCommandAliases = function countDuplicateCommandAliases(inputData, inputMetaData) {
   var functionName = s.ccountDuplicateCommandAliases;

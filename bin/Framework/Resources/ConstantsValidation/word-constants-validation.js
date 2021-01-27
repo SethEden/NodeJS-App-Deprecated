@@ -998,13 +998,49 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cBrowser,
   Expected: 'Browser'
 }, {
+  Name: 'cact',
+  Actual: w.cact,
+  Expected: 'act'
+}, {
+  Name: 'cAct',
+  Actual: w.cAct,
+  Expected: 'Act'
+}, {
+  Name: 'caction',
+  Actual: w.caction,
+  Expected: 'action'
+}, {
   Name: 'cAction',
   Actual: w.cAction,
   Expected: 'Action'
 }, {
+  Name: 'cactions',
+  Actual: w.cactions,
+  Expected: 'actions'
+}, {
   Name: 'cActions',
   Actual: w.cActions,
   Expected: 'Actions'
+}, {
+  Name: 'cactual',
+  Actual: w.cactual,
+  Expected: 'actual'
+}, {
+  Name: 'cActual',
+  Actual: w.cActual,
+  Expected: 'Actual'
+}, {
+  Name: 'cauto',
+  Actual: w.cauto,
+  Expected: 'auto'
+}, {
+  Name: 'cAuto',
+  Actual: w.cAuto,
+  Expected: 'Auto'
+}, {
+  Name: 'cautomation',
+  Actual: w.cautomation,
+  Expected: 'automation'
 }, {
   Name: 'cAutomation',
   Actual: w.cAutomation,
@@ -4023,5 +4059,85 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cScreen',
   Actual: w.cScreen,
   Expected: 'Screen'
+}, {
+  Name: 'cyou',
+  Actual: w.cyou,
+  Expected: 'you'
+}, {
+  Name: 'cYou',
+  Actual: w.cYou,
+  Expected: 'You'
+}, {
+  Name: 'cwould',
+  Actual: w.cwould,
+  Expected: 'would'
+}, {
+  Name: 'cWould',
+  Actual: w.cWould,
+  Expected: 'Would'
+}, {
+  Name: 'cshould',
+  Actual: w.cshould,
+  Expected: 'should'
+}, {
+  Name: 'cShould',
+  Actual: w.cShould,
+  Expected: 'Should'
+}, {
+  Name: 'ccould',
+  Actual: w.ccould,
+  Expected: 'could'
+}, {
+  Name: 'cCould',
+  Actual: w.cCould,
+  Expected: 'Could'
+}, {
+  Name: 'clike',
+  Actual: w.clike,
+  Expected: 'like'
+}, {
+  Name: 'cLike',
+  Actual: w.cLike,
+  Expected: 'Like'
+}, {
+  Name: 'cfine',
+  Actual: w.cfine,
+  Expected: 'fine'
+}, {
+  Name: 'cFine',
+  Actual: w.cFine,
+  Expected: 'Fine'
+}, {
+  Name: 'cdefine',
+  Actual: w.cdefine,
+  Expected: 'define'
+}, {
+  Name: 'cDefine',
+  Actual: w.cDefine,
+  Expected: 'Define'
+}, {
+  Name: 'cfill',
+  Actual: w.cfill,
+  Expected: 'fill'
+}, {
+  Name: 'cFill',
+  Actual: w.cFill,
+  Expected: 'Fill'
+}, {
+  Name: 'cfulfillment',
+  Actual: w.cfulfillment,
+  Expected: 'fulfillment'
+}, {
+  Name: 'cFulfillment',
+  Actual: w.cFulfillment,
+  Expected: 'Fulfillment'
+}, {
+  Name: 'coptimized',
+  Actual: w.coptimized,
+  Expected: 'optimized'
+}, {
+  Name: 'cOptimized',
+  Actual: w.cOptimized,
+  Expected: 'Optimized'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

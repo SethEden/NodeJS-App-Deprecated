@@ -129,6 +129,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.csion,
   Expected: 'sion'
 }, {
+  Name: 'cill',
+  Actual: p.cill,
+  Expected: 'ill'
+}, {
   Name: 'cillion',
   Actual: p.cillion,
   Expected: 'illion'
@@ -152,6 +156,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cction',
   Actual: p.cction,
   Expected: 'ction'
+}, {
+  Name: 'cmation',
+  Actual: p.cmation,
+  Expected: 'mation'
 }, {
   Name: 'cage',
   Actual: p.cage,
@@ -1637,5 +1645,37 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cExp',
   Actual: p.cExp,
   Expected: 'Exp'
+}, {
+  Name: 'could',
+  Actual: p.could,
+  Expected: 'ould'
+}, {
+  Name: 'cike',
+  Actual: p.cike,
+  Expected: 'ike'
+}, {
+  Name: 'cful',
+  Actual: p.cful,
+  Expected: 'ful'
+}, {
+  Name: 'cFul',
+  Actual: p.cFul,
+  Expected: 'Ful'
+}, {
+  Name: 'cuto',
+  Actual: p.cuto,
+  Expected: 'uto'
+}, {
+  Name: 'copt',
+  Actual: p.copt,
+  Expected: 'opt'
+}, {
+  Name: 'cOpt',
+  Actual: p.cOpt,
+  Expected: 'Opt'
+}, {
+  Name: 'cized',
+  Actual: p.cized,
+  Expected: 'ized'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;
