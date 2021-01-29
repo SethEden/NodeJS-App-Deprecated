@@ -907,6 +907,232 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
 };
 
 /**
+ * @function countCamelCaseWords
+ * @description Takes a string in camelCase and returns the number of words that it contains based on camel case rules.
+ * @param {string} inputData String to count words from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The number of camel case words found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ * @NOTE Might not work so well with numbers as part of the string, they are not treated as capital letters.
+ * We might need to do some refactoring of this function if
+ * mixed numbers and camel case strings ever becomes a requirement as input to this function.
+ * @NOTE Based on the above implementation for the business rule/function convertCamelCaseStringToArray
+ */
+export const countCamelCaseWords = function(inputData, inputMetaData) {
+  let functionName = s.ccountCamelCaseWords;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData;
+  let caps = [];
+  for (let i = 1; i &lt; inputData.length; i++) {
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
+  }
+  returnData = caps.length;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function doesStringContainAcronym
+ * @description Scans a string and determines if there are 2 or more immediately adjacent upper-case characters in the string.
+ * Example: nodeJS where JS is an acronym for JavaScript.
+ * @param {string} inputData The string that should be scanned to determine if it contains an acronym.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input string contains an acronym.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+export const doesStringContainAcronym = function(inputData, inputMetaData) {
+  let functionName = s.cdoesStringContainAcronym;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false;
+  let lastCharacterWasUpperCase = false;
+  let caps = [];
+  for (let i = 1; i &lt; inputData.length; i++) {
+    // If the last character was upper case and the current character is upper case then we have found an acronym and we can exit the loop.
+    if (lastCharacterWasUpperCase === true &amp;&amp; g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      returnData = true;
+      break;
+    }
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      lastCharacterWasUpperCase = true;
+    } else {
+      lastCharacterWasUpperCase = false;
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function countDelimiterInString
+ * @description Takes a string and returns the number of specified delimiters it contains.
+ * @param {string} inputData String to count delimiters from.
+ * @param {string} inputMetaData The delimiter that should be used when counting from the input string.
+ * @return {integer} The number of delimiters found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ * @NOTE: https://stackoverflow.com/questions/35849174/count-spaces-in-a-string
+ */
+export const countDelimiterInString = function(inputData, inputMetaData) {
+  let functionName = s.ccountDelimiterInString;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = (inputData.split(inputMetaData).length - 1);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function determineWordDelimiter
+ * @description Determines what delimiter should be used to break a string up into words if possible.
+ * @param {string} inputData The string that should be examined to determine what delimiter should be used to break it up into words.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The delimiter that should be used, or if camelCase then the function will return the string "CamelCase".
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+export const determineWordDelimiter = function(inputData, inputMetaData) {
+  let functionName = s.cdetermineWordDelimiter;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = '';
+  let camelCaseWordCount = countCamelCaseWords(inputData, '');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'camelCaseWordCount is: ' + camelCaseWordCount);
+  let containsAcronym = doesStringContainAcronym(inputData, '');
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'containsAcronym is: ' + containsAcronym);
+  let spacesCount = countDelimiterInString(inputData, b.cSpace);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'spacesCount is: ' + spacesCount);
+  let periodCount = countDelimiterInString(inputData, b.cDot);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'periodCount is: ' + periodCount);
+  let dashCount = countDelimiterInString(inputData, b.cDash);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'dashCount is: ' + dashCount);
+  let underscoreCount = countDelimiterInString(inputData, b.cUnderscore);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'underscoreCount is: ' + underscoreCount);
+  if (camelCaseWordCount > 0 &amp;&amp; containsAcronym === false &amp;&amp; spacesCount === 0 &amp;&amp; periodCount === 0 &amp;&amp; dashCount === 0 &amp;&amp; underscoreCount === 0) {
+    returnData = s.cCamelCase;
+  // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
+  // We could have multiple acronyms in a word, or in multiple words that are camelCase.
+  // Each of these could be a really complex special case. If we get to that point we will handle those cases on a case by case basis to improve the algorithm.
+  // } else if (camelCaseWordCount > 1 &amp;&amp; containsAcronym === false)
+  } else if (spacesCount > 0 &amp;&amp; periodCount === 0 &amp;&amp; dashCount === 0 &amp;&amp; underscoreCount === 0) {
+    returnData = b.cSpace;
+  } else if (spacesCount === 0 &amp;&amp; periodCount > 0 &amp;&amp; dashCount === 0 &amp;&amp; underscoreCount === 0) {
+    returnData = b.cDot;
+  } else if (spacesCount === 0 &amp;&amp; periodCount === 0 &amp;&amp; dashCount > 0 &amp;&amp; underscoreCount === 0) {
+    returnData = b.cDash;
+  } else if (spacesCount === 0 &amp;&amp; periodCount === 0 &amp;&amp; dashCount === 0 &amp;&amp; underscoreCount > 0) {
+    returnData = b.cUnderscore;
+  } else {
+    // We don't need to be showing this warning unless we are debugging.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getWordCountInString
+ * @description Gets the number of words in a string, it expects words to be delimited by either camel-case, spaces, period, dash or underscore.
+ * @param {string} inputData The string that words should be counted from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The number of words that were found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+export const getWordCountInString = function(inputData, inputMetaData) {
+  let functionName = s.cgetWordCountInString;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = 0;
+  let wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
+  if (wordDelimiter === s.cCamelCase) {
+    returnData = countCamelCaseWords(inputData, '');
+  } else if (wordDelimiter != '') {
+    returnData = inputData.split(wordDelimiter).length;
+  } else {
+    // We don't need to be showing this warning unless we are debugging.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine how words are delimited in the string. Unable to count words.');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getWordsArrayFromString
+ * @description Gets an array of words from a string,
+ * automatically determining how the words are delimited based on common word delimiters: camel case, space, period, dash &amp; underscore.
+ * @param {string} inputData The string that should be broken down into words and returned as an array.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array&lt;string>} The array of words found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+export const getWordsArrayFromString = function(inputData, inputMetaData) {
+  let functionName = s.cgetWordsArrayFromString;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = 0;
+  if (getWordCountInString(inputData, '') > 0) {
+    let wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
+    let stringContainsAcronym = doesStringContainAcronym(inputData, '');
+    if (wordDelimiter === s.cCamelCase &amp;&amp; stringContainsAcronym === false) {
+      returnData = convertCamelCaseStringToArray(inputData, '');
+    } else if (wordDelimiter != '' &amp;&amp; wordDelimiter != s.cCamelCase) {
+      returnData = inputData.split(wordDelimiter);
+    } else {
+      // We don't need to be showing this warning unless we are debugging.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot get words from the string. Unable to determine words.');
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function recombineStringArrayWithSpaces
+ * @description Takes an array of strings and recombines them sequentially with spaces between each array element.
+ * This function is needed, because commands parse inputs by spaces into an array,
+ * and some commands need a single continuous string that might be delimited by coma's.
+ * So this function lets us recombine and then re-parse the string with another delimiter.
+ * @param {array&lt;string>} inputData The array of strings that should be recombined.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The string array with spaces between array elements.
+ * @author Seth Hollingsead
+ * @date 2021/01/29
+ */
+export const recombineStringArrayWithSpaces = function(inputData, inputMetaData) {
+  let functionName = s.crecombineStringArrayWithSpaces;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = '';
+  if (inputData) {
+    returnData = inputData[1];
+    for (let i = 2; i &lt; inputData.length; i++) {
+        returnData = returnData + b.cSpace + inputData[i];
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function doesStringContainUpperCaseCharacter
  * @description Determines if the input string contains at least one upper case character.
  * @param {string} inputData The string that should be checked for upper case characters.
@@ -1077,9 +1303,10 @@ export const isStringCamelCase = function(inputData, inputMetaData) {
     // 1. Does not contain underscore or dash word seperators.
     // 2. Contains at least 1 lower case letter or more.
     // 3. Contains at least 1 upper case letter or more.
-    // 4. Has a lower case first letter of the first word.
+    // 4. Has a lower case or upper case first letter of the first word.
     if (!inputData.match(/[\s_-]/g) &amp;&amp; doesStringContainUpperCaseCharacter(inputData, '') &amp;&amp;
-    doesStringContainLowerCaseCharacter(inputData, '') &amp;&amp; isFirstCharacterLowerCase(inputData, '')) {
+    doesStringContainLowerCaseCharacter(inputData, '') &amp;&amp;
+    (isFirstCharacterLowerCase(inputData, '') || isFirstCharacterUpperCase(inputData, ''))) {
       for (let i = 1; i &lt; inputData.length; i++) {
         // Now check for the final qualification:
         // 3. Ensure that upper case letters are seperated by lower case letters
@@ -1099,7 +1326,7 @@ export const isStringCamelCase = function(inputData, inputMetaData) {
           }
         }
       } // End of the for-loop iterating over the characters in the string.
-    }
+    } // End-if conditions on upperCase &amp; lowerCase.
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -3257,7 +3484,7 @@ export const replaceCharacterAtIndexOfString = function(originalString, index, r
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jan 27 2021 05:34:33 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jan 29 2021 16:37:42 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

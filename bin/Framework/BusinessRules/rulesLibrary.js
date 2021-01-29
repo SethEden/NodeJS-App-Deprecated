@@ -92,6 +92,20 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cconvertCamelCaseStringToArray, function (inputData, inputMetaData) {
     return stringParsing.convertCamelCaseStringToArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.ccountCamelCaseWords, function (inputData, inputMetaData) {
+    return stringParsing.countCamelCaseWords(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainAcronym, function (inputData, inputMetaData) {
+    return stringParsing.doesStringContainAcronym(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.ccountDelimiterInString, function (inputData, inputMetaData) {
+    return stringParsing.countDelimiterInString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdetermineWordDelimiter, function (inputData, inputMetaData) {
+    return stringParsing.determineWordDelimiter(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetWordCountInString, function (inputData, inputMetaData) {
+    return stringParsing.getWordCountInString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetWordsArrayFromString, function (inputData, inputMetaData) {
+    return stringParsing.getWordsArrayFromString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.crecombineStringArrayWithSpaces, function (inputData, inputMetaData) {
+    return stringParsing.recombineStringArrayWithSpaces(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainUpperCaseCharacter, function (inputData, inputMetaData) {
     return stringParsing.doesStringContainUpperCaseCharacter(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainLowerCaseCharacter, function (inputData, inputMetaData) {

@@ -2380,6 +2380,34 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cconvertCamelCaseStringToArray,
   Expected: 'convertCamelCaseStringToArray'
 }, {
+  Name: 'ccountCamelCaseWords',
+  Actual: s.ccountCamelCaseWords,
+  Expected: 'countCamelCaseWords'
+}, {
+  Name: 'cdoesStringContainAcronym',
+  Actual: s.cdoesStringContainAcronym,
+  Expected: 'doesStringContainAcronym'
+}, {
+  Name: 'ccountDelimiterInString',
+  Actual: s.ccountDelimiterInString,
+  Expected: 'countDelimiterInString'
+}, {
+  Name: 'cdetermineWordDelimiter',
+  Actual: s.cdetermineWordDelimiter,
+  Expected: 'determineWordDelimiter'
+}, {
+  Name: 'cgetWordCountInString',
+  Actual: s.cgetWordCountInString,
+  Expected: 'getWordCountInString'
+}, {
+  Name: 'cgetWordsArrayFromString',
+  Actual: s.cgetWordsArrayFromString,
+  Expected: 'getWordsArrayFromString'
+}, {
+  Name: 'crecombineStringArrayWithSpaces',
+  Actual: s.crecombineStringArrayWithSpaces,
+  Expected: 'recombineStringArrayWithSpaces'
+}, {
   Name: 'cdoesStringContainUpperCaseCharacter',
   Actual: s.cdoesStringContainUpperCaseCharacter,
   Expected: 'doesStringContainUpperCaseCharacter'
@@ -2587,6 +2615,14 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cconstantsGenerator',
   Actual: s.cconstantsGenerator,
   Expected: 'constantsGenerator'
+}, {
+  Name: 'cconstantsGeneratorList',
+  Actual: s.cconstantsGeneratorList,
+  Expected: 'constantsGeneratorList'
+}, {
+  Name: 'cconstantsPatternRecognizer',
+  Actual: s.cconstantsPatternRecognizer,
+  Expected: 'constantsPatternRecognizer'
 }, {
   Name: 'cgetAttributeName',
   Actual: s.cgetAttributeName,

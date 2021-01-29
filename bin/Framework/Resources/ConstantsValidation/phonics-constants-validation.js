@@ -719,6 +719,14 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cTri,
   Expected: 'Tri'
 }, {
+  Name: 'crec',
+  Actual: p.crec,
+  Expected: 'rec'
+}, {
+  Name: 'cRec',
+  Actual: p.cRec,
+  Expected: 'Rec'
+}, {
   Name: 'crect',
   Actual: p.crect,
   Expected: 'rect'
@@ -1677,5 +1685,29 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cized',
   Actual: p.cized,
   Expected: 'ized'
+}, {
+  Name: 'come',
+  Actual: p.come,
+  Expected: 'ome'
+}, {
+  Name: 'clus',
+  Actual: p.clus,
+  Expected: 'lus'
+}, {
+  Name: 'clon',
+  Actual: p.clon,
+  Expected: 'lon'
+}, {
+  Name: 'cizer',
+  Actual: p.cizer,
+  Expected: 'izer'
+}, {
+  Name: 'cern',
+  Actual: p.cern,
+  Expected: 'ern'
+}, {
+  Name: 'comb',
+  Actual: p.comb,
+  Expected: 'omb'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

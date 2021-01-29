@@ -1320,17 +1320,33 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cReplace,
   Expected: 'Replace'
 }, {
+  Name: 'cspace',
+  Actual: w.cspace,
+  Expected: 'space'
+}, {
   Name: 'cSpace',
   Actual: w.cSpace,
   Expected: 'Space'
+}, {
+  Name: 'cspaces',
+  Actual: w.cspaces,
+  Expected: 'spaces'
 }, {
   Name: 'cSpaces',
   Actual: w.cSpaces,
   Expected: 'Spaces'
 }, {
+  Name: 'cplus',
+  Actual: w.cplus,
+  Expected: 'plus'
+}, {
   Name: 'cPlus',
   Actual: w.cPlus,
   Expected: 'Plus'
+}, {
+  Name: 'ccolon',
+  Actual: w.ccolon,
+  Expected: 'colon'
 }, {
   Name: 'cColon',
   Actual: w.cColon,
@@ -4139,5 +4155,69 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cOptimized',
   Actual: w.cOptimized,
   Expected: 'Optimized'
+}, {
+  Name: 'csome',
+  Actual: w.csome,
+  Expected: 'some'
+}, {
+  Name: 'cSome',
+  Actual: w.cSome,
+  Expected: 'Some'
+}, {
+  Name: 'ccomb',
+  Actual: w.ccomb,
+  Expected: 'comb'
+}, {
+  Name: 'cComb',
+  Actual: w.cComb,
+  Expected: 'Comb'
+}, {
+  Name: 'ccombine',
+  Actual: w.ccombine,
+  Expected: 'combine'
+}, {
+  Name: 'cCombine',
+  Actual: w.cCombine,
+  Expected: 'Combine'
+}, {
+  Name: 'crecombine',
+  Actual: w.crecombine,
+  Expected: 'recombine'
+}, {
+  Name: 'cRecombine',
+  Actual: w.cRecombine,
+  Expected: 'Recombine'
+}, {
+  Name: 'crecognizer',
+  Actual: w.crecognizer,
+  Expected: 'recognizer'
+}, {
+  Name: 'cRecognizer',
+  Actual: w.cRecognizer,
+  Expected: 'Recognizer'
+}, {
+  Name: 'cpat',
+  Actual: w.cpat,
+  Expected: 'pat'
+}, {
+  Name: 'cPat',
+  Actual: w.cPat,
+  Expected: 'Pat'
+}, {
+  Name: 'cpatt',
+  Actual: w.cpatt,
+  Expected: 'patt'
+}, {
+  Name: 'cPatt',
+  Actual: w.cPatt,
+  Expected: 'Patt'
+}, {
+  Name: 'cpattern',
+  Actual: w.cpattern,
+  Expected: 'pattern'
+}, {
+  Name: 'cPattern',
+  Actual: w.cPattern,
+  Expected: 'Pattern'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

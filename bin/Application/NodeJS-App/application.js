@@ -122,7 +122,11 @@ function application() {
 
   argumentDrivenInterface = _warden["default"].getConfigurationSetting(s.cArgumentDrivenInterface);
 
-  _warden["default"].enqueueCommand(s.cStartupWorkflow); // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
+  _warden["default"].enqueueCommand(s.cStartupWorkflow);
+
+  console.log('w.cRecognizer resolves as: ' + w.cRecognizer);
+  console.log('w.cPattern resolves as: ' + w.cPattern);
+  console.log('s.cconstantsPatternRecognizer resolves as: ' + s.cconstantsPatternRecognizer); // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
   //
   // console.log('argument driven execution');
@@ -130,7 +134,6 @@ function application() {
   // console.log('command to execute is: ' + process.argv[2]);
   // We need to strip off the preceeding "--" before we try to process it as an actual command.
   // Also need to make sure that the command to execute actually contains the "--".
-
 
   var commandToExecute = ''; // Make sure we execute any and all commands so the command queue is empty before
   // we process the command args and add more commands to the command queue.

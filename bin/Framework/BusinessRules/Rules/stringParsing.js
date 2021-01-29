@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.recombineStringArrayWithSpaces = exports.getWordsArrayFromString = exports.getWordCountInString = exports.determineWordDelimiter = exports.countDelimiterInString = exports.doesStringContainAcronym = exports.countCamelCaseWords = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -1226,6 +1226,324 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
   return returnData;
 };
 /**
+ * @function countCamelCaseWords
+ * @description Takes a string in camelCase and returns the number of words that it contains based on camel case rules.
+ * @param {string} inputData String to count words from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The number of camel case words found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ * @NOTE Might not work so well with numbers as part of the string, they are not treated as capital letters.
+ * We might need to do some refactoring of this function if
+ * mixed numbers and camel case strings ever becomes a requirement as input to this function.
+ * @NOTE Based on the above implementation for the business rule/function convertCamelCaseStringToArray
+ */
+
+
+exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
+
+var countCamelCaseWords = function countCamelCaseWords(inputData, inputMetaData) {
+  var functionName = s.ccountCamelCaseWords;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+  var caps = [];
+
+  for (var i = 1; i < inputData.length; i++) {
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      caps.push(i);
+    }
+  }
+
+  returnData = caps.length;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function doesStringContainAcronym
+ * @description Scans a string and determines if there are 2 or more immediately adjacent upper-case characters in the string.
+ * Example: nodeJS where JS is an acronym for JavaScript.
+ * @param {string} inputData The string that should be scanned to determine if it contains an acronym.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input string contains an acronym.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.countCamelCaseWords = countCamelCaseWords;
+
+var doesStringContainAcronym = function doesStringContainAcronym(inputData, inputMetaData) {
+  var functionName = s.cdoesStringContainAcronym;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+  var lastCharacterWasUpperCase = false;
+  var caps = [];
+
+  for (var i = 1; i < inputData.length; i++) {
+    // If the last character was upper case and the current character is upper case then we have found an acronym and we can exit the loop.
+    if (lastCharacterWasUpperCase === true && g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      returnData = true;
+      break;
+    }
+
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      lastCharacterWasUpperCase = true;
+    } else {
+      lastCharacterWasUpperCase = false;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function countDelimiterInString
+ * @description Takes a string and returns the number of specified delimiters it contains.
+ * @param {string} inputData String to count delimiters from.
+ * @param {string} inputMetaData The delimiter that should be used when counting from the input string.
+ * @return {integer} The number of delimiters found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ * @NOTE: https://stackoverflow.com/questions/35849174/count-spaces-in-a-string
+ */
+
+
+exports.doesStringContainAcronym = doesStringContainAcronym;
+
+var countDelimiterInString = function countDelimiterInString(inputData, inputMetaData) {
+  var functionName = s.ccountDelimiterInString;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = inputData.split(inputMetaData).length - 1;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function determineWordDelimiter
+ * @description Determines what delimiter should be used to break a string up into words if possible.
+ * @param {string} inputData The string that should be examined to determine what delimiter should be used to break it up into words.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The delimiter that should be used, or if camelCase then the function will return the string "CamelCase".
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.countDelimiterInString = countDelimiterInString;
+
+var determineWordDelimiter = function determineWordDelimiter(inputData, inputMetaData) {
+  var functionName = s.cdetermineWordDelimiter;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+  var camelCaseWordCount = countCamelCaseWords(inputData, '');
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseWordCount is: ' + camelCaseWordCount);
+
+  var containsAcronym = doesStringContainAcronym(inputData, '');
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'containsAcronym is: ' + containsAcronym);
+
+  var spacesCount = countDelimiterInString(inputData, b.cSpace);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'spacesCount is: ' + spacesCount);
+
+  var periodCount = countDelimiterInString(inputData, b.cDot);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'periodCount is: ' + periodCount);
+
+  var dashCount = countDelimiterInString(inputData, b.cDash);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dashCount is: ' + dashCount);
+
+  var underscoreCount = countDelimiterInString(inputData, b.cUnderscore);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'underscoreCount is: ' + underscoreCount);
+
+  if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
+    returnData = s.cCamelCase; // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
+    // We could have multiple acronyms in a word, or in multiple words that are camelCase.
+    // Each of these could be a really complex special case. If we get to that point we will handle those cases on a case by case basis to improve the algorithm.
+    // } else if (camelCaseWordCount > 1 && containsAcronym === false)
+  } else if (spacesCount > 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
+    returnData = b.cSpace;
+  } else if (spacesCount === 0 && periodCount > 0 && dashCount === 0 && underscoreCount === 0) {
+    returnData = b.cDot;
+  } else if (spacesCount === 0 && periodCount === 0 && dashCount > 0 && underscoreCount === 0) {
+    returnData = b.cDash;
+  } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount > 0) {
+    returnData = b.cUnderscore;
+  } else {
+    // We don't need to be showing this warning unless we are debugging.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getWordCountInString
+ * @description Gets the number of words in a string, it expects words to be delimited by either camel-case, spaces, period, dash or underscore.
+ * @param {string} inputData The string that words should be counted from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The number of words that were found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.determineWordDelimiter = determineWordDelimiter;
+
+var getWordCountInString = function getWordCountInString(inputData, inputMetaData) {
+  var functionName = s.cgetWordCountInString;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = 0;
+  var wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
+
+  if (wordDelimiter === s.cCamelCase) {
+    returnData = countCamelCaseWords(inputData, '');
+  } else if (wordDelimiter != '') {
+    returnData = inputData.split(wordDelimiter).length;
+  } else {
+    // We don't need to be showing this warning unless we are debugging.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine how words are delimited in the string. Unable to count words.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getWordsArrayFromString
+ * @description Gets an array of words from a string,
+ * automatically determining how the words are delimited based on common word delimiters: camel case, space, period, dash & underscore.
+ * @param {string} inputData The string that should be broken down into words and returned as an array.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array<string>} The array of words found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.getWordCountInString = getWordCountInString;
+
+var getWordsArrayFromString = function getWordsArrayFromString(inputData, inputMetaData) {
+  var functionName = s.cgetWordsArrayFromString;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = 0;
+
+  if (getWordCountInString(inputData, '') > 0) {
+    var wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
+    var stringContainsAcronym = doesStringContainAcronym(inputData, '');
+
+    if (wordDelimiter === s.cCamelCase && stringContainsAcronym === false) {
+      returnData = convertCamelCaseStringToArray(inputData, '');
+    } else if (wordDelimiter != '' && wordDelimiter != s.cCamelCase) {
+      returnData = inputData.split(wordDelimiter);
+    } else {
+      // We don't need to be showing this warning unless we are debugging.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot get words from the string. Unable to determine words.');
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function recombineStringArrayWithSpaces
+ * @description Takes an array of strings and recombines them sequentially with spaces between each array element.
+ * This function is needed, because commands parse inputs by spaces into an array,
+ * and some commands need a single continuous string that might be delimited by coma's.
+ * So this function lets us recombine and then re-parse the string with another delimiter.
+ * @param {array<string>} inputData The array of strings that should be recombined.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The string array with spaces between array elements.
+ * @author Seth Hollingsead
+ * @date 2021/01/29
+ */
+
+
+exports.getWordsArrayFromString = getWordsArrayFromString;
+
+var recombineStringArrayWithSpaces = function recombineStringArrayWithSpaces(inputData, inputMetaData) {
+  var functionName = s.crecombineStringArrayWithSpaces;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    returnData = inputData[1];
+
+    for (var i = 2; i < inputData.length; i++) {
+      returnData = returnData + b.cSpace + inputData[i];
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function doesStringContainUpperCaseCharacter
  * @description Determines if the input string contains at least one upper case character.
  * @param {string} inputData The string that should be checked for upper case characters.
@@ -1236,7 +1554,7 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
  */
 
 
-exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
+exports.recombineStringArrayWithSpaces = recombineStringArrayWithSpaces;
 
 var doesStringContainUpperCaseCharacter = function doesStringContainUpperCaseCharacter(inputData, inputMetaData) {
   var functionName = s.cdoesStringContainUpperCaseCharacter;
@@ -1460,9 +1778,9 @@ var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
     // 1. Does not contain underscore or dash word seperators.
     // 2. Contains at least 1 lower case letter or more.
     // 3. Contains at least 1 upper case letter or more.
-    // 4. Has a lower case first letter of the first word.
+    // 4. Has a lower case or upper case first letter of the first word.
 
-    if (!inputData.match(/[\s_-]/g) && doesStringContainUpperCaseCharacter(inputData, '') && doesStringContainLowerCaseCharacter(inputData, '') && isFirstCharacterLowerCase(inputData, '')) {
+    if (!inputData.match(/[\s_-]/g) && doesStringContainUpperCaseCharacter(inputData, '') && doesStringContainLowerCaseCharacter(inputData, '') && (isFirstCharacterLowerCase(inputData, '') || isFirstCharacterUpperCase(inputData, ''))) {
       for (var i = 1; i < inputData.length; i++) {
         // Now check for the final qualification:
         // 3. Ensure that upper case letters are seperated by lower case letters
@@ -1482,7 +1800,8 @@ var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
         }
       } // End of the for-loop iterating over the characters in the string.
 
-    }
+    } // End-if conditions on upperCase & lowerCase.
+
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
