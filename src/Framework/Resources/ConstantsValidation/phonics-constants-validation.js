@@ -191,6 +191,8 @@ export const phonicsConstantsValidation = [
    {Name: 'cgle', Actual: p.cgle, Expected: 'gle'},
    {Name: 'ctri', Actual: p.ctri, Expected: 'tri'},
    {Name: 'cTri', Actual: p.cTri, Expected: 'Tri'},
+   {Name: 'crec', Actual: p.crec, Expected: 'rec'},
+   {Name: 'cRec', Actual: p.cRec, Expected: 'Rec'},
    {Name: 'crect', Actual: p.crect, Expected: 'rect'},
    {Name: 'cRect', Actual: p.cRect, Expected: 'Rect'},
    {Name: 'coct', Actual: p.coct, Expected: 'oct'},
@@ -429,5 +431,11 @@ export const phonicsConstantsValidation = [
    {Name: 'cuto', Actual: p.cuto, Expected: 'uto'},
    {Name: 'copt', Actual: p.copt, Expected: 'opt'},
    {Name: 'cOpt', Actual: p.cOpt, Expected: 'Opt'},
-   {Name: 'cized', Actual: p.cized, Expected: 'ized'}
+   {Name: 'cized', Actual: p.cized, Expected: 'ized'},
+   {Name: 'come', Actual: p.come, Expected: 'ome'},
+   {Name: 'clus', Actual: p.clus, Expected: 'lus'},
+   {Name: 'clon', Actual: p.clon, Expected: 'lon'},
+   {Name: 'cizer', Actual: p.cizer, Expected: 'izer'},
+   {Name: 'cern', Actual: p.cern, Expected: 'ern'},
+   {Name: 'comb', Actual: p.comb, Expected: 'omb'}
  ];

@@ -795,7 +795,7 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
  * @description Requests a string input the user would like to have converted into a constant,
  * while determining the most optimized way to define the new constant based on existing constants.
  * Also checks to see if that new constant is already defined in the constants system.
- * @param {string} inputData Not used for this business rule.
+ * @param {string} inputData Parameterized constant to generate for.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -813,21 +813,35 @@ export const constantsGenerator = function(inputData, inputMetaData) {
   let doesConstantExistRule = [];
   let getConstantTypeRule = [];
   let constantsFulfillmentSystemRule = [];
+  let wordsCountRule = [];
+  let wordsArrayRule = [];
+  let recombineArrayInputRule = [];
   validConstantRule[0] = s.cisConstantValid;
   doesConstantExistRule[0] = s.cdoesConstantExist;
   getConstantTypeRule[0] = s.cgetConstantType;
   constantsFulfillmentSystemRule[0] = s.cconstantsFulfillmentSystem;
+  wordsCountRule[0] = s.cgetWordCountInString;
+  wordsArrayRule[0] = s.cgetWordsArrayFromString;
+  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
 
-  while(validEntry === false) {
-    console.log(s.cConstantPrompt1);
-    console.log(s.cConstantPrompt2);
-    console.log(s.cConstantPrompt3);
-    userDefinedConstant = prompt(b.cGreaterThan);
-    validEntry = ruleBroker.processRules(userDefinedConstant, '', validConstantRule);
-    if (validEntry === false) {
-      console.log('INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.');
+  if (inputData.length === 0) {
+    while(validEntry === false) {
+      console.log(s.cConstantPrompt1);
+      console.log(s.cConstantPrompt2);
+      console.log(s.cConstantPrompt3);
+      userDefinedConstant = prompt(b.cGreaterThan);
+      validEntry = ruleBroker.processRules(userDefinedConstant, '', validConstantRule);
+      if (validEntry === false) {
+        console.log('INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.');
+      }
     }
+  } else if (inputData.length === 2) {
+    userDefinedConstant = inputData[1];
+  } else {
+    // We need to recombine all of the array elements after the 0-th element into a single string with spaces inbetween.
+    userDefinedConstant = ruleBroker.processRules(inputData, '', recombineArrayInputRule);
   }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstant is: ' + userDefinedConstant);
 
   // First lets check if the constant is already defined, so we can warn the user.
   // NOTE: It could be that the developer is just looking to optimize the existing constant,
@@ -837,9 +851,88 @@ export const constantsGenerator = function(inputData, inputMetaData) {
     let constantType = ruleBroker.processRules(userDefinedConstant, '', getConstantTypeRule);
     console.log('WARNING: The constant has already been defined in the following library(ies): ' + constantType);
   }
-
+  userDefinedConstant = userDefinedConstant.trim();
+  let wordCount = ruleBroker.processRules(userDefinedConstant, '', wordsCountRule);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'wordCount is: ' + wordCount);
   // Now begin the fulfillment algorithm.
-  console.log('Optimized constant definition is: ' + ruleBroker.processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
+  if (wordCount > 1) {
+    let wordsArray = ruleBroker.processRules(userDefinedConstant, '', wordsArrayRule);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'wordsArray is: ' + JSON.stringify(wordsArray));
+    for(let j = 0; j < wordsArray.length; j++) {
+      console.log('Optimized constant definition for word: ' + b.cc + wordsArray[j] + b.cSpace + b.cEqual + b.cSpace +
+      ruleBroker.processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
+    }
+  } else {
+    console.log(b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace + ruleBroker.processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function constantsGeneratorList
+ * @description Calls the constantsGenerator command to iterate over a list of constants and generate many constants sequentially.
+ * @NOTE This function will also walk the list and determine if there are any common strings
+ * internal to the list that could be defined as new constants to help with the optimization process.
+ * @NOTE Testing string: constGenL somethingXML,whatever that is,A basic NodeJS template App,that can easily
+ * @param {string} inputData Parameterized coma delimited list of constants to be auto-generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/27
+ */
+export const constantsGeneratorList = function(inputData, inputMetaData) {
+  let functionName = s.cconstantsGeneratorList;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  let recombineArrayInputRule = [];
+  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
+  // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
+  // The array elements will then be used to enqueue the command constantsGenerator.
+  let userDefinedConstantList = ruleBroker.processRules(inputData, '', recombineArrayInputRule);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList is: ' + userDefinedConstantList);
+  if (userDefinedConstantList.includes(b.cComa) === true) {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList contains comas');
+    let userDefinedConstantsListArray = userDefinedConstantList.split(b.cComa);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantsListArray is: ' + JSON.stringify(userDefinedConstantsListArray));
+    if (userDefinedConstantsListArray.length > 1) {
+      for (let i = 0; i < userDefinedConstantsListArray.length; i++) {
+        queue.enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantsListArray[i].trim());
+      }
+    } else if (userDefinedConstantsListArray.length === 1) {
+      // Just enqueue the constants Generator command with the input directly.
+      queue.enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantsListArray[0].trim());
+    }
+  } else {
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList DOES NOT contains comas');
+    // Just enqueue the constants Generator command with the input directly.
+    queue.enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantList.trim());
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function constantsPatternRecognizer
+ * @description Walks through a list of constants looking for patterns internal to the strings.
+ * @param {string} inputData Parameterized coma delimited list of constants to be
+ * passed through pattern recognition to find common strings among them.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/01/29
+ */
+export const constantsPatternRecognizer = function(inputData, inputMetaData) {
+  let functionName = s.cconstantsPatternRecognizer;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

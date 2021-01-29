@@ -87,6 +87,10 @@ function application() {
   argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
   warden.enqueueCommand(s.cStartupWorkflow);
 
+  console.log('w.cRecognizer resolves as: ' + w.cRecognizer);
+  console.log('w.cPattern resolves as: ' + w.cPattern);
+  console.log('s.cconstantsPatternRecognizer resolves as: ' + s.cconstantsPatternRecognizer);
+
   // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
   //
