@@ -1028,6 +1028,7 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
   var commandWordAliasList = '';
   var validCommandName = false;
   var validCommandWordAliasList = false;
+  var validCommandInput = false;
   var commandAliasDataStructure = {};
   var commandNameParsingRule = [];
   var camelCaseToArrayRule = [];
@@ -1037,59 +1038,78 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
   camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
   commandWordAliasListParsingRule[0] = s.cisStringList;
   generateCommandAliasesRule[0] = s.cgenerateCommandAliases;
+  console.log('Command can be called by passing parameters and bypass the prompt system.');
+  console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
 
-  while (validCommandName === false) {
-    console.log(s.cCommandNamePrompt1);
-    console.log(s.cCommandNamePrompt2);
-    console.log(s.cCommandNamePrompt3);
-    console.log(s.cCommandNamePrompt4);
-    console.log(s.cCommandNamePrompt5);
-    commandName = prompt(b.cGreaterThan);
-    validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
+  if (inputData.length === 0) {
+    while (validCommandName === false) {
+      console.log(s.cCommandNamePrompt1);
+      console.log(s.cCommandNamePrompt2);
+      console.log(s.cCommandNamePrompt3);
+      console.log(s.cCommandNamePrompt4);
+      console.log(s.cCommandNamePrompt5);
+      commandName = prompt(b.cGreaterThan);
+      validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
 
-    if (validCommandName === false) {
-      console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+      if (validCommandName === false) {
+        console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+      }
     }
+
+    var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
+
+    for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
+      var commandWord = camelCaseCommandNameArray[i];
+      console.log('current commandWord is: ' + commandWord);
+      validCommandWordAliasList = false;
+
+      if (commandWord != '') {
+        commandAliasDataStructure[commandWord] = {};
+
+        while (validCommandWordAliasList === false) {
+          console.log(s.cCommandWordAliasPrompt1);
+          console.log(s.cCommandWordAliasPrompt2);
+          console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
+          commandWordAliasList = prompt(b.cGreaterThan);
+          validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
+
+          if (validCommandWordAliasList === false) {
+            console.log('INVALID INPUT: Please enter a valid command word alias list.');
+          } else if (commandWordAliasList != '') {
+            // As long as the user entered something we should be able to proceed!
+            validCommandWordAliasList = true;
+          }
+        } // End while-loop: validCommandWordAliasList
+
+
+        commandAliasDataStructure[commandWord] = commandWordAliasList;
+        validCommandInput = true;
+      }
+    }
+  } else if (inputData.length === 2) {
+    try {
+      commandAliasDataStructure = JSON.parse(inputData[1]);
+      validCommandInput = true;
+    } catch (e) {
+      console.log('PARSER ERROR: ' + e.message);
+      console.log('INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.');
+      console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
+    }
+  } else {
+    console.log('INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.');
+    console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
   }
 
-  var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
-
-  for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
-    var commandWord = camelCaseCommandNameArray[i];
-    console.log('current commandWord is: ' + commandWord);
-    validCommandWordAliasList = false;
-
-    if (commandWord != '') {
-      commandAliasDataStructure[commandWord] = {};
-
-      while (validCommandWordAliasList === false) {
-        console.log(s.cCommandWordAliasPrompt1);
-        console.log(s.cCommandWordAliasPrompt2);
-        console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
-        commandWordAliasList = prompt(b.cGreaterThan);
-        validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
-
-        if (validCommandWordAliasList === false) {
-          console.log('INVALID INPUT: Please enter a valid command word alias list.');
-        } else if (commandWordAliasList != '') {
-          // As long as the user entered something we should be able to proceed!
-          validCommandWordAliasList = true;
-        }
-      } // End while-loop: validCommandWordAliasList
+  if (validCommandInput === true) {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
+    // TODO: Start generating all the possible combinations of the command words and command word aliases.
+    // Pass the data object to a business rule to do the above task.
 
 
-      commandAliasDataStructure[commandWord] = commandWordAliasList;
-    }
+    var commandAliases = _ruleBroker["default"].processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
   }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
-  // TODO: Start generating all the possible combinations of the command words and command word aliases.
-  // Pass the data object to a business rule to do the above task.
-
-
-  var commandAliases = _ruleBroker["default"].processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
