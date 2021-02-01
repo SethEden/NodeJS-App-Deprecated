@@ -259,10 +259,18 @@ export const systemConstantsValidation = [
    {Name: 'cCommandNamePrompt3', Actual: s.cCommandNamePrompt3, Expected: 'lower case letter and all other '},
    {Name: 'cCommandNamePrompt4', Actual: s.cCommandNamePrompt4, Expected: 'words in the named command start '},
    {Name: 'cCommandNamePrompt5', Actual: s.cCommandNamePrompt5, Expected: 'with an upper case letter:'},
-
    {Name: 'cCommandWordAliasPrompt1', Actual: s.cCommandWordAliasPrompt1, Expected: 'Please enter a list of command '},
    {Name: 'cCommandWordAliasPrompt2', Actual: s.cCommandWordAliasPrompt2, Expected: 'word abreviations/acronyms/aliases '},
    {Name: 'cCommandWordAliasPrompt3', Actual: s.cCommandWordAliasPrompt3, Expected: 'for the command word:'},
+   {Name: 'cConstantPrompt1', Actual: s.cConstantPrompt1, Expected: 'Please enter a string you would '},
+   {Name: 'cConstantPrompt2', Actual: s.cConstantPrompt2, Expected: 'like to define as a constant '},
+   {Name: 'cConstantPrompt3', Actual: s.cConstantPrompt3, Expected: 'in the constants system:'},
+   {Name: 'cConstantsListPrompt1', Actual: s.cConstantsListPrompt1, Expected: 'Please enter a coma separated list of '},
+   {Name: 'cConstantsListPrompt2', Actual: s.cConstantsListPrompt2, Expected: 'strings you would like to define in '},
+   {Name: 'cConstantsListPrompt3', Actual: s.cConstantsListPrompt3, Expected: 'the constants system:'},
+   {Name: 'cConstantsListPatternSearchPrompt1', Actual: s.cConstantsListPatternSearchPrompt1, Expected: 'Please enter a coma separated list of '},
+   {Name: 'cConstantsListPatternSearchPrompt2', Actual: s.cConstantsListPatternSearchPrompt2, Expected: 'strings you would like to search for '},
+   {Name: 'cConstantsListPatternSearchPrompt3', Actual: s.cConstantsListPatternSearchPrompt3, Expected: 'common patterns:'},
 
    // File Types
    {Name: 'cCatia', Actual: s.cCatia, Expected: 'Catia'},
@@ -662,6 +670,13 @@ export const systemConstantsValidation = [
    {Name: 'cgetValueFromAssignmentOperationString', Actual: s.cgetValueFromAssignmentOperationString, Expected: 'getValueFromAssignmentOperationString'},
    {Name: 'caggregateNumericalDifferenceBetweenTwoStrings', Actual: s.caggregateNumericalDifferenceBetweenTwoStrings, Expected: 'aggregateNumericalDifferenceBetweenTwoStrings'},
    {Name: 'cconvertCamelCaseStringToArray', Actual: s.cconvertCamelCaseStringToArray, Expected: 'convertCamelCaseStringToArray'},
+   {Name: 'ccountCamelCaseWords', Actual: s.ccountCamelCaseWords, Expected: 'countCamelCaseWords'},
+   {Name: 'cdoesStringContainAcronym', Actual: s.cdoesStringContainAcronym, Expected: 'doesStringContainAcronym'},
+   {Name: 'ccountDelimiterInString', Actual: s.ccountDelimiterInString, Expected: 'countDelimiterInString'},
+   {Name: 'cdetermineWordDelimiter', Actual: s.cdetermineWordDelimiter, Expected: 'determineWordDelimiter'},
+   {Name: 'cgetWordCountInString', Actual: s.cgetWordCountInString, Expected: 'getWordCountInString'},
+   {Name: 'cgetWordsArrayFromString', Actual: s.cgetWordsArrayFromString, Expected: 'getWordsArrayFromString'},
+   {Name: 'crecombineStringArrayWithSpaces', Actual: s.crecombineStringArrayWithSpaces, Expected: 'recombineStringArrayWithSpaces'},
    {Name: 'cdoesStringContainUpperCaseCharacter', Actual: s.cdoesStringContainUpperCaseCharacter, Expected: 'doesStringContainUpperCaseCharacter'},
    {Name: 'cdoesStringContainLowerCaseCharacter', Actual: s.cdoesStringContainLowerCaseCharacter, Expected: 'doesStringContainLowerCaseCharacter'},
    {Name: 'cisFirstCharacterLowerCase', Actual: s.cisFirstCharacterLowerCase, Expected: 'isFirstCharacterLowerCase'},
@@ -678,12 +693,25 @@ export const systemConstantsValidation = [
    {Name: 'cascertainMatchingFilenames', Actual: s.cascertainMatchingFilenames, Expected: 'ascertainMatchingFilenames'},
    {Name: 'cascertainMatchingElements', Actual: s.cascertainMatchingElements, Expected: 'ascertainMatchingElements'},
    {Name: 'cdoesArrayContainFilename', Actual: s.cdoesArrayContainFilename, Expected: 'doesArrayContainFilename'},
+   {Name: 'cgetLengthOfLongestStringInArray', Actual: s.cgetLengthOfLongestStringInArray, Expected: 'getLengthOfLongestStringInArray'},
    {Name: 'cvalidateConstantsDataValidation', Actual: s.cvalidateConstantsDataValidation, Expected: 'validateConstantsDataValidation'},
    {Name: 'cdetermineConstantsContextQualifiedPrefix', Actual: s.cdetermineConstantsContextQualifiedPrefix, Expected: 'determineConstantsContextQualifiedPrefix'},
    {Name: 'cdetermineSuggestedConstantsValidationLineOfCode', Actual: s.cdetermineSuggestedConstantsValidationLineOfCode, Expected: 'determineSuggestedConstantsValidationLineOfCode'},
    {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: s.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
+   {Name: 'cdoesConstantExist', Actual: s.cdoesConstantExist, Expected: 'doesConstantExist'},
+   {Name: 'cgetConstantType', Actual: s.cgetConstantType, Expected: 'getConstantType'},
+   {Name: 'cgetConstantActualValue', Actual: s.cgetConstantActualValue, Expected: 'getConstantActualValue'},
+   {Name: 'cgetConstantName', Actual: s.cgetConstantName, Expected: 'getConstantName'},
+   {Name: 'cfindConstantName', Actual: s.cfindConstantName, Expected: 'findConstantName'},
+   {Name: 'cisConstantTypeValid', Actual: s.cisConstantTypeValid, Expected: 'isConstantTypeValid'},
+   {Name: 'cconvertConstantTypeToConstantPrefix', Actual: s.cconvertConstantTypeToConstantPrefix, Expected: 'convertConstantTypeToConstantPrefix'},
+   {Name: 'cconstantsOptimizedFulfillmentSystem', Actual: s.cconstantsOptimizedFulfillmentSystem, Expected: 'constantsOptimizedFulfillmentSystem'},
+   {Name: 'cconstantsFulfillmentSystem', Actual: s.cconstantsFulfillmentSystem, Expected: 'constantsFulfillmentSystem'},
+   {Name: 'csearchForPatternsInStringArray', Actual: s.csearchForPatternsInStringArray, Expected: 'searchForPatternsInStringArray'},
+   {Name: 'cvalidatePatternsThatNeedImplementation', Actual: s.cvalidatePatternsThatNeedImplementation, Expected: 'validatePatternsThatNeedImplementation'},
    {Name: 'cvalidateConstantsDataValues', Actual: s.cvalidateConstantsDataValues, Expected: 'validateConstantsDataValues'},
    {Name: 'cisValidCommandNameString', Actual: s.cisValidCommandNameString, Expected: 'isValidCommandNameString'},
+   {Name: 'cisConstantValid', Actual: s.cisConstantValid, Expected: 'isConstantValid'},
    {Name: 'ccountDuplicateCommandAliases', Actual: s.ccountDuplicateCommandAliases, Expected: 'countDuplicateCommandAliases'},
    {Name: 'cgetDataCatagoryFromDataContextName', Actual: s.cgetDataCatagoryFromDataContextName, Expected: 'getDataCatagoryFromDataContextName'},
    {Name: 'cgetDataCatagoryDetailNameFromDataContextName', Actual: s.cgetDataCatagoryDetailNameFromDataContextName, Expected: 'getDataCatagoryDetailNameFromDataContextName'},
@@ -703,6 +731,9 @@ export const systemConstantsValidation = [
    {Name: 'cisObject', Actual: s.cisObject, Expected: 'isObject'},
    {Name: 'cisArrayOrObject', Actual: s.cisArrayOrObject, Expected: 'isArrayOrObject'},
    {Name: 'ccommandAliasGenerator', Actual: s.ccommandAliasGenerator, Expected: 'commandAliasGenerator'},
+   {Name: 'cconstantsGenerator', Actual: s.cconstantsGenerator, Expected: 'constantsGenerator'},
+   {Name: 'cconstantsGeneratorList', Actual: s.cconstantsGeneratorList, Expected: 'constantsGeneratorList'},
+   {Name: 'cconstantsPatternRecognizer', Actual: s.cconstantsPatternRecognizer, Expected: 'constantsPatternRecognizer'},
    {Name: 'cgetAttributeName', Actual: s.cgetAttributeName, Expected: 'getAttributeName'},
    {Name: 'cgetAttributeValue', Actual: s.cgetAttributeValue, Expected: 'getAttributeValue'},
    {Name: 'cisOdd', Actual: s.cisOdd, Expected: 'isOdd'},
@@ -849,7 +880,7 @@ export const systemConstantsValidation = [
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jan 22 2021 15:47:00 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jan 31 2021 21:10:43 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

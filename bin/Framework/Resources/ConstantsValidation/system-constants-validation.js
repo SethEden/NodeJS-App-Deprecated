@@ -859,6 +859,42 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cCommandWordAliasPrompt3',
   Actual: s.cCommandWordAliasPrompt3,
   Expected: 'for the command word:'
+}, {
+  Name: 'cConstantPrompt1',
+  Actual: s.cConstantPrompt1,
+  Expected: 'Please enter a string you would '
+}, {
+  Name: 'cConstantPrompt2',
+  Actual: s.cConstantPrompt2,
+  Expected: 'like to define as a constant '
+}, {
+  Name: 'cConstantPrompt3',
+  Actual: s.cConstantPrompt3,
+  Expected: 'in the constants system:'
+}, {
+  Name: 'cConstantsListPrompt1',
+  Actual: s.cConstantsListPrompt1,
+  Expected: 'Please enter a coma separated list of '
+}, {
+  Name: 'cConstantsListPrompt2',
+  Actual: s.cConstantsListPrompt2,
+  Expected: 'strings you would like to define in '
+}, {
+  Name: 'cConstantsListPrompt3',
+  Actual: s.cConstantsListPrompt3,
+  Expected: 'the constants system:'
+}, {
+  Name: 'cConstantsListPatternSearchPrompt1',
+  Actual: s.cConstantsListPatternSearchPrompt1,
+  Expected: 'Please enter a coma separated list of '
+}, {
+  Name: 'cConstantsListPatternSearchPrompt2',
+  Actual: s.cConstantsListPatternSearchPrompt2,
+  Expected: 'strings you would like to search for '
+}, {
+  Name: 'cConstantsListPatternSearchPrompt3',
+  Actual: s.cConstantsListPatternSearchPrompt3,
+  Expected: 'common patterns:'
 }, // File Types
 {
   Name: 'cCatia',
@@ -2368,6 +2404,34 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cconvertCamelCaseStringToArray,
   Expected: 'convertCamelCaseStringToArray'
 }, {
+  Name: 'ccountCamelCaseWords',
+  Actual: s.ccountCamelCaseWords,
+  Expected: 'countCamelCaseWords'
+}, {
+  Name: 'cdoesStringContainAcronym',
+  Actual: s.cdoesStringContainAcronym,
+  Expected: 'doesStringContainAcronym'
+}, {
+  Name: 'ccountDelimiterInString',
+  Actual: s.ccountDelimiterInString,
+  Expected: 'countDelimiterInString'
+}, {
+  Name: 'cdetermineWordDelimiter',
+  Actual: s.cdetermineWordDelimiter,
+  Expected: 'determineWordDelimiter'
+}, {
+  Name: 'cgetWordCountInString',
+  Actual: s.cgetWordCountInString,
+  Expected: 'getWordCountInString'
+}, {
+  Name: 'cgetWordsArrayFromString',
+  Actual: s.cgetWordsArrayFromString,
+  Expected: 'getWordsArrayFromString'
+}, {
+  Name: 'crecombineStringArrayWithSpaces',
+  Actual: s.crecombineStringArrayWithSpaces,
+  Expected: 'recombineStringArrayWithSpaces'
+}, {
   Name: 'cdoesStringContainUpperCaseCharacter',
   Actual: s.cdoesStringContainUpperCaseCharacter,
   Expected: 'doesStringContainUpperCaseCharacter'
@@ -2432,6 +2496,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cdoesArrayContainFilename,
   Expected: 'doesArrayContainFilename'
 }, {
+  Name: 'cgetLengthOfLongestStringInArray',
+  Actual: s.cgetLengthOfLongestStringInArray,
+  Expected: 'getLengthOfLongestStringInArray'
+}, {
   Name: 'cvalidateConstantsDataValidation',
   Actual: s.cvalidateConstantsDataValidation,
   Expected: 'validateConstantsDataValidation'
@@ -2448,6 +2516,50 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cvalidateConstantsDataValidationLineItemName,
   Expected: 'validateConstantsDataValidationLineItemName'
 }, {
+  Name: 'cdoesConstantExist',
+  Actual: s.cdoesConstantExist,
+  Expected: 'doesConstantExist'
+}, {
+  Name: 'cgetConstantType',
+  Actual: s.cgetConstantType,
+  Expected: 'getConstantType'
+}, {
+  Name: 'cgetConstantActualValue',
+  Actual: s.cgetConstantActualValue,
+  Expected: 'getConstantActualValue'
+}, {
+  Name: 'cgetConstantName',
+  Actual: s.cgetConstantName,
+  Expected: 'getConstantName'
+}, {
+  Name: 'cfindConstantName',
+  Actual: s.cfindConstantName,
+  Expected: 'findConstantName'
+}, {
+  Name: 'cisConstantTypeValid',
+  Actual: s.cisConstantTypeValid,
+  Expected: 'isConstantTypeValid'
+}, {
+  Name: 'cconvertConstantTypeToConstantPrefix',
+  Actual: s.cconvertConstantTypeToConstantPrefix,
+  Expected: 'convertConstantTypeToConstantPrefix'
+}, {
+  Name: 'cconstantsOptimizedFulfillmentSystem',
+  Actual: s.cconstantsOptimizedFulfillmentSystem,
+  Expected: 'constantsOptimizedFulfillmentSystem'
+}, {
+  Name: 'cconstantsFulfillmentSystem',
+  Actual: s.cconstantsFulfillmentSystem,
+  Expected: 'constantsFulfillmentSystem'
+}, {
+  Name: 'csearchForPatternsInStringArray',
+  Actual: s.csearchForPatternsInStringArray,
+  Expected: 'searchForPatternsInStringArray'
+}, {
+  Name: 'cvalidatePatternsThatNeedImplementation',
+  Actual: s.cvalidatePatternsThatNeedImplementation,
+  Expected: 'validatePatternsThatNeedImplementation'
+}, {
   Name: 'cvalidateConstantsDataValues',
   Actual: s.cvalidateConstantsDataValues,
   Expected: 'validateConstantsDataValues'
@@ -2455,6 +2567,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cisValidCommandNameString',
   Actual: s.cisValidCommandNameString,
   Expected: 'isValidCommandNameString'
+}, {
+  Name: 'cisConstantValid',
+  Actual: s.cisConstantValid,
+  Expected: 'isConstantValid'
 }, {
   Name: 'ccountDuplicateCommandAliases',
   Actual: s.ccountDuplicateCommandAliases,
@@ -2531,6 +2647,18 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'ccommandAliasGenerator',
   Actual: s.ccommandAliasGenerator,
   Expected: 'commandAliasGenerator'
+}, {
+  Name: 'cconstantsGenerator',
+  Actual: s.cconstantsGenerator,
+  Expected: 'constantsGenerator'
+}, {
+  Name: 'cconstantsGeneratorList',
+  Actual: s.cconstantsGeneratorList,
+  Expected: 'constantsGeneratorList'
+}, {
+  Name: 'cconstantsPatternRecognizer',
+  Actual: s.cconstantsPatternRecognizer,
+  Expected: 'constantsPatternRecognizer'
 }, {
   Name: 'cgetAttributeName',
   Actual: s.cgetAttributeName,

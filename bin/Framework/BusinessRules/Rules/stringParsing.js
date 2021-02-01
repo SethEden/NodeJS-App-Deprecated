@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.validatePatternsThatNeedImplementation = exports.searchForPatternsInStringArray = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.getLengthOfLongestStringInArray = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.recombineStringArrayWithSpaces = exports.getWordsArrayFromString = exports.getWordCountInString = exports.determineWordDelimiter = exports.countDelimiterInString = exports.doesStringContainAcronym = exports.countCamelCaseWords = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -30,6 +30,18 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 var lineByLine = require('n-readlines');
 
@@ -1226,6 +1238,324 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
   return returnData;
 };
 /**
+ * @function countCamelCaseWords
+ * @description Takes a string in camelCase and returns the number of words that it contains based on camel case rules.
+ * @param {string} inputData String to count words from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The number of camel case words found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ * @NOTE Might not work so well with numbers as part of the string, they are not treated as capital letters.
+ * We might need to do some refactoring of this function if
+ * mixed numbers and camel case strings ever becomes a requirement as input to this function.
+ * @NOTE Based on the above implementation for the business rule/function convertCamelCaseStringToArray
+ */
+
+
+exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
+
+var countCamelCaseWords = function countCamelCaseWords(inputData, inputMetaData) {
+  var functionName = s.ccountCamelCaseWords;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData;
+  var caps = [];
+
+  for (var i = 1; i < inputData.length; i++) {
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      caps.push(i);
+    }
+  }
+
+  returnData = caps.length;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function doesStringContainAcronym
+ * @description Scans a string and determines if there are 2 or more immediately adjacent upper-case characters in the string.
+ * Example: nodeJS where JS is an acronym for JavaScript.
+ * @param {string} inputData The string that should be scanned to determine if it contains an acronym.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the input string contains an acronym.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.countCamelCaseWords = countCamelCaseWords;
+
+var doesStringContainAcronym = function doesStringContainAcronym(inputData, inputMetaData) {
+  var functionName = s.cdoesStringContainAcronym;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+  var lastCharacterWasUpperCase = false;
+  var caps = [];
+
+  for (var i = 1; i < inputData.length; i++) {
+    // If the last character was upper case and the current character is upper case then we have found an acronym and we can exit the loop.
+    if (lastCharacterWasUpperCase === true && g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      returnData = true;
+      break;
+    }
+
+    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      lastCharacterWasUpperCase = true;
+    } else {
+      lastCharacterWasUpperCase = false;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function countDelimiterInString
+ * @description Takes a string and returns the number of specified delimiters it contains.
+ * @param {string} inputData String to count delimiters from.
+ * @param {string} inputMetaData The delimiter that should be used when counting from the input string.
+ * @return {integer} The number of delimiters found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ * @NOTE: https://stackoverflow.com/questions/35849174/count-spaces-in-a-string
+ */
+
+
+exports.doesStringContainAcronym = doesStringContainAcronym;
+
+var countDelimiterInString = function countDelimiterInString(inputData, inputMetaData) {
+  var functionName = s.ccountDelimiterInString;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = inputData.split(inputMetaData).length - 1;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function determineWordDelimiter
+ * @description Determines what delimiter should be used to break a string up into words if possible.
+ * @param {string} inputData The string that should be examined to determine what delimiter should be used to break it up into words.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The delimiter that should be used, or if camelCase then the function will return the string "CamelCase".
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.countDelimiterInString = countDelimiterInString;
+
+var determineWordDelimiter = function determineWordDelimiter(inputData, inputMetaData) {
+  var functionName = s.cdetermineWordDelimiter;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+  var camelCaseWordCount = countCamelCaseWords(inputData, '');
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseWordCount is: ' + camelCaseWordCount);
+
+  var containsAcronym = doesStringContainAcronym(inputData, '');
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'containsAcronym is: ' + containsAcronym);
+
+  var spacesCount = countDelimiterInString(inputData, b.cSpace);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'spacesCount is: ' + spacesCount);
+
+  var periodCount = countDelimiterInString(inputData, b.cDot);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'periodCount is: ' + periodCount);
+
+  var dashCount = countDelimiterInString(inputData, b.cDash);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dashCount is: ' + dashCount);
+
+  var underscoreCount = countDelimiterInString(inputData, b.cUnderscore);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'underscoreCount is: ' + underscoreCount);
+
+  if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
+    returnData = s.cCamelCase; // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
+    // We could have multiple acronyms in a word, or in multiple words that are camelCase.
+    // Each of these could be a really complex special case. If we get to that point we will handle those cases on a case by case basis to improve the algorithm.
+    // } else if (camelCaseWordCount > 1 && containsAcronym === false)
+  } else if (spacesCount > 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
+    returnData = b.cSpace;
+  } else if (spacesCount === 0 && periodCount > 0 && dashCount === 0 && underscoreCount === 0) {
+    returnData = b.cDot;
+  } else if (spacesCount === 0 && periodCount === 0 && dashCount > 0 && underscoreCount === 0) {
+    returnData = b.cDash;
+  } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount > 0) {
+    returnData = b.cUnderscore;
+  } else {
+    // We don't need to be showing this warning unless we are debugging.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getWordCountInString
+ * @description Gets the number of words in a string, it expects words to be delimited by either camel-case, spaces, period, dash or underscore.
+ * @param {string} inputData The string that words should be counted from.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The number of words that were found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.determineWordDelimiter = determineWordDelimiter;
+
+var getWordCountInString = function getWordCountInString(inputData, inputMetaData) {
+  var functionName = s.cgetWordCountInString;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = 0;
+  var wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
+
+  if (wordDelimiter === s.cCamelCase) {
+    returnData = countCamelCaseWords(inputData, '');
+  } else if (wordDelimiter != '') {
+    returnData = inputData.split(wordDelimiter).length;
+  } else {
+    // We don't need to be showing this warning unless we are debugging.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine how words are delimited in the string. Unable to count words.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getWordsArrayFromString
+ * @description Gets an array of words from a string,
+ * automatically determining how the words are delimited based on common word delimiters: camel case, space, period, dash & underscore.
+ * @param {string} inputData The string that should be broken down into words and returned as an array.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array<string>} The array of words found in the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/28
+ */
+
+
+exports.getWordCountInString = getWordCountInString;
+
+var getWordsArrayFromString = function getWordsArrayFromString(inputData, inputMetaData) {
+  var functionName = s.cgetWordsArrayFromString;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = 0;
+
+  if (getWordCountInString(inputData, '') > 0) {
+    var wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
+    var stringContainsAcronym = doesStringContainAcronym(inputData, '');
+
+    if (wordDelimiter === s.cCamelCase && stringContainsAcronym === false) {
+      returnData = convertCamelCaseStringToArray(inputData, '');
+    } else if (wordDelimiter != '' && wordDelimiter != s.cCamelCase) {
+      returnData = inputData.split(wordDelimiter);
+    } else {
+      // We don't need to be showing this warning unless we are debugging.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot get words from the string. Unable to determine words.');
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function recombineStringArrayWithSpaces
+ * @description Takes an array of strings and recombines them sequentially with spaces between each array element.
+ * This function is needed, because commands parse inputs by spaces into an array,
+ * and some commands need a single continuous string that might be delimited by coma's.
+ * So this function lets us recombine and then re-parse the string with another delimiter.
+ * @param {array<string>} inputData The array of strings that should be recombined.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The string array with spaces between array elements.
+ * @author Seth Hollingsead
+ * @date 2021/01/29
+ */
+
+
+exports.getWordsArrayFromString = getWordsArrayFromString;
+
+var recombineStringArrayWithSpaces = function recombineStringArrayWithSpaces(inputData, inputMetaData) {
+  var functionName = s.crecombineStringArrayWithSpaces;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    returnData = inputData[1];
+
+    for (var i = 2; i < inputData.length; i++) {
+      returnData = returnData + b.cSpace + inputData[i];
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function doesStringContainUpperCaseCharacter
  * @description Determines if the input string contains at least one upper case character.
  * @param {string} inputData The string that should be checked for upper case characters.
@@ -1236,7 +1566,7 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
  */
 
 
-exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
+exports.recombineStringArrayWithSpaces = recombineStringArrayWithSpaces;
 
 var doesStringContainUpperCaseCharacter = function doesStringContainUpperCaseCharacter(inputData, inputMetaData) {
   var functionName = s.cdoesStringContainUpperCaseCharacter;
@@ -1460,9 +1790,9 @@ var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
     // 1. Does not contain underscore or dash word seperators.
     // 2. Contains at least 1 lower case letter or more.
     // 3. Contains at least 1 upper case letter or more.
-    // 4. Has a lower case first letter of the first word.
+    // 4. Has a lower case or upper case first letter of the first word.
 
-    if (!inputData.match(/[\s_-]/g) && doesStringContainUpperCaseCharacter(inputData, '') && doesStringContainLowerCaseCharacter(inputData, '') && isFirstCharacterLowerCase(inputData, '')) {
+    if (!inputData.match(/[\s_-]/g) && doesStringContainUpperCaseCharacter(inputData, '') && doesStringContainLowerCaseCharacter(inputData, '') && (isFirstCharacterLowerCase(inputData, '') || isFirstCharacterUpperCase(inputData, ''))) {
       for (var i = 1; i < inputData.length; i++) {
         // Now check for the final qualification:
         // 3. Ensure that upper case letters are seperated by lower case letters
@@ -1482,7 +1812,8 @@ var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
         }
       } // End of the for-loop iterating over the characters in the string.
 
-    }
+    } // End-if conditions on upperCase & lowerCase.
+
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1876,6 +2207,43 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
   return returnData;
 };
 /**
+ * @function getLengthOfLongestStringInArray
+ * @description Determines what the longest string is in an array of strings.
+ * @param {array<string>} inputData The array for which we should find the longest length string in.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The length of the longest string in the array.
+ * @author Seth Hollingsead
+ * @date 2021/01/30
+ * @NOTE https://stackoverflow.com/questions/6521245/finding-longest-string-in-array
+ */
+
+
+exports.doesArrayContainFilename = doesArrayContainFilename;
+
+var getLengthOfLongestStringInArray = function getLengthOfLongestStringInArray(inputData, inputMetaData) {
+  var functionName = s.cgetLengthOfLongestStringInArray;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = 0;
+
+  if (inputData) {
+    returnData = Math.max.apply(Math, _toConsumableArray(inputData.map(function (el) {
+      return el.length;
+    })));
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function validateConstantsDataValidation
  * @description Validates that validation data to ensure that all the contents of the
  * constants validation data matches with the actual constants definitions.
@@ -1887,7 +2255,7 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
  */
 
 
-exports.doesArrayContainFilename = doesArrayContainFilename;
+exports.getLengthOfLongestStringInArray = getLengthOfLongestStringInArray;
 
 var validateConstantsDataValidation = function validateConstantsDataValidation(inputData, inputMetaData) {
   var functionName = s.cvalidateConstantsDataValidation;
@@ -2083,9 +2451,11 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
   for (var i = 0; i < D[s.cConstantsValidationData][inputMetaData].length; i++) {
     var validationLineItem = D[s.cConstantsValidationData][inputMetaData][i];
 
-    if (inputData === validationLineItem.Name) {
-      returnData = true;
-      break;
+    if (validationLineItem) {
+      if (inputData === validationLineItem.Name) {
+        returnData = true;
+        break;
+      }
     }
   }
 
@@ -2096,8 +2466,760 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
   return returnData;
 };
 /**
+ * @function doesConstantExist
+ * @description Walks through all of the constants validation files and
+ * checks to see if any of the expected values match the string that is passed in.
+ * @param {string} inputData The value that should be looked for in all the constants files.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if a matching constant definition was found or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
+
+var doesConstantExist = function doesConstantExist(inputData, inputMetaData) {
+  var functionName = s.cdoesConstantExist;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (inputData) {
+    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+    loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
+      var constantTypeKey = constantsTypesKeys[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+
+      var constantsKeys = Object.keys(constantTypeValues);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+
+      loop2: for (var j = 0; j < constantsKeys.length; j++) {
+        var constantKey = constantsKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+
+        var constantActualValue = constantTypeValues[constantKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+
+        if (inputData === constantActualValue.Actual) {
+          returnData = true;
+          break loop1;
+        }
+      } // for-loop j-th iterator.
+
+    } // for-loop i-th iterator.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getConstantType
+ * @description Determines what constant library a particular constant is defined in.
+ * (This will aid developers who are trying to understand & develop under this complicated constants system.)
+ * NOTE: Just because a constant is found we do not break the loop,
+ * but this function will report back all constants libraries where a particular constant would be defined.
+ * Passing in a True to the inputMetaData will cause the function to exit upon first discovered match.
+ * @param {string} inputData The string value that should be searched in all of the constants libraries.
+ * @param {boolean} inputMetaData True or False to indicate if the function should exit on first discovery or continue to discover all possible matches.
+ * @return {string} A list of constants libraries where the constant was found to be defined in.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.doesConstantExist = doesConstantExist;
+
+var getConstantType = function getConstantType(inputData, inputMetaData) {
+  var functionName = s.cgetConstantType;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+    loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
+      var constantTypeKey = constantsTypesKeys[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+
+      var constantsKeys = Object.keys(constantTypeValues);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+
+      loop2: for (var j = 0; j < constantsKeys.length; j++) {
+        var constantKey = constantsKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+
+        var constantActualValue = constantTypeValues[constantKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+
+        if (inputData === constantActualValue.Actual) {
+          if (returnData === '') {
+            returnData = constantTypeKey; // NOTE: This is our first discovered match. Check the inputMetaData to see if we should exit or continue searching?
+
+            if (inputMetaData === true) {
+              // We are doing it this way so we can re-use this function as part of the optimized constants fulfillment system algorithm.
+              break loop1;
+            }
+          } else {
+            returnData = returnData + b.cComa + constantTypeKey;
+          }
+        }
+      } // for-loop j-th iterator.
+
+    } // for-loop i-th iterator.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getConstantActualValue
+ * @description Determines the actual value of the named constant given the constant type.
+ * @param {string} inputData The name of the constant we are looking for to get the actual value of the constant.
+ * @param {string} inputMetaData (OPTIONAL) The type or library where the constant should be found.
+ * @return {string} The actual value of the string.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.getConstantType = getConstantType;
+
+var getConstantActualValue = function getConstantActualValue(inputData, inputMetaData) {
+  var functionName = s.cgetConstantActualValue;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    if (isConstantTypeValid(inputMetaData, '') === true) {
+      var constantTypeValues1 = D[s.cConstantsValidationData][inputMetaData];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues1 is: ' + JSON.stringify(constantTypeValues1));
+
+      var constantsKeys1 = Object.keys(constantTypeValues1);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys1 is: ' + JSON.stringify(constantsKeys1));
+
+      loop1: for (var i = 0; i < constantsKeys1.length; i++) {
+        var constantKey1 = constantsKeys1[i];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey1 is: ' + JSON.stringify(constantKey1));
+
+        var constantActualValue1 = constantTypeValues1[constantKey1];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(constantActualValue1));
+
+        if (inputData === constantActualValue1.Name) {
+          returnData = constantActualValue1.Actual;
+        }
+      } // for-loop j-th iterator.
+
+    } else {
+      var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+      loop2: for (var j = 0; j < constantsTypesKeys.length; j++) {
+        var constantTypeKey = constantsTypesKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+        var constantTypeValues2 = D[s.cConstantsValidationData][constantTypeKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues2 is: ' + JSON.stringify(constantTypeValues2));
+
+        var constantsKeys2 = Object.keys(constantTypeValues2);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys2 is: ' + JSON.stringify(constantsKeys2));
+
+        loop3: for (var k = 0; k < constantsKeys2.length; k++) {
+          var constantKey2 = constantsKeys2[k];
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey2 is: ' + JSON.stringify(constantKey2));
+
+          var _constantActualValue = constantTypeValues2[constantKey2];
+
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(_constantActualValue));
+
+          if (inputData === _constantActualValue.Name) {
+            returnData = _constantActualValue.Actual;
+          }
+        } // for-loop j-th iterator.
+
+      } // for-loop i-th iterator.
+
+    } // else clause for the case that inputMetaData did not match a valid constant type in the system.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function getConstantName
+ * @description Gets the constant name given the constant value, or what the constant should resolve as. Can only return the first instance.
+ * @param {string} inputData The constant string value that should be used when getting the constant name.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The name of the constant: eg: cSystem
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.getConstantActualValue = getConstantActualValue;
+
+var getConstantName = function getConstantName(inputData, inputMetaData) {
+  var functionName = s.cgetConstantName;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+
+    loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
+      var constantTypeKey = constantsTypesKeys[i];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+
+      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+
+      var constantsKeys = Object.keys(constantTypeValues);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+
+      loop2: for (var j = 0; j < constantsKeys.length; j++) {
+        var constantKey = constantsKeys[j];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+
+        var constantActualValue = constantTypeValues[constantKey];
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+
+        if (inputData === constantActualValue.Actual) {
+          returnData = constantActualValue.Name;
+          break loop1;
+        }
+      } // for-loop j-th iterator.
+
+    } // for-loop i-th iterator.
+
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function findConstantName
+ * @description Looks through a string and tries to weed out a constant name.
+ * @param {string} inputData The string that should be searched for a constant name.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The name of the constant that was found.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.getConstantName = getConstantName;
+
+var findConstantName = function findConstantName(inputData, inputMetaData) {
+  var functionName = s.cfindConstantName;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    if (inputData.includes(b.cDot)) {
+      returnData = inputData.substr(inputData.lastIndexOf(b.cDot) + 1, inputData.length);
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function isConstantTypeValid
+ * @description Determines if a string is a valid constant type/library or not.
+ * @param {string} inputData The string that should be validated if it is a valid constant type or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True or False to indicate if the string is a valid constant type/library that exists within the system.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.findConstantName = findConstantName;
+
+var isConstantTypeValid = function isConstantTypeValid(inputData, inputMetaData) {
+  var functionName = s.cisConstantTypeValid;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false;
+
+  if (inputData) {
+    switch (inputData) {
+      case s.cBasicConstantsValidation:
+      case s.cColorConstantsValidation:
+      case s.cElementConstantsValidation:
+      case s.cGenericConstantsValidation:
+      case s.cIsotopeConstantsValidation:
+      case s.cNumericConstantsValidation:
+      case s.cPhonicsConstantsValidation:
+      case s.cShapeConstantsValidation:
+      case s.cSystemConstantsValidation:
+      case s.cUnitsConstantsValidation:
+      case s.cWordConstantsValidation:
+        returnData = true;
+        break;
+
+      default:
+        returnData = false;
+        break;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function convertConstantTypeToConstantPrefix
+ * @description Converts the constant type to a constant prefix so it can be used to assist with defining an optimized constant definition.
+ * @param {string} inputData The constant type that should be used when converting to a constant prefix.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} The appropriate constant prefix.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.isConstantTypeValid = isConstantTypeValid;
+
+var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstantPrefix(inputData, inputMetaData) {
+  var functionName = s.cconvertConstantTypeToConstantPrefix;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+
+  if (inputData) {
+    returnData = inputData;
+
+    switch (inputData) {
+      case s.cBasicConstantsValidation:
+        returnData = b.cb + b.cDot;
+        break;
+
+      case s.cColorConstantsValidation:
+        returnData = s.ccolr + b.cDot;
+        break;
+
+      case s.cElementConstantsValidation:
+        returnData = b.ce + b.cDot;
+        break;
+
+      case s.cGenericConstantsValidation:
+        returnData = b.cg + b.cDot;
+        break;
+
+      case s.cIsotopeConstantsValidation:
+        returnData = b.ci + b.cDot;
+        break;
+
+      case s.cNumericConstantsValidation:
+        returnData = b.cn + b.cDot;
+        break;
+
+      case s.cPhonicsConstantsValidation:
+        returnData = b.cp + b.cDot;
+        break;
+
+      case s.cShapeConstantsValidation:
+        returnData = s.cshp + b.cDot;
+        break;
+
+      case s.cSystemConstantsValidation:
+        returnData = b.cs + b.cDot;
+        break;
+
+      case s.cUnitsConstantsValidation:
+        returnData = b.cu + b.cDot;
+        break;
+
+      case s.cWordConstantsValidation:
+        returnData = b.cw + b.cDot;
+        break;
+
+      default:
+        returnData = false;
+        break;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function constantsOptimizedFulfillmentSystem
+ * @description Determines what is the most optimized way to define a string using existing constant strings.
+ * @param {string} inputData The string that should be determined or find a constant to fulfill part of the string.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A constant that represents part of the input string.
+ * @author Seth Hollingsead
+ * @date 2021/01/26
+ */
+
+
+exports.convertConstantTypeToConstantPrefix = convertConstantTypeToConstantPrefix;
+
+var constantsOptimizedFulfillmentSystem = function constantsOptimizedFulfillmentSystem(inputData, inputMetaData) {
+  var functionName = s.cconstantsOptimizedFulfillmentSystem;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+  var constantType = '';
+  var constantName = '';
+
+  if (inputData) {
+    if (doesConstantExist(inputData, '') === false) {
+      returnData = constantsOptimizedFulfillmentSystem(inputData.substring(0, inputData.length - 1), inputMetaData);
+    } else {
+      constantType = getConstantType(inputData, true);
+      constantName = getConstantName(inputData, '');
+      var constantPrefix = convertConstantTypeToConstantPrefix(constantType, '');
+      returnData = constantPrefix + constantName;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function constantsFulfillmentSystem
+ * @description Determines what is the most optimized way to define a new constant using existing constant strings.
+ * @param {string} inputData The constant to be defined/fulfilled.
+ * @param {string} inputMetaData The original user-defined constant to be fulfilled,
+ * so the recursive algorithm can continue processing the rest of the string, after a first match is found.
+ * @return {string} The fully optimized definition for the new constant.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.constantsOptimizedFulfillmentSystem = constantsOptimizedFulfillmentSystem;
+
+var constantsFulfillmentSystem = function constantsFulfillmentSystem(inputData, inputMetaData) {
+  var functionName = s.cconstantsFulfillmentSystem;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = '';
+  var constantName = '';
+  var constantType = '';
+
+  if (inputData) {
+    returnData = constantsOptimizedFulfillmentSystem(inputData, ''); // We found the first part of the string, now lets continue processing the rest of the string!
+    // First determine how many characters are being returned so we can determine what portion of the string we need to continue processing with.
+
+    constantName = findConstantName(returnData, '');
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantName is: ' + constantName);
+
+    var constantValue = getConstantActualValue(constantName, '');
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantValue is: ' + constantValue);
+
+    var deltaLength = inputData.length - constantValue.length;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deltaLength is: ' + deltaLength);
+
+    if (deltaLength != 0) {
+      var recursiveSubString = inputMetaData.substring(inputMetaData.length - deltaLength, inputMetaData.length);
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'recursiveSubString is: ' + recursiveSubString);
+
+      returnData = returnData + b.cSpace + b.cPlus + b.cSpace + constantsFulfillmentSystem(recursiveSubString, inputData);
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function searchForPatternsInStringArray
+ * @description Walks through sub-strings of each string in the input array of strings searching for common patterns using a brute-force sequential array search.
+ * Maximum string length to search is the maximum string length - 1 (basically the longest string in the array minus 1 character).
+ * Minimum string length to search is 3 characters.
+ * @param {array<string>} inputData The array of strings that should be searched for matching patterns.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array<string>} A string array of common string values found in more than 1 element of the array and 3 or more characters long.
+ * @author Seth Hollingsead
+ * @date 2021/01/30
+ */
+
+
+exports.constantsFulfillmentSystem = constantsFulfillmentSystem;
+
+var searchForPatternsInStringArray = function searchForPatternsInStringArray(inputData, inputMetaData) {
+  var functionName = s.csearchForPatternsInStringArray;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false; // Set it to false just in case invalid data was passed into this function.
+
+  if (inputData && inputData.length > 0) {
+    returnData = []; // Reset it to an empty array, the input data has something in it so we should be able to process it.
+
+    var maxStringLength = getLengthOfLongestStringInArray(inputData, '') - 1;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'maxStringLength is: ' + maxStringLength);
+
+    var minStringLength = 3;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'minStringLength is: ' + minStringLength);
+
+    for (var a = 0; a < inputData.length; a++) {
+      // Initial high-level loop over each of the array elements. (This is the source string for the comparison)
+      var currentMasterStringArrayElement = inputData[a];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement is: ' + currentMasterStringArrayElement);
+
+      if (currentMasterStringArrayElement.includes(b.cSpace) === false) {
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement does not contain a space character'); // NOTE: All of the other loggers.consolelog below this are not actually getting called for some reason.
+        // That is why I have added the hard-coded console Logs, but really they only need to be enabled if this function needs to be debugged.
+        // It's difficult to debug these because they really dump a LOT of data to the output.
+        // The only real way to debug larger data sets would be to force the output to a log file.
+        // A small data-set might be possible to debug.
+        // Loop over the length of the string we need to compare.
+
+
+        for (var _b = minStringLength; _b <= maxStringLength; _b++) {
+          // b will now hold the length of the string we are using to compare.
+          // loggers.consoleLog(baseFileName + b.cDot + functionName, 'length of string to compare is: ' + toString(b));
+          // console.log('length of string to compare is: ' + b);
+          // First make sure that the length of our master string is less than or equal to the length of j, otherwise we will just skip to the next.
+          if (currentMasterStringArrayElement.length <= _b) {
+            // loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement.length is less than b');
+            // console.log('currentMasterStringArrayElement.length is less than b');
+            // Loop again for the length of the current string - 3 (minStringLength)
+            // Each loop will determine our currentComparisonString (which will be used when we actually iterate over the array in our search)
+            for (var c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++) {
+              // loop through each set of strings in the master comparison string.
+              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'c value is: ' + c);
+              // console.log('c value is: ' + c);
+              // Now here we should be able to finally compute the beginning and ending of the indexes for the string we want to use for comparison.
+              var beginningIndex = c; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'beginningIndex is: ' + beginningIndex);
+              // console.log('beginningIndex is: ' + beginningIndex);
+
+              var endingIndex = c + _b; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'endingIndex is: ' + endingIndex);
+              // console.log('endingIndex is: ' + endingIndex);
+
+              var stringToCompare = currentMasterStringArrayElement.substring(beginningIndex, endingIndex); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'stringToCompare is: ' + stringToCompare);
+              // console.log('stringToCompare is: ' + stringToCompare);
+              // Now we need another loop to go over all of the array elements, make sure we always ignore the current array element.
+
+              for (var d = 0; d < inputData.length; d++) {
+                // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd value is: ' + d);
+                // console.log('d value is: ' + d);
+                if (d != a) {
+                  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd != a');
+                  // console.log('d != a');
+                  var otherStringToCompare = inputData[d]; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'otherStringToCompare is: ' + otherStringToCompare);
+                  // console.log('otherStringToCompare is: ' + otherStringToCompare);
+
+                  if (otherStringToCompare.includes(stringToCompare)) {
+                    // loggers.consoleLog(baseFileName + b.cDot + functionName, 'FOUND A MATCH!!!!');
+                    // console.log('FOUND A MATCH!!!! ' + stringToCompare);
+                    // Here we have found a match amoung brothers. We need to see if this stringToCompare has already been added to the returnData array.
+                    if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false) {
+                      returnData.push(stringToCompare);
+                    } // End-if if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false)
+
+                  } // End-if (otherStringToCompare.includes(stringToCompare))
+
+                } // End-if (d != a)
+
+              } // End-for (let d = 0; d < inputData.length; d++)
+
+            } // End-for (let c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++)
+
+          } // End-if (currentMasterStringArrayElement <= b)
+
+        } // End-for (let b = minStringLength; b <= maxStringLength; b++) {
+
+      } else {
+        // Else-clause if (currentMasterStringArrayElement.includes(b.cSpace) === false)
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: The current string being searched contains a space character, we are going to skip comparison.');
+      }
+    } // End-for (let a = 0; a < inputData.length; a++)
+
+  } else {
+    // Else-clause if (inputData && inputData.length > 0)
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: InputData was not an array or had an empty array.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function validatePatternsThatNeedImplementation
+ * @description Scans through an array of strings and determines which ones are not yet implemented in the constants system.
+ * @param {array<string>} inputData The array of strings that should be checked if they are already implemented in the constants system or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/01/31
+ */
+
+
+exports.searchForPatternsInStringArray = searchForPatternsInStringArray;
+
+var validatePatternsThatNeedImplementation = function validatePatternsThatNeedImplementation(inputData, inputMetaData) {
+  var functionName = s.cvalidatePatternsThatNeedImplementation;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (inputData) {
+    var passMessage = '';
+
+    for (var i = 0; i < inputData.length; i++) {
+      var currentString = inputData[i];
+
+      if (doesConstantExist(currentString, '') === false) {
+        passMessage = 'Constant does NOT exist: ' + currentString;
+        passMessage = chalk.rgb(0, 0, 0)(passMessage);
+        passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+        console.log(passMessage);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constant does NOT exist: ' + currentString);
+      } else {
+        passMessage = 'Constant does exist: ' + currentString;
+        passMessage = chalk.rgb(0, 0, 0)(passMessage);
+        passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
+        console.log(passMessage);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constant does exist: ' + currentString);
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return null;
+};
+/**
  * @function validateConstantsDataValues
- * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content..
+ * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content.
  * @param {string} inputData The name of the data-hive that should contain all of the validation data that should be used to execute the validation procedures.
  * @param {string} inputMetaData Not used for this function.
  * @return {boolean} True or False to indicate if the validation passed for the entire data hive or if it did not pass.
@@ -2106,7 +3228,7 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
  */
 
 
-exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
+exports.validatePatternsThatNeedImplementation = validatePatternsThatNeedImplementation;
 
 var validateConstantsDataValues = function validateConstantsDataValues(inputData, inputMetaData) {
   var functionName = s.cvalidateConstantsDataValues;
@@ -2118,27 +3240,35 @@ var validateConstantsDataValues = function validateConstantsDataValues(inputData
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
+  var passMessage = '';
 
   for (var i = 0; i < D[s.cConstantsValidationData][inputData].length; i++) {
+    passMessage = '';
     var validationLineItem = D[s.cConstantsValidationData][inputData][i];
 
-    if (validationLineItem.Actual === validationLineItem.Expected) {
-      if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-        var passMessage = "PASS -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- PASS");
-        passMessage = chalk.rgb(0, 0, 0)(passMessage);
-        passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
-        console.log(passMessage);
+    if (validationLineItem) {
+      if (validationLineItem.Actual === validationLineItem.Expected) {
+        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          passMessage = "PASS -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- PASS");
+          passMessage = chalk.rgb(0, 0, 0)(passMessage);
+          passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+          console.log(passMessage);
+        }
+      } else {
+        returnData = false;
+
+        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          passMessage = "FAIL -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- FAIL");
+          passMessage = chalk.rgb(0, 0, 0)(passMessage);
+          passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
+          console.log(passMessage);
+        }
       }
     } else {
-      returnData = false;
-
-      if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-        var _passMessage = "FAIL -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- FAIL");
-
-        _passMessage = chalk.rgb(0, 0, 0)(_passMessage);
-        _passMessage = chalk.bgRgb(255, 0, 0)(_passMessage);
-        console.log(_passMessage);
-      }
+      passMessage = "FAIL -- ".concat(inputData, " -- FAIL");
+      passMessage = chalk.rgb(0, 0, 0)(passMessage);
+      passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
+      console.log(passMessage);
     }
   }
 
@@ -2200,6 +3330,42 @@ var isValidCommandNameString = function isValidCommandNameString(inputData, inpu
   return returnData;
 };
 /**
+ * @function isConstantValid
+ * @description Determines if the user entered some valid input constant string or not. User must have entered more than 4 characters.
+ * @param {string} inputData The value of the constant as a string.
+ * @param {string} inputMetaData Not used for this buisness rule.
+ * @return {boolean} True or False to indicate if the user entered a valid constant or not.
+ * @author Seth Hollingsead
+ * @date 2021/01/25
+ */
+
+
+exports.isValidCommandNameString = isValidCommandNameString;
+
+var isConstantValid = function isConstantValid(inputData, inputMetaData) {
+  var functionName = s.cisConstantValid;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+
+  var returnData = false;
+
+  if (inputData) {
+    if (inputData.length >= 4) {
+      returnData = true;
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function countDuplicateCommandAliases
  * @description Counts the number of command aliases that match the input command alias.
  * @param {string} inputData The command alias that should be have duplicates counted.
@@ -2211,7 +3377,7 @@ var isValidCommandNameString = function isValidCommandNameString(inputData, inpu
  */
 
 
-exports.isValidCommandNameString = isValidCommandNameString;
+exports.isConstantValid = isConstantValid;
 
 var countDuplicateCommandAliases = function countDuplicateCommandAliases(inputData, inputMetaData) {
   var functionName = s.ccountDuplicateCommandAliases;

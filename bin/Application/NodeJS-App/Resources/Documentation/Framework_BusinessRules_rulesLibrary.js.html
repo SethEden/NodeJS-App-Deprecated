@@ -90,6 +90,13 @@ export const initRulesLibrary = function() {
     [s.cgetValueFromAssignmentOperationString]: (inputData, inputMetaData) => stringParsing.getValueFromAssignmentOperationString(inputData, inputMetaData),
     [s.caggregateNumericalDifferenceBetweenTwoStrings]: (inputData, inputMetaData) => stringParsing.aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData),
     [s.cconvertCamelCaseStringToArray]: (inputData, inputMetaData) => stringParsing.convertCamelCaseStringToArray(inputData, inputMetaData),
+    [s.ccountCamelCaseWords]: (inputData, inputMetaData) => stringParsing.countCamelCaseWords(inputData, inputMetaData),
+    [s.cdoesStringContainAcronym]: (inputData, inputMetaData) => stringParsing.doesStringContainAcronym(inputData, inputMetaData),
+    [s.ccountDelimiterInString]: (inputData, inputMetaData) => stringParsing.countDelimiterInString(inputData, inputMetaData),
+    [s.cdetermineWordDelimiter]: (inputData, inputMetaData) => stringParsing.determineWordDelimiter(inputData, inputMetaData),
+    [s.cgetWordCountInString]: (inputData, inputMetaData) => stringParsing.getWordCountInString(inputData, inputMetaData),
+    [s.cgetWordsArrayFromString]: (inputData, inputMetaData) => stringParsing.getWordsArrayFromString(inputData, inputMetaData),
+    [s.crecombineStringArrayWithSpaces]: (inputData, inputMetaData) => stringParsing.recombineStringArrayWithSpaces(inputData, inputMetaData),
     [s.cdoesStringContainUpperCaseCharacter]: (inputData, inputMetaData) => stringParsing.doesStringContainUpperCaseCharacter(inputData, inputMetaData),
     [s.cdoesStringContainLowerCaseCharacter]: (inputData, inputMetaData) => stringParsing.doesStringContainLowerCaseCharacter(inputData, inputMetaData),
     [s.cisFirstCharacterLowerCase]: (inputData, inputMetaData) => stringParsing.isFirstCharacterLowerCase(inputData, inputMetaData),
@@ -106,12 +113,25 @@ export const initRulesLibrary = function() {
     [s.cascertainMatchingFilenames]: (inputData, inputMetaData) => stringParsing.ascertainMatchingFilenames(inputData, inputMetaData),
     [s.cascertainMatchingElements]: (inputData, inputMetaData) => stringParsing.acertainMatchingElements(inputData, inputMetaData),
     [s.cdoesArrayContainFilename]: (inputData, inputMetaData) => stringParsing.doesArrayContainFilename(inputData, inputMetaData),
+    [s.cgetLengthOfLongestStringInArray]: (inputData, inputMetaData) => stringParsing.getLengthOfLongestStringInArray(inputData, inputMetaData),
     [s.cvalidateConstantsDataValidation]: (inputData, inputMetaData) => stringParsing.validateConstantsDataValidation(inputData, inputMetaData),
     [s.cdetermineConstantsContextQualifiedPrefix]: (inputData, inputMetaData) => stringParsing.determineConstantsContextQualifiedPrefix(inputData, inputMetaData),
     [s.cdetermineSuggestedConstantsValidationLineOfCode]: (inputData, inputMetaData) => stringParsing.determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData),
     [s.cvalidateConstantsDataValidationLineItemName]: (inputData, inputMetaData) => stringParsing.validateConstantsDataValidationLineItemName(inputData, inputMetaData),
+    [s.cdoesConstantExist]: (inputData, inputMetaData) => stringParsing.doesConstantExist(inputData, inputMetaData),
+    [s.cgetConstantType]: (inputData, inputMetaData) => stringParsing.getConstantType(inputData, inputMetaData),
+    [s.cgetConstantActualValue]: (inputData, inputMetaData) => stringParsing.getConstantActualValue(inputData, inputMetaData),
+    [s.cgetConstantName]: (inputData, inputMetaData) => stringParsing.getConstantName(inputData, inputMetaData),
+    [s.cfindConstantName]: (inputData, inputMetaData) => stringParsing.findConstantName(inputData, inputMetaData),
+    [s.cisConstantTypeValid]: (inputData, inputMetaData) => stringParsing.isConstantTypeValid(inputData, inputMetaData),
+    [s.cconstantsOptimizedFulfillmentSystem]: (inputData, inputMetaData) => stringParsing.constantsOptimizedFulfillmentSystem(inputData, inputMetaData),
+    [s.cconvertConstantTypeToConstantPrefix]: (inputData, inputMetaData) => stringParsing.convertConstantTypeToConstantPrefix(inputData, inputMetaData),
+    [s.cconstantsFulfillmentSystem]: (inputData, inputMetaData) => stringParsing.constantsFulfillmentSystem(inputData, inputMetaData),
+    [s.csearchForPatternsInStringArray]: (inputData, inputMetaData) => stringParsing.searchForPatternsInStringArray(inputData, inputMetaData),
+    [s.cvalidatePatternsThatNeedImplementation]: (inputData, inputMetaData) => stringParsing.validatePatternsThatNeedImplementation(inputData, inputMetaData),
     [s.cvalidateConstantsDataValues]: (inputData, inputMetaData) => stringParsing.validateConstantsDataValues(inputData, inputMetaData),
     [s.cisValidCommandNameString]: (inputData, inputMetaData) => stringParsing.isValidCommandNameString(inputData, inputMetaData),
+    [s.cisConstantValid]: (inputData, inputMetaData) => stringParsing.isConstantValid(inputData, inputMetaData),
     [s.ccountDuplicateCommandAliases]: (inputData, inputMetaData) => stringParsing.countDuplicateCommandAliases(inputData, inputMetaData),
     [s.cgetDataCatagoryFromDataContextName]: (inputData, inputMetaData) => stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData),
     [s.cgetDataCatagoryDetailNameFromDataContextName]: (inputData, inputMetaData) => stringParsing.getDataCatagoryDetailNameFromDataContextName(inputData, inputMetaData),
@@ -240,7 +260,7 @@ export const initRulesLibrary = function() {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Fri Jan 22 2021 15:47:00 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Jan 31 2021 21:10:43 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
