@@ -430,3 +430,4 @@ export const clon = b.clo + b.cn; // lon
 export const cizer = b.ciz + b.cer; // izer
 export const cern = b.cer + b.cn; // ern
 export const comb = b.com + b.cb; // omb
+export const ceed = b.cee + b.cd; // eed

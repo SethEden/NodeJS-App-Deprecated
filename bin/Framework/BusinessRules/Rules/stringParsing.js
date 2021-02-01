@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.recombineStringArrayWithSpaces = exports.getWordsArrayFromString = exports.getWordCountInString = exports.determineWordDelimiter = exports.countDelimiterInString = exports.doesStringContainAcronym = exports.countCamelCaseWords = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.validatePatternsThatNeedImplementation = exports.searchForPatternsInStringArray = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.getLengthOfLongestStringInArray = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.recombineStringArrayWithSpaces = exports.getWordsArrayFromString = exports.getWordCountInString = exports.determineWordDelimiter = exports.countDelimiterInString = exports.doesStringContainAcronym = exports.countCamelCaseWords = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -30,6 +30,18 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 var lineByLine = require('n-readlines');
 
@@ -2195,6 +2207,43 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
   return returnData;
 };
 /**
+ * @function getLengthOfLongestStringInArray
+ * @description Determines what the longest string is in an array of strings.
+ * @param {array<string>} inputData The array for which we should find the longest length string in.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The length of the longest string in the array.
+ * @author Seth Hollingsead
+ * @date 2021/01/30
+ * @NOTE https://stackoverflow.com/questions/6521245/finding-longest-string-in-array
+ */
+
+
+exports.doesArrayContainFilename = doesArrayContainFilename;
+
+var getLengthOfLongestStringInArray = function getLengthOfLongestStringInArray(inputData, inputMetaData) {
+  var functionName = s.cgetLengthOfLongestStringInArray;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = 0;
+
+  if (inputData) {
+    returnData = Math.max.apply(Math, _toConsumableArray(inputData.map(function (el) {
+      return el.length;
+    })));
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function validateConstantsDataValidation
  * @description Validates that validation data to ensure that all the contents of the
  * constants validation data matches with the actual constants definitions.
@@ -2206,7 +2255,7 @@ var doesArrayContainFilename = function doesArrayContainFilename(inputData, inpu
  */
 
 
-exports.doesArrayContainFilename = doesArrayContainFilename;
+exports.getLengthOfLongestStringInArray = getLengthOfLongestStringInArray;
 
 var validateConstantsDataValidation = function validateConstantsDataValidation(inputData, inputMetaData) {
   var functionName = s.cvalidateConstantsDataValidation;
@@ -2402,9 +2451,11 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
   for (var i = 0; i < D[s.cConstantsValidationData][inputMetaData].length; i++) {
     var validationLineItem = D[s.cConstantsValidationData][inputMetaData][i];
 
-    if (inputData === validationLineItem.Name) {
-      returnData = true;
-      break;
+    if (validationLineItem) {
+      if (inputData === validationLineItem.Name) {
+        returnData = true;
+        break;
+      }
     }
   }
 
@@ -2994,8 +3045,181 @@ var constantsFulfillmentSystem = function constantsFulfillmentSystem(inputData, 
   return returnData;
 };
 /**
+ * @function searchForPatternsInStringArray
+ * @description Walks through sub-strings of each string in the input array of strings searching for common patterns using a brute-force sequential array search.
+ * Maximum string length to search is the maximum string length - 1 (basically the longest string in the array minus 1 character).
+ * Minimum string length to search is 3 characters.
+ * @param {array<string>} inputData The array of strings that should be searched for matching patterns.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array<string>} A string array of common string values found in more than 1 element of the array and 3 or more characters long.
+ * @author Seth Hollingsead
+ * @date 2021/01/30
+ */
+
+
+exports.constantsFulfillmentSystem = constantsFulfillmentSystem;
+
+var searchForPatternsInStringArray = function searchForPatternsInStringArray(inputData, inputMetaData) {
+  var functionName = s.csearchForPatternsInStringArray;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = false; // Set it to false just in case invalid data was passed into this function.
+
+  if (inputData && inputData.length > 0) {
+    returnData = []; // Reset it to an empty array, the input data has something in it so we should be able to process it.
+
+    var maxStringLength = getLengthOfLongestStringInArray(inputData, '') - 1;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'maxStringLength is: ' + maxStringLength);
+
+    var minStringLength = 3;
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'minStringLength is: ' + minStringLength);
+
+    for (var a = 0; a < inputData.length; a++) {
+      // Initial high-level loop over each of the array elements. (This is the source string for the comparison)
+      var currentMasterStringArrayElement = inputData[a];
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement is: ' + currentMasterStringArrayElement);
+
+      if (currentMasterStringArrayElement.includes(b.cSpace) === false) {
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement does not contain a space character'); // NOTE: All of the other loggers.consolelog below this are not actually getting called for some reason.
+        // That is why I have added the hard-coded console Logs, but really they only need to be enabled if this function needs to be debugged.
+        // It's difficult to debug these because they really dump a LOT of data to the output.
+        // The only real way to debug larger data sets would be to force the output to a log file.
+        // A small data-set might be possible to debug.
+        // Loop over the length of the string we need to compare.
+
+
+        for (var _b = minStringLength; _b <= maxStringLength; _b++) {
+          // b will now hold the length of the string we are using to compare.
+          // loggers.consoleLog(baseFileName + b.cDot + functionName, 'length of string to compare is: ' + toString(b));
+          // console.log('length of string to compare is: ' + b);
+          // First make sure that the length of our master string is less than or equal to the length of j, otherwise we will just skip to the next.
+          if (currentMasterStringArrayElement.length <= _b) {
+            // loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement.length is less than b');
+            // console.log('currentMasterStringArrayElement.length is less than b');
+            // Loop again for the length of the current string - 3 (minStringLength)
+            // Each loop will determine our currentComparisonString (which will be used when we actually iterate over the array in our search)
+            for (var c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++) {
+              // loop through each set of strings in the master comparison string.
+              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'c value is: ' + c);
+              // console.log('c value is: ' + c);
+              // Now here we should be able to finally compute the beginning and ending of the indexes for the string we want to use for comparison.
+              var beginningIndex = c; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'beginningIndex is: ' + beginningIndex);
+              // console.log('beginningIndex is: ' + beginningIndex);
+
+              var endingIndex = c + _b; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'endingIndex is: ' + endingIndex);
+              // console.log('endingIndex is: ' + endingIndex);
+
+              var stringToCompare = currentMasterStringArrayElement.substring(beginningIndex, endingIndex); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'stringToCompare is: ' + stringToCompare);
+              // console.log('stringToCompare is: ' + stringToCompare);
+              // Now we need another loop to go over all of the array elements, make sure we always ignore the current array element.
+
+              for (var d = 0; d < inputData.length; d++) {
+                // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd value is: ' + d);
+                // console.log('d value is: ' + d);
+                if (d != a) {
+                  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd != a');
+                  // console.log('d != a');
+                  var otherStringToCompare = inputData[d]; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'otherStringToCompare is: ' + otherStringToCompare);
+                  // console.log('otherStringToCompare is: ' + otherStringToCompare);
+
+                  if (otherStringToCompare.includes(stringToCompare)) {
+                    // loggers.consoleLog(baseFileName + b.cDot + functionName, 'FOUND A MATCH!!!!');
+                    // console.log('FOUND A MATCH!!!! ' + stringToCompare);
+                    // Here we have found a match amoung brothers. We need to see if this stringToCompare has already been added to the returnData array.
+                    if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false) {
+                      returnData.push(stringToCompare);
+                    } // End-if if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false)
+
+                  } // End-if (otherStringToCompare.includes(stringToCompare))
+
+                } // End-if (d != a)
+
+              } // End-for (let d = 0; d < inputData.length; d++)
+
+            } // End-for (let c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++)
+
+          } // End-if (currentMasterStringArrayElement <= b)
+
+        } // End-for (let b = minStringLength; b <= maxStringLength; b++) {
+
+      } else {
+        // Else-clause if (currentMasterStringArrayElement.includes(b.cSpace) === false)
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: The current string being searched contains a space character, we are going to skip comparison.');
+      }
+    } // End-for (let a = 0; a < inputData.length; a++)
+
+  } else {
+    // Else-clause if (inputData && inputData.length > 0)
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: InputData was not an array or had an empty array.');
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function validatePatternsThatNeedImplementation
+ * @description Scans through an array of strings and determines which ones are not yet implemented in the constants system.
+ * @param {array<string>} inputData The array of strings that should be checked if they are already implemented in the constants system or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/01/31
+ */
+
+
+exports.searchForPatternsInStringArray = searchForPatternsInStringArray;
+
+var validatePatternsThatNeedImplementation = function validatePatternsThatNeedImplementation(inputData, inputMetaData) {
+  var functionName = s.cvalidatePatternsThatNeedImplementation;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  if (inputData) {
+    var passMessage = '';
+
+    for (var i = 0; i < inputData.length; i++) {
+      var currentString = inputData[i];
+
+      if (doesConstantExist(currentString, '') === false) {
+        passMessage = 'Constant does NOT exist: ' + currentString;
+        passMessage = chalk.rgb(0, 0, 0)(passMessage);
+        passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+        console.log(passMessage);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constant does NOT exist: ' + currentString);
+      } else {
+        passMessage = 'Constant does exist: ' + currentString;
+        passMessage = chalk.rgb(0, 0, 0)(passMessage);
+        passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
+        console.log(passMessage);
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constant does exist: ' + currentString);
+      }
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return null;
+};
+/**
  * @function validateConstantsDataValues
- * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content..
+ * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content.
  * @param {string} inputData The name of the data-hive that should contain all of the validation data that should be used to execute the validation procedures.
  * @param {string} inputMetaData Not used for this function.
  * @return {boolean} True or False to indicate if the validation passed for the entire data hive or if it did not pass.
@@ -3004,7 +3228,7 @@ var constantsFulfillmentSystem = function constantsFulfillmentSystem(inputData, 
  */
 
 
-exports.constantsFulfillmentSystem = constantsFulfillmentSystem;
+exports.validatePatternsThatNeedImplementation = validatePatternsThatNeedImplementation;
 
 var validateConstantsDataValues = function validateConstantsDataValues(inputData, inputMetaData) {
   var functionName = s.cvalidateConstantsDataValues;
@@ -3016,27 +3240,35 @@ var validateConstantsDataValues = function validateConstantsDataValues(inputData
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
+  var passMessage = '';
 
   for (var i = 0; i < D[s.cConstantsValidationData][inputData].length; i++) {
+    passMessage = '';
     var validationLineItem = D[s.cConstantsValidationData][inputData][i];
 
-    if (validationLineItem.Actual === validationLineItem.Expected) {
-      if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-        var passMessage = "PASS -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- PASS");
-        passMessage = chalk.rgb(0, 0, 0)(passMessage);
-        passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
-        console.log(passMessage);
+    if (validationLineItem) {
+      if (validationLineItem.Actual === validationLineItem.Expected) {
+        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          passMessage = "PASS -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- PASS");
+          passMessage = chalk.rgb(0, 0, 0)(passMessage);
+          passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+          console.log(passMessage);
+        }
+      } else {
+        returnData = false;
+
+        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          passMessage = "FAIL -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- FAIL");
+          passMessage = chalk.rgb(0, 0, 0)(passMessage);
+          passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
+          console.log(passMessage);
+        }
       }
     } else {
-      returnData = false;
-
-      if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-        var _passMessage = "FAIL -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- FAIL");
-
-        _passMessage = chalk.rgb(0, 0, 0)(_passMessage);
-        _passMessage = chalk.bgRgb(255, 0, 0)(_passMessage);
-        console.log(_passMessage);
-      }
+      passMessage = "FAIL -- ".concat(inputData, " -- FAIL");
+      passMessage = chalk.rgb(0, 0, 0)(passMessage);
+      passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
+      console.log(passMessage);
     }
   }
 

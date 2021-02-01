@@ -240,6 +240,14 @@ export const cCommandWordAliasPrompt3 = w.cfor + b.cSpace + w.cthe + b.cSpace + 
 export const cConstantPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cstring + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace; // Please enter a string you would
 export const cConstantPrompt2 = w.clike + b.cSpace + b.cto + b.cSpace + w.cdefine + b.cSpace + b.cas + b.cSpace + b.ca + b.cSpace + w.cconstant + b.cSpace; // like to define as a constant
 export const cConstantPrompt3 = b.cin + b.cSpace + w.cthe + b.cSpace + w.cconstants + b.cSpace + w.csystem + b.cColon; // in the constants system:
+// Please enter a coma separated list of strings you would like to define in the constants system:
+export const cConstantsListPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.ccoma + b.cSpace + w.cseparated + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace;
+export const cConstantsListPrompt2 = w.cstrings + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace + w.clike + b.cSpace + b.cto + b.cSpace + w.cdefine + b.cSpace + b.cin + b.cSpace;
+export const cConstantsListPrompt3 = w.cthe + b.cSpace + w.cconstants + b.cSpace + w.csystem + b.cColon;
+// Please enter a coma separated list of strings you would like to search for common patterns:
+export const cConstantsListPatternSearchPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.ccoma + b.cSpace + w.cseparated + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace; // Please enter a coma separated list of
+export const cConstantsListPatternSearchPrompt2 = w.cstrings + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace + w.clike + b.cSpace + b.cto + b.cSpace + w.csearch + b.cSpace + w.cfor + b.cSpace; // strings you would like to search for
+export const cConstantsListPatternSearchPrompt3 = w.ccommon + b.cSpace + w.cpatterns + b.cColon; // common patterns:
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia
@@ -662,6 +670,7 @@ export const cremoveCharacterFromArray = w.cremove + w.cCharacter + w.cFrom + w.
 export const cascertainMatchingFilenames = w.cascertain + w.cMatching + cFilenames; // ascertainMatchingFilenames
 export const cascertainMatchingElements = w.cascertain + w.cMatching + w.cElements; // acertainMatchingElements
 export const cdoesArrayContainFilename = w.cdoes + w.cArray + w.cContain + cFilename; // doesArrayContainFilename
+export const cgetLengthOfLongestStringInArray = w.cget + w.cLength + b.cOf + w.cLongest + w.cString + b.cIn + w.cArray; // getLengthOfLongestStringInArray
 export const cvalidateConstantsDataValidation = w.cvalidate + w.cConstants + w.cData + w.cValidation; // validateConstantsDataValidation
 export const cdetermineConstantsContextQualifiedPrefix = w.cdetermine + w.cConstants + w.cContext + w.cQualified + w.cPrefix; // determineConstantsContextQualifiedPrefix
 export const cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
@@ -675,6 +684,8 @@ export const cisConstantTypeValid = b.cis + w.cConstant + w.cType + w.cValid; //
 export const cconvertConstantTypeToConstantPrefix = w.cconvert + w.cConstant + w.cType + b.cTo + w.cConstant + w.cPrefix; // convertConstantTypeToConstantPrefix
 export const cconstantsOptimizedFulfillmentSystem = w.cconstants + w.cOptimized + w.cFulfillment + w.cSystem; // constantsOptimizedFulfillmentSystem
 export const cconstantsFulfillmentSystem = w.cconstants + w.cFulfillment + w.cSystem; // constantsFulfillmentSystem
+export const csearchForPatternsInStringArray = w.csearch + w.cFor + w.cPatterns + b.cIn + w.cString + w.cArray; // searchForPatternsInStringArray
+export const cvalidatePatternsThatNeedImplementation = w.cvalidate + w.cPatterns + w.cThat + w.cNeed + w.cImplementation; // validatePatternsThatNeedImplementation
 export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
 export const cisValidCommandNameString = b.cis + w.cValid + w.cCommand + w.cName + w.cString; // isValidCommandNameString
 export const cisConstantValid = b.cis + w.cConstant + w.cValid; // isConstantValid

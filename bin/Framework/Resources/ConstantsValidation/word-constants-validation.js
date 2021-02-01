@@ -190,6 +190,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cLongs,
   Expected: 'Longs'
 }, {
+  Name: 'clonger',
+  Actual: w.clonger,
+  Expected: 'longer'
+}, {
+  Name: 'cLonger',
+  Actual: w.cLonger,
+  Expected: 'Longer'
+}, {
+  Name: 'clongest',
+  Actual: w.clongest,
+  Expected: 'longest'
+}, {
+  Name: 'cLongest',
+  Actual: w.cLongest,
+  Expected: 'Longest'
+}, {
   Name: 'cshort',
   Actual: w.cshort,
   Expected: 'short'
@@ -205,6 +221,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cShorts',
   Actual: w.cShorts,
   Expected: 'Shorts'
+}, {
+  Name: 'cshorter',
+  Actual: w.cshorter,
+  Expected: 'shorter'
+}, {
+  Name: 'cShorter',
+  Actual: w.cShorter,
+  Expected: 'Shorter'
+}, {
+  Name: 'cshortest',
+  Actual: w.cshortest,
+  Expected: 'shortest'
+}, {
+  Name: 'cShortest',
+  Actual: w.cShortest,
+  Expected: 'Shortest'
 }, {
   Name: 'cdouble',
   Actual: w.cdouble,
@@ -4219,5 +4251,77 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cPattern',
   Actual: w.cPattern,
   Expected: 'Pattern'
+}, {
+  Name: 'cpatterns',
+  Actual: w.cpatterns,
+  Expected: 'patterns'
+}, {
+  Name: 'cPatterns',
+  Actual: w.cPatterns,
+  Expected: 'Patterns'
+}, {
+  Name: 'ccoma',
+  Actual: w.ccoma,
+  Expected: 'coma'
+}, {
+  Name: 'cComa',
+  Actual: w.cComa,
+  Expected: 'Coma'
+}, {
+  Name: 'cseparate',
+  Actual: w.cseparate,
+  Expected: 'separate'
+}, {
+  Name: 'cSeparate',
+  Actual: w.cSeparate,
+  Expected: 'Separate'
+}, {
+  Name: 'cseparated',
+  Actual: w.cseparated,
+  Expected: 'separated'
+}, {
+  Name: 'cSeparated',
+  Actual: w.cSeparated,
+  Expected: 'Separated'
+}, {
+  Name: 'csearch',
+  Actual: w.csearch,
+  Expected: 'search'
+}, {
+  Name: 'cSearch',
+  Actual: w.cSearch,
+  Expected: 'Search'
+}, {
+  Name: 'cneed',
+  Actual: w.cneed,
+  Expected: 'need'
+}, {
+  Name: 'cNeed',
+  Actual: w.cNeed,
+  Expected: 'Need'
+}, {
+  Name: 'cimplement',
+  Actual: w.cimplement,
+  Expected: 'implement'
+}, {
+  Name: 'cImplement',
+  Actual: w.cImplement,
+  Expected: 'Implement'
+}, {
+  Name: 'cimplements',
+  Actual: w.cimplements,
+  Expected: 'implements'
+}, {
+  Name: 'cImplements',
+  Actual: w.cImplements,
+  Expected: 'Implements'
+}, {
+  Name: 'cimplementation',
+  Actual: w.cimplementation,
+  Expected: 'implementation'
+}, {
+  Name: 'cImplementation',
+  Actual: w.cImplementation,
+  Expected: 'Implementation'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

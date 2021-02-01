@@ -1007,6 +1007,8 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2021/01/14
+ * @NOTE Test String for argument driven interface for this command:
+ * {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
  */
 
 
@@ -1220,11 +1222,32 @@ var constantsGeneratorList = function constantsGeneratorList(inputData, inputMet
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
+  var validEntry = false;
+  var userDefinedConstantList = '';
+  var validConstantRule = [];
   var recombineArrayInputRule = [];
-  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces; // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
-  // The array elements will then be used to enqueue the command constantsGenerator.
+  validConstantRule[0] = s.cisConstantValid;
+  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
 
-  var userDefinedConstantList = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
+  if (inputData.length === 0) {
+    while (validEntry === false) {
+      console.log(s.cConstantsListPrompt1);
+      console.log(s.cConstantsListPrompt2);
+      console.log(s.cConstantsListPrompt3);
+      userDefinedConstantList = prompt(b.cGreaterThan);
+      validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
+
+      if (validEntry === false) {
+        console.log('INVALID INPUT: Please enter a valid constant list.');
+      }
+    }
+  } else if (inputData.length === 2) {
+    userDefinedConstantList = inputData[1];
+  } else {
+    // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
+    // The array elements will then be used to enqueue the command constantsGenerator.
+    userDefinedConstantList = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList is: ' + userDefinedConstantList);
 
@@ -1280,6 +1303,61 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
+  var validEntry = false;
+  var userDefinedConstantList = '';
+  var validConstantRule = [];
+  var recombineArrayInputRule = [];
+  var wordsArrayFromStringRule = [];
+  var searchForPatternsInStringArrayRule = [];
+  var validatePatternsNeedImplementationRule = [];
+  var wordsArray = [];
+  var commonPatternsArray = [];
+  validConstantRule[0] = s.cisConstantValid;
+  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
+  wordsArrayFromStringRule[0] = s.cgetWordsArrayFromString;
+  searchForPatternsInStringArrayRule[0] = s.csearchForPatternsInStringArray;
+  validatePatternsNeedImplementationRule[0] = s.cvalidatePatternsThatNeedImplementation;
+
+  if (inputData.length === 0) {
+    while (validEntry === false) {
+      console.log(s.cConstantsListPatternSearchPrompt1);
+      console.log(s.cConstantsListPatternSearchPrompt2);
+      console.log(s.cConstantsListPatternSearchPrompt3);
+      userDefinedConstantList = prompt(b.cGreaterThan);
+      validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
+
+      if (validEntry === false) {
+        console.log('INVALID INPUT: Please enter a valid constant list.');
+      }
+    }
+  } else if (inputData.length === 2) {
+    userDefinedConstantList = inputData[1];
+  } else {
+    // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
+    // The array elements will then be used to enqueue the command constantsGenerator.
+    userDefinedConstantList = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList is: ' + userDefinedConstantList);
+
+  if (userDefinedConstantList.includes(b.cComa) === true) {
+    wordsArray = userDefinedConstantList.split(b.cComa);
+  } else {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList DOES NOT contains comas'); // Check and see if there is another delimiter we can use to break up the string into an array,
+    // such as a space character, Maybe the user entered a sentence and would like all the words of the sentence to be optimized.
+
+
+    wordsArray = _ruleBroker["default"].processRules(userDefinedConstantList, '', wordsArrayFromStringRule);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'wordsArray is: ' + JSON.stringify(wordsArray));
+
+  commonPatternsArray = _ruleBroker["default"].processRules(wordsArray, '', searchForPatternsInStringArrayRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commonPatternsArray is: ' + JSON.stringify(commonPatternsArray)); // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
+
+
+  _ruleBroker["default"].processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 

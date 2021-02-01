@@ -1573,6 +1573,30 @@ export const doesArrayContainFilename = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function getLengthOfLongestStringInArray
+ * @description Determines what the longest string is in an array of strings.
+ * @param {array<string>} inputData The array for which we should find the longest length string in.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {integer} The length of the longest string in the array.
+ * @author Seth Hollingsead
+ * @date 2021/01/30
+ * @NOTE https://stackoverflow.com/questions/6521245/finding-longest-string-in-array
+ */
+export const getLengthOfLongestStringInArray = function(inputData, inputMetaData) {
+  let functionName = s.cgetLengthOfLongestStringInArray;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = 0;
+  if (inputData) {
+    returnData = Math.max(...(inputData.map(el => el.length)));
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function validateConstantsDataValidation
  * @description Validates that validation data to ensure that all the contents of the
  * constants validation data matches with the actual constants definitions.
@@ -1732,9 +1756,11 @@ export const validateConstantsDataValidationLineItemName = function(inputData, i
   let returnData = false;
   for (let i = 0; i < D[s.cConstantsValidationData][inputMetaData].length; i++) {
     let validationLineItem = D[s.cConstantsValidationData][inputMetaData][i];
-    if (inputData === validationLineItem.Name) {
-      returnData = true;
-      break;
+    if (validationLineItem) {
+      if (inputData === validationLineItem.Name) {
+        returnData = true;
+        break;
+      }
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -2146,8 +2172,136 @@ export const constantsFulfillmentSystem = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function searchForPatternsInStringArray
+ * @description Walks through sub-strings of each string in the input array of strings searching for common patterns using a brute-force sequential array search.
+ * Maximum string length to search is the maximum string length - 1 (basically the longest string in the array minus 1 character).
+ * Minimum string length to search is 3 characters.
+ * @param {array<string>} inputData The array of strings that should be searched for matching patterns.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {array<string>} A string array of common string values found in more than 1 element of the array and 3 or more characters long.
+ * @author Seth Hollingsead
+ * @date 2021/01/30
+ */
+export const searchForPatternsInStringArray = function(inputData, inputMetaData) {
+  let functionName = s.csearchForPatternsInStringArray;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = false; // Set it to false just in case invalid data was passed into this function.
+  if (inputData && inputData.length > 0) {
+    returnData = []; // Reset it to an empty array, the input data has something in it so we should be able to process it.
+    let maxStringLength = getLengthOfLongestStringInArray(inputData, '') - 1;
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'maxStringLength is: ' + maxStringLength);
+    let minStringLength = 3;
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'minStringLength is: ' + minStringLength);
+    for (let a = 0; a < inputData.length; a++) { // Initial high-level loop over each of the array elements. (This is the source string for the comparison)
+      let currentMasterStringArrayElement = inputData[a];
+      loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement is: ' + currentMasterStringArrayElement);
+      if (currentMasterStringArrayElement.includes(b.cSpace) === false) {
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement does not contain a space character');
+        // NOTE: All of the other loggers.consolelog below this are not actually getting called for some reason.
+        // That is why I have added the hard-coded console Logs, but really they only need to be enabled if this function needs to be debugged.
+        // It's difficult to debug these because they really dump a LOT of data to the output.
+        // The only real way to debug larger data sets would be to force the output to a log file.
+        // A small data-set might be possible to debug.
+        // Loop over the length of the string we need to compare.
+        for (let b = minStringLength; b <= maxStringLength; b++) { // b will now hold the length of the string we are using to compare.
+          // loggers.consoleLog(baseFileName + b.cDot + functionName, 'length of string to compare is: ' + toString(b));
+          // console.log('length of string to compare is: ' + b);
+          // First make sure that the length of our master string is less than or equal to the length of j, otherwise we will just skip to the next.
+          if (currentMasterStringArrayElement.length <= b) {
+            // loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement.length is less than b');
+            // console.log('currentMasterStringArrayElement.length is less than b');
+            // Loop again for the length of the current string - 3 (minStringLength)
+            // Each loop will determine our currentComparisonString (which will be used when we actually iterate over the array in our search)
+            for (let c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++) { // loop through each set of strings in the master comparison string.
+              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'c value is: ' + c);
+              // console.log('c value is: ' + c);
+              // Now here we should be able to finally compute the beginning and ending of the indexes for the string we want to use for comparison.
+              let beginningIndex = c;
+              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'beginningIndex is: ' + beginningIndex);
+              // console.log('beginningIndex is: ' + beginningIndex);
+              let endingIndex = c + b;
+              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'endingIndex is: ' + endingIndex);
+              // console.log('endingIndex is: ' + endingIndex);
+              let stringToCompare = currentMasterStringArrayElement.substring(beginningIndex, endingIndex);
+              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'stringToCompare is: ' + stringToCompare);
+              // console.log('stringToCompare is: ' + stringToCompare);
+              // Now we need another loop to go over all of the array elements, make sure we always ignore the current array element.
+              for (let d = 0; d < inputData.length; d++) {
+                // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd value is: ' + d);
+                // console.log('d value is: ' + d);
+                if (d != a) {
+                  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd != a');
+                  // console.log('d != a');
+                  let otherStringToCompare = inputData[d];
+                  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'otherStringToCompare is: ' + otherStringToCompare);
+                  // console.log('otherStringToCompare is: ' + otherStringToCompare);
+                  if (otherStringToCompare.includes(stringToCompare)) {
+                    // loggers.consoleLog(baseFileName + b.cDot + functionName, 'FOUND A MATCH!!!!');
+                    // console.log('FOUND A MATCH!!!! ' + stringToCompare);
+                    // Here we have found a match amoung brothers. We need to see if this stringToCompare has already been added to the returnData array.
+                    if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false) {
+                      returnData.push(stringToCompare);
+                    } // End-if if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false)
+                  } // End-if (otherStringToCompare.includes(stringToCompare))
+                } // End-if (d != a)
+              } // End-for (let d = 0; d < inputData.length; d++)
+            } // End-for (let c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++)
+          } // End-if (currentMasterStringArrayElement <= b)
+        } // End-for (let b = minStringLength; b <= maxStringLength; b++) {
+      } else { // Else-clause if (currentMasterStringArrayElement.includes(b.cSpace) === false)
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: The current string being searched contains a space character, we are going to skip comparison.');
+      }
+    } // End-for (let a = 0; a < inputData.length; a++)
+  } else { // Else-clause if (inputData && inputData.length > 0)
+    loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: InputData was not an array or had an empty array.');
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function validatePatternsThatNeedImplementation
+ * @description Scans through an array of strings and determines which ones are not yet implemented in the constants system.
+ * @param {array<string>} inputData The array of strings that should be checked if they are already implemented in the constants system or not.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/01/31
+ */
+export const validatePatternsThatNeedImplementation = function(inputData, inputMetaData) {
+  let functionName = s.cvalidatePatternsThatNeedImplementation;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  if (inputData) {
+    let passMessage = '';
+    for (let i = 0; i < inputData.length; i++) {
+      let currentString = inputData[i];
+      if (doesConstantExist(currentString, '') === false) {
+        passMessage = 'Constant does NOT exist: ' + currentString;
+        passMessage = chalk.rgb(0,0,0)(passMessage);
+        passMessage = chalk.bgRgb(0,255,0)(passMessage);
+        console.log(passMessage);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constant does NOT exist: ' + currentString);
+      } else {
+        passMessage = 'Constant does exist: ' + currentString;
+        passMessage = chalk.rgb(0,0,0)(passMessage);
+        passMessage = chalk.bgRgb(255,0,0)(passMessage);
+        console.log(passMessage);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constant does exist: ' + currentString);
+      }
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return null;
+};
+
+/**
  * @function validateConstantsDataValues
- * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content..
+ * @description Iterates over all the constants values in the constants validation data specified by the input parameter and validates the content.
  * @param {string} inputData The name of the data-hive that should contain all of the validation data that should be used to execute the validation procedures.
  * @param {string} inputMetaData Not used for this function.
  * @return {boolean} True or False to indicate if the validation passed for the entire data hive or if it did not pass.
@@ -2160,23 +2314,32 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
+  let passMessage = '';
   for (let i = 0; i < D[s.cConstantsValidationData][inputData].length; i++) {
+    passMessage = '';
     let validationLineItem = D[s.cConstantsValidationData][inputData][i];
-    if (validationLineItem.Actual === validationLineItem.Expected) {
-      if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-        let passMessage = `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
-        passMessage = chalk.rgb(0,0,0)(passMessage);
-        passMessage = chalk.bgRgb(0,255,0)(passMessage);
-        console.log(passMessage);
+    if (validationLineItem) {
+      if (validationLineItem.Actual === validationLineItem.Expected) {
+        if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          passMessage = `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
+          passMessage = chalk.rgb(0,0,0)(passMessage);
+          passMessage = chalk.bgRgb(0,255,0)(passMessage);
+          console.log(passMessage);
+        }
+      } else {
+        returnData = false;
+        if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          passMessage = `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
+          passMessage = chalk.rgb(0,0,0)(passMessage);
+          passMessage = chalk.bgRgb(255,0,0)(passMessage);
+          console.log(passMessage);
+        }
       }
     } else {
-      returnData = false;
-      if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-        let passMessage = `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
-        passMessage = chalk.rgb(0,0,0)(passMessage);
-        passMessage = chalk.bgRgb(255,0,0)(passMessage);
-        console.log(passMessage);
-      }
+      passMessage = `FAIL -- ${inputData} -- FAIL`;
+      passMessage = chalk.rgb(0,0,0)(passMessage);
+      passMessage = chalk.bgRgb(255,0,0)(passMessage);
+      console.log(passMessage);
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);

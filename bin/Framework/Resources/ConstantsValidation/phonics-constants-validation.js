@@ -1709,5 +1709,9 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'comb',
   Actual: p.comb,
   Expected: 'omb'
+}, {
+  Name: 'ceed',
+  Actual: p.ceed,
+  Expected: 'eed'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

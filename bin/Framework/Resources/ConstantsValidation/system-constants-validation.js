@@ -871,6 +871,30 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cConstantPrompt3',
   Actual: s.cConstantPrompt3,
   Expected: 'in the constants system:'
+}, {
+  Name: 'cConstantsListPrompt1',
+  Actual: s.cConstantsListPrompt1,
+  Expected: 'Please enter a coma separated list of '
+}, {
+  Name: 'cConstantsListPrompt2',
+  Actual: s.cConstantsListPrompt2,
+  Expected: 'strings you would like to define in '
+}, {
+  Name: 'cConstantsListPrompt3',
+  Actual: s.cConstantsListPrompt3,
+  Expected: 'the constants system:'
+}, {
+  Name: 'cConstantsListPatternSearchPrompt1',
+  Actual: s.cConstantsListPatternSearchPrompt1,
+  Expected: 'Please enter a coma separated list of '
+}, {
+  Name: 'cConstantsListPatternSearchPrompt2',
+  Actual: s.cConstantsListPatternSearchPrompt2,
+  Expected: 'strings you would like to search for '
+}, {
+  Name: 'cConstantsListPatternSearchPrompt3',
+  Actual: s.cConstantsListPatternSearchPrompt3,
+  Expected: 'common patterns:'
 }, // File Types
 {
   Name: 'cCatia',
@@ -2472,6 +2496,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cdoesArrayContainFilename,
   Expected: 'doesArrayContainFilename'
 }, {
+  Name: 'cgetLengthOfLongestStringInArray',
+  Actual: s.cgetLengthOfLongestStringInArray,
+  Expected: 'getLengthOfLongestStringInArray'
+}, {
   Name: 'cvalidateConstantsDataValidation',
   Actual: s.cvalidateConstantsDataValidation,
   Expected: 'validateConstantsDataValidation'
@@ -2523,6 +2551,14 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cconstantsFulfillmentSystem',
   Actual: s.cconstantsFulfillmentSystem,
   Expected: 'constantsFulfillmentSystem'
+}, {
+  Name: 'csearchForPatternsInStringArray',
+  Actual: s.csearchForPatternsInStringArray,
+  Expected: 'searchForPatternsInStringArray'
+}, {
+  Name: 'cvalidatePatternsThatNeedImplementation',
+  Actual: s.cvalidatePatternsThatNeedImplementation,
+  Expected: 'validatePatternsThatNeedImplementation'
 }, {
   Name: 'cvalidateConstantsDataValues',
   Actual: s.cvalidateConstantsDataValues,

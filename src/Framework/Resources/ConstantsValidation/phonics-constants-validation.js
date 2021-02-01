@@ -437,5 +437,6 @@ export const phonicsConstantsValidation = [
    {Name: 'clon', Actual: p.clon, Expected: 'lon'},
    {Name: 'cizer', Actual: p.cizer, Expected: 'izer'},
    {Name: 'cern', Actual: p.cern, Expected: 'ern'},
-   {Name: 'comb', Actual: p.comb, Expected: 'omb'}
+   {Name: 'comb', Actual: p.comb, Expected: 'omb'},
+   {Name: 'ceed', Actual: p.ceed, Expected: 'eed'}
  ];

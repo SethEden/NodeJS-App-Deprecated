@@ -138,6 +138,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.acertainMatchingElements(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainFilename, function (inputData, inputMetaData) {
     return stringParsing.doesArrayContainFilename(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetLengthOfLongestStringInArray, function (inputData, inputMetaData) {
+    return stringParsing.getLengthOfLongestStringInArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidation, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidation(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdetermineConstantsContextQualifiedPrefix, function (inputData, inputMetaData) {
@@ -164,6 +166,10 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.convertConstantTypeToConstantPrefix(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cconstantsFulfillmentSystem, function (inputData, inputMetaData) {
     return stringParsing.constantsFulfillmentSystem(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.csearchForPatternsInStringArray, function (inputData, inputMetaData) {
+    return stringParsing.searchForPatternsInStringArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cvalidatePatternsThatNeedImplementation, function (inputData, inputMetaData) {
+    return stringParsing.validatePatternsThatNeedImplementation(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValues, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValues(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisValidCommandNameString, function (inputData, inputMetaData) {
