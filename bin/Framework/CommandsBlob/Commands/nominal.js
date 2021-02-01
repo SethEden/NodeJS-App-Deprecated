@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.constantsPatternRecognizer = exports.constantsGeneratorList = exports.constantsGenerator = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -1007,6 +1007,8 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
  * @date 2021/01/14
+ * @NOTE Test String for argument driven interface for this command:
+ * {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
  */
 
 
@@ -1026,6 +1028,7 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
   var commandWordAliasList = '';
   var validCommandName = false;
   var validCommandWordAliasList = false;
+  var validCommandInput = false;
   var commandAliasDataStructure = {};
   var commandNameParsingRule = [];
   var camelCaseToArrayRule = [];
@@ -1035,59 +1038,346 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
   camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
   commandWordAliasListParsingRule[0] = s.cisStringList;
   generateCommandAliasesRule[0] = s.cgenerateCommandAliases;
+  console.log('Command can be called by passing parameters and bypass the prompt system.');
+  console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
 
-  while (validCommandName === false) {
-    console.log(s.cCommandNamePrompt1);
-    console.log(s.cCommandNamePrompt2);
-    console.log(s.cCommandNamePrompt3);
-    console.log(s.cCommandNamePrompt4);
-    console.log(s.cCommandNamePrompt5);
-    commandName = prompt(b.cGreaterThan);
-    validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
+  if (inputData.length === 0) {
+    while (validCommandName === false) {
+      console.log(s.cCommandNamePrompt1);
+      console.log(s.cCommandNamePrompt2);
+      console.log(s.cCommandNamePrompt3);
+      console.log(s.cCommandNamePrompt4);
+      console.log(s.cCommandNamePrompt5);
+      commandName = prompt(b.cGreaterThan);
+      validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
 
-    if (validCommandName === false) {
-      console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+      if (validCommandName === false) {
+        console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+      }
     }
+
+    var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
+
+    for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
+      var commandWord = camelCaseCommandNameArray[i];
+      console.log('current commandWord is: ' + commandWord);
+      validCommandWordAliasList = false;
+
+      if (commandWord != '') {
+        commandAliasDataStructure[commandWord] = {};
+
+        while (validCommandWordAliasList === false) {
+          console.log(s.cCommandWordAliasPrompt1);
+          console.log(s.cCommandWordAliasPrompt2);
+          console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
+          commandWordAliasList = prompt(b.cGreaterThan);
+          validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
+
+          if (validCommandWordAliasList === false) {
+            console.log('INVALID INPUT: Please enter a valid command word alias list.');
+          } else if (commandWordAliasList != '') {
+            // As long as the user entered something we should be able to proceed!
+            validCommandWordAliasList = true;
+          }
+        } // End while-loop: validCommandWordAliasList
+
+
+        commandAliasDataStructure[commandWord] = commandWordAliasList;
+        validCommandInput = true;
+      }
+    }
+  } else if (inputData.length === 2) {
+    try {
+      commandAliasDataStructure = JSON.parse(inputData[1]);
+      validCommandInput = true;
+    } catch (e) {
+      console.log('PARSER ERROR: ' + e.message);
+      console.log('INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.');
+      console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
+    }
+  } else {
+    console.log('INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.');
+    console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
   }
 
-  var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
-
-  for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
-    var commandWord = camelCaseCommandNameArray[i];
-    console.log('current commandWord is: ' + commandWord);
-    validCommandWordAliasList = false;
-
-    if (commandWord != '') {
-      commandAliasDataStructure[commandWord] = {};
-
-      while (validCommandWordAliasList === false) {
-        console.log(s.cCommandWordAliasPrompt1);
-        console.log(s.cCommandWordAliasPrompt2);
-        console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
-        commandWordAliasList = prompt(b.cGreaterThan);
-        validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
-
-        if (validCommandWordAliasList === false) {
-          console.log('INVALID INPUT: Please enter a valid command word alias list.');
-        } else if (commandWordAliasList != '') {
-          // As long as the user entered something we should be able to proceed!
-          validCommandWordAliasList = true;
-        }
-      } // End while-loop: validCommandWordAliasList
+  if (validCommandInput === true) {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
+    // TODO: Start generating all the possible combinations of the command words and command word aliases.
+    // Pass the data object to a business rule to do the above task.
 
 
-      commandAliasDataStructure[commandWord] = commandWordAliasList;
-    }
+    var commandAliases = _ruleBroker["default"].processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
-  // TODO: Start generating all the possible combinations of the command words and command word aliases.
-  // Pass the data object to a business rule to do the above task.
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function constantsGenerator
+ * @description Requests a string input the user would like to have converted into a constant,
+ * while determining the most optimized way to define the new constant based on existing constants.
+ * Also checks to see if that new constant is already defined in the constants system.
+ * @param {string} inputData Parameterized constant to generate for.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/22
+ */
 
 
-  var commandAliases = _ruleBroker["default"].processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
+exports.commandAliasGenerator = commandAliasGenerator;
+
+var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
+  var functionName = s.cconstantsGenerator;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var validEntry = false;
+  var userDefinedConstant = '';
+  var validConstantRule = [];
+  var doesConstantExistRule = [];
+  var getConstantTypeRule = [];
+  var constantsFulfillmentSystemRule = [];
+  var wordsCountRule = [];
+  var wordsArrayRule = [];
+  var recombineArrayInputRule = [];
+  validConstantRule[0] = s.cisConstantValid;
+  doesConstantExistRule[0] = s.cdoesConstantExist;
+  getConstantTypeRule[0] = s.cgetConstantType;
+  constantsFulfillmentSystemRule[0] = s.cconstantsFulfillmentSystem;
+  wordsCountRule[0] = s.cgetWordCountInString;
+  wordsArrayRule[0] = s.cgetWordsArrayFromString;
+  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
+
+  if (inputData.length === 0) {
+    while (validEntry === false) {
+      console.log(s.cConstantPrompt1);
+      console.log(s.cConstantPrompt2);
+      console.log(s.cConstantPrompt3);
+      userDefinedConstant = prompt(b.cGreaterThan);
+      validEntry = _ruleBroker["default"].processRules(userDefinedConstant, '', validConstantRule);
+
+      if (validEntry === false) {
+        console.log('INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.');
+      }
+    }
+  } else if (inputData.length === 2) {
+    userDefinedConstant = inputData[1];
+  } else {
+    // We need to recombine all of the array elements after the 0-th element into a single string with spaces inbetween.
+    userDefinedConstant = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstant is: ' + userDefinedConstant); // First lets check if the constant is already defined, so we can warn the user.
+  // NOTE: It could be that the developer is just looking to optimize the existing constant,
+  // but if not, a warning to the user would be a good idea!
+
+
+  var doesConstantExist = _ruleBroker["default"].processRules(userDefinedConstant, '', doesConstantExistRule);
+
+  if (doesConstantExist === true) {
+    var constantType = _ruleBroker["default"].processRules(userDefinedConstant, '', getConstantTypeRule);
+
+    console.log('WARNING: The constant has already been defined in the following library(ies): ' + constantType);
+  }
+
+  userDefinedConstant = userDefinedConstant.trim();
+
+  var wordCount = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsCountRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'wordCount is: ' + wordCount); // Now begin the fulfillment algorithm.
+
+
+  if (wordCount > 1) {
+    var wordsArray = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsArrayRule);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'wordsArray is: ' + JSON.stringify(wordsArray));
+
+    for (var j = 0; j < wordsArray.length; j++) {
+      console.log('Optimized constant definition for word: ' + b.cc + wordsArray[j] + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
+    }
+  } else {
+    console.log(b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function constantsGeneratorList
+ * @description Calls the constantsGenerator command to iterate over a list of constants and generate many constants sequentially.
+ * @NOTE This function will also walk the list and determine if there are any common strings
+ * internal to the list that could be defined as new constants to help with the optimization process.
+ * @NOTE Testing string: constGenL somethingXML,whatever that is,A basic NodeJS template App,that can easily
+ * @param {string} inputData Parameterized coma delimited list of constants to be auto-generated.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/01/27
+ */
+
+
+exports.constantsGenerator = constantsGenerator;
+
+var constantsGeneratorList = function constantsGeneratorList(inputData, inputMetaData) {
+  var functionName = s.cconstantsGeneratorList;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var validEntry = false;
+  var userDefinedConstantList = '';
+  var validConstantRule = [];
+  var recombineArrayInputRule = [];
+  validConstantRule[0] = s.cisConstantValid;
+  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
+
+  if (inputData.length === 0) {
+    while (validEntry === false) {
+      console.log(s.cConstantsListPrompt1);
+      console.log(s.cConstantsListPrompt2);
+      console.log(s.cConstantsListPrompt3);
+      userDefinedConstantList = prompt(b.cGreaterThan);
+      validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
+
+      if (validEntry === false) {
+        console.log('INVALID INPUT: Please enter a valid constant list.');
+      }
+    }
+  } else if (inputData.length === 2) {
+    userDefinedConstantList = inputData[1];
+  } else {
+    // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
+    // The array elements will then be used to enqueue the command constantsGenerator.
+    userDefinedConstantList = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList is: ' + userDefinedConstantList);
+
+  if (userDefinedConstantList.includes(b.cComa) === true) {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList contains comas');
+
+    var userDefinedConstantsListArray = userDefinedConstantList.split(b.cComa);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantsListArray is: ' + JSON.stringify(userDefinedConstantsListArray));
+
+    if (userDefinedConstantsListArray.length > 1) {
+      for (var i = 0; i < userDefinedConstantsListArray.length; i++) {
+        _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantsListArray[i].trim());
+      }
+    } else if (userDefinedConstantsListArray.length === 1) {
+      // Just enqueue the constants Generator command with the input directly.
+      _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantsListArray[0].trim());
+    }
+  } else {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList DOES NOT contains comas'); // Just enqueue the constants Generator command with the input directly.
+
+
+    _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantList.trim());
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function constantsPatternRecognizer
+ * @description Walks through a list of constants looking for patterns internal to the strings.
+ * @param {string} inputData Parameterized coma delimited list of constants to be
+ * passed through pattern recognition to find common strings among them.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2020/01/29
+ */
+
+
+exports.constantsGeneratorList = constantsGeneratorList;
+
+var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, inputMetaData) {
+  var functionName = s.cconstantsPatternRecognizer;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+  var validEntry = false;
+  var userDefinedConstantList = '';
+  var validConstantRule = [];
+  var recombineArrayInputRule = [];
+  var wordsArrayFromStringRule = [];
+  var searchForPatternsInStringArrayRule = [];
+  var validatePatternsNeedImplementationRule = [];
+  var wordsArray = [];
+  var commonPatternsArray = [];
+  validConstantRule[0] = s.cisConstantValid;
+  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
+  wordsArrayFromStringRule[0] = s.cgetWordsArrayFromString;
+  searchForPatternsInStringArrayRule[0] = s.csearchForPatternsInStringArray;
+  validatePatternsNeedImplementationRule[0] = s.cvalidatePatternsThatNeedImplementation;
+
+  if (inputData.length === 0) {
+    while (validEntry === false) {
+      console.log(s.cConstantsListPatternSearchPrompt1);
+      console.log(s.cConstantsListPatternSearchPrompt2);
+      console.log(s.cConstantsListPatternSearchPrompt3);
+      userDefinedConstantList = prompt(b.cGreaterThan);
+      validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
+
+      if (validEntry === false) {
+        console.log('INVALID INPUT: Please enter a valid constant list.');
+      }
+    }
+  } else if (inputData.length === 2) {
+    userDefinedConstantList = inputData[1];
+  } else {
+    // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
+    // The array elements will then be used to enqueue the command constantsGenerator.
+    userDefinedConstantList = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList is: ' + userDefinedConstantList);
+
+  if (userDefinedConstantList.includes(b.cComa) === true) {
+    wordsArray = userDefinedConstantList.split(b.cComa);
+  } else {
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList DOES NOT contains comas'); // Check and see if there is another delimiter we can use to break up the string into an array,
+    // such as a space character, Maybe the user entered a sentence and would like all the words of the sentence to be optimized.
+
+
+    wordsArray = _ruleBroker["default"].processRules(userDefinedConstantList, '', wordsArrayFromStringRule);
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'wordsArray is: ' + JSON.stringify(wordsArray));
+
+  commonPatternsArray = _ruleBroker["default"].processRules(wordsArray, '', searchForPatternsInStringArrayRule);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commonPatternsArray is: ' + JSON.stringify(commonPatternsArray)); // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
+
+
+  _ruleBroker["default"].processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -1106,7 +1396,7 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
  */
 
 
-exports.commandAliasGenerator = commandAliasGenerator;
+exports.constantsPatternRecognizer = constantsPatternRecognizer;
 
 var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaData) {
   var functionName = s.cbusinessRulesMetrics;

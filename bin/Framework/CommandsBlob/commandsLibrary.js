@@ -84,6 +84,12 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.commandGenerator(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.ccommandAliasGenerator, function (inputData, inputMetaData) {
     return nominalCommands.commandAliasGenerator(inputData, inputMetaData);
+  }), _defineProperty(_D$w$cCommands, s.cconstantsGenerator, function (inputData, inputMetaData) {
+    return nominalCommands.constantsGenerator(inputData, inputMetaData);
+  }), _defineProperty(_D$w$cCommands, s.cconstantsGeneratorList, function (inputData, inputMetaData) {
+    return nominalCommands.constantsGeneratorList(inputData, inputMetaData);
+  }), _defineProperty(_D$w$cCommands, s.cconstantsPatternRecognizer, function (inputData, inputMetaData) {
+    return nominalCommands.constantsPatternRecognizer(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.cbusinessRulesMetrics, function (inputData, inputMetaData) {
     return nominalCommands.businessRulesMetrics(inputData, inputMetaData);
   }), _defineProperty(_D$w$cCommands, s.ccommandMetrics, function (inputData, inputMetaData) {

@@ -92,6 +92,20 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cconvertCamelCaseStringToArray, function (inputData, inputMetaData) {
     return stringParsing.convertCamelCaseStringToArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.ccountCamelCaseWords, function (inputData, inputMetaData) {
+    return stringParsing.countCamelCaseWords(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainAcronym, function (inputData, inputMetaData) {
+    return stringParsing.doesStringContainAcronym(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.ccountDelimiterInString, function (inputData, inputMetaData) {
+    return stringParsing.countDelimiterInString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdetermineWordDelimiter, function (inputData, inputMetaData) {
+    return stringParsing.determineWordDelimiter(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetWordCountInString, function (inputData, inputMetaData) {
+    return stringParsing.getWordCountInString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetWordsArrayFromString, function (inputData, inputMetaData) {
+    return stringParsing.getWordsArrayFromString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.crecombineStringArrayWithSpaces, function (inputData, inputMetaData) {
+    return stringParsing.recombineStringArrayWithSpaces(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainUpperCaseCharacter, function (inputData, inputMetaData) {
     return stringParsing.doesStringContainUpperCaseCharacter(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainLowerCaseCharacter, function (inputData, inputMetaData) {
@@ -124,6 +138,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.acertainMatchingElements(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainFilename, function (inputData, inputMetaData) {
     return stringParsing.doesArrayContainFilename(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetLengthOfLongestStringInArray, function (inputData, inputMetaData) {
+    return stringParsing.getLengthOfLongestStringInArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidation, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidation(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdetermineConstantsContextQualifiedPrefix, function (inputData, inputMetaData) {
@@ -132,10 +148,34 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidationLineItemName, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidationLineItemName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesConstantExist, function (inputData, inputMetaData) {
+    return stringParsing.doesConstantExist(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetConstantType, function (inputData, inputMetaData) {
+    return stringParsing.getConstantType(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetConstantActualValue, function (inputData, inputMetaData) {
+    return stringParsing.getConstantActualValue(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetConstantName, function (inputData, inputMetaData) {
+    return stringParsing.getConstantName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cfindConstantName, function (inputData, inputMetaData) {
+    return stringParsing.findConstantName(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisConstantTypeValid, function (inputData, inputMetaData) {
+    return stringParsing.isConstantTypeValid(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconstantsOptimizedFulfillmentSystem, function (inputData, inputMetaData) {
+    return stringParsing.constantsOptimizedFulfillmentSystem(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconvertConstantTypeToConstantPrefix, function (inputData, inputMetaData) {
+    return stringParsing.convertConstantTypeToConstantPrefix(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconstantsFulfillmentSystem, function (inputData, inputMetaData) {
+    return stringParsing.constantsFulfillmentSystem(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.csearchForPatternsInStringArray, function (inputData, inputMetaData) {
+    return stringParsing.searchForPatternsInStringArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cvalidatePatternsThatNeedImplementation, function (inputData, inputMetaData) {
+    return stringParsing.validatePatternsThatNeedImplementation(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValues, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValues(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisValidCommandNameString, function (inputData, inputMetaData) {
     return stringParsing.isValidCommandNameString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisConstantValid, function (inputData, inputMetaData) {
+    return stringParsing.isConstantValid(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccountDuplicateCommandAliases, function (inputData, inputMetaData) {
     return stringParsing.countDuplicateCommandAliases(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {
