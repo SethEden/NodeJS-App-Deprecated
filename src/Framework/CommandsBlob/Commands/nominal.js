@@ -190,11 +190,7 @@ export const clearScreen = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  // Maybe we can find a faster way to do this at some point?!
-  // For now this will have to work.
-  for (let i = 0; i <= 10000; i++) {
-    console.log(' ');
-  }
+  console.clear();
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

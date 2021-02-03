@@ -58,7 +58,8 @@ export const hex2rgbConversion = function(inputData, inputMetaData) {
     // }
 
     let bigInteger = parseInt(inputData, 16);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'bigInteger is: ' + bigInteger);
+    // bigInteger is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cMathOperationsMessage1 + bigInteger);
     let red = (bigInteger >> 16) & 255;
     let green = (bigInteger >> 8) & 255;
     let blue = bigInteger & 255;

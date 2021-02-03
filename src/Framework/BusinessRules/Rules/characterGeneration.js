@@ -281,22 +281,23 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = 
   let c9 = n.c9;
   let cTrue = g.cTrue;
   typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'typeToGenerate is: ' + typeToGenerate);
+  // typeToGenerate is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage1 + typeToGenerate);
   switch (typeToGenerate) {
-    case 1: case '1': // Generate a number.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a number.');
+    case 1: case n.c1: // Generate a number.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage2);
       returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
-    case 2: case '2': // Generate a random upper case or lower case letter.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a random upper case or lower case letter.');
+    case 2: case n.c2: // Generate a random upper case or lower case letter.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage3);
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
-    case 3: case '3':// Generate a special characters.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a special character.');
+    case 3: case n.c3:// Generate a special character.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage4);
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
-    default: // Default to a random upper case or lower case letter as a fall-back.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'DEFAULT: Generate a random upper case or lower case letter.');
+    default: // DEFAULT: Generate a random upper case or lower case letter.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage5);
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
   }

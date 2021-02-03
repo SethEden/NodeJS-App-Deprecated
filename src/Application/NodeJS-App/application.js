@@ -50,7 +50,8 @@ function bootStrapApplication() {
   } else if (NODE_ENV === w.cproduction) {
     rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
   } else {
-    console.log('WARNING: No .env file found! going to default to the DEVELOPMENT ENVIRONMENT!!!!!!!!!')
+    // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
+    console.log(s.cApplicationWarningMessage1a + s.ccApplicationWarningMessage1b);
     rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
   }
   // console.log('rootPath is: ' + rootPath);
@@ -82,8 +83,10 @@ function application() {
   let commandInput;
   let commandResult;
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN main program loop');
-  warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
+  // BEGIN main program loop
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationMessage2);
+  // BEGIN command parser
+  warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationMessage3);
   argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
   warden.enqueueCommand(s.cStartupWorkflow);
 
@@ -125,11 +128,13 @@ function application() {
       }
       commandResult = warden.processCommandQueue();
       if (commandResult === false) {
-        warden.consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
+        // END command parser
+        warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationMessage4);
         programRunning = false;
-        warden.consoleLog(baseFileName + b.cDot + functionName, 'END main program loop');
-        // console.log('Exiting, Good bye, Have a nice day & stay safe!');
-        warden.consoleLog(baseFileName + b.cDot + functionName, 'Exiting, Good bye, Have a nice day & stay safe!');
+        // END main program loop
+        warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationMessage5);
+        // Exiting, Good bye, Have a nice day & stay safe!
+        warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationExitMessage1 = s.cApplicationExitMessage2);
         break;
       } else {
         // console.log('contents of D are: ' + JSON.stringify(D));

@@ -107,6 +107,9 @@ export const genericConstantsValidation = [
    {Name: 'cDotjson', Actual: g.cDotjson, Expected: '.json'},
    {Name: 'cDotJson', Actual: g.cDotJson, Expected: '.Json'},
    {Name: 'cDotJSON', Actual: g.cDotJSON, Expected: '.JSON'},
+   {Name: 'cDotenv', Actual: g.cDotenv, Expected: '.env'},
+   {Name: 'cDotEnv', Actual: g.cDotEnv, Expected: '.Env'},
+   {Name: 'cDotENV', Actual: g.cDotENV, Expected: '.ENV'},
    {Name: 'cascii', Actual: g.cascii, Expected: 'ascii'},
 
    // Time Formatting

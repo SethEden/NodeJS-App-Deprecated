@@ -160,10 +160,16 @@ export const cSpecialCharacterCodeByLength = cSpecialCharacter + w.cCode + cByLe
 export const cvalidEmail = w.cvalid + w.cEmail; // validEmail
 export const cValidEmail = w.cValid + w.cEmail; // ValidEmail
 export const cInvalidEmail = b.cIn + cvalidEmail; // InvalidEmail
+export const cgenerateValidEmail = w.cgenerate + cValidEmail; // generateValidEmail
+export const cgenerateInvalidEmail = w.cgenerate + cInvalidEmail; // generateInvalidEmail
+export const cRandomValidEmail = w.cRandom + cValidEmail; // RandomValidEmail
+export const cRandomInvalidEmail = w.cRandom + cInvalidEmail; // RandomInvalidEmail
 export const cLetterOr = w.cLetter + b.cOr; // LetterOr
 export const cLetterOrSpecialCharacter = cLetterOr + cSpecialCharacter; // LetterOrSpecialCharacter
 export const cLetterOrNumberOrSpecialCharacter = cLetterOr + w.cNumber + w.cOr + cSpecialCharacter; // LetterOrNumberOrSpecialCharacter
 export const cAlphaNumericCharacter = cAlphaNumeric + w.cCharacter; // AlphaNumericCharacter
+export const cSuffixAndDomain = w.cSuffix + w.cAnd + w.cDomain; // SuffixAndDomain
+export const cWithSpecificSuffixAndDomainName = w.cWith + w.cSpecific + w.cSuffix + w.cAnd + w.cDomain + w.cName; // WithSpecificSuffixAndDomainName
 export const cNumericCharacter = w.cNumeric + w.cCharacter; // NumericCharacter
 export const cNumberInRange = w.cNumber + b.cIn + w.cRange; // NumberInRange
 export const cBooleanValue = w.cBoolean + w.cValue; // BooleanValue
@@ -202,6 +208,13 @@ export const cExportConst = w.cExport + b.cSpace + g.cConst; // Export Const
 export const cDataStorage = w.cData + w.cStorage; // DataStorage
 export const cSource1 = w.cSource + n.c1; // Source1
 export const cSource2 = w.cSource + n.c2; // Source2
+export const cbigInteger = w.cbig + w.cInteger; // bigInteger
+export const cnumberOfCharactersToGenerate = w.cnumber + b.cOf + w.cCharacters + b.cTo + w.cGenerate; // numberOfCharactersToGenerate
+export const cgenerateSpecialCharacters = w.cgenerate + cSpecialCharacters; // generateSpecialCharacters
+export const callowableSpecialCharacters = w.callowable + cSpecialCharacters; // allowableSpecialCharacters
+export const cspecifiedSuffixAndDomain = w.cspecified + cSuffixAndDomain; // specifiedSuffixAndDomain
+export const cfailureMode = w.cfailure + w.cMode; // failureMode
+export const cWithoutThe = w.cWithout + b.cSpace + w.cthe; // Without the
 
 // Logging Constants
 export const cBEGIN_Function = w.cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + w.cFunction; // BEGIN %% Function
@@ -226,6 +239,64 @@ export const cMessageFontBackgroundColor = w.cMessage + w.cFont + cBackground + 
 export const cDataFontBackgroundColor = w.cData + w.cFont + cBackground + w.cColor; // DataFontBackgroundColor
 
 // System Messages
+// WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
+export const cApplicationWarningMessage1a = w.cWARNING + b.cColon + b.cSpace + b.cNo + b.cSpace + g.cDotEnv + b.cSpace + w.cFile + b.cSpace + b.cfound + b.cExclamation + b.cSpace; // WARNING: No .End File found!
+export const cApplicationWarningMessage1b = w.cGoing + b.cSpace + b.cto + b.cSpace + w.cdefault + b.cSpace + b.cto + b.cSpace + w.cthe + b.cSpace + w.cDEVELOPMENT + b.cSpace + cENVIRONMENT + b.cExclamation; // Going to default to the DEVELOPMENT ENVIRONMENT!
+export const cApplicationMessage2 = w.cBEGIN + b.cSpace + w.cmain + b.cSpace + w.cprogram + b.cSpace + w.cloop; // BEGIN main program loop
+export const cApplicationMessage3 = w.cBEGIN + b.cSpace + w.ccommand + b.cSpace + w.cparser; // BEGIN command parser
+export const cApplicationMessage4 = w.cEND + b.cSpace + w.ccommand + b.cSpace + w.cparser; // END command parser
+export const cApplicationMessage5 = w.cEND + b.cSpace + w.cmain + b.cSpace + w.cprogram + b.cSpace + w.cloop; // END main program loop
+export const cApplicationExitMessage1 = w.cExiting + b.cComa + b.cSpace + w.cGood + b.cSpace + w.cbye + b.cComa + b.cSpace + w.cHave + b.cSpace + b.ca + b.cSpace + w.cnice + b.cSpace; // Exiting, Good bye, Have a nice
+export const cApplicationExitMessage2 = w.cday + b.cSpace + b.cAndPersand + b.cSpace + w.cstay + b.cSpace + w.csafe + b.cExclamation; // day & stay safe!
+export const cBuildMessage1 = w.cDeployment + b.cSpace + w.cwas + b.cSpace + w.ccompleted + b.cColon + b.cSpace; // Deployment was completed:
+export const cBuildMessage2 = w.cRelease + b.cSpace + w.cwas + b.cSpace + w.ccompleted + b.cColon + b.cSpace; // Release was completed:
+export const cCharacterGenerationMessage1 = w.ctype + b.cTo + w.cGenerate + b.cSpace + b.cis + b.cColon + b.cSpace; // typeToGenerate is:
+export const cCharacterGenerationMessage2 = w.cGenerate + b.cSpace + b.ca + b.cSpace + w.cnumber + b.cDot; // Generate a number.
+export const cCharacterGenerationMessage3 = w.cGenerate + b.cSpace + b.ca + b.cSpace + w.crandom + b.cSpace + w.cupper + b.cSpace + w.ccase + b.cSpace + b.cor + b.cSpace + w.clower + b.cSpace + w.ccase + b.cSpace + w.cletter + b.cDot; // Generate a random upper case or lower case letter.
+export const cCharacterGenerationMessage4 = w.cGenerate + b.cSpace + b.ca + b.cSpace + w.cspecial + b.cSpace + w.ccharacter + b.cDot; // Generate a special character.
+export const cCharacterGenerationMessage5 = w.cDEFAULT + b.cColon + b.cSpace + w.cGenerate + b.cSpace + b.ca + b.cSpace + w.crandom + b.cSpace + w.cupper + b.cSpace + w.ccase + b.cSpace + b.cor + b.cSpace + w.clower + b.cSpace + w.ccase + b.cSpace + w.cletter + b.cDot; // DEFAULT: Generate a random upper case or lower case letter.
+export const cMathOperationsMessage1 = cbigInteger + b.cSpace + b.cis + b.cColon + b.cSpace; // bigInteger is:
+export const cnumberOfCharactersToGenerateIs = cnumberOfCharactersToGenerate + b.cSpace + b.cIs + b.cColon + b.cSpace; // numberOfCharactersToGenerate is:
+export const cgenerateSpecialCharactersIs = cgenerateSpecialCharacters + b.cSpace + b.cIs + b.cColon + b.cSpace; // generateSpecialCharacters is:
+export const callowableSpecialCharactersIs = callowableSpecialCharacters + b.cSpace + b.cIs + b.cColon + b.cSpace; // allowableSpecialCharacters is:
+export const cspecifiedSuffixAndDomainIs = cspecifiedSuffixAndDomain + b.cSpace + b.cIs + b.cColon + b.cSpace; // specifiedSuffixAndDomain is:
+export const cfailureModeIs = cfailureMode + b.cSpace + b.cIs + b.cColon + b.cSpace; // failureMode is:
+export const cprefixIs = w.cprefix + b.cSpace + b.cIs + b.cColon + b.cSpace; // prefix is:
+export const csuffixIs = w.csuffix + b.cSpace + b.cIs + b.cColon + b.cSpace; // suffix is:
+export const cWithoutTheAtSymbol = cWithoutThe + b.cSpace + b.cAt + b.cSpace + w.csymbol + b.cDot; // Without the @ symbol.
+export const cWithoutThePrefix = cWithoutThe + b.cSpace + w.cprefix + b.cDot; // Without the prefix.
+export const cWithoutTheSuffix = cWithoutThe + b.cSpace + w.csuffix + b.cDot; // Without the suffix.
+export const cWithoutTheAtSymbolAndPrefix = cWithoutThe + b.cSpace + b.cAt + b.cSpace + w.cand + b.cSpace + w.cprefix + b.cDot; // Without the @ and prefix.
+export const cDEFAULTWithoutTheAtSymbolAndPrefix = w.cDEFAULT + b.cColon + b.cSpace + cWithoutTheAtSymbolAndPrefix // DEFAULT: Without the @ and prefix.
+export const cdomainNameIs = w.cdomain + w.cName + b.cSpace + b.cis + b.cColon + b.cSpace; // domainName is:
+export const cnumberOfPrefixCharactersIs = w.cnumber + b.cOf + w.cPrefix + w.cCharacters + b.cSpace + b.cis + b.cColon + b.cSpace; // numberOfPrefixCharacters is:
+export const cnumberOfSuffixCharactersIs = w.cnumber + b.cOf + w.cSuffix + w.cCharacters + b.cSpace + b.cis + b.cColon + b.cSpace; // numberOfSuffixCharacters is:
+
+export const cWithoutTheDotSymbol = cWithoutThe + b.cSpace + b.cDot + b.cSpace + w.csymbol + b.cDot; // Without the . symbol.
+export const cWithoutTheAndPersandAndDotSymbols = cWithoutThe + b.cSpace + b.cAt + b.cSpace + w.cand + b.cSpace + b.cDot + b.cSpace + w.csymbols + b.cDot; // Without the @ and . symbols.
+export const cWithoutTheDomainName = cWithoutThe + b.cSpace + w.cdomain + b.cSpace + w.cname; // Without the domain name.
+export const cWithoutTheAtSymbolAndDomainName = cWithoutThe + b.cSpace + b.cAt + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the @ and domain name.
+export const cWithoutTheDotAndDomainName = cWithoutThe + b.cSpace + b.cDot + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the . and domain name.
+export const cWithoutTheAtSymbolDotAndDomainName = cWithoutThe + b.cSpace + b.cAt + b.cComa + b.cSpace + b.cDot + b.cSpace + w.cand + b.cSpace + w.cdomain + w.cname + b.cDot; // Without the @, . and domain name.
+export const cWithoutTheDotAndPrefix = cWithoutThe + b.cSpace + b.cDot + b.cSpace + w.cand + b.cSpace + w.cprefix + b.cDot; // Without the . and prefix.
+export const cWithoutTheAtSymbolAndSuffix = cWithoutThe + b.cSpace + b.cAt + b.cSpace + w.cand + b.cSpace + w.csuffix + b.cDot; // Without the @ and suffix.
+export const cWithoutTheDotAndSuffix = cWithoutThe + b.cSpace + b.cDot + b.cSpace + w.cand + b.cSpace + w.csuffix + b.cDot; // Without the . and suffix.
+export const cWithoutTheAtSymbolDotAndPrefix = cWithoutThe + b.cSpace + b.cAt + b.cComa + b.cSpace + b.cDot + b.cSpace + w.cand + b.cSpace + w.cprefix + b.cDot; // Without the @, . and prefix.
+export const cWithoutTheAtSymbolDotAndSuffix = cWithoutThe + b.cSpace + b.cAt + b.cComa + b.cSpace + b.cDot + b.cSpace + w.cand + b.cSpace + w.csuffix + b.cDot; // Without the @, . and suffix.
+export const cWithoutTheAtSymbolDotPrefixAndSuffix = cWithoutThe + b.cSpace + b.cAt + b.cComa + b.cSpace + b.cDot + b.cComa + b.cSpace + w.cprefix + b.cSpace + w.cand + b.cSpace + w.csuffix + b.cDot; // Without the @, ., prefix and suffix.
+export const cWithoutThePrefixAndDomainName = cWithoutThe + b.cSpace + w.cprefix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the prefix and domain name.
+export const cWithoutTheSuffixAndDomainName = cWithoutThe + b.cSpace + w.csuffix + b.cSpace + w.cand + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the suffix and domain name.
+export const cWithoutThePrefixAndSuffix = cWithoutThe + b.cSpace + w.cprefix + b.cSpace + w.cand + b.cSpace + w.csuffix + b.cDot; // Without the prefix and suffix.
+export const cWithoutThePrefixSuffixAndDomainName = cWithoutThe + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the prefix, suffix and domain name.
+export const cWithoutTheAtSymbolPrefixAndDomainName = cWithoutThe + b.cSpace + b.cAt + b.cComa + b.cSpace + w.cprefix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the @, prefix and domain name.
+export const cWithoutTheDotPrefixAndDomainName = cWithoutThe + b.cSpace + b.cDot + b.cComa + b.cSpace + w.cprefix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the ., prefix and domain name.
+export const cWithoutTheAtSymbolSuffixAndDomainName = cWithoutThe + b.cSpace + b.cAt + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the @, suffix and domain name.
+export const cWithoutTheDotSuffixAndDomainName = cWithoutThe + b.cSpace + b.cDot + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the ., suffix and domain name.
+export const cWithoutTheAtSymbolPrefixSuffixAndDomainName = cWithoutThe + b.cSpace + b.cAt + b.cComa + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the @, prefix, suffix and domain name.
+export const cWithoutTheDotPrefixSuffixAndDomainName = cWithoutThe + b.cSpace + b.dDot + b.cComa + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cand + b.cSpace + w.cdomain + b.cSpace + w.cname + b.cDot; // Without the ., prefix, suffix and domain name.
+export const cWithoutThePrefixSuffixAndAtSymbol = cWithoutThe + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cname + b.cAt + b.cDot; // Without the prefix, suffix and @.
+export const cWithoutThePrefixSuffixAndDot = cWithoutThe + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cand + b.cSpace + b.cDot + b.cDot; // Without the prefix, suffix and ..
+
 // Please enter a named command where the first word starts with a lower case letter and all other words in the named command start with an upper case letter:
 export const cCommandNamePrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cnamed + b.cSpace + w.ccommand + b.cSpace + w.cwhere + b.cSpace; // Please enter a named command where
 export const cCommandNamePrompt2 = w.cthe + b.cSpace + n.cfirst + b.cSpace + w.cword + b.cSpace + w.cstarts + b.cSpace + w.cwith + b.cSpace + b.ca + b.cSpace; // the first word starts with a
@@ -751,10 +822,18 @@ export const cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLeng
 export const cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cLowerCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c2; // generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2
 export const cgenerateRandomSpecialCharacterCodeByLength1 = cgenerateRandom + cSpecialCharacterCodeByLength + n.c1; // generateRandomSpecialCharacterCodeByLength1
 export const cgenerateRandomSpecialCharacterCodeByLength2 = cgenerateRandom + cSpecialCharacterCodeByLength + n.c2; // generateRandomSpecialCharacterCodeByLength2
-export const cgenerateValidEmail1 = w.cgenerate + cValidEmail + n.c1; // generateValidEmail1
-export const cgenerateValidEmail2 = w.cgenerate + cValidEmail + n.c2; // generateValidEmail2
-export const cgenerateInvalidEmail1 = w.cgenerate + cInvalidEmail + n.c1; // generateInvalidEmail1
-export const cgenerateInvalidEmail2 = w.cgenerate + cInvalidEmail + n.c2; // generateInvalidEmail2
+export const cgenerateValidEmail1 = cgenerateValidEmail + n.c1; // generateValidEmail1
+export const cgenerateValidEmail2 = cgenerateValidEmail + n.c2; // generateValidEmail2
+export const cgenerateInvalidEmail1 = cgenerateInvalidEmail + n.c1; // generateInvalidEmail1
+export const cgenerateInvalidEmail2 = cgenerateInvalidEmail + n.c2; // generateInvalidEmail2
+export const cgenerateValidEmailWithSpecificSuffixAndDomainName1 = cgenerateValidEmail + cWithSpecificSuffixAndDomainName + n.c1; // generateValidEmailWithSpecificSuffixAndDomainName1
+export const cgenerateValidEmailWithSpecificSuffixAndDomainName2 = cgenerateValidEmail + cWithSpecificSuffixAndDomainName + n.c2; // generateValidEmailWithSpecificSuffixAndDomainName2
+export const cgenerateRandomValidEmail1 = w.cgenerate + cRandomValidEmail + n.c1; // generateRandomValidEmail1
+export const cgenerateRandomValidEmail2 = w.cgenerate + cRandomValidEmail + n.c2; // generateRandomValidEmail2
+export const cgenerateInvalidEmailWithSpecificSuffixAndDomainName1 = cgenerateInvalidEmail + cWithSpecificSuffixAndDomainName + n.c1; // generateInvalidEmailWithSpecificSuffixAndDomainName1
+export const cgenerateInvalidEmailWithSpecificSuffixAndDomainName2 = cgenerateInvalidEmail + cWithSpecificSuffixAndDomainName + n.c2; // generateInvalidEmailWithSpecificSuffixAndDomainName2
+export const cgenerateRandomInvalidEmail1 = w.cgenerate + cRandomInvalidEmail + n.c1; // generateRandomInvalidEmail1
+export const cgenerateRandomInvalidEmail2 = w.cgenerate + cRandomInvalidEmail + n.c2; // generateRandomInvalidEmail2
 
 // *********************************
 // CharacterGeneration rules in order

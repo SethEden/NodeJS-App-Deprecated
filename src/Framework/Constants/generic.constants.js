@@ -105,6 +105,9 @@ export const cDotXML = b.cDot + cXML; // .XML
 export const cDotjson = b.cDot + cjson; // .json
 export const cDotJson = b.cDot + cJson; // .Json
 export const cDotJSON = b.cDot + cJSON; // .JSON
+export const cDotenv = b.cDot + cenv; // .env
+export const cDotEnv = b.cDot + cEnv; // .Env
+export const cDotENV = b.cDot + cENV; // .ENV
 export const cascii = b.cas + b.cci + b.ci; // ascii
 
 // Time Formatting
