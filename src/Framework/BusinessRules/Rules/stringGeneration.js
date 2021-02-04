@@ -138,9 +138,7 @@ export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMet
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
@@ -167,9 +165,7 @@ export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMet
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
@@ -196,9 +192,7 @@ export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMet
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
@@ -225,9 +219,7 @@ export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMet
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
@@ -254,9 +246,7 @@ export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMet
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
@@ -283,9 +273,7 @@ export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMet
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
@@ -312,9 +300,7 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = functio
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
@@ -341,9 +327,7 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = functio
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
@@ -370,9 +354,7 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = functio
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
@@ -399,9 +381,7 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = functio
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
@@ -428,9 +408,7 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = functio
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
@@ -457,9 +435,7 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = functio
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
@@ -486,9 +462,7 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
@@ -515,9 +489,7 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
@@ -544,9 +516,7 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
@@ -573,9 +543,7 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
@@ -602,9 +570,7 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
@@ -631,9 +597,7 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
@@ -660,9 +624,7 @@ export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaD
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
@@ -689,9 +651,7 @@ export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaD
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
@@ -719,9 +679,7 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
@@ -749,9 +707,7 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
@@ -779,9 +735,7 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
@@ -809,9 +763,7 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
@@ -839,9 +791,7 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
@@ -869,9 +819,7 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
@@ -898,9 +846,7 @@ export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, i
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
@@ -927,9 +873,7 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
 		returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
@@ -1640,13 +1584,13 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
     // We know we have to use an "@" symbol, and a "x" symbol, the rest of the characters must be generated.
     // first need to figure out how many characters of each we must generate to get the desired final length.
     switch (failureMode) {
-      case 1: case '1':
+      case 1: case n.c1:
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - (specifiedSuffixAndDomain.length + 1);
         break;
-      case 2: case '2':
+      case 2: case n.c2:
         numberOfCharactersToGenerate = numberOfCharactersToGenerate - specifiedSuffixAndDomain.length;
         break;
-      case 3: case '3':
+      case 3: case n.c3:
         numberOfCharactersToGenerate = 0;
         break;
       default:
@@ -1890,27 +1834,27 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 2: // Without the . symbol.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . symbol.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotSymbol);
       returnData = prefix + b.cAt + suffix + domainName;
       break;
     case 3: // Without both the @ and . symbols.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and . symbols.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtAndDotSymbols);
       returnData = prefix + suffix + domainName;
       break;
     case 4: // Without the domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDomainName);
       returnData = prefix + b.cAt + suffix + b.cDot;
       break;
     case 5: // Without the @ and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolAndDomainName);
       returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 6: // Without the . and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotAndDomainName);
       returnData = prefix + b.cAt + suffix;
       break;
     case 7: // Without the @, . and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotAndDomainName);
       returnData = prefix + suffix;
       break;
     case 8: // Without the prefix.
@@ -1918,7 +1862,7 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       returnData = b.cAt + suffix + b.cDot + domainName;
       break;
     case 9: // Without the suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheSuffix);
       returnData = prefix + b.cAt + b.cDot + domainName;
       break;
     case 10: // Without the @ and prefix.
@@ -1926,75 +1870,75 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       returnData = suffix + b.cDot + domainName;
       break;
     case 11: // Without the . and prefix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and prefix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotAndPrefix);
       returnData = b.cAt + suffix + domainName;
       break;
     case 12: // Without the @ and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolAndSuffix);
       returnData = prefix + b.cDot + domainName;
       break;
     case 13: // Without the . and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotAndSuffix);
       returnData = prefix + b.cAt + domainName;
       break;
     case 14: // Without the @, . and prefix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and prefix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotAndPrefix);
       returnData = suffix + domainName;
       break;
     case 15: // Without the @, . and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotAndSuffix);
       returnData = prefix + domainName;
       break;
     case 16: // Without the @, ., prefix, and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, ., prefix and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotPrefixAndSuffix);
       returnData = domainName;
       break;
     case 17: // Without the prefix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixAndDomainName);
       returnData = b.cAt + suffix + b.cDot;
       break;
     case 18: // Without the suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheSuffixAndDomainName);
       returnData = prefix + b.cAt + b.cDot;
       break;
     case 19: // Without the prefix and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixAndSuffix);
       returnData = b.cAt + b.cDot + domainName;
       break;
     case 20: // Without the prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixSuffixAndDomainName);
       returnData = b.cAt + b.cDot;
       break;
     case 21: // Without the @, prefix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolPrefixAndDomainName);
       returnData = suffix + b.cDot;
       break;
     case 22: // Without the ., prefix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotPrefixAndDomainName);
       returnData = b.cAt + suffix;
       break;
     case 23: // Without the @, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolSuffixAndDomainName);
       returnData = prefix + b.cDot;
       break;
     case 24: // Without the ., suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotSuffixAndDomainName);
       returnData = prefix + b.cAt + b.cDot;
       break;
     case 25: // Without the @, prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolPrefixSuffixAndDomainName);
       returnData = b.cDot;
       break;
     case 26: // Without the ., prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotPrefixSuffixAndDomainName);
       returnData = b.cAt;
       break;
     case 27: // Without the prefix, suffix and @.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and @.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixSuffixAndAtSymbol);
       returnData = b.cDot + domainName;
       break;
     case 28: // Without the prefix, suffix and ..
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and ..');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixSuffixAndDot);
       returnData = b.cAt + domainName;
       break;
   }
@@ -2200,27 +2144,27 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 2: // Without the . symbol.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . symbol.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotSymbol);
       returnData = prefix + b.cAt + suffix + domainName;
       break;
     case 3: // Without both the @ and . symbols.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and . symbols.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtAndDotSymbols);
       returnData = prefix + suffix + domainName;
       break;
     case 4: // Without the domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDomainName);
       returnData = prefix + b.cAt + suffix + b.cDot;
       break;
     case 5: // Without the @ and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolAndDomainName);
       returnData = prefix + suffix + b.cDot + domainName;
       break;
     case 6: // Without the . and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotAndDomainName);
       returnData = prefix + b.cAt + suffix;
       break;
     case 7: // Without the @, . and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotAndDomainName);
       returnData = prefix + suffix;
       break;
     case 8: // Without the prefix.
@@ -2228,7 +2172,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       returnData = b.cAt + suffix + b.cDot + domainName;
       break;
     case 9: // Without the suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheSuffix);
       returnData = prefix + b.cAt + b.cDot + domainName;
       break;
     case 10: // Without the @ and prefix.
@@ -2236,75 +2180,75 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       returnData = suffix + b.cDot + domainName;
       break;
     case 11: // Without the . and prefix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and prefix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotAndPrefix);
       returnData = b.cAt + suffix + domainName;
       break;
     case 12: // Without the @ and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @ and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolAndSuffix);
       returnData = prefix + b.cDot + domainName;
       break;
     case 13: // Without the . and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the . and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotAndSuffix);
       returnData = prefix + b.cAt + domainName;
       break;
     case 14: // Without the @, . and prefix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and prefix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotAndPrefix);
       returnData = suffix + domainName;
       break;
     case 15: // Without the @, . and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, . and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotAndSuffix);
       returnData = prefix + domainName;
       break;
     case 16: // Without the @, ., prefix, and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, ., prefix and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolDotPrefixAndSuffix);
       returnData = domainName;
       break;
     case 17: // Without the prefix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixAndDomainName);
       returnData = b.cAt + suffix + b.cDot;
       break;
     case 18: // Without the suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheSuffixAndDomainName);
       returnData = prefix + b.cAt + b.cDot;
       break;
     case 19: // Without the prefix and suffix.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix and suffix.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixAndSuffix);
       returnData = b.cAt + b.cDot + domainName;
       break;
     case 20: // Without the prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixSuffixAndDomainName);
       returnData = b.cAt + b.cDot;
       break;
     case 21: // Without the @, prefix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolPrefixAndDomainName);
       returnData = suffix + b.cDot;
       break;
     case 22: // Without the ., prefix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotPrefixAndDomainName);
       returnData = b.cAt + suffix;
       break;
     case 23: // Without the @, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolSuffixAndDomainName);
       returnData = prefix + b.cDot;
       break;
     case 24: // Without the ., suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotSuffixAndDomainName);
       returnData = prefix + b.cAt + b.cDot;
       break;
     case 25: // Without the @, prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the @, prefix, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheAtSymbolPrefixSuffixAndDomainName);
       returnData = b.cDot;
       break;
     case 26: // Without the ., prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the ., prefix, suffix and domain name.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutTheDotPrefixSuffixAndDomainName);
       returnData = b.cAt;
       break;
     case 27: // Without the prefix, suffix and @.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and @.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixSuffixAndAtSymbol);
       returnData = b.cDot + domainName;
       break;
     case 28: // Without the prefix, suffix and ..
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Without the prefix, suffix and ..');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cWithoutThePrefixSuffixAndDot);
       returnData = b.cAt + domainName;
       break;
   }

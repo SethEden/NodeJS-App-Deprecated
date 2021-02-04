@@ -1154,3 +1154,5 @@ export const cmode = b.cm + p.code; // mode
 export const cMode = b.cM + p.code; // Mode
 export const csymbol = p.csym + p.cbol; // symbol
 export const cSymbol = p.cSym + p.cbol; // Symbol
+export const csymbols = csymbol + b.cs; // symbols
+export const cSymbols = cSymbol + b.cs; // Symbols

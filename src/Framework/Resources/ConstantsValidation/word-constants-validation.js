@@ -1153,5 +1153,7 @@ export const wordConstantsValidation = [
    {Name: 'cmode', Actual: w.cmode, Expected: 'mode'},
    {Name: 'cMode', Actual: w.cMode, Expected: 'Mode'},
    {Name: 'csymbol', Actual: w.csymbol, Expected: 'symbol'},
-   {Name: 'cSymbol', Actual: w.cSymbol, Expected: 'Symbol'}
+   {Name: 'cSymbol', Actual: w.cSymbol, Expected: 'Symbol'},
+   {Name: 'csymbols', Actual: w.csymbols, Expected: 'symbols'},
+   {Name: 'cSymbols', Actual: w.cSymbols, Expected: 'Symbols'}
  ];
