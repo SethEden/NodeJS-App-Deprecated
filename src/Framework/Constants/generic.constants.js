@@ -47,6 +47,10 @@ export const cnotEql = cnot + p.cEql; // notEql
 export const cnoteql = cnot + p.ceql; // noteql
 export const cNotEql = cNot + p.cEql; // NotEql
 export const cNoteql = cNot + p.ceql; // Noteql
+export const cmax = b.cma + b.cx; // max
+export const cMax = b.cMa + b.cx; // Max
+export const cmin = b.camai + b.cn; // min
+export const cMin = b.cMi + b.cn; // Min
 
 // Test Status
 export const cPass = b.cPa + b.css; // Pass

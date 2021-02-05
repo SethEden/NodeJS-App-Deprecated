@@ -480,3 +480,7 @@ export const ceak = b.cea + b.ck; // eak
 export const cnto = b.cnt + b.co; // nto
 export const cmpt = b.cmp + b.ct; // mpt
 export const cted = b.cte + b.cd; // ted
+export const cist = b.cis + b.ct; // ist
+export const crch = b.crc + b.ch; // rch
+export const cson = b.cso + b.cn; // son
+export const cison = b.ci + cson; // ison

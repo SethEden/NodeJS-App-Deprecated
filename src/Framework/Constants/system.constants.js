@@ -222,11 +222,16 @@ export const candPrefix = w.cand + b.cSpace + w.cprefix; // and prefix
 export const candSuffix = w.cand + b.cSpace + w.csuffix; // and suffix
 export const cdomainSpaceName = w.cdomain + b.cSpace + w.cname // domain name
 export const candSpaceDomainSpaceName = w.cand + b.cSpace + cdomainSpaceName; // and domain name
+export const ccurrentMasterStringArrayElement = w.ccurrent + w.cMaster + w.cString + w.cArray + w.cElement; // currentMasterStringArrayElement
 
 // Logging Constants
 export const cBEGIN_Function = w.cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + w.cFunction; // BEGIN %% Function
 export const cEND_Function = w.cEND + b.cSpace + b.cPercent + b.cPercent + b.cSpace + w.cFunction; // END %% Function
-export const cinputDataIs = w.cinput + w.cData + cSpaceIsColonSpace; // input Data is:
+export const cinputData = w.cinput + w.cData; // inputData
+export const cInputData = w.cInput + w.cData; // InputData
+export const cinputMetaData = w.cinput + w.cMetaData; // inputMetaData
+export const cInputMetaData = w.cInput + w.cMetaData; // InputMetaData
+export const cinputDataIs = cinputData + cSpaceIsColonSpace; // input Data is:
 export const cinputMetaDataIs = w.cinput + w.cMetaData + cSpaceIsColonSpace; // input MetaData is:
 export const creturnDataIs = w.creturn + w.cData + cSpaceIsColonSpace; // return Data is:
 export const cLogBasicSystemEvents = w.cLog + w.cBasic + w.cSystem + w.cEvents; // LogBasicSystemEvents
@@ -334,6 +339,49 @@ export const cconstantTypeValuesIs = w.cconstant + w.cType + w.cValues + cSpaceI
 export const cconstantsKeysIs = w.cconstants + w.cKeys + cSpaceIsColonSpace; // constantsKeys is:
 export const cconstantKeyIs = w.cconstant + w.cKey + cSpaceIsColonSpace; // constantKey is:
 export const cconstantActualValueIs = w.cconstant + w.cActual + w.cValue + cSpaceIsColonSpace; // constantActualValue is:
+export const cconstantNameIs = w.cconstant + w.cName + cSpaceIsColonSpace; // constantName is:
+export const cconstantValueIs = w.cconstant + w.cValue + cSpaceIsColonSpace; // constantValue is:
+export const cdeltaLengthIs = w.cdelta + w.cLength + cSpaceIsColonSpace; // deltaLength is:
+export const crecursiveSubStringIs = w.crecursive + w.cSubString + cSpaceIsColonSpace; // recursiveSubString is:
+export const cmaxStringLengthIs = g.cmax + w.cString + w.cLength + cSpaceIsColonSpace; // maxStringLength is:
+export const cminStringLengthIs = g.cmin + w.cString + w.cLength + cSpaceIsColonSpace; // minStringLength is:
+export const ccurrentMasterStringArrayElementIs = ccurrentMasterStringArrayElement + cSpaceIsColonSpace; // currentMasterStringArrayElement is:
+export const cConstantDoesNotExist = w.cConstant + b.cSpace + w.cdoes + b.cSpace + g.cNOT + b.cSpace + w.cexist + b.cColon + b.cSpace; // Constant does NOT exist:
+export const cConstantDoesExist = w.cConstant + b.cSpace + w.cdoes + b.cSpace + w.cexist + b.cColon + b.cSpace; // Constant does exist:
+// BEGIN i-th loop:
+// currentCommand is:
+// aliasList is:
+// BEGIN j-th loop:
+// currentAlias is:
+// duplicateAliasCount is:
+// END j-th loop:
+// END i-th loop:
+// duplicateAliasCount is:
+// duplicate command alias is:
+// commandWordAliases BEFORE CHANGE is:
+// commandWordAliasesArray AFTER CHANGE is:
+// masterCommandWordAliasesArray is:
+// masterArrayIndex is:
+// Command Aliases are:
+// expandedLehmerCodeArray is:
+// indexOfExpansion is:
+// arrayToBeExpanded is:
+// limitOfExpansion is:
+// returnData is:
+// pushing lehmerCodeArray1 to returnData value:
+// returnData after push is:
+// returnData after Level 1 is:
+// arrayToBeExpanded.length is:
+// returnData.length is:
+// returnData BEFORE POP is:
+// returnData AFTER POP is:
+// masterTempReturnData BEFORE recursive call is:
+// tempReturnData1 is:
+// tempReturnData1.length is:
+// BEGIN k-th iteration:
+// pushing tempReturnData1[k] value:
+// END k-th iteration:
+// masterTempReturnData AFTER recursive call is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
@@ -379,6 +427,12 @@ export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 = w.c
 export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4 = b.cit + b.cSpace + w.cshould + b.cSpace + w.cbegin + b.cSpace + w.cwith + b.cSpace + b.ca + b.cSpace + w.clower + b.cSpace + w.ccase + b.cSpace + b.cDoubleQuote + b.cc + b.cDoubleQuote + b.cDot + b.cSpace; // it should begin with a lower case "c".
 export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5 = w.cPlease + b.cSpace + w.creformat + b.cSpace + w.cthe + b.cSpace + w.cconstant + b.cSpace + w.ccorrectly + b.cSpace + b.cso + b.cSpace + b.ca + b.cSpace; // Please reformat the constant correctly so a
 export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6 = w.cline + b.cSpace + b.cof + b.cSpace + w.ccode + b.cSpace + w.ccan + b.cSpace + b.cbe + b.cSpace + w.cgenerated + b.cSpace + w.cfor + b.cSpace + w.cyou + b.cDot; // line of code can be generated for you.
+export const cSearchForPatternsInStringArrayMessage1 = ccurrentMasterStringArrayElement + b.cSpace + w.cdoes + b.cSpace + g.cnot + b.cSpace + w.ccontain + b.cSpace + b.ca + b.cSpace + w.cspace + b.cSpace + w.ccharacter; // currentMasterStringArrayElement does not contain a space character
+// WARNING: The current string being searched contains a space character, we are going to skip comparison.
+export const cSearchForPatternsInStringArrayMessage2 = w.cWARNING + b.cColon + b.cSpace + w.cThe + b.cSpace + w.ccurrent + b.cSpace + w.cstring + b.cSpace + w.cbeing + b.cSpace + w.csearched + b.cSpace + w.ccontains + b.cSpace + b.ca + b.cSpace + w.cspace + b.cSpace + w.ccharacter + b.cComa + b.cSpace; // WARNING: The current string being search contains a space character,
+export const cSearchForPatternsInStringArrayMessage3 = b.cwe + b.cSpace + w.care + b.cSpace + w.cgoing + b.cSpace + b.cto + b.cSpace + w.cskip + b.cSpace + w.ccomparison + b.cDot; // we are going to skip comparison.
+// WARNING: InputData was not an array or had an empty array.
+export const cSearchForPatternsInStringArrayMessage4 = w.cWARNING + b.cColon + b.cSpace + cInputData + b.cSpace + w.cwas + b.cSpace + g.cnot + b.cSpace + b.can + b.cSpace + w.carray + b.cSpace + b.cor + b.cSpace + w.chad + b.cSpace + b.can + b.cSpace + w.cempty + b.cSpace + w.carray + b.cDot; // WARNING: InputData was not an array or had an empty array.
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia

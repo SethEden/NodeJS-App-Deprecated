@@ -2225,15 +2225,19 @@ export const constantsFulfillmentSystem = function(inputData, inputMetaData) {
     // We found the first part of the string, now lets continue processing the rest of the string!
     // First determine how many characters are being returned so we can determine what portion of the string we need to continue processing with.
     constantName = findConstantName(returnData, '');
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantName is: ' + constantName);
+    // constantName is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantNameIs + constantName);
     let constantValue = getConstantActualValue(constantName, '');
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantValue is: ' + constantValue);
+    // constantValue is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantValueIs + constantValue);
 
     let deltaLength = inputData.length - constantValue.length;
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'deltaLength is: ' + deltaLength);
+    // deltaLength is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdeltaLengthIs + deltaLength);
     if (deltaLength != 0) {
       let recursiveSubString = inputMetaData.substring(inputMetaData.length - deltaLength, inputMetaData.length);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'recursiveSubString is: ' + recursiveSubString);
+      // recursiveSubString is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.crecursiveSubStringIs + recursiveSubString);
       returnData = returnData + b.cSpace + b.cPlus + b.cSpace + constantsFulfillmentSystem(recursiveSubString, inputData);
     }
   }
@@ -2262,14 +2266,18 @@ export const searchForPatternsInStringArray = function(inputData, inputMetaData)
   if (inputData && inputData.length > 0) {
     returnData = []; // Reset it to an empty array, the input data has something in it so we should be able to process it.
     let maxStringLength = getLengthOfLongestStringInArray(inputData, '') - 1;
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'maxStringLength is: ' + maxStringLength);
+    // maxStringLength is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmaxStringLengthIs + maxStringLength);
     let minStringLength = 3;
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'minStringLength is: ' + minStringLength);
+    // minStringLength is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cminStringLengthIs + minStringLength);
     for (let a = 0; a < inputData.length; a++) { // Initial high-level loop over each of the array elements. (This is the source string for the comparison)
       let currentMasterStringArrayElement = inputData[a];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement is: ' + currentMasterStringArrayElement);
+      // currentMasterStringArrayElement is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentMasterStringArrayElementIs + currentMasterStringArrayElement);
       if (currentMasterStringArrayElement.includes(b.cSpace) === false) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement does not contain a space character');
+        // currentMasterStringArrayElement does not contain a space character
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage1);
         // NOTE: All of the other loggers.consolelog below this are not actually getting called for some reason.
         // That is why I have added the hard-coded console Logs, but really they only need to be enabled if this function needs to be debugged.
         // It's difficult to debug these because they really dump a LOT of data to the output.
@@ -2322,11 +2330,13 @@ export const searchForPatternsInStringArray = function(inputData, inputMetaData)
           } // End-if (currentMasterStringArrayElement <= b)
         } // End-for (let b = minStringLength; b <= maxStringLength; b++) {
       } else { // Else-clause if (currentMasterStringArrayElement.includes(b.cSpace) === false)
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: The current string being searched contains a space character, we are going to skip comparison.');
+        // WARNING: The current string being searched contains a space character, we are going to skip comparison.
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage2 + s.cSearchForPatternsInStringArrayMessage3);
       }
     } // End-for (let a = 0; a < inputData.length; a++)
   } else { // Else-clause if (inputData && inputData.length > 0)
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: InputData was not an array or had an empty array.');
+    // WARNING: InputData was not an array or had an empty array.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage4);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -2352,17 +2362,21 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
     for (let i = 0; i < inputData.length; i++) {
       let currentString = inputData[i];
       if (doesConstantExist(currentString, '') === false) {
-        passMessage = 'Constant does NOT exist: ' + currentString;
+        // Constant does NOT exist:
+        passMessage = s.cConstantDoesNotExist + currentString;
         passMessage = chalk.rgb(0,0,0)(passMessage);
         passMessage = chalk.bgRgb(0,255,0)(passMessage);
         console.log(passMessage);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constant does NOT exist: ' + currentString);
+        // constant does NOT exist:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cConstantDoesNotExist + currentString);
       } else {
-        passMessage = 'Constant does exist: ' + currentString;
+        // Constant does exist:
+        passMessage = s.cConstantDoesExist + currentString;
         passMessage = chalk.rgb(0,0,0)(passMessage);
         passMessage = chalk.bgRgb(255,0,0)(passMessage);
         console.log(passMessage);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constant does exist: ' + currentString);
+        // constant does exist:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cConstantDoesExist + currentString);
       }
     }
   }
@@ -2393,7 +2407,9 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
       if (validationLineItem) {
         if (validationLineItem.Actual === validationLineItem.Expected) {
           if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-            passMessage = `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
+            // `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
+            passMessage = w.cPASS + b.cSpace + b.cDoubleDash + b.cSpace + inputData + b.cSpace + w.cActual + b.cColon + b.cSpace +
+              validationLineItem.Actual + b.cComa + b.cSpace + w.cExpected + b.cColon + b.cSpace + validationLineItem.Expected + b.cbSpace + b.cDoubleDash + b.cSpace + w.cPASS;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(0,255,0)(passMessage);
             console.log(passMessage);
@@ -2401,14 +2417,17 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
         } else {
           returnData = false;
           if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-            passMessage = `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
+            // `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
+            passMessage = w.cFAIL + b.cSpace + b.cDoubleDash + b.cSpace + inputData + b.cSpace + w.cActual + b.cColon + b.cSpace +
+              validationLineItem.Actual + b.cComa + b.cSpace + w.cExpected + b.cColon + b.cSpace + validationLineItem.Expected + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAIL;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(255,0,0)(passMessage);
             console.log(passMessage);
           }
         }
       } else {
-        passMessage = `FAIL -- ${inputData} -- FAIL`;
+        // `FAIL -- ${inputData} -- FAIL`
+        passMessage = w.cFAIL + b.cSpace + b.cDoubleDash + b.cSpace + inputData + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAIL;
         passMessage = chalk.rgb(0,0,0)(passMessage);
         passMessage = chalk.bgRgb(255,0,0)(passMessage);
         console.log(passMessage);
@@ -2499,31 +2518,41 @@ export const countDuplicateCommandAliases = function(inputData, inputMetaData) {
   if (inputData && inputMetaData) {
 loop1:
     for (let i = 0; i < inputMetaData.length; i++) {
+      // BEGIN i-th loop:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
       let currentCommand = inputMetaData[i];
+      // currentCommand is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
       let aliasList = currentCommand[w.cAliases];
+      // aliasList is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
       let arrayOfAliases = aliasList.split(b.cComa);
 loop2:
       for (let j = 0; j < arrayOfAliases.length; j++) {
+        // BEGIN j-th loop:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
         let currentAlias = arrayOfAliases[j];
+        // currentAlias is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
         if (currentAlias === inputData) {
           returnData = returnData + 1;
         }
+        // duplicateAliasCount is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'duplicateAliasCount is: ' + returnData);
+        // END j-th loop:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
       }
+      // END i-th loop:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
     }
   }
   if (returnData > 1) {
+    // duplicateAliasCount is:
     let duplicateAliasCountMessage = 'duplicateAliasCount is: ' + returnData;
     duplicateAliasCountMessage = chalk.rgb(0,0,0)(duplicateAliasCountMessage);
     duplicateAliasCountMessage = chalk.bgRgb(255,0,0)(duplicateAliasCountMessage);
     console.log(duplicateAliasCountMessage);
+    // duplicate command alias is:
     let duplicateAliasCommandMessage = 'duplicate command alias is: ' + inputData;
     duplicateAliasCommandMessage = chalk.rgb(0,0,0)(duplicateAliasCommandMessage);
     duplicateAliasCommandMessage = chalk.bgRgb(255,0,0)(duplicateAliasCommandMessage);
@@ -2578,6 +2607,7 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
         commandDelimiter = tertiaryCommandDelimiter;
       }
       commandWordAliases = commandWordAliases + commandDelimiter + key1;
+      // commandWordAliases BEFORE CHANGE is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliases BEFORE CHANGE is: ' + commandWordAliases);
       commandWordAliasesArray = commandWordAliases.split(commandDelimiter);
       masterArrayIndex[i] = commandWordAliasesArray.length - 1;
@@ -2589,10 +2619,13 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
           commandWordAliasesArray[j] = commandAliasWord; // Saved the changes back to array.
         }
       }
+      // commandWordAliasesArray AFTER CHANGE is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliasesArray AFTER CHANGE is: ' + JSON.stringify(commandWordAliasesArray));
       masterCommandWordAliasesArray[i] = commandWordAliasesArray; // Try to build an array of arrays (2D)
     }
+    // masterCommandWordAliasesArray is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterCommandWordAliasesArray is: ' + JSON.stringify(masterCommandWordAliasesArray));
+    // masterArrayIndex is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterArrayIndex is: ' + JSON.stringify(masterArrayIndex));
 
     // NOTES: Console output is:
@@ -2613,6 +2646,7 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // NOTE: The algorthim described above is called: Lehmer code
     // https://en.wikipedia.org/wiki/Lehmer_code
     let returnData = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
+    // Command Aliases are:
     console.log('Command Aliases are: ' + returnData);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -2651,6 +2685,7 @@ export const solveLehmerCode = function(inputData, inputMetaData) {
     let tempArray = [];
     let lehmerCodeArray = Array.from(Array(lengthOfInputData), () => 0);
     expandedLehmerCodeArray = arrayDeepClone(recursiveArrayExpansion([0, lehmerCodeArray], inputData));
+    // expandedLehmerCodeArray is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'expandedLehmerCodeArray is: ' + JSON.stringify(expandedLehmerCodeArray));
 
     // Now we just iterate over each array in expandedLehmerCodeArray and call: getLehmerCodeValue
@@ -2688,8 +2723,11 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
     let indexOfExpansion = inputData[0];
     let arrayToBeExpanded = inputData[1];
     let limitOfExpansion = inputMetaData[indexOfExpansion];
+    // indexOfExpansion is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'indexOfExpansion is: ' + indexOfExpansion);
+    // arrayToBeExpanded is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded is: ' + JSON.stringify(arrayToBeExpanded));
+    // limitOfExpansion is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'limitOfExpansion is: ' + limitOfExpansion);
     let masterTempReturnData = []; // When we are all done we will set the returnData back to the list of arrays in this array.
 
@@ -2705,24 +2743,30 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
     // First level array expansion.
     for (let i = 0; i <= limitOfExpansion; i++) {
       let lehmerCodeArray1 = arrayDeepClone(arrayToBeExpanded, '');
+      // returnData is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
       lehmerCodeArray1[indexOfExpansion] = i;
       if (doesArrayContainValue(returnData, lehmerCodeArray1, ascertainMatchingElements) === false) {
+        // pushing lehmerCodeArray1 to returnData value:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'pushing lehmerCodeArray1 to returnData value: ' + JSON.stringify(lehmerCodeArray1));
         returnData.push(lehmerCodeArray1);
+        // returnData after push is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData after push is: ' + JSON.stringify(returnData));
       }
     }
+    // returnData after Level 1 is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData after Level 1 is: ' + JSON.stringify(returnData));
 
     // Second level array expansion, this is where we call recursively.
     // We need to determine if the index of expansion is equal to the length of the arrayToBeExpanded.
     // If it is then we have reached our recursive expansion limit.
     // If NOT then we need to recursively expand some more on each of the arrays that are now in the returnData array.
+    // arrayToBeExpanded.length is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded.length is: ' + arrayToBeExpanded.length);
     if (indexOfExpansion < arrayToBeExpanded.length - 1) {
       // We need to remove arrays from the returnData and recursively call the recursiveArrayExpansion with each array we remove.
       // The data we get back from each recursive call should be pushed back to masterTempReturnData array
+      // returnData.length is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData.length is: ' + returnData.length);
       // Make sure we clone the array we will be removing array elements from,
       // because otherwise we would be looping over the same array we are removing elements from,
@@ -2730,22 +2774,31 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
       // https://stackoverflow.com/questions/54081930/why-array-foreach-array-pop-would-not-empty-the-array
       let returnDataTemp = arrayDeepClone(returnData, '');
       returnDataTemp.forEach(function(item) {
+        // returnData BEFORE POP is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData BEFORE POP is: ' + JSON.stringify(returnData));
         let lehmerCodeArray2 = arrayDeepClone(returnData.pop(), '');
+        // returnData AFTER POP is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData AFTER POP is: ' + JSON.stringify(returnData));
+        // masterTempReturnData BEFORE recursive call is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData BEFORE recursive call is: ' + JSON.stringify(masterTempReturnData));
         let tempReturnData1 = arrayDeepClone(recursiveArrayExpansion([indexOfExpansion + 1, lehmerCodeArray2], inputMetaData), '');
+        // tempReturnData1 is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1 is: ' + JSON.stringify(tempReturnData1));
+        // tempReturnData1.length is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1.length is: ' + tempReturnData1.length);
         for (let k = 0; k <= tempReturnData1.length - 1; k++) {
+          // BEGIN k-th iteration:
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN k-th iteration: ' + k);
           if (doesArrayContainValue(masterTempReturnData, tempReturnData1[k], ascertainMatchingElements) === false) {
+            // pushing tempReturnData1[k] value:
             loggers.consoleLog(baseFileName + b.cDot + functionName, 'pushing tempReturnData1[k] value: ' + JSON.stringify(tempReturnData1[k]));
             masterTempReturnData.push(arrayDeepClone(tempReturnData1[k], ''));
           }
+          // END k-th iteration:
           loggers.consoleLog(baseFileName + b.cDot + functionName, 'END k-th iteration: ' + k);
         }
         tempReturnData1 = null;
+        // masterTempReturnData AFTER recursive call is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData AFTER recursive call is: ' + JSON.stringify(masterTempReturnData));
       });
       returnData = arrayDeepClone(masterTempReturnData, '');

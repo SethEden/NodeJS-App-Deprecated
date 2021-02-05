@@ -487,5 +487,9 @@ export const phonicsConstantsValidation = [
    {Name: 'ceak', Actual: p.ceak, Expected: 'eak'},
    {Name: 'cnto', Actual: p.cnto, Expected: 'nto'},
    {Name: 'cmpt', Actual: p.cmpt, Expected: 'mpt'},
-   {Name: 'cted', Actual: p.cted, Expected: 'ted'}
+   {Name: 'cted', Actual: p.cted, Expected: 'ted'},
+   {Name: 'cist', Actual: p.cist, Expected: 'ist'},
+   {Name: 'crch', Actual: p.crch, Expected: 'rch'},
+   {Name: 'cson', Actual: p.cson, Expected: 'son'},
+   {Name: 'cison', Actual: p.cison, Expected: 'ison'}
  ];

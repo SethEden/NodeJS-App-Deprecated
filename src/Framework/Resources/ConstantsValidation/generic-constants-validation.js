@@ -49,6 +49,10 @@ export const genericConstantsValidation = [
    {Name: 'cnoteql', Actual: g.cnoteql, Expected: 'noteql'},
    {Name: 'cNotEql', Actual: g.cNotEql, Expected: 'NotEql'},
    {Name: 'cNoteql', Actual: g.cNoteql, Expected: 'Noteql'},
+   {Name: 'cmax', Actual: g.cmax, Expected: 'max'},
+   {Name: 'cMax', Actual: g.cMax, Expected: 'Max'},
+   {Name: 'cmin', Actual: g.cmin, Expected: 'min'},
+   {Name: 'cMin', Actual: g.cMin, Expected: 'Min'},
 
    // Test Status
    {Name: 'cPass', Actual: g.cPass, Expected: 'Pass'},

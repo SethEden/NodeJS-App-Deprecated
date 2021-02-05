@@ -222,10 +222,15 @@ export const systemConstantsValidation = [
    {Name: 'candSuffix', Actual: s.candSuffix, Expected: 'and suffix'},
    {Name: 'cdomainSpaceName', Actual: s.cdomainSpaceName, Expected: 'domain name'},
    {Name: 'candSpaceDomainSpaceName', Actual: s.candSpaceDomainSpaceName, Expected: 'and domain name'},
+   {Name: 'ccurrentMasterStringArrayElement', Actual: s.ccurrentMasterStringArrayElement, Expected: 'currentMasterStringArrayElement'},
 
    // Logging Constants
    {Name: 'cBEGIN_Function', Actual: s.cBEGIN_Function, Expected: 'BEGIN %% Function'},
    {Name: 'cEND_Function', Actual: s.cEND_Function, Expected: 'END %% Function'},
+   {Name: 'cinputData', Actual: s.cinputData, Expected: 'inputData'},
+   {Name: 'cInputData', Actual: s.cInputData, Expected: 'InputData'},
+   {Name: 'cinputMetaData', Actual: s.cinputMetaData, Expected: 'inputMetaData'},
+   {Name: 'cInputMetaData', Actual: s.cInputMetaData, Expected: 'InputMetaData'},
    {Name: 'cinputDataIs', Actual: s.cinputDataIs, Expected: 'inputData is: '},
    {Name: 'cinputMetaDataIs', Actual: s.cinputMetaDataIs, Expected: 'inputMetaData is: '},
    {Name: 'creturnDataIs', Actual: s.creturnDataIs, Expected: 'returnData is: '},
@@ -333,6 +338,15 @@ export const systemConstantsValidation = [
    {Name: 'cconstantsKeysIs', Actual: s.cconstantsKeysIs, Expected: 'constantsKeys is: '},
    {Name: 'cconstantKeyIs', Actual: s.cconstantKeyIs, Expected: 'constantKey is: '},
    {Name: 'cconstantActualValueIs', Actual: s.cconstantActualValueIs, Expected: 'constantActualValue is: '},
+   {Name: 'cconstantNameIs', Actual: s.cconstantNameIs, Expected: 'constantName is: '},
+   {Name: 'cconstantValueIs', Actual: s.cconstantValueIs, Expected: 'constantValue is: '},
+   {Name: 'cdeltaLengthIs', Actual: s.cdeltaLengthIs, Expected: 'deltaLength is: '},
+   {Name: 'crecursiveSubStringIs', Actual: s.crecursiveSubStringIs, Expected: 'recursiveSubString is: '},
+   {Name: 'cmaxStringLengthIs', Actual: s.cmaxStringLengthIs, Expected: 'maxStringLength is: '},
+   {Name: 'cminStringLengthIs', Actual: s.cminStringLengthIs, Expected: 'minStringLength is: '},
+   {Name: 'ccurrentMasterStringArrayElementIs', Actual: s.ccurrentMasterStringArrayElementIs, Expected: 'currentMasterStringArrayElement is: '},
+   {Name: 'cConstantDoesNotExist', Actual: s.cConstantDoesNotExist, Expected: 'Constant does NOT exist: '},
+   {Name: 'cConstantDoesExist', Actual: s.cConstantDoesExist, Expected: 'Constant does exist: '},
 
    {Name: 'cDetermineWordDelimiterMessage1', Actual: s.cDetermineWordDelimiterMessage1, Expected: 'WARNING: Mixed string. '},
    {Name: 'cDetermineWordDelimiterMessage2', Actual: s.cDetermineWordDelimiterMessage2, Expected: 'Cannot determine what delimiter should '},
@@ -368,6 +382,10 @@ export const systemConstantsValidation = [
    {Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4', Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4, Expected: 'it should begin with a lower case "c". '},
    {Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5', Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5, Expected: 'Please reformat the constant correctly so a '},
    {Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6', Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6, Expected: 'line of code can be generated for you.'},
+   {Name: 'cSearchForPatternsInStringArrayMessage1', Actual: s.cSearchForPatternsInStringArrayMessage1, Expected: 'currentMasterStringArrayElement does not contain a space character'},
+   {Name: 'cSearchForPatternsInStringArrayMessage2', Actual: s.cSearchForPatternsInStringArrayMessage2, Expected: 'WARNING: The current string being searched contains a space character, '},
+   {Name: 'cSearchForPatternsInStringArrayMessage3', Actual: s.cSearchForPatternsInStringArrayMessage3, Expected: 'we are going to skip comparison.'},
+   {Name: 'cSearchForPatternsInStringArrayMessage4', Actual: s.cSearchForPatternsInStringArrayMessage4, Expected: 'WARNING: InputData was not an array or had an empty array.'},
 
    // File Types
    {Name: 'cCatia', Actual: s.cCatia, Expected: 'Catia'},
