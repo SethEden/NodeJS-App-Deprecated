@@ -302,7 +302,52 @@ export const cWithoutTheAtSymbolPrefixSuffixAndDomainName = cWithoutThe + b.cSpa
 export const cWithoutTheDotPrefixSuffixAndDomainName = cWithoutThe + b.cSpace + b.cDot + b.cComa + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + candSpaceDomainSpaceName + b.cDot; // Without the ., prefix, suffix and domain name.
 export const cWithoutThePrefixSuffixAndAtSymbol = cWithoutThe + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cname + b.cAt + b.cDot; // Without the prefix, suffix and @.
 export const cWithoutThePrefixSuffixAndDot = cWithoutThe + b.cSpace + w.cprefix + b.cComa + b.cSpace + w.csuffix + b.cSpace + w.cand + b.cSpace + b.cDot + b.cDot; // Without the prefix, suffix and ..
+export const cIndexOfTheSpace = w.cIndex + b.cSpace + b.cof + b.cSpace + w.cthe + b.cSpace; // Index of the
+export const cisResolvingAs = b.cis + b.cSpace + w.cresolving + b.cSpace + b.cas + b.cColon + b.cSpace; // is resolving as:
+export const cparsedStringSpaceTerm = w.cparsed + w.cString + b.cSpace + w.cterm; // parsedString term
+export const cstring1Is = w.cstring + n.c1 + cSpaceIsColonSpace; // string1 is:
+export const cstring2Is = w.cstring + n.c2 + cSpaceIsColonSpace; // string2 is:
+export const cvariation0ValueIs = w.cvariation + n.c0 + b.cSpace + w.cvalue + cSpaceIsColonSpace; // variation0 value is:
+export const cvariation1ValueIs = w.cvariation + n.c1 + b.cSpace + w.cvalue + cSpaceIsColonSpace; // variation1 value is:
+export const ciValueIs = b.ci + b.cSpace + w.cvalue + cSpaceIsColonSpace; // i value is:
+export const cjValueIs = b.cj + b.cSpace + w.cvalue + cSpaceIsColonSpace; // j value is:
+export const cdeletionCostIs = w.cdeletion + w.cCost + cSpaceIsColonSpace; // deletionCost is:
+export const cinsertionCostIs = w.cinsertion + w.cCost + cSpaceIsColonSpace; // insertionCost is:
+export const csubstitutionCostIs = w.csubstitution + w.cCost + cSpaceIsColonSpace; // substitutionCost is:
+export const ccamelCaseWordCountIs = w.ccamel + w.cCase + w.cWord + w.cCount + cSpaceIsColonSpace; // camelCaseWordCount is:
+export const ccontainsAcronymIs = w.ccontains + w.cAcronym + cSpaceIsColonSpace; // containsAcronym is:
+export const cspacesCountIs = w.cspaces + w.cCount + cSpaceIsColonSpace; // spacesCount is:
+export const cperiodCountIs = w.cperiod + w.cCount + cSpaceIsColonSpace; // periodCount is:
+export const cdashCountIs = w.cdash + w.cCount + cSpaceIsColonSpace; // dashCount is:
+export const cunderscoreCountIs = w.cunderscore + w.cCount + cSpaceIsColonSpace; // underscoreCount is:
+export const cstringDeltaValueIs = w.cstring + g.cDelta + b.cSpace + w.cvalue + cSpaceIsColonSpace; // stringDelta value is:
+export const cFilenamesMatch = w.cFilenames + b.cSpace + w.cmatch; // Filenames match
+export const cFilenamesDoNotMatch = w.cFilenames + b.cSpace + b.cdo + b.cSpace + g.cnot + b.cSpace + w.cmatch; // Filenames do not match
+export const cArrayElementsMatch = w.cArray + b.cSpace + w.celements + b.cSpace + w.cmatch; // Array elements match
+export const cArrayElementsDoNotMatch = w.cArray + b.cSpace + w.celements + b.cSpace + b.cdo + b.cSpace + g.cnot + b.cSpace + w.cmatch; // Array elements do not match
+export const clineArray2Is = w.cline + w.cArray + b.cOpenBracket + n.c2 + b.cCloseBracket + cSpaceIsColonSpace; // lineArray[2] is:
+export const cSuggestedLineOfCodeIs = w.cSuggested + b.cSpace + w.cline + b.cSpace + b.cof + b.cSpace + w.ccode + cSpaceIsColonSpace; // Suggested line of code is:
+export const cErrorUnknownConstantFile = w.cERROR + b.cColon + b.cSpace + w.cUnknown + b.cSpace + w.cconstant + b.cSpace + w.cfile + b.cDot; // ERROR: Unknown constant file.
+export const cconstantsTypesKeysIs = w.cconstants + w.cTypes + w.cKeys + cSpaceIsColonSpace; // constantsTypesKeys is:
+export const cconstantTypeKeyIs = w.cconstant + w.cType + w.cKey + cSpaceIsColonSpace; // constantTypeKey is:
+export const cconstantTypeValuesIs = w.cconstant + w.cType + w.cValues + cSpaceIsColonSpace; // constantTypeValues is:
+export const cconstantsKeysIs = w.cconstants + w.cKeys + cSpaceIsColonSpace; // constantsKeys is:
+export const cconstantKeyIs = w.cconstant + w.cKey + cSpaceIsColonSpace; // constantKey is:
+export const cconstantActualValueIs = w.cconstant + w.cActual + w.cValue + cSpaceIsColonSpace; // constantActualValue is:
 
+// WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
+export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
+export const cDetermineWordDelimiterMessage2 = w.cCannot + b.cSpace + w.cdetermine + b.cSpace + w.cwhat + b.cSpace + w.cdelimiter + b.cSpace + w.cshould + b.cSpace; // Cannot determine what delimiter should
+export const cDetermineWordDelimiterMessage3 = b.cbe + b.cSpace + w.cused + b.cSpace + b.cto + b.cSpace + w.cbreak + b.cSpace + b.cup + b.cSpace + w.cthe + b.cSpace; // be used to break up the
+export const cDetermineWordDelimiterMessage4 = w.cstring + b.cSpace + w.cinto + b.cSpace + w.cwords + b.cDot; // string into words.
+// WARNING: Mixed string. Cannot determine how words are delimited in the string. Unable to count words.
+export const cGetWordCountInStringMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
+export const cGetWordCountInStringMessage2 = w.cCannot + b.cSpace + w.cdetermine + b.cSpace + w.chow + b.cSpace + w.cwords + b.cSpace + w.care + b.cSpace + w.cdelimited + b.cSpace; // Cannot determine how words are delimited
+export const cGetWordCountInStringMessage3 = b.cin + b.cSpace + w.cthe + b.cSpace + w.cstring + b.cDot + b.cSpace + w.cUnable + b.cSpace + b.cto + b.cSpace + w.ccount + b.cSpace + w.cwords + b.cDot; // in the string. Unable to count words.
+// WARNING: Mixed string. Cannot get words from the string. Unable to determine words.
+export const cGetWordsArrayFromStringMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cString + b.cDot + b.cSpace; // WARNING: Mixed string.
+export const cGetWordsArrayFromStringMessage2 = w.cCannot + b.cSpace + w.cget + b.cSpace + w.cwords + b.cSpace + w.cfrom + b.cSpace + w.cthe + b.cSpace + w.cstring + b.cDot + b.cSpace; // Cannot get words from the string.
+export const cGetWordsArrayFromStringMessage3 = w.cUnable + b.cSpace + b.cto + b.cSpace + w.cdetermine + b.cSpace + w.cwords + b.cDot // Unable to determine words.
 // Please enter a named command where the first word starts with a lower case letter and all other words in the named command start with an upper case letter:
 export const cCommandNamePrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cnamed + b.cSpace + w.ccommand + b.cSpace + w.cwhere + b.cSpace; // Please enter a named command where
 export const cCommandNamePrompt2 = w.cthe + b.cSpace + n.cfirst + b.cSpace + w.cword + b.cSpace + w.cstarts + b.cSpace + w.cwith + b.cSpace + b.ca + b.cSpace; // the first word starts with a
@@ -325,6 +370,15 @@ export const cConstantsListPrompt3 = w.cthe + b.cSpace + w.cconstants + b.cSpace
 export const cConstantsListPatternSearchPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.ccoma + b.cSpace + w.cseparated + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace; // Please enter a coma separated list of
 export const cConstantsListPatternSearchPrompt2 = w.cstrings + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace + w.clike + b.cSpace + b.cto + b.cSpace + w.csearch + b.cSpace + w.cfor + b.cSpace; // strings you would like to search for
 export const cConstantsListPatternSearchPrompt3 = w.ccommon + b.cSpace + w.cpatterns + b.cColon; // common patterns:
+// ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
+// 'but the constant is not formatted correctly, it should begin with a lower case "c". ' +
+// 'Please reformat the constant correctly so a line of code can be generated for you.
+export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1 = w.cERROR + b.cColon + b.cSpace + w.cAttempted + b.cSpace + b.cto + b.cSpace + w.cgenerate + b.cSpace + b.ca + b.cSpace + w.csuggested + b.cSpace; // ERROR: Attempted to generate a suggested
+export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2 = w.cline + b.cSpace + b.cof + b.cSpace + w.ccode + b.cSpace + b.cto + b.cSpace + w.cvalidate + b.cSpace + w.cthe + b.cSpace + w.cconstant + b.cComa + b.cSpace; // line of code to validate the constant,
+export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 = w.cbut + b.cSpace + w.cthe + b.cSpace + w.cconstant + b.cSpace + b.cis + b.cSpace + g.cnot + b.cSpace + w.cformatted + b.cSpace + w.ccorrectly + b.cComa + b.cSpace; // but the constant is not formatted correctly,
+export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4 = b.cit + b.cSpace + w.cshould + b.cSpace + w.cbegin + b.cSpace + w.cwith + b.cSpace + b.ca + b.cSpace + w.clower + b.cSpace + w.ccase + b.cSpace + b.cDoubleQuote + b.cc + b.cDoubleQuote + b.cDot + b.cSpace; // it should begin with a lower case "c".
+export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5 = w.cPlease + b.cSpace + w.creformat + b.cSpace + w.cthe + b.cSpace + w.cconstant + b.cSpace + w.ccorrectly + b.cSpace + b.cso + b.cSpace + b.ca + b.cSpace; // Please reformat the constant correctly so a
+export const cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6 = w.cline + b.cSpace + b.cof + b.cSpace + w.ccode + b.cSpace + w.ccan + b.cSpace + b.cbe + b.cSpace + w.cgenerated + b.cSpace + w.cfor + b.cSpace + w.cyou + b.cDot; // line of code can be generated for you.
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia

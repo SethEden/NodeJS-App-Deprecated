@@ -466,7 +466,7 @@ export const getUserNameFromEmail = function(inputData, inputMetaData) {
   if (!inputData) {
     returnData = false;
   } else {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'index of the ' + b.cAt + ' is: ' + inputData.indexOf(b.cAt));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cIndexOfTheSpace + b.cAt + s.cSpaceIsColonSpace + inputData.indexOf(b.cAt));
     let returnData = inputData.substr(0, inputData.indexOf(b.cAt));
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -761,7 +761,7 @@ export const removeFileExtensionFromFileName = function(inputData, inputMetaData
  * @date 2020/02/03
  */
 export const getValueFromAssignmentOperationString = function(inputData, inputMetaData) {
-  console.log('s.cgetValueFromAssignmentOperationString is resolving as: ' + s.cgetValueFromAssignmentOperationString);
+  console.log('s.cgetValueFromAssignmentOperationString' + b.cSpace + s.cisResolvingAs + s.cgetValueFromAssignmentOperationString);
   let functionName = s.cgetValueFromAssignmentOperationString;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
@@ -771,8 +771,8 @@ export const getValueFromAssignmentOperationString = function(inputData, inputMe
     returnData = false;
   } else {
     let parsedString = inputData.split(b.cEqual);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'parsedString term 1 is: ' + parsedString[0]);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'parsedString term 2 is: ' + parsedString[1]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cparsedStringSpaceTerm + b.cSpace + n.c1 + s.cSpaceIsColonSpace + parsedString[0]);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cparsedStringSpaceTerm + b.cSpace + n.c2 + s.cSpaceIsColonSpace + parsedString[1]);
     returnData = parsedString[1].replace(/['"]+/g, '');
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -800,21 +800,21 @@ export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData,
   // Convert the input strings to lower case and clean them up for parsing.
   let string1 = inputData.toLowerCase().replace(/\W/g, '');
   let string2 = inputMetaData.toLowerCase().replace(/\W/g, '');
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'string1 is: ' + string1);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'string2 is: ' + string2);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cstring1Is + string1);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cstring2Is + string2);
 
   // Build some arrays of variations on string 2, we will use these for doing the comparisons.
   let variation0 = Array(string2.length + 1).fill(0).map((v, i) => i);
   let variation1 = Array(string2.length + 1).fill(0);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'variation0 value is: ' + variation0);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'variation1 value is: ' + variation1);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation0ValueIs + variation0);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation1ValueIs + variation1);
 
   for (let i = 0; i < string1.length; i++) {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'i value is: ' + i);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ciValueIs + i);
     variation1[0] = i + 1;
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'variation0 value is: ' + variation0);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation0ValueIs + variation0);
     for (let j = 0; j < string2.length; j++) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'j value is: ' + j);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cjValueIs + j);
       let deletionCost = variation0[j + 1] + 1;
       let insertionCost = variation1[j] + 1;
       let substitutionCost;
@@ -823,11 +823,11 @@ export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData,
       } else {
         substitutionCost = variation0[j] + 1;
       }
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'deletionCost is: ' + deletionCost);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'insertionCost is: ' + insertionCost);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'substitutionCost is: ' + substitutionCost);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdeletionCostIs + deletionCost);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinsertionCostIs + insertionCost);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.csubstitutionCostIs + substitutionCost);
       variation1[j + 1] = math.min(deletionCost, insertionCost, substitutionCost);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'variation1 value is: ' + variation1);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation1ValueIs + variation1);
     }
     let temp = variation1;
     variation1 = variation0;
@@ -987,17 +987,17 @@ export const determineWordDelimiter = function(inputData, inputMetaData) {
   let returnData = '';
   if (inputData) {
     let camelCaseWordCount = countCamelCaseWords(inputData, '');
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'camelCaseWordCount is: ' + camelCaseWordCount);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccamelCaseWordCountIs + camelCaseWordCount);
     let containsAcronym = doesStringContainAcronym(inputData, '');
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'containsAcronym is: ' + containsAcronym);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontainsAcronymIs + containsAcronym);
     let spacesCount = countDelimiterInString(inputData, b.cSpace);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'spacesCount is: ' + spacesCount);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cspacesCountIs + spacesCount);
     let periodCount = countDelimiterInString(inputData, b.cDot);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'periodCount is: ' + periodCount);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cperiodCountIs + periodCount);
     let dashCount = countDelimiterInString(inputData, b.cDash);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'dashCount is: ' + dashCount);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdashCountIs + dashCount);
     let underscoreCount = countDelimiterInString(inputData, b.cUnderscore);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'underscoreCount is: ' + underscoreCount);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cunderscoreCountIs + underscoreCount);
     if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
       returnData = s.cCamelCase;
     // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
@@ -1014,7 +1014,9 @@ export const determineWordDelimiter = function(inputData, inputMetaData) {
       returnData = b.cUnderscore;
     } else {
       // We don't need to be showing this warning unless we are debugging.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.');
+      // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDetermineWordDelimiterMessage1 + s.cDetermineWordDelimiterMessage2 +
+        s.cDetermineWordDelimiterMessage3 + s.cDetermineWordDelimiterMessage4);
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1045,7 +1047,7 @@ export const getWordCountInString = function(inputData, inputMetaData) {
       returnData = inputData.split(wordDelimiter).length;
     } else {
       // We don't need to be showing this warning unless we are debugging.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine how words are delimited in the string. Unable to count words.');
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cGetWordCountInStringMessage1 + s.cGetWordCountInStringMessage2 + s.cGetWordCountInStringMessage3);
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1079,7 +1081,7 @@ export const getWordsArrayFromString = function(inputData, inputMetaData) {
         returnData = inputData.split(wordDelimiter);
       } else {
         // We don't need to be showing this warning unless we are debugging.
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot get words from the string. Unable to determine words.');
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cGetWordsArrayFromStringMessage1 + s.cGetWordsArrayFromStringMessage2 + s.cGetWordsArrayFromStringMessage3);
       }
     }
   }
@@ -1427,7 +1429,8 @@ export const doesArrayContainLowerCaseConsolidatedString = function(inputData, i
     // I get the arrow function is passing these values to the aggregateNumericalDifferenceBetweenTwoStrings function.
     // But I'm not sure how or what values are being passed for value1 & value2.
     let stringDelta = (value1, value2) => aggregateNumericalDifferenceBetweenTwoStrings(value1, value2) < 2;
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'stringDelta value is: ' + stringDelta);
+    // stringDelta value is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cstringDeltaValueIs + stringDelta);
     returnData = doesArrayContainValue(inputData, inputMetaData, stringDelta);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1513,10 +1516,12 @@ export const ascertainMatchingFilenames = function(inputData, inputMetaData) {
   let returnData = false;
   if (inputData && inputMetaData) {
     if (path.basename(inputData) === path.basename(inputMetaData)) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Filenames match');
+      // Filenames match
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cFilenamesMatch);
       returnData = true;
     } else {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Filenames do not match');
+      // Filenames do not match
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cFilenamesDoNotMatch);
       returnData = false;
     }
   }
@@ -1542,10 +1547,12 @@ export const ascertainMatchingElements = function(inputData, inputMetaData) {
   let returnData = false;
   if (inputData && inputMetaData) {
     if (inputData === inputMetaData) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Array elements match');
+      // Array elements match
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cArrayElementsMatch);
       returnData = true;
     } else {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Array elements do not match');
+      // Array elements do not match
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cArrayElementsDoNotMatch);
       returnData = false;
     }
   }
@@ -1638,19 +1645,20 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
       let foundConstant = false;
       if (lineInCode.includes(s.cexportconst) === true) {
         let lineArray = lineInCode.split(b.cSpace);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'lineArray[2] is: ' + lineArray[2]);
+        // lineArray[2] is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.clineArray2Is + lineArray[2]);
         foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
         let qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
         if (foundConstant === true) {
           if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-            let passMessage = 'PASS: ' + lineArray[2] + ' PASS';
+            let passMessage = w.cPASS + b.cColon + b.cSpace + lineArray[2] + b.cSpace + w.cPASS;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(0,255,0)(passMessage);
             console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + passMessage);
           }
         } else {
           if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-            let failMessage = 'FAIL: ' + lineArray[2] + ' FAIL';
+            let failMessage = w.cFAIL + b.cColon + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL;
             failMessage = chalk.rgb(0,0,0)(failMessage);
             failMessage = chalk.bgRgb(255,0,0)(failMessage);
             let qualifiedConstantsPrefix = determineConstantsContextQualifiedPrefix(qualifiedConstantsFilename, '');
@@ -1661,7 +1669,8 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
             if (suggestedLineOfCode !== '') {
               suggestedLineOfCode = chalk.rgb(0,0,0)(suggestedLineOfCode);
               suggestedLineOfCode = chalk.bgRgb(255,0,0)(suggestedLineOfCode);
-              console.log('Suggested line of code is: ' + suggestedLineOfCode);
+              // Suggested line of code is:
+              console.log(s.cSuggestedLineOfCodeIs + suggestedLineOfCode);
             }
           }
           foundAFailure = true;
@@ -1719,7 +1728,8 @@ export const determineConstantsContextQualifiedPrefix = function(inputData, inpu
     } else if (inputData.includes(w.cword) === true) {
       returnData = b.cw;
     } else {
-      console.log('ERROR: Unknown constant file.');
+      // ERROR: Unknown constant file.
+      console.log(s.cErrorUnknownConstantFile);
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1749,11 +1759,19 @@ export const determineSuggestedConstantsValidationLineOfCode = function(inputDat
     // Output: {Name: 'cZZTopIntentionalFailure', Actual: w.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
     if (inputData.charAt(0) === b.cc) {
       let literalValue = inputData.substr(1);
-      returnData = `{Name: '${inputData}', Actual: ${inputMetaData}.${inputData}, Expected: '${literalValue}'}`;
+      // `Name: '${inputData}', Actual: ${inputMetaData}.${inputData}, Expected: '${literalValue}'}`;
+      returnData = b.cOpenCurlyBrace + w.cName + b.cColon + b.cSpace + b.cSingleQuote + inputData + b.cSingleQuote + b.cComa + b.cSpace + w.cActual + b.cColon + b.cSpace + inputMetaData +
+      b.cDot + inputData + b.cComa + b.cSpace + w.cExpected + b.cColon + b.cSpace + b.cSingleQuote + literalValue + b.cSingleQuote + b.cCloseCurlyBrace;
     } else {
-      console.log('ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
-      'but the constant is not formatted correctly, it should begin with a lower case "c". ' +
-      'Please reformat the constant correctly so a line of code can be generated for you.');
+      // ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
+      // 'but the constant is not formatted correctly, it should begin with a lower case "c". ' +
+      // 'Please reformat the constant correctly so a line of code can be generated for you.
+      console.log(s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1 +
+        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2 +
+        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 +
+        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4 +
+        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5 +
+        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6);
       returnData = '';
     }
   }
@@ -1811,21 +1829,27 @@ export const doesConstantExist = function(inputData, inputMetaData) {
   let returnData = false;
   if (inputData) {
     let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+    // constantsTypesKeys is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop1:
     for (let i = 0; i < constantsTypesKeys.length; i++) {
       let constantTypeKey = constantsTypesKeys[i];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+      // constantTypeKey is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
       let constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+      // constantTypeValues is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
       let constantsKeys = Object.keys(constantTypeValues);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+      // constantsKeys is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsKeysIs + JSON.stringify(constantsKeys));
 loop2:
       for (let j = 0; j < constantsKeys.length; j++) {
         let constantKey = constantsKeys[j];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+        // constantKey is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantKeyIs + JSON.stringify(constantKey));
         let constantActualValue = constantTypeValues[constantKey];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+        // constantActualValue is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantActualValueIs + JSON.stringify(constantActualValue));
         if (inputData === constantActualValue.Actual) {
           returnData = true;
           break loop1;
@@ -1859,21 +1883,27 @@ export const getConstantType = function(inputData, inputMetaData) {
   let returnData = '';
   if (inputData) {
     let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+    // constantsTypesKeys is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop1:
     for (let i = 0; i < constantsTypesKeys.length; i++) {
       let constantTypeKey = constantsTypesKeys[i];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+      // constantTypeKey is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
       let constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+      // constantTypeValues is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
       let constantsKeys = Object.keys(constantTypeValues);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+      // constantsKeys is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsKeysIs + JSON.stringify(constantsKeys));
 loop2:
       for (let j = 0; j < constantsKeys.length; j++) {
         let constantKey = constantsKeys[j];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+        // constantKey is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantKeyIs + JSON.stringify(constantKey));
         let constantActualValue = constantTypeValues[constantKey];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+        // constantActualValue is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantActualValueIs + JSON.stringify(constantActualValue));
         if (inputData === constantActualValue.Actual) {
           if (returnData === '') {
             returnData = constantTypeKey;
@@ -1912,36 +1942,46 @@ export const getConstantActualValue = function(inputData, inputMetaData) {
   if (inputData) {
     if (isConstantTypeValid(inputMetaData, '') === true) {
       let constantTypeValues1 = D[s.cConstantsValidationData][inputMetaData];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues1 is: ' + JSON.stringify(constantTypeValues1));
+      // 1 constantTypeValues is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues1));
       let constantsKeys1 = Object.keys(constantTypeValues1);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys1 is: ' + JSON.stringify(constantsKeys1));
+      // 1 constantsKeys is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantsKeysIs + JSON.stringify(constantsKeys1));
 loop1:
       for (let i = 0; i < constantsKeys1.length; i++) {
         let constantKey1 = constantsKeys1[i];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantKey1 is: ' + JSON.stringify(constantKey1));
+        // 1 constantKey is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantKeyIs + JSON.stringify(constantKey1));
         let constantActualValue1 = constantTypeValues1[constantKey1];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(constantActualValue1));
+        // 1 constantActualValue is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantActualValueIs + JSON.stringify(constantActualValue1));
         if (inputData === constantActualValue1.Name) {
           returnData = constantActualValue1.Actual;
         }
       } // for-loop j-th iterator.
     } else {
       let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+      // constantsTypesKeys is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop2:
       for (let j = 0; j < constantsTypesKeys.length; j++) {
         let constantTypeKey = constantsTypesKeys[j];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+        // constantTypeKey is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
         let constantTypeValues2 = D[s.cConstantsValidationData][constantTypeKey];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues2 is: ' + JSON.stringify(constantTypeValues2));
+        // 2 constantTypeValues is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c2 + b.cSpace + s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues2));
         let constantsKeys2 = Object.keys(constantTypeValues2);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys2 is: ' + JSON.stringify(constantsKeys2));
+        // 2 constantsKeys is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c2 + b.cSpace + s.cconstantsKeysIs + JSON.stringify(constantsKeys2));
 loop3:
         for (let k = 0; k < constantsKeys2.length; k++) {
           let constantKey2 = constantsKeys2[k];
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantKey2 is: ' + JSON.stringify(constantKey2));
+          // 2 constantKey is:
+          loggers.consoleLog(baseFileName + b.cDot + functionName, n.c2 + b.cSpace + s.cconstantKeyIs + JSON.stringify(constantKey2));
           let constantActualValue1 = constantTypeValues2[constantKey2];
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(constantActualValue1));
+          // 1 constantActualValue is:
+          loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantActualValueIs + JSON.stringify(constantActualValue1));
           if (inputData === constantActualValue1.Name) {
             returnData = constantActualValue1.Actual;
           }
@@ -1971,21 +2011,27 @@ export const getConstantName = function(inputData, inputMetaData) {
   let returnData = '';
   if (inputData) {
     let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+    // constantsTypesKeys is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop1:
     for (let i = 0; i < constantsTypesKeys.length; i++) {
       let constantTypeKey = constantsTypesKeys[i];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+      // constantTypeKey is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
       let constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+      // constantTypeValues is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
       let constantsKeys = Object.keys(constantTypeValues);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+      // constantsKeys is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsKeysIs + JSON.stringify(constantsKeys));
 loop2:
       for (let j = 0; j < constantsKeys.length; j++) {
         let constantKey = constantsKeys[j];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+        // constantKey is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantKeyIs + JSON.stringify(constantKey));
         let constantActualValue = constantTypeValues[constantKey];
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+        // constantActualValue is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantActualValueIs + JSON.stringify(constantActualValue));
         if (inputData === constantActualValue.Actual) {
           returnData = constantActualValue.Name;
           break loop1;
