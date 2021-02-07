@@ -223,6 +223,8 @@ export const candSuffix = w.cand + b.cSpace + w.csuffix; // and suffix
 export const cdomainSpaceName = w.cdomain + b.cSpace + w.cname // domain name
 export const candSpaceDomainSpaceName = w.cand + b.cSpace + cdomainSpaceName; // and domain name
 export const ccurrentMasterStringArrayElement = w.ccurrent + w.cMaster + w.cString + w.cArray + w.cElement; // currentMasterStringArrayElement
+export const cLehmerCodeArray = w.cLehmer + w.cCode + w.cArray; // LehmerCodeArray
+export const creturnData = w.creturn + w.cData; // returnData
 
 // Logging Constants
 export const cBEGIN_Function = w.cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + w.cFunction; // BEGIN %% Function
@@ -233,7 +235,7 @@ export const cinputMetaData = w.cinput + w.cMetaData; // inputMetaData
 export const cInputMetaData = w.cInput + w.cMetaData; // InputMetaData
 export const cinputDataIs = cinputData + cSpaceIsColonSpace; // input Data is:
 export const cinputMetaDataIs = w.cinput + w.cMetaData + cSpaceIsColonSpace; // input MetaData is:
-export const creturnDataIs = w.creturn + w.cData + cSpaceIsColonSpace; // return Data is:
+export const creturnDataIs = creturnData + cSpaceIsColonSpace; // return Data is:
 export const cLogBasicSystemEvents = w.cLog + w.cBasic + w.cSystem + w.cEvents; // LogBasicSystemEvents
 export const cLogWarnings = w.cLog + w.cWarnings; // LogWarnings
 // Logging Styles Constants
@@ -348,40 +350,38 @@ export const cminStringLengthIs = g.cmin + w.cString + w.cLength + cSpaceIsColon
 export const ccurrentMasterStringArrayElementIs = ccurrentMasterStringArrayElement + cSpaceIsColonSpace; // currentMasterStringArrayElement is:
 export const cConstantDoesNotExist = w.cConstant + b.cSpace + w.cdoes + b.cSpace + g.cNOT + b.cSpace + w.cexist + b.cColon + b.cSpace; // Constant does NOT exist:
 export const cConstantDoesExist = w.cConstant + b.cSpace + w.cdoes + b.cSpace + w.cexist + b.cColon + b.cSpace; // Constant does exist:
-// BEGIN i-th loop:
-// currentCommand is:
-// aliasList is:
-// BEGIN j-th loop:
-// currentAlias is:
-// duplicateAliasCount is:
-// END j-th loop:
-// END i-th loop:
-// duplicateAliasCount is:
-// duplicate command alias is:
-// commandWordAliases BEFORE CHANGE is:
-// commandWordAliasesArray AFTER CHANGE is:
-// masterCommandWordAliasesArray is:
-// masterArrayIndex is:
-// Command Aliases are:
-// expandedLehmerCodeArray is:
-// indexOfExpansion is:
-// arrayToBeExpanded is:
-// limitOfExpansion is:
-// returnData is:
-// pushing lehmerCodeArray1 to returnData value:
-// returnData after push is:
-// returnData after Level 1 is:
-// arrayToBeExpanded.length is:
-// returnData.length is:
-// returnData BEFORE POP is:
-// returnData AFTER POP is:
-// masterTempReturnData BEFORE recursive call is:
-// tempReturnData1 is:
-// tempReturnData1.length is:
-// BEGIN k-th iteration:
-// pushing tempReturnData1[k] value:
-// END k-th iteration:
-// masterTempReturnData AFTER recursive call is:
+export const cBEGIN_ithLoop = w.cBEGIN + b.cSpace + b.ci + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon; // BEGIN i-th loop:
+export const cBEGIN_jthLoop = w.cBEGIN + b.cSpace + b.cj + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon; // BEGIN j-th loop:
+export const cBEGIN_kthIteration = w.cBEGIN + b.cSpace + b.ck + b.cDash + b.cth + b.cSpace + w.citeration + b.cColon; // BEGIN k-th iteration:
+export const cEND_ithLoop = w.cEND + b.cSpace + b.ci + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon; // END i-th loop:
+export const cEND_jthLoop = w.cEND + b.cSpace + b.cj + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon; // END j-th loop:
+export const cEND_kthIteration = w.cEND + b.cSpace + b.ck + b.cDash + b.cth + b.cSpace + w.citeration + b.cColon; // END k-th iteration:
+export const ccurrentCommandIs = w.ccurrent + w.cCommand + cSpaceIsColonSpace; // currentCommand is:
+export const caliasListIs = w.calias + w.cList + cSpaceIsColonSpace; // aliasList is:
+export const ccurrentAliasIs = w.ccurrent + w.cAlias + cSpaceIsColonSpace; // currentAlias is:
+export const cduplicateAliasCountIs = w.cduplicate + w.cAlias + w.cCount + cSpaceIsColonSpace; // duplicateAliasCount is:
+export const cduplicateCommandAliasIs = w.cduplicate + w.ccommand + w.calias + cSpaceIsColonSpace; // duplicate command alias is:
+export const ccommandWordAliasesBeforeChangeIs = w.ccommand + w.cWord + w.cAliases + b.cSpace + w.cBEFORE + b.cSpace + w.cCHANGE + b.cSpace + cSpaceIsColonSpace; // commandWordAliases BEFORE CHANGE is:
+export const ccommandWordAliasesAfterChangeIs = w.ccommand + w.cWord + w.cAliases + w.cArray + b.cSpace + w.cAFTER + b.cSpace + w.cCHANGE + b.cSpace + cSpaceIsColonSpace; // commandWordAliasesArray AFTER CHANGE is:
+export const cmasterCommandWordAlisesArrayIs = w.cmaster + w.cCommand + w.cWord + w.cAliases + w.cArray + b.cSpace + cSpaceIsColonSpace; // masterCommandWordAliasesArray is:
+export const cmasterArrayIndexIs = w.cmaster + w.cArray + w.cIndex + cSpaceIsColonSpace; // masterArrayIndex is:
+export const cCommandAliasesAre = w.cCommand + b.cSpace + w.cAliases + b.cSpace + w.care + b.cColon + b.cSpace; // Command Aliases are:
+export const cexpandedLehmerCodeArrayIs = w.cexpanded + cLehmerCodeArray + cSpaceIsColonSpace; // expandedLehmerCodeArray is:
+export const cindexOfExpansionIs = w.cindex + b.cOf + w.cExpansion + cSpaceIsColonSpace; // indexOfExpansion is:
+export const carrayToBeExpandedIs = w.carray+ b.cTo + b.cBe + w.cExpanded + cSpaceIsColonSpace; // arrayToBeExpanded is:
+export const climitOfExpansionIs = w.climit + b.cOf + w.cExpansion + cSpaceIsColonSpace;  // limitOfExpansion is:
+export const cpushingLehmerCodeArray1ToReturnDataValue = w.cpushing + b.cSpace + cLehmerCodeArray + n.c1 + b.cSpace + b.cto + b.cSpace + creturnData + b.cSpace + w.cvalue + b.cColon + b.cSpace; // pushing lehmerCodeArray1 to returnData value:
+export const creturnDataAfterPushIs = creturnData + b.cSpace + w.cafter + b.cSpace + w.cpush + cSpaceIsColonSpace; // returnData after push is:
+export const creturnDataAfterLevel1Is = creturnData + b.cSpace + w.cafter + b.cSpace + w.clevel + b.cSpace + n.c1 + b.cSpace + cSpaceIsColonSpace; // returnData after Level 1 is:
+export const carrayToBeExpandedDotLengthIs = w.carray + b.cTo + b.cBe + w.cExpanded + b.cDot + w.clength + cSpaceIsColonSpace; // arrayToBeExpanded.length is:
+export const creturnDataDotLengthIs = creturnData + b.cDot + w.cLength + cSpaceIsColonSpace; // returnData.length is:
+export const creturnDataBeforePopIs = creturnData + b.cSpace + w.cBEFORE + b.cSpace + w.cPOP + cSpaceIsColonSpace; // returnData BEFORE POP is:
+export const creturnDataAfterPopIs = creturnData + b.cSpace + w.cAFTER + b.cSpace + w.cPOP + cSpaceIsColonSpace; // returnData AFTER POP is:
+export const cmasterTempReturnDataBeforeRecursiveCallIs = w.cmaster + w.cTemp + w.cReturn + w.cData + b.cSpace + w.cBEFORE + b.cSpace + w.crecursive + b.cSpace + w.ccall + cSpaceIsColonSpace; // masterTempReturnData BEFORE recursive call is:
+export const ctempReturnData1Is = w.ctemp + w.cReturn + w.cData + n.c1 + cSpaceIsColonSpace; // tempReturnData1 is:
+export const ctempReturnData1DotLengthIs = w.ctemp + w.cReturn + w.cData + n.c1 + w.clength + cSpaceIsColonSpace; // tempReturnData1.length is:
+export const cpushingTempReturnData1Kvalue = w.cpushing + b.cSpace + w.ctemp + w.cReturn + w.cData + n.c1 + b.cOpenBracket + b.ck + b.cCloseBracket + b.cSpace + w.cvalue + b.cColon + b.cSpace; // pushing tempReturnData1[k] value:
+export const cmasterTempReturnDataAfterRecursiveCallIs = w.cmaster + w.cTemp + w.cReturn + w.cData + b.cSpace + w.cAFTER + b.cSpace + w.crecursive + b.cSpace + w.ccall + b.cSpace + cSpaceIsColonSpace; // masterTempReturnData AFTER recursive call is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
