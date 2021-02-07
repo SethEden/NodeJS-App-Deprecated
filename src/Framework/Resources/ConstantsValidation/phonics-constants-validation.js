@@ -36,6 +36,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cred', Actual: p.cred, Expected: 'red'},
    {Name: 'cgreen', Actual: p.cgreen, Expected: 'green'},
    {Name: 'cblue', Actual: p.cblue, Expected: 'blue'},
+   {Name: 'cund', Actual: p.cund, Expected: 'und'},
    {Name: 'cundred', Actual: p.cundred, Expected: 'undred'},
    {Name: 'cand', Actual: p.cand, Expected: 'and'},
    {Name: 'csand', Actual: p.csand, Expected: 'sand'},
@@ -504,5 +505,14 @@ export const phonicsConstantsValidation = [
    {Name: 'cemp', Actual: p.cemp, Expected: 'emp'},
    {Name: 'cmas', Actual: p.cmas, Expected: 'mas'},
    {Name: 'cMas', Actual: p.cMas, Expected: 'Mas'},
-   {Name: 'cpand', Actual: p.cpand, Expected: 'pand'}
+   {Name: 'cpand', Actual: p.cpand, Expected: 'pand'},
+   {Name: 'cook', Actual: p.cook, Expected: 'ook'},
+   {Name: 'clse', Actual: p.clse, Expected: 'lse'},
+   {Name: 'cify', Actual: p.cify, Expected: 'ify'},
+   {Name: 'csup', Actual: p.csup, Expected: 'sup'},
+   {Name: 'cSup', Actual: p.cSup, Expected: 'Sup'},
+   {Name: 'cplac', Actual: p.cplac, Expected: 'plac'},
+   {Name: 'cori', Actual: p.cori, Expected: 'ori'},
+   {Name: 'cOri', Actual: p.cOri, Expected: 'Ori'},
+   {Name: 'cinal', Actual: p.cinal, Expected: 'inal'}
  ];

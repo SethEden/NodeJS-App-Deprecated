@@ -2519,41 +2519,41 @@ export const countDuplicateCommandAliases = function(inputData, inputMetaData) {
 loop1:
     for (let i = 0; i < inputMetaData.length; i++) {
       // BEGIN i-th loop:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithLoop + i);
       let currentCommand = inputMetaData[i];
       // currentCommand is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentCommandIs + JSON.stringify(currentCommand));
       let aliasList = currentCommand[w.cAliases];
       // aliasList is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.caliasListIs + aliasList);
       let arrayOfAliases = aliasList.split(b.cComa);
 loop2:
       for (let j = 0; j < arrayOfAliases.length; j++) {
         // BEGIN j-th loop:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_jthLoop + i);
         let currentAlias = arrayOfAliases[j];
         // currentAlias is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentAliasIs + currentAlias);
         if (currentAlias === inputData) {
           returnData = returnData + 1;
         }
         // duplicateAliasCount is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'duplicateAliasCount is: ' + returnData);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cduplicateAliasCountIs + returnData);
         // END j-th loop:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_jthLoop + i);
       }
       // END i-th loop:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithLoop + i);
     }
   }
   if (returnData > 1) {
     // duplicateAliasCount is:
-    let duplicateAliasCountMessage = 'duplicateAliasCount is: ' + returnData;
+    let duplicateAliasCountMessage = s.cduplicateAliasCountIs + returnData;
     duplicateAliasCountMessage = chalk.rgb(0,0,0)(duplicateAliasCountMessage);
     duplicateAliasCountMessage = chalk.bgRgb(255,0,0)(duplicateAliasCountMessage);
     console.log(duplicateAliasCountMessage);
     // duplicate command alias is:
-    let duplicateAliasCommandMessage = 'duplicate command alias is: ' + inputData;
+    let duplicateAliasCommandMessage = s.cduplicateCommandAliasIs + inputData;
     duplicateAliasCommandMessage = chalk.rgb(0,0,0)(duplicateAliasCommandMessage);
     duplicateAliasCommandMessage = chalk.bgRgb(255,0,0)(duplicateAliasCommandMessage);
     console.log(duplicateAliasCommandMessage);
@@ -2608,7 +2608,7 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
       }
       commandWordAliases = commandWordAliases + commandDelimiter + key1;
       // commandWordAliases BEFORE CHANGE is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliases BEFORE CHANGE is: ' + commandWordAliases);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandWordAliasesBeforeChangeIs + commandWordAliases);
       commandWordAliasesArray = commandWordAliases.split(commandDelimiter);
       masterArrayIndex[i] = commandWordAliasesArray.length - 1;
       for (let j = 0; j < commandWordAliasesArray.length; j++) {
@@ -2620,13 +2620,13 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
         }
       }
       // commandWordAliasesArray AFTER CHANGE is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliasesArray AFTER CHANGE is: ' + JSON.stringify(commandWordAliasesArray));
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandWordAliasesAfterChangeIs + JSON.stringify(commandWordAliasesArray));
       masterCommandWordAliasesArray[i] = commandWordAliasesArray; // Try to build an array of arrays (2D)
     }
     // masterCommandWordAliasesArray is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterCommandWordAliasesArray is: ' + JSON.stringify(masterCommandWordAliasesArray));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterCommandWordAlisesArrayIs + JSON.stringify(masterCommandWordAliasesArray));
     // masterArrayIndex is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterArrayIndex is: ' + JSON.stringify(masterArrayIndex));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterArrayIndexIs + JSON.stringify(masterArrayIndex));
 
     // NOTES: Console output is:
     // masterCommandWordAliasesArray is: [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
@@ -2647,7 +2647,7 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // https://en.wikipedia.org/wiki/Lehmer_code
     let returnData = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
     // Command Aliases are:
-    console.log('Command Aliases are: ' + returnData);
+    console.log(s.cCommandAliasesAre + returnData);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -2686,7 +2686,7 @@ export const solveLehmerCode = function(inputData, inputMetaData) {
     let lehmerCodeArray = Array.from(Array(lengthOfInputData), () => 0);
     expandedLehmerCodeArray = arrayDeepClone(recursiveArrayExpansion([0, lehmerCodeArray], inputData));
     // expandedLehmerCodeArray is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'expandedLehmerCodeArray is: ' + JSON.stringify(expandedLehmerCodeArray));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cexpandedLehmerCodeArrayIs + JSON.stringify(expandedLehmerCodeArray));
 
     // Now we just iterate over each array in expandedLehmerCodeArray and call: getLehmerCodeValue
     for (let i = 0; i < expandedLehmerCodeArray.length - 1; i++) {
@@ -2724,11 +2724,11 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
     let arrayToBeExpanded = inputData[1];
     let limitOfExpansion = inputMetaData[indexOfExpansion];
     // indexOfExpansion is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'indexOfExpansion is: ' + indexOfExpansion);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cindexOfExpansionIs + indexOfExpansion);
     // arrayToBeExpanded is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded is: ' + JSON.stringify(arrayToBeExpanded));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayToBeExpandedIs + JSON.stringify(arrayToBeExpanded));
     // limitOfExpansion is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'limitOfExpansion is: ' + limitOfExpansion);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.climitOfExpansionIs + limitOfExpansion);
     let masterTempReturnData = []; // When we are all done we will set the returnData back to the list of arrays in this array.
 
     // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
@@ -2744,30 +2744,30 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
     for (let i = 0; i <= limitOfExpansion; i++) {
       let lehmerCodeArray1 = arrayDeepClone(arrayToBeExpanded, '');
       // returnData is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
       lehmerCodeArray1[indexOfExpansion] = i;
       if (doesArrayContainValue(returnData, lehmerCodeArray1, ascertainMatchingElements) === false) {
         // pushing lehmerCodeArray1 to returnData value:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'pushing lehmerCodeArray1 to returnData value: ' + JSON.stringify(lehmerCodeArray1));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpushingLehmerCodeArray1ToReturnDataValue + JSON.stringify(lehmerCodeArray1));
         returnData.push(lehmerCodeArray1);
         // returnData after push is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData after push is: ' + JSON.stringify(returnData));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataAfterPushIs + JSON.stringify(returnData));
       }
     }
     // returnData after Level 1 is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData after Level 1 is: ' + JSON.stringify(returnData));
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataAfterLevel1Is + JSON.stringify(returnData));
 
     // Second level array expansion, this is where we call recursively.
     // We need to determine if the index of expansion is equal to the length of the arrayToBeExpanded.
     // If it is then we have reached our recursive expansion limit.
     // If NOT then we need to recursively expand some more on each of the arrays that are now in the returnData array.
     // arrayToBeExpanded.length is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded.length is: ' + arrayToBeExpanded.length);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayToBeExpandedDotLengthIs + arrayToBeExpanded.length);
     if (indexOfExpansion < arrayToBeExpanded.length - 1) {
       // We need to remove arrays from the returnData and recursively call the recursiveArrayExpansion with each array we remove.
       // The data we get back from each recursive call should be pushed back to masterTempReturnData array
       // returnData.length is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData.length is: ' + returnData.length);
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataDotLengthIs + returnData.length);
       // Make sure we clone the array we will be removing array elements from,
       // because otherwise we would be looping over the same array we are removing elements from,
       // which would mean that we would never visit all of the elemtns.
@@ -2775,31 +2775,31 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
       let returnDataTemp = arrayDeepClone(returnData, '');
       returnDataTemp.forEach(function(item) {
         // returnData BEFORE POP is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData BEFORE POP is: ' + JSON.stringify(returnData));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataBeforePopIs + JSON.stringify(returnData));
         let lehmerCodeArray2 = arrayDeepClone(returnData.pop(), '');
         // returnData AFTER POP is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData AFTER POP is: ' + JSON.stringify(returnData));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataAfterPopIs + JSON.stringify(returnData));
         // masterTempReturnData BEFORE recursive call is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData BEFORE recursive call is: ' + JSON.stringify(masterTempReturnData));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterTempReturnDataBeforeRecursiveCallIs + JSON.stringify(masterTempReturnData));
         let tempReturnData1 = arrayDeepClone(recursiveArrayExpansion([indexOfExpansion + 1, lehmerCodeArray2], inputMetaData), '');
         // tempReturnData1 is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1 is: ' + JSON.stringify(tempReturnData1));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ctempReturnData1Is + JSON.stringify(tempReturnData1));
         // tempReturnData1.length is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1.length is: ' + tempReturnData1.length);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ctempReturnData1DotLengthIs + tempReturnData1.length);
         for (let k = 0; k <= tempReturnData1.length - 1; k++) {
           // BEGIN k-th iteration:
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN k-th iteration: ' + k);
+          loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_kthIteration + k);
           if (doesArrayContainValue(masterTempReturnData, tempReturnData1[k], ascertainMatchingElements) === false) {
             // pushing tempReturnData1[k] value:
-            loggers.consoleLog(baseFileName + b.cDot + functionName, 'pushing tempReturnData1[k] value: ' + JSON.stringify(tempReturnData1[k]));
+            loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpushingTempReturnData1Kvalue + JSON.stringify(tempReturnData1[k]));
             masterTempReturnData.push(arrayDeepClone(tempReturnData1[k], ''));
           }
           // END k-th iteration:
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'END k-th iteration: ' + k);
+          loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_kthIteration + k);
         }
         tempReturnData1 = null;
         // masterTempReturnData AFTER recursive call is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData AFTER recursive call is: ' + JSON.stringify(masterTempReturnData));
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterTempReturnDataAfterRecursiveCallIs + JSON.stringify(masterTempReturnData));
       });
       returnData = arrayDeepClone(masterTempReturnData, '');
     }
@@ -2828,14 +2828,18 @@ export const getLehmerCodeValue = function(inputData, inputMetaData) {
     let lengthOfInputData = inputData.length;
     returnData = '';
     for (let i = 0; i < lengthOfInputData; i++) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+      // BEGIN i-th iteration:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
       let lookupIndex = inputData[i];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'lookupIndex is: ' + lookupIndex);
+      // lookupIndex is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.clookupIndexIs + lookupIndex);
       let lookupValue = inputMetaData[i][lookupIndex]
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'lookupValue is: ' + lookupValue);
+      // lookupValue is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.clookupValueIs + lookupValue);
       returnData = returnData + lookupValue;
       loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+      // END i-th iteration:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -2891,7 +2895,8 @@ export const getDataCatagoryFromDataContextName = function(inputData, inputMetaD
   if (inputData) {
     let dataCatagory = inputData.split(b.cUnderscore);
     returnData = dataCatagory[0];
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Data Catagory should be: ' + dataCatagory[0]);
+    // Data Catagory should be:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDataCatagoryShouldBe + dataCatagory[0]);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -2916,7 +2921,8 @@ export const getDataCatagoryDetailNameFromDataContextName = function(inputData, 
   if (inputData) {
     let dataCatagoryDetailName = inputData.split(b.cUnderscore);
     returnData = dataCatagoryDetailName[1];
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Data Catagory Detail Name should be: ' + dataCatagoryDetailName[1]);
+    // Data Catagory Detail Name should be:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDataCatagoryDetailNameShouldBe + dataCatagoryDetailName[1]);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -2941,7 +2947,8 @@ export const getKeywordNameFromDataContextName = function(inputData, inputMetaDa
   if (inputData) {
     let dataCatagoryKeywordName = inputData.split(b.cUnderscore);
     returnData = dataCatagoryKeywordName[2];
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Keyword Name should be: ' + dataCatagoryKeywordName[2]);
+    // Keyword Name should be:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cKeywordNameShouldBe + dataCatagoryKeywordName[2]);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -2977,28 +2984,35 @@ export const parseSystemRootPath = function(inputData, inputMetaData) {
     loop1:
       for (let i = 0; i < pathElements.length; i++) {
         // console.log('BEGIN iteration i: ' + i);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN iteration i: ' + i);
+        // BEGIN i-th iteration:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
         let pathElement = pathElements[i];
         // console.log('pathElement is ' + pathElement);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathElement is: ' + pathElement);
+        // pathElement is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathElementIs + pathElement);
         if (i === 0) {
           // console.log('case: i = 0');
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: i = 0');
+          // case: i = 0
+          loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccaseIEqual0);
           returnData = pathElement;
         } else if (pathElement === applicationName) {
           // console.log('case: pathElement = ' + s.cCAFfeinated);
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + applicationName);
+          // case: pathElement =
+          loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccasePathElementEqual + applicationName);
           returnData = returnData + b.cBackSlash + pathElement + b.cBackSlash;
           break loop1;
         } else {
           // console.log('case else');
-          loggers.consoleLog(baseFileName + b.cDot + functionName, 'case else');
+          // case else
+          loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccaseElse);
           returnData = returnData + b.cBackSlash + pathElement;
         }
         // console.log('returnData so far is: ' + returnData);
         // console.log('END iteration i: ' + i);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData so far is: ' + returnData);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'END iteration i: ' + i);
+        // returnData so far is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataSoFarIs + returnData);
+        // END i-th iteration:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
       }
     returnData = swapDoubleBackSlashToSingleBackSlash(returnData, '');
     returnData = swapBackSlashToForwardSlash(returnData, '');
@@ -3073,9 +3087,11 @@ export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMeta
       returnData = false;
     }
     if (returnData !== false) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathArray is: ' + JSON.stringify(pathArray));
+      // pathArray is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathArrayIs + JSON.stringify(pathArray));
       for (let i = 0; i <= pathArray.length - inputMetaData - 1; i++) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'current path element is: ' + pathArray[i]);
+        // current path element is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentPathElementIs + pathArray[i]);
         if (i === 0) {
             returnData = pathArray[i];
         } else {
@@ -3133,7 +3149,8 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
     }
     if (returnData !== false) {
       // console.log('pathArray is: ' + JSON.stringify(pathArray));
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathArray is: ' + JSON.stringify(pathArray));
+      // pathArray is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathArrayIs + JSON.stringify(pathArray));
       returnData = pathArray[pathArray.length - 2];
     }
   }
@@ -3160,29 +3177,57 @@ export const loadDataFile = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (!inputData) {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: No data to load, please specify a valid path & filename!');
+    // WARNING: No data to load, please specify a valid path & filename!
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cLoadDataFileMessage1 + s.cLoadDataFileMessage2);
     returnData = false;
   } else {
     let loadedData = {};
     if (inputData.includes(g.cDotxml) || inputData.includes(g.cDotXml) || inputData.includes(g.cDotXML)) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Attempting to load XML data!');
+      // Attempting to load XML data!
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cAttemptingToLoadXmlData);
       loadedData = fileBroker.getXmlData(inputData);
     } else if (inputData.includes(g.cDotcsv) || inputData.includes(g.cDotCsv) || inputData.includes(g.cDotCSV)) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Attempting to load CSV data!');
+      // Attempting to load CSV data!
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cAttemptingToLoadCsvData);
       loadedData = fileBroker.getCsvData(inputData);
     } else if (inputData.includes(g.cDotjson) || inputData.includes(g.cDotJson) || inputData.includes(g.cDotJSON)) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Attempting to load JSON data!');
+      // Attempting to load JSON data!
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cAttemptingToLoadJsonData);
       loadedData = fileBroker.getJsonData(inputData);
     } else {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Invalid file format, file formats supported are: XML, CSV, JSON');
+      // WARNING: Invalid file format, file formats supported are:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cloadDataFileMessage3 + supportedFileFormatsAre());
     }
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(loadedData));
+    // Loaded data is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cLoadedDataIs + JSON.stringify(loadedData));
     if (loadedData !== null && loadedData) {
       returnData = true;
       dataBroker.storeData(inputMetaData, loadedData);
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function supportedFileFormatsAre
+ * @description Returns a list of supported file formats.
+ * @param {string} inputData Not used for this business rule.
+ * @param {string} inputMetaData Not used for this business rule.
+ * @return {string} A coma seperated list of supported file formats. IE a list of file extensions.
+ * @author Seth Hollingsead
+ * @date 2021/02/06
+ */
+export const supportedFileFormatsAre = function(inputData, inputMetaData) {
+  let functionName = s.csupportedFileFormatsAre;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  // NOTE: In the future it might be better to store this data in a configuration setting so it's easier to update.
+  // This this function could just look up that data and return it as a list.
+  let returnData = g.cXML + b.cComa + b.cSpace + g.cCSV + b.cComa + b.cSpace + g.cJSON;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
 };
@@ -3428,8 +3473,10 @@ export const getAttributeName = function(inputData, inputMetaData) {
   let returnData = false;
   if (inputData) {
     let attributeArray = inputData.split(b.cColon);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[0]);
+    // attributeArray is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArrayIs + attributeArray);
+    // attributeArray[0] is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArray0Is + attributeArray[0]);
     returnData = replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
     returnData = returnData.trim();
   }
@@ -3455,8 +3502,10 @@ export const getAttributeValue = function(inputData, inputMetaData) {
   let returnData = false;
   if (inputData) {
     let attributeArray = inputData.split(b.cColon);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[1]);
+    // attributeArray is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArrayIs + attributeArray);
+    // attributeArray[0] is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArray0Is + attributeArray[1]);
     returnData = replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
     returnData = returnData.trim();
   }
@@ -3613,14 +3662,17 @@ export const aggregateCommandArguments = function(inputData, inputMetaData) {
   if (inputData) {
     if (inputData.length > 3) {
       for (let i = 2; i < inputData.length; i++) {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+        // BEGIN i-th iteration:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
         if (i === 2) {
           returnData = cleanCommandInput(inputData[i]);
         } else {
           returnData = returnData + b.cSpace + cleanCommandInput(inputData[i]);
         }
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+        // returnData is:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+        // END i-th iteration:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
       }
     } else {
       returnData = cleanCommandInput(inputData[2]);
@@ -3647,22 +3699,28 @@ export const aggregateCommandArguments = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 function doesArrayContainValue(array, value, myFunction) {
-  let functionName = 'doesArrayContainValue';
+  let functionName = s.doesArrayContainValue;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'inputData value is: ' + JSON.stringify(array));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'inputMetaData value is: ' + value);
+  // array is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayIs + JSON.stringify(array));
+  // value is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvalueIs + value);
   // Not sure how this will output, would be good to also put some type checking on this input variable.
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'myFunction value is: ' + JSON.stringify(myFunction));
+  // myFunction is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmyFunctionIs + JSON.stringify(myFunction));
   let returnData = false;
   if (_.isArray(array) === false) {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'array input object is not an array.');
+    // array input object is not an array.'
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayInputObjectIsNotAnArray);
     returnData = false;
   }
   if (!!array.find(i => myFunction(i, value))) {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'The value was found in the array.');
+    // The value was found in the array.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cTheValueWasFoundInTheArray);
     returnData = true;
   } else {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'The value was NOT found in the array.');
+    // The value was NOT found in the array.
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cTheValueWasNotFoundInTheArray);
     returnData = false;
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -3682,11 +3740,14 @@ function doesArrayContainValue(array, value, myFunction) {
  * @NOTE: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
  */
 export const replaceCharacterAtIndexOfString = function(originalString, index, replacement) {
-  let functionName = 'replaceCharacterAtIndexOfString';
+  let functionName = s.replaceCharacterAtIndexOfString;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'originalString value is: ' + originalString);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'index value is: ' + index);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'replacement value is: ' + replacement);
+  // originalString is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.coriginalStringIs + originalString);
+  // index is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cindexIs + index);
+  // replacement is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creplacementIs + replacement);
   let returnData;
   if (originalString != '' && index >= 0 && replacement != '') {
     returnData = originalString.substr(0, index) + replacement + originalString.substr(index + replacement.length);

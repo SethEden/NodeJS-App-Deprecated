@@ -105,6 +105,11 @@ export const initRulesLibrary = function() {
     [s.cisValidCommandNameString]: (inputData, inputMetaData) => stringParsing.isValidCommandNameString(inputData, inputMetaData),
     [s.cisConstantValid]: (inputData, inputMetaData) => stringParsing.isConstantValid(inputData, inputMetaData),
     [s.ccountDuplicateCommandAliases]: (inputData, inputMetaData) => stringParsing.countDuplicateCommandAliases(inputData, inputMetaData),
+    [s.cgenerateCommandAliases]: (inputData, inputMetaData) => stringParsing.generateCommandAliases(inputData, inputMetaData),
+    [s.csolveLehmerCode]: (inputData, inputMetaData) => stringParsing.solveLehmerCode(inputData, inputMetaData),
+    [s.crecursiveArrayExpansion]: (inputData, inputMetaData) => stringParsing.recursiveArrayExpansion(inputData, inputMetaData),
+    [s.cgetLehmerCodeValue]: (inputData, inputMetaData) => stringParsing.getLehmerCodeValue(inputData, inputMetaData),
+    [s.carraysAreEqual]: (inputData, inputMetaData) => stringParsing.arraysAreEqual(inputData, inputMetaData),
     [s.cgetDataCatagoryFromDataContextName]: (inputData, inputMetaData) => stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData),
     [s.cgetDataCatagoryDetailNameFromDataContextName]: (inputData, inputMetaData) => stringParsing.getDataCatagoryDetailNameFromDataContextName(inputData, inputMetaData),
     [s.cgetKeywordNameFromDataContextName]: (inputData, inputMetaData) => stringParsing.getKeywordNameFromDataContextName(inputData, inputMetaData),
@@ -113,6 +118,7 @@ export const initRulesLibrary = function() {
     [s.cremoveXnumberOfFoldersFromEndOfPath]: (inputData, inputMetaData) => stringParsing.removeXnumberOfFoldersFromEndOfPath(inputData, inputMetaData),
     [s.cgetFirstTopLevelFolderFromPath]: (inputData, inputMetaData) => stringParsing.getFirstTopLevelFolderFromPath(inputData, inputMetaData),
     [s.cloadDataFile]: (inputData, inputMetaData) => stringParsing.loadDataFile(inputData, inputMetaData),
+    [s.csupportedFileFormatsAre]: (inputData, inputMetaData) => stringParsing.supportedFileFormatsAre(inputData, inputMetaData),
     [s.cgetStoredData]: (inputData, inputMetaData) => stringParsing.getStoredData(inputData, inputMetaData),
     [s.cstoreData]: (inputData, inputMetaData) => stringParsing.storeData(inputData, inputMetaData),
     [s.cisObjectEmpty]: (inputData, inputMetaData) => stringParsing.isObjectEmpty(inputData, inputMetaData),
@@ -129,11 +135,6 @@ export const initRulesLibrary = function() {
     [s.creplaceCharacterAtIndex]: (inputData, inputMetaData) => stringParsing.replaceCharacterAtIndex(inputData, inputMetaData),
     [s.ccleanCommandInput]: (inputData, inputMetaData) => stringParsing.cleanCommandInput(inputData, inputMetaData),
     [s.caggregateCommandArguments]: (inputData, inputMetaData) => stringParsing.aggregateCommandArguments(inputData, inputMetaData),
-    [s.cgenerateCommandAliases]: (inputData, inputMetaData) => stringParsing.generateCommandAliases(inputData, inputMetaData),
-    [s.csolveLehmerCode]: (inputData, inputMetaData) => stringParsing.solveLehmerCode(inputData, inputMetaData),
-    [s.crecursiveArrayExpansion]: (inputData, inputMetaData) => stringParsing.recursiveArrayExpansion(inputData, inputMetaData),
-    [s.cgetLehmerCodeValue]: (inputData, inputMetaData) => stringParsing.getLehmerCodeValue(inputData, inputMetaData),
-    [s.carraysAreEqual]: (inputData, inputMetaData) => stringParsing.arraysAreEqual(inputData, inputMetaData),
 
     // *********************************
     // StringGeneration rules in order

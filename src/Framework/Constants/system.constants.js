@@ -351,16 +351,18 @@ export const ccurrentMasterStringArrayElementIs = ccurrentMasterStringArrayEleme
 export const cConstantDoesNotExist = w.cConstant + b.cSpace + w.cdoes + b.cSpace + g.cNOT + b.cSpace + w.cexist + b.cColon + b.cSpace; // Constant does NOT exist:
 export const cConstantDoesExist = w.cConstant + b.cSpace + w.cdoes + b.cSpace + w.cexist + b.cColon + b.cSpace; // Constant does exist:
 export const cBEGIN_ithLoop = w.cBEGIN + b.cSpace + b.ci + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon + b.cSpace; // BEGIN i-th loop:
+export const cBEGIN_ithIteration = w.cBEGIN + b.cSpace + b.ci + b.cDash + b.cth + b.cSpace + w.citeration + b.cColon + b.cSpace; // BEGIN i-th iteration:
 export const cBEGIN_jthLoop = w.cBEGIN + b.cSpace + b.cj + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon + b.cSpace; // BEGIN j-th loop:
 export const cBEGIN_kthIteration = w.cBEGIN + b.cSpace + b.ck + b.cDash + b.cth + b.cSpace + w.citeration + b.cColon + b.cSpace; // BEGIN k-th iteration:
 export const cEND_ithLoop = w.cEND + b.cSpace + b.ci + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon + b.cSpace; // END i-th loop:
+export const cEND_ithIteration = w.cEND + b.cSpace + b.ci + b.cDash + b.cth + b.cSpace + w.cIteration + b.cColon + b.cSpace; // END i-th iteration:
 export const cEND_jthLoop = w.cEND + b.cSpace + b.cj + b.cDash + b.cth + b.cSpace + w.cloop + b.cColon + b.cSpace; // END j-th loop:
 export const cEND_kthIteration = w.cEND + b.cSpace + b.ck + b.cDash + b.cth + b.cSpace + w.citeration + b.cColon + b.cSpace; // END k-th iteration:
 export const ccurrentCommandIs = w.ccurrent + w.cCommand + cSpaceIsColonSpace; // currentCommand is:
 export const caliasListIs = w.calias + w.cList + cSpaceIsColonSpace; // aliasList is:
 export const ccurrentAliasIs = w.ccurrent + w.cAlias + cSpaceIsColonSpace; // currentAlias is:
 export const cduplicateAliasCountIs = w.cduplicate + w.cAlias + w.cCount + cSpaceIsColonSpace; // duplicateAliasCount is:
-export const cduplicateCommandAliasIs = w.cduplicate + w.cCommand + w.cAlias + cSpaceIsColonSpace; // duplicate command alias is:
+export const cduplicateCommandAliasIs = w.cduplicate + b.cSpace + w.cCommand + b.cSpace + w.cAlias + cSpaceIsColonSpace; // duplicate command alias is:
 export const ccommandWordAliasesBeforeChangeIs = w.ccommand + w.cWord + w.cAliases + b.cSpace + w.cBEFORE + b.cSpace + w.cCHANGE + cSpaceIsColonSpace; // commandWordAliases BEFORE CHANGE is:
 export const ccommandWordAliasesAfterChangeIs = w.ccommand + w.cWord + w.cAliases + w.cArray + b.cSpace + w.cAFTER + b.cSpace + w.cCHANGE + cSpaceIsColonSpace; // commandWordAliasesArray AFTER CHANGE is:
 export const cmasterCommandWordAlisesArrayIs = w.cmaster + w.cCommand + w.cWord + w.cAliases + w.cArray + cSpaceIsColonSpace; // masterCommandWordAliasesArray is:
@@ -382,6 +384,33 @@ export const ctempReturnData1Is = w.ctemp + w.cReturn + w.cData + n.c1 + cSpaceI
 export const ctempReturnData1DotLengthIs = w.ctemp + w.cReturn + w.cData + n.c1 + w.clength + cSpaceIsColonSpace; // tempReturnData1.length is:
 export const cpushingTempReturnData1Kvalue = w.cpushing + b.cSpace + w.ctemp + w.cReturn + w.cData + n.c1 + b.cOpenBracket + b.ck + b.cCloseBracket + b.cSpace + w.cvalue + b.cColon + b.cSpace; // pushing tempReturnData1[k] value:
 export const cmasterTempReturnDataAfterRecursiveCallIs = w.cmaster + w.cTemp + w.cReturn + w.cData + b.cSpace + w.cAFTER + b.cSpace + w.crecursive + b.cSpace + w.ccall + cSpaceIsColonSpace; // masterTempReturnData AFTER recursive call is:
+export const clookupIndexIs = w.clookup + w.cIndex + cSpaceIsColonSpace; // lookupIndex is:
+export const clookupValueIs = w.clookup + w.cValue + cSpaceIsColonSpace; // lookupValue is:
+export const cDataCatagoryShouldBe = w.cData + b.cSpace + w.cCatagory + b.cSpace + w.cshould + b.cSpace + b.cbe + b.cColon + b.cSpace; // Data Catagory should be:
+export const cDataCatagoryDetailNameShouldBe = w.cData + b.cSpace + w.cCatagory + b.cSpace + w.cDetail + b.cSpace + w.cName + b.cSpace + w.cshould + b.cSpace + b.cbe + b.cColon + b.cSpace; // Data Catagory Detail Name should be:
+export const cKeywordNameShouldBe = w.cKeyword + b.cSpace + w.cName + b.cSpace + w.cshould + b.cSpace + b.cbe + b.cColon + b.cSpace; // Keyword Name should be:
+export const cpathElementIs = w.cpath + w.cElement + cSpaceIsColonSpace; // pathElement is:
+export const ccaseIEqual0 = w.ccase + b.cColon + b.cSpace + b.ci + b.cSpace + b.cEqual + b.cSpace + n.c0; // case: i = 0
+export const ccasePathElementEqual = w.ccase + b.cColon + b.cSpace + w.cpath + w.cElement + b.cSpace + b.cEqual + b.cSpace; // case: pathElement =
+export const ccaseElse = w.ccase + b.cSpace + w.celse; // case else
+export const creturnDataSoFarIs = creturnData + b.cSpace + b.cso + b.cSpace + w.cfar + cSpaceIsColonSpace; // returnData so far is:
+export const cpathArrayIs = w.cpath + w.cArray + cSpaceIsColonSpace; // pathArray is:
+export const ccurrentPathElementIs = w.ccurrent + b.cSpace + w.cpath + b.cSpace + w.celement + cSpaceIsColonSpace; // current path element is:
+export const cAttemptingToLoadXmlData = w.cAttempting + b.cSpace + b.cto + b.cSpace + w.cload + b.cSpace + g.cXML + b.cSpace + w.cdata + b.cExclamation; // Attempting to load XML data!
+export const cAttemptingToLoadCsvData = w.cAttempting + b.cSpace + b.cto + b.cSpace + w.cload + b.cSpace + g.cCSV + b.cSpace + w.cdata + b.cExclamation; // Attempting to load CSV data!
+export const cAttemptingToLoadJsonData = w.cAttempting + b.cSpace + b.cto + b.cSpace + w.cload + b.cSpace + g.cJSON + b.cSpace + w.cdata + b.cExclamation; // Attempting to load JSON data!
+export const cLoadedDataIs = w.cLoaded + b.cSpace + w.cdata + cSpaceIsColonSpace; // Loaded data is:
+export const cattributeArrayIs = w.cattribute + w.cArray + cSpaceIsColonSpace; // attributeArray is:
+export const cattributeArray0Is = w.cattribute + w.cArray + b.cOpenBracket + n.c0 + b.cCloseBracket + cSpaceIsColonSpace; // attributeArray[0] is:
+export const carrayIs = w.carray + cSpaceIsColonSpace; // array is:
+export const cvalueIs = w.cvalue + cSpaceIsColonSpace; // value is:
+export const cmyFunctionIs = b.cmy + w.cFunction + cSpaceIsColonSpace; // myFunction is:
+export const carrayInputObjectIsNotAnArray = w.carray + b.cSpace + w.cinput + b.cSpace + w.cobject + b.cSpace + b.cis + b.cSpace + g.cnot + b.cSpace + b.can + b.cSpace + w.carray + b.cDot; // array input object is not an array.
+export const cTheValueWasFoundInTheArray = w.cThe + b.cSpace + w.cvalue + b.cSpace + w.cwas + b.cSpace + w.cfound + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.carray + b.cDot; // The value was found in the array.
+export const cTheValueWasNotFoundInTheArray = w.cThe + b.cSpace + w.cvalue + b.cSpace + w.cwas + b.cSpace + g.cNOT + b.cSpace + w.cfound + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.carray + b.cDot; // The value was NOT found in the array.
+export const coriginalStringIs = w.coriginal + w.cString + cSpaceIsColonSpace; // originalString is:
+export const cindexIs = w.cindex + b.cSpace + cSpaceIsColonSpace; // index is:
+export const creplacementIs = w.creplacement + cSpaceIsColonSpace; // replacement is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
@@ -433,6 +462,10 @@ export const cSearchForPatternsInStringArrayMessage2 = w.cWARNING + b.cColon + b
 export const cSearchForPatternsInStringArrayMessage3 = b.cwe + b.cSpace + w.care + b.cSpace + w.cgoing + b.cSpace + b.cto + b.cSpace + w.cskip + b.cSpace + w.ccomparison + b.cDot; // we are going to skip comparison.
 // WARNING: InputData was not an array or had an empty array.
 export const cSearchForPatternsInStringArrayMessage4 = w.cWARNING + b.cColon + b.cSpace + cInputData + b.cSpace + w.cwas + b.cSpace + g.cnot + b.cSpace + b.can + b.cSpace + w.carray + b.cSpace + b.cor + b.cSpace + w.chad + b.cSpace + b.can + b.cSpace + w.cempty + b.cSpace + w.carray + b.cDot; // WARNING: InputData was not an array or had an empty array.
+// WARNING: No data to load, please specify a valid path & filename!
+export const cLoadDataFileMessage1 = w.cWARNING + b.cColon + b.cSpace + b.cNo + b.cSpace + w.cdata + b.cSpace + b.cto + b.cSpace + w.cload + b.cComa + b.cSpace; // WARNING: No data to load,
+export const cloadDataFileMessage2 = w.cplease + b.cSpace + w.cspecify + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cpath + b.cSpace + b.cAndPersand + b.cSpace + w.cfilename + b.cExclamation; // please specify a valid path & filename!
+export const cloadDataFileMessage3 = w.cWARNING + b.cColon + b.cSpace + w.cInvalid + b.cSpace + w.cfile + b.cSpace + w.cformat + b.cComa + b.cSpace + w.cfile + b.cSpace + w.cformats + b.cSpace + w.csupported + b.cSpace + w.care + b.cColon + b.cSpace; // WARNING: Invalid file format, file formats supported are:
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia
@@ -875,6 +908,11 @@ export const cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData
 export const cisValidCommandNameString = b.cis + w.cValid + w.cCommand + w.cName + w.cString; // isValidCommandNameString
 export const cisConstantValid = b.cis + w.cConstant + w.cValid; // isConstantValid
 export const ccountDuplicateCommandAliases = w.ccount + w.cDuplicate + w.cCommand + w.cAliases; // countDuplicateCommandAliases
+export const cgenerateCommandAliases = w.cgenerate + w.cCommand + w.cAliases; // generateCommandAliases
+export const csolveLehmerCode = w.csolve + w.cLehmer + w.cCode; // solveLehmerCode
+export const crecursiveArrayExpansion = w.crecursive + w.cArray + w.cExpansion; // recursiveArrayExpansion
+export const cgetLehmerCodeValue = w.cget + w.cLehmer + w.cCode + w.cValue; // getLehmerCodeValue
+export const carraysAreEqual = w.carrays + w.cAre + w.cEqual; // arraysAreEqual
 export const cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
 export const cgetDataCatagoryDetailNameFromDataContextName = w.cget + w.cData + w.cCatagory + w.cDetail + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryDetailNameFromDataContextName
 export const cgetKeywordNameFromDataContextName = w.cget + w.cKeyword + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getKeywordNameFromDataContextName
@@ -883,6 +921,7 @@ export const creplaceDoublePercentWithMessage = w.creplace + w.cDouble + w.cPerc
 export const cremoveXnumberOfFoldersFromEndOfPath = w.cremove + b.cX + w.cnumber + b.cOf + w.cFolders + w.cFrom + w.cEnd + b.cOf + w.cPath; // removeXnumberOfFoldersFromEndOfPath
 export const cgetFirstTopLevelFolderFromPath = w.cget + n.cFirst + w.cTop + w.cLevel + w.cFolder + w.cFrom + w.cPath; // getFirstTopLevelFolderFromPath
 export const cloadDataFile = w.cload + w.cData + w.cFile; // loadDataFile
+export const csupportedFileFormatsAre = w.csupported + w.cFile + w.cFormats + w.cAre; // supportedFileFormatsAre
 export const cgetStoredData = w.cget + w.cStored + w.cData; // getStoredData
 export const cstoreData = w.cstore + w.cData; // storeData
 export const cisObjectEmpty = b.cis + w.cObject + w.cEmpty; // isObjectEmpty
@@ -899,11 +938,8 @@ export const cisEven = b.cis + w.cEven; // isEven
 export const creplaceCharacterAtIndex = w.creplace  + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
 export const ccleanCommandInput = w.cclean + w.cCommand + w.cInput; // cleanCommandInput
 export const caggregateCommandArguments = w.caggregate + w.cCommand + w.cArguments; // aggregateCommandArguments
-export const cgenerateCommandAliases = w.cgenerate + w.cCommand + w.cAliases; // generateCommandAliases
-export const csolveLehmerCode = w.csolve + w.cLehmer + w.cCode; // solveLehmerCode
-export const crecursiveArrayExpansion = w.crecursive + w.cArray + w.cExpansion; // recursiveArrayExpansion
-export const cgetLehmerCodeValue = w.cget + w.cLehmer + w.cCode + w.cValue; // getLehmerCodeValue
-export const carraysAreEqual = w.carrays + w.cAre + w.cEqual; // arraysAreEqual
+export const cdoesArrayContainValue = w.cdoes + w.cArray + w.cContain + w.cValue; // doesArrayContainValue
+export const creplaceCharacterAtIndexOfString = w.creplace + w.cCharacter + b.cA + b.ct + w.cIndex + b.cOf + w.cString; // replaceCharacterAtIndexOfString
 
 // *********************************
 // StringGeneration rules in order
