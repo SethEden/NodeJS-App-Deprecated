@@ -112,6 +112,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cate', Actual: p.cate, Expected: 'ate'},
    {Name: 'cdate', Actual: p.cdate, Expected: 'date'},
    {Name: 'cter', Actual: p.cter, Expected: 'ter'},
+   {Name: 'cTER', Actual: p.cTER, Expected: 'TER'},
    {Name: 'cment', Actual: p.cment, Expected: 'ment'},
    {Name: 'cMENT', Actual: p.cMENT, Expected: 'MENT'},
    {Name: 'cime', Actual: p.cime, Expected: 'ime'},
@@ -301,6 +302,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cyan', Actual: p.cyan, Expected: 'yan'},
    {Name: 'cite', Actual: p.cite, Expected: 'ite'},
    {Name: 'cange', Actual: p.cange, Expected: 'ange'},
+   {Name: 'cANGE', Actual: p.cANGE, Expected: 'ANGE'},
    {Name: 'cost', Actual: p.cost, Expected: 'ost'},
    {Name: 'cular', Actual: p.cular, Expected: 'ular'},
    {Name: 'cdrom', Actual: p.cdrom, Expected: 'drom'},
@@ -491,5 +493,16 @@ export const phonicsConstantsValidation = [
    {Name: 'cist', Actual: p.cist, Expected: 'ist'},
    {Name: 'crch', Actual: p.crch, Expected: 'rch'},
    {Name: 'cson', Actual: p.cson, Expected: 'son'},
-   {Name: 'cison', Actual: p.cison, Expected: 'ison'}
+   {Name: 'cison', Actual: p.cison, Expected: 'ison'},
+   {Name: 'cera', Actual: p.cera, Expected: 'era'},
+   {Name: 'cfore', Actual: p.cfore, Expected: 'fore'},
+   {Name: 'cFORE', Actual: p.cFORE, Expected: 'FORE'},
+   {Name: 'cush', Actual: p.cush, Expected: 'ush'},
+   {Name: 'cUSH', Actual: p.cUSH, Expected: 'USH'},
+   {Name: 'cvel', Actual: p.cvel, Expected: 'vel'},
+   {Name: 'ccess', Actual: p.ccess, Expected: 'cess'},
+   {Name: 'cemp', Actual: p.cemp, Expected: 'emp'},
+   {Name: 'cmas', Actual: p.cmas, Expected: 'mas'},
+   {Name: 'cMas', Actual: p.cMas, Expected: 'Mas'},
+   {Name: 'cpand', Actual: p.cpand, Expected: 'pand'}
  ];

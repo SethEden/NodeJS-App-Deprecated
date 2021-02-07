@@ -496,3 +496,4 @@ export const ccess = b.cce + b.css; // cess
 export const cemp = b.cem + b.cp;// emp
 export const cmas = b.cma + b.cs; // mas
 export const cMas = b.cMa + b.cs; // Mas
+export const cpand = b.cpa + b.cnd; // pand
