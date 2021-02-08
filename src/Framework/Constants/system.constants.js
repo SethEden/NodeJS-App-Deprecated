@@ -512,6 +512,29 @@ export const cShapeConstantsPhase2Validation = w.cShape + b.cSpace + w.cConstant
 export const cSystemConstantsPhase2Validation = w.cSystem + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // System Constants Phase 2 Validation
 export const cUnitsConstantsPhase2Validation = w.cUnits + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Units Constants Phase 2 Validation
 export const cWordConstantsPhase2Validation = w.cWord + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Word Constants Phase 2 Validation
+export const ccommandStringIs = w.ccommand + w.cString + cSpaceIsColonSpace; // commandString is:
+export const ccommandDelimiterIs = w.ccommand + w.cDelimiter + cSpaceIsColonSpace; // commandDelimiter is:
+export const ccommandToExecuteBeforeTheAliasIs = w.ccommand + b.cTo + w.cExecute + b.cSpace + w.cbefore + b.cSpace + w.cthe + b.cSpace + w.cAlias + cSpaceIsColonSpace; // commandToExecute before the Alias is:
+export const ccommandToExecuteAfterTheAliasIs = w.ccommand + b.cTo + w.cExecute + b.cSpace + w.cafter + b.cSpace + w.cthe + b.cSpace + w.cAlias + cSpaceIsColonSpace; // commandToExecute after the Alias is:
+export const cWarningTheSpecifiedCommand = w.cWARNING + b.cColon + b.cSpace + w.cThe + b.cSpace + w.cspecified + b.cSpace + w.ccommand + b.cColon + b.cSpace; // WARNING: The specified command:
+export const cdoesNotExistPleaseTryAgain = b.cSpace + w.cdoes + b.cSpace + g.cnot + b.cSpace + w.cexist + b.cComa + b.cSpace + w.cplease + b.cSpace + w.ctry + b.cSpace + w.cagain + b.cExclamation; // does not exist, please try again!
+export const ccommandStringContainsEitherSingleQuoteOrBackTickQuote = w.ccommand + w.cString + b.cSpace + w.ccontains + b.cSpace + w.ceither + b.cSpace + b.ca + b.cSpace + w.csingle + w.cQuote + b.cSpace + b.cor + b.cSpace + b.ca + b.cSpace + w.cback + w.cTick + w.cQuote; // commandString contains either a singleQuote or a backTickQuote
+export const ccommandStringContainsSingleQuote = w.ccommand + w.cString + b.cSpace + w.ccontains + b.cSpace + b.ca + b.cSpace + w.csingle + w.cQuote + b.cExclamation; // commandString contains a singleQuote!
+export const cnumberOfSingleQuotesIsEven = w.cnumber + b.cOf + w.cSingle + w.cQuotes + b.cSpace + b.cis + b.cSpace + b.cGreaterThan + b.cEqual + b.cSpace + n.c2 + b.cSpace + b.cAndPersand + b.cSpace + w.cthe + b.cSpace + w.cnumber + b.cOf + w.cSingle + w.cQuotes + b.cSpace + b.cis + b.cSpace + w.cEVEN + b.cExclamation + b.cSpace + w.cYAY + b.cExclamation; // numberOfSingleQuotes is >= 2 & the numberOfSingleQuotes is EVEN! YAY!
+export const cFirstIndexIs = n.cFirst + b.cSpace + w.cindex + cSpaceIsColonSpace; // First index is:
+export const ccommandStringAfterTaggingTheFirstStringDelimiter = w.ccommand + w.cString + b.cSpace + w.cafter + b.cSpace + w.ctagging + b.cSpace + w.cthe + b.cSpace + n.cfirst + b.cSpace + w.cstring + b.cSpace + w.cdelimiter + b.cColon + b.cSpace; // commandString after tagging the first string delimiter:
+export const cAdditionalIndexIs = w.cAdditional + b.cSpace + w.cindex + cSpaceIsColonSpace; // Additional index is:
+export const coddIndex = w.codd + b.cSpace + w.cindex; // odd index
+export const cevenIndex = w.ceven + b.cSpace + w.cindex; // even index
+export const ccommandStringAfterTaggingAnOddStringDelimiter = w.ccommand + w.cString + b.cSpace + w.cafter + b.cSpace + w.ctagging + b.cSpace + b.can + b.cSpace + w.codd + b.cSpace + w.cstring + b.cSpace + w.cdelimiter + b.cColon + b.cSpace; // commandString after tagging an odd string delimiter:
+export const ccommandStringAfterTaggingAnEvenStringDelimiter = w.ccommand + w.cString + b.cSpace + w.cafter + b.cSpace + w.ctagging + b.cSpace + b.can + b.cSpace + w.ceven + b.cSpace + w.cstring + b.cSpace + w.cdelimiter + b.cColon + b.cSpace; // commandString after tagging an even string delimiter:
+export const cpreSplitCommandStringIs = p.cpre + w.cSplit + w.cCommand + w.cString + cSpaceIsColonSpace; // preSplitCommandString is:
+export const cpostSplitCommandStringIs = w.cpost + w.cSplit + w.cCommand + w.cString + b.cOpenBracket + b.ck + b.cCloseBracket + cSpaceIsColonSpace; // postSplitCommandString[k] is:
+export const cpreSplitCommandStringElementIs = p.cpre + w.cSplit + w.cCommand + w.cString + w.cElement + cSpaceIsColonSpace; // preSplitCommandStringElement is:
+export const cDoingStraightSplitCommandString = w.cDoing + b.cSpace + b.ca + b.cSpace + w.cstraight + b.cSpace + w.csplit + b.cSpace + b.cof + b.cSpace + w.cthe + b.cSpace + w.ccommand + w.cString + b.cColon + b.cSpace; // Doing a straight split of the commandString:
+export const cCommandStartTimeIs = w.cCommand + b.cSpace + w.cStart + b.cSpace + w.ctime + cSpaceIsColonSpace; // Command Start time is:
+export const cCommandEndTimeIs = w.cCommand + b.cSpace + w.cEnd + b.cSpace + w.ctime + cSpaceIsColonSpace; // Command End time is:
+export const cCommandRunTimeIs = w.cCommand + b.cSpace + w.crun + b.cDash + w.ctime + cSpaceIsColonSpace; // Command run-time is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
@@ -608,6 +631,12 @@ export const cconstantsGeneratorMessage2 = w.cWARNING + b.cColon + b.cSpace + w.
 export const cconstantsGeneratorListMessage1 = w.cINVALID + b.cSpace + w.cINPUT + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cconstant + b.cSpace + w.cList + b.cDot;
 // PASSED: All duplicate command aliases validation tests!
 export const cvalidateCommandAliasesMessage1 = w.cPASSED + b.cColon + b.cSpace + w.cAll + b.cSpace + w.cduplicate + b.cSpace + w.ccommand + b.cSpace + w.cAliases + b.cSpace + w.cvalidation + b.cSpace + w.ctests + b.cExclamation;
+// About to call the rule broker to process on the number of single quotes
+export const cgetCommandArgsMessage1 = w.cAbout + b.cSpace + b.cto + b.cSpace + w.ccall + b.cSpace + w.cthe + b.cSpace + w.crule + b.cSpace + w.cbroker + b.cSpace + b.cto + b.cSpace + w.cprocess + b.cSpace + b.con + b.cSpace + w.cthe + b.cSpace + w.cnumber + b.cSpace + b.cof + b.cSpace + w.csingle + b.cSpace + w.cquotes + b.cSpace; // About to call the rule broker to process on the number of single quotes
+// and determine if it-be even or odd
+export const cgetCommandArgsMessage2 = w.cand + b.cSpace + w.cdetermine + b.cSpace + b.cif + b.cSpace + b.cit + b.cDash + b.cbe + b.cSpace + w.ceven + b.cSpace + b.cor + b.cSpace + w.codd;
+// WARNING: Command does not exist, please enter a valid command and try again!
+export const cexecuteCommandMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cCommand + b.cSpace + w.cdoes + b.cSpace + g.cnot + b.cSpace + w.cexist + b.cComa + b.cSpace + w.cplease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.ccommand + b.cSpace + w.cand + b.cSpace + w.ctry + b.cSpace + w.cagain + b.cExclamation;
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia

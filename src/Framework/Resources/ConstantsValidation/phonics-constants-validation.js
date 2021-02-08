@@ -291,6 +291,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cPer', Actual: p.cPer, Expected: 'Per'},
    {Name: 'casic', Actual: p.casic, Expected: 'asic'},
    {Name: 'cven', Actual: p.cven, Expected: 'ven'},
+   {Name: 'cVEN', Actual: p.cVEN, Expected: 'VEN'},
    {Name: 'cvent', Actual: p.cvent, Expected: 'vent'},
    {Name: 'carg', Actual: p.carg, Expected: 'arg'},
    {Name: 'cArg', Actual: p.cArg, Expected: 'Arg'},
@@ -485,6 +486,8 @@ export const phonicsConstantsValidation = [
    {Name: 'cance', Actual: p.cance, Expected: 'ance'},
    {Name: 'cional', Actual: p.cional, Expected: 'ional'},
    {Name: 'ctional', Actual: p.ctional, Expected: 'tional'},
+   {Name: 'ctra', Actual: p.ctra, Expected: 'tra'},
+   {Name: 'cTra', Actual: p.cTra, Expected: 'Tra'},
    {Name: 'ctrad', Actual: p.ctrad, Expected: 'trad'},
    {Name: 'cTrad', Actual: p.cTrad, Expected: 'Trad'},
    {Name: 'ctrol', Actual: p.ctrol, Expected: 'trol'},
@@ -543,5 +546,8 @@ export const phonicsConstantsValidation = [
    {Name: 'ceen', Actual: p.ceen, Expected: 'een'},
    {Name: 'core', Actual: p.core, Expected: 'ore'},
    {Name: 'cstd', Actual: p.cstd, Expected: 'std'},
-   {Name: 'cStd', Actual: p.cStd, Expected: 'Std'}
+   {Name: 'cStd', Actual: p.cStd, Expected: 'Std'},
+   {Name: 'cick', Actual: p.cick, Expected: 'ick'},
+   {Name: 'cote', Actual: p.cote, Expected: 'ote'},
+   {Name: 'coker', Actual: p.coker, Expected: 'oker'}
  ];
