@@ -474,6 +474,44 @@ export const ccurrentColorNameIs = w.ccurrent + w.cColor + w.cName + cSpaceIsCol
 export const ccurrentColorObjectIs = w.ccurrent + w.cColor + w.cObject + cSpaceIsColonSpace; // currentColorObject is:
 export const ccurrentColorHexValueIs = w.ccurrent + w.cColor + p.cHex + w.cValue + cSpaceIsColonSpace; // currentColorHexValue is:
 export const cruleOutputIs = w.crule + w.cOutput + cSpaceIsColonSpace; // ruleOutput is:
+export const cBeginPhase1ConstantsValidation = w.cBEGIN + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cConstants + b.cSpace + w.cValidation; // BEGIN Phase 1 Constants Validation
+export const cEndPhase1ConstantsValidation = w.cEND + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cConstants + b.cSpace + w.cValidation; // END Phase 1 Constants Validation
+export const cBeginPhase2ConstantsValidation = w.cBEGIN + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cConstants + b.cSpace + w.cValidation; // BEGIN Phase 2 Constants Validation
+export const cEndPhase2ConstantsValidation = w.cEND + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cConstants + b.cSpace + w.cValidation; // END Phase 2 Constants Validation
+export const cconstantsPathIs = w.cconstants + w.cPath + cSpaceIsColonSpace; // constantsPath is:
+export const cresolvedConstantsPath_BasicIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cBasic + cSpaceIsColonSpace; // resolvedConstantsPath_Basic is:
+export const cresolvedConstantsPath_ColorIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cColor + cSpaceIsColonSpace; // resolvedConstantsPath_Color is:
+export const cresolvedConstantsPath_ElementIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cElement + cSpaceIsColonSpace; // resolvedConstantsPath_Element is:
+export const cresolvedConstantsPath_GenericIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cGeneric + cSpaceIsColonSpace; // resolvedConstantsPath_Generic is:
+export const cresolvedConstantsPath_IsotopeIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cIsotope + cSpaceIsColonSpace; // resolvedConstantsPath_Isotope is:
+export const cresolvedConstantsPath_NumericIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cNumeric + cSpaceIsColonSpace; // resolvedConstantsPath_Numeric is:
+export const cresolvedConstantsPath_PhonicsIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cPhonics + cSpaceIsColonSpace; // resolvedConstantsPath_Phonics is:
+export const cresolvedConstantsPath_ShapeIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cShape + cSpaceIsColonSpace; // resolvedConstantsPath_Shape is:
+export const cresolvedConstantsPath_SystemIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cSystem + cSpaceIsColonSpace; // resolvedConstantsPath_System is:
+export const cresolvedConstantsPath_UnitsIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cUnits + cSpaceIsColonSpace; // resolvedConstantsPath_Units is:
+export const cresolvedConstantsPath_WordsIs = w.cresolved + w.cConstants + w.cPath + b.cUnderscore + w.cWords + cSpaceIsColonSpace; // resolvedConstantsPath_Words is:
+export const cBasicConstantsPhase1Validation = w.cBasic + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Basic Constants Phase 1 Validation
+export const cColorConstantsPhase1Validation = w.cColor + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Color Constants Phase 1 Validation
+export const cElementConstantsPhase1Validation = w.cElement + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Element Constants Phase 1 Validation
+export const cGenericConstantsPhase1Validation = w.cGeneric + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Generic Constants Phase 1 Validation
+export const cIsotopeConstantsPhase1Validation = w.cIsotope + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Isotope Constants Phase 1 Validation
+export const cNumericalConstantsPhase1Validation = w.cNumerical + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Numerical Constants Phase 1 Validation
+export const cPhonicsConstantsPhase1Validation = w.cPhonics + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Phonics Constants Phase 1 Validation
+export const cShapeConstantsPhase1Validation = w.cShape + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Shape Constants Phase 1 Validation
+export const cSystemConstantsPhase1Validation = w.cSystem + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // System Constants Phase 1 Validation
+export const cUnitsConstantsPhase1Validation = w.cUnits + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Units Constants Phase 1 Validation
+export const cWordConstantsPhase1Validation = w.cWord + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c1 + b.cSpace + w.cValidation; // Word Constants Phase 1 Validation
+export const cBasicConstantsPhase2Validation = w.cBasic + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Basic Constants Phase 2 Validation
+export const cColorConstantsPhase2Validation = w.cColor + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Color Constants Phase 2 Validation
+export const cElementConstantsPhase2Validation = w.cElement + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Element Constants Phase 2 Validation
+export const cGenericConstantsPhase2Validation = w.cGeneric + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Generic Constants Phase 2 Validation
+export const cIsotopeConstantsPhase2Validation = w.cIsotope + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Isotope Constants Phase 2 Validation
+export const cNumericalConstantsPhase2Validation = w.cNumerical + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Numerical Constants Phase 2 Validation
+export const cPhonicsConstantsPhase2Validation = w.cPhonics + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Phonics Constants Phase 2 Validation
+export const cShapeConstantsPhase2Validation = w.cShape + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Shape Constants Phase 2 Validation
+export const cSystemConstantsPhase2Validation = w.cSystem + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // System Constants Phase 2 Validation
+export const cUnitsConstantsPhase2Validation = w.cUnits + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Units Constants Phase 2 Validation
+export const cWordConstantsPhase2Validation = w.cWord + b.cSpace + w.cConstants + b.cSpace + w.cPhase + b.cSpace + n.c2 + b.cSpace + w.cValidation; // Word Constants Phase 2 Validation
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
@@ -568,6 +606,8 @@ export const cconstantsGeneratorMessage1 = w.cINVALID + b.cSpace + w.cINPUT + b.
 export const cconstantsGeneratorMessage2 = w.cWARNING + b.cColon + b.cSpace + w.cThe + b.cSpace + w.cconstant + b.cSpace + w.chas + b.cSpace + w.calready + b.cSpace + w.cbeen + b.cSpace + w.cdefined + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.cfollowing + b.cSpace + w.clibrary + b.cOpenParenthesis + p.cies + b.cCloseParenthesis + b.cColon + b.cSpace;
 // INVALID INPUT: Please enter a valid constant list.
 export const cconstantsGeneratorListMessage1 = w.cINVALID + b.cSpace + w.cINPUT + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cconstant + b.cSpace + w.cList + b.cDot;
+// PASSED: All duplicate command aliases validation tests!
+export const cvalidateCommandAliasesMessage1 = w.cPASSED + b.cColon + b.cSpace + w.cAll + b.cSpace + w.cduplicate + b.cSpace + w.ccommand + b.cSpace + w.cAliases + b.cSpace + w.cvalidation + b.cSpace + w.ctests + b.cExclamation;
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia

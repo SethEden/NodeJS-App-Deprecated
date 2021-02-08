@@ -1549,5 +1549,13 @@ export const wordConstantsValidation = [
    {Name: 'cDefinitions', Actual: w.cDefinitions, Expected: 'Definitions'},
    {Name: 'cdone', Actual: w.cdone, Expected: 'done'},
    {Name: 'cDone', Actual: w.cDone, Expected: 'Done'},
-   {Name: 'cDONE', Actual: w.cDONE, Expected: 'DONE'}
+   {Name: 'cDONE', Actual: w.cDONE, Expected: 'DONE'},
+   {Name: 'cphase', Actual: w.cphase, Expected: 'phase'},
+   {Name: 'cPhase', Actual: w.cPhase, Expected: 'Phase'},
+   {Name: 'cphases', Actual: w.cphases, Expected: 'phases'},
+   {Name: 'cPhases', Actual: w.cPhases, Expected: 'Phases'},
+   {Name: 'cphased', Actual: w.cphased, Expected: 'phased'},
+   {Name: 'cPhased', Actual: w.cPhased, Expected: 'Phased'},
+   {Name: 'cphasing', Actual: w.cphasing, Expected: 'phasing'},
+   {Name: 'cPhasing', Actual: w.cPhasing, Expected: 'Phasing'}
  ];
