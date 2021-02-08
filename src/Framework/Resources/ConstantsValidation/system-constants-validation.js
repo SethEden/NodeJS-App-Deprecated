@@ -531,8 +531,12 @@ export const systemConstantsValidation = [
    {Name: 'cpostSplitCommandStringIs', Actual: s.cpostSplitCommandStringIs, Expected: 'postSplitCommandString[k] is: '},
    {Name: 'cpreSplitCommandStringElementIs', Actual: s.cpreSplitCommandStringElementIs, Expected: 'preSplitCommandStringElement is: '},
    {Name: 'cDoingStraightSplitCommandString', Actual: s.cDoingStraightSplitCommandString, Expected: 'Doing a straight split of the commandString: '},
+   {Name: 'cCommandStartTimeIs', Actual: s.cCommandStartTimeIs, Expected: 'Command Start time is: '},
    {Name: 'cCommandEndTimeIs', Actual: s.cCommandEndTimeIs, Expected: 'Command End time is: '},
    {Name: 'cCommandRunTimeIs', Actual: s.cCommandRunTimeIs, Expected: 'Command run-time is: '},
+   {Name: 'ccommandAliasesFilePathConfigurationNameIs', Actual: s.ccommandAliasesFilePathConfigurationNameIs, Expected: 'commandAliasesFilePathConfigurationName is: '},
+   {Name: 'ccommandIs', Actual: s.ccommandIs, Expected: 'command is: '},
+   {Name: 'ccommandToExecuteIs', Actual: s.ccommandToExecuteIs, Expected: 'commandToExecute is: '},
 
    {Name: 'cDetermineWordDelimiterMessage1', Actual: s.cDetermineWordDelimiterMessage1, Expected: 'WARNING: Mixed string. '},
    {Name: 'cDetermineWordDelimiterMessage2', Actual: s.cDetermineWordDelimiterMessage2, Expected: 'Cannot determine what delimiter should '},

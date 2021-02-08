@@ -535,6 +535,9 @@ export const cDoingStraightSplitCommandString = w.cDoing + b.cSpace + b.ca + b.c
 export const cCommandStartTimeIs = w.cCommand + b.cSpace + w.cStart + b.cSpace + w.ctime + cSpaceIsColonSpace; // Command Start time is:
 export const cCommandEndTimeIs = w.cCommand + b.cSpace + w.cEnd + b.cSpace + w.ctime + cSpaceIsColonSpace; // Command End time is:
 export const cCommandRunTimeIs = w.cCommand + b.cSpace + w.crun + b.cDash + w.ctime + cSpaceIsColonSpace; // Command run-time is:
+export const ccommandAliasesFilePathConfigurationNameIs = w.ccommand + w.cAliases + w.cFile + w.cPath + w.cConfiguration + w.cName + cSpaceIsColonSpace; // commandAliasesFilePathConfigurationName is:
+export const ccommandIs = w.ccommand + cSpaceIsColonSpace; // command is:
+export const ccommandToExecuteIs = w.ccommand + b.cTo + w.cExecute + cSpaceIsColonSpace; // commandToExecute is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
