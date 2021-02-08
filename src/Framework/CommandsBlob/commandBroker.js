@@ -350,7 +350,7 @@ function getCommandArgs(commandString, commandDelimiter) {
     if (D[s.cCommandNamesPerformanceTrackingStack] === undefined) {
       stack.initStack(s.cCommandNamesPerformanceTrackingStack);
     }
-    performanceTrackingObject = {'Name': commandToExecute, 'RunTime': commandDeltaTime};
+    performanceTrackingObject = {Name: commandToExecute, RunTime: commandDeltaTime};
     if (stack.contains(s.cCommandNamesPerformanceTrackingStack, commandToExecute) === false) {
       stack.push(s.cCommandNamesPerformanceTrackingStack, commandToExecute);
     }

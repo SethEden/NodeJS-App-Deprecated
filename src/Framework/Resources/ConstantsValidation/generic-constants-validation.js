@@ -198,5 +198,15 @@ export const genericConstantsValidation = [
 
    // Miscelanious
    {Name: 'cconst', Actual: g.cconst, Expected: 'const'},
-   {Name: 'cConst', Actual: g.cConst, Expected: 'Const'}
+   {Name: 'cConst', Actual: g.cConst, Expected: 'Const'},
+   {Name: 'cASAP', Actual: g.cASAP, Expected: 'ASAP'},
+   {Name: 'capp', Actual: g.capp, Expected: 'app'},
+   {Name: 'cApp', Actual: g.cApp, Expected: 'App'},
+   {Name: 'cAPP', Actual: g.cAPP, Expected: 'APP'},
+   {Name: 'carg', Actual: g.carg, Expected: 'arg'},
+   {Name: 'cArg', Actual: g.cArg, Expected: 'Arg'},
+   {Name: 'cargs', Actual: g.cargs, Expected: 'args'},
+   {Name: 'cArgs', Actual: g.cArgs, Expected: 'Args'},
+   {Name: 'chex', Actual: g.chex, Expected: 'hex'},
+   {Name: 'cHex', Actual: g.cHex, Expected: 'Hex'}
  ];

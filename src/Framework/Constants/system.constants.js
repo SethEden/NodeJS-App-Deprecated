@@ -411,6 +411,69 @@ export const cTheValueWasNotFoundInTheArray = w.cThe + b.cSpace + w.cvalue + b.c
 export const coriginalStringIs = w.coriginal + w.cString + cSpaceIsColonSpace; // originalString is:
 export const cindexIs = w.cindex + b.cSpace + cSpaceIsColonSpace; // index is:
 export const creplacementIs = w.creplacement + cSpaceIsColonSpace; // replacement is:
+export const cDEPLOY_APPLICATION = w.cDEPLOY + b.cUnderscore + w.cAPPLICATION; // DEPLOY APPLICATION
+export const cRELEASE_APPLICATION = w.cRELEASE + b.cUnderscore + w.cAPPLICATION; // RELEASE APPLICATION
+export const cDeploymentWasCompleted = w.cDeployment + b.cSpace + w.cwas + b.cSpace + w.ccompleted + b.cColon + b.cSpace; // Deployment was completed:
+export const cinputDataIis = cinputData + b.cOpenBracket + b.ci + b.cCloseBracket + cSpaceIsColonSpace; // inputData[i] is:
+export const caggregateCommandStringIs = w.caggregate + w.cCommand + w.cString + cSpaceIsColonSpace; // aggregateCommandString is:
+export const cmetaDataParametersIs = w.cmetaData + w.cParameters + cSpaceIsColonSpace; // metaDataParameters is:
+export const cmetaDataParametersLengthIs = w.cmetaData + w.cParameters + b.cSpace + w.cLength + cSpaceIsColonSpace; // metaDataParameters length is:
+export const cmetaDataParameters0Is = w.cmetaData + w.cParameters + b.cOpenBracket + n.c0 + b.cCloseBracket + cSpaceIsColonSpace; // metaDataParameters[0] is:
+export const cmetaDataParameters1Is = w.cmetaData + w.cParameters + b.cOpenBracket + n.c1 + b.cCloseBracket + cSpaceIsColonSpace; // metaDataParameters[1] is:
+export const cmetaDataParameters2Is = w.cmetaData + w.cParameters + b.cOpenBracket + n.c2 + b.cCloseBracket + cSpaceIsColonSpace; // metaDataParameters[2] is:
+export const cappNameIs = g.capp + w.cName + cSpaceIsColonSpace; // appName is:
+export const cappVersionIs = g.capp + w.cVersion + cSpaceIsColonSpace; // appVersion is:
+export const cappDescriptionIs = g.capp + w.cDescription + cSpaceIsColonSpace; // appDescription is:
+export const cappNameAttributeNameIs = g.capp + w.cName + w.cAttribute + w.cName + cSpaceIsColonSpace; // appNameAttributeName is:
+export const cappVersionAttributeNameIs = g.capp + w.cVersion + w.cAttribute + w.cName + cSpaceIsColonSpace; // appVersionAttributeName is:
+export const cappDescriptionAttributeNameIs = g.capp + w.cDescription + w.cAttribute + w.cName + cSpaceIsColonSpace; // appDescriptionAttributeName is:
+export const cappNameAttributeValueIs = g.capp + w.cName + w.cAttribute + w.cValue + cSpaceIsColonSpace; // appNameAttributeValue is:
+export const cappVersionAttributeValueIs = g.capp + w.cVersion + w.cAttribute + w.cValue + cSpaceIsColonSpace; // appVersionAttributeValue is:
+export const cappDescriptionAttributeValueIs = g.capp + w.cDescription + w.cAttribute + w.cValue + cSpaceIsColonSpace; // appDescriptionAttributeValue is:
+export const cmetaDataPathAndFilenameIs = w.cmetaData + w.cPath + w.cAnd + w.cFilename + cSpaceIsColonSpace; // metaDataPathAndFilename is:
+export const ccontentsAre = w.ccontents + b.cSpace + w.care + b.cColon + b.cSpace; // contents are:
+export const ccontentsOfDare = w.ccontents + b.cSpace + b.cof + b.cSpace + b.cD + b.cSpace + w.care + b.cColon + b.cSpace; // contents of D are:
+export const cBEGIN_ithIterationOfInputDataArray = cBEGIN_ithIteration + b.cof + b.cSpace + w.cthe + b.cSpace + cinputData + b.cSpace + w.carray + b.cDot + b.cSpace + b.ci + cSpaceIsColonSpace; // Begin the i-th iteration of the inputData array. i is:
+export const ccurrentRuleIs = w.ccurrent + w.cRule + cSpaceIsColonSpace; // currentRule is:
+export const crulesIs = w.crules + cSpaceIsColonSpace; // rules is:
+export const cruleInputDataIs = w.crule + cInputData + cSpaceIsColonSpace; // ruleInputData is:
+export const cruleInputMetaData = w.crule + w.cInput + w.cMetaData + cSpaceIsColonSpace; // ruleInputMetaData is:
+export const cBusinessRuleStartTimeIs = w.cBusiness + b.cSpace + w.cRule + b.cSpace + w.cStart + b.cSpace + w.ctime + cSpaceIsColonSpace; // Business Rule Start time is:
+export const cBusinessRuleEndTimeIs = w.cBusiness + b.cSpace + w.cRule + b.cSpace + w.cEnd + b.cSpace + w.ctime + cSpaceIsColonSpace; // Business Rule End time is:
+export const cBusinessRuleRunTimeIs = w.cBusiness + w.cRule + b.cSpace + w.crun + b.cDash + w.ctime + cSpaceIsColonSpace; // BusinessRule run-time is:
+export const ccommandStringBeforeAttemptedDelimiterSwapIs = w.ccommand + w.cString + b.cSpace + w.cbefore + b.cSpace + w.cattempted + b.cSpace + w.cswap + cSpaceIsColonSpace; // commandString before attempted delimiter swap is:
+export const creplaceCharacterWithCharacterRuleIs = w.creplace + w.cCharacter + w.cWith + w.cCharacter + w.cRule + cSpaceIsColonSpace; // replaceCharacterWithCharacterRule is:
+export const cRuleOutputIs = w.cRule + b.cSpace + w.coutput + cSpaceIsColonSpace; // Rule output is:
+export const ccamelCaseCommandNameArrayIs = w.ccamel + w.cCase + w.cCommand + w.cName + w.cArray + cSpaceIsColonSpace; // camelCaseCommandNameArray is:
+export const ccurrentCommandWordIs = w.ccurrent + w.cCommand + w.cWord + cSpaceIsColonSpace; // current commandWord is:
+export const cPARSER_ERROR = w.cPARSER + b.cUnderscore + w.cERROR + b.cColon + b.cSpace; // PARSER ERROR:
+export const ccommandAliasDataStructureIs = w.ccommand + w.cAlias + w.cData + w.cStructure + cSpaceIsColonSpace; // commandAliasDataStructure is:
+export const cuserDefinedConstantIs = w.cuser + w.cDefined + w.cConstant + cSpaceIsColonSpace; // userDefinedConstant is:
+export const cwordCountIs = w.cword + w.cCount + cSpaceIsColonSpace; // wordCount is:
+export const cwordsArrayIs = w.cwords + w.cArray + cSpaceIsColonSpace; // wordsArray is:
+export const cOptimizedConstantDefinitionForWord = w.cOptimized + b.cSpace + w.cconstant + b.cSpace + w.cdefinition + b.cSpace + w.cfor + b.cSpace + w.cword + b.cColon + b.cSpace; // Optimized constant definition for word:
+export const cuserDefinedConstantListIs = w.cuser + w.cDefined + w.cConstants + w.cList + cSpaceIsColonSpace; // userDefinedConstantList is:
+export const cuserDefinedConstantListContainsComas = w.cuser + w.cDefined + w.cConstants + w.cList + b.cSpace + w.ccontains + b.cSpace + w.ccomas; // userDefinedConstantList contains comas
+export const cuserDefinedConstantsListArrayIs = w.cuser + w.cDefined + w.cConstants + w.cList + w.cArray + cSpaceIsColonSpace; // userDefinedConstantsListArray is:
+export const cuserDefinedConstantsListDoesNotContainComas = w.cuser + w.cDefined + w.cConstant + w.cList + b.cSpace + w.cDOES + b.cSpace + g.cNOT + b.cSpace + w.ccontain + b.cSpace + w.ccomas; // userDefinedConstantList DOES NOT contain comas
+export const ccommonPatternsArrayIs = w.ccommon + w.cPatterns + w.cArray + cSpaceIsColonSpace; // commonPatternsArray is:
+export const cbusinessRuleCounterIs = w.cbusiness + w.cRule + w.cCounter + cSpaceIsColonSpace; // businessRuleCounter is:
+export const cbusinessRulePerformanceSumIs = w.cbusiness + w.cRule + w.cPerformance + w.cSum + cSpaceIsColonSpace; // businessRulePerformanceSum is:
+export const cDoneBusinessRulePerformanceSumIs = w.cDONE + b.cExclamation + b.cSpace + cbusinessRulePerformanceSumIs; // DONE! businessRulePerformanceSum is:
+export const caverageIs = w.caverage + cSpaceIsColonSpace; // average is:
+export const cbusinessRulePerformanceStdSumIs = w.cbusiness + w.cRule + w.cPerformance + p.cStd + w.cSum + cSpaceIsColonSpace; // businessRulePerformanceStdSum is:
+export const cDoneBusinessRulePerformanceStdSumIs = w.cDONE + b.cExclamation + b.cSpace + cbusinessRulePerformanceStdSumIs; // DONE! businessRulePerformanceStdSum is:
+export const cstandardDevIs = w.cstandard + p.cDev + cSpaceIsColonSpace; // standardDev is:
+export const ccommandCounterIs = w.ccommand + w.cCounter + cSpaceIsColonSpace; // commandCounter is:
+export const ccommandPerformanceSumIs = w.ccommand + w.cPerformance + w.cSum + cSpaceIsColonSpace; // commandPerformanceSum is:
+export const cDoneCommandPerformanceSumIs = w.cDONE + b.cExclamation + b.cSpace + ccommandPerformanceSumIs; // DONE! commandPerformanceSum is:
+export const ccommandPerformanceStdSumIs = w.ccommand + w.cPerformance + p.cStd + w.cSum + cSpaceIsColonSpace; // commandPerformanceStdSum is:
+export const cDoneCommandPerformanceStdSumIs = w.cDONE + b.cExclamation + b.cSpace + ccommandPerformanceStdSumIs; // DONE! commandPerformanceStdSum is:
+export const ccolorKeysIs = w.ccolor + w.cKeys + cSpaceIsColonSpace; // colorKeys is:
+export const ccurrentColorNameIs = w.ccurrent + w.cColor + w.cName + cSpaceIsColonSpace; // currentColorName is:
+export const ccurrentColorObjectIs = w.ccurrent + w.cColor + w.cObject + cSpaceIsColonSpace; // currentColorObject is:
+export const ccurrentColorHexValueIs = w.ccurrent + w.cColor + p.cHex + w.cValue + cSpaceIsColonSpace; // currentColorHexValue is:
+export const cruleOutputIs = w.crule + w.cOutput + cSpaceIsColonSpace; // ruleOutput is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
@@ -466,6 +529,45 @@ export const cSearchForPatternsInStringArrayMessage4 = w.cWARNING + b.cColon + b
 export const cLoadDataFileMessage1 = w.cWARNING + b.cColon + b.cSpace + b.cNo + b.cSpace + w.cdata + b.cSpace + b.cto + b.cSpace + w.cload + b.cComa + b.cSpace; // WARNING: No data to load,
 export const cloadDataFileMessage2 = w.cplease + b.cSpace + w.cspecify + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cpath + b.cSpace + b.cAndPersand + b.cSpace + w.cfilename + b.cExclamation; // please specify a valid path & filename!
 export const cloadDataFileMessage3 = w.cWARNING + b.cColon + b.cSpace + w.cInvalid + b.cSpace + w.cfile + b.cSpace + w.cformat + b.cComa + b.cSpace + w.cfile + b.cSpace + w.cformats + b.cSpace + w.csupported + b.cSpace + w.care + b.cColon + b.cSpace; // WARNING: Invalid file format, file formats supported are:
+// ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
+export const cdeployApplicationMessage1a = w.cERROR + b.cColon + b.cSpace + w.cRelease + b.cSpace + w.cfailed + b.cSpace + w.cbecause + b.cSpace + b.cof + b.cSpace + b.ca + b.cSpace + w.cfailure + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.cconstants + b.cSpace + w.cvalidation + b.cSpace + w.csystem + b.cDot + b.cSpace; // ERROR: Release failed because of a failure in the constants validation system.
+export const cdeployApplicationMessage2a = w.cPlease + b.cSpace + w.cfix + b.cSpace + g.cASAP + b.cSpace + w.cbefore + b.cSpace + w.cattempting + b.cSpace + w.canother + b.cSpace + w.crelease + b.cDot; // Please fix ASAP before attempting another release.
+// ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.
+export const cdeployApplicationMessage1b = w.cERROR + b.cColon + b.cSpace + w.cRelease + b.cSpace + w.cfailed + b.cSpace + w.cbecause + b.cSpace + b.cof + b.cSpace + b.ca + b.cSpace + w.cfailure + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.ccommands + b.cSpace + w.calias + b.cSpace + w.cvalidation + b.cSpace + w.csystem + b.cDot + b.cSpace; //ERROR: Release failed because of a failure in the commands alias validation system.
+export const ccommandSequencerMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cnominal + b.cDot + w.ccommand + w.cSequencer + b.cColon + b.cSpace + w.cThe + b.cSpace + w.cspecified + b.cSpace + w.ccommand + b.cSpace + w.cwas + b.cSpace + g.cnot + b.cSpace + w.cfound + b.cComa + b.cSpace; // WARNING: nominal.commandSequencer: The specified command was not found,
+export const ccommandSequencerMessage2 = w.cplease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.ccommand + b.cSpace + w.cand + b.cSpace + w.ctry + b.cSpace + w.cagain + b.cDot; // Please enter a valid command and try again.
+export const cworkflowMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cnominal + b.cDot + w.cworkflow + b.cColon + b.cSpace + w.cThe + b.cSpace + w.cspecified + b.cSpace + w.cworkflow + b.cColon + b.cSpace; // WARNING: nominal.workflow: The specified workflow:
+export const cworkflowMessage2 = b.cSpace + w.cwas + b.cSpace + g.cnot + b.cSpace + w.cfound + b.cSpace + b.cin + b.cSpace + w.ceither + b.cSpace + w.cthe + b.cSpace + w.csystem + b.cSpace + w.cdefined + b.cSpace + w.cworkflows + b.cComa + b.cSpace + b.cor + b.cSpace + w.cclient + b.cSpace + w.cdefined + b.cSpace + w.cworkflows + b.cDot; // was not found in either the system defined workflows, or client defined workflows.
+export const cworkflowMessage3 = b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cworkflow + b.cSpace + w.cname + b.cSpace + w.cand + b.cSpace + w.ctry + b.cSpace + w.cagain + b.cDot; // Please enter a valid workflow name and try again.
+// After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is:
+export const ccommandGeneratorMessage1 = w.cAfter + b.cSpace + w.cattempting + b.cSpace + b.cto + b.cSpace + w.creplace + b.cSpace + w.cthe + b.cSpace + w.csecondary + w.cCommand + g.cArgs + w.cDelimiter + b.cSpace + w.cwith + b.cSpace + w.cthe + b.cSpace + w.cprimary + w.cCommand + w.cDelimiter + b.cSpace + w.ccommand + w.cString + cSpaceIsColonSpace;
+// After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandArgsDelimiter commandString is:
+export const ccommandGeneratorMessage2 = w.cAfter + b.cSpace + w.cattempting + b.cSpace + b.cto + b.cSpace + w.creplace + b.cSpace + w.cthe + b.cSpace + w.ctertiary + w.cCommand + w.cDelimiter + b.cSpace + w.cwith + b.cSpace + w.cthe + b.cSpace + w.csecondary + w.cCommand + g.cArs + w.cDelimiter + b.cSpace + w.ccommand + w.cString + cSpaceIsColonSpace;
+// WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered:
+export const ccommandGeneratorMessage3 = w.cWARNING + b.cColon + b.cSpace + w.cnominal + b.cDot + w.ccommand + w.cGenerator + b.cColon + b.cSpace + w.cMust + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cnumber + b.cSpace + w.cgreater + b.cSpace + w.cthan + b.cSpace + n.c0 + b.cComa + b.cSpace + w.cnumber + b.cSpace + w.centered + b.cColon + b.cSpace;
+// WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number:
+export const ccommandGeneratorMessage4 = w.cWARNING + b.cColon + b.cSpace + w.cnominal + b.cDot + w.ccommand + w.cGenerator + b.cColon + b.cSpace + w.cNumber + b.cSpace + w.centered + b.cSpace + w.cfor + b.cSpace + w.cthe + b.cSpace + w.cnumber + b.cSpace + b.cof + b.cSpace + w.ccommands + b.cSpace + b.cto + b.cSpace + w.cgenerate + b.cSpace + b.cis + b.cSpace + g.cnot + b.cSpace + b.ca + b.cSpace + w.cnumber + b.cColon + b.cSpace;
+// WARNING: nominal.commandGenerator: The specified command:
+export const ccommandGeneratorMessage5 = w.cWarning + b.cColon + b.cSpace + w.cnominal + b.cDot + w.ccommand + w.cGenerator + b.cColon + b.cSpace + w.cThe + b.cSpace + w.cspecified + b.cSpace + w.ccommand + b.cColon + b.cSpace;
+// was not found, please enter a valid command and try again.
+export const ccommandGeneratorMessage6 = b.cSpace + w.cwas + b.cSpace + g.cnot + b.cSpace + w.cfound + b.cComa + b.cSpace + w.cplease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.ccommand + b.cSpace + w.cand + b.cSpace + w.ctry + b.cSpace + w.cagain + b.cDot;
+// Command can be called by passing parameters and bypass the prompt system.
+export const ccommandAliasGeneratorMessage1 = w.cCommand + b.cSpace + w.ccan + b.cSpace + b.cbe + b.cSpace + w.ccalled + b.cSpace + b.cby + b.cSpace + w.cpassing + b.cSpace + w.cparameters + b.cSpace + w.cand + b.cSpace + w.cbypass + b.cSpace + w.cthe + b.cSpace + w.cprompt + b.cSpace + w.csystem + b.cDot;
+// EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
+export const ccommandAliasGeneratorMessage2 = w.cEXAMPLE + b.cColon + b.cSpace + b.cOpenCurlyBrace + b.cDoubleQuote + w.cconstants + b.cDoubleQuote + b.cColon + b.cDoubleQuote + b.cc + b.cComa + g.cconst + b.cDoubleQuote + b.cComa + b.cDoubleQuote + w.cGenerator + b.cDoubleQuote + b.cColon + b.cDoubleQuote + b.cg + b.cComa + p.cgen + b.cComa + p.cgen + b.crt + b.cr + b.cDoubleQuote + b.cComa + b.cDoubleQuote + w.cList +
+b.cDoubleQuote + b.cColon + b.cDoubleQuote + b.cl + b.cComa + b.cls + b.ct + b.cDoubleQuote + b.cCloseCurlyBrace;
+// INVALID INPUT: Please enter a valid camel-case command name.
+export const ccommandAliasGeneratorMessage3 = w.cINVALID + b.cSpace + w.cINPUT + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.ccamel + b.cDash + w.ccase + b.cSpace + w.ccommand + b.cSpace + w.cname + b.cDot;
+// INVALID INPUT: Please enter a valid command word alias list.
+export const ccommandAliasGeneratorMessage4 = w.cINVALID + b.cSpace + w.cINPUT + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.ccommand + b.cSpace + w.cword + b.cSpace + w.calias + b.cSpace + w.clist + b.cDot;
+// INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.
+export const ccommandAliasGeneratorMessage5 = w.cINVALID + b.cSpace + w.cCOMMAND + b.cSpace + w.cINPUT + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + w.cvalid + b.cSpace + w.ccommand + b.cSpace + w.cdata + b.cSpace + w.cwhen + b.cSpace + w.ctrying + b.cSpace + b.cto + b.cSpace + w.ccall + b.cSpace + w.cwith + b.cSpace + w.cparameters + b.cDot;
+// INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.
+export const cconstantsGeneratorMessage1 = w.cINVALID + b.cSpace + w.cINPUT + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cconstant + b.cSpace + w.cvalue + b.cSpace + w.cthat + b.cSpace + w.ccontains + b.cSpace + w.cmore + b.cSpace + w.cthan + b.cSpace + n.c4 + b.cSpace + w.ccharacters + b.cDot;
+// WARNING: The constant has already been defined in the following library(ies):
+export const cconstantsGeneratorMessage2 = w.cWARNING + b.cColon + b.cSpace + w.cThe + b.cSpace + w.cconstant + b.cSpace + w.chas + b.cSpace + w.calready + b.cSpace + w.cbeen + b.cSpace + w.cdefined + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.cfollowing + b.cSpace + w.clibrary + b.cOpenParenthesis + p.cies + b.cCloseParenthesis + b.cColon + b.cSpace;
+// INVALID INPUT: Please enter a valid constant list.
+export const cconstantsGeneratorListMessage1 = w.cINVALID + b.cSpace + w.cINPUT + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cconstant + b.cSpace + w.cList + b.cDot;
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia
@@ -798,7 +900,7 @@ export const cunits_constants_js = w.cunits + b.cDot + w.cconstants + b.cDot + b
 export const cword_constants_js = w.cword + b.cDot + w.cconstants + b.cDot + b.cjs; // word.constants.js
 
 // Configuration Settings
-export const cmetaDataDotJson = w.cmeta + w.cData + b.cDot + g.cjson; // metaData.json
+export const cmetaDataDotJson = w.cmetaData + b.cDot + g.cjson; // metaData.json
 export const cArgumentDrivenInterface = w.cArgument + w.cDriven + w.cInterface; // ArgumentDrivenInterface
 export const cFigletFont = w.cFiglet + w.cFont; // FigletFont
 export const cPrimaryCommandDelimiter = w.cPrimary + w.cCommand + w.cDelimiter; // PrimaryCommandDelimiter

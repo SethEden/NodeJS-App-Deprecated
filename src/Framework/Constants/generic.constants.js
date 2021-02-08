@@ -195,5 +195,15 @@ export const cOctober = b.cOc + b.cto + b.cb + b.cer; // October
 export const cDecember = b.cDe + b.cc + p.cemb + b.cer; // December
 
 // Miscelanious
-export const cconst = p.ccon + b.cst;
-export const cConst = p.cCon + b.cst;
+export const cconst = p.ccon + b.cst; // const
+export const cConst = p.cCon + b.cst; // Const
+export const cASAP = b.cAS + b.cAP; // ASAP
+export const capp = b.cap + b.cp; // app
+export const cApp = b.cAp + b.cp; // App
+export const cAPP = b.cAP + b.cP; // APP
+export const carg = b.car + b.cg; // arg
+export const cArg = b.cAr + b.cg; // Arg
+export const cargs = b.ca + p.crgs; // args
+export const cArgs = b.cA + p.crgs; // Args
+export const chex = b.che + b.cx; // hex
+export const cHex = b.cHe + b.cx; // Hex
