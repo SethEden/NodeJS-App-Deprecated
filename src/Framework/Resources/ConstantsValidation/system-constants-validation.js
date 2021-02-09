@@ -430,6 +430,7 @@ export const systemConstantsValidation = [
    {Name: 'cappVersionAttributeValueIs', Actual: s.cappVersionAttributeValueIs, Expected: 'appVersionAttributeValue is: '},
    {Name: 'cappDescriptionAttributeValueIs', Actual: s.cappDescriptionAttributeValueIs, Expected: 'appDescriptionAttributeValue is: '},
    {Name: 'cmetaDataPathAndFilenameIs', Actual: s.cmetaDataPathAndFilenameIs, Expected: 'metaDataPathAndFilename is: '},
+   {Name: 'cpathAndFilenameIs', Actual: s.cpathAndFilenameIs, Expected: 'pathAndFilenameIs'},
    {Name: 'ccontentsAre', Actual: s.ccontentsAre, Expected: 'contents are: '},
    {Name: 'ccontentsOfDare', Actual: s.ccontentsOfDare, Expected: 'contents of D are: '},
    {Name: 'cBEGIN_ithIterationOfInputDataArray', Actual: s.cBEGIN_ithIterationOfInputDataArray, Expected: 'BEGIN i-th iteration: of the inputData array. i is: '},

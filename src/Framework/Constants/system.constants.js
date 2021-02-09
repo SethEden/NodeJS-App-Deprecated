@@ -431,6 +431,7 @@ export const cappNameAttributeValueIs = g.capp + w.cName + w.cAttribute + w.cVal
 export const cappVersionAttributeValueIs = g.capp + w.cVersion + w.cAttribute + w.cValue + cSpaceIsColonSpace; // appVersionAttributeValue is:
 export const cappDescriptionAttributeValueIs = g.capp + w.cDescription + w.cAttribute + w.cValue + cSpaceIsColonSpace; // appDescriptionAttributeValue is:
 export const cmetaDataPathAndFilenameIs = w.cmetaData + w.cPath + w.cAnd + w.cFilename + cSpaceIsColonSpace; // metaDataPathAndFilename is:
+export const cpathAndFilenameIs = w.cpath + w.cAnd + w.cFilename + cSpaceIsColonSpace; // pathAndFilename is:
 export const ccontentsAre = w.ccontents + b.cSpace + w.care + b.cColon + b.cSpace; // contents are:
 export const ccontentsOfDare = w.ccontents + b.cSpace + b.cof + b.cSpace + b.cD + b.cSpace + w.care + b.cColon + b.cSpace; // contents of D are:
 export const cBEGIN_ithIterationOfInputDataArray = cBEGIN_ithIteration + b.cof + b.cSpace + w.cthe + b.cSpace + cinputData + b.cSpace + w.carray + b.cDot + b.cSpace + b.ci + cSpaceIsColonSpace; // Begin the i-th iteration of the inputData array. i is:
