@@ -134,7 +134,7 @@ function application() {
         // END main program loop
         warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationMessage5);
         // Exiting, Good bye, Have a nice day & stay safe!
-        warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationExitMessage1 = s.cApplicationExitMessage2);
+        warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationExitMessage1 + s.cApplicationExitMessage2);
         break;
       } else {
         // console.log('contents of D are: ' + JSON.stringify(D));

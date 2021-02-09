@@ -542,3 +542,6 @@ export const cStd = b.cSt + b.cd; // Std
 export const cick = b.cic + b.ck; // ick
 export const cote = b.cot + b.ce; // ote
 export const coker = b.cok + b.cer; // oker
+export const crge = b.crg + b.ce; // rge
+export const cerge = b.ce + crge; // erge
+export const cerg = b.cer + b.cg; // erg

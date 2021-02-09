@@ -649,6 +649,7 @@ export const wordConstantsValidation = [
    {Name: 'ctext', Actual: w.ctext, Expected: 'text'},
    {Name: 'cText', Actual: w.cText, Expected: 'Text'},
    {Name: 'cTEXT', Actual: w.cTEXT, Expected: 'TEXT'},
+   {Name: 'ccontext', Actual: w.ccontext, Expected: 'context'},
    {Name: 'cContext', Actual: w.cContext, Expected: 'Context'},
    {Name: 'cinput', Actual: w.cinput, Expected: 'input'},
    {Name: 'cInput', Actual: w.cInput, Expected: 'Input'},
@@ -1611,5 +1612,13 @@ export const wordConstantsValidation = [
    {Name: 'cposted', Actual: w.cposted, Expected: 'posted'},
    {Name: 'cPosted', Actual: w.cPosted, Expected: 'Posted'},
    {Name: 'cposting', Actual: w.cposting, Expected: 'posting'},
-   {Name: 'cPosting', Actual: w.cPosting, Expected: 'Posting'}
+   {Name: 'cPosting', Actual: w.cPosting, Expected: 'Posting'},
+   {Name: 'cmerge', Actual: w.cmerge, Expected: 'merge'},
+   {Name: 'cMerge', Actual: w.cMerge, Expected: 'Merge'},
+   {Name: 'cmerges', Actual: w.cmerges, Expected: 'merges'},
+   {Name: 'cMerges', Actual: w.cMerges, Expected: 'Merges'},
+   {Name: 'cmerged', Actual: w.cmerged, Expected: 'merged'},
+   {Name: 'cMerged', Actual: w.cMerged, Expected: 'Merged'},
+   {Name: 'cmerging', Actual: w.cmerging, Expected: 'merging'},
+   {Name: 'cMerging', Actual: w.cMerging, Expected: 'Merging'}
  ];
