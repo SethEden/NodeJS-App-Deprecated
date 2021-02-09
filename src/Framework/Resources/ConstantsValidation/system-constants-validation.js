@@ -545,6 +545,7 @@ export const systemConstantsValidation = [
    {Name: 'cfilesToLoadIs', Actual: s.cfilesToLoadIs, Expected: 'filesToLoad is: '},
    {Name: 'cloadedAndMergedDataAllFilesIs', Actual: s.cloadedAndMergedDataAllFilesIs, Expected: 'loadedAndMergedDataAllFiles is: '},
    {Name: 'cloadedAndMergedDataAllFilesContentsAre', Actual: s.cloadedAndMergedDataAllFilesContentsAre, Expected: 'loadedAndMergedDataAllFiles contents are: '},
+   {Name: 'ccommandWorkflowFilePathConfigurationNameIs', Actual: s.ccommandWorkflowFilePathConfigurationNameIs, Expected: 'commandWorkflowFilePathConfigurationName is: '},
 
    {Name: 'cDetermineWordDelimiterMessage1', Actual: s.cDetermineWordDelimiterMessage1, Expected: 'WARNING: Mixed string. '},
    {Name: 'cDetermineWordDelimiterMessage2', Actual: s.cDetermineWordDelimiterMessage2, Expected: 'Cannot determine what delimiter should '},
