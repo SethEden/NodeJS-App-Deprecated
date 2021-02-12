@@ -83,9 +83,10 @@ function bootStrapCommands() {
 function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
   var functionName = loadCommandAliasesFromPath.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // commandAliasesFilePathConfigurationName is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasesFilePathConfigurationName is: ' + commandAliasesFilePathConfigurationName);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandAliasesFilePathConfigurationNameIs + commandAliasesFilePathConfigurationName);
 
   var allCommandAliasesData = {};
   allCommandAliasesData = _chiefData["default"].setupAllXmlData(commandAliasesFilePathConfigurationName, s.cCommandsAliases);
@@ -117,9 +118,10 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
 function enqueueCommand(command) {
   var functionName = enqueueCommand.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // command is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'command is: ' + command);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandIs + command);
 
   if (D[s.cCommandQueue] === undefined) {
     _queue["default"].initQueue(s.cCommandQueue);
@@ -144,14 +146,14 @@ function isCommandQueueEmpty() {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  var returnValue = false;
-  returnValue = _queue["default"].isEmpty(s.cCommandQueue);
+  var returnData = false;
+  returnData = _queue["default"].isEmpty(s.cCommandQueue);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
-  return returnValue;
+  return returnData;
 }
 
 ;
@@ -169,18 +171,18 @@ function processCommandQueue() {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
   var commandToExecute;
-  var returnValue;
-  commandToExecute = _queue["default"].dequeue(s.cCommandQueue);
+  var returnData;
+  commandToExecute = _queue["default"].dequeue(s.cCommandQueue); // commandToExecute is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandToExecuteIs + commandToExecute);
 
-  returnValue = _commandBroker["default"].executeCommand(commandToExecute);
+  returnData = _commandBroker["default"].executeCommand(commandToExecute);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
-  return returnValue;
+  return returnData;
 }
 
 ;

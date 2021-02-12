@@ -549,6 +549,28 @@ function setFontBackgroundColorOnMessageComponentAccordingToSetting(messageCompo
   return returnMessageComponent;
 };
 
+/**
+ * @function removeFontStyles
+ * @description Removes all font styles and formatting from a string.
+ * @param {string} message The string message that has formatting applied to it where the formatting should be removed:
+ * Example: [48;2;255;255;255m[38;2;0;0;0mBEGIN main program loop[39m[49m
+ * Return: BEGIN main program loop
+ * @return {string} The string without all the extra formatting.
+ * @date 2021/02/03
+ * @author Seth Hollingsead
+ * @NOTE https://stackoverflow.com/questions/25245716/remove-all-ansi-colors-styles-from-strings)
+ */
+function removeFontStyles(message) {
+  // console.log('BEGIN colorizer.removeFontStyles function');
+  // console.log('message is: ' + message);
+  let returnMessage = '';
+  // [48;2;255;255;255m[38;2;0;0;0mBEGIN main program loop[39m[49m
+  returnMessage = message.replace(/\u001b[^m]*?m/g,'');
+  // console.log('returnMessage is: ' + returnMessage);
+  // console.log('END colorizer.removeFontStyles function');
+  return returnMessage;
+};
+
 export default {
   colorizeMessage,
   aggregateStyleSetting,
@@ -558,5 +580,6 @@ export default {
   setUnderlineFontStyleOnMessageComponentAccordingToSetting,
   setBoldFontStyleOnMessageComponentAccordingToSetting,
   setFontForgroundColorOnMessageComponentAccordingToSetting,
-  setFontBackgroundColorOnMessageComponentAccordingToSetting
+  setFontBackgroundColorOnMessageComponentAccordingToSetting,
+  removeFontStyles
 };

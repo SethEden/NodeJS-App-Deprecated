@@ -252,7 +252,7 @@ export const deployMetaData = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   returnData = true;
-  if (!inputData || inputData === null || inputData === undefined) {
+  if (!inputData) {
     returnData = false;
   } else {
     let aggregateCommandString = '';
@@ -260,62 +260,35 @@ export const deployMetaData = function(inputData, inputMetaData) {
     let getAttributeValueRule = [];
     getAttributeNameRule[0] = s.cgetAttributeName;
     getAttributeValueRule[0] = s.cgetAttributeValue;
-    for (let i = 1; i < inputData.length; i++) {
-      // BEGIN i-th iteration:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
-      // inputData[i] is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIis + inputData[i]);
-      aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
-      // aggregateCommandString is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.caggregateCommandStringIs + aggregateCommandString);
-      // END i-th iteration:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
-    }
-    let metaDataParameters = aggregateCommandString.split(b.cComa);
+    inputData.shift(); // Remove the first element of the array, because that is what is used to call this command.
+    let metaDataParameters = inputData.join(b.cSpace).split(b.cComa);
     // metaDataParameters is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersIs + metaDataParameters);
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersIs + JSON.stringify(metaDataParameters));
     // metaDataParameters length is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersLengthIs + metaDataParameters.length);
-    // metaDataParameters[0] is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParameters0Is + metaDataParameters[0]);
-    // metaDataParameters[1] is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParameters1Is + metaDataParameters[1]);
-    // metaDataParameters[2] is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParameters2Is + metaDataParameters[2]);
-    let appNameJsonString = metaDataParameters[0];
-    let appVersionJsonString = metaDataParameters[1];
-    let appDescriptionJsonString = metaDataParameters[2];
-    // appName is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappNameIs + appNameJsonString);
-    // appVersion is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappVersionIs + appVersionJsonString);
-    // appDescription is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappDescriptionIs + appDescriptionJsonString);
 
-    let appNameAttributeName = ruleBroker.processRules(appNameJsonString, '', getAttributeNameRule);
-    // appNameAttributeName is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappNameAttributeNameIs + appNameAttributeName);
-    let appVersionAttributeName = ruleBroker.processRules(appVersionJsonString, '', getAttributeNameRule);
-    // appVersionAttributeName is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappVersionAttributeNameIs + appVersionAttributeName);
-    let appDescriptionAttributeName = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeNameRule);
-    // appDescriptionAttributeName is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappDescriptionAttributeNameIs + appDescriptionAttributeName);
-
-    let appNameAttributeValue = ruleBroker.processRules(appNameJsonString, '', getAttributeValueRule);
-    configurator.setConfigurationSetting(s.cApplicationName, appNameAttributeValue);
-    // appNameAttributeValue is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappNameAttributeValueIs + appNameAttributeValue);
-    let appVersionAttributeValue = ruleBroker.processRules(appVersionJsonString, '', getAttributeValueRule);
-    configurator.setConfigurationSetting(s.cApplicationVersionNumber, appVersionAttributeValue);
-    // appVersionAttributeValue is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappVersionAttributeValueIs + appVersionAttributeValue);
-    let appDescriptionAttributeValue = ruleBroker.processRules(appDescriptionJsonString, '', getAttributeValueRule);
-    configurator.setConfigurationSetting(s.cApplicationDescription, appDescriptionAttributeValue);
-    // appDescriptionAttributeValue is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappDescriptionAttributeValueIs + appDescriptionAttributeValue);
-
-    let metaDataOutput = {[appNameAttributeName]: appNameAttributeValue, [appVersionAttributeName]: appVersionAttributeValue, [appDescriptionAttributeName]: appDescriptionAttributeValue};
+    let metaDataOutput = {};
+    for (let i = 0; i < metaDataParameters.length; i++) {
+      let attributeJsonString = metaDataParameters[i];
+      // attributeJsonString is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeJsonStringIs + attributeJsonString);
+      let appAttributeName = ruleBroker.processRules(attributeJsonString, '', getAttributeNameRule);
+      // appAttributeName is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappAttributeNameIs + appAttributeName);
+      let appAttributeValue = ruleBroker.processRules(attributeJsonString, '', getAttributeValueRule);
+      // appAttributeValue is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cappAttributeValueIs + appAttributeValue);
+      if (appAttributeName.includes(w.cName) === true) {
+        configurator.setConfigurationSetting(s.cApplicationName, appAttributeValue);
+      } else if (appAttributeName.includes(w.cVersion) === true) {
+        configurator.setConfigurationSetting(s.cApplicationVersionNumber, appAttributeValue);
+      } else if (appAttributeName.includes(w.cDescription) === true) {
+        configurator.setConfigurationSetting(s.cApplicationDescription, appAttributeValue);
+      } else {
+        configurator.setConfigurationSetting(appAttributeName, appAttributeValue);
+      }
+      metaDataOutput[appAttributeName] = appAttributeValue;
+    }
     let metaDataPathAndFilename = configurator.getConfigurationSetting(s.cConfigurationPath);
     metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson);
     // metaDataPathAndFilename is:

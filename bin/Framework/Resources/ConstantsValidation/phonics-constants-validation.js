@@ -101,6 +101,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cblue,
   Expected: 'blue'
 }, {
+  Name: 'cund',
+  Actual: p.cund,
+  Expected: 'und'
+}, {
   Name: 'cundred',
   Actual: p.cundred,
   Expected: 'undred'
@@ -160,6 +164,14 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cmation',
   Actual: p.cmation,
   Expected: 'mation'
+}, {
+  Name: 'cition',
+  Actual: p.cition,
+  Expected: 'ition'
+}, {
+  Name: 'cITION',
+  Actual: p.cITION,
+  Expected: 'ITION'
 }, {
   Name: 'cage',
   Actual: p.cage,
@@ -225,9 +237,17 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.calid,
   Expected: 'alid'
 }, {
+  Name: 'cALID',
+  Actual: p.cALID,
+  Expected: 'ALID'
+}, {
   Name: 'cing',
   Actual: p.cing,
   Expected: 'ing'
+}, {
+  Name: 'cING',
+  Actual: p.cING,
+  Expected: 'ING'
 }, {
   Name: 'ctring',
   Actual: p.ctring,
@@ -240,6 +260,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cata',
   Actual: p.cata,
   Expected: 'ata'
+}, {
+  Name: 'cATA',
+  Actual: p.cATA,
+  Expected: 'ATA'
 }, {
   Name: 'cMac',
   Actual: p.cMac,
@@ -300,6 +324,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cOperat',
   Actual: p.cOperat,
   Expected: 'Operat'
+}, {
+  Name: 'cili',
+  Actual: p.cili,
+  Expected: 'ili'
 }, {
   Name: 'cility',
   Actual: p.cility,
@@ -401,6 +429,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cter,
   Expected: 'ter'
 }, {
+  Name: 'cTER',
+  Actual: p.cTER,
+  Expected: 'TER'
+}, {
   Name: 'cment',
   Actual: p.cment,
   Expected: 'ment'
@@ -453,6 +485,14 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cder,
   Expected: 'der'
 }, {
+  Name: 'ccor',
+  Actual: p.ccor,
+  Expected: 'cor'
+}, {
+  Name: 'cCor',
+  Actual: p.cCor,
+  Expected: 'Cor'
+}, {
   Name: 'ccore',
   Actual: p.ccore,
   Expected: 'core'
@@ -466,6 +506,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Expected: 'ase'
 }, // 'case' is a reserved word
 {
+  Name: 'c_ASE',
+  Actual: p.c_ASE,
+  Expected: 'ASE'
+}, {
   Name: 'cunt',
   Actual: p.cunt,
   Expected: 'unt'
@@ -638,6 +682,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'crror',
   Actual: p.crror,
   Expected: 'rror'
+}, {
+  Name: 'cRROR',
+  Actual: p.cRROR,
+  Expected: 'RROR'
 }, {
   Name: 'card',
   Actual: p.card,
@@ -883,6 +931,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cDiff,
   Expected: 'Diff'
 }, {
+  Name: 'cenc',
+  Actual: p.cenc,
+  Expected: 'enc'
+}, {
   Name: 'cence',
   Actual: p.cence,
   Expected: 'ence'
@@ -915,6 +967,14 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cess,
   Expected: 'ess'
 }, {
+  Name: 'cres',
+  Actual: p.cres,
+  Expected: 'res'
+}, {
+  Name: 'cRes',
+  Actual: p.cRes,
+  Expected: 'Res'
+}, {
   Name: 'cress',
   Actual: p.cress,
   Expected: 'ress'
@@ -935,6 +995,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.clica,
   Expected: 'lica'
 }, {
+  Name: 'cLICA',
+  Actual: p.cLICA,
+  Expected: 'LICA'
+}, {
   Name: 'capp',
   Actual: p.capp,
   Expected: 'app'
@@ -942,6 +1006,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cApp',
   Actual: p.cApp,
   Expected: 'App'
+}, {
+  Name: 'cAPP',
+  Actual: p.cAPP,
+  Expected: 'APP'
 }, {
   Name: 'coot',
   Actual: p.coot,
@@ -951,9 +1019,17 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.crse,
   Expected: 'rse'
 }, {
+  Name: 'cRSE',
+  Actual: p.cRSE,
+  Expected: 'RSE'
+}, {
   Name: 'carse',
   Actual: p.carse,
   Expected: 'arse'
+}, {
+  Name: 'cARSE',
+  Actual: p.cARSE,
+  Expected: 'ARSE'
 }, {
   Name: 'cwap',
   Actual: p.cwap,
@@ -1027,6 +1103,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cple,
   Expected: 'ple'
 }, {
+  Name: 'cPLE',
+  Actual: p.cPLE,
+  Expected: 'PLE'
+}, {
   Name: 'cnal',
   Actual: p.cnal,
   Expected: 'nal'
@@ -1055,6 +1135,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cven,
   Expected: 'ven'
 }, {
+  Name: 'cVEN',
+  Actual: p.cVEN,
+  Expected: 'VEN'
+}, {
   Name: 'cvent',
   Actual: p.cvent,
   Expected: 'vent'
@@ -1074,6 +1158,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cloy',
   Actual: p.cloy,
   Expected: 'loy'
+}, {
+  Name: 'cLOY',
+  Actual: p.cLOY,
+  Expected: 'LOY'
 }, {
   Name: 'cumber',
   Actual: p.cumber,
@@ -1136,6 +1224,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cange,
   Expected: 'ange'
 }, {
+  Name: 'cANGE',
+  Actual: p.cANGE,
+  Expected: 'ANGE'
+}, {
   Name: 'cost',
   Actual: p.cost,
   Expected: 'ost'
@@ -1176,6 +1268,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.centa,
   Expected: 'enta'
 }, {
+  Name: 'cust',
+  Actual: p.cust,
+  Expected: 'ust'
+}, {
   Name: 'ccust',
   Actual: p.ccust,
   Expected: 'cust'
@@ -1188,9 +1284,17 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cmand,
   Expected: 'mand'
 }, {
+  Name: 'cMAND',
+  Actual: p.cMAND,
+  Expected: 'MAND'
+}, {
   Name: 'clob',
   Actual: p.clob,
   Expected: 'lob'
+}, {
+  Name: 'cram',
+  Actual: p.cram,
+  Expected: 'ram'
 }, {
   Name: 'crame',
   Actual: p.crame,
@@ -1240,6 +1344,14 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cTert',
   Actual: p.cTert,
   Expected: 'Tert'
+}, {
+  Name: 'ctar',
+  Actual: p.ctar,
+  Expected: 'tar'
+}, {
+  Name: 'cTar',
+  Actual: p.cTar,
+  Expected: 'Tar'
 }, {
   Name: 'ctart',
   Actual: p.ctart,
@@ -1382,6 +1494,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cCom,
   Expected: 'Com'
 }, {
+  Name: 'cCOM',
+  Actual: p.cCOM,
+  Expected: 'COM'
+}, {
   Name: 'cubic',
   Actual: p.cubic,
   Expected: 'ubic'
@@ -1429,6 +1545,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cHyper',
   Actual: p.cHyper,
   Expected: 'Hyper'
+}, {
+  Name: 'cbol',
+  Actual: p.cbol,
+  Expected: 'bol'
 }, {
   Name: 'cbola',
   Actual: p.cbola,
@@ -1550,6 +1670,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cied,
   Expected: 'ied'
 }, {
+  Name: 'cfied',
+  Actual: p.cfied,
+  Expected: 'fied'
+}, {
   Name: 'cified',
   Actual: p.cified,
   Expected: 'ified'
@@ -1625,6 +1749,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cron',
   Actual: p.cron,
   Expected: 'ron'
+}, {
+  Name: 'colv',
+  Actual: p.colv,
+  Expected: 'olv'
 }, {
   Name: 'colve',
   Actual: p.colve,
@@ -1706,6 +1834,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: p.cern,
   Expected: 'ern'
 }, {
+  Name: 'cerm',
+  Actual: p.cerm,
+  Expected: 'erm'
+}, {
   Name: 'comb',
   Actual: p.comb,
   Expected: 'omb'
@@ -1713,5 +1845,429 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'ceed',
   Actual: p.ceed,
   Expected: 'eed'
+}, {
+  Name: 'coop',
+  Actual: p.coop,
+  Expected: 'oop'
+}, {
+  Name: 'cood',
+  Actual: p.cood,
+  Expected: 'ood'
+}, {
+  Name: 'cice',
+  Actual: p.cice,
+  Expected: 'ice'
+}, {
+  Name: 'ctay',
+  Actual: p.ctay,
+  Expected: 'tay'
+}, {
+  Name: 'cafe',
+  Actual: p.cafe,
+  Expected: 'afe'
+}, {
+  Name: 'cult',
+  Actual: p.cult,
+  Expected: 'ult'
+}, {
+  Name: 'cULT',
+  Actual: p.cULT,
+  Expected: 'ULT'
+}, {
+  Name: 'cault',
+  Actual: p.cault,
+  Expected: 'ault'
+}, {
+  Name: 'cAULT',
+  Actual: p.cAULT,
+  Expected: 'AULT'
+}, {
+  Name: 'clete',
+  Actual: p.clete,
+  Expected: 'lete'
+}, {
+  Name: 'cger',
+  Actual: p.cger,
+  Expected: 'ger'
+}, {
+  Name: 'cspec',
+  Actual: p.cspec,
+  Expected: 'spec'
+}, {
+  Name: 'cSpec',
+  Actual: p.cSpec,
+  Expected: 'Spec'
+}, {
+  Name: 'cfic',
+  Actual: p.cfic,
+  Expected: 'fic'
+}, {
+  Name: 'cific',
+  Actual: p.cific,
+  Expected: 'ific'
+}, {
+  Name: 'csuf',
+  Actual: p.csuf,
+  Expected: 'suf'
+}, {
+  Name: 'cSuf',
+  Actual: p.cSuf,
+  Expected: 'Suf'
+}, {
+  Name: 'cance',
+  Actual: p.cance,
+  Expected: 'ance'
+}, {
+  Name: 'cional',
+  Actual: p.cional,
+  Expected: 'ional'
+}, {
+  Name: 'ctional',
+  Actual: p.ctional,
+  Expected: 'tional'
+}, {
+  Name: 'ctra',
+  Actual: p.ctra,
+  Expected: 'tra'
+}, {
+  Name: 'cTra',
+  Actual: p.cTra,
+  Expected: 'Tra'
+}, {
+  Name: 'ctrad',
+  Actual: p.ctrad,
+  Expected: 'trad'
+}, {
+  Name: 'cTrad',
+  Actual: p.cTrad,
+  Expected: 'Trad'
+}, {
+  Name: 'ctrol',
+  Actual: p.ctrol,
+  Expected: 'trol'
+}, {
+  Name: 'cure',
+  Actual: p.cure,
+  Expected: 'ure'
+}, {
+  Name: 'csym',
+  Actual: p.csym,
+  Expected: 'sym'
+}, {
+  Name: 'cSym',
+  Actual: p.cSym,
+  Expected: 'Sym'
+}, {
+  Name: 'cdel',
+  Actual: p.cdel,
+  Expected: 'del'
+}, {
+  Name: 'cDel',
+  Actual: p.cDel,
+  Expected: 'Del'
+}, {
+  Name: 'csert',
+  Actual: p.csert,
+  Expected: 'sert'
+}, {
+  Name: 'csub',
+  Actual: p.csub,
+  Expected: 'sub'
+}, {
+  Name: 'cSub',
+  Actual: p.cSub,
+  Expected: 'Sub'
+}, {
+  Name: 'ctit',
+  Actual: p.ctit,
+  Expected: 'tit'
+}, {
+  Name: 'cute',
+  Actual: p.cute,
+  Expected: 'ute'
+}, {
+  Name: 'ciod',
+  Actual: p.ciod,
+  Expected: 'iod'
+}, {
+  Name: 'ceak',
+  Actual: p.ceak,
+  Expected: 'eak'
+}, {
+  Name: 'cnto',
+  Actual: p.cnto,
+  Expected: 'nto'
+}, {
+  Name: 'cmpt',
+  Actual: p.cmpt,
+  Expected: 'mpt'
+}, {
+  Name: 'cted',
+  Actual: p.cted,
+  Expected: 'ted'
+}, {
+  Name: 'cist',
+  Actual: p.cist,
+  Expected: 'ist'
+}, {
+  Name: 'crch',
+  Actual: p.crch,
+  Expected: 'rch'
+}, {
+  Name: 'cson',
+  Actual: p.cson,
+  Expected: 'son'
+}, {
+  Name: 'cison',
+  Actual: p.cison,
+  Expected: 'ison'
+}, {
+  Name: 'cera',
+  Actual: p.cera,
+  Expected: 'era'
+}, {
+  Name: 'cfore',
+  Actual: p.cfore,
+  Expected: 'fore'
+}, {
+  Name: 'cFORE',
+  Actual: p.cFORE,
+  Expected: 'FORE'
+}, {
+  Name: 'cush',
+  Actual: p.cush,
+  Expected: 'ush'
+}, {
+  Name: 'cUSH',
+  Actual: p.cUSH,
+  Expected: 'USH'
+}, {
+  Name: 'cvel',
+  Actual: p.cvel,
+  Expected: 'vel'
+}, {
+  Name: 'ccess',
+  Actual: p.ccess,
+  Expected: 'cess'
+}, {
+  Name: 'cCESS',
+  Actual: p.cCESS,
+  Expected: 'CESS'
+}, {
+  Name: 'cemp',
+  Actual: p.cemp,
+  Expected: 'emp'
+}, {
+  Name: 'cmas',
+  Actual: p.cmas,
+  Expected: 'mas'
+}, {
+  Name: 'cMas',
+  Actual: p.cMas,
+  Expected: 'Mas'
+}, {
+  Name: 'cpand',
+  Actual: p.cpand,
+  Expected: 'pand'
+}, {
+  Name: 'cook',
+  Actual: p.cook,
+  Expected: 'ook'
+}, {
+  Name: 'clse',
+  Actual: p.clse,
+  Expected: 'lse'
+}, {
+  Name: 'cify',
+  Actual: p.cify,
+  Expected: 'ify'
+}, {
+  Name: 'csup',
+  Actual: p.csup,
+  Expected: 'sup'
+}, {
+  Name: 'cSup',
+  Actual: p.cSup,
+  Expected: 'Sup'
+}, {
+  Name: 'cplac',
+  Actual: p.cplac,
+  Expected: 'plac'
+}, {
+  Name: 'cori',
+  Actual: p.cori,
+  Expected: 'ori'
+}, {
+  Name: 'cOri',
+  Actual: p.cOri,
+  Expected: 'Ori'
+}, {
+  Name: 'cinal',
+  Actual: p.cinal,
+  Expected: 'inal'
+}, {
+  Name: 'cpara',
+  Actual: p.cpara,
+  Expected: 'para'
+}, {
+  Name: 'cPara',
+  Actual: p.cPara,
+  Expected: 'Para'
+}, {
+  Name: 'cnom',
+  Actual: p.cnom,
+  Expected: 'nom'
+}, {
+  Name: 'cNom',
+  Actual: p.cNom,
+  Expected: 'Nom'
+}, {
+  Name: 'cther',
+  Actual: p.cther,
+  Expected: 'ther'
+}, {
+  Name: 'cfin',
+  Actual: p.cfin,
+  Expected: 'fin'
+}, {
+  Name: 'cFin',
+  Actual: p.cFin,
+  Expected: 'Fin'
+}, {
+  Name: 'crgs',
+  Actual: p.crgs,
+  Expected: 'rgs'
+}, {
+  Name: 'cample',
+  Actual: p.cample,
+  Expected: 'ample'
+}, {
+  Name: 'cAMPLE',
+  Actual: p.cAMPLE,
+  Expected: 'AMPLE'
+}, {
+  Name: 'cruc',
+  Actual: p.cruc,
+  Expected: 'ruc'
+}, {
+  Name: 'cture',
+  Actual: p.cture,
+  Expected: 'ture'
+}, {
+  Name: 'crea',
+  Actual: p.crea,
+  Expected: 'rea'
+}, {
+  Name: 'cRea',
+  Actual: p.cRea,
+  Expected: 'Rea'
+}, {
+  Name: 'ceen',
+  Actual: p.ceen,
+  Expected: 'een'
+}, {
+  Name: 'core',
+  Actual: p.core,
+  Expected: 'ore'
+}, {
+  Name: 'cstd',
+  Actual: p.cstd,
+  Expected: 'std'
+}, {
+  Name: 'cStd',
+  Actual: p.cStd,
+  Expected: 'Std'
+}, {
+  Name: 'cick',
+  Actual: p.cick,
+  Expected: 'ick'
+}, {
+  Name: 'cote',
+  Actual: p.cote,
+  Expected: 'ote'
+}, {
+  Name: 'coker',
+  Actual: p.coker,
+  Expected: 'oker'
+}, {
+  Name: 'crge',
+  Actual: p.crge,
+  Expected: 'rge'
+}, {
+  Name: 'cRGE',
+  Actual: p.cRGE,
+  Expected: 'RGE'
+}, {
+  Name: 'cerge',
+  Actual: p.cerge,
+  Expected: 'erge'
+}, {
+  Name: 'cERGE',
+  Actual: p.cERGE,
+  Expected: 'ERGE'
+}, {
+  Name: 'cerg',
+  Actual: p.cerg,
+  Expected: 'erg'
+}, {
+  Name: 'cured',
+  Actual: p.cured,
+  Expected: 'ured'
+}, {
+  Name: 'cude',
+  Actual: p.cude,
+  Expected: 'ude'
+}, {
+  Name: 'clude',
+  Actual: p.clude,
+  Expected: 'lude'
+}, {
+  Name: 'clud',
+  Actual: p.clud,
+  Expected: 'lud'
+}, {
+  Name: 'ccau',
+  Actual: p.ccau,
+  Expected: 'cau'
+}, {
+  Name: 'cCau',
+  Actual: p.cCau,
+  Expected: 'Cau'
+}, {
+  Name: 'cght',
+  Actual: p.cght,
+  Expected: 'ght'
+}, {
+  Name: 'cned',
+  Actual: p.cned,
+  Expected: 'ned'
+}, {
+  Name: 'cten',
+  Actual: p.cten,
+  Expected: 'ten'
+}, {
+  Name: 'csid',
+  Actual: p.csid,
+  Expected: 'sid'
+}, {
+  Name: 'cSid',
+  Actual: p.cSid,
+  Expected: 'Sid'
+}, {
+  Name: 'cifies',
+  Actual: p.cifies,
+  Expected: 'ifies'
+}, {
+  Name: 'cref',
+  Actual: p.cref,
+  Expected: 'ref'
+}, {
+  Name: 'cRef',
+  Actual: p.cRef,
+  Expected: 'Ref'
+}, {
+  Name: 'clat',
+  Actual: p.clat,
+  Expected: 'lat'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

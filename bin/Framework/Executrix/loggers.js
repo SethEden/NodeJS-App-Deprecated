@@ -13,7 +13,11 @@ var _colorizer = _interopRequireDefault(require("./colorizer"));
 
 var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"));
 
+var _timers = _interopRequireDefault(require("./timers"));
+
 var b = _interopRequireWildcard(require("../Constants/basic.constants"));
+
+var g = _interopRequireWildcard(require("../Constants/generic.constants"));
 
 var w = _interopRequireWildcard(require("../Constants/word.constants"));
 
@@ -35,10 +39,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:configurator
  * @requires module:colorizer
  * @requires module:ruleBroker
+ * @requires module:timers
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
@@ -46,6 +52,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 var fs = require('fs');
+
+var path = require('path');
 
 var chalk = require('chalk');
 
@@ -68,19 +76,20 @@ var D = require('../Resources/data');
 
 function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
-    var logFile = _configurator["default"].getConfigurationSetting(s.cApplicationRootPath);
+    var logFile = _configurator["default"].getConfigurationSetting(s.cApplicationCleanedRootPath);
 
     if (logFile !== undefined) {
-      // console.log('logFile is !== undefined');
+      logFile = logFile + b.cForwardSlash + w.clogs; // console.log('logFile is !== undefined');
+
       var debugSetting = false;
       var outputMessage = '';
       var _rules = {};
       _rules[1] = s.creplaceDoublePercentWithMessage;
-      logFile = logFile + _configurator["default"].getConfigurationSetting(s.cLogFilePathAndName); // console.log('determine if there is a configuration setting for the class path');
+      logFile = path.resolve(logFile + b.cForwardSlash + _configurator["default"].getConfigurationSetting(s.cLogFilePathAndName)); // console.log('determine if there is a configuration setting for the class path');
 
       debugSetting = _configurator["default"].getConfigurationSetting(classPath); // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
 
-      if (logFile.indexOf('txt') !== -1) {
+      if (logFile.toUpperCase().includes(g.cLOG) || logFile.toUpperCase().includes(g.cTXT)) {
         // If we have a log file then we will log it to the console & file.
         consoleLogProcess(debugSetting, logFile, classPath, message, true);
       } else {
@@ -352,43 +361,51 @@ function parseClassPath(logFile, classPath, message) {
 function printMessageToFile(file, message) {
   // console.log('BEGIN loggers.printMessageToFile function');
   // console.log('file is: ' + file);
-  console.log(message);
+  // console.log(message);
   var fd;
+  var dateTimeStamp = ''; // let currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
+  // if (currentOS === w.cWindows || currentOS === w.cLinux) {
 
-  var currentOS = _configurator["default"].getConfigurationSetting(s.cOperatingSystem);
+  if (_configurator["default"].getConfigurationSetting(s.cLogFileEnabled) === true) {
+    // console.log('LogFileEnabled = true');
+    message = _colorizer["default"].removeFontStyles(message);
 
-  if (currentOS === w.cWindows || currentOS === w.cLinux) {
-    if (_configurator["default"].getConfigurationSetting(s.cLogFileEnabled) === true) {
-      try {
-        fd = fs.openSync(file, 'a');
-        fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, 'utf8');
-      } catch (err) {
-        return console.log(err);
-      } finally {
-        if (fd !== undefined) {
-          fs.closeSync(fd);
-        }
-      } // // console.log('writing message to file: ' + file + ' message: ' + message);
-      // fs.appendFile(file, message + b.cCarriageReturn + b.cNewLine, 'utf8', function(err) {
-      //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
-      //   if (err) { return console.log(err); }
-      // });
+    if (_configurator["default"].getConfigurationSetting(s.cIncludeDateTimeStampInLogFiles) === true) {
+      // Individual messages need to have a time stamp on them. So lets sign the message with a time stamp.
+      dateTimeStamp = _timers["default"].getNowMoment(g.cYYYY_MM_DD_HH_mm_ss_SSS); // console.log('dateTimeStamp is: ' + dateTimeStamp);
 
-    } else {// console.log('ERROR: Failure to log to file: ' + file);
+      message = dateTimeStamp + b.cColon + b.cSpace + message;
+    } // console.log('final Message is: ' + message);
+
+
+    try {
+      fd = fs.openSync(file, 'a');
+      fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, 'utf8');
+    } catch (err) {
+      return console.log(err);
+    } finally {
+      if (fd !== undefined) {
+        fs.closeSync(fd);
       }
-  } else {
-    console.log('ERROR: Invalid OS: ' + currentOS);
-  } // console.log('END loggers.printMessageToFile function');
-  // let fd;
-  // try {
-  //   fd = fs.openSync('message.txt', 'a');
-  //   fs.appendFileSync(fd, 'data to append', 'utf8');
-  // } catch (err) {
-  //   /* Handle the error */
-  // } finally {
-  //   if (fd !== undefined)
-  //     fs.closeSync(fd);
-  // }
+    } // // console.log('writing message to file: ' + file + ' message: ' + message);
+    // fs.appendFile(file, message + b.cCarriageReturn + b.cNewLine, 'utf8', function(err) {
+    //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
+    //   if (err) { return console.log(err); }
+    // });
+
+  } else {} // console.log('ERROR: Failure to log to file: ' + file);
+    // } else { console.log('ERROR: Invalid OS: ' + currentOS); }
+    // console.log('END loggers.printMessageToFile function');
+    // let fd;
+    // try {
+    //   fd = fs.openSync('message.txt', 'a');
+    //   fs.appendFileSync(fd, 'data to append', 'utf8');
+    // } catch (err) {
+    //   /* Handle the error */
+    // } finally {
+    //   if (fd !== undefined)
+    //     fs.closeSync(fd);
+    // }
 
 }
 

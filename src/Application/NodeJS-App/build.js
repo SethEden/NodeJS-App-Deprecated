@@ -106,8 +106,13 @@ function deployApplication() {
       commandResult = warden.processCommandQueue();
     }
     let deploymentResult = warden.getConfigurationSetting(s.cdeploymentCompleted);
-    // Deployment was completed:
-    console.log(s.cBuildMessage1 + deploymentResult);
+    if (deploymentResult) {
+      // Deployment was completed:
+      console.log(s.cBuildMessage1 + deploymentResult);
+    } else {
+      console.log(s.cBuildMessage1 + g.cFalse);
+      warden.setConfigurationSetting(s.cdeploymentCompleted, false);
+    }
   } catch (err) {
     console.error(err);
     // deploymentCompleted
@@ -140,8 +145,12 @@ function releaseApplication() {
       commandResult = warden.processCommandQueue();
     }
     let releaseResult = warden.getConfigurationSetting(s.creleaseCompleted);
-    // Release was completed
-    console.log(s.cBuildMessage2 + releaseResult);
+    if (releaseResult) {
+      // Release was completed
+      console.log(s.cBuildMessage1 + releaseResult);
+    } else {
+      console.log(s.cBuildMessage1 + g.cFalse);
+    }
   } catch (err) {
     console.error(err);
   }

@@ -58,9 +58,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   var functionName = loadCommandWorkflowsFromPath.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // commandWorkflowFilePathConfigurationName is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandWorkflowFilePathConfigurationName is: ' + commandWorkflowFilePathConfigurationName);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
 
   var allCommandWorkflowsData = {};
   allCommandWorkflowsData = _chiefData["default"].setupAllXmlData(commandWorkflowFilePathConfigurationName, s.cCommandWorkflows);

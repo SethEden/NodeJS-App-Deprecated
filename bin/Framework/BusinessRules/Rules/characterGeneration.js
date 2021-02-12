@@ -368,38 +368,38 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function 
   var c3 = n.c3;
   var c9 = n.c9;
   var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]); // typeToGenerate is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'typeToGenerate is: ' + typeToGenerate);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage1 + typeToGenerate);
 
   switch (typeToGenerate) {
     case 1:
-    case '1':
+    case n.c1:
       // Generate a number.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a number.');
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage2);
 
       returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
 
     case 2:
-    case '2':
+    case n.c2:
       // Generate a random upper case or lower case letter.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a random upper case or lower case letter.');
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage3);
 
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
 
     case 3:
-    case '3':
-      // Generate a special characters.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a special character.');
+    case n.c3:
+      // Generate a special character.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage4);
 
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
 
     default:
-      // Default to a random upper case or lower case letter as a fall-back.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DEFAULT: Generate a random upper case or lower case letter.');
+      // DEFAULT: Generate a random upper case or lower case letter.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage5);
 
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
@@ -929,9 +929,7 @@ var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacte
 
   var cTrue = g.cTrue;
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var inputDataLength = inputData.length.toString();
     var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 
@@ -972,9 +970,7 @@ var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacte
 
   var cTrue = g.cTrue;
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var inputDataLength = inputData.length.toString();
     var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 
@@ -1015,9 +1011,7 @@ var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inp
 
   var returnData = '';
 
-  if (!inputData && !inputMetaData) {
-    returnData = '';
-  } else {
+  if (inputData && inputMetaData) {
     var minimum = parseInt(inputData);
     var maximum = parseInt(inputMetaData[0]);
     var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1], '');
@@ -1073,9 +1067,7 @@ var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inp
 
   var returnData = '';
 
-  if (!inputData && !inputMetaData) {
-    returnData = '';
-  } else {
+  if (inputData && inputMetaData) {
     var minimum = parseInt(inputData);
     var maximum = parseInt(inputMetaData[0]);
     var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1]);
@@ -1394,9 +1386,7 @@ var convertNumberToUpperCaseLetter = function convertNumberToUpperCaseLetter(inp
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var number = parseInt(inputData);
     number--; // console.log('number is: ' + number.toString(10));
 
@@ -1437,9 +1427,7 @@ var convertNumberToLowerCaseLetter = function convertNumberToLowerCaseLetter(inp
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var number = parseInt(inputData);
     number--; // console.log('number is: ' + number.toString(10));
 

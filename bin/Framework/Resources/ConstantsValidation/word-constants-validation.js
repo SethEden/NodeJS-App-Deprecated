@@ -77,6 +77,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cKey,
   Expected: 'Key'
 }, {
+  Name: 'ckeys',
+  Actual: w.ckeys,
+  Expected: 'keys'
+}, {
+  Name: 'cKeys',
+  Actual: w.cKeys,
+  Expected: 'Keys'
+}, {
+  Name: 'ckeyed',
+  Actual: w.ckeyed,
+  Expected: 'keyed'
+}, {
+  Name: 'cKeyed',
+  Actual: w.cKeyed,
+  Expected: 'Keyed'
+}, {
+  Name: 'ckeying',
+  Actual: w.ckeying,
+  Expected: 'keying'
+}, {
+  Name: 'cKeying',
+  Actual: w.cKeying,
+  Expected: 'Keying'
+}, {
   Name: 'cnode',
   Actual: w.cnode,
   Expected: 'node'
@@ -303,6 +327,18 @@ var wordConstantsValidation = [// Miscelaneious Words
   Expected: 'Objects'
 }, // General Use Words
 {
+  Name: 'csubstring',
+  Actual: w.csubstring,
+  Expected: 'substring'
+}, {
+  Name: 'csubString',
+  Actual: w.csubString,
+  Expected: 'subString'
+}, {
+  Name: 'cSubString',
+  Actual: w.cSubString,
+  Expected: 'SubString'
+}, {
   Name: 'cwind',
   Actual: w.cwind,
   Expected: 'wind'
@@ -363,13 +399,69 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cOOPS,
   Expected: 'OOPS'
 }, {
+  Name: 'clet',
+  Actual: w.clet,
+  Expected: 'let'
+}, {
+  Name: 'cLet',
+  Actual: w.cLet,
+  Expected: 'Let'
+}, {
+  Name: 'cfig',
+  Actual: w.cfig,
+  Expected: 'fig'
+}, {
+  Name: 'cFig',
+  Actual: w.cFig,
+  Expected: 'Fig'
+}, {
+  Name: 'cfiglet',
+  Actual: w.cfiglet,
+  Expected: 'figlet'
+}, {
+  Name: 'cFiglet',
+  Actual: w.cFiglet,
+  Expected: 'Figlet'
+}, {
+  Name: 'cconfig',
+  Actual: w.cconfig,
+  Expected: 'config'
+}, {
+  Name: 'cConfig',
+  Actual: w.cConfig,
+  Expected: 'Config'
+}, {
+  Name: 'cconfiguration',
+  Actual: w.cconfiguration,
+  Expected: 'configuration'
+}, {
   Name: 'cConfiguration',
   Actual: w.cConfiguration,
   Expected: 'Configuration'
 }, {
+  Name: 'cconfigurations',
+  Actual: w.cconfigurations,
+  Expected: 'configurations'
+}, {
   Name: 'cConfigurations',
   Actual: w.cConfigurations,
   Expected: 'Configurations'
+}, {
+  Name: 'cconfigured',
+  Actual: w.cconfigured,
+  Expected: 'configured'
+}, {
+  Name: 'cConfigured',
+  Actual: w.cConfigured,
+  Expected: 'Configured'
+}, {
+  Name: 'cconfiguring',
+  Actual: w.cconfiguring,
+  Expected: 'configuring'
+}, {
+  Name: 'cConfiguring',
+  Actual: w.cConfiguring,
+  Expected: 'Configuring'
 }, {
   Name: 'cempty',
   Actual: w.cempty,
@@ -386,6 +478,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cFull',
   Actual: w.cFull,
   Expected: 'Full'
+}, {
+  Name: 'cfully',
+  Actual: w.cfully,
+  Expected: 'fully'
+}, {
+  Name: 'cFully',
+  Actual: w.cFully,
+  Expected: 'Fully'
 }, {
   Name: 'ccreate',
   Actual: w.ccreate,
@@ -407,9 +507,45 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cAdd,
   Expected: 'Add'
 }, {
+  Name: 'cADD',
+  Actual: w.cADD,
+  Expected: 'ADD'
+}, {
+  Name: 'cadded',
+  Actual: w.cadded,
+  Expected: 'added'
+}, {
   Name: 'cAdded',
   Actual: w.cAdded,
   Expected: 'Added'
+}, {
+  Name: 'cadding',
+  Actual: w.cadding,
+  Expected: 'adding'
+}, {
+  Name: 'cAdding',
+  Actual: w.cAdding,
+  Expected: 'Adding'
+}, {
+  Name: 'cadditional',
+  Actual: w.cadditional,
+  Expected: 'additional'
+}, {
+  Name: 'cAdditional',
+  Actual: w.cAdditional,
+  Expected: 'Additional'
+}, {
+  Name: 'cADDITIONAL',
+  Actual: w.cADDITIONAL,
+  Expected: 'ADDITIONAL'
+}, {
+  Name: 'cadditionals',
+  Actual: w.cadditionals,
+  Expected: 'additionals'
+}, {
+  Name: 'cAdditionals',
+  Actual: w.cAdditionals,
+  Expected: 'Additionals'
 }, {
   Name: 'cClose',
   Actual: w.cClose,
@@ -435,6 +571,46 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDelete,
   Expected: 'Delete'
 }, {
+  Name: 'cdeletion',
+  Actual: w.cdeletion,
+  Expected: 'deletion'
+}, {
+  Name: 'cDeletion',
+  Actual: w.cDeletion,
+  Expected: 'Deletion'
+}, {
+  Name: 'cinsert',
+  Actual: w.cinsert,
+  Expected: 'insert'
+}, {
+  Name: 'cInsert',
+  Actual: w.cInsert,
+  Expected: 'Insert'
+}, {
+  Name: 'cinsertion',
+  Actual: w.cinsertion,
+  Expected: 'insertion'
+}, {
+  Name: 'cInsertion',
+  Actual: w.cInsertion,
+  Expected: 'Insertion'
+}, {
+  Name: 'csubstitute',
+  Actual: w.csubstitute,
+  Expected: 'substitute'
+}, {
+  Name: 'cSubstitute',
+  Actual: w.cSubstitute,
+  Expected: 'Substitute'
+}, {
+  Name: 'csubstitution',
+  Actual: w.csubstitution,
+  Expected: 'substitution'
+}, {
+  Name: 'cSubstitution',
+  Actual: w.cSubstitution,
+  Expected: 'Substitution'
+}, {
   Name: 'call',
   Actual: w.call,
   Expected: 'all'
@@ -459,6 +635,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cSelect',
   Actual: w.cSelect,
   Expected: 'Select'
+}, {
+  Name: 'ccan',
+  Actual: w.ccan,
+  Expected: 'can'
+}, {
+  Name: 'cCan',
+  Actual: w.cCan,
+  Expected: 'Can'
 }, {
   Name: 'ccancel',
   Actual: w.ccancel,
@@ -742,6 +926,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Expected: 'Load'
 }, // NOTE: Apparently 'cad' is also a reserved word.
 {
+  Name: 'cloads',
+  Actual: w.cloads,
+  Expected: 'loads'
+}, {
+  Name: 'cLoads',
+  Actual: w.cLoads,
+  Expected: 'Loads'
+}, {
+  Name: 'cloaded',
+  Actual: w.cloaded,
+  Expected: 'loaded'
+}, {
+  Name: 'cLoaded',
+  Actual: w.cLoaded,
+  Expected: 'Loaded'
+}, {
+  Name: 'cloading',
+  Actual: w.cloading,
+  Expected: 'loading'
+}, {
+  Name: 'cLoading',
+  Actual: w.cLoading,
+  Expected: 'Loading'
+}, {
   Name: 'cclick',
   Actual: w.cclick,
   Expected: 'click'
@@ -761,6 +969,34 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cexpect',
   Actual: w.cexpect,
   Expected: 'expect'
+}, {
+  Name: 'cExpect',
+  Actual: w.cExpect,
+  Expected: 'Expect'
+}, {
+  Name: 'cexpects',
+  Actual: w.cexpects,
+  Expected: 'expects'
+}, {
+  Name: 'cExpects',
+  Actual: w.cExpects,
+  Expected: 'Expects'
+}, {
+  Name: 'cexpected',
+  Actual: w.cexpected,
+  Expected: 'expected'
+}, {
+  Name: 'cExpected',
+  Actual: w.cExpected,
+  Expected: 'Expected'
+}, {
+  Name: 'cexpecting',
+  Actual: w.cexpecting,
+  Expected: 'expecting'
+}, {
+  Name: 'cExpecting',
+  Actual: w.cExpecting,
+  Expected: 'Expecting'
 }, {
   Name: 'cnavigate',
   Actual: w.cnavigate,
@@ -830,6 +1066,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cValid,
   Expected: 'Valid'
 }, {
+  Name: 'cVALID',
+  Actual: w.cVALID,
+  Expected: 'VALID'
+}, {
   Name: 'cvalidation',
   Actual: w.cvalidation,
   Expected: 'validation'
@@ -861,6 +1101,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cInvalid',
   Actual: w.cInvalid,
   Expected: 'Invalid'
+}, {
+  Name: 'cINVALID',
+  Actual: w.cINVALID,
+  Expected: 'INVALID'
 }, {
   Name: 'cbug',
   Actual: w.cbug,
@@ -937,6 +1181,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cData',
   Actual: w.cData,
   Expected: 'Data'
+}, {
+  Name: 'cDATA',
+  Actual: w.cDATA,
+  Expected: 'DATA'
 }, {
   Name: 'cresults',
   Actual: w.cresults,
@@ -1094,17 +1342,77 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cOf,
   Expected: 'Of'
 }, {
+  Name: 'crow',
+  Actual: w.crow,
+  Expected: 'row'
+}, {
   Name: 'cRow',
   Actual: w.cRow,
   Expected: 'Row'
+}, {
+  Name: 'crows',
+  Actual: w.crows,
+  Expected: 'rows'
+}, {
+  Name: 'cRows',
+  Actual: w.cRows,
+  Expected: 'Rows'
+}, {
+  Name: 'crowed',
+  Actual: w.crowed,
+  Expected: 'rowed'
+}, {
+  Name: 'cRowed',
+  Actual: w.cRowed,
+  Expected: 'Rowed'
+}, {
+  Name: 'crowing',
+  Actual: w.crowing,
+  Expected: 'rowing'
+}, {
+  Name: 'cRowing',
+  Actual: w.cRowing,
+  Expected: 'Rowing'
+}, {
+  Name: 'crun',
+  Actual: w.crun,
+  Expected: 'run'
 }, {
   Name: 'cRun',
   Actual: w.cRun,
   Expected: 'Run'
 }, {
-  Name: 'cRows',
-  Actual: w.cRows,
-  Expected: 'Rows'
+  Name: 'cruns',
+  Actual: w.cruns,
+  Expected: 'runs'
+}, {
+  Name: 'cRuns',
+  Actual: w.cRuns,
+  Expected: 'Runs'
+}, {
+  Name: 'crunning',
+  Actual: w.crunning,
+  Expected: 'running'
+}, {
+  Name: 'cRunning',
+  Actual: w.cRunning,
+  Expected: 'Running'
+}, {
+  Name: 'cruntime',
+  Actual: w.cruntime,
+  Expected: 'runtime'
+}, {
+  Name: 'cRuntime',
+  Actual: w.cRuntime,
+  Expected: 'Runtime'
+}, {
+  Name: 'cRunTime',
+  Actual: w.cRunTime,
+  Expected: 'RunTime'
+}, {
+  Name: 'cmaster',
+  Actual: w.cmaster,
+  Expected: 'master'
 }, {
   Name: 'cMaster',
   Actual: w.cMaster,
@@ -1230,6 +1538,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cExit,
   Expected: 'Exit'
 }, {
+  Name: 'cexiting',
+  Actual: w.cexiting,
+  Expected: 'exiting'
+}, {
+  Name: 'cExiting',
+  Actual: w.cExiting,
+  Expected: 'Exiting'
+}, {
   Name: 'cViewer',
   Actual: w.cViewer,
   Expected: 'Viewer'
@@ -1288,17 +1604,57 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cGateway,
   Expected: 'Gateway'
 }, {
+  Name: 'cprocess',
+  Actual: w.cprocess,
+  Expected: 'process'
+}, {
   Name: 'cProcess',
   Actual: w.cProcess,
   Expected: 'Process'
+}, {
+  Name: 'cPROCESS',
+  Actual: w.cPROCESS,
+  Expected: 'PROCESS'
+}, {
+  Name: 'cprocessed',
+  Actual: w.cprocessed,
+  Expected: 'processed'
+}, {
+  Name: 'cProcessed',
+  Actual: w.cProcessed,
+  Expected: 'Processed'
+}, {
+  Name: 'cprocesses',
+  Actual: w.cprocesses,
+  Expected: 'processes'
+}, {
+  Name: 'cProcesses',
+  Actual: w.cProcesses,
+  Expected: 'Processes'
+}, {
+  Name: 'cprocessing',
+  Actual: w.cprocessing,
+  Expected: 'processing'
 }, {
   Name: 'cProcessing',
   Actual: w.cProcessing,
   Expected: 'Processing'
 }, {
+  Name: 'cPROCESSING',
+  Actual: w.cPROCESSING,
+  Expected: 'PROCESSING'
+}, {
+  Name: 'ccomplete',
+  Actual: w.ccomplete,
+  Expected: 'complete'
+}, {
   Name: 'cComplete',
   Actual: w.cComplete,
   Expected: 'Complete'
+}, {
+  Name: 'ccompleted',
+  Actual: w.ccompleted,
+  Expected: 'completed'
 }, {
   Name: 'cCompleted',
   Actual: w.cCompleted,
@@ -1312,6 +1668,18 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cAnd,
   Expected: 'And'
 }, {
+  Name: 'cuse',
+  Actual: w.cuse,
+  Expected: 'use'
+}, {
+  Name: 'cUse',
+  Actual: w.cUse,
+  Expected: 'Use'
+}, {
+  Name: 'cuser',
+  Actual: w.cuser,
+  Expected: 'user'
+}, {
   Name: 'cUser',
   Actual: w.cUser,
   Expected: 'User'
@@ -1319,6 +1687,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cAccess',
   Actual: w.cAccess,
   Expected: 'Access'
+}, {
+  Name: 'clevel',
+  Actual: w.clevel,
+  Expected: 'level'
 }, {
   Name: 'cLevel',
   Actual: w.cLevel,
@@ -1340,9 +1712,57 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cPut,
   Expected: 'Put'
 }, {
+  Name: 'cPUT',
+  Actual: w.cPUT,
+  Expected: 'PUT'
+}, {
+  Name: 'cfrom',
+  Actual: w.cfrom,
+  Expected: 'from'
+}, {
   Name: 'cFrom',
   Actual: w.cFrom,
   Expected: 'From'
+}, {
+  Name: 'cplace',
+  Actual: w.cplace,
+  Expected: 'place'
+}, {
+  Name: 'cPlace',
+  Actual: w.cPlace,
+  Expected: 'Place'
+}, {
+  Name: 'cplaces',
+  Actual: w.cplaces,
+  Expected: 'places'
+}, {
+  Name: 'cPlaces',
+  Actual: w.cPlaces,
+  Expected: 'Places'
+}, {
+  Name: 'cplaced',
+  Actual: w.cplaced,
+  Expected: 'placed'
+}, {
+  Name: 'cPlaced',
+  Actual: w.cPlaced,
+  Expected: 'Placed'
+}, {
+  Name: 'cplacing',
+  Actual: w.cplacing,
+  Expected: 'placing'
+}, {
+  Name: 'cPlacing',
+  Actual: w.cPlacing,
+  Expected: 'Placing'
+}, {
+  Name: 'cplacement',
+  Actual: w.cplacement,
+  Expected: 'placement'
+}, {
+  Name: 'cPlacement',
+  Actual: w.cPlacement,
+  Expected: 'Placement'
 }, {
   Name: 'creplace',
   Actual: w.creplace,
@@ -1351,6 +1771,38 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cReplace',
   Actual: w.cReplace,
   Expected: 'Replace'
+}, {
+  Name: 'creplaces',
+  Actual: w.creplaces,
+  Expected: 'replaces'
+}, {
+  Name: 'cReplaces',
+  Actual: w.cReplaces,
+  Expected: 'Replaces'
+}, {
+  Name: 'creplaced',
+  Actual: w.creplaced,
+  Expected: 'replaced'
+}, {
+  Name: 'cReplaced',
+  Actual: w.cReplaced,
+  Expected: 'Replaced'
+}, {
+  Name: 'creplacing',
+  Actual: w.creplacing,
+  Expected: 'replacing'
+}, {
+  Name: 'cReplacing',
+  Actual: w.cReplacing,
+  Expected: 'Replacing'
+}, {
+  Name: 'creplacement',
+  Actual: w.creplacement,
+  Expected: 'replacement'
+}, {
+  Name: 'cReplacement',
+  Actual: w.cReplacement,
+  Expected: 'Replacement'
 }, {
   Name: 'cspace',
   Actual: w.cspace,
@@ -1367,6 +1819,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cSpaces',
   Actual: w.cSpaces,
   Expected: 'Spaces'
+}, {
+  Name: 'cspaced',
+  Actual: w.cspaced,
+  Expected: 'spaced'
+}, {
+  Name: 'cSpaced',
+  Actual: w.cSpaced,
+  Expected: 'Spaced'
 }, {
   Name: 'cplus',
   Actual: w.cplus,
@@ -1399,6 +1859,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cScore',
   Actual: w.cScore,
   Expected: 'Score'
+}, {
+  Name: 'cunderscore',
+  Actual: w.cunderscore,
+  Expected: 'underscore'
+}, {
+  Name: 'cUnderscore',
+  Actual: w.cUnderscore,
+  Expected: 'Underscore'
 }, {
   Name: 'cCatagory',
   Actual: w.cCatagory,
@@ -1500,14 +1968,6 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDigit,
   Expected: 'Digit'
 }, {
-  Name: 'clet',
-  Actual: w.clet,
-  Expected: 'let'
-}, {
-  Name: 'cLet',
-  Actual: w.cLet,
-  Expected: 'Let'
-}, {
   Name: 'cletter',
   Actual: w.cletter,
   Expected: 'letter'
@@ -1547,6 +2007,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cGenerate',
   Actual: w.cGenerate,
   Expected: 'Generate'
+}, {
+  Name: 'cgenerated',
+  Actual: w.cgenerated,
+  Expected: 'generated'
+}, {
+  Name: 'cGenerated',
+  Actual: w.cGenerated,
+  Expected: 'Generated'
 }, {
   Name: 'cparent',
   Actual: w.cparent,
@@ -1628,6 +2096,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cCode,
   Expected: 'Code'
 }, {
+  Name: 'ceither',
+  Actual: w.ceither,
+  Expected: 'either'
+}, {
   Name: 'cEither',
   Actual: w.cEither,
   Expected: 'Either'
@@ -1656,9 +2128,53 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDetermine,
   Expected: 'Determine'
 }, {
+  Name: 'cties',
+  Actual: w.cties,
+  Expected: 'ties'
+}, {
+  Name: 'cTies',
+  Actual: w.cTies,
+  Expected: 'Ties'
+}, {
+  Name: 'cability',
+  Actual: w.cability,
+  Expected: 'ability'
+}, {
+  Name: 'cAbility',
+  Actual: w.cAbility,
+  Expected: 'Ability'
+}, {
+  Name: 'cabilities',
+  Actual: w.cabilities,
+  Expected: 'abilities'
+}, {
+  Name: 'cAbilities',
+  Actual: w.cAbilities,
+  Expected: 'Abilities'
+}, {
+  Name: 'cvariable',
+  Actual: w.cvariable,
+  Expected: 'variable'
+}, {
   Name: 'cVariable',
   Actual: w.cVariable,
   Expected: 'Variable'
+}, {
+  Name: 'cvariables',
+  Actual: w.cvariables,
+  Expected: 'variables'
+}, {
+  Name: 'cVariables',
+  Actual: w.cVariables,
+  Expected: 'Variables'
+}, {
+  Name: 'cvariability',
+  Actual: w.cvariability,
+  Expected: 'variability'
+}, {
+  Name: 'cVariability',
+  Actual: w.cVariability,
+  Expected: 'Variability'
 }, {
   Name: 'cvisibility',
   Actual: w.cvisibility,
@@ -1840,13 +2356,37 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cIndividually,
   Expected: 'Individually'
 }, {
+  Name: 'cexist',
+  Actual: w.cexist,
+  Expected: 'exist'
+}, {
   Name: 'cExist',
   Actual: w.cExist,
   Expected: 'Exist'
 }, {
+  Name: 'cexists',
+  Actual: w.cexists,
+  Expected: 'exists'
+}, {
   Name: 'cExists',
   Actual: w.cExists,
   Expected: 'Exists'
+}, {
+  Name: 'cexisted',
+  Actual: w.cexisted,
+  Expected: 'existed'
+}, {
+  Name: 'cExisted',
+  Actual: w.cExisted,
+  Expected: 'Existed'
+}, {
+  Name: 'cexisting',
+  Actual: w.cexisting,
+  Expected: 'existing'
+}, {
+  Name: 'cExisting',
+  Actual: w.cExisting,
+  Expected: 'Existing'
 }, {
   Name: 'cAsynch',
   Actual: w.cAsynch,
@@ -1876,6 +2416,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cfault,
   Expected: 'fault'
 }, {
+  Name: 'cFault',
+  Actual: w.cFault,
+  Expected: 'Fault'
+}, {
+  Name: 'cFAULT',
+  Actual: w.cFAULT,
+  Expected: 'FAULT'
+}, {
   Name: 'cdefault',
   Actual: w.cdefault,
   Expected: 'default'
@@ -1883,6 +2431,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cDefault',
   Actual: w.cDefault,
   Expected: 'Default'
+}, {
+  Name: 'cDEFAULT',
+  Actual: w.cDEFAULT,
+  Expected: 'DEFAULT'
 }, {
   Name: 'csingle',
   Actual: w.csingle,
@@ -1892,9 +2444,29 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cSingle,
   Expected: 'Single'
 }, {
+  Name: 'cquote',
+  Actual: w.cquote,
+  Expected: 'quote'
+}, {
   Name: 'cQuote',
   Actual: w.cQuote,
   Expected: 'Quote'
+}, {
+  Name: 'cquotes',
+  Actual: w.cquotes,
+  Expected: 'quotes'
+}, {
+  Name: 'cQuotes',
+  Actual: w.cQuotes,
+  Expected: 'Quotes'
+}, {
+  Name: 'cquoted',
+  Actual: w.cquoted,
+  Expected: 'quoted'
+}, {
+  Name: 'cQuoted',
+  Actual: w.cQuoted,
+  Expected: 'Quoted'
 }, {
   Name: 'cswap',
   Actual: w.cswap,
@@ -1904,9 +2476,29 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cSwap,
   Expected: 'Swap'
 }, {
+  Name: 'cbefore',
+  Actual: w.cbefore,
+  Expected: 'before'
+}, {
+  Name: 'cBefore',
+  Actual: w.cBefore,
+  Expected: 'Before'
+}, {
+  Name: 'cBEFORE',
+  Actual: w.cBEFORE,
+  Expected: 'BEFORE'
+}, {
+  Name: 'cafter',
+  Actual: w.cafter,
+  Expected: 'after'
+}, {
   Name: 'cAfter',
   Actual: w.cAfter,
   Expected: 'After'
+}, {
+  Name: 'cAFTER',
+  Actual: w.cAFTER,
+  Expected: 'AFTER'
 }, {
   Name: 'cOnce',
   Actual: w.cOnce,
@@ -2032,9 +2624,17 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cOR,
   Expected: 'OR'
 }, {
+  Name: 'cmix',
+  Actual: w.cmix,
+  Expected: 'mix'
+}, {
   Name: 'cMix',
   Actual: w.cMix,
   Expected: 'Mix'
+}, {
+  Name: 'cmixed',
+  Actual: w.cmixed,
+  Expected: 'mixed'
 }, {
   Name: 'cMixed',
   Actual: w.cMixed,
@@ -2068,6 +2668,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cTEXT,
   Expected: 'TEXT'
 }, {
+  Name: 'ccontext',
+  Actual: w.ccontext,
+  Expected: 'context'
+}, {
   Name: 'cContext',
   Actual: w.cContext,
   Expected: 'Context'
@@ -2079,6 +2683,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cInput',
   Actual: w.cInput,
   Expected: 'Input'
+}, {
+  Name: 'cINPUT',
+  Actual: w.cINPUT,
+  Expected: 'INPUT'
 }, {
   Name: 'cdescription',
   Actual: w.cdescription,
@@ -2103,6 +2711,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cConstants',
   Actual: w.cConstants,
   Expected: 'Constants'
+}, {
+  Name: 'citeration',
+  Actual: w.citeration,
+  Expected: 'iteration'
 }, {
   Name: 'cIteration',
   Actual: w.cIteration,
@@ -2156,21 +2768,37 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cWebkey,
   Expected: 'Webkey'
 }, {
+  Name: 'cfile',
+  Actual: w.cfile,
+  Expected: 'file'
+}, {
   Name: 'cFile',
   Actual: w.cFile,
   Expected: 'File'
+}, {
+  Name: 'cfiles',
+  Actual: w.cfiles,
+  Expected: 'files'
 }, {
   Name: 'cFiles',
   Actual: w.cFiles,
   Expected: 'Files'
 }, {
-  Name: 'cfile',
-  Actual: w.cfile,
-  Expected: 'file'
+  Name: 'cfilename',
+  Actual: w.cfilename,
+  Expected: 'filename'
 }, {
-  Name: 'cfiles',
-  Actual: w.cfiles,
-  Expected: 'files'
+  Name: 'cFilename',
+  Actual: w.cFilename,
+  Expected: 'Filename'
+}, {
+  Name: 'cfilenames',
+  Actual: w.cfilenames,
+  Expected: 'filenames'
+}, {
+  Name: 'cFilenames',
+  Actual: w.cFilenames,
+  Expected: 'Filenames'
 }, {
   Name: 'cfold',
   Actual: w.cfold,
@@ -2412,9 +3040,69 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDwell,
   Expected: 'Dwell'
 }, {
+  Name: 'ccut',
+  Actual: w.ccut,
+  Expected: 'cut'
+}, {
+  Name: 'cCut',
+  Actual: w.cCut,
+  Expected: 'Cut'
+}, {
+  Name: 'ccuts',
+  Actual: w.ccuts,
+  Expected: 'cuts'
+}, {
+  Name: 'cCuts',
+  Actual: w.cCuts,
+  Expected: 'Cuts'
+}, {
+  Name: 'ccutting',
+  Actual: w.ccutting,
+  Expected: 'cutting'
+}, {
+  Name: 'cCutting',
+  Actual: w.cCutting,
+  Expected: 'Cutting'
+}, {
+  Name: 'ccute',
+  Actual: w.ccute,
+  Expected: 'cute'
+}, {
+  Name: 'cCute',
+  Actual: w.cCute,
+  Expected: 'Cute'
+}, {
+  Name: 'cexecute',
+  Actual: w.cexecute,
+  Expected: 'execute'
+}, {
   Name: 'cExecute',
   Actual: w.cExecute,
   Expected: 'Execute'
+}, {
+  Name: 'cexecutes',
+  Actual: w.cexecutes,
+  Expected: 'executes'
+}, {
+  Name: 'cExecutes',
+  Actual: w.cExecutes,
+  Expected: 'Executes'
+}, {
+  Name: 'cexecuted',
+  Actual: w.cexecuted,
+  Expected: 'executed'
+}, {
+  Name: 'cExecuted',
+  Actual: w.cExecuted,
+  Expected: 'Executed'
+}, {
+  Name: 'cexecuting',
+  Actual: w.cexecuting,
+  Expected: 'executing'
+}, {
+  Name: 'cExecuting',
+  Actual: w.cExecuting,
+  Expected: 'Executing'
 }, {
   Name: 'csibling',
   Actual: w.csibling,
@@ -2516,6 +3204,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cWarn,
   Expected: 'Warn'
 }, {
+  Name: 'cWARN',
+  Actual: w.cWARN,
+  Expected: 'WARN'
+}, {
   Name: 'cwarning',
   Actual: w.cwarning,
   Expected: 'warning'
@@ -2523,6 +3215,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cWarning',
   Actual: w.cWarning,
   Expected: 'Warning'
+}, {
+  Name: 'cWARNING',
+  Actual: w.cWARNING,
+  Expected: 'WARNING'
 }, {
   Name: 'cwarnings',
   Actual: w.cwarnings,
@@ -2539,6 +3235,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cError',
   Actual: w.cError,
   Expected: 'Error'
+}, {
+  Name: 'cERROR',
+  Actual: w.cERROR,
+  Expected: 'ERROR'
+}, {
+  Name: 'cash',
+  Actual: w.cash,
+  Expected: 'ash'
+}, {
+  Name: 'cAsh',
+  Actual: w.cAsh,
+  Expected: 'Ash'
+}, {
+  Name: 'cdash',
+  Actual: w.cdash,
+  Expected: 'dash'
 }, {
   Name: 'cDash',
   Actual: w.cDash,
@@ -2643,6 +3355,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cNormalize',
   Actual: w.cNormalize,
   Expected: 'Normalize'
+}, {
+  Name: 'cnominal',
+  Actual: w.cnominal,
+  Expected: 'nominal'
+}, {
+  Name: 'cNominal',
+  Actual: w.cNominal,
+  Expected: 'Nominal'
 }, {
   Name: 'cdegree',
   Actual: w.cdegree,
@@ -2772,6 +3492,46 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cCompare,
   Expected: 'Compare'
 }, {
+  Name: 'ccompares',
+  Actual: w.ccompares,
+  Expected: 'compares'
+}, {
+  Name: 'cCompares',
+  Actual: w.cCompares,
+  Expected: 'Compares'
+}, {
+  Name: 'ccompared',
+  Actual: w.ccompared,
+  Expected: 'compared'
+}, {
+  Name: 'cCompared',
+  Actual: w.cCompared,
+  Expected: 'Compared'
+}, {
+  Name: 'ccomparing',
+  Actual: w.ccomparing,
+  Expected: 'comparing'
+}, {
+  Name: 'cComparing',
+  Actual: w.cComparing,
+  Expected: 'Comparing'
+}, {
+  Name: 'ccomparison',
+  Actual: w.ccomparison,
+  Expected: 'comparison'
+}, {
+  Name: 'cComparison',
+  Actual: w.cComparison,
+  Expected: 'Comparison'
+}, {
+  Name: 'ccomparisons',
+  Actual: w.ccomparisons,
+  Expected: 'comparisons'
+}, {
+  Name: 'cComparisons',
+  Actual: w.cComparisons,
+  Expected: 'Comparisons'
+}, {
   Name: 'ccontain',
   Actual: w.ccontain,
   Expected: 'contain'
@@ -2787,6 +3547,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cContains',
   Actual: w.cContains,
   Expected: 'Contains'
+}, {
+  Name: 'ccontained',
+  Actual: w.ccontained,
+  Expected: 'contained'
+}, {
+  Name: 'cContained',
+  Actual: w.cContained,
+  Expected: 'Contained'
+}, {
+  Name: 'ccontaining',
+  Actual: w.ccontaining,
+  Expected: 'containing'
+}, {
+  Name: 'cContaining',
+  Actual: w.cContaining,
+  Expected: 'Containing'
 }, {
   Name: 'cvideo',
   Actual: w.cvideo,
@@ -2872,6 +3648,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDoes,
   Expected: 'Does'
 }, {
+  Name: 'cDOES',
+  Actual: w.cDOES,
+  Expected: 'DOES'
+}, {
   Name: 'capplication',
   Actual: w.capplication,
   Expected: 'application'
@@ -2879,6 +3659,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cApplication',
   Actual: w.cApplication,
   Expected: 'Application'
+}, {
+  Name: 'cAPPLICATION',
+  Actual: w.cAPPLICATION,
+  Expected: 'APPLICATION'
 }, {
   Name: 'cbuild',
   Actual: w.cbuild,
@@ -2896,6 +3680,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDeploy,
   Expected: 'Deploy'
 }, {
+  Name: 'cDEPLOY',
+  Actual: w.cDEPLOY,
+  Expected: 'DEPLOY'
+}, {
   Name: 'cdeployment',
   Actual: w.cdeployment,
   Expected: 'deployment'
@@ -2908,6 +3696,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.clease,
   Expected: 'lease'
 }, {
+  Name: 'cLEASE',
+  Actual: w.cLEASE,
+  Expected: 'LEASE'
+}, {
   Name: 'crelease',
   Actual: w.crelease,
   Expected: 'release'
@@ -2915,6 +3707,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cRelease',
   Actual: w.cRelease,
   Expected: 'Release'
+}, {
+  Name: 'cRELEASE',
+  Actual: w.cRELEASE,
+  Expected: 'RELEASE'
 }, {
   Name: 'croot',
   Actual: w.croot,
@@ -2931,6 +3727,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cParse',
   Actual: w.cParse,
   Expected: 'Parse'
+}, {
+  Name: 'cPARSE',
+  Actual: w.cPARSE,
+  Expected: 'PARSE'
+}, {
+  Name: 'cparser',
+  Actual: w.cparser,
+  Expected: 'parser'
+}, {
+  Name: 'cParser',
+  Actual: w.cParser,
+  Expected: 'Parser'
+}, {
+  Name: 'cPARSER',
+  Actual: w.cPARSER,
+  Expected: 'PARSER'
+}, {
+  Name: 'cparsed',
+  Actual: w.cparsed,
+  Expected: 'parsed'
+}, {
+  Name: 'cParsed',
+  Actual: w.cParsed,
+  Expected: 'Parsed'
 }, {
   Name: 'cforward',
   Actual: w.cforward,
@@ -2955,6 +3775,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cMeta',
   Actual: w.cMeta,
   Expected: 'Meta'
+}, {
+  Name: 'cmetaData',
+  Actual: w.cmetaData,
+  Expected: 'metaData'
 }, {
   Name: 'cMetaData',
   Actual: w.cMetaData,
@@ -3084,6 +3908,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cEven,
   Expected: 'Even'
 }, {
+  Name: 'cEVEN',
+  Actual: w.cEVEN,
+  Expected: 'EVEN'
+}, {
   Name: 'cevent',
   Actual: w.cevent,
   Expected: 'event'
@@ -3139,22 +3967,6 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cInterface',
   Actual: w.cInterface,
   Expected: 'Interface'
-}, {
-  Name: 'cfig',
-  Actual: w.cfig,
-  Expected: 'fig'
-}, {
-  Name: 'cFig',
-  Actual: w.cFig,
-  Expected: 'Fig'
-}, {
-  Name: 'cfiglet',
-  Actual: w.cfiglet,
-  Expected: 'figlet'
-}, {
-  Name: 'cFiglet',
-  Actual: w.cFiglet,
-  Expected: 'Figlet'
 }, {
   Name: 'cfont',
   Actual: w.cfont,
@@ -3219,6 +4031,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cPop',
   Actual: w.cPop,
   Expected: 'Pop'
+}, {
+  Name: 'cPOP',
+  Actual: w.cPOP,
+  Expected: 'POP'
 }, {
   Name: 'cpopular',
   Actual: w.cpopular,
@@ -3291,6 +4107,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cCommand',
   Actual: w.cCommand,
   Expected: 'Command'
+}, {
+  Name: 'cCOMMAND',
+  Actual: w.cCOMMAND,
+  Expected: 'COMMAND'
 }, {
   Name: 'ccommands',
   Actual: w.ccommands,
@@ -3372,6 +4192,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cTertiary,
   Expected: 'Tertiary'
 }, {
+  Name: 'cdelimit',
+  Actual: w.cdelimit,
+  Expected: 'delimit'
+}, {
+  Name: 'cDelimit',
+  Actual: w.cDelimit,
+  Expected: 'Delimit'
+}, {
   Name: 'cdelimiter',
   Actual: w.cdelimiter,
   Expected: 'delimiter'
@@ -3379,6 +4207,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cDelimiter',
   Actual: w.cDelimiter,
   Expected: 'Delimiter'
+}, {
+  Name: 'cdelimited',
+  Actual: w.cdelimited,
+  Expected: 'delimited'
+}, {
+  Name: 'cDelimited',
+  Actual: w.cDelimited,
+  Expected: 'Delimited'
 }, {
   Name: 'chelp',
   Actual: w.chelp,
@@ -3552,9 +4388,25 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cVersion,
   Expected: 'Version'
 }, {
+  Name: 'ccontrol',
+  Actual: w.ccontrol,
+  Expected: 'control'
+}, {
   Name: 'cControl',
   Actual: w.cControl,
   Expected: 'Control'
+}, {
+  Name: 'cperform',
+  Actual: w.cperform,
+  Expected: 'perform'
+}, {
+  Name: 'cPerform',
+  Actual: w.cPerform,
+  Expected: 'Perform'
+}, {
+  Name: 'cperformance',
+  Actual: w.cperformance,
+  Expected: 'performance'
 }, {
   Name: 'cPerformance',
   Actual: w.cPerformance,
@@ -3592,6 +4444,46 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cPASSED,
   Expected: 'PASSED'
 }, {
+  Name: 'cpassing',
+  Actual: w.cpassing,
+  Expected: 'passing'
+}, {
+  Name: 'cPassing',
+  Actual: w.cPassing,
+  Expected: 'Passing'
+}, {
+  Name: 'cbypass',
+  Actual: w.cbypass,
+  Expected: 'bypass'
+}, {
+  Name: 'cBypass',
+  Actual: w.cBypass,
+  Expected: 'Bypass'
+}, {
+  Name: 'cbypasses',
+  Actual: w.cbypasses,
+  Expected: 'bypasses'
+}, {
+  Name: 'cBypasses',
+  Actual: w.cBypasses,
+  Expected: 'Bypasses'
+}, {
+  Name: 'cbypassed',
+  Actual: w.cbypassed,
+  Expected: 'bypassed'
+}, {
+  Name: 'cBypassed',
+  Actual: w.cBypassed,
+  Expected: 'Bypassed'
+}, {
+  Name: 'cbypassing',
+  Actual: w.cbypassing,
+  Expected: 'bypassing'
+}, {
+  Name: 'cBypassing',
+  Actual: w.cBypassing,
+  Expected: 'Bypassing'
+}, {
   Name: 'cfail',
   Actual: w.cfail,
   Expected: 'fail'
@@ -3604,9 +4496,33 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cFAIL,
   Expected: 'FAIL'
 }, {
+  Name: 'cfailed',
+  Actual: w.cfailed,
+  Expected: 'failed'
+}, {
+  Name: 'cFailed',
+  Actual: w.cFailed,
+  Expected: 'Failed'
+}, {
+  Name: 'cfailure',
+  Actual: w.cfailure,
+  Expected: 'failure'
+}, {
+  Name: 'cFailure',
+  Actual: w.cFailure,
+  Expected: 'Failure'
+}, {
+  Name: 'csimplified',
+  Actual: w.csimplified,
+  Expected: 'simplified'
+}, {
   Name: 'cSimplified',
   Actual: w.cSimplified,
   Expected: 'Simplified'
+}, {
+  Name: 'ctraditional',
+  Actual: w.ctraditional,
+  Expected: 'traditional'
 }, {
   Name: 'cTraditional',
   Actual: w.cTraditional,
@@ -3804,6 +4720,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cPrefix,
   Expected: 'Prefix'
 }, {
+  Name: 'csuffix',
+  Actual: w.csuffix,
+  Expected: 'suffix'
+}, {
+  Name: 'cSuffix',
+  Actual: w.cSuffix,
+  Expected: 'Suffix'
+}, {
   Name: 'cdevelop',
   Actual: w.cdevelop,
   Expected: 'develop'
@@ -3895,6 +4819,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cEnter',
   Actual: w.cEnter,
   Expected: 'Enter'
+}, {
+  Name: 'centers',
+  Actual: w.centers,
+  Expected: 'enters'
+}, {
+  Name: 'cEnters',
+  Actual: w.cEnters,
+  Expected: 'Enters'
+}, {
+  Name: 'centered',
+  Actual: w.centered,
+  Expected: 'entered'
+}, {
+  Name: 'cEntered',
+  Actual: w.cEntered,
+  Expected: 'Entered'
+}, {
+  Name: 'centering',
+  Actual: w.centering,
+  Expected: 'entering'
+}, {
+  Name: 'cEntering',
+  Actual: w.cEntering,
+  Expected: 'Entering'
 }, {
   Name: 'cwere',
   Actual: w.cwere,
@@ -4164,6 +5112,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDefine,
   Expected: 'Define'
 }, {
+  Name: 'cdefined',
+  Actual: w.cdefined,
+  Expected: 'defined'
+}, {
+  Name: 'cDefined',
+  Actual: w.cDefined,
+  Expected: 'Defined'
+}, {
+  Name: 'cdefines',
+  Actual: w.cdefines,
+  Expected: 'defines'
+}, {
+  Name: 'cDefines',
+  Actual: w.cDefines,
+  Expected: 'Defines'
+}, {
+  Name: 'cdefining',
+  Actual: w.cdefining,
+  Expected: 'defining'
+}, {
+  Name: 'cDefining',
+  Actual: w.cDefining,
+  Expected: 'Defining'
+}, {
   Name: 'cfill',
   Actual: w.cfill,
   Expected: 'fill'
@@ -4268,6 +5240,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cComa,
   Expected: 'Coma'
 }, {
+  Name: 'ccomas',
+  Actual: w.ccomas,
+  Expected: 'comas'
+}, {
+  Name: 'cComas',
+  Actual: w.cComas,
+  Expected: 'Comas'
+}, {
   Name: 'cseparate',
   Actual: w.cseparate,
   Expected: 'separate'
@@ -4284,6 +5264,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cSeparated,
   Expected: 'Separated'
 }, {
+  Name: 'csea',
+  Actual: w.csea,
+  Expected: 'sea'
+}, {
+  Name: 'cSea',
+  Actual: w.cSea,
+  Expected: 'Sea'
+}, {
   Name: 'csearch',
   Actual: w.csearch,
   Expected: 'search'
@@ -4291,6 +5279,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cSearch',
   Actual: w.cSearch,
   Expected: 'Search'
+}, {
+  Name: 'csearches',
+  Actual: w.csearches,
+  Expected: 'searches'
+}, {
+  Name: 'cSearches',
+  Actual: w.cSearches,
+  Expected: 'Searches'
+}, {
+  Name: 'csearched',
+  Actual: w.csearched,
+  Expected: 'searched'
+}, {
+  Name: 'cSearched',
+  Actual: w.cSearched,
+  Expected: 'Searched'
+}, {
+  Name: 'csearching',
+  Actual: w.csearching,
+  Expected: 'searching'
+}, {
+  Name: 'cSearching',
+  Actual: w.cSearching,
+  Expected: 'Searching'
 }, {
   Name: 'cneed',
   Actual: w.cneed,
@@ -4323,5 +5335,1517 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cImplementation',
   Actual: w.cImplementation,
   Expected: 'Implementation'
+}, {
+  Name: 'cgoing',
+  Actual: w.cgoing,
+  Expected: 'going'
+}, {
+  Name: 'cGoing',
+  Actual: w.cGoing,
+  Expected: 'Going'
+}, {
+  Name: 'cmain',
+  Actual: w.cmain,
+  Expected: 'main'
+}, {
+  Name: 'cMain',
+  Actual: w.cMain,
+  Expected: 'Main'
+}, {
+  Name: 'cprogram',
+  Actual: w.cprogram,
+  Expected: 'program'
+}, {
+  Name: 'cProgram',
+  Actual: w.cProgram,
+  Expected: 'Program'
+}, {
+  Name: 'cloop',
+  Actual: w.cloop,
+  Expected: 'loop'
+}, {
+  Name: 'cLoop',
+  Actual: w.cLoop,
+  Expected: 'Loop'
+}, {
+  Name: 'cgood',
+  Actual: w.cgood,
+  Expected: 'good'
+}, {
+  Name: 'cGood',
+  Actual: w.cGood,
+  Expected: 'Good'
+}, {
+  Name: 'cbye',
+  Actual: w.cbye,
+  Expected: 'bye'
+}, {
+  Name: 'cBye',
+  Actual: w.cBye,
+  Expected: 'Bye'
+}, {
+  Name: 'chave',
+  Actual: w.chave,
+  Expected: 'have'
+}, {
+  Name: 'cHave',
+  Actual: w.cHave,
+  Expected: 'Have'
+}, {
+  Name: 'cnice',
+  Actual: w.cnice,
+  Expected: 'nice'
+}, {
+  Name: 'cNice',
+  Actual: w.cNice,
+  Expected: 'Nice'
+}, {
+  Name: 'cday',
+  Actual: w.cday,
+  Expected: 'day'
+}, {
+  Name: 'cDay',
+  Actual: w.cDay,
+  Expected: 'Day'
+}, {
+  Name: 'cstay',
+  Actual: w.cstay,
+  Expected: 'stay'
+}, {
+  Name: 'cStay',
+  Actual: w.cStay,
+  Expected: 'Stay'
+}, {
+  Name: 'csafe',
+  Actual: w.csafe,
+  Expected: 'safe'
+}, {
+  Name: 'cSafe',
+  Actual: w.cSafe,
+  Expected: 'Safe'
+}, {
+  Name: 'cwas',
+  Actual: w.cwas,
+  Expected: 'was'
+}, {
+  Name: 'cWas',
+  Actual: w.cWas,
+  Expected: 'Was'
+}, {
+  Name: 'cbig',
+  Actual: w.cbig,
+  Expected: 'big'
+}, {
+  Name: 'cBig',
+  Actual: w.cBig,
+  Expected: 'Big'
+}, {
+  Name: 'cbigger',
+  Actual: w.cbigger,
+  Expected: 'bigger'
+}, {
+  Name: 'cBigger',
+  Actual: w.cBigger,
+  Expected: 'Bigger'
+}, {
+  Name: 'cbiggest',
+  Actual: w.cbiggest,
+  Expected: 'biggest'
+}, {
+  Name: 'cBiggest',
+  Actual: w.cBiggest,
+  Expected: 'Biggest'
+}, {
+  Name: 'cspecific',
+  Actual: w.cspecific,
+  Expected: 'specific'
+}, {
+  Name: 'cSpecific',
+  Actual: w.cSpecific,
+  Expected: 'Specific'
+}, {
+  Name: 'cspecified',
+  Actual: w.cspecified,
+  Expected: 'specified'
+}, {
+  Name: 'cSpecified',
+  Actual: w.cSpecified,
+  Expected: 'Specified'
+}, {
+  Name: 'cdomain',
+  Actual: w.cdomain,
+  Expected: 'domain'
+}, {
+  Name: 'cDomain',
+  Actual: w.cDomain,
+  Expected: 'Domain'
+}, {
+  Name: 'cmode',
+  Actual: w.cmode,
+  Expected: 'mode'
+}, {
+  Name: 'cMode',
+  Actual: w.cMode,
+  Expected: 'Mode'
+}, {
+  Name: 'csymbol',
+  Actual: w.csymbol,
+  Expected: 'symbol'
+}, {
+  Name: 'cSymbol',
+  Actual: w.cSymbol,
+  Expected: 'Symbol'
+}, {
+  Name: 'csymbols',
+  Actual: w.csymbols,
+  Expected: 'symbols'
+}, {
+  Name: 'cSymbols',
+  Actual: w.cSymbols,
+  Expected: 'Symbols'
+}, {
+  Name: 'cresolve',
+  Actual: w.cresolve,
+  Expected: 'resolve'
+}, {
+  Name: 'cResolve',
+  Actual: w.cResolve,
+  Expected: 'Resolve'
+}, {
+  Name: 'cresolved',
+  Actual: w.cresolved,
+  Expected: 'resolved'
+}, {
+  Name: 'cResolved',
+  Actual: w.cResolved,
+  Expected: 'Resolved'
+}, {
+  Name: 'cresolving',
+  Actual: w.cresolving,
+  Expected: 'resolving'
+}, {
+  Name: 'cResolving',
+  Actual: w.cResolving,
+  Expected: 'Resolving'
+}, {
+  Name: 'cvariation',
+  Actual: w.cvariation,
+  Expected: 'variation'
+}, {
+  Name: 'cVariation',
+  Actual: w.cVariation,
+  Expected: 'Variation'
+}, {
+  Name: 'cterm',
+  Actual: w.cterm,
+  Expected: 'term'
+}, {
+  Name: 'cTerm',
+  Actual: w.cTerm,
+  Expected: 'Term'
+}, {
+  Name: 'ccost',
+  Actual: w.ccost,
+  Expected: 'cost'
+}, {
+  Name: 'cCost',
+  Actual: w.cCost,
+  Expected: 'Cost'
+}, {
+  Name: 'cperiod',
+  Actual: w.cperiod,
+  Expected: 'period'
+}, {
+  Name: 'cPeriod',
+  Actual: w.cPeriod,
+  Expected: 'Period'
+}, {
+  Name: 'ccannot',
+  Actual: w.ccannot,
+  Expected: 'cannot'
+}, {
+  Name: 'cCannot',
+  Actual: w.cCannot,
+  Expected: 'Cannot'
+}, {
+  Name: 'cused',
+  Actual: w.cused,
+  Expected: 'used'
+}, {
+  Name: 'cUsed',
+  Actual: w.cUsed,
+  Expected: 'Used'
+}, {
+  Name: 'cusing',
+  Actual: w.cusing,
+  Expected: 'using'
+}, {
+  Name: 'cUsing',
+  Actual: w.cUsing,
+  Expected: 'Using'
+}, {
+  Name: 'cbreak',
+  Actual: w.cbreak,
+  Expected: 'break'
+}, {
+  Name: 'cBreak',
+  Actual: w.cBreak,
+  Expected: 'Break'
+}, {
+  Name: 'cinto',
+  Actual: w.cinto,
+  Expected: 'into'
+}, {
+  Name: 'cInto',
+  Actual: w.cInto,
+  Expected: 'Into'
+}, {
+  Name: 'cunable',
+  Actual: w.cunable,
+  Expected: 'unable'
+}, {
+  Name: 'cUnable',
+  Actual: w.cUnable,
+  Expected: 'Unable'
+}, {
+  Name: 'cnow',
+  Actual: w.cnow,
+  Expected: 'now'
+}, {
+  Name: 'cNow',
+  Actual: w.cNow,
+  Expected: 'Now'
+}, {
+  Name: 'cknow',
+  Actual: w.cknow,
+  Expected: 'know'
+}, {
+  Name: 'cKnow',
+  Actual: w.cKnow,
+  Expected: 'Know'
+}, {
+  Name: 'cknown',
+  Actual: w.cknown,
+  Expected: 'known'
+}, {
+  Name: 'cKnown',
+  Actual: w.cKnown,
+  Expected: 'Known'
+}, {
+  Name: 'cunknown',
+  Actual: w.cunknown,
+  Expected: 'unknown'
+}, {
+  Name: 'cUnknown',
+  Actual: w.cUnknown,
+  Expected: 'Unknown'
+}, {
+  Name: 'ctemp',
+  Actual: w.ctemp,
+  Expected: 'temp'
+}, {
+  Name: 'cTemp',
+  Actual: w.cTemp,
+  Expected: 'Temp'
+}, {
+  Name: 'ctempt',
+  Actual: w.ctempt,
+  Expected: 'tempt'
+}, {
+  Name: 'cTempt',
+  Actual: w.cTempt,
+  Expected: 'Tempt'
+}, {
+  Name: 'cattempt',
+  Actual: w.cattempt,
+  Expected: 'attempt'
+}, {
+  Name: 'cAttempt',
+  Actual: w.cAttempt,
+  Expected: 'Attempt'
+}, {
+  Name: 'cattempts',
+  Actual: w.cattempts,
+  Expected: 'attempts'
+}, {
+  Name: 'cAttempts',
+  Actual: w.cAttempts,
+  Expected: 'Attempts'
+}, {
+  Name: 'cattempted',
+  Actual: w.cattempted,
+  Expected: 'attempted'
+}, {
+  Name: 'cAttempted',
+  Actual: w.cAttempted,
+  Expected: 'Attempted'
+}, {
+  Name: 'cattempting',
+  Actual: w.cattempting,
+  Expected: 'attempting'
+}, {
+  Name: 'cAttempting',
+  Actual: w.cAttempting,
+  Expected: 'Attempting'
+}, {
+  Name: 'cmat',
+  Actual: w.cmat,
+  Expected: 'mat'
+}, {
+  Name: 'cMat',
+  Actual: w.cMat,
+  Expected: 'Mat'
+}, {
+  Name: 'cformat',
+  Actual: w.cformat,
+  Expected: 'format'
+}, {
+  Name: 'cFormat',
+  Actual: w.cFormat,
+  Expected: 'Format'
+}, {
+  Name: 'cformats',
+  Actual: w.cformats,
+  Expected: 'formats'
+}, {
+  Name: 'cFormats',
+  Actual: w.cFormats,
+  Expected: 'Formats'
+}, {
+  Name: 'cformatted',
+  Actual: w.cformatted,
+  Expected: 'formatted'
+}, {
+  Name: 'cFormatted',
+  Actual: w.cFormatted,
+  Expected: 'Formatted'
+}, {
+  Name: 'cformatting',
+  Actual: w.cformatting,
+  Expected: 'formatting'
+}, {
+  Name: 'cFormatting',
+  Actual: w.cFormatting,
+  Expected: 'Formatting'
+}, {
+  Name: 'creformat',
+  Actual: w.creformat,
+  Expected: 'reformat'
+}, {
+  Name: 'cReformat',
+  Actual: w.cReformat,
+  Expected: 'Reformat'
+}, {
+  Name: 'creformats',
+  Actual: w.creformats,
+  Expected: 'reformats'
+}, {
+  Name: 'cReformats',
+  Actual: w.cReformats,
+  Expected: 'Reformats'
+}, {
+  Name: 'creformated',
+  Actual: w.creformated,
+  Expected: 'reformated'
+}, {
+  Name: 'cReformated',
+  Actual: w.cReformated,
+  Expected: 'Reformated'
+}, {
+  Name: 'creformating',
+  Actual: w.creformating,
+  Expected: 'reformating'
+}, {
+  Name: 'cReformating',
+  Actual: w.cReformating,
+  Expected: 'Reformating'
+}, {
+  Name: 'ccorrect',
+  Actual: w.ccorrect,
+  Expected: 'correct'
+}, {
+  Name: 'cCorrect',
+  Actual: w.cCorrect,
+  Expected: 'Correct'
+}, {
+  Name: 'ccorrects',
+  Actual: w.ccorrects,
+  Expected: 'corrects'
+}, {
+  Name: 'cCorrects',
+  Actual: w.cCorrects,
+  Expected: 'Corrects'
+}, {
+  Name: 'ccorrected',
+  Actual: w.ccorrected,
+  Expected: 'corrected'
+}, {
+  Name: 'cCorrected',
+  Actual: w.cCorrected,
+  Expected: 'Corrected'
+}, {
+  Name: 'ccorrectly',
+  Actual: w.ccorrectly,
+  Expected: 'correctly'
+}, {
+  Name: 'cCorrectly',
+  Actual: w.cCorrectly,
+  Expected: 'Correctly'
+}, {
+  Name: 'ccorrecting',
+  Actual: w.ccorrecting,
+  Expected: 'correcting'
+}, {
+  Name: 'cCorrecting',
+  Actual: w.cCorrecting,
+  Expected: 'Correcting'
+}, {
+  Name: 'cbut',
+  Actual: w.cbut,
+  Expected: 'but'
+}, {
+  Name: 'cBut',
+  Actual: w.cBut,
+  Expected: 'But'
+}, {
+  Name: 'crent',
+  Actual: w.crent,
+  Expected: 'rent'
+}, {
+  Name: 'cRent',
+  Actual: w.cRent,
+  Expected: 'Rent'
+}, {
+  Name: 'ccurrent',
+  Actual: w.ccurrent,
+  Expected: 'current'
+}, {
+  Name: 'cCurrent',
+  Actual: w.cCurrent,
+  Expected: 'Current'
+}, {
+  Name: 'cdelta',
+  Actual: w.cdelta,
+  Expected: 'delta'
+}, {
+  Name: 'cbeing',
+  Actual: w.cbeing,
+  Expected: 'being'
+}, {
+  Name: 'cBeing',
+  Actual: w.cBeing,
+  Expected: 'Being'
+}, {
+  Name: 'cskip',
+  Actual: w.cskip,
+  Expected: 'skip'
+}, {
+  Name: 'cSkip',
+  Actual: w.cSkip,
+  Expected: 'Skip'
+}, {
+  Name: 'cskips',
+  Actual: w.cskips,
+  Expected: 'skips'
+}, {
+  Name: 'cSkips',
+  Actual: w.cSkips,
+  Expected: 'Skips'
+}, {
+  Name: 'cskiped',
+  Actual: w.cskiped,
+  Expected: 'skiped'
+}, {
+  Name: 'cSkiped',
+  Actual: w.cSkiped,
+  Expected: 'Skiped'
+}, {
+  Name: 'cskiping',
+  Actual: w.cskiping,
+  Expected: 'skiping'
+}, {
+  Name: 'cSkiping',
+  Actual: w.cSkiping,
+  Expected: 'Skiping'
+}, {
+  Name: 'chad',
+  Actual: w.chad,
+  Expected: 'had'
+}, {
+  Name: 'cHad',
+  Actual: w.cHad,
+  Expected: 'Had'
+}, {
+  Name: 'cchange',
+  Actual: w.cchange,
+  Expected: 'change'
+}, {
+  Name: 'cChange',
+  Actual: w.cChange,
+  Expected: 'Change'
+}, {
+  Name: 'cCHANGE',
+  Actual: w.cCHANGE,
+  Expected: 'CHANGE'
+}, {
+  Name: 'cpush',
+  Actual: w.cpush,
+  Expected: 'push'
+}, {
+  Name: 'cPush',
+  Actual: w.cPush,
+  Expected: 'Push'
+}, {
+  Name: 'cPUSH',
+  Actual: w.cPUSH,
+  Expected: 'PUSH'
+}, {
+  Name: 'cpushes',
+  Actual: w.cpushes,
+  Expected: 'pushes'
+}, {
+  Name: 'cPushes',
+  Actual: w.cPushes,
+  Expected: 'Pushes'
+}, {
+  Name: 'cpushed',
+  Actual: w.cpushed,
+  Expected: 'pushed'
+}, {
+  Name: 'cPushed',
+  Actual: w.cPushed,
+  Expected: 'Pushed'
+}, {
+  Name: 'cpushing',
+  Actual: w.cpushing,
+  Expected: 'pushing'
+}, {
+  Name: 'cPushing',
+  Actual: w.cPushing,
+  Expected: 'Pushing'
+}, {
+  Name: 'cexpand',
+  Actual: w.cexpand,
+  Expected: 'expand'
+}, {
+  Name: 'cExpand',
+  Actual: w.cExpand,
+  Expected: 'Expand'
+}, {
+  Name: 'cexpands',
+  Actual: w.cexpands,
+  Expected: 'expands'
+}, {
+  Name: 'cExpands',
+  Actual: w.cExpands,
+  Expected: 'Expands'
+}, {
+  Name: 'cexpanded',
+  Actual: w.cexpanded,
+  Expected: 'expanded'
+}, {
+  Name: 'cExpanded',
+  Actual: w.cExpanded,
+  Expected: 'Expanded'
+}, {
+  Name: 'cexpanding',
+  Actual: w.cexpanding,
+  Expected: 'expanding'
+}, {
+  Name: 'cExpanding',
+  Actual: w.cExpanding,
+  Expected: 'Expanding'
+}, {
+  Name: 'ccall',
+  Actual: w.ccall,
+  Expected: 'call'
+}, {
+  Name: 'cCall',
+  Actual: w.cCall,
+  Expected: 'Call'
+}, {
+  Name: 'ccalls',
+  Actual: w.ccalls,
+  Expected: 'calls'
+}, {
+  Name: 'cCalls',
+  Actual: w.cCalls,
+  Expected: 'Calls'
+}, {
+  Name: 'ccalled',
+  Actual: w.ccalled,
+  Expected: 'called'
+}, {
+  Name: 'cCalled',
+  Actual: w.cCalled,
+  Expected: 'Called'
+}, {
+  Name: 'ccalling',
+  Actual: w.ccalling,
+  Expected: 'calling'
+}, {
+  Name: 'cCalling',
+  Actual: w.cCalling,
+  Expected: 'Calling'
+}, {
+  Name: 'clook',
+  Actual: w.clook,
+  Expected: 'look'
+}, {
+  Name: 'cLook',
+  Actual: w.cLook,
+  Expected: 'Look'
+}, {
+  Name: 'clooks',
+  Actual: w.clooks,
+  Expected: 'looks'
+}, {
+  Name: 'cLooks',
+  Actual: w.cLooks,
+  Expected: 'Looks'
+}, {
+  Name: 'clooked',
+  Actual: w.clooked,
+  Expected: 'looked'
+}, {
+  Name: 'cLooked',
+  Actual: w.cLooked,
+  Expected: 'Looked'
+}, {
+  Name: 'clooking',
+  Actual: w.clooking,
+  Expected: 'looking'
+}, {
+  Name: 'cLooking',
+  Actual: w.cLooking,
+  Expected: 'Looking'
+}, {
+  Name: 'clookup',
+  Actual: w.clookup,
+  Expected: 'lookup'
+}, {
+  Name: 'cLookup',
+  Actual: w.cLookup,
+  Expected: 'Lookup'
+}, {
+  Name: 'celse',
+  Actual: w.celse,
+  Expected: 'else'
+}, {
+  Name: 'cElse',
+  Actual: w.cElse,
+  Expected: 'Else'
+}, {
+  Name: 'cfar',
+  Actual: w.cfar,
+  Expected: 'far'
+}, {
+  Name: 'cFar',
+  Actual: w.cFar,
+  Expected: 'Far'
+}, {
+  Name: 'cspecify',
+  Actual: w.cspecify,
+  Expected: 'specify'
+}, {
+  Name: 'cSpecify',
+  Actual: w.cSpecify,
+  Expected: 'Specify'
+}, {
+  Name: 'csupport',
+  Actual: w.csupport,
+  Expected: 'support'
+}, {
+  Name: 'cSupport',
+  Actual: w.cSupport,
+  Expected: 'Support'
+}, {
+  Name: 'csupports',
+  Actual: w.csupports,
+  Expected: 'supports'
+}, {
+  Name: 'cSupports',
+  Actual: w.cSupports,
+  Expected: 'Supports'
+}, {
+  Name: 'csupported',
+  Actual: w.csupported,
+  Expected: 'supported'
+}, {
+  Name: 'cSupported',
+  Actual: w.cSupported,
+  Expected: 'Supported'
+}, {
+  Name: 'csupporting',
+  Actual: w.csupporting,
+  Expected: 'supporting'
+}, {
+  Name: 'cSupporting',
+  Actual: w.cSupporting,
+  Expected: 'Supporting'
+}, {
+  Name: 'cfound',
+  Actual: w.cfound,
+  Expected: 'found'
+}, {
+  Name: 'cFound',
+  Actual: w.cFound,
+  Expected: 'Found'
+}, {
+  Name: 'cfounded',
+  Actual: w.cfounded,
+  Expected: 'founded'
+}, {
+  Name: 'cFounded',
+  Actual: w.cFounded,
+  Expected: 'Founded'
+}, {
+  Name: 'cunfounded',
+  Actual: w.cunfounded,
+  Expected: 'unfounded'
+}, {
+  Name: 'cUnfounded',
+  Actual: w.cUnfounded,
+  Expected: 'Unfounded'
+}, {
+  Name: 'coriginal',
+  Actual: w.coriginal,
+  Expected: 'original'
+}, {
+  Name: 'cOriginal',
+  Actual: w.cOriginal,
+  Expected: 'Original'
+}, {
+  Name: 'coriginals',
+  Actual: w.coriginals,
+  Expected: 'originals'
+}, {
+  Name: 'cOriginals',
+  Actual: w.cOriginals,
+  Expected: 'Originals'
+}, {
+  Name: 'ccause',
+  Actual: w.ccause,
+  Expected: 'cause'
+}, {
+  Name: 'cCause',
+  Actual: w.cCause,
+  Expected: 'Cause'
+}, {
+  Name: 'cbecause',
+  Actual: w.cbecause,
+  Expected: 'because'
+}, {
+  Name: 'cBecause',
+  Actual: w.cBecause,
+  Expected: 'Because'
+}, {
+  Name: 'canother',
+  Actual: w.canother,
+  Expected: 'another'
+}, {
+  Name: 'cAnother',
+  Actual: w.cAnother,
+  Expected: 'Another'
+}, {
+  Name: 'cparameter',
+  Actual: w.cparameter,
+  Expected: 'parameter'
+}, {
+  Name: 'cParameter',
+  Actual: w.cParameter,
+  Expected: 'Parameter'
+}, {
+  Name: 'cparameters',
+  Actual: w.cparameters,
+  Expected: 'parameters'
+}, {
+  Name: 'cParameters',
+  Actual: w.cParameters,
+  Expected: 'Parameters'
+}, {
+  Name: 'ctry',
+  Actual: w.ctry,
+  Expected: 'try'
+}, {
+  Name: 'cTry',
+  Actual: w.cTry,
+  Expected: 'Try'
+}, {
+  Name: 'ctried',
+  Actual: w.ctried,
+  Expected: 'tried'
+}, {
+  Name: 'cTried',
+  Actual: w.cTried,
+  Expected: 'Tried'
+}, {
+  Name: 'ctrying',
+  Actual: w.ctrying,
+  Expected: 'trying'
+}, {
+  Name: 'cTrying',
+  Actual: w.cTrying,
+  Expected: 'Trying'
+}, {
+  Name: 'cgain',
+  Actual: w.cgain,
+  Expected: 'gain'
+}, {
+  Name: 'cGain',
+  Actual: w.cGain,
+  Expected: 'Gain'
+}, {
+  Name: 'cagain',
+  Actual: w.cagain,
+  Expected: 'again'
+}, {
+  Name: 'cAgain',
+  Actual: w.cAgain,
+  Expected: 'Again'
+}, {
+  Name: 'ctent',
+  Actual: w.ctent,
+  Expected: 'tent'
+}, {
+  Name: 'cTent',
+  Actual: w.cTent,
+  Expected: 'Tent'
+}, {
+  Name: 'ctents',
+  Actual: w.ctents,
+  Expected: 'tents'
+}, {
+  Name: 'cTents',
+  Actual: w.cTents,
+  Expected: 'Tents'
+}, {
+  Name: 'ctenting',
+  Actual: w.ctenting,
+  Expected: 'tenting'
+}, {
+  Name: 'cTenting',
+  Actual: w.cTenting,
+  Expected: 'Tenting'
+}, {
+  Name: 'ccontent',
+  Actual: w.ccontent,
+  Expected: 'content'
+}, {
+  Name: 'cContent',
+  Actual: w.cContent,
+  Expected: 'Content'
+}, {
+  Name: 'ccontents',
+  Actual: w.ccontents,
+  Expected: 'contents'
+}, {
+  Name: 'cContents',
+  Actual: w.cContents,
+  Expected: 'Contents'
+}, {
+  Name: 'cmust',
+  Actual: w.cmust,
+  Expected: 'must'
+}, {
+  Name: 'cMust',
+  Actual: w.cMust,
+  Expected: 'Must'
+}, {
+  Name: 'cprompt',
+  Actual: w.cprompt,
+  Expected: 'prompt'
+}, {
+  Name: 'cPrompt',
+  Actual: w.cPrompt,
+  Expected: 'Prompt'
+}, {
+  Name: 'cexample',
+  Actual: w.cexample,
+  Expected: 'example'
+}, {
+  Name: 'cExample',
+  Actual: w.cExample,
+  Expected: 'Example'
+}, {
+  Name: 'cEXAMPLE',
+  Actual: w.cEXAMPLE,
+  Expected: 'EXAMPLE'
+}, {
+  Name: 'cstructure',
+  Actual: w.cstructure,
+  Expected: 'structure'
+}, {
+  Name: 'cStructure',
+  Actual: w.cStructure,
+  Expected: 'Structure'
+}, {
+  Name: 'cstructured',
+  Actual: w.cstructured,
+  Expected: 'structured'
+}, {
+  Name: 'cStructured',
+  Actual: w.cStructured,
+  Expected: 'Structured'
+}, {
+  Name: 'cstructures',
+  Actual: w.cstructures,
+  Expected: 'structures'
+}, {
+  Name: 'cStructures',
+  Actual: w.cStructures,
+  Expected: 'Structures'
+}, {
+  Name: 'cmore',
+  Actual: w.cmore,
+  Expected: 'more'
+}, {
+  Name: 'cMore',
+  Actual: w.cMore,
+  Expected: 'More'
+}, {
+  Name: 'chas',
+  Actual: w.chas,
+  Expected: 'has'
+}, {
+  Name: 'cHas',
+  Actual: w.cHas,
+  Expected: 'Has'
+}, {
+  Name: 'cready',
+  Actual: w.cready,
+  Expected: 'ready'
+}, {
+  Name: 'cReady',
+  Actual: w.cReady,
+  Expected: 'Ready'
+}, {
+  Name: 'calready',
+  Actual: w.calready,
+  Expected: 'already'
+}, {
+  Name: 'cAlready',
+  Actual: w.cAlready,
+  Expected: 'Already'
+}, {
+  Name: 'cbeen',
+  Actual: w.cbeen,
+  Expected: 'been'
+}, {
+  Name: 'cBeen',
+  Actual: w.cBeen,
+  Expected: 'Been'
+}, {
+  Name: 'cfollow',
+  Actual: w.cfollow,
+  Expected: 'follow'
+}, {
+  Name: 'cFollow',
+  Actual: w.cFollow,
+  Expected: 'Follow'
+}, {
+  Name: 'cfollowes',
+  Actual: w.cfollowes,
+  Expected: 'followes'
+}, {
+  Name: 'cFollowes',
+  Actual: w.cFollowes,
+  Expected: 'Followes'
+}, {
+  Name: 'cfollowed',
+  Actual: w.cfollowed,
+  Expected: 'followed'
+}, {
+  Name: 'cFollowed',
+  Actual: w.cFollowed,
+  Expected: 'Followed'
+}, {
+  Name: 'cfollowing',
+  Actual: w.cfollowing,
+  Expected: 'following'
+}, {
+  Name: 'cFollowing',
+  Actual: w.cFollowing,
+  Expected: 'Following'
+}, {
+  Name: 'cdefinition',
+  Actual: w.cdefinition,
+  Expected: 'definition'
+}, {
+  Name: 'cDefinition',
+  Actual: w.cDefinition,
+  Expected: 'Definition'
+}, {
+  Name: 'cdefinitions',
+  Actual: w.cdefinitions,
+  Expected: 'definitions'
+}, {
+  Name: 'cDefinitions',
+  Actual: w.cDefinitions,
+  Expected: 'Definitions'
+}, {
+  Name: 'cdone',
+  Actual: w.cdone,
+  Expected: 'done'
+}, {
+  Name: 'cDone',
+  Actual: w.cDone,
+  Expected: 'Done'
+}, {
+  Name: 'cDONE',
+  Actual: w.cDONE,
+  Expected: 'DONE'
+}, {
+  Name: 'cphase',
+  Actual: w.cphase,
+  Expected: 'phase'
+}, {
+  Name: 'cPhase',
+  Actual: w.cPhase,
+  Expected: 'Phase'
+}, {
+  Name: 'cphases',
+  Actual: w.cphases,
+  Expected: 'phases'
+}, {
+  Name: 'cPhases',
+  Actual: w.cPhases,
+  Expected: 'Phases'
+}, {
+  Name: 'cphased',
+  Actual: w.cphased,
+  Expected: 'phased'
+}, {
+  Name: 'cPhased',
+  Actual: w.cPhased,
+  Expected: 'Phased'
+}, {
+  Name: 'cphasing',
+  Actual: w.cphasing,
+  Expected: 'phasing'
+}, {
+  Name: 'cPhasing',
+  Actual: w.cPhasing,
+  Expected: 'Phasing'
+}, {
+  Name: 'ctick',
+  Actual: w.ctick,
+  Expected: 'tick'
+}, {
+  Name: 'cTick',
+  Actual: w.cTick,
+  Expected: 'Tick'
+}, {
+  Name: 'cyay',
+  Actual: w.cyay,
+  Expected: 'yay'
+}, {
+  Name: 'cYay',
+  Actual: w.cYay,
+  Expected: 'Yay'
+}, {
+  Name: 'cYAY',
+  Actual: w.cYAY,
+  Expected: 'YAY'
+}, {
+  Name: 'ctag',
+  Actual: w.ctag,
+  Expected: 'tag'
+}, {
+  Name: 'cTag',
+  Actual: w.cTag,
+  Expected: 'Tag'
+}, {
+  Name: 'ctags',
+  Actual: w.ctags,
+  Expected: 'tags'
+}, {
+  Name: 'cTags',
+  Actual: w.cTags,
+  Expected: 'Tags'
+}, {
+  Name: 'ctagged',
+  Actual: w.ctagged,
+  Expected: 'tagged'
+}, {
+  Name: 'cTagged',
+  Actual: w.cTagged,
+  Expected: 'Tagged'
+}, {
+  Name: 'ctagging',
+  Actual: w.ctagging,
+  Expected: 'tagging'
+}, {
+  Name: 'cTagging',
+  Actual: w.cTagging,
+  Expected: 'Tagging'
+}, {
+  Name: 'clit',
+  Actual: w.clit,
+  Expected: 'lit'
+}, {
+  Name: 'cLit',
+  Actual: w.cLit,
+  Expected: 'Lit'
+}, {
+  Name: 'csplit',
+  Actual: w.csplit,
+  Expected: 'split'
+}, {
+  Name: 'cSplit',
+  Actual: w.cSplit,
+  Expected: 'Split'
+}, {
+  Name: 'csplits',
+  Actual: w.csplits,
+  Expected: 'splits'
+}, {
+  Name: 'cSplits',
+  Actual: w.cSplits,
+  Expected: 'Splits'
+}, {
+  Name: 'csplitting',
+  Actual: w.csplitting,
+  Expected: 'splitting'
+}, {
+  Name: 'cSplitting',
+  Actual: w.cSplitting,
+  Expected: 'Splitting'
+}, {
+  Name: 'cdoing',
+  Actual: w.cdoing,
+  Expected: 'doing'
+}, {
+  Name: 'cDoing',
+  Actual: w.cDoing,
+  Expected: 'Doing'
+}, {
+  Name: 'cstraight',
+  Actual: w.cstraight,
+  Expected: 'straight'
+}, {
+  Name: 'cStraight',
+  Actual: w.cStraight,
+  Expected: 'Straight'
+}, {
+  Name: 'cbroker',
+  Actual: w.cbroker,
+  Expected: 'broker'
+}, {
+  Name: 'cBroker',
+  Actual: w.cBroker,
+  Expected: 'Broker'
+}, {
+  Name: 'cpost',
+  Actual: w.cpost,
+  Expected: 'post'
+}, {
+  Name: 'cPost',
+  Actual: w.cPost,
+  Expected: 'Post'
+}, {
+  Name: 'cposts',
+  Actual: w.cposts,
+  Expected: 'posts'
+}, {
+  Name: 'cPosts',
+  Actual: w.cPosts,
+  Expected: 'Posts'
+}, {
+  Name: 'cposted',
+  Actual: w.cposted,
+  Expected: 'posted'
+}, {
+  Name: 'cPosted',
+  Actual: w.cPosted,
+  Expected: 'Posted'
+}, {
+  Name: 'cposting',
+  Actual: w.cposting,
+  Expected: 'posting'
+}, {
+  Name: 'cPosting',
+  Actual: w.cPosting,
+  Expected: 'Posting'
+}, {
+  Name: 'cmerge',
+  Actual: w.cmerge,
+  Expected: 'merge'
+}, {
+  Name: 'cMerge',
+  Actual: w.cMerge,
+  Expected: 'Merge'
+}, {
+  Name: 'cMERGE',
+  Actual: w.cMERGE,
+  Expected: 'MERGE'
+}, {
+  Name: 'cmerges',
+  Actual: w.cmerges,
+  Expected: 'merges'
+}, {
+  Name: 'cMerges',
+  Actual: w.cMerges,
+  Expected: 'Merges'
+}, {
+  Name: 'cmerged',
+  Actual: w.cmerged,
+  Expected: 'merged'
+}, {
+  Name: 'cMerged',
+  Actual: w.cMerged,
+  Expected: 'Merged'
+}, {
+  Name: 'cMERGED',
+  Actual: w.cMERGED,
+  Expected: 'MERGED'
+}, {
+  Name: 'cmerging',
+  Actual: w.cmerging,
+  Expected: 'merging'
+}, {
+  Name: 'cMerging',
+  Actual: w.cMerging,
+  Expected: 'Merging'
+}, {
+  Name: 'cinclude',
+  Actual: w.cinclude,
+  Expected: 'include'
+}, {
+  Name: 'cInclude',
+  Actual: w.cInclude,
+  Expected: 'Include'
+}, {
+  Name: 'cincludes',
+  Actual: w.cincludes,
+  Expected: 'includes'
+}, {
+  Name: 'cIncludes',
+  Actual: w.cIncludes,
+  Expected: 'Includes'
+}, {
+  Name: 'cincluded',
+  Actual: w.cincluded,
+  Expected: 'included'
+}, {
+  Name: 'cIncluded',
+  Actual: w.cIncluded,
+  Expected: 'Included'
+}, {
+  Name: 'cincluding',
+  Actual: w.cincluding,
+  Expected: 'including'
+}, {
+  Name: 'cIncluding',
+  Actual: w.cIncluding,
+  Expected: 'Including'
+}, {
+  Name: 'cfinal',
+  Actual: w.cfinal,
+  Expected: 'final'
+}, {
+  Name: 'cFinal',
+  Actual: w.cFinal,
+  Expected: 'Final'
+}, {
+  Name: 'cfinals',
+  Actual: w.cfinals,
+  Expected: 'finals'
+}, {
+  Name: 'cFinals',
+  Actual: w.cFinals,
+  Expected: 'Finals'
+}, {
+  Name: 'cfinally',
+  Actual: w.cfinally,
+  Expected: 'finally'
+}, {
+  Name: 'cFinally',
+  Actual: w.cFinally,
+  Expected: 'Finally'
+}, {
+  Name: 'ccaught',
+  Actual: w.ccaught,
+  Expected: 'caught'
+}, {
+  Name: 'cCaught',
+  Actual: w.cCaught,
+  Expected: 'Caught'
+}, {
+  Name: 'cflat',
+  Actual: w.cflat,
+  Expected: 'flat'
+}, {
+  Name: 'cFlat',
+  Actual: w.cFlat,
+  Expected: 'Flat'
+}, {
+  Name: 'cflats',
+  Actual: w.cflats,
+  Expected: 'flats'
+}, {
+  Name: 'cFlats',
+  Actual: w.cFlats,
+  Expected: 'Flats'
+}, {
+  Name: 'cflatten',
+  Actual: w.cflatten,
+  Expected: 'flatten'
+}, {
+  Name: 'cFlatten',
+  Actual: w.cFlatten,
+  Expected: 'Flatten'
+}, {
+  Name: 'cflattened',
+  Actual: w.cflattened,
+  Expected: 'flattened'
+}, {
+  Name: 'cFlattened',
+  Actual: w.cFlattened,
+  Expected: 'Flattened'
+}, {
+  Name: 'cflattening',
+  Actual: w.cflattening,
+  Expected: 'flattening'
+}, {
+  Name: 'cFlattening',
+  Actual: w.cFlattening,
+  Expected: 'Flattening'
+}, {
+  Name: 'cside',
+  Actual: w.cside,
+  Expected: 'side'
+}, {
+  Name: 'cSide',
+  Actual: w.cSide,
+  Expected: 'Side'
+}, {
+  Name: 'csides',
+  Actual: w.csides,
+  Expected: 'sides'
+}, {
+  Name: 'cSides',
+  Actual: w.cSides,
+  Expected: 'Sides'
+}, {
+  Name: 'csided',
+  Actual: w.csided,
+  Expected: 'sided'
+}, {
+  Name: 'cSided',
+  Actual: w.cSided,
+  Expected: 'Sided'
+}, {
+  Name: 'csiding',
+  Actual: w.csiding,
+  Expected: 'siding'
+}, {
+  Name: 'cSiding',
+  Actual: w.cSiding,
+  Expected: 'Siding'
+}, {
+  Name: 'cinside',
+  Actual: w.cinside,
+  Expected: 'inside'
+}, {
+  Name: 'cInside',
+  Actual: w.cInside,
+  Expected: 'Inside'
+}, {
+  Name: 'ctarget',
+  Actual: w.ctarget,
+  Expected: 'target'
+}, {
+  Name: 'cTarget',
+  Actual: w.cTarget,
+  Expected: 'Target'
+}, {
+  Name: 'ctargets',
+  Actual: w.ctargets,
+  Expected: 'targets'
+}, {
+  Name: 'cTargets',
+  Actual: w.cTargets,
+  Expected: 'Targets'
+}, {
+  Name: 'ctargeted',
+  Actual: w.ctargeted,
+  Expected: 'targeted'
+}, {
+  Name: 'cTargeted',
+  Actual: w.cTargeted,
+  Expected: 'Targeted'
+}, {
+  Name: 'ctargeting',
+  Actual: w.ctargeting,
+  Expected: 'targeting'
+}, {
+  Name: 'cTargeting',
+  Actual: w.cTargeting,
+  Expected: 'Targeting'
+}, {
+  Name: 'cmodify',
+  Actual: w.cmodify,
+  Expected: 'modify'
+}, {
+  Name: 'cModify',
+  Actual: w.cModify,
+  Expected: 'Modify'
+}, {
+  Name: 'cmodified',
+  Actual: w.cmodified,
+  Expected: 'modified'
+}, {
+  Name: 'cModified',
+  Actual: w.cModified,
+  Expected: 'Modified'
+}, {
+  Name: 'cmodifies',
+  Actual: w.cmodifies,
+  Expected: 'modifies'
+}, {
+  Name: 'cModifies',
+  Actual: w.cModifies,
+  Expected: 'Modifies'
+}, {
+  Name: 'cmodifying',
+  Actual: w.cmodifying,
+  Expected: 'modifying'
+}, {
+  Name: 'cModifying',
+  Actual: w.cModifying,
+  Expected: 'Modifying'
+}, {
+  Name: 'creference',
+  Actual: w.creference,
+  Expected: 'reference'
+}, {
+  Name: 'cReference',
+  Actual: w.cReference,
+  Expected: 'Reference'
+}, {
+  Name: 'creferences',
+  Actual: w.creferences,
+  Expected: 'references'
+}, {
+  Name: 'cReferences',
+  Actual: w.cReferences,
+  Expected: 'References'
+}, {
+  Name: 'creferenced',
+  Actual: w.creferenced,
+  Expected: 'referenced'
+}, {
+  Name: 'cReferenced',
+  Actual: w.cReferenced,
+  Expected: 'Referenced'
+}, {
+  Name: 'creferencing',
+  Actual: w.creferencing,
+  Expected: 'referencing'
+}, {
+  Name: 'cReferencing',
+  Actual: w.cReferencing,
+  Expected: 'Referencing'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

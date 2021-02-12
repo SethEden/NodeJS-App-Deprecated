@@ -8,10 +8,12 @@
  * @requires module:configurator
  * @requires module:colorizer
  * @requires module:ruleBroker
+ * @requires module:timers
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
@@ -21,10 +23,13 @@
 import configurator from './configurator';
 import colorizer from './colorizer';
 import ruleBroker from '../BusinessRules/ruleBroker';
+import timers from './timers';
 import * as b from '../Constants/basic.constants';
+import * as g from '../Constants/generic.constants';
 import * as w from '../Constants/word.constants';
 import * as s from '../Constants/system.constants';
 var fs = require('fs');
+var path = require('path');
 var chalk = require('chalk');
 var D = require('../Resources/data');
 
@@ -44,18 +49,19 @@ var D = require('../Resources/data');
  */
 function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
-    let logFile = configurator.getConfigurationSetting(s.cApplicationRootPath);
+    let logFile = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
     if (logFile !== undefined) {
+      logFile = logFile + b.cForwardSlash + w.clogs;
       // console.log('logFile is !== undefined');
       let debugSetting = false;
       let outputMessage = '';
       let rules = {};
       rules[1] = s.creplaceDoublePercentWithMessage;
-      logFile = logFile + configurator.getConfigurationSetting(s.cLogFilePathAndName);
+      logFile = path.resolve(logFile + b.cForwardSlash + configurator.getConfigurationSetting(s.cLogFilePathAndName));
       // console.log('determine if there is a configuration setting for the class path');
       debugSetting = configurator.getConfigurationSetting(classPath);
       // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
-      if (logFile.indexOf('txt') !== -1) { // If we have a log file then we will log it to the console & file.
+      if (logFile.toUpperCase().includes(g.cLOG) || logFile.toUpperCase().includes(g.cTXT)) { // If we have a log file then we will log it to the console & file.
         consoleLogProcess(debugSetting, logFile, classPath, message, true);
       } else { // No text log file specified, proceed with the same process for console only.
         consoleLogProcess(debugSetting, undefined, classPath, message, false);
@@ -91,14 +97,14 @@ function constantsValidationSummaryLog(message, passFail) {
   let outputMessage = '';
   if (passFail === true) {
     if (configurator.getConfigurationSetting(s.cDisplaySummaryConstantsValidationPassMessages) === true) {
-      outputMessage = `PASSED -- ${message} -- PASSED`;
+      outputMessage = w.cPASSED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cPASSED; // `PASSED -- ${message} -- PASSED`;
       outputMessage = chalk.rgb(0,0,0)(outputMessage);
       outputMessage = chalk.bgRgb(0,255,0)(outputMessage);
       console.log(outputMessage);
     }
   } else {
     if (configurator.getConfigurationSetting(s.cDisplaySummaryConstantsValidationFailMessages) === true) {
-      outputMessage = `FAILED -- ${message} -- FAILED`;
+      outputMessage = w.cFAILED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAILED; // `FAILED -- ${message} -- FAILED`;
       outputMessage = chalk.rgb(0,0,0)(outputMessage);
       outputMessage = chalk.bgRgb(255,0,0)(outputMessage);
       console.log(outputMessage);
@@ -320,14 +326,25 @@ function parseClassPath(logFile, classPath, message) {
 function printMessageToFile(file, message) {
   // console.log('BEGIN loggers.printMessageToFile function');
   // console.log('file is: ' + file);
-  console.log(message);
+  // console.log(message);
   let fd;
-  let currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
-  if (currentOS === w.cWindows || currentOS === w.cLinux) {
+  let dateTimeStamp = '';
+  // let currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
+  // if (currentOS === w.cWindows || currentOS === w.cLinux) {
     if (configurator.getConfigurationSetting(s.cLogFileEnabled) === true) {
+      // console.log('LogFileEnabled = true');
+      message = colorizer.removeFontStyles(message);
+      if (configurator.getConfigurationSetting(s.cIncludeDateTimeStampInLogFiles) === true) {
+        // Individual messages need to have a time stamp on them. So lets sign the message with a time stamp.
+        dateTimeStamp = timers.getNowMoment(g.cYYYY_MM_DD_HH_mm_ss_SSS);
+        // console.log('dateTimeStamp is: ' + dateTimeStamp);
+        message = dateTimeStamp + b.cColon + b.cSpace + message;
+      }
+
+      // console.log('final Message is: ' + message);
       try {
         fd = fs.openSync(file, 'a');
-        fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, 'utf8');
+        fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, g.cUTF8);
       } catch (err) {
         return console.log(err);
       } finally {
@@ -343,7 +360,7 @@ function printMessageToFile(file, message) {
     } else {
       // console.log('ERROR: Failure to log to file: ' + file);
     }
-  } else { console.log('ERROR: Invalid OS: ' + currentOS); }
+  // } else { console.log('ERROR: Invalid OS: ' + currentOS); }
   // console.log('END loggers.printMessageToFile function');
 
   // let fd;

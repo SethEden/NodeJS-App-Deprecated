@@ -45,8 +45,34 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+/**
+ * @file nominal.js
+ * @module nominal
+ * @description Contains all of the nominal system commands.
+ * @requires module:configurator
+ * @requires module:lexical
+ * @requires module:fileBroker
+ * @requires module:dataBroker
+ * @requires module:commandBroker
+ * @requires module:ruleBroker
+ * @requires module:workflowBroker
+ * @requires module:queue
+ * @requires module:stack
+ * @requires module:timers
+ * @requires module:loggers
+ * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:word-constants
+ * @requires module:system-constants
+ * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
+ * @requires {@link https://www.npmjs.com/package/figlet|figlet}
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://mathjs.org/index.html|math}
+ * @requires module:data
+ * @author Seth Hollingsead
+ * @date 2020/06/19
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+ */
 var prompt = require('prompt-sync')();
 
 var figlet = require('figlet');
@@ -262,12 +288,8 @@ var clearScreen = function clearScreen(inputData, inputMetaData) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
-  var returnData = true; // Maybe we can find a faster way to do this at some point?!
-  // For now this will have to work.
-
-  for (var i = 0; i <= 10000; i++) {
-    console.log(' ');
-  }
+  var returnData = true;
+  console.clear();
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -300,7 +322,8 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
   var returnData = true;
 
   if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
-    console.log('DEPLOY APPLICATION');
+    // DEPLOY APPLICATION
+    console.log(s.cDEPLOY_APPLICATION);
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cSourceResourcesPath);
 
@@ -309,16 +332,18 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
     var deploymentStatus = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath); // console.log('Deployment was completed: ' + deploymentStatus);
 
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Deployment was completed: ' + true);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDeploymentWasCompleted + true);
 
     _configurator["default"].setConfigurationSetting(s.cdeploymentCompleted, true);
   } else {
     if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
-      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+      // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
+      console.log(s.cdeployApplicationMessage1a + s.cdeployApplicationMessage2a);
     }
 
     if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
-      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+      // ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.
+      console.log(s.cdeployApplicationMessage1b + s.cdeployApplicationMessage2a);
     }
   }
 
@@ -353,88 +378,69 @@ var deployMetaData = function deployMetaData(inputData, inputMetaData) {
   var returnData = true;
   returnData = true;
 
-  if (!inputData || inputData === null || inputData === undefined) {
+  if (!inputData) {
     returnData = false;
   } else {
-    var _metaDataOutput;
-
     var aggregateCommandString = '';
     var getAttributeNameRule = [];
     var getAttributeValueRule = [];
     getAttributeNameRule[0] = s.cgetAttributeName;
-    getAttributeValueRule[0] = s.cgetAttributeValue;
+    getAttributeValueRule[0] = s.cgetAttributeValue; // for (let i = 1; i < inputData.length; i++) {
+    //   // BEGIN i-th iteration:
+    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+    //   // inputData[i] is:
+    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIis + inputData[i]);
+    //   aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
+    //   // aggregateCommandString is:
+    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.caggregateCommandStringIs + aggregateCommandString);
+    //   // END i-th iteration:
+    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+    // }
 
-    for (var i = 1; i < inputData.length; i++) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
+    inputData.shift();
+    var metaDataParameters = inputData.join(b.cSpace).split(b.cComa); // aggregateCommandString.split(b.cComa);
+    // metaDataParameters is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'inputData[i] is: ' + inputData[i]);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersIs + JSON.stringify(metaDataParameters)); // metaDataParameters length is:
 
-      aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'aggregateCommandString is: ' + aggregateCommandString);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersLengthIs + metaDataParameters.length);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
+    var metaDataOutput = {};
+
+    for (var i = 0; i < metaDataParameters.length; i++) {
+      var attributeJsonString = metaDataParameters[i]; // attributeJsonString is:
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cattributeJsonStringIs + attributeJsonString);
+
+      var appAttributeName = _ruleBroker["default"].processRules(attributeJsonString, '', getAttributeNameRule); // appAttributeName is:
+
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cappAttributeNameIs + appAttributeName);
+
+      var appAttributeValue = _ruleBroker["default"].processRules(attributeJsonString, '', getAttributeValueRule); // appAttributeValue is:
+
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cappAttributeValueIs + appAttributeValue);
+
+      if (appAttributeName.includes(w.cName) === true) {
+        _configurator["default"].setConfigurationSetting(s.cApplicationName, appAttributeValue);
+      } else if (appAttributeName.includes(w.cVersion) === true) {
+        _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, appAttributeValue);
+      } else if (appAttributeName.includes(w.cDescription) === true) {
+        _configurator["default"].setConfigurationSetting(s.cApplicationDescription, appAttributeValue);
+      } else {
+        _configurator["default"].setConfigurationSetting(appAttributeName, appAttributeValue);
+      }
+
+      metaDataOutput[appAttributeName] = appAttributeValue;
     }
-
-    var metaDataParameters = aggregateCommandString.split(b.cComa);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters is: ' + metaDataParameters);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters length is: ' + metaDataParameters.length);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[0] is: ' + metaDataParameters[0]);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[1] is: ' + metaDataParameters[1]);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataParameters[2] is: ' + metaDataParameters[2]);
-
-    var appNameJsonString = metaDataParameters[0];
-    var appVersionJsonString = metaDataParameters[1];
-    var appDescriptionJsonString = metaDataParameters[2];
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appName is: ' + appNameJsonString);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersion is: ' + appVersionJsonString);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescription is: ' + appDescriptionJsonString);
-
-    var appNameAttributeName = _ruleBroker["default"].processRules(appNameJsonString, '', getAttributeNameRule);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeName is: ' + appNameAttributeName);
-
-    var appVersionAttributeName = _ruleBroker["default"].processRules(appVersionJsonString, '', getAttributeNameRule);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeName is: ' + appVersionAttributeName);
-
-    var appDescriptionAttributeName = _ruleBroker["default"].processRules(appDescriptionJsonString, '', getAttributeNameRule);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeName is: ' + appDescriptionAttributeName);
-
-    var appNameAttributeValue = _ruleBroker["default"].processRules(appNameJsonString, '', getAttributeValueRule);
-
-    _configurator["default"].setConfigurationSetting(s.cApplicationName, appNameAttributeValue);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appNameAttributeValue is: ' + appNameAttributeValue);
-
-    var appVersionAttributeValue = _ruleBroker["default"].processRules(appVersionJsonString, '', getAttributeValueRule);
-
-    _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, appVersionAttributeValue);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appVersionAttributeValue is: ' + appVersionAttributeValue);
-
-    var appDescriptionAttributeValue = _ruleBroker["default"].processRules(appDescriptionJsonString, '', getAttributeValueRule);
-
-    _configurator["default"].setConfigurationSetting(s.cApplicationDescription, appDescriptionAttributeValue);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'appDescriptionAttributeValue is: ' + appDescriptionAttributeValue);
-
-    var metaDataOutput = (_metaDataOutput = {}, _defineProperty(_metaDataOutput, appNameAttributeName, appNameAttributeValue), _defineProperty(_metaDataOutput, appVersionAttributeName, appVersionAttributeValue), _defineProperty(_metaDataOutput, appDescriptionAttributeName, appDescriptionAttributeValue), _metaDataOutput);
 
     var metaDataPathAndFilename = _configurator["default"].getConfigurationSetting(s.cConfigurationPath);
 
-    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson);
+    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson); // metaDataPathAndFilename is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'metaDataPathAndFilename is: ' + metaDataPathAndFilename);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataPathAndFilenameIs + metaDataPathAndFilename);
 
     _fileBroker["default"].writeJsonData(metaDataPathAndFilename, metaDataOutput);
   }
@@ -474,7 +480,8 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
   var returnData = true;
 
   if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
-    console.log('RELEASE APPLICATION');
+    // RELEASE APPLICATION
+    console.log(s.cRELEASE_APPLICATION);
 
     var sourcePath = _configurator["default"].getConfigurationSetting(s.cBinaryRootPath);
 
@@ -483,16 +490,18 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
     var releaseResult = _fileBroker["default"].buildReleasePackage(sourcePath, destinationPath); // console.log('Release was completed: ' + releaseResult);
 
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Release was completed: ' + true);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBuildMessage2 + true);
 
     _configurator["default"].setConfigurationSetting(s.creleaseCompleted, true);
   } else {
     if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
-      console.log('ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.');
+      // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
+      console.log(s.cdeployApplicationMessage1a + s.cdeployApplicationMessage2a);
     }
 
     if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
-      console.log('ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.');
+      // ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.
+      console.log(s.cdeployApplicationMessage1b + s.cdeployApplicationMessage2a);
     }
   }
 
@@ -633,7 +642,8 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
 
       _queue["default"].enqueue(s.cCommandQueue, currentCommand);
     } else {
-      console.log('WARNING: nominal.commandSequencer: The specified command was not found, please enter a valid command and try again.');
+      // WARNING: nominal.commandSequencer: The specified command was not found, please enter a valid command and try again.
+      console.log(s.ccommandSequencerMessage1 + s.ccommandSequencerMessage2);
     }
   }
 
@@ -679,7 +689,7 @@ var workflow = function workflow(inputData, inputMetaData) {
   if (workflowValue !== false) {
     _queue["default"].enqueue(s.cCommandQueue, workflowValue);
   } else {
-    console.log('WARNING: nominal.workflow: The specified workflow: ' + workflowName + b.cComa + ' was not found in either the system defined workflows, or client defined workflows.' + ' Please enter a valid workflow name and try again.');
+    console.log(s.cworkflowMessage1 + workflowName + b.cComa + s.cworkflowMessage2 + s.cworkflowMessage3);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -719,8 +729,10 @@ var printDataHive = function printDataHive(inputData, inputMetaData) {
   var returnData = true;
 
   if (D[inputData[1]] !== undefined) {
+    // contents are:
     console.log(inputData[1] + ' contents are: ' + JSON.stringify(D[inputData[1]]));
   } else {
+    // contents of D are:
     console.log('contents of D are: ' + JSON.stringify(D));
   }
 
@@ -818,11 +830,13 @@ var businessRule = function businessRule(inputData, inputMetaData) {
   // there are any inputs that need to be passed into the business rule.
 
   for (var i = 1; i < inputData.length; i++) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Begin the i-th iteration of the inputData array. i is: ' + i);
+    // Begin the i-th iteration of the inputData array. i is:
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIterationOfInputDataArray + i);
 
     var currentRuleArg = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
+    // currentRule is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentRule is: ' + JSON.stringify(currentRuleArg));
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentRuleIs + JSON.stringify(currentRuleArg));
 
     var ruleArgs = [];
 
@@ -838,35 +852,38 @@ var businessRule = function businessRule(inputData, inputMetaData) {
       // In this case all of the arguments will have been combined into a single array and added to the ruleInputData.
       ruleInputMetaData = '';
     }
-  }
+  } // rules is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'rules is: ' + JSON.stringify(rules));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInputData is: ' + ruleInputData);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.crulesIs + JSON.stringify(rules)); // ruleInputData is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleInputMetaData is: ' + JSON.stringify(ruleInputMetaData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cruleInputDataIs + ruleInputData); // ruleInputMetaData is:
+
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cruleInputMetaData + JSON.stringify(ruleInputMetaData));
 
   if (businessRuleMetricsEnabled === true) {
     // Here we will capture the start time of the business rule we are about to execute.
     // After executing we will capture the end time and then
     // compute the difference to determine how many milliseconds it took to run the business rule.
-    businessRuleStartTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    businessRuleStartTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS); // Business Rule Start time is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Business Rule Start time is: ' + businessRuleStartTime);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBusinessRuleStartTimeIs + businessRuleStartTime);
   }
 
   ruleOutput = _ruleBroker["default"].processRules(ruleInputData, ruleInputMetaData, rules);
 
   if (businessRuleMetricsEnabled === true) {
     var performanceTrackingObject = {};
-    businessRuleEndTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    businessRuleEndTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS); // BusinessRule End time is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BusinessRule End time is: ' + businessRuleEndTime); // Now compute the delta time so we know how long it took to run that business rule.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBusinessRuleEndTimeIs + businessRuleEndTime); // Now compute the delta time so we know how long it took to run that business rule.
 
 
-    businessRuleDeltaTime = _timers["default"].computeDeltaTime(businessRuleStartTime, businessRuleEndTime);
+    businessRuleDeltaTime = _timers["default"].computeDeltaTime(businessRuleStartTime, businessRuleEndTime); // BusinessRule run-time is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BusinessRule run-time is: ' + businessRuleDeltaTime); // Check to make sure the business rule performance tracking stack exists or does not exist.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBusinessRuleRunTimeIs + businessRuleDeltaTime); // Check to make sure the business rule performance tracking stack exists or does not exist.
 
 
     if (D[s.cBusinessRulePerformanceTrackingStack] === undefined) {
@@ -878,8 +895,8 @@ var businessRule = function businessRule(inputData, inputMetaData) {
     }
 
     performanceTrackingObject = {
-      'Name': rules[0],
-      'RunTime': businessRuleDeltaTime
+      Name: rules[0],
+      RunTime: businessRuleDeltaTime
     };
 
     if (_stack["default"].contains(s.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
@@ -892,7 +909,8 @@ var businessRule = function businessRule(inputData, inputMetaData) {
   }
 
   if (businessRuleOutput === true) {
-    console.log('Rule output is: ' + JSON.stringify(ruleOutput));
+    // Rule output is:
+    console.log(s.cRuleOutputIs + JSON.stringify(ruleOutput));
   }
 
   businessRuleStartTime = '';
@@ -954,20 +972,22 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
   // i.e. treating the whole block as a single array and doing it's own split operation.
   // commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
   // commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
+  // commandString before attempted delimiter swap is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandString before attempted delimiter swap is: ' + commandString);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandStringBeforeAttemptedDelimiterSwapIs + commandString); // replaceCharacterWithCharacterRule is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'replaceCharacterWithCharacterRule is: ' + JSON.stringify(replaceCharacterWithCharacterRule));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creplaceCharacterWithCharacterRuleIs + JSON.stringify(replaceCharacterWithCharacterRule));
 
   var secondaryCommandDelimiterRegEx = new RegExp('\\' + secondaryCommandArgsDelimiter, 'g');
-  commandString = _ruleBroker["default"].processRules(commandString, [secondaryCommandDelimiterRegEx, primaryCommandDelimiter], replaceCharacterWithCharacterRule);
+  commandString = _ruleBroker["default"].processRules(commandString, [secondaryCommandDelimiterRegEx, primaryCommandDelimiter], replaceCharacterWithCharacterRule); // After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is: ' + commandString);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandGeneratorMessage1 + commandString);
 
   var tertiaryCommandDelimiterRegEx = new RegExp('\\' + tertiaryCommandDelimiter, 'g');
-  commandString = _ruleBroker["default"].processRules(commandString, [tertiaryCommandDelimiterRegEx, secondaryCommandArgsDelimiter], replaceCharacterWithCharacterRule);
+  commandString = _ruleBroker["default"].processRules(commandString, [tertiaryCommandDelimiterRegEx, secondaryCommandArgsDelimiter], replaceCharacterWithCharacterRule); // After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandArgsDelimiter commandString is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandArgsDelimiter commandString is: ' + commandString);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandGeneratorMessage2 + commandString);
 
   var currentCommand = _commandBroker["default"].getValidCommand(commandString, primaryCommandDelimiter);
 
@@ -983,13 +1003,17 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
           _queue["default"].enqueue(s.cCommandQueue, commandString);
         }
       } else {
-        console.log('WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered: ' + numberOfCommands);
+        // WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered:
+        console.log(s.ccommandGeneratorMessage3 + numberOfCommands);
       }
     } else {
-      console.log('WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number: ' + inputData[2]);
+      // WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number:
+      console.log(s.ccommandGeneratorMessage4 + inputData[2]);
     }
   } else {
-    console.log('WARNING: nominal.commandGenerator: The specified command: ' + commandString + ' was not found, please enter a valid command and try again.');
+    // WARNING: nominal.commandGenerator: The specified command:
+    // was not found, please enter a valid command and try again.
+    console.log(s.ccommandGeneratorMessage5 + commandString + s.ccommandGeneratorMessage6);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1037,9 +1061,11 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
   commandNameParsingRule[0] = s.cisValidCommandNameString;
   camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
   commandWordAliasListParsingRule[0] = s.cisStringList;
-  generateCommandAliasesRule[0] = s.cgenerateCommandAliases;
-  console.log('Command can be called by passing parameters and bypass the prompt system.');
-  console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
+  generateCommandAliasesRule[0] = s.cgenerateCommandAliases; // Command can be called by passing parameters and bypass the prompt system.
+
+  console.log(s.ccommandAliasGeneratorMessage1); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
+
+  console.log(s.ccommandAliasGeneratorMessage2);
 
   if (inputData.length === 0) {
     while (validCommandName === false) {
@@ -1052,17 +1078,20 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
       validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
 
       if (validCommandName === false) {
-        console.log('INVALID INPUT: Please enter a valid camel-case command name.');
+        // INVALID INPUT: Please enter a valid camel-case command name.
+        console.log(s.ccommandAliasGeneratorMessage3);
       }
     }
 
-    var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule);
+    var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule); // camelCaseCommandNameArray is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseCommandNameArray is: ' + JSON.stringify(camelCaseCommandNameArray));
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccamelCaseCommandNameArrayIs + JSON.stringify(camelCaseCommandNameArray));
 
     for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
-      var commandWord = camelCaseCommandNameArray[i];
-      console.log('current commandWord is: ' + commandWord);
+      var commandWord = camelCaseCommandNameArray[i]; // current commandWord is:
+
+      console.log(s.ccurrentCommandWordIs + commandWord);
       validCommandWordAliasList = false;
 
       if (commandWord != '') {
@@ -1076,7 +1105,8 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
           validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
 
           if (validCommandWordAliasList === false) {
-            console.log('INVALID INPUT: Please enter a valid command word alias list.');
+            // INVALID INPUT: Please enter a valid command word alias list.
+            console.log(s.ccommandAliasGeneratorMessage4);
           } else if (commandWordAliasList != '') {
             // As long as the user entered something we should be able to proceed!
             validCommandWordAliasList = true;
@@ -1093,17 +1123,23 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
       commandAliasDataStructure = JSON.parse(inputData[1]);
       validCommandInput = true;
     } catch (e) {
-      console.log('PARSER ERROR: ' + e.message);
-      console.log('INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.');
-      console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
+      // PARSER ERROR:
+      console.log(s.cPARSER_ERROR + e.message); // INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.
+
+      console.log(s.ccommandAliasGeneratorMessage5); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
+
+      console.log(s.ccommandAliasGeneratorMessage2);
     }
   } else {
-    console.log('INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.');
-    console.log('EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}');
+    // INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.
+    console.log(s.ccommandAliasGeneratorMessage5); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
+
+    console.log(s.ccommandAliasGeneratorMessage2);
   }
 
   if (validCommandInput === true) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasDataStructure is: ' + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
+    // ccommandAliasDataStructure is:
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandAliasDataStructureIs + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
     // TODO: Start generating all the possible combinations of the command words and command word aliases.
     // Pass the data object to a business rule to do the above task.
 
@@ -1168,7 +1204,8 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
       validEntry = _ruleBroker["default"].processRules(userDefinedConstant, '', validConstantRule);
 
       if (validEntry === false) {
-        console.log('INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.');
+        // INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.
+        console.log(s.cconstantsGeneratorMessage1);
       }
     }
   } else if (inputData.length === 2) {
@@ -1176,9 +1213,10 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
   } else {
     // We need to recombine all of the array elements after the 0-th element into a single string with spaces inbetween.
     userDefinedConstant = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
-  }
+  } // userDefinedConstant is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstant is: ' + userDefinedConstant); // First lets check if the constant is already defined, so we can warn the user.
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantIs + userDefinedConstant); // First lets check if the constant is already defined, so we can warn the user.
   // NOTE: It could be that the developer is just looking to optimize the existing constant,
   // but if not, a warning to the user would be a good idea!
 
@@ -1186,25 +1224,29 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
   var doesConstantExist = _ruleBroker["default"].processRules(userDefinedConstant, '', doesConstantExistRule);
 
   if (doesConstantExist === true) {
-    var constantType = _ruleBroker["default"].processRules(userDefinedConstant, '', getConstantTypeRule);
+    var constantType = _ruleBroker["default"].processRules(userDefinedConstant, '', getConstantTypeRule); // WARNING: The constant has already been defined in the following library(ies):
 
-    console.log('WARNING: The constant has already been defined in the following library(ies): ' + constantType);
+
+    console.log(s.cconstantsGeneratorMessage2 + constantType);
   }
 
   userDefinedConstant = userDefinedConstant.trim();
 
-  var wordCount = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsCountRule);
+  var wordCount = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsCountRule); // wordCount is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'wordCount is: ' + wordCount); // Now begin the fulfillment algorithm.
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cwordCountIs + wordCount); // Now begin the fulfillment algorithm.
 
 
   if (wordCount > 1) {
-    var wordsArray = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsArrayRule);
+    var wordsArray = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsArrayRule); // wordsArray is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'wordsArray is: ' + JSON.stringify(wordsArray));
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cwordsArrayIs + JSON.stringify(wordsArray));
 
     for (var j = 0; j < wordsArray.length; j++) {
-      console.log('Optimized constant definition for word: ' + b.cc + wordsArray[j] + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
+      // Optimized constant definition for word:
+      console.log(s.cOptimizedConstantDefinitionForWord + b.cc + wordsArray[j] + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
     }
   } else {
     console.log(b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
@@ -1258,7 +1300,8 @@ var constantsGeneratorList = function constantsGeneratorList(inputData, inputMet
       validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
 
       if (validEntry === false) {
-        console.log('INVALID INPUT: Please enter a valid constant list.');
+        // INVALID INPUT: Please enter a valid constant list.
+        console.log(s.cconstantsGeneratorListMessage1);
       }
     }
   } else if (inputData.length === 2) {
@@ -1267,16 +1310,18 @@ var constantsGeneratorList = function constantsGeneratorList(inputData, inputMet
     // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
     // The array elements will then be used to enqueue the command constantsGenerator.
     userDefinedConstantList = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
-  }
+  } // userDefinedConstantList is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList is: ' + userDefinedConstantList);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantListIs + userDefinedConstantList);
 
   if (userDefinedConstantList.includes(b.cComa) === true) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList contains comas');
+    // userDefinedConstantList contains comas
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantListContainsComas);
 
-    var userDefinedConstantsListArray = userDefinedConstantList.split(b.cComa);
+    var userDefinedConstantsListArray = userDefinedConstantList.split(b.cComa); // userDefinedConstantsListArray is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantsListArray is: ' + JSON.stringify(userDefinedConstantsListArray));
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantsListArrayIs + JSON.stringify(userDefinedConstantsListArray));
 
     if (userDefinedConstantsListArray.length > 1) {
       for (var i = 0; i < userDefinedConstantsListArray.length; i++) {
@@ -1287,7 +1332,8 @@ var constantsGeneratorList = function constantsGeneratorList(inputData, inputMet
       _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantsListArray[0].trim());
     }
   } else {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList DOES NOT contains comas'); // Just enqueue the constants Generator command with the input directly.
+    // userDefinedConstantList DOES NOT contain comas
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantsListDoesNotContainComas); // Just enqueue the constants Generator command with the input directly.
 
 
     _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantList.trim());
@@ -1347,7 +1393,8 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
       validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
 
       if (validEntry === false) {
-        console.log('INVALID INPUT: Please enter a valid constant list.');
+        // INVALID INPUT: Please enter a valid constant list.
+        console.log(s.cconstantsGeneratorListMessage1);
       }
     }
   } else if (inputData.length === 2) {
@@ -1356,25 +1403,28 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
     // Combine all of the input parameters back into a single string then we will parse it for coma's into an array.
     // The array elements will then be used to enqueue the command constantsGenerator.
     userDefinedConstantList = _ruleBroker["default"].processRules(inputData, '', recombineArrayInputRule);
-  }
+  } // userDefinedConstantList is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList is: ' + userDefinedConstantList);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantListIs + userDefinedConstantList);
 
   if (userDefinedConstantList.includes(b.cComa) === true) {
     wordsArray = userDefinedConstantList.split(b.cComa);
   } else {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'userDefinedConstantList DOES NOT contains comas'); // Check and see if there is another delimiter we can use to break up the string into an array,
+    // userDefinedConstantList DOES NOT contain comas
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantsListDoesNotContainComas); // Check and see if there is another delimiter we can use to break up the string into an array,
     // such as a space character, Maybe the user entered a sentence and would like all the words of the sentence to be optimized.
 
 
     wordsArray = _ruleBroker["default"].processRules(userDefinedConstantList, '', wordsArrayFromStringRule);
-  }
+  } // wordsArray is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'wordsArray is: ' + JSON.stringify(wordsArray));
 
-  commonPatternsArray = _ruleBroker["default"].processRules(wordsArray, '', searchForPatternsInStringArrayRule);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cwordsArrayIs + JSON.stringify(wordsArray));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commonPatternsArray is: ' + JSON.stringify(commonPatternsArray)); // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
+  commonPatternsArray = _ruleBroker["default"].processRules(wordsArray, '', searchForPatternsInStringArrayRule); // commonPatternsArray is:
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray)); // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
 
 
   _ruleBroker["default"].processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
@@ -1431,45 +1481,47 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
 
       for (var j = 0; j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); j++) {
         if (D[s.cBusinessRulePerformanceTrackingStack][j][w.cName] === currentBusinessRuleName) {
-          businessRuleCounter = businessRuleCounter + 1;
+          businessRuleCounter = businessRuleCounter + 1; // businessRuleCounter is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRuleCounter is: ' + businessRuleCounter);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cbusinessRuleCounterIs + businessRuleCounter);
 
-          businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime];
+          businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime]; // businessRulePerformanceSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceSum is: ' + businessRulePerformanceSum);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cbusinessRulePerformanceSumIs + businessRulePerformanceSum);
         }
-      }
+      } // DONE! businessRulePerformanceSum is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! businessRulePerformanceSum is: ' + businessRulePerformanceSum);
 
-      average = businessRulePerformanceSum / businessRuleCounter;
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneBusinessRulePerformanceSumIs + businessRulePerformanceSum);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average); // Now go back through them all so we can compute the standard deviation
+      average = businessRulePerformanceSum / businessRuleCounter; // average is:
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.caverageIs + average); // Now go back through them all so we can compute the standard deviation
 
 
       for (var _j = 0; _j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); _j++) {
         if (D[s.cBusinessRulePerformanceTrackingStack][_j][w.cName] === currentBusinessRuleName) {
-          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[s.cBusinessRulePerformanceTrackingStack][_j][s.cRunTime] - average, 2);
+          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[s.cBusinessRulePerformanceTrackingStack][_j][s.cRunTime] - average, 2); // businessRulePerformanceStdSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cbusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
         }
-      }
+      } // DONE! businessRulePerformanceStdSum is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!! businessRulePerformanceStdSum is: ' + businessRulePerformanceStdSum);
 
-      standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneBusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'standardDev is: ' + standardDev);
+      standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter); // standardDev is:
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cstandardDevIs + standardDev);
 
       if (D[s.cBusinessRulesPerformanceAnalysisStack] === undefined) {
         _stack["default"].initStack(s.cBusinessRulesPerformanceAnalysisStack);
       }
 
       _stack["default"].push(s.cBusinessRulesPerformanceAnalysisStack, {
-        'Name': currentBusinessRuleName,
-        'Average': average,
-        'StandardDeviation': standardDev
+        Name: currentBusinessRuleName,
+        Average: average,
+        StandardDeviation: standardDev
       });
     }
 
@@ -1537,45 +1589,47 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
 
       for (var j = 0; j < _stack["default"].length(s.cCommandPerformanceTrackingStack); j++) {
         if (D[s.cCommandPerformanceTrackingStack][j][w.cName] === currentCommandName) {
-          commandCounter = commandCounter + 1;
+          commandCounter = commandCounter + 1; // commandCounter is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandCounter is: ' + commandCounter);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandCounterIs + commandCounter);
 
-          commandPerformanceSum = commandPerformanceSum + D[s.cCommandPerformanceTrackingStack][j][s.cRunTime];
+          commandPerformanceSum = commandPerformanceSum + D[s.cCommandPerformanceTrackingStack][j][s.cRunTime]; // commandPerformanceSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandPerformanceSum is: ' + commandPerformanceSum);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandPerformanceSumIs + commandPerformanceSum);
         }
-      }
+      } // DONE! commandPerformanceSum is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! commandPerformanceSum is: ' + commandPerformanceSum);
 
-      average = commandPerformanceSum / commandCounter;
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneCommandPerformanceSumIs + commandPerformanceSum);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'average is: ' + average); // Now go back through them all so we can compute the standard deviation
+      average = commandPerformanceSum / commandCounter; // average is:
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.caverageIs + average); // Now go back through them all so we can compute the standard deviation
 
 
       for (var _j2 = 0; _j2 < _stack["default"].length(s.cCommandPerformanceTrackingStack); _j2++) {
         if (D[s.cCommandPerformanceTrackingStack][_j2][w.cName] === currentCommandName) {
-          commandPerformanceStdSum = commandPerformanceStdSum + math.pow(D[s.cCommandPerformanceTrackingStack][_j2][s.cRunTime] - average, 2);
+          commandPerformanceStdSum = commandPerformanceStdSum + math.pow(D[s.cCommandPerformanceTrackingStack][_j2][s.cRunTime] - average, 2); // commandPerformanceStdSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandPerformanceStdSum is: ' + commandPerformanceStdSum);
+          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandPerformanceStdSumIs + commandPerformanceStdSum);
         }
-      }
+      } // DONE! commandPerformanceStdSum is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DONE!!!!!! commandPerformanceStdSum is: ' + commandPerformanceStdSum);
 
-      standardDev = math.sqrt(commandPerformanceStdSum / commandCounter);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneCommandPerformanceStdSumIs + commandPerformanceStdSum);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'standardDev is: ' + standardDev);
+      standardDev = math.sqrt(commandPerformanceStdSum / commandCounter); // standardDev is:
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cstandardDevIs + standardDev);
 
       if (D[s.cCommandsPerformanceAnalysisStack] === undefined) {
         _stack["default"].initStack(s.cCommandsPerformanceAnalysisStack);
       }
 
       _stack["default"].push(s.cCommandsPerformanceAnalysisStack, {
-        'Name': currentCommandName,
-        'Average': average,
-        'StandardDeviation': standardDev
+        Name: currentCommandName,
+        Average: average,
+        StandardDeviation: standardDev
       });
     }
 
@@ -1625,26 +1679,27 @@ var convertColors = function convertColors(inputData, inputMetaData) {
   var colorConvertionRule = [];
   colorConvertionRule[0] = s.creplaceCharacterWithCharacter;
   colorConvertionRule[1] = s.chex2rgbConversion;
-  var colorKeys = Object.keys(D[s.cColors][s.cColorData]);
+  var colorKeys = Object.keys(D[s.cColors][s.cColorData]); // colorKeys is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'colorKeys is: ' + JSON.stringify(colorKeys));
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccolorKeysIs + JSON.stringify(colorKeys));
 
   for (var i = 0; i < colorKeys.length; i++) {
-    var currentColorName = colorKeys[i];
+    var currentColorName = colorKeys[i]; // currentColorName is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorName is: ' + currentColorName);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentColorNameIs + currentColorName);
 
-    var currentColorObject = D[w.cColors][s.cColorData][currentColorName];
+    var currentColorObject = D[w.cColors][s.cColorData][currentColorName]; // currentColorObject is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorObject is: ' + JSON.stringify(currentColorObject));
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentColorObjectIs + JSON.stringify(currentColorObject));
 
-    var currentColorHexValue = currentColorObject[s.cHexValue];
+    var currentColorHexValue = currentColorObject[s.cHexValue]; // currentColorHexValue is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentColorHexValue is: ' + currentColorHexValue);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentColorHexValueIs + currentColorHexValue);
 
-    var ruleOutput = _ruleBroker["default"].processRules(currentColorHexValue, [b.cHash, ''], colorConvertionRule);
+    var ruleOutput = _ruleBroker["default"].processRules(currentColorHexValue, [b.cHash, ''], colorConvertionRule); // ruleOutput is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'ruleOutput is: ' + ruleOutput);
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cruleOutputIs + ruleOutput);
 
     console.log(currentColorName + b.cComa + currentColorHexValue + b.cComa + ruleOutput[0] + b.cComa + ruleOutput[1] + b.cComa + ruleOutput[2]);
   }

@@ -178,6 +178,16 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.isConstantValid(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccountDuplicateCommandAliases, function (inputData, inputMetaData) {
     return stringParsing.countDuplicateCommandAliases(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgenerateCommandAliases, function (inputData, inputMetaData) {
+    return stringParsing.generateCommandAliases(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.csolveLehmerCode, function (inputData, inputMetaData) {
+    return stringParsing.solveLehmerCode(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.crecursiveArrayExpansion, function (inputData, inputMetaData) {
+    return stringParsing.recursiveArrayExpansion(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetLehmerCodeValue, function (inputData, inputMetaData) {
+    return stringParsing.getLehmerCodeValue(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.carraysAreEqual, function (inputData, inputMetaData) {
+    return stringParsing.arraysAreEqual(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {
     return stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryDetailNameFromDataContextName, function (inputData, inputMetaData) {
@@ -194,6 +204,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.getFirstTopLevelFolderFromPath(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cloadDataFile, function (inputData, inputMetaData) {
     return stringParsing.loadDataFile(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.csupportedFileFormatsAre, function (inputData, inputMetaData) {
+    return stringParsing.supportedFileFormatsAre(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetStoredData, function (inputData, inputMetaData) {
     return stringParsing.getStoredData(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cstoreData, function (inputData, inputMetaData) {
@@ -226,16 +238,6 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.cleanCommandInput(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.caggregateCommandArguments, function (inputData, inputMetaData) {
     return stringParsing.aggregateCommandArguments(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cgenerateCommandAliases, function (inputData, inputMetaData) {
-    return stringParsing.generateCommandAliases(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.csolveLehmerCode, function (inputData, inputMetaData) {
-    return stringParsing.solveLehmerCode(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.crecursiveArrayExpansion, function (inputData, inputMetaData) {
-    return stringParsing.recursiveArrayExpansion(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cgetLehmerCodeValue, function (inputData, inputMetaData) {
-    return stringParsing.getLehmerCodeValue(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.carraysAreEqual, function (inputData, inputMetaData) {
-    return stringParsing.arraysAreEqual(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength1, function (inputData, inputMetaData) {
     return stringGeneration.generateRandomMixedCaseTextByLength1(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength2, function (inputData, inputMetaData) {

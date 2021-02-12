@@ -13,6 +13,7 @@
  * @requires module:fileBroker
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:numeric-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
@@ -32,6 +33,7 @@ import dataBroker from '../../Executrix/dataBroker';
 import fileBroker from '../../Executrix/fileBroker';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
+import * as n from '../../Constants/numeric.constants';
 import * as w from '../../Constants/word.constants';
 import * as s from '../../Constants/system.constants';
 const lineByLine = require('n-readlines');

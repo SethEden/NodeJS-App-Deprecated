@@ -1,0 +1,1 @@
+This is where log files will show up if the logFilesEnabled flag is set in the configuration file.

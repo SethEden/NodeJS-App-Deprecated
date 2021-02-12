@@ -91,15 +91,19 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function scanDataPath(dataPath) {
   let functionName = scanDataPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // dataPath is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath is: ' + dataPath);
   let rules = {};
   let filesFound = [];
   // rules[1] = s.cswapFowardSlashToBackSlash;
   rules[1] = s.cswapBackSlashToForwardSlash;
+  // execute business rules:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
   dataPath = ruleBroker.processRules(dataPath, '', rules);
+  // dataPath after business rules processing is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataPath after business rules processing is: ' + dataPath);
   filesFound = fileBroker.readDirectoryContents(dataPath);
+  // cfilesFound is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesFound is: ' + JSON.stringify(filesFound));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return filesFound;
@@ -120,7 +124,9 @@ function loadAllCsvData(filesToLoad, contextName) {
   // console.log('contextName is: ' + contextName);
   let functionName = loadAllCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // filesToLoad is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
+  // contextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
   let rules = {};
   let fileExtensionRules = {};
@@ -132,25 +138,31 @@ function loadAllCsvData(filesToLoad, contextName) {
   for (let i = 0; i &lt; filesToLoad.length; i++) {
     let fileToLoad = filesToLoad[i];
     // console.log('File to load is: ' + fileToLoad)
+    // File to load is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'File to load is: ' + fileToLoad);
     // NOTE: We still need a filename to use as a context for the page data that we just loaded.
     // A context name will be composed of the input context name with the file name we are processing
     // which tells us where we will put the data in the D[contextName] sub-structure.
     let fileExtension = ruleBroker.processRules(fileToLoad, '', fileExtensionRules);
     // console.log('fileExtension is: ' + fileExtension);
+    // fileExtension is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'fileExtension is: ' + fileExtension);
     if (fileExtension === g.ccsv || fileExtension === g.cCsv || fileExtension === g.cCSV) {
       // console.log('execute business rules: ' + JSON.stringify(rules));
+      // execute business rules:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
       contextName = contextName + b.cUnderscore + ruleBroker.processRules(fileToLoad, '', rules);
       // console.log('contextName is: ' + contextName);
+      // contextName is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
       let dataFile = fileBroker.getCsvData(fileToLoad);
       // console.log('loaded file data is: ' + JSON.stringify(dataFile));
+      // loaded file data is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'loaded file data is: ' + JSON.stringify(dataFile));
       parsedDataFile = processCsvData(dataFile, contextName);
     }
   }
+  // parsedDataFile is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'parsedDataFile is: ' + JSON.stringify(parsedDataFile));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('parsedDataFile is: ' + JSON.stringify(parsedDataFile));
@@ -174,7 +186,9 @@ function loadAllXmlData(filesToLoad, contextName) {
   // console.log('contextName is: ' + contextName);
   let functionName = loadAllXmlData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // filesToLoad is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'filesToLoad is: ' + JSON.stringify(filesToLoad));
+  // contextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
   let j = 0;
   let multiMergedData = {};
@@ -193,26 +207,33 @@ function loadAllXmlData(filesToLoad, contextName) {
     // console.log('****************************************************');
     let fileToLoad = filesToLoad[i];
     // console.log('execute business rules: ' + JSON.stringify(filePathRules));
+    // execute business rules:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(filePathRules));
     fileToLoad = ruleBroker.processRules(fileToLoad, '', filePathRules);
     // console.log('File to Load is: ' + fileToLoad);
+    // File to load is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'File to load is: ' + fileToLoad);
     // NOTE We still need a filename to use as a context for the page data that we just loaded.
     // A context name will be composed of the input context name with the file name we are processing
     // which tells us where we will put the data in the D[contextName] sub-structure.
     let fileExtension = ruleBroker.processRules(fileToLoad, '', fileExtensionRules);
     // console.log('fileExtension is: ' + fileExtension);
+    // fileExtension is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'fileExtension is: ' + fileExtension);
     if (fileExtension === g.cxml || fileExtension === g.cXml || fileExtension === g.cXML) {
       // console.log('execute business rules: ' + JSON.stringify(fileNameRules));
+      // execute business rules:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(fileNameRules));
       contextName = contextName + b.cUnderscore + ruleBroker.processRules(fileToLoad, '', fileNameRules);
       // console.log('contextName is: ' + contextName);
+      // contextName is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
       let dataFile = fileBroker.getXmlData(fileToLoad);
       // console.log('loaded file data is: ' + JSON.stringify(dataFile));
+      // loaded file data is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'loaded file data is: ' + JSON.stringify(dataFile));
       // console.log('BEGIN PROCESSING ADDITIONAL DATA');
+      // BEGIN PROCESSING ADDITIONAL DATA
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN PROCESSING ADDITIONAL DATA');
       // console.log('j merge controller is: ' + j);
       if (j === 0) {
@@ -223,8 +244,10 @@ function loadAllXmlData(filesToLoad, contextName) {
         multiMergedData = mergeData(multiMergedData, w.cPage, '', dataFile);
       }
       // console.log('DONE PROCESSING ADDITIONAL DATA');
+      // DONE PROCESSING ADDITIONAL DATA
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE PROCESSING ADDITIONAL DATA');
       // console.log('MERGED data is: ' + JSON.stringify(multiMergedData));
+      // MERGED data is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'MERGED data is: ' + JSON.stringify(multiMergedData));
       dataFile = {};
     }
@@ -235,6 +258,7 @@ function loadAllXmlData(filesToLoad, contextName) {
   }
   parsedDataFile = {}; // Clear it, so we can re-assign it to the merged locator data from all the files.
   parsedDataFile = multiMergedData;
+  // parsedDataFile contents are:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'parsedDataFile contents are: ' + JSON.stringify(parsedDataFile));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('parsedDataFile contents are: ' + JSON.stringify(parsedDataFile));
@@ -257,11 +281,14 @@ function processCsvData(data, contextName) {
   // console.log('contextName is: ' + contextName);
   let functionName = processCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // input data is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input data is: ' + JSON.stringify(data));
+  // contextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'contextName is: ' + contextName);
   let parsedData = extractDataFromPapaParseObject(data, contextName);
   let dataCatagory = getDataCatagoryFromContextName(contextName);
   // console.log('dataCatagory is: ' + dataCatagory);
+  // dataCatagory is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is: ' + dataCatagory);
   let dataCatagoryDetailName;
   if (contextName.includes(w.cWorkflow)) {
@@ -281,7 +308,9 @@ function processCsvData(data, contextName) {
       mergeData(D, dataCatagory, '', 0, parsedData);
     }
   }
+  // fully parsed data is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'fully parsed data is: ' + JSON.stringify(parsedData));
+  // D final merge is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'D final merge is: ' + JSON.stringify(D));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('fully parsed data is: ' + JSON.stringify(parsedData));
@@ -323,13 +352,15 @@ function setupDataStorage() {
 function storeData(dataStorageContextName, dataToStore) {
   let functionName = storeData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // dataStorageContextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataStorageContextName is: ' + dataStorageContextName);
+  // dataToStore is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToStore is: ' + JSON.stringify(dataToStore));
   let returnData = false;
   D[s.cDataStorage][dataStorageContextName] = {};
   D[s.cDataStorage][dataStorageContextName] = dataToStore;
   returnData = true;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
 };
@@ -345,12 +376,13 @@ function storeData(dataStorageContextName, dataToStore) {
 function getData(dataStorageContextName) {
   let functionName = storeData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // dataStorageContextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataStorageContextName is: ' + dataStorageContextName);
   let returnData = false;
   if (D[s.cDataStorage][dataStorageContextName] !== null &amp;&amp; !!D[s.cDataStorage][dataStorageContextName]) {
     returnData = D[s.cDataStorage][dataStorageContextName];
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
 };
@@ -385,12 +417,15 @@ function clearData(dataStorageContextName) {
 function getDataCatagoryFromContextName(contextName) {
   let functionName = getDataCatagoryFromContextName.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // input contextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
   let rules = {};
   let dataCatagory = '';
   rules[1] = s.cgetDataCatagoryFromDataContextName;
+  // execute business rules:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
   dataCatagory = ruleBroker.processRules(contextName, '', rules);
+  // dataCatagory is:
   loggers.consoleLog(baseFileName, b.cDot + functionName, 'dataCatagory is: ' + dataCatagory);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return dataCatagory;
@@ -407,12 +442,15 @@ function getDataCatagoryFromContextName(contextName) {
 function getDataCatagoryDetailNameFromContextName(contextName) {
   let functionName = getDataCatagoryDetailNameFromContextName.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // input contextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
   let rules = {};
   let dataCatagoryDetailName = '';
   rules[1] = s.cgetDataCatagoryDetailNameFromDataContextName;
+  // execute business rules:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
   dataCatagoryDetailName = ruleBroker.processRules(contextName, '', rules);
+  // dataCatagoryDetailsName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagoryDetailsName is: ' + dataCatagoryDetailName);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return dataCatagoryDetailName;
@@ -433,7 +471,9 @@ function extractDataFromPapaParseObject(data, contextName) {
   // console.log('data is: ' + JSON.stringify(data));
   let functionName = extractDataFromPapaParseObject.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // input contextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input contextName is: ' + contextName);
+  // input data is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'input data is: ' + JSON.stringify(data));
   let cleanKeysRules = {};
   let tempData = {};
@@ -499,6 +539,8 @@ function extractDataFromPapaParseObject(data, contextName) {
     } // End-else
   } // End-for (var i = 0; i&lt;=highLevelDataCount; i++)
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'output data is: ' + JSON.stringify(tempData));
+  // tempData is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, 'tempData is: ' + tempData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('output data is: ' + JSON.stringify(tempData));
   // console.log('END dataBroker.extractDataFromPapaParseObject function');
@@ -520,47 +562,64 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
   let functionName = mergeData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // console.log('BEGIN dataBroker.mergeData function');
+  // targetData is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData is: ' + JSON.stringify(targetData));
   // console.log('targetData is: ' + JSON.stringify(targetData));
+  // dataCatagory is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is: ' + dataCatagory);
   // console.log('dataCatagory is: ' + dataCatagory);
+  // pageName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
   // console.log('pageName is: ' + pageName);
+  // data to Merge is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'data to Merge is: ' + JSON.stringify(dataToMerge));
   // console.log('data to Merge is: ' + JSON.stringify(dataToMerge));
   let dataToMergeElementCount = getDataElementCount(dataToMerge, '', '');
+  // dataToMergeElementCount is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToMergeElementCount is: ' + dataToMergeElementCount);
   // console.log('dataToMergeElementCount is: ' + dataToMergeElementCount);
   if (dataToMergeElementCount === 1) {
+    // dataToMergeElementCount is 1
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataToMergeElementCount is 1');
     // console.log('dataToMergeElementCount is 1');
+    // check if the pageName is not an empty string
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'check if the pageName is not an empty string');
     // console.log('check if the pageName is not an empty string');
     if (pageName !== '') {
+      // pageName is not an empty string
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is not an empty string');
       // console.log('pageName is not an empty string');
+      // Check if the dataCatagory is an empty string or not
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'Check if the dataCatagory is an empty string or not');
       // console.log('Check if the dataCatagory is an empty string or not');
       if (dataCatagory !== '') {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is not an empty string!!');
-        // console.log('dataCatagory is not an empty string!!');
+        // dataCatagory is not an empty string!
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory is not an empty string!');
+        // console.log('dataCatagory is not an empty string!');
         Object.assign(targetData[dataCatagory][pageName], dataToMerge);
       } else {
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory IS an empty string!!!!');
-        // console.log('dataCatagory IS an empty string!!!!');
+        // dataCatagory IS an empty string!
+        loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataCatagory IS an empty string!');
+        // console.log('dataCatagory IS an empty string!');
+        // data to Merge is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'data to Merge is: ' + JSON.stringify(dataToMerge));
         // console.log('data to Merge is: ' + JSON.stringify(dataToMerge));
+        // targetData content is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData content is: ' + JSON.stringify(targetData));
         // console.log('targetData content is: ' + JSON.stringify(targetData));
         Object.assign(targetData[pageName], dataToMerge);
+        // after attempt to merge, results are:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'after attempt to merge, results are: ');
         // console.log('after attempt to merge, results are: ');
+        // Merged data is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'Merged data is: ' + JSON.stringify(dataToMerge));
         // console.log('Merged data is: ' + JSON.stringify(dataToMerge));
+        // targetData content is:
         loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData content is: ' + JSON.stringify(targetData));
         // console.log('targetData content is: ' + JSON.stringify(targetData));
       }
     } else {
+      // pageName is an empty string
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is an empty string');
       // console.log('pageName is an empty string');
       if (targetData[dataCatagory] === undefined) {
@@ -570,21 +629,26 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
       Object.assign(targetData[dataCatagory], dataToMerge);
     }
   } else {
+    // Caught the special case that we are merging a flat list.
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'Caught the special case that we are merging a flat list.');
     // console.log('Caught the special case that we are merging a flat list.');
+    // targetData content is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData content is: ' + JSON.stringify(targetData));
     // console.log('targetData content is: ' + JSON.stringify(targetData));
     for (let key in dataToMerge) {
+      // inside the for-loop
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'inside the for-loop');
       // console.log('inside the for-loop');
+      // key is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'key is: ' + key);
       // console.log('key is: ' + key);
+      // pageName is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
       // console.log('pageName is: ' + pageName);
       targetData[pageName][key] = dataToMerge[key];
     }
   }
-
+  // targetData is modified in the input pass-by-reference variable content is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'targetData is modified in the input pass-by-reference variable content is: ' +
     JSON.stringify(targetData));
   // console.log('targetData is modified in the input pass-by-reference variable content is: ' + JSON.stringify(targetData));
@@ -606,17 +670,21 @@ function mergeData(targetData, dataCatagory, pageName, dataToMerge) {
 function getDataElement(dataObject, pageName, elementName) {
   let functionName = getDataElement.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // dataObject value is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataObject value is: ' + JSON.stringify(dataObject));
+  // pageName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
+  // elementName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'elementName is: ' + elementName);
-  let returnString = dataObject[pageName][elementName];
+  let returnData = dataObject[pageName][elementName];
   let rules = {};
   rules[1] = s.cCleanCarriageReturnFromString;
+  // execute business rules:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(rules));
-  returnString = ruleBroker.processRules(returnString, '', rules);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnString is: ' + returnString);
+  returnData = ruleBroker.processRules(returnData, '', rules);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return returnString;
+  return returnData;
 };
 
 /**
@@ -635,8 +703,11 @@ function getDataElement(dataObject, pageName, elementName) {
 function getDataElementCount(dataObject, pageName, elementNamePattern) {
   let functionName = getDataElementCount.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // dataObject is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'dataObject is: ' + JSON.stringify(dataObject));
+  // pageName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'pageName is: ' + pageName);
+  // elementNamePattern is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'elementNamePattern is: ' + elementNamePattern);
   let elementCollection;
   let elementCount = 0;
@@ -656,6 +727,7 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
       }
     }
   }
+  // elementCount is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, 'elementCount is: ' + elementCount);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return elementCount;
@@ -725,7 +797,7 @@ export default {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 01 2021 06:56:25 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 10 2021 11:35:06 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

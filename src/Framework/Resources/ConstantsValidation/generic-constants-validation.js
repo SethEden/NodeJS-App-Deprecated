@@ -70,6 +70,9 @@ export const genericConstantsValidation = [
    {Name: 'cAllNumbers', Actual: g.cAllNumbers, Expected: '0123456789'},
 
    // File Extensions
+   {Name: 'cexe', Actual: g.cexe, Expected: 'exe'},
+   {Name: 'cExe', Actual: g.cExe, Expected: 'Exe'},
+   {Name: 'cEXE', Actual: g.cEXE, Expected: 'EXE'},
    {Name: 'cdoc', Actual: g.cdoc, Expected: 'doc'},
    {Name: 'cDoc', Actual: g.cDoc, Expected: 'Doc'},
    {Name: 'cDOC', Actual: g.cDOC, Expected: 'DOC'},
@@ -88,6 +91,9 @@ export const genericConstantsValidation = [
    {Name: 'cxml', Actual: g.cxml, Expected: 'xml'},
    {Name: 'cXml', Actual: g.cXml, Expected: 'Xml'},
    {Name: 'cXML', Actual: g.cXML, Expected: 'XML'},
+   {Name: 'clog', Actual: g.clog, Expected: 'log'},
+   {Name: 'cLog', Actual: g.cLog, Expected: 'Log'},
+   {Name: 'cLOG', Actual: g.cLOG, Expected: 'LOG'},
    {Name: 'cjson', Actual: g.cjson, Expected: 'json'},
    {Name: 'cJson', Actual: g.cJson, Expected: 'Json'},
    {Name: 'cJSON', Actual: g.cJSON, Expected: 'JSON'},
@@ -95,6 +101,9 @@ export const genericConstantsValidation = [
    {Name: 'cEnv', Actual: g.cEnv, Expected: 'Env'},
    {Name: 'cENV', Actual: g.cENV, Expected: 'ENV'},
 
+   {Name: 'cDotexe', Actual: g.cDotexe, Expected: '.exe'},
+   {Name: 'cDotExe', Actual: g.cDotExe, Expected: '.Exe'},
+   {Name: 'cDotEXE', Actual: g.cDotEXE, Expected: '.EXE'},
    {Name: 'cDotcsv', Actual: g.cDotcsv, Expected: '.csv'},
    {Name: 'cDotCsv', Actual: g.cDotCsv, Expected: '.Csv'},
    {Name: 'cDotCSV', Actual: g.cDotCSV, Expected: '.CSV'},
@@ -108,6 +117,9 @@ export const genericConstantsValidation = [
    {Name: 'cDotxml', Actual: g.cDotxml, Expected: '.xml'},
    {Name: 'cDotXml', Actual: g.cDotXml, Expected: '.Xml'},
    {Name: 'cDotXML', Actual: g.cDotXML, Expected: '.XML'},
+   {Name: 'cDotlog', Actual: g.cDotlog, Expected: '.log'},
+   {Name: 'cDotLog', Actual: g.cDotLog, Expected: '.Log'},
+   {Name: 'cDotLOG', Actual: g.cDotLOG, Expected: '.LOG'},
    {Name: 'cDotjson', Actual: g.cDotjson, Expected: '.json'},
    {Name: 'cDotJson', Actual: g.cDotJson, Expected: '.Json'},
    {Name: 'cDotJSON', Actual: g.cDotJSON, Expected: '.JSON'},
@@ -197,6 +209,7 @@ export const genericConstantsValidation = [
    {Name: 'cDecember', Actual: g.cDecember, Expected: 'December'},
 
    // Miscelanious
+   {Name: 'cUTF8', Actual: g.cUTF8, Expected: 'UTF8'},
    {Name: 'cconst', Actual: g.cconst, Expected: 'const'},
    {Name: 'cConst', Actual: g.cConst, Expected: 'Const'},
    {Name: 'cASAP', Actual: g.cASAP, Expected: 'ASAP'},
@@ -208,5 +221,12 @@ export const genericConstantsValidation = [
    {Name: 'cargs', Actual: g.cargs, Expected: 'args'},
    {Name: 'cArgs', Actual: g.cArgs, Expected: 'Args'},
    {Name: 'chex', Actual: g.chex, Expected: 'hex'},
-   {Name: 'cHex', Actual: g.cHex, Expected: 'Hex'}
+   {Name: 'cHex', Actual: g.cHex, Expected: 'Hex'},
+   {Name: 'cregEx', Actual: g.cregEx, Expected: 'regEx'},
+   {Name: 'cRegEx', Actual: g.cRegEx, Expected: 'RegEx'},
+   {Name: 'cregExp', Actual: g.cregExp, Expected: 'regExp'},
+   {Name: 'cRegExp', Actual: g.cRegExp, Expected: 'RegExp'},
+   {Name: 'cbin', Actual: g.cbin, Expected: 'bin'},
+   {Name: 'cBin', Actual: g.cBin, Expected: 'Bin'},
+   {Name: 'cBIN', Actual: g.cBIN, Expected: 'BIN'}
  ];

@@ -155,6 +155,22 @@ var genericConstantsValidation = [{
   Name: 'cNoteql',
   Actual: g.cNoteql,
   Expected: 'Noteql'
+}, {
+  Name: 'cmax',
+  Actual: g.cmax,
+  Expected: 'max'
+}, {
+  Name: 'cMax',
+  Actual: g.cMax,
+  Expected: 'Max'
+}, {
+  Name: 'cmin',
+  Actual: g.cmin,
+  Expected: 'min'
+}, {
+  Name: 'cMin',
+  Actual: g.cMin,
+  Expected: 'Min'
 }, // Test Status
 {
   Name: 'cPass',
@@ -196,6 +212,18 @@ var genericConstantsValidation = [{
   Expected: '0123456789'
 }, // File Extensions
 {
+  Name: 'cexe',
+  Actual: g.cexe,
+  Expected: 'exe'
+}, {
+  Name: 'cExe',
+  Actual: g.cExe,
+  Expected: 'Exe'
+}, {
+  Name: 'cEXE',
+  Actual: g.cEXE,
+  Expected: 'EXE'
+}, {
   Name: 'cdoc',
   Actual: g.cdoc,
   Expected: 'doc'
@@ -268,6 +296,18 @@ var genericConstantsValidation = [{
   Actual: g.cXML,
   Expected: 'XML'
 }, {
+  Name: 'clog',
+  Actual: g.clog,
+  Expected: 'log'
+}, {
+  Name: 'cLog',
+  Actual: g.cLog,
+  Expected: 'Log'
+}, {
+  Name: 'cLOG',
+  Actual: g.cLOG,
+  Expected: 'LOG'
+}, {
   Name: 'cjson',
   Actual: g.cjson,
   Expected: 'json'
@@ -291,6 +331,18 @@ var genericConstantsValidation = [{
   Name: 'cENV',
   Actual: g.cENV,
   Expected: 'ENV'
+}, {
+  Name: 'cDotexe',
+  Actual: g.cDotexe,
+  Expected: '.exe'
+}, {
+  Name: 'cDotExe',
+  Actual: g.cDotExe,
+  Expected: '.Exe'
+}, {
+  Name: 'cDotEXE',
+  Actual: g.cDotEXE,
+  Expected: '.EXE'
 }, {
   Name: 'cDotcsv',
   Actual: g.cDotcsv,
@@ -344,6 +396,18 @@ var genericConstantsValidation = [{
   Actual: g.cDotXML,
   Expected: '.XML'
 }, {
+  Name: 'cDotlog',
+  Actual: g.cDotlog,
+  Expected: '.log'
+}, {
+  Name: 'cDotLog',
+  Actual: g.cDotLog,
+  Expected: '.Log'
+}, {
+  Name: 'cDotLOG',
+  Actual: g.cDotLOG,
+  Expected: '.LOG'
+}, {
   Name: 'cDotjson',
   Actual: g.cDotjson,
   Expected: '.json'
@@ -355,6 +419,18 @@ var genericConstantsValidation = [{
   Name: 'cDotJSON',
   Actual: g.cDotJSON,
   Expected: '.JSON'
+}, {
+  Name: 'cDotenv',
+  Actual: g.cDotenv,
+  Expected: '.env'
+}, {
+  Name: 'cDotEnv',
+  Actual: g.cDotEnv,
+  Expected: '.Env'
+}, {
+  Name: 'cDotENV',
+  Actual: g.cDotENV,
+  Expected: '.ENV'
 }, {
   Name: 'cascii',
   Actual: g.cascii,
@@ -660,5 +736,45 @@ var genericConstantsValidation = [{
   Name: 'cConst',
   Actual: g.cConst,
   Expected: 'Const'
+}, {
+  Name: 'cASAP',
+  Actual: g.cASAP,
+  Expected: 'ASAP'
+}, {
+  Name: 'capp',
+  Actual: g.capp,
+  Expected: 'app'
+}, {
+  Name: 'cApp',
+  Actual: g.cApp,
+  Expected: 'App'
+}, {
+  Name: 'cAPP',
+  Actual: g.cAPP,
+  Expected: 'APP'
+}, {
+  Name: 'carg',
+  Actual: g.carg,
+  Expected: 'arg'
+}, {
+  Name: 'cArg',
+  Actual: g.cArg,
+  Expected: 'Arg'
+}, {
+  Name: 'cargs',
+  Actual: g.cargs,
+  Expected: 'args'
+}, {
+  Name: 'cArgs',
+  Actual: g.cArgs,
+  Expected: 'Args'
+}, {
+  Name: 'chex',
+  Actual: g.chex,
+  Expected: 'hex'
+}, {
+  Name: 'cHex',
+  Actual: g.cHex,
+  Expected: 'Hex'
 }];
 exports.genericConstantsValidation = genericConstantsValidation;
