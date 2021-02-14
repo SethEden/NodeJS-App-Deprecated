@@ -4187,7 +4187,7 @@
           <ConfigurationElement Name="nominal.printDataHive@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHive@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="nominal.printDataHiveAttributes" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHiveAttributes@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHiveAttributes@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHiveAttributes@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
