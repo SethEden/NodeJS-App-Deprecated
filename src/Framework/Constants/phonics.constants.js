@@ -588,3 +588,4 @@ export const ccal = b.cca + b.cl; // cal
 export const cical = b.ci + ccal; // ical
 export const cicon = b.ci + ccon; // icon
 export const clta = b.clt + b.ca; // lta
+export const ceaf = b.cea + b.cf; // eaf

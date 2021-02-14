@@ -1925,5 +1925,7 @@ export const wordConstantsValidation = [
    {Name: 'csleeped', Actual: w.csleeped, Expected: 'sleeped'},
    {Name: 'cSleeped', Actual: w.cSleeped, Expected: 'Sleeped'},
    {Name: 'csleeping', Actual: w.csleeping, Expected: 'sleeping'},
-   {Name: 'cSleeping', Actual: w.cSleeping, Expected: 'Sleeping'}
+   {Name: 'cSleeping', Actual: w.cSleeping, Expected: 'Sleeping'},
+   {Name: 'cleaf', Actual: w.cleaf, Expected: 'leaf'},
+   {Name: 'cLeaf', Actual: w.cLeaf, Expected: 'Leaf'}
  ];

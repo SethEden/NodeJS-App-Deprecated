@@ -2758,7 +2758,7 @@
           <ConfigurationElement Name="stringParsing.generateCommandAliases@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.generateCommandAliases@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="stringParsing.solveLehmerCode" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="stringParsing.solveLehmerCode" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.solveLehmerCode@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.solveLehmerCode@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.solveLehmerCode@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -4185,6 +4185,20 @@
           <ConfigurationElement Name="nominal.printDataHive@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHive@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHive@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.printDataHiveAttributes" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="nominal.clearDataStorage" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.clearDataStorage@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

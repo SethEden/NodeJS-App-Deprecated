@@ -190,7 +190,9 @@ export const clearScreen = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  console.clear();
+  // console.clear(); // This will clear the screen, but not the cache, you can still scroll up and see the previous commands.
+  // process.stdout.write('\u001B[2J\u001B[0;0f'); // Same as above
+  process.stdout.write('\u001b[H\u001b[2J\u001b[3J');
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -488,6 +490,8 @@ export const workflow = function(inputData, inputMetaData) {
  * Examples: Configuration, Workflows, Colors, Commands, etc...
  * inputData[0] === 'printDataHive'
  * inputData[1] === dataHiveName
+ * @NOTE This function is now going to support printing specific child data-hives.
+ * Example: ConstantsValidationData.ColorConstantsValidation
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -499,12 +503,108 @@ export const printDataHive = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (D[inputData[1]] !== undefined) {
-    // contents are:
-    console.log(inputData[1] + ' contents are: ' + JSON.stringify(D[inputData[1]]));
+  if (inputData[1].includes(b.cDot) === true) {
+    let dataHivePathArray = inputData[1].split(b.cDot);
+    let leafDataHiveElement = D;
+    // dataHivePathArray is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
+    // This for-loop should let us drill down in the D-Data structure following the path that was provided.
+    // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
+    for (let i = 0; i < dataHivePathArray.length; i++) {
+      // BEGIN i-th iteration:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+      leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]];
+      // contents of leafDataHiveElement is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
+      // END i-th iteration:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+    }
+    console.log(inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
   } else {
-    // contents of D are:
-    console.log('contents of D are: ' + JSON.stringify(D));
+    if (D[inputData[1]] !== undefined) {
+      // contents are:
+      console.log(inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(D[inputData[1]]));
+    } else {
+      // contents of D are:
+      console.log(s.ccontentsOfDare + JSON.stringify(D));
+    }
+  }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function printDataHiveAttributes
+ * @description Prints out all of the attributes for a given specified data-set from the D-data structure.
+ * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
+ * depending on what the user entered. But the function filters all of that internally and
+ * extracts the case the user has entered a data hive or leaf data structure in the heirarchy and
+ * a name of an attribute where all values should be printed.
+ * Examples ConstantsValidationData.ColorConstantsValidation.Actual
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/02/12
+ */
+export const printDataHiveAttributes = function(inputData, inputMetaData) {
+  let functionName = s.cprintDataHiveAttributes;
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+  if (inputData[1].includes(b.cDot) === true) {
+    let dataHivePathArray = inputData[1].split(b.cDot);
+    let leafDataHiveElement = D;
+    // dataHivePathArray is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
+    // This for-loop should let us drill down in the D-Data structure following the path that was provided.
+    // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
+    // Make sure we don't try to grab the very last term of the namespace. See note below.
+    for (let i = 0; i < dataHivePathArray.length - 1; i++) {
+      // BEGIN i-th iteration:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+      leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]];
+      // contents of leafDataHiveElement is:
+      // loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
+      // END i-th iteration:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+    }
+    loggers.consoleLog(baseFileName + b.cDot + functionName, inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
+    let attributeName = dataHivePathArray[dataHivePathArray.length - 1];
+    if (leafDataHiveElement && leafDataHiveElement.length > 0) {
+      let leafDataHiveElementKeys1 = Object.keys(leafDataHiveElement);
+      for (let j = 0; j < leafDataHiveElement.length; j++) {
+        let dataEntry = leafDataHiveElement[j];
+        if (dataEntry) {
+          if (attributeName.toLowerCase() === w.centity) {
+            console.log('entry is: ' + JSON.stringify(dataEntry));
+          } else {
+            if (dataEntry[attributeName]) {
+              console.log('attributeValue is: ' + dataEntry[attributeName]);
+            }
+          }
+        }
+      }
+    } else {
+      let leafDataHiveElementKeys2 = Object.keys(leafDataHiveElement);
+      leafDataHiveElementKeys2.forEach((key2) => {
+        if (attributeName.toLowerCase() === w.ckey) {
+          console.log('key2 is: ' + key2);
+        } else if (attributeName.toLowerCase() === w.centity) {
+          console.log('entity is: ' + JSON.stringify(leafDataHiveElement[key2]));
+        } else {
+          let dataEntry2 = leafDataHiveElement[key2];
+          if (dataEntry2) {
+            console.log('attributeValue is: ' + dataEntry2[attributeName]);
+          }
+        }
+      });
+    }
+  } else {
+    // This is the case that the user has probably just specified a single data hive
+    // that might not have specific attribute names such as the configuration data.
+    console.log('Caught the case that the user may have only specified a single data have, such as the configuration data hive.')
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

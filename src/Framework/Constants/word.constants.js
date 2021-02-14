@@ -1926,3 +1926,5 @@ export const csleeped = csleep + b.ced; // sleeped
 export const cSleeped = cSleep + b.ced; // Sleeped
 export const csleeping = csleep + p.cing; // sleeping
 export const cSleeping = cSleep + p.cing; // Sleeping
+export const cleaf = b.cl + p.ceaf; // leaf
+export const cLeaf = b.cL + p.ceaf; // Leaf
