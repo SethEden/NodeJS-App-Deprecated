@@ -666,6 +666,10 @@ export const systemConstantsValidation = [
    {Name: 'cworkflowValueIs', Actual: s.cworkflowValueIs, Expected: 'workflowValue is: '},
    {Name: 'cdataHivePathArrayIs', Actual: s.cdataHivePathArrayIs, Expected: 'dataHivePathArray is: '},
    {Name: 'ccontentsOfLeafDataHiveElementIs', Actual: s.ccontentsOfLeafDataHiveElementIs, Expected: 'contents of leafDataHiveElement is: '},
+   {Name: 'centryIs', Actual: s.centryIs, Expected: 'entry is: '},
+   {Name: 'cattributeValueIs', Actual: s.cattributeValueIs, Expected: 'attributeValue is: '},
+   {Name: 'ckey2Is', Actual: s.ckey2Is, Expected: 'key2 is: '},
+   {Name: 'centityIs', Actual: s.centityIs, Expected: 'entity is: '},
 
    {Name: 'cDetermineWordDelimiterMessage1', Actual: s.cDetermineWordDelimiterMessage1, Expected: 'WARNING: Mixed string. '},
    {Name: 'cDetermineWordDelimiterMessage2', Actual: s.cDetermineWordDelimiterMessage2, Expected: 'Cannot determine what delimiter should '},
@@ -736,6 +740,8 @@ export const systemConstantsValidation = [
    {Name: 'cexecuteCommandMessage1', Actual: s.cexecuteCommandMessage1, Expected: 'WARNING: Command does not exist, please enter a valid command and try again!'},
    {Name: 'cparseBusinessRuleArgumentMessage1', Actual: s.cparseBusinessRuleArgumentMessage1, Expected: 'WARNING: lexical.parseBusinessRuleArgument: Invalid combination of inputs to the lexical.parseBusinessRuleArgument function! '},
    {Name: 'cparseBusinessRuleArgumentMessage2', Actual: s.cparseBusinessRuleArgumentMessage2, Expected: 'Please adjust inputs and try again.'},
+   {Name: 'cprintDataHiveAttributesMessage1', Actual: s.cprintDataHiveAttributesMessage1, Expected: 'Caught the case the user may have only specified a single data hive, '},
+   {Name: 'cprintDataHiveAttributesMessage2', Actual: s.cprintDataHiveAttributesMessage2, Expected: 'such as the configuration data hive.'},
 
    // File Types
    {Name: 'cCatia', Actual: s.cCatia, Expected: 'Catia'},
@@ -1078,6 +1084,7 @@ export const systemConstantsValidation = [
    {Name: 'cEnableBusinessRulePerformanceMetrics', Actual: s.cEnableBusinessRulePerformanceMetrics, Expected: 'EnableBusinessRulePerformanceMetrics'},
    {Name: 'cEnableCommandPerformanceMetrics', Actual: s.cEnableCommandPerformanceMetrics, Expected: 'EnableCommandPerformanceMetrics'},
    {Name: 'cEnableConstantsValidation', Actual: s.cEnableConstantsValidation, Expected: 'EnableConstantsValidation'},
+   {Name: 'cEnableConstantsPatternGeneration', Actual: s.cEnableConstantsPatternGeneration, Expected: 'EnableConstantsPatternGeneration'},
    {Name: 'cDisplayIndividualConstantsValidationPassMessages', Actual: s.cDisplayIndividualConstantsValidationPassMessages, Expected: 'DisplayIndividualConstantsValidationPassMessages'},
    {Name: 'cDisplayIndividualConstantsValidationFailMessages', Actual: s.cDisplayIndividualConstantsValidationFailMessages, Expected: 'DisplayIndividualConstantsValidationFailMessages'},
    {Name: 'cDisplaySummaryConstantsValidationPassMessages', Actual: s.cDisplaySummaryConstantsValidationPassMessages, Expected: 'DisplaySummaryConstantsValidationPassMessages'},

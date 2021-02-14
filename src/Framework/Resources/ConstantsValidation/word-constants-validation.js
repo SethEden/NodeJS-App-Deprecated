@@ -1927,5 +1927,19 @@ export const wordConstantsValidation = [
    {Name: 'csleeping', Actual: w.csleeping, Expected: 'sleeping'},
    {Name: 'cSleeping', Actual: w.cSleeping, Expected: 'Sleeping'},
    {Name: 'cleaf', Actual: w.cleaf, Expected: 'leaf'},
-   {Name: 'cLeaf', Actual: w.cLeaf, Expected: 'Leaf'}
+   {Name: 'cLeaf', Actual: w.cLeaf, Expected: 'Leaf'},
+   {Name: 'centry', Actual: w.centry, Expected: 'entry'},
+   {Name: 'cEntry', Actual: w.cEntry, Expected: 'Entry'},
+   {Name: 'centries', Actual: w.centries, Expected: 'entries'},
+   {Name: 'cEntries', Actual: w.cEntries, Expected: 'Entries'},
+   {Name: 'centity', Actual: w.centity, Expected: 'entity'},
+   {Name: 'cEntity', Actual: w.cEntity, Expected: 'Entity'},
+   {Name: 'cmay', Actual: w.cmay, Expected: 'may'},
+   {Name: 'cMay', Actual: w.cMay, Expected: 'May'},
+   {Name: 'conly', Actual: w.conly, Expected: 'only'},
+   {Name: 'cOnly', Actual: w.cOnly, Expected: 'Only'},
+   {Name: 'csuch', Actual: w.csuch, Expected: 'such'},
+   {Name: 'cSuch', Actual: w.cSuch, Expected: 'Such'},
+   {Name: 'cgeneration', Actual: w.cgeneration, Expected: 'generation'},
+   {Name: 'cGeneration', Actual: w.cGeneration, Expected: 'Generation'}
  ];

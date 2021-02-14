@@ -2359,8 +2359,10 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let returnData = '';
   if (inputData) {
     let passMessage = '';
+    let j = 0; // We will use this as an iterator to count the number of times we add a string to the returnData coma-seperated list.
     for (let i = 0; i < inputData.length; i++) {
       let currentString = inputData[i];
       if (doesConstantExist(currentString, '') === false) {
@@ -2371,6 +2373,14 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
         console.log(passMessage);
         // constant does NOT exist:
         loggers.consoleLog(baseFileName + b.cDot + functionName, s.cConstantDoesNotExist + currentString);
+        // Make sure we add all the strings that do not exist to a coma-seperated list,
+        // so we can enqueue it to the constantsGeneratorList command and generate actual new constants lines of code.
+        if (j === 0) {
+          returnData = currentString;
+        } else {
+          returnData = returnData + b.cComa + currentString;
+        }
+        j++;
       } else {
         // Constant does exist:
         passMessage = s.cConstantDoesExist + currentString;
@@ -2382,8 +2392,9 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
       }
     }
   }
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return null;
+  return returnData;
 };
 
 /**

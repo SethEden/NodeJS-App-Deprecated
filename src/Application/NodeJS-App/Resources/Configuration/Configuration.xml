@@ -19,6 +19,7 @@
         <ConfigurationElement Name="ClearBusinessRulesPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="ClearCommandPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableConstantsValidation" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="EnableConstantsPatternGeneration" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="LogFileEnabled" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="IncludeDateTimeStampInLogFiles" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="False" Version="3"/>

@@ -578,10 +578,12 @@ export const printDataHiveAttributes = function(inputData, inputMetaData) {
         let dataEntry = leafDataHiveElement[j];
         if (dataEntry) {
           if (attributeName.toLowerCase() === w.centity) {
-            console.log('entry is: ' + JSON.stringify(dataEntry));
+            // entity is:
+            console.log(s.centryIs + JSON.stringify(dataEntry));
           } else {
             if (dataEntry[attributeName]) {
-              console.log('attributeValue is: ' + dataEntry[attributeName]);
+              // attributeValue is:
+              console.log(s.cattributeValueIs + dataEntry[attributeName]);
             }
           }
         }
@@ -590,13 +592,16 @@ export const printDataHiveAttributes = function(inputData, inputMetaData) {
       let leafDataHiveElementKeys2 = Object.keys(leafDataHiveElement);
       leafDataHiveElementKeys2.forEach((key2) => {
         if (attributeName.toLowerCase() === w.ckey) {
-          console.log('key2 is: ' + key2);
+          // key2 is:
+          console.log(s.ckey2Is + key2);
         } else if (attributeName.toLowerCase() === w.centity) {
-          console.log('entity is: ' + JSON.stringify(leafDataHiveElement[key2]));
+          // entity is:
+          console.log(s.centityIs + JSON.stringify(leafDataHiveElement[key2]));
         } else {
           let dataEntry2 = leafDataHiveElement[key2];
           if (dataEntry2) {
-            console.log('attributeValue is: ' + dataEntry2[attributeName]);
+            // attributeValue is:
+            console.log(s.cattributeValueIs + dataEntry2[attributeName]);
           }
         }
       });
@@ -604,7 +609,7 @@ export const printDataHiveAttributes = function(inputData, inputMetaData) {
   } else {
     // This is the case that the user has probably just specified a single data hive
     // that might not have specific attribute names such as the configuration data.
-    console.log('Caught the case that the user may have only specified a single data have, such as the configuration data hive.')
+    console.log(s.cprintDataHiveAttributesMessage1 + s.cprintDataHiveAttributesMessage2);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1157,7 +1162,11 @@ export const constantsPatternRecognizer = function(inputData, inputMetaData) {
   // commonPatternsArray is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray));
   // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
-  ruleBroker.processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
+  let newConstantsList = ruleBroker.processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
+  let constantsPatternGenerationSetting = configurator.getConfigurationSetting(s.cEnableConstantsPatternGeneration);
+  if (constantsPatternGenerationSetting === true) {
+    queue.enqueue(s.cCommandQueue, s.cconstantsGeneratorList + b.cSpace + newConstantsList);
+  }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
