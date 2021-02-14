@@ -1941,5 +1941,21 @@ export const wordConstantsValidation = [
    {Name: 'csuch', Actual: w.csuch, Expected: 'such'},
    {Name: 'cSuch', Actual: w.cSuch, Expected: 'Such'},
    {Name: 'cgeneration', Actual: w.cgeneration, Expected: 'generation'},
-   {Name: 'cGeneration', Actual: w.cGeneration, Expected: 'Generation'}
+   {Name: 'cGeneration', Actual: w.cGeneration, Expected: 'Generation'},
+   {Name: 'cDemocratic', Actual: w.cDemocratic, Expected: 'Democratic'},
+   {Name: 'cRepublic', Actual: w.cRepublic, Expected: 'Republic'},
+   {Name: 'cCongo', Actual: w.cCongo, Expected: 'Congo'},
+   {Name: 'cCentral', Actual: w.cCentral, Expected: 'Central'},
+   {Name: 'cAfrican', Actual: w.cAfrican, Expected: 'African'},
+   {Name: 'cPapua', Actual: w.cPapua, Expected: 'Papua'},
+   {Name: 'cGuinea', Actual: w.cGuinea, Expected: 'Guinea'},
+   {Name: 'cTrinidad', Actual: w.cTrinidad, Expected: 'Trinidad'},
+   {Name: 'cTabago', Actual: w.cTabago, Expected: 'Tabago'},
+   {Name: 'cUnited', Actual: w.cUnited, Expected: 'United'},
+   {Name: 'cArab', Actual: w.cArab, Expected: 'Arab'},
+   {Name: 'cEmirates', Actual: w.cEmirates, Expected: 'Emirates'},
+   {Name: 'cStates', Actual: w.cStates, Expected: 'States'},
+   {Name: 'cAmerica', Actual: w.cAmerica, Expected: 'America'},
+   {Name: 'cliver', Actual: w.cliver, Expected: 'liver'},
+   {Name: 'cLiver', Actual: w.cLiver, Expected: 'Liver'}
  ];

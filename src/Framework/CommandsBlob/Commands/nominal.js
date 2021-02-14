@@ -553,63 +553,68 @@ export const printDataHiveAttributes = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (inputData[1].includes(b.cDot) === true) {
-    let dataHivePathArray = inputData[1].split(b.cDot);
-    let leafDataHiveElement = D;
-    // dataHivePathArray is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
-    // This for-loop should let us drill down in the D-Data structure following the path that was provided.
-    // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
-    // Make sure we don't try to grab the very last term of the namespace. See note below.
-    for (let i = 0; i < dataHivePathArray.length - 1; i++) {
-      // BEGIN i-th iteration:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
-      leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]];
-      // contents of leafDataHiveElement is:
-      // loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
-      // END i-th iteration:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
-    }
-    loggers.consoleLog(baseFileName + b.cDot + functionName, inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
-    let attributeName = dataHivePathArray[dataHivePathArray.length - 1];
-    if (leafDataHiveElement && leafDataHiveElement.length > 0) {
-      let leafDataHiveElementKeys1 = Object.keys(leafDataHiveElement);
-      for (let j = 0; j < leafDataHiveElement.length; j++) {
-        let dataEntry = leafDataHiveElement[j];
-        if (dataEntry) {
-          if (attributeName.toLowerCase() === w.centity) {
-            // entity is:
-            console.log(s.centryIs + JSON.stringify(dataEntry));
-          } else {
-            if (dataEntry[attributeName]) {
-              // attributeValue is:
-              console.log(s.cattributeValueIs + dataEntry[attributeName]);
+  if (inputData && inputData.length > 1) {
+    if (inputData[1].includes(b.cDot) === true) {
+      let dataHivePathArray = inputData[1].split(b.cDot);
+      let leafDataHiveElement = D;
+      // dataHivePathArray is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
+      // This for-loop should let us drill down in the D-Data structure following the path that was provided.
+      // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
+      // Make sure we don't try to grab the very last term of the namespace. See note below.
+      for (let i = 0; i < dataHivePathArray.length - 1; i++) {
+        // BEGIN i-th iteration:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+        leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]];
+        // contents of leafDataHiveElement is:
+        // loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
+        // END i-th iteration:
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+      }
+      loggers.consoleLog(baseFileName + b.cDot + functionName, inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
+      let attributeName = dataHivePathArray[dataHivePathArray.length - 1];
+      if (leafDataHiveElement && leafDataHiveElement.length > 0) {
+        let leafDataHiveElementKeys1 = Object.keys(leafDataHiveElement);
+        for (let j = 0; j < leafDataHiveElement.length; j++) {
+          let dataEntry = leafDataHiveElement[j];
+          if (dataEntry) {
+            if (attributeName.toLowerCase() === w.centity) {
+              // entity is:
+              console.log(s.centryIs + JSON.stringify(dataEntry));
+            } else {
+              if (dataEntry[attributeName]) {
+                // attributeValue is:
+                console.log(s.cattributeValueIs + dataEntry[attributeName]);
+              }
             }
           }
         }
+      } else {
+        let leafDataHiveElementKeys2 = Object.keys(leafDataHiveElement);
+        leafDataHiveElementKeys2.forEach((key2) => {
+          if (attributeName.toLowerCase() === w.ckey) {
+            // key2 is:
+            console.log(s.ckey2Is + key2);
+          } else if (attributeName.toLowerCase() === w.centity) {
+            // entity is:
+            console.log(s.centityIs + JSON.stringify(leafDataHiveElement[key2]));
+          } else {
+            let dataEntry2 = leafDataHiveElement[key2];
+            if (dataEntry2) {
+              // attributeValue is:
+              console.log(s.cattributeValueIs + dataEntry2[attributeName]);
+            }
+          }
+        });
       }
     } else {
-      let leafDataHiveElementKeys2 = Object.keys(leafDataHiveElement);
-      leafDataHiveElementKeys2.forEach((key2) => {
-        if (attributeName.toLowerCase() === w.ckey) {
-          // key2 is:
-          console.log(s.ckey2Is + key2);
-        } else if (attributeName.toLowerCase() === w.centity) {
-          // entity is:
-          console.log(s.centityIs + JSON.stringify(leafDataHiveElement[key2]));
-        } else {
-          let dataEntry2 = leafDataHiveElement[key2];
-          if (dataEntry2) {
-            // attributeValue is:
-            console.log(s.cattributeValueIs + dataEntry2[attributeName]);
-          }
-        }
-      });
+      // This is the case that the user has probably just specified a single data hive
+      // that might not have specific attribute names such as the configuration data.
+      console.log(s.cprintDataHiveAttributesMessage1 + s.cprintDataHiveAttributesMessage2);
     }
   } else {
-    // This is the case that the user has probably just specified a single data hive
-    // that might not have specific attribute names such as the configuration data.
-    console.log(s.cprintDataHiveAttributesMessage1 + s.cprintDataHiveAttributesMessage2);
+    // ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.
+    console.log(s.cprintDataHiveAttributesMessage3);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -1019,7 +1024,11 @@ export const constantsGenerator = function(inputData, inputMetaData) {
       ruleBroker.processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
     }
   } else {
-    console.log(b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace + ruleBroker.processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
+    // output a proper line of code:
+    // export const csomething = w.csome + w.cthing; // something
+    console.log(w.cexport + b.cSpace + g.cconst + b.cSpace + b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace +
+      ruleBroker.processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule) +
+      b.cSemiColon + b.cSpace + b.cDoubleForwardSlash + b.cSpace + userDefinedConstant);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
