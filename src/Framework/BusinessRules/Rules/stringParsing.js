@@ -12,6 +12,7 @@
  * @requires module:dataBroker
  * @requires module:fileBroker
  * @requires module:basic-constants
+ * @requires module:phonics-constants
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
@@ -32,6 +33,7 @@ import loggers from '../../Executrix/loggers';
 import dataBroker from '../../Executrix/dataBroker';
 import fileBroker from '../../Executrix/fileBroker';
 import * as b from '../../Constants/basic.constants';
+import * as p from '../../Constants/phonics.constants';
 import * as g from '../../Constants/generic.constants';
 import * as n from '../../Constants/numeric.constants';
 import * as w from '../../Constants/word.constants';
@@ -1710,7 +1712,7 @@ export const determineConstantsContextQualifiedPrefix = function(inputData, inpu
     if (inputData.includes(w.cbasic) === true) {
       returnData = b.cb;
     } else if (inputData.includes(w.ccolor) === true) {
-      returnData = p.ccolr;
+      returnData = p.cclr;
     } else if (inputData.includes(w.celement) === true) {
       returnData = b.ce;
     } else if (inputData.includes(w.cgeneric) === true) {
@@ -2133,7 +2135,7 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
         returnData = b.cb + b.cDot;
         break;
       case s.cColorConstantsValidation:
-        returnData = s.ccolr + b.cDot;
+        returnData = p.cclr + b.cDot;
         break;
       case s.cElementConstantsValidation:
         returnData = b.ce + b.cDot;
@@ -2151,7 +2153,7 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
         returnData = b.cp + b.cDot;
         break;
       case s.cShapeConstantsValidation:
-        returnData = s.cshp + b.cDot;
+        returnData = p.cshp + b.cDot;
         break;
       case s.cSystemConstantsValidation:
         returnData = b.cs + b.cDot;

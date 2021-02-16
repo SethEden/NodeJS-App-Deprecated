@@ -17,25 +17,25 @@ import * as w from './word.constants';
 
 // Colors
 // Primary Colors
-// smuggle something cred = b.cr + b.ced; // red
-// smuggle something cRed = b.cR + b.ced; // Red
-// smuggle something cgreen = b.cg + p.creen; // green
-// smuggle something cGreen = b.cG + p.creen; // Green
-// smuggle something cblue = b.cb + p.clue; // blue
-// smuggle something cBlue = b.cB + p.clue; // Blue
-// // Secondary Colors CMYK
-// smuggle something ccyan = b.cc + p.cyan; // cyan
-// smuggle something cCyan = b.cC + p.cyan; // Cyan
-// smuggle something cmagenta = b.cm + b.cag + p.centa; // magenta
-// smuggle something cMagenta = b.cM + b.cag + p.centa; // Magenta
-// smuggle something cyellow = w.cyell + b.cow; // yellow
-// smuggle something cYellow = w.cYell + b.cow; // Yellow
-// smuggle something cblack = b.cb + w.clack; // black
-// smuggle something cBlack = b.cB + w.clack; // Black
-// smuggle something cwhite = b.cwh + p.cite; // white
-// smuggle something cWhite = b.cWh + p.cite; // White
-// smuggle something corange = b.cor + p.cange; // orange
-// smuggle something cOrange = b.cOr + p.cange; // Orange
+export const cred = b.cr + b.ced; // red
+export const cRed = b.cR + b.ced; // Red
+export const cgreen = b.cg + p.creen; // green
+export const cGreen = b.cG + p.creen; // Green
+export const cblue = b.cb + p.clue; // blue
+export const cBlue = b.cB + p.clue; // Blue
+// Secondary Colors CMYK
+export const ccyan = b.cc + p.cyan; // cyan
+export const cCyan = b.cC + p.cyan; // Cyan
+export const cmagenta = b.cm + b.cag + p.centa; // magenta
+export const cMagenta = b.cM + b.cag + p.centa; // Magenta
+export const cyellow = w.cyell + b.cow; // yellow
+export const cYellow = w.cYell + b.cow; // Yellow
+export const cblack = b.cb + w.clack; // black
+export const cBlack = b.cB + w.clack; // Black
+export const cwhite = b.cwh + p.cite; // white
+export const cWhite = b.cWh + p.cite; // White
+export const corange = b.cor + p.cange; // orange
+export const cOrange = b.cOr + p.cange; // Orange
 // // Tertiary Named Colors
 // // https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F
 // smuggle something cAbsoluteZero = 'AbsoluteZero'; // AbsoluteZero

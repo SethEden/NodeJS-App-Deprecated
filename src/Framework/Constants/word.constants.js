@@ -746,6 +746,22 @@ export const cpageData = cpage + cData; // pageData
 export const cPageData = cPage + cData; // PageData
 export const cTestName = cTest + cName; // TestName
 export const cPageName = cPage + cName; // PageName
+export const cbed = b.cbe + b.cd; // bed
+export const cBed = b.cBe + b.cd; // Bed
+export const cbeds = cbed + b.cs; // beds
+export const cBeds = cBed + b.cs; // Beds
+export const cbedded = cbed + p.cded; // bedded
+export const cBedded = cBed + p.cded; // Bedded
+export const cbedding = cbed + b.cd + p.cing; // bedding
+export const cBedding = cBed + b.cd + p.cing; // Bedding
+export const cweb = b.cwe + b.cb; // web
+export const cWeb = b.cWe + b.cb; // Web
+export const cwebs = cweb + b.cs; // webs
+export const cWebs = cWeb + b.cs; // Webs
+export const cwebbed = cweb + cbed; // webbed
+export const cWebbed = cWeb + cbed; // webbed
+export const cwebbing = cweb + p.cbing; // webbing
+export const cWebbing = cWeb + p.cbing; // Webbing
 export const cWebkey = b.cWe + b.cb + ckey; // Webkey
 export const cfile = b.cf + p.cile; // file
 export const cFile = b.cF + p.cile; // File
@@ -1958,3 +1974,713 @@ export const cStates = b.cSt + p.cates; // States
 export const cAmerica = b.cAm + b.cer + p.cica; // America
 export const cliver = b.cli + p.cver; // liver
 export const cLiver = b.cLi + p.cver; // Liver
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+export const cAbsolute = b.cAb + p.csol + p.cute; // Absolute
+export const cAcid = b.cAc + b.cid; // Acid
+
+Optimized constant definition for word: cAir = b.cAi + b.cr
+Optimized constant definition for word: cSuperiority = p.cSup + b.cer + b.cio + p.crit + b.cy
+
+export const cAlabaster = b.cAl + b.cab + b.cas + p.cter; // Alabaster
+export const cAlice = b.cAl + p.cice; // Alice
+export const cAlloy = p.cAll + b.coy; // Alloy
+export const cAmaranth = b.cAm + p.caranth; // Amaranth
+export const cAndroid = w.cAnd + b.cro + b.cid; // Android
+export const cAntique = b.cAn + b.cti + p.cque; // Antique
+export const cBrass = p.cBra + b.css; // Brass
+export const cAntique = b.cAn + b.cti + p.cque; // Antique
+export const cBronze = b.cBr + p.conze; // Bronze
+export const cApple = g.cApp + b.cle; // Apple
+export const cApricot = b.cAp + p.cricot; // Apricot
+export const cArctic = b.cAr + b.cct + b.cic; // Arctic
+export const cArmy = b.cAr + b.cmy; // Army
+export const cArylide = b.cAr + b.cyl + p.cide; // Arylide
+export const cAtomic = e.cAt + b.com + b.cic; // Atomic
+export const cBaby = b.cBa + b.cby; // Baby
+
+Optimized constant definition for word: cEyes = b.cEy + b.ces
+
+export const cPowder = b.cPo + p.cwder; // Powder
+
+Optimized constant definition for word: cBaker = b.cBa + b.cke + b.cr
+Optimized constant definition for word: cMiller = u.cMill + b.cer
+
+export const cBanana = b.cBa + b.cna + b.cna; // Banana
+export const cMania = w.cMan + b.cia; // Mania
+export const cBarbie = b.cBa + b.crb + b.cie; // Barbie
+export const cBarn = b.cBa + b.crn; // Barn
+export const cBattleship = b.cBa + b.ctt + p.cles + p.chip; // Battleship
+export const cBeau = b.cBe + b.cau; // Beau
+
+Optimized constant definition for word: cDazzled = b.cDa + b.czz + b.cle + b.cd
+
+export const cBitter = b.cBi + p.ctte + b.cr; // Bitter
+export const csweet = b.cs + p.cweet; // sweet
+export const cSweet = b.cS + p.cweet; // Sweet
+export const cBittersweet = b.cBi + p.ctte + b.crs + p.cweet; // Bittersweet
+export const cShimmer = b.cSh + p.cimmer; // Shimmer
+export const cBean = b.cBe + b.can; // Bean
+export const cChocolate = b.cCh + p.cocolate; // Chocolate
+export const cShadows = p.cSha + p.cdow + b.cs; // Shadows
+export const cBlanched = b.cBl + b.can + b.cch + b.ced; // Blanched
+
+Optimized constant definition for word: cBlast = b.cBl + b.cas + b.ct
+
+export const cBlizzard = b.cBl + b.ciz + p.czard; // Blizzard
+export const cBlood = b.cBl + p.cood; // Blood
+export const cCrayola = b.cCr + p.cayola; // Crayola
+export const cMunsell = b.cMu + p.cnsell; // Munsell
+export const cPantone = b.cPa + p.cntone; // Pantone
+export const cPigment = b.cPi + p.cgment; // Pigment
+export const cBell = b.cBe + b.cll; // Bell
+
+export const cwheel = b.cwh + p.ceel; // wheel
+export const cWheel = b.cWh + p.ceel; // Wheel
+export const cwheels = cwheel + b.cs; // wheels
+export const cWheels = cWheel + b.cs; // Wheels
+export const cJeans = b.cJe + p.cans; // Jeans
+
+export const cYonder = b.cYo + p.cnder; // Yonder
+export const cBottle = b.cBo + b.ctt + b.cle; // Bottle
+export const cbrick = b.cbr + p.cick; // brick
+export const cBrick = b.cBr + p.cick; // Brick
+export const cbricks = cbrick + b.cs; // bricks
+export const cBricks = cBrick + b.cs; // Bricks
+export const cBright = b.cBr + p.cight; // Bright
+
+export const cBrilliant = b.cBr + p.cill + p.cian + b.ct; // Brilliant
+
+Optimized constant definition for word: cRacing = b.cRa + b.cci + b.cng
+
+export const cSugar = p.cSug + b.car; // Sugar
+export const cBrunswick = b.cBr + b.cun + b.csw + p.cick; // Brunswick
+export const cBud = b.cBu + b.cd; // Bud
+
+export const cBurly = b.cBu + b.crl + b.cy; // Burly
+export const cBurnished = b.cBu + b.crn + p.cish + b.ced; // Burnished
+export const cBurnt = b.cBu + b.crn + b.ct; // Burnt
+
+Optimized constant definition for word: cCadet = b.cCa + p.cdet
+Optimized constant definition for word: cCafe = b.cCa + b.cfe
+
+export const cCambridge = b.cCa + b.cmb + b.cri + b.cdg + b.ce; // Cambridge
+export const cCameo = b.cCa + b.cme + b.co; // Cameo
+export const cCaput = b.cCa + w.cput; // Caput
+export const cMortuum = b.cMo + b.crt + b.cuu + b.cm; // Mortuum
+export const cCaribbean = b.cCa + b.cri + b.cbb + p.cean; // Caribbean
+export const cCarnation = b.cCa + b.crn + p.cation; // Carnation
+export const cCarrot = b.cCa + p.crrot; // Carrot
+export const cCastleton = b.cCa + p.cstle + p.cton; // Castleton
+export const cCedar = b.cCe + b.cda + b.cr; // Cedar
+export const cChest = b.cC + p.chest; // Chest
+export const cCeladon = p.cCel + p.cadon; // Celadon
+
+export const cCeltic = p.cCel + p.ctic; // Celtic
+
+export const cCharleston = w.cChar + p.cles + p.cton; // Charleston
+export const cCharm = w.cChar + b.cm; // Charm
+export const cChartreuse = w.cChar + p.ctre + w.cuse; // Chartreuse
+
+Optimized constant definition for word: cCherry = b.cCh + p.cerry
+Optimized constant definition for word: cBlossom = b.cBl + p.coss + b.com
+
+export const cChestnut = cChest + b.cnu + b.ct; // Chestnut
+
+export const cChrome = b.cCh + b.cro + b.cme; // Chrome
+
+export const cCinnamon = b.cCi + p.cnna + p.cmon; // Cinnamon
+
+export const cCocoa = b.cCo + b.cco + b.ca; // Cocoa
+export const cCoffee = b.cCo + p.cffee; // Coffee
+export const cColumbia = p.cCol + b.cum + p.cbia; // Columbia
+
+export const cCool = b.cCo + b.col; // Cool
+
+export const cflower = p.cf + clower; // flower
+export const cFlower = p.cF + clower; // Flower
+export const cflowers = cflower + b.cs; // flowers
+export const cFlowers = cFlower + b.cs; // Flowers
+
+export const csilk = b.cs + p.cilk; // silk
+export const cSilk = b.cS + p.cilk; // Silk
+export const cCosmic = b.cCo + b.csm + b.cic; // Cosmic
+export const cLatte = b.cLa + p.ctte; // Latte
+export const cCoyote = b.cCo + b.cyo + b.cte; // Coyote
+export const cCotton = b.cCo + b.ctt + b.con; // Cotton
+
+export const cCyber = b.cCy + p.cber; // Cyber
+
+Optimized constant definition for word: cDark = b.cDa + b.crk
+
+export const cByzantium = b.cBy + p.czantium; // Byzantium
+
+Optimized constant definition for word: cElectric = b.cEl + p.cect + p.cric
+
+export const cKhaki = b.cKh + p.caki; // Khaki
+
+export const cHorse = b.cHo + p.crse; // Horse
+Optimized constant definition for word: cHorses = cHorse + b.cs; // Horses
+Optimized constant definition for word: cMoss = b.cMo + b.css
+
+export const cDarkOrange = b.cDa + b.crk + clr.cOrange; // DarkOrange
+
+Optimized constant definition for word: cPastel = b.cPa + p.cste + b.cl
+Optimized constant definition for word: cSky = b.cSk + b.cy
+Optimized constant definition for word: cSlate = b.cSl + p.cate
+Optimized constant definition for word: cSpring = b.cSp + p.crin + b.cg
+
+export const cDartmouth = b.cDa + b.crt + b.cmo + p.cuth; // Dartmouth
+export const cDavys = b.cDa + b.cvy + b.cs; // Davys
+export const cCerise = b.cCe + p.crise; // Cerise
+
+Optimized constant definition for word: cSparkle = b.cSp + p.cark + b.cle
+
+export const cDim = b.cDi + b.cm; // Dim
+export const cDodger = b.cDo + b.cdg + b.cer; // Dodger
+export const cDogwood = b.cDo + b.cgw + p.cood; // Dogwood
+
+export const cDuke = b.cDu + b.cke; // Duke
+export const cDutch = b.cDu + p.ctch; // Dutch
+export const cEarth = b.cEa + b.crt + b.ch; // Earth
+
+export const cEerie = b.cEe + b.cri + b.ce; // Eerie
+
+export const cEgyptian = s.cEgypt + p.cian; // Egyptian
+
+export const cEton = b.cEt + b.con; // Eton
+
+export const cFalu = b.cFa + b.clu; // Falu
+
+export const cFashion = b.cFa + b.csh + p.cion; // Fashion
+
+export const cFern = b.cFe + b.crn; // Fern
+
+export const cFiery = b.cFi + b.cer + b.cy; // Fiery
+
+Optimized constant definition for word: cFire = b.cFi + b.cre
+Optimized constant definition for word: cEngine = b.cEn + b.cgi + b.cne
+
+export const cFloral = b.cFl + p.coral; // Floral
+export const cFluorescent = b.cFl + b.cuo + p.cres + p.ccent; // Fluorescent
+Optimized constant definition for word: cForest = w.cFor + p.cest
+
+export const cFrost = b.cFr + p.cost; // Frost
+export const cbite = b.cbi + b.cte; // bite
+
+export const cFuzzy = b.cFu + b.czz + b.cy; // Fuzzy
+export const cWuzzy = b.cW + b.cuz + b.czy; // Wuzzy
+
+export const cGhost = b.cGh + p.cost; // Ghost
+
+export const cGlossy = b.cGl + p.coss + b.cy; // Glossy
+
+export const cMetal = cMeta + b.cl; // Metal
+export const cMetallic = w.cMeta + p.cllic; // Metallic
+Optimized constant definition for word: cGold = e.cGold
+Optimized constant definition for word: cGolden = e.cGold + b.cen
+
+export const cFusion = b.cFu + p.csion; // Fusion
+export const cPoppy = b.cen + w.cPop + b.cpy; // Poppy
+export const cGranite = b.cGr + b.can + p.cite; // Granite
+Optimized constant definition for word: cGranny = b.cGr + b.can + b.cny
+Optimized constant definition for word: cSmith = b.cSm + p.cith
+
+export const cLizard = b.cLi + p.czard; // Lizard
+
+export const cGun = b.cGu + b.cn; // Gun
+
+export const cHarvest = b.cHa + b.crv + p.cest; // Harvest
+export const cHeat = b.cHe + b.cat; // Heat
+export const cWave = b.cWa + b.cve; // Wave
+
+export const cHollywood = b.cHo + b.cll + b.cyw + p.cood; // Hollywood
+export const cHoney = b.cHo + b.cne + b.cy; // Honey
+export const cdew = b.cd + b.cew; // dew
+export const cHonolulu = b.cHo + b.cno + b.clu + b.clu; // Honolulu
+export const cHookers = b.cHo + p.coker + b.cs; // Hookers
+export const cHot = b.cHo + b.ct; // Hot
+
+export const cHunter = b.cHu + b.cnt + b.cer; // Hunter
+export const cIce = b.cIc + b.ce; // Ice
+
+export const cIlluminating = b.cIl + p.clum + p.cina + p.ctin + b.cg; // Illuminating
+
+Optimized constant definition for word: cImperial = b.cIm + p.cper + b.cia + b.cl
+
+export const cworm = b.cwo + b.crm; // worm
+export const cIndependence = b.cIn + b.cde + w.cpen + p.cden + b.cce; // Independence
+export const cIndiaGreen = g.cIndia + clr.cGreen; // IndiaGreen
+export const cIndian = g.cIndia + b.cn; // Indian
+
+export const cDye = b.cDy + b.ce; // Dye
+Optimized constant definition for word: cInternational = p.cInter + w.cnation + b.cal
+
+Optimized constant definition for word: cAerospace = b.cAe + b.cro + w.cspace
+
+Optimized constant definition for word: cEngineering = b.cEn + b.cgi + b.cne + b.cer + p.cing
+
+Optimized constant definition for word: cBridge = b.cBr + b.cid + b.cge
+
+export const cCarmine = b.cCa + p.crmine; // Carmine
+
+export const cjazz = b.cja + b.czz; // jazz
+export const cJazz = b.cJa + b.czz; // Jazz
+export const cberry = p.cber + b.cry; // berry
+export const cBerry = p.cBer + b.cry; // Berry
+export const cjam = b.cja + b.cm; // jam
+export const cJam = b.cJa + b.cm; // Jam
+
+export const cKelly = b.cKe + b.cll + b.cy; // Kelly
+
+export const cKombu = b.cKo + b.cmb + b.cu; // Kombu
+
+export const cLanguid = b.cLa + b.cng + b.cui + b.cd; // Languid
+export const cLapis = b.cLa + b.cpi + b.cs; // Lapis
+export const cLazuli = b.cL + b.caz + p.culi; // Lazuli
+export const cLaser = b.cLa + b.cse + b.cr; // Laser
+export const cLaurel = b.cLa + p.cure + b.cl; // Laurel
+
+export const cLawn = b.cLa + b.cwn; // Lawn
+
+export const cCurry = p.cCur + b.cry; // Curry
+export const cGlacier = b.cGl + b.cac + p.cier; // Glacier
+export const cMeringue = b.cMe + p.crin + b.cgu + b.ce; // Meringue
+
+export const cLight = b.cLi + p.cght; // Light
+export const cCoral = p.cCor + b.cal; // Coral
+
+Optimized constant definition for word: cSteel = b.cSt + p.ceel
+
+export const cLuster = b.cLu + p.cster; // Luster
+
+export const cLincoln = p.cLin + p.ccol + b.cn; // Lincoln
+
+export const cLiseran = b.cLi + b.cse + p.cran; // Liseran
+Optimized constant definition for word: cLittle = w.cLit + p.ctle
+Optimized constant definition for word: cBoy = b.cBo + b.cy
+
+export const cDogs = b.cDo + b.cgs; // Dogs
+export const cOrgan =  b.cOr + p.cgan; // Organ
+
+Optimized constant definition for word: cMacaroni = p.cMac + p.caro + b.cni
+
+Optimized constant definition for word: cCheese = b.cCh + b.cee + b.cse
+export const cMadder = b.cMa + p.cdder; // Madder
+
+export const cHaze = b.cHa + b.cze; // Haze
+export const cMagic = b.cMa + b.cgi + b.cc; // Magic
+
+export const cMajorelle = b.cMa + b.cjo + b.cre + b.cll + b.ce; // Majorelle
+
+export const cMaximum = g.cMax + b.cim + b.cum; // Maximum
+
+export const cMaya = g.cMay + b.ca; // Maya
+
+Optimized constant definition for word: cMedium = b.cMe + p.cdium
+
+export const cMellow = b.cMe + p.cllow; // Mellow
+
+export const cweed = b.cwe + b.ced; // weed
+export const cWeed = b.cWe + b.ced; // Weed
+export const cweeds = cweed + b.cs; // weeds
+export const cWeeds = cWeed + b.cs; // Weeds
+export const cweeded = cweed + b.ced; // weeded
+export const cWeeded = cWeed + b.ced; // Weeded
+export const cSeaweed = cSea + cweed; // Seaweed
+export const csun = b.csu + b.cn; // sun
+export const cSun = b.cSu + b.cn; // Sun
+export const csuns = csun + b.cs; // suns
+export const cSuns = cSun + b.cs; // Suns
+export const cSunburst = b.cSu + b.cnb + b.cur + b.cst; // Sunburst
+export const cMexican = b.cMe + b.cxi + p.ccan; // Mexican
+
+Optimized constant definition for word: cMiddle = b.cMi + b.cdd + b.cle
+
+export const cMikado = b.cMi + b.cka + b.cdo; // Mikado
+export const cMimi = b.cMi + b.cm + b.ci; // Mimi
+
+export const cMinion = g.cMin + p.cion; // Minion
+
+export const cMisty = p.cMis + b.cty; // Misty
+
+export const cMorning = b.cMo + b.crn + p.cing; // Morning
+
+export const cMeadow = b.cMe + p.cadow; // Meadow
+export const cMount = b.cMo + p.cunt; // Mount
+export const cbatten = b.cba + p.ctten; // batten
+
+export const cMulberry = b.cMu + b.clb + p.cerry; // Mulberry
+
+export const cMyrtle = b.cMy + b.crt + b.cle; // Myrtle
+
+export const cNadeshiko = b.cNa + b.cde + b.csh + b.cik + b.co; // Nadeshiko
+export const cNaples = b.cNa + p.cple + b.cs; // Naples
+export const cNavajo = b.cNa + b.cva + b.cjo; // Navajo
+
+Optimized constant definition for word: cNavy = b.cNa + b.cvy
+
+export const cNeon = e.cNeon; // Neon
+
+Optimized constant definition for word: cYork = b.cYo + b.crk
+
+Optimized constant definition for word: cPhoto = b.cPh + b.cot + b.co
+
+export const cOcean = b.cOc + p.cean; // Ocean
+
+export const cLace = b.cLa + b.cce; // Lace
+
+export const cOpera = b.cOp + p.cera; // Opera
+
+export const cPeel = b.cPe + b.cel; // Peel
+
+export const cSoda = b.cSo + b.cda; // Soda
+
+Optimized constant definition for word: cOuter = w.cOut + b.cer
+
+export const cOutrageous = w.cOut + p.crage + p.cous; // Outrageous
+
+export const cOxford = b.cOx + w.cfor + b.cd; // Oxford
+
+export const cPacific = b.cPa + b.cci + p.cfic; // Pacific
+
+export const cPalatinate = w.cPal + p.catin + p.cate; // Palatinate
+
+Optimized constant definition for word: cPale = w.cPal + b.ce
+
+export const cPansy = b.cPa + b.cns + b.cy; // Pansy
+Optimized constant definition for word: cPaolo = b.cPa + b.col + b.co
+Optimized constant definition for word: cVeronese = p.cVer + n.cone + b.cse
+
+export const cPapaya = g.cPapa + b.cya; // Papaya
+export const cWhip = b.cWh + b.cip; // Whip
+export const cParadise = p.cPara + b.cdi + b.cse; // Paradise
+export const cParis = b.cPa + p.cris; // Paris
+
+export const cPaynes = b.cPa + b.cyn + b.ces; // Paynes
+
+export const cPuff = b.cPu + b.cff; // Puff
+
+export const cPearly = b.cPe + b.car + b.cly; // Pearly
+
+Optimized constant definition for word: cPermanent = p.cPer + w.cman + p.cent
+Optimized constant definition for word: cGeranium = b.cGe + p.cran + p.cium
+Optimized constant definition for word: cLake = b.cLa + b.cke
+export const cPersian = p.cPer + p.csia + b.cn; // Persian
+
+export const cPewter = b.cPe + b.cwt + b.cer; // Pewter
+
+export const cPhthalo = b.cPh + b.cth + b.cal + b.co; // Phthalo
+
+export const cPicotee = u.cPico + p.ctee; // Picotee
+export const cPictorial = b.cPi + p.cctor + b.cia + b.cl; // Pictorial
+export const cPiggy = b.cPi + b.cgg + b.cy; // Piggy
+export const cPine = b.cPi + b.cne; // Pine
+export const cTree = b.cTr + b.cee; // Tree
+
+export const cFlamingo = b.cFl + b.cam + p.cing + b.co; // Flamingo
+
+export const cSherbet = b.cSh + b.cer + w.cbet; // Sherbet
+
+export const cPlump = b.cPl + b.cum + b.cp; // Plump
+export const cpolish = b.cpo + p.clish; // polish
+export const cPolish = b.cPo + p.clish; // Polish
+export const cpolished = cpolish + b.ced; // polished
+export const cPolished = cPolish + b.ced; // Polished
+Optimized constant definition for word: cPomp = b.cPo + b.cmp
+
+Optimized constant definition for word: cPower = b.cPo + p.cwer
+
+export const cPortland = w.cPort + b.cla + b.cnd; // Portland
+
+export const cPrinceton = p.cPri + p.cnce + p.cton; // Princeton
+
+export const cPrussian = b.cPr + b.cus + p.csia + b.cn; // Prussian
+export const cPsychedelic = b.cPs + b.cyc + b.che + p.cdel + b.cic; // Psychedelic
+
+export const cPullman = b.cPu + b.cll + w.cman; // Pullman
+
+Optimized constant definition for word: cMountain = b.cMo + p.cunt + p.cain
+Optimized constant definition for word: cMajesty = b.cMa + b.cje + p.csty
+
+export const cPizzazz = b.cPi + b.czz + p.cazz; // Pizzazz
+
+export const cQueen = p.cQue + b.cen; // Queen
+
+export const cQuick = b.cQu + p.cick; // Quick
+export const cQuinacridone = b.cQu + p.cina + b.ccr + b.cid + n.cone; // Quinacridone
+export const cRadical = b.cRa + b.cdi + p.ccal; // Radical
+export const cRaisin = b.cRa + b.cis + b.cin; // Raisin
+
+export const cGlace = b.cGl + p.cace; // Glace
+
+Optimized constant definition for word: cRazzle = b.cRa + b.czz + b.cle
+Optimized constant definition for word: cDazzle = b.cDa + b.czz + b.cle
+
+export const cRazzmic = b.cRa + b.czz + b.camai + b.cc; // Razzmic
+export const cRebecca = b.cRe + b.cbe + b.ccc + b.ca; // Rebecca
+
+export const cSalsa = b.cSa + b.cls + b.ca; // Salsa
+
+export const cResolution = p.cRes + b.col + b.cut + p.cion; // Resolution
+
+export const cRich = b.cRi + b.cch; // Rich
+
+export const cRifle = b.cRi + b.cfl + b.ce; // Rifle
+Optimized constant definition for word: cRobin = b.cRo + g.cbin
+Optimized constant definition for word: cEgg = b.cEg + b.cg
+
+export const cRocket = b.cRo + b.cck + b.cet; // Rocket
+export const cRoman = b.cRo + w.cman; // Roman
+
+export const cBonbon = b.cBo + b.cnb + b.con; // Bonbon
+export const cDust = b.cDu + b.cst; // Dust
+export const cEbony = b.cEb + p.cony; // Ebony
+
+export const cQuartz = w.cQuart + b.cz; // Quartz
+
+export const cVale = b.cVa + b.cle; // Vale
+export const cwood = b.cwo + b.cod; // wood
+export const cRosso = b.cRo + b.css + b.co; // Rosso
+export const cCorsa = b.cC + b.cor + b.csa; // Corsa
+export const cRosy = b.cRo + b.csy; // Rosy
+Optimized constant definition for word: cRoyal = b.cRo + b.cya + b.cl
+
+export const cRubineRed = b.cRu + g.cbin + b.ceR + b.ced; // RubineRed
+export const cRuby = b.cRu + b.cby; // Ruby
+export const cRubyRed = b.cRu + b.cby + clr.cRed; // RubyRed
+export const cRufous = b.cRu + b.cfo + b.cus; // Rufous
+export const cRusset = b.cRu + b.css + b.cet; // Russet
+export const cRussianGreen = s.cRussian + clr.cGreen; // RussianGreen
+export const cRussianViolet = s.cRussian + b.cVi + p.colet; // RussianViolet
+export const cRust = b.cRu + b.cst; // Rust
+export const cRustyRed = b.cRu + p.csty + clr.cRed; // RustyRed
+Optimized constant definition for word: cSacramento = b.cSa + b.ccr + p.camen + b.cto
+Optimized constant definition for word: cState = b.cSt + p.cate
+Optimized constant definition for word: cGreen = clr.cGreen
+export const cSaddleBrown = b.cSa + b.cdd + b.cle + b.cBr + p.cown; // SaddleBrown
+export const cSafetyOrange = w.cSafe + b.cty + clr.cOrange; // SafetyOrange
+export const cBlazeOrange = b.cBl + p.caze + clr.cOrange; // BlazeOrange
+export const cSafetyYellow = w.cSafe + b.cty + clr.cYellow; // SafetyYellow
+export const cSaffron = b.cSa + p.cffron; // Saffron
+export const cSage = b.cSa + b.cge; // Sage
+Optimized constant definition for word: cSt = b.cSt
+Optimized constant definition for word: cPatricks = w.cPat + p.crick + b.cs
+Optimized constant definition for word: cBlue = clr.cBlue
+export const cSalmon = b.cSa + p.clmon; // Salmon
+export const cSalmonPink = b.cSa + p.clmon + b.cPi + b.cnk; // SalmonPink
+export const cSand = g.cSan + b.cd; // Sand
+export const cSandDune = g.cSan + b.cdD + p.cune; // SandDune
+export const cSandyBrown = g.cSan + b.cdy + b.cBr + p.cown; // SandyBrown
+export const cSapGreen = b.cSa + b.cpG + p.creen; // SapGreen
+export const cSapphire = b.cSa + p.cpphire; // Sapphire
+export const cSapphireBlue = b.cSa + p.cpphire + clr.cBlue; // SapphireBlue
+export const cSapphireCrayola = b.cSa + p.cpphire + b.cCr + p.cayola; // SapphireCrayola
+Optimized constant definition for word: cSatin = b.cSa + p.ctin
+Optimized constant definition for word: cSheen = b.cSh + p.ceen
+Optimized constant definition for word: cGold = e.cGold
+export const cScarlet = b.cSc + b.car + w.clet; // Scarlet
+export const cSchaussPink = b.cSc + b.cha + b.cus + b.csP + p.cink; // SchaussPink
+Optimized constant definition for word: cSchool = b.cSc + b.cho + b.col
+Optimized constant definition for word: cBus = b.cBu + b.cs
+Optimized constant definition for word: cYellow = clr.cYellow
+export const cScreaminGreen = b.cSc + p.cream + b.cin + clr.cGreen; // ScreaminGreen
+export const cSeaGreen = w.cSea + clr.cGreen; // SeaGreen
+Optimized constant definition for word: cSea = w.cSea
+Optimized constant definition for word: cGreen = clr.cGreen
+Optimized constant definition for word: cCrayola = b.cCr + p.cayola
+export const cSealBrown = w.cSea + b.clB + p.crown; // SealBrown
+export const cSeashell = w.cSea + b.csh + p.cell; // Seashell
+export const cSelectiveYellow = w.cSelect + p.cive + clr.cYellow; // SelectiveYellow
+export const cSepia = b.cSe + p.cpia; // Sepia
+export const cShadow = p.cSha + p.cdow; // Shadow
+export const cShadowBlue = p.cSha + p.cdow + clr.cBlue; // ShadowBlue
+export const cShamrockGreen = p.cSha + b.cmr + p.cock + clr.cGreen; // ShamrockGreen
+export const cShimmeringBlush = b.cSh + p.cimmer + p.cing + b.cBl + p.cush; // ShimmeringBlush
+export const cShinyShamrock = b.cSh + b.cin + b.cyS + b.cha + b.cmr + p.cock; // ShinyShamrock
+export const cShockingPink = b.cSh + p.cock + p.cing + b.cPi + b.cnk; // ShockingPink
+Optimized constant definition for word: cShocking = b.cSh + p.cock + p.cing
+Optimized constant definition for word: cPink = b.cPi + b.cnk
+Optimized constant definition for word: cCrayola = b.cCr + p.cayola
+export const cSienna = b.cSi + p.cenna; // Sienna
+WARNING: The constant has already been defined in the following library(ies): ElementConstantsValidation
+export const cSilver = e.cSilver; // Silver
+export const cSilverCrayola = e.cSilver + b.cCr + p.cayola; // SilverCrayola
+export const cSilverMetallic = e.cSilver + w.cMeta + p.cllic; // SilverMetallic
+export const cSilverChalice = e.cSilver + b.cCh + p.cali + b.cce; // SilverChalice
+export const cSilverPink = e.cSilver + b.cPi + b.cnk; // SilverPink
+export const cSilverSand = e.cSilver + g.cSan + b.cd; // SilverSand
+export const cSinopia = b.cSi + b.cno + p.cpia; // Sinopia
+export const cSizzlingRed = b.cSi + b.czz + p.clin + b.cgR + b.ced; // SizzlingRed
+export const cSizzlingSunrise = b.cSi + b.czz + p.clin + b.cgS + b.cun + p.crise; // SizzlingSunrise
+export const cSkobeloff = b.cSk + p.cobe + b.clo + b.cff; // Skobeloff
+Optimized constant definition for word: cBlue = clr.cBlue
+Optimized constant definition for word: cCrayola = b.cCr + p.cayola
+export const cSlimyGreen = b.cSl + b.cim + b.cyG + p.creen; // SlimyGreen
+export const cSmitten = b.cSm + b.cit + n.cten; // Smitten
+export const cSmokyBlack = b.cSm + b.cok + b.cyB + w.clack; // SmokyBlack
+export const cSnow = b.cSn + b.cow; // Snow
+export const cSolidPink = w.cSolid + b.cPi + b.cnk; // SolidPink
+export const cSonicSilver = b.cSo + p.cnic + e.cSilver; // SonicSilver
+export const cSpaceCadet = w.cSpace + b.cCa + p.cdet; // SpaceCadet
+export const cSpanishBistre = s.cSpanish + b.cBi + p.cstre; // SpanishBistre
+export const cSpanishBlue = s.cSpanish + clr.cBlue; // SpanishBlue
+export const cSpanishCarmine = s.cSpanish + b.cCa + p.crmine; // SpanishCarmine
+export const cSpanishGray = s.cSpanish + b.cGr + b.cay; // SpanishGray
+export const cSpanishGreen = s.cSpanish + clr.cGreen; // SpanishGreen
+export const cSpanishOrange = s.cSpanish + clr.cOrange; // SpanishOrange
+export const cSpanishPink = s.cSpanish + b.cPi + b.cnk; // SpanishPink
+export const cSpanishRed = s.cSpanish + clr.cRed; // SpanishRed
+Optimized constant definition for word: cSpanish = s.cSpanish
+Optimized constant definition for word: cSky = b.cSk + b.cy
+Optimized constant definition for word: cBlue = clr.cBlue
+export const cSpanishViolet = s.cSpanish + b.cVi + p.colet; // SpanishViolet
+export const cSpanishViridian = s.cSpanish + b.cVi + p.cridian; // SpanishViridian
+export const cSpringFrost = b.cSp + p.crin + b.cgF + p.crost; // SpringFrost
+Optimized constant definition for word: cGreen = clr.cGreen
+Optimized constant definition for word: cCrayola = b.cCr + p.cayola
+Optimized constant definition for word: cStar = b.cSt + b.car
+Optimized constant definition for word: cCommand = w.cCommand
+Optimized constant definition for word: cBlue = clr.cBlue
+Optimized constant definition for word: cStil = b.cSt + b.cil
+Optimized constant definition for word: cDe = b.cDe
+Optimized constant definition for word: cGrain = b.cGr + p.cain
+Optimized constant definition for word: cYellow = clr.cYellow
+export const cStraw = b.cSt + p.craw; // Straw
+export const cSugarPlum = p.cSug + b.car + b.cPl + b.cum; // SugarPlum
+export const cSunglow = b.cSu + b.cng + w.clow; // Sunglow
+export const cSunray = b.cSu + b.cnr + b.cay; // Sunray
+export const cSunset = b.cSu + b.cns + b.cet; // Sunset
+export const cSuperPink = p.cSup + b.cer + b.cPi + b.cnk; // SuperPink
+export const cSweetBrown = b.cSw + p.ceet + b.cBr + p.cown; // SweetBrown
+export const cTan = b.cTa + b.cn; // Tan
+export const cTanCrayola = b.cTa + b.cnC + p.crayola; // TanCrayola
+export const cTangerine = b.cTa + p.cngerine; // Tangerine
+export const cTangoPink = g.cTango + b.cPi + b.cnk; // TangoPink
+export const cTartOrange = p.cTart + clr.cOrange; // TartOrange
+export const cTaupe = g.cTau + b.cpe; // Taupe
+export const cTaupeGray = g.cTau + b.cpe + b.cGr + b.cay; // TaupeGray
+export const cTeaGreen = b.cTe + b.caG + p.creen; // TeaGreen
+export const cTeaRose = b.cTe + b.caR + p.cose; // TeaRose
+Optimized constant definition for word: cTea = b.cTe + b.ca
+Optimized constant definition for word: cRose = b.cRo + b.cse
+export const cTeal = b.cTe + b.cal; // Teal
+export const cTealBlue = b.cTe + b.cal + clr.cBlue; // TealBlue
+export const cTelemagenta = b.cTe + b.cle + clr.cmagenta; // Telemagenta
+export const cTawny = b.cTa + b.cwn + b.cy; // Tawny
+export const cTerraCotta = b.cTe + p.crra + b.cCo + b.ctt + b.ca; // TerraCotta
+export const cThistle = w.cThis + p.ctle; // Thistle
+export const cThulianPink = b.cTh + p.culi + b.can + b.cPi + b.cnk; // ThulianPink
+Optimized constant definition for word: cTickle = w.cTick + b.cle
+Optimized constant definition for word: cMe = b.cMe
+Optimized constant definition for word: cPink = b.cPi + b.cnk
+export const cTiffanyBlue = b.cTi + b.cff + p.cany + clr.cBlue; // TiffanyBlue
+export const cTimberwolf = b.cTi + p.cmber + b.cwo + b.clf; // Timberwolf
+export const cTitaniumYellow = e.cTitanium + clr.cYellow; // TitaniumYellow
+export const cTomato = b.cTo + w.cmat + b.co; // Tomato
+export const cTropicalRainforest = b.cTr + b.cop + p.cical + b.cRa + w.cinfo + p.crest; // TropicalRainforest
+export const cTrueBlue = g.cTrue + clr.cBlue; // TrueBlue
+export const cTrypanBlue = w.cTry + b.cpa + b.cnB + p.clue; // TrypanBlue
+export const cTuftsBlue = b.cTu + b.cft + b.csB + p.clue; // TuftsBlue
+export const cTumbleweed = b.cTu + b.cmb + b.cle + b.cwe + b.ced; // Tumbleweed
+export const cTurquoise = b.cTu + p.crquoise; // Turquoise
+export const cTurquoiseBlue = b.cTu + p.crquoise + clr.cBlue; // TurquoiseBlue
+export const cTurquoiseGreen = b.cTu + p.crquoise + clr.cGreen; // TurquoiseGreen
+export const cTurtleGreen = b.cTu + b.crt + b.cle + clr.cGreen; // TurtleGreen
+export const cTuscan = b.cTu + w.cscan; // Tuscan
+export const cTuscanBrown = b.cTu + w.cscan + b.cBr + p.cown; // TuscanBrown
+export const cTuscanRed = b.cTu + w.cscan + clr.cRed; // TuscanRed
+export const cTuscanTan = b.cTu + w.cscan + b.cTa + b.cn; // TuscanTan
+export const cTuscany = b.cTu + w.cscan + b.cy; // Tuscany
+export const cTwilightLavender = b.cTw + p.cili + p.cght + b.cLa + p.cvender; // TwilightLavender
+export const cTyrianPurple = b.cTy + p.cria + b.cnP + p.curple; // TyrianPurple
+export const cUABlue = b.cUA + clr.cBlue; // UABlue
+export const cUARed = b.cUA + clr.cRed; // UARed
+export const cUltramarine = b.cUl + p.ctra + p.cmar + p.cine; // Ultramarine
+export const cUltramarineBlue = b.cUl + p.ctra + p.cmar + p.cine + clr.cBlue; // UltramarineBlue
+export const cUltraPink = b.cUl + p.ctra + b.cPi + b.cnk; // UltraPink
+export const cUltraRed = b.cUl + p.ctra + clr.cRed; // UltraRed
+export const cUmber = b.cUm + p.cber; // Umber
+export const cUnbleachedSilk = b.cUn + p.cble + p.cach + b.ced + b.cSi + b.clk; // UnbleachedSilk
+Optimized constant definition for word: cUnited = w.cUnited
+Optimized constant definition for word: cNations = w.cNation + b.cs
+Optimized constant definition for word: cBlue = clr.cBlue
+export const cUPMaroon = b.cUP + b.cMa + p.croon; // UPMaroon
+export const cUpsdellRed = b.cUp + b.csd + p.cell + clr.cRed; // UpsdellRed
+export const cUranianBlue = b.cUr + p.cania + b.cnB + p.clue; // UranianBlue
+export const cUSAFABlue = b.cUS + b.cAF + b.cAB + p.clue; // USAFABlue
+Optimized constant definition for word: cVan = b.cVa + b.cn
+Optimized constant definition for word: cDyke = b.cDy + b.cke
+Optimized constant definition for word: cBrown = b.cBr + p.cown
+export const cVanilla = b.cVa + p.cnilla; // Vanilla
+export const cVanillaIce = b.cVa + p.cnilla + b.cIc + b.ce; // VanillaIce
+export const cVegasGold = b.cVe + b.cga + b.csG + w.cold; // VegasGold
+export const cVenetianRed = b.cVe + b.cne + b.cti + b.can + clr.cRed; // VenetianRed
+export const cVerdigris = p.cVer + w.cdig + p.cris; // Verdigris
+export const cVermilion = p.cVer + p.cmilion; // Vermilion
+export const cVeronica = p.cVer + b.con + p.cica; // Veronica
+export const cViolet = b.cVi + p.colet; // Violet
+Optimized constant definition for word: cViolet = b.cVi + p.colet
+Optimized constant definition for word: cColor = w.cColor
+Optimized constant definition for word: cWheel = b.cWh + p.ceel
+export const cVioletCrayola = b.cVi + p.colet + b.cCr + p.cayola; // VioletCrayola
+export const cVioletRYB = b.cVi + p.colet + p.cRYB; // VioletRYB
+export const cVioletBlue = b.cVi + p.colet + clr.cBlue; // VioletBlue
+Optimized constant definition for word: cViolet = b.cVi + p.colet
+Optimized constant definition for word: cBlue = clr.cBlue
+Optimized constant definition for word: cCrayola = b.cCr + p.cayola
+export const cVioletRed = b.cVi + p.colet + clr.cRed; // VioletRed
+export const cViridian = b.cVi + p.cridian; // Viridian
+export const cViridianGreen = b.cVi + p.cridian + clr.cGreen; // ViridianGreen
+export const cVividBurgundy = b.cVi + p.cvid + b.cBu + p.crgundy; // VividBurgundy
+Optimized constant definition for word: cVivid = b.cVi + p.cvid
+Optimized constant definition for word: cBlue = clr.cBlue
+export const cVividTangerine = b.cVi + p.cvid + b.cTa + p.cngerine; // VividTangerine
+export const cVividViolet = b.cVi + p.cvid + b.cVi + p.colet; // VividViolet
+export const cVolt = b.cVo + b.clt; // Volt
+export const cWarmBlack = b.cWa + b.crm + clr.cBlack; // WarmBlack
+export const cWheat = b.cWh + p.ceat; // Wheat
+Optimized constant definition for word: cWild = b.cWi + b.cld
+Optimized constant definition for word: cBlue = clr.cBlue
+Optimized constant definition for word: cYonder = b.cYo + p.cnder
+export const cWildOrchid = b.cWi + b.cld + b.cOr + p.cchid; // WildOrchid
+export const cWildStrawberry = b.cWi + b.cld + b.cSt + p.craw + p.cber + b.cry; // WildStrawberry
+export const cWildWatermelon = b.cWi + b.cld + b.cWa + w.cterm + p.celon; // WildWatermelon
+export const cWindsorTan = w.cWind + b.cso + b.crT + b.can; // WindsorTan
+export const cWine = b.cWi + b.cne; // Wine
+export const cWineDregs = b.cWi + b.cne + b.cDr + b.ceg + b.cs; // WineDregs
+export const cWinterSky = b.cWi + b.cnt + b.cer + b.cSk + b.cy; // WinterSky
+export const cWintergreenDream = b.cWi + b.cnt + p.cerg + p.creen + b.cDr + p.ceam; // WintergreenDream
+export const cWisteria = b.cWi + p.cster + b.cia; // Wisteria
+export const cWoodBrown = b.cWo + b.cod + b.cBr + p.cown; // WoodBrown
+export const cXanthic = b.cXa + w.cnth + b.cic; // Xanthic
+export const cXanadu = b.cXa + b.cna + b.cdu; // Xanadu
+export const cYaleBlue = b.cYa + b.cle + clr.cBlue; // YaleBlue
+export const cYellowCrayola = clr.cYellow + b.cCr + p.cayola; // YellowCrayola
+export const cYellowMunsell = clr.cYellow + b.cMu + p.cnsell; // YellowMunsell
+export const cYellowNCS = clr.cYellow + p.cNCS; // YellowNCS
+export const cYellowPantone = clr.cYellow + b.cPa + p.cntone; // YellowPantone
+export const cYellowProcess = clr.cYellow + w.cProcess; // YellowProcess
+export const cYellowRYB = clr.cYellow + p.cRYB; // YellowRYB
+export const cYellowGreen = clr.cYellow + clr.cGreen; // YellowGreen
+Optimized constant definition for word: cYellow = clr.cYellow
+Optimized constant definition for word: cGreen = clr.cGreen
+Optimized constant definition for word: cCrayola = b.cCr + p.cayola
+Optimized constant definition for word: cYellow = clr.cYellow
+Optimized constant definition for word: cGreen = clr.cGreen
+Optimized constant definition for word: cColor = w.cColor
+Optimized constant definition for word: cWheel = b.cWh + p.ceel
+export const cYellowOrange = clr.cYellow + clr.cOrange; // YellowOrange
+Optimized constant definition for word: cYellow = clr.cYellow
+Optimized constant definition for word: cOrange = clr.cOrange
+Optimized constant definition for word: cColor = w.cColor
+Optimized constant definition for word: cWheel = b.cWh + p.ceel
+export const cYellowSunshine = clr.cYellow + b.cSu + b.cns + p.chine; // YellowSunshine
+Optimized constant definition for word: cY = b.cY
+Optimized constant definition for word: cIn = b.cIn
+Optimized constant definition for word: cMn = b.cMn
+Optimized constant definition for word: cBlue = clr.cBlue
+export const cZaffre = b.cZa + b.cff + b.cre; // Zaffre
+export const cZomp = b.cZo + b.cmp; // Zomp
