@@ -53,7 +53,8 @@ function bootStrapApplicationDeployment() {
   } else if (NODE_ENV === w.cproduction) {
     rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
   } else {
-    console.log('WARNING: No .env file found! going to default to the DEVELOPMENT ENVIRONMENT!!!!!!!!!')
+    // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
+    console.log(s.cApplicationWarningMessage1a + s.ccApplicationWarningMessage1b);
     rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
   }
   // console.log('rootPath is: ' + rootPath);
@@ -105,10 +106,17 @@ function deployApplication() {
       commandResult = warden.processCommandQueue();
     }
     let deploymentResult = warden.getConfigurationSetting(s.cdeploymentCompleted);
-    console.log('Deployment was completed: ' + deploymentResult);
+    if (deploymentResult) {
+      // Deployment was completed:
+      console.log(s.cBuildMessage1 + deploymentResult);
+    } else {
+      console.log(s.cBuildMessage1 + g.cFalse);
+      warden.setConfigurationSetting(s.cdeploymentCompleted, false);
+    }
   } catch (err) {
     console.error(err);
-    warden.setConfigurationSetting('deploymentCompleted', false);
+    // deploymentCompleted
+    warden.setConfigurationSetting(s.cdeploymentCompleted, false);
   }
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
@@ -137,7 +145,12 @@ function releaseApplication() {
       commandResult = warden.processCommandQueue();
     }
     let releaseResult = warden.getConfigurationSetting(s.creleaseCompleted);
-    console.log('Release was completed: ' + releaseResult);
+    if (releaseResult) {
+      // Release was completed
+      console.log(s.cBuildMessage1 + releaseResult);
+    } else {
+      console.log(s.cBuildMessage1 + g.cFalse);
+    }
   } catch (err) {
     console.error(err);
   }

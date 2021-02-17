@@ -19,6 +19,9 @@
         <ConfigurationElement Name="ClearBusinessRulesPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="ClearCommandPerformanceDataAfterAnalysis" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableConstantsValidation" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="EnableConstantsPatternGeneration" Type="Default" Value="True" Version="3"/>
+        <ConfigurationElement Name="LogFileEnabled" Type="Default" Value="False" Version="3"/>
+        <ConfigurationElement Name="IncludeDateTimeStampInLogFiles" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="DisplayIndividualConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplaySummaryConstantsValidationPassMessages" Type="Default" Value="True" Version="3"/>
@@ -2154,6 +2157,20 @@
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2503,6 +2520,20 @@
           <ConfigurationElement Name="stringParsing.loadDataFile@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.loadDataFile@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.loadDataFile@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.supportedFileFormatsAre@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="stringParsing.getStoredData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.getStoredData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -4169,6 +4200,20 @@
           <ConfigurationElement Name="nominal.printDataHive@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHive@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.printDataHive@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="nominal.printDataHiveAttributes" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="nominal.printDataHiveAttributes@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
           <ConfigurationElement Name="nominal.clearDataStorage" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.clearDataStorage@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

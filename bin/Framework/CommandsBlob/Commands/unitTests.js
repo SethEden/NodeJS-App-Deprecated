@@ -65,62 +65,64 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData); // Phase 1 Constants Validation
+  // BEGIN Phase 1 Constants Validation
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN Phase 1 Constants Validation'); // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBeginPhase1ConstantsValidation); // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
 
 
-  var constantsPath = _configurator["default"].getConfigurationSetting(s.cConstantsPath);
+  var constantsPath = _configurator["default"].getConfigurationSetting(s.cConstantsPath); // constantsPath is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsPath is: ' + constantsPath);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cconstantsPathIs + constantsPath);
 
   var rulesPhase1 = [];
   var rulesPhase2 = [];
   rulesPhase1[0] = s.cvalidateConstantsDataValidation;
   rulesPhase2[0] = s.cvalidateConstantsDataValues;
-  var resolvedConstantsPath_Basic = path.resolve(constantsPath + b.cForwardSlash + s.cbasic_constants_js);
+  var resolvedConstantsPath_Basic = path.resolve(constantsPath + b.cForwardSlash + s.cbasic_constants_js); // resolvedConstantsPath_Basic is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Basic is: ' + resolvedConstantsPath_Basic);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_BasicIs + resolvedConstantsPath_Basic);
 
-  var resolvedConstantsPath_Color = path.resolve(constantsPath + b.cForwardSlash + s.ccolor_constants_js);
+  var resolvedConstantsPath_Color = path.resolve(constantsPath + b.cForwardSlash + s.ccolor_constants_js); // resolvedConstantsPath_Color is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Color is: ' + resolvedConstantsPath_Color);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_ColorIs + resolvedConstantsPath_Color);
 
-  var resolvedConstantsPath_Element = path.resolve(constantsPath + b.cForwardSlash + s.celement_constants_js);
+  var resolvedConstantsPath_Element = path.resolve(constantsPath + b.cForwardSlash + s.celement_constants_js); // resolvedConstantsPath_Element is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Element is: ' + resolvedConstantsPath_Element);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_ElementIs + resolvedConstantsPath_Element);
 
-  var resolvedConstantsPath_Generic = path.resolve(constantsPath + b.cForwardSlash + s.cgeneric_constants_js);
+  var resolvedConstantsPath_Generic = path.resolve(constantsPath + b.cForwardSlash + s.cgeneric_constants_js); // resolvedConstantsPath_Generic is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Generic is: ' + resolvedConstantsPath_Generic);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_GenericIs + resolvedConstantsPath_Generic);
 
-  var resolvedConstantsPath_Isotope = path.resolve(constantsPath + b.cForwardSlash + s.cisotope_constants_js);
+  var resolvedConstantsPath_Isotope = path.resolve(constantsPath + b.cForwardSlash + s.cisotope_constants_js); // resolvedConstantsPath_Isotope is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Isotope is: ' + resolvedConstantsPath_Isotope);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_IsotopeIs + resolvedConstantsPath_Isotope);
 
-  var resolvedConstantsPath_Numeric = path.resolve(constantsPath + b.cForwardSlash + s.cnumeric_constants_js);
+  var resolvedConstantsPath_Numeric = path.resolve(constantsPath + b.cForwardSlash + s.cnumeric_constants_js); // resolvedConstantsPath_Numeric is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Numeric is: ' + resolvedConstantsPath_Numeric);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_NumericIs + resolvedConstantsPath_Numeric);
 
-  var resolvedConstantsPath_Phonics = path.resolve(constantsPath + b.cForwardSlash + s.cphonics_constants_js);
+  var resolvedConstantsPath_Phonics = path.resolve(constantsPath + b.cForwardSlash + s.cphonics_constants_js); // resolvedConstantsPath_Phonics is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Phonics is: ' + resolvedConstantsPath_Phonics);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_PhonicsIs + resolvedConstantsPath_Phonics);
 
-  var resolvedConstantsPath_Shape = path.resolve(constantsPath + b.cForwardSlash + s.cshape_constants_js);
+  var resolvedConstantsPath_Shape = path.resolve(constantsPath + b.cForwardSlash + s.cshape_constants_js); // resolvedConstantsPath_Shape is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Shape is: ' + resolvedConstantsPath_Shape);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_ShapeIs + resolvedConstantsPath_Shape);
 
-  var resolvedConstantsPath_System = path.resolve(constantsPath + b.cForwardSlash + s.csystem_constants_js);
+  var resolvedConstantsPath_System = path.resolve(constantsPath + b.cForwardSlash + s.csystem_constants_js); // resolvedConstantsPath_System is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_System is: ' + resolvedConstantsPath_System);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_SystemIs + resolvedConstantsPath_System);
 
-  var resolvedConstantsPath_Units = path.resolve(constantsPath + b.cForwardSlash + s.cunits_constants_js);
+  var resolvedConstantsPath_Units = path.resolve(constantsPath + b.cForwardSlash + s.cunits_constants_js); // resolvedConstantsPath_Units is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Units is: ' + resolvedConstantsPath_Units);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_UnitsIs + resolvedConstantsPath_Units);
 
-  var resolvedConstantsPath_Words = path.resolve(constantsPath + b.cForwardSlash + s.cword_constants_js);
+  var resolvedConstantsPath_Words = path.resolve(constantsPath + b.cForwardSlash + s.cword_constants_js); // resolvedConstantsPath_Words is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'resolvedConstantsPath_Words is: ' + resolvedConstantsPath_Words);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cresolvedConstantsPath_WordsIs + resolvedConstantsPath_Words);
 
   var basicConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Basic, s.cBasicConstantsValidation, rulesPhase1);
 
@@ -142,12 +144,14 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   var unitsConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Units, s.cUnitsConstantsValidation, rulesPhase1);
 
-  var wordConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Words, s.cWordConstantsValidation, rulesPhase1);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END Phase 1 Constants Validation'); // Phase 2 Constants Validation
+  var wordConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Words, s.cWordConstantsValidation, rulesPhase1); // END Phase 1 Constants Validation
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN Phase 2 Constants Validation'); // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEndPhase1ConstantsValidation); // Phase 2 Constants Validation
+  // BEGIN Phase 2 Constants Validation
+
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBeginPhase2ConstantsValidation); // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
 
 
   var basicConstantsValidationPhase2Result = _ruleBroker["default"].processRules(s.cBasicConstantsValidation, '', rulesPhase2);
@@ -170,53 +174,76 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   var unitsConstantsValidationPhase2Result = _ruleBroker["default"].processRules(s.cUnitsConstantsValidation, '', rulesPhase2);
 
-  var wordConstantsValidationPhase2Result = _ruleBroker["default"].processRules(s.cWordConstantsValidation, '', rulesPhase2);
+  var wordConstantsValidationPhase2Result = _ruleBroker["default"].processRules(s.cWordConstantsValidation, '', rulesPhase2); // END Phase 2 Constants Validation
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END Phase 2 Constants Validation');
 
-  _loggers["default"].constantsValidationSummaryLog('Basic Constants Phase 1 Validation', basicConstantsValidationPhase1Result);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEndPhase2ConstantsValidation); // Basic Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Color Constants Phase 1 Validation', colorConstantsValidationPhase1Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Element Constants Phase 1 Validation', elementConstantsValidationPhase1Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cBasicConstantsPhase1Validation, basicConstantsValidationPhase1Result); // Color Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Generic Constants Phase 1 Validation', genericConstantsValidationPhase1Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Isotope Constants Phase 1 Validation', isotopeConstantsValidationPhase1Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cColorConstantsPhase1Validation, colorConstantsValidationPhase1Result); // Element Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Numerical Constants Phase 1 Validation', numericConstantsValidationPhase1Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Phonics Constants Phase 1 Validation', phonicsConstantsValidationPhase1Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cElementConstantsPhase1Validation, elementConstantsValidationPhase1Result); // Generic Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Shape Constants Phase 1 Validation', shapeConstantsValidationPhase1Result);
 
-  _loggers["default"].constantsValidationSummaryLog('System Constants Phase 1 Validation', systemConstantsValidationPhase1Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cGenericConstantsPhase1Validation, genericConstantsValidationPhase1Result); // Isotope Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Units Constants Phase 1 Validation', unitsConstantsValidationPhase1Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Word Constants Phase 1 Validation', wordConstantsValidationPhase1Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cIsotopeConstantsPhase1Validation, isotopeConstantsValidationPhase1Result); // Numerical Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Basic Constants Phase 2 Validation', basicConstantsValidationPhase2Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Color Constants Phase 2 Validation', colorConstantsValidationPhase2Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cNumericalConstantsPhase1Validation, numericConstantsValidationPhase1Result); // Phonics Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Element Constants Phase 2 Validation', elementConstantsValidationPhase2Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Generic Constants Phase 2 Validation', genericConstantsValidationPhase2Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cPhonicsConstantsPhase1Validation, phonicsConstantsValidationPhase1Result); // Shape Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Isotope Constants Phase 2 Validation', isotopeConstantsValidationPhase2Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Numerical Constants Phase 2 Validation', numericConstantsValidationPhase2Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cShapeConstantsPhase1Validation, shapeConstantsValidationPhase1Result); // System Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Phonics Constants Phase 2 Validation', phonicsConstantsValidationPhase2Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Shape Constants Phase 2 Validation', shapeConstantsValidationPhase2Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cSystemConstantsPhase1Validation, systemConstantsValidationPhase1Result); // Units Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('System Constants Phase 2 Validation', systemConstantsValidationPhase2Result);
 
-  _loggers["default"].constantsValidationSummaryLog('Units Constants Phase 2 Validation', unitsConstantsValidationPhase2Result);
+  _loggers["default"].constantsValidationSummaryLog(s.cUnitsConstantsPhase1Validation, unitsConstantsValidationPhase1Result); // Word Constants Phase 1 Validation
 
-  _loggers["default"].constantsValidationSummaryLog('Word Constants Phase 2 Validation', wordConstantsValidationPhase2Result);
+
+  _loggers["default"].constantsValidationSummaryLog(s.cWordConstantsPhase1Validation, wordConstantsValidationPhase1Result); // Basic Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cBasicConstantsPhase2Validation, basicConstantsValidationPhase2Result); // Color Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cColorConstantsPhase2Validation, colorConstantsValidationPhase2Result); // Element Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cElementConstantsPhase2Validation, elementConstantsValidationPhase2Result); // Generic Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cGenericConstantsPhase2Validation, genericConstantsValidationPhase2Result); // Isotope Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cIsotopeConstantsPhase2Validation, isotopeConstantsValidationPhase2Result); // Numerical Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cNumericalConstantsPhase2Validation, numericConstantsValidationPhase2Result); // Phonics Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cPhonicsConstantsPhase2Validation, phonicsConstantsValidationPhase2Result); // Shape Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cShapeConstantsPhase2Validation, shapeConstantsValidationPhase2Result); // System Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cSystemConstantsPhase2Validation, systemConstantsValidationPhase2Result); // Units Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cUnitsConstantsPhase2Validation, unitsConstantsValidationPhase2Result); // Word Constants Phase 2 Validation
+
+
+  _loggers["default"].constantsValidationSummaryLog(s.cWordConstantsPhase2Validation, wordConstantsValidationPhase2Result);
 
   if (basicConstantsValidationPhase1Result === true && colorConstantsValidationPhase1Result === true && elementConstantsValidationPhase1Result === true && genericConstantsValidationPhase1Result === true && isotopeConstantsValidationPhase1Result === true && numericConstantsValidationPhase1Result === true && phonicsConstantsValidationPhase1Result === true && shapeConstantsValidationPhase1Result === true && systemConstantsValidationPhase1Result === true && unitsConstantsValidationPhase1Result === true && wordConstantsValidationPhase1Result === true && basicConstantsValidationPhase2Result === true && colorConstantsValidationPhase2Result === true && elementConstantsValidationPhase2Result === true && genericConstantsValidationPhase2Result === true && isotopeConstantsValidationPhase2Result === true && numericConstantsValidationPhase2Result === true && phonicsConstantsValidationPhase2Result === true && shapeConstantsValidationPhase2Result === true && systemConstantsValidationPhase2Result === true && unitsConstantsValidationPhase2Result === true && wordConstantsValidationPhase2Result === true) {
     _configurator["default"].setConfigurationSetting(s.cPassAllConstantsValidations, true);
@@ -254,39 +281,44 @@ var validateCommandAliases = function validateCommandAliases(inputData, inputMet
   rules[0] = s.ccountDuplicateCommandAliases;
 
   loop1: for (var i = 0; i < allCommandAliases.length; i++) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+    // BEGIN i-th loop:
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithLoop + i);
 
-    var currentCommand = allCommandAliases[i];
+    var currentCommand = allCommandAliases[i]; // currentCommand is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentCommandIs + JSON.stringify(currentCommand));
 
-    var aliasList = currentCommand[w.cAliases];
+    var aliasList = currentCommand[w.cAliases]; // aliasList is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.caliasListIs + aliasList);
 
     var arrayOfAliases = aliasList.split(b.cComa);
 
     loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+      // BEGIN j-th loop:
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_jthLoop + i);
 
-      var currentAlias = arrayOfAliases[j];
+      var currentAlias = arrayOfAliases[j]; // currentAlias is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentAliasIs + currentAlias);
 
       var duplicateAliasCount = _ruleBroker["default"].processRules(currentAlias, allCommandAliases, rules);
 
       if (duplicateAliasCount > 1) {
         passedAllCommandAliasesDuplicateCheck = false;
-      }
+      } // END j-th loop:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
-    }
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_jthLoop + i);
+    } // END i-th loop:
+
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithLoop + i);
   }
 
   if (passedAllCommandAliasesDuplicateCheck === true) {
-    console.log('PASSED: All duplicate command aliases validation tests!');
+    // PASSED: All duplicate command aliases validation tests!
+    console.log(s.cvalidateCommandAliasesMessage1);
   }
 
   _configurator["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);

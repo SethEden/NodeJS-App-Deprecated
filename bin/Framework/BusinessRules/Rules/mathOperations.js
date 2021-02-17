@@ -80,9 +80,9 @@ var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
     //     b: parseInt(result[3], 16)
     //   } : null;
     // }
-    var bigInteger = parseInt(inputData, 16);
+    var bigInteger = parseInt(inputData, 16); // bigInteger is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'bigInteger is: ' + bigInteger);
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cMathOperationsMessage1 + bigInteger);
 
     var red = bigInteger >> 16 & 255;
     var green = bigInteger >> 8 & 255;

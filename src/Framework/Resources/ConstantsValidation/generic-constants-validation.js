@@ -49,6 +49,10 @@ export const genericConstantsValidation = [
    {Name: 'cnoteql', Actual: g.cnoteql, Expected: 'noteql'},
    {Name: 'cNotEql', Actual: g.cNotEql, Expected: 'NotEql'},
    {Name: 'cNoteql', Actual: g.cNoteql, Expected: 'Noteql'},
+   {Name: 'cmax', Actual: g.cmax, Expected: 'max'},
+   {Name: 'cMax', Actual: g.cMax, Expected: 'Max'},
+   {Name: 'cmin', Actual: g.cmin, Expected: 'min'},
+   {Name: 'cMin', Actual: g.cMin, Expected: 'Min'},
 
    // Test Status
    {Name: 'cPass', Actual: g.cPass, Expected: 'Pass'},
@@ -66,6 +70,9 @@ export const genericConstantsValidation = [
    {Name: 'cAllNumbers', Actual: g.cAllNumbers, Expected: '0123456789'},
 
    // File Extensions
+   {Name: 'cexe', Actual: g.cexe, Expected: 'exe'},
+   {Name: 'cExe', Actual: g.cExe, Expected: 'Exe'},
+   {Name: 'cEXE', Actual: g.cEXE, Expected: 'EXE'},
    {Name: 'cdoc', Actual: g.cdoc, Expected: 'doc'},
    {Name: 'cDoc', Actual: g.cDoc, Expected: 'Doc'},
    {Name: 'cDOC', Actual: g.cDOC, Expected: 'DOC'},
@@ -84,6 +91,9 @@ export const genericConstantsValidation = [
    {Name: 'cxml', Actual: g.cxml, Expected: 'xml'},
    {Name: 'cXml', Actual: g.cXml, Expected: 'Xml'},
    {Name: 'cXML', Actual: g.cXML, Expected: 'XML'},
+   {Name: 'clog', Actual: g.clog, Expected: 'log'},
+   {Name: 'cLog', Actual: g.cLog, Expected: 'Log'},
+   {Name: 'cLOG', Actual: g.cLOG, Expected: 'LOG'},
    {Name: 'cjson', Actual: g.cjson, Expected: 'json'},
    {Name: 'cJson', Actual: g.cJson, Expected: 'Json'},
    {Name: 'cJSON', Actual: g.cJSON, Expected: 'JSON'},
@@ -91,6 +101,9 @@ export const genericConstantsValidation = [
    {Name: 'cEnv', Actual: g.cEnv, Expected: 'Env'},
    {Name: 'cENV', Actual: g.cENV, Expected: 'ENV'},
 
+   {Name: 'cDotexe', Actual: g.cDotexe, Expected: '.exe'},
+   {Name: 'cDotExe', Actual: g.cDotExe, Expected: '.Exe'},
+   {Name: 'cDotEXE', Actual: g.cDotEXE, Expected: '.EXE'},
    {Name: 'cDotcsv', Actual: g.cDotcsv, Expected: '.csv'},
    {Name: 'cDotCsv', Actual: g.cDotCsv, Expected: '.Csv'},
    {Name: 'cDotCSV', Actual: g.cDotCSV, Expected: '.CSV'},
@@ -104,9 +117,15 @@ export const genericConstantsValidation = [
    {Name: 'cDotxml', Actual: g.cDotxml, Expected: '.xml'},
    {Name: 'cDotXml', Actual: g.cDotXml, Expected: '.Xml'},
    {Name: 'cDotXML', Actual: g.cDotXML, Expected: '.XML'},
+   {Name: 'cDotlog', Actual: g.cDotlog, Expected: '.log'},
+   {Name: 'cDotLog', Actual: g.cDotLog, Expected: '.Log'},
+   {Name: 'cDotLOG', Actual: g.cDotLOG, Expected: '.LOG'},
    {Name: 'cDotjson', Actual: g.cDotjson, Expected: '.json'},
    {Name: 'cDotJson', Actual: g.cDotJson, Expected: '.Json'},
    {Name: 'cDotJSON', Actual: g.cDotJSON, Expected: '.JSON'},
+   {Name: 'cDotenv', Actual: g.cDotenv, Expected: '.env'},
+   {Name: 'cDotEnv', Actual: g.cDotEnv, Expected: '.Env'},
+   {Name: 'cDotENV', Actual: g.cDotENV, Expected: '.ENV'},
    {Name: 'cascii', Actual: g.cascii, Expected: 'ascii'},
 
    // Time Formatting
@@ -190,6 +209,24 @@ export const genericConstantsValidation = [
    {Name: 'cDecember', Actual: g.cDecember, Expected: 'December'},
 
    // Miscelanious
+   {Name: 'cUTF8', Actual: g.cUTF8, Expected: 'UTF8'},
    {Name: 'cconst', Actual: g.cconst, Expected: 'const'},
-   {Name: 'cConst', Actual: g.cConst, Expected: 'Const'}
+   {Name: 'cConst', Actual: g.cConst, Expected: 'Const'},
+   {Name: 'cASAP', Actual: g.cASAP, Expected: 'ASAP'},
+   {Name: 'capp', Actual: g.capp, Expected: 'app'},
+   {Name: 'cApp', Actual: g.cApp, Expected: 'App'},
+   {Name: 'cAPP', Actual: g.cAPP, Expected: 'APP'},
+   {Name: 'carg', Actual: g.carg, Expected: 'arg'},
+   {Name: 'cArg', Actual: g.cArg, Expected: 'Arg'},
+   {Name: 'cargs', Actual: g.cargs, Expected: 'args'},
+   {Name: 'cArgs', Actual: g.cArgs, Expected: 'Args'},
+   {Name: 'chex', Actual: g.chex, Expected: 'hex'},
+   {Name: 'cHex', Actual: g.cHex, Expected: 'Hex'},
+   {Name: 'cregEx', Actual: g.cregEx, Expected: 'regEx'},
+   {Name: 'cRegEx', Actual: g.cRegEx, Expected: 'RegEx'},
+   {Name: 'cregExp', Actual: g.cregExp, Expected: 'regExp'},
+   {Name: 'cRegExp', Actual: g.cRegExp, Expected: 'RegExp'},
+   {Name: 'cbin', Actual: g.cbin, Expected: 'bin'},
+   {Name: 'cBin', Actual: g.cBin, Expected: 'Bin'},
+   {Name: 'cBIN', Actual: g.cBIN, Expected: 'BIN'}
  ];

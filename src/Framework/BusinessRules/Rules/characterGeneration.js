@@ -281,22 +281,23 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = 
   let c9 = n.c9;
   let cTrue = g.cTrue;
   typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'typeToGenerate is: ' + typeToGenerate);
+  // typeToGenerate is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage1 + typeToGenerate);
   switch (typeToGenerate) {
-    case 1: case '1': // Generate a number.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a number.');
+    case 1: case n.c1: // Generate a number.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage2);
       returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
       break;
-    case 2: case '2': // Generate a random upper case or lower case letter.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a random upper case or lower case letter.');
+    case 2: case n.c2: // Generate a random upper case or lower case letter.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage3);
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
-    case 3: case '3':// Generate a special characters.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Generate a special character.');
+    case 3: case n.c3:// Generate a special character.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage4);
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
-    default: // Default to a random upper case or lower case letter as a fall-back.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'DEFAULT: Generate a random upper case or lower case letter.');
+    default: // DEFAULT: Generate a random upper case or lower case letter.
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage5);
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
   }
@@ -661,9 +662,7 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let inputDataLength = inputData.length.toString();
 	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
 	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
@@ -693,9 +692,7 @@ export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaDa
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let cTrue = g.cTrue;
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let inputDataLength = inputData.length.toString();
 	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
 	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
@@ -725,9 +722,7 @@ export const randomlyGenerateNumberInRange1 = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = '';
-  if (!inputData && !inputMetaData) {
-	  returnData = '';
-  } else {
+  if (inputData && inputMetaData) {
 	  let minimum = parseInt(inputData);
 	  let maximum = parseInt(inputMetaData[0]);
 	  let addOne = stringToBoolean(inputMetaData[1], '');
@@ -771,9 +766,7 @@ export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData && !inputMetaData) {
-	  returnData = '';
-  } else {
+  if (inputData && inputMetaData) {
 	  let minimum = parseInt(inputData);
 	  let maximum = parseInt(inputMetaData[0]);
 	  let addOne = stringToBoolean(inputMetaData[1]);
@@ -999,9 +992,7 @@ export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let number = parseInt(inputData);
 	  number--;
 	  // console.log('number is: ' + number.toString(10));
@@ -1031,9 +1022,7 @@ export const convertNumberToLowerCaseLetter = function(inputData, inputMetaData)
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  if (!inputData) {
-	  returnData = '';
-  } else {
+  if (inputData) {
 	  let number = parseInt(inputData);
 	  number--;
 	  // console.log('number is: ' + number.toString(10));

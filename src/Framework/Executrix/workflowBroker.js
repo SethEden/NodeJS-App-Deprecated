@@ -35,19 +35,23 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function getWorkflow(workflowName) {
   let functionName = getWorkflow.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'workflowName is: ' + workflowName);
+  // workflowName is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowNameIs + workflowName);
   let workflowValue = false;
   let arrayOfWorkflows = D[s.cCommandWorkflows][w.cWorkflow];
   for (let i = 0; i < arrayOfWorkflows.length; i++) {
     let currentWorkflow = arrayOfWorkflows[i];
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentWorkflow is: ' + JSON.stringify(currentWorkflow));
+    // currentWorkflow is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
     if (currentWorkflow[w.cName] === workflowName) {
       workflowValue = currentWorkflow[w.cValue];
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'workflowValue is: ' + JSON.stringify(workflowValue));
+      // workflowValue is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowValueIs + JSON.stringify(workflowValue));
       break;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'workflowValue is: ' + workflowValue);
+  // workflowValue is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowValueIs + workflowValue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return workflowValue;
 };

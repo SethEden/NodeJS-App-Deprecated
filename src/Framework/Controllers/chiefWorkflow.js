@@ -36,7 +36,8 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   let functionName = loadCommandWorkflowsFromPath.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'commandWorkflowFilePathConfigurationName is: ' + commandWorkflowFilePathConfigurationName);
+  // commandWorkflowFilePathConfigurationName is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
   let allCommandWorkflowsData = {};
   allCommandWorkflowsData = chiefData.setupAllXmlData(commandWorkflowFilePathConfigurationName, s.cCommandWorkflows);
   if (D[s.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.

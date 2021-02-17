@@ -5,8 +5,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = exports.cYYYY = exports.cascii = exports.cDotJSON = exports.cDotJson = exports.cDotjson = exports.cDotXML = exports.cDotXml = exports.cDotxml = exports.cDotTXT = exports.cDotTxt = exports.cDottxt = exports.cDotZIP = exports.cDotZip = exports.cDotzip = exports.cDotCom = exports.cDotCSV = exports.cDotCsv = exports.cDotcsv = exports.cENV = exports.cEnv = exports.cenv = exports.cJSON = exports.cJson = exports.cjson = exports.cXML = exports.cXml = exports.cxml = exports.cCSV = exports.cCsv = exports.ccsv = exports.cTXT = exports.cTxt = exports.ctxt = exports.cZIP = exports.cZip = exports.czip = exports.cCOM = exports.cCom = exports.ccom = exports.cDOC = exports.cDoc = exports.cdoc = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
-exports.cConst = exports.cconst = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = void 0;
+exports.cYYYY = exports.cascii = exports.cDotENV = exports.cDotEnv = exports.cDotenv = exports.cDotJSON = exports.cDotJson = exports.cDotjson = exports.cDotLOG = exports.cDotLog = exports.cDotlog = exports.cDotXML = exports.cDotXml = exports.cDotxml = exports.cDotTXT = exports.cDotTxt = exports.cDottxt = exports.cDotZIP = exports.cDotZip = exports.cDotzip = exports.cDotCom = exports.cDotCSV = exports.cDotCsv = exports.cDotcsv = exports.cDotEXE = exports.cDotExe = exports.cDotexe = exports.cENV = exports.cEnv = exports.cenv = exports.cJSON = exports.cJson = exports.cjson = exports.cLOG = exports.cLog = exports.clog = exports.cXML = exports.cXml = exports.cxml = exports.cCSV = exports.cCsv = exports.ccsv = exports.cTXT = exports.cTxt = exports.ctxt = exports.cZIP = exports.cZip = exports.czip = exports.cCOM = exports.cCom = exports.ccom = exports.cDOC = exports.cDoc = exports.cdoc = exports.cEXE = exports.cExe = exports.cexe = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cMin = exports.cmin = exports.cMax = exports.cmax = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
+exports.cBIN = exports.cBin = exports.cbin = exports.cRegExp = exports.cregExp = exports.cRegEx = exports.cregEx = exports.cHex = exports.chex = exports.cArgs = exports.cargs = exports.cArg = exports.carg = exports.cAPP = exports.cApp = exports.capp = exports.cASAP = exports.cConst = exports.cconst = exports.cUTF8 = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = void 0;
 
 var b = _interopRequireWildcard(require("../constants/basic.constants"));
 
@@ -120,9 +120,21 @@ var cNotEql = cNot + p.cEql; // NotEql
 
 exports.cNotEql = cNotEql;
 var cNoteql = cNot + p.ceql; // Noteql
-// Test Status
 
 exports.cNoteql = cNoteql;
+var cmax = b.cma + b.cx; // max
+
+exports.cmax = cmax;
+var cMax = b.cMa + b.cx; // Max
+
+exports.cMax = cMax;
+var cmin = b.camai + b.cn; // min
+
+exports.cmin = cmin;
+var cMin = b.cMi + b.cn; // Min
+// Test Status
+
+exports.cMin = cMin;
 var cPass = b.cPa + b.css; // Pass
 
 exports.cPass = cPass;
@@ -153,6 +165,15 @@ var cAllNumbers = n.c0 + n.c1 + n.c2 + n.c3 + n.c4 + n.c5 + n.c6 + n.c7 + n.c8 +
 // File Extensions
 
 exports.cAllNumbers = cAllNumbers;
+var cexe = b.cex + b.ce; // exe
+
+exports.cexe = cexe;
+var cExe = b.cEx + b.ce; // Exe
+
+exports.cExe = cExe;
+var cEXE = b.cEX + b.cE; // EXE
+
+exports.cEXE = cEXE;
 var cdoc = b.cdo + b.cc; // doc
 
 exports.cdoc = cdoc;
@@ -207,6 +228,15 @@ exports.cXml = cXml;
 var cXML = b.cXM + b.cL; // XML
 
 exports.cXML = cXML;
+var clog = b.clo + b.cg; // log
+
+exports.clog = clog;
+var cLog = b.cLo + b.cg; // Log
+
+exports.cLog = cLog;
+var cLOG = b.cLO + b.cG; // LOG
+
+exports.cLOG = cLOG;
 var cjson = b.cjs + b.con; // json
 
 exports.cjson = cjson;
@@ -225,6 +255,15 @@ exports.cEnv = cEnv;
 var cENV = b.cEN + b.cV; // ENV
 
 exports.cENV = cENV;
+var cDotexe = b.cDot + cexe; // .exe
+
+exports.cDotexe = cDotexe;
+var cDotExe = b.cDot + cExe; // .Exe
+
+exports.cDotExe = cDotExe;
+var cDotEXE = b.cDot + cEXE; // .EXE
+
+exports.cDotEXE = cDotEXE;
 var cDotcsv = b.cDot + ccsv; // .csv
 
 exports.cDotcsv = cDotcsv;
@@ -264,6 +303,15 @@ exports.cDotXml = cDotXml;
 var cDotXML = b.cDot + cXML; // .XML
 
 exports.cDotXML = cDotXML;
+var cDotlog = b.cDot + clog; // .log
+
+exports.cDotlog = cDotlog;
+var cDotLog = b.cDot + cLog; // .Log
+
+exports.cDotLog = cDotLog;
+var cDotLOG = b.cDot + cLOG; // .LOG
+
+exports.cDotLOG = cDotLOG;
 var cDotjson = b.cDot + cjson; // .json
 
 exports.cDotjson = cDotjson;
@@ -273,6 +321,15 @@ exports.cDotJson = cDotJson;
 var cDotJSON = b.cDot + cJSON; // .JSON
 
 exports.cDotJSON = cDotJSON;
+var cDotenv = b.cDot + cenv; // .env
+
+exports.cDotenv = cDotenv;
+var cDotEnv = b.cDot + cEnv; // .Env
+
+exports.cDotEnv = cDotEnv;
+var cDotENV = b.cDot + cENV; // .ENV
+
+exports.cDotENV = cDotENV;
 var cascii = b.cas + b.cci + b.ci; // ascii
 // Time Formatting
 
@@ -497,7 +554,63 @@ var cDecember = b.cDe + b.cc + p.cemb + b.cer; // December
 // Miscelanious
 
 exports.cDecember = cDecember;
-var cconst = p.ccon + b.cst;
+var cUTF8 = b.cUT + b.cF + n.c8; // UTF8
+
+exports.cUTF8 = cUTF8;
+var cconst = p.ccon + b.cst; // const
+
 exports.cconst = cconst;
-var cConst = p.cCon + b.cst;
+var cConst = p.cCon + b.cst; // Const
+
 exports.cConst = cConst;
+var cASAP = b.cAS + b.cAP; // ASAP
+
+exports.cASAP = cASAP;
+var capp = b.cap + b.cp; // app
+
+exports.capp = capp;
+var cApp = b.cAp + b.cp; // App
+
+exports.cApp = cApp;
+var cAPP = b.cAP + b.cP; // APP
+
+exports.cAPP = cAPP;
+var carg = b.car + b.cg; // arg
+
+exports.carg = carg;
+var cArg = b.cAr + b.cg; // Arg
+
+exports.cArg = cArg;
+var cargs = b.ca + p.crgs; // args
+
+exports.cargs = cargs;
+var cArgs = b.cA + p.crgs; // Args
+
+exports.cArgs = cArgs;
+var chex = b.che + b.cx; // hex
+
+exports.chex = chex;
+var cHex = b.cHe + b.cx; // Hex
+
+exports.cHex = cHex;
+var cregEx = p.creg + b.cEx; // regEx
+
+exports.cregEx = cregEx;
+var cRegEx = p.cReg + b.cEx; // RegEx
+
+exports.cRegEx = cRegEx;
+var cregExp = cregEx + b.cp; // regExp
+
+exports.cregExp = cregExp;
+var cRegExp = cRegEx + b.cp; // RegExp
+
+exports.cRegExp = cRegExp;
+var cbin = b.cbi + b.cn; // bin
+
+exports.cbin = cbin;
+var cBin = b.cBi + b.cn; // Bin
+
+exports.cBin = cBin;
+var cBIN = b.cBI + b.cN; // BIN
+
+exports.cBIN = cBIN;

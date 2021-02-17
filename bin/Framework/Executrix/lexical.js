@@ -64,48 +64,57 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMode) {
   var functionName = parseBusinessRuleArgument.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // argumentValue is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'index is: ' + index);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueIs + JSON.stringify(argumentValue)); // index is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'consolidatedArgumentMode is: ' + consolidatedArgumentMode);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cindexIs + index); // consolidatedArgumentMode is:
+
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cconsolidatedArgumentModeIs + consolidatedArgumentMode);
 
   var returnData;
 
   if (index === 1) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Pushing the argumentValue to the returnData as an array element');
+    // Pushing the argumentValue to the returnData as an array element
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cPushingArgumentValueToReturnDataAsArrayElement);
 
     returnData = [];
     returnData.push(argumentValue);
   } else if (index === 2 && consolidatedArgumentMode === false) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Calling analyzeArgument for index = 2, consolidatedArgumentMode = false');
+    // Calling analyzeArgument for index = 2, consolidatedArgumentMode = false
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeFalse);
 
     returnData = analyzeArgument(argumentValue);
   } else if (index === 2 && consolidatedArgumentMode === true) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Calling analyzeArgument for index = 2, consolidatedArgumentMode = true');
+    // Calling analyzeArgument for index = 2, consolidatedArgumentMode = true
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeTrue);
 
     if (argumentValue.length > 0) {
-      returnData = [];
+      returnData = []; // argumentValue.length > 0
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue.length > 0');
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueLengthGreaterThanZero);
 
       for (var i = 1; i < argumentValue.length; i++) {
         // Combine all arguments into a single array on the returnData
         returnData.push(argumentValue[i]);
       }
     } else {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Return the argumentValue the same as it was passed in.');
+      // Return the argumentValue the same as it was passed in.
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cReturnArgumentValueSameAsItWasPassedIn);
 
       returnData = argumentValue;
     }
   } else if (index === 3 && consolidatedArgumentMode === false) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Calling analyzeArgument for index = 3, consolidatedArgumentMode = false');
+    // Calling analyzeArgument for index = 3, consolidatedArgumentMode = false
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCallingAnalyzeArgumentIndex3ConsolidatedArgumentModeFalse);
 
     returnData = analyzeArgument(argumentValue);
   } else {
-    console.log('WARNING: lexical.parseBusinessRuleArgument: Invalid combination of inputs to the lexical.parseBusinessRuleArgument function! Please adjust inputs and try again.');
+    // WARNING: lexical.parseBusinessRuleArgument: Invalid combination of inputs to the lexical.parseBusinessRuleArgument function! Please adjust inputs and try again.
+    console.log(s.cparseBusinessRuleArgumentMessage1 + s.cparseBusinessRuleArgumentMessage2);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -133,9 +142,10 @@ function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMod
 function analyzeArgument(argumentValue) {
   var functionName = analyzeArgument.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // argumentValue is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData;
   var argsArrayContainsCharacterRule = [];
@@ -147,48 +157,56 @@ function analyzeArgument(argumentValue) {
 
   if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
     // Check if there are brackets or no brackets.
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Check if there are brackets or no brackets.');
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCheckIfThereAreBracketsOrNoBrackets);
 
     var argsArrayContainsOpenBracket = _ruleBroker["default"].processRules(b.cOpenBracket, argumentValue, argsArrayContainsCharacterRule);
 
     var argsArrayContainsCloseBracket = _ruleBroker["default"].processRules(b.cCloseBracket, argumentValue, argsArrayContainsCharacterRule);
 
     if (argsArrayContainsOpenBracket === false || argsArrayContainsCloseBracket === false) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Brackets were found'); // Check if there is a Regular Expression or not.
+      // Brackets were found
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBracketsWereFound); // Check if there is a Regular Expression or not.
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Check if there is a Regular Expression or not.');
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCheckIfThereIsRegularExpressionOrNot);
 
       if (analyzeForRegularExpression(argumentValue) === true) {
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'A regular expression was found!');
+        // A regular expression was found!
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cRegularExpressionWasFound);
 
         returnData = parseArgumentAsRegularExpression(argumentValue);
       } else {
         // No regular expression, just return the argument as it was passed in, no additional processing required.
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'NO RegExp found!');
+        // NO RegExp found!
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cNoRegExpFound);
 
         returnData = argumentValue;
       }
     } else {
       // There are Brackets, so treat the argument as an array.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Brackets ARE found!');
+      // Brackets ARE found!
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBracketsAreFound);
 
       returnData = parseArgumentAsArray(argumentValue);
     }
   } else {
     // The argumentValue does not contain a secondaryCommandArgsDelimiter
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'NO secondary command argument delimiters.'); // Check if there is any regular expression or no regular expression
+    // NO secondary command argument delimiters.
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cNoSecondaryCommandArgumentDelimiters); // Check if there is any regular expression or no regular expression
+    // Check if there is a Regular Expression or not.
 
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Check if there is a Regular Expression or not.');
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cCheckIfThereIsRegularExpressionOrNot);
 
     if (analyzeForRegularExpression(argumentValue) === true) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'A regular expression was found!');
+      // A regular expression was found!
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cRegularExpressionWasFound);
 
       returnData = parseArgumentAsRegularExpression(argumentValue);
     } else {
       // No regular expression, just return the argument as it was passed in, no additional processing required.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'NO RegExp found!');
+      // NO RegExp found!
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cNoRegExpFound);
 
       returnData = argumentValue;
     }
@@ -214,9 +232,10 @@ function analyzeArgument(argumentValue) {
 function analyzeForRegularExpression(argumentValue) {
   var functionName = analyzeForRegularExpression.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // argumentValue is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData = false;
   var argsArrayContainsCharacterRule = [];
@@ -252,9 +271,10 @@ function analyzeForRegularExpression(argumentValue) {
 function parseArgumentAsRegularExpression(argumentValue) {
   var functionName = parseArgumentAsRegularExpression.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // argumentValue is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData;
   var regExValue, regExFlags;
@@ -262,21 +282,21 @@ function parseArgumentAsRegularExpression(argumentValue) {
 
   for (var k = 0; k < regExArray.length; k++) {
     if (regExArray[k] === w.cregEx || regExArray[k] === w.cRegEx) {
-      k++;
+      k++; // regular expression is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'regular expression is: ' + regExArray[k]);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cregularExpressionIs + regExArray[k]);
 
-      regExValue = regExArray[k];
+      regExValue = regExArray[k]; // regExValue is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'regExValue is: ' + regExValue);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cregExValueIs + regExValue);
     } else if (regExArray[k] === w.cflags || regExArray[k] === w.cFlags) {
-      k++;
+      k++; // regular expression flags are:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'regular expression flags are: ' + regExArray[k]);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cregularExpressionFlagsAre + regExArray[k]);
 
-      regExFlags = regExArray[k];
+      regExFlags = regExArray[k]; // regExFlags is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'regExFlags is: ' + regExFlags);
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cregExFlagsIs + regExFlags);
     }
   }
 
@@ -303,9 +323,10 @@ function parseArgumentAsRegularExpression(argumentValue) {
 function parseArgumentAsArray(argumentValue) {
   var functionName = parseArgumentAsArray.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // argumentValue is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue is: ' + JSON.stringify(argumentValue));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData;
   var isArray = false;
@@ -331,29 +352,32 @@ function parseArgumentAsArray(argumentValue) {
 
   if (isArray === false) {
     if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue contains the delimiter, lets split it!');
+      // argumentValue contains the delimiter, lets split it!
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueContainsTheDelimiterLetsSplitIt);
 
       argumentValue = argumentValue.split(secondaryCommandArgsDelimiter);
     }
   }
 
   if (argsArrayContainsOpenBracket === true) {
-    argumentValue = _ruleBroker["default"].processRules(b.cOpenBracket, argumentValue, removeBracketsFromArgsArrayRule);
+    argumentValue = _ruleBroker["default"].processRules(b.cOpenBracket, argumentValue, removeBracketsFromArgsArrayRule); // argumentValue after attempting to remove a open bracket from all array elements is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue after attempting to remove a open bracket from all array elements is: ' + JSON.stringify(argumentValue));
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
   }
 
   if (argsArrayContainsCloseBracket === true) {
-    argumentValue = _ruleBroker["default"].processRules(b.cCloseBracket, argumentValue, removeBracketsFromArgsArrayRule);
+    argumentValue = _ruleBroker["default"].processRules(b.cCloseBracket, argumentValue, removeBracketsFromArgsArrayRule); // argumentValue after attempting to remove a close bracket from all array elements is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue after attempting to remove a close bracket from all array elements is: ' + JSON.stringify(argumentValue));
-  }
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
+  } // secondaryCommandArgsDelimiter is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'secondaryCommandArgsDelimiter is: ' + secondaryCommandArgsDelimiter);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.csecondaryCommandArgsDelimiterIs + secondaryCommandArgsDelimiter);
 
   if (isArray === true) {
     if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentValue contains the delimiter, lets split it!');
+      // argumentValue contains the delimiter, lets split it!
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueContainsTheDelimiterLetsSplitIt);
 
       returnData = argumentValue.split(secondaryCommandArgsDelimiter);
     }
@@ -382,9 +406,10 @@ function parseArgumentAsArray(argumentValue) {
 function removeStringLiteralTagsFromArray(argumentArray) {
   var functionName = parseArgumentAsRegularExpression.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // argumentArray is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'argumentArray is: ' + JSON.stringify(argumentArray));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cargumentArrayIs + JSON.stringify(argumentArray));
 
   var returnData;
   var removeCharacterRule = [];

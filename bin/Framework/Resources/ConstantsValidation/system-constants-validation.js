@@ -325,6 +325,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cLogFileEnabled,
   Expected: 'LogFileEnabled'
 }, {
+  Name: 'cIncludeDateTimeStampInLogFiles',
+  Actual: s.cIncludeDateTimeStampInLogFiles,
+  Expected: 'IncludeDateTimeStampInLogFiles'
+}, {
   Name: 'cFileCounter',
   Actual: s.cFileCounter,
   Expected: 'FileCounter'
@@ -581,6 +585,22 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cInvalidEmail,
   Expected: 'InvalidEmail'
 }, {
+  Name: 'cgenerateValidEmail',
+  Actual: s.cgenerateValidEmail,
+  Expected: 'generateValidEmail'
+}, {
+  Name: 'cgenerateInvalidEmail',
+  Actual: s.cgenerateInvalidEmail,
+  Expected: 'generateInvalidEmail'
+}, {
+  Name: 'cRandomValidEmail',
+  Actual: s.cRandomValidEmail,
+  Expected: 'RandomValidEmail'
+}, {
+  Name: 'cRandomInvalidEmail',
+  Actual: s.cRandomInvalidEmail,
+  Expected: 'RandomInvalidEmail'
+}, {
   Name: 'cLetterOr',
   Actual: s.cLetterOr,
   Expected: 'LetterOr'
@@ -596,6 +616,14 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cAlphaNumericCharacter',
   Actual: s.cAlphaNumericCharacter,
   Expected: 'AlphaNumericCharacter'
+}, {
+  Name: 'cSuffixAndDomain',
+  Actual: s.cSuffixAndDomain,
+  Expected: 'SuffixAndDomain'
+}, {
+  Name: 'cWithSpecificSuffixAndDomainName',
+  Actual: s.cWithSpecificSuffixAndDomainName,
+  Expected: 'WithSpecificSuffixAndDomainName'
 }, {
   Name: 'cNumericCharacter',
   Actual: s.cNumericCharacter,
@@ -651,7 +679,7 @@ var systemConstantsValidation = [// Miscelaneious
 }, {
   Name: 'cSpaceIsColonSpace',
   Actual: s.cSpaceIsColonSpace,
-  Expected: ' Is: '
+  Expected: ' is: '
 }, {
   Name: 'cdeployApplication',
   Actual: s.cdeployApplication,
@@ -748,6 +776,74 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cSource2',
   Actual: s.cSource2,
   Expected: 'Source2'
+}, {
+  Name: 'cbigInteger',
+  Actual: s.cbigInteger,
+  Expected: 'bigInteger'
+}, {
+  Name: 'cnumberOfCharactersToGenerate',
+  Actual: s.cnumberOfCharactersToGenerate,
+  Expected: 'numberOfCharactersToGenerate'
+}, {
+  Name: 'cgenerateSpecialCharacters',
+  Actual: s.cgenerateSpecialCharacters,
+  Expected: 'generateSpecialCharacters'
+}, {
+  Name: 'callowableSpecialCharacters',
+  Actual: s.callowableSpecialCharacters,
+  Expected: 'allowableSpecialCharacters'
+}, {
+  Name: 'cspecifiedSuffixAndDomain',
+  Actual: s.cspecifiedSuffixAndDomain,
+  Expected: 'specifiedSuffixAndDomain'
+}, {
+  Name: 'cfailureMode',
+  Actual: s.cfailureMode,
+  Expected: 'failureMode'
+}, {
+  Name: 'cWithoutThe',
+  Actual: s.cWithoutThe,
+  Expected: 'Without the'
+}, {
+  Name: 'cwasCompleted',
+  Actual: s.cwasCompleted,
+  Expected: 'was completed'
+}, {
+  Name: 'cGenerateA',
+  Actual: s.cGenerateA,
+  Expected: 'Generate a'
+}, {
+  Name: 'cprogramLoop',
+  Actual: s.cprogramLoop,
+  Expected: 'program loop'
+}, {
+  Name: 'candPrefix',
+  Actual: s.candPrefix,
+  Expected: 'and prefix'
+}, {
+  Name: 'candSuffix',
+  Actual: s.candSuffix,
+  Expected: 'and suffix'
+}, {
+  Name: 'cdomainSpaceName',
+  Actual: s.cdomainSpaceName,
+  Expected: 'domain name'
+}, {
+  Name: 'candSpaceDomainSpaceName',
+  Actual: s.candSpaceDomainSpaceName,
+  Expected: 'and domain name'
+}, {
+  Name: 'ccurrentMasterStringArrayElement',
+  Actual: s.ccurrentMasterStringArrayElement,
+  Expected: 'currentMasterStringArrayElement'
+}, {
+  Name: 'cLehmerCodeArray',
+  Actual: s.cLehmerCodeArray,
+  Expected: 'LehmerCodeArray'
+}, {
+  Name: 'creturnData',
+  Actual: s.creturnData,
+  Expected: 'returnData'
 }, // Logging Constants
 {
   Name: 'cBEGIN_Function',
@@ -758,17 +854,33 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cEND_Function,
   Expected: 'END %% Function'
 }, {
+  Name: 'cinputData',
+  Actual: s.cinputData,
+  Expected: 'inputData'
+}, {
+  Name: 'cInputData',
+  Actual: s.cInputData,
+  Expected: 'InputData'
+}, {
+  Name: 'cinputMetaData',
+  Actual: s.cinputMetaData,
+  Expected: 'inputMetaData'
+}, {
+  Name: 'cInputMetaData',
+  Actual: s.cInputMetaData,
+  Expected: 'InputMetaData'
+}, {
   Name: 'cinputDataIs',
   Actual: s.cinputDataIs,
-  Expected: 'inputData Is: '
+  Expected: 'inputData is: '
 }, {
   Name: 'cinputMetaDataIs',
   Actual: s.cinputMetaDataIs,
-  Expected: 'inputMetaData Is: '
+  Expected: 'inputMetaData is: '
 }, {
   Name: 'creturnDataIs',
   Actual: s.creturnDataIs,
-  Expected: 'returnData Is: '
+  Expected: 'returnData is: '
 }, {
   Name: 'cLogBasicSystemEvents',
   Actual: s.cLogBasicSystemEvents,
@@ -828,6 +940,1710 @@ var systemConstantsValidation = [// Miscelaneious
   Expected: 'DataFontBackgroundColor'
 }, // System Messages
 {
+  Name: 'cApplicationWarningMessage1a',
+  Actual: s.cApplicationWarningMessage1a,
+  Expected: 'WARNING: No .Env File undefined! '
+}, {
+  Name: 'cApplicationWarningMessage1b',
+  Actual: s.cApplicationWarningMessage1b,
+  Expected: 'Going to default to the DEVELOPMENT ENVIRONMENT!'
+}, {
+  Name: 'cApplicationMessage2',
+  Actual: s.cApplicationMessage2,
+  Expected: 'BEGIN main program loop'
+}, {
+  Name: 'cApplicationMessage3',
+  Actual: s.cApplicationMessage3,
+  Expected: 'BEGIN command parser'
+}, {
+  Name: 'cApplicationMessage4',
+  Actual: s.cApplicationMessage4,
+  Expected: 'END command parser'
+}, {
+  Name: 'cApplicationMessage5',
+  Actual: s.cApplicationMessage5,
+  Expected: 'END main program loop'
+}, {
+  Name: 'cApplicationExitMessage1',
+  Actual: s.cApplicationExitMessage1,
+  Expected: 'Exiting, Good bye, Have a nice '
+}, {
+  Name: 'cApplicationExitMessage2',
+  Actual: s.cApplicationExitMessage2,
+  Expected: 'day & stay safe!'
+}, {
+  Name: 'cBuildMessage1',
+  Actual: s.cBuildMessage1,
+  Expected: 'Deployment was completed: '
+}, {
+  Name: 'cBuildMessage2',
+  Actual: s.cBuildMessage2,
+  Expected: 'Release was completed: '
+}, {
+  Name: 'cCharacterGenerationMessage1',
+  Actual: s.cCharacterGenerationMessage1,
+  Expected: 'typeToGenerate is: '
+}, {
+  Name: 'cCharacterGenerationMessage2',
+  Actual: s.cCharacterGenerationMessage2,
+  Expected: 'Generate a number.'
+}, {
+  Name: 'cCharacterGenerationMessage3',
+  Actual: s.cCharacterGenerationMessage3,
+  Expected: 'Generate a random upper case or lower case letter.'
+}, {
+  Name: 'cCharacterGenerationMessage4',
+  Actual: s.cCharacterGenerationMessage4,
+  Expected: 'Generate a special character.'
+}, {
+  Name: 'cCharacterGenerationMessage5',
+  Actual: s.cCharacterGenerationMessage5,
+  Expected: 'DEFAULT: Generate a random upper case or lower case letter.'
+}, {
+  Name: 'cMathOperationsMessage1',
+  Actual: s.cMathOperationsMessage1,
+  Expected: 'bigInteger is: '
+}, {
+  Name: 'cnumberOfCharactersToGenerateIs',
+  Actual: s.cnumberOfCharactersToGenerateIs,
+  Expected: 'numberOfCharactersToGenerate is: '
+}, {
+  Name: 'cgenerateSpecialCharactersIs',
+  Actual: s.cgenerateSpecialCharactersIs,
+  Expected: 'generateSpecialCharacters is: '
+}, {
+  Name: 'callowableSpecialCharactersIs',
+  Actual: s.callowableSpecialCharactersIs,
+  Expected: 'allowableSpecialCharacters is: '
+}, {
+  Name: 'cspecifiedSuffixAndDomainIs',
+  Actual: s.cspecifiedSuffixAndDomainIs,
+  Expected: 'specifiedSuffixAndDomain is: '
+}, {
+  Name: 'cfailureModeIs',
+  Actual: s.cfailureModeIs,
+  Expected: 'failureMode is: '
+}, {
+  Name: 'cprefixIs',
+  Actual: s.cprefixIs,
+  Expected: 'prefix is: '
+}, {
+  Name: 'csuffixIs',
+  Actual: s.csuffixIs,
+  Expected: 'suffix is: '
+}, {
+  Name: 'cWithoutTheAtSymbol',
+  Actual: s.cWithoutTheAtSymbol,
+  Expected: 'Without the @ symbol.'
+}, {
+  Name: 'cWithoutThePrefix',
+  Actual: s.cWithoutThePrefix,
+  Expected: 'Without the prefix.'
+}, {
+  Name: 'cWithoutTheSuffix',
+  Actual: s.cWithoutTheSuffix,
+  Expected: 'Without the suffix.'
+}, {
+  Name: 'cWithoutTheAtSymbolAndPrefix',
+  Actual: s.cWithoutTheAtSymbolAndPrefix,
+  Expected: 'Without the @ and prefix.'
+}, {
+  Name: 'cDEFAULTWithoutTheAtSymbolAndPrefix',
+  Actual: s.cDEFAULTWithoutTheAtSymbolAndPrefix,
+  Expected: 'DEFAULT: Without the @ and prefix.'
+}, {
+  Name: 'cdomainNameIs',
+  Actual: s.cdomainNameIs,
+  Expected: 'domainName is: '
+}, {
+  Name: 'cnumberOfPrefixCharactersIs',
+  Actual: s.cnumberOfPrefixCharactersIs,
+  Expected: 'numberOfPrefixCharacters is: '
+}, {
+  Name: 'cnumberOfSuffixCharactersIs',
+  Actual: s.cnumberOfSuffixCharactersIs,
+  Expected: 'numberOfSuffixCharacters is: '
+}, {
+  Name: 'cWithoutTheDotSymbol',
+  Actual: s.cWithoutTheDotSymbol,
+  Expected: 'Without the . symbol.'
+}, {
+  Name: 'cWithoutTheAtAndDotSymbols',
+  Actual: s.cWithoutTheAtAndDotSymbols,
+  Expected: 'Without the @ and . symbols.'
+}, {
+  Name: 'cWithoutTheDomainName',
+  Actual: s.cWithoutTheDomainName,
+  Expected: 'Without the domain name.'
+}, {
+  Name: 'cWithoutTheAtSymbolAndDomainName',
+  Actual: s.cWithoutTheAtSymbolAndDomainName,
+  Expected: 'Without the @ and domain name.'
+}, {
+  Name: 'cWithoutTheDotAndDomainName',
+  Actual: s.cWithoutTheDotAndDomainName,
+  Expected: 'Without the . and domain name.'
+}, {
+  Name: 'cWithoutTheAtSymbolDotAndDomainName',
+  Actual: s.cWithoutTheAtSymbolDotAndDomainName,
+  Expected: 'Without the @, . and domain name.'
+}, {
+  Name: 'cWithoutTheDotAndPrefix',
+  Actual: s.cWithoutTheDotAndPrefix,
+  Expected: 'Without the . and prefix.'
+}, {
+  Name: 'cWithoutTheAtSymbolAndSuffix',
+  Actual: s.cWithoutTheAtSymbolAndSuffix,
+  Expected: 'Without the @ and suffix.'
+}, {
+  Name: 'cWithoutTheDotAndSuffix',
+  Actual: s.cWithoutTheDotAndSuffix,
+  Expected: 'Without the . and suffix.'
+}, {
+  Name: 'cWithoutTheAtSymbolDotAndPrefix',
+  Actual: s.cWithoutTheAtSymbolDotAndPrefix,
+  Expected: 'Without the @, . and prefix.'
+}, {
+  Name: 'cWithoutTheAtSymbolDotAndSuffix',
+  Actual: s.cWithoutTheAtSymbolDotAndSuffix,
+  Expected: 'Without the @, . and suffix.'
+}, {
+  Name: 'cWithoutTheAtSymbolDotPrefixAndSuffix',
+  Actual: s.cWithoutTheAtSymbolDotPrefixAndSuffix,
+  Expected: 'Without the @, ., prefix and suffix.'
+}, {
+  Name: 'cWithoutThePrefixAndDomainName',
+  Actual: s.cWithoutThePrefixAndDomainName,
+  Expected: 'Without the prefix and domain name.'
+}, {
+  Name: 'cWithoutTheSuffixAndDomainName',
+  Actual: s.cWithoutTheSuffixAndDomainName,
+  Expected: 'Without the suffix and domain name.'
+}, {
+  Name: 'cWithoutThePrefixAndSuffix',
+  Actual: s.cWithoutThePrefixAndSuffix,
+  Expected: 'Without the prefix and suffix.'
+}, {
+  Name: 'cWithoutThePrefixSuffixAndDomainName',
+  Actual: s.cWithoutThePrefixSuffixAndDomainName,
+  Expected: 'Without the prefix, suffix and domain name.'
+}, {
+  Name: 'cWithoutTheAtSymbolPrefixAndDomainName',
+  Actual: s.cWithoutTheAtSymbolPrefixAndDomainName,
+  Expected: 'Without the @, prefix and domain name.'
+}, {
+  Name: 'cWithoutTheDotPrefixAndDomainName',
+  Actual: s.cWithoutTheDotPrefixAndDomainName,
+  Expected: 'Without the ., prefix and domain name.'
+}, {
+  Name: 'cWithoutTheAtSymbolSuffixAndDomainName',
+  Actual: s.cWithoutTheAtSymbolSuffixAndDomainName,
+  Expected: 'Without the @, suffix and domain name.'
+}, {
+  Name: 'cWithoutTheDotSuffixAndDomainName',
+  Actual: s.cWithoutTheDotSuffixAndDomainName,
+  Expected: 'Without the ., suffix and domain name.'
+}, {
+  Name: 'cWithoutTheAtSymbolPrefixSuffixAndDomainName',
+  Actual: s.cWithoutTheAtSymbolPrefixSuffixAndDomainName,
+  Expected: 'Without the @, prefix, suffix and domain name.'
+}, {
+  Name: 'cWithoutTheDotPrefixSuffixAndDomainName',
+  Actual: s.cWithoutTheDotPrefixSuffixAndDomainName,
+  Expected: 'Without the ., prefix, suffix and domain name.'
+}, {
+  Name: 'cWithoutThePrefixSuffixAndAtSymbol',
+  Actual: s.cWithoutThePrefixSuffixAndAtSymbol,
+  Expected: 'Without the prefix, suffix name@.'
+}, {
+  Name: 'cWithoutThePrefixSuffixAndDot',
+  Actual: s.cWithoutThePrefixSuffixAndDot,
+  Expected: 'Without the prefix, suffix and ..'
+}, {
+  Name: 'cIndexOfTheSpace',
+  Actual: s.cIndexOfTheSpace,
+  Expected: 'Index of the '
+}, {
+  Name: 'cisResolvingAs',
+  Actual: s.cisResolvingAs,
+  Expected: 'is resolving as: '
+}, {
+  Name: 'cparsedStringSpaceTerm',
+  Actual: s.cparsedStringSpaceTerm,
+  Expected: 'parsedString term'
+}, {
+  Name: 'cstring1Is',
+  Actual: s.cstring1Is,
+  Expected: 'string1 is: '
+}, {
+  Name: 'cstring2Is',
+  Actual: s.cstring2Is,
+  Expected: 'string2 is: '
+}, {
+  Name: 'cvariation0ValueIs',
+  Actual: s.cvariation0ValueIs,
+  Expected: 'variation0 value is: '
+}, {
+  Name: 'cvariation1ValueIs',
+  Actual: s.cvariation1ValueIs,
+  Expected: 'variation1 value is: '
+}, {
+  Name: 'ciValueIs',
+  Actual: s.ciValueIs,
+  Expected: 'i value is: '
+}, {
+  Name: 'cjValueIs',
+  Actual: s.cjValueIs,
+  Expected: 'j value is: '
+}, {
+  Name: 'cdeletionCostIs',
+  Actual: s.cdeletionCostIs,
+  Expected: 'deletionCost is: '
+}, {
+  Name: 'cinsertionCostIs',
+  Actual: s.cinsertionCostIs,
+  Expected: 'insertionCost is: '
+}, {
+  Name: 'csubstitutionCostIs',
+  Actual: s.csubstitutionCostIs,
+  Expected: 'substitutionCost is: '
+}, {
+  Name: 'ccamelCaseWordCountIs',
+  Actual: s.ccamelCaseWordCountIs,
+  Expected: 'camelCaseWordCount is: '
+}, {
+  Name: 'ccontainsAcronymIs',
+  Actual: s.ccontainsAcronymIs,
+  Expected: 'containsAcronym is: '
+}, {
+  Name: 'cspacesCountIs',
+  Actual: s.cspacesCountIs,
+  Expected: 'spacesCount is: '
+}, {
+  Name: 'cperiodCountIs',
+  Actual: s.cperiodCountIs,
+  Expected: 'periodCount is: '
+}, {
+  Name: 'cdashCountIs',
+  Actual: s.cdashCountIs,
+  Expected: 'dashCount is: '
+}, {
+  Name: 'cunderscoreCountIs',
+  Actual: s.cunderscoreCountIs,
+  Expected: 'underscoreCount is: '
+}, {
+  Name: 'cstringDeltaValueIs',
+  Actual: s.cstringDeltaValueIs,
+  Expected: 'stringDelta value is: '
+}, {
+  Name: 'cFilenamesMatch',
+  Actual: s.cFilenamesMatch,
+  Expected: 'Filenames match'
+}, {
+  Name: 'cFilenamesDoNotMatch',
+  Actual: s.cFilenamesDoNotMatch,
+  Expected: 'Filenames do not match'
+}, {
+  Name: 'cArrayElementsMatch',
+  Actual: s.cArrayElementsMatch,
+  Expected: 'Array elements match'
+}, {
+  Name: 'cArrayElementsDoNotMatch',
+  Actual: s.cArrayElementsDoNotMatch,
+  Expected: 'Array elements do not match'
+}, {
+  Name: 'clineArray2Is',
+  Actual: s.clineArray2Is,
+  Expected: 'lineArray[2] is: '
+}, {
+  Name: 'cSuggestedLineOfCodeIs',
+  Actual: s.cSuggestedLineOfCodeIs,
+  Expected: 'Suggested line of code is: '
+}, {
+  Name: 'cErrorUnknownConstantFile',
+  Actual: s.cErrorUnknownConstantFile,
+  Expected: 'ERROR: Unknown constant file.'
+}, {
+  Name: 'cconstantsTypesKeysIs',
+  Actual: s.cconstantsTypesKeysIs,
+  Expected: 'constantsTypesKeys is: '
+}, {
+  Name: 'cconstantTypeKeyIs',
+  Actual: s.cconstantTypeKeyIs,
+  Expected: 'constantTypeKey is: '
+}, {
+  Name: 'cconstantTypeValuesIs',
+  Actual: s.cconstantTypeValuesIs,
+  Expected: 'constantTypeValues is: '
+}, {
+  Name: 'cconstantsKeysIs',
+  Actual: s.cconstantsKeysIs,
+  Expected: 'constantsKeys is: '
+}, {
+  Name: 'cconstantKeyIs',
+  Actual: s.cconstantKeyIs,
+  Expected: 'constantKey is: '
+}, {
+  Name: 'cconstantActualValueIs',
+  Actual: s.cconstantActualValueIs,
+  Expected: 'constantActualValue is: '
+}, {
+  Name: 'cconstantNameIs',
+  Actual: s.cconstantNameIs,
+  Expected: 'constantName is: '
+}, {
+  Name: 'cconstantValueIs',
+  Actual: s.cconstantValueIs,
+  Expected: 'constantValue is: '
+}, {
+  Name: 'cdeltaLengthIs',
+  Actual: s.cdeltaLengthIs,
+  Expected: 'deltaLength is: '
+}, {
+  Name: 'crecursiveSubStringIs',
+  Actual: s.crecursiveSubStringIs,
+  Expected: 'recursiveSubString is: '
+}, {
+  Name: 'cmaxStringLengthIs',
+  Actual: s.cmaxStringLengthIs,
+  Expected: 'maxStringLength is: '
+}, {
+  Name: 'cminStringLengthIs',
+  Actual: s.cminStringLengthIs,
+  Expected: 'minStringLength is: '
+}, {
+  Name: 'ccurrentMasterStringArrayElementIs',
+  Actual: s.ccurrentMasterStringArrayElementIs,
+  Expected: 'currentMasterStringArrayElement is: '
+}, {
+  Name: 'cConstantDoesNotExist',
+  Actual: s.cConstantDoesNotExist,
+  Expected: 'Constant does NOT exist: '
+}, {
+  Name: 'cConstantDoesExist',
+  Actual: s.cConstantDoesExist,
+  Expected: 'Constant does exist: '
+}, {
+  Name: 'cBEGIN_ithLoop',
+  Actual: s.cBEGIN_ithLoop,
+  Expected: 'BEGIN i-th loop: '
+}, {
+  Name: 'cBEGIN_ithIteration',
+  Actual: s.cBEGIN_ithIteration,
+  Expected: 'BEGIN i-th iteration: '
+}, {
+  Name: 'cBEGIN_jthLoop',
+  Actual: s.cBEGIN_jthLoop,
+  Expected: 'BEGIN j-th loop: '
+}, {
+  Name: 'cBEGIN_kthIteration',
+  Actual: s.cBEGIN_kthIteration,
+  Expected: 'BEGIN k-th iteration: '
+}, {
+  Name: 'cEND_ithLoop',
+  Actual: s.cEND_ithLoop,
+  Expected: 'END i-th loop: '
+}, {
+  Name: 'cEND_ithIteration',
+  Actual: s.cEND_ithIteration,
+  Expected: 'END i-th Iteration: '
+}, {
+  Name: 'cEND_jthLoop',
+  Actual: s.cEND_jthLoop,
+  Expected: 'END j-th loop: '
+}, {
+  Name: 'cEND_kthIteration',
+  Actual: s.cEND_kthIteration,
+  Expected: 'END k-th iteration: '
+}, {
+  Name: 'ccurrentCommandIs',
+  Actual: s.ccurrentCommandIs,
+  Expected: 'currentCommand is: '
+}, {
+  Name: 'caliasListIs',
+  Actual: s.caliasListIs,
+  Expected: 'aliasList is: '
+}, {
+  Name: 'ccurrentAliasIs',
+  Actual: s.ccurrentAliasIs,
+  Expected: 'currentAlias is: '
+}, {
+  Name: 'cduplicateAliasCountIs',
+  Actual: s.cduplicateAliasCountIs,
+  Expected: 'duplicateAliasCount is: '
+}, {
+  Name: 'cduplicateCommandAliasIs',
+  Actual: s.cduplicateCommandAliasIs,
+  Expected: 'duplicate Command Alias is: '
+}, {
+  Name: 'ccommandWordAliasesBeforeChangeIs',
+  Actual: s.ccommandWordAliasesBeforeChangeIs,
+  Expected: 'commandWordAliases BEFORE CHANGE is: '
+}, {
+  Name: 'ccommandWordAliasesAfterChangeIs',
+  Actual: s.ccommandWordAliasesAfterChangeIs,
+  Expected: 'commandWordAliasesArray AFTER CHANGE is: '
+}, {
+  Name: 'cmasterCommandWordAlisesArrayIs',
+  Actual: s.cmasterCommandWordAlisesArrayIs,
+  Expected: 'masterCommandWordAliasesArray is: '
+}, {
+  Name: 'cmasterArrayIndexIs',
+  Actual: s.cmasterArrayIndexIs,
+  Expected: 'masterArrayIndex is: '
+}, {
+  Name: 'cCommandAliasesAre',
+  Actual: s.cCommandAliasesAre,
+  Expected: 'Command Aliases are: '
+}, {
+  Name: 'cexpandedLehmerCodeArrayIs',
+  Actual: s.cexpandedLehmerCodeArrayIs,
+  Expected: 'expandedLehmerCodeArray is: '
+}, {
+  Name: 'cindexOfExpansionIs',
+  Actual: s.cindexOfExpansionIs,
+  Expected: 'indexOfExpansion is: '
+}, {
+  Name: 'carrayToBeExpandedIs',
+  Actual: s.carrayToBeExpandedIs,
+  Expected: 'arrayToBeExpanded is: '
+}, {
+  Name: 'climitOfExpansionIs',
+  Actual: s.climitOfExpansionIs,
+  Expected: 'limitOfExpansion is: '
+}, {
+  Name: 'cpushingLehmerCodeArray1ToReturnDataValue',
+  Actual: s.cpushingLehmerCodeArray1ToReturnDataValue,
+  Expected: 'pushing LehmerCodeArray1 to returnData value: '
+}, {
+  Name: 'creturnDataAfterPushIs',
+  Actual: s.creturnDataAfterPushIs,
+  Expected: 'returnData after push is: '
+}, {
+  Name: 'creturnDataAfterLevel1Is',
+  Actual: s.creturnDataAfterLevel1Is,
+  Expected: 'returnData after level 1 is: '
+}, {
+  Name: 'carrayToBeExpandedDotLengthIs',
+  Actual: s.carrayToBeExpandedDotLengthIs,
+  Expected: 'arrayToBeExpanded.length is: '
+}, {
+  Name: 'creturnDataDotLengthIs',
+  Actual: s.creturnDataDotLengthIs,
+  Expected: 'returnData.Length is: '
+}, {
+  Name: 'creturnDataBeforePopIs',
+  Actual: s.creturnDataBeforePopIs,
+  Expected: 'returnData BEFORE POP is: '
+}, {
+  Name: 'creturnDataAfterPopIs',
+  Actual: s.creturnDataAfterPopIs,
+  Expected: 'returnData AFTER POP is: '
+}, {
+  Name: 'cmasterTempReturnDataBeforeRecursiveCallIs',
+  Actual: s.cmasterTempReturnDataBeforeRecursiveCallIs,
+  Expected: 'masterTempReturnData BEFORE recursive call is: '
+}, {
+  Name: 'ctempReturnData1Is',
+  Actual: s.ctempReturnData1Is,
+  Expected: 'tempReturnData1 is: '
+}, {
+  Name: 'ctempReturnData1DotLengthIs',
+  Actual: s.ctempReturnData1DotLengthIs,
+  Expected: 'tempReturnData1length is: '
+}, {
+  Name: 'cpushingTempReturnData1Kvalue',
+  Actual: s.cpushingTempReturnData1Kvalue,
+  Expected: 'pushing tempReturnData1[k] value: '
+}, {
+  Name: 'cmasterTempReturnDataAfterRecursiveCallIs',
+  Actual: s.cmasterTempReturnDataAfterRecursiveCallIs,
+  Expected: 'masterTempReturnData AFTER recursive call is: '
+}, {
+  Name: 'clookupIndexIs',
+  Actual: s.clookupIndexIs,
+  Expected: 'lookupIndex is: '
+}, {
+  Name: 'clookupValueIs',
+  Actual: s.clookupValueIs,
+  Expected: 'lookupValue is: '
+}, {
+  Name: 'cDataCatagoryShouldBe',
+  Actual: s.cDataCatagoryShouldBe,
+  Expected: 'Data Catagory should be: '
+}, {
+  Name: 'cDataCatagoryDetailNameShouldBe',
+  Actual: s.cDataCatagoryDetailNameShouldBe,
+  Expected: 'Data Catagory Detail Name should be: '
+}, {
+  Name: 'cKeywordNameShouldBe',
+  Actual: s.cKeywordNameShouldBe,
+  Expected: 'Keyword Name should be: '
+}, {
+  Name: 'cpathElementIs',
+  Actual: s.cpathElementIs,
+  Expected: 'pathElement is: '
+}, {
+  Name: 'ccaseIEqual0',
+  Actual: s.ccaseIEqual0,
+  Expected: 'case: i = 0'
+}, {
+  Name: 'ccasePathElementEqual',
+  Actual: s.ccasePathElementEqual,
+  Expected: 'case: pathElement = '
+}, {
+  Name: 'ccaseElse',
+  Actual: s.ccaseElse,
+  Expected: 'case else'
+}, {
+  Name: 'creturnDataSoFarIs',
+  Actual: s.creturnDataSoFarIs,
+  Expected: 'returnData so far is: '
+}, {
+  Name: 'cpathArrayIs',
+  Actual: s.cpathArrayIs,
+  Expected: 'pathArray is: '
+}, {
+  Name: 'ccurrentPathElementIs',
+  Actual: s.ccurrentPathElementIs,
+  Expected: 'current path element is: '
+}, {
+  Name: 'cAttemptingToLoadXmlData',
+  Actual: s.cAttemptingToLoadXmlData,
+  Expected: 'Attempting to load XML data!'
+}, {
+  Name: 'cAttemptingToLoadCsvData',
+  Actual: s.cAttemptingToLoadCsvData,
+  Expected: 'Attempting to load CSV data!'
+}, {
+  Name: 'cAttemptingToLoadJsonData',
+  Actual: s.cAttemptingToLoadJsonData,
+  Expected: 'Attempting to load JSON data!'
+}, {
+  Name: 'cLoadedDataIs',
+  Actual: s.cLoadedDataIs,
+  Expected: 'Loaded data is: '
+}, {
+  Name: 'cattributeArrayIs',
+  Actual: s.cattributeArrayIs,
+  Expected: 'attributeArray is: '
+}, {
+  Name: 'cattributeArray0Is',
+  Actual: s.cattributeArray0Is,
+  Expected: 'attributeArray[0] is: '
+}, {
+  Name: 'carrayIs',
+  Actual: s.carrayIs,
+  Expected: 'array is: '
+}, {
+  Name: 'cvalueIs',
+  Actual: s.cvalueIs,
+  Expected: 'value is: '
+}, {
+  Name: 'cmyFunctionIs',
+  Actual: s.cmyFunctionIs,
+  Expected: 'myFunction is: '
+}, {
+  Name: 'carrayInputObjectIsNotAnArray',
+  Actual: s.carrayInputObjectIsNotAnArray,
+  Expected: 'array input object is not an array.'
+}, {
+  Name: 'cTheValueWasFoundInTheArray',
+  Actual: s.cTheValueWasFoundInTheArray,
+  Expected: 'The value was found in the array.'
+}, {
+  Name: 'cTheValueWasNotFoundInTheArray',
+  Actual: s.cTheValueWasNotFoundInTheArray,
+  Expected: 'The value was NOT found in the array.'
+}, {
+  Name: 'coriginalStringIs',
+  Actual: s.coriginalStringIs,
+  Expected: 'originalString is: '
+}, {
+  Name: 'cindexIs',
+  Actual: s.cindexIs,
+  Expected: 'index  is: '
+}, {
+  Name: 'creplacementIs',
+  Actual: s.creplacementIs,
+  Expected: 'replacement is: '
+}, {
+  Name: 'cDEPLOY_APPLICATION',
+  Actual: s.cDEPLOY_APPLICATION,
+  Expected: 'DEPLOY_APPLICATION'
+}, {
+  Name: 'cRELEASE_APPLICATION',
+  Actual: s.cRELEASE_APPLICATION,
+  Expected: 'RELEASE_APPLICATION'
+}, {
+  Name: 'cDeploymentWasCompleted',
+  Actual: s.cDeploymentWasCompleted,
+  Expected: 'Deployment was completed: '
+}, {
+  Name: 'cinputDataIis',
+  Actual: s.cinputDataIis,
+  Expected: 'inputData[i] is: '
+}, {
+  Name: 'caggregateCommandStringIs',
+  Actual: s.caggregateCommandStringIs,
+  Expected: 'aggregateCommandString is: '
+}, {
+  Name: 'cmetaDataParametersIs',
+  Actual: s.cmetaDataParametersIs,
+  Expected: 'metaDataParameters is: '
+}, {
+  Name: 'cmetaDataParametersLengthIs',
+  Actual: s.cmetaDataParametersLengthIs,
+  Expected: 'metaDataParameters Length is: '
+}, {
+  Name: 'cmetaDataPathAndFilenameIs',
+  Actual: s.cmetaDataPathAndFilenameIs,
+  Expected: 'metaDataPathAndFilename is: '
+}, {
+  Name: 'cpathAndFilenameIs',
+  Actual: s.cpathAndFilenameIs,
+  Expected: 'pathAndFilename is: '
+}, {
+  Name: 'ccontentsAre',
+  Actual: s.ccontentsAre,
+  Expected: 'contents are: '
+}, {
+  Name: 'ccontentsOfDare',
+  Actual: s.ccontentsOfDare,
+  Expected: 'contents of D are: '
+}, {
+  Name: 'cBEGIN_ithIterationOfInputDataArray',
+  Actual: s.cBEGIN_ithIterationOfInputDataArray,
+  Expected: 'BEGIN i-th iteration: of the inputData array. i is: '
+}, {
+  Name: 'ccurrentRuleIs',
+  Actual: s.ccurrentRuleIs,
+  Expected: 'currentRule is: '
+}, {
+  Name: 'crulesIs',
+  Actual: s.crulesIs,
+  Expected: 'rules is: '
+}, {
+  Name: 'cruleInputDataIs',
+  Actual: s.cruleInputDataIs,
+  Expected: 'ruleInputData is: '
+}, {
+  Name: 'cruleInputMetaData',
+  Actual: s.cruleInputMetaData,
+  Expected: 'ruleInputMetaData is: '
+}, {
+  Name: 'cBusinessRuleStartTimeIs',
+  Actual: s.cBusinessRuleStartTimeIs,
+  Expected: 'Business Rule Start time is: '
+}, {
+  Name: 'cBusinessRuleEndTimeIs',
+  Actual: s.cBusinessRuleEndTimeIs,
+  Expected: 'Business Rule End time is: '
+}, {
+  Name: 'cBusinessRuleRunTimeIs',
+  Actual: s.cBusinessRuleRunTimeIs,
+  Expected: 'BusinessRule run-time is: '
+}, {
+  Name: 'ccommandStringBeforeAttemptedDelimiterSwapIs',
+  Actual: s.ccommandStringBeforeAttemptedDelimiterSwapIs,
+  Expected: 'commandString before attempted swap is: '
+}, {
+  Name: 'creplaceCharacterWithCharacterRuleIs',
+  Actual: s.creplaceCharacterWithCharacterRuleIs,
+  Expected: 'replaceCharacterWithCharacterRule is: '
+}, {
+  Name: 'cRuleOutputIs',
+  Actual: s.cRuleOutputIs,
+  Expected: 'Rule output is: '
+}, {
+  Name: 'ccamelCaseCommandNameArrayIs',
+  Actual: s.ccamelCaseCommandNameArrayIs,
+  Expected: 'camelCaseCommandNameArray is: '
+}, {
+  Name: 'ccurrentCommandWordIs',
+  Actual: s.ccurrentCommandWordIs,
+  Expected: 'currentCommandWord is: '
+}, {
+  Name: 'cPARSER_ERROR',
+  Actual: s.cPARSER_ERROR,
+  Expected: 'PARSER_ERROR: '
+}, {
+  Name: 'ccommandAliasDataStructureIs',
+  Actual: s.ccommandAliasDataStructureIs,
+  Expected: 'commandAliasDataStructure is: '
+}, {
+  Name: 'cuserDefinedConstantIs',
+  Actual: s.cuserDefinedConstantIs,
+  Expected: 'userDefinedConstant is: '
+}, {
+  Name: 'cwordCountIs',
+  Actual: s.cwordCountIs,
+  Expected: 'wordCount is: '
+}, {
+  Name: 'cwordsArrayIs',
+  Actual: s.cwordsArrayIs,
+  Expected: 'wordsArray is: '
+}, {
+  Name: 'cOptimizedConstantDefinitionForWord',
+  Actual: s.cOptimizedConstantDefinitionForWord,
+  Expected: 'Optimized constant definition for word: '
+}, {
+  Name: 'cuserDefinedConstantListIs',
+  Actual: s.cuserDefinedConstantListIs,
+  Expected: 'userDefinedConstantsList is: '
+}, {
+  Name: 'cuserDefinedConstantListContainsComas',
+  Actual: s.cuserDefinedConstantListContainsComas,
+  Expected: 'userDefinedConstantsList contains comas'
+}, {
+  Name: 'cuserDefinedConstantsListArrayIs',
+  Actual: s.cuserDefinedConstantsListArrayIs,
+  Expected: 'userDefinedConstantsListArray is: '
+}, {
+  Name: 'cuserDefinedConstantsListDoesNotContainComas',
+  Actual: s.cuserDefinedConstantsListDoesNotContainComas,
+  Expected: 'userDefinedConstantList DOES NOT contain comas'
+}, {
+  Name: 'ccommonPatternsArrayIs',
+  Actual: s.ccommonPatternsArrayIs,
+  Expected: 'commonPatternsArray is: '
+}, {
+  Name: 'cbusinessRuleCounterIs',
+  Actual: s.cbusinessRuleCounterIs,
+  Expected: 'businessRuleCounter is: '
+}, {
+  Name: 'cbusinessRulePerformanceSumIs',
+  Actual: s.cbusinessRulePerformanceSumIs,
+  Expected: 'businessRulePerformanceSum is: '
+}, {
+  Name: 'cDoneBusinessRulePerformanceSumIs',
+  Actual: s.cDoneBusinessRulePerformanceSumIs,
+  Expected: 'DONE! businessRulePerformanceSum is: '
+}, {
+  Name: 'caverageIs',
+  Actual: s.caverageIs,
+  Expected: 'average is: '
+}, {
+  Name: 'cbusinessRulePerformanceStdSumIs',
+  Actual: s.cbusinessRulePerformanceStdSumIs,
+  Expected: 'businessRulePerformanceStdSum is: '
+}, {
+  Name: 'cDoneBusinessRulePerformanceStdSumIs',
+  Actual: s.cDoneBusinessRulePerformanceStdSumIs,
+  Expected: 'DONE! businessRulePerformanceStdSum is: '
+}, {
+  Name: 'cstandardDevIs',
+  Actual: s.cstandardDevIs,
+  Expected: 'standardDev is: '
+}, {
+  Name: 'ccommandCounterIs',
+  Actual: s.ccommandCounterIs,
+  Expected: 'commandCounter is: '
+}, {
+  Name: 'ccommandPerformanceSumIs',
+  Actual: s.ccommandPerformanceSumIs,
+  Expected: 'commandPerformanceSum is: '
+}, {
+  Name: 'cDoneCommandPerformanceSumIs',
+  Actual: s.cDoneCommandPerformanceSumIs,
+  Expected: 'DONE! commandPerformanceSum is: '
+}, {
+  Name: 'ccommandPerformanceStdSumIs',
+  Actual: s.ccommandPerformanceStdSumIs,
+  Expected: 'commandPerformanceStdSum is: '
+}, {
+  Name: 'cDoneCommandPerformanceStdSumIs',
+  Actual: s.cDoneCommandPerformanceStdSumIs,
+  Expected: 'DONE! commandPerformanceStdSum is: '
+}, {
+  Name: 'ccolorKeysIs',
+  Actual: s.ccolorKeysIs,
+  Expected: 'colorKeys is: '
+}, {
+  Name: 'ccurrentColorNameIs',
+  Actual: s.ccurrentColorNameIs,
+  Expected: 'currentColorName is: '
+}, {
+  Name: 'ccurrentColorObjectIs',
+  Actual: s.ccurrentColorObjectIs,
+  Expected: 'currentColorObject is: '
+}, {
+  Name: 'ccurrentColorHexValueIs',
+  Actual: s.ccurrentColorHexValueIs,
+  Expected: 'currentColorHexValue is: '
+}, {
+  Name: 'cruleOutputIs',
+  Actual: s.cruleOutputIs,
+  Expected: 'ruleOutput is: '
+}, {
+  Name: 'cBeginPhase1ConstantsValidation',
+  Actual: s.cBeginPhase1ConstantsValidation,
+  Expected: 'BEGIN Phase 1 Constants Validation'
+}, {
+  Name: 'cEndPhase1ConstantsValidation',
+  Actual: s.cEndPhase1ConstantsValidation,
+  Expected: 'END Phase 1 Constants Validation'
+}, {
+  Name: 'cBeginPhase2ConstantsValidation',
+  Actual: s.cBeginPhase2ConstantsValidation,
+  Expected: 'BEGIN Phase 2 Constants Validation'
+}, {
+  Name: 'cEndPhase2ConstantsValidation',
+  Actual: s.cEndPhase2ConstantsValidation,
+  Expected: 'END Phase 2 Constants Validation'
+}, {
+  Name: 'cconstantsPathIs',
+  Actual: s.cconstantsPathIs,
+  Expected: 'constantsPath is: '
+}, {
+  Name: 'cresolvedConstantsPath_BasicIs',
+  Actual: s.cresolvedConstantsPath_BasicIs,
+  Expected: 'resolvedConstantsPath_Basic is: '
+}, {
+  Name: 'cresolvedConstantsPath_ColorIs',
+  Actual: s.cresolvedConstantsPath_ColorIs,
+  Expected: 'resolvedConstantsPath_Color is: '
+}, {
+  Name: 'cresolvedConstantsPath_ElementIs',
+  Actual: s.cresolvedConstantsPath_ElementIs,
+  Expected: 'resolvedConstantsPath_Element is: '
+}, {
+  Name: 'cresolvedConstantsPath_GenericIs',
+  Actual: s.cresolvedConstantsPath_GenericIs,
+  Expected: 'resolvedConstantsPath_Generic is: '
+}, {
+  Name: 'cresolvedConstantsPath_IsotopeIs',
+  Actual: s.cresolvedConstantsPath_IsotopeIs,
+  Expected: 'resolvedConstantsPath_Isotope is: '
+}, {
+  Name: 'cresolvedConstantsPath_NumericIs',
+  Actual: s.cresolvedConstantsPath_NumericIs,
+  Expected: 'resolvedConstantsPath_Numeric is: '
+}, {
+  Name: 'cresolvedConstantsPath_PhonicsIs',
+  Actual: s.cresolvedConstantsPath_PhonicsIs,
+  Expected: 'resolvedConstantsPath_Phonics is: '
+}, {
+  Name: 'cresolvedConstantsPath_ShapeIs',
+  Actual: s.cresolvedConstantsPath_ShapeIs,
+  Expected: 'resolvedConstantsPath_Shape is: '
+}, {
+  Name: 'cresolvedConstantsPath_SystemIs',
+  Actual: s.cresolvedConstantsPath_SystemIs,
+  Expected: 'resolvedConstantsPath_System is: '
+}, {
+  Name: 'cresolvedConstantsPath_UnitsIs',
+  Actual: s.cresolvedConstantsPath_UnitsIs,
+  Expected: 'resolvedConstantsPath_Units is: '
+}, {
+  Name: 'cresolvedConstantsPath_WordsIs',
+  Actual: s.cresolvedConstantsPath_WordsIs,
+  Expected: 'resolvedConstantsPath_Words is: '
+}, {
+  Name: 'cBasicConstantsPhase1Validation',
+  Actual: s.cBasicConstantsPhase1Validation,
+  Expected: 'Basic Constants Phase 1 Validation'
+}, {
+  Name: 'cColorConstantsPhase1Validation',
+  Actual: s.cColorConstantsPhase1Validation,
+  Expected: 'Color Constants Phase 1 Validation'
+}, {
+  Name: 'cElementConstantsPhase1Validation',
+  Actual: s.cElementConstantsPhase1Validation,
+  Expected: 'Element Constants Phase 1 Validation'
+}, {
+  Name: 'cGenericConstantsPhase1Validation',
+  Actual: s.cGenericConstantsPhase1Validation,
+  Expected: 'Generic Constants Phase 1 Validation'
+}, {
+  Name: 'cIsotopeConstantsPhase1Validation',
+  Actual: s.cIsotopeConstantsPhase1Validation,
+  Expected: 'Isotope Constants Phase 1 Validation'
+}, {
+  Name: 'cNumericalConstantsPhase1Validation',
+  Actual: s.cNumericalConstantsPhase1Validation,
+  Expected: 'Numerical Constants Phase 1 Validation'
+}, {
+  Name: 'cPhonicsConstantsPhase1Validation',
+  Actual: s.cPhonicsConstantsPhase1Validation,
+  Expected: 'Phonics Constants Phase 1 Validation'
+}, {
+  Name: 'cShapeConstantsPhase1Validation',
+  Actual: s.cShapeConstantsPhase1Validation,
+  Expected: 'Shape Constants Phase 1 Validation'
+}, {
+  Name: 'cSystemConstantsPhase1Validation',
+  Actual: s.cSystemConstantsPhase1Validation,
+  Expected: 'System Constants Phase 1 Validation'
+}, {
+  Name: 'cUnitsConstantsPhase1Validation',
+  Actual: s.cUnitsConstantsPhase1Validation,
+  Expected: 'Units Constants Phase 1 Validation'
+}, {
+  Name: 'cWordConstantsPhase1Validation',
+  Actual: s.cWordConstantsPhase1Validation,
+  Expected: 'Word Constants Phase 1 Validation'
+}, {
+  Name: 'cBasicConstantsPhase2Validation',
+  Actual: s.cBasicConstantsPhase2Validation,
+  Expected: 'Basic Constants Phase 2 Validation'
+}, {
+  Name: 'cColorConstantsPhase2Validation',
+  Actual: s.cColorConstantsPhase2Validation,
+  Expected: 'Color Constants Phase 2 Validation'
+}, {
+  Name: 'cElementConstantsPhase2Validation',
+  Actual: s.cElementConstantsPhase2Validation,
+  Expected: 'Element Constants Phase 2 Validation'
+}, {
+  Name: 'cGenericConstantsPhase2Validation',
+  Actual: s.cGenericConstantsPhase2Validation,
+  Expected: 'Generic Constants Phase 2 Validation'
+}, {
+  Name: 'cIsotopeConstantsPhase2Validation',
+  Actual: s.cIsotopeConstantsPhase2Validation,
+  Expected: 'Isotope Constants Phase 2 Validation'
+}, {
+  Name: 'cNumericalConstantsPhase2Validation',
+  Actual: s.cNumericalConstantsPhase2Validation,
+  Expected: 'Numerical Constants Phase 2 Validation'
+}, {
+  Name: 'cPhonicsConstantsPhase2Validation',
+  Actual: s.cPhonicsConstantsPhase2Validation,
+  Expected: 'Phonics Constants Phase 2 Validation'
+}, {
+  Name: 'cShapeConstantsPhase2Validation',
+  Actual: s.cShapeConstantsPhase2Validation,
+  Expected: 'Shape Constants Phase 2 Validation'
+}, {
+  Name: 'cSystemConstantsPhase2Validation',
+  Actual: s.cSystemConstantsPhase2Validation,
+  Expected: 'System Constants Phase 2 Validation'
+}, {
+  Name: 'cUnitsConstantsPhase2Validation',
+  Actual: s.cUnitsConstantsPhase2Validation,
+  Expected: 'Units Constants Phase 2 Validation'
+}, {
+  Name: 'cWordConstantsPhase2Validation',
+  Actual: s.cWordConstantsPhase2Validation,
+  Expected: 'Word Constants Phase 2 Validation'
+}, {
+  Name: 'ccommandStringIs',
+  Actual: s.ccommandStringIs,
+  Expected: 'commandString is: '
+}, {
+  Name: 'ccommandDelimiterIs',
+  Actual: s.ccommandDelimiterIs,
+  Expected: 'commandDelimiter is: '
+}, {
+  Name: 'ccommandToExecuteBeforeTheAliasIs',
+  Actual: s.ccommandToExecuteBeforeTheAliasIs,
+  Expected: 'commandToExecute before the Alias is: '
+}, {
+  Name: 'ccommandToExecuteAfterTheAliasIs',
+  Actual: s.ccommandToExecuteAfterTheAliasIs,
+  Expected: 'commandToExecute after the Alias is: '
+}, {
+  Name: 'cWarningTheSpecifiedCommand',
+  Actual: s.cWarningTheSpecifiedCommand,
+  Expected: 'WARNING: The specified command: '
+}, {
+  Name: 'cdoesNotExistPleaseTryAgain',
+  Actual: s.cdoesNotExistPleaseTryAgain,
+  Expected: ' does not exist, please try again!'
+}, {
+  Name: 'ccommandStringContainsEitherSingleQuoteOrBackTickQuote',
+  Actual: s.ccommandStringContainsEitherSingleQuoteOrBackTickQuote,
+  Expected: 'commandString contains either a singleQuote or a backTickQuote'
+}, {
+  Name: 'ccommandStringContainsSingleQuote',
+  Actual: s.ccommandStringContainsSingleQuote,
+  Expected: 'commandString contains a singleQuote!'
+}, {
+  Name: 'cnumberOfSingleQuotesIsEven',
+  Actual: s.cnumberOfSingleQuotesIsEven,
+  Expected: 'numberOfSingleQuotes is >= 2 & the numberOfSingleQuotes is EVEN! YAY!'
+}, {
+  Name: 'cFirstIndexIs',
+  Actual: s.cFirstIndexIs,
+  Expected: 'First index is: '
+}, {
+  Name: 'ccommandStringAfterTaggingTheFirstStringDelimiter',
+  Actual: s.ccommandStringAfterTaggingTheFirstStringDelimiter,
+  Expected: 'commandString after tagging the first string delimiter: '
+}, {
+  Name: 'cAdditionalIndexIs',
+  Actual: s.cAdditionalIndexIs,
+  Expected: 'Additional index is: '
+}, {
+  Name: 'coddIndex',
+  Actual: s.coddIndex,
+  Expected: 'odd index'
+}, {
+  Name: 'cevenIndex',
+  Actual: s.cevenIndex,
+  Expected: 'even index'
+}, {
+  Name: 'ccommandStringAfterTaggingAnOddStringDelimiter',
+  Actual: s.ccommandStringAfterTaggingAnOddStringDelimiter,
+  Expected: 'commandString after tagging an odd string delimiter: '
+}, {
+  Name: 'ccommandStringAfterTaggingAnEvenStringDelimiter',
+  Actual: s.ccommandStringAfterTaggingAnEvenStringDelimiter,
+  Expected: 'commandString after tagging an even string delimiter: '
+}, {
+  Name: 'cpreSplitCommandStringIs',
+  Actual: s.cpreSplitCommandStringIs,
+  Expected: 'preSplitCommandString is: '
+}, {
+  Name: 'cpostSplitCommandStringIs',
+  Actual: s.cpostSplitCommandStringIs,
+  Expected: 'postSplitCommandString[k] is: '
+}, {
+  Name: 'cpreSplitCommandStringElementIs',
+  Actual: s.cpreSplitCommandStringElementIs,
+  Expected: 'preSplitCommandStringElement is: '
+}, {
+  Name: 'cDoingStraightSplitCommandString',
+  Actual: s.cDoingStraightSplitCommandString,
+  Expected: 'Doing a straight split of the commandString: '
+}, {
+  Name: 'cCommandStartTimeIs',
+  Actual: s.cCommandStartTimeIs,
+  Expected: 'Command Start time is: '
+}, {
+  Name: 'cCommandEndTimeIs',
+  Actual: s.cCommandEndTimeIs,
+  Expected: 'Command End time is: '
+}, {
+  Name: 'cCommandRunTimeIs',
+  Actual: s.cCommandRunTimeIs,
+  Expected: 'Command run-time is: '
+}, {
+  Name: 'ccommandAliasesFilePathConfigurationNameIs',
+  Actual: s.ccommandAliasesFilePathConfigurationNameIs,
+  Expected: 'commandAliasesFilePathConfigurationName is: '
+}, {
+  Name: 'ccommandIs',
+  Actual: s.ccommandIs,
+  Expected: 'command is: '
+}, {
+  Name: 'ccommandToExecuteIs',
+  Actual: s.ccommandToExecuteIs,
+  Expected: 'commandToExecute is: '
+}, {
+  Name: 'ccontextNameIs',
+  Actual: s.ccontextNameIs,
+  Expected: 'contextName is: '
+}, {
+  Name: 'callSystemConfigurationsIs',
+  Actual: s.callSystemConfigurationsIs,
+  Expected: 'allSystemConfigurations is: '
+}, {
+  Name: 'cdataPathConfigurationNameIs',
+  Actual: s.cdataPathConfigurationNameIs,
+  Expected: 'dataPathConfigurationName is: '
+}, {
+  Name: 'cdataPathIs',
+  Actual: s.cdataPathIs,
+  Expected: 'dataPath is: '
+}, {
+  Name: 'cfilesToLoadIs',
+  Actual: s.cfilesToLoadIs,
+  Expected: 'filesToLoad is: '
+}, {
+  Name: 'cloadedAndMergedDataAllFilesIs',
+  Actual: s.cloadedAndMergedDataAllFilesIs,
+  Expected: 'loadedAndMergedDataAllFiles is: '
+}, {
+  Name: 'cloadedAndMergedDataAllFilesContentsAre',
+  Actual: s.cloadedAndMergedDataAllFilesContentsAre,
+  Expected: 'loadedAndMergedDataAllFiles contents are: '
+}, {
+  Name: 'ccommandWorkflowFilePathConfigurationNameIs',
+  Actual: s.ccommandWorkflowFilePathConfigurationNameIs,
+  Expected: 'commandWorkflowFilePathConfigurationName is: '
+}, {
+  Name: 'ccontentsOfDataStructreIs',
+  Actual: s.ccontentsOfDataStructreIs,
+  Expected: 'contents of D-data structure is: '
+}, {
+  Name: 'crootPathIs',
+  Actual: s.crootPathIs,
+  Expected: 'rootPath is: '
+}, {
+  Name: 'cclientBusinessRulesAre',
+  Actual: s.cclientBusinessRulesAre,
+  Expected: 'clientBusinessRules are: '
+}, {
+  Name: 'cclientCommandsAre',
+  Actual: s.cclientCommandsAre,
+  Expected: 'clientCommands are: '
+}, {
+  Name: 'csystemCommandsAliasesPathIs',
+  Actual: s.csystemCommandsAliasesPathIs,
+  Expected: 'systemCommandsAliasesPath is: '
+}, {
+  Name: 'cclientCommandsAliasesPathIs',
+  Actual: s.cclientCommandsAliasesPathIs,
+  Expected: 'clientCommandsAliasesPath is: '
+}, {
+  Name: 'cresolvedSystemCommandsAliasesPathIs',
+  Actual: s.cresolvedSystemCommandsAliasesPathIs,
+  Expected: 'resolvedSystemCommandsAliasesPath is: '
+}, {
+  Name: 'cresolvedClientCommandsAliasesPathIs',
+  Actual: s.cresolvedClientCommandsAliasesPathIs,
+  Expected: 'resolvedClientCommandsAliasesPath is: '
+}, {
+  Name: 'csystemWorkflowPathIs',
+  Actual: s.csystemWorkflowPathIs,
+  Expected: 'systemWorkflowPath is: '
+}, {
+  Name: 'cclientWorkflowPathIs',
+  Actual: s.cclientWorkflowPathIs,
+  Expected: 'clientWorkflowPath is: '
+}, {
+  Name: 'cresolvedSystemWorkflowsPathIs',
+  Actual: s.cresolvedSystemWorkflowsPathIs,
+  Expected: 'resolvedSystemWorkflowsPath is: '
+}, {
+  Name: 'cresolvedClientWorkflowsPathIs',
+  Actual: s.cresolvedClientWorkflowsPathIs,
+  Expected: 'resolvedClientWorkflowsPath is: '
+}, {
+  Name: 'cbusinessRuleIs',
+  Actual: s.cbusinessRuleIs,
+  Expected: 'businessRule is: '
+}, {
+  Name: 'cruleInputIs',
+  Actual: s.cruleInputIs,
+  Expected: 'ruleInput is: '
+}, {
+  Name: 'cruleMetaDataIs',
+  Actual: s.cruleMetaDataIs,
+  Expected: 'ruleMetaData is: '
+}, {
+  Name: 'cconfigurationNameIs',
+  Actual: s.cconfigurationNameIs,
+  Expected: 'configurationName is: '
+}, {
+  Name: 'cconfigurationValueIs',
+  Actual: s.cconfigurationValueIs,
+  Expected: 'configurationValue is: '
+}, {
+  Name: 'creturnConfiguraitonValueIs',
+  Actual: s.creturnConfiguraitonValueIs,
+  Expected: 'returnConfigurationValue is: '
+}, {
+  Name: 'cattributeJsonStringIs',
+  Actual: s.cattributeJsonStringIs,
+  Expected: 'attributeJsonString is: '
+}, {
+  Name: 'cappAttributeNameIs',
+  Actual: s.cappAttributeNameIs,
+  Expected: 'appAttributeName is: '
+}, {
+  Name: 'cappAttributeValueIs',
+  Actual: s.cappAttributeValueIs,
+  Expected: 'appAttributeValue is: '
+}, {
+  Name: 'cexecuteBusinessRulesColon',
+  Actual: s.cexecuteBusinessRulesColon,
+  Expected: 'execute business rules: '
+}, {
+  Name: 'cdataPathAfterBusinessRulesProcessingIs',
+  Actual: s.cdataPathAfterBusinessRulesProcessingIs,
+  Expected: 'dataPath after business rules processing is: '
+}, {
+  Name: 'cfilesFoundIs',
+  Actual: s.cfilesFoundIs,
+  Expected: 'filesFound is: '
+}, {
+  Name: 'cFileToLoadIs',
+  Actual: s.cFileToLoadIs,
+  Expected: 'File to load is: '
+}, {
+  Name: 'cfileExtensionIs',
+  Actual: s.cfileExtensionIs,
+  Expected: 'fileExtension is: '
+}, {
+  Name: 'cloadedFileDataIs',
+  Actual: s.cloadedFileDataIs,
+  Expected: 'loaded file data is: '
+}, {
+  Name: 'cparsedDataFileIs',
+  Actual: s.cparsedDataFileIs,
+  Expected: 'parsedDataFile is: '
+}, {
+  Name: 'cBEGIN_PROCESSING_ADDITIONAL_DATA',
+  Actual: s.cBEGIN_PROCESSING_ADDITIONAL_DATA,
+  Expected: 'BEGIN PROCESSING ADDITIONAL DATA'
+}, {
+  Name: 'cDONE_PROCESSING_ADDITIONAL_DATA',
+  Actual: s.cDONE_PROCESSING_ADDITIONAL_DATA,
+  Expected: 'DONE PROCESSING ADDITIONAL DATA'
+}, {
+  Name: 'cMERGED_dataIs',
+  Actual: s.cMERGED_dataIs,
+  Expected: 'MERGED data is: '
+}, {
+  Name: 'cparsedDataFileContentsAre',
+  Actual: s.cparsedDataFileContentsAre,
+  Expected: 'parsedDataFile contents are: '
+}, {
+  Name: 'cdataCatagoryIs',
+  Actual: s.cdataCatagoryIs,
+  Expected: 'dataCatagory is: '
+}, {
+  Name: 'cfullyParsedDataIs',
+  Actual: s.cfullyParsedDataIs,
+  Expected: 'fully parsed data is: '
+}, {
+  Name: 'cD_finalMergeIs',
+  Actual: s.cD_finalMergeIs,
+  Expected: 'D final merge is: '
+}, {
+  Name: 'cdataStorageContextNameIs',
+  Actual: s.cdataStorageContextNameIs,
+  Expected: 'dataStorageContextName is: '
+}, {
+  Name: 'cdataToStoreIs',
+  Actual: s.cdataToStoreIs,
+  Expected: 'dataToStore is: '
+}, {
+  Name: 'cdataCatagoryDetailsNameIs',
+  Actual: s.cdataCatagoryDetailsNameIs,
+  Expected: 'dataCatagoryDetailsName is: '
+}, {
+  Name: 'ctempDataIs',
+  Actual: s.ctempDataIs,
+  Expected: 'tempData is: '
+}, {
+  Name: 'ctargetDataIs',
+  Actual: s.ctargetDataIs,
+  Expected: 'targetData is: '
+}, {
+  Name: 'cpageNameIs',
+  Actual: s.cpageNameIs,
+  Expected: 'pageName is: '
+}, {
+  Name: 'cdataToMergeIs',
+  Actual: s.cdataToMergeIs,
+  Expected: 'data to Merge is: '
+}, {
+  Name: 'cdataToMergeElementCountIs',
+  Actual: s.cdataToMergeElementCountIs,
+  Expected: 'dataToMergeElementCount is: '
+}, {
+  Name: 'cdataToMergeElementCountIs1',
+  Actual: s.cdataToMergeElementCountIs1,
+  Expected: 'dataToMergeElementCount is: 1'
+}, {
+  Name: 'ccheckIfThePageNameIsNotAnEmptyString',
+  Actual: s.ccheckIfThePageNameIsNotAnEmptyString,
+  Expected: 'check if the pageName is not an empty string'
+}, {
+  Name: 'cpageNameIsNotAnEmptyString',
+  Actual: s.cpageNameIsNotAnEmptyString,
+  Expected: 'pageName is not an empty string'
+}, {
+  Name: 'cCheckIfTheDataCatagoryIsAnEmptyStringOrNot',
+  Actual: s.cCheckIfTheDataCatagoryIsAnEmptyStringOrNot,
+  Expected: 'Check if the dataCatagory is an empty string or not'
+}, {
+  Name: 'cdataCatagoryIsNotAnEmptyString',
+  Actual: s.cdataCatagoryIsNotAnEmptyString,
+  Expected: 'dataCatagory is not an empty string!'
+}, {
+  Name: 'cdataCatagoryIsAnEmptyString',
+  Actual: s.cdataCatagoryIsAnEmptyString,
+  Expected: 'dataCatagory IS an empty string!'
+}, {
+  Name: 'ctargetDataContentIs',
+  Actual: s.ctargetDataContentIs,
+  Expected: 'targetData content is: '
+}, {
+  Name: 'cafterAttemptToMergeResultsAre',
+  Actual: s.cafterAttemptToMergeResultsAre,
+  Expected: 'after attempt to merge, results are: '
+}, {
+  Name: 'cMergedDataIs',
+  Actual: s.cMergedDataIs,
+  Expected: 'Merged data is: '
+}, {
+  Name: 'cpageNameIsAnEmptyString',
+  Actual: s.cpageNameIsAnEmptyString,
+  Expected: 'pageName is an empty string'
+}, {
+  Name: 'cCaughtTheSpecialCaseThatWeAreMergingFlatList',
+  Actual: s.cCaughtTheSpecialCaseThatWeAreMergingFlatList,
+  Expected: 'Caught the special case that we are merging a flat list.'
+}, {
+  Name: 'cinsideTheForLoop',
+  Actual: s.cinsideTheForLoop,
+  Expected: 'inside the for-loop'
+}, {
+  Name: 'ckeyIs',
+  Actual: s.ckeyIs,
+  Expected: 'key is: '
+}, {
+  Name: 'ctargetDataIsModifiedInTheInputPassByReferenceVariableContentIs',
+  Actual: s.ctargetDataIsModifiedInTheInputPassByReferenceVariableContentIs,
+  Expected: 'targetData is modified in the input pass-by-reference variable content is: '
+}, {
+  Name: 'cdataObjectValueIs',
+  Actual: s.cdataObjectValueIs,
+  Expected: 'dataObject value is: '
+}, {
+  Name: 'celementNameIs',
+  Actual: s.celementNameIs,
+  Expected: 'elementName is: '
+}, {
+  Name: 'cdataObjectIs',
+  Actual: s.cdataObjectIs,
+  Expected: 'dataObject is: '
+}, {
+  Name: 'celementNamePatternIs',
+  Actual: s.celementNamePatternIs,
+  Expected: 'elementNamePattern is: '
+}, {
+  Name: 'celementCountIs',
+  Actual: s.celementCountIs,
+  Expected: 'elementCount is: '
+}, {
+  Name: 'cERROR_Colon',
+  Actual: s.cERROR_Colon,
+  Expected: 'ERROR: '
+}, {
+  Name: 'cfileAndPathToLoadFromIs',
+  Actual: s.cfileAndPathToLoadFromIs,
+  Expected: 'file and path to load from is: '
+}, {
+  Name: 'cDoneLoadingDataFrom',
+  Actual: s.cDoneLoadingDataFrom,
+  Expected: 'DONE loading data from: '
+}, {
+  Name: 'cfileAndPathToWriteDataToIs',
+  Actual: s.cfileAndPathToWriteDataToIs,
+  Expected: 'file and path to write data to is: '
+}, {
+  Name: 'cdataToWriteIs',
+  Actual: s.cdataToWriteIs,
+  Expected: 'data to write is: '
+}, {
+  Name: 'cDataWasWrittenToTheFile',
+  Actual: s.cDataWasWrittenToTheFile,
+  Expected: 'Data was written to the file: '
+}, {
+  Name: 'cPathThatShouldBeScannedIs',
+  Actual: s.cPathThatShouldBeScannedIs,
+  Expected: 'Path that should be scanned is: '
+}, {
+  Name: 'cfilesFoundAre',
+  Actual: s.cfilesFoundAre,
+  Expected: 'files found are: '
+}, {
+  Name: 'cdirectorIs',
+  Actual: s.cdirectorIs,
+  Expected: 'directory is: '
+}, {
+  Name: 'cdirectoryPathIs',
+  Actual: s.cdirectoryPathIs,
+  Expected: 'directoryPath is: '
+}, {
+  Name: 'csourceFolderIs',
+  Actual: s.csourceFolderIs,
+  Expected: 'sourceFolder is: '
+}, {
+  Name: 'cdestinationFolderIs',
+  Actual: s.cdestinationFolderIs,
+  Expected: 'destinationFolder is: '
+}, {
+  Name: 'ccopySuccessIs',
+  Actual: s.ccopySuccessIs,
+  Expected: 'copySuccess is: '
+}, {
+  Name: 'ccurrentVersionIs',
+  Actual: s.ccurrentVersionIs,
+  Expected: 'current version is: '
+}, {
+  Name: 'creleasedArchiveFilesListIs',
+  Actual: s.creleasedArchiveFilesListIs,
+  Expected: 'released archive files list is: '
+}, {
+  Name: 'cfileIs',
+  Actual: s.cfileIs,
+  Expected: 'file is: '
+}, {
+  Name: 'cfileNameIs',
+  Actual: s.cfileNameIs,
+  Expected: 'fileName is: '
+}, {
+  Name: 'creleaseFilesListIs',
+  Actual: s.creleaseFilesListIs,
+  Expected: 'release files list is: '
+}, {
+  Name: 'creleaseDateTimeStampIs',
+  Actual: s.creleaseDateTimeStampIs,
+  Expected: 'release date-time stamp is: '
+}, {
+  Name: 'creleaseFileNameIs',
+  Actual: s.creleaseFileNameIs,
+  Expected: 'release fileName is: '
+}, {
+  Name: 'cDoneWritingTheZipFile',
+  Actual: s.cDoneWritingTheZipFile,
+  Expected: 'Done writing the zip file: '
+}, {
+  Name: 'cSetTheReturnPackageSuccessFlagToTrue',
+  Actual: s.cSetTheReturnPackageSuccessFlagToTrue,
+  Expected: 'Set the return packageSuccess flag to TRUE'
+}, {
+  Name: 'ccurrentVersionAlreadyReleased',
+  Actual: s.ccurrentVersionAlreadyReleased,
+  Expected: 'current version already released'
+}, {
+  Name: 'cpackageSuccessIs',
+  Actual: s.cpackageSuccessIs,
+  Expected: 'packageSuccess is: '
+}, {
+  Name: 'cRootPathBeforeProcessingIs',
+  Actual: s.cRootPathBeforeProcessingIs,
+  Expected: 'RootPath before processing is: '
+}, {
+  Name: 'cRootPathAfterProcessingIs',
+  Actual: s.cRootPathAfterProcessingIs,
+  Expected: 'RootPath after processing is: '
+}, {
+  Name: 'cSourceIs',
+  Actual: s.cSourceIs,
+  Expected: 'source is: '
+}, {
+  Name: 'ctargetIs',
+  Actual: s.ctargetIs,
+  Expected: 'target is: '
+}, {
+  Name: 'cErrorCouldNotCopyFile',
+  Actual: s.cErrorCouldNotCopyFile,
+  Expected: 'ERROR: Could not copy file: '
+}, {
+  Name: 'cErrorCouldNotCreateFolder',
+  Actual: s.cErrorCouldNotCreateFolder,
+  Expected: 'ERROR: Could not create folder: '
+}, {
+  Name: 'csuccessfullCopyIs',
+  Actual: s.csuccessfullCopyIs,
+  Expected: 'successfulCopy is: '
+}, {
+  Name: 'cErrorCouldNotCopyFolderContents',
+  Actual: s.cErrorCouldNotCopyFolderContents,
+  Expected: 'ERROR: Could not copy folder contents: '
+}, {
+  Name: 'cargumentValueIs',
+  Actual: s.cargumentValueIs,
+  Expected: 'argumentValue is: '
+}, {
+  Name: 'cconsolidatedArgumentModeIs',
+  Actual: s.cconsolidatedArgumentModeIs,
+  Expected: 'consolidatedArgumentMode is: '
+}, {
+  Name: 'cPushingArgumentValueToReturnDataAsArrayElement',
+  Actual: s.cPushingArgumentValueToReturnDataAsArrayElement,
+  Expected: 'Pushing the argumentValue to the returnData as an array element'
+}, {
+  Name: 'cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeFalse',
+  Actual: s.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeFalse,
+  Expected: 'Calling analyzeArgument for index Equal 2, consolidatedArgumentMode = false'
+}, {
+  Name: 'cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeTrue',
+  Actual: s.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeTrue,
+  Expected: 'Calling analyzeArgument for index = 2, consolidatedArgumentMode = true'
+}, {
+  Name: 'cargumentValueLengthGreaterThanZero',
+  Actual: s.cargumentValueLengthGreaterThanZero,
+  Expected: 'argumentValue.Length > 0'
+}, {
+  Name: 'cReturnArgumentValueSameAsItWasPassedIn',
+  Actual: s.cReturnArgumentValueSameAsItWasPassedIn,
+  Expected: 'Return the argumentValue the same as it was passed in.'
+}, {
+  Name: 'cCallingAnalyzeArgumentIndex3ConsolidatedArgumentModeFalse',
+  Actual: s.cCallingAnalyzeArgumentIndex3ConsolidatedArgumentModeFalse,
+  Expected: 'Calling analyzeArgument for index = 3, consolidatedArgumentMode = false'
+}, {
+  Name: 'cCheckIfThereAreBracketsOrNoBrackets',
+  Actual: s.cCheckIfThereAreBracketsOrNoBrackets,
+  Expected: 'Check if there are brackets or no brackets.'
+}, {
+  Name: 'cBracketsWereFound',
+  Actual: s.cBracketsWereFound,
+  Expected: 'Brackets were found'
+}, {
+  Name: 'cCheckIfThereIsRegularExpressionOrNot',
+  Actual: s.cCheckIfThereIsRegularExpressionOrNot,
+  Expected: 'Check if there is a Regular Expression or not.'
+}, {
+  Name: 'cRegularExpressionWasFound',
+  Actual: s.cRegularExpressionWasFound,
+  Expected: 'A regular expression was found!'
+}, {
+  Name: 'cNoRegExpFound',
+  Actual: s.cNoRegExpFound,
+  Expected: 'NO RegExp found!'
+}, {
+  Name: 'cBracketsAreFound',
+  Actual: s.cBracketsAreFound,
+  Expected: 'Brackets ARE found!'
+}, {
+  Name: 'cNoSecondaryCommandArgumentDelimiters',
+  Actual: s.cNoSecondaryCommandArgumentDelimiters,
+  Expected: 'NO secondary command argument delimiters.'
+}, {
+  Name: 'cregularExpressionIs',
+  Actual: s.cregularExpressionIs,
+  Expected: 'regular expression is: '
+}, {
+  Name: 'cregExValueIs',
+  Actual: s.cregExValueIs,
+  Expected: 'regExValue is: '
+}, {
+  Name: 'cregularExpressionFlagsAre',
+  Actual: s.cregularExpressionFlagsAre,
+  Expected: 'regular expression flags are: '
+}, {
+  Name: 'cregExFlagsIs',
+  Actual: s.cregExFlagsIs,
+  Expected: 'regExFlags is: '
+}, {
+  Name: 'cargumentValueContainsTheDelimiterLetsSplitIt',
+  Actual: s.cargumentValueContainsTheDelimiterLetsSplitIt,
+  Expected: 'argumentValue contains the delimiter: Lets split it!'
+}, {
+  Name: 'cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs',
+  Actual: s.cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs,
+  Expected: 'argumentValue after attempting to remove a open bracket from all array elements is: '
+}, {
+  Name: 'cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs',
+  Actual: s.cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs,
+  Expected: 'argumentValue after attempting to remove a close bracket from all array elements is: '
+}, {
+  Name: 'csecondaryCommandArgsDelimiterIs',
+  Actual: s.csecondaryCommandArgsDelimiterIs,
+  Expected: 'secondaryCommandArgsDelimiter is: '
+}, {
+  Name: 'cargumentArrayIs',
+  Actual: s.cargumentArrayIs,
+  Expected: 'argumentArray is: '
+}, {
+  Name: 'cformattingIs',
+  Actual: s.cformattingIs,
+  Expected: 'formatting is: '
+}, {
+  Name: 'cstartTimeIs',
+  Actual: s.cstartTimeIs,
+  Expected: 'startTime is: '
+}, {
+  Name: 'cendTimeIs',
+  Actual: s.cendTimeIs,
+  Expected: 'endTime is: '
+}, {
+  Name: 'cdeltaTimeResultIs',
+  Actual: s.cdeltaTimeResultIs,
+  Expected: 'deltaTimeResult is: '
+}, {
+  Name: 'cdeltaTimeIs',
+  Actual: s.cdeltaTimeIs,
+  Expected: 'deltaTime is: '
+}, {
+  Name: 'cformatIs',
+  Actual: s.cformatIs,
+  Expected: 'format is: '
+}, {
+  Name: 'creturnDeltaTimeIs',
+  Actual: s.creturnDeltaTimeIs,
+  Expected: 'returnDeltaTime is: '
+}, {
+  Name: 'csleepTimeIs',
+  Actual: s.csleepTimeIs,
+  Expected: 'sleepTime is: '
+}, {
+  Name: 'cworkflowNameIs',
+  Actual: s.cworkflowNameIs,
+  Expected: 'workflowName is: '
+}, {
+  Name: 'ccurrentWorkflowIs',
+  Actual: s.ccurrentWorkflowIs,
+  Expected: 'currentWorkflow is: '
+}, {
+  Name: 'cworkflowValueIs',
+  Actual: s.cworkflowValueIs,
+  Expected: 'workflowValue is: '
+}, {
+  Name: 'cdataHivePathArrayIs',
+  Actual: s.cdataHivePathArrayIs,
+  Expected: 'dataHivePathArray is: '
+}, {
+  Name: 'ccontentsOfLeafDataHiveElementIs',
+  Actual: s.ccontentsOfLeafDataHiveElementIs,
+  Expected: 'contents of leafDataHiveElement is: '
+}, {
+  Name: 'centryIs',
+  Actual: s.centryIs,
+  Expected: 'entry is: '
+}, {
+  Name: 'cattributeValueIs',
+  Actual: s.cattributeValueIs,
+  Expected: 'attributeValue is: '
+}, {
+  Name: 'ckey2Is',
+  Actual: s.ckey2Is,
+  Expected: 'key2 is: '
+}, {
+  Name: 'centityIs',
+  Actual: s.centityIs,
+  Expected: 'entity is: '
+}, {
+  Name: 'cDetermineWordDelimiterMessage1',
+  Actual: s.cDetermineWordDelimiterMessage1,
+  Expected: 'WARNING: Mixed string. '
+}, {
+  Name: 'cDetermineWordDelimiterMessage2',
+  Actual: s.cDetermineWordDelimiterMessage2,
+  Expected: 'Cannot determine what delimiter should '
+}, {
+  Name: 'cDetermineWordDelimiterMessage3',
+  Actual: s.cDetermineWordDelimiterMessage3,
+  Expected: 'be used to break up the '
+}, {
+  Name: 'cDetermineWordDelimiterMessage4',
+  Actual: s.cDetermineWordDelimiterMessage4,
+  Expected: 'string into words.'
+}, {
+  Name: 'cGetWordCountInStringMessage1',
+  Actual: s.cGetWordCountInStringMessage1,
+  Expected: 'WARNING: Mixed string. '
+}, {
+  Name: 'cGetWordCountInStringMessage2',
+  Actual: s.cGetWordCountInStringMessage2,
+  Expected: 'Cannot determine how words are delimited '
+}, {
+  Name: 'cGetWordCountInStringMessage3',
+  Actual: s.cGetWordCountInStringMessage3,
+  Expected: 'in the string. Unable to count words.'
+}, {
+  Name: 'cGetWordsArrayFromStringMessage1',
+  Actual: s.cGetWordsArrayFromStringMessage1,
+  Expected: 'WARNING: Mixed String. '
+}, {
+  Name: 'cGetWordsArrayFromStringMessage2',
+  Actual: s.cGetWordsArrayFromStringMessage2,
+  Expected: 'Cannot get words from the string. '
+}, {
+  Name: 'cGetWordsArrayFromStringMessage3',
+  Actual: s.cGetWordsArrayFromStringMessage3,
+  Expected: 'Unable to determine words.'
+}, {
   Name: 'cCommandNamePrompt1',
   Actual: s.cCommandNamePrompt1,
   Expected: 'Please enter a named command where '
@@ -895,6 +2711,182 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cConstantsListPatternSearchPrompt3',
   Actual: s.cConstantsListPatternSearchPrompt3,
   Expected: 'common patterns:'
+}, {
+  Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1',
+  Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1,
+  Expected: 'ERROR: Attempted to generate a suggested '
+}, {
+  Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2',
+  Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2,
+  Expected: 'line of code to validate the constant, '
+}, {
+  Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3',
+  Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3,
+  Expected: 'but the constant is not formatted correctly, '
+}, {
+  Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4',
+  Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4,
+  Expected: 'it should begin with a lower case "c". '
+}, {
+  Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5',
+  Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5,
+  Expected: 'Please reformat the constant correctly so a '
+}, {
+  Name: 'cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6',
+  Actual: s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6,
+  Expected: 'line of code can be generated for you.'
+}, {
+  Name: 'cSearchForPatternsInStringArrayMessage1',
+  Actual: s.cSearchForPatternsInStringArrayMessage1,
+  Expected: 'currentMasterStringArrayElement does not contain a space character'
+}, {
+  Name: 'cSearchForPatternsInStringArrayMessage2',
+  Actual: s.cSearchForPatternsInStringArrayMessage2,
+  Expected: 'WARNING: The current string being searched contains a space character, '
+}, {
+  Name: 'cSearchForPatternsInStringArrayMessage3',
+  Actual: s.cSearchForPatternsInStringArrayMessage3,
+  Expected: 'we are going to skip comparison.'
+}, {
+  Name: 'cSearchForPatternsInStringArrayMessage4',
+  Actual: s.cSearchForPatternsInStringArrayMessage4,
+  Expected: 'WARNING: InputData was not an array or had an empty array.'
+}, {
+  Name: 'cLoadDataFileMessage1',
+  Actual: s.cLoadDataFileMessage1,
+  Expected: 'WARNING: No data to load, '
+}, {
+  Name: 'cloadDataFileMessage2',
+  Actual: s.cloadDataFileMessage2,
+  Expected: 'please specify a valid path & filename!'
+}, {
+  Name: 'cloadDataFileMessage3',
+  Actual: s.cloadDataFileMessage3,
+  Expected: 'WARNING: Invalid file format, file formats supported are: '
+}, {
+  Name: 'cdeployApplicationMessage1a',
+  Actual: s.cdeployApplicationMessage1a,
+  Expected: 'ERROR: Release failed because of a failure in the constants validation system. '
+}, {
+  Name: 'cdeployApplicationMessage2a',
+  Actual: s.cdeployApplicationMessage2a,
+  Expected: 'Please fix ASAP before attempting another release.'
+}, {
+  Name: 'cdeployApplicationMessage1b',
+  Actual: s.cdeployApplicationMessage1b,
+  Expected: 'ERROR: Release failed because of a failure in the commands alias validation system. '
+}, {
+  Name: 'ccommandSequencerMessage1',
+  Actual: s.ccommandSequencerMessage1,
+  Expected: 'WARNING: nominal.commandSequencer: The specified command was not found, '
+}, {
+  Name: 'ccommandSequencerMessage2',
+  Actual: s.ccommandSequencerMessage2,
+  Expected: 'please enter a valid command and try again.'
+}, {
+  Name: 'cworkflowMessage1',
+  Actual: s.cworkflowMessage1,
+  Expected: 'WARNING: nominal.workflow: The specified workflow: '
+}, {
+  Name: 'cworkflowMessage2',
+  Actual: s.cworkflowMessage2,
+  Expected: ' was not found in either the system defined workflows, or client defined workflows.'
+}, {
+  Name: 'cworkflowMessage3',
+  Actual: s.cworkflowMessage3,
+  Expected: ' Please enter a valid workflow name and try again.'
+}, {
+  Name: 'ccommandGeneratorMessage1',
+  Actual: s.ccommandGeneratorMessage1,
+  Expected: 'After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is: '
+}, {
+  Name: 'ccommandGeneratorMessage2',
+  Actual: s.ccommandGeneratorMessage2,
+  Expected: 'After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandundefinedDelimiter commandString is: '
+}, {
+  Name: 'ccommandGeneratorMessage3',
+  Actual: s.ccommandGeneratorMessage3,
+  Expected: 'WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered: '
+}, {
+  Name: 'ccommandGeneratorMessage4',
+  Actual: s.ccommandGeneratorMessage4,
+  Expected: 'WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number: '
+}, {
+  Name: 'ccommandGeneratorMessage5',
+  Actual: s.ccommandGeneratorMessage5,
+  Expected: 'Warning: nominal.commandGenerator: The specified command: '
+}, {
+  Name: 'ccommandGeneratorMessage6',
+  Actual: s.ccommandGeneratorMessage6,
+  Expected: ' was not found, please enter a valid command and try again.'
+}, {
+  Name: 'ccommandAliasGeneratorMessage1',
+  Actual: s.ccommandAliasGeneratorMessage1,
+  Expected: 'Command can be called by passing parameters and bypass the prompt system.'
+}, {
+  Name: 'ccommandAliasGeneratorMessage2',
+  Actual: s.ccommandAliasGeneratorMessage2,
+  Expected: 'EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}'
+}, {
+  Name: 'ccommandAliasGeneratorMessage3',
+  Actual: s.ccommandAliasGeneratorMessage3,
+  Expected: 'INVALID INPUT: Please enter a valid camel-case command name.'
+}, {
+  Name: 'ccommandAliasGeneratorMessage4',
+  Actual: s.ccommandAliasGeneratorMessage4,
+  Expected: 'INVALID INPUT: Please enter a valid command word alias list.'
+}, {
+  Name: 'ccommandAliasGeneratorMessage5',
+  Actual: s.ccommandAliasGeneratorMessage5,
+  Expected: 'INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.'
+}, {
+  Name: 'cconstantsGeneratorMessage1',
+  Actual: s.cconstantsGeneratorMessage1,
+  Expected: 'INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.'
+}, {
+  Name: 'cconstantsGeneratorMessage2',
+  Actual: s.cconstantsGeneratorMessage2,
+  Expected: 'WARNING: The constant has already been defined in the following library(ies): '
+}, {
+  Name: 'cconstantsGeneratorListMessage1',
+  Actual: s.cconstantsGeneratorListMessage1,
+  Expected: 'INVALID INPUT: Please enter a valid constant List.'
+}, {
+  Name: 'cvalidateCommandAliasesMessage1',
+  Actual: s.cvalidateCommandAliasesMessage1,
+  Expected: 'PASSED: All duplicate command Aliases validation tests!'
+}, {
+  Name: 'cgetCommandArgsMessage1',
+  Actual: s.cgetCommandArgsMessage1,
+  Expected: 'About to call the rule broker to process on the number of single quotes '
+}, {
+  Name: 'cgetCommandArgsMessage2',
+  Actual: s.cgetCommandArgsMessage2,
+  Expected: 'and determine if it-be even or odd'
+}, {
+  Name: 'cexecuteCommandMessage1',
+  Actual: s.cexecuteCommandMessage1,
+  Expected: 'WARNING: Command does not exist, please enter a valid command and try again!'
+}, {
+  Name: 'cparseBusinessRuleArgumentMessage1',
+  Actual: s.cparseBusinessRuleArgumentMessage1,
+  Expected: 'WARNING: lexical.parseBusinessRuleArgument: Invalid combination of inputs to the lexical.parseBusinessRuleArgument function! '
+}, {
+  Name: 'cparseBusinessRuleArgumentMessage2',
+  Actual: s.cparseBusinessRuleArgumentMessage2,
+  Expected: 'Please adjust inputs and try again.'
+}, {
+  Name: 'cprintDataHiveAttributesMessage1',
+  Actual: s.cprintDataHiveAttributesMessage1,
+  Expected: 'Caught the case the user may have only specified a single data hive, '
+}, {
+  Name: 'cprintDataHiveAttributesMessage2',
+  Actual: s.cprintDataHiveAttributesMessage2,
+  Expected: 'such as the configuration data hive.'
+}, {
+  Name: 'cprintDataHiveAttributesMessage3',
+  Actual: s.cprintDataHiveAttributesMessage3,
+  Expected: 'ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.'
 }, // File Types
 {
   Name: 'cCatia',
@@ -976,871 +2968,6 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cVRML',
   Actual: s.cVRML,
   Expected: 'VRML'
-}, // Countires
-// TODO: Need to come back and generalize thse with constants re-use.
-{
-  Name: 'cAfghanistan',
-  Actual: s.cAfghanistan,
-  Expected: 'Afghanistan'
-}, {
-  Name: 'cAlbania',
-  Actual: s.cAlbania,
-  Expected: 'Albania'
-}, {
-  Name: 'cAlgeria',
-  Actual: s.cAlgeria,
-  Expected: 'Algeria'
-}, {
-  Name: 'cAndorra',
-  Actual: s.cAndorra,
-  Expected: 'Andorra'
-}, {
-  Name: 'cAngola',
-  Actual: s.cAngola,
-  Expected: 'Angola'
-}, {
-  Name: 'cAntigua',
-  Actual: s.cAntigua,
-  Expected: 'Antigua'
-}, {
-  Name: 'cArgentina',
-  Actual: s.cArgentina,
-  Expected: 'Argentina'
-}, {
-  Name: 'cArmenia',
-  Actual: s.cArmenia,
-  Expected: 'Armenia'
-}, {
-  Name: 'cAustralia',
-  Actual: s.cAustralia,
-  Expected: 'Australia'
-}, {
-  Name: 'cAustria',
-  Actual: s.cAustria,
-  Expected: 'Austria'
-}, {
-  Name: 'cAzerbaijan',
-  Actual: s.cAzerbaijan,
-  Expected: 'Azerbaijan'
-}, {
-  Name: 'cBahamas',
-  Actual: s.cBahamas,
-  Expected: 'Bahamas'
-}, {
-  Name: 'cBahrain',
-  Actual: s.cBahrain,
-  Expected: 'Bahrain'
-}, {
-  Name: 'cBangladesh',
-  Actual: s.cBangladesh,
-  Expected: 'Bangladesh'
-}, {
-  Name: 'cBarbados',
-  Actual: s.cBarbados,
-  Expected: 'Barbados'
-}, {
-  Name: 'cBarbuda',
-  Actual: s.cBarbuda,
-  Expected: 'Barbuda'
-}, {
-  Name: 'cBelarus',
-  Actual: s.cBelarus,
-  Expected: 'Belarus'
-}, {
-  Name: 'cBelgium',
-  Actual: s.cBelgium,
-  Expected: 'Belgium'
-}, {
-  Name: 'cBelize',
-  Actual: s.cBelize,
-  Expected: 'Belize'
-}, {
-  Name: 'cBenin',
-  Actual: s.cBenin,
-  Expected: 'Benin'
-}, {
-  Name: 'cBhutan',
-  Actual: s.cBhutan,
-  Expected: 'Bhutan'
-}, {
-  Name: 'cBolivia',
-  Actual: s.cBolivia,
-  Expected: 'Bolivia'
-}, {
-  Name: 'cBosnia',
-  Actual: s.cBosnia,
-  Expected: 'Bosnia'
-}, {
-  Name: 'cBotswana',
-  Actual: s.cBotswana,
-  Expected: 'Botswana'
-}, {
-  Name: 'cBrazil',
-  Actual: s.cBrazil,
-  Expected: 'Brazil'
-}, {
-  Name: 'cBrunei',
-  Actual: s.cBrunei,
-  Expected: 'Brunei'
-}, {
-  Name: 'cBulgaria',
-  Actual: s.cBulgaria,
-  Expected: 'Bulgaria'
-}, {
-  Name: 'cBurkinaFaso',
-  Actual: s.cBurkinaFaso,
-  Expected: 'BurkinaFaso'
-}, {
-  Name: 'cBurundi',
-  Actual: s.cBurundi,
-  Expected: 'Burundi'
-}, {
-  Name: 'cCotedlvoire',
-  Actual: s.cCotedlvoire,
-  Expected: 'Cote dlvoire'
-}, {
-  Name: 'cCaboVerde',
-  Actual: s.cCaboVerde,
-  Expected: 'Cabo Verde'
-}, {
-  Name: 'cCambodia',
-  Actual: s.cCambodia,
-  Expected: 'Cambodia'
-}, {
-  Name: 'cCameroon',
-  Actual: s.cCameroon,
-  Expected: 'Cameroon'
-}, {
-  Name: 'cCanada',
-  Actual: s.cCanada,
-  Expected: 'Canada'
-}, {
-  Name: 'cCentralAfricanRepublic',
-  Actual: s.cCentralAfricanRepublic,
-  Expected: 'Central African Republic'
-}, {
-  Name: 'cChad',
-  Actual: s.cChad,
-  Expected: 'Chad'
-}, {
-  Name: 'cChile',
-  Actual: s.cChile,
-  Expected: 'Chile'
-}, {
-  Name: 'cChina',
-  Actual: s.cChina,
-  Expected: 'China'
-}, {
-  Name: 'cColombia',
-  Actual: s.cColombia,
-  Expected: 'Colombia'
-}, {
-  Name: 'cComoros',
-  Actual: s.cComoros,
-  Expected: 'Comoros'
-}, {
-  Name: 'cCongo',
-  Actual: s.cCongo,
-  Expected: 'Congo'
-}, {
-  Name: 'cCostaRica',
-  Actual: s.cCostaRica,
-  Expected: 'Costa Rica'
-}, {
-  Name: 'cCroatia',
-  Actual: s.cCroatia,
-  Expected: 'Croatia'
-}, {
-  Name: 'cCuba',
-  Actual: s.cCuba,
-  Expected: 'Cuba'
-}, {
-  Name: 'cCyprus',
-  Actual: s.cCyprus,
-  Expected: 'Cyprus'
-}, {
-  Name: 'cCzechia',
-  Actual: s.cCzechia,
-  Expected: 'Czechia'
-}, {
-  Name: 'cDemocraticRepublicOfTheCongo',
-  Actual: s.cDemocraticRepublicOfTheCongo,
-  Expected: 'Democratic Republic of the Congo'
-}, {
-  Name: 'cDenmark',
-  Actual: s.cDenmark,
-  Expected: 'Denmark'
-}, {
-  Name: 'cDjibouti',
-  Actual: s.cDjibouti,
-  Expected: 'Djibouti'
-}, {
-  Name: 'cDominica',
-  Actual: s.cDominica,
-  Expected: 'Dominica'
-}, {
-  Name: 'cDominicanRepublic',
-  Actual: s.cDominicanRepublic,
-  Expected: 'Dominican Republic'
-}, {
-  Name: 'cEcuador',
-  Actual: s.cEcuador,
-  Expected: 'Ecuador'
-}, {
-  Name: 'cEgypt',
-  Actual: s.cEgypt,
-  Expected: 'Egypt'
-}, {
-  Name: 'cElSalvador',
-  Actual: s.cElSalvador,
-  Expected: 'El Salvador'
-}, {
-  Name: 'cEquatorialGuinea',
-  Actual: s.cEquatorialGuinea,
-  Expected: 'Equatorial Guinea'
-}, {
-  Name: 'cEritrea',
-  Actual: s.cEritrea,
-  Expected: 'Eritrea'
-}, {
-  Name: 'cEstonia',
-  Actual: s.cEstonia,
-  Expected: 'Estonia'
-}, {
-  Name: 'cEswatini',
-  Actual: s.cEswatini,
-  Expected: 'Eswatini'
-}, // -- Formerly Swaziland
-{
-  Name: 'cEthiopia',
-  Actual: s.cEthiopia,
-  Expected: 'Ethiopia'
-}, {
-  Name: 'cFiji',
-  Actual: s.cFiji,
-  Expected: 'Fiji'
-}, {
-  Name: 'cFinland',
-  Actual: s.cFinland,
-  Expected: 'Finland'
-}, {
-  Name: 'cFrance',
-  Actual: s.cFrance,
-  Expected: 'France'
-}, {
-  Name: 'cGabon',
-  Actual: s.cGabon,
-  Expected: 'Gabon'
-}, {
-  Name: 'cGambia',
-  Actual: s.cGambia,
-  Expected: 'Gambia'
-}, {
-  Name: 'cGeorgia',
-  Actual: s.cGeorgia,
-  Expected: 'Georgia'
-}, {
-  Name: 'cGerman',
-  Actual: s.cGerman,
-  Expected: 'German'
-}, {
-  Name: 'cGermany',
-  Actual: s.cGermany,
-  Expected: 'Germany'
-}, {
-  Name: 'cGhana',
-  Actual: s.cGhana,
-  Expected: 'Ghana'
-}, {
-  Name: 'cGreece',
-  Actual: s.cGreece,
-  Expected: 'Greece'
-}, {
-  Name: 'cGrenada',
-  Actual: s.cGrenada,
-  Expected: 'Grenada'
-}, {
-  Name: 'cGuatemala',
-  Actual: s.cGuatemala,
-  Expected: 'Guatemala'
-}, {
-  Name: 'cGuinea',
-  Actual: s.cGuinea,
-  Expected: 'Guinea'
-}, {
-  Name: 'cGuineaBissau',
-  Actual: s.cGuineaBissau,
-  Expected: 'Guinea-Bissau'
-}, {
-  Name: 'cGuyana',
-  Actual: s.cGuyana,
-  Expected: 'Guyana'
-}, {
-  Name: 'cHaiti',
-  Actual: s.cHaiti,
-  Expected: 'Haiti'
-}, {
-  Name: 'cHerzegovina',
-  Actual: s.cHerzegovina,
-  Expected: 'Herzegovina'
-}, {
-  Name: 'cHolySee',
-  Actual: s.cHolySee,
-  Expected: 'Holy See'
-}, {
-  Name: 'cHonduras',
-  Actual: s.cHonduras,
-  Expected: 'Honduras'
-}, {
-  Name: 'cHungary',
-  Actual: s.cHungary,
-  Expected: 'Hungary'
-}, {
-  Name: 'cIceland',
-  Actual: s.cIceland,
-  Expected: 'Iceland'
-}, {
-  Name: 'cIndia',
-  Actual: s.cIndia,
-  Expected: 'India'
-}, {
-  Name: 'cIndonesia',
-  Actual: s.cIndonesia,
-  Expected: 'Indonesia'
-}, {
-  Name: 'cIran',
-  Actual: s.cIran,
-  Expected: 'Iran'
-}, {
-  Name: 'cIraq',
-  Actual: s.cIraq,
-  Expected: 'Iraq'
-}, {
-  Name: 'cIreland',
-  Actual: s.cIreland,
-  Expected: 'Ireland'
-}, {
-  Name: 'cIsrael',
-  Actual: s.cIsrael,
-  Expected: 'Israel'
-}, {
-  Name: 'cItaly',
-  Actual: s.cItaly,
-  Expected: 'Italy'
-}, {
-  Name: 'cJamaica',
-  Actual: s.cJamaica,
-  Expected: 'Jamaica'
-}, {
-  Name: 'cJapan',
-  Actual: s.cJapan,
-  Expected: 'Japan'
-}, {
-  Name: 'cJordan',
-  Actual: s.cJordan,
-  Expected: 'Jordan'
-}, {
-  Name: 'cKazakhstan',
-  Actual: s.cKazakhstan,
-  Expected: 'Kazakhstan'
-}, {
-  Name: 'cKenya',
-  Actual: s.cKenya,
-  Expected: 'Kenya'
-}, {
-  Name: 'cKiribati',
-  Actual: s.cKiribati,
-  Expected: 'Kiribati'
-}, {
-  Name: 'cKuwait',
-  Actual: s.cKuwait,
-  Expected: 'Kuwait'
-}, {
-  Name: 'cKyrgyzstan',
-  Actual: s.cKyrgyzstan,
-  Expected: 'Kyrgyzstan'
-}, {
-  Name: 'cLaos',
-  Actual: s.cLaos,
-  Expected: 'Laos'
-}, {
-  Name: 'cLatvia',
-  Actual: s.cLatvia,
-  Expected: 'Latvia'
-}, {
-  Name: 'cLebanon',
-  Actual: s.cLebanon,
-  Expected: 'Lebanon'
-}, {
-  Name: 'cLesotho',
-  Actual: s.cLesotho,
-  Expected: 'Lesotho'
-}, {
-  Name: 'cLiberia',
-  Actual: s.cLiberia,
-  Expected: 'Liberia'
-}, {
-  Name: 'cLibya',
-  Actual: s.cLibya,
-  Expected: 'Libya'
-}, {
-  Name: 'cLiechtenstein',
-  Actual: s.cLiechtenstein,
-  Expected: 'Liechtenstein'
-}, {
-  Name: 'cLithuania',
-  Actual: s.cLithuania,
-  Expected: 'Lithuania'
-}, {
-  Name: 'cLuxembourg',
-  Actual: s.cLuxembourg,
-  Expected: 'Luxembourg'
-}, {
-  Name: 'cMadagascar',
-  Actual: s.cMadagascar,
-  Expected: 'Madagascar'
-}, {
-  Name: 'cMalawi',
-  Actual: s.cMalawi,
-  Expected: 'Malawi'
-}, {
-  Name: 'cMalaysia',
-  Actual: s.cMalaysia,
-  Expected: 'Malaysia'
-}, {
-  Name: 'cMaldives',
-  Actual: s.cMaldives,
-  Expected: 'Maldives'
-}, {
-  Name: 'cMali',
-  Actual: s.cMali,
-  Expected: 'Mali'
-}, {
-  Name: 'cMalta',
-  Actual: s.cMalta,
-  Expected: 'Malta'
-}, {
-  Name: 'cMarshallIslands',
-  Actual: s.cMarshallIslands,
-  Expected: 'Marshall Islands'
-}, {
-  Name: 'cMauritania',
-  Actual: s.cMauritania,
-  Expected: 'Mauritania'
-}, {
-  Name: 'cMauritius',
-  Actual: s.cMauritius,
-  Expected: 'Mauritius'
-}, {
-  Name: 'cMexico',
-  Actual: s.cMexico,
-  Expected: 'Mexico'
-}, {
-  Name: 'cMicronesia',
-  Actual: s.cMicronesia,
-  Expected: 'Micronesia'
-}, {
-  Name: 'cMoldova',
-  Actual: s.cMoldova,
-  Expected: 'Moldova'
-}, {
-  Name: 'cMonaco',
-  Actual: s.cMonaco,
-  Expected: 'Monaco'
-}, {
-  Name: 'cMongolia',
-  Actual: s.cMongolia,
-  Expected: 'Mongolia'
-}, {
-  Name: 'cMontenegro',
-  Actual: s.cMontenegro,
-  Expected: 'Montenegro'
-}, {
-  Name: 'cMorocco',
-  Actual: s.cMorocco,
-  Expected: 'Morocco'
-}, {
-  Name: 'cMozambique',
-  Actual: s.cMozambique,
-  Expected: 'Mozambique'
-}, {
-  Name: 'cMyanmar',
-  Actual: s.cMyanmar,
-  Expected: 'Myanmar'
-}, {
-  Name: 'cNamibia',
-  Actual: s.cNamibia,
-  Expected: 'Namibia'
-}, {
-  Name: 'cNauru',
-  Actual: s.cNauru,
-  Expected: 'Nauru'
-}, {
-  Name: 'cNepal',
-  Actual: s.cNepal,
-  Expected: 'Nepal'
-}, {
-  Name: 'cNetherlands',
-  Actual: s.cNetherlands,
-  Expected: 'Netherlands'
-}, {
-  Name: 'cNewZealand',
-  Actual: s.cNewZealand,
-  Expected: 'New Zealand'
-}, {
-  Name: 'cNevis',
-  Actual: s.cNevis,
-  Expected: 'Nevis'
-}, {
-  Name: 'cNicaragua',
-  Actual: s.cNicaragua,
-  Expected: 'Nicaragua'
-}, {
-  Name: 'cNiger',
-  Actual: s.cNiger,
-  Expected: 'Niger'
-}, {
-  Name: 'cNigeria',
-  Actual: s.cNigeria,
-  Expected: 'Nigeria'
-}, {
-  Name: 'cNorthKorea',
-  Actual: s.cNorthKorea,
-  Expected: 'North Korea'
-}, {
-  Name: 'cNorthMacedonia',
-  Actual: s.cNorthMacedonia,
-  Expected: 'North Macedonia'
-}, {
-  Name: 'cNorway',
-  Actual: s.cNorway,
-  Expected: 'Norway'
-}, {
-  Name: 'cOman',
-  Actual: s.cOman,
-  Expected: 'Oman'
-}, {
-  Name: 'cPakistan',
-  Actual: s.cPakistan,
-  Expected: 'Pakistan'
-}, {
-  Name: 'cPalau',
-  Actual: s.cPalau,
-  Expected: 'Palau'
-}, {
-  Name: 'cPalestine',
-  Actual: s.cPalestine,
-  Expected: 'Palestine'
-}, {
-  Name: 'cPanama',
-  Actual: s.cPanama,
-  Expected: 'Panama'
-}, {
-  Name: 'cPapuaNewGuinea',
-  Actual: s.cPapuaNewGuinea,
-  Expected: 'Papua New Guinea'
-}, {
-  Name: 'cParaguay',
-  Actual: s.cParaguay,
-  Expected: 'Paraguay'
-}, {
-  Name: 'cPeru',
-  Actual: s.cPeru,
-  Expected: 'Peru'
-}, {
-  Name: 'cPhilippines',
-  Actual: s.cPhilippines,
-  Expected: 'Philippines'
-}, {
-  Name: 'cPoland',
-  Actual: s.cPoland,
-  Expected: 'Poland'
-}, {
-  Name: 'cPortugal',
-  Actual: s.cPortugal,
-  Expected: 'Portugal'
-}, {
-  Name: 'cPrincipe',
-  Actual: s.cPrincipe,
-  Expected: 'Principe'
-}, {
-  Name: 'cQatar',
-  Actual: s.cQatar,
-  Expected: 'Qatar'
-}, {
-  Name: 'cRomania',
-  Actual: s.cRomania,
-  Expected: 'Romania'
-}, {
-  Name: 'cRussia',
-  Actual: s.cRussia,
-  Expected: 'Russia'
-}, {
-  Name: 'cRwanda',
-  Actual: s.cRwanda,
-  Expected: 'Rwanda'
-}, {
-  Name: 'cSaintKitts',
-  Actual: s.cSaintKitts,
-  Expected: 'Saint Kitts'
-}, {
-  Name: 'cSaintLucia',
-  Actual: s.cSaintLucia,
-  Expected: 'Saint Lucia'
-}, {
-  Name: 'cSaintVincent',
-  Actual: s.cSaintVincent,
-  Expected: 'Saint Vincent'
-}, {
-  Name: 'cSomoa',
-  Actual: s.cSomoa,
-  Expected: 'Somoa'
-}, {
-  Name: 'cSanMarino',
-  Actual: s.cSanMarino,
-  Expected: 'San Marino'
-}, {
-  Name: 'cSaoTome',
-  Actual: s.cSaoTome,
-  Expected: 'Sao Tome'
-}, {
-  Name: 'cSaudiArabia',
-  Actual: s.cSaudiArabia,
-  Expected: 'Saudi Arabia'
-}, {
-  Name: 'cSenegal',
-  Actual: s.cSenegal,
-  Expected: 'Senegal'
-}, {
-  Name: 'cSerbia',
-  Actual: s.cSerbia,
-  Expected: 'Serbia'
-}, {
-  Name: 'cSeychelles',
-  Actual: s.cSeychelles,
-  Expected: 'Seychelles'
-}, {
-  Name: 'cSierraLeone',
-  Actual: s.cSierraLeone,
-  Expected: 'Sierra Leone'
-}, {
-  Name: 'cSingapore',
-  Actual: s.cSingapore,
-  Expected: 'Singapore'
-}, {
-  Name: 'cSlovakia',
-  Actual: s.cSlovakia,
-  Expected: 'Slovakia'
-}, {
-  Name: 'cSlovenia',
-  Actual: s.cSlovenia,
-  Expected: 'Slovenia'
-}, {
-  Name: 'cSolomonIslands',
-  Actual: s.cSolomonIslands,
-  Expected: 'Solomon Islands'
-}, {
-  Name: 'cSomalia',
-  Actual: s.cSomalia,
-  Expected: 'Somalia'
-}, {
-  Name: 'cSouthAfrica',
-  Actual: s.cSouthAfrica,
-  Expected: 'South Africa'
-}, {
-  Name: 'cSouthKorea',
-  Actual: s.cSouthKorea,
-  Expected: 'South Korea'
-}, {
-  Name: 'cSouthSudan',
-  Actual: s.cSouthSudan,
-  Expected: 'South Sudan'
-}, {
-  Name: 'cSpain',
-  Actual: s.cSpain,
-  Expected: 'Spain'
-}, {
-  Name: 'cSriLanka',
-  Actual: s.cSriLanka,
-  Expected: 'Sri Lanka'
-}, {
-  Name: 'cSudan',
-  Actual: s.cSudan,
-  Expected: 'Sudan'
-}, {
-  Name: 'cSuriname',
-  Actual: s.cSuriname,
-  Expected: 'Suriname'
-}, {
-  Name: 'cSweden',
-  Actual: s.cSweden,
-  Expected: 'Sweden'
-}, {
-  Name: 'cSwitzerland',
-  Actual: s.cSwitzerland,
-  Expected: 'Switzerland'
-}, {
-  Name: 'cSyria',
-  Actual: s.cSyria,
-  Expected: 'Syria'
-}, {
-  Name: 'cTajikistan',
-  Actual: s.cTajikistan,
-  Expected: 'Tajikistan'
-}, {
-  Name: 'cTanzania',
-  Actual: s.cTanzania,
-  Expected: 'Tanzania'
-}, {
-  Name: 'cThailand',
-  Actual: s.cThailand,
-  Expected: 'Thailand'
-}, {
-  Name: 'cTimorLeste',
-  Actual: s.cTimorLeste,
-  Expected: 'Timor-Leste'
-}, {
-  Name: 'cTogo',
-  Actual: s.cTogo,
-  Expected: 'Togo'
-}, {
-  Name: 'cTonga',
-  Actual: s.cTonga,
-  Expected: 'Tonga'
-}, {
-  Name: 'cTrinidadAndTabago',
-  Actual: s.cTrinidadAndTabago,
-  Expected: 'Trinidad and Tabago'
-}, {
-  Name: 'cTunisia',
-  Actual: s.cTunisia,
-  Expected: 'Tunisia'
-}, {
-  Name: 'cTurkey',
-  Actual: s.cTurkey,
-  Expected: 'Turkey'
-}, {
-  Name: 'cTurkmenistan',
-  Actual: s.cTurkmenistan,
-  Expected: 'Turkmenistan'
-}, {
-  Name: 'cTuvalu',
-  Actual: s.cTuvalu,
-  Expected: 'Tuvalu'
-}, {
-  Name: 'cUganda',
-  Actual: s.cUganda,
-  Expected: 'Uganda'
-}, {
-  Name: 'cUkraine',
-  Actual: s.cUkraine,
-  Expected: 'Ukraine'
-}, {
-  Name: 'cUnitedArabEmirates',
-  Actual: s.cUnitedArabEmirates,
-  Expected: 'United Arab Emirates'
-}, {
-  Name: 'cUnitedKingdom',
-  Actual: s.cUnitedKingdom,
-  Expected: 'United Kingdom'
-}, {
-  Name: 'cUnitedStatesOfAmerica',
-  Actual: s.cUnitedStatesOfAmerica,
-  Expected: 'United States of America'
-}, {
-  Name: 'cUruguay',
-  Actual: s.cUruguay,
-  Expected: 'Uruguay'
-}, {
-  Name: 'cUzbekistan',
-  Actual: s.cUzbekistan,
-  Expected: 'Uzbekistan'
-}, {
-  Name: 'cVanuatu',
-  Actual: s.cVanuatu,
-  Expected: 'Vanuatu'
-}, {
-  Name: 'cVenezuela',
-  Actual: s.cVenezuela,
-  Expected: 'Venezuela'
-}, {
-  Name: 'cVietnam',
-  Actual: s.cVietnam,
-  Expected: 'Vietnam'
-}, {
-  Name: 'cYemen',
-  Actual: s.cYemen,
-  Expected: 'Yemen'
-}, {
-  Name: 'cZambia',
-  Actual: s.cZambia,
-  Expected: 'Zambia'
-}, {
-  Name: 'cZimbabwe',
-  Actual: s.cZimbabwe,
-  Expected: 'Zimbabwe'
-}, // Languages
-{
-  Name: 'cChinese',
-  Actual: s.cChinese,
-  Expected: 'Chinese'
-}, {
-  Name: 'cChineseSimplified',
-  Actual: s.cChineseSimplified,
-  Expected: 'ChineseSimplified'
-}, {
-  Name: 'cChineseTraditional',
-  Actual: s.cChineseTraditional,
-  Expected: 'ChineseTraditional'
-}, {
-  Name: 'cCzech',
-  Actual: s.cCzech,
-  Expected: 'Czech'
-}, {
-  Name: 'cEnglish',
-  Actual: s.cEnglish,
-  Expected: 'English'
-}, {
-  Name: 'cFrench',
-  Actual: s.cFrench,
-  Expected: 'French'
-}, // {Name: 'cGerman', Actual: s.   s.cGe + s.cr + cman, Expected: 'German // Defined above in the countries section
-{
-  Name: 'cHungarian',
-  Actual: s.cHungarian,
-  Expected: 'Hungarian'
-}, {
-  Name: 'cItalian',
-  Actual: s.cItalian,
-  Expected: 'Italian'
-}, {
-  Name: 'cJapanese',
-  Actual: s.cJapanese,
-  Expected: 'Japanese'
-}, {
-  Name: 'cKorean',
-  Actual: s.cKorean,
-  Expected: 'Korean'
-}, {
-  Name: 'cMiscellaneous',
-  Actual: s.cMiscellaneous,
-  Expected: 'Miscellaneous'
-}, {
-  Name: 'cPolish',
-  Actual: s.cPolish,
-  Expected: 'Polish'
-}, {
-  Name: 'cPortuguese',
-  Actual: s.cPortuguese,
-  Expected: 'Portuguese'
-}, {
-  Name: 'cRussian',
-  Actual: s.cRussian,
-  Expected: 'Russian'
-}, {
-  Name: 'cSpanish',
-  Actual: s.cSpanish,
-  Expected: 'Spanish'
 }, // UI Element Types
 {
   Name: 'cButton',
@@ -2198,6 +3325,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cEnableConstantsValidation',
   Actual: s.cEnableConstantsValidation,
   Expected: 'EnableConstantsValidation'
+}, {
+  Name: 'cEnableConstantsPatternGeneration',
+  Actual: s.cEnableConstantsPatternGeneration,
+  Expected: 'EnableConstantsPatternGeneration'
 }, {
   Name: 'cDisplayIndividualConstantsValidationPassMessages',
   Actual: s.cDisplayIndividualConstantsValidationPassMessages,
@@ -2576,6 +3707,26 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.ccountDuplicateCommandAliases,
   Expected: 'countDuplicateCommandAliases'
 }, {
+  Name: 'cgenerateCommandAliases',
+  Actual: s.cgenerateCommandAliases,
+  Expected: 'generateCommandAliases'
+}, {
+  Name: 'csolveLehmerCode',
+  Actual: s.csolveLehmerCode,
+  Expected: 'solveLehmerCode'
+}, {
+  Name: 'crecursiveArrayExpansion',
+  Actual: s.crecursiveArrayExpansion,
+  Expected: 'recursiveArrayExpansion'
+}, {
+  Name: 'cgetLehmerCodeValue',
+  Actual: s.cgetLehmerCodeValue,
+  Expected: 'getLehmerCodeValue'
+}, {
+  Name: 'carraysAreEqual',
+  Actual: s.carraysAreEqual,
+  Expected: 'arraysAreEqual'
+}, {
   Name: 'cgetDataCatagoryFromDataContextName',
   Actual: s.cgetDataCatagoryFromDataContextName,
   Expected: 'getDataCatagoryFromDataContextName'
@@ -2607,6 +3758,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cloadDataFile',
   Actual: s.cloadDataFile,
   Expected: 'loadDataFile'
+}, {
+  Name: 'csupportedFileFormatsAre',
+  Actual: s.csupportedFileFormatsAre,
+  Expected: 'supportedFileFormatsAre'
 }, {
   Name: 'cgetStoredData',
   Actual: s.cgetStoredData,
@@ -2688,25 +3843,13 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.caggregateCommandArguments,
   Expected: 'aggregateCommandArguments'
 }, {
-  Name: 'cgenerateCommandAliases',
-  Actual: s.cgenerateCommandAliases,
-  Expected: 'generateCommandAliases'
+  Name: 'cdoesArrayContainValue',
+  Actual: s.cdoesArrayContainValue,
+  Expected: 'doesArrayContainValue'
 }, {
-  Name: 'csolveLehmerCode',
-  Actual: s.csolveLehmerCode,
-  Expected: 'solveLehmerCode'
-}, {
-  Name: 'crecursiveArrayExpansion',
-  Actual: s.crecursiveArrayExpansion,
-  Expected: 'recursiveArrayExpansion'
-}, {
-  Name: 'cgetLehmerCodeValue',
-  Actual: s.cgetLehmerCodeValue,
-  Expected: 'getLehmerCodeValue'
-}, {
-  Name: 'carraysAreEqual',
-  Actual: s.carraysAreEqual,
-  Expected: 'arraysAreEqual'
+  Name: 'creplaceCharacterAtIndexOfString',
+  Actual: s.creplaceCharacterAtIndexOfString,
+  Expected: 'replaceCharacterAtIndexOfString'
 }, // *********************************
 // StringGeneration rules in order
 // *********************************
@@ -2838,6 +3981,38 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cgenerateInvalidEmail2',
   Actual: s.cgenerateInvalidEmail2,
   Expected: 'generateInvalidEmail2'
+}, {
+  Name: 'cgenerateValidEmailWithSpecificSuffixAndDomainName1',
+  Actual: s.cgenerateValidEmailWithSpecificSuffixAndDomainName1,
+  Expected: 'generateValidEmailWithSpecificSuffixAndDomainName1'
+}, {
+  Name: 'cgenerateValidEmailWithSpecificSuffixAndDomainName2',
+  Actual: s.cgenerateValidEmailWithSpecificSuffixAndDomainName2,
+  Expected: 'generateValidEmailWithSpecificSuffixAndDomainName2'
+}, {
+  Name: 'cgenerateRandomValidEmail1',
+  Actual: s.cgenerateRandomValidEmail1,
+  Expected: 'generateRandomValidEmail1'
+}, {
+  Name: 'cgenerateRandomValidEmail2',
+  Actual: s.cgenerateRandomValidEmail2,
+  Expected: 'generateRandomValidEmail2'
+}, {
+  Name: 'cgenerateInvalidEmailWithSpecificSuffixAndDomainName1',
+  Actual: s.cgenerateInvalidEmailWithSpecificSuffixAndDomainName1,
+  Expected: 'generateInvalidEmailWithSpecificSuffixAndDomainName1'
+}, {
+  Name: 'cgenerateInvalidEmailWithSpecificSuffixAndDomainName2',
+  Actual: s.cgenerateInvalidEmailWithSpecificSuffixAndDomainName2,
+  Expected: 'generateInvalidEmailWithSpecificSuffixAndDomainName2'
+}, {
+  Name: 'cgenerateRandomInvalidEmail1',
+  Actual: s.cgenerateRandomInvalidEmail1,
+  Expected: 'generateRandomInvalidEmail1'
+}, {
+  Name: 'cgenerateRandomInvalidEmail2',
+  Actual: s.cgenerateRandomInvalidEmail2,
+  Expected: 'generateRandomInvalidEmail2'
 }, // *********************************
 // CharacterGeneration rules in order
 // *********************************
@@ -3052,6 +4227,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cprintDataHive',
   Actual: s.cprintDataHive,
   Expected: 'printDataHive'
+}, {
+  Name: 'cprintDataHiveAttributes',
+  Actual: s.cprintDataHiveAttributes,
+  Expected: 'printDataHiveAttributes'
 }, {
   Name: 'cclearDataStorage',
   Actual: s.cclearDataStorage,

@@ -70,11 +70,11 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function setupConfiguration(pathAndFilename) {
   // console.log('BEGIN chiefConfiguration.setupConfiguration function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
-  var functionName = 'setupTestConfiguration';
+  var functionName = setupConfiguration.name; // 'setupConfiguration';
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cpathAndFilenameIs + pathAndFilename);
 
   var rules = {};
   rules[1] = s.cswapBackSlashToForwardSlash;

@@ -81,23 +81,25 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function getXmlData(pathAndFilename) {
   let functionName = getXmlData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'pathAndFilename is: ' + pathAndFilename);
+  // pathAndFilename is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathAndFilenameIs + pathAndFilename);
   let returnData;
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
-  let data = fs.readFileSync(pathAndFilename, {encoding: 'UTF8' });
+  let data = fs.readFileSync(pathAndFilename, {encoding: g.cUTF8 });
   let xml;
   xml2js.parseString(data,
     function(err, result) {
       if (err) {
-        returnData = console.log('ERROR: ' + err);
-        loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
+        // ERROR:
+        returnData = console.log(s.cERROR_Colon + err);
+        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
         loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
         return returnData;
       }
       xml = result;
     });
   returnData = xml;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
 };
@@ -116,18 +118,21 @@ function getXmlData(pathAndFilename) {
 function getCsvData(pathAndFilename) {
   let functionName = getCsvData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+  // file and path to load from is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfileAndPathToLoadFromIs + pathAndFilename);
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
-  let data = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
+  let data = fs.readFileSync(pathAndFilename, { encoding: g.cUTF8 });
   let parsedData = Papa.parse(data, {
     delimiter: ',',
     newline: '/n',
     header: true,
     skipEmptyLines: true,
-    encoding: 'UTF8'
+    encoding: g.cUTF8
   });
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE loading data from: ' + pathAndFilename);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(parsedData));
+  // DONE loading data from:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDoneLoadingDataFrom + pathAndFilename);
+  // Loaded data is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cLoadedDataIs + JSON.stringify(parsedData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return parsedData;
 };
@@ -143,12 +148,15 @@ function getCsvData(pathAndFilename) {
 function getJsonData(pathAndFilename) {
   let functionName = getJsonData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to load from is: ' + pathAndFilename);
+  // file and path to load from is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfileAndPathToLoadFromIs + pathAndFilename);
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
-  let rawData = fs.readFileSync(pathAndFilename, { encoding: 'UTF8' });
+  let rawData = fs.readFileSync(pathAndFilename, { encoding: g.cUTF8 });
   let parsedData = JSON.parse(rawData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'DONE loading data from: ' + pathAndFilename);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(parsedData));
+  // DONE loading data from:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDoneLoadingDataFrom + pathAndFilename);
+  // Loaded data is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cLoadedDataIs + JSON.stringify(parsedData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return parsedData;
 };
@@ -165,16 +173,20 @@ function getJsonData(pathAndFilename) {
 function writeJsonData(pathAndFilename, dataToWrite) {
   let functionName = writeJsonData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'file and path to write data to is: ' + pathAndFilename);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'data to write is: ' + JSON.stringify(dataToWrite));
+  // file and path to write data to is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfileAndPathToWriteDataToIs + pathAndFilename);
+  // data to write is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataToWriteIs + JSON.stringify(dataToWrite));
   let outputSuccess = false;
   try {
     fs.writeFileSync(pathAndFilename, JSON.stringify(dataToWrite, null, 2))
     outputSuccess = true;
   } catch (err) {
-    console.error('ERROR: ' + err)
+    // ERROR:
+    console.error(s.cERROR_Colon + err)
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Data was written to the file: ' + outputSuccess);
+  // Data was written to the file:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDataWasWrittenToTheFile + outputSuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -191,14 +203,16 @@ function writeJsonData(pathAndFilename, dataToWrite) {
 function readDirectoryContents(directory) {
   let functionName = readDirectoryContents.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'Path that should be scanned is: ' + directory);
+  // Path that should be scanned is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cPathThatShouldBeScannedIs + directory);
   let filesFound = [];
   directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   readDirectorySynchronously(directory);
   filesFound = filesCollection; // Copy the data into a local variable first.
   filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
   filesCollection = [];
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'files found are: ' + JSON.stringify(filesFound));
+  // files found are:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfilesFoundAre + JSON.stringify(filesFound));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return filesFound;
 };
@@ -218,15 +232,16 @@ function readDirectorySynchronously(directory) {
   // console.log('directory is: ' + directory);
   let functionName = readDirectorySynchronously.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'directory is: ' + directory);
+  // directory is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdirectorIs + directory);
   directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let currentDirectoryPath = directory;
   let currentDirectory = '';
   try {
-    currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
+    currentDirectory = fs.readdirSync(currentDirectoryPath, g.cUTF8);
   } catch (e) {
     fs.mkdirSync(currentDirectoryPath);
-    currentDirectory = fs.readdirSync(currentDirectoryPath, 'UTF8');
+    currentDirectory = fs.readdirSync(currentDirectoryPath, g.cUTF8);
   }
   currentDirectory.forEach(file => {
     let filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
@@ -240,7 +255,8 @@ function readDirectorySynchronously(directory) {
       // Then handle each case appropriately.
       let directoryPath = '';
       directoryPath = path.resolve(directory + b.cForwardSlash + file);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'directoryPath is: ' + directoryPath);
+      // directoryPath is:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdirectoryPathIs + directoryPath);
       readDirectorySynchronously(directoryPath);
     }
   });
@@ -265,19 +281,23 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   // console.log('destinationFolder is: ' + destinationFolder);
   let functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+  // sourceFolder is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.csourceFolderIs + sourceFolder);
+  // destinationFolder is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdestinationFolderIs + destinationFolder);
   let copySuccess = false;
   let rootPath = cleanRootPath();
   sourceFolder = rootPath + sourceFolder;
   sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   destinationFolder = rootPath + destinationFolder
   destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+  // sourceFolder is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.csourceFolderIs + sourceFolder);
+  // destinationFolder is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdestinationFolderIs + destinationFolder);
   copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder);
-
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'copySuccess is: ' + copySuccess);
+  // copySuccess is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccopySuccessIs + copySuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('copySuccess is: ' + copySuccess);
   // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
@@ -300,8 +320,10 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   // console.log('destinationFolder is: ' + destinationFolder);
   let functionName = buildReleasePackage.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'sourceFolder is: ' + sourceFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'destinationFolder is: ' + destinationFolder);
+  // sourceFolder is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.csourceFolderIs + sourceFolder);
+  // destinationFolder is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdestinationFolderIs + destinationFolder);
   let packageSuccess = false;
   let releaseFiles = [];
   let releasedArchiveFiles = [];
@@ -317,48 +339,59 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   let applicationName = configurator.getConfigurationSetting(s.cApplicationName);
   let currentVersionReleased = false;
   let releaseDateTimeStamp;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version is: ' + currentVersion);
+  // current version is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentVersionIs + currentVersion);
   sourceFolder = rootPath + sourceFolder;
   sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   destinationFolder = rootPath + destinationFolder
   destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   releaseFiles = readDirectoryContents(sourceFolder);
   releasedArchiveFiles = readDirectoryContents(destinationFolder);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'released archive files list is: ' + JSON.stringify(releasedArchiveFiles));
+  // released archive files list is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creleasedArchiveFilesListIs + JSON.stringify(releasedArchiveFiles));
   // Check if the current version number has already been released as a zip file in the Release folder.
   // If it has not been released, then we can build the zip file with the current release number and date-time stamp.
   for (let i = 0; i &lt;= releasedArchiveFiles.length - 1; i++) {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'file is: ' + releasedArchiveFiles[i]);
+    // file is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfileIs + releasedArchiveFiles[i]);
     let pathAndFileName = releasedArchiveFiles[i];
     let fileName = ruleBroker.processRules(pathAndFileName, '', fileNameBusinessRules);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'fileName is: ' + fileName);
+    // fileName is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfileNameIs + fileName);
     if (fileName.includes(currentVersion) === true) {
       currentVersionReleased = true;
     }
   }
   if (currentVersionReleased === false) {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release files list is: ' + JSON.stringify(releaseFiles));
+    // release files list is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.creleaseFilesListIs + JSON.stringify(releaseFiles));
     releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(s.cDateTimeStamp));
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release date-time stamp is: ' + releaseDateTimeStamp);
+    // release date-time stamp is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.creleaseDateTimeStampIs + releaseDateTimeStamp);
     // loggers.consoleLog(baseFileName + b.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
     let releaseFileName = releaseDateTimeStamp + b.cUnderscore + currentVersion + b.cUnderscore + applicationName;
-    loggers.consoleLog(baseFileName + b.cDot + functionName, 'release fileName is: ' + releaseFileName);
+    // release fileName is:
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.creleaseFileNameIs + releaseFileName);
     let fullReleasePath = path.resolve(destinationFolder + b.cForwardSlash + releaseFileName + g.cDotzip);
     zip({
       source: sourceFolder + '/*',
       destination: fullReleasePath
     }).then(function() {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Done writing the zip file: ' + fullReleasePath);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'Set the return packageSuccess flag to TRUE');
+      // Done writing the zip file:
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDoneWritingTheZipFile + fullReleasePath);
+      // Set the return packageSuccess flag to TRUE
+      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSetTheReturnPackageSuccessFlagToTrue);
       packageSuccess = true;
     }).catch(function(err) {
       console.error(err.stack);
       process.exit(1);
     });
   } else {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, 'current version already released');
+    // current version already released
+    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentVersionAlreadyReleased);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'packageSuccess is: ' + packageSuccess);
+  // packageSuccess is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpackageSuccessIs + packageSuccess);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   // console.log('packageSuccess is: ' + packageSuccess);
   // console.log('END dataBroker.buildReleasePackage function');
@@ -383,9 +416,11 @@ function cleanRootPath() {
   rootPath = configurator.getConfigurationSetting(s.cApplicationRootPath);
   let cleanRootPathRules = {};
   cleanRootPathRules[1] = s.cremoveXnumberOfFoldersFromEndOfPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath before processing is: ' + rootPath);
+  // RootPath before processing is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cRootPathBeforeProcessingIs + rootPath);
   rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'RootPath after processing is: ' + rootPath);
+  // RootPath after processing is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cRootPathAfterProcessingIs + rootPath);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return rootPath;
 };
@@ -405,8 +440,10 @@ function cleanRootPath() {
 function copyFileSync(source, target) {
   let functionName = copyFileSync.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+  // source is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSourceIs + source);
+  // target is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.ctargetIs + target);
   let successfullCopy = false;
   let targetFile = target;
 
@@ -425,10 +462,12 @@ function copyFileSync(source, target) {
       // console.log('Detected the .env file, and avoided it!');
     }
   } catch(err) {
-    console.log('ERROR: Could not copy file: ' + source);
+    // ERROR: Could not copy file:
+    console.log(s.cErrorCouldNotCopyFile + source);
     successfullCopy = false;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+  // successfullCopy is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.csuccessfullCopyIs + successfullCopy);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return successfullCopy;
 };
@@ -449,8 +488,10 @@ function copyFileSync(source, target) {
 function copyFolderRecursiveSync(source, target) {
   let functionName = copyFolderRecursiveSync.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'source is: ' + source);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'target is: ' + target);
+  // source is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSourceIs + source);
+  // target is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.ctargetIs + target);
   let successfullCopy = false;
   let files = [];
 
@@ -463,8 +504,10 @@ function copyFolderRecursiveSync(source, target) {
       // NOTE: Just because we complete the above code doesn't mean the entire copy process was a success.
       // But atleast we haven't errored out, so it wasn't a failure YET.
     } catch(err) {
-      console.log('ERROR: Could not create folder: ' + targetFolder);
-      console.log('ERROR: ' + err);
+      // ERROR: Could not create folder:
+      console.log(s.cErrorCouldNotCreateFolder + targetFolder);
+      // ERROR:
+      console.log(s.cERROR_Colon + err);
       successfullCopy = false;
     }
   }
@@ -483,11 +526,14 @@ function copyFolderRecursiveSync(source, target) {
       });
     }
   } catch (err) {
-    console.log('ERROR: Could not copy folder contents: ' + targetFolder);
-    console.log('ERROR: ' + err);
+    // ERROR: Could not copy folder contents:
+    console.log(s.cErrorCouldNotCopyFolderContents + targetFolder);
+    // ERROR:
+    console.log(s.cERROR_Colon + err);
     successfullCopy = false;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'successfullCopy is: ' + successfullCopy);
+  // successfullCopy is:
+  loggers.consoleLog(baseFileName + b.cDot + functionName, s.csuccessfullCopyIs + successfullCopy);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return successfullCopy;
 };
@@ -520,7 +566,7 @@ export default {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 01 2021 06:56:25 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 12:05:58 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
