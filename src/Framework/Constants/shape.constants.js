@@ -20,6 +20,8 @@ import * as w from './word.constants';
 // because the constants validation system is scanning these files looking for that keyword and
 // if it finds it then it will use that line for validation pruposes.
 // So to reverse this, just do a find replace and change // smuggle something back into the other e-x-p-o-r-t c-o-n-s-t string.
+// The current state of the application doesn't need all of these, but future applications will most definately need them.
+// So they are left here as a matter of future-proofing.
 
 // Basic Shapes
 // smuggle something cline = b.cli + b.cne; // line
