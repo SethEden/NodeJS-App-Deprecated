@@ -729,6 +729,10 @@ var genericConstantsValidation = [{
   Expected: 'December'
 }, // Miscelanious
 {
+  Name: 'cUTF8',
+  Actual: g.cUTF8,
+  Expected: 'UTF8'
+}, {
   Name: 'cconst',
   Actual: g.cconst,
   Expected: 'const'
@@ -776,5 +780,33 @@ var genericConstantsValidation = [{
   Name: 'cHex',
   Actual: g.cHex,
   Expected: 'Hex'
+}, {
+  Name: 'cregEx',
+  Actual: g.cregEx,
+  Expected: 'regEx'
+}, {
+  Name: 'cRegEx',
+  Actual: g.cRegEx,
+  Expected: 'RegEx'
+}, {
+  Name: 'cregExp',
+  Actual: g.cregExp,
+  Expected: 'regExp'
+}, {
+  Name: 'cRegExp',
+  Actual: g.cRegExp,
+  Expected: 'RegExp'
+}, {
+  Name: 'cbin',
+  Actual: g.cbin,
+  Expected: 'bin'
+}, {
+  Name: 'cBin',
+  Actual: g.cBin,
+  Expected: 'Bin'
+}, {
+  Name: 'cBIN',
+  Actual: g.cBIN,
+  Expected: 'BIN'
 }];
 exports.genericConstantsValidation = genericConstantsValidation;

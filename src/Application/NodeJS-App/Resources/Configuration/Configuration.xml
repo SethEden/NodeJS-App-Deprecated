@@ -2003,6 +2003,20 @@
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.validateConstantsDataValidation@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringParsing.determineConstantsContextQualifiedPrefix@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringParsing.determineSuggestedConstantsValidationLineOfCode@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -4089,7 +4103,7 @@
           <ConfigurationElement Name="nominal.deployApplication@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.deployApplication@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="nominal.deployMetaData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.deployMetaData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.deployMetaData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.deployMetaData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
