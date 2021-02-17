@@ -1014,6 +1014,7 @@ export const creplaceCharacterAtIndexOfString = w.creplace + w.cCharacter + b.cA
 export const creplaceCharacterWithCharacter = w.creplace + w.cCharacter + w.cWith + w.cCharacter; // replaceCharacterWithCharacter
 export const cconvertCamelCaseStringToArray = w.cconvert + w.cCamel + w.cCase + w.cString + b.cTo + w.cArray; // convertCamelCaseStringToArray
 export const cgetWordsArrayFromString = w.cget + w.cWords + w.cArray + w.cFrom + w.cString; // getWordsArrayFromString
+export const crecombineStringArrayWithSpaces = w.crecombine + w.cString + w.cArray + w.cWith + w.cSpaces; // recombineStringArrayWithSpaces
 export const cconvertArrayToCamelCaseString = w.cconvert + w.cArray + b.cTo + w.cCamel + w.cCase + w.cString; // convertArrayToCamelCaseString
 export const cdoesArrayContainLowerCaseConsolidatedString = w.cdoes + w.cArray + w.cContain + w.cLower + w.cCase + w.cConsolidated + w.cString; // doesArrayContainLowerCaseConsolidatedString
 export const cdoesArrayContainCharacter = w.cdoes + w.cArray + w.cContain + w.cCharacter; // doesArrayContainCharacter

@@ -4257,7 +4257,7 @@
           <ConfigurationElement Name="nominal.commandGenerator@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.commandGenerator@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="nominal.commandAliasGenerator" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal.commandAliasGenerator" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.commandAliasGenerator@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.commandAliasGenerator@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.commandAliasGenerator@MessageFontStyle" Type="Default" Value="Default" Version="3"/>

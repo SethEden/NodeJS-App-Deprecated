@@ -11,7 +11,7 @@ var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var _stringParsing = require("./stringParsing");
 
-var cg = _interopRequireWildcard(require("./characterGeneration"));
+var charGen = _interopRequireWildcard(require("./characterGeneration"));
 
 var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
@@ -171,7 +171,7 @@ var generateRandomMixedCaseTextByLength1 = function generateRandomMixedCaseTextB
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
     }
   }
 
@@ -210,7 +210,7 @@ var generateRandomMixedCaseTextByLength2 = function generateRandomMixedCaseTextB
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
     }
   }
 
@@ -249,7 +249,7 @@ var generateRandomUpperCaseTextByLength1 = function generateRandomUpperCaseTextB
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
     }
   }
 
@@ -288,7 +288,7 @@ var generateRandomUpperCaseTextByLength2 = function generateRandomUpperCaseTextB
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
     }
   }
 
@@ -327,7 +327,7 @@ var generateRandomLowerCaseTextByLength1 = function generateRandomLowerCaseTextB
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
     }
   }
 
@@ -366,7 +366,7 @@ var generateRandomLowerCaseTextByLength2 = function generateRandomLowerCaseTextB
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
     }
   }
 
@@ -405,7 +405,7 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function generat
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
     }
   }
 
@@ -444,7 +444,7 @@ var generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function generat
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
     }
   }
 
@@ -483,7 +483,7 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function generat
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
     }
   }
 
@@ -522,7 +522,7 @@ var generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function generat
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
     }
   }
 
@@ -561,7 +561,7 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function generat
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
     }
   }
 
@@ -600,7 +600,7 @@ var generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function generat
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
     }
   }
 
@@ -639,7 +639,7 @@ var generateRandomMixedCaseAlphaNumericCodeByLength1 = function generateRandomMi
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
     }
   }
 
@@ -678,7 +678,7 @@ var generateRandomMixedCaseAlphaNumericCodeByLength2 = function generateRandomMi
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
     }
   }
 
@@ -717,7 +717,7 @@ var generateRandomUpperCaseAlphaNumericCodeByLength1 = function generateRandomUp
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
     }
   }
 
@@ -756,7 +756,7 @@ var generateRandomUpperCaseAlphaNumericCodeByLength2 = function generateRandomUp
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
     }
   }
 
@@ -795,7 +795,7 @@ var generateRandomLowerCaseAlphaNumericCodeByLength1 = function generateRandomLo
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
     }
   }
 
@@ -834,7 +834,7 @@ var generateRandomLowerCaseAlphaNumericCodeByLength2 = function generateRandomLo
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
     }
   }
 
@@ -873,7 +873,7 @@ var generateRandomNumericCodeByLength1 = function generateRandomNumericCodeByLen
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
     }
   }
 
@@ -912,7 +912,7 @@ var generateRandomNumericCodeByLength2 = function generateRandomNumericCodeByLen
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
+      returnData = returnData.concat(charGen.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
     }
   }
 
@@ -952,7 +952,7 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
     }
   }
 
@@ -992,7 +992,7 @@ var generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
     }
   }
 
@@ -1032,7 +1032,7 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
     }
   }
 
@@ -1072,7 +1072,7 @@ var generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
     }
   }
 
@@ -1112,7 +1112,7 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = func
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
     }
   }
 
@@ -1152,7 +1152,7 @@ var generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = func
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
     }
   }
 
@@ -1191,7 +1191,7 @@ var generateRandomSpecialCharacterCodeByLength1 = function generateRandomSpecial
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
     }
   }
 
@@ -1230,7 +1230,7 @@ var generateRandomSpecialCharacterCodeByLength2 = function generateRandomSpecial
     var numberOfCharactersToGenerate = parseInt(inputData);
 
     for (var counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-      returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
+      returnData = returnData.concat(charGen.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
     }
   }
 
@@ -1696,7 +1696,7 @@ var generateRandomValidEmail1 = function generateRandomValidEmail1(numberOfChara
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
       // but need to decide now so we can get it done and be fair.
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
-      if (cg.randomlyGenerateBooleanValue1('', '') === true) {
+      if (charGen.randomlyGenerateBooleanValue1('', '') === true) {
         // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
           domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
@@ -1818,7 +1818,7 @@ var generateRandomValidEmail2 = function generateRandomValidEmail2(numberOfChara
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
       // but need to decide now so we can get it done and be fair.
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
-      if (cg.randomlyGenerateBooleanValue2('', '') === true) {
+      if (charGen.randomlyGenerateBooleanValue2('', '') === true) {
         // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
           domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
@@ -1929,7 +1929,7 @@ var generateInvalidEmailWithSpecificSuffixAndDomainName1 = function generateInva
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange1(n.c1, [c3, cTrue, cTrue]); // failureMode is:
+  failureMode = charGen.randomlyGenerateNumberInRange1(n.c1, [c3, cTrue, cTrue]); // failureMode is:
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode); // ************************************************************
   // Failure Mode Legend:
@@ -2069,7 +2069,7 @@ var generateInvalidEmailWithSpecificSuffixAndDomainName2 = function generateInva
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange2(n.c1, [c3, cTrue, cTrue]); // failureMode is:
+  failureMode = charGen.randomlyGenerateNumberInRange2(n.c1, [c3, cTrue, cTrue]); // failureMode is:
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode); // ************************************************************
   // Failure Mode Legend:
@@ -2203,7 +2203,7 @@ var generateRandomInvalidEmail1 = function generateRandomInvalidEmail1(numberOfC
 
   var c28 = n.c2 + n.c8;
   var cTrue = g.cTrue;
-  failureMode = cg.randomlyGenerateNumberInRange1(n.c1, [c28, cTrue, cTrue]);
+  failureMode = charGen.randomlyGenerateNumberInRange1(n.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode); // failureMode is:
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode); // ************************************************************
@@ -2280,7 +2280,7 @@ var generateRandomInvalidEmail1 = function generateRandomInvalidEmail1(numberOfC
         // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
         // but need to decide now so we can get it done and be fair.
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
-        if (cg.randomlyGenerateBooleanValue1('', '') === true) {
+        if (charGen.randomlyGenerateBooleanValue1('', '') === true) {
           // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
             domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
@@ -2614,7 +2614,7 @@ var generateRandomInvalidEmail2 = function generateRandomInvalidEmail2(numberOfC
 
   var c28 = n.c2 + n.c8;
   var cTrue = g.cTrue;
-  failureMode = cg.randomlyGenerateNumberInRange2(n.c1, [c28, cTrue, cTrue]);
+  failureMode = charGen.randomlyGenerateNumberInRange2(n.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode); // failureModeIs
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode); // ************************************************************
@@ -2691,7 +2691,7 @@ var generateRandomInvalidEmail2 = function generateRandomInvalidEmail2(numberOfC
         // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
         // but need to decide now so we can get it done and be fair.
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
-        if (cg.randomlyGenerateBooleanValue2('', '') === true) {
+        if (charGen.randomlyGenerateBooleanValue2('', '') === true) {
           // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
             domainName = generateRandomMixedCaseTextByLength2(n.c2, '');

@@ -13,8 +13,8 @@ exports.callSystemConfigurationsIs = exports.ccontextNameIs = exports.ccommandTo
 exports.cErrorCouldNotCopyFolderContents = exports.csuccessfullCopyIs = exports.cErrorCouldNotCreateFolder = exports.cErrorCouldNotCopyFile = exports.ctargetIs = exports.cSourceIs = exports.cRootPathAfterProcessingIs = exports.cRootPathBeforeProcessingIs = exports.cpackageSuccessIs = exports.ccurrentVersionAlreadyReleased = exports.cSetTheReturnPackageSuccessFlagToTrue = exports.cDoneWritingTheZipFile = exports.creleaseFileNameIs = exports.creleaseDateTimeStampIs = exports.creleaseFilesListIs = exports.cfileNameIs = exports.cfileIs = exports.creleasedArchiveFilesListIs = exports.ccurrentVersionIs = exports.ccopySuccessIs = exports.cdestinationFolderIs = exports.csourceFolderIs = exports.cdirectoryPathIs = exports.cdirectorIs = exports.cfilesFoundAre = exports.cPathThatShouldBeScannedIs = exports.cDataWasWrittenToTheFile = exports.cdataToWriteIs = exports.cfileAndPathToWriteDataToIs = exports.cDoneLoadingDataFrom = exports.cfileAndPathToLoadFromIs = exports.cERROR_Colon = exports.celementCountIs = exports.celementNamePatternIs = exports.cdataObjectIs = exports.celementNameIs = exports.cdataObjectValueIs = exports.ctargetDataIsModifiedInTheInputPassByReferenceVariableContentIs = exports.ckeyIs = exports.cinsideTheForLoop = exports.cCaughtTheSpecialCaseThatWeAreMergingFlatList = exports.cpageNameIsAnEmptyString = exports.cMergedDataIs = exports.cafterAttemptToMergeResultsAre = exports.ctargetDataContentIs = exports.cdataCatagoryIsAnEmptyString = exports.cdataCatagoryIsNotAnEmptyString = exports.cCheckIfTheDataCatagoryIsAnEmptyStringOrNot = exports.cpageNameIsNotAnEmptyString = exports.ccheckIfThePageNameIsNotAnEmptyString = exports.cdataToMergeElementCountIs1 = exports.cdataToMergeElementCountIs = exports.cdataToMergeIs = exports.cpageNameIs = exports.ctargetDataIs = exports.ctempDataIs = exports.cdataCatagoryDetailsNameIs = exports.cdataToStoreIs = exports.cdataStorageContextNameIs = exports.cD_finalMergeIs = exports.cfullyParsedDataIs = exports.cdataCatagoryIs = exports.cparsedDataFileContentsAre = exports.cMERGED_dataIs = exports.cDONE_PROCESSING_ADDITIONAL_DATA = exports.cBEGIN_PROCESSING_ADDITIONAL_DATA = exports.cparsedDataFileIs = exports.cloadedFileDataIs = exports.cfileExtensionIs = exports.cFileToLoadIs = exports.cfilesFoundIs = exports.cdataPathAfterBusinessRulesProcessingIs = exports.cexecuteBusinessRulesColon = exports.cappAttributeValueIs = exports.cappAttributeNameIs = exports.cattributeJsonStringIs = exports.creturnConfiguraitonValueIs = exports.cconfigurationValueIs = exports.cconfigurationNameIs = exports.cruleMetaDataIs = exports.cruleInputIs = exports.cbusinessRuleIs = exports.cresolvedClientWorkflowsPathIs = exports.cresolvedSystemWorkflowsPathIs = exports.cclientWorkflowPathIs = exports.csystemWorkflowPathIs = exports.cresolvedClientCommandsAliasesPathIs = exports.cresolvedSystemCommandsAliasesPathIs = exports.cclientCommandsAliasesPathIs = exports.csystemCommandsAliasesPathIs = exports.cclientCommandsAre = exports.cclientBusinessRulesAre = exports.crootPathIs = exports.ccontentsOfDataStructreIs = exports.ccommandWorkflowFilePathConfigurationNameIs = exports.cloadedAndMergedDataAllFilesContentsAre = exports.cloadedAndMergedDataAllFilesIs = exports.cfilesToLoadIs = exports.cdataPathIs = exports.cdataPathConfigurationNameIs = void 0;
 exports.ccommandAliasGeneratorMessage5 = exports.ccommandAliasGeneratorMessage4 = exports.ccommandAliasGeneratorMessage3 = exports.ccommandAliasGeneratorMessage2 = exports.ccommandAliasGeneratorMessage1 = exports.ccommandGeneratorMessage6 = exports.ccommandGeneratorMessage5 = exports.ccommandGeneratorMessage4 = exports.ccommandGeneratorMessage3 = exports.ccommandGeneratorMessage2 = exports.ccommandGeneratorMessage1 = exports.cworkflowMessage3 = exports.cworkflowMessage2 = exports.cworkflowMessage1 = exports.ccommandSequencerMessage2 = exports.ccommandSequencerMessage1 = exports.cdeployApplicationMessage1b = exports.cdeployApplicationMessage2a = exports.cdeployApplicationMessage1a = exports.cloadDataFileMessage3 = exports.cloadDataFileMessage2 = exports.cLoadDataFileMessage1 = exports.cSearchForPatternsInStringArrayMessage4 = exports.cSearchForPatternsInStringArrayMessage3 = exports.cSearchForPatternsInStringArrayMessage2 = exports.cSearchForPatternsInStringArrayMessage1 = exports.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6 = exports.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5 = exports.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4 = exports.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 = exports.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2 = exports.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1 = exports.cConstantsListPatternSearchPrompt3 = exports.cConstantsListPatternSearchPrompt2 = exports.cConstantsListPatternSearchPrompt1 = exports.cConstantsListPrompt3 = exports.cConstantsListPrompt2 = exports.cConstantsListPrompt1 = exports.cConstantPrompt3 = exports.cConstantPrompt2 = exports.cConstantPrompt1 = exports.cCommandWordAliasPrompt3 = exports.cCommandWordAliasPrompt2 = exports.cCommandWordAliasPrompt1 = exports.cCommandNamePrompt5 = exports.cCommandNamePrompt4 = exports.cCommandNamePrompt3 = exports.cCommandNamePrompt2 = exports.cCommandNamePrompt1 = exports.cGetWordsArrayFromStringMessage3 = exports.cGetWordsArrayFromStringMessage2 = exports.cGetWordsArrayFromStringMessage1 = exports.cGetWordCountInStringMessage3 = exports.cGetWordCountInStringMessage2 = exports.cGetWordCountInStringMessage1 = exports.cDetermineWordDelimiterMessage4 = exports.cDetermineWordDelimiterMessage3 = exports.cDetermineWordDelimiterMessage2 = exports.cDetermineWordDelimiterMessage1 = exports.centityIs = exports.ckey2Is = exports.cattributeValueIs = exports.centryIs = exports.ccontentsOfLeafDataHiveElementIs = exports.cdataHivePathArrayIs = exports.cworkflowValueIs = exports.ccurrentWorkflowIs = exports.cworkflowNameIs = exports.csleepTimeIs = exports.creturnDeltaTimeIs = exports.cformatIs = exports.cdeltaTimeIs = exports.cdeltaTimeResultIs = exports.cendTimeIs = exports.cstartTimeIs = exports.cformattingIs = exports.cargumentArrayIs = exports.csecondaryCommandArgsDelimiterIs = exports.cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs = exports.cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs = exports.cargumentValueContainsTheDelimiterLetsSplitIt = exports.cregExFlagsIs = exports.cregularExpressionFlagsAre = exports.cregExValueIs = exports.cregularExpressionIs = exports.cNoSecondaryCommandArgumentDelimiters = exports.cBracketsAreFound = exports.cNoRegExpFound = exports.cRegularExpressionWasFound = exports.cCheckIfThereIsRegularExpressionOrNot = exports.cBracketsWereFound = exports.cCheckIfThereAreBracketsOrNoBrackets = exports.cCallingAnalyzeArgumentIndex3ConsolidatedArgumentModeFalse = exports.cReturnArgumentValueSameAsItWasPassedIn = exports.cargumentValueLengthGreaterThanZero = exports.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeTrue = exports.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeFalse = exports.cPushingArgumentValueToReturnDataAsArrayElement = exports.cconsolidatedArgumentModeIs = exports.cargumentValueIs = void 0;
 exports.cbasic_constants_js = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cDestinationResourcesPath = exports.cSourceResourcesPath = exports.cWordConstantsValidation = exports.cUnitsConstantsValidation = exports.cSystemConstantsValidation = exports.cShapeConstantsValidation = exports.cPhonicsConstantsValidation = exports.cNumericConstantsValidation = exports.cIsotopeConstantsValidation = exports.cGenericConstantsValidation = exports.cElementConstantsValidation = exports.cColorConstantsValidation = exports.cBasicConstantsValidation = exports.cConstantsValidationData = exports.cCommandQueue = exports.cclientRulesLibrary = exports.cConstantsPathActual = exports.cConstantsPath = exports.cLocatorsDataPath = exports.cKeywordsDataPath = exports.cWorkflowDataPath = exports.cPageDataPath = exports.cCtempPath = exports.cDataPath = exports.cApplicationDescription = exports.cApplicationVersionNumber = exports.cConfigurationPath = exports.cApplicationCleanedRootPath = exports.cApplicationRootPath = exports.cApplicationName = exports.cctrl_z = exports.cctrl_y = exports.cctrl_x = exports.cctrl_w = exports.cctrl_v = exports.cctrl_u = exports.cctrl_t = exports.cctrl_s = exports.cctrl_r = exports.cctrl_q = exports.cctrl_p = exports.cctrl_o = exports.cctrl_n = exports.cctrl_m = exports.cctrl_l = exports.cctrl_k = exports.cctrl_j = exports.cctrl_i = exports.cctrl_h = exports.cctrl_g = exports.cctrl_f = exports.cctrl_e = exports.cctrl_d = exports.cctrl_c = exports.cctrl_b = exports.cctrl_a = exports.cPREPROD = exports.cPreProd = exports.cPRE = exports.cPre = exports.cPROD = exports.cProd = exports.cDEV = exports.cQA = exports.cButton = exports.cVRML = exports.cVrml = exports.cvrml = exports.cSolidWorks = exports.cSolidEdge = exports.cRhino = exports.cProE = exports.cParasolid = exports.cNX = exports.cNeutral = exports.cInventor = exports.cImages = exports.cImage = exports.cHOOPS = exports.cHoops = exports.cDWG = exports.cDraft = exports.cDocuments = exports.cDocument = exports.cCatia = exports.cprintDataHiveAttributesMessage3 = exports.cprintDataHiveAttributesMessage2 = exports.cprintDataHiveAttributesMessage1 = exports.cparseBusinessRuleArgumentMessage2 = exports.cparseBusinessRuleArgumentMessage1 = exports.cexecuteCommandMessage1 = exports.cgetCommandArgsMessage2 = exports.cgetCommandArgsMessage1 = exports.cvalidateCommandAliasesMessage1 = exports.cconstantsGeneratorListMessage1 = exports.cconstantsGeneratorMessage2 = exports.cconstantsGeneratorMessage1 = void 0;
-exports.cdoesConstantExist = exports.cvalidateConstantsDataValidationLineItemName = exports.cdetermineSuggestedConstantsValidationLineOfCode = exports.cdetermineConstantsContextQualifiedPrefix = exports.cvalidateConstantsDataValidation = exports.cgetLengthOfLongestStringInArray = exports.cdoesArrayContainFilename = exports.cascertainMatchingElements = exports.cascertainMatchingFilenames = exports.cremoveCharacterFromArray = exports.cdoesArrayContainCharacter = exports.cdoesArrayContainLowerCaseConsolidatedString = exports.ccompareSimplifiedAndConsolidatedStrings = exports.csimplifyAndConsolidateString = exports.cmapWordToCamelCaseWord = exports.cconvertArrayToCamelCaseString = exports.cisStringCamelCase = exports.cisStringList = exports.cisFirstCharacterUpperCase = exports.cisFirstCharacterLowerCase = exports.cdoesStringContainLowerCaseCharacter = exports.cdoesStringContainUpperCaseCharacter = exports.crecombineStringArrayWithSpaces = exports.cgetWordsArrayFromString = exports.cgetWordCountInString = exports.cdetermineWordDelimiter = exports.ccountDelimiterInString = exports.cdoesStringContainAcronym = exports.ccountCamelCaseWords = exports.cconvertCamelCaseStringToArray = exports.caggregateNumericalDifferenceBetweenTwoStrings = exports.cgetValueFromAssignmentOperationString = exports.cremoveFileExtensionFromFileName = exports.cremoveDotFromFileExtension = exports.cgetFileExtension = exports.cgetFileNameFromPath = exports.cconvertStringToUpperCase = exports.cconvertStringToLowerCase = exports.ccleanCarriageReturnFromString = exports.creplaceCharacterWithCharacter = exports.creplaceColonWithUnderscore = exports.creplaceSpacesWithPlus = exports.cgetUserNameFromEmail = exports.cswapDoubleBackSlashToSingleBackSlash = exports.cswapDoubleForwardSlashToSingleForwardSlash = exports.cswapBackSlashToForwardSlash = exports.cswapForwardSlashToBackSlash = exports.csingleQuoteSwapAfterEquals = exports.cisString = exports.cisFloat = exports.cisInteger = exports.cisBoolean = exports.cdetermineObjectDataType = exports.cstringToDataType = exports.cstringToBoolean = exports.cEcho = exports.cecho = exports.cClearCommandPerformanceDataAfterAnalysis = exports.cCommandsPerformanceAnalysisStack = exports.cCommandNamesPerformanceTrackingStack = exports.cCommandPerformanceTrackingStack = exports.cClearBusinessRulesPerformanceDataAfterAnalysis = exports.cBusinessRulesPerformanceAnalysisStack = exports.cBusinessRuleNamesPerformanceTrackingStack = exports.cBusinessRulePerformanceTrackingStack = exports.cEndTimeStampVariableName = exports.cBeginTimeStampVariableName = exports.cTimeStampVariableName = exports.cItemsIndividuallySynch = exports.cEndDateTimeStamp = exports.cBeginDateTimeStamp = exports.creleaseCompleted = exports.cdeploymentCompleted = exports.cPassedAllCommandAliasesDuplicateChecks = exports.cPassAllConstantsValidations = exports.cDisplaySummaryConstantsValidationFailMessages = exports.cDisplaySummaryConstantsValidationPassMessages = exports.cDisplayIndividualConstantsValidationFailMessages = exports.cDisplayIndividualConstantsValidationPassMessages = exports.cEnableConstantsPatternGeneration = exports.cEnableConstantsValidation = exports.cEnableCommandPerformanceMetrics = exports.cEnableBusinessRulePerformanceMetrics = exports.cEnableBusinessRuleOutput = exports.cTertiaryCommandDelimiter = exports.cSecondaryCommandDelimiter = exports.cPrimaryCommandDelimiter = exports.cFigletFont = exports.cArgumentDrivenInterface = exports.cmetaDataDotJson = exports.cword_constants_js = exports.cunits_constants_js = exports.csystem_constants_js = exports.cshape_constants_js = exports.cphonics_constants_js = exports.cnumeric_constants_js = exports.cisotope_constants_js = exports.cgeneric_constants_js = exports.celement_constants_js = exports.ccolor_constants_js = void 0;
-exports.crandomlyGenerateMixedCaseAlphaNumericCharacter2 = exports.crandomlyGenerateMixedCaseAlphaNumericCharacter1 = exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1 = exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1 = exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1 = exports.cgenerateRandomInvalidEmail2 = exports.cgenerateRandomInvalidEmail1 = exports.cgenerateInvalidEmailWithSpecificSuffixAndDomainName2 = exports.cgenerateInvalidEmailWithSpecificSuffixAndDomainName1 = exports.cgenerateRandomValidEmail2 = exports.cgenerateRandomValidEmail1 = exports.cgenerateValidEmailWithSpecificSuffixAndDomainName2 = exports.cgenerateValidEmailWithSpecificSuffixAndDomainName1 = exports.cgenerateInvalidEmail2 = exports.cgenerateInvalidEmail1 = exports.cgenerateValidEmail2 = exports.cgenerateValidEmail1 = exports.cgenerateRandomSpecialCharacterCodeByLength2 = exports.cgenerateRandomSpecialCharacterCodeByLength1 = exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomNumericCodeByLength2 = exports.cgenerateRandomNumericCodeByLength1 = exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomLowerCaseTextByLength2 = exports.cgenerateRandomLowerCaseTextByLength1 = exports.cgenerateRandomUpperCaseTextByLength2 = exports.cgenerateRandomUpperCaseTextByLength1 = exports.cgenerateRandomMixedCaseTextByLength2 = exports.cgenerateRandomMixedCaseTextByLength1 = exports.creplaceCharacterAtIndexOfString = exports.cdoesArrayContainValue = exports.caggregateCommandArguments = exports.ccleanCommandInput = exports.creplaceCharacterAtIndex = exports.cisEven = exports.cisOdd = exports.cgetAttributeValue = exports.cgetAttributeName = exports.cisArrayOrObject = exports.cisObject = exports.carrayDeepClone = exports.cisNonZeroLengthArray = exports.cisArray = exports.cisArrayEmpty = exports.cisObjectEmpty = exports.cstoreData = exports.cgetStoredData = exports.csupportedFileFormatsAre = exports.cloadDataFile = exports.cgetFirstTopLevelFolderFromPath = exports.cremoveXnumberOfFoldersFromEndOfPath = exports.creplaceDoublePercentWithMessage = exports.cparseSystemRootPath = exports.cgetKeywordNameFromDataContextName = exports.cgetDataCatagoryDetailNameFromDataContextName = exports.cgetDataCatagoryFromDataContextName = exports.carraysAreEqual = exports.cgetLehmerCodeValue = exports.crecursiveArrayExpansion = exports.csolveLehmerCode = exports.cgenerateCommandAliases = exports.ccountDuplicateCommandAliases = exports.cisConstantValid = exports.cisValidCommandNameString = exports.cvalidateConstantsDataValues = exports.cvalidatePatternsThatNeedImplementation = exports.csearchForPatternsInStringArray = exports.cconstantsFulfillmentSystem = exports.cconstantsOptimizedFulfillmentSystem = exports.cconvertConstantTypeToConstantPrefix = exports.cisConstantTypeValid = exports.cfindConstantName = exports.cgetConstantName = exports.cgetConstantActualValue = exports.cgetConstantType = void 0;
+exports.cisConstantValid = exports.cisValidCommandNameString = exports.cvalidateConstantsDataValues = exports.cconstantsFulfillmentSystem = exports.cconstantsOptimizedFulfillmentSystem = exports.cconvertConstantTypeToConstantPrefix = exports.cisConstantTypeValid = exports.cfindConstantName = exports.cgetConstantName = exports.cgetConstantActualValue = exports.cgetConstantType = exports.cdoesConstantExist = exports.cvalidateConstantsDataValidationLineItemName = exports.cdetermineSuggestedConstantsValidationLineOfCode = exports.cdetermineConstantsContextQualifiedPrefix = exports.cvalidateConstantsDataValidation = exports.cascertainMatchingFilenames = exports.ccompareSimplifiedAndConsolidatedStrings = exports.csimplifyAndConsolidateString = exports.cmapWordToCamelCaseWord = exports.cisStringCamelCase = exports.cisStringList = exports.cisFirstCharacterUpperCase = exports.cisFirstCharacterLowerCase = exports.cdoesStringContainLowerCaseCharacter = exports.cdoesStringContainUpperCaseCharacter = exports.cgetWordCountInString = exports.cdetermineWordDelimiter = exports.ccountDelimiterInString = exports.cdoesStringContainAcronym = exports.ccountCamelCaseWords = exports.caggregateNumericalDifferenceBetweenTwoStrings = exports.cgetValueFromAssignmentOperationString = exports.cremoveFileExtensionFromFileName = exports.cremoveDotFromFileExtension = exports.cgetFileExtension = exports.cgetFileNameFromPath = exports.cconvertStringToUpperCase = exports.cconvertStringToLowerCase = exports.ccleanCarriageReturnFromString = exports.creplaceColonWithUnderscore = exports.creplaceSpacesWithPlus = exports.cgetUserNameFromEmail = exports.cswapDoubleBackSlashToSingleBackSlash = exports.cswapDoubleForwardSlashToSingleForwardSlash = exports.cswapBackSlashToForwardSlash = exports.cswapForwardSlashToBackSlash = exports.csingleQuoteSwapAfterEquals = exports.cisString = exports.cisFloat = exports.cisInteger = exports.cisBoolean = exports.cdetermineObjectDataType = exports.cstringToDataType = exports.cstringToBoolean = exports.cEcho = exports.cecho = exports.cClearCommandPerformanceDataAfterAnalysis = exports.cCommandsPerformanceAnalysisStack = exports.cCommandNamesPerformanceTrackingStack = exports.cCommandPerformanceTrackingStack = exports.cClearBusinessRulesPerformanceDataAfterAnalysis = exports.cBusinessRulesPerformanceAnalysisStack = exports.cBusinessRuleNamesPerformanceTrackingStack = exports.cBusinessRulePerformanceTrackingStack = exports.cEndTimeStampVariableName = exports.cBeginTimeStampVariableName = exports.cTimeStampVariableName = exports.cItemsIndividuallySynch = exports.cEndDateTimeStamp = exports.cBeginDateTimeStamp = exports.creleaseCompleted = exports.cdeploymentCompleted = exports.cPassedAllCommandAliasesDuplicateChecks = exports.cPassAllConstantsValidations = exports.cDisplaySummaryConstantsValidationFailMessages = exports.cDisplaySummaryConstantsValidationPassMessages = exports.cDisplayIndividualConstantsValidationFailMessages = exports.cDisplayIndividualConstantsValidationPassMessages = exports.cEnableConstantsPatternGeneration = exports.cEnableConstantsValidation = exports.cEnableCommandPerformanceMetrics = exports.cEnableBusinessRulePerformanceMetrics = exports.cEnableBusinessRuleOutput = exports.cTertiaryCommandDelimiter = exports.cSecondaryCommandDelimiter = exports.cPrimaryCommandDelimiter = exports.cFigletFont = exports.cArgumentDrivenInterface = exports.cmetaDataDotJson = exports.cword_constants_js = exports.cunits_constants_js = exports.csystem_constants_js = exports.cshape_constants_js = exports.cphonics_constants_js = exports.cnumeric_constants_js = exports.cisotope_constants_js = exports.cgeneric_constants_js = exports.celement_constants_js = exports.ccolor_constants_js = void 0;
+exports.crandomlyGenerateMixedCaseAlphaNumericCharacter2 = exports.crandomlyGenerateMixedCaseAlphaNumericCharacter1 = exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1 = exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1 = exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1 = exports.cgenerateRandomInvalidEmail2 = exports.cgenerateRandomInvalidEmail1 = exports.cgenerateInvalidEmailWithSpecificSuffixAndDomainName2 = exports.cgenerateInvalidEmailWithSpecificSuffixAndDomainName1 = exports.cgenerateRandomValidEmail2 = exports.cgenerateRandomValidEmail1 = exports.cgenerateValidEmailWithSpecificSuffixAndDomainName2 = exports.cgenerateValidEmailWithSpecificSuffixAndDomainName1 = exports.cgenerateInvalidEmail2 = exports.cgenerateInvalidEmail1 = exports.cgenerateValidEmail2 = exports.cgenerateValidEmail1 = exports.cgenerateRandomSpecialCharacterCodeByLength2 = exports.cgenerateRandomSpecialCharacterCodeByLength1 = exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomNumericCodeByLength2 = exports.cgenerateRandomNumericCodeByLength1 = exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomLowerCaseTextByLength2 = exports.cgenerateRandomLowerCaseTextByLength1 = exports.cgenerateRandomUpperCaseTextByLength2 = exports.cgenerateRandomUpperCaseTextByLength1 = exports.cgenerateRandomMixedCaseTextByLength2 = exports.cgenerateRandomMixedCaseTextByLength1 = exports.cdoesArrayContainValue = exports.caggregateCommandArguments = exports.cgenerateCommandAliases = exports.creplaceCharacterAtIndex = exports.carrayDeepClone = exports.cisNonZeroLengthArray = exports.cisArrayOrObject = exports.cisArray = exports.cisObject = exports.cisArrayEmpty = exports.cisObjectEmpty = exports.cgetStoredData = exports.cstoreData = exports.carraysAreEqual = exports.cgetLehmerCodeValue = exports.crecursiveArrayExpansion = exports.csolveLehmerCode = exports.cvalidatePatternsThatNeedImplementation = exports.csearchForPatternsInStringArray = exports.cgetLengthOfLongestStringInArray = exports.cdoesArrayContainFilename = exports.cascertainMatchingElements = exports.cremoveCharacterFromArray = exports.cdoesArrayContainCharacter = exports.cdoesArrayContainLowerCaseConsolidatedString = exports.cconvertArrayToCamelCaseString = exports.crecombineStringArrayWithSpaces = exports.cgetWordsArrayFromString = exports.cconvertCamelCaseStringToArray = exports.creplaceCharacterWithCharacter = exports.creplaceCharacterAtIndexOfString = exports.ccleanCommandInput = exports.cisEven = exports.cisOdd = exports.cgetAttributeValue = exports.cgetAttributeName = exports.csupportedFileFormatsAre = exports.cloadDataFile = exports.cgetFirstTopLevelFolderFromPath = exports.cremoveXnumberOfFoldersFromEndOfPath = exports.creplaceDoublePercentWithMessage = exports.cparseSystemRootPath = exports.cgetKeywordNameFromDataContextName = exports.cgetDataCatagoryDetailNameFromDataContextName = exports.cgetDataCatagoryFromDataContextName = exports.ccountDuplicateCommandAliases = void 0;
 exports.cReleaseWorkflow = exports.cBuildWorkflow = exports.cStartupWorkflow = exports.cvalidateCommandAliases = exports.cvalidateConstants = exports.cconvertColors = exports.ccommandMetrics = exports.cbusinessRulesMetrics = exports.cconstantsPatternRecognizer = exports.cconstantsGeneratorList = exports.cconstantsGenerator = exports.ccommandAliasGenerator = exports.ccommandGenerator = exports.cclearDataStorage = exports.cprintDataHiveAttributes = exports.cprintDataHive = exports.ccommandSequencer = exports.cworkflowHelp = exports.cclearScreen = exports.cEchoCommand = exports.cechoCommand = exports.cClientWorkflowsPath = exports.cSystemWorkflowsPath = exports.cClientCommandsAliasesPath = exports.cSystemCommandsAliasesPath = exports.cProdSystemWorkflowsActualPath = exports.cProdSystemCommandsAliasesActualPath = exports.cDevSystemWorkflowsActualPath = exports.cDevSystemCommandsAliasesActualPath = exports.cSystemWorkflowsActualPath = exports.cSystemCommandsAliasesActualPath = exports.chex2rgbConversion = exports.cconvertNumberToLowerCaseLetter = exports.cconvertNumberToUpperCaseLetter = exports.crandomlyGenerateUpperCaseLetter2 = exports.crandomlyGenerateUpperCaseLetter1 = exports.crandomlyGenerateLowerCaseLetter2 = exports.crandomlyGenerateLowerCaseLetter1 = exports.crandomlyGenerateMixedCaseAlphabeticCharacter2 = exports.crandomlyGenerateMixedCaseAlphabeticCharacter1 = exports.crandomlyGenerateBooleanValue2 = exports.crandomlyGenerateBooleanValue1 = exports.crandomlyGenerateNumberInRange2 = exports.crandomlyGenerateNumberInRange1 = exports.crandomlyGenerateSpecialCharacter2 = exports.crandomlyGenerateSpecialCharacter1 = exports.crandomlyGenerateNumericCharacter2 = exports.crandomlyGenerateNumericCharacter1 = exports.crandomlyGenerateLowerCaseAlphaNumericCharacter2 = exports.crandomlyGenerateLowerCaseAlphaNumericCharacter1 = exports.crandomlyGenerateUpperCaseAlphaNumericCharacter2 = exports.crandomlyGenerateUpperCaseAlphaNumericCharacter1 = void 0;
 
 var b = _interopRequireWildcard(require("./basic.constants"));
@@ -2656,9 +2656,6 @@ exports.creplaceSpacesWithPlus = creplaceSpacesWithPlus;
 var creplaceColonWithUnderscore = w.creplace + w.cColon + w.cWith + cUnderscore; // replaceColonWithUnderscore
 
 exports.creplaceColonWithUnderscore = creplaceColonWithUnderscore;
-var creplaceCharacterWithCharacter = w.creplace + w.cCharacter + w.cWith + w.cCharacter; // replaceCharacterWithCharacter
-
-exports.creplaceCharacterWithCharacter = creplaceCharacterWithCharacter;
 var ccleanCarriageReturnFromString = w.cclean + cCarriageReturn + w.cFrom + w.cString; // cleanCarriageReturnFromString
 
 exports.ccleanCarriageReturnFromString = ccleanCarriageReturnFromString;
@@ -2686,9 +2683,6 @@ exports.cgetValueFromAssignmentOperationString = cgetValueFromAssignmentOperatio
 var caggregateNumericalDifferenceBetweenTwoStrings = w.caggregate + w.cNumerical + w.cDifference + w.cBetween + n.cTwo + w.cStrings; // aggregateNumericalDifferenceBetweenTwoStrings
 
 exports.caggregateNumericalDifferenceBetweenTwoStrings = caggregateNumericalDifferenceBetweenTwoStrings;
-var cconvertCamelCaseStringToArray = w.cconvert + w.cCamel + w.cCase + w.cString + b.cTo + w.cArray; // convertCamelCaseStringToArray
-
-exports.cconvertCamelCaseStringToArray = cconvertCamelCaseStringToArray;
 var ccountCamelCaseWords = w.ccount + w.cCamel + w.cCase + w.cWords; // countCamelCaseWords
 
 exports.ccountCamelCaseWords = ccountCamelCaseWords;
@@ -2704,12 +2698,6 @@ exports.cdetermineWordDelimiter = cdetermineWordDelimiter;
 var cgetWordCountInString = w.cget + w.cWord + w.cCount + b.cIn + w.cString; // getWordCountInString
 
 exports.cgetWordCountInString = cgetWordCountInString;
-var cgetWordsArrayFromString = w.cget + w.cWords + w.cArray + w.cFrom + w.cString; // getWordsArrayFromString
-
-exports.cgetWordsArrayFromString = cgetWordsArrayFromString;
-var crecombineStringArrayWithSpaces = w.crecombine + w.cString + w.cArray + w.cWith + w.cSpaces; // recombineStringArrayWithSpaces
-
-exports.crecombineStringArrayWithSpaces = crecombineStringArrayWithSpaces;
 var cdoesStringContainUpperCaseCharacter = w.cdoes + w.cString + w.cContain + cUpperCase + w.cCharacter; // doesStringContainUpperCaseCharacter
 
 exports.cdoesStringContainUpperCaseCharacter = cdoesStringContainUpperCaseCharacter;
@@ -2728,9 +2716,6 @@ exports.cisStringList = cisStringList;
 var cisStringCamelCase = b.cis + w.cString + w.cCamel + w.cCase; // isStringCamelCase
 
 exports.cisStringCamelCase = cisStringCamelCase;
-var cconvertArrayToCamelCaseString = w.cconvert + w.cArray + b.cTo + w.cCamel + w.cCase + w.cString; // convertArrayToCamelCaseString
-
-exports.cconvertArrayToCamelCaseString = cconvertArrayToCamelCaseString;
 var cmapWordToCamelCaseWord = p.cmap + w.cWord + b.cTo + w.cCamel + w.cCase + w.cWord; // mapWordToCamelCaseWord
 
 exports.cmapWordToCamelCaseWord = cmapWordToCamelCaseWord;
@@ -2740,27 +2725,9 @@ exports.csimplifyAndConsolidateString = csimplifyAndConsolidateString;
 var ccompareSimplifiedAndConsolidatedStrings = w.ccompare + w.cSimplified + w.cAnd + w.cConsolidated + w.cStrings; // compareSimplifiedAndConsolidatedStrings
 
 exports.ccompareSimplifiedAndConsolidatedStrings = ccompareSimplifiedAndConsolidatedStrings;
-var cdoesArrayContainLowerCaseConsolidatedString = w.cdoes + w.cArray + w.cContain + w.cLower + w.cCase + w.cConsolidated + w.cString; // doesArrayContainLowerCaseConsolidatedString
-
-exports.cdoesArrayContainLowerCaseConsolidatedString = cdoesArrayContainLowerCaseConsolidatedString;
-var cdoesArrayContainCharacter = w.cdoes + w.cArray + w.cContain + w.cCharacter; // doesArrayContainCharacter
-
-exports.cdoesArrayContainCharacter = cdoesArrayContainCharacter;
-var cremoveCharacterFromArray = w.cremove + w.cCharacter + w.cFrom + w.cArray; // removeCharacterFromArray
-
-exports.cremoveCharacterFromArray = cremoveCharacterFromArray;
 var cascertainMatchingFilenames = w.cascertain + w.cMatching + cFilenames; // ascertainMatchingFilenames
 
 exports.cascertainMatchingFilenames = cascertainMatchingFilenames;
-var cascertainMatchingElements = w.cascertain + w.cMatching + w.cElements; // acertainMatchingElements
-
-exports.cascertainMatchingElements = cascertainMatchingElements;
-var cdoesArrayContainFilename = w.cdoes + w.cArray + w.cContain + cFilename; // doesArrayContainFilename
-
-exports.cdoesArrayContainFilename = cdoesArrayContainFilename;
-var cgetLengthOfLongestStringInArray = w.cget + w.cLength + b.cOf + w.cLongest + w.cString + b.cIn + w.cArray; // getLengthOfLongestStringInArray
-
-exports.cgetLengthOfLongestStringInArray = cgetLengthOfLongestStringInArray;
 var cvalidateConstantsDataValidation = w.cvalidate + w.cConstants + w.cData + w.cValidation; // validateConstantsDataValidation
 
 exports.cvalidateConstantsDataValidation = cvalidateConstantsDataValidation;
@@ -2800,12 +2767,6 @@ exports.cconstantsOptimizedFulfillmentSystem = cconstantsOptimizedFulfillmentSys
 var cconstantsFulfillmentSystem = w.cconstants + w.cFulfillment + w.cSystem; // constantsFulfillmentSystem
 
 exports.cconstantsFulfillmentSystem = cconstantsFulfillmentSystem;
-var csearchForPatternsInStringArray = w.csearch + w.cFor + w.cPatterns + b.cIn + w.cString + w.cArray; // searchForPatternsInStringArray
-
-exports.csearchForPatternsInStringArray = csearchForPatternsInStringArray;
-var cvalidatePatternsThatNeedImplementation = w.cvalidate + w.cPatterns + w.cThat + w.cNeed + w.cImplementation; // validatePatternsThatNeedImplementation
-
-exports.cvalidatePatternsThatNeedImplementation = cvalidatePatternsThatNeedImplementation;
 var cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
 
 exports.cvalidateConstantsDataValues = cvalidateConstantsDataValues;
@@ -2818,21 +2779,6 @@ exports.cisConstantValid = cisConstantValid;
 var ccountDuplicateCommandAliases = w.ccount + w.cDuplicate + w.cCommand + w.cAliases; // countDuplicateCommandAliases
 
 exports.ccountDuplicateCommandAliases = ccountDuplicateCommandAliases;
-var cgenerateCommandAliases = w.cgenerate + w.cCommand + w.cAliases; // generateCommandAliases
-
-exports.cgenerateCommandAliases = cgenerateCommandAliases;
-var csolveLehmerCode = w.csolve + w.cLehmer + w.cCode; // solveLehmerCode
-
-exports.csolveLehmerCode = csolveLehmerCode;
-var crecursiveArrayExpansion = w.crecursive + w.cArray + w.cExpansion; // recursiveArrayExpansion
-
-exports.crecursiveArrayExpansion = crecursiveArrayExpansion;
-var cgetLehmerCodeValue = w.cget + w.cLehmer + w.cCode + w.cValue; // getLehmerCodeValue
-
-exports.cgetLehmerCodeValue = cgetLehmerCodeValue;
-var carraysAreEqual = w.carrays + w.cAre + w.cEqual; // arraysAreEqual
-
-exports.carraysAreEqual = carraysAreEqual;
 var cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
 
 exports.cgetDataCatagoryFromDataContextName = cgetDataCatagoryFromDataContextName;
@@ -2860,33 +2806,6 @@ exports.cloadDataFile = cloadDataFile;
 var csupportedFileFormatsAre = w.csupported + w.cFile + w.cFormats + w.cAre; // supportedFileFormatsAre
 
 exports.csupportedFileFormatsAre = csupportedFileFormatsAre;
-var cgetStoredData = w.cget + w.cStored + w.cData; // getStoredData
-
-exports.cgetStoredData = cgetStoredData;
-var cstoreData = w.cstore + w.cData; // storeData
-
-exports.cstoreData = cstoreData;
-var cisObjectEmpty = b.cis + w.cObject + w.cEmpty; // isObjectEmpty
-
-exports.cisObjectEmpty = cisObjectEmpty;
-var cisArrayEmpty = b.cis + w.cArray + w.cEmpty; // isArrayEmpty
-
-exports.cisArrayEmpty = cisArrayEmpty;
-var cisArray = b.cis + w.cArray; // isArray
-
-exports.cisArray = cisArray;
-var cisNonZeroLengthArray = b.cis + p.cNon + n.cZero + w.cLength + w.cArray; // isNonZeroLengthArray
-
-exports.cisNonZeroLengthArray = cisNonZeroLengthArray;
-var carrayDeepClone = w.carray + w.cDeep + w.cClone; // arrayDeepClone
-
-exports.carrayDeepClone = carrayDeepClone;
-var cisObject = b.cis + w.cObject; // isObject
-
-exports.cisObject = cisObject;
-var cisArrayOrObject = b.cis + w.cArray + b.cOr + w.cObject; // isArrayOrObject
-
-exports.cisArrayOrObject = cisArrayOrObject;
 var cgetAttributeName = w.cget + w.cAttribute + w.cName; // getAttributeName
 
 exports.cgetAttributeName = cgetAttributeName;
@@ -2899,24 +2818,108 @@ exports.cisOdd = cisOdd;
 var cisEven = b.cis + w.cEven; // isEven
 
 exports.cisEven = cisEven;
-var creplaceCharacterAtIndex = w.creplace + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
-
-exports.creplaceCharacterAtIndex = creplaceCharacterAtIndex;
 var ccleanCommandInput = w.cclean + w.cCommand + w.cInput; // cleanCommandInput
 
 exports.ccleanCommandInput = ccleanCommandInput;
+var creplaceCharacterAtIndexOfString = w.creplace + w.cCharacter + b.cA + b.ct + w.cIndex + b.cOf + w.cString; // replaceCharacterAtIndexOfString
+// *********************************
+// ArrayParsing rules in order
+// *********************************
+
+exports.creplaceCharacterAtIndexOfString = creplaceCharacterAtIndexOfString;
+var creplaceCharacterWithCharacter = w.creplace + w.cCharacter + w.cWith + w.cCharacter; // replaceCharacterWithCharacter
+
+exports.creplaceCharacterWithCharacter = creplaceCharacterWithCharacter;
+var cconvertCamelCaseStringToArray = w.cconvert + w.cCamel + w.cCase + w.cString + b.cTo + w.cArray; // convertCamelCaseStringToArray
+
+exports.cconvertCamelCaseStringToArray = cconvertCamelCaseStringToArray;
+var cgetWordsArrayFromString = w.cget + w.cWords + w.cArray + w.cFrom + w.cString; // getWordsArrayFromString
+
+exports.cgetWordsArrayFromString = cgetWordsArrayFromString;
+var crecombineStringArrayWithSpaces = w.crecombine + w.cString + w.cArray + w.cWith + w.cSpaces; // recombineStringArrayWithSpaces
+
+exports.crecombineStringArrayWithSpaces = crecombineStringArrayWithSpaces;
+var cconvertArrayToCamelCaseString = w.cconvert + w.cArray + b.cTo + w.cCamel + w.cCase + w.cString; // convertArrayToCamelCaseString
+
+exports.cconvertArrayToCamelCaseString = cconvertArrayToCamelCaseString;
+var cdoesArrayContainLowerCaseConsolidatedString = w.cdoes + w.cArray + w.cContain + w.cLower + w.cCase + w.cConsolidated + w.cString; // doesArrayContainLowerCaseConsolidatedString
+
+exports.cdoesArrayContainLowerCaseConsolidatedString = cdoesArrayContainLowerCaseConsolidatedString;
+var cdoesArrayContainCharacter = w.cdoes + w.cArray + w.cContain + w.cCharacter; // doesArrayContainCharacter
+
+exports.cdoesArrayContainCharacter = cdoesArrayContainCharacter;
+var cremoveCharacterFromArray = w.cremove + w.cCharacter + w.cFrom + w.cArray; // removeCharacterFromArray
+
+exports.cremoveCharacterFromArray = cremoveCharacterFromArray;
+var cascertainMatchingElements = w.cascertain + w.cMatching + w.cElements; // acertainMatchingElements
+
+exports.cascertainMatchingElements = cascertainMatchingElements;
+var cdoesArrayContainFilename = w.cdoes + w.cArray + w.cContain + cFilename; // doesArrayContainFilename
+
+exports.cdoesArrayContainFilename = cdoesArrayContainFilename;
+var cgetLengthOfLongestStringInArray = w.cget + w.cLength + b.cOf + w.cLongest + w.cString + b.cIn + w.cArray; // getLengthOfLongestStringInArray
+
+exports.cgetLengthOfLongestStringInArray = cgetLengthOfLongestStringInArray;
+var csearchForPatternsInStringArray = w.csearch + w.cFor + w.cPatterns + b.cIn + w.cString + w.cArray; // searchForPatternsInStringArray
+
+exports.csearchForPatternsInStringArray = csearchForPatternsInStringArray;
+var cvalidatePatternsThatNeedImplementation = w.cvalidate + w.cPatterns + w.cThat + w.cNeed + w.cImplementation; // validatePatternsThatNeedImplementation
+
+exports.cvalidatePatternsThatNeedImplementation = cvalidatePatternsThatNeedImplementation;
+var csolveLehmerCode = w.csolve + w.cLehmer + w.cCode; // solveLehmerCode
+
+exports.csolveLehmerCode = csolveLehmerCode;
+var crecursiveArrayExpansion = w.crecursive + w.cArray + w.cExpansion; // recursiveArrayExpansion
+
+exports.crecursiveArrayExpansion = crecursiveArrayExpansion;
+var cgetLehmerCodeValue = w.cget + w.cLehmer + w.cCode + w.cValue; // getLehmerCodeValue
+
+exports.cgetLehmerCodeValue = cgetLehmerCodeValue;
+var carraysAreEqual = w.carrays + w.cAre + w.cEqual; // arraysAreEqual
+
+exports.carraysAreEqual = carraysAreEqual;
+var cstoreData = w.cstore + w.cData; // storeData
+
+exports.cstoreData = cstoreData;
+var cgetStoredData = w.cget + w.cStored + w.cData; // getStoredData
+
+exports.cgetStoredData = cgetStoredData;
+var cisObjectEmpty = b.cis + w.cObject + w.cEmpty; // isObjectEmpty
+
+exports.cisObjectEmpty = cisObjectEmpty;
+var cisArrayEmpty = b.cis + w.cArray + w.cEmpty; // isArrayEmpty
+
+exports.cisArrayEmpty = cisArrayEmpty;
+var cisObject = b.cis + w.cObject; // isObject
+
+exports.cisObject = cisObject;
+var cisArray = b.cis + w.cArray; // isArray
+
+exports.cisArray = cisArray;
+var cisArrayOrObject = b.cis + w.cArray + b.cOr + w.cObject; // isArrayOrObject
+
+exports.cisArrayOrObject = cisArrayOrObject;
+var cisNonZeroLengthArray = b.cis + p.cNon + n.cZero + w.cLength + w.cArray; // isNonZeroLengthArray
+
+exports.cisNonZeroLengthArray = cisNonZeroLengthArray;
+var carrayDeepClone = w.carray + w.cDeep + w.cClone; // arrayDeepClone
+
+exports.carrayDeepClone = carrayDeepClone;
+var creplaceCharacterAtIndex = w.creplace + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
+
+exports.creplaceCharacterAtIndex = creplaceCharacterAtIndex;
+var cgenerateCommandAliases = w.cgenerate + w.cCommand + w.cAliases; // generateCommandAliases
+
+exports.cgenerateCommandAliases = cgenerateCommandAliases;
 var caggregateCommandArguments = w.caggregate + w.cCommand + w.cArguments; // aggregateCommandArguments
 
 exports.caggregateCommandArguments = caggregateCommandArguments;
 var cdoesArrayContainValue = w.cdoes + w.cArray + w.cContain + w.cValue; // doesArrayContainValue
-
-exports.cdoesArrayContainValue = cdoesArrayContainValue;
-var creplaceCharacterAtIndexOfString = w.creplace + w.cCharacter + b.cA + b.ct + w.cIndex + b.cOf + w.cString; // replaceCharacterAtIndexOfString
 // *********************************
 // StringGeneration rules in order
 // *********************************
 
-exports.creplaceCharacterAtIndexOfString = creplaceCharacterAtIndexOfString;
+exports.cdoesArrayContainValue = cdoesArrayContainValue;
 var cgenerateRandomMixedCaseTextByLength1 = cgenerateRandom + cMixedCase + cTextByLength + n.c1; // generateRandomMixedCaseTextByLength1
 
 exports.cgenerateRandomMixedCaseTextByLength1 = cgenerateRandomMixedCaseTextByLength1;

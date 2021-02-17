@@ -44,6 +44,7 @@ import * as characterGeneration from './Rules/characterGeneration';
 import * as stringGeneration from './Rules/stringGeneration';
 import * as stringParsing from './Rules/stringParsing';
 import * as mathOperations from './Rules/mathOperations';
+import * as arrayParsing from './Rules/arrayParsing';
 import * as s from '../Constants/system.constants';
 var D = require('../Resources/data');
 
@@ -79,7 +80,6 @@ export const initRulesLibrary = function() {
     [s.cgetUserNameFromEmail]: (inputData, inputMetaData) => stringParsing.getUserNameFromEmail(inputData, inputMetaData),
     [s.creplaceSpacesWithPlus]: (inputData, inputMetaData) => stringParsing.replaceSpacesWithPlus(inputData, inputMetaData),
     [s.creplaceColonWithUnderscore]: (inputData, inputMetaData) => stringParsing.replaceColonWithUnderscore(inputData, inputMetaData),
-    [s.creplaceCharacterWithCharacter]: (inputData, inputMetaData) => stringParsing.replaceCharacterWithCharacter(inputData, inputMetaData),
     [s.ccleanCarriageReturnFromString]: (inputData, inputMetaData) => stringParsing.cleanCarriageReturnFromString(inputData, inputMetaData),
     [s.cconvertStringToLowerCase]: (inputData, inputMetaData) => stringParsing.convertStringToLowerCase(inputData, inputMetaData),
     [s.cconvertStringToUpperCase]: (inputData, inputMetaData) => stringParsing.convertStringToUpperCase(inputData, inputMetaData),
@@ -89,31 +89,21 @@ export const initRulesLibrary = function() {
     [s.cremoveFileExtensionFromFileName]: (inputData, inputMetaData) => stringParsing.removeFileExtensionFromFileName(inputData, inputMetaData),
     [s.cgetValueFromAssignmentOperationString]: (inputData, inputMetaData) => stringParsing.getValueFromAssignmentOperationString(inputData, inputMetaData),
     [s.caggregateNumericalDifferenceBetweenTwoStrings]: (inputData, inputMetaData) => stringParsing.aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData),
-    [s.cconvertCamelCaseStringToArray]: (inputData, inputMetaData) => stringParsing.convertCamelCaseStringToArray(inputData, inputMetaData),
     [s.ccountCamelCaseWords]: (inputData, inputMetaData) => stringParsing.countCamelCaseWords(inputData, inputMetaData),
     [s.cdoesStringContainAcronym]: (inputData, inputMetaData) => stringParsing.doesStringContainAcronym(inputData, inputMetaData),
     [s.ccountDelimiterInString]: (inputData, inputMetaData) => stringParsing.countDelimiterInString(inputData, inputMetaData),
     [s.cdetermineWordDelimiter]: (inputData, inputMetaData) => stringParsing.determineWordDelimiter(inputData, inputMetaData),
     [s.cgetWordCountInString]: (inputData, inputMetaData) => stringParsing.getWordCountInString(inputData, inputMetaData),
-    [s.cgetWordsArrayFromString]: (inputData, inputMetaData) => stringParsing.getWordsArrayFromString(inputData, inputMetaData),
-    [s.crecombineStringArrayWithSpaces]: (inputData, inputMetaData) => stringParsing.recombineStringArrayWithSpaces(inputData, inputMetaData),
     [s.cdoesStringContainUpperCaseCharacter]: (inputData, inputMetaData) => stringParsing.doesStringContainUpperCaseCharacter(inputData, inputMetaData),
     [s.cdoesStringContainLowerCaseCharacter]: (inputData, inputMetaData) => stringParsing.doesStringContainLowerCaseCharacter(inputData, inputMetaData),
     [s.cisFirstCharacterLowerCase]: (inputData, inputMetaData) => stringParsing.isFirstCharacterLowerCase(inputData, inputMetaData),
     [s.cisFirstCharacterUpperCase]: (inputData, inputMetaData) => stringParsing.isFirstCharacterUpperCase(inputData, inputMetaData),
     [s.cisStringList]: (inputData, inputMetaData) => stringParsing.isStringList(inputData, inputMetaData),
     [s.cisStringCamelCase]: (inputData, inputMetaData) => stringParsing.isStringCamelCase(inputData, inputMetaData),
-    [s.cconvertArrayToCamelCaseString]: (inputData, inputMetaData) => stringParsing.convertArrayToCamelCaseString(inputData, inputMetaData),
     [s.cmapWordToCamelCaseWord]: (inputData, inputMetaData) => stringParsing.mapWordToCamelCaseWord(inputData, inputMetaData),
     [s.csimplifyAndConsolidateString]: (inputData, inputMetaData) => stringParsing.simplifyAndConsolidateString(inputData, inputMetaData),
     [s.ccompareSimplifiedAndConsolidatedStrings]: (inputData, inputMetaData) => stringParsing.compareSimplifiedAndConsolidatedStrings(inputData, inputMetaData),
-    [s.cdoesArrayContainLowerCaseConsolidatedString]: (inputData, inputMetaData) => stringParsing.doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData),
-    [s.cdoesArrayContainCharacter]: (inputData, inputMetaData) => stringParsing.doesArrayContainCharacter(inputData, inputMetaData),
-    [s.cremoveCharacterFromArray]: (inputData, inputMetaData) => stringParsing.removeCharacterFromArray(inputData, inputMetaData),
     [s.cascertainMatchingFilenames]: (inputData, inputMetaData) => stringParsing.ascertainMatchingFilenames(inputData, inputMetaData),
-    [s.cascertainMatchingElements]: (inputData, inputMetaData) => stringParsing.acertainMatchingElements(inputData, inputMetaData),
-    [s.cdoesArrayContainFilename]: (inputData, inputMetaData) => stringParsing.doesArrayContainFilename(inputData, inputMetaData),
-    [s.cgetLengthOfLongestStringInArray]: (inputData, inputMetaData) => stringParsing.getLengthOfLongestStringInArray(inputData, inputMetaData),
     [s.cvalidateConstantsDataValidation]: (inputData, inputMetaData) => stringParsing.validateConstantsDataValidation(inputData, inputMetaData),
     [s.cdetermineConstantsContextQualifiedPrefix]: (inputData, inputMetaData) => stringParsing.determineConstantsContextQualifiedPrefix(inputData, inputMetaData),
     [s.cdetermineSuggestedConstantsValidationLineOfCode]: (inputData, inputMetaData) => stringParsing.determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData),
@@ -127,17 +117,11 @@ export const initRulesLibrary = function() {
     [s.cconstantsOptimizedFulfillmentSystem]: (inputData, inputMetaData) => stringParsing.constantsOptimizedFulfillmentSystem(inputData, inputMetaData),
     [s.cconvertConstantTypeToConstantPrefix]: (inputData, inputMetaData) => stringParsing.convertConstantTypeToConstantPrefix(inputData, inputMetaData),
     [s.cconstantsFulfillmentSystem]: (inputData, inputMetaData) => stringParsing.constantsFulfillmentSystem(inputData, inputMetaData),
-    [s.csearchForPatternsInStringArray]: (inputData, inputMetaData) => stringParsing.searchForPatternsInStringArray(inputData, inputMetaData),
-    [s.cvalidatePatternsThatNeedImplementation]: (inputData, inputMetaData) => stringParsing.validatePatternsThatNeedImplementation(inputData, inputMetaData),
     [s.cvalidateConstantsDataValues]: (inputData, inputMetaData) => stringParsing.validateConstantsDataValues(inputData, inputMetaData),
     [s.cisValidCommandNameString]: (inputData, inputMetaData) => stringParsing.isValidCommandNameString(inputData, inputMetaData),
     [s.cisConstantValid]: (inputData, inputMetaData) => stringParsing.isConstantValid(inputData, inputMetaData),
     [s.ccountDuplicateCommandAliases]: (inputData, inputMetaData) => stringParsing.countDuplicateCommandAliases(inputData, inputMetaData),
-    [s.cgenerateCommandAliases]: (inputData, inputMetaData) => stringParsing.generateCommandAliases(inputData, inputMetaData),
-    [s.csolveLehmerCode]: (inputData, inputMetaData) => stringParsing.solveLehmerCode(inputData, inputMetaData),
-    [s.crecursiveArrayExpansion]: (inputData, inputMetaData) => stringParsing.recursiveArrayExpansion(inputData, inputMetaData),
     [s.cgetLehmerCodeValue]: (inputData, inputMetaData) => stringParsing.getLehmerCodeValue(inputData, inputMetaData),
-    [s.carraysAreEqual]: (inputData, inputMetaData) => stringParsing.arraysAreEqual(inputData, inputMetaData),
     [s.cgetDataCatagoryFromDataContextName]: (inputData, inputMetaData) => stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData),
     [s.cgetDataCatagoryDetailNameFromDataContextName]: (inputData, inputMetaData) => stringParsing.getDataCatagoryDetailNameFromDataContextName(inputData, inputMetaData),
     [s.cgetKeywordNameFromDataContextName]: (inputData, inputMetaData) => stringParsing.getKeywordNameFromDataContextName(inputData, inputMetaData),
@@ -147,22 +131,43 @@ export const initRulesLibrary = function() {
     [s.cgetFirstTopLevelFolderFromPath]: (inputData, inputMetaData) => stringParsing.getFirstTopLevelFolderFromPath(inputData, inputMetaData),
     [s.cloadDataFile]: (inputData, inputMetaData) => stringParsing.loadDataFile(inputData, inputMetaData),
     [s.csupportedFileFormatsAre]: (inputData, inputMetaData) => stringParsing.supportedFileFormatsAre(inputData, inputMetaData),
-    [s.cgetStoredData]: (inputData, inputMetaData) => stringParsing.getStoredData(inputData, inputMetaData),
-    [s.cstoreData]: (inputData, inputMetaData) => stringParsing.storeData(inputData, inputMetaData),
-    [s.cisObjectEmpty]: (inputData, inputMetaData) => stringParsing.isObjectEmpty(inputData, inputMetaData),
-    [s.cisArrayEmpty]: (inputData, inputMetaData) => stringParsing.isArrayEmpty(inputData, inputMetaData),
-    [s.cisArray]: (inputData, inputMetaData) => stringParsing.isArray(inputData, inputMetaData),
-    [s.cisNonZeroLengthArray]: (inputData, inputMetaData) => stringParsing.isNonZeroLengthArray(inputData, inputMetaData),
-    [s.carrayDeepClone]: (inputData, inputMetaData) => stringParsing.arrayDeepClone(inputData, inputMetaData),
-    [s.cisObject]: (inputData, inputMetaData) => stringParsing.isObject(inputData, inputMetaData),
-    [s.cisArrayOrObject]: (inputData, inputMetaData) => stringParsing.isArrayOrObject(inputData, inputMetaData),
     [s.cgetAttributeName]: (inputData, inputMetaData) => stringParsing.getAttributeName(inputData, inputMetaData),
     [s.cgetAttributeValue]: (inputData, inputMetaData) => stringParsing.getAttributeValue(inputData, inputMetaData),
     [s.cisOdd]: (inputData, inputMetaData) => stringParsing.isOdd(inputData, inputMetaData),
     [s.cisEven]: (inputData, inputMetaData) => stringParsing.isEven(inputData, inputMetaData),
-    [s.creplaceCharacterAtIndex]: (inputData, inputMetaData) => stringParsing.replaceCharacterAtIndex(inputData, inputMetaData),
     [s.ccleanCommandInput]: (inputData, inputMetaData) => stringParsing.cleanCommandInput(inputData, inputMetaData),
-    [s.caggregateCommandArguments]: (inputData, inputMetaData) => stringParsing.aggregateCommandArguments(inputData, inputMetaData),
+
+    // *********************************
+    // ArrayParsing rules in order
+    // *********************************
+    [s.creplaceCharacterWithCharacter]: (inputData, inputMetaData) => arrayParsing.replaceCharacterWithCharacter(inputData, inputMetaData),
+    [s.cconvertCamelCaseStringToArray]: (inputData, inputMetaData) => arrayParsing.convertCamelCaseStringToArray(inputData, inputMetaData),
+    [s.cgetWordsArrayFromString]: (inputData, inputMetaData) => arrayParsing.getWordsArrayFromString(inputData, inputMetaData),
+    [s.crecombineStringArrayWithSpaces]: (inputData, inputMetaData) => arrayParsing.recombineStringArrayWithSpaces(inputData, inputMetaData),
+    [s.cconvertArrayToCamelCaseString]: (inputData, inputMetaData) => arrayParsing.convertArrayToCamelCaseString(inputData, inputMetaData),
+    [s.cdoesArrayContainLowerCaseConsolidatedString]: (inputData, inputMetaData) => arrayParsing.doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData),
+    [s.cdoesArrayContainCharacter]: (inputData, inputMetaData) => arrayParsing.doesArrayContainCharacter(inputData, inputMetaData),
+    [s.cremoveCharacterFromArray]: (inputData, inputMetaData) => arrayParsing.removeCharacterFromArray(inputData, inputMetaData),
+    [s.cascertainMatchingElements]: (inputData, inputMetaData) => arrayParsing.acertainMatchingElements(inputData, inputMetaData),
+    [s.cdoesArrayContainFilename]: (inputData, inputMetaData) => arrayParsing.doesArrayContainFilename(inputData, inputMetaData),
+    [s.cgetLengthOfLongestStringInArray]: (inputData, inputMetaData) => arrayParsing.getLengthOfLongestStringInArray(inputData, inputMetaData),
+    [s.csearchForPatternsInStringArray]: (inputData, inputMetaData) => arrayParsing.searchForPatternsInStringArray(inputData, inputMetaData),
+    [s.cvalidatePatternsThatNeedImplementation]: (inputData, inputMetaData) => arrayParsing.validatePatternsThatNeedImplementation(inputData, inputMetaData),
+    [s.csolveLehmerCode]: (inputData, inputMetaData) => arrayParsing.solveLehmerCode(inputData, inputMetaData),
+    [s.crecursiveArrayExpansion]: (inputData, inputMetaData) => arrayParsing.recursiveArrayExpansion(inputData, inputMetaData),
+    [s.carraysAreEqual]: (inputData, inputMetaData) => arrayParsing.arraysAreEqual(inputData, inputMetaData),
+    [s.cstoreData]: (inputData, inputMetaData) => arrayParsing.storeData(inputData, inputMetaData),
+    [s.cgetStoredData]: (inputData, inputMetaData) => arrayParsing.getStoredData(inputData, inputMetaData),
+    [s.cisObjectEmpty]: (inputData, inputMetaData) => arrayParsing.isObjectEmpty(inputData, inputMetaData),
+    [s.cisArrayEmpty]: (inputData, inputMetaData) => arrayParsing.isArrayEmpty(inputData, inputMetaData),
+    [s.cisObject]: (inputData, inputMetaData) => arrayParsing.isObject(inputData, inputMetaData),
+    [s.cisArray]: (inputData, inputMetaData) => arrayParsing.isArray(inputData, inputMetaData),
+    [s.cisArrayOrObject]: (inputData, inputMetaData) => arrayParsing.isArrayOrObject(inputData, inputMetaData),
+    [s.cisNonZeroLengthArray]: (inputData, inputMetaData) => arrayParsing.isNonZeroLengthArray(inputData, inputMetaData),
+    [s.carrayDeepClone]: (inputData, inputMetaData) => arrayParsing.arrayDeepClone(inputData, inputMetaData),
+    [s.creplaceCharacterAtIndex]: (inputData, inputMetaData) => arrayParsing.replaceCharacterAtIndex(inputData, inputMetaData),
+    [s.cgenerateCommandAliases]: (inputData, inputMetaData) => arrayParsing.generateCommandAliases(inputData, inputMetaData),
+    [s.caggregateCommandArguments]: (inputData, inputMetaData) => arrayParsing.aggregateCommandArguments(inputData, inputMetaData),
 
     // *********************************
     // StringGeneration rules in order
@@ -255,13 +260,13 @@ export const initRulesLibrary = function() {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 12:05:58 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 15:30:59 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -15,6 +15,8 @@ var stringParsing = _interopRequireWildcard(require("./Rules/stringParsing"));
 
 var mathOperations = _interopRequireWildcard(require("./Rules/mathOperations"));
 
+var arrayParsing = _interopRequireWildcard(require("./Rules/arrayParsing"));
+
 var s = _interopRequireWildcard(require("../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -70,8 +72,6 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.replaceSpacesWithPlus(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.creplaceColonWithUnderscore, function (inputData, inputMetaData) {
     return stringParsing.replaceColonWithUnderscore(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.creplaceCharacterWithCharacter, function (inputData, inputMetaData) {
-    return stringParsing.replaceCharacterWithCharacter(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccleanCarriageReturnFromString, function (inputData, inputMetaData) {
     return stringParsing.cleanCarriageReturnFromString(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cconvertStringToLowerCase, function (inputData, inputMetaData) {
@@ -90,8 +90,6 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.getValueFromAssignmentOperationString(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.caggregateNumericalDifferenceBetweenTwoStrings, function (inputData, inputMetaData) {
     return stringParsing.aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cconvertCamelCaseStringToArray, function (inputData, inputMetaData) {
-    return stringParsing.convertCamelCaseStringToArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccountCamelCaseWords, function (inputData, inputMetaData) {
     return stringParsing.countCamelCaseWords(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainAcronym, function (inputData, inputMetaData) {
@@ -102,10 +100,6 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.determineWordDelimiter(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetWordCountInString, function (inputData, inputMetaData) {
     return stringParsing.getWordCountInString(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cgetWordsArrayFromString, function (inputData, inputMetaData) {
-    return stringParsing.getWordsArrayFromString(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.crecombineStringArrayWithSpaces, function (inputData, inputMetaData) {
-    return stringParsing.recombineStringArrayWithSpaces(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainUpperCaseCharacter, function (inputData, inputMetaData) {
     return stringParsing.doesStringContainUpperCaseCharacter(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdoesStringContainLowerCaseCharacter, function (inputData, inputMetaData) {
@@ -118,28 +112,14 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.isStringList(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisStringCamelCase, function (inputData, inputMetaData) {
     return stringParsing.isStringCamelCase(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cconvertArrayToCamelCaseString, function (inputData, inputMetaData) {
-    return stringParsing.convertArrayToCamelCaseString(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cmapWordToCamelCaseWord, function (inputData, inputMetaData) {
     return stringParsing.mapWordToCamelCaseWord(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.csimplifyAndConsolidateString, function (inputData, inputMetaData) {
     return stringParsing.simplifyAndConsolidateString(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccompareSimplifiedAndConsolidatedStrings, function (inputData, inputMetaData) {
     return stringParsing.compareSimplifiedAndConsolidatedStrings(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainLowerCaseConsolidatedString, function (inputData, inputMetaData) {
-    return stringParsing.doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainCharacter, function (inputData, inputMetaData) {
-    return stringParsing.doesArrayContainCharacter(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cremoveCharacterFromArray, function (inputData, inputMetaData) {
-    return stringParsing.removeCharacterFromArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cascertainMatchingFilenames, function (inputData, inputMetaData) {
     return stringParsing.ascertainMatchingFilenames(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cascertainMatchingElements, function (inputData, inputMetaData) {
-    return stringParsing.acertainMatchingElements(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainFilename, function (inputData, inputMetaData) {
-    return stringParsing.doesArrayContainFilename(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cgetLengthOfLongestStringInArray, function (inputData, inputMetaData) {
-    return stringParsing.getLengthOfLongestStringInArray(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValidation, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValidation(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cdetermineConstantsContextQualifiedPrefix, function (inputData, inputMetaData) {
@@ -166,10 +146,6 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.convertConstantTypeToConstantPrefix(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cconstantsFulfillmentSystem, function (inputData, inputMetaData) {
     return stringParsing.constantsFulfillmentSystem(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.csearchForPatternsInStringArray, function (inputData, inputMetaData) {
-    return stringParsing.searchForPatternsInStringArray(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cvalidatePatternsThatNeedImplementation, function (inputData, inputMetaData) {
-    return stringParsing.validatePatternsThatNeedImplementation(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cvalidateConstantsDataValues, function (inputData, inputMetaData) {
     return stringParsing.validateConstantsDataValues(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisValidCommandNameString, function (inputData, inputMetaData) {
@@ -178,16 +154,8 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.isConstantValid(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccountDuplicateCommandAliases, function (inputData, inputMetaData) {
     return stringParsing.countDuplicateCommandAliases(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cgenerateCommandAliases, function (inputData, inputMetaData) {
-    return stringParsing.generateCommandAliases(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.csolveLehmerCode, function (inputData, inputMetaData) {
-    return stringParsing.solveLehmerCode(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.crecursiveArrayExpansion, function (inputData, inputMetaData) {
-    return stringParsing.recursiveArrayExpansion(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetLehmerCodeValue, function (inputData, inputMetaData) {
     return stringParsing.getLehmerCodeValue(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.carraysAreEqual, function (inputData, inputMetaData) {
-    return stringParsing.arraysAreEqual(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryFromDataContextName, function (inputData, inputMetaData) {
     return stringParsing.getDataCatagoryFromDataContextName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetDataCatagoryDetailNameFromDataContextName, function (inputData, inputMetaData) {
@@ -206,24 +174,6 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.loadDataFile(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.csupportedFileFormatsAre, function (inputData, inputMetaData) {
     return stringParsing.supportedFileFormatsAre(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cgetStoredData, function (inputData, inputMetaData) {
-    return stringParsing.getStoredData(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cstoreData, function (inputData, inputMetaData) {
-    return stringParsing.storeData(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cisObjectEmpty, function (inputData, inputMetaData) {
-    return stringParsing.isObjectEmpty(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cisArrayEmpty, function (inputData, inputMetaData) {
-    return stringParsing.isArrayEmpty(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cisArray, function (inputData, inputMetaData) {
-    return stringParsing.isArray(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cisNonZeroLengthArray, function (inputData, inputMetaData) {
-    return stringParsing.isNonZeroLengthArray(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.carrayDeepClone, function (inputData, inputMetaData) {
-    return stringParsing.arrayDeepClone(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cisObject, function (inputData, inputMetaData) {
-    return stringParsing.isObject(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.cisArrayOrObject, function (inputData, inputMetaData) {
-    return stringParsing.isArrayOrObject(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetAttributeName, function (inputData, inputMetaData) {
     return stringParsing.getAttributeName(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgetAttributeValue, function (inputData, inputMetaData) {
@@ -232,12 +182,64 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringParsing.isOdd(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cisEven, function (inputData, inputMetaData) {
     return stringParsing.isEven(inputData, inputMetaData);
-  }), _defineProperty(_D$s$cBusinessRules, s.creplaceCharacterAtIndex, function (inputData, inputMetaData) {
-    return stringParsing.replaceCharacterAtIndex(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.ccleanCommandInput, function (inputData, inputMetaData) {
     return stringParsing.cleanCommandInput(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.creplaceCharacterWithCharacter, function (inputData, inputMetaData) {
+    return arrayParsing.replaceCharacterWithCharacter(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconvertCamelCaseStringToArray, function (inputData, inputMetaData) {
+    return arrayParsing.convertCamelCaseStringToArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetWordsArrayFromString, function (inputData, inputMetaData) {
+    return arrayParsing.getWordsArrayFromString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.crecombineStringArrayWithSpaces, function (inputData, inputMetaData) {
+    return arrayParsing.recombineStringArrayWithSpaces(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cconvertArrayToCamelCaseString, function (inputData, inputMetaData) {
+    return arrayParsing.convertArrayToCamelCaseString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainLowerCaseConsolidatedString, function (inputData, inputMetaData) {
+    return arrayParsing.doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainCharacter, function (inputData, inputMetaData) {
+    return arrayParsing.doesArrayContainCharacter(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cremoveCharacterFromArray, function (inputData, inputMetaData) {
+    return arrayParsing.removeCharacterFromArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cascertainMatchingElements, function (inputData, inputMetaData) {
+    return arrayParsing.acertainMatchingElements(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cdoesArrayContainFilename, function (inputData, inputMetaData) {
+    return arrayParsing.doesArrayContainFilename(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetLengthOfLongestStringInArray, function (inputData, inputMetaData) {
+    return arrayParsing.getLengthOfLongestStringInArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.csearchForPatternsInStringArray, function (inputData, inputMetaData) {
+    return arrayParsing.searchForPatternsInStringArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cvalidatePatternsThatNeedImplementation, function (inputData, inputMetaData) {
+    return arrayParsing.validatePatternsThatNeedImplementation(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.csolveLehmerCode, function (inputData, inputMetaData) {
+    return arrayParsing.solveLehmerCode(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.crecursiveArrayExpansion, function (inputData, inputMetaData) {
+    return arrayParsing.recursiveArrayExpansion(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.carraysAreEqual, function (inputData, inputMetaData) {
+    return arrayParsing.arraysAreEqual(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cstoreData, function (inputData, inputMetaData) {
+    return arrayParsing.storeData(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgetStoredData, function (inputData, inputMetaData) {
+    return arrayParsing.getStoredData(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisObjectEmpty, function (inputData, inputMetaData) {
+    return arrayParsing.isObjectEmpty(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisArrayEmpty, function (inputData, inputMetaData) {
+    return arrayParsing.isArrayEmpty(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisObject, function (inputData, inputMetaData) {
+    return arrayParsing.isObject(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisArray, function (inputData, inputMetaData) {
+    return arrayParsing.isArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisArrayOrObject, function (inputData, inputMetaData) {
+    return arrayParsing.isArrayOrObject(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cisNonZeroLengthArray, function (inputData, inputMetaData) {
+    return arrayParsing.isNonZeroLengthArray(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.carrayDeepClone, function (inputData, inputMetaData) {
+    return arrayParsing.arrayDeepClone(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.creplaceCharacterAtIndex, function (inputData, inputMetaData) {
+    return arrayParsing.replaceCharacterAtIndex(inputData, inputMetaData);
+  }), _defineProperty(_D$s$cBusinessRules, s.cgenerateCommandAliases, function (inputData, inputMetaData) {
+    return arrayParsing.generateCommandAliases(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.caggregateCommandArguments, function (inputData, inputMetaData) {
-    return stringParsing.aggregateCommandArguments(inputData, inputMetaData);
+    return arrayParsing.aggregateCommandArguments(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength1, function (inputData, inputMetaData) {
     return stringGeneration.generateRandomMixedCaseTextByLength1(inputData, inputMetaData);
   }), _defineProperty(_D$s$cBusinessRules, s.cgenerateRandomMixedCaseTextByLength2, function (inputData, inputMetaData) {
