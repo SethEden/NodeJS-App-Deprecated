@@ -1068,4 +1068,5 @@ export const chine = b.chi + b.cne; // hine
 export const comp = b.com + b.cp; // omp
 export const cclr = b.ccl + b.cr; // clr
 export const cded = b.cde + b.cd; // ded
-export const cbing = b.cb + p.cing; // bing
+export const cbing = b.cb + cing; // bing
+export const ceth = b.cet + b.ch; // eth
