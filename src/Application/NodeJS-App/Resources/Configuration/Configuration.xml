@@ -4103,7 +4103,7 @@
           <ConfigurationElement Name="nominal.deployApplication@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="nominal.deployApplication@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
 
-          <ConfigurationElement Name="nominal.deployMetaData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="nominal.deployMetaData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="nominal.deployMetaData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.deployMetaData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="nominal.deployMetaData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>

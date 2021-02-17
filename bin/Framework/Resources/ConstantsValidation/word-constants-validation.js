@@ -407,6 +407,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cLet,
   Expected: 'Let'
 }, {
+  Name: 'clets',
+  Actual: w.clets,
+  Expected: 'lets'
+}, {
+  Name: 'cLets',
+  Actual: w.cLets,
+  Expected: 'Lets'
+}, {
   Name: 'cfig',
   Actual: w.cfig,
   Expected: 'fig'
@@ -547,13 +555,77 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cAdditionals,
   Expected: 'Additionals'
 }, {
+  Name: 'cpen',
+  Actual: w.cpen,
+  Expected: 'pen'
+}, {
+  Name: 'cPen',
+  Actual: w.cPen,
+  Expected: 'Pen'
+}, {
+  Name: 'cpens',
+  Actual: w.cpens,
+  Expected: 'pens'
+}, {
+  Name: 'cPens',
+  Actual: w.cPens,
+  Expected: 'Pens'
+}, {
+  Name: 'cclose',
+  Actual: w.cclose,
+  Expected: 'close'
+}, {
   Name: 'cClose',
   Actual: w.cClose,
   Expected: 'Close'
 }, {
+  Name: 'cclosed',
+  Actual: w.cclosed,
+  Expected: 'closed'
+}, {
+  Name: 'cClosed',
+  Actual: w.cClosed,
+  Expected: 'Closed'
+}, {
+  Name: 'cclosing',
+  Actual: w.cclosing,
+  Expected: 'closing'
+}, {
+  Name: 'cClosing',
+  Actual: w.cClosing,
+  Expected: 'Closing'
+}, {
+  Name: 'copen',
+  Actual: w.copen,
+  Expected: 'open'
+}, {
   Name: 'cOpen',
   Actual: w.cOpen,
   Expected: 'Open'
+}, {
+  Name: 'copens',
+  Actual: w.copens,
+  Expected: 'opens'
+}, {
+  Name: 'cOpens',
+  Actual: w.cOpens,
+  Expected: 'Opens'
+}, {
+  Name: 'copened',
+  Actual: w.copened,
+  Expected: 'opened'
+}, {
+  Name: 'cOpened',
+  Actual: w.cOpened,
+  Expected: 'Opened'
+}, {
+  Name: 'copening',
+  Actual: w.copening,
+  Expected: 'opening'
+}, {
+  Name: 'cOpening',
+  Actual: w.cOpening,
+  Expected: 'Opening'
 }, {
   Name: 'cUpdate',
   Actual: w.cUpdate,
@@ -958,6 +1030,38 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cClick,
   Expected: 'Click'
 }, {
+  Name: 'cpress',
+  Actual: w.cpress,
+  Expected: 'press'
+}, {
+  Name: 'cPress',
+  Actual: w.cPress,
+  Expected: 'Press'
+}, {
+  Name: 'cpresses',
+  Actual: w.cpresses,
+  Expected: 'presses'
+}, {
+  Name: 'cPresses',
+  Actual: w.cPresses,
+  Expected: 'Presses'
+}, {
+  Name: 'cpressed',
+  Actual: w.cpressed,
+  Expected: 'pressed'
+}, {
+  Name: 'cPressed',
+  Actual: w.cPressed,
+  Expected: 'Pressed'
+}, {
+  Name: 'cpressing',
+  Actual: w.cpressing,
+  Expected: 'pressing'
+}, {
+  Name: 'cPressing',
+  Actual: w.cPressing,
+  Expected: 'Pressing'
+}, {
   Name: 'cpressKey',
   Actual: w.cpressKey,
   Expected: 'pressKey'
@@ -1186,6 +1290,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDATA,
   Expected: 'DATA'
 }, {
+  Name: 'cresult',
+  Actual: w.cresult,
+  Expected: 'result'
+}, {
+  Name: 'cResult',
+  Actual: w.cResult,
+  Expected: 'Result'
+}, {
   Name: 'cresults',
   Actual: w.cresults,
   Expected: 'results'
@@ -1193,6 +1305,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cResults',
   Actual: w.cResults,
   Expected: 'Results'
+}, {
+  Name: 'cresulted',
+  Actual: w.cresulted,
+  Expected: 'resulted'
+}, {
+  Name: 'cResulted',
+  Actual: w.cResulted,
+  Expected: 'Resulted'
+}, {
+  Name: 'cresulting',
+  Actual: w.cresulting,
+  Expected: 'resulting'
+}, {
+  Name: 'cResulting',
+  Actual: w.cResulting,
+  Expected: 'Resulting'
 }, {
   Name: 'cwork',
   Actual: w.cwork,
@@ -1409,6 +1537,34 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cRunTime',
   Actual: w.cRunTime,
   Expected: 'RunTime'
+}, {
+  Name: 'cstamp',
+  Actual: w.cstamp,
+  Expected: 'stamp'
+}, {
+  Name: 'cstamps',
+  Actual: w.cstamps,
+  Expected: 'stamps'
+}, {
+  Name: 'cStamps',
+  Actual: w.cStamps,
+  Expected: 'Stamps'
+}, {
+  Name: 'cstamped',
+  Actual: w.cstamped,
+  Expected: 'stamped'
+}, {
+  Name: 'cStamped',
+  Actual: w.cStamped,
+  Expected: 'Stamped'
+}, {
+  Name: 'cstamping',
+  Actual: w.cstamping,
+  Expected: 'stamping'
+}, {
+  Name: 'cStamping',
+  Actual: w.cStamping,
+  Expected: 'Stamping'
 }, {
   Name: 'cmaster',
   Actual: w.cmaster,
@@ -2688,6 +2844,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cINPUT,
   Expected: 'INPUT'
 }, {
+  Name: 'cinputs',
+  Actual: w.cinputs,
+  Expected: 'inputs'
+}, {
+  Name: 'cInputs',
+  Actual: w.cInputs,
+  Expected: 'Inputs'
+}, {
+  Name: 'cinputting',
+  Actual: w.cinputting,
+  Expected: 'inputting'
+}, {
+  Name: 'cInputting',
+  Actual: w.cInputting,
+  Expected: 'Inputting'
+}, {
   Name: 'cdescription',
   Actual: w.cdescription,
   Expected: 'description'
@@ -2763,6 +2935,70 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cPageName',
   Actual: w.cPageName,
   Expected: 'PageName'
+}, {
+  Name: 'cbed',
+  Actual: w.cbed,
+  Expected: 'bed'
+}, {
+  Name: 'cBed',
+  Actual: w.cBed,
+  Expected: 'Bed'
+}, {
+  Name: 'cbeds',
+  Actual: w.cbeds,
+  Expected: 'beds'
+}, {
+  Name: 'cBeds',
+  Actual: w.cBeds,
+  Expected: 'Beds'
+}, {
+  Name: 'cbedded',
+  Actual: w.cbedded,
+  Expected: 'bedded'
+}, {
+  Name: 'cBedded',
+  Actual: w.cBedded,
+  Expected: 'Bedded'
+}, {
+  Name: 'cbedding',
+  Actual: w.cbedding,
+  Expected: 'bedding'
+}, {
+  Name: 'cBedding',
+  Actual: w.cBedding,
+  Expected: 'Bedding'
+}, {
+  Name: 'cweb',
+  Actual: w.cweb,
+  Expected: 'web'
+}, {
+  Name: 'cWeb',
+  Actual: w.cWeb,
+  Expected: 'Web'
+}, {
+  Name: 'cwebs',
+  Actual: w.cwebs,
+  Expected: 'webs'
+}, {
+  Name: 'cWebs',
+  Actual: w.cWebs,
+  Expected: 'Webs'
+}, {
+  Name: 'cwebbed',
+  Actual: w.cwebbed,
+  Expected: 'webbed'
+}, {
+  Name: 'cWebbed',
+  Actual: w.cWebbed,
+  Expected: 'Webbed'
+}, {
+  Name: 'cwebbing',
+  Actual: w.cwebbing,
+  Expected: 'webbing'
+}, {
+  Name: 'cWebbing',
+  Actual: w.cWebbing,
+  Expected: 'Webbing'
 }, {
   Name: 'cWebkey',
   Actual: w.cWebkey,
@@ -3472,9 +3708,29 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cConsolidate,
   Expected: 'Consolidate'
 }, {
+  Name: 'cconsolidated',
+  Actual: w.cconsolidated,
+  Expected: 'consolidated'
+}, {
   Name: 'cConsolidated',
   Actual: w.cConsolidated,
   Expected: 'Consolidated'
+}, {
+  Name: 'cconsolidates',
+  Actual: w.cconsolidates,
+  Expected: 'consolidates'
+}, {
+  Name: 'cConsolidates',
+  Actual: w.cConsolidates,
+  Expected: 'Consolidates'
+}, {
+  Name: 'cconsolidating',
+  Actual: w.cconsolidating,
+  Expected: 'consolidating'
+}, {
+  Name: 'cConsolidating',
+  Actual: w.cConsolidating,
+  Expected: 'Consolidating'
 }, {
   Name: 'care',
   Actual: w.care,
@@ -3483,6 +3739,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cAre',
   Actual: w.cAre,
   Expected: 'Are'
+}, {
+  Name: 'cARE',
+  Actual: w.cARE,
+  Expected: 'ARE'
 }, {
   Name: 'ccompare',
   Actual: w.ccompare,
@@ -3711,6 +3971,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cRELEASE',
   Actual: w.cRELEASE,
   Expected: 'RELEASE'
+}, {
+  Name: 'creleases',
+  Actual: w.creleases,
+  Expected: 'releases'
+}, {
+  Name: 'cReleases',
+  Actual: w.cReleases,
+  Expected: 'Releases'
+}, {
+  Name: 'creleased',
+  Actual: w.creleased,
+  Expected: 'released'
+}, {
+  Name: 'cReleased',
+  Actual: w.cReleased,
+  Expected: 'Released'
+}, {
+  Name: 'creleasing',
+  Actual: w.creleasing,
+  Expected: 'releasing'
+}, {
+  Name: 'cReleasing',
+  Actual: w.cReleasing,
+  Expected: 'Releasing'
 }, {
   Name: 'croot',
   Actual: w.croot,
@@ -4208,6 +4492,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cDelimiter,
   Expected: 'Delimiter'
 }, {
+  Name: 'cdelimiters',
+  Actual: w.cdelimiters,
+  Expected: 'delimiters'
+}, {
+  Name: 'cDelimiters',
+  Actual: w.cDelimiters,
+  Expected: 'Delimiters'
+}, {
   Name: 'cdelimited',
   Actual: w.cdelimited,
   Expected: 'delimited'
@@ -4215,6 +4507,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cDelimited',
   Actual: w.cDelimited,
   Expected: 'Delimited'
+}, {
+  Name: 'cdelimiting',
+  Actual: w.cdelimiting,
+  Expected: 'delimiting'
+}, {
+  Name: 'cDelimiting',
+  Actual: w.cDelimiting,
+  Expected: 'Delimiting'
 }, {
   Name: 'chelp',
   Actual: w.chelp,
@@ -4503,6 +4803,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cFailed',
   Actual: w.cFailed,
   Expected: 'Failed'
+}, {
+  Name: 'cFAILED',
+  Actual: w.cFAILED,
+  Expected: 'FAILED'
 }, {
   Name: 'cfailure',
   Actual: w.cfailure,
@@ -5184,6 +5488,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: w.cCombine,
   Expected: 'Combine'
 }, {
+  Name: 'ccombines',
+  Actual: w.ccombines,
+  Expected: 'combines'
+}, {
+  Name: 'cCombines',
+  Actual: w.cCombines,
+  Expected: 'Combines'
+}, {
+  Name: 'ccombined',
+  Actual: w.ccombined,
+  Expected: 'combined'
+}, {
+  Name: 'cCombined',
+  Actual: w.cCombined,
+  Expected: 'Combined'
+}, {
+  Name: 'ccombining',
+  Actual: w.ccombining,
+  Expected: 'combining'
+}, {
+  Name: 'cCombining',
+  Actual: w.cCombining,
+  Expected: 'Combining'
+}, {
   Name: 'crecombine',
   Actual: w.crecombine,
   Expected: 'recombine'
@@ -5191,6 +5519,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cRecombine',
   Actual: w.cRecombine,
   Expected: 'Recombine'
+}, {
+  Name: 'ccombination',
+  Actual: w.ccombination,
+  Expected: 'combination'
+}, {
+  Name: 'cCombination',
+  Actual: w.cCombination,
+  Expected: 'Combination'
+}, {
+  Name: 'ccombinations',
+  Actual: w.ccombinations,
+  Expected: 'combinations'
+}, {
+  Name: 'cCombinations',
+  Actual: w.cCombinations,
+  Expected: 'Combinations'
 }, {
   Name: 'crecognizer',
   Actual: w.crecognizer,
@@ -5827,6 +6171,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cdelta',
   Actual: w.cdelta,
   Expected: 'delta'
+}, {
+  Name: 'cDelta',
+  Actual: w.cDelta,
+  Expected: 'Delta'
 }, {
   Name: 'cbeing',
   Actual: w.cbeing,
@@ -6847,5 +7195,3129 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cReferencing',
   Actual: w.cReferencing,
   Expected: 'Referencing'
+}, {
+  Name: 'cwrite',
+  Actual: w.cwrite,
+  Expected: 'write'
+}, {
+  Name: 'cWrite',
+  Actual: w.cWrite,
+  Expected: 'Write'
+}, {
+  Name: 'cwrites',
+  Actual: w.cwrites,
+  Expected: 'writes'
+}, {
+  Name: 'cWrites',
+  Actual: w.cWrites,
+  Expected: 'Writes'
+}, {
+  Name: 'cwritten',
+  Actual: w.cwritten,
+  Expected: 'written'
+}, {
+  Name: 'cWritten',
+  Actual: w.cWritten,
+  Expected: 'Written'
+}, {
+  Name: 'cwriting',
+  Actual: w.cwriting,
+  Expected: 'writing'
+}, {
+  Name: 'cWriting',
+  Actual: w.cWriting,
+  Expected: 'Writing'
+}, {
+  Name: 'cscan',
+  Actual: w.cscan,
+  Expected: 'scan'
+}, {
+  Name: 'cScan',
+  Actual: w.cScan,
+  Expected: 'Scan'
+}, {
+  Name: 'cscans',
+  Actual: w.cscans,
+  Expected: 'scans'
+}, {
+  Name: 'cScans',
+  Actual: w.cScans,
+  Expected: 'Scans'
+}, {
+  Name: 'cscanned',
+  Actual: w.cscanned,
+  Expected: 'scanned'
+}, {
+  Name: 'cScanned',
+  Actual: w.cScanned,
+  Expected: 'Scanned'
+}, {
+  Name: 'cscanning',
+  Actual: w.cscanning,
+  Expected: 'scanning'
+}, {
+  Name: 'cScanning',
+  Actual: w.cScanning,
+  Expected: 'Scanning'
+}, {
+  Name: 'cdirect',
+  Actual: w.cdirect,
+  Expected: 'direct'
+}, {
+  Name: 'cDirect',
+  Actual: w.cDirect,
+  Expected: 'Direct'
+}, {
+  Name: 'cdirects',
+  Actual: w.cdirects,
+  Expected: 'directs'
+}, {
+  Name: 'cDirects',
+  Actual: w.cDirects,
+  Expected: 'Directs'
+}, {
+  Name: 'cdirected',
+  Actual: w.cdirected,
+  Expected: 'directed'
+}, {
+  Name: 'cDirected',
+  Actual: w.cDirected,
+  Expected: 'Directed'
+}, {
+  Name: 'cdirector',
+  Actual: w.cdirector,
+  Expected: 'director'
+}, {
+  Name: 'cDirector',
+  Actual: w.cDirector,
+  Expected: 'Director'
+}, {
+  Name: 'cdirecting',
+  Actual: w.cdirecting,
+  Expected: 'directing'
+}, {
+  Name: 'cDirecting',
+  Actual: w.cDirecting,
+  Expected: 'Directing'
+}, {
+  Name: 'cdirectors',
+  Actual: w.cdirectors,
+  Expected: 'directors'
+}, {
+  Name: 'cDirectors',
+  Actual: w.cDirectors,
+  Expected: 'Directors'
+}, {
+  Name: 'cdirectory',
+  Actual: w.cdirectory,
+  Expected: 'directory'
+}, {
+  Name: 'cDirectory',
+  Actual: w.cDirectory,
+  Expected: 'Directory'
+}, {
+  Name: 'cdirectories',
+  Actual: w.cdirectories,
+  Expected: 'directories'
+}, {
+  Name: 'cDirectories',
+  Actual: w.cDirectories,
+  Expected: 'Directories'
+}, {
+  Name: 'cchive',
+  Actual: w.cchive,
+  Expected: 'chive'
+}, {
+  Name: 'cChive',
+  Actual: w.cChive,
+  Expected: 'Chive'
+}, {
+  Name: 'cchives',
+  Actual: w.cchives,
+  Expected: 'chives'
+}, {
+  Name: 'cChives',
+  Actual: w.cChives,
+  Expected: 'Chives'
+}, {
+  Name: 'carchive',
+  Actual: w.carchive,
+  Expected: 'archive'
+}, {
+  Name: 'cArchive',
+  Actual: w.cArchive,
+  Expected: 'Archive'
+}, {
+  Name: 'carchived',
+  Actual: w.carchived,
+  Expected: 'archived'
+}, {
+  Name: 'cArchived',
+  Actual: w.cArchived,
+  Expected: 'Archived'
+}, {
+  Name: 'carchives',
+  Actual: w.carchives,
+  Expected: 'archives'
+}, {
+  Name: 'cArchives',
+  Actual: w.cArchives,
+  Expected: 'Archives'
+}, {
+  Name: 'carchiving',
+  Actual: w.carchiving,
+  Expected: 'archiving'
+}, {
+  Name: 'cArchiving',
+  Actual: w.cArchiving,
+  Expected: 'Archiving'
+}, {
+  Name: 'ccop',
+  Actual: w.ccop,
+  Expected: 'cop'
+}, {
+  Name: 'cCop',
+  Actual: w.cCop,
+  Expected: 'Cop'
+}, {
+  Name: 'ccops',
+  Actual: w.ccops,
+  Expected: 'cops'
+}, {
+  Name: 'cCops',
+  Actual: w.cCops,
+  Expected: 'Cops'
+}, {
+  Name: 'ccopy',
+  Actual: w.ccopy,
+  Expected: 'copy'
+}, {
+  Name: 'cCopy',
+  Actual: w.cCopy,
+  Expected: 'Copy'
+}, {
+  Name: 'ccopies',
+  Actual: w.ccopies,
+  Expected: 'copies'
+}, {
+  Name: 'cCopies',
+  Actual: w.cCopies,
+  Expected: 'Copies'
+}, {
+  Name: 'ccopied',
+  Actual: w.ccopied,
+  Expected: 'copied'
+}, {
+  Name: 'cCopied',
+  Actual: w.cCopied,
+  Expected: 'Copied'
+}, {
+  Name: 'ccopying',
+  Actual: w.ccopying,
+  Expected: 'copying'
+}, {
+  Name: 'cCopying',
+  Actual: w.cCopying,
+  Expected: 'Copying'
+}, {
+  Name: 'csuccess',
+  Actual: w.csuccess,
+  Expected: 'success'
+}, {
+  Name: 'cSuccess',
+  Actual: w.cSuccess,
+  Expected: 'Success'
+}, {
+  Name: 'csuccesses',
+  Actual: w.csuccesses,
+  Expected: 'successes'
+}, {
+  Name: 'cSuccesses',
+  Actual: w.cSuccesses,
+  Expected: 'Successes'
+}, {
+  Name: 'csuccessful',
+  Actual: w.csuccessful,
+  Expected: 'successful'
+}, {
+  Name: 'cSuccessful',
+  Actual: w.cSuccessful,
+  Expected: 'Successful'
+}, {
+  Name: 'cpack',
+  Actual: w.cpack,
+  Expected: 'pack'
+}, {
+  Name: 'cPack',
+  Actual: w.cPack,
+  Expected: 'Pack'
+}, {
+  Name: 'cpacks',
+  Actual: w.cpacks,
+  Expected: 'packs'
+}, {
+  Name: 'cPacks',
+  Actual: w.cPacks,
+  Expected: 'Packs'
+}, {
+  Name: 'cpacked',
+  Actual: w.cpacked,
+  Expected: 'packed'
+}, {
+  Name: 'cPacked',
+  Actual: w.cPacked,
+  Expected: 'Packed'
+}, {
+  Name: 'cpacking',
+  Actual: w.cpacking,
+  Expected: 'packing'
+}, {
+  Name: 'cPacking',
+  Actual: w.cPacking,
+  Expected: 'Packing'
+}, {
+  Name: 'cpackage',
+  Actual: w.cpackage,
+  Expected: 'package'
+}, {
+  Name: 'cPackage',
+  Actual: w.cPackage,
+  Expected: 'Package'
+}, {
+  Name: 'cpackages',
+  Actual: w.cpackages,
+  Expected: 'packages'
+}, {
+  Name: 'cPackages',
+  Actual: w.cPackages,
+  Expected: 'Packages'
+}, {
+  Name: 'cpackaged',
+  Actual: w.cpackaged,
+  Expected: 'packaged'
+}, {
+  Name: 'cPackaged',
+  Actual: w.cPackaged,
+  Expected: 'Packaged'
+}, {
+  Name: 'cpackaging',
+  Actual: w.cpackaging,
+  Expected: 'packaging'
+}, {
+  Name: 'cPackaging',
+  Actual: w.cPackaging,
+  Expected: 'Packaging'
+}, {
+  Name: 'canalyze',
+  Actual: w.canalyze,
+  Expected: 'analyze'
+}, {
+  Name: 'cAnalyze',
+  Actual: w.cAnalyze,
+  Expected: 'Analyze'
+}, {
+  Name: 'canalyzes',
+  Actual: w.canalyzes,
+  Expected: 'analyzes'
+}, {
+  Name: 'cAnalyzes',
+  Actual: w.cAnalyzes,
+  Expected: 'Analyzes'
+}, {
+  Name: 'canalyzed',
+  Actual: w.canalyzed,
+  Expected: 'analyzed'
+}, {
+  Name: 'cAnalyzed',
+  Actual: w.cAnalyzed,
+  Expected: 'Analyzed'
+}, {
+  Name: 'canalyzing',
+  Actual: w.canalyzing,
+  Expected: 'analyzing'
+}, {
+  Name: 'cAnalyzing',
+  Actual: w.cAnalyzing,
+  Expected: 'Analyzing'
+}, {
+  Name: 'csame',
+  Actual: w.csame,
+  Expected: 'same'
+}, {
+  Name: 'cSame',
+  Actual: w.cSame,
+  Expected: 'Same'
+}, {
+  Name: 'cthere',
+  Actual: w.cthere,
+  Expected: 'there'
+}, {
+  Name: 'cThere',
+  Actual: w.cThere,
+  Expected: 'There'
+}, {
+  Name: 'cbracket',
+  Actual: w.cbracket,
+  Expected: 'bracket'
+}, {
+  Name: 'cBracket',
+  Actual: w.cBracket,
+  Expected: 'Bracket'
+}, {
+  Name: 'cbrackets',
+  Actual: w.cbrackets,
+  Expected: 'brackets'
+}, {
+  Name: 'cBrackets',
+  Actual: w.cBrackets,
+  Expected: 'Brackets'
+}, {
+  Name: 'cbracketed',
+  Actual: w.cbracketed,
+  Expected: 'bracketed'
+}, {
+  Name: 'cBracketed',
+  Actual: w.cBracketed,
+  Expected: 'Bracketed'
+}, {
+  Name: 'cbracketing',
+  Actual: w.cbracketing,
+  Expected: 'bracketing'
+}, {
+  Name: 'cBracketing',
+  Actual: w.cBracketing,
+  Expected: 'Bracketing'
+}, {
+  Name: 'cregular',
+  Actual: w.cregular,
+  Expected: 'regular'
+}, {
+  Name: 'cRegular',
+  Actual: w.cRegular,
+  Expected: 'Regular'
+}, {
+  Name: 'cexpression',
+  Actual: w.cexpression,
+  Expected: 'expression'
+}, {
+  Name: 'cExpression',
+  Actual: w.cExpression,
+  Expected: 'Expression'
+}, {
+  Name: 'cexpressions',
+  Actual: w.cexpressions,
+  Expected: 'expressions'
+}, {
+  Name: 'cExpressions',
+  Actual: w.cExpressions,
+  Expected: 'Expressions'
+}, {
+  Name: 'clexical',
+  Actual: w.clexical,
+  Expected: 'lexical'
+}, {
+  Name: 'cLexical',
+  Actual: w.cLexical,
+  Expected: 'Lexical'
+}, {
+  Name: 'clexicon',
+  Actual: w.clexicon,
+  Expected: 'lexicon'
+}, {
+  Name: 'cLexicon',
+  Actual: w.cLexicon,
+  Expected: 'Lexicon'
+}, {
+  Name: 'clexicons',
+  Actual: w.clexicons,
+  Expected: 'lexicons'
+}, {
+  Name: 'cLexicons',
+  Actual: w.cLexicons,
+  Expected: 'Lexicons'
+}, {
+  Name: 'cjust',
+  Actual: w.cjust,
+  Expected: 'just'
+}, {
+  Name: 'cJust',
+  Actual: w.cJust,
+  Expected: 'Just'
+}, {
+  Name: 'cjustice',
+  Actual: w.cjustice,
+  Expected: 'justice'
+}, {
+  Name: 'cJustice',
+  Actual: w.cJustice,
+  Expected: 'Justice'
+}, {
+  Name: 'cjustified',
+  Actual: w.cjustified,
+  Expected: 'justified'
+}, {
+  Name: 'cJustified',
+  Actual: w.cJustified,
+  Expected: 'Justified'
+}, {
+  Name: 'cadjust',
+  Actual: w.cadjust,
+  Expected: 'adjust'
+}, {
+  Name: 'cAdjust',
+  Actual: w.cAdjust,
+  Expected: 'Adjust'
+}, {
+  Name: 'cadjusts',
+  Actual: w.cadjusts,
+  Expected: 'adjusts'
+}, {
+  Name: 'cAdjusts',
+  Actual: w.cAdjusts,
+  Expected: 'Adjusts'
+}, {
+  Name: 'cadjusted',
+  Actual: w.cadjusted,
+  Expected: 'adjusted'
+}, {
+  Name: 'cAdjusted',
+  Actual: w.cAdjusted,
+  Expected: 'Adjusted'
+}, {
+  Name: 'cadjusting',
+  Actual: w.cadjusting,
+  Expected: 'adjusting'
+}, {
+  Name: 'cAdjusting',
+  Actual: w.cAdjusting,
+  Expected: 'Adjusting'
+}, {
+  Name: 'csleep',
+  Actual: w.csleep,
+  Expected: 'sleep'
+}, {
+  Name: 'cSleep',
+  Actual: w.cSleep,
+  Expected: 'Sleep'
+}, {
+  Name: 'csleeps',
+  Actual: w.csleeps,
+  Expected: 'sleeps'
+}, {
+  Name: 'cSleeps',
+  Actual: w.cSleeps,
+  Expected: 'Sleeps'
+}, {
+  Name: 'csleeped',
+  Actual: w.csleeped,
+  Expected: 'sleeped'
+}, {
+  Name: 'cSleeped',
+  Actual: w.cSleeped,
+  Expected: 'Sleeped'
+}, {
+  Name: 'csleeping',
+  Actual: w.csleeping,
+  Expected: 'sleeping'
+}, {
+  Name: 'cSleeping',
+  Actual: w.cSleeping,
+  Expected: 'Sleeping'
+}, {
+  Name: 'cleaf',
+  Actual: w.cleaf,
+  Expected: 'leaf'
+}, {
+  Name: 'cLeaf',
+  Actual: w.cLeaf,
+  Expected: 'Leaf'
+}, {
+  Name: 'centry',
+  Actual: w.centry,
+  Expected: 'entry'
+}, {
+  Name: 'cEntry',
+  Actual: w.cEntry,
+  Expected: 'Entry'
+}, {
+  Name: 'centries',
+  Actual: w.centries,
+  Expected: 'entries'
+}, {
+  Name: 'cEntries',
+  Actual: w.cEntries,
+  Expected: 'Entries'
+}, {
+  Name: 'centity',
+  Actual: w.centity,
+  Expected: 'entity'
+}, {
+  Name: 'cEntity',
+  Actual: w.cEntity,
+  Expected: 'Entity'
+}, {
+  Name: 'cmay',
+  Actual: w.cmay,
+  Expected: 'may'
+}, {
+  Name: 'cMay',
+  Actual: w.cMay,
+  Expected: 'May'
+}, {
+  Name: 'conly',
+  Actual: w.conly,
+  Expected: 'only'
+}, {
+  Name: 'cOnly',
+  Actual: w.cOnly,
+  Expected: 'Only'
+}, {
+  Name: 'csuch',
+  Actual: w.csuch,
+  Expected: 'such'
+}, {
+  Name: 'cSuch',
+  Actual: w.cSuch,
+  Expected: 'Such'
+}, {
+  Name: 'cgeneration',
+  Actual: w.cgeneration,
+  Expected: 'generation'
+}, {
+  Name: 'cGeneration',
+  Actual: w.cGeneration,
+  Expected: 'Generation'
+}, {
+  Name: 'cDemocratic',
+  Actual: w.cDemocratic,
+  Expected: 'Democratic'
+}, {
+  Name: 'cRepublic',
+  Actual: w.cRepublic,
+  Expected: 'Republic'
+}, {
+  Name: 'cCongo',
+  Actual: w.cCongo,
+  Expected: 'Congo'
+}, {
+  Name: 'cCentral',
+  Actual: w.cCentral,
+  Expected: 'Central'
+}, {
+  Name: 'cAfrican',
+  Actual: w.cAfrican,
+  Expected: 'African'
+}, {
+  Name: 'cPapua',
+  Actual: w.cPapua,
+  Expected: 'Papua'
+}, {
+  Name: 'cGuinea',
+  Actual: w.cGuinea,
+  Expected: 'Guinea'
+}, {
+  Name: 'cTrinidad',
+  Actual: w.cTrinidad,
+  Expected: 'Trinidad'
+}, {
+  Name: 'cTabago',
+  Actual: w.cTabago,
+  Expected: 'Tabago'
+}, {
+  Name: 'cUnited',
+  Actual: w.cUnited,
+  Expected: 'United'
+}, {
+  Name: 'cArab',
+  Actual: w.cArab,
+  Expected: 'Arab'
+}, {
+  Name: 'cEmirates',
+  Actual: w.cEmirates,
+  Expected: 'Emirates'
+}, {
+  Name: 'cStates',
+  Actual: w.cStates,
+  Expected: 'States'
+}, {
+  Name: 'cAmerica',
+  Actual: w.cAmerica,
+  Expected: 'America'
+}, {
+  Name: 'cliver',
+  Actual: w.cliver,
+  Expected: 'liver'
+}, {
+  Name: 'cLiver',
+  Actual: w.cLiver,
+  Expected: 'Liver'
+}, //////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+// Countires
+{
+  Name: 'cAfghanistan',
+  Actual: w.cAfghanistan,
+  Expected: 'Afghanistan'
+}, {
+  Name: 'cAlbania',
+  Actual: w.cAlbania,
+  Expected: 'Albania'
+}, {
+  Name: 'cAlgeria',
+  Actual: w.cAlgeria,
+  Expected: 'Algeria'
+}, {
+  Name: 'cAndorra',
+  Actual: w.cAndorra,
+  Expected: 'Andorra'
+}, {
+  Name: 'cAngola',
+  Actual: w.cAngola,
+  Expected: 'Angola'
+}, {
+  Name: 'cAntigua',
+  Actual: w.cAntigua,
+  Expected: 'Antigua'
+}, {
+  Name: 'cArgentina',
+  Actual: w.cArgentina,
+  Expected: 'Argentina'
+}, {
+  Name: 'cArmenia',
+  Actual: w.cArmenia,
+  Expected: 'Armenia'
+}, {
+  Name: 'cAustralia',
+  Actual: w.cAustralia,
+  Expected: 'Australia'
+}, {
+  Name: 'cAustria',
+  Actual: w.cAustria,
+  Expected: 'Austria'
+}, {
+  Name: 'cAzerbaijan',
+  Actual: w.cAzerbaijan,
+  Expected: 'Azerbaijan'
+}, {
+  Name: 'cBahamas',
+  Actual: w.cBahamas,
+  Expected: 'Bahamas'
+}, {
+  Name: 'cBahrain',
+  Actual: w.cBahrain,
+  Expected: 'Bahrain'
+}, {
+  Name: 'cBangladesh',
+  Actual: w.cBangladesh,
+  Expected: 'Bangladesh'
+}, {
+  Name: 'cBarbados',
+  Actual: w.cBarbados,
+  Expected: 'Barbados'
+}, {
+  Name: 'cBarbuda',
+  Actual: w.cBarbuda,
+  Expected: 'Barbuda'
+}, {
+  Name: 'cBelarus',
+  Actual: w.cBelarus,
+  Expected: 'Belarus'
+}, {
+  Name: 'cBelgium',
+  Actual: w.cBelgium,
+  Expected: 'Belgium'
+}, {
+  Name: 'cBelize',
+  Actual: w.cBelize,
+  Expected: 'Belize'
+}, {
+  Name: 'cBenin',
+  Actual: w.cBenin,
+  Expected: 'Benin'
+}, {
+  Name: 'cBhutan',
+  Actual: w.cBhutan,
+  Expected: 'Bhutan'
+}, {
+  Name: 'cBolivia',
+  Actual: w.cBolivia,
+  Expected: 'Bolivia'
+}, {
+  Name: 'cBosnia',
+  Actual: w.cBosnia,
+  Expected: 'Bosnia'
+}, {
+  Name: 'cBotswana',
+  Actual: w.cBotswana,
+  Expected: 'Botswana'
+}, {
+  Name: 'cBrazil',
+  Actual: w.cBrazil,
+  Expected: 'Brazil'
+}, {
+  Name: 'cBrunei',
+  Actual: w.cBrunei,
+  Expected: 'Brunei'
+}, {
+  Name: 'cBulgaria',
+  Actual: w.cBulgaria,
+  Expected: 'Bulgaria'
+}, {
+  Name: 'cBurkinaFaso',
+  Actual: w.cBurkinaFaso,
+  Expected: 'BurkinaFaso'
+}, {
+  Name: 'cBurundi',
+  Actual: w.cBurundi,
+  Expected: 'Burundi'
+}, {
+  Name: 'cCotedlvoire',
+  Actual: w.cCotedlvoire,
+  Expected: 'Cote dlvoire'
+}, {
+  Name: 'cCaboVerde',
+  Actual: w.cCaboVerde,
+  Expected: 'Cabo Verde'
+}, {
+  Name: 'cCambodia',
+  Actual: w.cCambodia,
+  Expected: 'Cambodia'
+}, {
+  Name: 'cCameroon',
+  Actual: w.cCameroon,
+  Expected: 'Cameroon'
+}, {
+  Name: 'cCanada',
+  Actual: w.cCanada,
+  Expected: 'Canada'
+}, {
+  Name: 'cCentralAfricanRepublic',
+  Actual: w.cCentralAfricanRepublic,
+  Expected: 'Central African Republic'
+}, {
+  Name: 'cChad',
+  Actual: w.cChad,
+  Expected: 'Chad'
+}, {
+  Name: 'cChile',
+  Actual: w.cChile,
+  Expected: 'Chile'
+}, {
+  Name: 'cChina',
+  Actual: w.cChina,
+  Expected: 'China'
+}, {
+  Name: 'cColombia',
+  Actual: w.cColombia,
+  Expected: 'Colombia'
+}, {
+  Name: 'cComoros',
+  Actual: w.cComoros,
+  Expected: 'Comoros'
+}, {
+  Name: 'cCongo',
+  Actual: w.cCongo,
+  Expected: 'Congo'
+}, {
+  Name: 'cCostaRica',
+  Actual: w.cCostaRica,
+  Expected: 'Costa Rica'
+}, {
+  Name: 'cCroatia',
+  Actual: w.cCroatia,
+  Expected: 'Croatia'
+}, {
+  Name: 'cCuba',
+  Actual: w.cCuba,
+  Expected: 'Cuba'
+}, {
+  Name: 'cCyprus',
+  Actual: w.cCyprus,
+  Expected: 'Cyprus'
+}, {
+  Name: 'cCzechia',
+  Actual: w.cCzechia,
+  Expected: 'Czechia'
+}, {
+  Name: 'cDemocraticRepublicOfTheCongo',
+  Actual: w.cDemocraticRepublicOfTheCongo,
+  Expected: 'Democratic Republic of the Congo'
+}, {
+  Name: 'cDenmark',
+  Actual: w.cDenmark,
+  Expected: 'Denmark'
+}, {
+  Name: 'cDjibouti',
+  Actual: w.cDjibouti,
+  Expected: 'Djibouti'
+}, {
+  Name: 'cDominica',
+  Actual: w.cDominica,
+  Expected: 'Dominica'
+}, {
+  Name: 'cDominicanRepublic',
+  Actual: w.cDominicanRepublic,
+  Expected: 'Dominican Republic'
+}, {
+  Name: 'cEcuador',
+  Actual: w.cEcuador,
+  Expected: 'Ecuador'
+}, {
+  Name: 'cEgypt',
+  Actual: w.cEgypt,
+  Expected: 'Egypt'
+}, {
+  Name: 'cElSalvador',
+  Actual: w.cElSalvador,
+  Expected: 'El Salvador'
+}, {
+  Name: 'cEquatorialGuinea',
+  Actual: w.cEquatorialGuinea,
+  Expected: 'Equatorial Guinea'
+}, {
+  Name: 'cEritrea',
+  Actual: w.cEritrea,
+  Expected: 'Eritrea'
+}, {
+  Name: 'cEstonia',
+  Actual: w.cEstonia,
+  Expected: 'Estonia'
+}, {
+  Name: 'cEswatini',
+  Actual: w.cEswatini,
+  Expected: 'Eswatini'
+}, // -- Formerly Swaziland
+{
+  Name: 'cEthiopia',
+  Actual: w.cEthiopia,
+  Expected: 'Ethiopia'
+}, {
+  Name: 'cFiji',
+  Actual: w.cFiji,
+  Expected: 'Fiji'
+}, {
+  Name: 'cFinland',
+  Actual: w.cFinland,
+  Expected: 'Finland'
+}, {
+  Name: 'cFrance',
+  Actual: w.cFrance,
+  Expected: 'France'
+}, {
+  Name: 'cGabon',
+  Actual: w.cGabon,
+  Expected: 'Gabon'
+}, {
+  Name: 'cGambia',
+  Actual: w.cGambia,
+  Expected: 'Gambia'
+}, {
+  Name: 'cGeorgia',
+  Actual: w.cGeorgia,
+  Expected: 'Georgia'
+}, {
+  Name: 'cGermany',
+  Actual: w.cGermany,
+  Expected: 'Germany'
+}, {
+  Name: 'cGhana',
+  Actual: w.cGhana,
+  Expected: 'Ghana'
+}, {
+  Name: 'cGreece',
+  Actual: w.cGreece,
+  Expected: 'Greece'
+}, {
+  Name: 'cGrenada',
+  Actual: w.cGrenada,
+  Expected: 'Grenada'
+}, {
+  Name: 'cGuatemala',
+  Actual: w.cGuatemala,
+  Expected: 'Guatemala'
+}, {
+  Name: 'cGuinea',
+  Actual: w.cGuinea,
+  Expected: 'Guinea'
+}, {
+  Name: 'cGuineaBissau',
+  Actual: w.cGuineaBissau,
+  Expected: 'Guinea-Bissau'
+}, {
+  Name: 'cGuyana',
+  Actual: w.cGuyana,
+  Expected: 'Guyana'
+}, {
+  Name: 'cHaiti',
+  Actual: w.cHaiti,
+  Expected: 'Haiti'
+}, {
+  Name: 'cHerzegovina',
+  Actual: w.cHerzegovina,
+  Expected: 'Herzegovina'
+}, {
+  Name: 'cHolySee',
+  Actual: w.cHolySee,
+  Expected: 'Holy See'
+}, {
+  Name: 'cHonduras',
+  Actual: w.cHonduras,
+  Expected: 'Honduras'
+}, {
+  Name: 'cHungary',
+  Actual: w.cHungary,
+  Expected: 'Hungary'
+}, {
+  Name: 'cIceland',
+  Actual: w.cIceland,
+  Expected: 'Iceland'
+}, {
+  Name: 'cIndia',
+  Actual: w.cIndia,
+  Expected: 'India'
+}, {
+  Name: 'cIndonesia',
+  Actual: w.cIndonesia,
+  Expected: 'Indonesia'
+}, {
+  Name: 'cIran',
+  Actual: w.cIran,
+  Expected: 'Iran'
+}, {
+  Name: 'cIraq',
+  Actual: w.cIraq,
+  Expected: 'Iraq'
+}, {
+  Name: 'cIreland',
+  Actual: w.cIreland,
+  Expected: 'Ireland'
+}, {
+  Name: 'cIsrael',
+  Actual: w.cIsrael,
+  Expected: 'Israel'
+}, {
+  Name: 'cItaly',
+  Actual: w.cItaly,
+  Expected: 'Italy'
+}, {
+  Name: 'cJamaica',
+  Actual: w.cJamaica,
+  Expected: 'Jamaica'
+}, {
+  Name: 'cJapan',
+  Actual: w.cJapan,
+  Expected: 'Japan'
+}, {
+  Name: 'cJordan',
+  Actual: w.cJordan,
+  Expected: 'Jordan'
+}, {
+  Name: 'cKazakhstan',
+  Actual: w.cKazakhstan,
+  Expected: 'Kazakhstan'
+}, {
+  Name: 'cKenya',
+  Actual: w.cKenya,
+  Expected: 'Kenya'
+}, {
+  Name: 'cKiribati',
+  Actual: w.cKiribati,
+  Expected: 'Kiribati'
+}, {
+  Name: 'cKuwait',
+  Actual: w.cKuwait,
+  Expected: 'Kuwait'
+}, {
+  Name: 'cKyrgyzstan',
+  Actual: w.cKyrgyzstan,
+  Expected: 'Kyrgyzstan'
+}, {
+  Name: 'cLaos',
+  Actual: w.cLaos,
+  Expected: 'Laos'
+}, {
+  Name: 'cLatvia',
+  Actual: w.cLatvia,
+  Expected: 'Latvia'
+}, {
+  Name: 'cLebanon',
+  Actual: w.cLebanon,
+  Expected: 'Lebanon'
+}, {
+  Name: 'cLesotho',
+  Actual: w.cLesotho,
+  Expected: 'Lesotho'
+}, {
+  Name: 'cLiberia',
+  Actual: w.cLiberia,
+  Expected: 'Liberia'
+}, {
+  Name: 'cLibya',
+  Actual: w.cLibya,
+  Expected: 'Libya'
+}, {
+  Name: 'cLiechtenstein',
+  Actual: w.cLiechtenstein,
+  Expected: 'Liechtenstein'
+}, {
+  Name: 'cLithuania',
+  Actual: w.cLithuania,
+  Expected: 'Lithuania'
+}, {
+  Name: 'cLuxembourg',
+  Actual: w.cLuxembourg,
+  Expected: 'Luxembourg'
+}, {
+  Name: 'cMadagascar',
+  Actual: w.cMadagascar,
+  Expected: 'Madagascar'
+}, {
+  Name: 'cMalawi',
+  Actual: w.cMalawi,
+  Expected: 'Malawi'
+}, {
+  Name: 'cMalaysia',
+  Actual: w.cMalaysia,
+  Expected: 'Malaysia'
+}, {
+  Name: 'cMaldives',
+  Actual: w.cMaldives,
+  Expected: 'Maldives'
+}, {
+  Name: 'cMali',
+  Actual: w.cMali,
+  Expected: 'Mali'
+}, {
+  Name: 'cMalta',
+  Actual: w.cMalta,
+  Expected: 'Malta'
+}, {
+  Name: 'cMarshallIslands',
+  Actual: w.cMarshallIslands,
+  Expected: 'Marshall Islands'
+}, {
+  Name: 'cMauritania',
+  Actual: w.cMauritania,
+  Expected: 'Mauritania'
+}, {
+  Name: 'cMauritius',
+  Actual: w.cMauritius,
+  Expected: 'Mauritius'
+}, {
+  Name: 'cMexico',
+  Actual: w.cMexico,
+  Expected: 'Mexico'
+}, {
+  Name: 'cMicronesia',
+  Actual: w.cMicronesia,
+  Expected: 'Micronesia'
+}, {
+  Name: 'cMoldova',
+  Actual: w.cMoldova,
+  Expected: 'Moldova'
+}, {
+  Name: 'cMonaco',
+  Actual: w.cMonaco,
+  Expected: 'Monaco'
+}, {
+  Name: 'cMongolia',
+  Actual: w.cMongolia,
+  Expected: 'Mongolia'
+}, {
+  Name: 'cMontenegro',
+  Actual: w.cMontenegro,
+  Expected: 'Montenegro'
+}, {
+  Name: 'cMorocco',
+  Actual: w.cMorocco,
+  Expected: 'Morocco'
+}, {
+  Name: 'cMozambique',
+  Actual: w.cMozambique,
+  Expected: 'Mozambique'
+}, {
+  Name: 'cMyanmar',
+  Actual: w.cMyanmar,
+  Expected: 'Myanmar'
+}, {
+  Name: 'cNamibia',
+  Actual: w.cNamibia,
+  Expected: 'Namibia'
+}, {
+  Name: 'cNauru',
+  Actual: w.cNauru,
+  Expected: 'Nauru'
+}, {
+  Name: 'cNepal',
+  Actual: w.cNepal,
+  Expected: 'Nepal'
+}, {
+  Name: 'cNetherlands',
+  Actual: w.cNetherlands,
+  Expected: 'Netherlands'
+}, {
+  Name: 'cNewZealand',
+  Actual: w.cNewZealand,
+  Expected: 'New Zealand'
+}, {
+  Name: 'cNevis',
+  Actual: w.cNevis,
+  Expected: 'Nevis'
+}, {
+  Name: 'cNicaragua',
+  Actual: w.cNicaragua,
+  Expected: 'Nicaragua'
+}, {
+  Name: 'cNiger',
+  Actual: w.cNiger,
+  Expected: 'Niger'
+}, {
+  Name: 'cNigeria',
+  Actual: w.cNigeria,
+  Expected: 'Nigeria'
+}, {
+  Name: 'cNorthKorea',
+  Actual: w.cNorthKorea,
+  Expected: 'North Korea'
+}, {
+  Name: 'cNorthMacedonia',
+  Actual: w.cNorthMacedonia,
+  Expected: 'North Macedonia'
+}, {
+  Name: 'cNorway',
+  Actual: w.cNorway,
+  Expected: 'Norway'
+}, {
+  Name: 'cOman',
+  Actual: w.cOman,
+  Expected: 'Oman'
+}, {
+  Name: 'cPakistan',
+  Actual: w.cPakistan,
+  Expected: 'Pakistan'
+}, {
+  Name: 'cPalau',
+  Actual: w.cPalau,
+  Expected: 'Palau'
+}, {
+  Name: 'cPalestine',
+  Actual: w.cPalestine,
+  Expected: 'Palestine'
+}, {
+  Name: 'cPanama',
+  Actual: w.cPanama,
+  Expected: 'Panama'
+}, {
+  Name: 'cPapuaNewGuinea',
+  Actual: w.cPapuaNewGuinea,
+  Expected: 'Papua New Guinea'
+}, {
+  Name: 'cParaguay',
+  Actual: w.cParaguay,
+  Expected: 'Paraguay'
+}, {
+  Name: 'cPeru',
+  Actual: w.cPeru,
+  Expected: 'Peru'
+}, {
+  Name: 'cPhilippines',
+  Actual: w.cPhilippines,
+  Expected: 'Philippines'
+}, {
+  Name: 'cPoland',
+  Actual: w.cPoland,
+  Expected: 'Poland'
+}, {
+  Name: 'cPortugal',
+  Actual: w.cPortugal,
+  Expected: 'Portugal'
+}, {
+  Name: 'cPrincipe',
+  Actual: w.cPrincipe,
+  Expected: 'Principe'
+}, {
+  Name: 'cQatar',
+  Actual: w.cQatar,
+  Expected: 'Qatar'
+}, {
+  Name: 'cRomania',
+  Actual: w.cRomania,
+  Expected: 'Romania'
+}, {
+  Name: 'cRussia',
+  Actual: w.cRussia,
+  Expected: 'Russia'
+}, {
+  Name: 'cRwanda',
+  Actual: w.cRwanda,
+  Expected: 'Rwanda'
+}, {
+  Name: 'cSaintKitts',
+  Actual: w.cSaintKitts,
+  Expected: 'Saint Kitts'
+}, {
+  Name: 'cSaintLucia',
+  Actual: w.cSaintLucia,
+  Expected: 'Saint Lucia'
+}, {
+  Name: 'cSaintVincent',
+  Actual: w.cSaintVincent,
+  Expected: 'Saint Vincent'
+}, {
+  Name: 'cSomoa',
+  Actual: w.cSomoa,
+  Expected: 'Somoa'
+}, {
+  Name: 'cSanMarino',
+  Actual: w.cSanMarino,
+  Expected: 'San Marino'
+}, {
+  Name: 'cSaoTome',
+  Actual: w.cSaoTome,
+  Expected: 'Sao Tome'
+}, {
+  Name: 'cSaudiArabia',
+  Actual: w.cSaudiArabia,
+  Expected: 'Saudi Arabia'
+}, {
+  Name: 'cSenegal',
+  Actual: w.cSenegal,
+  Expected: 'Senegal'
+}, {
+  Name: 'cSerbia',
+  Actual: w.cSerbia,
+  Expected: 'Serbia'
+}, {
+  Name: 'cSeychelles',
+  Actual: w.cSeychelles,
+  Expected: 'Seychelles'
+}, {
+  Name: 'cSierraLeone',
+  Actual: w.cSierraLeone,
+  Expected: 'Sierra Leone'
+}, {
+  Name: 'cSingapore',
+  Actual: w.cSingapore,
+  Expected: 'Singapore'
+}, {
+  Name: 'cSlovakia',
+  Actual: w.cSlovakia,
+  Expected: 'Slovakia'
+}, {
+  Name: 'cSlovenia',
+  Actual: w.cSlovenia,
+  Expected: 'Slovenia'
+}, {
+  Name: 'cSolomonIslands',
+  Actual: w.cSolomonIslands,
+  Expected: 'Solomon Islands'
+}, {
+  Name: 'cSomalia',
+  Actual: w.cSomalia,
+  Expected: 'Somalia'
+}, {
+  Name: 'cSouthAfrica',
+  Actual: w.cSouthAfrica,
+  Expected: 'South Africa'
+}, {
+  Name: 'cSouthKorea',
+  Actual: w.cSouthKorea,
+  Expected: 'South Korea'
+}, {
+  Name: 'cSouthSudan',
+  Actual: w.cSouthSudan,
+  Expected: 'South Sudan'
+}, {
+  Name: 'cSpain',
+  Actual: w.cSpain,
+  Expected: 'Spain'
+}, {
+  Name: 'cSriLanka',
+  Actual: w.cSriLanka,
+  Expected: 'Sri Lanka'
+}, {
+  Name: 'cSudan',
+  Actual: w.cSudan,
+  Expected: 'Sudan'
+}, {
+  Name: 'cSuriname',
+  Actual: w.cSuriname,
+  Expected: 'Suriname'
+}, {
+  Name: 'cSweden',
+  Actual: w.cSweden,
+  Expected: 'Sweden'
+}, {
+  Name: 'cSwitzerland',
+  Actual: w.cSwitzerland,
+  Expected: 'Switzerland'
+}, {
+  Name: 'cSyria',
+  Actual: w.cSyria,
+  Expected: 'Syria'
+}, {
+  Name: 'cTajikistan',
+  Actual: w.cTajikistan,
+  Expected: 'Tajikistan'
+}, {
+  Name: 'cTanzania',
+  Actual: w.cTanzania,
+  Expected: 'Tanzania'
+}, {
+  Name: 'cThailand',
+  Actual: w.cThailand,
+  Expected: 'Thailand'
+}, {
+  Name: 'cTimorLeste',
+  Actual: w.cTimorLeste,
+  Expected: 'Timor-Leste'
+}, {
+  Name: 'cTogo',
+  Actual: w.cTogo,
+  Expected: 'Togo'
+}, {
+  Name: 'cTonga',
+  Actual: w.cTonga,
+  Expected: 'Tonga'
+}, {
+  Name: 'cTrinidadAndTabago',
+  Actual: w.cTrinidadAndTabago,
+  Expected: 'Trinidad and Tabago'
+}, {
+  Name: 'cTunisia',
+  Actual: w.cTunisia,
+  Expected: 'Tunisia'
+}, {
+  Name: 'cTurkey',
+  Actual: w.cTurkey,
+  Expected: 'Turkey'
+}, {
+  Name: 'cTurkmenistan',
+  Actual: w.cTurkmenistan,
+  Expected: 'Turkmenistan'
+}, {
+  Name: 'cTuvalu',
+  Actual: w.cTuvalu,
+  Expected: 'Tuvalu'
+}, {
+  Name: 'cUganda',
+  Actual: w.cUganda,
+  Expected: 'Uganda'
+}, {
+  Name: 'cUkraine',
+  Actual: w.cUkraine,
+  Expected: 'Ukraine'
+}, {
+  Name: 'cUnitedArabEmirates',
+  Actual: w.cUnitedArabEmirates,
+  Expected: 'United Arab Emirates'
+}, {
+  Name: 'cUnitedKingdom',
+  Actual: w.cUnitedKingdom,
+  Expected: 'United Kingdom'
+}, {
+  Name: 'cUnitedStatesOfAmerica',
+  Actual: w.cUnitedStatesOfAmerica,
+  Expected: 'United States of America'
+}, {
+  Name: 'cUruguay',
+  Actual: w.cUruguay,
+  Expected: 'Uruguay'
+}, {
+  Name: 'cUzbekistan',
+  Actual: w.cUzbekistan,
+  Expected: 'Uzbekistan'
+}, {
+  Name: 'cVanuatu',
+  Actual: w.cVanuatu,
+  Expected: 'Vanuatu'
+}, {
+  Name: 'cVenezuela',
+  Actual: w.cVenezuela,
+  Expected: 'Venezuela'
+}, {
+  Name: 'cVietnam',
+  Actual: w.cVietnam,
+  Expected: 'Vietnam'
+}, {
+  Name: 'cYemen',
+  Actual: w.cYemen,
+  Expected: 'Yemen'
+}, {
+  Name: 'cZambia',
+  Actual: w.cZambia,
+  Expected: 'Zambia'
+}, {
+  Name: 'cZimbabwe',
+  Actual: w.cZimbabwe,
+  Expected: 'Zimbabwe'
+}, // Languages
+{
+  Name: 'cChinese',
+  Actual: w.cChinese,
+  Expected: 'Chinese'
+}, {
+  Name: 'cChineseSimplified',
+  Actual: w.cChineseSimplified,
+  Expected: 'ChineseSimplified'
+}, {
+  Name: 'cChineseTraditional',
+  Actual: w.cChineseTraditional,
+  Expected: 'ChineseTraditional'
+}, {
+  Name: 'cCzech',
+  Actual: w.cCzech,
+  Expected: 'Czech'
+}, {
+  Name: 'cEnglish',
+  Actual: w.cEnglish,
+  Expected: 'English'
+}, {
+  Name: 'cFrench',
+  Actual: w.cFrench,
+  Expected: 'French'
+}, // {Name: 'cGerman', Actual: s.   w.cGe + w.cr + cman, Expected: 'German // Defined above in the countries section
+{
+  Name: 'cHungarian',
+  Actual: w.cHungarian,
+  Expected: 'Hungarian'
+}, {
+  Name: 'cItalian',
+  Actual: w.cItalian,
+  Expected: 'Italian'
+}, {
+  Name: 'cJapanese',
+  Actual: w.cJapanese,
+  Expected: 'Japanese'
+}, {
+  Name: 'cKorean',
+  Actual: w.cKorean,
+  Expected: 'Korean'
+}, {
+  Name: 'cMiscellaneous',
+  Actual: w.cMiscellaneous,
+  Expected: 'Miscellaneous'
+}, {
+  Name: 'cPolish',
+  Actual: w.cPolish,
+  Expected: 'Polish'
+}, {
+  Name: 'cPortuguese',
+  Actual: w.cPortuguese,
+  Expected: 'Portuguese'
+}, {
+  Name: 'cRussian',
+  Actual: w.cRussian,
+  Expected: 'Russian'
+}, {
+  Name: 'cSpanish',
+  Actual: w.cSpanish,
+  Expected: 'Spanish'
+}, //////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+{
+  Name: 'cAbsolute',
+  Actual: w.cAbsolute,
+  Expected: 'Absolute'
+}, {
+  Name: 'cAcid',
+  Actual: w.cAcid,
+  Expected: 'Acid'
+}, {
+  Name: 'cAir',
+  Actual: w.cAir,
+  Expected: 'Air'
+}, {
+  Name: 'cSuperiority',
+  Actual: w.cSuperiority,
+  Expected: 'Superiority'
+}, {
+  Name: 'cAlabaster',
+  Actual: w.cAlabaster,
+  Expected: 'Alabaster'
+}, {
+  Name: 'cAlice',
+  Actual: w.cAlice,
+  Expected: 'Alice'
+}, {
+  Name: 'cAlloy',
+  Actual: w.cAlloy,
+  Expected: 'Alloy'
+}, {
+  Name: 'cAmaranth',
+  Actual: w.cAmaranth,
+  Expected: 'Amaranth'
+}, {
+  Name: 'cAndroid',
+  Actual: w.cAndroid,
+  Expected: 'Android'
+}, {
+  Name: 'cAntique',
+  Actual: w.cAntique,
+  Expected: 'Antique'
+}, {
+  Name: 'cBrass',
+  Actual: w.cBrass,
+  Expected: 'Brass'
+}, {
+  Name: 'cBronze',
+  Actual: w.cBronze,
+  Expected: 'Bronze'
+}, {
+  Name: 'cApple',
+  Actual: w.cApple,
+  Expected: 'Apple'
+}, {
+  Name: 'cApricot',
+  Actual: w.cApricot,
+  Expected: 'Apricot'
+}, {
+  Name: 'cArctic',
+  Actual: w.cArctic,
+  Expected: 'Arctic'
+}, {
+  Name: 'cArmy',
+  Actual: w.cArmy,
+  Expected: 'Army'
+}, {
+  Name: 'cArylide',
+  Actual: w.cArylide,
+  Expected: 'Arylide'
+}, {
+  Name: 'cAtomic',
+  Actual: w.cAtomic,
+  Expected: 'Atomic'
+}, {
+  Name: 'cBaby',
+  Actual: w.cBaby,
+  Expected: 'Baby'
+}, {
+  Name: 'cEyes',
+  Actual: w.cEyes,
+  Expected: 'Eyes'
+}, {
+  Name: 'cPowder',
+  Actual: w.cPowder,
+  Expected: 'Powder'
+}, {
+  Name: 'cBaker',
+  Actual: w.cBaker,
+  Expected: 'Baker'
+}, {
+  Name: 'cMiller',
+  Actual: w.cMiller,
+  Expected: 'Miller'
+}, {
+  Name: 'cBanana',
+  Actual: w.cBanana,
+  Expected: 'Banana'
+}, {
+  Name: 'cMania',
+  Actual: w.cMania,
+  Expected: 'Mania'
+}, {
+  Name: 'cBarbie',
+  Actual: w.cBarbie,
+  Expected: 'Barbie'
+}, {
+  Name: 'cBarn',
+  Actual: w.cBarn,
+  Expected: 'Barn'
+}, {
+  Name: 'cBattleship',
+  Actual: w.cBattleship,
+  Expected: 'Battleship'
+}, {
+  Name: 'cBeau',
+  Actual: w.cBeau,
+  Expected: 'Beau'
+}, {
+  Name: 'cDazzled',
+  Actual: w.cDazzled,
+  Expected: 'Dazzled'
+}, {
+  Name: 'cBitter',
+  Actual: w.cBitter,
+  Expected: 'Bitter'
+}, {
+  Name: 'csweet',
+  Actual: w.csweet,
+  Expected: 'sweet'
+}, {
+  Name: 'cSweet',
+  Actual: w.cSweet,
+  Expected: 'Sweet'
+}, {
+  Name: 'cBittersweet',
+  Actual: w.cBittersweet,
+  Expected: 'Bittersweet'
+}, {
+  Name: 'cShimmer',
+  Actual: w.cShimmer,
+  Expected: 'Shimmer'
+}, {
+  Name: 'cBean',
+  Actual: w.cBean,
+  Expected: 'Bean'
+}, {
+  Name: 'cChocolate',
+  Actual: w.cChocolate,
+  Expected: 'Chocolate'
+}, {
+  Name: 'cShadows',
+  Actual: w.cShadows,
+  Expected: 'Shadows'
+}, {
+  Name: 'cBlanched',
+  Actual: w.cBlanched,
+  Expected: 'Blanched'
+}, {
+  Name: 'cBlast',
+  Actual: w.cBlast,
+  Expected: 'Blast'
+}, {
+  Name: 'cBlizzard',
+  Actual: w.cBlizzard,
+  Expected: 'Blizzard'
+}, {
+  Name: 'cBlood',
+  Actual: w.cBlood,
+  Expected: 'Blood'
+}, {
+  Name: 'cCrayola',
+  Actual: w.cCrayola,
+  Expected: 'Crayola'
+}, {
+  Name: 'cMunsell',
+  Actual: w.cMunsell,
+  Expected: 'Munsell'
+}, {
+  Name: 'cPantone',
+  Actual: w.cPantone,
+  Expected: 'Pantone'
+}, {
+  Name: 'cPigment',
+  Actual: w.cPigment,
+  Expected: 'Pigment'
+}, {
+  Name: 'cBell',
+  Actual: w.cBell,
+  Expected: 'Bell'
+}, {
+  Name: 'cwheel',
+  Actual: w.cwheel,
+  Expected: 'wheel'
+}, {
+  Name: 'cWheel',
+  Actual: w.cWheel,
+  Expected: 'Wheel'
+}, {
+  Name: 'cwheels',
+  Actual: w.cwheels,
+  Expected: 'wheels'
+}, {
+  Name: 'cWheels',
+  Actual: w.cWheels,
+  Expected: 'Wheels'
+}, {
+  Name: 'cJeans',
+  Actual: w.cJeans,
+  Expected: 'Jeans'
+}, {
+  Name: 'cYonder',
+  Actual: w.cYonder,
+  Expected: 'Yonder'
+}, {
+  Name: 'cBottle',
+  Actual: w.cBottle,
+  Expected: 'Bottle'
+}, {
+  Name: 'cbrick',
+  Actual: w.cbrick,
+  Expected: 'brick'
+}, {
+  Name: 'cBrick',
+  Actual: w.cBrick,
+  Expected: 'Brick'
+}, {
+  Name: 'cbricks',
+  Actual: w.cbricks,
+  Expected: 'bricks'
+}, {
+  Name: 'cBricks',
+  Actual: w.cBricks,
+  Expected: 'Bricks'
+}, {
+  Name: 'cBright',
+  Actual: w.cBright,
+  Expected: 'Bright'
+}, {
+  Name: 'cBrilliant',
+  Actual: w.cBrilliant,
+  Expected: 'Brilliant'
+}, {
+  Name: 'cRacing',
+  Actual: w.cRacing,
+  Expected: 'Racing'
+}, {
+  Name: 'cSugar',
+  Actual: w.cSugar,
+  Expected: 'Sugar'
+}, {
+  Name: 'cBrunswick',
+  Actual: w.cBrunswick,
+  Expected: 'Brunswick'
+}, {
+  Name: 'cBud',
+  Actual: w.cBud,
+  Expected: 'Bud'
+}, {
+  Name: 'cBurly',
+  Actual: w.cBurly,
+  Expected: 'Burly'
+}, {
+  Name: 'cBurnished',
+  Actual: w.cBurnished,
+  Expected: 'Burnished'
+}, {
+  Name: 'cBurnt',
+  Actual: w.cBurnt,
+  Expected: 'Burnt'
+}, {
+  Name: 'cCadet',
+  Actual: w.cCadet,
+  Expected: 'Cadet'
+}, {
+  Name: 'cCafe',
+  Actual: w.cCafe,
+  Expected: 'Cafe'
+}, {
+  Name: 'cCambridge',
+  Actual: w.cCambridge,
+  Expected: 'Cambridge'
+}, {
+  Name: 'cCameo',
+  Actual: w.cCameo,
+  Expected: 'Cameo'
+}, {
+  Name: 'cCaput',
+  Actual: w.cCaput,
+  Expected: 'Caput'
+}, {
+  Name: 'cMortuum',
+  Actual: w.cMortuum,
+  Expected: 'Mortuum'
+}, {
+  Name: 'cCaribbean',
+  Actual: w.cCaribbean,
+  Expected: 'Caribbean'
+}, {
+  Name: 'cCarnation',
+  Actual: w.cCarnation,
+  Expected: 'Carnation'
+}, {
+  Name: 'cCarrot',
+  Actual: w.cCarrot,
+  Expected: 'Carrot'
+}, {
+  Name: 'cCastleton',
+  Actual: w.cCastleton,
+  Expected: 'Castleton'
+}, {
+  Name: 'cCedar',
+  Actual: w.cCedar,
+  Expected: 'Cedar'
+}, {
+  Name: 'cChest',
+  Actual: w.cChest,
+  Expected: 'Chest'
+}, {
+  Name: 'cCeladon',
+  Actual: w.cCeladon,
+  Expected: 'Celadon'
+}, {
+  Name: 'cCeltic',
+  Actual: w.cCeltic,
+  Expected: 'Celtic'
+}, {
+  Name: 'cCharleston',
+  Actual: w.cCharleston,
+  Expected: 'Charleston'
+}, {
+  Name: 'cCharm',
+  Actual: w.cCharm,
+  Expected: 'Charm'
+}, {
+  Name: 'cChartreuse',
+  Actual: w.cChartreuse,
+  Expected: 'Chartreuse'
+}, {
+  Name: 'cCherry',
+  Actual: w.cCherry,
+  Expected: 'Cherry'
+}, {
+  Name: 'cBlossom',
+  Actual: w.cBlossom,
+  Expected: 'Blossom'
+}, {
+  Name: 'cChestnut',
+  Actual: w.cChestnut,
+  Expected: 'Chestnut'
+}, {
+  Name: 'cChrome',
+  Actual: w.cChrome,
+  Expected: 'Chrome'
+}, {
+  Name: 'cCinnamon',
+  Actual: w.cCinnamon,
+  Expected: 'Cinnamon'
+}, {
+  Name: 'cCocoa',
+  Actual: w.cCocoa,
+  Expected: 'Cocoa'
+}, {
+  Name: 'cCoffee',
+  Actual: w.cCoffee,
+  Expected: 'Coffee'
+}, {
+  Name: 'cColumbia',
+  Actual: w.cColumbia,
+  Expected: 'Columbia'
+}, {
+  Name: 'cCool',
+  Actual: w.cCool,
+  Expected: 'Cool'
+}, {
+  Name: 'cflower',
+  Actual: w.cflower,
+  Expected: 'flower'
+}, {
+  Name: 'cFlower',
+  Actual: w.cFlower,
+  Expected: 'Flower'
+}, {
+  Name: 'cflowers',
+  Actual: w.cflowers,
+  Expected: 'flowers'
+}, {
+  Name: 'cFlowers',
+  Actual: w.cFlowers,
+  Expected: 'Flowers'
+}, {
+  Name: 'csilk',
+  Actual: w.csilk,
+  Expected: 'silk'
+}, {
+  Name: 'cSilk',
+  Actual: w.cSilk,
+  Expected: 'Silk'
+}, {
+  Name: 'cCosmic',
+  Actual: w.cCosmic,
+  Expected: 'Cosmic'
+}, {
+  Name: 'cLatte',
+  Actual: w.cLatte,
+  Expected: 'Latte'
+}, {
+  Name: 'cCoyote',
+  Actual: w.cCoyote,
+  Expected: 'Coyote'
+}, {
+  Name: 'cCotton',
+  Actual: w.cCotton,
+  Expected: 'Cotton'
+}, {
+  Name: 'cCyber',
+  Actual: w.cCyber,
+  Expected: 'Cyber'
+}, {
+  Name: 'cDark',
+  Actual: w.cDark,
+  Expected: 'Dark'
+}, {
+  Name: 'cByzantium',
+  Actual: w.cByzantium,
+  Expected: 'Byzantium'
+}, {
+  Name: 'cElectric',
+  Actual: w.cElectric,
+  Expected: 'Electric'
+}, {
+  Name: 'cKhaki',
+  Actual: w.cKhaki,
+  Expected: 'Khaki'
+}, {
+  Name: 'cHorse',
+  Actual: w.cHorse,
+  Expected: 'Horse'
+}, {
+  Name: 'cHorses',
+  Actual: w.cHorses,
+  Expected: 'Horses'
+}, {
+  Name: 'cMoss',
+  Actual: w.cMoss,
+  Expected: 'Moss'
+}, {
+  Name: 'cPastel',
+  Actual: w.cPastel,
+  Expected: 'Pastel'
+}, {
+  Name: 'cSky',
+  Actual: w.cSky,
+  Expected: 'Sky'
+}, {
+  Name: 'cSlate',
+  Actual: w.cSlate,
+  Expected: 'Slate'
+}, {
+  Name: 'cSpring',
+  Actual: w.cSpring,
+  Expected: 'Spring'
+}, {
+  Name: 'cDartmouth',
+  Actual: w.cDartmouth,
+  Expected: 'Dartmouth'
+}, {
+  Name: 'cDavys',
+  Actual: w.cDavys,
+  Expected: 'Davys'
+}, {
+  Name: 'cCerise',
+  Actual: w.cCerise,
+  Expected: 'Cerise'
+}, {
+  Name: 'cSparkle',
+  Actual: w.cSparkle,
+  Expected: 'Sparkle'
+}, {
+  Name: 'cDim',
+  Actual: w.cDim,
+  Expected: 'Dim'
+}, {
+  Name: 'cDodger',
+  Actual: w.cDodger,
+  Expected: 'Dodger'
+}, {
+  Name: 'cDogwood',
+  Actual: w.cDogwood,
+  Expected: 'Dogwood'
+}, {
+  Name: 'cDuke',
+  Actual: w.cDuke,
+  Expected: 'Duke'
+}, {
+  Name: 'cDutch',
+  Actual: w.cDutch,
+  Expected: 'Dutch'
+}, {
+  Name: 'cEarth',
+  Actual: w.cEarth,
+  Expected: 'Earth'
+}, {
+  Name: 'cEerie',
+  Actual: w.cEerie,
+  Expected: 'Eerie'
+}, {
+  Name: 'cEton',
+  Actual: w.cEton,
+  Expected: 'Eton'
+}, {
+  Name: 'cFalu',
+  Actual: w.cFalu,
+  Expected: 'Falu'
+}, {
+  Name: 'cFashion',
+  Actual: w.cFashion,
+  Expected: 'Fashion'
+}, {
+  Name: 'cFern',
+  Actual: w.cFern,
+  Expected: 'Fern'
+}, {
+  Name: 'cFiery',
+  Actual: w.cFiery,
+  Expected: 'Fiery'
+}, {
+  Name: 'cFire',
+  Actual: w.cFire,
+  Expected: 'Fire'
+}, {
+  Name: 'cEngine',
+  Actual: w.cEngine,
+  Expected: 'Engine'
+}, {
+  Name: 'cFloral',
+  Actual: w.cFloral,
+  Expected: 'Floral'
+}, {
+  Name: 'cFluorescent',
+  Actual: w.cFluorescent,
+  Expected: 'Fluorescent'
+}, {
+  Name: 'cForest',
+  Actual: w.cForest,
+  Expected: 'Forest'
+}, {
+  Name: 'cFrost',
+  Actual: w.cFrost,
+  Expected: 'Frost'
+}, {
+  Name: 'cbite',
+  Actual: w.cbite,
+  Expected: 'bite'
+}, {
+  Name: 'cFuzzy',
+  Actual: w.cFuzzy,
+  Expected: 'Fuzzy'
+}, {
+  Name: 'cWuzzy',
+  Actual: w.cWuzzy,
+  Expected: 'Wuzzy'
+}, {
+  Name: 'cGhost',
+  Actual: w.cGhost,
+  Expected: 'Ghost'
+}, {
+  Name: 'cGlossy',
+  Actual: w.cGlossy,
+  Expected: 'Glossy'
+}, {
+  Name: 'cMetal',
+  Actual: w.cMetal,
+  Expected: 'Metal'
+}, {
+  Name: 'cMetallic',
+  Actual: w.cMetallic,
+  Expected: 'Metallic'
+}, {
+  Name: 'cFusion',
+  Actual: w.cFusion,
+  Expected: 'Fusion'
+}, {
+  Name: 'cPoppy',
+  Actual: w.cPoppy,
+  Expected: 'Poppy'
+}, {
+  Name: 'cGranite',
+  Actual: w.cGranite,
+  Expected: 'Granite'
+}, {
+  Name: 'cGranny',
+  Actual: w.cGranny,
+  Expected: 'Granny'
+}, {
+  Name: 'cSmith',
+  Actual: w.cSmith,
+  Expected: 'Smith'
+}, {
+  Name: 'cLizard',
+  Actual: w.cLizard,
+  Expected: 'Lizard'
+}, {
+  Name: 'cGun',
+  Actual: w.cGun,
+  Expected: 'Gun'
+}, {
+  Name: 'cHarvest',
+  Actual: w.cHarvest,
+  Expected: 'Harvest'
+}, {
+  Name: 'cHeat',
+  Actual: w.cHeat,
+  Expected: 'Heat'
+}, {
+  Name: 'cWave',
+  Actual: w.cWave,
+  Expected: 'Wave'
+}, {
+  Name: 'cHollywood',
+  Actual: w.cHollywood,
+  Expected: 'Hollywood'
+}, {
+  Name: 'cHoney',
+  Actual: w.cHoney,
+  Expected: 'Honey'
+}, {
+  Name: 'cdew',
+  Actual: w.cdew,
+  Expected: 'dew'
+}, {
+  Name: 'cHonolulu',
+  Actual: w.cHonolulu,
+  Expected: 'Honolulu'
+}, {
+  Name: 'cHookers',
+  Actual: w.cHookers,
+  Expected: 'Hookers'
+}, {
+  Name: 'cHot',
+  Actual: w.cHot,
+  Expected: 'Hot'
+}, {
+  Name: 'cHunter',
+  Actual: w.cHunter,
+  Expected: 'Hunter'
+}, {
+  Name: 'cIce',
+  Actual: w.cIce,
+  Expected: 'Ice'
+}, {
+  Name: 'cIlluminating',
+  Actual: w.cIlluminating,
+  Expected: 'Illuminating'
+}, {
+  Name: 'cImperial',
+  Actual: w.cImperial,
+  Expected: 'Imperial'
+}, {
+  Name: 'cworm',
+  Actual: w.cworm,
+  Expected: 'worm'
+}, {
+  Name: 'cIndependence',
+  Actual: w.cIndependence,
+  Expected: 'Independence'
+}, {
+  Name: 'cIndian',
+  Actual: w.cIndian,
+  Expected: 'Indian'
+}, {
+  Name: 'cDye',
+  Actual: w.cDye,
+  Expected: 'Dye'
+}, {
+  Name: 'cnational',
+  Actual: w.cnational,
+  Expected: 'national'
+}, {
+  Name: 'cNational',
+  Actual: w.cNational,
+  Expected: 'National'
+}, {
+  Name: 'cnationals',
+  Actual: w.cnationals,
+  Expected: 'nationals'
+}, {
+  Name: 'cNationals',
+  Actual: w.cNationals,
+  Expected: 'Nationals'
+}, {
+  Name: 'cInternational',
+  Actual: w.cInternational,
+  Expected: 'International'
+}, {
+  Name: 'cAerospace',
+  Actual: w.cAerospace,
+  Expected: 'Aerospace'
+}, {
+  Name: 'cEngineering',
+  Actual: w.cEngineering,
+  Expected: 'Engineering'
+}, {
+  Name: 'cBridge',
+  Actual: w.cBridge,
+  Expected: 'Bridge'
+}, {
+  Name: 'cCarmine',
+  Actual: w.cCarmine,
+  Expected: 'Carmine'
+}, {
+  Name: 'cjazz',
+  Actual: w.cjazz,
+  Expected: 'jazz'
+}, {
+  Name: 'cJazz',
+  Actual: w.cJazz,
+  Expected: 'Jazz'
+}, {
+  Name: 'cberry',
+  Actual: w.cberry,
+  Expected: 'berry'
+}, {
+  Name: 'cBerry',
+  Actual: w.cBerry,
+  Expected: 'Berry'
+}, {
+  Name: 'cjam',
+  Actual: w.cjam,
+  Expected: 'jam'
+}, {
+  Name: 'cJam',
+  Actual: w.cJam,
+  Expected: 'Jam'
+}, {
+  Name: 'cKelly',
+  Actual: w.cKelly,
+  Expected: 'Kelly'
+}, {
+  Name: 'cKombu',
+  Actual: w.cKombu,
+  Expected: 'Kombu'
+}, {
+  Name: 'cLanguid',
+  Actual: w.cLanguid,
+  Expected: 'Languid'
+}, {
+  Name: 'cLapis',
+  Actual: w.cLapis,
+  Expected: 'Lapis'
+}, {
+  Name: 'cLazuli',
+  Actual: w.cLazuli,
+  Expected: 'Lazuli'
+}, {
+  Name: 'cLaser',
+  Actual: w.cLaser,
+  Expected: 'Laser'
+}, {
+  Name: 'cLaurel',
+  Actual: w.cLaurel,
+  Expected: 'Laurel'
+}, {
+  Name: 'cLawn',
+  Actual: w.cLawn,
+  Expected: 'Lawn'
+}, {
+  Name: 'cCurry',
+  Actual: w.cCurry,
+  Expected: 'Curry'
+}, {
+  Name: 'cGlacier',
+  Actual: w.cGlacier,
+  Expected: 'Glacier'
+}, {
+  Name: 'cMeringue',
+  Actual: w.cMeringue,
+  Expected: 'Meringue'
+}, {
+  Name: 'cLight',
+  Actual: w.cLight,
+  Expected: 'Light'
+}, {
+  Name: 'cCoral',
+  Actual: w.cCoral,
+  Expected: 'Coral'
+}, {
+  Name: 'cSteel',
+  Actual: w.cSteel,
+  Expected: 'Steel'
+}, {
+  Name: 'cLuster',
+  Actual: w.cLuster,
+  Expected: 'Luster'
+}, {
+  Name: 'cLincoln',
+  Actual: w.cLincoln,
+  Expected: 'Lincoln'
+}, {
+  Name: 'cLiseran',
+  Actual: w.cLiseran,
+  Expected: 'Liseran'
+}, {
+  Name: 'cLittle',
+  Actual: w.cLittle,
+  Expected: 'Little'
+}, {
+  Name: 'cBoy',
+  Actual: w.cBoy,
+  Expected: 'Boy'
+}, {
+  Name: 'cDogs',
+  Actual: w.cDogs,
+  Expected: 'Dogs'
+}, {
+  Name: 'cOrgan',
+  Actual: w.cOrgan,
+  Expected: 'Organ'
+}, {
+  Name: 'cMacaroni',
+  Actual: w.cMacaroni,
+  Expected: 'Macaroni'
+}, {
+  Name: 'cCheese',
+  Actual: w.cCheese,
+  Expected: 'Cheese'
+}, {
+  Name: 'cMadder',
+  Actual: w.cMadder,
+  Expected: 'Madder'
+}, {
+  Name: 'cHaze',
+  Actual: w.cHaze,
+  Expected: 'Haze'
+}, {
+  Name: 'cMagic',
+  Actual: w.cMagic,
+  Expected: 'Magic'
+}, {
+  Name: 'cMajorelle',
+  Actual: w.cMajorelle,
+  Expected: 'Majorelle'
+}, {
+  Name: 'cMaximum',
+  Actual: w.cMaximum,
+  Expected: 'Maximum'
+}, {
+  Name: 'cMaya',
+  Actual: w.cMaya,
+  Expected: 'Maya'
+}, {
+  Name: 'cMedium',
+  Actual: w.cMedium,
+  Expected: 'Medium'
+}, {
+  Name: 'cMellow',
+  Actual: w.cMellow,
+  Expected: 'Mellow'
+}, {
+  Name: 'cweed',
+  Actual: w.cweed,
+  Expected: 'weed'
+}, {
+  Name: 'cWeed',
+  Actual: w.cWeed,
+  Expected: 'Weed'
+}, {
+  Name: 'cweeds',
+  Actual: w.cweeds,
+  Expected: 'weeds'
+}, {
+  Name: 'cWeeds',
+  Actual: w.cWeeds,
+  Expected: 'Weeds'
+}, {
+  Name: 'cweeded',
+  Actual: w.cweeded,
+  Expected: 'weeded'
+}, {
+  Name: 'cWeeded',
+  Actual: w.cWeeded,
+  Expected: 'Weeded'
+}, {
+  Name: 'cSeaweed',
+  Actual: w.cSeaweed,
+  Expected: 'Seaweed'
+}, {
+  Name: 'csun',
+  Actual: w.csun,
+  Expected: 'sun'
+}, {
+  Name: 'cSun',
+  Actual: w.cSun,
+  Expected: 'Sun'
+}, {
+  Name: 'csuns',
+  Actual: w.csuns,
+  Expected: 'suns'
+}, {
+  Name: 'cSuns',
+  Actual: w.cSuns,
+  Expected: 'Suns'
+}, {
+  Name: 'cSunburst',
+  Actual: w.cSunburst,
+  Expected: 'Sunburst'
+}, {
+  Name: 'cMexican',
+  Actual: w.cMexican,
+  Expected: 'Mexican'
+}, {
+  Name: 'cMiddle',
+  Actual: w.cMiddle,
+  Expected: 'Middle'
+}, {
+  Name: 'cMikado',
+  Actual: w.cMikado,
+  Expected: 'Mikado'
+}, {
+  Name: 'cMimi',
+  Actual: w.cMimi,
+  Expected: 'Mimi'
+}, {
+  Name: 'cMinion',
+  Actual: w.cMinion,
+  Expected: 'Minion'
+}, {
+  Name: 'cMisty',
+  Actual: w.cMisty,
+  Expected: 'Misty'
+}, {
+  Name: 'cMorning',
+  Actual: w.cMorning,
+  Expected: 'Morning'
+}, {
+  Name: 'cMeadow',
+  Actual: w.cMeadow,
+  Expected: 'Meadow'
+}, {
+  Name: 'cMount',
+  Actual: w.cMount,
+  Expected: 'Mount'
+}, {
+  Name: 'cbatten',
+  Actual: w.cbatten,
+  Expected: 'batten'
+}, {
+  Name: 'cMulberry',
+  Actual: w.cMulberry,
+  Expected: 'Mulberry'
+}, {
+  Name: 'cMyrtle',
+  Actual: w.cMyrtle,
+  Expected: 'Myrtle'
+}, {
+  Name: 'cNadeshiko',
+  Actual: w.cNadeshiko,
+  Expected: 'Nadeshiko'
+}, {
+  Name: 'cNaples',
+  Actual: w.cNaples,
+  Expected: 'Naples'
+}, {
+  Name: 'cNavajo',
+  Actual: w.cNavajo,
+  Expected: 'Navajo'
+}, {
+  Name: 'cNavy',
+  Actual: w.cNavy,
+  Expected: 'Navy'
+}, {
+  Name: 'cNeon',
+  Actual: w.cNeon,
+  Expected: 'Neon'
+}, {
+  Name: 'cYork',
+  Actual: w.cYork,
+  Expected: 'York'
+}, {
+  Name: 'cPhoto',
+  Actual: w.cPhoto,
+  Expected: 'Photo'
+}, {
+  Name: 'cOcean',
+  Actual: w.cOcean,
+  Expected: 'Ocean'
+}, {
+  Name: 'cLace',
+  Actual: w.cLace,
+  Expected: 'Lace'
+}, {
+  Name: 'cOpera',
+  Actual: w.cOpera,
+  Expected: 'Opera'
+}, {
+  Name: 'cPeel',
+  Actual: w.cPeel,
+  Expected: 'Peel'
+}, {
+  Name: 'cSoda',
+  Actual: w.cSoda,
+  Expected: 'Soda'
+}, {
+  Name: 'cOuter',
+  Actual: w.cOuter,
+  Expected: 'Outer'
+}, {
+  Name: 'cOutrageous',
+  Actual: w.cOutrageous,
+  Expected: 'Outrageous'
+}, {
+  Name: 'cOxford',
+  Actual: w.cOxford,
+  Expected: 'Oxford'
+}, {
+  Name: 'cPacific',
+  Actual: w.cPacific,
+  Expected: 'Pacific'
+}, {
+  Name: 'cPalatinate',
+  Actual: w.cPalatinate,
+  Expected: 'Palatinate'
+}, {
+  Name: 'cPale',
+  Actual: w.cPale,
+  Expected: 'Pale'
+}, {
+  Name: 'cPansy',
+  Actual: w.cPansy,
+  Expected: 'Pansy'
+}, {
+  Name: 'cPaolo',
+  Actual: w.cPaolo,
+  Expected: 'Paolo'
+}, {
+  Name: 'cVeronese',
+  Actual: w.cVeronese,
+  Expected: 'Veronese'
+}, {
+  Name: 'cPapaya',
+  Actual: w.cPapaya,
+  Expected: 'Papaya'
+}, {
+  Name: 'cWhip',
+  Actual: w.cWhip,
+  Expected: 'Whip'
+}, {
+  Name: 'cParadise',
+  Actual: w.cParadise,
+  Expected: 'Paradise'
+}, {
+  Name: 'cParis',
+  Actual: w.cParis,
+  Expected: 'Paris'
+}, {
+  Name: 'cPaynes',
+  Actual: w.cPaynes,
+  Expected: 'Paynes'
+}, {
+  Name: 'cPuff',
+  Actual: w.cPuff,
+  Expected: 'Puff'
+}, {
+  Name: 'cPearly',
+  Actual: w.cPearly,
+  Expected: 'Pearly'
+}, {
+  Name: 'cPermanent',
+  Actual: w.cPermanent,
+  Expected: 'Permanent'
+}, {
+  Name: 'cGeranium',
+  Actual: w.cGeranium,
+  Expected: 'Geranium'
+}, {
+  Name: 'cLake',
+  Actual: w.cLake,
+  Expected: 'Lake'
+}, {
+  Name: 'cPersian',
+  Actual: w.cPersian,
+  Expected: 'Persian'
+}, {
+  Name: 'cPewter',
+  Actual: w.cPewter,
+  Expected: 'Pewter'
+}, {
+  Name: 'cPhthalo',
+  Actual: w.cPhthalo,
+  Expected: 'Phthalo'
+}, {
+  Name: 'cPicotee',
+  Actual: w.cPicotee,
+  Expected: 'Picotee'
+}, {
+  Name: 'cPictorial',
+  Actual: w.cPictorial,
+  Expected: 'Pictorial'
+}, {
+  Name: 'cPiggy',
+  Actual: w.cPiggy,
+  Expected: 'Piggy'
+}, {
+  Name: 'cPine',
+  Actual: w.cPine,
+  Expected: 'Pine'
+}, {
+  Name: 'cTree',
+  Actual: w.cTree,
+  Expected: 'Tree'
+}, {
+  Name: 'cFlamingo',
+  Actual: w.cFlamingo,
+  Expected: 'Flamingo'
+}, {
+  Name: 'cSherbet',
+  Actual: w.cSherbet,
+  Expected: 'Sherbet'
+}, {
+  Name: 'cPlump',
+  Actual: w.cPlump,
+  Expected: 'Plump'
+}, {
+  Name: 'cpolish',
+  Actual: w.cpolish,
+  Expected: 'polish'
+}, {
+  Name: 'cPolish',
+  Actual: w.cPolish,
+  Expected: 'Polish'
+}, {
+  Name: 'cpolished',
+  Actual: w.cpolished,
+  Expected: 'polished'
+}, {
+  Name: 'cPolished',
+  Actual: w.cPolished,
+  Expected: 'Polished'
+}, {
+  Name: 'cPomp',
+  Actual: w.cPomp,
+  Expected: 'Pomp'
+}, {
+  Name: 'cPower',
+  Actual: w.cPower,
+  Expected: 'Power'
+}, {
+  Name: 'cPortland',
+  Actual: w.cPortland,
+  Expected: 'Portland'
+}, {
+  Name: 'cPrinceton',
+  Actual: w.cPrinceton,
+  Expected: 'Princeton'
+}, {
+  Name: 'cPrussian',
+  Actual: w.cPrussian,
+  Expected: 'Prussian'
+}, {
+  Name: 'cPsychedelic',
+  Actual: w.cPsychedelic,
+  Expected: 'Psychedelic'
+}, {
+  Name: 'cPullman',
+  Actual: w.cPullman,
+  Expected: 'Pullman'
+}, {
+  Name: 'cMountain',
+  Actual: w.cMountain,
+  Expected: 'Mountain'
+}, {
+  Name: 'cMajesty',
+  Actual: w.cMajesty,
+  Expected: 'Majesty'
+}, {
+  Name: 'cPizzazz',
+  Actual: w.cPizzazz,
+  Expected: 'Pizzazz'
+}, {
+  Name: 'cQueen',
+  Actual: w.cQueen,
+  Expected: 'Queen'
+}, {
+  Name: 'cQuick',
+  Actual: w.cQuick,
+  Expected: 'Quick'
+}, {
+  Name: 'cQuinacridone',
+  Actual: w.cQuinacridone,
+  Expected: 'Quinacridone'
+}, {
+  Name: 'cRadical',
+  Actual: w.cRadical,
+  Expected: 'Radical'
+}, {
+  Name: 'cRaisin',
+  Actual: w.cRaisin,
+  Expected: 'Raisin'
+}, {
+  Name: 'cGlace',
+  Actual: w.cGlace,
+  Expected: 'Glace'
+}, {
+  Name: 'cRazzle',
+  Actual: w.cRazzle,
+  Expected: 'Razzle'
+}, {
+  Name: 'cDazzle',
+  Actual: w.cDazzle,
+  Expected: 'Dazzle'
+}, {
+  Name: 'cRazzmic',
+  Actual: w.cRazzmic,
+  Expected: 'Razzmic'
+}, {
+  Name: 'cRebecca',
+  Actual: w.cRebecca,
+  Expected: 'Rebecca'
+}, {
+  Name: 'cSalsa',
+  Actual: w.cSalsa,
+  Expected: 'Salsa'
+}, {
+  Name: 'cResolution',
+  Actual: w.cResolution,
+  Expected: 'Resolution'
+}, {
+  Name: 'cRich',
+  Actual: w.cRich,
+  Expected: 'Rich'
+}, {
+  Name: 'cRifle',
+  Actual: w.cRifle,
+  Expected: 'Rifle'
+}, {
+  Name: 'cRobin',
+  Actual: w.cRobin,
+  Expected: 'Robin'
+}, {
+  Name: 'cEgg',
+  Actual: w.cEgg,
+  Expected: 'Egg'
+}, {
+  Name: 'cRocket',
+  Actual: w.cRocket,
+  Expected: 'Rocket'
+}, {
+  Name: 'cRoman',
+  Actual: w.cRoman,
+  Expected: 'Roman'
+}, {
+  Name: 'cBonbon',
+  Actual: w.cBonbon,
+  Expected: 'Bonbon'
+}, {
+  Name: 'cDust',
+  Actual: w.cDust,
+  Expected: 'Dust'
+}, {
+  Name: 'cEbony',
+  Actual: w.cEbony,
+  Expected: 'Ebony'
+}, {
+  Name: 'cQuartz',
+  Actual: w.cQuartz,
+  Expected: 'Quartz'
+}, {
+  Name: 'cVale',
+  Actual: w.cVale,
+  Expected: 'Vale'
+}, {
+  Name: 'cwood',
+  Actual: w.cwood,
+  Expected: 'wood'
+}, {
+  Name: 'cRosso',
+  Actual: w.cRosso,
+  Expected: 'Rosso'
+}, {
+  Name: 'cCorsa',
+  Actual: w.cCorsa,
+  Expected: 'Corsa'
+}, {
+  Name: 'cRosy',
+  Actual: w.cRosy,
+  Expected: 'Rosy'
+}, {
+  Name: 'cRoyal',
+  Actual: w.cRoyal,
+  Expected: 'Royal'
+}, {
+  Name: 'crub',
+  Actual: w.crub,
+  Expected: 'rub'
+}, {
+  Name: 'cRub',
+  Actual: w.cRub,
+  Expected: 'Rub'
+}, {
+  Name: 'crubs',
+  Actual: w.crubs,
+  Expected: 'rubs'
+}, {
+  Name: 'cRubs',
+  Actual: w.cRubs,
+  Expected: 'Rubs'
+}, {
+  Name: 'crubbed',
+  Actual: w.crubbed,
+  Expected: 'rubbed'
+}, {
+  Name: 'cRubbed',
+  Actual: w.cRubbed,
+  Expected: 'Rubbed'
+}, {
+  Name: 'crubbing',
+  Actual: w.crubbing,
+  Expected: 'rubbing'
+}, {
+  Name: 'cRubbing',
+  Actual: w.cRubbing,
+  Expected: 'Rubbing'
+}, {
+  Name: 'cRubine',
+  Actual: w.cRubine,
+  Expected: 'Rubine'
+}, {
+  Name: 'cSacramento',
+  Actual: w.cSacramento,
+  Expected: 'Sacramento'
+}, {
+  Name: 'cState',
+  Actual: w.cState,
+  Expected: 'State'
+}, {
+  Name: 'cSaddle',
+  Actual: w.cSaddle,
+  Expected: 'Saddle'
+}, {
+  Name: 'cSafety',
+  Actual: w.cSafety,
+  Expected: 'Safety'
+}, {
+  Name: 'cBlaze',
+  Actual: w.cBlaze,
+  Expected: 'Blaze'
+}, {
+  Name: 'cPatricks',
+  Actual: w.cPatricks,
+  Expected: 'Patricks'
+}, {
+  Name: 'cSandy',
+  Actual: w.cSandy,
+  Expected: 'Sandy'
+}, {
+  Name: 'csap',
+  Actual: w.csap,
+  Expected: 'sap'
+}, {
+  Name: 'cSap',
+  Actual: w.cSap,
+  Expected: 'Sap'
+}, {
+  Name: 'cSatin',
+  Actual: w.cSatin,
+  Expected: 'Satin'
+}, {
+  Name: 'cSheen',
+  Actual: w.cSheen,
+  Expected: 'Sheen'
+}, {
+  Name: 'cSchauss',
+  Actual: w.cSchauss,
+  Expected: 'Schauss'
+}, {
+  Name: 'cSchool',
+  Actual: w.cSchool,
+  Expected: 'School'
+}, {
+  Name: 'cBus',
+  Actual: w.cBus,
+  Expected: 'Bus'
+}, {
+  Name: 'cScreamin',
+  Actual: w.cScreamin,
+  Expected: 'Screamin'
+}, {
+  Name: 'cSeal',
+  Actual: w.cSeal,
+  Expected: 'Seal'
+}, {
+  Name: 'cshell',
+  Actual: w.cshell,
+  Expected: 'shell'
+}, {
+  Name: 'cSelective',
+  Actual: w.cSelective,
+  Expected: 'Selective'
+}, {
+  Name: 'cShamrock',
+  Actual: w.cShamrock,
+  Expected: 'Shamrock'
+}, {
+  Name: 'cShimmering',
+  Actual: w.cShimmering,
+  Expected: 'Shimmering'
+}, {
+  Name: 'cBlush',
+  Actual: w.cBlush,
+  Expected: 'Blush'
+}, {
+  Name: 'cShiny',
+  Actual: w.cShiny,
+  Expected: 'Shiny'
+}, {
+  Name: 'cShocking',
+  Actual: w.cShocking,
+  Expected: 'Shocking'
+}, {
+  Name: 'cChalice',
+  Actual: w.cChalice,
+  Expected: 'Chalice'
+}, {
+  Name: 'cSizzling',
+  Actual: w.cSizzling,
+  Expected: 'Sizzling'
+}, {
+  Name: 'cSunrise',
+  Actual: w.cSunrise,
+  Expected: 'Sunrise'
+}, {
+  Name: 'cSlimy',
+  Actual: w.cSlimy,
+  Expected: 'Slimy'
+}, {
+  Name: 'cSmoky',
+  Actual: w.cSmoky,
+  Expected: 'Smoky'
+}, {
+  Name: 'cSonic',
+  Actual: w.cSonic,
+  Expected: 'Sonic'
+}, {
+  Name: 'cBistre',
+  Actual: w.cBistre,
+  Expected: 'Bistre'
+}, {
+  Name: 'cStar',
+  Actual: w.cStar,
+  Expected: 'Star'
+}, {
+  Name: 'cStil',
+  Actual: w.cStil,
+  Expected: 'Stil'
+}, {
+  Name: 'cGrain',
+  Actual: w.cGrain,
+  Expected: 'Grain'
+}, {
+  Name: 'cglow',
+  Actual: w.cglow,
+  Expected: 'glow'
+}, {
+  Name: 'cSuper',
+  Actual: w.cSuper,
+  Expected: 'Super'
+}, {
+  Name: 'cTango',
+  Actual: w.cTango,
+  Expected: 'Tango'
+}, {
+  Name: 'cTart',
+  Actual: w.cTart,
+  Expected: 'Tart'
+}, {
+  Name: 'cTea',
+  Actual: w.cTea,
+  Expected: 'Tea'
+}, {
+  Name: 'cTerra',
+  Actual: w.cTerra,
+  Expected: 'Terra'
+}, {
+  Name: 'cCotta',
+  Actual: w.cCotta,
+  Expected: 'Cotta'
+}, {
+  Name: 'cThulian',
+  Actual: w.cThulian,
+  Expected: 'Thulian'
+}, {
+  Name: 'cTickle',
+  Actual: w.cTickle,
+  Expected: 'Tickle'
+}, {
+  Name: 'cTiffany',
+  Actual: w.cTiffany,
+  Expected: 'Tiffany'
+}, {
+  Name: 'cTimber',
+  Actual: w.cTimber,
+  Expected: 'Timber'
+}, {
+  Name: 'cwolf',
+  Actual: w.cwolf,
+  Expected: 'wolf'
+}, {
+  Name: 'cTropical',
+  Actual: w.cTropical,
+  Expected: 'Tropical'
+}, {
+  Name: 'cRain',
+  Actual: w.cRain,
+  Expected: 'Rain'
+}, {
+  Name: 'cTrypan',
+  Actual: w.cTrypan,
+  Expected: 'Trypan'
+}, {
+  Name: 'cTufts',
+  Actual: w.cTufts,
+  Expected: 'Tufts'
+}, {
+  Name: 'cTumble',
+  Actual: w.cTumble,
+  Expected: 'Tumble'
+}, {
+  Name: 'cTwilight',
+  Actual: w.cTwilight,
+  Expected: 'Twilight'
+}, {
+  Name: 'cTyrian',
+  Actual: w.cTyrian,
+  Expected: 'Tyrian'
+}, {
+  Name: 'cUltra',
+  Actual: w.cUltra,
+  Expected: 'Ultra'
+}, {
+  Name: 'cUnbleached',
+  Actual: w.cUnbleached,
+  Expected: 'Unbleached'
+}, {
+  Name: 'cNations',
+  Actual: w.cNations,
+  Expected: 'Nations'
+}, {
+  Name: 'cUpsdell',
+  Actual: w.cUpsdell,
+  Expected: 'Upsdell'
+}, {
+  Name: 'cUranian',
+  Actual: w.cUranian,
+  Expected: 'Uranian'
+}, {
+  Name: 'cvan',
+  Actual: w.cvan,
+  Expected: 'van'
+}, {
+  Name: 'cVan',
+  Actual: w.cVan,
+  Expected: 'Van'
+}, {
+  Name: 'cDyke',
+  Actual: w.cDyke,
+  Expected: 'Dyke'
+}, {
+  Name: 'cVegas',
+  Actual: w.cVegas,
+  Expected: 'Vegas'
+}, {
+  Name: 'cVenetian',
+  Actual: w.cVenetian,
+  Expected: 'Venetian'
+}, {
+  Name: 'cVivid',
+  Actual: w.cVivid,
+  Expected: 'Vivid'
+}, {
+  Name: 'cWarm',
+  Actual: w.cWarm,
+  Expected: 'Warm'
+}, {
+  Name: 'cWild',
+  Actual: w.cWild,
+  Expected: 'Wild'
+}, {
+  Name: 'cWindsor',
+  Actual: w.cWindsor,
+  Expected: 'Windsor'
+}, {
+  Name: 'cDregs',
+  Actual: w.cDregs,
+  Expected: 'Dregs'
+}, {
+  Name: 'cWinter',
+  Actual: w.cWinter,
+  Expected: 'Winter'
+}, {
+  Name: 'cDream',
+  Actual: w.cDream,
+  Expected: 'Dream'
+}, {
+  Name: 'cYale',
+  Actual: w.cYale,
+  Expected: 'Yale'
 }];
 exports.wordConstantsValidation = wordConstantsValidation;

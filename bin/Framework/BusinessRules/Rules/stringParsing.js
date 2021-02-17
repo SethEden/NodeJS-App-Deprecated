@@ -17,7 +17,11 @@ var _fileBroker = _interopRequireDefault(require("../../Executrix/fileBroker"));
 
 var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
+var p = _interopRequireWildcard(require("../../Constants/phonics.constants"));
+
 var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
+
+var n = _interopRequireWildcard(require("../../Constants/numeric.constants"));
 
 var w = _interopRequireWildcard(require("../../Constants/word.constants"));
 
@@ -2392,7 +2396,7 @@ var determineConstantsContextQualifiedPrefix = function determineConstantsContex
     if (inputData.includes(w.cbasic) === true) {
       returnData = b.cb;
     } else if (inputData.includes(w.ccolor) === true) {
-      returnData = p.ccolr;
+      returnData = p.cclr;
     } else if (inputData.includes(w.celement) === true) {
       returnData = b.ce;
     } else if (inputData.includes(w.cgeneric) === true) {
@@ -2941,7 +2945,7 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
         break;
 
       case s.cColorConstantsValidation:
-        returnData = s.ccolr + b.cDot;
+        returnData = p.cclr + b.cDot;
         break;
 
       case s.cElementConstantsValidation:
@@ -2965,7 +2969,7 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
         break;
 
       case s.cShapeConstantsValidation:
-        returnData = s.cshp + b.cDot;
+        returnData = p.cshp + b.cDot;
         break;
 
       case s.cSystemConstantsValidation:
@@ -3241,8 +3245,11 @@ var validatePatternsThatNeedImplementation = function validatePatternsThatNeedIm
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
+  var returnData = '';
+
   if (inputData) {
     var passMessage = '';
+    var j = 0; // We will use this as an iterator to count the number of times we add a string to the returnData coma-seperated list.
 
     for (var i = 0; i < inputData.length; i++) {
       var currentString = inputData[i];
@@ -3254,7 +3261,17 @@ var validatePatternsThatNeedImplementation = function validatePatternsThatNeedIm
         passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
         console.log(passMessage); // constant does NOT exist:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cConstantDoesNotExist + currentString);
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cConstantDoesNotExist + currentString); // Make sure we add all the strings that do not exist to a coma-seperated list,
+        // so we can enqueue it to the constantsGeneratorList command and generate actual new constants lines of code.
+
+
+        if (j === 0) {
+          returnData = currentString;
+        } else {
+          returnData = returnData + b.cComa + currentString;
+        }
+
+        j++;
       } else {
         // Constant does exist:
         passMessage = s.cConstantDoesExist + currentString;
@@ -3267,9 +3284,11 @@ var validatePatternsThatNeedImplementation = function validatePatternsThatNeedIm
     }
   }
 
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
-  return null;
+  return returnData;
 };
 /**
  * @function validateConstantsDataValues

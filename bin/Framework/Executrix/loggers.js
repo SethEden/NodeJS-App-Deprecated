@@ -132,14 +132,16 @@ function constantsValidationSummaryLog(message, passFail) {
 
   if (passFail === true) {
     if (_configurator["default"].getConfigurationSetting(s.cDisplaySummaryConstantsValidationPassMessages) === true) {
-      outputMessage = "PASSED -- ".concat(message, " -- PASSED");
+      outputMessage = w.cPASSED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cPASSED; // `PASSED -- ${message} -- PASSED`;
+
       outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
       outputMessage = chalk.bgRgb(0, 255, 0)(outputMessage);
       console.log(outputMessage);
     }
   } else {
     if (_configurator["default"].getConfigurationSetting(s.cDisplaySummaryConstantsValidationFailMessages) === true) {
-      outputMessage = "FAILED -- ".concat(message, " -- FAILED");
+      outputMessage = w.cFAILED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAILED; // `FAILED -- ${message} -- FAILED`;
+
       outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
       outputMessage = chalk.bgRgb(255, 0, 0)(outputMessage);
       console.log(outputMessage);
@@ -380,7 +382,7 @@ function printMessageToFile(file, message) {
 
     try {
       fd = fs.openSync(file, 'a');
-      fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, 'utf8');
+      fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, g.cUTF8);
     } catch (err) {
       return console.log(err);
     } finally {

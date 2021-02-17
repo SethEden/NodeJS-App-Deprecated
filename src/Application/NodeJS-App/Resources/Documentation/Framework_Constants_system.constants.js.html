@@ -38,6 +38,7 @@
  * @requires module:phonics-constants
  * @requires module:generic-constants
  * @requires module:numeric-constants
+ * @requires module:units-constants
  * @requires module:word-constants
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -47,6 +48,7 @@ import * as b from './basic.constants';
 import * as p from './phonics.constants';
 import * as g from './generic.constants';
 import * as n from './numeric.constants';
+import * as u from './units.constants';
 import * as w from './word.constants';
 
 // Miscelaneious
@@ -233,7 +235,7 @@ export const cCommandWorkflows = w.cCommand + w.cWorkflows; // CommandWorkflows
 export const cStandardDeviation = w.cStandard + w.cDeviation; // StandardDeviation
 export const cHexValue = p.cHex + w.cValue; // HexValue
 export const cexportconst = w.cexport + b.cSpace + g.cconst; // export-const // With a space not a dash, but the validation code is looking for that exact string.
-export const cExportConst = w.cExport + b.cSpace + g.cConst; // Export Const
+export const cExportConst = w.cExport + b.cSpace + g.cConst; // smuggle something
 export const cDataStorage = w.cData + w.cStorage; // DataStorage
 export const cSource1 = w.cSource + n.c1; // Source1
 export const cSource2 = w.cSource + n.c2; // Source2
@@ -585,7 +587,6 @@ export const creturnConfiguraitonValueIs = w.creturn + w.cConfiguration + w.cVal
 export const cattributeJsonStringIs = w.cattribute + g.cJson + w.cString + cSpaceIsColonSpace; // attributeJsonString is:
 export const cappAttributeNameIs = g.capp + w.cAttribute + w.cName + cSpaceIsColonSpace; // appAttributeName is:
 export const cappAttributeValueIs = g.capp + w.cAttribute + w.cValue + cSpaceIsColonSpace; // appAttributeValue is:
-/////////////////////////////////////////////////////////////////
 export const cexecuteBusinessRulesColon = w.cexecute + b.cSpace + w.cbusiness + b.cSpace + w.crules + b.cColon + b.cSpace; // execute business rules:
 export const cdataPathAfterBusinessRulesProcessingIs = w.cdata + w.cPath + b.cSpace + w.cafter + b.cSpace + w.cbusiness + b.cSpace + w.crules + b.cSpace + w.cprocessing + cSpaceIsColonSpace; // dataPath after business rules processing is:
 export const cfilesFoundIs = w.cfiles + w.cFound + cSpaceIsColonSpace; // filesFound is:
@@ -602,7 +603,6 @@ export const cfullyParsedDataIs = w.cfully + b.cSpace + w.cparsed + b.cSpace + w
 export const cD_finalMergeIs = b.cD + b.cSpace + w.cfinal + b.cSpace + w.cmerge + cSpaceIsColonSpace; // D final merge is:
 export const cdataStorageContextNameIs = w.cdata + w.cStorage + w.cContext + w.cName + cSpaceIsColonSpace; // dataStorageContextName is:
 export const cdataToStoreIs = w.cdata + b.cTo + w.cStore + cSpaceIsColonSpace; // dataToStore is:
-export const cinputContextNameIs = w.cinput + b.cSpace + w.ccontext + w.cName + cSpaceIsColonSpace; // input contextName is:
 export const cdataCatagoryDetailsNameIs = w.cdata + w.cCatagory + w.cDetails + w.cName + cSpaceIsColonSpace; // dataCatagoryDetailsName is:
 export const ctempDataIs = w.ctemp + w.cData + cSpaceIsColonSpace; // tempData is:
 export const ctargetDataIs = w.ctarget + w.cData + cSpaceIsColonSpace; // targetData is:
@@ -628,6 +628,79 @@ export const celementNameIs = w.celement + w.cName + cSpaceIsColonSpace; // elem
 export const cdataObjectIs = w.cdata + w.cObject + cSpaceIsColonSpace; // dataObject is:
 export const celementNamePatternIs = w.celement + w.cName + w.cPattern + cSpaceIsColonSpace; // elementNamePattern is:
 export const celementCountIs = w.celement + w.cCount + cSpaceIsColonSpace; // elementCount is:
+export const cERROR_Colon = w.cERROR + b.cColon + b.cSpace; // ERROR:
+export const cfileAndPathToLoadFromIs = w.cfile + b.cSpace + w.cand + b.cSpace + w.cpath + b.cSpace + b.cto + b.cSpace + w.cload + b.cSpace + w.cfrom + cSpaceIsColonSpace; // file and path to load from is:
+export const cDoneLoadingDataFrom = w.cDONE + b.cSpace + w.cloading + b.cSpace + w.cdata + b.cSpace + w.cfrom + b.cColon + b.cSpace; // DONE loading data from:
+export const cfileAndPathToWriteDataToIs = w.cfile + b.cSpace + w.cand + b.cSpace + w.cpath + b.cSpace + b.cto + b.cSpace + w.cwrite + b.cSpace + w.cdata + b.cSpace + b.cto + b.cSpace + b.cis + b.cColon + b.cSpace; // file and path to write data to is:
+export const cdataToWriteIs = w.cdata + b.cSpace + b.cto + b.cSpace + w.cwrite + cSpaceIsColonSpace; // data to write is:
+export const cDataWasWrittenToTheFile = w.cData + b.cSpace + w.cwas + b.cSpace + w.cwritten + b.cSpace + b.cto + b.cSpace + w.cthe + b.cSpace + w.cfile + b.cColon + b.cSpace; // Data was written to the file:
+export const cPathThatShouldBeScannedIs = w.cPath + b.cSpace + w.cthat + b.cSpace + w.cshould + b.cSpace + b.cbe + b.cSpace + w.cscanned + cSpaceIsColonSpace; // Path that should be scanned is:
+export const cfilesFoundAre = w.cfiles + b.cSpace + w.cfound + b.cSpace + w.care + b.cColon + b.cSpace; // files found are:
+export const cdirectorIs = w.cdirectory + cSpaceIsColonSpace; // directory is:
+export const cdirectoryPathIs = w.cdirectory + w.cPath + cSpaceIsColonSpace; // directoryPath is:
+export const csourceFolderIs = w.csource + w.cFolder + cSpaceIsColonSpace; // sourceFolder is:
+export const cdestinationFolderIs = w.cdestination + w.cFolder + cSpaceIsColonSpace; // destinationFolder is:
+export const ccopySuccessIs = w.ccopy + w.cSuccess + cSpaceIsColonSpace; // copySuccess is:
+export const ccurrentVersionIs = w.ccurrent + b.cSpace + w.cversion + cSpaceIsColonSpace; // current version is:
+export const creleasedArchiveFilesListIs = w.creleased + b.cSpace + w.carchive + b.cSpace + w.cfiles + b.cSpace + w.clist + cSpaceIsColonSpace; // released archive files list is:
+export const cfileIs = w.cfile + cSpaceIsColonSpace; // file is:
+export const cfileNameIs = w.cfile + w.cName + cSpaceIsColonSpace; // fileName is:
+export const creleaseFilesListIs = w.crelease + b.cSpace + w.cfiles + b.cSpace + w.clist + cSpaceIsColonSpace; // release files list is:
+export const creleaseDateTimeStampIs = w.crelease + b.cSpace + w.cdate + b.cDash + w.ctime + b.cSpace + w.cstamp + cSpaceIsColonSpace; // release date-time stamp is:
+export const creleaseFileNameIs = w.crelease + b.cSpace + w.cfile + w.cName + cSpaceIsColonSpace; // release fileName is:
+export const cDoneWritingTheZipFile = w.cDone + b.cSpace + w.cwriting + b.cSpace + w.cthe + b.cSpace + g.czip + b.cSpace + w.cfile + b.cColon + b.cSpace; // Done writing the zip file:
+export const cSetTheReturnPackageSuccessFlagToTrue = w.cSet + b.cSpace + w.cthe + b.cSpace + w.creturn + b.cSpace + w.cpackage + w.cSuccess + b.cSpace + w.cflag + b.cSpace + b.cto + b.cSpace + g.cTRUE; // Set the return packageSuccess flag to TRUE
+export const ccurrentVersionAlreadyReleased = w.ccurrent + b.cSpace + w.cversion + b.cSpace + w.calready + b.cSpace + w.creleased; // current version already released
+export const cpackageSuccessIs = w.cpackage + w.cSuccess + cSpaceIsColonSpace; // packageSuccess is:
+export const cRootPathBeforeProcessingIs = w.cRoot + w.cPath + b.cSpace + w.cbefore + b.cSpace + w.cprocessing + cSpaceIsColonSpace; // RootPath before processing is:
+export const cRootPathAfterProcessingIs = w.cRoot + w.cPath + b.cSpace + w.cafter + b.cSpace + w.cprocessing + cSpaceIsColonSpace; // RootPath after processing is:
+export const cSourceIs = w.csource + cSpaceIsColonSpace; // source is:
+export const ctargetIs = w.ctarget + cSpaceIsColonSpace; // target is:
+export const cErrorCouldNotCopyFile = w.cERROR + b.cColon + b.cSpace + w.cCould + b.cSpace + g.cnot + b.cSpace + w.ccopy + b.cSpace + w.cfile + b.cColon + b.cSpace; // ERROR: Could not copy file:
+export const cErrorCouldNotCreateFolder = w.cERROR + b.cColon + b.cSpace + w.cCould + b.cSpace + g.cnot + b.cSpace + w.ccreate + b.cSpace + w.cfolder + b.cColon + b.cSpace; // ERROR: Could not create folder:
+export const csuccessfullCopyIs = w.csuccessful + w.cCopy + cSpaceIsColonSpace; // successfullCopy is:
+export const cErrorCouldNotCopyFolderContents = w.cERROR + b.cColon + b.cSpace + w.cCould + b.cSpace + g.cnot + b.cSpace + w.ccopy + b.cSpace + w.cfolder + b.cSpace + w.ccontents + b.cColon + b.cSpace; // ERROR: Could not copy folder contents:
+export const cargumentValueIs = w.cargument + w.cValue + cSpaceIsColonSpace; // argumentValue is:
+export const cconsolidatedArgumentModeIs = w.cconsolidated + w.cArgument + w.cMode + cSpaceIsColonSpace; // consolidatedArgumentMode is:
+export const cPushingArgumentValueToReturnDataAsArrayElement = w.cPushing + b.cSpace + w.cthe + b.cSpace + w.cargument + w.cValue + b.cSpace + b.cto + b.cSpace + w.cthe + b.cSpace + w.creturn + w.cData + b.cSpace + b.cas + b.cSpace + b.can + b.cSpace + w.carray + b.cSpace + w.celement; // Pushing the argumentValue to the returnData as an array element
+export const cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeFalse = w.cCalling + b.cSpace + w.canalyze + w.cArgument + b.cSpace + w.cfor + b.cSpace + w.cindex + b.cSpace + w.cEqual + b.cSpace + n.c2 + b.cComa + b.cSpace + w.cconsolidated + w.cArgument + w.cMode + b.cSpace + b.cEqual + b.cSpace + g.cfalse; // Calling analyzeArgument for index = 2, consolidatedArgumentMode = false
+export const cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeTrue = w.cCalling + b.cSpace + w.canalyze + w.cArgument + b.cSpace + w.cfor + b.cSpace + w.cindex + b.cSpace + b.cEqual + b.cSpace + n.c2 + b.cComa + b.cSpace + w.cconsolidated + w.cArgument + w.cMode + b.cSpace + b.cEqual + b.cSpace + g.ctrue; // Calling analyzeArgument for index = 2, consolidatedArgumentMode = true
+export const cargumentValueLengthGreaterThanZero = w.cargument + w.cValue + b.cDot + w.cLength + b.cSpace + b.cGreaterThan + b.cSpace + n.c0; // argumentValue.length > 0
+export const cReturnArgumentValueSameAsItWasPassedIn = w.cReturn + b.cSpace + w.cthe + b.cSpace + w.cargument + w.cValue + b.cSpace + w.cthe + b.cSpace + w.csame + b.cSpace + b.cas + b.cSpace + b.cit + b.cSpace + w.cwas + b.cSpace + w.cpassed + b.cSpace + b.cin + b.cDot; // Return the argumentValue the same as it was passed in.
+export const cCallingAnalyzeArgumentIndex3ConsolidatedArgumentModeFalse = w.cCalling + b.cSpace + w.canalyze + w.cArgument + b.cSpace + w.cfor + b.cSpace + w.cindex + b.cSpace + b.cEqual + b.cSpace + n.c3 + b.cComa + b.cSpace + w.cconsolidated + w.cArgument + w.cMode + b.cSpace + b.cEqual + b.cSpace + g.cfalse; // Calling analyzeArgument for index = 3, consolidatedArgumentMode = false
+export const cCheckIfThereAreBracketsOrNoBrackets = w.cCheck + b.cSpace + b.cif + b.cSpace + w.cthere + b.cSpace + w.care + b.cSpace + w.cbrackets + b.cSpace + b.cor + b.cSpace + b.cno + b.cSpace + w.cbrackets + b.cDot; // Check if there are brackets or no brackets.
+export const cBracketsWereFound = w.cBrackets + b.cSpace + w.cwere + b.cSpace + w.cfound; // Brackets were found
+export const cCheckIfThereIsRegularExpressionOrNot = w.cCheck + b.cSpace + b.cif + b.cSpace + w.cthere + b.cSpace + b.cis + b.cSpace + b.ca + b.cSpace + w.cRegular + b.cSpace + w.cExpression + b.cSpace + b.cor + b.cSpace + g.cnot + b.cDot; // Check if there is a Regular Expression or not.
+export const cRegularExpressionWasFound = b.cA + b.cSpace + w.cregular + b.cSpace + w.cexpression + b.cSpace + w.cwas + b.cSpace + w.cfound + b.cExclamation; // A regular expression was found!
+export const cNoRegExpFound = b.cNO + b.cSpace + g.cRegExp + b.cSpace + w.cfound + b.cExclamation; // NO RegExp found!
+export const cBracketsAreFound = w.cBrackets + b.cSpace + w.cARE + b.cSpace + w.cfound + b.cExclamation; // Brackets ARE found!
+export const cNoSecondaryCommandArgumentDelimiters = b.cNO + b.cSpace + w.csecondary + b.cSpace + w.ccommand + b.cSpace + w.cargument + b.cSpace + w.cdelimiters + b.cDot; // NO secondary command argument delimiters.
+export const cregularExpressionIs = w.cregular + b.cSpace + w.cexpression + cSpaceIsColonSpace; // regular expression is:
+export const cregExValueIs = g.cregEx + w.cValue + cSpaceIsColonSpace; // regExValue is:
+export const cregularExpressionFlagsAre = w.cregular + b.cSpace + w.cexpression + b.cSpace + w.cflags + b.cSpace + w.care + b.cColon + b.cSpace; // regular expression flags are:
+export const cregExFlagsIs = g.cregEx + w.cFlags + cSpaceIsColonSpace; // regExFlags is:
+export const cargumentValueContainsTheDelimiterLetsSplitIt = w.cargument + w.cValue + b.cSpace + w.ccontains + b.cSpace + w.cthe + b.cSpace + w.cdelimiter + b.cColon + b.cSpace + w.cLets + b.cSpace + w.csplit + b.cSpace + b.cit + b.cExclamation; // argumentValue contains the delimiter, lets split it!
+export const cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs = w.cargument + w.cValue + b.cSpace + w.cafter + b.cSpace + w.cattempting + b.cSpace + b.cto + b.cSpace + w.cremove + b.cSpace + b.ca + b.cSpace + w.copen + b.cSpace + w.cbracket + b.cSpace + w.cfrom + b.cSpace + w.call + b.cSpace + w.carray + b.cSpace + w.celements + cSpaceIsColonSpace; // argumentValue after attempting to remove a open bracket from all array elements is:
+export const cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs = w.cargument + w.cValue + b.cSpace + w.cafter + b.cSpace + w.cattempting + b.cSpace + b.cto + b.cSpace + w.cremove + b.cSpace + b.ca + b.cSpace + w.cclose + b.cSpace + w.cbracket + b.cSpace + w.cfrom + b.cSpace + w.call + b.cSpace + w.carray + b.cSpace + w.celements + cSpaceIsColonSpace; // argumentValue after attempting to remove a close bracket from all array elements is:
+export const csecondaryCommandArgsDelimiterIs = w.csecondary + w.cCommand + g.cArgs + w.cDelimiter + cSpaceIsColonSpace; // secondaryCommandArgsDelimiter is:
+export const cargumentArrayIs = w.cargument + w.cArray + cSpaceIsColonSpace; // argumentArray is:
+export const cformattingIs = w.cformatting + cSpaceIsColonSpace; // formatting is:
+export const cstartTimeIs = w.cstart + w.cTime + cSpaceIsColonSpace; // startTime is:
+export const cendTimeIs = w.cend + w.cTime + cSpaceIsColonSpace; // endTime is:
+export const cdeltaTimeResultIs = w.cdelta + w.cTime + w.cResult + cSpaceIsColonSpace; // deltaTimeResult is:
+export const cdeltaTimeIs = w.cdelta + w.cTime + cSpaceIsColonSpace; // deltaTime is:
+export const cformatIs = w.cformat + cSpaceIsColonSpace; // format is:
+export const creturnDeltaTimeIs = w.creturn + w.cDelta + w.cTime + cSpaceIsColonSpace; // returnDeltaTime is:
+export const csleepTimeIs = w.csleep + w.cTime + cSpaceIsColonSpace; // sleepTime is:
+export const cworkflowNameIs = w.cworkflow + w.cName + cSpaceIsColonSpace; // workflowName is:
+export const ccurrentWorkflowIs = w.ccurrent + w.cWorkflow + cSpaceIsColonSpace; // currentWorkflow is:
+export const cworkflowValueIs = w.cworkflow + w.cValue + cSpaceIsColonSpace; // workflowValue is:
+export const cdataHivePathArrayIs = w.cdata + w.cHive + w.cPath + w.cArray + cSpaceIsColonSpace; // dataHivePathArray is:
+export const ccontentsOfLeafDataHiveElementIs = w.ccontents + b.cSpace + b.cof + b.cSpace + w.cleaf + w.cData + w.cHive + w.cElement + cSpaceIsColonSpace; // contents of leafDataHiveElement is:
+export const centryIs = w.centry + cSpaceIsColonSpace; // entry is:
+export const cattributeValueIs = w.cattribute + w.cValue + cSpaceIsColonSpace; // attributeValue is:
+export const ckey2Is = w.ckey + n.c2 + cSpaceIsColonSpace; // key2 is:
+export const centityIs = w.centity + cSpaceIsColonSpace; // entity is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cMixed + b.cSpace + w.cstring + b.cDot + b.cSpace; // WARNING: Mixed string.
@@ -730,6 +803,14 @@ export const cgetCommandArgsMessage1 = w.cAbout + b.cSpace + b.cto + b.cSpace + 
 export const cgetCommandArgsMessage2 = w.cand + b.cSpace + w.cdetermine + b.cSpace + b.cif + b.cSpace + b.cit + b.cDash + b.cbe + b.cSpace + w.ceven + b.cSpace + b.cor + b.cSpace + w.codd;
 // WARNING: Command does not exist, please enter a valid command and try again!
 export const cexecuteCommandMessage1 = w.cWARNING + b.cColon + b.cSpace + w.cCommand + b.cSpace + w.cdoes + b.cSpace + g.cnot + b.cSpace + w.cexist + b.cComa + b.cSpace + w.cplease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.ccommand + b.cSpace + w.cand + b.cSpace + w.ctry + b.cSpace + w.cagain + b.cExclamation;
+// WARNING: lexical.parseBusinessRuleArgument: Invalid combination of inputs to the lexical.parseBusinessRuleArgument function!
+export const cparseBusinessRuleArgumentMessage1 = w.cWARNING + b.cColon + b.cSpace + w.clexical + b.cDot + w.cparse + w.cBusiness + w.cRule + w.cArgument + b.cColon + b.cSpace + w.cInvalid + b.cSpace + w.ccombination + b.cSpace + b.cof + b.cSpace + w.cinputs + b.cSpace + b.cto + b.cSpace + w.cthe + b.cSpace + w.clexical + b.cDot + w.cparse + w.cBusiness + w.cRule + w.cArgument + b.cSpace + w.cfunction + b.cExclamation + b.cSpace;
+export const cparseBusinessRuleArgumentMessage2 = w.cPlease + b.cSpace + w.cadjust + b.cSpace + w.cinputs + b.cSpace + w.cand + b.cSpace + w.ctry + b.cSpace + w.cagain + b.cDot; //Please adjust inputs and try again.
+// Caught the case that the user may have only specified a single data hive, such as the configuration data hive.
+export const cprintDataHiveAttributesMessage1 = w.cCaught + b.cSpace + w.cthe + b.cSpace + w.ccase + b.cSpace + w.cthe + b.cSpace + w.cuser + b.cSpace + w.cmay + b.cSpace + w.chave + b.cSpace + w.conly + b.cSpace + w.cspecified + b.cSpace + b.ca + b.cSpace + w.csingle + b.cSpace + w.cdata + b.cSpace + w.chive + b.cComa + b.cSpace;
+export const cprintDataHiveAttributesMessage2 = w.csuch + b.cSpace + b.cas + b.cSpace + w.cthe + b.cSpace + w.cconfiguration + b.cSpace + w.cdata + b.cSpace + w.chive + b.cDot;
+// ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.
+export const cprintDataHiveAttributesMessage3 = w.cERROR + b.cColon + b.cSpace + w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cvalid + b.cSpace + w.cname + b.cDot + w.cspace + b.cDot + w.cattribute + w.cName + b.cSpace + w.cfor + b.cSpace + w.cthe + b.cSpace + w.csystem + b.cSpace + b.cto + b.cSpace + w.cprint + b.cSpace + w.cout + b.cSpace + w.cattribute + b.cSpace + w.cdata + b.cSpace + w.cfrom + b.cDot;
 
 // File Types
 export const cCatia = b.cCa + b.cti + b.ca; // Catia
@@ -752,227 +833,6 @@ export const cSolidWorks = w.cSolid + w.cWorks; // SolidWorks
 export const cvrml = b.cvr + b.cml; // vrml
 export const cVrml = b.cVr + b.cml; // Vrml
 export const cVRML = b.cVR + b.cML; // VRML
-
-// Countires
-// TODO: Need to come back and generalize these with constants re-use.
-export const cAfghanistan = 'Afghanistan'; // Afghanistan
-export const cAlbania = 'Albania'; // Albania
-export const cAlgeria = 'Algeria'; // Algeria
-export const cAndorra = 'Andorra'; // Andorra
-export const cAngola = 'Angola'; // Angola
-export const cAntigua = 'Antigua'; // Antigua
-export const cArgentina = 'Argentina'; // Argentina
-export const cArmenia = 'Armenia'; // Armenia
-export const cAustralia = 'Australia'; // Australia
-export const cAustria = 'Austria'; // Austria
-export const cAzerbaijan = 'Azerbaijan'; // Azerbaijan
-export const cBahamas = 'Bahamas'; // Bahamas
-export const cBahrain = 'Bahrain'; // Bahrain
-export const cBangladesh = 'Bangladesh'; // Bangladesh
-export const cBarbados = 'Barbados'; // Barbados
-export const cBarbuda = 'Barbuda'; // Barbuda
-export const cBelarus = 'Belarus'; // Belarus
-export const cBelgium = 'Belgium'; // Belgium
-export const cBelize = 'Belize'; // Belize
-export const cBenin = 'Benin'; // Benin
-export const cBhutan = 'Bhutan'; // Bhutan
-export const cBolivia = 'Bolivia'; // Bolivia
-export const cBosnia = 'Bosnia'; // Bosnia
-export const cBotswana = 'Botswana'; // Botswana
-export const cBrazil = 'Brazil'; // Brazil
-export const cBrunei = 'Brunei'; // Brunei
-export const cBulgaria = 'Bulgaria'; // Bulgaria
-export const cBurkinaFaso = 'BurkinaFaso'; // BurkinaFaso
-export const cBurundi = 'Burundi'; // Burundi
-export const cCotedlvoire = 'Cote dlvoire'; // Cote dlvoire
-export const cCaboVerde = 'Cabo Verde'; // Cabo Verde
-export const cCambodia = 'Cambodia'; // Cambodia
-export const cCameroon = 'Cameroon'; // Cameroon
-export const cCanada = 'Canada'; // Canada
-export const cCentralAfricanRepublic = 'Central African Republic'; // Central African Republic
-export const cChad = 'Chad'; // Chad
-export const cChile = 'Chile'; // Chile
-export const cChina = 'China'; // China
-export const cColombia = 'Colombia'; // Colombia
-export const cComoros = 'Comoros'; // Comoros
-export const cCongo = 'Congo'; // Congo
-export const cCostaRica = 'Costa Rica'; // Costa Rica
-export const cCroatia = 'Croatia'; // Croatia
-export const cCuba = 'Cuba'; // Cuba
-export const cCyprus = 'Cyprus'; // Cyprus
-export const cCzechia = 'Czechia'; // Czechia
-export const cDemocraticRepublicOfTheCongo = 'Democratic Republic of the Congo'; // Democratic Republic of the Congo
-export const cDenmark = 'Denmark'; // Denmark
-export const cDjibouti = 'Djibouti'; // Djibouti
-export const cDominica = 'Dominica'; // Dominica
-export const cDominicanRepublic = 'Dominican Republic'; // Dominican Republic
-export const cEcuador = 'Ecuador'; // Ecuador
-export const cEgypt = 'Egypt'; // Egypt
-export const cElSalvador = 'El Salvador'; // El Salvador
-export const cEquatorialGuinea = 'Equatorial Guinea'; // Equatorial Guinea
-export const cEritrea = 'Eritrea'; // Eritrea
-export const cEstonia = 'Estonia'; // Estonia
-export const cEswatini = 'Eswatini'; // Eswatini -- Formerly Swaziland
-export const cEthiopia = 'Ethiopia'; // Ethiopia
-export const cFiji = 'Fiji';  // Fiji
-export const cFinland = 'Finland'; // Finland
-export const cFrance = 'France'; // France
-export const cGabon = 'Gabon'; // Gabon
-export const cGambia = 'Gambia'; // Gambia
-export const cGeorgia = 'Georgia'; // Georgia
-export const cGerman = b.cGe + b.cr + w.cman; // German
-export const cGermany = cGerman + b.cy; // Germany
-export const cGhana = 'Ghana'; // Ghana
-export const cGreece = 'Greece'; // Greece
-export const cGrenada = 'Grenada'; // Grenada
-export const cGuatemala = 'Guatemala'; // Guatemala
-export const cGuinea = 'Guinea'; // Guinea
-export const cGuineaBissau = 'Guinea-Bissau'; // Guinea-Bissau
-export const cGuyana = 'Guyana'; // Guyana
-export const cHaiti = 'Haiti'; // Haiti
-export const cHerzegovina = 'Herzegovina'; // Herzegovina
-export const cHolySee = 'Holy See'; // Holy See
-export const cHonduras = 'Honduras'; // Honduras
-export const cHungary = w.cHung + p.cary; // Hungary
-export const cIceland = 'Iceland'; // Iceland
-export const cIndia = 'India'; // India
-export const cIndonesia = 'Indonesia'; // Indonesia
-export const cIran = 'Iran'; // Iran
-export const cIraq = 'Iraq'; // Iraq
-export const cIreland = 'Ireland'; // Ireland
-export const cIsrael = 'Israel'; // Israel
-export const cItaly = 'Italy'; // Italy
-export const cJamaica = 'Jamaica'; // Jamaica
-export const cJapan = 'Japan'; // Japan
-export const cJordan = 'Jordan'; // Jordan
-export const cKazakhstan = 'Kazakhstan'; // Kazakhstan
-export const cKenya = 'Kenya'; // Kenya
-export const cKiribati = 'Kiribati'; // Kiribati
-export const cKuwait = 'Kuwait'; // Kuwait
-export const cKyrgyzstan = 'Kyrgyzstan'; // Kyrgyzstan
-export const cLaos = 'Laos'; // Laos
-export const cLatvia = 'Latvia'; // Latvia
-export const cLebanon = 'Lebanon'; // Lebanon
-export const cLesotho = 'Lesotho'; // Lesotho
-export const cLiberia = 'Liberia'; // Liberia
-export const cLibya = 'Libya'; // Libya
-export const cLiechtenstein = 'Liechtenstein'; // Liechtenstein
-export const cLithuania = 'Lithuania'; // Lithuania
-export const cLuxembourg = 'Luxembourg'; // Luxembourg
-export const cMadagascar = 'Madagascar'; // Madagascar
-export const cMalawi = 'Malawi'; // Malawi
-export const cMalaysia = 'Malaysia'; // Malaysia
-export const cMaldives = 'Maldives'; // Maldives
-export const cMali = 'Mali'; // Mali
-export const cMalta = 'Malta'; // Malta
-export const cMarshallIslands = 'Marshall Islands'; // Marshall Islands
-export const cMauritania = 'Mauritania'; // Mauritania
-export const cMauritius = 'Mauritius'; // Mauritius
-export const cMexico = 'Mexico'; // Mexico
-export const cMicronesia = 'Micronesia'; // Micronesia
-export const cMoldova = 'Moldova'; // Moldova
-export const cMonaco = 'Monaco'; // Monaco
-export const cMongolia = 'Mongolia'; // Mongolia
-export const cMontenegro = 'Montenegro'; // Montenegro
-export const cMorocco = 'Morocco'; // Morocco
-export const cMozambique = 'Mozambique'; // Mozambique
-export const cMyanmar = 'Myanmar'; // Myanmar
-export const cNamibia = 'Namibia'; // Namibia
-export const cNauru = 'Nauru'; // Nauru
-export const cNepal = 'Nepal'; // Nepal
-export const cNetherlands = 'Netherlands'; // Netherlands
-export const cNewZealand = 'New Zealand'; // New Zealand
-export const cNevis = 'Nevis'; // Nevis
-export const cNicaragua = 'Nicaragua'; // Nicaragua
-export const cNiger = 'Niger'; // Niger
-export const cNigeria = 'Nigeria'; // Nigeria
-export const cNorthKorea = 'North Korea'; // North Korea
-export const cNorthMacedonia = 'North Macedonia'; // North Macedonia
-export const cNorway = 'Norway'; // Norway
-export const cOman = 'Oman'; // Oman
-export const cPakistan = 'Pakistan'; // Pakistan
-export const cPalau = 'Palau'; // Palau
-export const cPalestine = 'Palestine'; // Palestine
-export const cPanama = 'Panama'; // Panama
-export const cPapuaNewGuinea = 'Papua New Guinea'; // Papua New Guinea
-export const cParaguay = 'Paraguay'; // Paraguay
-export const cPeru = 'Peru'; // Peru
-export const cPhilippines = 'Philippines'; // Philippines
-export const cPoland = 'Poland'; // Poland
-export const cPortugal = 'Portugal'; // Portugal
-export const cPrincipe = 'Principe'; // Principe
-export const cQatar = 'Qatar'; // Qatar
-export const cRomania = 'Romania'; // Romania
-export const cRussia = 'Russia'; // Russia
-export const cRwanda = 'Rwanda'; // Rwanda
-export const cSaintKitts = 'Saint Kitts'; // Saint Kitts
-export const cSaintLucia = 'Saint Lucia'; // Saint Lucia
-export const cSaintVincent = 'Saint Vincent'; // Saint Vincent
-export const cSomoa = 'Somoa'; // Somoa
-export const cSanMarino = 'San Marino'; // San Marino
-export const cSaoTome = 'Sao Tome'; // Sao Tome
-export const cSaudiArabia = 'Saudi Arabia'; // Saudi Arabia
-export const cSenegal = 'Senegal'; // Senegal
-export const cSerbia = 'Serbia'; // Serbia
-export const cSeychelles = 'Seychelles'; // Seychelles
-export const cSierraLeone = 'Sierra Leone'; // Sierra Leone
-export const cSingapore = 'Singapore'; // Singapore
-export const cSlovakia = 'Slovakia'; // Slovakia
-export const cSlovenia = 'Slovenia'; // Slovenia
-export const cSolomonIslands = 'Solomon Islands'; // Solomon Islands
-export const cSomalia = 'Somalia'; // Somalia
-export const cSouthAfrica = 'South Africa'; // South Africa
-export const cSouthKorea = 'South Korea'; // South Korea
-export const cSouthSudan = 'South Sudan'; // South Sudan
-export const cSpain = 'Spain'; // Spain
-export const cSriLanka = 'Sri Lanka'; // Sri Lanka
-export const cSudan = 'Sudan'; // Sudan
-export const cSuriname = 'Suriname'; // Suriname
-export const cSweden = 'Sweden'; // Sweden
-export const cSwitzerland = 'Switzerland'; // Switzerland
-export const cSyria = 'Syria'; // Syria
-export const cTajikistan = 'Tajikistan'; // Tajikistan
-export const cTanzania = 'Tanzania'; // Tanzania
-export const cThailand = 'Thailand'; // Thailand
-export const cTimorLeste = 'Timor-Leste'; // Timor-Leste
-export const cTogo = 'Togo'; // Togo
-export const cTonga = 'Tonga'; // Tonga
-export const cTrinidadAndTabago = 'Trinidad and Tabago'; // Trinidad and Tabago
-export const cTunisia = 'Tunisia'; // Tunisia
-export const cTurkey = 'Turkey'; // Turkey
-export const cTurkmenistan = 'Turkmenistan'; // Turkmenistan
-export const cTuvalu = 'Tuvalu'; // Tuvalu
-export const cUganda = 'Uganda'; // Uganda
-export const cUkraine = 'Ukraine'; // Ukraine
-export const cUnitedArabEmirates = 'United Arab Emirates'; // United Arab Emirates
-export const cUnitedKingdom = 'United Kingdom'; // United Kingdom
-export const cUnitedStatesOfAmerica = 'United States of America'; // United States of America
-export const cUruguay = 'Uruguay'; // Uruguay
-export const cUzbekistan = 'Uzbekistan'; // Uzbekistan
-export const cVanuatu = 'Vanuatu'; // Vanuatu
-export const cVenezuela = 'Venezuela'; // Venezuela
-export const cVietnam = 'Vietnam'; // Vietnam
-export const cYemen = 'Yemen'; // Yemen
-export const cZambia = 'Zambia'; // Zambia
-export const cZimbabwe = 'Zimbabwe'; // Zimbabwe
-
-// Languages
-export const cChinese = p.cChi + b.cn + p.cese; // Chinese
-export const cChineseSimplified = cChinese + w.cSimplified; // ChineseSimplified
-export const cChineseTraditional = cChinese + w.cTraditional; // ChineseTraditional
-export const cCzech = b.cCz + b.ce + b.cch; // Czech
-export const cEnglish = b.cEn + b.cgl + p.cish; // English
-export const cFrench = b.cFr + b.cen + b.cch; // French
-// cGerman = b.cGe + b.cr + cman; // German // Defined above in the countries section
-export const cHungarian = w.cHung + b.car + p.cian; // Hungarian
-export const cItalian = b.cIt + b.cal + p.cian; // Italian
-export const cJapanese = cJapan + p.cese; // Japanese
-export const cKorean = b.cKo + b.cre + b.can; // Korean
-export const cMiscellaneous = p.cMis + w.ccell + b.can + p.ceous; // Miscellaneous
-export const cPolish = b.cPo + b.cl + p.cish; // Polish
-export const cPortuguese = w.cPort + b.cug + b.cu + p.cese; // Portuguese
-export const cRussian = b.cRu + b.css + p.cian; // Russian
-export const cSpanish = b.cSp + b.can + p.cish; // Spanish
 
 // UI Element Types
 export const cButton = b.cBu + b.ctt + b.con; // Button
@@ -1072,6 +932,7 @@ export const cEnableBusinessRuleOutput = w.cEnable + w.cBusiness + w.cRule + w.c
 export const cEnableBusinessRulePerformanceMetrics = w.cEnable + w.cBusiness + w.cRule + w.cPerformance + w.cMetrics; // EnableBusinessRulePerformanceMetrics
 export const cEnableCommandPerformanceMetrics = w.cEnable + w.cCommand + w.cPerformance + w.cMetrics; // EnableCommandPerformanceMetrics
 export const cEnableConstantsValidation = w.cEnable + w.cConstants + w.cValidation; // EnableConstantsValidation
+export const cEnableConstantsPatternGeneration = w.cEnable + w.cConstants + w.cPattern + w.cGeneration; // EnableConstantsPatternGeneration
 export const cDisplayIndividualConstantsValidationPassMessages = w.cDisplay + w.cIndividual + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplayIndividualConstantsValidationPassMessages
 export const cDisplayIndividualConstantsValidationFailMessages = w.cDisplay + w.cIndividual + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplayIndividualConstantsValidationFailMessages
 export const cDisplaySummaryConstantsValidationPassMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplaySummaryConstantsValidationPassMessages
@@ -1312,6 +1173,7 @@ export const cclearScreen = w.cclear + w.cScreen; // clearScreen
 export const cworkflowHelp = w.cworkflow + w.cHelp; // workflowHelp
 export const ccommandSequencer = w.ccommand + w.cSequencer; // commandSequencer
 export const cprintDataHive = w.cprint + w.cData + w.cHive; // printDataHive
+export const cprintDataHiveAttributes = w.cprint + w.cData + w.cHive + w.cAttributes; // printDataHiveAttributes
 export const cclearDataStorage = w.cclear + w.cData + w.cStorage; // clearDataStorage
 export const ccommandGenerator = w.ccommand + w.cGenerator; // commandGenerator
 export const ccommandAliasGenerator = w.ccommand + w.cAlias + w.cGenerator; // commandAliasGenerator
@@ -1349,7 +1211,7 @@ export const cReleaseWorkflow = w.cWorkflow + b.cSpace + w.crelease; // Workflow
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 10 2021 11:35:06 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 12:05:58 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.constantsPatternRecognizer = exports.constantsGeneratorList = exports.constantsGenerator = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.constantsPatternRecognizer = exports.constantsGeneratorList = exports.constantsGenerator = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHiveAttributes = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -288,8 +288,10 @@ var clearScreen = function clearScreen(inputData, inputMetaData) {
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
 
-  var returnData = true;
-  console.clear();
+  var returnData = true; // console.clear(); // This will clear the screen, but not the cache, you can still scroll up and see the previous commands.
+  // process.stdout.write('\u001B[2J\u001B[0;0f'); // Same as above
+
+  process.stdout.write("\x1B[H\x1B[2J\x1B[3J");
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
@@ -385,21 +387,10 @@ var deployMetaData = function deployMetaData(inputData, inputMetaData) {
     var getAttributeNameRule = [];
     var getAttributeValueRule = [];
     getAttributeNameRule[0] = s.cgetAttributeName;
-    getAttributeValueRule[0] = s.cgetAttributeValue; // for (let i = 1; i < inputData.length; i++) {
-    //   // BEGIN i-th iteration:
-    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
-    //   // inputData[i] is:
-    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIis + inputData[i]);
-    //   aggregateCommandString = aggregateCommandString + inputData[i] + b.cSpace;
-    //   // aggregateCommandString is:
-    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.caggregateCommandStringIs + aggregateCommandString);
-    //   // END i-th iteration:
-    //   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
-    // }
+    getAttributeValueRule[0] = s.cgetAttributeValue;
+    inputData.shift(); // Remove the first element of the array, because that is what is used to call this command.
 
-    inputData.shift();
-    var metaDataParameters = inputData.join(b.cSpace).split(b.cComa); // aggregateCommandString.split(b.cComa);
-    // metaDataParameters is:
+    var metaDataParameters = inputData.join(b.cSpace).split(b.cComa); // metaDataParameters is:
 
     _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersIs + JSON.stringify(metaDataParameters)); // metaDataParameters length is:
 
@@ -708,6 +699,8 @@ var workflow = function workflow(inputData, inputMetaData) {
  * Examples: Configuration, Workflows, Colors, Commands, etc...
  * inputData[0] === 'printDataHive'
  * inputData[1] === dataHiveName
+ * @NOTE This function is now going to support printing specific child data-hives.
+ * Example: ConstantsValidationData.ColorConstantsValidation
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
  * @author Seth Hollingsead
@@ -728,12 +721,141 @@ var printDataHive = function printDataHive(inputData, inputMetaData) {
 
   var returnData = true;
 
-  if (D[inputData[1]] !== undefined) {
-    // contents are:
-    console.log(inputData[1] + ' contents are: ' + JSON.stringify(D[inputData[1]]));
+  if (inputData[1].includes(b.cDot) === true) {
+    var dataHivePathArray = inputData[1].split(b.cDot);
+    var leafDataHiveElement = D; // dataHivePathArray is:
+
+    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray)); // This for-loop should let us drill down in the D-Data structure following the path that was provided.
+    // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
+
+
+    for (var i = 0; i < dataHivePathArray.length; i++) {
+      // BEGIN i-th iteration:
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+
+      leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]]; // contents of leafDataHiveElement is:
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement)); // END i-th iteration:
+
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+    }
+
+    console.log(inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
   } else {
-    // contents of D are:
-    console.log('contents of D are: ' + JSON.stringify(D));
+    if (D[inputData[1]] !== undefined) {
+      // contents are:
+      console.log(inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(D[inputData[1]]));
+    } else {
+      // contents of D are:
+      console.log(s.ccontentsOfDare + JSON.stringify(D));
+    }
+  }
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function printDataHiveAttributes
+ * @description Prints out all of the attributes for a given specified data-set from the D-data structure.
+ * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
+ * depending on what the user entered. But the function filters all of that internally and
+ * extracts the case the user has entered a data hive or leaf data structure in the heirarchy and
+ * a name of an attribute where all values should be printed.
+ * Examples ConstantsValidationData.ColorConstantsValidation.Actual
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/02/12
+ */
+
+
+exports.printDataHive = printDataHive;
+
+var printDataHiveAttributes = function printDataHiveAttributes(inputData, inputMetaData) {
+  var functionName = s.cprintDataHiveAttributes;
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  if (inputData && inputData.length > 1) {
+    if (inputData[1].includes(b.cDot) === true) {
+      var dataHivePathArray = inputData[1].split(b.cDot);
+      var leafDataHiveElement = D; // dataHivePathArray is:
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray)); // This for-loop should let us drill down in the D-Data structure following the path that was provided.
+      // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
+      // Make sure we don't try to grab the very last term of the namespace. See note below.
+
+
+      for (var i = 0; i < dataHivePathArray.length - 1; i++) {
+        // BEGIN i-th iteration:
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+
+        leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]]; // contents of leafDataHiveElement is:
+        // loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
+        // END i-th iteration:
+
+        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+      }
+
+      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
+
+      var attributeName = dataHivePathArray[dataHivePathArray.length - 1];
+
+      if (leafDataHiveElement && leafDataHiveElement.length > 0) {
+        var leafDataHiveElementKeys1 = Object.keys(leafDataHiveElement);
+
+        for (var j = 0; j < leafDataHiveElement.length; j++) {
+          var dataEntry = leafDataHiveElement[j];
+
+          if (dataEntry) {
+            if (attributeName.toLowerCase() === w.centity) {
+              // entity is:
+              console.log(s.centryIs + JSON.stringify(dataEntry));
+            } else {
+              if (dataEntry[attributeName]) {
+                // attributeValue is:
+                console.log(s.cattributeValueIs + dataEntry[attributeName]);
+              }
+            }
+          }
+        }
+      } else {
+        var leafDataHiveElementKeys2 = Object.keys(leafDataHiveElement);
+        leafDataHiveElementKeys2.forEach(function (key2) {
+          if (attributeName.toLowerCase() === w.ckey) {
+            // key2 is:
+            console.log(s.ckey2Is + key2);
+          } else if (attributeName.toLowerCase() === w.centity) {
+            // entity is:
+            console.log(s.centityIs + JSON.stringify(leafDataHiveElement[key2]));
+          } else {
+            var dataEntry2 = leafDataHiveElement[key2];
+
+            if (dataEntry2) {
+              // attributeValue is:
+              console.log(s.cattributeValueIs + dataEntry2[attributeName]);
+            }
+          }
+        });
+      }
+    } else {
+      // This is the case that the user has probably just specified a single data hive
+      // that might not have specific attribute names such as the configuration data.
+      console.log(s.cprintDataHiveAttributesMessage1 + s.cprintDataHiveAttributesMessage2);
+    }
+  } else {
+    // ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.
+    console.log(s.cprintDataHiveAttributesMessage3);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -751,7 +873,7 @@ var printDataHive = function printDataHive(inputData, inputMetaData) {
  */
 
 
-exports.printDataHive = printDataHive;
+exports.printDataHiveAttributes = printDataHiveAttributes;
 
 var clearDataStorage = function clearDataStorage(inputData, inputMetaData) {
   var functionName = s.cclearDataStorage;
@@ -1249,7 +1371,9 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
       console.log(s.cOptimizedConstantDefinitionForWord + b.cc + wordsArray[j] + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
     }
   } else {
-    console.log(b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule));
+    // output a proper line of code:
+    // export const csomething = w.csome + w.cthing; // something
+    console.log(w.cexport + b.cSpace + g.cconst + b.cSpace + b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule) + b.cSemiColon + b.cSpace + b.cDoubleForwardSlash + b.cSpace + userDefinedConstant);
   }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1427,7 +1551,13 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray)); // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
 
 
-  _ruleBroker["default"].processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
+  var newConstantsList = _ruleBroker["default"].processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
+
+  var constantsPatternGenerationSetting = _configurator["default"].getConfigurationSetting(s.cEnableConstantsPatternGeneration);
+
+  if (constantsPatternGenerationSetting === true) {
+    _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGeneratorList + b.cSpace + newConstantsList);
+  }
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 

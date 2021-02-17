@@ -56,18 +56,19 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function getNowMoment(formatting) {
   var functionName = getNowMoment.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // formatting is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'input formatting value is: ' + formatting);
 
-  var returnValue = '';
-  returnValue = moment().format(formatting);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cformattingIs + formatting);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  var returnData = '';
+  returnData = moment().format(formatting);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
-  return returnValue;
+  return returnData;
 }
 
 ;
@@ -87,11 +88,13 @@ function computeDeltaTime(startTime, endTime) {
   // console.log('level is: ' + level);
   var functionName = computeDeltaTime.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // startTime is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'startTime is: ' + startTime);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'endTime is: ' + endTime);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cstartTimeIs + startTime); // endTime is:
+
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cendTimeIs + endTime);
 
   var deltaTimeResult;
   startTime = moment(startTime, g.cYYYYMMDD_HHmmss_SSS);
@@ -99,8 +102,9 @@ function computeDeltaTime(startTime, endTime) {
   deltaTimeResult = endTime.diff(startTime); // Should work in milliseconds out of the box!
   // console.log('deltaTimeResult is: ' + deltaTimeResult);
   // console.log('END timer.computeDeltaTime function');
+  // deltaTimeResult is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deltaTimeResult is: ' + deltaTimeResult);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cdeltaTimeResultIs + deltaTimeResult);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
@@ -121,16 +125,18 @@ function computeDeltaTime(startTime, endTime) {
 function reformatDeltaTime(deltaTime, format) {
   var functionName = reformatDeltaTime.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // deltaTime is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deltaTime is: ' + deltaTime);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'format is: ' + format);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cdeltaTimeIs + deltaTime); // format is:
+
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cformatIs + format);
 
   var returnDeltaTime = '';
-  returnDeltaTime = moment.duration(deltaTime).format(format);
+  returnDeltaTime = moment.duration(deltaTime).format(format); // returnDeltaTime is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnDeltaTime is: ' + returnDeltaTime);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDeltaTimeIs + returnDeltaTime);
 
   _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 
@@ -151,9 +157,10 @@ function reformatDeltaTime(deltaTime, format) {
 function sleep(sleepTime) {
   var functionName = reformatDeltaTime.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // sleepTime is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'sleepTime is: ' + sleepTime);
+
+  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.csleepTimeIs + sleepTime);
 
   var date = moment();
   var currentDate = null;
