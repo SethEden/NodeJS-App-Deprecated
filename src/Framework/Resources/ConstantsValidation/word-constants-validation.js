@@ -1,5 +1,5 @@
 /**
- * @file word.constants-validation.js
+ * @file word-constants-validation.js
  * @module word-constants-validation
  * @description Contains manyvalidations for re-usable word constants.
  * @requires module:word-constants

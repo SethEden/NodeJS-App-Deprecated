@@ -1,5 +1,5 @@
 /**
- * @file element.constants-validation.js
+ * @file element-constants-validation.js
  * @module element-constants-validation
  * @description Contains validations for named elements.
  * @requires module:element-constants

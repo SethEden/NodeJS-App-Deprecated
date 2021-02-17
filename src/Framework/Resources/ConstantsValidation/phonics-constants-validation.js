@@ -1,5 +1,5 @@
 /**
- * @file phonics.constants-validation.js
+ * @file phonics-constants-validation.js
  * @module phonics-constants-validation
  * @description Contains many validations for re-usable phonetic constants and partial phrases and/or
  * partial words for re-usability, many of them derived from the basic-constants.

@@ -1,5 +1,5 @@
 /**
- * @file isotope.constants-validation.js
+ * @file isotope-constants-validation.js
  * @module isotope-constants-validation
  * @description Contains validations for named isotopes.
  * @requires module:isotope-constants

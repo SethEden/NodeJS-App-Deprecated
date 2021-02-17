@@ -1,5 +1,5 @@
 /**
- * @file generic.constants-validation.js
+ * @file generic-constants-validation.js
  * @module generic-constants-validation
  * @description Contains many validations for generic constants.
  * @requires module:generic-constants

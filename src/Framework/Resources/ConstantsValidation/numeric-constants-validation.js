@@ -1,5 +1,5 @@
 /**
- * @file numeric.constants-validation.js
+ * @file numeric-constants-validation.js
  * @module numeric-constants-validation
  * @description Contains validations for numeric string values and numeric strings
  * @requires module:numeric-constants

@@ -1,5 +1,5 @@
 /**
-* @file basic.constants-validation.js
+* @file basic-constants-validation.js
 * @module basic-constants-validation
 * @description Contains validation for constants for all of the most basic characters and basic 2-character combinations.
 * @requires module:basic-constants

@@ -1,5 +1,5 @@
 /**
- * @file system.constants-validation.js
+ * @file system-constants-validation.js
  * @module system-constants-validation
  * @description Contains validations for system defined acronyms, many of them derived from the basic-constants.
  * Also included are validations for other constants like countries, named spoken languages.
