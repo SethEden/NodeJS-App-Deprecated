@@ -113,7 +113,7 @@
  */
 import loggers from '../../Executrix/loggers';
 import { stringToBoolean } from './stringParsing';
-import * as cg from './characterGeneration';
+import * as charGen from './characterGeneration';
 import * as b from '../../Constants/basic.constants';
 import * as g from '../../Constants/generic.constants';
 import * as n from '../../Constants/numeric.constants';
@@ -141,7 +141,7 @@ export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMet
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -168,7 +168,7 @@ export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMet
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -195,7 +195,7 @@ export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMet
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -222,7 +222,7 @@ export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMet
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -249,7 +249,7 @@ export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMet
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -276,7 +276,7 @@ export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMet
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -303,7 +303,7 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = functio
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -330,7 +330,7 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = functio
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -357,7 +357,7 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = functio
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -384,7 +384,7 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = functio
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -411,7 +411,7 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = functio
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -438,7 +438,7 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = functio
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -465,7 +465,7 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputDa
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -492,7 +492,7 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputDa
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -519,7 +519,7 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputDa
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -546,7 +546,7 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputDa
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -573,7 +573,7 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputDa
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -600,7 +600,7 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputDa
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -627,7 +627,7 @@ export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaD
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -654,7 +654,7 @@ export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaD
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
+		returnData = returnData.concat(charGen.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -682,7 +682,7 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -710,7 +710,7 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -738,7 +738,7 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -766,7 +766,7 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -794,7 +794,7 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -822,7 +822,7 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -849,7 +849,7 @@ export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, i
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -876,7 +876,7 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
 	  for (let counter = 1; counter <= numberOfCharactersToGenerate; counter++) {
-		returnData = returnData.concat(cg.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
+		returnData = returnData.concat(charGen.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
 	  }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -1259,7 +1259,7 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
       // but need to decide now so we can get it done and be fair.
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
-      if (cg.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
+      if (charGen.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
           domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
         } else {
@@ -1363,7 +1363,7 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
       // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
       // but need to decide now so we can get it done and be fair.
       // (That is generate 2-character domains roughtly equal to the times we generate a 3-character domain.)
-      if (cg.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
+      if (charGen.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
         if (generateSpecialCharacters === false) {
           domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
         } else {
@@ -1457,7 +1457,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange1(n.c1, [c3, cTrue, cTrue]);
+  failureMode = charGen.randomlyGenerateNumberInRange1(n.c1, [c3, cTrue, cTrue]);
   // failureMode is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode);
   // ************************************************************
@@ -1565,7 +1565,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
   // console.log('Allowable special characters are: ' + allowableSpecialCharacters);
   // console.log('Specified suffix and domain are: ' + specifiedSuffixAndDomain);
 
-  failureMode = cg.randomlyGenerateNumberInRange2(n.c1, [c3, cTrue, cTrue]);
+  failureMode = charGen.randomlyGenerateNumberInRange2(n.c1, [c3, cTrue, cTrue]);
   // failureMode is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode);
   // ************************************************************
@@ -1669,7 +1669,7 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
   let c28 = n.c2 + n.c8;
   let cTrue = g.cTrue;
 
-  failureMode = cg.randomlyGenerateNumberInRange1(n.c1, [c28, cTrue, cTrue]);
+  failureMode = charGen.randomlyGenerateNumberInRange1(n.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);
   // failureMode is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode);
@@ -1746,7 +1746,7 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
         // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
         // but need to decide now so we can get it done and be fair.
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
-        if (cg.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
+        if (charGen.randomlyGenerateBooleanValue1('', '') === true) { // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
             domainName = generateRandomMixedCaseTextByLength1(n.c2, '');
           } else {
@@ -1978,7 +1978,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
   let c28 = n.c2 + n.c8;
   let cTrue = g.cTrue;
 
-  failureMode = cg.randomlyGenerateNumberInRange2(n.c1, [c28, cTrue, cTrue]);
+  failureMode = charGen.randomlyGenerateNumberInRange2(n.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);
   // failureModeIs
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cfailureModeIs + failureMode);
@@ -2056,7 +2056,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
         // Randomly determine if we should generate a 2-character or 3-character domain name. We can do either one,
         // but need to decide now so we can get it done and be fair.
         // (That is generate 2-character domains roughly equal to the times we generate a 3-character domain.)
-        if (cg.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
+        if (charGen.randomlyGenerateBooleanValue2('', '') === true) { // Stick with a 2-character domain name.
           if (generateSpecialCharacters === false) {
             domainName = generateRandomMixedCaseTextByLength2(n.c2, '');
           } else {

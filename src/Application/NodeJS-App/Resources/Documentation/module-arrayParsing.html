@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: characterGeneration</title>
+    <title>JSDoc: Module: arrayParsing</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: characterGeneration</h1>
+    <h1 class="page-title">Module: arrayParsing</h1>
 
     
 
@@ -38,8 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Contains all business rules for randomly generating characters of all kinds.
-There are two versions of each function, an old implementation and a new implementation.</p></div>
+            <div class="description"><p>Contains all system defined business rules for parsing arrays with various operations.</p></div>
         
 
         
@@ -98,7 +97,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line4">line 4</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line4">line 4</a>
     </li></ul></dd>
     
 
@@ -138,7 +137,11 @@ There are two versions of each function, an old implementation and a new impleme
         <h3 class="subsection-title">Requires</h3>
 
         <ul>
+            <li><a href="module-configurator.html">module:configurator</a></li>
+        
             <li><a href="module-loggers.html">module:loggers</a></li>
+        
+            <li><a href="module-dataBroker.html">module:dataBroker</a></li>
         
             <li><a href="module-stringParsing.html">module:stringParsing</a></li>
         
@@ -146,11 +149,15 @@ There are two versions of each function, an old implementation and a new impleme
         
             <li><a href="module-generic-constants.html">module:generic-constants</a></li>
         
-            <li><a href="module-numeric-constants.html">module:numeric-constants</a></li>
-        
             <li><a href="module-system-constants.html">module:system-constants</a></li>
         
+            <li><a href="https://www.npmjs.com/package/lodash">lodash</a></li>
+        
             <li><a href="https://www.npmjs.com/package/path">path</a></li>
+        
+            <li><a href="https://mathjs.org/index.html">math</a></li>
+        
+            <li><a href="https://www.npmjs.com/package/chalk">chalk</a></li>
         </ul>
     
 
@@ -173,7 +180,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~convertNumberToLowerCaseLetter"><span class="type-signature">(inner) </span>convertNumberToLowerCaseLetter<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~acertainMatchingElements"><span class="type-signature">(inner) </span>acertainMatchingElements<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -181,7 +188,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Converts a number from 1-26 into a lower case letter of the alphabet a-z.</p>
+    <p>Determines if two values are identical. Needed for completeness of comparison for nested arrays.</p>
 </div>
 
 
@@ -223,7 +230,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array</span>
 
 
             
@@ -233,7 +240,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>A string that contains a number in the range of 1-26 that should be converted to a lower case letter of the alphabet.</p></td>
+            <td class="description last"><p>An array that should be compared for equality.</p></td>
         </tr>
 
     
@@ -246,7 +253,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array</span>
 
 
             
@@ -256,7 +263,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>Second array that should be compared for equality.</p></td>
         </tr>
 
     
@@ -304,7 +311,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line1010">line 1010</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line291">line 291</a>
     </li></ul></dd>
     
 
@@ -333,385 +340,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>A letter of the alphabet where 1-26 is converted to a letter a-z.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~convertNumberToUpperCaseLetter"><span class="type-signature">(inner) </span>convertNumberToUpperCaseLetter<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Converts a number from 1-26 into a upper case letter of the alphabet A-Z.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A string that contains a number in the range of 1-26 that should be converted to an upper case letter of the alphabet.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line980">line 980</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A letter of the alphabet where 1-26 is converted to a letter A-Z.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateBooleanValue1"><span class="type-signature">(inner) </span>randomlyGenerateBooleanValue1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates a boolean value {@code TRUE} or {@code FALSE}.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line793">line 793</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A Boolean value that is either {@code TRUE} or {@code FALSE} as a random 50-50 chance of one or the other.</p>
+    <p>True or False to indicate array equality or not.</p>
 </div>
 
 
@@ -740,7 +369,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateBooleanValue2"><span class="type-signature">(inner) </span>randomlyGenerateBooleanValue2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <h4 class="name" id="~aggregateCommandArguments"><span class="type-signature">(inner) </span>aggregateCommandArguments<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -748,7 +377,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates a boolean value {@code TRUE} or {@code FALSE}.</p>
+    <p>Combines all of the input arguments into a single command line to be executed by the command parser.</p>
 </div>
 
 
@@ -790,7 +419,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;string></span>
 
 
             
@@ -800,7 +429,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>An array of strings that represents the command and command parameters to execute.</p></td>
         </tr>
 
     
@@ -871,7 +500,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line815">line 815</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line1100">line 1100</a>
     </li></ul></dd>
     
 
@@ -900,7 +529,386 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>A Boolean value that is either {@code TRUE} or {@code FALSE} as a random 50-50 chance of one or the other.</p>
+    <p>A single string command line of code that should be sent to the command parser.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~arrayDeepClone"><span class="type-signature">(inner) </span>arrayDeepClone<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Clones an array by using JSON.stringify &amp; JSON.parse.
+Almost all other methods of cloning an array will actually clone by referance which essentially just clones the pointer to the array.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array that should be deeply cloned.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line946">line 946</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The new array object after being cloned deeply.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~arraysAreEqual"><span class="type-signature">(inner) </span>arraysAreEqual<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines if a set of arrays are equal or not.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first array that should be checked for equality.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second array that should be checked for equality.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line721">line 721</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the arrays are equal or not equal.</p>
 </div>
 
 
@@ -929,7 +937,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~convertArrayToCamelCaseString"><span class="type-signature">(inner) </span>convertArrayToCamelCaseString<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -937,7 +945,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from a-z or a number 0-9 or a random special character from the input list of special characters.</p>
+    <p>Takes an array of words and returns a camelCase string of the input words.</p>
 </div>
 
 
@@ -979,7 +987,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;string></span>
 
 
             
@@ -989,7 +997,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>The array of words that should be strung together into a single long string.</p></td>
         </tr>
 
     
@@ -1060,7 +1068,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line395">line 395</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line176">line 176</a>
     </li></ul></dd>
     
 
@@ -1089,7 +1097,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randonly returns a random number, a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>A String that contains all of the words from the input array put together in sequential order.</p>
 </div>
 
 
@@ -1118,7 +1126,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~convertCamelCaseStringToArray"><span class="type-signature">(inner) </span>convertCamelCaseStringToArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;string>}</span></h4>
     
 
     
@@ -1126,7 +1134,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from a-z or a number 0-9 or a random special character from the input list of special characters.</p>
+    <p>Takes a string in camelCase and returns an array of the words.</p>
 </div>
 
 
@@ -1178,7 +1186,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>String to decompose into an array.</p></td>
         </tr>
 
     
@@ -1249,7 +1257,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line437">line 437</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -1278,7 +1286,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randonly returns a random number, a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>The array of words that were composed in the original string.</p>
 </div>
 
 
@@ -1289,7 +1297,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;string></span>
 
 
     </dd>
@@ -1307,7 +1315,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~doesArrayContainCharacter"><span class="type-signature">(inner) </span>doesArrayContainCharacter<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -1315,7 +1323,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z, a-z or a number 0-9 or a random special character from the input list of special characters.</p>
+    <p>Parses through all the elements of an array and determines if any one of them contains the input character.</p>
 </div>
 
 
@@ -1358,6 +1366,15 @@ There are two versions of each function, an old implementation and a new impleme
             
                 
 <span class="param-type">string</span>
+|
+
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">integer</span>
+|
+
+<span class="param-type">object</span>
 
 
             
@@ -1367,7 +1384,793 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>The character that should be searched for in the array of elements.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;(string|boolean|integer|object)></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array that should be searched for the specified character/value/etc...</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line230">line 230</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True or False to indicate if the value was found or not found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~doesArrayContainFilename"><span class="type-signature">(inner) </span>doesArrayContainFilename<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Checks if an array contains a filename, after stripping off the path.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Array of file names that should be checked for the input file name we are looking for.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The file name we are looking for in the input Array.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line322">line 322</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Boolean value to indicate if the file name was found or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~doesArrayContainLowerCaseConsolidatedString"><span class="type-signature">(inner) </span>doesArrayContainLowerCaseConsolidatedString<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Checks if an array contains a string, comparison made by lowerCaseAndConsolidateString().</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array of strings that should be checked if it contains the specified string.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string we are looking for in the array.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line199">line 199</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Boolean to indicate if the string is found in the array or not.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~doesArrayContainValue"><span class="type-signature">(inner) </span>doesArrayContainValue<span class="signature">(inputData, inputMetaData, myFunction)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Checks if an array contains a value, checking equality by function(val, arr[i])</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;(string|object|map)></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The input array that should be searched for the given input value.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value that should be searched for in the input array.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>myFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The function that should be used to do the search.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line1143">line 1143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Boolean value to indicate if the value was found in the array or not found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateCommandAliases"><span class="type-signature">(inner) </span>generateCommandAliases<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generates all possible combinations of command aliases given a set of command words and command word abreviations.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An object containing all of the meta-data needed for command words and
+command abreviations needed to generate every possible combination of command alias.</p></td>
         </tr>
 
     
@@ -1438,7 +2241,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line261">line 261</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line1009">line 1009</a>
     </li></ul></dd>
     
 
@@ -1467,7 +2270,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randommly returns a random number, a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>A coma-separated list of every possible combination of command aliases.</p>
 </div>
 
 
@@ -1496,7 +2299,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~getLehmerCodeValue"><span class="type-signature">(inner) </span>getLehmerCodeValue<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -1504,7 +2307,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z, a-z or a number 0-9 or a random special character from the input list of special characters.</p>
+    <p>Takes a Lehmer code array and an array of arrays and uses the Lehmer Code array to look up the corosponding values in the array of arrays.</p>
 </div>
 
 
@@ -1546,7 +2349,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;integer></span>
 
 
             
@@ -1556,7 +2359,196 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>The Lehmer code array with indices for values we should get &amp; return.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;array.&lt;string>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The nested array of arrays with the values we should get and combine then return as a single string.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line683">line 683</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The joined string from each of the array element strings at the Lehmer code indices.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getLengthOfLongestStringInArray"><span class="type-signature">(inner) </span>getLengthOfLongestStringInArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {integer}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Determines what the longest string is in an array of strings.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array for which we should find the longest length string in.</p></td>
         </tr>
 
     
@@ -1627,7 +2619,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line309">line 309</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line355">line 355</a>
     </li></ul></dd>
     
 
@@ -1656,7 +2648,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randommly returns a random number, a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>The length of the longest string in the array.</p>
 </div>
 
 
@@ -1667,7 +2659,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">integer</span>
 
 
     </dd>
@@ -1685,7 +2677,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~getStoredData"><span class="type-signature">(inner) </span>getStoredData<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -1693,7 +2685,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z or a number 0-9 or a random special character from the input list of special characters.</p>
+    <p>Gets the named data stored in the D data structure in the DataStorage data hive.</p>
 </div>
 
 
@@ -1745,7 +2737,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>The name of the sub-data hive that should contain the stored data we are looking for.</p></td>
         </tr>
 
     
@@ -1816,7 +2808,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line331">line 331</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line771">line 771</a>
     </li></ul></dd>
     
 
@@ -1845,7 +2837,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randomly returns a random number, a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>The data that was stored in the sub-data hive under the DataStorage data hive of the D data structure.</p>
 </div>
 
 
@@ -1856,7 +2848,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
     </dd>
@@ -1874,7 +2866,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~getWordsArrayFromString"><span class="type-signature">(inner) </span>getWordsArrayFromString<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;string>}</span></h4>
     
 
     
@@ -1882,7 +2874,8 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z or a number 0-9 or a random special character from the input list of special characters.</p>
+    <p>Gets an array of words from a string,
+automatically determining how the words are delimited based on common word delimiters: camel case, space, period, dash &amp; underscore.</p>
 </div>
 
 
@@ -1934,7 +2927,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>The string that should be broken down into words and returned as an array.</p></td>
         </tr>
 
     
@@ -2005,7 +2998,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line373">line 373</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line112">line 112</a>
     </li></ul></dd>
     
 
@@ -2034,7 +3027,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randomly returns a random number, a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>The array of words found in the string.</p>
 </div>
 
 
@@ -2045,7 +3038,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;string></span>
 
 
     </dd>
@@ -2063,7 +3056,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateLowerCaseAlphaNumericCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateLowerCaseAlphaNumericCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~isArray"><span class="type-signature">(inner) </span>isArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -2071,7 +3064,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alpha-numeric code from a-z or 0-9.</p>
+    <p>Determines if an object is an array or not.</p>
 </div>
 
 
@@ -2113,7 +3106,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -2123,7 +3116,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>The object that should be tested to see if is an array or not.</p></td>
         </tr>
 
     
@@ -2194,7 +3187,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line555">line 555</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line873">line 873</a>
     </li></ul></dd>
     
 
@@ -2223,7 +3216,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Either a random lower case letter or a random number.</p>
+    <p>True or False to indicate if the input object is an array or not.</p>
 </div>
 
 
@@ -2234,7 +3227,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2252,7 +3245,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateLowerCaseAlphaNumericCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateLowerCaseAlphaNumericCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~isArrayEmpty"><span class="type-signature">(inner) </span>isArrayEmpty<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -2260,7 +3253,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alpha-numeric code from a-z or 0-9.</p>
+    <p>Determines if a JSON array is empty or not.</p>
 </div>
 
 
@@ -2302,7 +3295,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array</span>
 
 
             
@@ -2312,7 +3305,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>The array that should be checked for emptyness.</p></td>
         </tr>
 
     
@@ -2383,7 +3376,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line581">line 581</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line825">line 825</a>
     </li></ul></dd>
     
 
@@ -2412,7 +3405,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Either a random lower case letter or a random number.</p>
+    <p>True or False to indicate if the array is empty or not empty.</p>
 </div>
 
 
@@ -2423,7 +3416,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2441,7 +3434,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateLowerCaseLetter1"><span class="type-signature">(inner) </span>randomlyGenerateLowerCaseLetter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~isArrayOrObject"><span class="type-signature">(inner) </span>isArrayOrObject<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -2449,7 +3442,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates a lower case alphabetic letter from a-z.</p>
+    <p>Determines if an input object is either an array or a JSON object.</p>
 </div>
 
 
@@ -2491,7 +3484,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -2501,7 +3494,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>The object that should be tested to see if it is either an array or a JSON object or not.</p></td>
         </tr>
 
     
@@ -2572,7 +3565,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line886">line 886</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line896">line 896</a>
     </li></ul></dd>
     
 
@@ -2601,7 +3594,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>A randomly generated alphabetic letter from a-z.</p>
+    <p>True or False to indicate if the input object is either an array or a JSON object.</p>
 </div>
 
 
@@ -2612,7 +3605,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2630,7 +3623,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateLowerCaseLetter2"><span class="type-signature">(inner) </span>randomlyGenerateLowerCaseLetter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~isNonZeroLengthArray"><span class="type-signature">(inner) </span>isNonZeroLengthArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -2638,7 +3631,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates a lower case alphabetic letter from a-z.</p>
+    <p>Determines if an object is an array of length greater than or equal to one or not.</p>
 </div>
 
 
@@ -2680,7 +3673,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -2690,7 +3683,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>The object that should be tested to see if is an array of length greater than or equal to 1 or not.</p></td>
         </tr>
 
     
@@ -2761,7 +3754,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line911">line 911</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line921">line 921</a>
     </li></ul></dd>
     
 
@@ -2790,7 +3783,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>A randomly generated alphabetic letter from a-z.</p>
+    <p>True or False to indicate if the input object is an array of length greater than equal to zero or not.</p>
 </div>
 
 
@@ -2801,7 +3794,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -2819,7 +3812,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateLowerCaseLetterOrSpecialCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateLowerCaseLetterOrSpecialCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~isObject"><span class="type-signature">(inner) </span>isObject<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -2827,7 +3820,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from a-z or a random special character from the input list of special characters.</p>
+    <p>Determines if an object is a JSON object or not.</p>
 </div>
 
 
@@ -2869,7 +3862,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -2879,7 +3872,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>The object that should be tested to see if it is a JSON object or not.</p></td>
         </tr>
 
     
@@ -2950,7 +3943,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line211">line 211</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line848">line 848</a>
     </li></ul></dd>
     
 
@@ -2979,7 +3972,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randomly returns a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>True or False to indicate if the input object is an array or not.</p>
 </div>
 
 
@@ -2990,7 +3983,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -3008,7 +4001,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateLowerCaseLetterOrSpecialCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateLowerCaseLetterOrSpecialCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~isObjectEmpty"><span class="type-signature">(inner) </span>isObjectEmpty<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -3016,7 +4009,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alphabetic letter from a-z or a random special character from the input list of special characters.</p>
+    <p>Determines if a JSON object is empty or not.</p>
 </div>
 
 
@@ -3058,7 +4051,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -3068,7 +4061,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
+            <td class="description last"><p>The object that should be checked for emptyness.</p></td>
         </tr>
 
     
@@ -3139,7 +4132,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line239">line 239</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line794">line 794</a>
     </li></ul></dd>
     
 
@@ -3168,7 +4161,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>Randomly returns a random lower case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
+    <p>True or False to indicate if the object is empty or not empty.</p>
 </div>
 
 
@@ -3179,7 +4172,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
     </dd>
@@ -3197,7 +4190,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateMixedCaseAlphabeticCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateMixedCaseAlphabeticCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~recombineStringArrayWithSpaces"><span class="type-signature">(inner) </span>recombineStringArrayWithSpaces<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -3205,7 +4198,10 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates either an upper case or lower case random alphabetic letter from a-z or A-Z.</p>
+    <p>Takes an array of strings and recombines them sequentially with spaces between each array element.
+This function is needed, because commands parse inputs by spaces into an array,
+and some commands need a single continuous string that might be delimited by coma's.
+So this function lets us recombine and then re-parse the string with another delimiter.</p>
 </div>
 
 
@@ -3247,7 +4243,7 @@ There are two versions of each function, an old implementation and a new impleme
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">array.&lt;string></span>
 
 
             
@@ -3257,7 +4253,7 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>The array of strings that should be recombined.</p></td>
         </tr>
 
     
@@ -3328,7 +4324,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line838">line 838</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line147">line 147</a>
     </li></ul></dd>
     
 
@@ -3357,7 +4353,7 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>A randomly generated alphabetic letter from a-z or A-Z.</p>
+    <p>The string array with spaces between array elements.</p>
 </div>
 
 
@@ -3386,7 +4382,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateMixedCaseAlphabeticCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateMixedCaseAlphabeticCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~recursiveArrayExpansion"><span class="type-signature">(inner) </span>recursiveArrayExpansion<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;array.&lt;integer>>}</span></h4>
     
 
     
@@ -3394,7 +4390,398 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates either an upper case or lower case random alphabetic letter from a-z or A-Z.</p>
+    <p>Recursively expands all possible combinations of an input array given an index of expansion and returns the list of arrays.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer, array.&lt;integer>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The index of expansion and the array to be expanded as an array object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Lehmer Codex that should be used to set the limit of expansion based on the index of expansion.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line577">line 577</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The final list of arrays after the array expansion has completed successfully.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;array.&lt;integer>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~removeCharacterFromArray"><span class="type-signature">(inner) </span>removeCharacterFromArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;(string|boolean|integer|object)>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes all instances of a character or value from all array elements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+|
+
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">float</span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The character, integer, boolean, float or object
+that should be removed from all instances of the input array.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;(string|boolean|integer|object)></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array from which all instances of the input character, integer, etc... should be removed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line259">line 259</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The array after having the specified character removed from all elements of the input array.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;(string|boolean|integer|object)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~replaceCharacterAtIndex"><span class="type-signature">(inner) </span>replaceCharacterAtIndex<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Replaces a character at the specified index with another character.</p>
 </div>
 
 
@@ -3446,7 +4833,390 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>The string which should have the specified character changed, then returned.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer, string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array with an integer of what index the character should be replaced,
+and a string with the character or characters that should be inserted at the specified index.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line971">line 971</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The modified string.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~replaceCharacterWithCharacter"><span class="type-signature">(inner) </span>replaceCharacterWithCharacter<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Replaces all of a specified character in the input data with another specified character.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A string that may or may not contain the specified characters that should be converted to another specified character.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string, string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of data that contains 2 additional string parameters:
+inputMetaData[0] === character2Find - The character to be searched and replaced from the input string.
+inputMetaData[1] === character2Replace - The character that should be used to replace the character specified for replacement from the input data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The same as the input string but with specified characters converted to the other specified character.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~searchForPatternsInStringArray"><span class="type-signature">(inner) </span>searchForPatternsInStringArray<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;string>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Walks through sub-strings of each string in the input array of strings searching for common patterns using a brute-force sequential array search.
+Maximum string length to search is the maximum string length - 1 (basically the longest string in the array minus 1 character).
+Minimum string length to search is 3 characters.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array of strings that should be searched for matching patterns.</p></td>
         </tr>
 
     
@@ -3517,7 +5287,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line864">line 864</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line379">line 379</a>
     </li></ul></dd>
     
 
@@ -3546,7 +5316,196 @@ There are two versions of each function, an old implementation and a new impleme
 
         
 <div class="param-desc">
-    <p>A randomly generated alphabetic letter from a-z or A-Z.</p>
+    <p>A string array of common string values found in more than 1 element of the array and 3 or more characters long.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~solveLehmerCode"><span class="type-signature">(inner) </span>solveLehmerCode<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Used the inputData as an addressable Lehmer Code to find all possible combinations of array elements.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;integer></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The Lehmer code addressable index array we will use to permutate over all possible combinations.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;array.&lt;string>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The nested array that contains all instances of strings that should be used when generating permutations.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line528">line 528</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The delimited list of possible combinations generated by solving the Lehmer Code.</p>
 </div>
 
 
@@ -3575,7 +5534,7 @@ There are two versions of each function, an old implementation and a new impleme
     
 
     
-    <h4 class="name" id="~randomlyGenerateMixedCaseAlphaNumericCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateMixedCaseAlphaNumericCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="~storeData"><span class="type-signature">(inner) </span>storeData<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
     
 
     
@@ -3583,7 +5542,7 @@ There are two versions of each function, an old implementation and a new impleme
 
 
 <div class="description">
-    <p>Randomly generates an alpha-numeric code from a-z or A-Z or 0-9.</p>
+    <p>Stores some data using the DataStorage data hive on the D data store.</p>
 </div>
 
 
@@ -3635,7 +5594,192 @@ There are two versions of each function, an old implementation and a new impleme
 
             
 
-            <td class="description last"><p>Not used for this business rule.</p></td>
+            <td class="description last"><p>The context name that the data should be stored with.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string/integer/boolean/object/array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The data that should be stored.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line747">line 747</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~validatePatternsThatNeedImplementation"><span class="type-signature">(inner) </span>validatePatternsThatNeedImplementation<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Scans through an array of strings and determines which ones are not yet implemented in the constants system.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array of strings that should be checked if they are already implemented in the constants system or not.</p></td>
         </tr>
 
     
@@ -3706,7 +5850,7 @@ There are two versions of each function, an old implementation and a new impleme
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line459">line 459</a>
+        <a href="Framework_BusinessRules_Rules_arrayParsing.js.html">Framework/BusinessRules/Rules/arrayParsing.js</a>, <a href="Framework_BusinessRules_Rules_arrayParsing.js.html#line476">line 476</a>
     </li></ul></dd>
     
 
@@ -3734,10 +5878,6 @@ There are two versions of each function, an old implementation and a new impleme
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Either a random letter (could be upper case or lower case, which is also random) or a random number.</p>
-</div>
-
 
 
 <dl>
@@ -3746,2848 +5886,7 @@ There are two versions of each function, an old implementation and a new impleme
     </dt>
     <dd>
         
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateMixedCaseAlphaNumericCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateMixedCaseAlphaNumericCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an alpha-numeric code from a-z or A-Z or 0-9.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line485">line 485</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Either a random letter (could be upper case or lower case, which is also random) or a random number.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateMixedCaseLetterOrSpecialCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateMixedCaseLetterOrSpecialCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z, a-z or a random special character from the input list of special characters.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line111">line 111</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateMixedCaseLetterOrSpecialCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateMixedCaseLetterOrSpecialCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z, a-z or a random special character from the input list of special characters.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line139">line 139</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Randomly returns a random mixed case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateNumberInRange1"><span class="type-signature">(inner) </span>randomlyGenerateNumberInRange1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates a number between the start-range and end-range.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A string that contains the number with the minimum value.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array.&lt;(string|integer), boolean, boolean></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>an array with multiple input parameters:
-maximumValue - A string that contains the number with the maximum value.
-includeMaximum - A Boolean value that indicates if the maximum should be included or excluded from the range of allowable range of values to return from.
-addMinimum - A Boolean value that indicates if the minimum should be added to the value or not.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line706">line 706</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>The new random number that was generated according to the input parameters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateNumberInRange2"><span class="type-signature">(inner) </span>randomlyGenerateNumberInRange2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates a number between the start-range and end-range.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A string that contains the number with the minimum value.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array.&lt;(string|integer), boolean, boolean></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A map with multiple input parameters:
-maximumValue - A string that contains the number with the maximum value.
-includeMaximum - A Boolean value that indicates if the maximum should be included or excluded from the range of allowable range of values to return from.
-addMinimum - A Boolean value that indicates if the minimum should be added to the value or not.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line749">line 749</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>The new random number that was generated according to the input parameters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateNumericCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateNumericCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates a string character in the range of 0-9.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line603">line 603</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A single randomly generated string character in the range of 0-9.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateNumericCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateNumericCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates a string character in the range of 0-9.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line625">line 625</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A single randomly generated string character in the range of 0-9.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateSpecialCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateSpecialCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randommly select a special character from a list of allowable special characters.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line647">line 647</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A special character randomly selected from the input list of allowable special characters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateSpecialCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateSpecialCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randommly select a special character from a list of allowable special characters.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line676">line 676</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A special character randomly selected from the input list of allowable special characters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateUpperCaseAlphaNumericCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateUpperCaseAlphaNumericCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an alpha-numeric code from A-Z or 0-9.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line507">line 507</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Either a random upper case letter or a random number.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateUpperCaseAlphaNumericCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateUpperCaseAlphaNumericCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an alpha-numeric code from A-Z or 0-9.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line533">line 533</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Either a random upper case letter or a random number.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateUpperCaseLetter1"><span class="type-signature">(inner) </span>randomlyGenerateUpperCaseLetter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an upper case alphabetic letter from A-Z.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line933">line 933</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A randomly generated alphabetic letter from A-Z.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateUpperCaseLetter2"><span class="type-signature">(inner) </span>randomlyGenerateUpperCaseLetter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an upper case alphabetic letter from A-Z.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line958">line 958</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A randomly generated alphabetic letter from A-Z.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateUpperCaseLetterOrSpecialCharacter1"><span class="type-signature">(inner) </span>randomlyGenerateUpperCaseLetterOrSpecialCharacter1<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z or a random special character from the input list of special characters.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line161">line 161</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Randomly returns a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~randomlyGenerateUpperCaseLetterOrSpecialCharacter2"><span class="type-signature">(inner) </span>randomlyGenerateUpperCaseLetterOrSpecialCharacter2<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Randomly generates an alphabetic letter from A-Z or a random special character from the input list of special characters.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>inputData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The list of allowable special characters that should be used to randomly select from.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>inputMetaData</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Not used for this business rule.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li>Seth Hollingsead</li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_characterGeneration.js.html">Framework/BusinessRules/Rules/characterGeneration.js</a>, <a href="Framework_BusinessRules_Rules_characterGeneration.js.html#line189">line 189</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Randomly returns a random upper case letter of the alphabet, or a random special character from the list of allowable special characters.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
+<span class="param-type">void</span>
 
 
     </dd>
@@ -6621,7 +5920,7 @@ addMinimum - A Boolean value that indicates if the minimum should be added to th
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 15:31:00 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 15:30:59 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

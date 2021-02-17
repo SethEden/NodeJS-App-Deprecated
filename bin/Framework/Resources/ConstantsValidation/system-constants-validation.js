@@ -3491,10 +3491,6 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.creplaceColonWithUnderscore,
   Expected: 'replaceColonWithUnderscore'
 }, {
-  Name: 'creplaceCharacterWithCharacter',
-  Actual: s.creplaceCharacterWithCharacter,
-  Expected: 'replaceCharacterWithCharacter'
-}, {
   Name: 'ccleanCarriageReturnFromString',
   Actual: s.ccleanCarriageReturnFromString,
   Expected: 'cleanCarriageReturnFromString'
@@ -3531,10 +3527,6 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.caggregateNumericalDifferenceBetweenTwoStrings,
   Expected: 'aggregateNumericalDifferenceBetweenTwoStrings'
 }, {
-  Name: 'cconvertCamelCaseStringToArray',
-  Actual: s.cconvertCamelCaseStringToArray,
-  Expected: 'convertCamelCaseStringToArray'
-}, {
   Name: 'ccountCamelCaseWords',
   Actual: s.ccountCamelCaseWords,
   Expected: 'countCamelCaseWords'
@@ -3554,14 +3546,6 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cgetWordCountInString',
   Actual: s.cgetWordCountInString,
   Expected: 'getWordCountInString'
-}, {
-  Name: 'cgetWordsArrayFromString',
-  Actual: s.cgetWordsArrayFromString,
-  Expected: 'getWordsArrayFromString'
-}, {
-  Name: 'crecombineStringArrayWithSpaces',
-  Actual: s.crecombineStringArrayWithSpaces,
-  Expected: 'recombineStringArrayWithSpaces'
 }, {
   Name: 'cdoesStringContainUpperCaseCharacter',
   Actual: s.cdoesStringContainUpperCaseCharacter,
@@ -3587,10 +3571,6 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cisStringCamelCase,
   Expected: 'isStringCamelCase'
 }, {
-  Name: 'cconvertArrayToCamelCaseString',
-  Actual: s.cconvertArrayToCamelCaseString,
-  Expected: 'convertArrayToCamelCaseString'
-}, {
   Name: 'cmapWordToCamelCaseWord',
   Actual: s.cmapWordToCamelCaseWord,
   Expected: 'mapWordToCamelCaseWord'
@@ -3603,33 +3583,9 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.ccompareSimplifiedAndConsolidatedStrings,
   Expected: 'compareSimplifiedAndConsolidatedStrings'
 }, {
-  Name: 'cdoesArrayContainLowerCaseConsolidatedString',
-  Actual: s.cdoesArrayContainLowerCaseConsolidatedString,
-  Expected: 'doesArrayContainLowerCaseConsolidatedString'
-}, {
-  Name: 'cdoesArrayContainCharacter',
-  Actual: s.cdoesArrayContainCharacter,
-  Expected: 'doesArrayContainCharacter'
-}, {
-  Name: 'cremoveCharacterFromArray',
-  Actual: s.cremoveCharacterFromArray,
-  Expected: 'removeCharacterFromArray'
-}, {
   Name: 'cascertainMatchingFilenames',
   Actual: s.cascertainMatchingFilenames,
   Expected: 'ascertainMatchingFilenames'
-}, {
-  Name: 'cascertainMatchingElements',
-  Actual: s.cascertainMatchingElements,
-  Expected: 'ascertainMatchingElements'
-}, {
-  Name: 'cdoesArrayContainFilename',
-  Actual: s.cdoesArrayContainFilename,
-  Expected: 'doesArrayContainFilename'
-}, {
-  Name: 'cgetLengthOfLongestStringInArray',
-  Actual: s.cgetLengthOfLongestStringInArray,
-  Expected: 'getLengthOfLongestStringInArray'
 }, {
   Name: 'cvalidateConstantsDataValidation',
   Actual: s.cvalidateConstantsDataValidation,
@@ -3683,14 +3639,6 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cconstantsFulfillmentSystem,
   Expected: 'constantsFulfillmentSystem'
 }, {
-  Name: 'csearchForPatternsInStringArray',
-  Actual: s.csearchForPatternsInStringArray,
-  Expected: 'searchForPatternsInStringArray'
-}, {
-  Name: 'cvalidatePatternsThatNeedImplementation',
-  Actual: s.cvalidatePatternsThatNeedImplementation,
-  Expected: 'validatePatternsThatNeedImplementation'
-}, {
   Name: 'cvalidateConstantsDataValues',
   Actual: s.cvalidateConstantsDataValues,
   Expected: 'validateConstantsDataValues'
@@ -3706,26 +3654,6 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'ccountDuplicateCommandAliases',
   Actual: s.ccountDuplicateCommandAliases,
   Expected: 'countDuplicateCommandAliases'
-}, {
-  Name: 'cgenerateCommandAliases',
-  Actual: s.cgenerateCommandAliases,
-  Expected: 'generateCommandAliases'
-}, {
-  Name: 'csolveLehmerCode',
-  Actual: s.csolveLehmerCode,
-  Expected: 'solveLehmerCode'
-}, {
-  Name: 'crecursiveArrayExpansion',
-  Actual: s.crecursiveArrayExpansion,
-  Expected: 'recursiveArrayExpansion'
-}, {
-  Name: 'cgetLehmerCodeValue',
-  Actual: s.cgetLehmerCodeValue,
-  Expected: 'getLehmerCodeValue'
-}, {
-  Name: 'carraysAreEqual',
-  Actual: s.carraysAreEqual,
-  Expected: 'arraysAreEqual'
 }, {
   Name: 'cgetDataCatagoryFromDataContextName',
   Actual: s.cgetDataCatagoryFromDataContextName,
@@ -3763,42 +3691,6 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.csupportedFileFormatsAre,
   Expected: 'supportedFileFormatsAre'
 }, {
-  Name: 'cgetStoredData',
-  Actual: s.cgetStoredData,
-  Expected: 'getStoredData'
-}, {
-  Name: 'cstoreData',
-  Actual: s.cstoreData,
-  Expected: 'storeData'
-}, {
-  Name: 'cisObjectEmpty',
-  Actual: s.cisObjectEmpty,
-  Expected: 'isObjectEmpty'
-}, {
-  Name: 'cisArrayEmpty',
-  Actual: s.cisArrayEmpty,
-  Expected: 'isArrayEmpty'
-}, {
-  Name: 'cisArray',
-  Actual: s.cisArray,
-  Expected: 'isArray'
-}, {
-  Name: 'cisNonZeroLengthArray',
-  Actual: s.cisNonZeroLengthArray,
-  Expected: 'isNonZeroLengthArray'
-}, {
-  Name: 'carrayDeepClone',
-  Actual: s.carrayDeepClone,
-  Expected: 'arrayDeepClone'
-}, {
-  Name: 'cisObject',
-  Actual: s.cisObject,
-  Expected: 'isObject'
-}, {
-  Name: 'cisArrayOrObject',
-  Actual: s.cisArrayOrObject,
-  Expected: 'isArrayOrObject'
-}, {
   Name: 'ccommandAliasGenerator',
   Actual: s.ccommandAliasGenerator,
   Expected: 'commandAliasGenerator'
@@ -3831,13 +3723,128 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: s.cisEven,
   Expected: 'isEven'
 }, {
+  Name: 'ccleanCommandInput',
+  Actual: s.ccleanCommandInput,
+  Expected: 'cleanCommandInput'
+}, {
+  Name: 'creplaceCharacterAtIndexOfString',
+  Actual: s.creplaceCharacterAtIndexOfString,
+  Expected: 'replaceCharacterAtIndexOfString'
+}, // *********************************
+// ArrayParsing rules in order
+// *********************************
+{
+  Name: 'creplaceCharacterWithCharacter',
+  Actual: s.creplaceCharacterWithCharacter,
+  Expected: 'replaceCharacterWithCharacter'
+}, {
+  Name: 'cconvertCamelCaseStringToArray',
+  Actual: s.cconvertCamelCaseStringToArray,
+  Expected: 'convertCamelCaseStringToArray'
+}, {
+  Name: 'cgetWordsArrayFromString',
+  Actual: s.cgetWordsArrayFromString,
+  Expected: 'getWordsArrayFromString'
+}, {
+  Name: 'crecombineStringArrayWithSpaces',
+  Actual: s.crecombineStringArrayWithSpaces,
+  Expected: 'recombineStringArrayWithSpaces'
+}, {
+  Name: 'cconvertArrayToCamelCaseString',
+  Actual: s.cconvertArrayToCamelCaseString,
+  Expected: 'convertArrayToCamelCaseString'
+}, {
+  Name: 'cdoesArrayContainLowerCaseConsolidatedString',
+  Actual: s.cdoesArrayContainLowerCaseConsolidatedString,
+  Expected: 'doesArrayContainLowerCaseConsolidatedString'
+}, {
+  Name: 'cdoesArrayContainCharacter',
+  Actual: s.cdoesArrayContainCharacter,
+  Expected: 'doesArrayContainCharacter'
+}, {
+  Name: 'cremoveCharacterFromArray',
+  Actual: s.cremoveCharacterFromArray,
+  Expected: 'removeCharacterFromArray'
+}, {
+  Name: 'cascertainMatchingElements',
+  Actual: s.cascertainMatchingElements,
+  Expected: 'ascertainMatchingElements'
+}, {
+  Name: 'cdoesArrayContainFilename',
+  Actual: s.cdoesArrayContainFilename,
+  Expected: 'doesArrayContainFilename'
+}, {
+  Name: 'cgetLengthOfLongestStringInArray',
+  Actual: s.cgetLengthOfLongestStringInArray,
+  Expected: 'getLengthOfLongestStringInArray'
+}, {
+  Name: 'csearchForPatternsInStringArray',
+  Actual: s.csearchForPatternsInStringArray,
+  Expected: 'searchForPatternsInStringArray'
+}, {
+  Name: 'cvalidatePatternsThatNeedImplementation',
+  Actual: s.cvalidatePatternsThatNeedImplementation,
+  Expected: 'validatePatternsThatNeedImplementation'
+}, {
+  Name: 'csolveLehmerCode',
+  Actual: s.csolveLehmerCode,
+  Expected: 'solveLehmerCode'
+}, {
+  Name: 'crecursiveArrayExpansion',
+  Actual: s.crecursiveArrayExpansion,
+  Expected: 'recursiveArrayExpansion'
+}, {
+  Name: 'cgetLehmerCodeValue',
+  Actual: s.cgetLehmerCodeValue,
+  Expected: 'getLehmerCodeValue'
+}, {
+  Name: 'carraysAreEqual',
+  Actual: s.carraysAreEqual,
+  Expected: 'arraysAreEqual'
+}, {
+  Name: 'cstoreData',
+  Actual: s.cstoreData,
+  Expected: 'storeData'
+}, {
+  Name: 'cgetStoredData',
+  Actual: s.cgetStoredData,
+  Expected: 'getStoredData'
+}, {
+  Name: 'cisObjectEmpty',
+  Actual: s.cisObjectEmpty,
+  Expected: 'isObjectEmpty'
+}, {
+  Name: 'cisArrayEmpty',
+  Actual: s.cisArrayEmpty,
+  Expected: 'isArrayEmpty'
+}, {
+  Name: 'cisObject',
+  Actual: s.cisObject,
+  Expected: 'isObject'
+}, {
+  Name: 'cisArray',
+  Actual: s.cisArray,
+  Expected: 'isArray'
+}, {
+  Name: 'cisArrayOrObject',
+  Actual: s.cisArrayOrObject,
+  Expected: 'isArrayOrObject'
+}, {
+  Name: 'cisNonZeroLengthArray',
+  Actual: s.cisNonZeroLengthArray,
+  Expected: 'isNonZeroLengthArray'
+}, {
+  Name: 'carrayDeepClone',
+  Actual: s.carrayDeepClone,
+  Expected: 'arrayDeepClone'
+}, {
   Name: 'creplaceCharacterAtIndex',
   Actual: s.creplaceCharacterAtIndex,
   Expected: 'replaceCharacterAtIndex'
 }, {
-  Name: 'ccleanCommandInput',
-  Actual: s.ccleanCommandInput,
-  Expected: 'cleanCommandInput'
+  Name: 'cgenerateCommandAliases',
+  Actual: s.cgenerateCommandAliases,
+  Expected: 'generateCommandAliases'
 }, {
   Name: 'caggregateCommandArguments',
   Actual: s.caggregateCommandArguments,
@@ -3846,10 +3853,6 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cdoesArrayContainValue',
   Actual: s.cdoesArrayContainValue,
   Expected: 'doesArrayContainValue'
-}, {
-  Name: 'creplaceCharacterAtIndexOfString',
-  Actual: s.creplaceCharacterAtIndexOfString,
-  Expected: 'replaceCharacterAtIndexOfString'
 }, // *********************************
 // StringGeneration rules in order
 // *********************************
