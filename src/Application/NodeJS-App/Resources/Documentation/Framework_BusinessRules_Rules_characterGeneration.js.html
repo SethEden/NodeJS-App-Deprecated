@@ -308,13 +308,13 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = 
   let c3 = n.c3;
   let c9 = n.c9;
   let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, g.cTrue, g.cTrue]);
   // typeToGenerate is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage1 + typeToGenerate);
   switch (typeToGenerate) {
     case 1: case n.c1: // Generate a number.
       loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage2);
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, g.cTrue, g.cTrue]);
       break;
     case 2: case n.c2: // Generate a random upper case or lower case letter.
       loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage3);
@@ -378,10 +378,10 @@ export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = 
   let c3 = n.c3;
   let c9 = n.c9;
   let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, g.cTrue, g.cTrue]);
   switch (typeToGenerate) {
     case 1: case '1': // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, g.cTrue, g.cTrue]);
       break;
     case 2: case '2': // Generate a random upper case letter.
       returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
@@ -442,10 +442,10 @@ export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = 
   let c3 = n.c3;
   let c9 = n.c9;
   let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, g.cTrue, g.cTrue]);
   switch (typeToGenerate) {
     case 1: case '1': // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, g.cTrue, g.cTrue]);
       break;
     case 2: case '2': // Generate a random lower case letter.
       returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
@@ -526,7 +526,7 @@ export const randomlyGenerateMixedCaseAlphaNumericCharacter2 = function(inputDat
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -574,7 +574,7 @@ export const randomlyGenerateUpperCaseAlphaNumericCharacter2 = function(inputDat
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + g.cAllNumbers);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -622,7 +622,7 @@ export const randomlyGenerateLowerCaseAlphaNumericCharacter2 = function(inputDat
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cLowerCaseEnglishAlphabet + g.cAllNumbers);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -644,7 +644,7 @@ export const randomlyGenerateNumericCharacter1 = function(inputData, inputMetaDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+  returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, g.cTrue, g.cTrue]);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -666,7 +666,7 @@ export const randomlyGenerateNumericCharacter2 = function(inputData, inputMetaDa
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cAllNumbers);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -692,7 +692,7 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
   let cTrue = g.cTrue;
   if (inputData) {
 	  let inputDataLength = inputData.length.toString();
-	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  let number = randomlyGenerateNumberInRange1(num.c1, [inputDataLength, g.cTrue, g.cTrue]);
 	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 	  returnData = inputData.substring(number - 1, number);
   }
@@ -722,7 +722,7 @@ export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaDa
   let cTrue = g.cTrue;
   if (inputData) {
 	  let inputDataLength = inputData.length.toString();
-	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  let number = randomlyGenerateNumberInRange1(num.c1, [inputDataLength, g.cTrue, g.cTrue]);
 	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 	  returnData = inputData.substring(number - 1, number);
   }
@@ -905,7 +905,7 @@ export const randomlyGenerateMixedCaseAlphabeticCharacter2 = function(inputData,
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -930,7 +930,7 @@ export const randomlyGenerateLowerCaseLetter1 = function(inputData, inputMetaDat
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let c26 = n.c2 + n.c6;
   let cTrue = g.cTrue;
-  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
+  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(num.c1, [num.c26, g.cTrue, g.cTrue]));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -952,7 +952,7 @@ export const randomlyGenerateLowerCaseLetter2 = function(inputData, inputMetaDat
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cLowerCaseEnglishAlphabet);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -977,7 +977,7 @@ export const randomlyGenerateUpperCaseLetter1 = function(inputData, inputMetaDat
   // NOTE: Cannot have a "." as part of a variable name in a {set}
   let c26 = n.c2 + n.c6;
   let cTrue = g.cTrue;
-  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
+  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(num.c1, [num.c26, g.cTrue, g.cTrue]));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -999,7 +999,7 @@ export const randomlyGenerateUpperCaseLetter2 = function(inputData, inputMetaDat
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

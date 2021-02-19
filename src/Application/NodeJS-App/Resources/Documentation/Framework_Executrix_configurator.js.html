@@ -68,7 +68,7 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
-  D[w.cConfiguration][configurationName] = configurationValue;
+  D[wrd.cConfiguration][configurationName] = configurationValue;
   // console.log('END configurator.setConfigurationSetting function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
@@ -88,9 +88,9 @@ function getConfigurationSetting(configurationName) {
   // let functionName = getConfigurationSetting.name;
   // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
-  if (D[w.cConfiguration] !== undefined) {
-    if (D[w.cConfiguration][configurationName] !== undefined) {
-      returnConfigurationValue = D[w.cConfiguration][configurationName];
+  if (D[wrd.cConfiguration] !== undefined) {
+    if (D[wrd.cConfiguration][configurationName] !== undefined) {
+      returnConfigurationValue = D[wrd.cConfiguration][configurationName];
     } else {
       returnConfigurationValue = undefined;
     }

@@ -18,6 +18,8 @@
  * @requires module:numeric-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -34,12 +36,14 @@ import loggers from '../../Executrix/loggers';
 import dataBroker from '../../Executrix/dataBroker';
 import fileBroker from '../../Executrix/fileBroker';
 import * as aryParse from './arrayParsing';
-import * as b from '../../Constants/basic.constants';
-import * as p from '../../Constants/phonics.constants';
-import * as g from '../../Constants/generic.constants';
-import * as n from '../../Constants/numeric.constants';
-import * as w from '../../Constants/word.constants';
-import * as s from '../../Constants/system.constants';
+import * as bas from '../../Constants/basic.constants';
+import * as phn from '../../Constants/phonics.constants';
+import * as gen from '../../Constants/generic.constants';
+import * as num from '../../Constants/numeric.constants';
+import * as wrd from '../../Constants/word.constants';
+import * as sys from '../../Constants/system.constants';
+import * as biz from '../../Constants/business.constants';
+import * as msg from '../../Constants/messages.constants';
 const lineByLine = require('n-readlines');
 const _ = require('lodash');
 var path = require('path');
@@ -61,19 +65,19 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * If we cause this function to evaluate a 0 or 1 to a boolean, then the integer function would never get a chance to evaluate.
  */
 export const stringToBoolean = function(inputData, inputMetaData) {
-  let functionName = s.cstringToBoolean;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cstringToBoolean;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     switch (inputData.toLowerCase().trim()) {
-      case g.ctrue: case g.cTrue: case g.cTRUE: case b.ct: case b.cT: case b.cy: case b.cY: case g.cyes: case g.cYes: case g.cYES: case b.con: case b.cOn: case b.cON:
+      case gen.ctrue: case gen.cTrue: case gen.cTRUE: case bas.ct: case bas.cT: case bas.cy: case bas.cY: case gen.cyes: case gen.cYes: case gen.cYES: case bas.con: case bas.cOn: case bas.cON:
         returnData = true;
         break;
-      case g.cfalse: case g.cFalse: case g.cFALSE: case b.cf: case b.cF: case b.cn: case b.cN: case b.cno: case b.cNo: case b.cNO: case g.coff: case g.cOff: case g.cOFF:
+      case gen.cfalse: case gen.cFalse: case gen.cFALSE: case bas.cf: case bas.cF: case bas.cn: case bas.cN: case bas.cno: case bas.cNo: case bas.cNO: case gen.coff: case gen.cOff: case gen.cOFF:
         returnData = false;
         break;
       default:
@@ -81,8 +85,8 @@ export const stringToBoolean = function(inputData, inputMetaData) {
         break;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -101,26 +105,26 @@ export const stringToBoolean = function(inputData, inputMetaData) {
  * @date 2020/01/30
  */
 export const stringToDataType = function(inputData, inputMetaData) {
-  let functionName = s.cstringToDataType;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cstringToDataType;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     let dataType = determineObjectDataType(inputData);
     switch (dataType) {
-      case w.cBoolean:
+      case wrd.cBoolean:
         returnData = stringToBoolean(inputData);
         break;
-      case w.cInteger:
+      case wrd.cInteger:
         returnData = parseInt(inputData);
         break;
-      case w.cFloat:
+      case wrd.cFloat:
         returnData = parseFloat(inputData);
         break;
-      case w.cString:
+      case wrd.cString:
         returnData = inputData;
         break;
       default: // We don't know what kind of object this is, better return it the way it was.
@@ -128,8 +132,8 @@ export const stringToDataType = function(inputData, inputMetaData) {
         break;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -143,31 +147,31 @@ export const stringToDataType = function(inputData, inputMetaData) {
  * @date 2020/01/30
  */
 export const determineObjectDataType = function(inputData, inputMetaData) {
-  let functionName = s.cdetermineObjectDataType;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdetermineObjectDataType;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     if (isBoolean(inputData) === true) {
-      returnData = w.cBoolean;
+      returnData = wrd.cBoolean;
     } else if (isInteger(inputData) === true) {
-      returnData = w.cInteger;
+      returnData = wrd.cInteger;
     } else if (isFloat(inputData) === true) {
-      returnData = w.cFloat;
+      returnData = wrd.cFloat;
     } else if (isString(inputData) === true) {
-      returnData = w.cString;
+      returnData = wrd.cString;
     } else { // Otherwise we cannot figure out what the data type is.
       // No real way to tell the difference between Short, Long and Double.
       // And we don't really need to tell the difference between all those complicated data types.
       // At least not yet!
-      returnData = w.cObject;
+      returnData = wrd.cObject;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -182,24 +186,24 @@ export const determineObjectDataType = function(inputData, inputMetaData) {
  * @date 2020/01/30
  */
 export const isBoolean = function(inputData, inputMetaData) {
-  let functionName = s.cisBoolean;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisBoolean;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     inputData = inputData.toLowerCase().trim();
-    if (inputData === g.ctrue || inputData === b.ct || inputData === b.cy || inputData === g.cyes || inputData === b.con ||
-    inputData === g.cfalse || inputData === b.cf || inputData === b.cn || inputData === b.cno || inputData === g.coff) {
+    if (inputData === gen.ctrue || inputData === bas.ct || inputData === bas.cy || inputData === gen.cyes || inputData === bas.con ||
+    inputData === gen.cfalse || inputData === bas.cf || inputData === bas.cn || inputData === bas.cno || inputData === gen.coff) {
       returnData = true;
     } else {
       returnData = false;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -213,16 +217,16 @@ export const isBoolean = function(inputData, inputMetaData) {
  * @date 2020/01/30
  */
 export const isInteger = function(inputData, inputMetaData) {
-  let functionName = s.cisInteger;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisInteger;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    // if (!isNaN(inputData) && inputData.indexOf(b.cDot) === -1) {
-    // if (!isNaN(inputData) && inputData.includes(b.cDot) === false) { // Might work for strings, but not numbers.
+    // if (!isNaN(inputData) && inputData.indexOf(bas.cDot) === -1) {
+    // if (!isNaN(inputData) && inputData.includes(bas.cDot) === false) { // Might work for strings, but not numbers.
     // // Technically this works, but we want to make sure we don't attempt to evaluate a string here, and also filter out string decimal points.
     // if (!isNaN(inputData) && inputData % 1 === 0) {
     if (!isNaN(inputData)) {
@@ -237,8 +241,8 @@ export const isInteger = function(inputData, inputMetaData) {
       returnData = false;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -252,22 +256,22 @@ export const isInteger = function(inputData, inputMetaData) {
  * @date 2020/01/30
  */
 export const isFloat = function(inputData, inputMetaData) {
-  let functionName = s.cisFloat;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisFloat;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    if (!isNaN(inputData) && inputData.indexOf(b.cDot) !== -1) {
+    if (!isNaN(inputData) && inputData.indexOf(bas.cDot) !== -1) {
       returnData = true;
     } else {
       returnData = false;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -281,10 +285,10 @@ export const isFloat = function(inputData, inputMetaData) {
  * @date 2020/01/30
  */
 export const isString = function(inputData, inputMetaData) {
-  let functionName = s.cisString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
@@ -295,8 +299,8 @@ export const isString = function(inputData, inputMetaData) {
       returnData = false;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -312,31 +316,31 @@ export const isString = function(inputData, inputMetaData) {
  * @date 2020/01/30
  */
 export const singleQuoteSwapAfterEquals = function(inputData, inputMetaData) {
-  let functionName = s.csingleQuoteSwapAfterEquals;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.csingleQuoteSwapAfterEquals;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     // console.log('inputData is: ' + inputData);
-    if (inputData.includes(b.cSingleQuote) === true) {
+    if (inputData.includes(bas.cSingleQuote) === true) {
       // First replace all the quotes in the string with double quotes.
-      returnData = inputData.replace(/'/g, b.cDoubleQuote);
+      returnData = inputData.replace(/'/g, bas.cDoubleQuote);
       // Next replace the first and last double quote with single quote.
-      if (returnData.indexOf(b.cDoubleQuote) === 0) {
-        returnData = inputData.replace(b.cDoubleQuote, b.cSingleQuote);
+      if (returnData.indexOf(bas.cDoubleQuote) === 0) {
+        returnData = inputData.replace(bas.cDoubleQuote, bas.cSingleQuote);
       }
-      if (returnData.charAt(returnData.length - 1) === b.cDoubleQuote) {
-        returnData = returnData.slice(0, -1) + b.cSingleQuote;
+      if (returnData.charAt(returnData.length - 1) === bas.cDoubleQuote) {
+        returnData = returnData.slice(0, -1) + bas.cSingleQuote;
       }
     } else {
       returnData = inputData;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -351,18 +355,18 @@ export const singleQuoteSwapAfterEquals = function(inputData, inputMetaData) {
  * @date 2020/02/26
  */
 export const swapForwardSlashToBackSlash = function(inputData, inputMetaData) {
-  let functionName = s.cswapForwardSlashToBackSlash;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cswapForwardSlashToBackSlash;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\//g, b.cBackSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\//g, bas.cBackSlash]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -380,18 +384,18 @@ export const swapBackSlashToForwardSlash = function(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.swapBackSlashToForwardSlash function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.cswapBackSlashToForwardSlash;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cswapBackSlashToForwardSlash;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\\/g, b.cForwardSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\\/g, bas.cForwardSlash]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.swapBackSlashToForwardSlash function');
   return returnData;
@@ -408,18 +412,18 @@ export const swapBackSlashToForwardSlash = function(inputData, inputMetaData) {
  * @date 2020/02/26
  */
 export const swapDoubleForwardSlashToSingleForwardSlash = function(inputData, inputMetaData) {
-  let functionName = s.cswapDoubleForwardSlashToSingleForwardSlash;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cswapDoubleForwardSlashToSingleForwardSlash;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\/\//g, b.cForwardSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\/\//g, bas.cForwardSlash]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -437,18 +441,18 @@ export const swapDoubleBackSlashToSingleBackSlash = function(inputData, inputMet
   // console.log('BEGIN stringParsing.swapDoubleBackSlashToSingleBackSlash function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.cswapDoubleBackSlashToSingleBackSlash;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cswapDoubleBackSlashToSingleBackSlash;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\\\\/g, b.cBackSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\\\\/g, bas.cBackSlash]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.swapDoubleBackSlashToSingleBackSlash function');
   return returnData;
@@ -464,19 +468,19 @@ export const swapDoubleBackSlashToSingleBackSlash = function(inputData, inputMet
  * @date 2020/02/03
  */
 export const getUserNameFromEmail = function(inputData, inputMetaData) {
-  let functionName = s.cgetUserNameFromEmail;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetUserNameFromEmail;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cIndexOfTheSpace + b.cAt + s.cSpaceIsColonSpace + inputData.indexOf(b.cAt));
-    let returnData = inputData.substr(0, inputData.indexOf(b.cAt));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cIndexOfTheSpace + bas.cAt + msg.cSpaceIsColonSpace + inputData.indexOf(bas.cAt));
+    let returnData = inputData.substr(0, inputData.indexOf(bas.cAt));
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -490,19 +494,19 @@ export const getUserNameFromEmail = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 export const replaceSpacesWithPlus = function(inputData, inputMetaData) {
-  let functionName = s.creplaceSpacesWithPlus;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.creplaceSpacesWithPlus;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    // returnData = inputData.replace(/ /g, b.cPlus);
-    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/ /g, b.cPlus]);
+    // returnData = inputData.replace(/ /g, bas.cPlus);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/ /g, bas.cPlus]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -516,19 +520,19 @@ export const replaceSpacesWithPlus = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 export const replaceColonWithUnderscore = function(inputData, inputMetaData) {
-  let functionName = s.creplaceColonWithUnderscore;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.creplaceColonWithUnderscore;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    // returnData == inputData.replace(/:/g, b.cUnderscore);
-    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
+    // returnData == inputData.replace(/:/g, bas.cUnderscore);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/:/g, bas.cUnderscore]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -544,18 +548,18 @@ export const replaceColonWithUnderscore = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 export const cleanCarriageReturnFromString = function(inputData, inputMetaData) {
-  let functionName = s.ccleanCarriageReturnFromString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.ccleanCarriageReturnFromString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     returnData = inputData.replace(/\s+/g, ' ').trim();
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -569,18 +573,18 @@ export const cleanCarriageReturnFromString = function(inputData, inputMetaData) 
  * @date 2020/02/03
  */
 export const convertStringToLowerCase = function(inputData, inputMetaData) {
-  let functionName = s.cconvertStringToLowerCase;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconvertStringToLowerCase;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     returnData = inputData.toLowerCase();
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -594,18 +598,18 @@ export const convertStringToLowerCase = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 export const convertStringToUpperCase = function(inputData, inputMetaData) {
-  let functionName = s.cconvertStringToUpperCase;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconvertStringToUpperCase;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     returnData = inputData.toUpperCase();
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -622,26 +626,26 @@ export const getFileNameFromPath = function(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.getFileNameFromPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.cgetFileNameFromPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetFileNameFromPath;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     // Clean the path string for any double slashes.
-    if (inputData.includes(b.cDoubleForwardSlash)) {
+    if (inputData.includes(bas.cDoubleForwardSlash)) {
       inputData = swapDoubleForwardSlashToSingleForwardSlash(inputData, '');
     }
-    if (inputData.includes(b.cForwardSlash)) {
+    if (inputData.includes(bas.cForwardSlash)) {
       inputData = swapForwardSlashToBackSlash(inputData, '');
     }
     // console.log('inputData right before processing is: ' + inputData);
-    returnData = inputData.split(b.cBackSlash).pop().trim();
+    returnData = inputData.split(bas.cBackSlash).pop().trim();
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -656,18 +660,18 @@ export const getFileNameFromPath = function(inputData, inputMetaData) {
  * @date 2020/06/08
  */
 export const getFileExtension = function(inputData, inputMetaData) {
-  let functionName = s.cgetFileExtension;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetFileExtension;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     returnData = path.extname(inputData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -681,18 +685,18 @@ export const getFileExtension = function(inputData, inputMetaData) {
  * @date 2020/06/08
  */
 export const removeDotFromFileExtension = function(inputData, inputMetaData) {
-  let functionName = s.cremoveDotFromFileExtension;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cremoveDotFromFileExtension;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     returnData = inputData.substring(1);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -707,18 +711,18 @@ export const removeDotFromFileExtension = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 export const removeFileExtensionFromFileName = function(inputData, inputMetaData) {
-  let functionName = s.cremoveFileExtensionFromFileName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cremoveFileExtensionFromFileName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
     returnData = inputData.replace(/\.[^/.]+$/, '');
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -732,22 +736,22 @@ export const removeFileExtensionFromFileName = function(inputData, inputMetaData
  * @date 2020/02/03
  */
 export const getValueFromAssignmentOperationString = function(inputData, inputMetaData) {
-  console.log('s.cgetValueFromAssignmentOperationString' + b.cSpace + s.cisResolvingAs + s.cgetValueFromAssignmentOperationString);
-  let functionName = s.cgetValueFromAssignmentOperationString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  console.log('biz.cgetValueFromAssignmentOperationString' + bas.cSpace + msg.cisResolvingAs + biz.cgetValueFromAssignmentOperationString);
+  let functionName = biz.cgetValueFromAssignmentOperationString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (!inputData) {
     returnData = false;
   } else {
-    let parsedString = inputData.split(b.cEqual);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cparsedStringSpaceTerm + b.cSpace + n.c1 + s.cSpaceIsColonSpace + parsedString[0]);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cparsedStringSpaceTerm + b.cSpace + n.c2 + s.cSpaceIsColonSpace + parsedString[1]);
+    let parsedString = inputData.split(bas.cEqual);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cparsedStringSpaceTerm + bas.cSpace + num.c1 + msg.cSpaceIsColonSpace + parsedString[0]);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cparsedStringSpaceTerm + bas.cSpace + num.c2 + msg.cSpaceIsColonSpace + parsedString[1]);
     returnData = parsedString[1].replace(/['"]+/g, '');
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -763,29 +767,29 @@ export const getValueFromAssignmentOperationString = function(inputData, inputMe
  * @date 2020/02/10
  */
 export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData, inputMetaData) {
-  let functionName = s.caggregateNumericalDifferenceBetweenTwoStrings;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.caggregateNumericalDifferenceBetweenTwoStrings;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   // Convert the input strings to lower case and clean them up for parsing.
   let string1 = inputData.toLowerCase().replace(/\W/g, '');
   let string2 = inputMetaData.toLowerCase().replace(/\W/g, '');
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cstring1Is + string1);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cstring2Is + string2);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstring1Is + string1);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstring2Is + string2);
 
   // Build some arrays of variations on string 2, we will use these for doing the comparisons.
   let variation0 = Array(string2.length + 1).fill(0).map((v, i) => i);
   let variation1 = Array(string2.length + 1).fill(0);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation0ValueIs + variation0);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation1ValueIs + variation1);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation0ValueIs + variation0);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation1ValueIs + variation1);
 
   for (let i = 0; i < string1.length; i++) {
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ciValueIs + i);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ciValueIs + i);
     variation1[0] = i + 1;
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation0ValueIs + variation0);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation0ValueIs + variation0);
     for (let j = 0; j < string2.length; j++) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cjValueIs + j);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cjValueIs + j);
       let deletionCost = variation0[j + 1] + 1;
       let insertionCost = variation1[j] + 1;
       let substitutionCost;
@@ -794,19 +798,19 @@ export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData,
       } else {
         substitutionCost = variation0[j] + 1;
       }
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdeletionCostIs + deletionCost);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinsertionCostIs + insertionCost);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.csubstitutionCostIs + substitutionCost);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdeletionCostIs + deletionCost);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinsertionCostIs + insertionCost);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csubstitutionCostIs + substitutionCost);
       variation1[j + 1] = math.min(deletionCost, insertionCost, substitutionCost);
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvariation1ValueIs + variation1);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation1ValueIs + variation1);
     }
     let temp = variation1;
     variation1 = variation0;
     variation0 = temp;
   }
   returnData = variation0[string2.length];
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -824,20 +828,20 @@ export const aggregateNumericalDifferenceBetweenTwoStrings = function(inputData,
  * @NOTE Based on the above implementation for the business rule/function aryParse.convertCamelCaseStringToArray
  */
 export const countCamelCaseWords = function(inputData, inputMetaData) {
-  let functionName = s.ccountCamelCaseWords;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.ccountCamelCaseWords;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = 0;
   if (inputData) {
     let caps = [];
     for (let i = 1; i < inputData.length; i++) {
-      if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
+      if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
     }
     returnData = caps.length;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -852,29 +856,29 @@ export const countCamelCaseWords = function(inputData, inputMetaData) {
  * @date 2021/01/28
  */
 export const doesStringContainAcronym = function(inputData, inputMetaData) {
-  let functionName = s.cdoesStringContainAcronym;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdoesStringContainAcronym;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   let lastCharacterWasUpperCase = false;
   let caps = [];
   if (inputData) {
     for (let i = 1; i < inputData.length; i++) {
       // If the last character was upper case and the current character is upper case then we have found an acronym and we can exit the loop.
-      if (lastCharacterWasUpperCase === true && g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      if (lastCharacterWasUpperCase === true && gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
         returnData = true;
         break;
       }
-      if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
         lastCharacterWasUpperCase = true;
       } else {
         lastCharacterWasUpperCase = false;
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -889,16 +893,16 @@ export const doesStringContainAcronym = function(inputData, inputMetaData) {
  * @NOTE: https://stackoverflow.com/questions/35849174/count-spaces-in-a-string
  */
 export const countDelimiterInString = function(inputData, inputMetaData) {
-  let functionName = s.ccountDelimiterInString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.ccountDelimiterInString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = 0;
   if (inputData && inputMetaData) {
     returnData = (inputData.split(inputMetaData).length - 1);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -912,47 +916,47 @@ export const countDelimiterInString = function(inputData, inputMetaData) {
  * @date 2021/01/28
  */
 export const determineWordDelimiter = function(inputData, inputMetaData) {
-  let functionName = s.cdetermineWordDelimiter;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdetermineWordDelimiter;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     let camelCaseWordCount = countCamelCaseWords(inputData, '');
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccamelCaseWordCountIs + camelCaseWordCount);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccamelCaseWordCountIs + camelCaseWordCount);
     let containsAcronym = doesStringContainAcronym(inputData, '');
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontainsAcronymIs + containsAcronym);
-    let spacesCount = countDelimiterInString(inputData, b.cSpace);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cspacesCountIs + spacesCount);
-    let periodCount = countDelimiterInString(inputData, b.cDot);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cperiodCountIs + periodCount);
-    let dashCount = countDelimiterInString(inputData, b.cDash);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdashCountIs + dashCount);
-    let underscoreCount = countDelimiterInString(inputData, b.cUnderscore);
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cunderscoreCountIs + underscoreCount);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccontainsAcronymIs + containsAcronym);
+    let spacesCount = countDelimiterInString(inputData, bas.cSpace);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cspacesCountIs + spacesCount);
+    let periodCount = countDelimiterInString(inputData, bas.cDot);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cperiodCountIs + periodCount);
+    let dashCount = countDelimiterInString(inputData, bas.cDash);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdashCountIs + dashCount);
+    let underscoreCount = countDelimiterInString(inputData, bas.cUnderscore);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cunderscoreCountIs + underscoreCount);
     if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
-      returnData = s.cCamelCase;
+      returnData = sys.cCamelCase;
     // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
     // We could have multiple acronyms in a word, or in multiple words that are camelCase.
     // Each of these could be a really complex special case. If we get to that point we will handle those cases on a case by case basis to improve the algorithm.
     // } else if (camelCaseWordCount > 1 && containsAcronym === false)
     } else if (spacesCount > 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
-      returnData = b.cSpace;
+      returnData = bas.cSpace;
     } else if (spacesCount === 0 && periodCount > 0 && dashCount === 0 && underscoreCount === 0) {
-      returnData = b.cDot;
+      returnData = bas.cDot;
     } else if (spacesCount === 0 && periodCount === 0 && dashCount > 0 && underscoreCount === 0) {
-      returnData = b.cDash;
+      returnData = bas.cDash;
     } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount > 0) {
-      returnData = b.cUnderscore;
+      returnData = bas.cUnderscore;
     } else {
       // We don't need to be showing this warning unless we are debugging.
       // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDetermineWordDelimiterMessage1 + s.cDetermineWordDelimiterMessage2 +
-        s.cDetermineWordDelimiterMessage3 + s.cDetermineWordDelimiterMessage4);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDetermineWordDelimiterMessage1 + msg.cDetermineWordDelimiterMessage2 +
+        msg.cDetermineWordDelimiterMessage3 + msg.cDetermineWordDelimiterMessage4);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -966,24 +970,24 @@ export const determineWordDelimiter = function(inputData, inputMetaData) {
  * @date 2021/01/28
  */
 export const getWordCountInString = function(inputData, inputMetaData) {
-  let functionName = s.cgetWordCountInString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetWordCountInString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = 0;
   if (inputData) {
     let wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
-    if (wordDelimiter === s.cCamelCase) {
+    if (wordDelimiter === sys.cCamelCase) {
       returnData = countCamelCaseWords(inputData, '');
     } else if (wordDelimiter != '') {
       returnData = inputData.split(wordDelimiter).length;
     } else {
       // We don't need to be showing this warning unless we are debugging.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cGetWordCountInStringMessage1 + s.cGetWordCountInStringMessage2 + s.cGetWordCountInStringMessage3);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cGetWordCountInStringMessage1 + msg.cGetWordCountInStringMessage2 + msg.cGetWordCountInStringMessage3);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -997,21 +1001,21 @@ export const getWordCountInString = function(inputData, inputMetaData) {
  * @date 2021/01/15
  */
 export const doesStringContainUpperCaseCharacter = function(inputData, inputMetaData) {
-  let functionName = s.cdoesStringContainUpperCaseCharacter;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdoesStringContainUpperCaseCharacter;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     for (let i = 1; i < inputData.length; i++) {
-      if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
         returnData = true;
         break;
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1025,21 +1029,21 @@ export const doesStringContainUpperCaseCharacter = function(inputData, inputMeta
  * @date 2021/01/15
  */
 export const doesStringContainLowerCaseCharacter = function(inputData, inputMetaData) {
-  let functionName = s.cdoesStringContainLowerCaseCharacter;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdoesStringContainLowerCaseCharacter;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     for (let i = 1; i < inputData.length; i++) {
-      if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      if (gen.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
         returnData = true;
         break;
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1053,16 +1057,16 @@ export const doesStringContainLowerCaseCharacter = function(inputData, inputMeta
  * @date 2021/01/15
  */
 export const isFirstCharacterLowerCase = function(inputData, inputMetaData) {
-  let functionName = s.cisFirstCharacterLowerCase;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisFirstCharacterLowerCase;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
-    returnData = g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(0));
+    returnData = gen.cLowerCaseEnglishAlphabet.includes(inputData.charAt(0));
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1076,16 +1080,16 @@ export const isFirstCharacterLowerCase = function(inputData, inputMetaData) {
  * @date 2021/01/15
  */
 export const isFirstCharacterUpperCase = function(inputData, inputMetaData) {
-  let functionName = s.cisFirstCharacterUpperCase;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisFirstCharacterUpperCase;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
-    returnData = g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(0));
+    returnData = gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(0));
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1099,23 +1103,23 @@ export const isFirstCharacterUpperCase = function(inputData, inputMetaData) {
  * @date 2021/01/19
  */
 export const isStringList = function(inputData, inputMetaData) {
-  let functionName = s.cisStringList;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisStringList;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
-    let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
-    let secondaryCommandDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
-    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
+    let secondaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
     if (inputData.includes(primaryCommandDelimiter) === true ||
     inputData.includes(secondaryCommandDelimiter) === true ||
     inputData.includes(tertiaryCommandDelimiter) === true) {
       returnData = true;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1137,10 +1141,10 @@ export const isStringList = function(inputData, inputMetaData) {
  * aBc
  */
 export const isStringCamelCase = function(inputData, inputMetaData) {
-  let functionName = s.cisStringCamelCase;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisStringCamelCase;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     let foundFirstCapitalLetter = false;
@@ -1160,12 +1164,12 @@ export const isStringCamelCase = function(inputData, inputMetaData) {
 
         // First we need to look for the first upper case letter.
         if (foundFirstCapitalLetter === false) {
-          if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+          if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
             // Found an upper case letter, ensure the next letter is lower case.
             foundFirstCapitalLetter = true;
           }
         } else if (foundFirstCapitalLetter === true) {
-          if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+          if (gen.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
             returnData = true;
             break; // Sufficent evidence to prove this is a camel case string.
           }
@@ -1173,8 +1177,8 @@ export const isStringCamelCase = function(inputData, inputMetaData) {
       } // End of the for-loop iterating over the characters in the string.
     } // End-if conditions on upperCase & lowerCase.
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1188,16 +1192,16 @@ export const isStringCamelCase = function(inputData, inputMetaData) {
  * @data 2020/02/15
  */
 export const mapWordToCamelCaseWord = function(inputData, inputMetaData) {
-  let functionName = s.cmapWordToCamelCaseWord;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cmapWordToCamelCaseWord;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     returnData = inputData.replace(/^./, character => character.toUpperCase());
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1216,16 +1220,16 @@ export const mapWordToCamelCaseWord = function(inputData, inputMetaData) {
  * Might need to revisit this one when time allows, and if there is ever a business need again.
  */
 export const simplifyAndConsolidateString = function(inputData, inputMetaData) {
-  let functionName = s.csimplifyAndConsolidateString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.csimplifyAndConsolidateString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     returnData = _.replace(inputData.toLowerCase(), /[\W]/g, '');
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1239,16 +1243,16 @@ export const simplifyAndConsolidateString = function(inputData, inputMetaData) {
  * @date 2020/02/10
  */
 export const compareSimplifiedAndConsolidatedStrings = function(inputData, inputMetaData) {
-  let functionName = s.ccompareSimplifiedAndConsolidatedStrings;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.ccompareSimplifiedAndConsolidatedStrings;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData && inputMetaData) {
     returnData = simplifyAndConsolidateString(inputData, '') === simplifyAndConsolidateString(inputMetaData, '');
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1262,24 +1266,24 @@ export const compareSimplifiedAndConsolidatedStrings = function(inputData, input
  * @date 2020/02/10
  */
 export const ascertainMatchingFilenames = function(inputData, inputMetaData) {
-  let functionName = s.cascertainMatchingFilenames;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cascertainMatchingFilenames;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData && inputMetaData) {
     if (path.basename(inputData) === path.basename(inputMetaData)) {
       // Filenames match
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cFilenamesMatch);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cFilenamesMatch);
       returnData = true;
     } else {
       // Filenames do not match
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cFilenamesDoNotMatch);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cFilenamesDoNotMatch);
       returnData = false;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1294,10 +1298,10 @@ export const ascertainMatchingFilenames = function(inputData, inputMetaData) {
  * @date 2020/07/28
  */
 export const validateConstantsDataValidation = function(inputData, inputMetaData) {
-  let functionName = s.cvalidateConstantsDataValidation;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cvalidateConstantsDataValidation;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false; // Set it to false and we will prove if it should be true.
   let foundAFailure = false;
   if (inputData && inputMetaData) {
@@ -1305,37 +1309,37 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
     let line;
 
     while (line = liner.next()) {
-      loggers.consoleLog(baseFileName + b.cDot + functionName, line.toString(g.cascii));
-      let lineInCode = line.toString(g.cascii);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, line.toString(gen.cascii));
+      let lineInCode = line.toString(gen.cascii);
       let foundConstant = false;
-      if (lineInCode.includes(s.cexportconst) === true) {
-        let lineArray = lineInCode.split(b.cSpace);
+      if (lineInCode.includes(msg.cexportconst) === true) {
+        let lineArray = lineInCode.split(bas.cSpace);
         // lineArray[2] is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.clineArray2Is + lineArray[2]);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.clineArray2Is + lineArray[2]);
         foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
         let qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
         if (foundConstant === true) {
-          if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-            let passMessage = w.cPASS + b.cColon + b.cSpace + lineArray[2] + b.cSpace + w.cPASS;
+          if (configurator.getConfigurationSetting(msg.cDisplayIndividualConstantsValidationPassMessages) === true) {
+            let passMessage = wrd.cPASS + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cPASS;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(0,255,0)(passMessage);
-            console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + passMessage);
+            console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + passMessage);
           }
         } else {
-          if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-            let failMessage = w.cFAIL + b.cColon + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL;
+          if (configurator.getConfigurationSetting(msg.cDisplayIndividualConstantsValidationFailMessages) === true) {
+            let failMessage = wrd.cFAIL + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL;
             failMessage = chalk.rgb(0,0,0)(failMessage);
             failMessage = chalk.bgRgb(255,0,0)(failMessage);
             let qualifiedConstantsPrefix = determineConstantsContextQualifiedPrefix(qualifiedConstantsFilename, '');
-            console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + failMessage);
-            // loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
+            console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + failMessage);
+            // loggers.consoleLog(baseFileName + bas.cDot + functionName, wrd.cFAIL + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL);
             // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
             let suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], qualifiedConstantsPrefix);
             if (suggestedLineOfCode !== '') {
               suggestedLineOfCode = chalk.rgb(0,0,0)(suggestedLineOfCode);
               suggestedLineOfCode = chalk.bgRgb(255,0,0)(suggestedLineOfCode);
               // Suggested line of code is:
-              console.log(s.cSuggestedLineOfCodeIs + suggestedLineOfCode);
+              console.log(msg.cSuggestedLineOfCodeIs + suggestedLineOfCode);
             }
           }
           foundAFailure = true;
@@ -1346,8 +1350,8 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
   if (foundAFailure === false) {
     returnData = true;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1363,42 +1367,42 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
  * @date 2020/12/18
  */
 export const determineConstantsContextQualifiedPrefix = function(inputData, inputMetaData) {
-  let functionName = s.cdetermineConstantsContextQualifiedPrefix;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdetermineConstantsContextQualifiedPrefix;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     returnData = inputData;
-    if (inputData.includes(w.cbasic) === true) {
-      returnData = b.cb;
-    } else if (inputData.includes(w.ccolor) === true) {
-      returnData = p.cclr;
-    } else if (inputData.includes(w.celement) === true) {
-      returnData = b.ce;
-    } else if (inputData.includes(w.cgeneric) === true) {
-      returnData = b.cg;
-    } else if (inputData.includes(w.cisotope) === true) {
-      returnData = b.ci;
-    } else if (inputData.includes(w.cnumeric) === true) {
-      returnData = b.cn;
-    } else if (inputData.includes(w.cphonics) === true) {
-      returnData = b.cp;
-    } else if (inputData.includes(w.cshape) === true) {
-      returnData = p.cshp;
-    } else if (inputData.includes(w.csystem) === true) {
-      returnData = b.cs;
-    } else if (inputData.includes(w.cunits) === true) {
-      returnData = b.cu;
-    } else if (inputData.includes(w.cword) === true) {
-      returnData = b.cw;
+    if (inputData.includes(wrd.cbasic) === true) {
+      returnData = bas.cb;
+    } else if (inputData.includes(wrd.ccolor) === true) {
+      returnData = phn.cclr;
+    } else if (inputData.includes(wrd.celement) === true) {
+      returnData = bas.ce;
+    } else if (inputData.includes(wrd.cgeneric) === true) {
+      returnData = bas.cg;
+    } else if (inputData.includes(wrd.cisotope) === true) {
+      returnData = bas.ci;
+    } else if (inputData.includes(wrd.cnumeric) === true) {
+      returnData = bas.cn;
+    } else if (inputData.includes(wrd.cphonics) === true) {
+      returnData = bas.cp;
+    } else if (inputData.includes(wrd.cshape) === true) {
+      returnData = phn.cshp;
+    } else if (inputData.includes(wrd.csystem) === true) {
+      returnData = bas.cs;
+    } else if (inputData.includes(wrd.cunits) === true) {
+      returnData = bas.cu;
+    } else if (inputData.includes(wrd.cword) === true) {
+      returnData = bas.cw;
     } else {
       // ERROR: Unknown constant file.
-      console.log(s.cErrorUnknownConstantFile);
+      console.log(sys.cErrorUnknownConstantFile);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1413,35 +1417,35 @@ export const determineConstantsContextQualifiedPrefix = function(inputData, inpu
  * @date 2020/07/29
  */
 export const determineSuggestedConstantsValidationLineOfCode = function(inputData, inputMetaData) {
-  let functionName = s.cdetermineSuggestedConstantsValidationLineOfCode;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdetermineSuggestedConstantsValidationLineOfCode;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData && inputMetaData) {
     returnData = inputData;
     // Input: cZZTopIntentionalFailure
-    // Output: {Name: 'cZZTopIntentionalFailure', Actual: w.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
-    if (inputData.charAt(0) === b.cc) {
+    // Output: {Name: 'cZZTopIntentionalFailure', Actual: wrd.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
+    if (inputData.charAt(0) === bas.cc) {
       let literalValue = inputData.substr(1);
       // `Name: '${inputData}', Actual: ${inputMetaData}.${inputData}, Expected: '${literalValue}'}`;
-      returnData = b.cOpenCurlyBrace + w.cName + b.cColon + b.cSpace + b.cSingleQuote + inputData + b.cSingleQuote + b.cComa + b.cSpace + w.cActual + b.cColon + b.cSpace + inputMetaData +
-      b.cDot + inputData + b.cComa + b.cSpace + w.cExpected + b.cColon + b.cSpace + b.cSingleQuote + literalValue + b.cSingleQuote + b.cCloseCurlyBrace;
+      returnData = bas.cOpenCurlyBrace + wrd.cName + bas.cColon + bas.cSpace + bas.cSingleQuote + inputData + bas.cSingleQuote + bas.cComa + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace + inputMetaData +
+      bas.cDot + inputData + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + bas.cSingleQuote + literalValue + bas.cSingleQuote + bas.cCloseCurlyBrace;
     } else {
       // ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
       // 'but the constant is not formatted correctly, it should begin with a lower case "c". ' +
       // 'Please reformat the constant correctly so a line of code can be generated for you.
-      console.log(s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1 +
-        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2 +
-        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 +
-        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4 +
-        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5 +
-        s.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6);
+      console.log(msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1 +
+        msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2 +
+        msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 +
+        msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4 +
+        msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5 +
+        msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6);
       returnData = '';
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1455,14 +1459,14 @@ export const determineSuggestedConstantsValidationLineOfCode = function(inputDat
  * @date 2020/07/28
  */
 export const validateConstantsDataValidationLineItemName = function(inputData, inputMetaData) {
-  let functionName = s.cvalidateConstantsDataValidationLineItemName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cvalidateConstantsDataValidationLineItemName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData && inputMetaData) {
-    for (let i = 0; i < D[s.cConstantsValidationData][inputMetaData].length; i++) {
-      let validationLineItem = D[s.cConstantsValidationData][inputMetaData][i];
+    for (let i = 0; i < D[msg.cConstantsValidationData][inputMetaData].length; i++) {
+      let validationLineItem = D[msg.cConstantsValidationData][inputMetaData][i];
       if (validationLineItem) {
         if (inputData === validationLineItem.Name) {
           returnData = true;
@@ -1471,8 +1475,8 @@ export const validateConstantsDataValidationLineItemName = function(inputData, i
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1487,34 +1491,34 @@ export const validateConstantsDataValidationLineItemName = function(inputData, i
  * @date 2021/01/25
  */
 export const doesConstantExist = function(inputData, inputMetaData) {
-  let functionName = s.cdoesConstantExist;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdoesConstantExist;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
-    let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+    let constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]);
     // constantsTypesKeys is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop1:
     for (let i = 0; i < constantsTypesKeys.length; i++) {
       let constantTypeKey = constantsTypesKeys[i];
       // constantTypeKey is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
-      let constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
+      let constantTypeValues = D[sys.cConstantsValidationData][constantTypeKey];
       // constantTypeValues is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
       let constantsKeys = Object.keys(constantTypeValues);
       // constantsKeys is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsKeysIs + JSON.stringify(constantsKeys));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsKeysIs + JSON.stringify(constantsKeys));
 loop2:
       for (let j = 0; j < constantsKeys.length; j++) {
         let constantKey = constantsKeys[j];
         // constantKey is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantKeyIs + JSON.stringify(constantKey));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantKeyIs + JSON.stringify(constantKey));
         let constantActualValue = constantTypeValues[constantKey];
         // constantActualValue is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantActualValueIs + JSON.stringify(constantActualValue));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantActualValueIs + JSON.stringify(constantActualValue));
         if (inputData === constantActualValue.Actual) {
           returnData = true;
           break loop1;
@@ -1522,8 +1526,8 @@ loop2:
       } // for-loop j-th iterator.
     } // for-loop i-th iterator.
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1541,34 +1545,34 @@ loop2:
  * @date 2021/01/25
  */
 export const getConstantType = function(inputData, inputMetaData) {
-  let functionName = s.cgetConstantType;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetConstantType;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+    let constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]);
     // constantsTypesKeys is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop1:
     for (let i = 0; i < constantsTypesKeys.length; i++) {
       let constantTypeKey = constantsTypesKeys[i];
       // constantTypeKey is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
-      let constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
+      let constantTypeValues = D[sys.cConstantsValidationData][constantTypeKey];
       // constantTypeValues is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
       let constantsKeys = Object.keys(constantTypeValues);
       // constantsKeys is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsKeysIs + JSON.stringify(constantsKeys));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsKeysIs + JSON.stringify(constantsKeys));
 loop2:
       for (let j = 0; j < constantsKeys.length; j++) {
         let constantKey = constantsKeys[j];
         // constantKey is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantKeyIs + JSON.stringify(constantKey));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantKeyIs + JSON.stringify(constantKey));
         let constantActualValue = constantTypeValues[constantKey];
         // constantActualValue is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantActualValueIs + JSON.stringify(constantActualValue));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantActualValueIs + JSON.stringify(constantActualValue));
         if (inputData === constantActualValue.Actual) {
           if (returnData === '') {
             returnData = constantTypeKey;
@@ -1578,14 +1582,14 @@ loop2:
               break loop1;
             }
           } else {
-            returnData = returnData + b.cComa + constantTypeKey;
+            returnData = returnData + bas.cComa + constantTypeKey;
           }
         }
       } // for-loop j-th iterator.
     } // for-loop i-th iterator.
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1599,54 +1603,54 @@ loop2:
  * @date 2021/01/26
  */
 export const getConstantActualValue = function(inputData, inputMetaData) {
-  let functionName = s.cgetConstantActualValue;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetConstantActualValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     if (isConstantTypeValid(inputMetaData, '') === true) {
-      let constantTypeValues1 = D[s.cConstantsValidationData][inputMetaData];
+      let constantTypeValues1 = D[sys.cConstantsValidationData][inputMetaData];
       // 1 constantTypeValues is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues1));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues1));
       let constantsKeys1 = Object.keys(constantTypeValues1);
       // 1 constantsKeys is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantsKeysIs + JSON.stringify(constantsKeys1));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantsKeysIs + JSON.stringify(constantsKeys1));
 loop1:
       for (let i = 0; i < constantsKeys1.length; i++) {
         let constantKey1 = constantsKeys1[i];
         // 1 constantKey is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantKeyIs + JSON.stringify(constantKey1));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantKeyIs + JSON.stringify(constantKey1));
         let constantActualValue1 = constantTypeValues1[constantKey1];
         // 1 constantActualValue is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantActualValueIs + JSON.stringify(constantActualValue1));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantActualValueIs + JSON.stringify(constantActualValue1));
         if (inputData === constantActualValue1.Name) {
           returnData = constantActualValue1.Actual;
         }
       } // for-loop j-th iterator.
     } else {
-      let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+      let constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]);
       // constantsTypesKeys is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop2:
       for (let j = 0; j < constantsTypesKeys.length; j++) {
         let constantTypeKey = constantsTypesKeys[j];
         // constantTypeKey is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
-        let constantTypeValues2 = D[s.cConstantsValidationData][constantTypeKey];
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
+        let constantTypeValues2 = D[sys.cConstantsValidationData][constantTypeKey];
         // 2 constantTypeValues is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c2 + b.cSpace + s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues2));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c2 + bas.cSpace + msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues2));
         let constantsKeys2 = Object.keys(constantTypeValues2);
         // 2 constantsKeys is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, n.c2 + b.cSpace + s.cconstantsKeysIs + JSON.stringify(constantsKeys2));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c2 + bas.cSpace + msg.cconstantsKeysIs + JSON.stringify(constantsKeys2));
 loop3:
         for (let k = 0; k < constantsKeys2.length; k++) {
           let constantKey2 = constantsKeys2[k];
           // 2 constantKey is:
-          loggers.consoleLog(baseFileName + b.cDot + functionName, n.c2 + b.cSpace + s.cconstantKeyIs + JSON.stringify(constantKey2));
+          loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c2 + bas.cSpace + msg.cconstantKeyIs + JSON.stringify(constantKey2));
           let constantActualValue1 = constantTypeValues2[constantKey2];
           // 1 constantActualValue is:
-          loggers.consoleLog(baseFileName + b.cDot + functionName, n.c1 + b.cSpace + s.cconstantActualValueIs + JSON.stringify(constantActualValue1));
+          loggers.consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantActualValueIs + JSON.stringify(constantActualValue1));
           if (inputData === constantActualValue1.Name) {
             returnData = constantActualValue1.Actual;
           }
@@ -1654,8 +1658,8 @@ loop3:
       } // for-loop i-th iterator.
     } // else clause for the case that inputMetaData did not match a valid constant type in the system.
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1669,34 +1673,34 @@ loop3:
  * @date 2021/01/26
  */
 export const getConstantName = function(inputData, inputMetaData) {
-  let functionName = s.cgetConstantName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetConstantName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    let constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+    let constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]);
     // constantsTypesKeys is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 loop1:
     for (let i = 0; i < constantsTypesKeys.length; i++) {
       let constantTypeKey = constantsTypesKeys[i];
       // constantTypeKey is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
-      let constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
+      let constantTypeValues = D[sys.cConstantsValidationData][constantTypeKey];
       // constantTypeValues is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
       let constantsKeys = Object.keys(constantTypeValues);
       // constantsKeys is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsKeysIs + JSON.stringify(constantsKeys));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsKeysIs + JSON.stringify(constantsKeys));
 loop2:
       for (let j = 0; j < constantsKeys.length; j++) {
         let constantKey = constantsKeys[j];
         // constantKey is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantKeyIs + JSON.stringify(constantKey));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantKeyIs + JSON.stringify(constantKey));
         let constantActualValue = constantTypeValues[constantKey];
         // constantActualValue is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantActualValueIs + JSON.stringify(constantActualValue));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantActualValueIs + JSON.stringify(constantActualValue));
         if (inputData === constantActualValue.Actual) {
           returnData = constantActualValue.Name;
           break loop1;
@@ -1704,8 +1708,8 @@ loop2:
       } // for-loop j-th iterator.
     } // for-loop i-th iterator.
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1719,18 +1723,18 @@ loop2:
  * @date 2021/01/26
  */
 export const findConstantName = function(inputData, inputMetaData) {
-  let functionName = s.cfindConstantName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cfindConstantName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    if (inputData.includes(b.cDot)) {
-      returnData = inputData.substr(inputData.lastIndexOf(b.cDot) + 1, inputData.length);
+    if (inputData.includes(bas.cDot)) {
+      returnData = inputData.substr(inputData.lastIndexOf(bas.cDot) + 1, inputData.length);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1744,24 +1748,24 @@ export const findConstantName = function(inputData, inputMetaData) {
  * @date 2021/01/26
  */
 export const isConstantTypeValid = function(inputData, inputMetaData) {
-  let functionName = s.cisConstantTypeValid;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisConstantTypeValid;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     switch (inputData) {
-      case s.cBasicConstantsValidation:
-      case s.cColorConstantsValidation:
-      case s.cElementConstantsValidation:
-      case s.cGenericConstantsValidation:
-      case s.cIsotopeConstantsValidation:
-      case s.cNumericConstantsValidation:
-      case s.cPhonicsConstantsValidation:
-      case s.cShapeConstantsValidation:
-      case s.cSystemConstantsValidation:
-      case s.cUnitsConstantsValidation:
-      case s.cWordConstantsValidation:
+      case sys.cBasicConstantsValidation:
+      case sys.cColorConstantsValidation:
+      case sys.cElementConstantsValidation:
+      case sys.cGenericConstantsValidation:
+      case sys.cIsotopeConstantsValidation:
+      case sys.cNumericConstantsValidation:
+      case sys.cPhonicsConstantsValidation:
+      case sys.cShapeConstantsValidation:
+      case sys.cSystemConstantsValidation:
+      case sys.cUnitsConstantsValidation:
+      case sys.cWordConstantsValidation:
         returnData = true;
         break;
       default:
@@ -1769,8 +1773,8 @@ export const isConstantTypeValid = function(inputData, inputMetaData) {
         break;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1784,54 +1788,54 @@ export const isConstantTypeValid = function(inputData, inputMetaData) {
  * @date 2021/01/26
  */
 export const convertConstantTypeToConstantPrefix = function(inputData, inputMetaData) {
-  let functionName = s.cconvertConstantTypeToConstantPrefix;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconvertConstantTypeToConstantPrefix;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     returnData = inputData;
     switch (inputData) {
-      case s.cBasicConstantsValidation:
-        returnData = b.cb + b.cDot;
+      case sys.cBasicConstantsValidation:
+        returnData = bas.cb + bas.cDot;
         break;
-      case s.cColorConstantsValidation:
-        returnData = p.cclr + b.cDot;
+      case sys.cColorConstantsValidation:
+        returnData = phn.cclr + bas.cDot;
         break;
-      case s.cElementConstantsValidation:
-        returnData = b.ce + b.cDot;
+      case sys.cElementConstantsValidation:
+        returnData = bas.ce + bas.cDot;
         break;
-      case s.cGenericConstantsValidation:
-        returnData = b.cg + b.cDot;
+      case sys.cGenericConstantsValidation:
+        returnData = bas.cg + bas.cDot;
         break;
-      case s.cIsotopeConstantsValidation:
-        returnData = b.ci + b.cDot;
+      case sys.cIsotopeConstantsValidation:
+        returnData = bas.ci + bas.cDot;
         break;
-      case s.cNumericConstantsValidation:
-        returnData = b.cn + b.cDot;
+      case sys.cNumericConstantsValidation:
+        returnData = bas.cn + bas.cDot;
         break;
-      case s.cPhonicsConstantsValidation:
-        returnData = b.cp + b.cDot;
+      case sys.cPhonicsConstantsValidation:
+        returnData = bas.cp + bas.cDot;
         break;
-      case s.cShapeConstantsValidation:
-        returnData = p.cshp + b.cDot;
+      case sys.cShapeConstantsValidation:
+        returnData = phn.cshp + bas.cDot;
         break;
-      case s.cSystemConstantsValidation:
-        returnData = b.cs + b.cDot;
+      case sys.cSystemConstantsValidation:
+        returnData = bas.cs + bas.cDot;
         break;
-      case s.cUnitsConstantsValidation:
-        returnData = b.cu + b.cDot;
+      case sys.cUnitsConstantsValidation:
+        returnData = bas.cu + bas.cDot;
         break;
-      case s.cWordConstantsValidation:
-        returnData = b.cw + b.cDot;
+      case sys.cWordConstantsValidation:
+        returnData = bas.cw + bas.cDot;
         break;
       default:
         returnData = false;
         break;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1845,10 +1849,10 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
  * @date 2021/01/26
  */
 export const constantsOptimizedFulfillmentSystem = function(inputData, inputMetaData) {
-  let functionName = s.cconstantsOptimizedFulfillmentSystem;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconstantsOptimizedFulfillmentSystem;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let constantType = '';
   let constantName = '';
@@ -1862,8 +1866,8 @@ export const constantsOptimizedFulfillmentSystem = function(inputData, inputMeta
       returnData = constantPrefix + constantName;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1878,10 +1882,10 @@ export const constantsOptimizedFulfillmentSystem = function(inputData, inputMeta
  * @date 2021/01/25
  */
 export const constantsFulfillmentSystem = function(inputData, inputMetaData) {
-  let functionName = s.cconstantsFulfillmentSystem;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconstantsFulfillmentSystem;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let constantName = '';
   let constantType = '';
@@ -1891,23 +1895,23 @@ export const constantsFulfillmentSystem = function(inputData, inputMetaData) {
     // First determine how many characters are being returned so we can determine what portion of the string we need to continue processing with.
     constantName = findConstantName(returnData, '');
     // constantName is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantNameIs + constantName);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantNameIs + constantName);
     let constantValue = getConstantActualValue(constantName, '');
     // constantValue is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantValueIs + constantValue);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantValueIs + constantValue);
 
     let deltaLength = inputData.length - constantValue.length;
     // deltaLength is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdeltaLengthIs + deltaLength);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdeltaLengthIs + deltaLength);
     if (deltaLength != 0) {
       let recursiveSubString = inputMetaData.substring(inputMetaData.length - deltaLength, inputMetaData.length);
       // recursiveSubString is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.crecursiveSubStringIs + recursiveSubString);
-      returnData = returnData + b.cSpace + b.cPlus + b.cSpace + constantsFulfillmentSystem(recursiveSubString, inputData);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.crecursiveSubStringIs + recursiveSubString);
+      returnData = returnData + bas.cSpace + bas.cPlus + bas.cSpace + constantsFulfillmentSystem(recursiveSubString, inputData);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1921,32 +1925,32 @@ export const constantsFulfillmentSystem = function(inputData, inputMetaData) {
  * @date 2020/07/29
  */
 export const validateConstantsDataValues = function(inputData, inputMetaData) {
-  let functionName = s.cvalidateConstantsDataValues;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cvalidateConstantsDataValues;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let passMessage = '';
   if (inputData) {
-    for (let i = 0; i < D[s.cConstantsValidationData][inputData].length; i++) {
+    for (let i = 0; i < D[sys.cConstantsValidationData][inputData].length; i++) {
       passMessage = '';
-      let validationLineItem = D[s.cConstantsValidationData][inputData][i];
+      let validationLineItem = D[sys.cConstantsValidationData][inputData][i];
       if (validationLineItem) {
         if (validationLineItem.Actual === validationLineItem.Expected) {
-          if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
             // `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
-            passMessage = w.cPASS + b.cSpace + b.cDoubleDash + b.cSpace + inputData + b.cSpace + w.cActual + b.cColon + b.cSpace +
-              validationLineItem.Actual + b.cComa + b.cSpace + w.cExpected + b.cColon + b.cSpace + validationLineItem.Expected + b.cbSpace + b.cDoubleDash + b.cSpace + w.cPASS;
+            passMessage = wrd.cPASS + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace +
+              validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cbSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASS;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(0,255,0)(passMessage);
             console.log(passMessage);
           }
         } else {
           returnData = false;
-          if (configurator.getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
             // `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
-            passMessage = w.cFAIL + b.cSpace + b.cDoubleDash + b.cSpace + inputData + b.cSpace + w.cActual + b.cColon + b.cSpace +
-              validationLineItem.Actual + b.cComa + b.cSpace + w.cExpected + b.cColon + b.cSpace + validationLineItem.Expected + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAIL;
+            passMessage = wrd.cFAIL + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace +
+              validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAIL;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(255,0,0)(passMessage);
             console.log(passMessage);
@@ -1954,15 +1958,15 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
         }
       } else {
         // `FAIL -- ${inputData} -- FAIL`
-        passMessage = w.cFAIL + b.cSpace + b.cDoubleDash + b.cSpace + inputData + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAIL;
+        passMessage = wrd.cFAIL + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAIL;
         passMessage = chalk.rgb(0,0,0)(passMessage);
         passMessage = chalk.bgRgb(255,0,0)(passMessage);
         console.log(passMessage);
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1978,10 +1982,10 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
  * @date 2021/01/22
  */
 export const isValidCommandNameString = function(inputData, inputMetaData) {
-  let functionName = s.cisValidCommandNameString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cisValidCommandNameString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData) {
     // NOTE: The below call to convert the string to a camel-case array doesn't garantee that the string is actually camel-case.
@@ -1996,8 +2000,8 @@ export const isValidCommandNameString = function(inputData, inputMetaData) {
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2011,18 +2015,18 @@ export const isValidCommandNameString = function(inputData, inputMetaData) {
  * @date 2021/01/25
  */
 export const isConstantValid = function(inputData, inputMetaData) {
-  let functionName = s.cisConstantValid;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cisConstantValid;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData) {
     if (inputData.length >= 4) {
       returnData = true;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2037,56 +2041,56 @@ export const isConstantValid = function(inputData, inputMetaData) {
  * @date 2021/01/11
  */
 export const countDuplicateCommandAliases = function(inputData, inputMetaData) {
-  let functionName = s.ccountDuplicateCommandAliases;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.ccountDuplicateCommandAliases;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = 0;
   if (inputData && inputMetaData) {
 loop1:
     for (let i = 0; i < inputMetaData.length; i++) {
       // BEGIN i-th loop:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithLoop + i);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithLoop + i);
       let currentCommand = inputMetaData[i];
       // currentCommand is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentCommandIs + JSON.stringify(currentCommand));
-      let aliasList = currentCommand[w.cAliases];
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentCommandIs + JSON.stringify(currentCommand));
+      let aliasList = currentCommand[wrd.cAliases];
       // aliasList is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.caliasListIs + aliasList);
-      let arrayOfAliases = aliasList.split(b.cComa);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.caliasListIs + aliasList);
+      let arrayOfAliases = aliasList.split(bas.cComa);
 loop2:
       for (let j = 0; j < arrayOfAliases.length; j++) {
         // BEGIN j-th loop:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_jthLoop + i);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_jthLoop + i);
         let currentAlias = arrayOfAliases[j];
         // currentAlias is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentAliasIs + currentAlias);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentAliasIs + currentAlias);
         if (currentAlias === inputData) {
           returnData = returnData + 1;
         }
         // duplicateAliasCount is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cduplicateAliasCountIs + returnData);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cduplicateAliasCountIs + returnData);
         // END j-th loop:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_jthLoop + i);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_jthLoop + i);
       }
       // END i-th loop:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithLoop + i);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithLoop + i);
     }
   }
   if (returnData > 1) {
     // duplicateAliasCount is:
-    let duplicateAliasCountMessage = s.cduplicateAliasCountIs + returnData;
+    let duplicateAliasCountMessage = msg.cduplicateAliasCountIs + returnData;
     duplicateAliasCountMessage = chalk.rgb(0,0,0)(duplicateAliasCountMessage);
     duplicateAliasCountMessage = chalk.bgRgb(255,0,0)(duplicateAliasCountMessage);
     console.log(duplicateAliasCountMessage);
     // duplicate command alias is:
-    let duplicateAliasCommandMessage = s.cduplicateCommandAliasIs + inputData;
+    let duplicateAliasCommandMessage = msg.cduplicateCommandAliasIs + inputData;
     duplicateAliasCommandMessage = chalk.rgb(0,0,0)(duplicateAliasCommandMessage);
     duplicateAliasCommandMessage = chalk.bgRgb(255,0,0)(duplicateAliasCommandMessage);
     console.log(duplicateAliasCommandMessage);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -2104,19 +2108,19 @@ loop2:
  * @date 2020/02/03
  */
 export const getDataCatagoryFromDataContextName = function(inputData, inputMetaData) {
-  let functionName = s.cgetDataCatagoryFromDataContextName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetDataCatagoryFromDataContextName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    let dataCatagory = inputData.split(b.cUnderscore);
+    let dataCatagory = inputData.split(bas.cUnderscore);
     returnData = dataCatagory[0];
     // Data Catagory should be:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDataCatagoryShouldBe + dataCatagory[0]);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDataCatagoryShouldBe + dataCatagory[0]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -2130,19 +2134,19 @@ export const getDataCatagoryFromDataContextName = function(inputData, inputMetaD
  * @date 2020/02/03
  */
 export const getDataCatagoryDetailNameFromDataContextName = function(inputData, inputMetaData) {
-  let functionName = s.cgetDataCatagoryDetailNameFromDataContextName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetDataCatagoryDetailNameFromDataContextName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    let dataCatagoryDetailName = inputData.split(b.cUnderscore);
+    let dataCatagoryDetailName = inputData.split(bas.cUnderscore);
     returnData = dataCatagoryDetailName[1];
     // Data Catagory Detail Name should be:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cDataCatagoryDetailNameShouldBe + dataCatagoryDetailName[1]);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDataCatagoryDetailNameShouldBe + dataCatagoryDetailName[1]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -2156,19 +2160,19 @@ export const getDataCatagoryDetailNameFromDataContextName = function(inputData, 
  * @date 2020/02/03
  */
 export const getKeywordNameFromDataContextName = function(inputData, inputMetaData) {
-  let functionName = s.cgetKeywordNameFromDataContextName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetKeywordNameFromDataContextName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    let dataCatagoryKeywordName = inputData.split(b.cUnderscore);
+    let dataCatagoryKeywordName = inputData.split(bas.cUnderscore);
     returnData = dataCatagoryKeywordName[2];
     // Keyword Name should be:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cKeywordNameShouldBe + dataCatagoryKeywordName[2]);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cKeywordNameShouldBe + dataCatagoryKeywordName[2]);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -2190,52 +2194,52 @@ export const parseSystemRootPath = function(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.parseSystemRootPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.cparseSystemRootPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cparseSystemRootPath;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    let applicationName = configurator.getConfigurationSetting(s.cApplicationName);
-    let pathElements = inputData.split(b.cBackSlash);
+    let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
+    let pathElements = inputData.split(bas.cBackSlash);
     loop1:
       for (let i = 0; i < pathElements.length; i++) {
         // console.log('BEGIN iteration i: ' + i);
         // BEGIN i-th iteration:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
         let pathElement = pathElements[i];
         // console.log('pathElement is ' + pathElement);
         // pathElement is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathElementIs + pathElement);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpathElementIs + pathElement);
         if (i === 0) {
           // console.log('case: i = 0');
           // case: i = 0
-          loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccaseIEqual0);
+          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccaseIEqual0);
           returnData = pathElement;
         } else if (pathElement === applicationName) {
-          // console.log('case: pathElement = ' + s.cCAFfeinated);
+          // console.log('case: pathElement = ' + sys.cCAFfeinated);
           // case: pathElement =
-          loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccasePathElementEqual + applicationName);
-          returnData = returnData + b.cBackSlash + pathElement + b.cBackSlash;
+          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccasePathElementEqual + applicationName);
+          returnData = returnData + bas.cBackSlash + pathElement + bas.cBackSlash;
           break loop1;
         } else {
           // console.log('case else');
           // case else
-          loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccaseElse);
-          returnData = returnData + b.cBackSlash + pathElement;
+          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccaseElse);
+          returnData = returnData + bas.cBackSlash + pathElement;
         }
         // console.log('returnData so far is: ' + returnData);
         // console.log('END iteration i: ' + i);
         // returnData so far is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataSoFarIs + returnData);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataSoFarIs + returnData);
         // END i-th iteration:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
       }
     returnData = swapDoubleBackSlashToSingleBackSlash(returnData, '');
     returnData = swapBackSlashToForwardSlash(returnData, '');
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.parseSystemRootPath function');
   return returnData;
@@ -2260,16 +2264,16 @@ export const replaceDoublePercentWithMessage = function(inputData, inputMetaData
   // We just have to hard code everything and it won't be loged to the log file.
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.creplaceDoublePercentWithMessage;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.creplaceDoublePercentWithMessage;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    returnData = inputData.replace(b.cPercent + b.cPercent, inputMetaData);
+    returnData = inputData.replace(bas.cPercent + bas.cPercent, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.replaceDoublePercentWithMessage business rule');
   return returnData;
@@ -2285,19 +2289,19 @@ export const replaceDoublePercentWithMessage = function(inputData, inputMetaData
  * @date 2020/06/01
  */
 export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMetaData) {
-  let functionName = s.cremoveXnumberOfFoldersFromEndOfPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cremoveXnumberOfFoldersFromEndOfPath;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData && math.isNumeric(inputMetaData) === true) {
     let pathArray;
     let pathAsForwardSlash;
-    if (inputData.includes(b.cForwardSlash) === true) {
-      pathArray = inputData.split(b.cForwardSlash);
+    if (inputData.includes(bas.cForwardSlash) === true) {
+      pathArray = inputData.split(bas.cForwardSlash);
       pathAsForwardSlash = true;
-    } else if (inputData.includes(b.cBackSlash) === true) {
-      pathArray = inputData.split(b.cBackSlash);
+    } else if (inputData.includes(bas.cBackSlash) === true) {
+      pathArray = inputData.split(bas.cBackSlash);
       pathAsForwardSlash = false
     } else {
       pathAsForwardSlash = false;
@@ -2305,17 +2309,17 @@ export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMeta
     }
     if (returnData !== false) {
       // pathArray is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathArrayIs + JSON.stringify(pathArray));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpathArrayIs + JSON.stringify(pathArray));
       for (let i = 0; i <= pathArray.length - inputMetaData - 1; i++) {
         // current path element is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentPathElementIs + pathArray[i]);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentPathElementIs + pathArray[i]);
         if (i === 0) {
             returnData = pathArray[i];
         } else {
           if (pathAsForwardSlash === true) {
-            returnData = returnData + b.cForwardSlash + pathArray[i];
+            returnData = returnData + bas.cForwardSlash + pathArray[i];
           } else if (pathAsForwardSlash === false) {
-            returnData = returnData + b.cBackSlash + pathArray[i];
+            returnData = returnData + bas.cBackSlash + pathArray[i];
           } else {
             returnData = false;
             break;
@@ -2324,16 +2328,16 @@ export const removeXnumberOfFoldersFromEndOfPath = function(inputData, inputMeta
       } // END for-loop
       // We still need a trailing slash
       if (pathAsForwardSlash === true) {
-        returnData = returnData + b.cForwardSlash;
+        returnData = returnData + bas.cForwardSlash;
       } else if (pathAsForwardSlash === false) {
-        returnData = returnData + b.cBackSlash;
+        returnData = returnData + bas.cBackSlash;
       } else {
         returnData = false;
       }
     } // END returnData !== false
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2350,29 +2354,29 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
   // console.log('BEGIN stringParsing.getFirstTopLevelFolderFromPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.cgetFirstTopLevelFolderFromPath;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetFirstTopLevelFolderFromPath;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     let pathArray;
-    if (inputData.includes(b.cForwardSlash) === true) {
-      pathArray = inputData.split(b.cForwardSlash);
-    } else if (inputData.includes(b.cBackSlash) === true) {
-      pathArray = inputData.split(b.cBackSlash);
+    if (inputData.includes(bas.cForwardSlash) === true) {
+      pathArray = inputData.split(bas.cForwardSlash);
+    } else if (inputData.includes(bas.cBackSlash) === true) {
+      pathArray = inputData.split(bas.cBackSlash);
     } else {
       returnData = false;
     }
     if (returnData !== false) {
       // console.log('pathArray is: ' + JSON.stringify(pathArray));
       // pathArray is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathArrayIs + JSON.stringify(pathArray));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpathArrayIs + JSON.stringify(pathArray));
       returnData = pathArray[pathArray.length - 2];
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.getFirstTopLevelFolderFromPath function');
   return returnData;
@@ -2388,42 +2392,42 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
  * @date 2020/12/28
  */
 export const loadDataFile = function(inputData, inputMetaData) {
-  let functionName = s.cloadDataFile;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cloadDataFile;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (!inputData) {
     // WARNING: No data to load, please specify a valid path & filename!
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cLoadDataFileMessage1 + s.cLoadDataFileMessage2);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadDataFileMessage1 + msg.cLoadDataFileMessage2);
     returnData = false;
   } else {
     let loadedData = {};
-    if (inputData.includes(g.cDotxml) || inputData.includes(g.cDotXml) || inputData.includes(g.cDotXML)) {
+    if (inputData.includes(gen.cDotxml) || inputData.includes(gen.cDotXml) || inputData.includes(gen.cDotXML)) {
       // Attempting to load XML data!
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cAttemptingToLoadXmlData);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cAttemptingToLoadXmlData);
       loadedData = fileBroker.getXmlData(inputData);
-    } else if (inputData.includes(g.cDotcsv) || inputData.includes(g.cDotCsv) || inputData.includes(g.cDotCSV)) {
+    } else if (inputData.includes(gen.cDotcsv) || inputData.includes(gen.cDotCsv) || inputData.includes(gen.cDotCSV)) {
       // Attempting to load CSV data!
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cAttemptingToLoadCsvData);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cAttemptingToLoadCsvData);
       loadedData = fileBroker.getCsvData(inputData);
-    } else if (inputData.includes(g.cDotjson) || inputData.includes(g.cDotJson) || inputData.includes(g.cDotJSON)) {
+    } else if (inputData.includes(gen.cDotjson) || inputData.includes(gen.cDotJson) || inputData.includes(gen.cDotJSON)) {
       // Attempting to load JSON data!
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cAttemptingToLoadJsonData);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cAttemptingToLoadJsonData);
       loadedData = fileBroker.getJsonData(inputData);
     } else {
       // WARNING: Invalid file format, file formats supported are:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cloadDataFileMessage3 + supportedFileFormatsAre());
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cloadDataFileMessage3 + supportedFileFormatsAre());
     }
     // Loaded data is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cLoadedDataIs + JSON.stringify(loadedData));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadedDataIs + JSON.stringify(loadedData));
     if (loadedData !== null && loadedData) {
       returnData = true;
       dataBroker.storeData(inputMetaData, loadedData);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2437,15 +2441,15 @@ export const loadDataFile = function(inputData, inputMetaData) {
  * @date 2021/02/06
  */
 export const supportedFileFormatsAre = function(inputData, inputMetaData) {
-  let functionName = s.csupportedFileFormatsAre;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.csupportedFileFormatsAre;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   // NOTE: In the future it might be better to store this data in a configuration setting so it's easier to update.
   // This this function could just look up that data and return it as a list.
-  let returnData = g.cXML + b.cComa + b.cSpace + g.cCSV + b.cComa + b.cSpace + g.cJSON;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  let returnData = gen.cXML + bas.cComa + bas.cSpace + gen.cCSV + bas.cComa + bas.cSpace + gen.cJSON;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2459,22 +2463,22 @@ export const supportedFileFormatsAre = function(inputData, inputMetaData) {
  * @date 2021/01/10
  */
 export const getAttributeName = function(inputData, inputMetaData) {
-  let functionName = s.cgetAttributeName;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cgetAttributeName;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData) {
-    let attributeArray = inputData.split(b.cColon);
+    let attributeArray = inputData.split(bas.cColon);
     // attributeArray is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArrayIs + attributeArray);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArrayIs + attributeArray);
     // attributeArray[0] is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArray0Is + attributeArray[0]);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArray0Is + attributeArray[0]);
     returnData = aryParse.replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
     returnData = returnData.trim();
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2488,22 +2492,22 @@ export const getAttributeName = function(inputData, inputMetaData) {
  * @date 2021/01/10
  */
 export const getAttributeValue = function(inputData, inputMetaData) {
-  let functionName = s.cgetAttributeValue;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cgetAttributeValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData) {
-    let attributeArray = inputData.split(b.cColon);
+    let attributeArray = inputData.split(bas.cColon);
     // attributeArray is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArrayIs + attributeArray);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArrayIs + attributeArray);
     // attributeArray[0] is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cattributeArray0Is + attributeArray[1]);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArray0Is + attributeArray[1]);
     returnData = aryParse.replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
     returnData = returnData.trim();
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2521,10 +2525,10 @@ export const isOdd = function(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.isOdd function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.cisOdd;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisOdd;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     if (isInteger(inputData, '') === true) {
@@ -2535,8 +2539,8 @@ export const isOdd = function(inputData, inputMetaData) {
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.isOdd function');
   return returnData;
@@ -2554,10 +2558,10 @@ export const isOdd = function(inputData, inputMetaData) {
  * @NOTE This function isn't actually needed, as we can just invert our logic for calling isOdd, but I provided it here anyways for completeness.
  */
 export const isEven = function(inputData, inputMetaData) {
-  let functionName = s.cisEven;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisEven;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     if (math.isNumeric(inputData) === true) {
@@ -2568,8 +2572,8 @@ export const isEven = function(inputData, inputMetaData) {
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2583,10 +2587,10 @@ export const isEven = function(inputData, inputMetaData) {
  * @date 2020/12/21
  */
 export const cleanCommandInput = function(inputData, inputMetaData) {
-  let functionName = s.ccleanCommandInput;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.ccleanCommandInput;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     returnData = inputData;
@@ -2594,8 +2598,8 @@ export const cleanCommandInput = function(inputData, inputMetaData) {
     returnData = aryParse.replaceCharacterWithCharacter(returnData, [/\[/g, '']);
     returnData = aryParse.replaceCharacterWithCharacter(returnData, [/\]/g, '']);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2615,19 +2619,19 @@ export const cleanCommandInput = function(inputData, inputMetaData) {
  * @NOTE: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
  */
 export const replaceCharacterAtIndexOfString = function(originalString, index, replacement) {
-  let functionName = s.replaceCharacterAtIndexOfString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  let functionName = biz.creplaceCharacterAtIndexOfString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // originalString is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.coriginalStringIs + originalString);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.coriginalStringIs + originalString);
   // index is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cindexIs + index);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cindexIs + index);
   // replacement is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creplacementIs + replacement);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creplacementIs + replacement);
   let returnData;
   if (originalString != '' && index >= 0 && replacement != '') {
     returnData = originalString.substr(0, index) + replacement + originalString.substr(index + replacement.length);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };

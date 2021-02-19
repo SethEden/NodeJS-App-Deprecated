@@ -86,12 +86,12 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandAliasesFilePathConfigurationNameIs + commandAliasesFilePathConfigurationName);
   let allCommandAliasesData = {};
   allCommandAliasesData = chiefData.setupAllXmlData(commandAliasesFilePathConfigurationName, s.cCommandsAliases);
-  if (D[s.cCommandsAliases] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
-    D[s.cCommandsAliases] = {};
-    D[s.cCommandsAliases] = allCommandAliasesData[s.cCommandsAliases];
+  if (D[sys.cCommandsAliases] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
+    D[sys.cCommandsAliases] = {};
+    D[sys.cCommandsAliases] = allCommandAliasesData[sys.cCommandsAliases];
   } else {
-    for (let i=0; i&lt;allCommandAliasesData[s.cCommandsAliases][w.cCommand].length; i++) {
-      D[s.cCommandsAliases][w.cCommand].push(allCommandAliasesData[s.cCommandsAliases][w.cCommand][i])
+    for (let i=0; i&lt;allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand].length; i++) {
+      D[sys.cCommandsAliases][wrd.cCommand].push(allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand][i])
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -111,10 +111,10 @@ function enqueueCommand(command) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   // command is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandIs + command);
-  if (D[s.cCommandQueue] === undefined) {
-    queue.initQueue(s.cCommandQueue);
+  if (D[sys.cCommandQueue] === undefined) {
+    queue.initQueue(sys.cCommandQueue);
   }
-  queue.enqueue(s.cCommandQueue, command);
+  queue.enqueue(sys.cCommandQueue, command);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -129,7 +129,7 @@ function isCommandQueueEmpty() {
   let functionName = isCommandQueueEmpty.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   let returnData = false;
-  returnData = queue.isEmpty(s.cCommandQueue);
+  returnData = queue.isEmpty(sys.cCommandQueue);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;
@@ -147,7 +147,7 @@ function processCommandQueue() {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   let commandToExecute;
   let returnData;
-  commandToExecute = queue.dequeue(s.cCommandQueue);
+  commandToExecute = queue.dequeue(sys.cCommandQueue);
   // commandToExecute is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandToExecuteIs + commandToExecute);
   returnData = commandBroker.executeCommand(commandToExecute);

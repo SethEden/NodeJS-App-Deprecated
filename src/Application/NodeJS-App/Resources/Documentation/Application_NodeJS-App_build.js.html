@@ -82,7 +82,7 @@ function bootStrapApplicationDeployment() {
     rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
   } else {
     // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
-    console.log(s.cApplicationWarningMessage1a + s.ccApplicationWarningMessage1b);
+    console.log(sys.cApplicationWarningMessage1a + s.ccApplicationWarningMessage1b);
     rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
   }
   // console.log('rootPath is: ' + rootPath);
@@ -93,11 +93,11 @@ function bootStrapApplicationDeployment() {
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
   if (NODE_ENV === w.cdevelopment) {
-    warden.loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
-    warden.loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
+    warden.loadCommandAliases(sys.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(sys.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
   } else if (NODE_ENV === w.cproduction) {
-    warden.loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
-    warden.loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+    warden.loadCommandAliases(sys.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(sys.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
   }
 };
 
@@ -118,33 +118,33 @@ function deployApplication() {
   let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    warden.setConfigurationSetting(s.creleaseCompleted, false);
-    warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
-    warden.setConfigurationSetting(s.cDestinationResourcesPath, c.cProductionResourcesPath);
+    warden.setConfigurationSetting(sys.creleaseCompleted, false);
+    warden.setConfigurationSetting(sys.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(sys.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(sys.cSourceResourcesPath, c.cDevelopResourcesPath);
+    warden.setConfigurationSetting(sys.cDestinationResourcesPath, c.cProductionResourcesPath);
     let appName = b.cDoubleQuote + w.cName + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.name + b.cDoubleQuote;
     let appVersion = b.cDoubleQuote + w.cVersion + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.version + b.cDoubleQuote;
     let appDescription = b.cDoubleQuote + w.cDescription + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.description + b.cDoubleQuote;
-    warden.enqueueCommand(s.cdeployMetaData + b.cSpace + appName + b.cComa + appVersion + b.cComa + appDescription);
-    warden.enqueueCommand(s.cBuildWorkflow);
+    warden.enqueueCommand(sys.cdeployMetaData + b.cSpace + appName + b.cComa + appVersion + b.cComa + appDescription);
+    warden.enqueueCommand(sys.cBuildWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let deploymentResult = warden.getConfigurationSetting(s.cdeploymentCompleted);
+    let deploymentResult = warden.getConfigurationSetting(sys.cdeploymentCompleted);
     if (deploymentResult) {
       // Deployment was completed:
-      console.log(s.cBuildMessage1 + deploymentResult);
+      console.log(sys.cBuildMessage1 + deploymentResult);
     } else {
-      console.log(s.cBuildMessage1 + g.cFalse);
-      warden.setConfigurationSetting(s.cdeploymentCompleted, false);
+      console.log(sys.cBuildMessage1 + g.cFalse);
+      warden.setConfigurationSetting(sys.cdeploymentCompleted, false);
     }
   } catch (err) {
     console.error(err);
     // deploymentCompleted
-    warden.setConfigurationSetting(s.cdeploymentCompleted, false);
+    warden.setConfigurationSetting(sys.cdeploymentCompleted, false);
   }
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
@@ -161,23 +161,23 @@ function releaseApplication() {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   let releaseResult;
   try {
-    warden.setConfigurationSetting(s.creleaseCompleted, false);
-    warden.setConfigurationSetting(s.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
-    warden.setConfigurationSetting(s.cBinaryReleasePath, c.cReleasePath);
-    warden.enqueueCommand(s.cReleaseWorkflow);
+    warden.setConfigurationSetting(sys.creleaseCompleted, false);
+    warden.setConfigurationSetting(sys.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(sys.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(sys.cBinaryRootPath, c.cProductionRootPath);
+    warden.setConfigurationSetting(sys.cBinaryReleasePath, c.cReleasePath);
+    warden.enqueueCommand(sys.cReleaseWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let releaseResult = warden.getConfigurationSetting(s.creleaseCompleted);
+    let releaseResult = warden.getConfigurationSetting(sys.creleaseCompleted);
     if (releaseResult) {
       // Release was completed
-      console.log(s.cBuildMessage1 + releaseResult);
+      console.log(sys.cBuildMessage1 + releaseResult);
     } else {
-      console.log(s.cBuildMessage1 + g.cFalse);
+      console.log(sys.cBuildMessage1 + g.cFalse);
     }
   } catch (err) {
     console.error(err);

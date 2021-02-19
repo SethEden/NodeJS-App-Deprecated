@@ -70,7 +70,7 @@ export const validateConstants = function(inputData, inputMetaData) {
   // BEGIN Phase 1 Constants Validation
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBeginPhase1ConstantsValidation);
   // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
-  let constantsPath = configurator.getConfigurationSetting(s.cConstantsPath);
+  let constantsPath = configurator.getConfigurationSetting(sys.cConstantsPath);
   // constantsPath is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cconstantsPathIs + constantsPath);
   let rulesPhase1 = [];
@@ -130,65 +130,65 @@ export const validateConstants = function(inputData, inputMetaData) {
   // BEGIN Phase 2 Constants Validation
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBeginPhase2ConstantsValidation);
   // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
-  let basicConstantsValidationPhase2Result = ruleBroker.processRules(s.cBasicConstantsValidation, '', rulesPhase2);
-  let colorConstantsValidationPhase2Result = ruleBroker.processRules(s.cColorConstantsValidation, '', rulesPhase2);
-  let elementConstantsValidationPhase2Result = ruleBroker.processRules(s.cElementConstantsValidation, '', rulesPhase2);
-  let genericConstantsValidationPhase2Result = ruleBroker.processRules(s.cGenericConstantsValidation, '', rulesPhase2);
-  let isotopeConstantsValidationPhase2Result = ruleBroker.processRules(s.cIsotopeConstantsValidation, '', rulesPhase2);
-  let numericConstantsValidationPhase2Result = ruleBroker.processRules(s.cNumericConstantsValidation, '', rulesPhase2);
-  let phonicsConstantsValidationPhase2Result = ruleBroker.processRules(s.cPhonicsConstantsValidation, '', rulesPhase2);
-  let shapeConstantsValidationPhase2Result = ruleBroker.processRules(s.cShapeConstantsValidation, '', rulesPhase2);
-  let systemConstantsValidationPhase2Result = ruleBroker.processRules(s.cSystemConstantsValidation, '', rulesPhase2);
-  let unitsConstantsValidationPhase2Result = ruleBroker.processRules(s.cUnitsConstantsValidation, '', rulesPhase2);
-  let wordConstantsValidationPhase2Result = ruleBroker.processRules(s.cWordConstantsValidation, '', rulesPhase2);
+  let basicConstantsValidationPhase2Result = ruleBroker.processRules(sys.cBasicConstantsValidation, '', rulesPhase2);
+  let colorConstantsValidationPhase2Result = ruleBroker.processRules(sys.cColorConstantsValidation, '', rulesPhase2);
+  let elementConstantsValidationPhase2Result = ruleBroker.processRules(sys.cElementConstantsValidation, '', rulesPhase2);
+  let genericConstantsValidationPhase2Result = ruleBroker.processRules(sys.cGenericConstantsValidation, '', rulesPhase2);
+  let isotopeConstantsValidationPhase2Result = ruleBroker.processRules(sys.cIsotopeConstantsValidation, '', rulesPhase2);
+  let numericConstantsValidationPhase2Result = ruleBroker.processRules(sys.cNumericConstantsValidation, '', rulesPhase2);
+  let phonicsConstantsValidationPhase2Result = ruleBroker.processRules(sys.cPhonicsConstantsValidation, '', rulesPhase2);
+  let shapeConstantsValidationPhase2Result = ruleBroker.processRules(sys.cShapeConstantsValidation, '', rulesPhase2);
+  let systemConstantsValidationPhase2Result = ruleBroker.processRules(sys.cSystemConstantsValidation, '', rulesPhase2);
+  let unitsConstantsValidationPhase2Result = ruleBroker.processRules(sys.cUnitsConstantsValidation, '', rulesPhase2);
+  let wordConstantsValidationPhase2Result = ruleBroker.processRules(sys.cWordConstantsValidation, '', rulesPhase2);
   // END Phase 2 Constants Validation
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEndPhase2ConstantsValidation);
 
   // Basic Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cBasicConstantsPhase1Validation, basicConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cBasicConstantsPhase1Validation, basicConstantsValidationPhase1Result);
   // Color Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cColorConstantsPhase1Validation, colorConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cColorConstantsPhase1Validation, colorConstantsValidationPhase1Result);
   // Element Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cElementConstantsPhase1Validation, elementConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cElementConstantsPhase1Validation, elementConstantsValidationPhase1Result);
   // Generic Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cGenericConstantsPhase1Validation, genericConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cGenericConstantsPhase1Validation, genericConstantsValidationPhase1Result);
   // Isotope Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cIsotopeConstantsPhase1Validation, isotopeConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cIsotopeConstantsPhase1Validation, isotopeConstantsValidationPhase1Result);
   // Numerical Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cNumericalConstantsPhase1Validation, numericConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cNumericalConstantsPhase1Validation, numericConstantsValidationPhase1Result);
   // Phonics Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cPhonicsConstantsPhase1Validation, phonicsConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cPhonicsConstantsPhase1Validation, phonicsConstantsValidationPhase1Result);
   // Shape Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cShapeConstantsPhase1Validation, shapeConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cShapeConstantsPhase1Validation, shapeConstantsValidationPhase1Result);
   // System Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cSystemConstantsPhase1Validation, systemConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cSystemConstantsPhase1Validation, systemConstantsValidationPhase1Result);
   // Units Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cUnitsConstantsPhase1Validation, unitsConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cUnitsConstantsPhase1Validation, unitsConstantsValidationPhase1Result);
   // Word Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(s.cWordConstantsPhase1Validation, wordConstantsValidationPhase1Result);
+  loggers.constantsValidationSummaryLog(sys.cWordConstantsPhase1Validation, wordConstantsValidationPhase1Result);
 
   // Basic Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cBasicConstantsPhase2Validation, basicConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cBasicConstantsPhase2Validation, basicConstantsValidationPhase2Result);
   // Color Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cColorConstantsPhase2Validation, colorConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cColorConstantsPhase2Validation, colorConstantsValidationPhase2Result);
   // Element Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cElementConstantsPhase2Validation, elementConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cElementConstantsPhase2Validation, elementConstantsValidationPhase2Result);
   // Generic Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cGenericConstantsPhase2Validation, genericConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cGenericConstantsPhase2Validation, genericConstantsValidationPhase2Result);
   // Isotope Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cIsotopeConstantsPhase2Validation, isotopeConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cIsotopeConstantsPhase2Validation, isotopeConstantsValidationPhase2Result);
   // Numerical Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cNumericalConstantsPhase2Validation, numericConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cNumericalConstantsPhase2Validation, numericConstantsValidationPhase2Result);
   // Phonics Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cPhonicsConstantsPhase2Validation, phonicsConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cPhonicsConstantsPhase2Validation, phonicsConstantsValidationPhase2Result);
   // Shape Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cShapeConstantsPhase2Validation, shapeConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cShapeConstantsPhase2Validation, shapeConstantsValidationPhase2Result);
   // System Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cSystemConstantsPhase2Validation, systemConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cSystemConstantsPhase2Validation, systemConstantsValidationPhase2Result);
   // Units Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cUnitsConstantsPhase2Validation, unitsConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cUnitsConstantsPhase2Validation, unitsConstantsValidationPhase2Result);
   // Word Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(s.cWordConstantsPhase2Validation, wordConstantsValidationPhase2Result);
+  loggers.constantsValidationSummaryLog(sys.cWordConstantsPhase2Validation, wordConstantsValidationPhase2Result);
 
   if (
     basicConstantsValidationPhase1Result === true &amp;&amp;
@@ -214,9 +214,9 @@ export const validateConstants = function(inputData, inputMetaData) {
     unitsConstantsValidationPhase2Result === true &amp;&amp;
     wordConstantsValidationPhase2Result === true
   ) {
-    configurator.setConfigurationSetting(s.cPassAllConstantsValidations, true);
+    configurator.setConfigurationSetting(sys.cPassAllConstantsValidations, true);
   } else {
-    configurator.setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    configurator.setConfigurationSetting(sys.cPassAllConstantsValidations, false);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
@@ -235,7 +235,7 @@ export const validateCommandAliases = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-  let allCommandAliases = D[s.cCommandsAliases][w.cCommand];
+  let allCommandAliases = D[sys.cCommandsAliases][wrd.cCommand];
   let passedAllCommandAliasesDuplicateCheck = true;
   let rules = [];
   rules[0] = s.ccountDuplicateCommandAliases;
@@ -246,10 +246,10 @@ loop1:
     let currentCommand = allCommandAliases[i];
     // currentCommand is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentCommandIs + JSON.stringify(currentCommand));
-    let aliasList = currentCommand[w.cAliases];
+    let aliasList = currentCommand[wrd.cAliases];
     // aliasList is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.caliasListIs + aliasList);
-    let arrayOfAliases = aliasList.split(b.cComa);
+    let arrayOfAliases = aliasList.split(bas.cComa);
 loop2:
     for (let j = 0; j &lt; arrayOfAliases.length; j++) {
       // BEGIN j-th loop:
@@ -269,9 +269,9 @@ loop2:
   }
   if (passedAllCommandAliasesDuplicateCheck === true) {
     // PASSED: All duplicate command aliases validation tests!
-    console.log(s.cvalidateCommandAliasesMessage1);
+    console.log(sys.cvalidateCommandAliasesMessage1);
   }
-  configurator.setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
+  configurator.setConfigurationSetting(sys.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 </code></pre>

@@ -11,49 +11,48 @@
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as b from '../../../Framework/Constants/basic.constants';
-import * as g from '../../../Framework/Constants/generic.constants';
-import * as n from '../../../Framework/Constants/numeric.constants';
-import * as w from '../../../Framework/Constants/word.constants';
-import * as s from '../../../Framework/Constants/system.constants';
+import * as bas from '../../../Framework/Constants/basic.constants';
+import * as gen from '../../../Framework/Constants/generic.constants';
+import * as wrd from '../../../Framework/Constants/word.constants';
+import * as sys from '../../../Framework/Constants/system.constants';
 
-export const cConfigurationFilename = w.cConfiguration;
+export const cConfigurationFilename = wrd.cConfiguration;
 export const cApplicationName = 'NodeJS-App';
 
 // Configuration Path
-export const cConfigurationDataLookupPrefixPath = b.cForwardSlash + w.cResources + b.cForwardSlash;
-export const cResourcesCommonPath = w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cResources + b.cForwardSlash;
+export const cConfigurationDataLookupPrefixPath = bas.cForwardSlash + wrd.cResources + bas.cForwardSlash;
+export const cResourcesCommonPath = wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash + wrd.cResources + bas.cForwardSlash;
 
 // Source Resources Path
-export const cDevelopResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash +  cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+export const cDevelopResourcesPath = bas.cForwardSlash + wrd.csrc + bas.cForwardSlash +  cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
 
 // Binary Resources Path
-export const cProductionResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+export const cProductionResourcesPath = bas.cForwardSlash + wrd.cbin + bas.cForwardSlash + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 
-export const cDevelopRootPath = b.cForwardSlash + w.csrc + b.cForwardSlash;
-export const cProductionRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
-export const cReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
+export const cDevelopRootPath = bas.cForwardSlash + wrd.csrc + bas.cForwardSlash;
+export const cProductionRootPath = bas.cForwardSlash + wrd.cbin + bas.cForwardSlash;
+export const cReleasePath = bas.cForwardSlash + wrd.cRelease + bas.cForwardSlash;
 
-export const cApplicationDevelopRootPath = cDevelopRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
-export const cApplicationProductionRootPath = cProductionRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
+export const cApplicationDevelopRootPath = cDevelopRootPath + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash;
+export const cApplicationProductionRootPath = cProductionRootPath + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash;
 
 // Client Business Rules
-export const cclientEcho = w.cclient + s.cEcho;
+export const cclientEcho = wrd.cclient + sys.cEcho;
 // ********************************
 // ClientStringParsing rules in order
 // ********************************
-export const ccustomEcho = w.ccustom + s.cEcho;
-export const cmostPopularNumber = w.cmost + w.cPopular + w.cNumber;
-export const cisAlmostPalindrome = w.cis + w.cAlmost + w.cPalindrom;
-export const cthreePointAverage = g.cthree + w.cPoint + w.cAverage;
-export const carrayCounter = w.carray + w.cCounter;
+export const ccustomEcho = wrd.ccustom + sys.cEcho;
+export const cmostPopularNumber = wrd.cmost + wrd.cPopular + wrd.cNumber;
+export const cisAlmostPalindrome = wrd.cis + wrd.cAlmost + wrd.cPalindrom;
+export const cthreePointAverage = gen.cthree + wrd.cPoint + wrd.cAverage;
+export const carrayCounter = wrd.carray + wrd.cCounter;
 
 // Client Commands
-export const cDevClientCommandAliasesActualPath = cDevelopResourcesPath + w.cCommands + b.cForwardSlash;
-export const cDevClientWorkflowsActualPath = cDevelopResourcesPath + w.cWorkflows + b.cForwardSlash;
-export const cProdClientCommandAliasesActualPath = cProductionResourcesPath + w.cCommands + b.cForwardSlash;
-export const cProdClientWorkflowsActualPath = cProductionResourcesPath + w.cWorkflows + b.cForwardSlash;
+export const cDevClientCommandAliasesActualPath = cDevelopResourcesPath + wrd.cCommands + bas.cForwardSlash;
+export const cDevClientWorkflowsActualPath = cDevelopResourcesPath + wrd.cWorkflows + bas.cForwardSlash;
+export const cProdClientCommandAliasesActualPath = cProductionResourcesPath + wrd.cCommands + bas.cForwardSlash;
+export const cProdClientWorkflowsActualPath = cProductionResourcesPath + wrd.cWorkflows + bas.cForwardSlash;
 // ********************************
 // Client Commands in order
 // ********************************
-export const ccustomEchoCommand = w.ccustom + s.cEcho + w.cCommand;
+export const ccustomEchoCommand = wrd.ccustom + sys.cEcho + wrd.cCommand;

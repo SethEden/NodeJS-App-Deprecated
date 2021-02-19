@@ -91,7 +91,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function addClientCommands(clientCommands) {
   let functionName = addClientCommands.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  Object.assign(D[w.cCommands], clientCommands);
+  Object.assign(D[wrd.cCommands], clientCommands);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -129,20 +129,20 @@ function getValidCommand(commandString, commandDelimiter) {
     commandToExecute = commandString;
   }
 
-  if (D[w.cCommands][commandToExecute] !== undefined) {
+  if (D[wrd.cCommands][commandToExecute] !== undefined) {
     foundValidCommand = true;
     returnData = commandToExecute;
   } else {
     // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
     // to see if we can find a match, then get the actual command that should be executed.
-    let allCommandAliases = D[s.cCommandsAliases][w.cCommand];
+    let allCommandAliases = D[sys.cCommandsAliases][wrd.cCommand];
 loop1:
     for (let i = 0; i &lt; allCommandAliases.length; i++) {
       // Iterate through all of the command aliases and see if we can find a
       // command alias that matches the command the user is trying to execute.
       let currentCommand = allCommandAliases[i];
-      let aliasList = currentCommand[w.cAliases];
-      let arrayOfAliases = aliasList.split(b.cComa);
+      let aliasList = currentCommand[wrd.cAliases];
+      let arrayOfAliases = aliasList.split(bas.cComa);
 loop2:
       for (let j = 0; j &lt; arrayOfAliases.length; j++) {
         if (commandToExecute === arrayOfAliases[j] ||
@@ -163,7 +163,7 @@ loop2:
           foundValidCommand = true;
           // commandToExecute before the Alias is:
           loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandToExecuteBeforeTheAliasIs + commandToExecute);
-          commandToExecute = currentCommand[w.cName];
+          commandToExecute = currentCommand[wrd.cName];
           // commandToExecute after the Alias is:
           loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandToExecuteAfterTheAliasIs + commandToExecute);
           break loop1;
@@ -171,17 +171,17 @@ loop2:
       }
     }
     if (foundValidCommand === true) {
-      if (D[w.cCommands][commandToExecute] !== undefined) {
+      if (D[wrd.cCommands][commandToExecute] !== undefined) {
         returnData = commandToExecute;
       } else {
         // WARNING: The specified command:
         // does not exist, please try again!
-        console.log(s.cWarningTheSpecifiedCommand + commandToExecute + s.cdoesNotExistPleaseTryAgain);
+        console.log(sys.cWarningTheSpecifiedCommand + commandToExecute + s.cdoesNotExistPleaseTryAgain);
       }
     } else {
       // WARNING: The specified command:
       // does not exist, please try again!
-      console.log(s.cWarningTheSpecifiedCommand + commandToExecute + s.cdoesNotExistPleaseTryAgain);
+      console.log(sys.cWarningTheSpecifiedCommand + commandToExecute + s.cdoesNotExistPleaseTryAgain);
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
@@ -215,7 +215,7 @@ function getCommandArgs(commandString, commandDelimiter) {
   isOddRule[0] = s.cisOdd;
   replaceCharacterAtIndexRule[0] = s.creplaceCharacterAtIndex;
   replaceTildesWithSingleQuoteRule[0] = s.creplaceCharacterWithCharacter;
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(sys.cSecondaryCommandDelimiter);
   if (commandDelimiter === null || commandDelimiter !== commandDelimiter || commandDelimiter === undefined) {
     commandArgsDelimiter = b.cSpace;
   }
@@ -224,17 +224,17 @@ function getCommandArgs(commandString, commandDelimiter) {
     // There is a case where the user might pass a string with spaces or other code/syntax.
     // So we need to split first by single character string delimiters and parse the
     // non-string array elements to parse command arguments without accidently parsing string literal values as command arguments.
-    if (commandString.includes(b.cBackTickQuote) === true) {
+    if (commandString.includes(bas.cBackTickQuote) === true) {
       // commandString contains either a singleQuote or a backTickQuote
       loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandStringContainsEitherSingleQuoteOrBackTickQuote);
       let preSplitCommandString;
-      if (commandString.includes(b.cBackTickQuote) === true) {
+      if (commandString.includes(bas.cBackTickQuote) === true) {
         // commandString contains a singleQuote!
         loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandStringContainsSingleQuote);
         // NOTE: We cannot actually just replace each single quote, we need to tag each single quote in pairs of 2.
         // The first one should be post-tagged, i.e. replace "'" with "'~" and the second should be pre-tagged i.e. replace "'" with "~'".
         // Then if there are more single quotes, the third post-tagged, i.e. replace "'" with "'~", etc...
-        let numberOfSingleQuotes = commandString.split(b.cBackTickQuote).length - 1;
+        let numberOfSingleQuotes = commandString.split(bas.cBackTickQuote).length - 1;
         // Determine if the number of single quotes is odd or event?
         // About to call the rule broker to process on the number of single quotes and determine if it-be even or odd
         loggers.consoleLog(baseFileName + b.cDot + functionName, s.cgetCommandArgsMessage1 + s.cgetCommandArgsMessage2);
@@ -246,17 +246,17 @@ function getCommandArgs(commandString, commandDelimiter) {
             // Iterate over each one and if they are even or odd we will change how we replace each single quote character as described above.
             if (i === 0) {
               // Get the index of the first string delimiter.
-              indexOfStringDelimiter = commandString.indexOf(b.cBackTickQuote, 0);
+              indexOfStringDelimiter = commandString.indexOf(bas.cBackTickQuote, 0);
               // First index is:
               loggers.consoleLog(baseFileName + b.cDot + functionName, s.cFirstIndexIs + indexOfStringDelimiter);
-              // commandString.replace(b.cBackTickQuote, b.cBackTickQuote + b.cTilde)
+              // commandString.replace(bas.cBackTickQuote, b.cBackTickQuote + b.cTilde)
               // Rather than use the above, we will make a business rule to replace at index, the above replaces all instances and we don't want that!
               commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, b.cBackTickQuote + b.cTilde], replaceCharacterAtIndexRule);
               stringLiteralCommandDelimiterAdded = true
               // commandString after tagging the first string delimiter:
               loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandStringAfterTaggingTheFirstStringDelimiter + commandString);
             } else {
-              indexOfStringDelimiter = commandString.indexOf(b.cBackTickQuote, indexOfStringDelimiter + 1);
+              indexOfStringDelimiter = commandString.indexOf(bas.cBackTickQuote, indexOfStringDelimiter + 1);
               // Additional index is:
               loggers.consoleLog(baseFileName + b.cDot + functionName, s.cAdditionalIndexIs + indexOfStringDelimiter);
               // Determine if it is odd or even.
@@ -281,7 +281,7 @@ function getCommandArgs(commandString, commandDelimiter) {
               }
             }
           }
-          preSplitCommandString = commandString.split(b.cBackTickQuote);
+          preSplitCommandString = commandString.split(bas.cBackTickQuote);
           // Now we can check which segments of the array contain our Tilde character, since we used that to tag our single quotes.
           // And the array element that contains the Tilde tag we will not split.
           // ultimately everything needs to be returned as an array, make sure we trim the array elements so we don't get any empty array elements.
@@ -295,7 +295,7 @@ function getCommandArgs(commandString, commandDelimiter) {
               // Make sure we re-initialize our return value to an array, since it was set first to a boolean value.
               returnData = [];
             }
-            if (preSplitCommandStringElement.includes(b.cTilde) === false) {
+            if (preSplitCommandStringElement.includes(bas.cTilde) === false) {
               postSplitCommandString = preSplitCommandStringElement.split(commandArgsDelimiter);
               for (let k = 0; k &lt; postSplitCommandString.length; k++) {
                 if (postSplitCommandString[k] !== '') {
@@ -320,10 +320,10 @@ function getCommandArgs(commandString, commandDelimiter) {
                 returnData.push(preSplitCommandStringElement); // Add the string now.
               } // End else-clause: returnData[returnData.length - 1].slice(-1) === secondaryCommandArgsDelimiter
               loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-            } // End else-clause: preSplitCommandStringElement.includes(b.cTilde) === false
+            } // End else-clause: preSplitCommandStringElement.includes(bas.cTilde) === false
           } // End for-loop: preSplitCommandString, j++
         } // End if-condition: numberOfSingleQuotes >= 2 &amp;&amp; ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false
-      } // End if-condition: commandString.includes(b.cBackTickQuote) === true
+      } // End if-condition: commandString.includes(bas.cBackTickQuote) === true
       // We might need much additional logic to manage the case that the string contains multiple levels of commands with strings....in that case:
       // The command system will probably need to implement A re-assignment of the string delimiter, also using the b.cBackTickQuote.
       // I have started to lay out some of that logic above, but we are FAR from it, and there isn't any business need for it right now.
@@ -365,9 +365,9 @@ function getCommandArgs(commandString, commandDelimiter) {
   // commandString is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandStringIs + commandString);
   let returnData = false;
-  let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter));
-  let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter));
-  let commandMetricsEnabled = configurator.getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
+  let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(sys.cPrimaryCommandDelimiter));
+  let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(sys.cPrimaryCommandDelimiter));
+  let commandMetricsEnabled = configurator.getConfigurationSetting(sys.cEnableCommandPerformanceMetrics);
   let commandStartTime = '';
   let commandEndTime = '';
   let commandDeltaTime = '';
@@ -376,25 +376,25 @@ function getCommandArgs(commandString, commandDelimiter) {
     // Here we will capture the start time of the command we are about to execute.
     // After executing we will capture the end time and then
     // compute the difference to determine how many milliseconds it took to run the command.
-    commandStartTime = timers.getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    commandStartTime = timers.getNowMoment(gen.cYYYYMMDD_HHmmss_SSS);
     // Command Start time is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCommandStartTimeIs + commandStartTime);
   }
   if (commandToExecute !== false &amp;&amp; commandArgs !== false) {
-    returnData = D[w.cCommands][commandToExecute](commandArgs, '');
+    returnData = D[wrd.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false &amp;&amp; commandArgs === false) {
     // This could be a command without any arguments.
-    returnData = D[w.cCommands][commandToExecute]('', '');
+    returnData = D[wrd.cCommands][commandToExecute]('', '');
   } else {
     // This command does not exist, nothing to execute, but we don't want the application to exit.
     // An error message should have already been thrown, but we should throw another one here.
     // WARNING: Command does not exist, please enter a valid command and try again!
-    console.log(s.cexecuteCommandMessage1);
+    console.log(sys.cexecuteCommandMessage1);
     returnData = true;
   }
   if (commandMetricsEnabled === true &amp;&amp; commandToExecute !== '' &amp;&amp; commandToExecute !== false) {
     let performanceTrackingObject = {};
-    commandEndTime = timers.getNowMoment(g.cYYYYMMDD_HHmmss_SSS);
+    commandEndTime = timers.getNowMoment(gen.cYYYYMMDD_HHmmss_SSS);
     // Command End time is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCommandEndTimeIs + commandEndTime);
     // Now compute the delta time so we know how long it took to run that command.
@@ -402,19 +402,19 @@ function getCommandArgs(commandString, commandDelimiter) {
     // Command run-time is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCommandRunTimeIs + commandDeltaTime);
     // Check to make sure the command performance tracking stack exists or does not exist.
-    if (D[s.cCommandPerformanceTrackingStack] === undefined) {
-      stack.initStack(s.cCommandPerformanceTrackingStack);
+    if (D[sys.cCommandPerformanceTrackingStack] === undefined) {
+      stack.initStack(sys.cCommandPerformanceTrackingStack);
     }
-    if (D[s.cCommandNamesPerformanceTrackingStack] === undefined) {
-      stack.initStack(s.cCommandNamesPerformanceTrackingStack);
+    if (D[sys.cCommandNamesPerformanceTrackingStack] === undefined) {
+      stack.initStack(sys.cCommandNamesPerformanceTrackingStack);
     }
     performanceTrackingObject = {Name: commandToExecute, RunTime: commandDeltaTime};
-    if (stack.contains(s.cCommandNamesPerformanceTrackingStack, commandToExecute) === false) {
-      stack.push(s.cCommandNamesPerformanceTrackingStack, commandToExecute);
+    if (stack.contains(sys.cCommandNamesPerformanceTrackingStack, commandToExecute) === false) {
+      stack.push(sys.cCommandNamesPerformanceTrackingStack, commandToExecute);
     }
-    stack.push(s.cCommandPerformanceTrackingStack, performanceTrackingObject);
-    // stack.print(s.cCommandNamesPerformanceTrackingStack);
-    // stack.print(s.cCommandPerformanceTrackingStack);
+    stack.push(sys.cCommandPerformanceTrackingStack, performanceTrackingObject);
+    // stack.print(sys.cCommandNamesPerformanceTrackingStack);
+    // stack.print(sys.cCommandPerformanceTrackingStack);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

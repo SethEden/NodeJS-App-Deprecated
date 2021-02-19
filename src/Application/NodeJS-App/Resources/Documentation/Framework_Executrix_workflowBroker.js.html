@@ -66,13 +66,13 @@ function getWorkflow(workflowName) {
   // workflowName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowNameIs + workflowName);
   let workflowValue = false;
-  let arrayOfWorkflows = D[s.cCommandWorkflows][w.cWorkflow];
+  let arrayOfWorkflows = D[sys.cCommandWorkflows][wrd.cWorkflow];
   for (let i = 0; i &lt; arrayOfWorkflows.length; i++) {
     let currentWorkflow = arrayOfWorkflows[i];
     // currentWorkflow is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
-    if (currentWorkflow[w.cName] === workflowName) {
-      workflowValue = currentWorkflow[w.cValue];
+    if (currentWorkflow[wrd.cName] === workflowName) {
+      workflowValue = currentWorkflow[wrd.cValue];
       // workflowValue is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowValueIs + JSON.stringify(workflowValue));
       break;

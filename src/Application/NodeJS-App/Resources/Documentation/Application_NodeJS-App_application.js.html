@@ -79,7 +79,7 @@ function bootStrapApplication() {
     rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
   } else {
     // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
-    console.log(s.cApplicationWarningMessage1a + s.ccApplicationWarningMessage1b);
+    console.log(sys.cApplicationWarningMessage1a + s.ccApplicationWarningMessage1b);
     rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
   }
   // console.log('rootPath is: ' + rootPath);
@@ -90,11 +90,11 @@ function bootStrapApplication() {
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
   if (NODE_ENV === w.cdevelopment) {
-    warden.loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
-    warden.loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
+    warden.loadCommandAliases(sys.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(sys.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
   } else if (NODE_ENV === w.cproduction) {
-    warden.loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
-    warden.loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+    warden.loadCommandAliases(sys.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(sys.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
   }
 };
 
@@ -115,8 +115,8 @@ function application() {
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationMessage2);
   // BEGIN command parser
   warden.consoleLog(baseFileName + b.cDot + functionName, s.cApplicationMessage3);
-  argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
-  warden.enqueueCommand(s.cStartupWorkflow);
+  argumentDrivenInterface = warden.getConfigurationSetting(sys.cArgumentDrivenInterface);
+  warden.enqueueCommand(sys.cStartupWorkflow);
 
   // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
@@ -136,10 +136,10 @@ function application() {
 
   // NOW process the command args and add them to the command queue for execution.
   if (!process.argv &amp;&amp; process.argv.length > 0) {
-    if (process.argv[2].includes(b.cDash) === true ||
-    process.argv[2].includes(b.cForwardSlash) === true ||
-    process.argv[2].includes(b.cBackSlash) === true) {
-      commandToExecute = warden.executeBusinessRule(s.caggregateCommandArguments, process.argv, '');
+    if (process.argv[2].includes(bas.cDash) === true ||
+    process.argv[2].includes(bas.cForwardSlash) === true ||
+    process.argv[2].includes(bas.cBackSlash) === true) {
+      commandToExecute = warden.executeBusinessRule(sys.caggregateCommandArguments, process.argv, '');
     }
     warden.enqueueCommand(commandToExecute);
     while(warden.isCommandQueueEmpty() === false) {
@@ -151,7 +151,7 @@ function application() {
   if (argumentDrivenInterface === false) {
     while(programRunning === true) {
       if (warden.isCommandQueueEmpty() === true) {
-        commandInput = prompt(b.cGreaterThan);
+        commandInput = prompt(bas.cGreaterThan);
         warden.enqueueCommand(commandInput);
       }
       commandResult = warden.processCommandQueue();

@@ -9,6 +9,7 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -17,9 +18,10 @@
  */
 import chiefData from '../Controllers/chiefData';
 import loggers from '../Executrix/loggers';
-import * as b from '../Constants/basic.constants';
-import * as w from '../Constants/word.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
+import * as msg from '../Constants/messages.constants';
 var path = require('path');
 var D = require('../Resources/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -35,20 +37,20 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   let functionName = loadCommandWorkflowsFromPath.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // commandWorkflowFilePathConfigurationName is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
   let allCommandWorkflowsData = {};
-  allCommandWorkflowsData = chiefData.setupAllXmlData(commandWorkflowFilePathConfigurationName, s.cCommandWorkflows);
-  if (D[s.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
-    D[s.cCommandWorkflows] = {};
-    D[s.cCommandWorkflows] = allCommandWorkflowsData[s.cCommandWorkflows];
+  allCommandWorkflowsData = chiefData.setupAllXmlData(commandWorkflowFilePathConfigurationName, sys.cCommandWorkflows);
+  if (D[sys.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
+    D[sys.cCommandWorkflows] = {};
+    D[sys.cCommandWorkflows] = allCommandWorkflowsData[sys.cCommandWorkflows];
   } else {
-    for (let i=0; i<allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow].length; i++) {
-      D[s.cCommandWorkflows][w.cWorkflow].push(allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow][i])
+    for (let i=0; i<allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow].length; i++) {
+      D[sys.cCommandWorkflows][wrd.cWorkflow].push(allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow][i])
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 export default {

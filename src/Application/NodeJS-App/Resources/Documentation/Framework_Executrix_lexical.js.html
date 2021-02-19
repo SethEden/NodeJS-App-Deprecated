@@ -108,7 +108,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
       returnData = analyzeArgument(argumentValue);
     } else {
       // WARNING: lexical.parseBusinessRuleArgument: Invalid combination of inputs to the lexical.parseBusinessRuleArgument function! Please adjust inputs and try again.
-      console.log(s.cparseBusinessRuleArgumentMessage1 + s.cparseBusinessRuleArgumentMessage2);
+      console.log(sys.cparseBusinessRuleArgumentMessage1 + s.cparseBusinessRuleArgumentMessage2);
     }
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -139,12 +139,12 @@ function analyzeArgument(argumentValue) {
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
   removeBracketsFromArgsArrayRule[0] = s.cremoveCharacterFromArray;
 
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(sys.cSecondaryCommandDelimiter);
   if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
     // Check if there are brackets or no brackets.
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCheckIfThereAreBracketsOrNoBrackets);
-    let argsArrayContainsOpenBracket = ruleBroker.processRules(b.cOpenBracket, argumentValue, argsArrayContainsCharacterRule);
-    let argsArrayContainsCloseBracket = ruleBroker.processRules(b.cCloseBracket, argumentValue, argsArrayContainsCharacterRule);
+    let argsArrayContainsOpenBracket = ruleBroker.processRules(bas.cOpenBracket, argumentValue, argsArrayContainsCharacterRule);
+    let argsArrayContainsCloseBracket = ruleBroker.processRules(bas.cCloseBracket, argumentValue, argsArrayContainsCharacterRule);
     if (argsArrayContainsOpenBracket === false || argsArrayContainsCloseBracket === false) {
       // Brackets were found
       loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBracketsWereFound);
@@ -201,9 +201,9 @@ function analyzeForRegularExpression(argumentValue) {
   let returnData = false;
   let argsArrayContainsCharacterRule = [];
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
-  let argsArrayContainsRegEx1 = ruleBroker.processRules(w.cregEx, argumentValue, argsArrayContainsCharacterRule);
-  let argsArrayContainsRegEx2 = ruleBroker.processRules(w.cRegEx, argumentValue, argsArrayContainsCharacterRule);
-  let argsArrayContainsColon = ruleBroker.processRules(b.cColon, argumentValue, argsArrayContainsCharacterRule);
+  let argsArrayContainsRegEx1 = ruleBroker.processRules(wrd.cregEx, argumentValue, argsArrayContainsCharacterRule);
+  let argsArrayContainsRegEx2 = ruleBroker.processRules(wrd.cRegEx, argumentValue, argsArrayContainsCharacterRule);
+  let argsArrayContainsColon = ruleBroker.processRules(bas.cColon, argumentValue, argsArrayContainsCharacterRule);
   if ((argsArrayContainsRegEx1 === true || argsArrayContainsRegEx2 === true) &amp;&amp; argsArrayContainsColon === true) {
     returnData = true;
   }
@@ -227,7 +227,7 @@ function parseArgumentAsRegularExpression(argumentValue) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueIs + JSON.stringify(argumentValue));
   let returnData;
   let regExValue, regExFlags;
-  let regExArray = argumentValue.split(b.cColon);
+  let regExArray = argumentValue.split(bas.cColon);
   for (let k = 0; k &lt; regExArray.length; k++) {
     if (regExArray[k] === w.cregEx || regExArray[k] === w.cRegEx) {
       k++;
@@ -267,7 +267,7 @@ function parseArgumentAsArray(argumentValue) {
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueIs + JSON.stringify(argumentValue));
   let returnData;
   let isArray = false;
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(sys.cSecondaryCommandDelimiter);
   let argsArrayContainsCharacterRule = [];
   let removeBracketsFromArgsArrayRule = [];
   argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
@@ -275,12 +275,12 @@ function parseArgumentAsArray(argumentValue) {
   let argsArrayContainsOpenBracket = false;
   let argsArrayContainsCloseBracket = false;
   if (Array.isArray(argumentValue) === true) {
-    argsArrayContainsOpenBracket = ruleBroker.processRules(b.cOpenBracket, argumentValue, argsArrayContainsCharacterRule);
-    argsArrayContainsCloseBracket = ruleBroker.processRules(b.cCloseBracket, argumentValue, argsArrayContainsCharacterRule);
+    argsArrayContainsOpenBracket = ruleBroker.processRules(bas.cOpenBracket, argumentValue, argsArrayContainsCharacterRule);
+    argsArrayContainsCloseBracket = ruleBroker.processRules(bas.cCloseBracket, argumentValue, argsArrayContainsCharacterRule);
     isArray = true;
   } else {
-    argsArrayContainsOpenBracket = argumentValue.includes(b.cOpenBracket);
-    argsArrayContainsCloseBracket = argumentValue.includes(b.cCloseBracket);
+    argsArrayContainsOpenBracket = argumentValue.includes(bas.cOpenBracket);
+    argsArrayContainsCloseBracket = argumentValue.includes(bas.cCloseBracket);
     isArray = false;
   }
 
@@ -292,12 +292,12 @@ function parseArgumentAsArray(argumentValue) {
     }
   }
   if (argsArrayContainsOpenBracket === true) {
-    argumentValue = ruleBroker.processRules(b.cOpenBracket, argumentValue, removeBracketsFromArgsArrayRule);
+    argumentValue = ruleBroker.processRules(bas.cOpenBracket, argumentValue, removeBracketsFromArgsArrayRule);
     // argumentValue after attempting to remove a open bracket from all array elements is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
   }
   if (argsArrayContainsCloseBracket === true) {
-    argumentValue = ruleBroker.processRules(b.cCloseBracket, argumentValue, removeBracketsFromArgsArrayRule);
+    argumentValue = ruleBroker.processRules(bas.cCloseBracket, argumentValue, removeBracketsFromArgsArrayRule);
     // argumentValue after attempting to remove a close bracket from all array elements is:
     loggers.consoleLog(baseFileName + b.cDot + functionName, s.cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
   }
@@ -334,7 +334,7 @@ function removeStringLiteralTagsFromArray(argumentArray) {
   let returnData;
   let removeCharacterRule = [];
   removeCharacterRule[0] = s.cremoveCharacterFromArray;
-  returnData = ruleBroker.processRules(b.cTilde, argumentArray, removeCharacterRule);
+  returnData = ruleBroker.processRules(bas.cTilde, argumentArray, removeCharacterRule);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
   return returnData;

@@ -4,17 +4,15 @@
  * @description Contains named geometric shapes & knots.
  * @requires module:basic-constants
  * @requires module:phonics-constants
- * @requires module:generic-constants
  * @requires module:word-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  * {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
  */
-import * as b from './basic.constants';
-import * as p from './phonics.constants';
-import * as g from './generic.constants';
-import * as w from './word.constants';
+import * as bas from './basic.constants';
+import * as phn from './phonics.constants';
+import * as wrd from './word.constants';
 
 // NOTE: I changed e-x-p-o-r-t c-o-n-s-t => smuggle something,
 // because the constants validation system is scanning these files looking for that keyword and
@@ -24,44 +22,44 @@ import * as w from './word.constants';
 // So they are left here as a matter of future-proofing.
 
 // Basic Shapes
-// smuggle something cline = b.cli + b.cne; // line
-// smuggle something cLine = b.cLi + b.cne; // Line
-// smuggle something ccircle = p.ccir + p.ccle; // circle
-// smuggle something cCircle = p.cCir + p.ccle; // Circle
-// smuggle something coval = b.cov + b.cal; // oval
-// smuggle something cOval = b.cOv + b.cal; // Oval
-// smuggle something csquare = b.cs + p.cquare; // square
-// smuggle something cSquare = b.cS + p.cquare; // Square
-// smuggle something ctriangle = p.ctri + w.cangle; // triangle
-// smuggle something cTriangle = p.cTri + w.cangle; // Triangle
-// smuggle something crectangle = p.crect + w.cangle; // rectangle
-// smuggle something cRectangle = p.cRect + w.cangle; // Rectangle
-// smuggle something coctagon = p.coct + b.ca + p.cgon; // octagon
-// smuggle something cOctagon = p.cOct + b.ca + p.cgon; // Octagon
-// smuggle something chexagon = p.chex + b.ca + p.cgon; // hexagon
-// smuggle something cHexagon = p.cHex + b.ca + p.cgon; // Hexagon
-// smuggle something cheptagon = p.chep + b.cta + p.cgon; // heptagon
-// smuggle something cHeptagon = p.cHep + b.cta + p.cgon; // Heptagon
-// smuggle something cnonagon = p.cnon + b.ca + p.cgon; // nonagon
-// smuggle something cNonagon = p.cNon + b.ca + p.cgon; // Nonagon
-// smuggle something ctrapezoid = w.ctrap + b.ce + p.czoid; // trapezoid
-// smuggle something cTrapezoid = w.cTrap + b.ce + p.czoid; // Trapezoid
-// smuggle something ccube = b.ccu + b.cbe; // cube
-// smuggle something cCube = b.cCu + b.cbe; // Cube
+// smuggle something cline = bas.cli + bas.cne; // line
+// smuggle something cLine = bas.cLi + bas.cne; // Line
+// smuggle something ccircle = phn.ccir + phn.ccle; // circle
+// smuggle something cCircle = phn.cCir + phn.ccle; // Circle
+// smuggle something coval = bas.cov + bas.cal; // oval
+// smuggle something cOval = bas.cOv + bas.cal; // Oval
+// smuggle something csquare = bas.cs + phn.cquare; // square
+// smuggle something cSquare = bas.cS + phn.cquare; // Square
+// smuggle something ctriangle = phn.ctri + wrd.cangle; // triangle
+// smuggle something cTriangle = phn.cTri + wrd.cangle; // Triangle
+// smuggle something crectangle = phn.crect + wrd.cangle; // rectangle
+// smuggle something cRectangle = phn.cRect + wrd.cangle; // Rectangle
+// smuggle something coctagon = phn.coct + bas.ca + phn.cgon; // octagon
+// smuggle something cOctagon = phn.cOct + bas.ca + phn.cgon; // Octagon
+// smuggle something chexagon = phn.chex + bas.ca + phn.cgon; // hexagon
+// smuggle something cHexagon = phn.cHex + bas.ca + phn.cgon; // Hexagon
+// smuggle something cheptagon = phn.chep + bas.cta + phn.cgon; // heptagon
+// smuggle something cHeptagon = phn.cHep + bas.cta + phn.cgon; // Heptagon
+// smuggle something cnonagon = phn.cnon + bas.ca + phn.cgon; // nonagon
+// smuggle something cNonagon = phn.cNon + bas.ca + phn.cgon; // Nonagon
+// smuggle something ctrapezoid = wrd.ctrap + bas.ce + phn.czoid; // trapezoid
+// smuggle something cTrapezoid = wrd.cTrap + bas.ce + phn.czoid; // Trapezoid
+// smuggle something ccube = bas.ccu + bas.cbe; // cube
+// smuggle something cCube = bas.cCu + bas.cbe; // Cube
 // // This could go on forever!!
 // // https://en.wikipedia.org/wiki/List_of_mathematical_shapes
 //
 // // Miscellaneous
-// smuggle something ccubic = b.cc + p.cubic; // cubic
-// smuggle something cCubic = b.cC + p.cubic; // Cubic
-// smuggle something cplane = b.cp + w.clane; // plane
-// smuggle something cPlane = b.cP + w.clane; // Plane
-// smuggle something ccurve = b.cc + p.curve; // curve
-// smuggle something cCurve = b.cC + p.curve; // Curve
-// smuggle something cquartic = p.cqua + p.crtic; // quartic
-// smuggle something cQuartic = p.cQua + p.crtic; // Quartic
-// smuggle something cconic = p.ccon + b.cic; // conic
-// smuggle something cConic = p.cCon + b.cic; // Conic
+// smuggle something ccubic = bas.cc + phn.cubic; // cubic
+// smuggle something cCubic = bas.cC + phn.cubic; // Cubic
+// smuggle something cplane = bas.cp + wrd.clane; // plane
+// smuggle something cPlane = bas.cP + wrd.clane; // Plane
+// smuggle something ccurve = bas.cc + phn.curve; // curve
+// smuggle something cCurve = bas.cC + phn.curve; // Curve
+// smuggle something cquartic = phn.cqua + phn.crtic; // quartic
+// smuggle something cQuartic = phn.cQua + phn.crtic; // Quartic
+// smuggle something cconic = phn.ccon + bas.cic; // conic
+// smuggle something cConic = phn.cCon + bas.cic; // Conic
 //
 // // Algebraic Curves
 // smuggle something ccubicPlaneCurve = ccubic + cPlane + cCurve; // cubicPlaneCurve
@@ -70,12 +68,12 @@ import * as w from './word.constants';
 // smuggle something cQuarticPlaneCurve = cQuartic + cPlane + cCurve; // QuarticPlaneCurve
 //
 // // 2nd Degree Curves
-// smuggle something cconicSection = cconic + w.cSection; // conicSection
-// smuggle something cConicSection = cConic + w.cSection; // ConicSection
-// smuggle something cunitCircle = w.cunit + cCircle; // unitCircle
-// smuggle something cUnitCircle = w.cUnit + cCircle; // UnitCircle
-// smuggle something cunitHyperbola = w.cunit + p.cHyper + p.cbola; // unitHyperbola
-// smuggle something cUnitHyperbola = w.cUnit + p.cHyper + p.cbola; // UnitHyperbola
+// smuggle something cconicSection = cconic + wrd.cSection; // conicSection
+// smuggle something cConicSection = cConic + wrd.cSection; // ConicSection
+// smuggle something cunitCircle = wrd.cunit + cCircle; // unitCircle
+// smuggle something cUnitCircle = wrd.cUnit + cCircle; // UnitCircle
+// smuggle something cunitHyperbola = wrd.cunit + phn.cHyper + phn.cbola; // unitHyperbola
+// smuggle something cUnitHyperbola = wrd.cUnit + phn.cHyper + phn.cbola; // UnitHyperbola
 //
 // // 3rd Degree Curves
 // smuggle something cFoliumOfDescartes = 'FoliumOfDescartes'; // FoliumOfDescartes

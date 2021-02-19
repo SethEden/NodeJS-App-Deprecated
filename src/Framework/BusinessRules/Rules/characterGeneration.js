@@ -101,10 +101,10 @@
  */
 import loggers from '../../Executrix/loggers';
 import { stringToBoolean } from './stringParsing';
-import * as b from '../../Constants/basic.constants';
-import * as g from '../../Constants/generic.constants';
-import * as n from '../../Constants/numeric.constants';
-import * as s from '../../Constants/system.constants';
+import * as bas from '../../Constants/basic.constants';
+import * as gen from '../../Constants/generic.constants';
+import * as num from '../../Constants/numeric.constants';
+import * as sys from '../../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -119,10 +119,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/03/05
  */
 export const randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let typeToGenerate = -1;
   typeToGenerate = randomlyGenerateBooleanValue1(inputData, inputMetaData);
@@ -131,8 +131,8 @@ export const randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function(input
   } else {
     returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -147,14 +147,14 @@ export const randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function(input
  * @date 2020/05/19
  */
 export const randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -169,10 +169,10 @@ export const randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function(input
  * @date 2020/03/05
  */
 export const randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let typeToGenerate = -1;
   typeToGenerate = randomlyGenerateBooleanValue1(inputData, inputMetaData);
@@ -181,8 +181,8 @@ export const randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function(input
   } else {
     returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -197,14 +197,14 @@ export const randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function(input
  * @date 2020/05/19
  */
 export const randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -219,10 +219,10 @@ export const randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = function(input
  * @date 2020/03/05
  */
 export const randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let typeToGenerate = -1;
   typeToGenerate = randomlyGenerateBooleanValue1(inputData, inputMetaData);
@@ -231,8 +231,8 @@ export const randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function(input
   } else {
     returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -247,14 +247,14 @@ export const randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function(input
  * @date 2020/05/19
  */
 export const randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cLowerCaseEnglishAlphabet);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cLowerCaseEnglishAlphabet);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -269,40 +269,40 @@ export const randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function(input
  * @date 2020/03/05
  */
 export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let typeToGenerate = -1;
 
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = n.c3;
-  let c9 = n.c9;
-  let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  let c3 = num.c3;
+  let c9 = num.c9;
+  let cTrue = gen.cTrue;
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, gen.cTrue, gen.cTrue]);
   // typeToGenerate is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage1 + typeToGenerate);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage1 + typeToGenerate);
   switch (typeToGenerate) {
-    case 1: case n.c1: // Generate a number.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage2);
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+    case 1: case num.c1: // Generate a number.
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage2);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
       break;
-    case 2: case n.c2: // Generate a random upper case or lower case letter.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage3);
+    case 2: case num.c2: // Generate a random upper case or lower case letter.
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage3);
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
-    case 3: case n.c3:// Generate a special character.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage4);
+    case 3: case num.c3:// Generate a special character.
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage4);
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
     default: // DEFAULT: Generate a random upper case or lower case letter.
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cCharacterGenerationMessage5);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage5);
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -317,14 +317,14 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = 
  * @date 2020/05/19
  */
 export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -339,21 +339,21 @@ export const randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = 
  * @date 2020/03/05
  */
 export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let typeToGenerate = -1
 
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = n.c3;
-  let c9 = n.c9;
-  let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  let c3 = num.c3;
+  let c9 = num.c9;
+  let cTrue = gen.cTrue;
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, gen.cTrue, gen.cTrue]);
   switch (typeToGenerate) {
     case 1: case '1': // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
       break;
     case 2: case '2': // Generate a random upper case letter.
       returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
@@ -365,8 +365,8 @@ export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = 
       returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
       break;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -381,14 +381,14 @@ export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = 
  * @date 2020/05/19
  */
 export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cAllNumbers);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet + gen.cAllNumbers);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -403,34 +403,34 @@ export const randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = 
  * @date 2020/03/05
  */
 export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let typeToGenerate = -1;
 
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c3 = n.c3;
-  let c9 = n.c9;
-  let cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  let c3 = num.c3;
+  let c9 = num.c9;
+  let cTrue = gen.cTrue;
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, gen.cTrue, gen.cTrue]);
   switch (typeToGenerate) {
-    case 1: case '1': // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+    case 1: case num.c1: // Generate a number.
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
       break;
-    case 2: case '2': // Generate a random lower case letter.
+    case 2: case num.c2: // Generate a random lower case letter.
       returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
       break;
-    case 3: case '3': // Generate a special character.
+    case 3: case num.c3: // Generate a special character.
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
     default: // Default to a random lower case letter as a fall-back.
       returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
       break;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -445,14 +445,14 @@ export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = 
  * @date 2020/05/19
  */
 export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -467,18 +467,18 @@ export const randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = 
  * @date 2020/03/05
  */
 export const randomlyGenerateMixedCaseAlphaNumericCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateMixedCaseAlphaNumericCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateMixedCaseAlphaNumericCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) {
     returnData = randomlyGenerateNumericCharacter1(inputData, inputMetaData); // Generate a number
   } else {
     returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -493,14 +493,14 @@ export const randomlyGenerateMixedCaseAlphaNumericCharacter1 = function(inputDat
  * @date 2020/05/19
  */
 export const randomlyGenerateMixedCaseAlphaNumericCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateMixedCaseAlphaNumericCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateMixedCaseAlphaNumericCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -515,18 +515,18 @@ export const randomlyGenerateMixedCaseAlphaNumericCharacter2 = function(inputDat
  * @date 2020/03/05
  */
 export const randomlyGenerateUpperCaseAlphaNumericCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateUpperCaseAlphaNumericCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateUpperCaseAlphaNumericCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) {
     returnData = randomlyGenerateNumericCharacter1(inputData, inputMetaData); // Generate a number.
   } else {
     returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -541,14 +541,14 @@ export const randomlyGenerateUpperCaseAlphaNumericCharacter1 = function(inputDat
  * @date 2020/05/19
  */
 export const randomlyGenerateUpperCaseAlphaNumericCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateUpperCaseAlphaNumericCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateUpperCaseAlphaNumericCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cAllNumbers);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + gen.cAllNumbers);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -563,18 +563,18 @@ export const randomlyGenerateUpperCaseAlphaNumericCharacter2 = function(inputDat
  * @date 2020/03/05
  */
 export const randomlyGenerateLowerCaseAlphaNumericCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateLowerCaseAlphaNumericCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateLowerCaseAlphaNumericCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) {
     returnData = randomlyGenerateNumericCharacter1(inputData, inputMetaData); // Generate a number.
   } else {
     returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -589,14 +589,14 @@ export const randomlyGenerateLowerCaseAlphaNumericCharacter1 = function(inputDat
  * @date 2020/05/19
  */
 export const randomlyGenerateLowerCaseAlphaNumericCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateLowerCaseAlphaNumericCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateLowerCaseAlphaNumericCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -611,14 +611,14 @@ export const randomlyGenerateLowerCaseAlphaNumericCharacter2 = function(inputDat
  * @date 2020/03/05
  */
 export const randomlyGenerateNumericCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateNumericCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateNumericCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -633,14 +633,14 @@ export const randomlyGenerateNumericCharacter1 = function(inputData, inputMetaDa
  * @date 2020/05/19
  */
 export const randomlyGenerateNumericCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateNumericCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateNumericCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cAllNumbers);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cAllNumbers);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -655,21 +655,21 @@ export const randomlyGenerateNumericCharacter2 = function(inputData, inputMetaDa
  * @date 2020/03/05
  */
 export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateSpecialCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateSpecialCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let cTrue = g.cTrue;
+  let cTrue = gen.cTrue;
   if (inputData) {
 	  let inputDataLength = inputData.length.toString();
-	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  let number = randomlyGenerateNumberInRange1(num.c1, [inputDataLength, gen.cTrue, gen.cTrue]);
 	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 	  returnData = inputData.substring(number - 1, number);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -685,21 +685,21 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
  * @date 2020/05/19
  */
 export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateSpecialCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateSpecialCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let cTrue = g.cTrue;
+  let cTrue = gen.cTrue;
   if (inputData) {
 	  let inputDataLength = inputData.length.toString();
-	  let number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]);
+	  let number = randomlyGenerateNumberInRange1(num.c1, [inputDataLength, gen.cTrue, gen.cTrue]);
 	  // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 	  returnData = inputData.substring(number - 1, number);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -717,10 +717,10 @@ export const randomlyGenerateSpecialCharacter2 = function(inputData, inputMetaDa
  * @date 2020/03/05
  */
 export const randomlyGenerateNumberInRange1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateNumberInRange1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.crandomlyGenerateNumberInRange1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = '';
   if (inputData && inputMetaData) {
 	  let minimum = parseInt(inputData);
@@ -741,8 +741,8 @@ export const randomlyGenerateNumberInRange1 = function(inputData, inputMetaData)
 		}
 	  }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData.toString();
 };
 
@@ -761,10 +761,10 @@ export const randomlyGenerateNumberInRange1 = function(inputData, inputMetaData)
  * @date 2020/05/19
  */
 export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateNumberInRange2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateNumberInRange2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData && inputMetaData) {
 	  let minimum = parseInt(inputData);
@@ -785,8 +785,8 @@ export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData)
 		}
 	  }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData.toString();
 };
 
@@ -801,14 +801,14 @@ export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData)
  * @date 2020/03/05
  */
 export const randomlyGenerateBooleanValue1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateBooleanValue1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateBooleanValue1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   returnData = Math.random() >= 0.5;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -824,14 +824,14 @@ export const randomlyGenerateBooleanValue1 = function(inputData, inputMetaData) 
  * @date 2020/05/19
  */
 export const randomlyGenerateBooleanValue2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateBooleanValue2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateBooleanValue2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   returnData = Math.random() >= 0.5;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -846,18 +846,18 @@ export const randomlyGenerateBooleanValue2 = function(inputData, inputMetaData) 
  * @date 2020/03/05
  */
 export const randomlyGenerateMixedCaseAlphabeticCharacter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateMixedCaseAlphabeticCharacter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateMixedCaseAlphabeticCharacter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (randomlyGenerateBooleanValue1(inputData, inputMetaData) === true) {
     returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
   } else {
     returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -872,14 +872,14 @@ export const randomlyGenerateMixedCaseAlphabeticCharacter1 = function(inputData,
  * @date 2020/05/19
  */
 export const randomlyGenerateMixedCaseAlphabeticCharacter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateMixedCaseAlphabeticCharacter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateMixedCaseAlphabeticCharacter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -894,17 +894,17 @@ export const randomlyGenerateMixedCaseAlphabeticCharacter2 = function(inputData,
  * @date 2020/03/05
  */
 export const randomlyGenerateLowerCaseLetter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateLowerCaseLetter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateLowerCaseLetter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c26 = n.c2 + n.c6;
-  let cTrue = g.cTrue;
-  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  let c26 = num.c2 + num.c6;
+  let cTrue = gen.cTrue;
+  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(num.c1, [num.c26, gen.cTrue, gen.cTrue]));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -919,14 +919,14 @@ export const randomlyGenerateLowerCaseLetter1 = function(inputData, inputMetaDat
  * @date 2020/05/19
  */
 export const randomlyGenerateLowerCaseLetter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateLowerCaseLetter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateLowerCaseLetter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cLowerCaseEnglishAlphabet);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -941,17 +941,17 @@ export const randomlyGenerateLowerCaseLetter2 = function(inputData, inputMetaDat
  * @date 2020/03/05
  */
 export const randomlyGenerateUpperCaseLetter1 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateUpperCaseLetter1;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateUpperCaseLetter1;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   // NOTE: Cannot have a "." as part of a variable name in a {set}
-  let c26 = n.c2 + n.c6;
-  let cTrue = g.cTrue;
-  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  let c26 = num.c2 + num.c6;
+  let cTrue = gen.cTrue;
+  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(num.c1, [num.c26, gen.cTrue, gen.cTrue]));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -966,14 +966,14 @@ export const randomlyGenerateUpperCaseLetter1 = function(inputData, inputMetaDat
  * @date 2020/05/19
  */
 export const randomlyGenerateUpperCaseLetter2 = function(inputData, inputMetaData) {
-  let functionName = s.crandomlyGenerateUpperCaseLetter2;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crandomlyGenerateUpperCaseLetter2;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -987,10 +987,10 @@ export const randomlyGenerateUpperCaseLetter2 = function(inputData, inputMetaDat
  * @date 2020/05/19
  */
 export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData) {
-  let functionName = s.cconvertNumberToUpperCaseLetter;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconvertNumberToUpperCaseLetter;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let number = parseInt(inputData);
@@ -999,11 +999,11 @@ export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData)
 	  if (number > 25 || number < 0) {
 		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
 	  } else {
-		returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+		returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
 	  }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1017,10 +1017,10 @@ export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData)
  * @date 2020/05/19
  */
 export const convertNumberToLowerCaseLetter = function(inputData, inputMetaData) {
-  let functionName = s.cconvertNumberToLowerCaseLetter;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconvertNumberToLowerCaseLetter;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let number = parseInt(inputData);
@@ -1029,10 +1029,10 @@ export const convertNumberToLowerCaseLetter = function(inputData, inputMetaData)
 	  if (number > 25 || number < 0) {
 		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
 	  } else {
-		returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+		returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
 	  }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };

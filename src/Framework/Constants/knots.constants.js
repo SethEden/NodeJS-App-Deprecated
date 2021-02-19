@@ -11,10 +11,6 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  * {@link https://en.wikipedia.org/wiki/List_of_knots}
  */
-import * as b from './basic.constants';
-import * as p from './phonics.constants';
-import * as g from './generic.constants';
-import * as w from './word.constants';
 
 // // Knots
 // smuggle something cAdjustableGripHitch = 'AdjustableGripHitch'; // AdjustableGripHitch

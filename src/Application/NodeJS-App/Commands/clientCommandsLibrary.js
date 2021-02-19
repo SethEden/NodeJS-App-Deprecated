@@ -8,7 +8,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as clientCommands from './ClientCommands/clientCommands';
-import * as c from '../Constants/application.constants';
+import * as apc from '../Constants/application.constants';
 
 /**
  * @function initClientCommandsLibrary
@@ -25,7 +25,7 @@ export const initClientCommandsLibrary = function() {
     // ********************************
     // ClientStringParsing rules in order
     // ********************************
-    [c.ccustomEchoCommand]: (inputData, inputMetaData) => clientCommands.customEchoCommand(inputData, inputMetaData),
+    [apc.ccustomEchoCommand]: (inputData, inputMetaData) => clientCommands.customEchoCommand(inputData, inputMetaData),
   };
 };
 

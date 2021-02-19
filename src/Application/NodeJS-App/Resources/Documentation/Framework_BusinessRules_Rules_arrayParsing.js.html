@@ -118,7 +118,7 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
   let returnData;
   let caps = [];
   for (let i = 1; i &lt; inputData.length; i++) {
-    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
+    if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
   }
   if (caps.length > 0) {
     let last = 0;
@@ -433,7 +433,7 @@ export const searchForPatternsInStringArray = function(inputData, inputMetaData)
       let currentMasterStringArrayElement = inputData[a];
       // currentMasterStringArrayElement is:
       loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentMasterStringArrayElementIs + currentMasterStringArrayElement);
-      if (currentMasterStringArrayElement.includes(b.cSpace) === false) {
+      if (currentMasterStringArrayElement.includes(bas.cSpace) === false) {
         // currentMasterStringArrayElement does not contain a space character
         loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage1);
         // NOTE: All of the other loggers.consolelog below this are not actually getting called for some reason.
@@ -487,7 +487,7 @@ export const searchForPatternsInStringArray = function(inputData, inputMetaData)
             } // End-for (let c = 0; c &lt;= currentMasterStringArrayElement.length - minStringLength; c++)
           } // End-if (currentMasterStringArrayElement &lt;= b)
         } // End-for (let b = minStringLength; b &lt;= maxStringLength; b++) {
-      } else { // Else-clause if (currentMasterStringArrayElement.includes(b.cSpace) === false)
+      } else { // Else-clause if (currentMasterStringArrayElement.includes(bas.cSpace) === false)
         // WARNING: The current string being searched contains a space character, we are going to skip comparison.
         loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage2 + s.cSearchForPatternsInStringArrayMessage3);
       }
@@ -1058,9 +1058,9 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // "Woman": "wman,wmn,womn",
     // "Amazing": "amzing,amzng"
     // }
-    let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
-    let secondaryCommandDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
-    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(sys.cPrimaryCommandDelimiter);
+    let secondaryCommandDelimiter = configurator.getConfigurationSetting(sys.cSecondaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(sys.cTertiaryCommandDelimiter);
     let commandDelimiter = '';
     let commandWordsKeys1 = Object.keys(inputData);
     let commandWordAliasesArray = [];
@@ -1118,7 +1118,7 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // https://en.wikipedia.org/wiki/Lehmer_code
     let returnData = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
     // Command Aliases are:
-    console.log(s.cCommandAliasesAre + returnData);
+    console.log(sys.cCommandAliasesAre + returnData);
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);

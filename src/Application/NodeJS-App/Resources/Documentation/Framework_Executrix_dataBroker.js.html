@@ -291,12 +291,12 @@ function processCsvData(data, contextName) {
   // dataCatagory is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataCatagoryIs + dataCatagory);
   let dataCatagoryDetailName;
-  if (contextName.includes(w.cWorkflow)) {
+  if (contextName.includes(wrd.cWorkflow)) {
     // Processing a workflow
-    Object.assign(D[w.cWorkflow], parsedData[contextName]);
-  } else if (contextName.includes(w.cColors)) {
-    D[w.cColors] = {};
-    Object.assign(D[w.cColors], parsedData);
+    Object.assign(D[wrd.cWorkflow], parsedData[contextName]);
+  } else if (contextName.includes(wrd.cColors)) {
+    D[wrd.cColors] = {};
+    Object.assign(D[wrd.cColors], parsedData);
   } else {
     // Processing all other kinds of files.
     if (typeof D[dataCatagory] !== 'undefined' &amp;&amp; D[dataCatagory]) {
@@ -337,7 +337,7 @@ function processCsvData(data, contextName) {
 function setupDataStorage() {
   let functionName = storeData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  D[s.cDataStorage] = {};
+  D[sys.cDataStorage] = {};
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 
@@ -357,8 +357,8 @@ function storeData(dataStorageContextName, dataToStore) {
   // dataToStore is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataToStoreIs + JSON.stringify(dataToStore));
   let returnData = false;
-  D[s.cDataStorage][dataStorageContextName] = {};
-  D[s.cDataStorage][dataStorageContextName] = dataToStore;
+  D[sys.cDataStorage][dataStorageContextName] = {};
+  D[sys.cDataStorage][dataStorageContextName] = dataToStore;
   returnData = true;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -379,8 +379,8 @@ function getData(dataStorageContextName) {
   // dataStorageContextName is:
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cdataStorageContextNameIs + dataStorageContextName);
   let returnData = false;
-  if (D[s.cDataStorage][dataStorageContextName] !== null &amp;&amp; !!D[s.cDataStorage][dataStorageContextName]) {
-    returnData = D[s.cDataStorage][dataStorageContextName];
+  if (D[sys.cDataStorage][dataStorageContextName] !== null &amp;&amp; !!D[sys.cDataStorage][dataStorageContextName]) {
+    returnData = D[sys.cDataStorage][dataStorageContextName];
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
@@ -398,10 +398,10 @@ function getData(dataStorageContextName) {
 function clearData(dataStorageContextName) {
   let functionName = clearData.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  if (D[s.cDataStorage][dataStorageContextName] !== null &amp;&amp; !!D[s.cDataStorage][dataStorageContextName] &amp;&amp; dataStorageContextName !== '') {
-    D[s.cDataStorage][dataStorageContextName] = {};
+  if (D[sys.cDataStorage][dataStorageContextName] !== null &amp;&amp; !!D[sys.cDataStorage][dataStorageContextName] &amp;&amp; dataStorageContextName !== '') {
+    D[sys.cDataStorage][dataStorageContextName] = {};
   } else {
-    D[s.cDataStorage] = {};
+    D[sys.cDataStorage] = {};
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
@@ -483,13 +483,13 @@ function extractDataFromPapaParseObject(data, contextName) {
   }
   tempData[contextName] = {};
   cleanKeysRules[1] = s.ccleanCarriageReturnFromString;
-  let highLevelDataCount = Object.keys(data[w.cdata]).length;
+  let highLevelDataCount = Object.keys(data[wrd.cdata]).length;
   for (let i = 0; i&lt;=highLevelDataCount; i++) {
     validDataAdded = false;
     let lowLevelTempData = {};
     if (contextName === s.cColorData) {
       let colorName = '';
-      for (let key in data[w.cdata][i]) {
+      for (let key in data[wrd.cdata][i]) {
         validDataAdded = true;
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
@@ -497,12 +497,12 @@ function extractDataFromPapaParseObject(data, contextName) {
         let newKey = ruleBroker.processRules(key, '', cleanKeysRules);
         // console.log('newKey is: ' + newKey);
         if (key === s.cColorName) {
-          colorName = data[w.cdata][i][key];
+          colorName = data[wrd.cdata][i][key];
         }
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
-        // console.log('data[w.cData][i][key] is: ' + data[w.cdata][i][key]);
-        lowLevelTempData[newKey] = ruleBroker.processRules(data[w.cdata][i][key], '', cleanKeysRules);
+        // console.log('data[wrd.cData][i][key] is: ' + data[wrd.cdata][i][key]);
+        lowLevelTempData[newKey] = ruleBroker.processRules(data[wrd.cdata][i][key], '', cleanKeysRules);
         // console.log('lowLevelTempData is: ' + JSON.stringify(lowLevelTempData));
       }
       if (validDataAdded === true) {
@@ -515,7 +515,7 @@ function extractDataFromPapaParseObject(data, contextName) {
         }
       } // End-if validDataAdd === true
     } else { // Else-if (contextName === s.cConfiguration_Colors)
-      for (let key in data[w.cdata][i]) {
+      for (let key in data[wrd.cdata][i]) {
         validDataAdded = true;
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
@@ -524,8 +524,8 @@ function extractDataFromPapaParseObject(data, contextName) {
         // console.log('newKey is: ' + newKey);
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
         // loggers.consoleLog(baseFileName + b.cDot + functionName, 'execute business rules: ' + JSON.stringify(cleanKeysRules));
-        // console.log('data[w.cData][i][key] is: ' + data[w.cdata][i][key]);
-        lowLevelTempData[newKey] = ruleBroker.processRules(data[w.cdata][i][key], '', cleanKeysRules);
+        // console.log('data[wrd.cData][i][key] is: ' + data[wrd.cdata][i][key]);
+        lowLevelTempData[newKey] = ruleBroker.processRules(data[wrd.cdata][i][key], '', cleanKeysRules);
         // console.log('lowLevelTempData is: ' + JSON.stringify(lowLevelTempData));
       }
       if (validDataAdded === true) {
@@ -743,30 +743,30 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
 function initializeConstantsValidationData() {
   let functionName = getDataElementCount.name;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  D[s.cConstantsValidationData] = {};
-  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cColorConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cElementConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = [];
-  D[s.cConstantsValidationData][s.cWordConstantsValidation] = [];
+  D[sys.cConstantsValidationData] = {};
+  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cPhonicsConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cUnitsConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = [];
 
-  D[s.cConstantsValidationData][s.cBasicConstantsValidation] = bcv.basicConstantsValidation;
-  D[s.cConstantsValidationData][s.cColorConstantsValidation] = ccv.colorConstantsValidation;
-  D[s.cConstantsValidationData][s.cElementConstantsValidation] = ecv.elementConstantsValidation;
-  D[s.cConstantsValidationData][s.cGenericConstantsValidation] = gcv.genericConstantsValidation;
-  D[s.cConstantsValidationData][s.cIsotopeConstantsValidation] = icv.isotopeConstantsValidation;
-  D[s.cConstantsValidationData][s.cNumericConstantsValidation] = ncv.numericConstantsValidation;
-  D[s.cConstantsValidationData][s.cPhonicsConstantsValidation] = pcv.phonicsConstantsValidation;
-  D[s.cConstantsValidationData][s.cShapeConstantsValidation] = shcv.shapeConstantsValidation;
-  D[s.cConstantsValidationData][s.cSystemConstantsValidation] = scv.systemConstantsValidation;
-  D[s.cConstantsValidationData][s.cUnitsConstantsValidation] = ucv.unitsConstantsValidation;
-  D[s.cConstantsValidationData][s.cWordConstantsValidation] = wcv.wordConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = bcv.basicConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = ccv.colorConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = ecv.elementConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = gcv.genericConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = icv.isotopeConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = ncv.numericConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cPhonicsConstantsValidation] = pcv.phonicsConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = shcv.shapeConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = scv.systemConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cUnitsConstantsValidation] = ucv.unitsConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = wcv.wordConstantsValidation;
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
 };
 

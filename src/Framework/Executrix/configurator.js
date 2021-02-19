@@ -14,8 +14,8 @@
  * Because having these functions in the chiefConfiguration can cause a circular dependency.
  */
 import loggers from './loggers';
-import * as w from '../Constants/word.constants';
-import * as s from '../Constants/system.constants';
+import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Resources/data');
 // var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -37,12 +37,12 @@ function setConfigurationSetting(configurationName, configurationValue) {
   // console.log('configurationName is: ' + configurationName);
   // console.log('configurationValue is: ' + configurationValue);
   // let functionName = setConfigurationSetting.name;
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, msg.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
-  D[w.cConfiguration][configurationName] = configurationValue;
+  D[wrd.cConfiguration][configurationName] = configurationValue;
   // console.log('END configurator.setConfigurationSetting function');
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, msg.cEND_Function);
 };
 
 /**
@@ -58,11 +58,11 @@ function getConfigurationSetting(configurationName) {
   // console.log('BEGIN configurator.getConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // let functionName = getConfigurationSetting.name;
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, msg.cBEGIN_Function);
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
-  if (D[w.cConfiguration] !== undefined) {
-    if (D[w.cConfiguration][configurationName] !== undefined) {
-      returnConfigurationValue = D[w.cConfiguration][configurationName];
+  if (D[wrd.cConfiguration] !== undefined) {
+    if (D[wrd.cConfiguration][configurationName] !== undefined) {
+      returnConfigurationValue = D[wrd.cConfiguration][configurationName];
     } else {
       returnConfigurationValue = undefined;
     }
@@ -72,7 +72,7 @@ function getConfigurationSetting(configurationName) {
   // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
   // console.log('END configurator.getConfigurationSetting function');
   // loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnConfigurationValue is: ' + returnConfigurationValue);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + b.cDot + functionName, msg.cEND_Function);
   return returnConfigurationValue;
 };
 

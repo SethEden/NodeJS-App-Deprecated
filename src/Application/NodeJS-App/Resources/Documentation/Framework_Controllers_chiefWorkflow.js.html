@@ -68,12 +68,12 @@ function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) 
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
   let allCommandWorkflowsData = {};
   allCommandWorkflowsData = chiefData.setupAllXmlData(commandWorkflowFilePathConfigurationName, s.cCommandWorkflows);
-  if (D[s.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
-    D[s.cCommandWorkflows] = {};
-    D[s.cCommandWorkflows] = allCommandWorkflowsData[s.cCommandWorkflows];
+  if (D[sys.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
+    D[sys.cCommandWorkflows] = {};
+    D[sys.cCommandWorkflows] = allCommandWorkflowsData[sys.cCommandWorkflows];
   } else {
-    for (let i=0; i&lt;allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow].length; i++) {
-      D[s.cCommandWorkflows][w.cWorkflow].push(allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow][i])
+    for (let i=0; i&lt;allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow].length; i++) {
+      D[sys.cCommandWorkflows][wrd.cWorkflow].push(allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow][i])
     }
   }
   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
