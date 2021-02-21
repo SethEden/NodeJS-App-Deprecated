@@ -35,7 +35,7 @@ import * as msg from '../Constants/messages.constants';
 var fs = require('fs');
 var path = require('path');
 var zip = require('bestzip');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 var Papa = require('papaparse');
 var xml2js = require('xml2js').Parser({
   parseNumbers: true,

@@ -14,10 +14,17 @@
  * @requires module:business-constants
  * @requires module:messages-constants
  * @requires module:basic-constants-validation
+ * @requires module:business-constants-validation
  * @requires module:color-constants-validation
+ * @requires module:commands-constants-validation
+ * @requires module:configuration-constants-validation
+ * @requires module:countries-constants-validation
  * @requires module:element-constants-validation
  * @requires module:generic-constants-validation
  * @requires module:isotope-constants-validation
+ * @requires module:knots-constants-validation
+ * @requires module:language-constants-validation
+ * @requires module:messages-constants-validation
  * @requires module:numeric-constants-validation
  * @requires module:phonics-constants-validation
  * @requires module:shape-constants-validation
@@ -41,17 +48,24 @@ import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/messages.constants';
 import * as bas_cv from '../Resources/ConstantsValidation/basic-constants-validation';
+import * as biz_cv from '../Resources/ConstantsValidation/business-constants-validation';
 import * as clr_cv from '../Resources/ConstantsValidation/color-constants-validation';
+import * as cmd_cv from '../Resources/ConstantsValidation/commands-constants-validation';
+import * as cfg_cv from '../Resources/ConstantsValidation/configurations-constants-validation';
+import * as ctr_cv from '../Resources/ConstantsValidation/countries-constants-validation';
 import * as elm_cv from '../Resources/ConstantsValidation/element-constants-validation';
 import * as gen_cv from '../Resources/ConstantsValidation/generic-constants-validation';
 import * as iso_cv from '../Resources/ConstantsValidation/isotope-constants-validation';
+import * as kts_cv from '../Resources/ConstantsValidation/knots-constants-validation';
+import * as lng_cv from '../Resources/ConstantsValidation/language-constants-validation';
+import * as msg_cv from '../Resources/ConstantsValidation/messages-constants-validation';
 import * as num_cv from '../Resources/ConstantsValidation/numeric-constants-validation';
 import * as phn_cv from '../Resources/ConstantsValidation/phonics-constants-validation';
 import * as shp_cv from '../Resources/ConstantsValidation/shape-constants-validation';
 import * as sys_cv from '../Resources/ConstantsValidation/system-constants-validation';
 import * as unt_cv from '../Resources/ConstantsValidation/units-constants-validation';
 import * as wrd_cv from '../Resources/ConstantsValidation/word-constants-validation';
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -721,10 +735,17 @@ function initializeConstantsValidationData() {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   D[sys.cConstantsValidationData] = {};
   D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cCommandsConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cConfigurationsConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cCountriesConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cKnotsConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cLanguagesConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cMessagesConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cPhonicsConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = [];
@@ -733,10 +754,17 @@ function initializeConstantsValidationData() {
   D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = [];
 
   D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = bas_cv.basicConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = biz_cv.businessConstantsValidation;
   D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = clr_cv.colorConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cCommandsConstantsValidation] = cmd_cv.commandsConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cConfigurationsConstantsValidation] = cfg_cv.configurationsConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cCountriesConstantsValidation] = ctr_cv.countriesConstantsValidation;
   D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = elm_cv.elementConstantsValidation;
   D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = gen_cv.genericConstantsValidation;
   D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = iso_cv.isotopeConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cKnotsConstantsValidation] = kts_cv.knotsConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cLanguagesConstantsValidation] = lng_cv.languageConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cMessagesConstantsValidation] = msg_cv.messagesConstantsValidation;
   D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = num_cv.numericConstantsValidation;
   D[sys.cConstantsValidationData][sys.cPhonicsConstantsValidation] = phn_cv.phonicsConstantsValidation;
   D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = shp_cv.shapeConstantsValidation;

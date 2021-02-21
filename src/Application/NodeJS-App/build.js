@@ -36,7 +36,7 @@ require('dotenv').config();
 var pjson = require('../../../package.json');
 const {NODE_ENV} = process.env;
 var path = require('path');
-var D = require('../../Framework/Resources/data');
+var D = require('../../Framework/Structures/data');
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var copyResult = false;

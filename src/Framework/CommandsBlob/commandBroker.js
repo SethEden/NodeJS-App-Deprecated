@@ -10,6 +10,8 @@
  * @requires module:timers
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:generic-constants
+ * @requires module:numeric-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
@@ -25,18 +27,19 @@ import configurator from '../Executrix/configurator';
 import lexical from '../Executrix/lexical';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import * as commands from './commandsLibrary';
-import stack from '../Resources/stack';
+import stack from '../Structures/stack';
 import timers from '../Executrix/timers';
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as gen from '../Constants/generic.constants';
+import * as num from '../Constants/numeric.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
 import * as cfg from '../Constants/configurations.constants';
 import * as msg from '../Constants/messages.constants';
 var path = require('path');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
@@ -154,12 +157,12 @@ function getValidCommand(commandString, commandDelimiter) {
         } else {
           // WARNING: The specified command:
           // does not exist, please try again!
-          console.log(msg.cWarningTheSpecifiedCommand + commandToExecute + msg.cdoesNotExistPleaseTryAgain);
+          console.log(msg.cWarningTheSpecifiedCommand + commandToExecute + msg.cdoesNotExistPleaseTryAgain + bas.cSpace + num.c1);
         }
       } else {
         // WARNING: The specified command:
         // does not exist, please try again!
-        console.log(msg.cWarningTheSpecifiedCommand + commandToExecute + msg.cdoesNotExistPleaseTryAgain);
+        console.log(msg.cWarningTheSpecifiedCommand + commandToExecute + msg.cdoesNotExistPleaseTryAgain + bas.cSpace + num.c2);
       }
     }
   } else {

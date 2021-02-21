@@ -30,7 +30,7 @@ import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/messages.constants';
 var path = require('path');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**

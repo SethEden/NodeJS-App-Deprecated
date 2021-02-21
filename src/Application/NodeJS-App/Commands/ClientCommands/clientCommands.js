@@ -3,7 +3,6 @@
  * @module clientCommands
  * @description Contains all client defined commands for execution client actions with various operations.
  * @requires module:warden
- * @requires module:queue
  * @requires module:basic-constants
  * @requires module:system-constants
  * @requires module:application-constants
@@ -13,7 +12,6 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import warden from '../../../../Framework/Controllers/warden';
-import queue from '../../../../Framework/Resources/queue';
 import * as bas from '../../../../Framework/Constants/basic.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
 import * as apc from '../../Constants/application.constants';

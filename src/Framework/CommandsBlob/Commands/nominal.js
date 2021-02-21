@@ -17,6 +17,9 @@
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:commands-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
  * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
@@ -34,20 +37,23 @@ import ruleBroker from '../../BusinessRules/ruleBroker';
 import fileBroker from '../../Executrix/fileBroker';
 import dataBroker from '../../Executrix/dataBroker';
 import workflowBroker from '../../Executrix/workflowBroker';
-import queue from '../../Resources/queue';
-import stack from '../../Resources/stack';
+import queue from '../../Structures/queue';
+import stack from '../../Structures/stack';
 import timers from '../../Executrix/timers';
 import loggers from '../../Executrix/loggers';
 import * as bas from '../../Constants/basic.constants';
 import * as gen from '../../Constants/generic.constants';
 import * as wrd from '../../Constants/word.constants';
 import * as sys from '../../Constants/system.constants';
+import * as cmd from '../../Constants/commands.constants';
+import * as biz from '../../Constants/business.constants';
+import * as cfg from '../../Constants/configurations.constants';
 import * as msg from '../../Constants/messages.constants';
 const prompt = require('prompt-sync')();
 const figlet = require('figlet');
 var path = require('path');
 var math = require('mathjs');
-var D = require('../../../Framework/Resources/data');
+var D = require('../../../Framework/Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
  /**
@@ -163,7 +169,7 @@ export const name = function(inputData, inputMetaData) {
   let figletFont = '';
   let useFancyFont = false;
   let rules = {};
-  rules[0] = sys.cstringToDataType;
+  rules[0] = biz.cstringToDataType;
   useFancyFont = ruleBroker.processRules(inputData[1], '', rules);
   if (useFancyFont === true) {
     figletFont = configurator.getConfigurationSetting(cfg.cFigletFont);
@@ -504,7 +510,7 @@ export const printDataHive = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (inputData[1].includes(bas.cDot) === true) {
+  if (inputData && inputData[1].includes(bas.cDot) === true) {
     let dataHivePathArray = inputData[1].split(bas.cDot);
     let leafDataHiveElement = D;
     // dataHivePathArray is:
@@ -732,19 +738,19 @@ export const businessRule = function(inputData, inputMetaData) {
     // BusinessRule run-time is:
     loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBusinessRuleRunTimeIs + businessRuleDeltaTime);
     // Check to make sure the business rule performance tracking stack exists or does not exist.
-    if (D[sys.cBusinessRulePerformanceTrackingStack] === undefined) {
-      stack.initStack(sys.cBusinessRulePerformanceTrackingStack);
+    if (D[cfg.cBusinessRulePerformanceTrackingStack] === undefined) {
+      stack.initStack(cfg.cBusinessRulePerformanceTrackingStack);
     }
-    if (D[sys.cBusinessRuleNamesPerformanceTrackingStack] === undefined) {
-      stack.initStack(sys.cBusinessRuleNamesPerformanceTrackingStack)
+    if (D[cfg.cBusinessRuleNamesPerformanceTrackingStack] === undefined) {
+      stack.initStack(cfg.cBusinessRuleNamesPerformanceTrackingStack)
     }
     performanceTrackingObject = {Name: rules[0], RunTime: businessRuleDeltaTime};
-    if (stack.contains(sys.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
-      stack.push(sys.cBusinessRuleNamesPerformanceTrackingStack, rules[0]);
+    if (stack.contains(cfg.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
+      stack.push(cfg.cBusinessRuleNamesPerformanceTrackingStack, rules[0]);
     }
-    stack.push(sys.cBusinessRulePerformanceTrackingStack, performanceTrackingObject);
-    // stack.print(sys.cBusinessRulePerformanceTrackingStack);
-    // stack.print(sys.cBusinessRuleNamesPerformanceTrackingStack);
+    stack.push(cfg.cBusinessRulePerformanceTrackingStack, performanceTrackingObject);
+    // stack.print(cfg.cBusinessRulePerformanceTrackingStack);
+    // stack.print(cfg.cBusinessRuleNamesPerformanceTrackingStack);
   }
   if (businessRuleOutput === true) {
     // Rule output is:
@@ -1205,7 +1211,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
     let average = 0;
     let standardDev = 0;
     // Here we iterate over all of the business rules that were added to the sys.cBusinessRulePerformanceTrackingStack.
-    for (let i = 0; i < stack.length(sys.cBusinessRuleNamesPerformanceTrackingStack); i++) {
+    for (let i = 0; i < stack.length(cfg.cBusinessRuleNamesPerformanceTrackingStack); i++) {
       businessRuleCounter = 0; // Reset it to zero, because we are beginning again with another business rule name.
       businessRulePerformanceSum = 0;
       businessRulePerformanceStdSum = 0;
@@ -1213,13 +1219,13 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       standardDev = 0;
       // Here we will now iterate over all of the contents of all of the business rule performance numbers and
       // do the necessary math for each business rule according to the parent loop.
-      let currentBusinessRuleName = D[sys.cBusinessRuleNamesPerformanceTrackingStack][i];
-      for (let j = 0; j < stack.length(sys.cBusinessRulePerformanceTrackingStack); j++) {
-        if (D[sys.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
+      let currentBusinessRuleName = D[cfg.cBusinessRuleNamesPerformanceTrackingStack][i];
+      for (let j = 0; j < stack.length(cfg.cBusinessRulePerformanceTrackingStack); j++) {
+        if (D[cfg.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
           businessRuleCounter = businessRuleCounter + 1;
           // businessRuleCounter is:
           loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRuleCounterIs + businessRuleCounter);
-          businessRulePerformanceSum = businessRulePerformanceSum + D[sys.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime];
+          businessRulePerformanceSum = businessRulePerformanceSum + D[cfg.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime];
           // businessRulePerformanceSum is:
           loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceSumIs + businessRulePerformanceSum);
         }
@@ -1230,9 +1236,9 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       // average is:
       loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.caverageIs + average);
       // Now go back through them all so we can compute the standard deviation
-      for (let j = 0; j < stack.length(sys.cBusinessRulePerformanceTrackingStack); j++) {
-        if (D[sys.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
-          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow((D[sys.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime] - average), 2);
+      for (let j = 0; j < stack.length(cfg.cBusinessRulePerformanceTrackingStack); j++) {
+        if (D[cfg.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
+          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow((D[cfg.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime] - average), 2);
           // businessRulePerformanceStdSum is:
           loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
         }
@@ -1242,18 +1248,18 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter);
       // standardDev is:
       loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
-      if (D[sys.cBusinessRulesPerformanceAnalysisStack] === undefined) {
-        stack.initStack(sys.cBusinessRulesPerformanceAnalysisStack);
+      if (D[cfg.cBusinessRulesPerformanceAnalysisStack] === undefined) {
+        stack.initStack(cfg.cBusinessRulesPerformanceAnalysisStack);
       }
-      stack.push(sys.cBusinessRulesPerformanceAnalysisStack, {Name: currentBusinessRuleName, Average: average, StandardDeviation: standardDev});
+      stack.push(cfg.cBusinessRulesPerformanceAnalysisStack, {Name: currentBusinessRuleName, Average: average, StandardDeviation: standardDev});
     }
-    loggers.consoleTableLog('', D[sys.cBusinessRulesPerformanceAnalysisStack], [wrd.cName, wrd.cAverage, sys.cStandardDeviation]);
-    stack.clearStack(sys.cBusinessRulesPerformanceAnalysisStack);
+    loggers.consoleTableLog('', D[cfg.cBusinessRulesPerformanceAnalysisStack], [wrd.cName, wrd.cAverage, sys.cStandardDeviation]);
+    stack.clearStack(cfg.cBusinessRulesPerformanceAnalysisStack);
     // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
     if (configurator.getConfigurationSetting(cfg.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
-      stack.clearStack(sys.cBusinessRulePerformanceTrackingStack);
-      stack.clearStack(sys.cBusinessRuleNamesPerformanceTrackingStack);
+      stack.clearStack(cfg.cBusinessRulePerformanceTrackingStack);
+      stack.clearStack(cfg.cBusinessRuleNamesPerformanceTrackingStack);
     }
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
@@ -1284,7 +1290,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
     let average = 0;
     let standardDev = 0;
     // Here we iterate over all of the commands that were added to the sys.cCommandPerformanceTrackingStack.
-    for (let i = 0; i < stack.length(sys.cCommandNamesPerformanceTrackingStack); i++) {
+    for (let i = 0; i < stack.length(cfg.cCommandNamesPerformanceTrackingStack); i++) {
       commandCounter = 0;
       commandPerformanceSum = 0;
       commandPerformanceStdSum = 0;
@@ -1292,13 +1298,13 @@ export const commandMetrics = function(inputData, inputMetaData) {
       standardDev = 0;
       // Here we will now iterate over all of the contents of all the command performance numbers and
       // do the necessary math for each command according to the parent loop.
-      let currentCommandName = D[sys.cCommandNamesPerformanceTrackingStack][i];
-      for (let j = 0; j < stack.length(sys.cCommandPerformanceTrackingStack); j++) {
-        if (D[sys.cCommandPerformanceTrackingStack][j][wrd.cName] === currentCommandName) {
+      let currentCommandName = D[cfg.cCommandNamesPerformanceTrackingStack][i];
+      for (let j = 0; j < stack.length(cfg.cCommandPerformanceTrackingStack); j++) {
+        if (D[cfg.cCommandPerformanceTrackingStack][j][wrd.cName] === currentCommandName) {
           commandCounter = commandCounter + 1;
           // commandCounter is:
           loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandCounterIs + commandCounter);
-          commandPerformanceSum = commandPerformanceSum + D[sys.cCommandPerformanceTrackingStack][j][sys.cRunTime];
+          commandPerformanceSum = commandPerformanceSum + D[cfg.cCommandPerformanceTrackingStack][j][sys.cRunTime];
           // commandPerformanceSum is:
           loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandPerformanceSumIs + commandPerformanceSum);
         }
@@ -1309,9 +1315,9 @@ export const commandMetrics = function(inputData, inputMetaData) {
       // average is:
       loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.caverageIs + average);
       // Now go back through them all so we can compute the standard deviation
-      for (let j = 0; j < stack.length(sys.cCommandPerformanceTrackingStack); j++) {
-        if (D[sys.cCommandPerformanceTrackingStack][j][wrd.cName] === currentCommandName) {
-          commandPerformanceStdSum = commandPerformanceStdSum + math.pow((D[sys.cCommandPerformanceTrackingStack][j][sys.cRunTime] - average), 2);
+      for (let j = 0; j < stack.length(cfg.cCommandPerformanceTrackingStack); j++) {
+        if (D[cfg.cCommandPerformanceTrackingStack][j][wrd.cName] === currentCommandName) {
+          commandPerformanceStdSum = commandPerformanceStdSum + math.pow((D[cfg.cCommandPerformanceTrackingStack][j][sys.cRunTime] - average), 2);
           // commandPerformanceStdSum is:
           loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandPerformanceStdSumIs + commandPerformanceStdSum);
         }
@@ -1321,18 +1327,18 @@ export const commandMetrics = function(inputData, inputMetaData) {
       standardDev = math.sqrt(commandPerformanceStdSum / commandCounter);
       // standardDev is:
       loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
-      if (D[sys.cCommandsPerformanceAnalysisStack] === undefined) {
-        stack.initStack(sys.cCommandsPerformanceAnalysisStack);
+      if (D[cfg.cCommandsPerformanceAnalysisStack] === undefined) {
+        stack.initStack(cfg.cCommandsPerformanceAnalysisStack);
       }
-      stack.push(sys.cCommandsPerformanceAnalysisStack, {Name: currentCommandName, Average: average, StandardDeviation: standardDev});
+      stack.push(cfg.cCommandsPerformanceAnalysisStack, {Name: currentCommandName, Average: average, StandardDeviation: standardDev});
     }
-    loggers.consoleTableLog('', D[sys.cCommandsPerformanceAnalysisStack], [wrd.cName, wrd.cAverage, sys.cStandardDeviation]);
-    stack.clearStack(sys.cCommandsPerformanceAnalysisStack);
+    loggers.consoleTableLog('', D[cfg.cCommandsPerformanceAnalysisStack], [wrd.cName, wrd.cAverage, sys.cStandardDeviation]);
+    stack.clearStack(cfg.cCommandsPerformanceAnalysisStack);
     // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
     if (configurator.getConfigurationSetting(cfg.cClearCommandPerformanceDataAfterAnalysis) === true) {
-      stack.clearStack(sys.cCommandPerformanceTrackingStack);
-      stack.clearStack(sys.cCommandNamesPerformanceTrackingStack);
+      stack.clearStack(cfg.cCommandPerformanceTrackingStack);
+      stack.clearStack(cfg.cCommandNamesPerformanceTrackingStack);
     }
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);

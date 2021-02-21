@@ -78,7 +78,8 @@ export const cynch = bas.cyn + bas.cch; // ynch
 export const celete = bas.cel + bas.cet + bas.ce; // elete
 export const cnner = bas.cnn + bas.cer; // nner
 export const click = bas.cli + bas.cck; // lick
-export const cctrl = bas.cct + bas.crl; // ctrl
+export const cctr = bas.cct + bas.cr; // ctr
+export const cctrl = cctr + bas.cl; // ctrl
 export const cype = bas.cyp + bas.ce; // ype
 export const ceql = bas.ce + bas.cql; // eql
 export const cEql = bas.cE + bas.cql; // Eql
@@ -310,7 +311,8 @@ export const creen = bas.cre + bas.cen; // reen
 export const clue = bas.clu + bas.ce; // lue Referance to Tron here! :-P
 export const cyan = bas.cy + bas.can; // yan
 export const cite = bas.cit + bas.ce; // ite
-export const cange = bas.can + bas.cge; // ange
+export const cang = bas.can + bas.cg; // ang
+export const cange = cang + bas.ce; // ange
 export const cANGE = bas.cAN + bas.cGE; // ANGE
 export const cost = bas.cos + bas.ct; // ost
 export const cular = bas.cul + bas.car; // ular
@@ -1066,6 +1068,10 @@ export const cclr = bas.ccl + bas.cr; // clr
 export const cded = bas.cde + bas.cd; // ded
 export const cbing = bas.cb + cing; // bing
 export const ceth = bas.cet + bas.ch; // eth
+export const clang = bas.cl + cang; // lang
+export const cLang = bas.cL + cang; // Lang
+export const cuage = bas.cu + cage; // uage
+export const cries = bas.cr + cies; // ries
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////

@@ -5,7 +5,7 @@
  * using the specified name-space on the D-data structure.
  * @requires module:loggers
  * @requires module:basic-constants
- * @requires module:system-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -13,8 +13,8 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import loggers from '../Executrix/loggers';
-import * as b from '../Constants/basic.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as msg from '../Constants/messages.constants';
 var path = require('path');
 var D = require('./data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -30,10 +30,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function initQueue(queueNameSpace) {
   let functionName = initQueue.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cqueueNameSpaceIs + queueNameSpace);
   D[queueNameSpace] = [];
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 /**
@@ -47,13 +47,13 @@ function initQueue(queueNameSpace) {
  */
 function dequeue(queueNameSpace) {
   let functionName = dequeue.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  let returnValue;
-  returnValue = D[queueNameSpace].shift();
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return returnValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cqueueNameSpaceIs + queueNameSpace);
+  let returnData;
+  returnData = D[queueNameSpace].shift();
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
 };
 
 /**
@@ -68,11 +68,11 @@ function dequeue(queueNameSpace) {
  */
 function enqueue(queueNameSpace, value) {
   let functionName = enqueue.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cqueueNameSpaceIs + queueNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvalueIs + value);
   D[queueNameSpace].push(value);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 /**
@@ -86,17 +86,17 @@ function enqueue(queueNameSpace, value) {
  */
 function isEmpty(queueNameSpace) {
   let functionName = isEmpty.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  let returnValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cqueueNameSpaceIs + queueNameSpace);
+  let returnData;
   if (D[queueNameSpace] === undefined) {
-    returnValue = true;
+    returnData = true;
   } else {
-    returnValue = (D[queueNameSpace].length === 0);
+    returnData = (D[queueNameSpace].length === 0);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return returnValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
 };
 
 /**
@@ -110,13 +110,13 @@ function isEmpty(queueNameSpace) {
  */
 function queueFront(queueNameSpace) {
   let functionName = queueFront.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  let returnValue;
-  returnValue = D[queueNameSpace][0];
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return returnValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cqueueNameSpaceIs + queueNameSpace);
+  let returnData;
+  returnData = D[queueNameSpace][0];
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
 };
 
 /**
@@ -130,13 +130,13 @@ function queueFront(queueNameSpace) {
  */
 function queueSize(queueNameSpace) {
   let functionName = queueSize.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'queueNameSpace is: ' + queueNameSpace);
-  let returnValue;
-  returnValue = D[queueNameSpace].length;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  return returnValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cqueueNameSpaceIs + queueNameSpace);
+  let returnData;
+  returnData = D[queueNameSpace].length;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
 };
 
 export default {

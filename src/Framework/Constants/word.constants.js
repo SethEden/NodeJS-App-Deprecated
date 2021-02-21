@@ -1973,6 +1973,18 @@ export const cStates = bas.cSt + phn.cates; // States
 export const cAmerica = bas.cAm + bas.cer + phn.cica; // America
 export const cliver = bas.cli + phn.cver; // liver
 export const cLiver = bas.cLi + phn.cver; // Liver
+export const ccountry = ccount + bas.cry; // country
+export const cCountry = cCount + bas.cry; // Country
+export const ccountries = ccount + phn.cries; // countries
+export const cCountries = cCount + phn.cries; // Countries
+export const cknot = bas.ck + gen.cnot; // knot
+export const cKnot = bas.cK + gen.cnot; // Knot
+export const cknots = cknot + bas.cs; // knots
+export const cKnots = cKnot + bas.cs; // Knots
+export const clanguage = phn.clang + phn.cuage; // language
+export const cLanguage = phn.cLang + phn.cuage; // Language
+export const clanguages = clanguage + bas.cs; // languages
+export const cLanguages = cLanguage + bas.cs; // Languages
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 export const cAbsolute = bas.cAb + phn.csol + phn.cute; // Absolute

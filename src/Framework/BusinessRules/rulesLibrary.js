@@ -21,7 +21,7 @@ import * as mathOperations from './Rules/mathOperations';
 import * as arrayParsing from './Rules/arrayParsing';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 /**
  * @function initRulesLibrary
@@ -29,6 +29,10 @@ var D = require('../Resources/data');
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/15
+ * @NOTE Please be aware that the Commands and BusinessRules data fields in the
+ * D-data structure are going to display as empty when printing out the D data structure even when using JSON.stringify().
+ * This is because the functions cannot really be serialized in any way. It actually kind of makes sense,
+ * but could be really confusing if you are struggling trying to debug commands or business rules that do not appear to exist.
  */
 export const initRulesLibrary = function() {
   // console.log('BEGIN rulesLibrary.initRulesLibrary');

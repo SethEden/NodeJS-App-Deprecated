@@ -19,6 +19,7 @@
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
+ * @requires module:configurations-constants
  * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
@@ -31,7 +32,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import configurator from '../../Executrix/configurator';
-import stack from '../../Resources/stack';
+import stack from '../../Structures/stack';
 import loggers from '../../Executrix/loggers';
 import dataBroker from '../../Executrix/dataBroker';
 import fileBroker from '../../Executrix/fileBroker';
@@ -43,13 +44,14 @@ import * as num from '../../Constants/numeric.constants';
 import * as wrd from '../../Constants/word.constants';
 import * as sys from '../../Constants/system.constants';
 import * as biz from '../../Constants/business.constants';
+import * as cfg from '../../Constants/configurations.constants';
 import * as msg from '../../Constants/messages.constants';
 const lineByLine = require('n-readlines');
 const _ = require('lodash');
 var path = require('path');
 var math = require('mathjs');
 var chalk = require('chalk');
-var D = require('../../../Framework/Resources/data');
+var D = require('../../../Framework/Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
@@ -1375,27 +1377,41 @@ export const determineConstantsContextQualifiedPrefix = function(inputData, inpu
   if (inputData) {
     returnData = inputData;
     if (inputData.includes(wrd.cbasic) === true) {
-      returnData = bas.cb;
+      returnData = gen.cbas;
+    } else if (inputData.includes(wrd.business) === true) {
+      returnData = gen.cbiz;
     } else if (inputData.includes(wrd.ccolor) === true) {
-      returnData = phn.cclr;
+      returnData = gen.cclr;
+    } else if (inputData.includes(wrd.ccommands) === true) {
+      returnData = gen.ccmd;
+    } else if (inputData.includes(wrd.cconfigurations) === true) {
+      returnData = gen.ccfg;
+    } else if (inputData.includes(wrd.ccountries) === true) {
+      returnData = gen.cctr;
     } else if (inputData.includes(wrd.celement) === true) {
-      returnData = bas.ce;
+      returnData = gen.celm;
     } else if (inputData.includes(wrd.cgeneric) === true) {
-      returnData = bas.cg;
+      returnData = gen.cgen;
     } else if (inputData.includes(wrd.cisotope) === true) {
-      returnData = bas.ci;
+      returnData = gen.ciso;
+    } else if (inputData.includes(wrd.cknots) === true) {
+      returnData = gen.ckts;
+    } else if (inputData.includes(wrd.clanguages) === true) {
+      returnData = gen.clng;
+    } else if (inputData.includes(wrd.cmessages) === true) {
+      returnData = gen.cmsg;
     } else if (inputData.includes(wrd.cnumeric) === true) {
-      returnData = bas.cn;
+      returnData = gen.cnum;
     } else if (inputData.includes(wrd.cphonics) === true) {
-      returnData = bas.cp;
+      returnData = gen.cphn;
     } else if (inputData.includes(wrd.cshape) === true) {
-      returnData = phn.cshp;
+      returnData = gen.cshp;
     } else if (inputData.includes(wrd.csystem) === true) {
-      returnData = bas.cs;
+      returnData = gen.csys;
     } else if (inputData.includes(wrd.cunits) === true) {
-      returnData = bas.cu;
+      returnData = gen.cunt;
     } else if (inputData.includes(wrd.cword) === true) {
-      returnData = bas.cw;
+      returnData = gen.cwrd;
     } else {
       // ERROR: Unknown constant file.
       console.log(sys.cErrorUnknownConstantFile);
@@ -1756,10 +1772,17 @@ export const isConstantTypeValid = function(inputData, inputMetaData) {
   if (inputData) {
     switch (inputData) {
       case sys.cBasicConstantsValidation:
+      case sys.cBusinessConstantsValidation:
       case sys.cColorConstantsValidation:
+      case sys.cCommandsConstantsValidation:
+      case sys.cConfigurationsConstantsValidation:
+      case sys.cCountriesConstantsValidation:
       case sys.cElementConstantsValidation:
       case sys.cGenericConstantsValidation:
       case sys.cIsotopeConstantsValidation:
+      case sys.cKnotsConstantsValidation:
+      case sys.cLanguagesConstantsValidation:
+      case sys.cMessagesConstantsValidation:
       case sys.cNumericConstantsValidation:
       case sys.cPhonicsConstantsValidation:
       case sys.cShapeConstantsValidation:
@@ -1797,37 +1820,58 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
     returnData = inputData;
     switch (inputData) {
       case sys.cBasicConstantsValidation:
-        returnData = bas.cb + bas.cDot;
+        returnData = gen.cbas + bas.cDot;
+        break;
+      case sys.cBusinessConstantsValidation:
+        returnData = gen.cbiz + bas.cDot;
         break;
       case sys.cColorConstantsValidation:
-        returnData = phn.cclr + bas.cDot;
+        returnData = gen.cclr + bas.cDot;
+        break;
+      case sys.cCommandsConstantsValidation:
+        returnData = gen.ccmd + bas.cDot;
+        break;
+      case sys.cConfigurationsConstantsValidation:
+        returnData = gen.ccfg + bas.cDot;
+        break;
+      case sys.cCountriesConstantsValidation:
+        returnData = gen.cctr + bas.cDot;
         break;
       case sys.cElementConstantsValidation:
-        returnData = bas.ce + bas.cDot;
+        returnData = gen.celm + bas.cDot;
         break;
       case sys.cGenericConstantsValidation:
-        returnData = bas.cg + bas.cDot;
+        returnData = gen.cgen + bas.cDot;
         break;
       case sys.cIsotopeConstantsValidation:
-        returnData = bas.ci + bas.cDot;
+        returnData = gen.ciso + bas.cDot;
+        break;
+      case sys.cKnotsConstantsValidation:
+        returnData = gen.ckts + bas.cDot;
+        break;
+      case sys.cLanguagesConstantsValidation:
+        returnData = gen.clng + bas.cDot;
+        break;
+      case sys.cMessagesConstantsValidation:
+        returnData = gen.cmsg + bas.cDot;
         break;
       case sys.cNumericConstantsValidation:
-        returnData = bas.cn + bas.cDot;
+        returnData = gen.cnum + bas.cDot;
         break;
       case sys.cPhonicsConstantsValidation:
-        returnData = bas.cp + bas.cDot;
+        returnData = gen.cphn + bas.cDot;
         break;
       case sys.cShapeConstantsValidation:
-        returnData = phn.cshp + bas.cDot;
+        returnData = gen.cshp + bas.cDot;
         break;
       case sys.cSystemConstantsValidation:
-        returnData = bas.cs + bas.cDot;
+        returnData = gen.csys + bas.cDot;
         break;
       case sys.cUnitsConstantsValidation:
-        returnData = bas.cu + bas.cDot;
+        returnData = gen.cunt + bas.cDot;
         break;
       case sys.cWordConstantsValidation:
-        returnData = bas.cw + bas.cDot;
+        returnData = gen.cwrd + bas.cDot;
         break;
       default:
         returnData = false;

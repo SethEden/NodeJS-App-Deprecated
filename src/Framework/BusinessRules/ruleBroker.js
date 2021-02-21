@@ -15,7 +15,7 @@ import * as rules from './rulesLibrary';
 import * as bas from '../Constants/basic.constants';
 import * as sys from '../Constants/system.constants';
 var path = require('path');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 /**
  * @function bootStrapApplication

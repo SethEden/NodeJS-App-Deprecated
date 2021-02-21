@@ -21,7 +21,7 @@ import * as wrd from '../Constants/word.constants';
 import * as clr from '../Constants/color.constants';
 import * as sys from '../Constants/system.constants';
 var chalk = require('chalk');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 /**
  * @function colorizeMessage

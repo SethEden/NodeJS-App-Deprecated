@@ -206,6 +206,26 @@ export const cOctober = bas.cOc + bas.cto + bas.cb + bas.cer; // October
 // cNovember = bas.cNo + bas.cv + bas.cemb + bas.cer; // November
 export const cDecember = bas.cDe + bas.cc + phn.cemb + bas.cer; // December
 
+// Constants Abreviations
+export const cbas = bas.cba + bas.cs; // bas
+export const cbiz = bas.cbi + bas.cz; // biz
+export const cclr = phn.clr; // clr
+export const ccmd = bas.ccm + bas.cd; // cmd
+export const ccfg = bas.ccf + bas.cg; // cfg
+export const cctr = phn.ctr; // ctr
+export const celm = bas.cel + bas.cm; // elm
+export const cgen = phn.cgen; // gen
+export const ciso = phn.ciso; // iso
+export const ckts = bas.ckt + bas.cs; // kts
+export const clng = bas.cln + bas.cg; // lng
+export const cmsg = bas.cms + bas.cg; // msg
+export const cnum = phn.cnum; // num
+export const cphn = bas.cph + bas.cn; // phn
+export const cshp = phn.shp; // shp
+export const csys = bas.csy + bas.cs; // sys
+export const cunt = phn.cunt; // unt
+export const cwrd = bas.cwr + bas.cd; // wrd
+
 // Miscelanious
 export const cUTF8 = bas.cUT + bas.cF + num.c8; // UTF8
 export const cconst = phn.ccon + bas.cst; // const

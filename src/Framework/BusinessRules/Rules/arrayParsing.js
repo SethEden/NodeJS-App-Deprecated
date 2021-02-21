@@ -10,6 +10,7 @@
  * @requires module:dataBroker
  * @requires module:stringParsing
  * @requires module:basic-constants
+ * @requires module:generic-constants
  * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:messages-constants
@@ -26,6 +27,7 @@ import loggers from '../../Executrix/loggers';
 import dataBroker from '../../Executrix/dataBroker';
 import * as strParse from './stringParsing';
 import * as bas from '../../Constants/basic.constants';
+import * as gen from '../../Constants/generic.constants';
 import * as sys from '../../Constants/system.constants';
 import * as biz from '../../Constants/business.constants';
 import * as msg from '../../Constants/messages.constants';
@@ -242,7 +244,7 @@ export const doesArrayContainCharacter = function(inputData, inputMetaData) {
   let functionName = biz.cdoesArrayContainCharacter;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData && inputMetaData) {
     for (let i = 0; i < inputMetaData.length; i++) {

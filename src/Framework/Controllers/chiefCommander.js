@@ -19,14 +19,14 @@
  */
 import chiefData from '../Controllers/chiefData';
 import commandBroker from '../CommandsBlob/commandBroker';
-import queue from '../Resources/queue';
+import queue from '../Structures/queue';
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as msg from '../Constants/messages.constants';
 var path = require('path');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**

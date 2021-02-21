@@ -37,7 +37,7 @@ require('dotenv').config();
 const {NODE_ENV} = process.env;
 const prompt = require('prompt-sync')();
 var path = require('path');
-var D = require('../../Framework/Resources/data');
+var D = require('../../Framework/Structures/data');
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var baseFileName = path.basename(module.filename, path.extname(module.filename));

@@ -8,6 +8,9 @@
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/026
@@ -19,6 +22,9 @@ import loggers from './loggers';
 import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
+import * as biz from '../Constants/business.constants';
+import * as cfg from '../Constants/configurations.constants';
+import * as msg from '../Constants/messages.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -171,7 +177,7 @@ function analyzeForRegularExpression(argumentValue) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
   let returnData = false;
   let argsArrayContainsCharacterRule = [];
-  argsArrayContainsCharacterRule[0] = sys.cdoesArrayContainCharacter;
+  argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;
   let argsArrayContainsRegEx1 = ruleBroker.processRules(wrd.cregEx, argumentValue, argsArrayContainsCharacterRule);
   let argsArrayContainsRegEx2 = ruleBroker.processRules(wrd.cRegEx, argumentValue, argsArrayContainsCharacterRule);
   let argsArrayContainsColon = ruleBroker.processRules(bas.cColon, argumentValue, argsArrayContainsCharacterRule);

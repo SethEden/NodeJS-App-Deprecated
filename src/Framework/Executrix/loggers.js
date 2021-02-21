@@ -35,7 +35,7 @@ import * as cfg from '../Constants/configurations.constants';
 var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 /**
  * @function consoleLog
