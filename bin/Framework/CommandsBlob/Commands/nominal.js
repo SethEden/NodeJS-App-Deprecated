@@ -21,23 +21,29 @@ var _dataBroker = _interopRequireDefault(require("../../Executrix/dataBroker"));
 
 var _workflowBroker = _interopRequireDefault(require("../../Executrix/workflowBroker"));
 
-var _queue = _interopRequireDefault(require("../../Resources/queue"));
+var _queue = _interopRequireDefault(require("../../Structures/queue"));
 
-var _stack = _interopRequireDefault(require("../../Resources/stack"));
+var _stack = _interopRequireDefault(require("../../Structures/stack"));
 
 var _timers = _interopRequireDefault(require("../../Executrix/timers"));
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
-var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
-var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
+var gen = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
-var n = _interopRequireWildcard(require("../../Constants/numeric.constants"));
+var wrd = _interopRequireWildcard(require("../../Constants/word.constants"));
 
-var w = _interopRequireWildcard(require("../../Constants/word.constants"));
+var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
 
-var s = _interopRequireWildcard(require("../../Constants/system.constants"));
+var cmd = _interopRequireWildcard(require("../../Constants/commands.constants"));
+
+var biz = _interopRequireWildcard(require("../../Constants/business.constants"));
+
+var cfg = _interopRequireWildcard(require("../../Constants/configurations.constants"));
+
+var msg = _interopRequireWildcard(require("../../Constants/messages.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -64,6 +70,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:commands-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -81,7 +91,7 @@ var path = require('path');
 
 var math = require('mathjs');
 
-var D = require('../../../Framework/Resources/data');
+var D = require('../../../Framework/Structures/data');
 
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
@@ -96,13 +106,13 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 var echoCommand = function echoCommand(inputData, inputMetaData) {
-  var functionName = s.cechoCommand;
+  var functionName = cmd.cechoCommand;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   if (!inputData) {
     return false;
@@ -112,9 +122,9 @@ var echoCommand = function echoCommand(inputData, inputMetaData) {
 
   var returnData = true;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -133,19 +143,19 @@ var echoCommand = function echoCommand(inputData, inputMetaData) {
 exports.echoCommand = echoCommand;
 
 var exit = function exit(inputData, inputMetaData) {
-  var functionName = w.cexit;
+  var functionName = wrd.cexit;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -164,20 +174,20 @@ var exit = function exit(inputData, inputMetaData) {
 exports.exit = exit;
 
 var version = function version(inputData, inputMetaData) {
-  var functionName = w.cversion;
+  var functionName = wrd.cversion;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
-  console.log(_configurator["default"].getConfigurationSetting(s.cApplicationVersionNumber));
+  console.log(_configurator["default"].getConfigurationSetting(sys.cApplicationVersionNumber));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -196,20 +206,20 @@ var version = function version(inputData, inputMetaData) {
 exports.version = version;
 
 var about = function about(inputData, inputMetaData) {
-  var functionName = w.cabout;
+  var functionName = wrd.cabout;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
-  console.log(_configurator["default"].getConfigurationSetting(s.cApplicationDescription));
+  console.log(_configurator["default"].getConfigurationSetting(sys.cApplicationDescription));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -231,38 +241,37 @@ var about = function about(inputData, inputMetaData) {
 exports.about = about;
 
 var name = function name(inputData, inputMetaData) {
-  var functionName = w.cname;
+  var functionName = wrd.cname;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  var applicationName = _configurator["default"].getConfigurationSetting(s.cApplicationName);
+  var applicationName = _configurator["default"].getConfigurationSetting(sys.cApplicationName);
 
-  var figletFont = _configurator["default"].getConfigurationSetting(s.cFigletFont);
-
+  var figletFont = '';
   var useFancyFont = false;
   var rules = {};
-  rules[0] = s.cstringToDataType;
+  rules[0] = biz.cstringToDataType;
   useFancyFont = _ruleBroker["default"].processRules(inputData[1], '', rules);
 
   if (useFancyFont === true) {
-    figletFont = _configurator["default"].getConfigurationSetting(s.cFigletFont);
+    figletFont = _configurator["default"].getConfigurationSetting(cfg.cFigletFont);
     console.log(figlet.textSync(applicationName, {
       font: figletFont,
-      horizontalLayout: s.cfull
+      horizontalLayout: sys.cfull
     }));
   } else {
     console.log(applicationName);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -280,22 +289,22 @@ var name = function name(inputData, inputMetaData) {
 exports.name = name;
 
 var clearScreen = function clearScreen(inputData, inputMetaData) {
-  var functionName = s.cclearScreen;
+  var functionName = cmd.cclearScreen;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true; // console.clear(); // This will clear the screen, but not the cache, you can still scroll up and see the previous commands.
   // process.stdout.write('\u001B[2J\u001B[0;0f'); // Same as above
 
   process.stdout.write("\x1B[H\x1B[2J\x1B[3J");
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -313,45 +322,49 @@ var clearScreen = function clearScreen(inputData, inputMetaData) {
 exports.clearScreen = clearScreen;
 
 var deployApplication = function deployApplication(inputData, inputMetaData) {
-  var functionName = s.cdeployApplication;
+  var functionName = sys.cdeployApplication;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
+  if (_configurator["default"].getConfigurationSetting(cfg.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
     // DEPLOY APPLICATION
-    console.log(s.cDEPLOY_APPLICATION);
+    console.log(msg.cDEPLOY_APPLICATION);
 
-    var sourcePath = _configurator["default"].getConfigurationSetting(s.cSourceResourcesPath);
+    var sourcePath = _configurator["default"].getConfigurationSetting(sys.cSourceResourcesPath);
 
-    var destinationPath = _configurator["default"].getConfigurationSetting(s.cDestinationResourcesPath);
+    var destinationPath = _configurator["default"].getConfigurationSetting(sys.cDestinationResourcesPath);
 
-    var deploymentStatus = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath); // console.log('Deployment was completed: ' + deploymentStatus);
+    var deploymentStatus = _fileBroker["default"].copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
 
+    if (deploymentStatus === true) {
+      // console.log('Deployment was completed: ' + deploymentStatus);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDeploymentWasCompleted + true);
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDeploymentWasCompleted + true);
-
-    _configurator["default"].setConfigurationSetting(s.cdeploymentCompleted, true);
+      _configurator["default"].setConfigurationSetting(cfg.cdeploymentCompleted, true);
+    } else {
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDeploymentFailed);
+    }
   } else {
-    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+    if (_configurator["default"].getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
       // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
-      console.log(s.cdeployApplicationMessage1a + s.cdeployApplicationMessage2a);
+      console.log(msg.cdeployApplicationMessage1a + msg.cdeployApplicationMessage2a);
     }
 
-    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+    if (_configurator["default"].getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === false) {
       // ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.
-      console.log(s.cdeployApplicationMessage1b + s.cdeployApplicationMessage2a);
+      console.log(msg.cdeployApplicationMessage1b + msg.cdeployApplicationMessage2a);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -369,13 +382,13 @@ var deployApplication = function deployApplication(inputData, inputMetaData) {
 exports.deployApplication = deployApplication;
 
 var deployMetaData = function deployMetaData(inputData, inputMetaData) {
-  var functionName = s.cdeployMetaData;
+  var functionName = sys.cdeployMetaData;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   returnData = true;
@@ -386,40 +399,40 @@ var deployMetaData = function deployMetaData(inputData, inputMetaData) {
     var aggregateCommandString = '';
     var getAttributeNameRule = [];
     var getAttributeValueRule = [];
-    getAttributeNameRule[0] = s.cgetAttributeName;
-    getAttributeValueRule[0] = s.cgetAttributeValue;
+    getAttributeNameRule[0] = biz.cgetAttributeName;
+    getAttributeValueRule[0] = biz.cgetAttributeValue;
     inputData.shift(); // Remove the first element of the array, because that is what is used to call this command.
 
-    var metaDataParameters = inputData.join(b.cSpace).split(b.cComa); // metaDataParameters is:
+    var metaDataParameters = inputData.join(bas.cSpace).split(bas.cComa); // metaDataParameters is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersIs + JSON.stringify(metaDataParameters)); // metaDataParameters length is:
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cmetaDataParametersIs + JSON.stringify(metaDataParameters)); // metaDataParameters length is:
 
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataParametersLengthIs + metaDataParameters.length);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cmetaDataParametersLengthIs + metaDataParameters.length);
 
     var metaDataOutput = {};
 
     for (var i = 0; i < metaDataParameters.length; i++) {
       var attributeJsonString = metaDataParameters[i]; // attributeJsonString is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cattributeJsonStringIs + attributeJsonString);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeJsonStringIs + attributeJsonString);
 
       var appAttributeName = _ruleBroker["default"].processRules(attributeJsonString, '', getAttributeNameRule); // appAttributeName is:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cappAttributeNameIs + appAttributeName);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cappAttributeNameIs + appAttributeName);
 
       var appAttributeValue = _ruleBroker["default"].processRules(attributeJsonString, '', getAttributeValueRule); // appAttributeValue is:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cappAttributeValueIs + appAttributeValue);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cappAttributeValueIs + appAttributeValue);
 
-      if (appAttributeName.includes(w.cName) === true) {
-        _configurator["default"].setConfigurationSetting(s.cApplicationName, appAttributeValue);
-      } else if (appAttributeName.includes(w.cVersion) === true) {
-        _configurator["default"].setConfigurationSetting(s.cApplicationVersionNumber, appAttributeValue);
-      } else if (appAttributeName.includes(w.cDescription) === true) {
-        _configurator["default"].setConfigurationSetting(s.cApplicationDescription, appAttributeValue);
+      if (appAttributeName.includes(wrd.cName) === true) {
+        _configurator["default"].setConfigurationSetting(sys.cApplicationName, appAttributeValue);
+      } else if (appAttributeName.includes(wrd.cVersion) === true) {
+        _configurator["default"].setConfigurationSetting(sys.cApplicationVersionNumber, appAttributeValue);
+      } else if (appAttributeName.includes(wrd.cDescription) === true) {
+        _configurator["default"].setConfigurationSetting(sys.cApplicationDescription, appAttributeValue);
       } else {
         _configurator["default"].setConfigurationSetting(appAttributeName, appAttributeValue);
       }
@@ -427,18 +440,18 @@ var deployMetaData = function deployMetaData(inputData, inputMetaData) {
       metaDataOutput[appAttributeName] = appAttributeValue;
     }
 
-    var metaDataPathAndFilename = _configurator["default"].getConfigurationSetting(s.cConfigurationPath);
+    var metaDataPathAndFilename = _configurator["default"].getConfigurationSetting(sys.cConfigurationPath);
 
-    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + s.cmetaDataDotJson); // metaDataPathAndFilename is:
+    metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + cfg.cmetaDataDotJson); // metaDataPathAndFilename is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cmetaDataPathAndFilenameIs + metaDataPathAndFilename);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cmetaDataPathAndFilenameIs + metaDataPathAndFilename);
 
     _fileBroker["default"].writeJsonData(metaDataPathAndFilename, metaDataOutput);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -460,45 +473,49 @@ var deployMetaData = function deployMetaData(inputData, inputMetaData) {
 exports.deployMetaData = deployMetaData;
 
 var releaseApplication = function releaseApplication(inputData, inputMetaData) {
-  var functionName = s.creleaseApplication;
+  var functionName = sys.creleaseApplication;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === true) {
+  if (_configurator["default"].getConfigurationSetting(cfg.cPassAllConstantsValidations) === true && _configurator["default"].getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
     // RELEASE APPLICATION
-    console.log(s.cRELEASE_APPLICATION);
+    console.log(msg.cRELEASE_APPLICATION);
 
-    var sourcePath = _configurator["default"].getConfigurationSetting(s.cBinaryRootPath);
+    var sourcePath = _configurator["default"].getConfigurationSetting(sys.cBinaryRootPath);
 
-    var destinationPath = _configurator["default"].getConfigurationSetting(s.cBinaryReleasePath);
+    var destinationPath = _configurator["default"].getConfigurationSetting(sys.cBinaryReleasePath);
 
-    var releaseResult = _fileBroker["default"].buildReleasePackage(sourcePath, destinationPath); // console.log('Release was completed: ' + releaseResult);
+    var releaseResult = _fileBroker["default"].buildReleasePackage(sourcePath, destinationPath);
 
+    if (releaseResult === true) {
+      // console.log('Release was completed: ' + releaseResult);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBuildMessage2 + true);
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBuildMessage2 + true);
-
-    _configurator["default"].setConfigurationSetting(s.creleaseCompleted, true);
+      _configurator["default"].setConfigurationSetting(cfg.creleaseCompleted, true);
+    } else {
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cReleaseFailed);
+    }
   } else {
-    if (_configurator["default"].getConfigurationSetting(s.cPassAllConstantsValidations) === false) {
+    if (_configurator["default"].getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
       // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
-      console.log(s.cdeployApplicationMessage1a + s.cdeployApplicationMessage2a);
+      console.log(msg.cdeployApplicationMessage1a + msg.cdeployApplicationMessage2a);
     }
 
-    if (_configurator["default"].getConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks) === false) {
+    if (_configurator["default"].getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === false) {
       // ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.
-      console.log(s.cdeployApplicationMessage1b + s.cdeployApplicationMessage2a);
+      console.log(msg.cdeployApplicationMessage1b + msg.cdeployApplicationMessage2a);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -518,21 +535,21 @@ var releaseApplication = function releaseApplication(inputData, inputMetaData) {
 exports.releaseApplication = releaseApplication;
 
 var help = function help(inputData, inputMetaData) {
-  var functionName = w.chelp;
+  var functionName = wrd.chelp;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandsAliases][w.cCommand], [w.cName, w.cDescription]);
+  _loggers["default"].consoleTableLog(baseFileName + bas.cDot + functionName, D[sys.cCommandsAliases][wrd.cCommand], [wrd.cName, wrd.cDescription]);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -552,21 +569,21 @@ var help = function help(inputData, inputMetaData) {
 exports.help = help;
 
 var workflowHelp = function workflowHelp(inputData, inputMetaData) {
-  var functionName = s.cworkflowHelp;
+  var functionName = cmd.cworkflowHelp;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  _loggers["default"].consoleTableLog(baseFileName + b.cDot + functionName, D[s.cCommandWorkflows][w.cWorkflow], [w.cName]);
+  _loggers["default"].consoleTableLog(baseFileName + bas.cDot + functionName, D[sys.cCommandWorkflows][wrd.cWorkflow], [wrd.cName]);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -591,30 +608,30 @@ var workflowHelp = function workflowHelp(inputData, inputMetaData) {
 exports.workflowHelp = workflowHelp;
 
 var commandSequencer = function commandSequencer(inputData, inputMetaData) {
-  var functionName = s.ccommandSequencer;
+  var functionName = cmd.ccommandSequencer;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
   for (var i = 1; i < inputData.length; i++) {
-    var commandString = inputData[i]; // b.cli + b.cmi + b.ct;
+    var commandString = inputData[i]; // bas.cli + bas.cmi + bas.ct;
 
-    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter); // console.log('primaryCommandDelimiter is: ' + primaryCommandDelimiter);
+    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(cfg.cPrimaryCommandDelimiter); // console.log('primaryCommandDelimiter is: ' + primaryCommandDelimiter);
 
 
     if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
-      primaryCommandDelimiter = b.cSpace;
+      primaryCommandDelimiter = bas.cSpace;
     }
 
-    var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter); // console.log('secondaryCommandDelimiter is: ' + secondaryCommandArgsDelimiter);
+    var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(cfg.cSecondaryCommandDelimiter); // console.log('secondaryCommandDelimiter is: ' + secondaryCommandArgsDelimiter);
 
 
-    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter); // console.log('tertiaryCommandDelimiter is: ' + tertiaryCommandDelimiter);
+    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(cfg.cTertiaryCommandDelimiter); // console.log('tertiaryCommandDelimiter is: ' + tertiaryCommandDelimiter);
     // Replace 2nd & 3rd level delimiters and down-increment them so we are dealing with command strings that can actually be executed.
 
 
@@ -623,7 +640,7 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
 
     var currentCommand = _commandBroker["default"].getValidCommand(commandString, primaryCommandDelimiter);
 
-    var commandArgs = _commandBroker["default"].getCommandArgs(commandString, primaryCommandDelimiter); // We need to recompose the command arguments for the current command using the s.cPrimaryCommandDelimiter.
+    var commandArgs = _commandBroker["default"].getCommandArgs(commandString, primaryCommandDelimiter); // We need to recompose the command arguments for the current command using the sys.cPrimaryCommandDelimiter.
 
 
     if (currentCommand !== false) {
@@ -631,16 +648,16 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
         currentCommand = currentCommand + primaryCommandDelimiter + commandArgs[j];
       }
 
-      _queue["default"].enqueue(s.cCommandQueue, currentCommand);
+      _queue["default"].enqueue(sys.cCommandQueue, currentCommand);
     } else {
       // WARNING: nominal.commandSequencer: The specified command was not found, please enter a valid command and try again.
-      console.log(s.ccommandSequencerMessage1 + s.ccommandSequencerMessage2);
+      console.log(msg.ccommandSequencerMessage1 + msg.ccommandSequencerMessage2);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -664,13 +681,13 @@ var commandSequencer = function commandSequencer(inputData, inputMetaData) {
 exports.commandSequencer = commandSequencer;
 
 var workflow = function workflow(inputData, inputMetaData) {
-  var functionName = w.cworkflow;
+  var functionName = wrd.cworkflow;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var workflowName = inputData[1];
@@ -678,14 +695,14 @@ var workflow = function workflow(inputData, inputMetaData) {
   var workflowValue = _workflowBroker["default"].getWorkflow(workflowName);
 
   if (workflowValue !== false) {
-    _queue["default"].enqueue(s.cCommandQueue, workflowValue);
+    _queue["default"].enqueue(sys.cCommandQueue, workflowValue);
   } else {
-    console.log(s.cworkflowMessage1 + workflowName + b.cComa + s.cworkflowMessage2 + s.cworkflowMessage3);
+    console.log(msg.cworkflowMessage1 + workflowName + bas.cComa + msg.cworkflowMessage2 + msg.cworkflowMessage3);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -711,50 +728,50 @@ var workflow = function workflow(inputData, inputMetaData) {
 exports.workflow = workflow;
 
 var printDataHive = function printDataHive(inputData, inputMetaData) {
-  var functionName = s.cprintDataHive;
+  var functionName = cmd.cprintDataHive;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  if (inputData[1].includes(b.cDot) === true) {
-    var dataHivePathArray = inputData[1].split(b.cDot);
+  if (inputData && inputData[1].includes(bas.cDot) === true) {
+    var dataHivePathArray = inputData[1].split(bas.cDot);
     var leafDataHiveElement = D; // dataHivePathArray is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray)); // This for-loop should let us drill down in the D-Data structure following the path that was provided.
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray)); // This for-loop should let us drill down in the D-Data structure following the path that was provided.
     // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
 
 
     for (var i = 0; i < dataHivePathArray.length; i++) {
       // BEGIN i-th iteration:
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
 
       leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]]; // contents of leafDataHiveElement is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement)); // END i-th iteration:
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement)); // END i-th iteration:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
     }
 
-    console.log(inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
+    console.log(inputData[1] + bas.cSpace + msg.ccontentsAre + JSON.stringify(leafDataHiveElement));
   } else {
     if (D[inputData[1]] !== undefined) {
       // contents are:
-      console.log(inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(D[inputData[1]]));
+      console.log(inputData[1] + bas.cSpace + msg.ccontentsAre + JSON.stringify(D[inputData[1]]));
     } else {
       // contents of D are:
-      console.log(s.ccontentsOfDare + JSON.stringify(D));
+      console.log(msg.ccontentsOfDare + JSON.stringify(D));
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -776,38 +793,38 @@ var printDataHive = function printDataHive(inputData, inputMetaData) {
 exports.printDataHive = printDataHive;
 
 var printDataHiveAttributes = function printDataHiveAttributes(inputData, inputMetaData) {
-  var functionName = s.cprintDataHiveAttributes;
+  var functionName = cmd.cprintDataHiveAttributes;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
   if (inputData && inputData.length > 1) {
-    if (inputData[1].includes(b.cDot) === true) {
-      var dataHivePathArray = inputData[1].split(b.cDot);
+    if (inputData[1].includes(bas.cDot) === true) {
+      var dataHivePathArray = inputData[1].split(bas.cDot);
       var leafDataHiveElement = D; // dataHivePathArray is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray)); // This for-loop should let us drill down in the D-Data structure following the path that was provided.
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray)); // This for-loop should let us drill down in the D-Data structure following the path that was provided.
       // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
       // Make sure we don't try to grab the very last term of the namespace. See note below.
 
 
       for (var i = 0; i < dataHivePathArray.length - 1; i++) {
         // BEGIN i-th iteration:
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
 
         leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]]; // contents of leafDataHiveElement is:
-        // loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
+        // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
         // END i-th iteration:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
       }
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, inputData[1] + b.cSpace + s.ccontentsAre + JSON.stringify(leafDataHiveElement));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, inputData[1] + bas.cSpace + msg.ccontentsAre + JSON.stringify(leafDataHiveElement));
 
       var attributeName = dataHivePathArray[dataHivePathArray.length - 1];
 
@@ -818,13 +835,13 @@ var printDataHiveAttributes = function printDataHiveAttributes(inputData, inputM
           var dataEntry = leafDataHiveElement[j];
 
           if (dataEntry) {
-            if (attributeName.toLowerCase() === w.centity) {
+            if (attributeName.toLowerCase() === wrd.centity) {
               // entity is:
-              console.log(s.centryIs + JSON.stringify(dataEntry));
+              console.log(msg.centryIs + JSON.stringify(dataEntry));
             } else {
               if (dataEntry[attributeName]) {
                 // attributeValue is:
-                console.log(s.cattributeValueIs + dataEntry[attributeName]);
+                console.log(msg.cattributeValueIs + dataEntry[attributeName]);
               }
             }
           }
@@ -832,18 +849,18 @@ var printDataHiveAttributes = function printDataHiveAttributes(inputData, inputM
       } else {
         var leafDataHiveElementKeys2 = Object.keys(leafDataHiveElement);
         leafDataHiveElementKeys2.forEach(function (key2) {
-          if (attributeName.toLowerCase() === w.ckey) {
+          if (attributeName.toLowerCase() === wrd.ckey) {
             // key2 is:
-            console.log(s.ckey2Is + key2);
-          } else if (attributeName.toLowerCase() === w.centity) {
+            console.log(msg.ckey2Is + key2);
+          } else if (attributeName.toLowerCase() === wrd.centity) {
             // entity is:
-            console.log(s.centityIs + JSON.stringify(leafDataHiveElement[key2]));
+            console.log(msg.centityIs + JSON.stringify(leafDataHiveElement[key2]));
           } else {
             var dataEntry2 = leafDataHiveElement[key2];
 
             if (dataEntry2) {
               // attributeValue is:
-              console.log(s.cattributeValueIs + dataEntry2[attributeName]);
+              console.log(msg.cattributeValueIs + dataEntry2[attributeName]);
             }
           }
         });
@@ -851,16 +868,16 @@ var printDataHiveAttributes = function printDataHiveAttributes(inputData, inputM
     } else {
       // This is the case that the user has probably just specified a single data hive
       // that might not have specific attribute names such as the configuration data.
-      console.log(s.cprintDataHiveAttributesMessage1 + s.cprintDataHiveAttributesMessage2);
+      console.log(msg.cprintDataHiveAttributesMessage1 + msg.cprintDataHiveAttributesMessage2);
     }
   } else {
     // ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.
-    console.log(s.cprintDataHiveAttributesMessage3);
+    console.log(msg.cprintDataHiveAttributesMessage3);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -876,21 +893,21 @@ var printDataHiveAttributes = function printDataHiveAttributes(inputData, inputM
 exports.printDataHiveAttributes = printDataHiveAttributes;
 
 var clearDataStorage = function clearDataStorage(inputData, inputMetaData) {
-  var functionName = s.cclearDataStorage;
+  var functionName = cmd.cclearDataStorage;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
   _dataBroker["default"].clearData('');
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -921,30 +938,30 @@ var clearDataStorage = function clearDataStorage(inputData, inputMetaData) {
 exports.clearDataStorage = clearDataStorage;
 
 var businessRule = function businessRule(inputData, inputMetaData) {
-  var functionName = s.cbusinessRule;
+  var functionName = cmd.cbusinessRule;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
+  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
 
   var rules = [];
   var ruleInputData, ruleInputMetaData;
   var ruleOutput = '';
   var argsArrayContainsCharacterRule = [];
   var removeBracketsFromArgsArrayRule = [];
-  argsArrayContainsCharacterRule[0] = s.cdoesArrayContainCharacter;
-  removeBracketsFromArgsArrayRule[0] = s.cremoveCharacterFromArray;
+  argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;
+  removeBracketsFromArgsArrayRule[0] = biz.cremoveCharacterFromArray;
   var addedARule = false;
 
-  var businessRuleOutput = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRuleOutput);
+  var businessRuleOutput = _configurator["default"].getConfigurationSetting(cfg.cEnableBusinessRuleOutput);
 
-  var businessRuleMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRulePerformanceMetrics);
+  var businessRuleMetricsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableBusinessRulePerformanceMetrics);
 
   var businessRuleStartTime = '';
   var businessRuleEndTime = '';
@@ -953,12 +970,12 @@ var businessRule = function businessRule(inputData, inputMetaData) {
 
   for (var i = 1; i < inputData.length; i++) {
     // Begin the i-th iteration of the inputData array. i is:
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIterationOfInputDataArray + i);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIterationOfInputDataArray + i);
 
     var currentRuleArg = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
     // currentRule is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentRuleIs + JSON.stringify(currentRuleArg));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentRuleIs + JSON.stringify(currentRuleArg));
 
     var ruleArgs = [];
 
@@ -977,43 +994,43 @@ var businessRule = function businessRule(inputData, inputMetaData) {
   } // rules is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.crulesIs + JSON.stringify(rules)); // ruleInputData is:
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.crulesIs + JSON.stringify(rules)); // ruleInputData is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cruleInputDataIs + ruleInputData); // ruleInputMetaData is:
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cruleInputDataIs + ruleInputData); // ruleInputMetaData is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cruleInputMetaData + JSON.stringify(ruleInputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cruleInputMetaData + JSON.stringify(ruleInputMetaData));
 
   if (businessRuleMetricsEnabled === true) {
     // Here we will capture the start time of the business rule we are about to execute.
     // After executing we will capture the end time and then
     // compute the difference to determine how many milliseconds it took to run the business rule.
-    businessRuleStartTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS); // Business Rule Start time is:
+    businessRuleStartTime = _timers["default"].getNowMoment(gen.cYYYYMMDD_HHmmss_SSS); // Business Rule Start time is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBusinessRuleStartTimeIs + businessRuleStartTime);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBusinessRuleStartTimeIs + businessRuleStartTime);
   }
 
   ruleOutput = _ruleBroker["default"].processRules(ruleInputData, ruleInputMetaData, rules);
 
   if (businessRuleMetricsEnabled === true) {
     var performanceTrackingObject = {};
-    businessRuleEndTime = _timers["default"].getNowMoment(g.cYYYYMMDD_HHmmss_SSS); // BusinessRule End time is:
+    businessRuleEndTime = _timers["default"].getNowMoment(gen.cYYYYMMDD_HHmmss_SSS); // BusinessRule End time is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBusinessRuleEndTimeIs + businessRuleEndTime); // Now compute the delta time so we know how long it took to run that business rule.
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBusinessRuleEndTimeIs + businessRuleEndTime); // Now compute the delta time so we know how long it took to run that business rule.
 
 
     businessRuleDeltaTime = _timers["default"].computeDeltaTime(businessRuleStartTime, businessRuleEndTime); // BusinessRule run-time is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBusinessRuleRunTimeIs + businessRuleDeltaTime); // Check to make sure the business rule performance tracking stack exists or does not exist.
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBusinessRuleRunTimeIs + businessRuleDeltaTime); // Check to make sure the business rule performance tracking stack exists or does not exist.
 
 
-    if (D[s.cBusinessRulePerformanceTrackingStack] === undefined) {
-      _stack["default"].initStack(s.cBusinessRulePerformanceTrackingStack);
+    if (D[cfg.cBusinessRulePerformanceTrackingStack] === undefined) {
+      _stack["default"].initStack(cfg.cBusinessRulePerformanceTrackingStack);
     }
 
-    if (D[s.cBusinessRuleNamesPerformanceTrackingStack] === undefined) {
-      _stack["default"].initStack(s.cBusinessRuleNamesPerformanceTrackingStack);
+    if (D[cfg.cBusinessRuleNamesPerformanceTrackingStack] === undefined) {
+      _stack["default"].initStack(cfg.cBusinessRuleNamesPerformanceTrackingStack);
     }
 
     performanceTrackingObject = {
@@ -1021,27 +1038,27 @@ var businessRule = function businessRule(inputData, inputMetaData) {
       RunTime: businessRuleDeltaTime
     };
 
-    if (_stack["default"].contains(s.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
-      _stack["default"].push(s.cBusinessRuleNamesPerformanceTrackingStack, rules[0]);
+    if (_stack["default"].contains(cfg.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
+      _stack["default"].push(cfg.cBusinessRuleNamesPerformanceTrackingStack, rules[0]);
     }
 
-    _stack["default"].push(s.cBusinessRulePerformanceTrackingStack, performanceTrackingObject); // stack.print(s.cBusinessRulePerformanceTrackingStack);
-    // stack.print(s.cBusinessRuleNamesPerformanceTrackingStack);
+    _stack["default"].push(cfg.cBusinessRulePerformanceTrackingStack, performanceTrackingObject); // stack.print(cfg.cBusinessRulePerformanceTrackingStack);
+    // stack.print(cfg.cBusinessRuleNamesPerformanceTrackingStack);
 
   }
 
   if (businessRuleOutput === true) {
     // Rule output is:
-    console.log(s.cRuleOutputIs + JSON.stringify(ruleOutput));
+    console.log(msg.cRuleOutputIs + JSON.stringify(ruleOutput));
   }
 
   businessRuleStartTime = '';
   businessRuleEndTime = '';
   businessRuleDeltaTime = '';
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1065,27 +1082,27 @@ var businessRule = function businessRule(inputData, inputMetaData) {
 exports.businessRule = businessRule;
 
 var commandGenerator = function commandGenerator(inputData, inputMetaData) {
-  var functionName = s.ccommandGenerator;
+  var functionName = cmd.ccommandGenerator;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var replaceCharacterWithCharacterRule = [];
-  replaceCharacterWithCharacterRule[0] = s.creplaceCharacterWithCharacter;
+  replaceCharacterWithCharacterRule[0] = biz.creplaceCharacterWithCharacter;
 
-  var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
+  var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
 
   if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
-    primaryCommandDelimiter = b.cSpace;
+    primaryCommandDelimiter = bas.cSpace;
   }
 
-  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
+  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
 
-  var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter);
+  var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
 
   var commandString = inputData[1]; // NOTE: The str.replace only replaces the first instance of a string value, not all values.
   // but we might have another issue in the sense that if the string begins and ends with "[" & "]" respectively,
@@ -1096,20 +1113,20 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
   // commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
   // commandString before attempted delimiter swap is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandStringBeforeAttemptedDelimiterSwapIs + commandString); // replaceCharacterWithCharacterRule is:
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringBeforeAttemptedDelimiterSwapIs + commandString); // replaceCharacterWithCharacterRule is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creplaceCharacterWithCharacterRuleIs + JSON.stringify(replaceCharacterWithCharacterRule));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creplaceCharacterWithCharacterRuleIs + JSON.stringify(replaceCharacterWithCharacterRule));
 
   var secondaryCommandDelimiterRegEx = new RegExp('\\' + secondaryCommandArgsDelimiter, 'g');
   commandString = _ruleBroker["default"].processRules(commandString, [secondaryCommandDelimiterRegEx, primaryCommandDelimiter], replaceCharacterWithCharacterRule); // After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandGeneratorMessage1 + commandString);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandGeneratorMessage1 + commandString);
 
   var tertiaryCommandDelimiterRegEx = new RegExp('\\' + tertiaryCommandDelimiter, 'g');
   commandString = _ruleBroker["default"].processRules(commandString, [tertiaryCommandDelimiterRegEx, secondaryCommandArgsDelimiter], replaceCharacterWithCharacterRule); // After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandArgsDelimiter commandString is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandGeneratorMessage2 + commandString);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandGeneratorMessage2 + commandString);
 
   var currentCommand = _commandBroker["default"].getValidCommand(commandString, primaryCommandDelimiter);
 
@@ -1122,25 +1139,25 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
 
       if (numberOfCommands > 0) {
         for (var i = 0; i < numberOfCommands; i++) {
-          _queue["default"].enqueue(s.cCommandQueue, commandString);
+          _queue["default"].enqueue(sys.cCommandQueue, commandString);
         }
       } else {
         // WARNING: nominal.commandGenerator: Must enter a number greater than 0, number entered:
-        console.log(s.ccommandGeneratorMessage3 + numberOfCommands);
+        console.log(msg.ccommandGeneratorMessage3 + numberOfCommands);
       }
     } else {
       // WARNING: nominal.commandGenerator: Number entered for the number of commands to generate is not a number:
-      console.log(s.ccommandGeneratorMessage4 + inputData[2]);
+      console.log(msg.ccommandGeneratorMessage4 + inputData[2]);
     }
   } else {
     // WARNING: nominal.commandGenerator: The specified command:
     // was not found, please enter a valid command and try again.
-    console.log(s.ccommandGeneratorMessage5 + commandString + s.ccommandGeneratorMessage6);
+    console.log(msg.ccommandGeneratorMessage5 + commandString + msg.ccommandGeneratorMessage6);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1161,13 +1178,13 @@ var commandGenerator = function commandGenerator(inputData, inputMetaData) {
 exports.commandGenerator = commandGenerator;
 
 var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaData) {
-  var functionName = s.ccommandAliasGenerator;
+  var functionName = cmd.ccommandAliasGenerator;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var commandName = '';
@@ -1180,55 +1197,55 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
   var camelCaseToArrayRule = [];
   var commandWordAliasListParsingRule = [];
   var generateCommandAliasesRule = [];
-  commandNameParsingRule[0] = s.cisValidCommandNameString;
-  camelCaseToArrayRule[0] = s.cconvertCamelCaseStringToArray;
-  commandWordAliasListParsingRule[0] = s.cisStringList;
-  generateCommandAliasesRule[0] = s.cgenerateCommandAliases; // Command can be called by passing parameters and bypass the prompt system.
+  commandNameParsingRule[0] = biz.cisValidCommandNameString;
+  camelCaseToArrayRule[0] = biz.cconvertCamelCaseStringToArray;
+  commandWordAliasListParsingRule[0] = biz.cisStringList;
+  generateCommandAliasesRule[0] = biz.cgenerateCommandAliases; // Command can be called by passing parameters and bypass the prompt system.
 
-  console.log(s.ccommandAliasGeneratorMessage1); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
+  console.log(msg.ccommandAliasGeneratorMessage1); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
 
-  console.log(s.ccommandAliasGeneratorMessage2);
+  console.log(msg.ccommandAliasGeneratorMessage2);
 
   if (inputData.length === 0) {
     while (validCommandName === false) {
-      console.log(s.cCommandNamePrompt1);
-      console.log(s.cCommandNamePrompt2);
-      console.log(s.cCommandNamePrompt3);
-      console.log(s.cCommandNamePrompt4);
-      console.log(s.cCommandNamePrompt5);
-      commandName = prompt(b.cGreaterThan);
+      console.log(sys.cCommandNamePrompt1);
+      console.log(sys.cCommandNamePrompt2);
+      console.log(sys.cCommandNamePrompt3);
+      console.log(sys.cCommandNamePrompt4);
+      console.log(sys.cCommandNamePrompt5);
+      commandName = prompt(bas.cGreaterThan);
       validCommandName = _ruleBroker["default"].processRules(commandName, '', commandNameParsingRule);
 
       if (validCommandName === false) {
         // INVALID INPUT: Please enter a valid camel-case command name.
-        console.log(s.ccommandAliasGeneratorMessage3);
+        console.log(msg.ccommandAliasGeneratorMessage3);
       }
     }
 
     var camelCaseCommandNameArray = _ruleBroker["default"].processRules(commandName, '', camelCaseToArrayRule); // camelCaseCommandNameArray is:
 
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccamelCaseCommandNameArrayIs + JSON.stringify(camelCaseCommandNameArray));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccamelCaseCommandNameArrayIs + JSON.stringify(camelCaseCommandNameArray));
 
     for (var i = 0; i < camelCaseCommandNameArray.length; i++) {
       var commandWord = camelCaseCommandNameArray[i]; // current commandWord is:
 
-      console.log(s.ccurrentCommandWordIs + commandWord);
+      console.log(msg.ccurrentCommandWordIs + commandWord);
       validCommandWordAliasList = false;
 
       if (commandWord != '') {
         commandAliasDataStructure[commandWord] = {};
 
         while (validCommandWordAliasList === false) {
-          console.log(s.cCommandWordAliasPrompt1);
-          console.log(s.cCommandWordAliasPrompt2);
-          console.log(s.cCommandWordAliasPrompt3 + b.cSpace + commandWord);
-          commandWordAliasList = prompt(b.cGreaterThan);
+          console.log(msg.cCommandWordAliasPrompt1);
+          console.log(msg.cCommandWordAliasPrompt2);
+          console.log(msg.cCommandWordAliasPrompt3 + bas.cSpace + commandWord);
+          commandWordAliasList = prompt(bas.cGreaterThan);
           validCommandWordAliasList = _ruleBroker["default"].processRules(commandWordAliasList, '', commandWordAliasListParsingRule);
 
           if (validCommandWordAliasList === false) {
             // INVALID INPUT: Please enter a valid command word alias list.
-            console.log(s.ccommandAliasGeneratorMessage4);
+            console.log(msg.ccommandAliasGeneratorMessage4);
           } else if (commandWordAliasList != '') {
             // As long as the user entered something we should be able to proceed!
             validCommandWordAliasList = true;
@@ -1246,22 +1263,22 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
       validCommandInput = true;
     } catch (e) {
       // PARSER ERROR:
-      console.log(s.cPARSER_ERROR + e.message); // INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.
+      console.log(msg.cPARSER_ERROR + e.message); // INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.
 
-      console.log(s.ccommandAliasGeneratorMessage5); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
+      console.log(msg.ccommandAliasGeneratorMessage5); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
 
-      console.log(s.ccommandAliasGeneratorMessage2);
+      console.log(msg.ccommandAliasGeneratorMessage2);
     }
   } else {
     // INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.
-    console.log(s.ccommandAliasGeneratorMessage5); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
+    console.log(msg.ccommandAliasGeneratorMessage5); // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
 
-    console.log(s.ccommandAliasGeneratorMessage2);
+    console.log(msg.ccommandAliasGeneratorMessage2);
   }
 
   if (validCommandInput === true) {
     // ccommandAliasDataStructure is:
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandAliasDataStructureIs + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandAliasDataStructureIs + JSON.stringify(commandAliasDataStructure)); // At this point the user should have entered all valid data and we should be ready to proceed.
     // TODO: Start generating all the possible combinations of the command words and command word aliases.
     // Pass the data object to a business rule to do the above task.
 
@@ -1269,9 +1286,9 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
     var commandAliases = _ruleBroker["default"].processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1291,13 +1308,13 @@ var commandAliasGenerator = function commandAliasGenerator(inputData, inputMetaD
 exports.commandAliasGenerator = commandAliasGenerator;
 
 var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
-  var functionName = s.cconstantsGenerator;
+  var functionName = cmd.cconstantsGenerator;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var validEntry = false;
@@ -1309,25 +1326,25 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
   var wordsCountRule = [];
   var wordsArrayRule = [];
   var recombineArrayInputRule = [];
-  validConstantRule[0] = s.cisConstantValid;
-  doesConstantExistRule[0] = s.cdoesConstantExist;
-  getConstantTypeRule[0] = s.cgetConstantType;
-  constantsFulfillmentSystemRule[0] = s.cconstantsFulfillmentSystem;
-  wordsCountRule[0] = s.cgetWordCountInString;
-  wordsArrayRule[0] = s.cgetWordsArrayFromString;
-  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
+  validConstantRule[0] = biz.cisConstantValid;
+  doesConstantExistRule[0] = biz.cdoesConstantExist;
+  getConstantTypeRule[0] = biz.cgetConstantType;
+  constantsFulfillmentSystemRule[0] = biz.cconstantsFulfillmentSystem;
+  wordsCountRule[0] = biz.cgetWordCountInString;
+  wordsArrayRule[0] = biz.cgetWordsArrayFromString;
+  recombineArrayInputRule[0] = biz.crecombineStringArrayWithSpaces;
 
   if (inputData.length === 0) {
     while (validEntry === false) {
-      console.log(s.cConstantPrompt1);
-      console.log(s.cConstantPrompt2);
-      console.log(s.cConstantPrompt3);
-      userDefinedConstant = prompt(b.cGreaterThan);
+      console.log(msg.cConstantPrompt1);
+      console.log(msg.cConstantPrompt2);
+      console.log(msg.cConstantPrompt3);
+      userDefinedConstant = prompt(bas.cGreaterThan);
       validEntry = _ruleBroker["default"].processRules(userDefinedConstant, '', validConstantRule);
 
       if (validEntry === false) {
         // INVALID INPUT: Please enter a valid constant value that contains more than 4 characters.
-        console.log(s.cconstantsGeneratorMessage1);
+        console.log(msg.cconstantsGeneratorMessage1);
       }
     }
   } else if (inputData.length === 2) {
@@ -1338,7 +1355,7 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
   } // userDefinedConstant is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantIs + userDefinedConstant); // First lets check if the constant is already defined, so we can warn the user.
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantIs + userDefinedConstant); // First lets check if the constant is already defined, so we can warn the user.
   // NOTE: It could be that the developer is just looking to optimize the existing constant,
   // but if not, a warning to the user would be a good idea!
 
@@ -1349,7 +1366,7 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
     var constantType = _ruleBroker["default"].processRules(userDefinedConstant, '', getConstantTypeRule); // WARNING: The constant has already been defined in the following library(ies):
 
 
-    console.log(s.cconstantsGeneratorMessage2 + constantType);
+    console.log(msg.cconstantsGeneratorMessage2 + constantType);
   }
 
   userDefinedConstant = userDefinedConstant.trim();
@@ -1357,28 +1374,28 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
   var wordCount = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsCountRule); // wordCount is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cwordCountIs + wordCount); // Now begin the fulfillment algorithm.
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cwordCountIs + wordCount); // Now begin the fulfillment algorithm.
 
 
   if (wordCount > 1) {
     var wordsArray = _ruleBroker["default"].processRules(userDefinedConstant, '', wordsArrayRule); // wordsArray is:
 
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cwordsArrayIs + JSON.stringify(wordsArray));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cwordsArrayIs + JSON.stringify(wordsArray));
 
     for (var j = 0; j < wordsArray.length; j++) {
       // Optimized constant definition for word:
-      console.log(s.cOptimizedConstantDefinitionForWord + b.cc + wordsArray[j] + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
+      console.log(msg.cOptimizedConstantDefinitionForWord + bas.cc + wordsArray[j] + bas.cSpace + bas.cEqual + bas.cSpace + _ruleBroker["default"].processRules(wordsArray[j].trim(), wordsArray[j].trim(), constantsFulfillmentSystemRule));
     }
   } else {
     // output a proper line of code:
-    // export const csomething = w.csome + w.cthing; // something
-    console.log(w.cexport + b.cSpace + g.cconst + b.cSpace + b.cc + userDefinedConstant + b.cSpace + b.cEqual + b.cSpace + _ruleBroker["default"].processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule) + b.cSemiColon + b.cSpace + b.cDoubleForwardSlash + b.cSpace + userDefinedConstant);
+    // export const csomething = wrd.csome + wrd.cthing; // something
+    console.log(wrd.cexport + bas.cSpace + gen.cconst + bas.cSpace + bas.cc + userDefinedConstant + bas.cSpace + bas.cEqual + bas.cSpace + _ruleBroker["default"].processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule) + bas.cSemiColon + bas.cSpace + bas.cDoubleForwardSlash + bas.cSpace + userDefinedConstant);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1399,33 +1416,33 @@ var constantsGenerator = function constantsGenerator(inputData, inputMetaData) {
 exports.constantsGenerator = constantsGenerator;
 
 var constantsGeneratorList = function constantsGeneratorList(inputData, inputMetaData) {
-  var functionName = s.cconstantsGeneratorList;
+  var functionName = cmd.cconstantsGeneratorList;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var validEntry = false;
   var userDefinedConstantList = '';
   var validConstantRule = [];
   var recombineArrayInputRule = [];
-  validConstantRule[0] = s.cisConstantValid;
-  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
+  validConstantRule[0] = biz.cisConstantValid;
+  recombineArrayInputRule[0] = biz.crecombineStringArrayWithSpaces;
 
   if (inputData.length === 0) {
     while (validEntry === false) {
-      console.log(s.cConstantsListPrompt1);
-      console.log(s.cConstantsListPrompt2);
-      console.log(s.cConstantsListPrompt3);
-      userDefinedConstantList = prompt(b.cGreaterThan);
+      console.log(msg.cConstantsListPrompt1);
+      console.log(msg.cConstantsListPrompt2);
+      console.log(msg.cConstantsListPrompt3);
+      userDefinedConstantList = prompt(bas.cGreaterThan);
       validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
 
       if (validEntry === false) {
         // INVALID INPUT: Please enter a valid constant list.
-        console.log(s.cconstantsGeneratorListMessage1);
+        console.log(msg.cconstantsGeneratorListMessage1);
       }
     }
   } else if (inputData.length === 2) {
@@ -1437,35 +1454,35 @@ var constantsGeneratorList = function constantsGeneratorList(inputData, inputMet
   } // userDefinedConstantList is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantListIs + userDefinedConstantList);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListIs + userDefinedConstantList);
 
-  if (userDefinedConstantList.includes(b.cComa) === true) {
+  if (userDefinedConstantList.includes(bas.cComa) === true) {
     // userDefinedConstantList contains comas
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantListContainsComas);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListContainsComas);
 
-    var userDefinedConstantsListArray = userDefinedConstantList.split(b.cComa); // userDefinedConstantsListArray is:
+    var userDefinedConstantsListArray = userDefinedConstantList.split(bas.cComa); // userDefinedConstantsListArray is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantsListArrayIs + JSON.stringify(userDefinedConstantsListArray));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListArrayIs + JSON.stringify(userDefinedConstantsListArray));
 
     if (userDefinedConstantsListArray.length > 1) {
       for (var i = 0; i < userDefinedConstantsListArray.length; i++) {
-        _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantsListArray[i].trim());
+        _queue["default"].enqueue(sys.cCommandQueue, cmd.cconstantsGenerator + bas.cSpace + userDefinedConstantsListArray[i].trim());
       }
     } else if (userDefinedConstantsListArray.length === 1) {
       // Just enqueue the constants Generator command with the input directly.
-      _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantsListArray[0].trim());
+      _queue["default"].enqueue(sys.cCommandQueue, cmd.cconstantsGenerator + bas.cSpace + userDefinedConstantsListArray[0].trim());
     }
   } else {
     // userDefinedConstantList DOES NOT contain comas
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantsListDoesNotContainComas); // Just enqueue the constants Generator command with the input directly.
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListDoesNotContainComas); // Just enqueue the constants Generator command with the input directly.
 
 
-    _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGenerator + b.cSpace + userDefinedConstantList.trim());
+    _queue["default"].enqueue(sys.cCommandQueue, cmd.cconstantsGenerator + bas.cSpace + userDefinedConstantList.trim());
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1484,13 +1501,13 @@ var constantsGeneratorList = function constantsGeneratorList(inputData, inputMet
 exports.constantsGeneratorList = constantsGeneratorList;
 
 var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, inputMetaData) {
-  var functionName = s.cconstantsPatternRecognizer;
+  var functionName = cmd.cconstantsPatternRecognizer;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var validEntry = false;
@@ -1502,23 +1519,23 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
   var validatePatternsNeedImplementationRule = [];
   var wordsArray = [];
   var commonPatternsArray = [];
-  validConstantRule[0] = s.cisConstantValid;
-  recombineArrayInputRule[0] = s.crecombineStringArrayWithSpaces;
-  wordsArrayFromStringRule[0] = s.cgetWordsArrayFromString;
-  searchForPatternsInStringArrayRule[0] = s.csearchForPatternsInStringArray;
-  validatePatternsNeedImplementationRule[0] = s.cvalidatePatternsThatNeedImplementation;
+  validConstantRule[0] = biz.cisConstantValid;
+  recombineArrayInputRule[0] = biz.crecombineStringArrayWithSpaces;
+  wordsArrayFromStringRule[0] = biz.cgetWordsArrayFromString;
+  searchForPatternsInStringArrayRule[0] = biz.csearchForPatternsInStringArray;
+  validatePatternsNeedImplementationRule[0] = biz.cvalidatePatternsThatNeedImplementation;
 
   if (inputData.length === 0) {
     while (validEntry === false) {
-      console.log(s.cConstantsListPatternSearchPrompt1);
-      console.log(s.cConstantsListPatternSearchPrompt2);
-      console.log(s.cConstantsListPatternSearchPrompt3);
-      userDefinedConstantList = prompt(b.cGreaterThan);
+      console.log(msg.cConstantsListPatternSearchPrompt1);
+      console.log(msg.cConstantsListPatternSearchPrompt2);
+      console.log(msg.cConstantsListPatternSearchPrompt3);
+      userDefinedConstantList = prompt(bas.cGreaterThan);
       validEntry = _ruleBroker["default"].processRules(userDefinedConstantList, '', validConstantRule);
 
       if (validEntry === false) {
         // INVALID INPUT: Please enter a valid constant list.
-        console.log(s.cconstantsGeneratorListMessage1);
+        console.log(msg.cconstantsGeneratorListMessage1);
       }
     }
   } else if (inputData.length === 2) {
@@ -1530,13 +1547,13 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
   } // userDefinedConstantList is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantListIs + userDefinedConstantList);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListIs + userDefinedConstantList);
 
-  if (userDefinedConstantList.includes(b.cComa) === true) {
-    wordsArray = userDefinedConstantList.split(b.cComa);
+  if (userDefinedConstantList.includes(bas.cComa) === true) {
+    wordsArray = userDefinedConstantList.split(bas.cComa);
   } else {
     // userDefinedConstantList DOES NOT contain comas
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cuserDefinedConstantsListDoesNotContainComas); // Check and see if there is another delimiter we can use to break up the string into an array,
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListDoesNotContainComas); // Check and see if there is another delimiter we can use to break up the string into an array,
     // such as a space character, Maybe the user entered a sentence and would like all the words of the sentence to be optimized.
 
 
@@ -1544,24 +1561,24 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
   } // wordsArray is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cwordsArrayIs + JSON.stringify(wordsArray));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cwordsArrayIs + JSON.stringify(wordsArray));
 
   commonPatternsArray = _ruleBroker["default"].processRules(wordsArray, '', searchForPatternsInStringArrayRule); // commonPatternsArray is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray)); // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray)); // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
 
 
   var newConstantsList = _ruleBroker["default"].processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
 
-  var constantsPatternGenerationSetting = _configurator["default"].getConfigurationSetting(s.cEnableConstantsPatternGeneration);
+  var constantsPatternGenerationSetting = _configurator["default"].getConfigurationSetting(cfg.cEnableConstantsPatternGeneration);
 
   if (constantsPatternGenerationSetting === true) {
-    _queue["default"].enqueue(s.cCommandQueue, s.cconstantsGeneratorList + b.cSpace + newConstantsList);
+    _queue["default"].enqueue(sys.cCommandQueue, cmd.cconstantsGeneratorList + bas.cSpace + newConstantsList);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1579,26 +1596,26 @@ var constantsPatternRecognizer = function constantsPatternRecognizer(inputData, 
 exports.constantsPatternRecognizer = constantsPatternRecognizer;
 
 var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaData) {
-  var functionName = s.cbusinessRulesMetrics;
+  var functionName = cmd.cbusinessRulesMetrics;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  var businessRuleMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableBusinessRulePerformanceMetrics);
+  var businessRuleMetricsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableBusinessRulePerformanceMetrics);
 
   if (businessRuleMetricsEnabled === true) {
     var businessRuleCounter = 0;
     var businessRulePerformanceSum = 0;
     var businessRulePerformanceStdSum = 0;
     var average = 0;
-    var standardDev = 0; // Here we iterate over all of the business rules that were added to the s.cBusinessRulePerformanceTrackingStack.
+    var standardDev = 0; // Here we iterate over all of the business rules that were added to the sys.cBusinessRulePerformanceTrackingStack.
 
-    for (var i = 0; i < _stack["default"].length(s.cBusinessRuleNamesPerformanceTrackingStack); i++) {
+    for (var i = 0; i < _stack["default"].length(cfg.cBusinessRuleNamesPerformanceTrackingStack); i++) {
       businessRuleCounter = 0; // Reset it to zero, because we are beginning again with another business rule name.
 
       businessRulePerformanceSum = 0;
@@ -1607,70 +1624,70 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
       standardDev = 0; // Here we will now iterate over all of the contents of all of the business rule performance numbers and
       // do the necessary math for each business rule according to the parent loop.
 
-      var currentBusinessRuleName = D[s.cBusinessRuleNamesPerformanceTrackingStack][i];
+      var currentBusinessRuleName = D[cfg.cBusinessRuleNamesPerformanceTrackingStack][i];
 
-      for (var j = 0; j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); j++) {
-        if (D[s.cBusinessRulePerformanceTrackingStack][j][w.cName] === currentBusinessRuleName) {
+      for (var j = 0; j < _stack["default"].length(cfg.cBusinessRulePerformanceTrackingStack); j++) {
+        if (D[cfg.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
           businessRuleCounter = businessRuleCounter + 1; // businessRuleCounter is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cbusinessRuleCounterIs + businessRuleCounter);
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRuleCounterIs + businessRuleCounter);
 
-          businessRulePerformanceSum = businessRulePerformanceSum + D[s.cBusinessRulePerformanceTrackingStack][j][s.cRunTime]; // businessRulePerformanceSum is:
+          businessRulePerformanceSum = businessRulePerformanceSum + D[cfg.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime]; // businessRulePerformanceSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cbusinessRulePerformanceSumIs + businessRulePerformanceSum);
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceSumIs + businessRulePerformanceSum);
         }
       } // DONE! businessRulePerformanceSum is:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneBusinessRulePerformanceSumIs + businessRulePerformanceSum);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneBusinessRulePerformanceSumIs + businessRulePerformanceSum);
 
       average = businessRulePerformanceSum / businessRuleCounter; // average is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.caverageIs + average); // Now go back through them all so we can compute the standard deviation
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.caverageIs + average); // Now go back through them all so we can compute the standard deviation
 
 
-      for (var _j = 0; _j < _stack["default"].length(s.cBusinessRulePerformanceTrackingStack); _j++) {
-        if (D[s.cBusinessRulePerformanceTrackingStack][_j][w.cName] === currentBusinessRuleName) {
-          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[s.cBusinessRulePerformanceTrackingStack][_j][s.cRunTime] - average, 2); // businessRulePerformanceStdSum is:
+      for (var _j = 0; _j < _stack["default"].length(cfg.cBusinessRulePerformanceTrackingStack); _j++) {
+        if (D[cfg.cBusinessRulePerformanceTrackingStack][_j][wrd.cName] === currentBusinessRuleName) {
+          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow(D[cfg.cBusinessRulePerformanceTrackingStack][_j][sys.cRunTime] - average, 2); // businessRulePerformanceStdSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cbusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
         }
       } // DONE! businessRulePerformanceStdSum is:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneBusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneBusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
 
       standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter); // standardDev is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cstandardDevIs + standardDev);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
 
-      if (D[s.cBusinessRulesPerformanceAnalysisStack] === undefined) {
-        _stack["default"].initStack(s.cBusinessRulesPerformanceAnalysisStack);
+      if (D[cfg.cBusinessRulesPerformanceAnalysisStack] === undefined) {
+        _stack["default"].initStack(cfg.cBusinessRulesPerformanceAnalysisStack);
       }
 
-      _stack["default"].push(s.cBusinessRulesPerformanceAnalysisStack, {
+      _stack["default"].push(cfg.cBusinessRulesPerformanceAnalysisStack, {
         Name: currentBusinessRuleName,
         Average: average,
         StandardDeviation: standardDev
       });
     }
 
-    _loggers["default"].consoleTableLog('', D[s.cBusinessRulesPerformanceAnalysisStack], [w.cName, w.cAverage, s.cStandardDeviation]);
+    _loggers["default"].consoleTableLog('', D[cfg.cBusinessRulesPerformanceAnalysisStack], [wrd.cName, wrd.cAverage, sys.cStandardDeviation]);
 
-    _stack["default"].clearStack(s.cBusinessRulesPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
+    _stack["default"].clearStack(cfg.cBusinessRulesPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
 
 
-    if (_configurator["default"].getConfigurationSetting(s.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
-      _stack["default"].clearStack(s.cBusinessRulePerformanceTrackingStack);
+    if (_configurator["default"].getConfigurationSetting(cfg.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
+      _stack["default"].clearStack(cfg.cBusinessRulePerformanceTrackingStack);
 
-      _stack["default"].clearStack(s.cBusinessRuleNamesPerformanceTrackingStack);
+      _stack["default"].clearStack(cfg.cBusinessRuleNamesPerformanceTrackingStack);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1688,26 +1705,26 @@ var businessRulesMetrics = function businessRulesMetrics(inputData, inputMetaDat
 exports.businessRulesMetrics = businessRulesMetrics;
 
 var commandMetrics = function commandMetrics(inputData, inputMetaData) {
-  var functionName = s.ccommandMetrics;
+  var functionName = cmd.ccommandMetrics;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
 
-  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(s.cEnableCommandPerformanceMetrics);
+  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableCommandPerformanceMetrics);
 
   if (commandMetricsEnabled === true) {
     var commandCounter = 0;
     var commandPerformanceSum = 0;
     var commandPerformanceStdSum = 0;
     var average = 0;
-    var standardDev = 0; // Here we iterate over all of the commands that were added to the s.cCommandPerformanceTrackingStack.
+    var standardDev = 0; // Here we iterate over all of the commands that were added to the sys.cCommandPerformanceTrackingStack.
 
-    for (var i = 0; i < _stack["default"].length(s.cCommandNamesPerformanceTrackingStack); i++) {
+    for (var i = 0; i < _stack["default"].length(cfg.cCommandNamesPerformanceTrackingStack); i++) {
       commandCounter = 0;
       commandPerformanceSum = 0;
       commandPerformanceStdSum = 0;
@@ -1715,70 +1732,70 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
       standardDev = 0; // Here we will now iterate over all of the contents of all the command performance numbers and
       // do the necessary math for each command according to the parent loop.
 
-      var currentCommandName = D[s.cCommandNamesPerformanceTrackingStack][i];
+      var currentCommandName = D[cfg.cCommandNamesPerformanceTrackingStack][i];
 
-      for (var j = 0; j < _stack["default"].length(s.cCommandPerformanceTrackingStack); j++) {
-        if (D[s.cCommandPerformanceTrackingStack][j][w.cName] === currentCommandName) {
+      for (var j = 0; j < _stack["default"].length(cfg.cCommandPerformanceTrackingStack); j++) {
+        if (D[cfg.cCommandPerformanceTrackingStack][j][wrd.cName] === currentCommandName) {
           commandCounter = commandCounter + 1; // commandCounter is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandCounterIs + commandCounter);
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandCounterIs + commandCounter);
 
-          commandPerformanceSum = commandPerformanceSum + D[s.cCommandPerformanceTrackingStack][j][s.cRunTime]; // commandPerformanceSum is:
+          commandPerformanceSum = commandPerformanceSum + D[cfg.cCommandPerformanceTrackingStack][j][sys.cRunTime]; // commandPerformanceSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandPerformanceSumIs + commandPerformanceSum);
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandPerformanceSumIs + commandPerformanceSum);
         }
       } // DONE! commandPerformanceSum is:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneCommandPerformanceSumIs + commandPerformanceSum);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneCommandPerformanceSumIs + commandPerformanceSum);
 
       average = commandPerformanceSum / commandCounter; // average is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.caverageIs + average); // Now go back through them all so we can compute the standard deviation
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.caverageIs + average); // Now go back through them all so we can compute the standard deviation
 
 
-      for (var _j2 = 0; _j2 < _stack["default"].length(s.cCommandPerformanceTrackingStack); _j2++) {
-        if (D[s.cCommandPerformanceTrackingStack][_j2][w.cName] === currentCommandName) {
-          commandPerformanceStdSum = commandPerformanceStdSum + math.pow(D[s.cCommandPerformanceTrackingStack][_j2][s.cRunTime] - average, 2); // commandPerformanceStdSum is:
+      for (var _j2 = 0; _j2 < _stack["default"].length(cfg.cCommandPerformanceTrackingStack); _j2++) {
+        if (D[cfg.cCommandPerformanceTrackingStack][_j2][wrd.cName] === currentCommandName) {
+          commandPerformanceStdSum = commandPerformanceStdSum + math.pow(D[cfg.cCommandPerformanceTrackingStack][_j2][sys.cRunTime] - average, 2); // commandPerformanceStdSum is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandPerformanceStdSumIs + commandPerformanceStdSum);
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandPerformanceStdSumIs + commandPerformanceStdSum);
         }
       } // DONE! commandPerformanceStdSum is:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cDoneCommandPerformanceStdSumIs + commandPerformanceStdSum);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneCommandPerformanceStdSumIs + commandPerformanceStdSum);
 
       standardDev = math.sqrt(commandPerformanceStdSum / commandCounter); // standardDev is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cstandardDevIs + standardDev);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
 
-      if (D[s.cCommandsPerformanceAnalysisStack] === undefined) {
-        _stack["default"].initStack(s.cCommandsPerformanceAnalysisStack);
+      if (D[cfg.cCommandsPerformanceAnalysisStack] === undefined) {
+        _stack["default"].initStack(cfg.cCommandsPerformanceAnalysisStack);
       }
 
-      _stack["default"].push(s.cCommandsPerformanceAnalysisStack, {
+      _stack["default"].push(cfg.cCommandsPerformanceAnalysisStack, {
         Name: currentCommandName,
         Average: average,
         StandardDeviation: standardDev
       });
     }
 
-    _loggers["default"].consoleTableLog('', D[s.cCommandsPerformanceAnalysisStack], [w.cName, w.cAverage, s.cStandardDeviation]);
+    _loggers["default"].consoleTableLog('', D[cfg.cCommandsPerformanceAnalysisStack], [wrd.cName, wrd.cAverage, sys.cStandardDeviation]);
 
-    _stack["default"].clearStack(s.cCommandsPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
+    _stack["default"].clearStack(cfg.cCommandsPerformanceAnalysisStack); // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
 
 
-    if (_configurator["default"].getConfigurationSetting(s.cClearCommandPerformanceDataAfterAnalysis) === true) {
-      _stack["default"].clearStack(s.cCommandPerformanceTrackingStack);
+    if (_configurator["default"].getConfigurationSetting(cfg.cClearCommandPerformanceDataAfterAnalysis) === true) {
+      _stack["default"].clearStack(cfg.cCommandPerformanceTrackingStack);
 
-      _stack["default"].clearStack(s.cCommandNamesPerformanceTrackingStack);
+      _stack["default"].clearStack(cfg.cCommandNamesPerformanceTrackingStack);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1797,46 +1814,46 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
 exports.commandMetrics = commandMetrics;
 
 var convertColors = function convertColors(inputData, inputMetaData) {
-  var functionName = s.cconvertColors;
+  var functionName = cmd.cconvertColors;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var colorConvertionRule = [];
-  colorConvertionRule[0] = s.creplaceCharacterWithCharacter;
-  colorConvertionRule[1] = s.chex2rgbConversion;
-  var colorKeys = Object.keys(D[s.cColors][s.cColorData]); // colorKeys is:
+  colorConvertionRule[0] = biz.creplaceCharacterWithCharacter;
+  colorConvertionRule[1] = biz.chex2rgbConversion;
+  var colorKeys = Object.keys(D[sys.cColors][sys.cColorData]); // colorKeys is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccolorKeysIs + JSON.stringify(colorKeys));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccolorKeysIs + JSON.stringify(colorKeys));
 
   for (var i = 0; i < colorKeys.length; i++) {
     var currentColorName = colorKeys[i]; // currentColorName is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentColorNameIs + currentColorName);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentColorNameIs + currentColorName);
 
-    var currentColorObject = D[w.cColors][s.cColorData][currentColorName]; // currentColorObject is:
+    var currentColorObject = D[wrd.cColors][sys.cColorData][currentColorName]; // currentColorObject is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentColorObjectIs + JSON.stringify(currentColorObject));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentColorObjectIs + JSON.stringify(currentColorObject));
 
-    var currentColorHexValue = currentColorObject[s.cHexValue]; // currentColorHexValue is:
+    var currentColorHexValue = currentColorObject[sys.cHexValue]; // currentColorHexValue is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccurrentColorHexValueIs + currentColorHexValue);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentColorHexValueIs + currentColorHexValue);
 
-    var ruleOutput = _ruleBroker["default"].processRules(currentColorHexValue, [b.cHash, ''], colorConvertionRule); // ruleOutput is:
+    var ruleOutput = _ruleBroker["default"].processRules(currentColorHexValue, [bas.cHash, ''], colorConvertionRule); // ruleOutput is:
 
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cruleOutputIs + ruleOutput);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cruleOutputIs + ruleOutput);
 
-    console.log(currentColorName + b.cComa + currentColorHexValue + b.cComa + ruleOutput[0] + b.cComa + ruleOutput[1] + b.cComa + ruleOutput[2]);
+    console.log(currentColorName + bas.cComa + currentColorHexValue + bas.cComa + ruleOutput[0] + bas.cComa + ruleOutput[1] + bas.cComa + ruleOutput[2]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };

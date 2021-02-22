@@ -365,7 +365,7 @@
           <ConfigurationElement Name="application.application@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="application.application@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="build.deployApplication" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="build.deployApplication" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="build.deployApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="build.deployApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="build.deployApplication@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -379,7 +379,7 @@
           <ConfigurationElement Name="build.deployApplication@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="build.deployApplication@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="build.releaseApplication" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="build.releaseApplication" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="build.releaseApplication@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="build.releaseApplication@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="build.releaseApplication@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -561,7 +561,7 @@
           <ConfigurationElement Name="warden.getConfigurationSetting@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.getConfigurationSetting@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="chiefCommander.bootStrapCommands" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="chiefCommander.bootStrapCommands" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@MessageFontStyle" Type="Default" Value="Default" Version="3"/>

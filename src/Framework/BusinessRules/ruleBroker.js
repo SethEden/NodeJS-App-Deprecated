@@ -12,10 +12,10 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as rules from './rulesLibrary';
-import * as b from '../Constants/basic.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as sys from '../Constants/system.constants';
 var path = require('path');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 /**
  * @function bootStrapApplication
@@ -47,10 +47,10 @@ function addClientRules(clientRules) {
   // console.log('clientRules is: ' + JSON.stringify(clientRules));
   // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = addClientRules.name;
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'clientRules is: ' + JSON.stringify(clientRules));
-  Object.assign(D[s.cBusinessRules], clientRules);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'clientRules is: ' + JSON.stringify(clientRules));
+  Object.assign(D[sys.cBusinessRules], clientRules);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cEND_Function);
   // console.log('END ruleBroker.addClientRules function');
 };
 
@@ -78,24 +78,24 @@ export const processRules = function(inputData, inputMetaData, rulesToExecute) {
   // console.log('rulesToExecute are: ' + JSON.stringify(rulesToExecute));
   // var baseFileName = path.basename(module.filename, path.extname(module.filename));
   // var functionName = processRules';
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cinputDataIs + inputData);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cinputMetaDataIs + inputMetaData);
   let returnData = inputData;
   for (let rule in rulesToExecute) {
     if (rulesToExecute.hasOwnProperty(rule)) {
       let key = rule;
-      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'key is: ' + key);
+      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'key is: ' + key);
       // console.log('key is: ' + key);
       let value = rulesToExecute[key];
-      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
+      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'value is: ' + value);
       // console.log('value is: ' + value);
       // returnData = rules.rulesLibrary[value](returnData, inputMetaData);
-      returnData = D[s.cBusinessRules][value](returnData, inputMetaData);
+      returnData = D[sys.cBusinessRules][value](returnData, inputMetaData);
     }
   }
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.creturnDataIs + returnData);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cEND_Function);
   // console.log('returnData is: ' + JSON.stringify(returnData));
   // console.log('END ruleBroker.processRules function');
   return returnData;

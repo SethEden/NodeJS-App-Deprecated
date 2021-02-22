@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Framework/Structures/data.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Framework/Structures/data.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file data.js
+ * @module data
+ * @description Contains the singleton data structure definition that allows the entire application,
+ * to share data between various components of the framework and greater application.
+ * There were many attempts to implement a proper singleton pattern but none of them really worked.
+ * So a very simple implementation was used for the time being until a proper working solution can be implemented.
+ * Right now there is no business need for anything beyond the basic system defined below.
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+ */
+
+// var mySingleton = (function() {
+//   // instance stores a reference to the Singleton.
+//   var instance;
+//   function init() {
+//     // Singleton
+//     // Private methods &amp; variables
+//     function privateMethod(){
+//       console.log('I am private');
+//     }
+//     var privateVariable = 'Im also private';
+//     var privateRandomNumber = Math.random();
+//     return {
+//       // Public methods and variables
+//       publicMethod: function() {
+//         console.log('The public can see me!');
+//       },
+//       publicProperty: 'I am also public',
+//       getRandomNumber: function() {
+//         return privateRandomNumber;
+//       }
+//     };
+//   };
+//   return {
+//     // Get the Singleton instance if one exists
+//     // or create on if it doesn't
+//     getInstance: function() {
+//       if (!instance) {
+//         instance = init();
+//       }
+//       return instance;
+//     }
+//   };
+// })();
+
+// module.exports = {obj = (function () {
+//     let objInstance; // private variable
+//     function create() {
+//       return {};
+//     };
+//     return {
+//       getInstance: function() {
+//         if(objInstance) {
+//           objInstance = create();
+//         }
+//         return objInstance;
+//       }
+//     };
+//   })();
+// }
+
+// export default {
+//   obj
+// };
+
+// var self = {
+//   var objInstance;
+//   var data;
+//   create: function() {
+//     data = {};
+//   }
+//   return {
+//     getInstance: function() {
+//       if (!objInstance) {
+//         objInstance = create();
+//       }
+//       return objInstance;
+//     }
+//   }
+// };
+//
+// module.exports = self;
+
+//Almost works
+// export let obj = function () {
+//   let objInstance; //private variable
+//   var data;
+//   function create() {
+//     //private function to create methods and properties
+//     data = {};
+//   }
+//   return {
+//     data: data,
+//     getInstance: function() {
+//       if (!objInstance) {
+//         objInstance = create();
+//       }
+//       return objInstance;
+//     }
+//   };
+// };
+
+export var data = {};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 22 2021 09:31:44 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

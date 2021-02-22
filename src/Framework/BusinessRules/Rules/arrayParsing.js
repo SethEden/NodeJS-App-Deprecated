@@ -12,6 +12,9 @@
  * @requires module:basic-constants
  * @requires module:generic-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
@@ -24,9 +27,12 @@ import configurator from '../../Executrix/configurator';
 import loggers from '../../Executrix/loggers';
 import dataBroker from '../../Executrix/dataBroker';
 import * as strParse from './stringParsing';
-import * as b from '../../Constants/basic.constants';
-import * as g from '../../Constants/generic.constants';
-import * as s from '../../Constants/system.constants';
+import * as bas from '../../Constants/basic.constants';
+import * as gen from '../../Constants/generic.constants';
+import * as sys from '../../Constants/system.constants';
+import * as biz from '../../Constants/business.constants';
+import * as cfg from '../../Constants/configurations.constants';
+import * as msg from '../../Constants/messages.constants';
 const _ = require('lodash');
 var path = require('path');
 var math = require('mathjs');
@@ -51,10 +57,10 @@ export const replaceCharacterWithCharacter = function(inputData, inputMetaData) 
   // console.log('BEGIN arrayParsing.replaceCharacterWithCharacter function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + JSON.stringify(inputMetaData));
-  let functionName = s.creplaceCharacterWithCharacter;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.creplaceCharacterWithCharacter;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData;
   let character2Find = inputMetaData[0];
   let character2Replace = inputMetaData[1];
@@ -63,8 +69,8 @@ export const replaceCharacterWithCharacter = function(inputData, inputMetaData) 
   } else {
     returnData = inputData.replace(character2Find, character2Replace);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END arrayParsing.replaceCharacterWithCharacter function');
   return returnData;
@@ -83,14 +89,14 @@ export const replaceCharacterWithCharacter = function(inputData, inputMetaData) 
  * mixed numbers and camel case strings ever becomes a requirement as input to this function.
  */
 export const convertCamelCaseStringToArray = function(inputData, inputMetaData) {
-  let functionName = s.cconvertCamelCaseStringToArray;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconvertCamelCaseStringToArray;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   let caps = [];
   for (let i = 1; i < inputData.length; i++) {
-    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
+    if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) { caps.push(i); }
   }
   if (caps.length > 0) {
     let last = 0;
@@ -104,8 +110,8 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
   } else {
     returnData = [inputData];
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -120,27 +126,34 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
  * @date 2021/01/28
  */
 export const getWordsArrayFromString = function(inputData, inputMetaData) {
-  let functionName = s.cgetWordsArrayFromString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetWordsArrayFromString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = 0;
   if (inputData) {
-    if (strParse.getWordCountInString(inputData, '') > 0) {
+    let wordCount = strParse.getWordCountInString(inputData, '');
+    // wordCount is:
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cwordCountIs + wordCount);
+    if (wordCount > 0) {
       let wordDelimiter = strParse.determineWordDelimiter(inputData, inputMetaData);
+      // wordDelimiter is:
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cwordDelimiterIs + wordDelimiter);
       let stringContainsAcronym = strParse.doesStringContainAcronym(inputData, '');
-      if (wordDelimiter === s.cCamelCase && stringContainsAcronym === false) {
+      // stringContainsAcronym is:
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstringContainsAcronymIs + stringContainsAcronym);
+      if (wordDelimiter === sys.cCamelCase && stringContainsAcronym === false) {
         returnData = convertCamelCaseStringToArray(inputData, '');
-      } else if (wordDelimiter != '' && wordDelimiter != s.cCamelCase) {
+      } else if (wordDelimiter != '' && wordDelimiter != sys.cCamelCase) {
         returnData = inputData.split(wordDelimiter);
       } else {
         // We don't need to be showing this warning unless we are debugging.
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cGetWordsArrayFromStringMessage1 + s.cGetWordsArrayFromStringMessage2 + s.cGetWordsArrayFromStringMessage3);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cGetWordsArrayFromStringMessage1 + msg.cGetWordsArrayFromStringMessage2 + msg.cGetWordsArrayFromStringMessage3);
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -157,19 +170,19 @@ export const getWordsArrayFromString = function(inputData, inputMetaData) {
  * @date 2021/01/29
  */
 export const recombineStringArrayWithSpaces = function(inputData, inputMetaData) {
-  let functionName = s.crecombineStringArrayWithSpaces;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.crecombineStringArrayWithSpaces;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     returnData = inputData[1];
     for (let i = 2; i < inputData.length; i++) {
-        returnData = returnData + b.cSpace + inputData[i];
+        returnData = returnData + bas.cSpace + inputData[i];
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -183,16 +196,16 @@ export const recombineStringArrayWithSpaces = function(inputData, inputMetaData)
  * @date 2020/02/10
  */
 export const convertArrayToCamelCaseString = function(inputData, inputMetaData) {
-  let functionName = s.cconvertArrayToCamelCaseString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cconvertArrayToCamelCaseString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     returnData = inputData.map((key, index) => strParse.mapWordToCamelCaseWord(key, index));
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -208,10 +221,10 @@ export const convertArrayToCamelCaseString = function(inputData, inputMetaData) 
  * @date 2020/02/10
  */
 export const doesArrayContainLowerCaseConsolidatedString = function(inputData, inputMetaData) {
-  let functionName = s.cdoesArrayContainLowerCaseConsolidatedString;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdoesArrayContainLowerCaseConsolidatedString;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData && inputMetaData) {
     // I'm not sure if value1 & value2 below should be referanced to inputData & inputMetaData?
@@ -219,11 +232,11 @@ export const doesArrayContainLowerCaseConsolidatedString = function(inputData, i
     // But I'm not sure how or what values are being passed for value1 & value2.
     let stringDelta = (value1, value2) => strParse.aggregateNumericalDifferenceBetweenTwoStrings(value1, value2) < 2;
     // stringDelta value is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cstringDeltaValueIs + stringDelta);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstringDeltaValueIs + stringDelta);
     returnData = doesArrayContainValue(inputData, inputMetaData, stringDelta);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -237,10 +250,10 @@ export const doesArrayContainLowerCaseConsolidatedString = function(inputData, i
  * @date 2020/06/25
  */
 export const doesArrayContainCharacter = function(inputData, inputMetaData) {
-  let functionName = s.cdoesArrayContainCharacter;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdoesArrayContainCharacter;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData && inputMetaData) {
     for (let i = 0; i < inputMetaData.length; i++) {
@@ -251,8 +264,8 @@ export const doesArrayContainCharacter = function(inputData, inputMetaData) {
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -267,24 +280,24 @@ export const doesArrayContainCharacter = function(inputData, inputMetaData) {
  * @date 2020/06/25
  */
 export const removeCharacterFromArray = function(inputData, inputMetaData) {
-  let functionName = s.cremoveCharacterFromArray;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cremoveCharacterFromArray;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData && inputMetaData) {
     for (let i = 0; i < inputMetaData.length; i++) {
       let arrayElement = inputMetaData[i];
       if (arrayElement.includes(inputData) === true) {
         // replaceCharacterWithCharacter Use this to parse the string and remove all characters that match.
-        // replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
-        inputMetaData[i] = replaceCharacterWithCharacter(arrayElement, [RegExp('\\' + inputData, b.cg), '']);
+        // replaceCharacterWithCharacter(inputData, [/:/g, bas.cUnderscore]);
+        inputMetaData[i] = replaceCharacterWithCharacter(arrayElement, [RegExp('\\' + inputData, bas.cg), '']);
       }
     }
     returnData = inputMetaData;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -298,24 +311,24 @@ export const removeCharacterFromArray = function(inputData, inputMetaData) {
  * @date 2021/01/21
  */
 export const ascertainMatchingElements = function(inputData, inputMetaData) {
-  let functionName = s.cascertainMatchingElements;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cascertainMatchingElements;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData && inputMetaData) {
     if (inputData === inputMetaData) {
       // Array elements match
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cArrayElementsMatch);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cArrayElementsMatch);
       returnData = true;
     } else {
       // Array elements do not match
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cArrayElementsDoNotMatch);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cArrayElementsDoNotMatch);
       returnData = false;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -329,10 +342,10 @@ export const ascertainMatchingElements = function(inputData, inputMetaData) {
  * @date 2020/02/10
  */
 export const doesArrayContainFilename = function(inputData, inputMetaData) {
-  let functionName = s.cdoesArrayContainFilename;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cdoesArrayContainFilename;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   // NOTE: This call doesn't actually work, it may have worked at one time, but it doesn't work now.
   // And I'm not going to spend the time trying to figure out why,
@@ -347,8 +360,8 @@ export const doesArrayContainFilename = function(inputData, inputMetaData) {
   //     break;
   //   }
   // }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -363,16 +376,16 @@ export const doesArrayContainFilename = function(inputData, inputMetaData) {
  * @NOTE https://stackoverflow.com/questions/6521245/finding-longest-string-in-array
  */
 export const getLengthOfLongestStringInArray = function(inputData, inputMetaData) {
-  let functionName = s.cgetLengthOfLongestStringInArray;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetLengthOfLongestStringInArray;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = 0;
   if (inputData) {
     returnData = Math.max(...(inputData.map(el => el.length)));
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -388,26 +401,26 @@ export const getLengthOfLongestStringInArray = function(inputData, inputMetaData
  * @date 2021/01/30
  */
 export const searchForPatternsInStringArray = function(inputData, inputMetaData) {
-  let functionName = s.csearchForPatternsInStringArray;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.csearchForPatternsInStringArray;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false; // Set it to false just in case invalid data was passed into this function.
   if (inputData && inputData.length > 0) {
     returnData = []; // Reset it to an empty array, the input data has something in it so we should be able to process it.
     let maxStringLength = getLengthOfLongestStringInArray(inputData, '') - 1;
     // maxStringLength is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmaxStringLengthIs + maxStringLength);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmaxStringLengthIs + maxStringLength);
     let minStringLength = 3;
     // minStringLength is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cminStringLengthIs + minStringLength);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cminStringLengthIs + minStringLength);
     for (let a = 0; a < inputData.length; a++) { // Initial high-level loop over each of the array elements. (This is the source string for the comparison)
       let currentMasterStringArrayElement = inputData[a];
       // currentMasterStringArrayElement is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentMasterStringArrayElementIs + currentMasterStringArrayElement);
-      if (currentMasterStringArrayElement.includes(b.cSpace) === false) {
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentMasterStringArrayElementIs + currentMasterStringArrayElement);
+      if (currentMasterStringArrayElement.includes(bas.cSpace) === false) {
         // currentMasterStringArrayElement does not contain a space character
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage1);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSearchForPatternsInStringArrayMessage1);
         // NOTE: All of the other loggers.consolelog below this are not actually getting called for some reason.
         // That is why I have added the hard-coded console Logs, but really they only need to be enabled if this function needs to be debugged.
         // It's difficult to debug these because they really dump a LOT of data to the output.
@@ -415,39 +428,39 @@ export const searchForPatternsInStringArray = function(inputData, inputMetaData)
         // A small data-set might be possible to debug.
         // Loop over the length of the string we need to compare.
         for (let b = minStringLength; b <= maxStringLength; b++) { // b will now hold the length of the string we are using to compare.
-          // loggers.consoleLog(baseFileName + b.cDot + functionName, 'length of string to compare is: ' + toString(b));
+          // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'length of string to compare is: ' + toString(b));
           // console.log('length of string to compare is: ' + b);
           // First make sure that the length of our master string is less than or equal to the length of j, otherwise we will just skip to the next.
           if (currentMasterStringArrayElement.length <= b) {
-            // loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement.length is less than b');
+            // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'currentMasterStringArrayElement.length is less than b');
             // console.log('currentMasterStringArrayElement.length is less than b');
             // Loop again for the length of the current string - 3 (minStringLength)
             // Each loop will determine our currentComparisonString (which will be used when we actually iterate over the array in our search)
             for (let c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++) { // loop through each set of strings in the master comparison string.
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'c value is: ' + c);
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'c value is: ' + c);
               // console.log('c value is: ' + c);
               // Now here we should be able to finally compute the beginning and ending of the indexes for the string we want to use for comparison.
               let beginningIndex = c;
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'beginningIndex is: ' + beginningIndex);
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'beginningIndex is: ' + beginningIndex);
               // console.log('beginningIndex is: ' + beginningIndex);
               let endingIndex = c + b;
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'endingIndex is: ' + endingIndex);
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'endingIndex is: ' + endingIndex);
               // console.log('endingIndex is: ' + endingIndex);
               let stringToCompare = currentMasterStringArrayElement.substring(beginningIndex, endingIndex);
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'stringToCompare is: ' + stringToCompare);
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'stringToCompare is: ' + stringToCompare);
               // console.log('stringToCompare is: ' + stringToCompare);
               // Now we need another loop to go over all of the array elements, make sure we always ignore the current array element.
               for (let d = 0; d < inputData.length; d++) {
-                // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd value is: ' + d);
+                // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'd value is: ' + d);
                 // console.log('d value is: ' + d);
                 if (d != a) {
-                  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd != a');
+                  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'd != a');
                   // console.log('d != a');
                   let otherStringToCompare = inputData[d];
-                  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'otherStringToCompare is: ' + otherStringToCompare);
+                  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'otherStringToCompare is: ' + otherStringToCompare);
                   // console.log('otherStringToCompare is: ' + otherStringToCompare);
                   if (otherStringToCompare.includes(stringToCompare)) {
-                    // loggers.consoleLog(baseFileName + b.cDot + functionName, 'FOUND A MATCH!!!!');
+                    // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'FOUND A MATCH!!!!');
                     // console.log('FOUND A MATCH!!!! ' + stringToCompare);
                     // Here we have found a match amoung brothers. We need to see if this stringToCompare has already been added to the returnData array.
                     if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false) {
@@ -459,17 +472,17 @@ export const searchForPatternsInStringArray = function(inputData, inputMetaData)
             } // End-for (let c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++)
           } // End-if (currentMasterStringArrayElement <= b)
         } // End-for (let b = minStringLength; b <= maxStringLength; b++) {
-      } else { // Else-clause if (currentMasterStringArrayElement.includes(b.cSpace) === false)
+      } else { // Else-clause if (currentMasterStringArrayElement.includes(bas.cSpace) === false)
         // WARNING: The current string being searched contains a space character, we are going to skip comparison.
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage2 + s.cSearchForPatternsInStringArrayMessage3);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSearchForPatternsInStringArrayMessage2 + msg.cSearchForPatternsInStringArrayMessage3);
       }
     } // End-for (let a = 0; a < inputData.length; a++)
   } else { // Else-clause if (inputData && inputData.length > 0)
     // WARNING: InputData was not an array or had an empty array.
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cSearchForPatternsInStringArrayMessage4);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSearchForPatternsInStringArrayMessage4);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -483,10 +496,10 @@ export const searchForPatternsInStringArray = function(inputData, inputMetaData)
  * @date 2021/01/31
  */
 export const validatePatternsThatNeedImplementation = function(inputData, inputMetaData) {
-  let functionName = s.cvalidatePatternsThatNeedImplementation;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cvalidatePatternsThatNeedImplementation;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     let passMessage = '';
@@ -495,33 +508,33 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
       let currentString = inputData[i];
       if (strParse.doesConstantExist(currentString, '') === false) {
         // Constant does NOT exist:
-        passMessage = s.cConstantDoesNotExist + currentString;
+        passMessage = msg.cConstantDoesNotExist + currentString;
         passMessage = chalk.rgb(0,0,0)(passMessage);
         passMessage = chalk.bgRgb(0,255,0)(passMessage);
         console.log(passMessage);
         // constant does NOT exist:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cConstantDoesNotExist + currentString);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cConstantDoesNotExist + currentString);
         // Make sure we add all the strings that do not exist to a coma-seperated list,
         // so we can enqueue it to the constantsGeneratorList command and generate actual new constants lines of code.
         if (j === 0) {
           returnData = currentString;
         } else {
-          returnData = returnData + b.cComa + currentString;
+          returnData = returnData + bas.cComa + currentString;
         }
         j++;
       } else {
         // Constant does exist:
-        passMessage = s.cConstantDoesExist + currentString;
+        passMessage = msg.cConstantDoesExist + currentString;
         passMessage = chalk.rgb(0,0,0)(passMessage);
         passMessage = chalk.bgRgb(255,0,0)(passMessage);
         console.log(passMessage);
         // constant does exist:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cConstantDoesExist + currentString);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cConstantDoesExist + currentString);
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -536,10 +549,10 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
  * @NOTE: https://en.wikipedia.org/wiki/Lehmer_code
  */
 export const solveLehmerCode = function(inputData, inputMetaData) {
-  let functionName = s.csolveLehmerCode;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.csolveLehmerCode;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData;
   if (inputData) {
     returnData = '';
@@ -557,7 +570,7 @@ export const solveLehmerCode = function(inputData, inputMetaData) {
     let lehmerCodeArray = Array.from(Array(lengthOfInputData), () => 0);
     expandedLehmerCodeArray = arrayDeepClone(recursiveArrayExpansion([0, lehmerCodeArray], inputData));
     // expandedLehmerCodeArray is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cexpandedLehmerCodeArrayIs + JSON.stringify(expandedLehmerCodeArray));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cexpandedLehmerCodeArrayIs + JSON.stringify(expandedLehmerCodeArray));
 
     // Now we just iterate over each array in expandedLehmerCodeArray and call: getLehmerCodeValue
     for (let i = 0; i < expandedLehmerCodeArray.length - 1; i++) {
@@ -565,12 +578,12 @@ export const solveLehmerCode = function(inputData, inputMetaData) {
       if (i === 0) {
         returnData = returnData + lehmerCodeStringValue;
       } else {
-        returnData = returnData + b.cComa + lehmerCodeStringValue;
+        returnData = returnData + bas.cComa + lehmerCodeStringValue;
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -584,10 +597,10 @@ export const solveLehmerCode = function(inputData, inputMetaData) {
  * @date 2021/01/21
  */
 export const recursiveArrayExpansion = function(inputData, inputMetaData) {
-  let functionName = s.crecursiveArrayExpansion;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.crecursiveArrayExpansion;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = [];
   if (inputData && inputMetaData && isArray(inputData) === true && isArray(inputMetaData) === true && inputData.length > 0 && inputMetaData.length > 0) {
     // Setup & parse the inputData & inputMetaData into a format we can use to actually do recursive array expansion.
@@ -595,11 +608,11 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
     let arrayToBeExpanded = inputData[1];
     let limitOfExpansion = inputMetaData[indexOfExpansion];
     // indexOfExpansion is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cindexOfExpansionIs + indexOfExpansion);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cindexOfExpansionIs + indexOfExpansion);
     // arrayToBeExpanded is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayToBeExpandedIs + JSON.stringify(arrayToBeExpanded));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.carrayToBeExpandedIs + JSON.stringify(arrayToBeExpanded));
     // limitOfExpansion is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.climitOfExpansionIs + limitOfExpansion);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.climitOfExpansionIs + limitOfExpansion);
     let masterTempReturnData = []; // When we are all done we will set the returnData back to the list of arrays in this array.
 
     // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
@@ -615,30 +628,30 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
     for (let i = 0; i <= limitOfExpansion; i++) {
       let lehmerCodeArray1 = arrayDeepClone(arrayToBeExpanded, '');
       // returnData is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
       lehmerCodeArray1[indexOfExpansion] = i;
       if (doesArrayContainValue(returnData, lehmerCodeArray1, ascertainMatchingElements) === false) {
         // pushing lehmerCodeArray1 to returnData value:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpushingLehmerCodeArray1ToReturnDataValue + JSON.stringify(lehmerCodeArray1));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpushingLehmerCodeArray1ToReturnDataValue + JSON.stringify(lehmerCodeArray1));
         returnData.push(lehmerCodeArray1);
         // returnData after push is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataAfterPushIs + JSON.stringify(returnData));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataAfterPushIs + JSON.stringify(returnData));
       }
     }
     // returnData after Level 1 is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataAfterLevel1Is + JSON.stringify(returnData));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataAfterLevel1Is + JSON.stringify(returnData));
 
     // Second level array expansion, this is where we call recursively.
     // We need to determine if the index of expansion is equal to the length of the arrayToBeExpanded.
     // If it is then we have reached our recursive expansion limit.
     // If NOT then we need to recursively expand some more on each of the arrays that are now in the returnData array.
     // arrayToBeExpanded.length is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayToBeExpandedDotLengthIs + arrayToBeExpanded.length);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.carrayToBeExpandedDotLengthIs + arrayToBeExpanded.length);
     if (indexOfExpansion < arrayToBeExpanded.length - 1) {
       // We need to remove arrays from the returnData and recursively call the recursiveArrayExpansion with each array we remove.
       // The data we get back from each recursive call should be pushed back to masterTempReturnData array
       // returnData.length is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataDotLengthIs + returnData.length);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataDotLengthIs + returnData.length);
       // Make sure we clone the array we will be removing array elements from,
       // because otherwise we would be looping over the same array we are removing elements from,
       // which would mean that we would never visit all of the elemtns.
@@ -646,37 +659,37 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
       let returnDataTemp = arrayDeepClone(returnData, '');
       returnDataTemp.forEach(function(item) {
         // returnData BEFORE POP is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataBeforePopIs + JSON.stringify(returnData));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataBeforePopIs + JSON.stringify(returnData));
         let lehmerCodeArray2 = arrayDeepClone(returnData.pop(), '');
         // returnData AFTER POP is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataAfterPopIs + JSON.stringify(returnData));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataAfterPopIs + JSON.stringify(returnData));
         // masterTempReturnData BEFORE recursive call is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterTempReturnDataBeforeRecursiveCallIs + JSON.stringify(masterTempReturnData));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmasterTempReturnDataBeforeRecursiveCallIs + JSON.stringify(masterTempReturnData));
         let tempReturnData1 = arrayDeepClone(recursiveArrayExpansion([indexOfExpansion + 1, lehmerCodeArray2], inputMetaData), '');
         // tempReturnData1 is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ctempReturnData1Is + JSON.stringify(tempReturnData1));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ctempReturnData1Is + JSON.stringify(tempReturnData1));
         // tempReturnData1.length is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.ctempReturnData1DotLengthIs + tempReturnData1.length);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ctempReturnData1DotLengthIs + tempReturnData1.length);
         for (let k = 0; k <= tempReturnData1.length - 1; k++) {
           // BEGIN k-th iteration:
-          loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_kthIteration + k);
+          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_kthIteration + k);
           if (doesArrayContainValue(masterTempReturnData, tempReturnData1[k], ascertainMatchingElements) === false) {
             // pushing tempReturnData1[k] value:
-            loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpushingTempReturnData1Kvalue + JSON.stringify(tempReturnData1[k]));
+            loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpushingTempReturnData1Kvalue + JSON.stringify(tempReturnData1[k]));
             masterTempReturnData.push(arrayDeepClone(tempReturnData1[k], ''));
           }
           // END k-th iteration:
-          loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_kthIteration + k);
+          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_kthIteration + k);
         }
         tempReturnData1 = null;
         // masterTempReturnData AFTER recursive call is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterTempReturnDataAfterRecursiveCallIs + JSON.stringify(masterTempReturnData));
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmasterTempReturnDataAfterRecursiveCallIs + JSON.stringify(masterTempReturnData));
       });
       returnData = arrayDeepClone(masterTempReturnData, '');
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -690,31 +703,31 @@ export const recursiveArrayExpansion = function(inputData, inputMetaData) {
  * @date 2021/01/20
  */
 export const getLehmerCodeValue = function(inputData, inputMetaData) {
-  let functionName = s.cgetLehmerCodeValue;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cgetLehmerCodeValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = '';
   if (inputData) {
     let lengthOfInputData = inputData.length;
     returnData = '';
     for (let i = 0; i < lengthOfInputData; i++) {
       // BEGIN i-th iteration:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
       let lookupIndex = inputData[i];
       // lookupIndex is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.clookupIndexIs + lookupIndex);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.clookupIndexIs + lookupIndex);
       let lookupValue = inputMetaData[i][lookupIndex]
       // lookupValue is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.clookupValueIs + lookupValue);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.clookupValueIs + lookupValue);
       returnData = returnData + lookupValue;
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
       // END i-th iteration:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -729,18 +742,18 @@ export const getLehmerCodeValue = function(inputData, inputMetaData) {
  * @NOTE: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
  */
 export const arraysAreEqual = function(inputData, inputMetaData) {
-  let functionName = s.carraysAreEqual;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.carraysAreEqual;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData && inputMetaData) {
     if (inputData === inputMetaData) { returnData = true; }
     if (inputData === null || inputMetaData === null) { returnData === false; }
     if (inputData.length !== inputMetaData.length) { returnData === false; }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -754,17 +767,17 @@ export const arraysAreEqual = function(inputData, inputMetaData) {
  * @date 2021/01/05
  */
 export const storeData = function(inputData, inputMetaData) {
-  let functionName = s.cstoreData;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cstoreData;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = false;
   if (inputData) {
     dataBroker.storeData(inputData, inputMetaData);
     returnData = true;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -778,16 +791,16 @@ export const storeData = function(inputData, inputMetaData) {
  * @date 2020/12/28
  */
 export const getStoredData = function(inputData, inputMetaData) {
-  let functionName = s.cgetStoredData;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgetStoredData;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     returnData = dataBroker.getData(inputData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -801,10 +814,10 @@ export const getStoredData = function(inputData, inputMetaData) {
  * @date 2021/01/15
  */
 export const isObjectEmpty = function(inputData, inputMetaData) {
-  let functionName = s.cisObjectEmpty;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cisObjectEmpty;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = true;
   if (inputData) {
     for (var key in inputData) {
@@ -817,8 +830,8 @@ export const isObjectEmpty = function(inputData, inputMetaData) {
       }
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -832,16 +845,16 @@ export const isObjectEmpty = function(inputData, inputMetaData) {
  * @date 2021/01/15
  */
 export const isArrayEmpty = function(inputData, inputMetaData) {
-  let functionName = s.cisArrayEmpty;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.cisArrayEmpty;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = true;
   if (inputData) {
     returnData = !Object.keys(inputData).length;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -855,18 +868,18 @@ export const isArrayEmpty = function(inputData, inputMetaData) {
  * @date 2021/01/14
  */
 export const isObject = function(inputData, inputMetaData) {
-  let functionName = s.cisObject;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisObject;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     if (typeof inputData === 'object') {
       returnData = true;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -880,16 +893,16 @@ export const isObject = function(inputData, inputMetaData) {
  * @date 2021/01/14
  */
 export const isArray = function(inputData, inputMetaData) {
-  let functionName = s.cisArray;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisArray;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     returnData = Array.isArray(inputData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -903,18 +916,18 @@ export const isArray = function(inputData, inputMetaData) {
  * @date 2021/01/14
  */
 export const isArrayOrObject = function(inputData, inputMetaData) {
-  let functionName = s.cisArrayOrObject;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisArrayOrObject;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     if (isObject(inputData, '') === true || isArray(inputData, '') === true) {
       returnData = true;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -928,18 +941,18 @@ export const isArrayOrObject = function(inputData, inputMetaData) {
  * @date 2021/01/14
  */
 export const isNonZeroLengthArray = function(inputData, inputMetaData) {
-  let functionName = s.cisNonZeroLengthArray;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cisNonZeroLengthArray;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     if (isArray(inputData) === true && inputData.length >= 1) {
       returnData = true;
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -955,16 +968,16 @@ export const isNonZeroLengthArray = function(inputData, inputMetaData) {
  * @date 2021/01/21
  */
 export const arrayDeepClone = function(inputData, inputMetaData) {
-  let functionName = s.carrayDeepClone;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.carrayDeepClone;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   if (inputData && isArray(inputData, '') === true && isArrayEmpty(inputData, '') === false) {
     returnData = JSON.parse(JSON.stringify(inputData));
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -983,10 +996,10 @@ export const replaceCharacterAtIndex = function(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.replaceCharacterAtIndex function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = s.creplaceCharacterAtIndex;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.creplaceCharacterAtIndex;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     let indexOfReplacement;
@@ -999,8 +1012,8 @@ export const replaceCharacterAtIndex = function(inputData, inputMetaData) {
       returnData = stringArray.join('');
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.replaceCharacterAtIndex function');
   return returnData;
@@ -1017,10 +1030,10 @@ export const replaceCharacterAtIndex = function(inputData, inputMetaData) {
  * @date 2021/01/19
  */
 export const generateCommandAliases = function(inputData, inputMetaData) {
-  let functionName = s.cgenerateCommandAliases;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.cgenerateCommandAliases;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
     // {"wonder":"wondr,wundr,wndr","Woman":"wman,wmn,womn","Amazing":"amzing,amzng"}
@@ -1030,9 +1043,9 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // "Woman": "wman,wmn,womn",
     // "Amazing": "amzing,amzng"
     // }
-    let primaryCommandDelimiter = configurator.getConfigurationSetting(s.cPrimaryCommandDelimiter);
-    let secondaryCommandDelimiter = configurator.getConfigurationSetting(s.cSecondaryCommandDelimiter);
-    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
+    let secondaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
     let commandDelimiter = '';
     let commandWordsKeys1 = Object.keys(inputData);
     let commandWordAliasesArray = [];
@@ -1051,7 +1064,7 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
       }
       commandWordAliases = commandWordAliases + commandDelimiter + key1;
       // commandWordAliases BEFORE CHANGE is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandWordAliasesBeforeChangeIs + commandWordAliases);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandWordAliasesBeforeChangeIs + commandWordAliases);
       commandWordAliasesArray = commandWordAliases.split(commandDelimiter);
       masterArrayIndex[i] = commandWordAliasesArray.length - 1;
       for (let j = 0; j < commandWordAliasesArray.length; j++) {
@@ -1063,13 +1076,13 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
         }
       }
       // commandWordAliasesArray AFTER CHANGE is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccommandWordAliasesAfterChangeIs + JSON.stringify(commandWordAliasesArray));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandWordAliasesAfterChangeIs + JSON.stringify(commandWordAliasesArray));
       masterCommandWordAliasesArray[i] = commandWordAliasesArray; // Try to build an array of arrays (2D)
     }
     // masterCommandWordAliasesArray is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterCommandWordAlisesArrayIs + JSON.stringify(masterCommandWordAliasesArray));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmasterCommandWordAlisesArrayIs + JSON.stringify(masterCommandWordAliasesArray));
     // masterArrayIndex is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmasterArrayIndexIs + JSON.stringify(masterArrayIndex));
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmasterArrayIndexIs + JSON.stringify(masterArrayIndex));
 
     // NOTES: Console output is:
     // masterCommandWordAliasesArray is: [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
@@ -1090,10 +1103,10 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // https://en.wikipedia.org/wiki/Lehmer_code
     let returnData = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
     // Command Aliases are:
-    console.log(s.cCommandAliasesAre + returnData);
+    console.log(msg.cCommandAliasesAre + returnData);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData
 };
 
@@ -1107,32 +1120,32 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
  * @date 2020/12/21
  */
 export const aggregateCommandArguments = function(inputData, inputMetaData) {
-  let functionName = s.caggregateCommandArguments;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  let functionName = biz.caggregateCommandArguments;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
     if (inputData.length > 3) {
       for (let i = 2; i < inputData.length; i++) {
         // BEGIN i-th iteration:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_ithIteration + i);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
         if (i === 2) {
           returnData = strParse.cleanCommandInput(inputData[i]);
         } else {
-          returnData = returnData + b.cSpace + strParse.cleanCommandInput(inputData[i]);
+          returnData = returnData + bas.cSpace + strParse.cleanCommandInput(inputData[i]);
         }
         // returnData is:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
         // END i-th iteration:
-        loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_ithIteration + i);
+        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
       }
     } else {
       returnData = strParse.cleanCommandInput(inputData[2]);
     }
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1153,31 +1166,31 @@ export const aggregateCommandArguments = function(inputData, inputMetaData) {
  * @date 2020/02/03
  */
 function doesArrayContainValue(array, value, myFunction) {
-  let functionName = s.doesArrayContainValue;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  let functionName = biz.cdoesArrayContainValue;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // array is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayIs + JSON.stringify(array));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.carrayIs + JSON.stringify(array));
   // value is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cvalueIs + value);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvalueIs + value);
   // Not sure how this will output, would be good to also put some type checking on this input variable.
   // myFunction is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cmyFunctionIs + JSON.stringify(myFunction));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmyFunctionIs + JSON.stringify(myFunction));
   let returnData = false;
   if (_.isArray(array) === false) {
     // array input object is not an array.'
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.carrayInputObjectIsNotAnArray);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.carrayInputObjectIsNotAnArray);
     returnData = false;
   }
   if (!!array.find(i => myFunction(i, value))) {
     // The value was found in the array.
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cTheValueWasFoundInTheArray);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cTheValueWasFoundInTheArray);
     returnData = true;
   } else {
     // The value was NOT found in the array.
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cTheValueWasNotFoundInTheArray);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cTheValueWasNotFoundInTheArray);
     returnData = false;
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };

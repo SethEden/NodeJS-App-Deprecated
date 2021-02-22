@@ -32,64 +32,62 @@
  * @description Contains named geometric shapes &amp; knots.
  * @requires module:basic-constants
  * @requires module:phonics-constants
- * @requires module:generic-constants
  * @requires module:word-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  * {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
  */
-import * as b from './basic.constants';
-import * as p from './phonics.constants';
-import * as g from './generic.constants';
-import * as w from './word.constants';
+import * as bas from './basic.constants';
+import * as phn from './phonics.constants';
+import * as wrd from './word.constants';
 
 // NOTE: I changed e-x-p-o-r-t c-o-n-s-t => smuggle something,
 // because the constants validation system is scanning these files looking for that keyword and
 // if it finds it then it will use that line for validation pruposes.
-// So to reverse this, just do a find replace and change // smuggle something back into the other e-x-p-o-r-t c-o-n-s-t string.
+// So to reverse this, just do a find replace and change // s.muggle something back into the other e-x-p-o-r-t c-o-n-s-t string.
 // The current state of the application doesn't need all of these, but future applications will most definately need them.
 // So they are left here as a matter of future-proofing.
 
 // Basic Shapes
-// smuggle something cline = b.cli + b.cne; // line
-// smuggle something cLine = b.cLi + b.cne; // Line
-// smuggle something ccircle = p.ccir + p.ccle; // circle
-// smuggle something cCircle = p.cCir + p.ccle; // Circle
-// smuggle something coval = b.cov + b.cal; // oval
-// smuggle something cOval = b.cOv + b.cal; // Oval
-// smuggle something csquare = b.cs + p.cquare; // square
-// smuggle something cSquare = b.cS + p.cquare; // Square
-// smuggle something ctriangle = p.ctri + w.cangle; // triangle
-// smuggle something cTriangle = p.cTri + w.cangle; // Triangle
-// smuggle something crectangle = p.crect + w.cangle; // rectangle
-// smuggle something cRectangle = p.cRect + w.cangle; // Rectangle
-// smuggle something coctagon = p.coct + b.ca + p.cgon; // octagon
-// smuggle something cOctagon = p.cOct + b.ca + p.cgon; // Octagon
-// smuggle something chexagon = p.chex + b.ca + p.cgon; // hexagon
-// smuggle something cHexagon = p.cHex + b.ca + p.cgon; // Hexagon
-// smuggle something cheptagon = p.chep + b.cta + p.cgon; // heptagon
-// smuggle something cHeptagon = p.cHep + b.cta + p.cgon; // Heptagon
-// smuggle something cnonagon = p.cnon + b.ca + p.cgon; // nonagon
-// smuggle something cNonagon = p.cNon + b.ca + p.cgon; // Nonagon
-// smuggle something ctrapezoid = w.ctrap + b.ce + p.czoid; // trapezoid
-// smuggle something cTrapezoid = w.cTrap + b.ce + p.czoid; // Trapezoid
-// smuggle something ccube = b.ccu + b.cbe; // cube
-// smuggle something cCube = b.cCu + b.cbe; // Cube
+// smuggle something cline = bas.cli + bas.cne; // line
+// smuggle something cLine = bas.cLi + bas.cne; // Line
+// smuggle something ccircle = phn.ccir + phn.ccle; // circle
+// smuggle something cCircle = phn.cCir + phn.ccle; // Circle
+// smuggle something coval = bas.cov + bas.cal; // oval
+// smuggle something cOval = bas.cOv + bas.cal; // Oval
+// smuggle something csquare = bas.cs + phn.cquare; // square
+// smuggle something cSquare = bas.cS + phn.cquare; // Square
+// smuggle something ctriangle = phn.ctri + wrd.cangle; // triangle
+// smuggle something cTriangle = phn.cTri + wrd.cangle; // Triangle
+// smuggle something crectangle = phn.crect + wrd.cangle; // rectangle
+// smuggle something cRectangle = phn.cRect + wrd.cangle; // Rectangle
+// smuggle something coctagon = phn.coct + bas.ca + phn.cgon; // octagon
+// smuggle something cOctagon = phn.cOct + bas.ca + phn.cgon; // Octagon
+// smuggle something chexagon = phn.chex + bas.ca + phn.cgon; // hexagon
+// smuggle something cHexagon = phn.cHex + bas.ca + phn.cgon; // Hexagon
+// smuggle something cheptagon = phn.chep + bas.cta + phn.cgon; // heptagon
+// smuggle something cHeptagon = phn.cHep + bas.cta + phn.cgon; // Heptagon
+// smuggle something cnonagon = phn.cnon + bas.ca + phn.cgon; // nonagon
+// smuggle something cNonagon = phn.cNon + bas.ca + phn.cgon; // Nonagon
+// smuggle something ctrapezoid = wrd.ctrap + bas.ce + phn.czoid; // trapezoid
+// smuggle something cTrapezoid = wrd.cTrap + bas.ce + phn.czoid; // Trapezoid
+// smuggle something ccube = bas.ccu + bas.cbe; // cube
+// smuggle something cCube = bas.cCu + bas.cbe; // Cube
 // // This could go on forever!!
 // // https://en.wikipedia.org/wiki/List_of_mathematical_shapes
 //
 // // Miscellaneous
-// smuggle something ccubic = b.cc + p.cubic; // cubic
-// smuggle something cCubic = b.cC + p.cubic; // Cubic
-// smuggle something cplane = b.cp + w.clane; // plane
-// smuggle something cPlane = b.cP + w.clane; // Plane
-// smuggle something ccurve = b.cc + p.curve; // curve
-// smuggle something cCurve = b.cC + p.curve; // Curve
-// smuggle something cquartic = p.cqua + p.crtic; // quartic
-// smuggle something cQuartic = p.cQua + p.crtic; // Quartic
-// smuggle something cconic = p.ccon + b.cic; // conic
-// smuggle something cConic = p.cCon + b.cic; // Conic
+// smuggle something ccubic = bas.cc + phn.cubic; // cubic
+// smuggle something cCubic = bas.cC + phn.cubic; // Cubic
+// smuggle something cplane = bas.cp + wrd.clane; // plane
+// smuggle something cPlane = bas.cP + wrd.clane; // Plane
+// smuggle something ccurve = bas.cc + phn.curve; // curve
+// smuggle something cCurve = bas.cC + phn.curve; // Curve
+// smuggle something cquartic = phn.cqua + phn.crtic; // quartic
+// smuggle something cQuartic = phn.cQua + phn.crtic; // Quartic
+// smuggle something cconic = phn.ccon + bas.cic; // conic
+// smuggle something cConic = phn.cCon + bas.cic; // Conic
 //
 // // Algebraic Curves
 // smuggle something ccubicPlaneCurve = ccubic + cPlane + cCurve; // cubicPlaneCurve
@@ -98,12 +96,12 @@ import * as w from './word.constants';
 // smuggle something cQuarticPlaneCurve = cQuartic + cPlane + cCurve; // QuarticPlaneCurve
 //
 // // 2nd Degree Curves
-// smuggle something cconicSection = cconic + w.cSection; // conicSection
-// smuggle something cConicSection = cConic + w.cSection; // ConicSection
-// smuggle something cunitCircle = w.cunit + cCircle; // unitCircle
-// smuggle something cUnitCircle = w.cUnit + cCircle; // UnitCircle
-// smuggle something cunitHyperbola = w.cunit + p.cHyper + p.cbola; // unitHyperbola
-// smuggle something cUnitHyperbola = w.cUnit + p.cHyper + p.cbola; // UnitHyperbola
+// smuggle something cconicSection = cconic + wrd.cSection; // conicSection
+// smuggle something cConicSection = cConic + wrd.cSection; // ConicSection
+// smuggle something cunitCircle = wrd.cunit + cCircle; // unitCircle
+// smuggle something cUnitCircle = wrd.cUnit + cCircle; // UnitCircle
+// smuggle something cunitHyperbola = wrd.cunit + phn.cHyper + phn.cbola; // unitHyperbola
+// smuggle something cUnitHyperbola = wrd.cUnit + phn.cHyper + phn.cbola; // UnitHyperbola
 //
 // // 3rd Degree Curves
 // smuggle something cFoliumOfDescartes = 'FoliumOfDescartes'; // FoliumOfDescartes
@@ -1292,212 +1290,6 @@ import * as w from './word.constants';
 // smuggle something cHigherOrderSpline = 'HigherOrderSpline'; // HigherOrderSpline
 // smuggle something cRay = 'Ray'; // Ray
 // smuggle something cRibaucourCurve = 'RibaucourCurve'; // RibaucourCurve
-//
-// // Knots
-// smuggle something cAdjustableGripHitch = 'AdjustableGripHitch'; // AdjustableGripHitch
-// smuggle something cAdjustableSling = 'AdjustableSling'; // AdjustableSling
-// smuggle something cAlbrightKnot = 'AlbrightKnot'; // AlbrightKnot
-// smuggle something cAlpineButterflyBend = 'AlpineButterflyBend'; // AlpineButterflyBend
-// smuggle something cAplineButterflyLoop = 'AplineButterflyLoop'; // AplineButterflyLoop
-// smuggle something cAnchorHitch = 'AnchorHitch'; // AnchorHitch
-// smuggle something cArborKnot = 'ArborKnot'; // ArborKnot
-// smuggle something cAshleyBend = 'AshleyBend'; // AshleyBend
-// smuggle something cAshleyStopper = 'AshleyStopper'; // AshleyStopper
-// smuggle something cAustralianBraidKnot = 'AustralianBraidKnot'; // AustralianBraidKnot
-// smuggle something cBackSplice = 'BackSplice'; // BackSplice
-// smuggle something cBarrelHitch = 'BarrelHitch'; // BarrelHitch
-// smuggle something cBasketHitch = 'BasketHitch'; // BasketHitch
-// smuggle something cBeerKnot = 'BeerKnot'; // BeerKnot
-// smuggle something cBiminiTwistKnot = 'BiminiTwistKnot'; // BiminiTwistKnot
-// smuggle something cBlakesHitch = 'BlakesHitch'; // BlakesHitch
-// smuggle something cBloodKnot = 'BloodKnot'; // BloodKnot
-// smuggle something cBoomHitch = 'BoomHitch'; // BoomHitch
-// smuggle something cBottleSling = 'BottleSling'; // BottleSling
-// smuggle something cBowTie = 'BowTie'; // BowTie
-// smuggle something cBowlineKnot = 'BowlineKnot'; // BowlineKnot
-// smuggle something cBowlineOnABight = 'BowlineOnABight'; // BowlineOnABight
-// smuggle something cBrummelSplice = 'BrummelSplice'; // BrummelSplice
-// smuggle something cBrummelSpliceDemo = 'BrummelSpliceDemo'; // BrummelSpliceDemo
-// smuggle something cBuntlineHitch = 'BuntlineHitch'; // BuntlineHitch
-// smuggle something cButchersKnot = 'ButchersKnot'; // ButchersKnot
-// smuggle something cCarrickBend = 'CarrickBend'; // CarrickBend
-// smuggle something cCarrickBendMat = 'CarrickBendMat'; // CarrickBendMat
-// smuggle something cCelticKnot = 'CelticKnot'; // CelticKnot
-// smuggle something cChainSinnet = 'ChainSinnet'; // ChainSinnet
-// smuggle something cChainSplice = 'ChainSplice'; // ChainSplice
-// smuggle something cCleatHitch = 'CleatHitch'; // CleatHitch
-// smuggle something cDockLine = 'DockLine'; // DockLine
-// smuggle something cHalyard = 'Halyard'; // Halyard
-// smuggle something cCloveHitch = 'CloveHitch'; // CloveHitch
-// smuggle something cHitches = 'Hitches'; // Hitches
-// smuggle something cLoops = 'Loops'; // Loops
-// smuggle something cRopeEnd = 'RopeEnd'; // RopeEnd
-// smuggle something cCobraKnot = 'CobraKnot'; // CobraKnot
-// smuggle something cCoilAttachedRope = 'CoilAttachedRope'; // CoilAttachedRope
-// smuggle something cCoilUnattachedRope = 'CoilUnattachedRope'; // CoilUnattachedRope
-// smuggle something cCommonWipping = 'CommonWipping'; // CommonWipping
-// smuggle something cConstrictor = 'Constrictor'; // Constrictor
-// smuggle something cConstrictorSlide = 'ConstrictorSlide'; // ConstrictorSlide
-// smuggle something cSlide = 'Slide'; // Slide
-// smuggle something cConstrictorHoward = 'ConstrictorHoward'; // ConstrictorHoward
-// smuggle something cHoward = 'Howard'; // Howard
-// smuggle something cConstrictorEnd = 'ConstrictorEnd'; // ConstrictorEnd
-// smuggle something cEnd = 'End'; // End
-// smuggle something cConstrictorFolding = 'ConstrictorFolding'; // ConstrictorFolding
-// smuggle something cFolding = 'Folding'; // Folding
-// smuggle something cConstrictorRopeEnd = 'ConstrictorRopeEnd'; // ConstrictorRopeEnd
-// smuggle something cConstrictorTwist = 'ConstrictorTwist'; // ConstrictorTwist
-// smuggle something cTwist = 'Twist'; // Twist
-// smuggle something cCowHitch = 'CowHitch'; // CowHitch
-// smuggle something cCowHitchEnds = 'CowHitchEnds'; // CowHitchEnds
-// smuggle something cChowHitchLoops = 'ChowHitchLoops'; // ChowHitchLoops
-// smuggle something cCrownKnot = 'CrownKnot'; // CrownKnot
-// smuggle something cCrownSinnet = 'CrownSinnet'; // CrownSinnet
-// smuggle something cCurtainTieBack = 'CurtainTieBack'; // CurtainTieBack
-// smuggle something cDavyKnot = 'DavyKnot'; // DavyKnot
-// smuggle something cDistelHitch = 'DistelHitch'; // DistelHitch
-// smuggle something cDoubleAlpineButterfly = 'DoubleAlpineButterfly'; // DoubleAlpineButterfly
-// smuggle something cDoubleDavyKnot = 'DoubleDavyKnot'; // DoubleDavyKnot
-// smuggle something cDoubleDragonLoop = 'DoubleDragonLoop'; // DoubleDragonLoop
-// smuggle something cDoubleFishermans = 'DoubleFishermans'; // DoubleFishermans
-// smuggle something cDoubleMatthewWalker = 'DoubleMatthewWalker'; // DoubleMatthewWalker
-// smuggle something cDoubleOverhandStopper = 'DoubleOverhandStopper'; // DoubleOverhandStopper
-// smuggle something cDoubleTurtleKnot = 'DoubleTurtleKnot'; // DoubleTurtleKnot
-// smuggle something cDropperLoopKnot = 'DropperLoopKnot'; // DropperLoopKnot
-// smuggle something cEggLoopKnot = 'EggLoopKnot'; // EggLoopKnot
-// smuggle something cEstarStopperKnot = 'EstarStopperKnot'; // EstarStopperKnot
-// smuggle something cEyeSplice = 'EyeSplice'; // EyeSplice
-// smuggle something cFarmersLoopKnot = 'FarmersLoopKnot'; // FarmersLoopKnot
-// smuggle something cFarrimondHitch = 'FarrimondHitch'; // FarrimondHitch
-// smuggle something cFgKnot = 'FgKnot'; // FgKnot
-// smuggle something cFiadorKnot = 'FiadorKnot'; // FiadorKnot
-// smuggle something cFigure8Bend = 'Figure8Bend'; // Figure8Bend
-// smuggle something cFigure8DirectionLoop = 'Figure8DirectionLoop'; // Figure8DirectionLoop
-// smuggle something cFigure8DoubleLoop = 'Figure8DoubleLoop'; // Figure8DoubleLoop
-// smuggle something cFigure8Flake = 'Figure8Flake'; // Figure8Flake
-// smuggle something cFigure8FollowLoop = 'Figure8FollowLoop'; // Figure8FollowLoop
-// smuggle something cFigure8Loop = 'Figure8Loop'; // Figure8Loop
-// smuggle something cFigure9Loop = 'Figure9Loop'; // Figure9Loop
-// smuggle something cFlatOverhandBend = 'FlatOverhandBend'; // FlatOverhandBend
-// smuggle something cFlemishFlakeCoil = 'FlemishFlakeCoil'; // FlemishFlakeCoil
-// smuggle something c4StrandSinnet = '4StrandSinnet'; // 4StrandSinnet
-// smuggle something c4StrandSquareSinnet = '4StrandSquareSinnet'; // 4StrandSquareSinnet
-// smuggle something cFourInHandNeckTie = 'FourInHandNeckTie'; // FourInHandNeckTie
-// smuggle something cFrenchSinnetOne = 'FrenchSinnetOne'; // FrenchSinnetOne
-// smuggle something cFrenchSinnetTwo = 'FrenchSinnetTwo'; // FrenchSinnetTwo
-// smuggle something cGirthHitch = 'GirthHitch'; // GirthHitch
-// smuggle something cGnatHitch = 'GnatHitch'; // GnatHitch
-// smuggle something cGrogSlidingSplice = 'GrogSlidingSplice'; // GrogSlidingSplice
-// smuggle something cGrogSling = 'GrogSling'; // GrogSling
-// smuggle something cHalfHitch = 'HalfHitch'; // HalfHitch
-// smuggle something cHalfKnot = 'HalfKnot'; // HalfKnot
-// smuggle something cHalfWindsorNecktie = 'HalfWindsorNecktie'; // HalfWindsorNecktie
-// smuggle something cHalterHitch = 'HalterHitch'; // HalterHitch
-// smuggle something cHalyardHitch = 'HalyardHitch'; // HalyardHitch
-// smuggle something cHandcuffKnot = 'HandcuffKnot'; // HandcuffKnot
-// smuggle something cHastyHarness = 'HastyHarness'; // HastyHarness
-// smuggle something cHeavingLineKnot = 'HeavingLineKnot'; // HeavingLineKnot
-// smuggle something cHighwaymansHitch = 'HighwaymansHitch'; // HighwaymansHitch
-// smuggle something cHondaKnot = 'HondaKnot'; // HondaKnot
-// smuggle something cHuntersBend = 'HuntersBend'; // HuntersBend
-// smuggle something cIcicleHitchEnd = 'IcicleHitchEnd'; // IcicleHitchEnd
-// smuggle something cIcicleHitchLoop = 'IcicleHitchLoop'; // IcicleHitchLoop
-// smuggle something cImproveClinchKnot = 'ImproveClinchKnot'; // ImproveClinchKnot
-// smuggle something cKlemheistKnot = 'KlemheistKnot'; // KlemheistKnot
-// smuggle something cLanyardKnot = 'LanyardKnot'; // LanyardKnot
-// smuggle something cLashingDiagonal = 'LashingDiagonal'; // LashingDiagonal
-// smuggle something cLashingRound = 'LashingRound'; // LashingRound
-// smuggle something cLashingSheer = 'LashingSheer'; // LashingSheer
-// smuggle something cLashingSquare = 'LashingSquare'; // LashingSquare
-// smuggle something cLashingTripod = 'LashingTripod'; // LashingTripod
-// smuggle something cLigatureInstrument = 'LigatureInstrument'; // LigatureInstrument
-// smuggle something cLigatureOneHand = 'LigatureOneHand'; // LigatureOneHand
-// smuggle something cLigatureTwoHands = 'LigatureTwoHands'; // LigatureTwoHands
-// smuggle something cLightermansHitch = 'LightermansHitch'; // LightermansHitch
-// smuggle something cLongBurySplice = 'LongBurySplice'; // LongBurySplice
-// smuggle something cManagerHitch = 'ManagerHitch'; // ManagerHitch
-// smuggle something cMarlinSpikeHitch = 'MarlinSpikeHitch'; // MarlinSpikeHitch
-// smuggle something cMastheadKnotMat = 'MastheadKnotMat'; // MastheadKnotMat
-// smuggle something cMcdonaldBrummel = 'McdonaldBrummel'; // McdonaldBrummel
-// smuggle something cMidshipmansHitch = 'MidshipmansHitch'; // MidshipmansHitch
-// smuggle something cMillersKnot = 'MillersKnot'; // MillersKnot
-// smuggle something cMonkeysFistKnot = 'MonkeysFistKnot'; // MonkeysFistKnot
-// smuggle something cMooringsHitch = 'MooringsHitch'; // MooringsHitch
-// smuggle something cMunterMuleCombo = 'MunterMuleCombo'; // MunterMuleCombo
-// smuggle something cNailKnot = 'NailKnot'; // NailKnot
-// smuggle something cNonSlipMonoKnot = 'NonSlipMonoKnot'; // NonSlipMonoKnot
-// smuggle something cNooseKnot = 'NooseKnot'; // NooseKnot
-// smuggle something cOceanPlaitMat = 'OceanPlaitMat'; // OceanPlaitMat
-// smuggle something cOneHandedBowline = 'OneHandedBowline'; // OneHandedBowline
-// smuggle something cOrvisKnot = 'OrvisKnot'; // OrvisKnot
-// smuggle something cOverhandKnot = 'OverhandKnot'; // OverhandKnot
-// smuggle something cPackageTyingKnot = 'PackageTyingKnot'; // PackageTyingKnot
-// smuggle something cPalomarKnot = 'PalomarKnot'; // PalomarKnot
-// smuggle something cPerfectionLoop = 'PerfectionLoop'; // PerfectionLoop
-// smuggle something cPileHitch = 'PileHitch'; // PileHitch
-// smuggle something cPoachersKnot = 'PoachersKnot'; // PoachersKnot
-// smuggle something cPrattNecktie = 'PrattNecktie'; // PrattNecktie
-// smuggle something cPrusikKnot = 'PrusikKnot'; // PrusikKnot
-// smuggle something cPurcellPrusikKnot = 'PurcellPrusikKnot'; // PurcellPrusikKnot
-// smuggle something cQuickHitch = 'QuickHitch'; // QuickHitch
-// smuggle something cRadiumReleaseHitch = 'RadiumReleaseHitch'; // RadiumReleaseHitch
-// smuggle something cRapalaKnot = 'RapalaKnot'; // RapalaKnot
-// smuggle something cRatTailStopperKnot = 'RatTailStopperKnot'; // RatTailStopperKnot
-// smuggle something cRingHitch = 'RingHitch'; // RingHitch
-// smuggle something cRollingHitch = 'RollingHitch'; // RollingHitch
-// smuggle something cRoundTurnHitches = 'RoundTurnHitches'; // RoundTurnHitches
-// smuggle something cRunningBowline = 'RunningBowline'; // RunningBowline
-// smuggle something cSailmakersWhipping = 'SailmakersWhipping'; // SailmakersWhipping
-// smuggle something cSanDiegoJamKnot = 'SanDiegoJamKnot'; // SanDiegoJamKnot
-// smuggle something cSheepShank = 'SheepShank'; // SheepShank
-// smuggle something cSheetBend = 'SheetBend'; // SheetBend
-// smuggle something cShoelaceBow = 'ShoelaceBow'; // ShoelaceBow
-// smuggle something cShoelaceBowFieggen = 'ShoelaceBowFieggen'; // ShoelaceBowFieggen
-// smuggle something cShoelaceBowSurgeon = 'ShoelaceBowSurgeon'; // ShoelaceBowSurgeon
-// smuggle something cShortSplice = 'ShortSplice'; // ShortSplice
-// smuggle something cSiberianHitch = 'SiberianHitch'; // SiberianHitch
-// smuggle something cSingleRopeBraid = 'SingleRopeBraid'; // SingleRopeBraid
-// smuggle something cSlidingDoubleFishermans = 'SlidingDoubleFishermans'; // SlidingDoubleFishermans
-// smuggle something cSlimBeautyKnot = 'SlimBeautyKnot'; // SlimBeautyKnot
-// smuggle something cSlipKnot = 'SlipKnot'; // SlipKnot
-// smuggle something cSnellKnot = 'SnellKnot'; // SnellKnot
-// smuggle something cSoftShackle = 'SoftShackle'; // SoftShackle
-// smuggle something cSoftShackleEdwards = 'SoftShackleEdwards'; // SoftShackleEdwards
-// smuggle something cSoftShackleStronger = 'SoftShackleStronger'; // SoftShackleStronger
-// smuggle something cSpanishBowline = 'SpanishBowline'; // SpanishBowline
-// smuggle something cSquareKnot = 'SquareKnot'; // SquareKnot
-// smuggle something cStevedoreStopper = 'StevedoreStopper'; // StevedoreStopper
-// smuggle something cStopperLoop = 'StopperLoop'; // StopperLoop
-// smuggle something cStrangleKnotEnd = 'StrangleKnotEnd'; // StrangleKnotEnd
-// smuggle something cStrangleKnotOverhand = 'StrangleKnotOverhand'; // StrangleKnotOverhand
-// smuggle something cSuperMunterHitch = 'SuperMunterHitch'; // SuperMunterHitch
-// smuggle something cSurgeonsJoinKnot = 'SurgeonsJoinKnot'; // SurgeonsJoinKnot
-// smuggle something cSurgeonsLoopKnot = 'SurgeonsLoopKnot'; // SurgeonsLoopKnot
-// smuggle something cSurgicalSlipTie = 'SurgicalSlipTie'; // SurgicalSlipTie
-// smuggle something cSurgicalTieInsturmental = 'SurgicalTieInsturmental'; // SurgicalTieInsturmental
-// smuggle something cSurgicalTieOneHand = 'SurgicalTieOneHand'; // SurgicalTieOneHand
-// smuggle something cSurgicalTieTwoHands = 'SurgicalTieTwoHands'; // SurgicalTieTwoHands
-// smuggle something cTensionlessHitch = 'TensionlessHitch'; // TensionlessHitch
-// smuggle something c3StrandBraid = '3StrandBraid'; // 3StrandBraid
-// smuggle something c3StrandBraidAlternate = '3StrandBraidAlternate'; // 3StrandBraidAlternate
-// smuggle something cTimberHitch = 'TimberHitch'; // TimberHitch
-// smuggle something cTreeSwing = 'TreeSwing'; // TreeSwing
-// smuggle something cTrileneKnot = 'TrileneKnot'; // TrileneKnot
-// smuggle something cTruckersHitch = 'TruckersHitch'; // TruckersHitch
-// smuggle something cTruckersHitchQuick = 'TruckersHitchQuick'; // TruckersHitchQuick
-// smuggle something cTumbleHitch = 'TumbleHitch'; // TumbleHitch
-// smuggle something cTurksHead = 'TurksHead'; // TurksHead
-// smuggle something cTwoHalfHitches = 'TwoHalfHitches'; // TwoHalfHitches
-// smuggle something cUnderwritersKnot = 'UnderwritersKnot'; // UnderwritersKnot
-// smuggle something cUniKNot = 'UniKNot'; // UniKNot
-// smuggle something cWallCrownKnot = 'WallCrownKnot'; // WallCrownKnot
-// smuggle something cWallKnot = 'WallKnot'; // WallKnot
-// smuggle something cWaterBowline = 'WaterBowline'; // WaterBowline
-// smuggle something cWaterKnot = 'WaterKnot'; // WaterKnot
-// smuggle something cWestCountryWipping = 'WestCountryWipping'; // WestCountryWipping
-// smuggle something cWhoopieSling = 'WhoopieSling'; // WhoopieSling
-// smuggle something cWindsorNecktie = 'WindsorNecktie'; // WindsorNecktie
-// smuggle something cZeppelinBend = 'ZeppelinBend'; // ZeppelinBend
 </code></pre>
         </article>
     </section>
@@ -1508,13 +1300,13 @@ import * as w from './word.constants';
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 15:30:59 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 22 2021 09:31:44 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

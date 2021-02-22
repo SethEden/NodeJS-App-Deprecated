@@ -9,7 +9,7 @@ exports["default"] = exports.initClientRulesLibrary = void 0;
 
 var clientStringParsing = _interopRequireWildcard(require("./ClientRules/clientStringParsing"));
 
-var c = _interopRequireWildcard(require("../Constants/application.constants"));
+var apc = _interopRequireWildcard(require("../Constants/application.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -29,17 +29,17 @@ var initClientRulesLibrary = function initClientRulesLibrary() {
 
   // console.log('BEGIN clientRulesLibrary.initClientRulesLibrary function');
   // console.log('END clientRulesLibrary.initClientRulesLibrary function');
-  return _ref = {}, _defineProperty(_ref, c.cclientEcho, function (inputData, inputMetaData) {
+  return _ref = {}, _defineProperty(_ref, apc.cclientEcho, function (inputData, inputMetaData) {
     return inputData, inputMetaData;
-  }), _defineProperty(_ref, c.ccustomEcho, function (inputData, inputMetaData) {
+  }), _defineProperty(_ref, apc.ccustomEcho, function (inputData, inputMetaData) {
     return clientStringParsing.customEcho(inputData, inputMetaData);
-  }), _defineProperty(_ref, c.cmostPopularNumber, function (inputData, inputMetaData) {
+  }), _defineProperty(_ref, apc.cmostPopularNumber, function (inputData, inputMetaData) {
     return clientStringParsing.mostPopularNumber(inputData, inputMetaData);
-  }), _defineProperty(_ref, c.cisAlmostPalindrome, function (inputData, inputMetaData) {
+  }), _defineProperty(_ref, apc.cisAlmostPalindrome, function (inputData, inputMetaData) {
     return clientStringParsing.isAlmostPalindrome(inputData, inputMetaData);
-  }), _defineProperty(_ref, c.cthreePointAverage, function (inputData, inputMetaData) {
+  }), _defineProperty(_ref, apc.cthreePointAverage, function (inputData, inputMetaData) {
     return clientStringParsing.threePointAverage(inputData, inputMetaData);
-  }), _defineProperty(_ref, c.carrayCounter, function (inputData, inputMetaData) {
+  }), _defineProperty(_ref, apc.carrayCounter, function (inputData, inputMetaData) {
     return clientStringParsing.arrayCounter(inputData, inputMetaData);
   }), _ref;
 };

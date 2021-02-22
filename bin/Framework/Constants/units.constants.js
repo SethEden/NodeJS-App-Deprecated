@@ -7,11 +7,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.cFemtoSeconds = exports.cFemtoSecond = exports.cPicoSeconds = exports.cPicoSecond = exports.cMilliSeconds = exports.cMilliSecond = exports.cMicroSeconds = exports.cMicroSecond = exports.cNanoSeconds = exports.cNanoSecond = exports.cMillenniums = exports.cMillennium = exports.cCenturies = exports.cCentury = exports.cCentur = exports.cCent = exports.ccent = exports.cDecades = exports.cDecade = exports.cYears = exports.cYear = exports.cMonths = exports.cMonth = exports.cWeeks = exports.cWeek = exports.cDays = exports.cDay = exports.cHours = exports.cHour = exports.cMinutes = exports.cMinute = exports.cSeconds = exports.cSecond = exports.csecond = exports.cMilli = exports.cMill = exports.cMicro = exports.cNano = exports.cPico = exports.cFemto = void 0;
 
-var b = _interopRequireWildcard(require("../constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../constants/basic.constants"));
 
-var p = _interopRequireWildcard(require("../constants/phonics.constants"));
-
-var n = _interopRequireWildcard(require("../constants/numeric.constants"));
+var phn = _interopRequireWildcard(require("../constants/phonics.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -24,101 +22,100 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * Also included are units of measurement, units of time, etc...
  * @requires module:basic-constants
  * @requires module:phonics-constants
- * @requires module:numeric-constants
  * @author Seth Hollingsead
  * @date 2020/07/21
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 // Units of Measure
-var cFemto = b.cFe + b.cmt + b.co; // Femto
+var cFemto = bas.cFe + bas.cmt + bas.co; // Femto
 
 exports.cFemto = cFemto;
-var cPico = b.cPi + b.cco; // Pico
+var cPico = bas.cPi + bas.cco; // Pico
 
 exports.cPico = cPico;
-var cNano = b.cNa + b.cno; // Nano
+var cNano = bas.cNa + bas.cno; // Nano
 
 exports.cNano = cNano;
-var cMicro = b.cMi + b.ccr + b.co; // Micro
+var cMicro = bas.cMi + bas.ccr + bas.co; // Micro
 
 exports.cMicro = cMicro;
-var cMill = b.cMi + b.cll; // Mill
+var cMill = bas.cMi + bas.cll; // Mill
 
 exports.cMill = cMill;
-var cMilli = cMill + b.ci; // Milli
+var cMilli = cMill + bas.ci; // Milli
 // Units of Time
 
 exports.cMilli = cMilli;
-var csecond = b.cse + p.ccond; // second
+var csecond = bas.cse + phn.ccond; // second
 
 exports.csecond = csecond;
-var cSecond = b.cSe + p.ccond; // Second
+var cSecond = bas.cSe + phn.ccond; // Second
 
 exports.cSecond = cSecond;
-var cSeconds = cSecond + b.cs; // Seconds
+var cSeconds = cSecond + bas.cs; // Seconds
 
 exports.cSeconds = cSeconds;
-var cMinute = b.cMi + b.cnu + b.cte; // Minute
+var cMinute = bas.cMi + bas.cnu + bas.cte; // Minute
 
 exports.cMinute = cMinute;
-var cMinutes = cMinute + b.cs; // Minutes
+var cMinutes = cMinute + bas.cs; // Minutes
 
 exports.cMinutes = cMinutes;
-var cHour = b.cHo + b.cur; // Hour
+var cHour = bas.cHo + bas.cur; // Hour
 
 exports.cHour = cHour;
-var cHours = cHour + b.cs; // Hours
+var cHours = cHour + bas.cs; // Hours
 
 exports.cHours = cHours;
-var cDay = b.cDa + b.cy; // Day
+var cDay = bas.cDa + bas.cy; // Day
 
 exports.cDay = cDay;
-var cDays = cDay + b.cs; // Days
+var cDays = cDay + bas.cs; // Days
 
 exports.cDays = cDays;
-var cWeek = b.cW + b.cee + b.ck; // Week
+var cWeek = bas.cW + bas.cee + bas.ck; // Week
 
 exports.cWeek = cWeek;
-var cWeeks = cWeek + b.cs; // Weeks
+var cWeeks = cWeek + bas.cs; // Weeks
 
 exports.cWeeks = cWeeks;
-var cMonth = b.cMo + b.cn + b.cth; // Month
+var cMonth = bas.cMo + bas.cn + bas.cth; // Month
 
 exports.cMonth = cMonth;
-var cMonths = cMonth + b.cs; // Months
+var cMonths = cMonth + bas.cs; // Months
 
 exports.cMonths = cMonths;
-var cYear = b.cYe + b.car; // Year
+var cYear = bas.cYe + bas.car; // Year
 
 exports.cYear = cYear;
-var cYears = cYear + b.cs; // Years
+var cYears = cYear + bas.cs; // Years
 
 exports.cYears = cYears;
-var cDecade = b.cDe + b.cca + b.cde; // Decade
+var cDecade = bas.cDe + bas.cca + bas.cde; // Decade
 
 exports.cDecade = cDecade;
-var cDecades = cDecade + b.cs; // Decades
+var cDecades = cDecade + bas.cs; // Decades
 
 exports.cDecades = cDecades;
-var ccent = b.cc + p.cent; // cent
+var ccent = bas.cc + phn.cent; // cent
 
 exports.ccent = ccent;
-var cCent = b.cC + p.cent; // Cent
+var cCent = bas.cC + phn.cent; // Cent
 
 exports.cCent = cCent;
-var cCentur = cCent + b.cur; // Centur
+var cCentur = cCent + bas.cur; // Centur
 
 exports.cCentur = cCentur;
-var cCentury = cCentur + b.cy; // Century
+var cCentury = cCentur + bas.cy; // Century
 
 exports.cCentury = cCentury;
-var cCenturies = cCentur + p.cies; // Centuries
+var cCenturies = cCentur + phn.cies; // Centuries
 
 exports.cCenturies = cCenturies;
-var cMillennium = cMill + b.cen + b.cni + b.cum; // Millennium // Millennium Falcon ;-)
+var cMillennium = cMill + bas.cen + bas.cni + bas.cum; // Millennium // Millennium Falcon ;-)
 
 exports.cMillennium = cMillennium;
-var cMillenniums = cMillennium + b.cs; // Millenniums
+var cMillenniums = cMillennium + bas.cs; // Millenniums
 
 exports.cMillenniums = cMillenniums;
 var cNanoSecond = cNano + cSecond; // NanoSecond

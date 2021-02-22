@@ -9,13 +9,11 @@ exports.customEchoCommand = void 0;
 
 var _warden = _interopRequireDefault(require("../../../../Framework/Controllers/warden"));
 
-var _queue = _interopRequireDefault(require("../../../../Framework/Resources/queue"));
+var bas = _interopRequireWildcard(require("../../../../Framework/Constants/basic.constants"));
 
-var c = _interopRequireWildcard(require("../../Constants/application.constants"));
+var sys = _interopRequireWildcard(require("../../../../Framework/Constants/system.constants"));
 
-var s = _interopRequireWildcard(require("../../../../Framework/Constants/system.constants"));
-
-var b = _interopRequireWildcard(require("../../../../Framework/Constants/basic.constants"));
+var apc = _interopRequireWildcard(require("../../Constants/application.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -28,10 +26,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @module clientCommands
  * @description Contains all client defined commands for execution client actions with various operations.
  * @requires module:warden
- * @requires module:queue
- * @requires module:application-constants
- * @requires module:system-constants
  * @requires module:basic-constants
+ * @requires module:system-constants
+ * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/10
@@ -54,20 +51,20 @@ var customEchoCommand = function customEchoCommand(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEchoCommand function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = c.ccustomEchoCommand;
+  var functionName = apc.ccustomEchoCommand;
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, sys.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, sys.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, sys.cinputMetaDataIs + inputMetaData);
 
   var returnData;
   returnData = inputData + ' clientStringParsing.customEchoCommand';
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, sys.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, sys.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END clientStringParsing.customEcho function');
 
 

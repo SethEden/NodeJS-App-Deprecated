@@ -12,6 +12,8 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
@@ -24,14 +26,16 @@ import configurator from './configurator';
 import colorizer from './colorizer';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import timers from './timers';
-import * as b from '../Constants/basic.constants';
-import * as g from '../Constants/generic.constants';
-import * as w from '../Constants/word.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as gen from '../Constants/generic.constants';
+import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
+import * as biz from '../Constants/business.constants';
+import * as cfg from '../Constants/configurations.constants';
 var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 /**
  * @function consoleLog
@@ -49,19 +53,19 @@ var D = require('../Resources/data');
  */
 function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
-    let logFile = configurator.getConfigurationSetting(s.cApplicationCleanedRootPath);
+    let logFile = configurator.getConfigurationSetting(sys.cApplicationCleanedRootPath);
     if (logFile !== undefined) {
-      logFile = logFile + b.cForwardSlash + w.clogs;
+      logFile = logFile + bas.cForwardSlash + wrd.clogs;
       // console.log('logFile is !== undefined');
       let debugSetting = false;
       let outputMessage = '';
       let rules = {};
-      rules[1] = s.creplaceDoublePercentWithMessage;
-      logFile = path.resolve(logFile + b.cForwardSlash + configurator.getConfigurationSetting(s.cLogFilePathAndName));
+      rules[0] = biz.creplaceDoublePercentWithMessage;
+      logFile = path.resolve(logFile + bas.cForwardSlash + configurator.getConfigurationSetting(sys.cLogFilePathAndName));
       // console.log('determine if there is a configuration setting for the class path');
       debugSetting = configurator.getConfigurationSetting(classPath);
       // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
-      if (logFile.toUpperCase().includes(g.cLOG) || logFile.toUpperCase().includes(g.cTXT)) { // If we have a log file then we will log it to the console & file.
+      if (logFile.toUpperCase().includes(gen.cLOG) || logFile.toUpperCase().includes(gen.cTXT)) { // If we have a log file then we will log it to the console & file.
         consoleLogProcess(debugSetting, logFile, classPath, message, true);
       } else { // No text log file specified, proceed with the same process for console only.
         consoleLogProcess(debugSetting, undefined, classPath, message, false);
@@ -96,15 +100,15 @@ function consoleTableLog(classPath, tableData, columnNames) {
 function constantsValidationSummaryLog(message, passFail) {
   let outputMessage = '';
   if (passFail === true) {
-    if (configurator.getConfigurationSetting(s.cDisplaySummaryConstantsValidationPassMessages) === true) {
-      outputMessage = w.cPASSED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cPASSED; // `PASSED -- ${message} -- PASSED`;
+    if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationPassMessages) === true) {
+      outputMessage = wrd.cPASSED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASSED; // `PASSED -- ${message} -- PASSED`;
       outputMessage = chalk.rgb(0,0,0)(outputMessage);
       outputMessage = chalk.bgRgb(0,255,0)(outputMessage);
       console.log(outputMessage);
     }
   } else {
-    if (configurator.getConfigurationSetting(s.cDisplaySummaryConstantsValidationFailMessages) === true) {
-      outputMessage = w.cFAILED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAILED; // `FAILED -- ${message} -- FAILED`;
+    if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationFailMessages) === true) {
+      outputMessage = wrd.cFAILED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAILED; // `FAILED -- ${message} -- FAILED`;
       outputMessage = chalk.rgb(0,0,0)(outputMessage);
       outputMessage = chalk.bgRgb(255,0,0)(outputMessage);
       console.log(outputMessage);
@@ -148,7 +152,7 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
       }
     }
     // console.log('Past the block of code that checks if the setting is true or not.');
-  } else if (configurator.getConfigurationSetting(s.cDebugTestExhaustive) === true) {
+  } else if (configurator.getConfigurationSetting(sys.cDebugTestExhaustive) === true) {
     // console.log('else-block the DebugTestExhaustive setting is true');
     outputMessage = ruleBroker.processRules(message, classPath, rules);
     // Debug Exhaustive is probably not the best, we might want to consider another configuration setting to
@@ -218,7 +222,7 @@ function validMessage(outputMessage, originalMessage) {
   // }
   if (outputMessage !== false && outputMessage !== originalMessage) {
     returnValue = true;
-  } else if (outputMessage !== false && outputMessage.includes(b.cPercent + b.cPercent) === false) {
+  } else if (outputMessage !== false && outputMessage.includes(bas.cPercent + bas.cPercent) === false) {
     returnValue = true;
   }
   // console.log('returnValue is: ' + returnValue);
@@ -248,7 +252,7 @@ function parseClassPath(logFile, classPath, message) {
   let classPathArray = {};
   let returnData = '';
 
-  classPathArray = classPath.split(b.cDot);
+  classPathArray = classPath.split(bas.cDot);
   // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
   // printMessageToFile(logFile, 'classPathArray.length is: ' + Object.keys(classPathArray).length);
   // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
@@ -257,7 +261,7 @@ function parseClassPath(logFile, classPath, message) {
     // printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
     // console.log('ERROR: Advanced debugging capability more than 3 not supported at all!');
   } else if (Object.keys(classPathArray).length === 3 ) {
-    className = classPathArray[0] + b.cDot + classPathArray[1];
+    className = classPathArray[0] + bas.cDot + classPathArray[1];
 
     // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
     // printMessageToFile(logFile, 'className is: ' + className);
@@ -281,20 +285,20 @@ function parseClassPath(logFile, classPath, message) {
     // printMessageToFile(logFile, 'ERROR: No class data, just print the message as is.');
     // console.log('ERROR: No class data, just print the message as is.');
   }
-  // printMessageToFile(logFile, 'getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
-  // console.log('getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
-  debugFunctionsSetting = configurator.getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
+  // printMessageToFile(logFile, 'getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
+  // console.log('getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
+  debugFunctionsSetting = configurator.getConfigurationSetting(sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
   // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
   // console.log('configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
-  debugFilesSetting = configurator.getConfigurationSetting(s.cDebugFiles + b.cPipe + className);
+  debugFilesSetting = configurator.getConfigurationSetting(sys.cDebugFiles + bas.cPipe + className);
   // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
   // console.log('configuration setting debugFilesSetting is: ' + debugFilesSetting);
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
     // message = chalk.white(message);
     // className = chalk.red.bold(className);
     // functionName = chalk.red.bold(functionName);
-    // // message = message.replace('%%', className + b.cDot + functionName);
-    // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    // // message = message.replace('%%', className + bas.cDot + functionName);
+    // return ruleBroker.processRules(message, className + bas.cDot + functionName, rules);
     // console.log('both true, call colorizer.colorizeMessage with the false flag');
     message = colorizer.colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
     returnData = message;
@@ -329,22 +333,22 @@ function printMessageToFile(file, message) {
   // console.log(message);
   let fd;
   let dateTimeStamp = '';
-  // let currentOS = configurator.getConfigurationSetting(s.cOperatingSystem);
-  // if (currentOS === w.cWindows || currentOS === w.cLinux) {
-    if (configurator.getConfigurationSetting(s.cLogFileEnabled) === true) {
+  // let currentOS = configurator.getConfigurationSetting(sys.cOperatingSystem);
+  // if (currentOS === wrd.cWindows || currentOS === wrd.cLinux) {
+    if (configurator.getConfigurationSetting(sys.cLogFileEnabled) === true) {
       // console.log('LogFileEnabled = true');
       message = colorizer.removeFontStyles(message);
-      if (configurator.getConfigurationSetting(s.cIncludeDateTimeStampInLogFiles) === true) {
+      if (configurator.getConfigurationSetting(sys.cIncludeDateTimeStampInLogFiles) === true) {
         // Individual messages need to have a time stamp on them. So lets sign the message with a time stamp.
-        dateTimeStamp = timers.getNowMoment(g.cYYYY_MM_DD_HH_mm_ss_SSS);
+        dateTimeStamp = timers.getNowMoment(gen.cYYYY_MM_DD_HH_mm_ss_SSS);
         // console.log('dateTimeStamp is: ' + dateTimeStamp);
-        message = dateTimeStamp + b.cColon + b.cSpace + message;
+        message = dateTimeStamp + bas.cColon + bas.cSpace + message;
       }
 
       // console.log('final Message is: ' + message);
       try {
         fd = fs.openSync(file, 'a');
-        fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, g.cUTF8);
+        fs.appendFileSync(fd, message + bas.cCarriageReturn + bas.cNewLine, gen.cUTF8);
       } catch (err) {
         return console.log(err);
       } finally {
@@ -353,7 +357,7 @@ function printMessageToFile(file, message) {
         }
       }
       // // console.log('writing message to file: ' + file + ' message: ' + message);
-      // fs.appendFile(file, message + b.cCarriageReturn + b.cNewLine, 'utf8', function(err) {
+      // fs.appendFile(file, message + bas.cCarriageReturn + bas.cNewLine, 'utf8', function(err) {
       //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
       //   if (err) { return console.log(err); }
       // });

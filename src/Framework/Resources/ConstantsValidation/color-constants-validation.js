@@ -1,5 +1,5 @@
 /**
- * @file color.constants-validation.js
+ * @file color-constants-validation.js
  * @module color-constants-validation
  * @description Contains all validations for named colors.
  * @requires module:color-constants

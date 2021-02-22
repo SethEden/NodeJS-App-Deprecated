@@ -8,6 +8,7 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -15,11 +16,12 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import loggers from '../Executrix/loggers';
-import * as b from '../Constants/basic.constants';
-import * as w from '../Constants/word.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
+import * as msg from '../Constants/messages.constants';
 var path = require('path');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
@@ -34,25 +36,25 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function getWorkflow(workflowName) {
   let functionName = getWorkflow.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // workflowName is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowNameIs + workflowName);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowNameIs + workflowName);
   let workflowValue = false;
-  let arrayOfWorkflows = D[s.cCommandWorkflows][w.cWorkflow];
+  let arrayOfWorkflows = D[sys.cCommandWorkflows][wrd.cWorkflow];
   for (let i = 0; i < arrayOfWorkflows.length; i++) {
     let currentWorkflow = arrayOfWorkflows[i];
     // currentWorkflow is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
-    if (currentWorkflow[w.cName] === workflowName) {
-      workflowValue = currentWorkflow[w.cValue];
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
+    if (currentWorkflow[wrd.cName] === workflowName) {
+      workflowValue = currentWorkflow[wrd.cValue];
       // workflowValue is:
-      loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowValueIs + JSON.stringify(workflowValue));
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + JSON.stringify(workflowValue));
       break;
     }
   }
   // workflowValue is:
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cworkflowValueIs + workflowValue);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + workflowValue);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return workflowValue;
 };
 

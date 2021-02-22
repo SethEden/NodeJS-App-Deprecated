@@ -39,6 +39,8 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -50,11 +52,13 @@ import configurator from '../Executrix/configurator';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from '../Executrix/loggers';
 import timers from '../Executrix/timers';
-import * as b from '../Constants/basic.constants';
-import * as w from '../Constants/word.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
+import * as biz from '../Constants/business.constants';
+import * as msg from '../Constants/messages.constants';
 var path = require('path');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
@@ -74,24 +78,24 @@ function setupConfiguration(pathAndFilename) {
   // console.log('BEGIN chiefConfiguration.setupConfiguration function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
   let functionName = setupConfiguration.name; // 'setupConfiguration';
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cpathAndFilenameIs + pathAndFilename);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpathAndFilenameIs + pathAndFilename);
   let rules = {};
-  rules[1] = s.cswapBackSlashToForwardSlash;
-  D[w.cConfiguration] = {};
+  rules[0] = biz.cswapBackSlashToForwardSlash;
+  D[wrd.cConfiguration] = {};
   pathAndFilename = ruleBroker.processRules(pathAndFilename, '', rules);
-  configurator.setConfigurationSetting(s.cConfigurationPath, pathAndFilename);
+  configurator.setConfigurationSetting(sys.cConfigurationPath, pathAndFilename);
   let allConfigurationData = {};
-  allConfigurationData = chiefData.setupAllXmlData(s.cConfigurationPath, w.cConfiguration);
+  allConfigurationData = chiefData.setupAllXmlData(sys.cConfigurationPath, wrd.cConfiguration);
   parseLoadedConfigurationData(allConfigurationData);
   allConfigurationData = {};
-  allConfigurationData = chiefData.setupAllCsvData(s.cConfigurationPath, w.cConfiguration);
+  allConfigurationData = chiefData.setupAllCsvData(sys.cConfigurationPath, wrd.cConfiguration);
   // parseLoadedConfigurationData(allConfigurationData);
 
   // Get the operating system envrionment variable here and setup how to setup the log files.
-  loggers.consoleLog(s.cLogFileEnabled, configurator.getConfigurationSetting(s.cDateTimeSTamp));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-  // console.log(configurator.getConfigurationSetting(s.cDateTimeSTamp));
+  loggers.consoleLog(msg.cLogFileEnabled, configurator.getConfigurationSetting(sys.cDateTimeSTamp));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  // console.log(configurator.getConfigurationSetting(sys.cDateTimeSTamp));
   // console.log('END chiefConfiguration.setupTestConfiguration function');
 };
 
@@ -116,8 +120,8 @@ function parseLoadedConfigurationData(allConfigurationData) {
   // console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
   // console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
   // var functionName = parseLoadedConfigurationData.name;
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
   let highLevelConfigurationContainer = {};
   let allConfigurations = {};
   let allSubConfigurations = {};
@@ -139,23 +143,23 @@ function parseLoadedConfigurationData(allConfigurationData) {
   let value;
   let version;
   let advancedDebugSettingPrefix;
-  rules[1] = s.cstringToDataType;
+  rules[0] = biz.cstringToDataType;
 
   // First we need to pull out all the high level configuration meta-data
   // about the rest of the cofiguration elements we are about to process.
-  highLevelConfigurationContainer = allConfigurationData[w.cPage][w.cApplication][w.cConfigurations][w.cConfiguration];
-  configurationsName = highLevelConfigurationContainer[s.cConfigurationName];
+  highLevelConfigurationContainer = allConfigurationData[wrd.cPage][wrd.cApplication][wrd.cConfigurations][wrd.cConfiguration];
+  configurationsName = highLevelConfigurationContainer[sys.cConfigurationName];
   // console.log('configurationsName is: ' + configurationsName);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsName is: ' + configurationsName);
-  if (highLevelConfigurationContainer[w.cCommon][s.cConfigurationElement][w.cName] === s.cVersionControl) {
-    configurationsVersion = highLevelConfigurationContainer[w.cCommon][s.cConfigurationElement][w.cValue];
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'configurationsName is: ' + configurationsName);
+  if (highLevelConfigurationContainer[wrd.cCommon][sys.cConfigurationElement][wrd.cName] === sys.cVersionControl) {
+    configurationsVersion = highLevelConfigurationContainer[wrd.cCommon][sys.cConfigurationElement][wrd.cValue];
     configurationsVersion = ruleBroker.processRules(configurationsVersion, '', rules);
   }
   // console.log('configurationsVersion is: ' + configurationsVersion);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationsVersion is: ' + configurationsVersion);
-  allConfigurations = highLevelConfigurationContainer[s.cConfigurationElements][s.cConfigurationElement];
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'configurationsVersion is: ' + configurationsVersion);
+  allConfigurations = highLevelConfigurationContainer[sys.cConfigurationElements][sys.cConfigurationElement];
   // console.log('allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
 
   if (configurationsVersion !== undefined &amp;&amp; configurationsVersion !== '' &amp;&amp;
   configurationsName !== undefined &amp;&amp; configurationsName !== '' &amp;&amp;
@@ -168,7 +172,7 @@ function parseLoadedConfigurationData(allConfigurationData) {
     // Although we might actually not have more than one configuration file.
     for (let key in allConfigurations) {
       // console.log('single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
-      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
+      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
       configurationElement = allConfigurations[key];
       name = '';
       type = '';
@@ -178,19 +182,19 @@ function parseLoadedConfigurationData(allConfigurationData) {
       configurationSubElement = undefined;
       allSubConfigurations = {};
       if (!!configurationElement) {
-        name = configurationElement[w.cName];
-        type = configurationElement[w.cType];
-        value = configurationElement[w.cValue];
-        version = configurationElement[w.cVersion];
+        name = configurationElement[wrd.cName];
+        type = configurationElement[wrd.cType];
+        value = configurationElement[wrd.cValue];
+        version = configurationElement[wrd.cVersion];
         version = ruleBroker.processRules(version, '', rules);
         if (name !== '' &amp;&amp; type !== '' &amp;&amp; value !== '' &amp;&amp; version !== '') {
           if (type === configurationsName &amp;&amp; version == configurationsVersion) {
-            if ((name === s.cDebugFunctions || name === s.cDebugFiles) &amp;&amp; value === w.cMultiple) {
+            if ((name === sys.cDebugFunctions || name === sys.cDebugFiles) &amp;&amp; value === wrd.cMultiple) {
               // console.log('configurationElement is: ' + JSON.stringify(configurationElement));
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
-              allSubConfigurations = configurationElement[s.cConfigurationElement];
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
+              allSubConfigurations = configurationElement[sys.cConfigurationElement];
               // console.log('allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
               advancedDebugSettingPrefix = name;
               for (let subKey in allSubConfigurations) {
                 name = '';
@@ -199,25 +203,25 @@ function parseLoadedConfigurationData(allConfigurationData) {
                 version = '';
                 configurationSubElement = allSubConfigurations[subKey];
                 if (!!configurationSubElement) {
-                  name = configurationSubElement[w.cName];
-                  type = configurationSubElement[w.cType];
-                  value = configurationSubElement[w.cValue];
-                  version = configurationSubElement[w.cVersion];
+                  name = configurationSubElement[wrd.cName];
+                  type = configurationSubElement[wrd.cType];
+                  value = configurationSubElement[wrd.cValue];
+                  version = configurationSubElement[wrd.cVersion];
                   version = ruleBroker.processRules(version, '', rules);
                   if (name !== '' &amp;&amp; type !== '' &amp;&amp; value !== '' &amp;&amp; version !== '') {
                     if (type === configurationsName &amp;&amp; version === configurationsVersion) {
                       // console.log('process advanced configuration setting: ');
-                      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'process advanced configuration setting: ');
+                      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'process advanced configuration setting: ');
                       // console.log('name is: ' + name);
-                      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'name is: ' + name);
+                      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'name is: ' + name);
                       // console.log('type is: ' + type);
-                      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'type is: ' + type);
+                      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'type is: ' + type);
                       // console.log('value is: ' + value);
-                      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
+                      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'value is: ' + value);
                       // console.log('version is: ' + version);
-                      // loggers.consoleLog(baseFileName + b.cDot + functionName, 'version is: ' + version);
+                      // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'version is: ' + version);
                       value = ruleBroker.processRules(value, '', rules);
-                      configurator.setConfigurationSetting(advancedDebugSettingPrefix + b.cPipe + name, value);
+                      configurator.setConfigurationSetting(advancedDebugSettingPrefix + bas.cPipe + name, value);
                     }
                   }
                 }
@@ -227,9 +231,9 @@ function parseLoadedConfigurationData(allConfigurationData) {
               value = processConfigurationRules(name, value);
               value = ruleBroker.processRules(value, '', rules);
               // console.log('setting the configuration name: ' + name);
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'setting the configuration name: ' + name);
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'setting the configuration name: ' + name);
               // console.log('setting the configuration value: ' + value);
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'setting the configuration value: ' + value);
+              // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'setting the configuration value: ' + value);
               configurator.setConfigurationSetting(name, value);
             }
           }
@@ -239,8 +243,8 @@ function parseLoadedConfigurationData(allConfigurationData) {
   }
   // console.log('full contents of the D are: ' + JSON.stringify(D));
   // console.log('END chiefConfiguration.parseLoadedConfigurationData function');
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'full contents of the D are: ' + JSON.stringify(D));
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'full contents of the D are: ' + JSON.stringify(D));
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cEND_Function);
 };
 
 /**
@@ -264,12 +268,12 @@ function processConfigurationRules(name, value) {
   // console.log('name is: ' + name);
   // console.log('value is: ' + value);
   // var functionName = parseLoadedConfigurationData.name;
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'name is: ' + name);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'name is: ' + name);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'value is: ' + value);
   let returnValue;
   switch (name) {
-    case s.cDateTimeStamp: case s.cDateStamp: case s.cTimeStamp:
+    case sys.cDateTimeStamp: case sys.cDateStamp: case sys.cTimeStamp:
       // NOTE: All of these three configurations are processed exactly the same way.
       // As long as what is stored in the configuration file is correct, then they should be processed correctly here.
       // return moment().format(value);0
@@ -281,8 +285,8 @@ function processConfigurationRules(name, value) {
       returnValue = value;
       break;
   }
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
-  // loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'returnValue is: ' + returnValue);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnValue is: ' + returnValue);
   // console.log('END chiefConfiguration.processConfigurationRules function');
   return returnValue;
@@ -301,13 +305,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 15:30:59 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 22 2021 09:31:44 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

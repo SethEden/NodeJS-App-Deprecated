@@ -7,14 +7,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.phonicsConstantsValidation = void 0;
 
-var p = _interopRequireWildcard(require("../../Constants/phonics.constants"));
+var phn = _interopRequireWildcard(require("../../Constants/phonics.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 /**
- * @file phonics.constants-validation.js
+ * @file phonics-constants-validation.js
  * @module phonics-constants-validation
  * @description Contains many validations for re-usable phonetic constants and partial phrases and/or
  * partial words for re-usability, many of them derived from the basic-constants.
@@ -34,2920 +34,2932 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var phonicsConstantsValidation = [// Reusable Grammer
 {
   Name: 'chree',
-  Actual: p.chree,
+  Actual: phn.chree,
   Expected: 'hree'
 }, {
   Name: 'cour',
-  Actual: p.cour,
+  Actual: phn.cour,
   Expected: 'our'
 }, {
   Name: 'cive',
-  Actual: p.cive,
+  Actual: phn.cive,
   Expected: 'ive'
 }, {
   Name: 'ceven',
-  Actual: p.ceven,
+  Actual: phn.ceven,
   Expected: 'even'
 }, {
   Name: 'cight',
-  Actual: p.cight,
+  Actual: phn.cight,
   Expected: 'ight'
 }, {
   Name: 'cine',
-  Actual: p.cine,
+  Actual: phn.cine,
   Expected: 'ine'
 }, {
   Name: 'cleven',
-  Actual: p.cleven,
+  Actual: phn.cleven,
   Expected: 'leven'
 }, {
   Name: 'cwelve',
-  Actual: p.cwelve,
+  Actual: phn.cwelve,
   Expected: 'welve'
 }, {
   Name: 'cteen',
-  Actual: p.cteen,
+  Actual: phn.cteen,
   Expected: 'teen'
 }, {
   Name: 'chir',
-  Actual: p.chir,
+  Actual: phn.chir,
   Expected: 'hir'
 }, {
   Name: 'cigh',
-  Actual: p.cigh,
+  Actual: phn.cigh,
   Expected: 'igh'
 }, {
   Name: 'cwenty',
-  Actual: p.cwenty,
+  Actual: phn.cwenty,
   Expected: 'wenty'
 }, {
   Name: 'chirty',
-  Actual: p.chirty,
+  Actual: phn.chirty,
   Expected: 'hirty'
 }, {
   Name: 'cifty',
-  Actual: p.cifty,
+  Actual: phn.cifty,
   Expected: 'ifty'
 }, {
   Name: 'cred',
-  Actual: p.cred,
+  Actual: phn.cred,
   Expected: 'red'
 }, {
   Name: 'cgreen',
-  Actual: p.cgreen,
+  Actual: phn.cgreen,
   Expected: 'green'
 }, {
   Name: 'cblue',
-  Actual: p.cblue,
+  Actual: phn.cblue,
   Expected: 'blue'
 }, {
   Name: 'cund',
-  Actual: p.cund,
+  Actual: phn.cund,
   Expected: 'und'
 }, {
   Name: 'cundred',
-  Actual: p.cundred,
+  Actual: phn.cundred,
   Expected: 'undred'
 }, {
   Name: 'cand',
-  Actual: p.cand,
+  Actual: phn.cand,
   Expected: 'and'
 }, {
   Name: 'csand',
-  Actual: p.csand,
+  Actual: phn.csand,
   Expected: 'sand'
 }, {
   Name: 'chousand',
-  Actual: p.chousand,
+  Actual: phn.chousand,
   Expected: 'housand'
 }, {
   Name: 'cion',
-  Actual: p.cion,
+  Actual: phn.cion,
   Expected: 'ion'
 }, {
   Name: 'cION',
-  Actual: p.cION,
+  Actual: phn.cION,
   Expected: 'ION'
 }, {
   Name: 'csion',
-  Actual: p.csion,
+  Actual: phn.csion,
   Expected: 'sion'
 }, {
   Name: 'cill',
-  Actual: p.cill,
+  Actual: phn.cill,
   Expected: 'ill'
 }, {
   Name: 'cillion',
-  Actual: p.cillion,
+  Actual: phn.cillion,
   Expected: 'illion'
 }, {
   Name: 'crue',
-  Actual: p.crue,
+  Actual: phn.crue,
   Expected: 'rue'
 }, {
   Name: 'calse',
-  Actual: p.calse,
+  Actual: phn.calse,
   Expected: 'alse'
 }, {
   Name: 'ction',
-  Actual: p.ction,
+  Actual: phn.ction,
   Expected: 'tion'
 }, {
   Name: 'cTION',
-  Actual: p.cTION,
+  Actual: phn.cTION,
   Expected: 'TION'
 }, {
   Name: 'cction',
-  Actual: p.cction,
+  Actual: phn.cction,
   Expected: 'ction'
 }, {
   Name: 'cmation',
-  Actual: p.cmation,
+  Actual: phn.cmation,
   Expected: 'mation'
 }, {
   Name: 'cition',
-  Actual: p.cition,
+  Actual: phn.cition,
   Expected: 'ition'
 }, {
   Name: 'cITION',
-  Actual: p.cITION,
+  Actual: phn.cITION,
   Expected: 'ITION'
 }, {
   Name: 'cage',
-  Actual: p.cage,
+  Actual: phn.cage,
   Expected: 'age'
 }, {
   Name: 'cest',
-  Actual: p.cest,
+  Actual: phn.cest,
   Expected: 'est'
 }, {
   Name: 'chare',
-  Actual: p.chare,
+  Actual: phn.chare,
   Expected: 'hare'
 }, {
   Name: 'c_lass',
-  Actual: p.c_lass,
+  Actual: phn.c_lass,
   Expected: 'lass'
 }, {
   Name: 'ctemp',
-  Actual: p.ctemp,
+  Actual: phn.ctemp,
   Expected: 'temp'
 }, {
   Name: 'chref',
-  Actual: p.chref,
+  Actual: phn.chref,
   Expected: 'href'
 }, {
   Name: 'cABC',
-  Actual: p.cABC,
+  Actual: phn.cABC,
   Expected: 'ABC'
 }, {
   Name: 'came',
-  Actual: p.came,
+  Actual: phn.came,
   Expected: 'ame'
 }, {
   Name: 'cile',
-  Actual: p.cile,
+  Actual: phn.cile,
   Expected: 'ile'
 }, {
   Name: 'cext',
-  Actual: p.cext,
+  Actual: phn.cext,
   Expected: 'ext'
 }, {
   Name: 'cExt',
-  Actual: p.cExt,
+  Actual: phn.cExt,
   Expected: 'Ext'
 }, {
   Name: 'clpha',
-  Actual: p.clpha,
+  Actual: phn.clpha,
   Expected: 'lpha'
 }, {
   Name: 'ccon',
-  Actual: p.ccon,
+  Actual: phn.ccon,
   Expected: 'con'
 }, {
   Name: 'cCon',
-  Actual: p.cCon,
+  Actual: phn.cCon,
   Expected: 'Con'
 }, {
   Name: 'cable',
-  Actual: p.cable,
+  Actual: phn.cable,
   Expected: 'able'
 }, {
   Name: 'calid',
-  Actual: p.calid,
+  Actual: phn.calid,
   Expected: 'alid'
 }, {
   Name: 'cALID',
-  Actual: p.cALID,
+  Actual: phn.cALID,
   Expected: 'ALID'
 }, {
   Name: 'cing',
-  Actual: p.cing,
+  Actual: phn.cing,
   Expected: 'ing'
 }, {
   Name: 'cING',
-  Actual: p.cING,
+  Actual: phn.cING,
   Expected: 'ING'
 }, {
   Name: 'ctring',
-  Actual: p.ctring,
+  Actual: phn.ctring,
   Expected: 'tring'
 }, {
   Name: 'cbject',
-  Actual: p.cbject,
+  Actual: phn.cbject,
   Expected: 'bject'
 }, {
   Name: 'cata',
-  Actual: p.cata,
+  Actual: phn.cata,
   Expected: 'ata'
 }, {
   Name: 'cATA',
-  Actual: p.cATA,
+  Actual: phn.cATA,
   Expected: 'ATA'
 }, {
   Name: 'cMac',
-  Actual: p.cMac,
+  Actual: phn.cMac,
   Expected: 'Mac'
 }, {
   Name: 'cpre',
-  Actual: p.cpre,
+  Actual: phn.cpre,
   Expected: 'pre'
 }, {
   Name: 'cPre',
-  Actual: p.cPre,
+  Actual: phn.cPre,
   Expected: 'Pre'
 }, {
   Name: 'cPRE',
-  Actual: p.cPRE,
+  Actual: phn.cPRE,
   Expected: 'PRE'
 }, {
   Name: 'colid',
-  Actual: p.colid,
+  Actual: phn.colid,
   Expected: 'olid'
 }, {
   Name: 'cynch',
-  Actual: p.cynch,
+  Actual: phn.cynch,
   Expected: 'ynch'
 }, {
   Name: 'celete',
-  Actual: p.celete,
+  Actual: phn.celete,
   Expected: 'elete'
 }, {
   Name: 'cnner',
-  Actual: p.cnner,
+  Actual: phn.cnner,
   Expected: 'nner'
 }, {
   Name: 'click',
-  Actual: p.click,
+  Actual: phn.click,
   Expected: 'lick'
 }, {
+  Name: 'cctr',
+  Actual: phn.cctr,
+  Expected: 'ctr'
+}, {
   Name: 'cctrl',
-  Actual: p.cctrl,
+  Actual: phn.cctrl,
   Expected: 'ctrl'
 }, {
   Name: 'cype',
-  Actual: p.cype,
+  Actual: phn.cype,
   Expected: 'ype'
 }, {
   Name: 'ceql',
-  Actual: p.ceql,
+  Actual: phn.ceql,
   Expected: 'eql'
 }, {
   Name: 'cEql',
-  Actual: p.cEql,
+  Actual: phn.cEql,
   Expected: 'Eql'
 }, {
   Name: 'cemb',
-  Actual: p.cemb,
+  Actual: phn.cemb,
   Expected: 'emb'
 }, {
   Name: 'cOperat',
-  Actual: p.cOperat,
+  Actual: phn.cOperat,
   Expected: 'Operat'
 }, {
   Name: 'cili',
-  Actual: p.cili,
+  Actual: phn.cili,
   Expected: 'ili'
 }, {
   Name: 'cility',
-  Actual: p.cility,
+  Actual: phn.cility,
   Expected: 'ility'
 }, {
   Name: 'cibility',
-  Actual: p.cibility,
+  Actual: phn.cibility,
   Expected: 'ibility'
 }, {
   Name: 'cisibility',
-  Actual: p.cisibility,
+  Actual: phn.cisibility,
   Expected: 'isibility'
 }, {
   Name: 'cith',
-  Actual: p.cith,
+  Actual: phn.cith,
   Expected: 'ith'
 }, {
   Name: 'crent',
-  Actual: p.crent,
+  Actual: phn.crent,
   Expected: 'rent'
 }, {
   Name: 'carent',
-  Actual: p.carent,
+  Actual: phn.carent,
   Expected: 'arent'
 }, {
   Name: 'ctor',
-  Actual: p.ctor,
+  Actual: phn.ctor,
   Expected: 'tor'
 }, {
   Name: 'cctor',
-  Actual: p.cctor,
+  Actual: phn.cctor,
   Expected: 'ctor'
 }, {
   Name: 'celector',
-  Actual: p.celector,
+  Actual: phn.celector,
   Expected: 'elector'
 }, {
   Name: 'coolean',
-  Actual: p.coolean,
+  Actual: phn.coolean,
   Expected: 'oolean'
 }, {
   Name: 'check',
-  Actual: p.check,
+  Actual: phn.check,
   Expected: 'heck'
 }, {
   Name: 'child',
-  Actual: p.child,
+  Actual: phn.child,
   Expected: 'hild'
 }, {
   Name: 'cibling',
-  Actual: p.cibling,
+  Actual: phn.cibling,
   Expected: 'ibling'
 }, {
   Name: 'cttribute',
-  Actual: p.cttribute,
+  Actual: phn.cttribute,
   Expected: 'ttribute'
 }, {
   Name: 'cttributes',
-  Actual: p.cttributes,
+  Actual: phn.cttributes,
   Expected: 'ttributes'
 }, {
   Name: 'cisabled',
-  Actual: p.cisabled,
+  Actual: phn.cisabled,
   Expected: 'isabled'
 }, {
   Name: 'cilter',
-  Actual: p.cilter,
+  Actual: phn.cilter,
   Expected: 'ilter'
 }, {
   Name: 'code',
-  Actual: p.code,
+  Actual: phn.code,
   Expected: 'ode'
 }, {
   Name: 'cide',
-  Actual: p.cide,
+  Actual: phn.cide,
   Expected: 'ide'
 }, {
   Name: 'cuary',
-  Actual: p.cuary,
+  Actual: phn.cuary,
   Expected: 'uary'
 }, {
   Name: 'cies',
-  Actual: p.cies,
+  Actual: phn.cies,
   Expected: 'ies'
 }, {
   Name: 'ctive',
-  Actual: p.ctive,
+  Actual: phn.ctive,
   Expected: 'tive'
 }, {
   Name: 'cate',
-  Actual: p.cate,
+  Actual: phn.cate,
   Expected: 'ate'
 }, {
   Name: 'cdate',
-  Actual: p.cdate,
+  Actual: phn.cdate,
   Expected: 'date'
 }, {
   Name: 'cter',
-  Actual: p.cter,
+  Actual: phn.cter,
   Expected: 'ter'
 }, {
   Name: 'cTER',
-  Actual: p.cTER,
+  Actual: phn.cTER,
   Expected: 'TER'
 }, {
   Name: 'cment',
-  Actual: p.cment,
+  Actual: phn.cment,
   Expected: 'ment'
 }, {
   Name: 'cMENT',
-  Actual: p.cMENT,
+  Actual: phn.cMENT,
   Expected: 'MENT'
 }, {
   Name: 'cime',
-  Actual: p.cime,
+  Actual: phn.cime,
   Expected: 'ime'
 }, {
   Name: 'cinter',
-  Actual: p.cinter,
+  Actual: phn.cinter,
   Expected: 'inter'
 }, {
   Name: 'cInter',
-  Actual: p.cInter,
+  Actual: phn.cInter,
   Expected: 'Inter'
 }, {
   Name: 'cmed',
-  Actual: p.cmed,
+  Actual: phn.cmed,
   Expected: 'med'
 }, {
   Name: 'cath',
-  Actual: p.cath,
+  Actual: phn.cath,
   Expected: 'ath'
 }, {
   Name: 'cvar',
-  Actual: p.cvar,
+  Actual: phn.cvar,
   Expected: 'var'
 }, {
   Name: 'cVar',
-  Actual: p.cVar,
+  Actual: phn.cVar,
   Expected: 'Var'
 }, {
   Name: 'ciew',
-  Actual: p.ciew,
+  Actual: phn.ciew,
   Expected: 'iew'
 }, {
   Name: 'cete',
-  Actual: p.cete,
+  Actual: phn.cete,
   Expected: 'ete'
 }, {
   Name: 'cace',
-  Actual: p.cace,
+  Actual: phn.cace,
   Expected: 'ace'
 }, {
   Name: 'cder',
-  Actual: p.cder,
+  Actual: phn.cder,
   Expected: 'der'
 }, {
   Name: 'ccor',
-  Actual: p.ccor,
+  Actual: phn.ccor,
   Expected: 'cor'
 }, {
   Name: 'cCor',
-  Actual: p.cCor,
+  Actual: phn.cCor,
   Expected: 'Cor'
 }, {
   Name: 'ccore',
-  Actual: p.ccore,
+  Actual: phn.ccore,
   Expected: 'core'
 }, {
   Name: 'cert',
-  Actual: p.cert,
+  Actual: phn.cert,
   Expected: 'ert'
 }, {
   Name: 'c_ase',
-  Actual: p.c_ase,
+  Actual: phn.c_ase,
   Expected: 'ase'
 }, // 'case' is a reserved word
 {
   Name: 'c_ASE',
-  Actual: p.c_ASE,
+  Actual: phn.c_ASE,
   Expected: 'ASE'
 }, {
   Name: 'cunt',
-  Actual: p.cunt,
+  Actual: phn.cunt,
   Expected: 'unt'
 }, {
   Name: 'caft',
-  Actual: p.caft,
+  Actual: phn.caft,
   Expected: 'aft'
 }, {
   Name: 'cops',
-  Actual: p.cops,
+  Actual: phn.cops,
   Expected: 'ops'
 }, {
   Name: 'cOPS',
-  Actual: p.cOPS,
+  Actual: phn.cOPS,
   Expected: 'OPS'
 }, {
   Name: 'cinv',
-  Actual: p.cinv,
+  Actual: phn.cinv,
   Expected: 'inv'
 }, {
   Name: 'cInv',
-  Actual: p.cInv,
+  Actual: phn.cInv,
   Expected: 'Inv'
 }, {
   Name: 'cral',
-  Actual: p.cral,
+  Actual: phn.cral,
   Expected: 'ral'
 }, {
   Name: 'cara',
-  Actual: p.cara,
+  Actual: phn.cara,
   Expected: 'ara'
 }, {
   Name: 'cpro',
-  Actual: p.cpro,
+  Actual: phn.cpro,
   Expected: 'pro'
 }, {
   Name: 'cPro',
-  Actual: p.cPro,
+  Actual: phn.cPro,
   Expected: 'Pro'
 }, {
   Name: 'cPRO',
-  Actual: p.cPRO,
+  Actual: phn.cPRO,
   Expected: 'PRO'
 }, {
   Name: 'cino',
-  Actual: p.cino,
+  Actual: phn.cino,
   Expected: 'ino'
 }, {
   Name: 'cese',
-  Actual: p.cese,
+  Actual: phn.cese,
   Expected: 'ese'
 }, {
   Name: 'cish',
-  Actual: p.cish,
+  Actual: phn.cish,
   Expected: 'ish'
 }, {
   Name: 'ccel',
-  Actual: p.ccel,
+  Actual: phn.ccel,
   Expected: 'cel'
 }, {
   Name: 'cCel',
-  Actual: p.cCel,
+  Actual: phn.cCel,
   Expected: 'Cel'
 }, {
   Name: 'cian',
-  Actual: p.cian,
+  Actual: phn.cian,
   Expected: 'ian'
 }, {
   Name: 'cous',
-  Actual: p.cous,
+  Actual: phn.cous,
   Expected: 'ous'
 }, {
   Name: 'ceous',
-  Actual: p.ceous,
+  Actual: phn.ceous,
   Expected: 'eous'
 }, {
   Name: 'cung',
-  Actual: p.cung,
+  Actual: phn.cung,
   Expected: 'ung'
 }, {
   Name: 'cary',
-  Actual: p.cary,
+  Actual: phn.cary,
   Expected: 'ary'
 }, {
   Name: 'ciary',
-  Actual: p.ciary,
+  Actual: phn.ciary,
   Expected: 'iary'
 }, {
   Name: 'cMis',
-  Actual: p.cMis,
+  Actual: phn.cMis,
   Expected: 'Mis'
 }, {
   Name: 'cmis',
-  Actual: p.cmis,
+  Actual: phn.cmis,
   Expected: 'mis'
 }, {
   Name: 'cource',
-  Actual: p.cource,
+  Actual: phn.cource,
   Expected: 'ource'
 }, {
   Name: 'cmine',
-  Actual: p.cmine,
+  Actual: phn.cmine,
   Expected: 'mine'
-}, //p.cet + p.cer + p.cmi + p.cne; //cmine;
+}, //p.cet + phn.cer + phn.cmi + phn.cne; //cmine;
 {
   Name: 'cetermine',
-  Actual: p.cetermine,
+  Actual: phn.cetermine,
   Expected: 'etermine'
 }, {
   Name: 'cingle',
-  Actual: p.cingle,
+  Actual: phn.cingle,
   Expected: 'ingle'
 }, {
   Name: 'clace',
-  Actual: p.clace,
+  Actual: phn.clace,
   Expected: 'lace'
 }, {
   Name: 'ceplace',
-  Actual: p.ceplace,
+  Actual: phn.ceplace,
   Expected: 'eplace'
 }, {
   Name: 'clean',
-  Actual: p.clean,
+  Actual: phn.clean,
   Expected: 'lean'
 }, {
   Name: 'cver',
-  Actual: p.cver,
+  Actual: phn.cver,
   Expected: 'ver'
 }, {
   Name: 'cVer',
-  Actual: p.cVer,
+  Actual: phn.cVer,
   Expected: 'Ver'
 }, {
   Name: 'cvert',
-  Actual: p.cvert,
+  Actual: phn.cvert,
   Expected: 'vert'
 }, {
   Name: 'convert',
-  Actual: p.convert,
+  Actual: phn.convert,
   Expected: 'onvert'
 }, {
   Name: 'crate',
-  Actual: p.crate,
+  Actual: phn.crate,
   Expected: 'rate'
 }, {
   Name: 'cenerate',
-  Actual: p.cenerate,
+  Actual: phn.cenerate,
   Expected: 'enerate'
 }, {
   Name: 'cdom',
-  Actual: p.cdom,
+  Actual: phn.cdom,
   Expected: 'dom'
 }, {
   Name: 'candom',
-  Actual: p.candom,
+  Actual: phn.candom,
   Expected: 'andom'
 }, {
   Name: 'create',
-  Actual: p.create,
+  Actual: phn.create,
   Expected: 'reate'
 }, {
   Name: 'carn',
-  Actual: p.carn,
+  Actual: phn.carn,
   Expected: 'arn'
 }, {
   Name: 'carning',
-  Actual: p.carning,
+  Actual: phn.carning,
   Expected: 'arning'
 }, {
   Name: 'crror',
-  Actual: p.crror,
+  Actual: phn.crror,
   Expected: 'rror'
 }, {
   Name: 'cRROR',
-  Actual: p.cRROR,
+  Actual: phn.cRROR,
   Expected: 'RROR'
 }, {
   Name: 'card',
-  Actual: p.card,
+  Actual: phn.card,
   Expected: 'ard'
 }, {
   Name: 'cose',
-  Actual: p.cose,
+  Actual: phn.cose,
   Expected: 'ose'
 }, {
   Name: 'cray',
-  Actual: p.cray,
+  Actual: phn.cray,
   Expected: 'ray'
 }, {
   Name: 'cmel',
-  Actual: p.cmel,
+  Actual: phn.cmel,
   Expected: 'mel'
 }, {
   Name: 'cound',
-  Actual: p.cound,
+  Actual: phn.cound,
   Expected: 'ound'
 }, {
   Name: 'cdot',
-  Actual: p.cdot,
+  Actual: phn.cdot,
   Expected: 'dot'
 }, {
   Name: 'cDot',
-  Actual: p.cDot,
+  Actual: phn.cDot,
   Expected: 'Dot'
 }, {
   Name: 'cart',
-  Actual: p.cart,
+  Actual: phn.cart,
   Expected: 'art'
 }, {
   Name: 'cize',
-  Actual: p.cize,
+  Actual: phn.cize,
   Expected: 'ize'
 }, {
   Name: 'cmal',
-  Actual: p.cmal,
+  Actual: phn.cmal,
   Expected: 'mal'
 }, {
   Name: 'cormal',
-  Actual: p.cormal,
+  Actual: phn.cormal,
   Expected: 'ormal'
 }, {
   Name: 'cegree',
-  Actual: p.cegree,
+  Actual: phn.cegree,
   Expected: 'egree'
 }, {
   Name: 'ccir',
-  Actual: p.ccir,
+  Actual: phn.ccir,
   Expected: 'cir'
 }, {
   Name: 'cCir',
-  Actual: p.cCir,
+  Actual: phn.cCir,
   Expected: 'Cir'
 }, {
   Name: 'ccle',
-  Actual: p.ccle,
+  Actual: phn.ccle,
   Expected: 'cle'
 }, {
   Name: 'care',
-  Actual: p.care,
+  Actual: phn.care,
   Expected: 'are'
 }, {
   Name: 'cquare',
-  Actual: p.cquare,
+  Actual: phn.cquare,
   Expected: 'quare'
 }, {
   Name: 'cgle',
-  Actual: p.cgle,
+  Actual: phn.cgle,
   Expected: 'gle'
 }, {
   Name: 'ctri',
-  Actual: p.ctri,
+  Actual: phn.ctri,
   Expected: 'tri'
 }, {
   Name: 'cTri',
-  Actual: p.cTri,
+  Actual: phn.cTri,
   Expected: 'Tri'
 }, {
   Name: 'crec',
-  Actual: p.crec,
+  Actual: phn.crec,
   Expected: 'rec'
 }, {
   Name: 'cRec',
-  Actual: p.cRec,
+  Actual: phn.cRec,
   Expected: 'Rec'
 }, {
   Name: 'crect',
-  Actual: p.crect,
+  Actual: phn.crect,
   Expected: 'rect'
 }, {
   Name: 'cRect',
-  Actual: p.cRect,
+  Actual: phn.cRect,
   Expected: 'Rect'
 }, {
   Name: 'coct',
-  Actual: p.coct,
+  Actual: phn.coct,
   Expected: 'oct'
 }, {
   Name: 'cOct',
-  Actual: p.cOct,
+  Actual: phn.cOct,
   Expected: 'Oct'
 }, {
   Name: 'cgon',
-  Actual: p.cgon,
+  Actual: phn.cgon,
   Expected: 'gon'
 }, {
   Name: 'chex',
-  Actual: p.chex,
+  Actual: phn.chex,
   Expected: 'hex'
 }, {
   Name: 'cHex',
-  Actual: p.cHex,
+  Actual: phn.cHex,
   Expected: 'Hex'
 }, {
   Name: 'chep',
-  Actual: p.chep,
+  Actual: phn.chep,
   Expected: 'hep'
 }, {
   Name: 'cHep',
-  Actual: p.cHep,
+  Actual: phn.cHep,
   Expected: 'Hep'
 }, {
   Name: 'cnon',
-  Actual: p.cnon,
+  Actual: phn.cnon,
   Expected: 'non'
 }, {
   Name: 'cNon',
-  Actual: p.cNon,
+  Actual: phn.cNon,
   Expected: 'Non'
 }, {
   Name: 'crap',
-  Actual: p.crap,
+  Actual: phn.crap,
   Expected: 'rap'
 }, {
   Name: 'czoid',
-  Actual: p.czoid,
+  Actual: phn.czoid,
   Expected: 'zoid'
 }, {
   Name: 'cfra',
-  Actual: p.cfra,
+  Actual: phn.cfra,
   Expected: 'fra'
 }, {
   Name: 'cFra',
-  Actual: p.cFra,
+  Actual: phn.cFra,
   Expected: 'Fra'
 }, {
   Name: 'ctrans',
-  Actual: p.ctrans,
+  Actual: phn.ctrans,
   Expected: 'trans'
 }, {
   Name: 'cTrans',
-  Actual: p.cTrans,
+  Actual: phn.cTrans,
   Expected: 'Trans'
 }, {
   Name: 'cint',
-  Actual: p.cint,
+  Actual: phn.cint,
   Expected: 'int'
 }, {
   Name: 'cloc',
-  Actual: p.cloc,
+  Actual: phn.cloc,
   Expected: 'loc'
 }, {
   Name: 'cLoc',
-  Actual: p.cLoc,
+  Actual: phn.cLoc,
   Expected: 'Loc'
 }, {
   Name: 'cation',
-  Actual: p.cation,
+  Actual: phn.cation,
   Expected: 'ation'
 }, {
   Name: 'cort',
-  Actual: p.cort,
+  Actual: phn.cort,
   Expected: 'ort'
 }, {
   Name: 'csim',
-  Actual: p.csim,
+  Actual: phn.csim,
   Expected: 'sim'
 }, {
   Name: 'cSim',
-  Actual: p.cSim,
+  Actual: phn.cSim,
   Expected: 'Sim'
 }, {
   Name: 'cplify',
-  Actual: p.cplify,
+  Actual: phn.cplify,
   Expected: 'plify'
 }, {
   Name: 'csol',
-  Actual: p.csol,
+  Actual: phn.csol,
   Expected: 'sol'
 }, {
   Name: 'ccomp',
-  Actual: p.ccomp,
+  Actual: phn.ccomp,
   Expected: 'comp'
 }, {
   Name: 'cComp',
-  Actual: p.cComp,
+  Actual: phn.cComp,
   Expected: 'Comp'
 }, {
   Name: 'cideo',
-  Actual: p.cideo,
+  Actual: phn.cideo,
   Expected: 'ideo'
 }, {
   Name: 'cnteger',
-  Actual: p.cnteger,
+  Actual: phn.cnteger,
   Expected: 'nteger'
 }, {
   Name: 'cloat',
-  Actual: p.cloat,
+  Actual: phn.cloat,
   Expected: 'loat'
 }, {
   Name: 'cong',
-  Actual: p.cong,
+  Actual: phn.cong,
   Expected: 'ong'
 }, {
   Name: 'chort',
-  Actual: p.chort,
+  Actual: phn.chort,
   Expected: 'hort'
 }, {
   Name: 'cble',
-  Actual: p.cble,
+  Actual: phn.cble,
   Expected: 'ble'
 }, {
   Name: 'couble',
-  Actual: p.couble,
+  Actual: phn.couble,
   Expected: 'ouble'
 }, {
   Name: 'cduct',
-  Actual: p.cduct,
+  Actual: phn.cduct,
   Expected: 'duct'
 }, {
   Name: 'cgate',
-  Actual: p.cgate,
+  Actual: phn.cgate,
   Expected: 'gate'
 }, {
   Name: 'cggregate',
-  Actual: p.cggregate,
+  Actual: phn.cggregate,
   Expected: 'ggregate'
 }, {
   Name: 'cDiff',
-  Actual: p.cDiff,
+  Actual: phn.cDiff,
   Expected: 'Diff'
 }, {
   Name: 'cenc',
-  Actual: p.cenc,
+  Actual: phn.cenc,
   Expected: 'enc'
 }, {
   Name: 'cence',
-  Actual: p.cence,
+  Actual: phn.cence,
   Expected: 'ence'
 }, {
   Name: 'cain',
-  Actual: p.cain,
+  Actual: phn.cain,
   Expected: 'ain'
 }, {
   Name: 'ctch',
-  Actual: p.ctch,
+  Actual: phn.ctch,
   Expected: 'tch'
 }, {
   Name: 'cween',
-  Actual: p.cween,
+  Actual: phn.cween,
   Expected: 'ween'
 }, {
   Name: 'cord',
-  Actual: p.cord,
+  Actual: phn.cord,
   Expected: 'ord'
 }, {
   Name: 'cmap',
-  Actual: p.cmap,
+  Actual: phn.cmap,
   Expected: 'map'
 }, {
   Name: 'cMap',
-  Actual: p.cMap,
+  Actual: phn.cMap,
   Expected: 'Map'
 }, {
   Name: 'cess',
-  Actual: p.cess,
+  Actual: phn.cess,
   Expected: 'ess'
 }, {
   Name: 'cres',
-  Actual: p.cres,
+  Actual: phn.cres,
   Expected: 'res'
 }, {
   Name: 'cRes',
-  Actual: p.cRes,
+  Actual: phn.cRes,
   Expected: 'Res'
 }, {
   Name: 'cress',
-  Actual: p.cress,
+  Actual: phn.cress,
   Expected: 'ress'
 }, {
   Name: 'ceat',
-  Actual: p.ceat,
+  Actual: phn.ceat,
   Expected: 'eat'
 }, {
   Name: 'chen',
-  Actual: p.chen,
+  Actual: phn.chen,
   Expected: 'hen'
 }, {
   Name: 'chan',
-  Actual: p.chan,
+  Actual: phn.chan,
   Expected: 'han'
 }, {
   Name: 'clica',
-  Actual: p.clica,
+  Actual: phn.clica,
   Expected: 'lica'
 }, {
   Name: 'cLICA',
-  Actual: p.cLICA,
+  Actual: phn.cLICA,
   Expected: 'LICA'
 }, {
   Name: 'capp',
-  Actual: p.capp,
+  Actual: phn.capp,
   Expected: 'app'
 }, {
   Name: 'cApp',
-  Actual: p.cApp,
+  Actual: phn.cApp,
   Expected: 'App'
 }, {
   Name: 'cAPP',
-  Actual: p.cAPP,
+  Actual: phn.cAPP,
   Expected: 'APP'
 }, {
   Name: 'coot',
-  Actual: p.coot,
+  Actual: phn.coot,
   Expected: 'oot'
 }, {
   Name: 'crse',
-  Actual: p.crse,
+  Actual: phn.crse,
   Expected: 'rse'
 }, {
   Name: 'cRSE',
-  Actual: p.cRSE,
+  Actual: phn.cRSE,
   Expected: 'RSE'
 }, {
   Name: 'carse',
-  Actual: p.carse,
+  Actual: phn.carse,
   Expected: 'arse'
 }, {
   Name: 'cARSE',
-  Actual: p.cARSE,
+  Actual: phn.cARSE,
   Expected: 'ARSE'
 }, {
   Name: 'cwap',
-  Actual: p.cwap,
+  Actual: phn.cwap,
   Expected: 'wap'
 }, {
   Name: 'cward',
-  Actual: p.cward,
+  Actual: phn.cward,
   Expected: 'ward'
 }, {
   Name: 'clash',
-  Actual: p.clash,
+  Actual: phn.clash,
   Expected: 'lash'
 }, {
   Name: 'cENV',
-  Actual: p.cENV,
+  Actual: phn.cENV,
   Expected: 'ENV'
 }, {
   Name: 'cavigate',
-  Actual: p.cavigate,
+  Actual: phn.cavigate,
   Expected: 'avigate'
 }, {
   Name: 'cness',
-  Actual: p.cness,
+  Actual: phn.cness,
   Expected: 'ness'
 }, {
   Name: 'cusiness',
-  Actual: p.cusiness,
+  Actual: phn.cusiness,
   Expected: 'usiness'
 }, {
   Name: 'cule',
-  Actual: p.cule,
+  Actual: phn.cule,
   Expected: 'ule'
 }, {
   Name: 'cait',
-  Actual: p.cait,
+  Actual: phn.cait,
   Expected: 'ait'
 }, {
   Name: 'cesh',
-  Actual: p.cesh,
+  Actual: phn.cesh,
   Expected: 'esh'
 }, {
   Name: 'cval',
-  Actual: p.cval,
+  Actual: phn.cval,
   Expected: 'val'
 }, {
   Name: 'cemo',
-  Actual: p.cemo,
+  Actual: phn.cemo,
   Expected: 'emo'
 }, {
   Name: 'cmon',
-  Actual: p.cmon,
+  Actual: phn.cmon,
   Expected: 'mon'
 }, {
   Name: 'common',
-  Actual: p.common,
+  Actual: phn.common,
   Expected: 'ommon'
 }, {
   Name: 'clti',
-  Actual: p.clti,
+  Actual: phn.clti,
   Expected: 'lti'
 }, {
   Name: 'cmulti',
-  Actual: p.cmulti,
+  Actual: phn.cmulti,
   Expected: 'multi'
 }, {
   Name: 'cMulti',
-  Actual: p.cMulti,
+  Actual: phn.cMulti,
   Expected: 'Multi'
 }, {
   Name: 'cple',
-  Actual: p.cple,
+  Actual: phn.cple,
   Expected: 'ple'
 }, {
   Name: 'cPLE',
-  Actual: p.cPLE,
+  Actual: phn.cPLE,
   Expected: 'PLE'
 }, {
   Name: 'cnal',
-  Actual: p.cnal,
+  Actual: phn.cnal,
   Expected: 'nal'
 }, {
   Name: 'cexe',
-  Actual: p.cexe,
+  Actual: phn.cexe,
   Expected: 'exe'
 }, {
   Name: 'cExe',
-  Actual: p.cExe,
+  Actual: phn.cExe,
   Expected: 'Exe'
 }, {
   Name: 'cper',
-  Actual: p.cper,
+  Actual: phn.cper,
   Expected: 'per'
 }, {
   Name: 'cPer',
-  Actual: p.cPer,
+  Actual: phn.cPer,
   Expected: 'Per'
 }, {
   Name: 'casic',
-  Actual: p.casic,
+  Actual: phn.casic,
   Expected: 'asic'
 }, {
   Name: 'cven',
-  Actual: p.cven,
+  Actual: phn.cven,
   Expected: 'ven'
 }, {
   Name: 'cVEN',
-  Actual: p.cVEN,
+  Actual: phn.cVEN,
   Expected: 'VEN'
 }, {
   Name: 'cvent',
-  Actual: p.cvent,
+  Actual: phn.cvent,
   Expected: 'vent'
 }, {
   Name: 'carg',
-  Actual: p.carg,
+  Actual: phn.carg,
   Expected: 'arg'
 }, {
   Name: 'cArg',
-  Actual: p.cArg,
+  Actual: phn.cArg,
   Expected: 'Arg'
 }, {
   Name: 'crive',
-  Actual: p.crive,
+  Actual: phn.crive,
   Expected: 'rive'
 }, {
   Name: 'cloy',
-  Actual: p.cloy,
+  Actual: phn.cloy,
   Expected: 'loy'
 }, {
   Name: 'cLOY',
-  Actual: p.cLOY,
+  Actual: phn.cLOY,
   Expected: 'LOY'
 }, {
   Name: 'cumber',
-  Actual: p.cumber,
+  Actual: phn.cumber,
   Expected: 'umber'
 }, {
   Name: 'ccond',
-  Actual: p.ccond,
+  Actual: phn.ccond,
   Expected: 'cond'
 }, {
   Name: 'cieth',
-  Actual: p.cieth,
+  Actual: phn.cieth,
   Expected: 'ieth'
 }, {
   Name: 'ctieth',
-  Actual: p.ctieth,
+  Actual: phn.ctieth,
   Expected: 'tieth'
 }, {
   Name: 'cont',
-  Actual: p.cont,
+  Actual: phn.cont,
   Expected: 'ont'
 }, {
   Name: 'cull',
-  Actual: p.cull,
+  Actual: phn.cull,
   Expected: 'ull'
 }, {
   Name: 'cmod',
-  Actual: p.cmod,
+  Actual: phn.cmod,
   Expected: 'mod'
 }, {
   Name: 'cMod',
-  Actual: p.cMod,
+  Actual: phn.cMod,
   Expected: 'Mod'
 }, {
   Name: 'ccol',
-  Actual: p.ccol,
+  Actual: phn.ccol,
   Expected: 'col'
 }, {
   Name: 'cCol',
-  Actual: p.cCol,
+  Actual: phn.cCol,
   Expected: 'Col'
 }, {
   Name: 'creen',
-  Actual: p.creen,
+  Actual: phn.creen,
   Expected: 'reen'
 }, {
   Name: 'clue',
-  Actual: p.clue,
+  Actual: phn.clue,
   Expected: 'lue'
 }, // Referance to Tron here! :-P
 {
   Name: 'cyan',
-  Actual: p.cyan,
+  Actual: phn.cyan,
   Expected: 'yan'
 }, {
   Name: 'cite',
-  Actual: p.cite,
+  Actual: phn.cite,
   Expected: 'ite'
 }, {
+  Name: 'cang',
+  Actual: phn.cang,
+  Expected: 'ang'
+}, {
   Name: 'cange',
-  Actual: p.cange,
+  Actual: phn.cange,
   Expected: 'ange'
 }, {
   Name: 'cANGE',
-  Actual: p.cANGE,
+  Actual: phn.cANGE,
   Expected: 'ANGE'
 }, {
   Name: 'cost',
-  Actual: p.cost,
+  Actual: phn.cost,
   Expected: 'ost'
 }, {
   Name: 'cular',
-  Actual: p.cular,
+  Actual: phn.cular,
   Expected: 'ular'
 }, {
   Name: 'cdrom',
-  Actual: p.cdrom,
+  Actual: phn.cdrom,
   Expected: 'drom'
 }, {
   Name: 'cave',
-  Actual: p.cave,
+  Actual: phn.cave,
   Expected: 'ave'
 }, {
   Name: 'cAve',
-  Actual: p.cAve,
+  Actual: phn.cAve,
   Expected: 'Ave'
 }, {
   Name: 'ccli',
-  Actual: p.ccli,
+  Actual: phn.ccli,
   Expected: 'cli'
 }, {
   Name: 'cCli',
-  Actual: p.cCli,
+  Actual: phn.cCli,
   Expected: 'Cli'
 }, {
   Name: 'cules',
-  Actual: p.cules,
+  Actual: phn.cules,
   Expected: 'ules'
 }, {
   Name: 'cent',
-  Actual: p.cent,
+  Actual: phn.cent,
   Expected: 'ent'
 }, {
   Name: 'centa',
-  Actual: p.centa,
+  Actual: phn.centa,
   Expected: 'enta'
 }, {
   Name: 'cust',
-  Actual: p.cust,
+  Actual: phn.cust,
   Expected: 'ust'
 }, {
   Name: 'ccust',
-  Actual: p.ccust,
+  Actual: phn.ccust,
   Expected: 'cust'
 }, {
   Name: 'cCust',
-  Actual: p.cCust,
+  Actual: phn.cCust,
   Expected: 'Cust'
 }, {
   Name: 'cmand',
-  Actual: p.cmand,
+  Actual: phn.cmand,
   Expected: 'mand'
 }, {
   Name: 'cMAND',
-  Actual: p.cMAND,
+  Actual: phn.cMAND,
   Expected: 'MAND'
 }, {
   Name: 'clob',
-  Actual: p.clob,
+  Actual: phn.clob,
   Expected: 'lob'
 }, {
   Name: 'cram',
-  Actual: p.cram,
+  Actual: phn.cram,
   Expected: 'ram'
 }, {
   Name: 'crame',
-  Actual: p.crame,
+  Actual: phn.crame,
   Expected: 'rame'
 }, {
   Name: 'cias',
-  Actual: p.cias,
+  Actual: phn.cias,
   Expected: 'ias'
 }, {
   Name: 'cbout',
-  Actual: p.cbout,
+  Actual: phn.cbout,
   Expected: 'bout'
 }, // Bout time we added this one! LOL
 {
   Name: 'cseq',
-  Actual: p.cseq,
+  Actual: phn.cseq,
   Expected: 'seq'
 }, {
   Name: 'cSeq',
-  Actual: p.cSeq,
+  Actual: phn.cSeq,
   Expected: 'Seq'
 }, {
   Name: 'cncer',
-  Actual: p.cncer,
+  Actual: phn.cncer,
   Expected: 'ncer'
 }, {
   Name: 'cpri',
-  Actual: p.cpri,
+  Actual: phn.cpri,
   Expected: 'pri'
 }, {
   Name: 'cPri',
-  Actual: p.cPri,
+  Actual: phn.cPri,
   Expected: 'Pri'
 }, {
   Name: 'cmary',
-  Actual: p.cmary,
+  Actual: phn.cmary,
   Expected: 'mary'
 }, {
   Name: 'cmit',
-  Actual: p.cmit,
+  Actual: phn.cmit,
   Expected: 'mit'
 }, {
   Name: 'ctert',
-  Actual: p.ctert,
+  Actual: phn.ctert,
   Expected: 'tert'
 }, {
   Name: 'cTert',
-  Actual: p.cTert,
+  Actual: phn.cTert,
   Expected: 'Tert'
 }, {
   Name: 'ctar',
-  Actual: p.ctar,
+  Actual: phn.ctar,
   Expected: 'tar'
 }, {
   Name: 'cTar',
-  Actual: p.cTar,
+  Actual: phn.cTar,
   Expected: 'Tar'
 }, {
   Name: 'ctart',
-  Actual: p.ctart,
+  Actual: phn.ctart,
   Expected: 'tart'
 }, {
   Name: 'cTart',
-  Actual: p.cTart,
+  Actual: phn.cTart,
   Expected: 'Tart'
 }, // poptart....LOL
 {
   Name: 'crint',
-  Actual: p.crint,
+  Actual: phn.crint,
   Expected: 'rint'
 }, {
   Name: 'cgen',
-  Actual: p.cgen,
+  Actual: phn.cgen,
   Expected: 'gen'
 }, {
   Name: 'cGen',
-  Actual: p.cGen,
+  Actual: phn.cGen,
   Expected: 'Gen'
 }, {
   Name: 'cator',
-  Actual: p.cator,
+  Actual: phn.cator,
   Expected: 'ator'
 }, {
   Name: 'cdex',
-  Actual: p.cdex,
+  Actual: phn.cdex,
   Expected: 'dex'
 }, {
   Name: 'call',
-  Actual: p.call,
+  Actual: phn.call,
   Expected: 'all'
 }, {
   Name: 'cAll',
-  Actual: p.cAll,
+  Actual: phn.cAll,
   Expected: 'All'
 }, {
   Name: 'creg',
-  Actual: p.creg,
+  Actual: phn.creg,
   Expected: 'reg'
 }, {
   Name: 'cReg',
-  Actual: p.cReg,
+  Actual: phn.cReg,
   Expected: 'Reg'
 }, {
   Name: 'ctain',
-  Actual: p.ctain,
+  Actual: phn.ctain,
   Expected: 'tain'
 }, {
   Name: 'cmet',
-  Actual: p.cmet,
+  Actual: phn.cmet,
   Expected: 'met'
 }, {
   Name: 'cMet',
-  Actual: p.cMet,
+  Actual: phn.cMet,
   Expected: 'Met'
 }, {
   Name: 'cric',
-  Actual: p.cric,
+  Actual: phn.cric,
   Expected: 'ric'
 }, {
   Name: 'cack',
-  Actual: p.cack,
+  Actual: phn.cack,
   Expected: 'ack'
 }, {
   Name: 'cdev',
-  Actual: p.cdev,
+  Actual: phn.cdev,
   Expected: 'dev'
 }, {
   Name: 'cDev',
-  Actual: p.cDev,
+  Actual: phn.cDev,
   Expected: 'Dev'
 }, {
   Name: 'cDEV',
-  Actual: p.cDEV,
+  Actual: phn.cDEV,
   Expected: 'DEV'
 }, {
   Name: 'cprod',
-  Actual: p.cprod,
+  Actual: phn.cprod,
   Expected: 'prod'
 }, {
   Name: 'cProd',
-  Actual: p.cProd,
+  Actual: phn.cProd,
   Expected: 'Prod'
 }, {
   Name: 'cPROD',
-  Actual: p.cPROD,
+  Actual: phn.cPROD,
   Expected: 'PROD'
 }, {
   Name: 'cana',
-  Actual: p.cana,
+  Actual: phn.cana,
   Expected: 'ana'
 }, {
   Name: 'cAna',
-  Actual: p.cAna,
+  Actual: phn.cAna,
   Expected: 'Ana'
 }, {
   Name: 'csis',
-  Actual: p.csis,
+  Actual: phn.csis,
   Expected: 'sis'
 }, {
   Name: 'crage',
-  Actual: p.crage,
+  Actual: phn.crage,
   Expected: 'rage'
 }, {
   Name: 'cear',
-  Actual: p.cear,
+  Actual: phn.cear,
   Expected: 'ear'
 }, {
   Name: 'crgb',
-  Actual: p.crgb,
+  Actual: phn.crgb,
   Expected: 'rgb'
 }, {
   Name: 'cass',
-  Actual: p.cass,
+  Actual: phn.cass,
   Expected: 'ass'
 }, {
   Name: 'cASS',
-  Actual: p.cASS,
+  Actual: phn.cASS,
   Expected: 'ASS'
 }, {
   Name: 'cind',
-  Actual: p.cind,
+  Actual: phn.cind,
   Expected: 'ind'
 }, {
   Name: 'clin',
-  Actual: p.clin,
+  Actual: phn.clin,
   Expected: 'lin'
 }, {
   Name: 'cLin',
-  Actual: p.cLin,
+  Actual: phn.cLin,
   Expected: 'Lin'
 }, {
   Name: 'ccom',
-  Actual: p.ccom,
+  Actual: phn.ccom,
   Expected: 'com'
 }, {
   Name: 'cCom',
-  Actual: p.cCom,
+  Actual: phn.cCom,
   Expected: 'Com'
 }, {
   Name: 'cCOM',
-  Actual: p.cCOM,
+  Actual: phn.cCOM,
   Expected: 'COM'
 }, {
   Name: 'cubic',
-  Actual: p.cubic,
+  Actual: phn.cubic,
   Expected: 'ubic'
 }, {
   Name: 'cane',
-  Actual: p.cane,
+  Actual: phn.cane,
   Expected: 'ane'
 }, {
   Name: 'curve',
-  Actual: p.curve,
+  Actual: phn.curve,
   Expected: 'urve'
 }, {
   Name: 'cqua',
-  Actual: p.cqua,
+  Actual: phn.cqua,
   Expected: 'qua'
 }, {
   Name: 'cQua',
-  Actual: p.cQua,
+  Actual: phn.cQua,
   Expected: 'Qua'
 }, {
   Name: 'crtic',
-  Actual: p.crtic,
+  Actual: phn.crtic,
   Expected: 'rtic'
 }, {
   Name: 'csec',
-  Actual: p.csec,
+  Actual: phn.csec,
   Expected: 'sec'
 }, {
   Name: 'cSec',
-  Actual: p.cSec,
+  Actual: phn.cSec,
   Expected: 'Sec'
 }, {
   Name: 'cuni',
-  Actual: p.cuni,
+  Actual: phn.cuni,
   Expected: 'uni'
 }, {
   Name: 'cUni',
-  Actual: p.cUni,
+  Actual: phn.cUni,
   Expected: 'Uni'
 }, {
   Name: 'chyper',
-  Actual: p.chyper,
+  Actual: phn.chyper,
   Expected: 'hyper'
 }, {
   Name: 'cHyper',
-  Actual: p.cHyper,
+  Actual: phn.cHyper,
   Expected: 'Hyper'
 }, {
   Name: 'cbol',
-  Actual: p.cbol,
+  Actual: phn.cbol,
   Expected: 'bol'
 }, {
   Name: 'cbola',
-  Actual: p.cbola,
+  Actual: phn.cbola,
   Expected: 'bola'
 }, {
   Name: 'cstant',
-  Actual: p.cstant,
+  Actual: phn.cstant,
   Expected: 'stant'
 }, {
   Name: 'ciso',
-  Actual: p.ciso,
+  Actual: phn.ciso,
   Expected: 'iso'
 }, {
   Name: 'cIso',
-  Actual: p.cIso,
+  Actual: phn.cIso,
   Expected: 'Iso'
 }, {
   Name: 'ctope',
-  Actual: p.ctope,
+  Actual: phn.ctope,
   Expected: 'tope'
 }, {
   Name: 'cphon',
-  Actual: p.cphon,
+  Actual: phn.cphon,
   Expected: 'phon'
 }, {
   Name: 'cPhon',
-  Actual: p.cPhon,
+  Actual: phn.cPhon,
   Expected: 'Phon'
 }, {
   Name: 'cics',
-  Actual: p.cics,
+  Actual: phn.cics,
   Expected: 'ics'
 }, {
   Name: 'csha',
-  Actual: p.csha,
+  Actual: phn.csha,
   Expected: 'sha'
 }, {
   Name: 'cSha',
-  Actual: p.cSha,
+  Actual: phn.cSha,
   Expected: 'Sha'
 }, {
   Name: 'cail',
-  Actual: p.cail,
+  Actual: phn.cail,
   Expected: 'ail'
 }, {
   Name: 'cAIL',
-  Actual: p.cAIL,
+  Actual: phn.cAIL,
   Expected: 'AIL'
 }, {
   Name: 'clay',
-  Actual: p.clay,
+  Actual: phn.clay,
   Expected: 'lay'
 }, {
   Name: 'cLay',
-  Actual: p.cLay,
+  Actual: phn.cLay,
   Expected: 'Lay'
 }, {
   Name: 'csug',
-  Actual: p.csug,
+  Actual: phn.csug,
   Expected: 'sug'
 }, {
   Name: 'cSug',
-  Actual: p.cSug,
+  Actual: phn.cSug,
   Expected: 'Sug'
 }, {
   Name: 'cgest',
-  Actual: p.cgest,
+  Actual: phn.cgest,
   Expected: 'gest'
 }, {
   Name: 'cGest',
-  Actual: p.cGest,
+  Actual: phn.cGest,
   Expected: 'Gest'
 }, {
   Name: 'cect',
-  Actual: p.cect,
+  Actual: phn.cect,
   Expected: 'ect'
 }, {
   Name: 'croject',
-  Actual: p.croject,
+  Actual: phn.croject,
   Expected: 'roject'
 }, {
   Name: 'cell',
-  Actual: p.cell,
+  Actual: phn.cell,
   Expected: 'ell'
 }, {
   Name: 'cnion',
-  Actual: p.cnion,
+  Actual: phn.cnion,
   Expected: 'nion'
 }, {
   Name: 'ceta',
-  Actual: p.ceta,
+  Actual: phn.ceta,
   Expected: 'eta'
 }, {
   Name: 'ccent',
-  Actual: p.ccent,
+  Actual: phn.ccent,
   Expected: 'cent'
 }, {
   Name: 'cChi',
-  Actual: p.cChi,
+  Actual: phn.cChi,
   Expected: 'Chi'
 }, {
   Name: 'cild',
-  Actual: p.cild,
+  Actual: phn.cild,
   Expected: 'ild'
 }, {
   Name: 'ccolr',
-  Actual: p.ccolr,
+  Actual: phn.ccolr,
   Expected: 'colr'
 }, {
   Name: 'cshp',
-  Actual: p.cshp,
+  Actual: phn.cshp,
   Expected: 'shp'
 }, {
   Name: 'cual',
-  Actual: p.cual,
+  Actual: phn.cual,
   Expected: 'ual'
 }, {
   Name: 'cied',
-  Actual: p.cied,
+  Actual: phn.cied,
   Expected: 'ied'
 }, {
   Name: 'cfied',
-  Actual: p.cfied,
+  Actual: phn.cfied,
   Expected: 'fied'
 }, {
   Name: 'cified',
-  Actual: p.cified,
+  Actual: phn.cified,
   Expected: 'ified'
 }, {
   Name: 'cments',
-  Actual: p.cments,
+  Actual: phn.cments,
   Expected: 'ments'
 }, {
   Name: 'clop',
-  Actual: p.clop,
+  Actual: phn.clop,
   Expected: 'lop'
 }, {
   Name: 'cLOP',
-  Actual: p.cLOP,
+  Actual: phn.cLOP,
   Expected: 'LOP'
 }, {
   Name: 'cdest',
-  Actual: p.cdest,
+  Actual: phn.cdest,
   Expected: 'dest'
 }, {
   Name: 'cDest',
-  Actual: p.cDest,
+  Actual: phn.cDest,
   Expected: 'Dest'
 }, {
   Name: 'cstor',
-  Actual: p.cstor,
+  Actual: phn.cstor,
   Expected: 'stor'
 }, {
   Name: 'cStor',
-  Actual: p.cStor,
+  Actual: phn.cStor,
   Expected: 'Stor'
 }, {
   Name: 'cequ',
-  Actual: p.cequ,
+  Actual: phn.cequ,
   Expected: 'equ'
 }, {
   Name: 'cEqu',
-  Actual: p.cEqu,
+  Actual: phn.cEqu,
   Expected: 'Equ'
 }, {
   Name: 'cque',
-  Actual: p.cque,
+  Actual: phn.cque,
   Expected: 'que'
 }, {
   Name: 'cQue',
-  Actual: p.cQue,
+  Actual: phn.cQue,
   Expected: 'Que'
 }, {
   Name: 'cdup',
-  Actual: p.cdup,
+  Actual: phn.cdup,
   Expected: 'dup'
 }, {
   Name: 'cDup',
-  Actual: p.cDup,
+  Actual: phn.cDup,
   Expected: 'Dup'
 }, {
   Name: 'ccate',
-  Actual: p.ccate,
+  Actual: phn.ccate,
   Expected: 'cate'
 }, {
   Name: 'cere',
-  Actual: p.cere,
+  Actual: phn.cere,
   Expected: 'ere'
 }, {
   Name: 'ceas',
-  Actual: p.ceas,
+  Actual: phn.ceas,
   Expected: 'eas'
 }, {
   Name: 'cease',
-  Actual: p.cease,
+  Actual: phn.cease,
   Expected: 'ease'
 }, {
   Name: 'crev',
-  Actual: p.crev,
+  Actual: phn.crev,
   Expected: 'rev'
 }, {
   Name: 'cron',
-  Actual: p.cron,
+  Actual: phn.cron,
   Expected: 'ron'
 }, {
   Name: 'colv',
-  Actual: p.colv,
+  Actual: phn.colv,
   Expected: 'olv'
 }, {
   Name: 'colve',
-  Actual: p.colve,
+  Actual: phn.colve,
   Expected: 'olve'
 }, {
   Name: 'ceep',
-  Actual: p.ceep,
+  Actual: phn.ceep,
   Expected: 'eep'
 }, {
   Name: 'ccur',
-  Actual: p.ccur,
+  Actual: phn.ccur,
   Expected: 'cur'
 }, {
   Name: 'cCur',
-  Actual: p.cCur,
+  Actual: phn.cCur,
   Expected: 'Cur'
 }, {
   Name: 'csive',
-  Actual: p.csive,
+  Actual: phn.csive,
   Expected: 'sive'
 }, {
   Name: 'cexp',
-  Actual: p.cexp,
+  Actual: phn.cexp,
   Expected: 'exp'
 }, {
   Name: 'cExp',
-  Actual: p.cExp,
+  Actual: phn.cExp,
   Expected: 'Exp'
 }, {
   Name: 'could',
-  Actual: p.could,
+  Actual: phn.could,
   Expected: 'ould'
 }, {
   Name: 'cike',
-  Actual: p.cike,
+  Actual: phn.cike,
   Expected: 'ike'
 }, {
   Name: 'cful',
-  Actual: p.cful,
+  Actual: phn.cful,
   Expected: 'ful'
 }, {
   Name: 'cFul',
-  Actual: p.cFul,
+  Actual: phn.cFul,
   Expected: 'Ful'
 }, {
   Name: 'cuto',
-  Actual: p.cuto,
+  Actual: phn.cuto,
   Expected: 'uto'
 }, {
   Name: 'copt',
-  Actual: p.copt,
+  Actual: phn.copt,
   Expected: 'opt'
 }, {
   Name: 'cOpt',
-  Actual: p.cOpt,
+  Actual: phn.cOpt,
   Expected: 'Opt'
 }, {
   Name: 'cized',
-  Actual: p.cized,
+  Actual: phn.cized,
   Expected: 'ized'
 }, {
   Name: 'come',
-  Actual: p.come,
+  Actual: phn.come,
   Expected: 'ome'
 }, {
   Name: 'clus',
-  Actual: p.clus,
+  Actual: phn.clus,
   Expected: 'lus'
 }, {
   Name: 'clon',
-  Actual: p.clon,
+  Actual: phn.clon,
   Expected: 'lon'
 }, {
   Name: 'cizer',
-  Actual: p.cizer,
+  Actual: phn.cizer,
   Expected: 'izer'
 }, {
   Name: 'cern',
-  Actual: p.cern,
+  Actual: phn.cern,
   Expected: 'ern'
 }, {
   Name: 'cerm',
-  Actual: p.cerm,
+  Actual: phn.cerm,
   Expected: 'erm'
 }, {
   Name: 'comb',
-  Actual: p.comb,
+  Actual: phn.comb,
   Expected: 'omb'
 }, {
   Name: 'ceed',
-  Actual: p.ceed,
+  Actual: phn.ceed,
   Expected: 'eed'
 }, {
   Name: 'coop',
-  Actual: p.coop,
+  Actual: phn.coop,
   Expected: 'oop'
 }, {
   Name: 'cood',
-  Actual: p.cood,
+  Actual: phn.cood,
   Expected: 'ood'
 }, {
   Name: 'cice',
-  Actual: p.cice,
+  Actual: phn.cice,
   Expected: 'ice'
 }, {
   Name: 'ctay',
-  Actual: p.ctay,
+  Actual: phn.ctay,
   Expected: 'tay'
 }, {
   Name: 'cafe',
-  Actual: p.cafe,
+  Actual: phn.cafe,
   Expected: 'afe'
 }, {
   Name: 'cult',
-  Actual: p.cult,
+  Actual: phn.cult,
   Expected: 'ult'
 }, {
   Name: 'cULT',
-  Actual: p.cULT,
+  Actual: phn.cULT,
   Expected: 'ULT'
 }, {
   Name: 'cault',
-  Actual: p.cault,
+  Actual: phn.cault,
   Expected: 'ault'
 }, {
   Name: 'cAULT',
-  Actual: p.cAULT,
+  Actual: phn.cAULT,
   Expected: 'AULT'
 }, {
   Name: 'clete',
-  Actual: p.clete,
+  Actual: phn.clete,
   Expected: 'lete'
 }, {
   Name: 'cger',
-  Actual: p.cger,
+  Actual: phn.cger,
   Expected: 'ger'
 }, {
   Name: 'cspec',
-  Actual: p.cspec,
+  Actual: phn.cspec,
   Expected: 'spec'
 }, {
   Name: 'cSpec',
-  Actual: p.cSpec,
+  Actual: phn.cSpec,
   Expected: 'Spec'
 }, {
   Name: 'cfic',
-  Actual: p.cfic,
+  Actual: phn.cfic,
   Expected: 'fic'
 }, {
   Name: 'cific',
-  Actual: p.cific,
+  Actual: phn.cific,
   Expected: 'ific'
 }, {
   Name: 'csuf',
-  Actual: p.csuf,
+  Actual: phn.csuf,
   Expected: 'suf'
 }, {
   Name: 'cSuf',
-  Actual: p.cSuf,
+  Actual: phn.cSuf,
   Expected: 'Suf'
 }, {
   Name: 'cance',
-  Actual: p.cance,
+  Actual: phn.cance,
   Expected: 'ance'
 }, {
   Name: 'cional',
-  Actual: p.cional,
+  Actual: phn.cional,
   Expected: 'ional'
 }, {
   Name: 'ctional',
-  Actual: p.ctional,
+  Actual: phn.ctional,
   Expected: 'tional'
 }, {
   Name: 'ctra',
-  Actual: p.ctra,
+  Actual: phn.ctra,
   Expected: 'tra'
 }, {
   Name: 'cTra',
-  Actual: p.cTra,
+  Actual: phn.cTra,
   Expected: 'Tra'
 }, {
   Name: 'ctrad',
-  Actual: p.ctrad,
+  Actual: phn.ctrad,
   Expected: 'trad'
 }, {
   Name: 'cTrad',
-  Actual: p.cTrad,
+  Actual: phn.cTrad,
   Expected: 'Trad'
 }, {
   Name: 'ctrol',
-  Actual: p.ctrol,
+  Actual: phn.ctrol,
   Expected: 'trol'
 }, {
   Name: 'cure',
-  Actual: p.cure,
+  Actual: phn.cure,
   Expected: 'ure'
 }, {
   Name: 'csym',
-  Actual: p.csym,
+  Actual: phn.csym,
   Expected: 'sym'
 }, {
   Name: 'cSym',
-  Actual: p.cSym,
+  Actual: phn.cSym,
   Expected: 'Sym'
 }, {
   Name: 'cdel',
-  Actual: p.cdel,
+  Actual: phn.cdel,
   Expected: 'del'
 }, {
   Name: 'cDel',
-  Actual: p.cDel,
+  Actual: phn.cDel,
   Expected: 'Del'
 }, {
   Name: 'csert',
-  Actual: p.csert,
+  Actual: phn.csert,
   Expected: 'sert'
 }, {
   Name: 'csub',
-  Actual: p.csub,
+  Actual: phn.csub,
   Expected: 'sub'
 }, {
   Name: 'cSub',
-  Actual: p.cSub,
+  Actual: phn.cSub,
   Expected: 'Sub'
 }, {
   Name: 'ctit',
-  Actual: p.ctit,
+  Actual: phn.ctit,
   Expected: 'tit'
 }, {
   Name: 'cute',
-  Actual: p.cute,
+  Actual: phn.cute,
   Expected: 'ute'
 }, {
   Name: 'ciod',
-  Actual: p.ciod,
+  Actual: phn.ciod,
   Expected: 'iod'
 }, {
   Name: 'ceak',
-  Actual: p.ceak,
+  Actual: phn.ceak,
   Expected: 'eak'
 }, {
   Name: 'cnto',
-  Actual: p.cnto,
+  Actual: phn.cnto,
   Expected: 'nto'
 }, {
   Name: 'cmpt',
-  Actual: p.cmpt,
+  Actual: phn.cmpt,
   Expected: 'mpt'
 }, {
   Name: 'cted',
-  Actual: p.cted,
+  Actual: phn.cted,
   Expected: 'ted'
 }, {
   Name: 'cist',
-  Actual: p.cist,
+  Actual: phn.cist,
   Expected: 'ist'
 }, {
   Name: 'crch',
-  Actual: p.crch,
+  Actual: phn.crch,
   Expected: 'rch'
 }, {
   Name: 'cson',
-  Actual: p.cson,
+  Actual: phn.cson,
   Expected: 'son'
 }, {
   Name: 'cison',
-  Actual: p.cison,
+  Actual: phn.cison,
   Expected: 'ison'
 }, {
   Name: 'cera',
-  Actual: p.cera,
+  Actual: phn.cera,
   Expected: 'era'
 }, {
   Name: 'cfore',
-  Actual: p.cfore,
+  Actual: phn.cfore,
   Expected: 'fore'
 }, {
   Name: 'cFORE',
-  Actual: p.cFORE,
+  Actual: phn.cFORE,
   Expected: 'FORE'
 }, {
   Name: 'cush',
-  Actual: p.cush,
+  Actual: phn.cush,
   Expected: 'ush'
 }, {
   Name: 'cUSH',
-  Actual: p.cUSH,
+  Actual: phn.cUSH,
   Expected: 'USH'
 }, {
   Name: 'cvel',
-  Actual: p.cvel,
+  Actual: phn.cvel,
   Expected: 'vel'
 }, {
   Name: 'ccess',
-  Actual: p.ccess,
+  Actual: phn.ccess,
   Expected: 'cess'
 }, {
   Name: 'cCESS',
-  Actual: p.cCESS,
+  Actual: phn.cCESS,
   Expected: 'CESS'
 }, {
   Name: 'cemp',
-  Actual: p.cemp,
+  Actual: phn.cemp,
   Expected: 'emp'
 }, {
   Name: 'cmas',
-  Actual: p.cmas,
+  Actual: phn.cmas,
   Expected: 'mas'
 }, {
   Name: 'cMas',
-  Actual: p.cMas,
+  Actual: phn.cMas,
   Expected: 'Mas'
 }, {
   Name: 'cpand',
-  Actual: p.cpand,
+  Actual: phn.cpand,
   Expected: 'pand'
 }, {
   Name: 'cook',
-  Actual: p.cook,
+  Actual: phn.cook,
   Expected: 'ook'
 }, {
   Name: 'clse',
-  Actual: p.clse,
+  Actual: phn.clse,
   Expected: 'lse'
 }, {
   Name: 'cify',
-  Actual: p.cify,
+  Actual: phn.cify,
   Expected: 'ify'
 }, {
   Name: 'csup',
-  Actual: p.csup,
+  Actual: phn.csup,
   Expected: 'sup'
 }, {
   Name: 'cSup',
-  Actual: p.cSup,
+  Actual: phn.cSup,
   Expected: 'Sup'
 }, {
   Name: 'cplac',
-  Actual: p.cplac,
+  Actual: phn.cplac,
   Expected: 'plac'
 }, {
   Name: 'cori',
-  Actual: p.cori,
+  Actual: phn.cori,
   Expected: 'ori'
 }, {
   Name: 'cOri',
-  Actual: p.cOri,
+  Actual: phn.cOri,
   Expected: 'Ori'
 }, {
   Name: 'cinal',
-  Actual: p.cinal,
+  Actual: phn.cinal,
   Expected: 'inal'
 }, {
   Name: 'cpara',
-  Actual: p.cpara,
+  Actual: phn.cpara,
   Expected: 'para'
 }, {
   Name: 'cPara',
-  Actual: p.cPara,
+  Actual: phn.cPara,
   Expected: 'Para'
 }, {
   Name: 'cnom',
-  Actual: p.cnom,
+  Actual: phn.cnom,
   Expected: 'nom'
 }, {
   Name: 'cNom',
-  Actual: p.cNom,
+  Actual: phn.cNom,
   Expected: 'Nom'
 }, {
   Name: 'cther',
-  Actual: p.cther,
+  Actual: phn.cther,
   Expected: 'ther'
 }, {
   Name: 'cfin',
-  Actual: p.cfin,
+  Actual: phn.cfin,
   Expected: 'fin'
 }, {
   Name: 'cFin',
-  Actual: p.cFin,
+  Actual: phn.cFin,
   Expected: 'Fin'
 }, {
   Name: 'crgs',
-  Actual: p.crgs,
+  Actual: phn.crgs,
   Expected: 'rgs'
 }, {
   Name: 'cample',
-  Actual: p.cample,
+  Actual: phn.cample,
   Expected: 'ample'
 }, {
   Name: 'cAMPLE',
-  Actual: p.cAMPLE,
+  Actual: phn.cAMPLE,
   Expected: 'AMPLE'
 }, {
   Name: 'cruc',
-  Actual: p.cruc,
+  Actual: phn.cruc,
   Expected: 'ruc'
 }, {
   Name: 'cture',
-  Actual: p.cture,
+  Actual: phn.cture,
   Expected: 'ture'
 }, {
   Name: 'crea',
-  Actual: p.crea,
+  Actual: phn.crea,
   Expected: 'rea'
 }, {
   Name: 'cRea',
-  Actual: p.cRea,
+  Actual: phn.cRea,
   Expected: 'Rea'
 }, {
+  Name: 'cREA',
+  Actual: phn.cREA,
+  Expected: 'REA'
+}, {
   Name: 'ceen',
-  Actual: p.ceen,
+  Actual: phn.ceen,
   Expected: 'een'
 }, {
   Name: 'core',
-  Actual: p.core,
+  Actual: phn.core,
   Expected: 'ore'
 }, {
   Name: 'cstd',
-  Actual: p.cstd,
+  Actual: phn.cstd,
   Expected: 'std'
 }, {
   Name: 'cStd',
-  Actual: p.cStd,
+  Actual: phn.cStd,
   Expected: 'Std'
 }, {
   Name: 'cick',
-  Actual: p.cick,
+  Actual: phn.cick,
   Expected: 'ick'
 }, {
   Name: 'cote',
-  Actual: p.cote,
+  Actual: phn.cote,
   Expected: 'ote'
 }, {
   Name: 'coker',
-  Actual: p.coker,
+  Actual: phn.coker,
   Expected: 'oker'
 }, {
   Name: 'crge',
-  Actual: p.crge,
+  Actual: phn.crge,
   Expected: 'rge'
 }, {
   Name: 'cRGE',
-  Actual: p.cRGE,
+  Actual: phn.cRGE,
   Expected: 'RGE'
 }, {
   Name: 'cerge',
-  Actual: p.cerge,
+  Actual: phn.cerge,
   Expected: 'erge'
 }, {
   Name: 'cERGE',
-  Actual: p.cERGE,
+  Actual: phn.cERGE,
   Expected: 'ERGE'
 }, {
   Name: 'cerg',
-  Actual: p.cerg,
+  Actual: phn.cerg,
   Expected: 'erg'
 }, {
   Name: 'cured',
-  Actual: p.cured,
+  Actual: phn.cured,
   Expected: 'ured'
 }, {
   Name: 'cude',
-  Actual: p.cude,
+  Actual: phn.cude,
   Expected: 'ude'
 }, {
   Name: 'clude',
-  Actual: p.clude,
+  Actual: phn.clude,
   Expected: 'lude'
 }, {
   Name: 'clud',
-  Actual: p.clud,
+  Actual: phn.clud,
   Expected: 'lud'
 }, {
   Name: 'ccau',
-  Actual: p.ccau,
+  Actual: phn.ccau,
   Expected: 'cau'
 }, {
   Name: 'cCau',
-  Actual: p.cCau,
+  Actual: phn.cCau,
   Expected: 'Cau'
 }, {
   Name: 'cght',
-  Actual: p.cght,
+  Actual: phn.cght,
   Expected: 'ght'
 }, {
   Name: 'cned',
-  Actual: p.cned,
+  Actual: phn.cned,
   Expected: 'ned'
 }, {
   Name: 'cten',
-  Actual: p.cten,
+  Actual: phn.cten,
   Expected: 'ten'
 }, {
   Name: 'csid',
-  Actual: p.csid,
+  Actual: phn.csid,
   Expected: 'sid'
 }, {
   Name: 'cSid',
-  Actual: p.cSid,
+  Actual: phn.cSid,
   Expected: 'Sid'
 }, {
   Name: 'cifies',
-  Actual: p.cifies,
+  Actual: phn.cifies,
   Expected: 'ifies'
 }, {
   Name: 'cref',
-  Actual: p.cref,
+  Actual: phn.cref,
   Expected: 'ref'
 }, {
   Name: 'cRef',
-  Actual: p.cRef,
+  Actual: phn.cRef,
   Expected: 'Ref'
 }, {
   Name: 'clat',
-  Actual: p.clat,
+  Actual: phn.clat,
   Expected: 'lat'
 }, {
   Name: 'crit',
-  Actual: p.crit,
+  Actual: phn.crit,
   Expected: 'rit'
 }, {
   Name: 'cleas',
-  Actual: p.cleas,
+  Actual: phn.cleas,
   Expected: 'leas'
 }, {
   Name: 'cchiv',
-  Actual: p.cchiv,
+  Actual: phn.cchiv,
   Expected: 'chiv'
 }, {
   Name: 'camp',
-  Actual: p.camp,
+  Actual: phn.camp,
   Expected: 'amp'
 }, {
   Name: 'copy',
-  Actual: p.copy,
+  Actual: phn.copy,
   Expected: 'opy'
 }, {
   Name: 'cccess',
-  Actual: p.cccess,
+  Actual: phn.cccess,
   Expected: 'ccess'
 }, {
   Name: 'clyz',
-  Actual: p.clyz,
+  Actual: phn.clyz,
   Expected: 'lyz'
 }, {
   Name: 'clyze',
-  Actual: p.clyze,
+  Actual: phn.clyze,
   Expected: 'lyze'
 }, {
   Name: 'cbra',
-  Actual: p.cbra,
+  Actual: phn.cbra,
   Expected: 'bra'
 }, {
   Name: 'cBra',
-  Actual: p.cBra,
+  Actual: phn.cBra,
   Expected: 'Bra'
 }, {
   Name: 'cket',
-  Actual: p.cket,
+  Actual: phn.cket,
   Expected: 'ket'
 }, {
   Name: 'clex',
-  Actual: p.clex,
+  Actual: phn.clex,
   Expected: 'lex'
 }, {
   Name: 'cLex',
-  Actual: p.cLex,
+  Actual: phn.cLex,
   Expected: 'Lex'
 }, {
   Name: 'ccal',
-  Actual: p.ccal,
+  Actual: phn.ccal,
   Expected: 'cal'
 }, {
   Name: 'cical',
-  Actual: p.cical,
+  Actual: phn.cical,
   Expected: 'ical'
 }, {
   Name: 'cicon',
-  Actual: p.cicon,
+  Actual: phn.cicon,
   Expected: 'icon'
 }, {
   Name: 'clta',
-  Actual: p.clta,
+  Actual: phn.clta,
   Expected: 'lta'
 }, {
   Name: 'ceaf',
-  Actual: p.ceaf,
+  Actual: phn.ceaf,
   Expected: 'eaf'
 }, {
   Name: 'ctity',
-  Actual: p.ctity,
+  Actual: phn.ctity,
   Expected: 'tity'
 }, {
   Name: 'cnly',
-  Actual: p.cnly,
+  Actual: phn.cnly,
   Expected: 'nly'
 }, {
   Name: 'cuch',
-  Actual: p.cuch,
+  Actual: phn.cuch,
   Expected: 'uch'
 }, {
   Name: 'ctan',
-  Actual: p.ctan,
+  Actual: phn.ctan,
   Expected: 'tan'
 }, {
   Name: 'cstan',
-  Actual: p.cstan,
+  Actual: phn.cstan,
   Expected: 'stan'
 }, {
   Name: 'cistan',
-  Actual: p.cistan,
+  Actual: phn.cistan,
   Expected: 'istan'
 }, {
   Name: 'cnistan',
-  Actual: p.cnistan,
+  Actual: phn.cnistan,
   Expected: 'nistan'
 }, {
   Name: 'cnia',
-  Actual: p.cnia,
+  Actual: phn.cnia,
   Expected: 'nia'
 }, {
   Name: 'cania',
-  Actual: p.cania,
+  Actual: phn.cania,
   Expected: 'ania'
 }, {
   Name: 'cria',
-  Actual: p.cria,
+  Actual: phn.cria,
   Expected: 'ria'
 }, {
   Name: 'ceria',
-  Actual: p.ceria,
+  Actual: phn.ceria,
   Expected: 'eria'
 }, {
   Name: 'cgeria',
-  Actual: p.cgeria,
+  Actual: phn.cgeria,
   Expected: 'geria'
 }, {
   Name: 'crra',
-  Actual: p.crra,
+  Actual: phn.crra,
   Expected: 'rra'
 }, {
   Name: 'cola',
-  Actual: p.cola,
+  Actual: phn.cola,
   Expected: 'ola'
 }, {
   Name: 'cgua',
-  Actual: p.cgua,
+  Actual: phn.cgua,
   Expected: 'gua'
 }, {
   Name: 'cina',
-  Actual: p.cina,
+  Actual: phn.cina,
   Expected: 'ina'
 }, {
   Name: 'cenia',
-  Actual: p.cenia,
+  Actual: phn.cenia,
   Expected: 'enia'
 }, {
   Name: 'clia',
-  Actual: p.clia,
+  Actual: phn.clia,
   Expected: 'lia'
 }, {
   Name: 'calia',
-  Actual: p.calia,
+  Actual: phn.calia,
   Expected: 'alia'
 }, {
   Name: 'crain',
-  Actual: p.crain,
+  Actual: phn.crain,
   Expected: 'rain'
 }, {
   Name: 'cuda',
-  Actual: p.cuda,
+  Actual: phn.cuda,
   Expected: 'uda'
 }, {
   Name: 'crus',
-  Actual: p.crus,
+  Actual: phn.crus,
   Expected: 'rus'
 }, {
   Name: 'cvia',
-  Actual: p.cvia,
+  Actual: phn.cvia,
   Expected: 'via'
 }, {
   Name: 'cndi',
-  Actual: p.cndi,
+  Actual: phn.cndi,
   Expected: 'ndi'
 }, {
   Name: 'cdia',
-  Actual: p.cdia,
+  Actual: phn.cdia,
   Expected: 'dia'
 }, {
   Name: 'cada',
-  Actual: p.cada,
+  Actual: phn.cada,
   Expected: 'ada'
 }, {
   Name: 'cnada',
-  Actual: p.cnada,
+  Actual: phn.cnada,
   Expected: 'nada'
 }, {
   Name: 'clic',
-  Actual: p.clic,
+  Actual: phn.clic,
   Expected: 'lic'
 }, {
   Name: 'cblic',
-  Actual: p.cblic,
+  Actual: phn.cblic,
   Expected: 'blic'
 }, {
   Name: 'cublic',
-  Actual: p.cublic,
+  Actual: phn.cublic,
   Expected: 'ublic'
 }, {
   Name: 'cbia',
-  Actual: p.cbia,
+  Actual: phn.cbia,
   Expected: 'bia'
 }, {
   Name: 'cmbia',
-  Actual: p.cmbia,
+  Actual: phn.cmbia,
   Expected: 'mbia'
 }, {
   Name: 'cngo',
-  Actual: p.cngo,
+  Actual: phn.cngo,
   Expected: 'ngo'
 }, {
   Name: 'congo',
-  Actual: p.congo,
+  Actual: phn.congo,
   Expected: 'ongo'
 }, {
   Name: 'cica',
-  Actual: p.cica,
+  Actual: phn.cica,
   Expected: 'ica'
 }, {
   Name: 'cnica',
-  Actual: p.cnica,
+  Actual: phn.cnica,
   Expected: 'nica'
 }, {
   Name: 'cinica',
-  Actual: p.cinica,
+  Actual: phn.cinica,
   Expected: 'inica'
 }, {
   Name: 'cminica',
-  Actual: p.cminica,
+  Actual: phn.cminica,
   Expected: 'minica'
 }, {
   Name: 'cominica',
-  Actual: p.cominica,
+  Actual: phn.cominica,
   Expected: 'ominica'
 }, {
   Name: 'cador',
-  Actual: p.cador,
+  Actual: phn.cador,
   Expected: 'ador'
 }, {
   Name: 'cdor',
-  Actual: p.cdor,
+  Actual: phn.cdor,
   Expected: 'dor'
 }, {
   Name: 'cnea',
-  Actual: p.cnea,
+  Actual: phn.cnea,
   Expected: 'nea'
 }, {
   Name: 'cinea',
-  Actual: p.cinea,
+  Actual: phn.cinea,
   Expected: 'inea'
 }, {
   Name: 'cuinea',
-  Actual: p.cuinea,
+  Actual: phn.cuinea,
   Expected: 'uinea'
 }, {
   Name: 'conia',
-  Actual: p.conia,
+  Actual: phn.conia,
   Expected: 'onia'
 }, {
   Name: 'cini',
-  Actual: p.cini,
+  Actual: phn.cini,
   Expected: 'ini'
 }, {
   Name: 'cnce',
-  Actual: p.cnce,
+  Actual: phn.cnce,
   Expected: 'nce'
 }, {
   Name: 'cambia',
-  Actual: p.cambia,
+  Actual: phn.cambia,
   Expected: 'ambia'
 }, {
   Name: 'cerman',
-  Actual: p.cerman,
+  Actual: phn.cerman,
   Expected: 'erman'
 }, {
   Name: 'crman',
-  Actual: p.crman,
+  Actual: phn.crman,
   Expected: 'rman'
 }, {
   Name: 'cala',
-  Actual: p.cala,
+  Actual: phn.cala,
   Expected: 'ala'
 }, {
   Name: 'citi',
-  Actual: p.citi,
+  Actual: phn.citi,
   Expected: 'iti'
 }, {
   Name: 'celand',
-  Actual: p.celand,
+  Actual: phn.celand,
   Expected: 'eland'
 }, {
   Name: 'csia',
-  Actual: p.csia,
+  Actual: phn.csia,
   Expected: 'sia'
 }, {
   Name: 'cesia',
-  Actual: p.cesia,
+  Actual: phn.cesia,
   Expected: 'esia'
 }, {
   Name: 'cnesia',
-  Actual: p.cnesia,
+  Actual: phn.cnesia,
   Expected: 'nesia'
 }, {
   Name: 'conesia',
-  Actual: p.conesia,
+  Actual: phn.conesia,
   Expected: 'onesia'
 }, {
   Name: 'cran',
-  Actual: p.cran,
+  Actual: phn.cran,
   Expected: 'ran'
 }, {
   Name: 'cdan',
-  Actual: p.cdan,
+  Actual: phn.cdan,
   Expected: 'dan'
 }, {
   Name: 'cati',
-  Actual: p.cati,
+  Actual: phn.cati,
   Expected: 'ati'
 }, {
   Name: 'ccar',
-  Actual: p.ccar,
+  Actual: phn.ccar,
   Expected: 'car'
 }, {
   Name: 'cali',
-  Actual: p.cali,
+  Actual: phn.cali,
   Expected: 'ali'
 }, {
   Name: 'cslands',
-  Actual: p.cslands,
+  Actual: phn.cslands,
   Expected: 'slands'
 }, {
   Name: 'cands',
-  Actual: p.cands,
+  Actual: phn.cands,
   Expected: 'ands'
 }, {
   Name: 'cnds',
-  Actual: p.cnds,
+  Actual: phn.cnds,
   Expected: 'nds'
 }, {
   Name: 'cova',
-  Actual: p.cova,
+  Actual: phn.cova,
   Expected: 'ova'
 }, {
   Name: 'cnmar',
-  Actual: p.cnmar,
+  Actual: phn.cnmar,
   Expected: 'nmar'
 }, {
   Name: 'cmar',
-  Actual: p.cmar,
+  Actual: phn.cmar,
   Expected: 'mar'
 }, {
   Name: 'curu',
-  Actual: p.curu,
+  Actual: phn.curu,
   Expected: 'uru'
 }, {
   Name: 'cagua',
-  Actual: p.cagua,
+  Actual: phn.cagua,
   Expected: 'agua'
 }, {
   Name: 'cragua',
-  Actual: p.cragua,
+  Actual: phn.cragua,
   Expected: 'ragua'
 }, {
   Name: 'caragua',
-  Actual: p.caragua,
+  Actual: phn.caragua,
   Expected: 'aragua'
 }, {
   Name: 'ciger',
-  Actual: p.ciger,
+  Actual: phn.ciger,
   Expected: 'iger'
 }, {
   Name: 'corea',
-  Actual: p.corea,
+  Actual: phn.corea,
   Expected: 'orea'
 }, {
   Name: 'ckistan',
-  Actual: p.ckistan,
+  Actual: phn.ckistan,
   Expected: 'kistan'
 }, {
   Name: 'cama',
-  Actual: p.cama,
+  Actual: phn.cama,
   Expected: 'ama'
 }, {
   Name: 'cguay',
-  Actual: p.cguay,
+  Actual: phn.cguay,
   Expected: 'guay'
 }, {
   Name: 'cuay',
-  Actual: p.cuay,
+  Actual: phn.cuay,
   Expected: 'uay'
 }, {
   Name: 'cnes',
-  Actual: p.cnes,
+  Actual: phn.cnes,
   Expected: 'nes'
 }, {
   Name: 'cgal',
-  Actual: p.cgal,
+  Actual: phn.cgal,
   Expected: 'gal'
 }, {
   Name: 'cnda',
-  Actual: p.cnda,
+  Actual: phn.cnda,
   Expected: 'nda'
 }, {
   Name: 'canda',
-  Actual: p.canda,
+  Actual: phn.canda,
   Expected: 'anda'
 }, {
   Name: 'cles',
-  Actual: p.cles,
+  Actual: phn.cles,
   Expected: 'les'
 }, {
   Name: 'crica',
-  Actual: p.crica,
+  Actual: phn.crica,
   Expected: 'rica'
 }, {
   Name: 'cfrica',
-  Actual: p.cfrica,
+  Actual: phn.cfrica,
   Expected: 'frica'
 }, {
   Name: 'cudan',
-  Actual: p.cudan,
+  Actual: phn.cudan,
   Expected: 'udan'
 }, {
   Name: 'crland',
-  Actual: p.crland,
+  Actual: phn.crland,
   Expected: 'rland'
 }, {
   Name: 'cerland',
-  Actual: p.cerland,
+  Actual: phn.cerland,
   Expected: 'erland'
 }, {
   Name: 'cste',
-  Actual: p.cste,
+  Actual: phn.cste,
   Expected: 'ste'
 }, {
   Name: 'cnga',
-  Actual: p.cnga,
+  Actual: phn.cnga,
   Expected: 'nga'
 }, {
   Name: 'cates',
-  Actual: p.cates,
+  Actual: phn.cates,
   Expected: 'ates'
 }, {
   Name: 'ctes',
-  Actual: p.ctes,
+  Actual: phn.ctes,
   Expected: 'tes'
 }, {
   Name: 'cela',
-  Actual: p.cela,
+  Actual: phn.cela,
   Expected: 'ela'
 }, {
   Name: 'cnam',
-  Actual: p.cnam,
+  Actual: phn.cnam,
   Expected: 'nam'
 }, {
   Name: 'cmen',
-  Actual: p.cmen,
+  Actual: phn.cmen,
   Expected: 'men'
 }, {
   Name: 'cogen',
-  Actual: p.cogen,
+  Actual: phn.cogen,
   Expected: 'ogen'
 }, {
   Name: 'crogen',
-  Actual: p.crogen,
+  Actual: phn.crogen,
   Expected: 'rogen'
 }, {
   Name: 'cium',
-  Actual: p.cium,
+  Actual: phn.cium,
   Expected: 'ium'
 }, {
   Name: 'clium',
-  Actual: p.clium,
+  Actual: phn.clium,
   Expected: 'lium'
 }, {
   Name: 'celium',
-  Actual: p.celium,
+  Actual: phn.celium,
   Expected: 'elium'
 }, {
   Name: 'chium',
-  Actual: p.chium,
+  Actual: phn.chium,
   Expected: 'hium'
 }, {
   Name: 'cthium',
-  Actual: p.cthium,
+  Actual: phn.cthium,
   Expected: 'thium'
 }, {
   Name: 'cllium',
-  Actual: p.cllium,
+  Actual: phn.cllium,
   Expected: 'llium'
 }, {
   Name: 'clorine',
-  Actual: p.clorine,
+  Actual: phn.clorine,
   Expected: 'lorine'
 }, {
   Name: 'crine',
-  Actual: p.crine,
+  Actual: phn.crine,
   Expected: 'rine'
 }, {
   Name: 'corine',
-  Actual: p.corine,
+  Actual: phn.corine,
   Expected: 'orine'
 }, {
   Name: 'cdium',
-  Actual: p.cdium,
+  Actual: phn.cdium,
   Expected: 'dium'
 }, {
   Name: 'codium',
-  Actual: p.codium,
+  Actual: phn.codium,
   Expected: 'odium'
 }, {
   Name: 'csium',
-  Actual: p.csium,
+  Actual: phn.csium,
   Expected: 'sium'
 }, {
   Name: 'cesium',
-  Actual: p.cesium,
+  Actual: phn.cesium,
   Expected: 'esium'
 }, {
   Name: 'cnum',
-  Actual: p.cnum,
+  Actual: phn.cnum,
   Expected: 'num'
 }, {
   Name: 'cinum',
-  Actual: p.cinum,
+  Actual: phn.cinum,
   Expected: 'inum'
 }, {
   Name: 'cssium',
-  Actual: p.cssium,
+  Actual: phn.cssium,
   Expected: 'ssium'
 }, {
   Name: 'cassium',
-  Actual: p.cassium,
+  Actual: phn.cassium,
   Expected: 'assium'
 }, {
   Name: 'ccium',
-  Actual: p.ccium,
+  Actual: phn.ccium,
   Expected: 'cium'
 }, {
   Name: 'cndium',
-  Actual: p.cndium,
+  Actual: phn.cndium,
   Expected: 'ndium'
 }, {
   Name: 'canium',
-  Actual: p.canium,
+  Actual: phn.canium,
   Expected: 'anium'
 }, {
   Name: 'cnium',
-  Actual: p.cnium,
+  Actual: phn.cnium,
   Expected: 'nium'
 }, {
   Name: 'cadium',
-  Actual: p.cadium,
+  Actual: phn.cadium,
   Expected: 'adium'
 }, {
   Name: 'cmium',
-  Actual: p.cmium,
+  Actual: phn.cmium,
   Expected: 'mium'
 }, {
   Name: 'ckel',
-  Actual: p.ckel,
+  Actual: phn.ckel,
   Expected: 'kel'
 }, {
   Name: 'callium',
-  Actual: p.callium,
+  Actual: phn.callium,
   Expected: 'allium'
 }, {
   Name: 'cnic',
-  Actual: p.cnic,
+  Actual: phn.cnic,
   Expected: 'nic'
 }, {
   Name: 'cenium',
-  Actual: p.cenium,
+  Actual: phn.cenium,
   Expected: 'enium'
 }, {
   Name: 'cton',
-  Actual: p.cton,
+  Actual: phn.cton,
   Expected: 'ton'
 }, {
   Name: 'cidium',
-  Actual: p.cidium,
+  Actual: phn.cidium,
   Expected: 'idium'
 }, {
   Name: 'ctium',
-  Actual: p.ctium,
+  Actual: phn.ctium,
   Expected: 'tium'
 }, {
   Name: 'crium',
-  Actual: p.crium,
+  Actual: phn.crium,
   Expected: 'rium'
 }, {
   Name: 'conium',
-  Actual: p.conium,
+  Actual: phn.conium,
   Expected: 'onium'
 }, {
   Name: 'cbium',
-  Actual: p.cbium,
+  Actual: phn.cbium,
   Expected: 'bium'
 }, {
   Name: 'cetium',
-  Actual: p.cetium,
+  Actual: phn.cetium,
   Expected: 'etium'
 }, {
   Name: 'chenium',
-  Actual: p.chenium,
+  Actual: phn.chenium,
   Expected: 'henium'
 }, {
   Name: 'curium',
-  Actual: p.curium,
+  Actual: phn.curium,
   Expected: 'urium'
 }, {
   Name: 'carium',
-  Actual: p.carium,
+  Actual: phn.carium,
   Expected: 'arium'
 }, {
   Name: 'cerium',
-  Actual: p.cerium,
+  Actual: phn.cerium,
   Expected: 'erium'
 }, {
   Name: 'cymium',
-  Actual: p.cymium,
+  Actual: phn.cymium,
   Expected: 'ymium'
 }, {
   Name: 'cdymium',
-  Actual: p.cdymium,
+  Actual: phn.cdymium,
   Expected: 'dymium'
 }, {
   Name: 'codymium',
-  Actual: p.codymium,
+  Actual: phn.codymium,
   Expected: 'odymium'
 }, {
   Name: 'ceodymium',
-  Actual: p.ceodymium,
+  Actual: phn.ceodymium,
   Expected: 'eodymium'
 }, {
   Name: 'cinium',
-  Actual: p.cinium,
+  Actual: phn.cinium,
   Expected: 'inium'
 }, {
   Name: 'crbium',
-  Actual: p.crbium,
+  Actual: phn.crbium,
   Expected: 'rbium'
 }, {
   Name: 'cerbium',
-  Actual: p.cerbium,
+  Actual: phn.cerbium,
   Expected: 'erbium'
 }, {
   Name: 'clum',
-  Actual: p.clum,
+  Actual: phn.clum,
   Expected: 'lum'
 }, {
   Name: 'cuth',
-  Actual: p.cuth,
+  Actual: phn.cuth,
   Expected: 'uth'
 }, {
   Name: 'cncium',
-  Actual: p.cncium,
+  Actual: phn.cncium,
   Expected: 'ncium'
 }, {
   Name: 'ctinium',
-  Actual: p.ctinium,
+  Actual: phn.ctinium,
   Expected: 'tinium'
 }, {
   Name: 'cctinium',
-  Actual: p.cctinium,
+  Actual: phn.cctinium,
   Expected: 'ctinium'
 }, {
   Name: 'corium',
-  Actual: p.corium,
+  Actual: phn.corium,
   Expected: 'orium'
 }, {
   Name: 'cicium',
-  Actual: p.cicium,
+  Actual: phn.cicium,
   Expected: 'icium'
 }, {
   Name: 'cvium',
-  Actual: p.cvium,
+  Actual: phn.cvium,
   Expected: 'vium'
 }, {
   Name: 'covium',
-  Actual: p.covium,
+  Actual: phn.covium,
   Expected: 'ovium'
 }, ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
@@ -2955,1307 +2967,1323 @@ var phonicsConstantsValidation = [// Reusable Grammer
 //////////////////////////////////////////////////
 {
   Name: 'cero',
-  Actual: p.cero,
+  Actual: phn.cero,
   Expected: 'ero'
 }, {
   Name: 'colet',
-  Actual: p.colet,
+  Actual: phn.colet,
   Expected: 'olet'
 }, {
   Name: 'ciolet',
-  Actual: p.ciolet,
+  Actual: phn.ciolet,
   Expected: 'iolet'
 }, {
   Name: 'cster',
-  Actual: p.cster,
+  Actual: phn.cster,
   Expected: 'ster'
 }, {
   Name: 'cnge',
-  Actual: p.cnge,
+  Actual: phn.cnge,
   Expected: 'nge'
 }, {
   Name: 'cond',
-  Actual: p.cond,
+  Actual: phn.cond,
   Expected: 'ond'
 }, {
   Name: 'cmond',
-  Actual: p.cmond,
+  Actual: phn.cmond,
   Expected: 'mond'
 }, {
   Name: 'clmond',
-  Actual: p.clmond,
+  Actual: phn.clmond,
   Expected: 'lmond'
 }, {
   Name: 'canth',
-  Actual: p.canth,
+  Actual: phn.canth,
   Expected: 'anth'
 }, {
   Name: 'cranth',
-  Actual: p.cranth,
+  Actual: phn.cranth,
   Expected: 'ranth'
 }, {
   Name: 'caranth',
-  Actual: p.caranth,
+  Actual: phn.caranth,
   Expected: 'aranth'
 }, {
   Name: 'cmaranth',
-  Actual: p.cmaranth,
+  Actual: phn.cmaranth,
   Expected: 'maranth'
 }, {
   Name: 'cink',
-  Actual: p.cink,
+  Actual: phn.cink,
   Expected: 'ink'
 }, {
   Name: 'crple',
-  Actual: p.crple,
+  Actual: phn.crple,
   Expected: 'rple'
 }, {
   Name: 'curple',
-  Actual: p.curple,
+  Actual: phn.curple,
   Expected: 'urple'
 }, {
   Name: 'cmber',
-  Actual: p.cmber,
+  Actual: phn.cmber,
   Expected: 'mber'
 }, {
   Name: 'cber',
-  Actual: p.cber,
+  Actual: phn.cber,
   Expected: 'ber'
 }, {
   Name: 'cBer',
-  Actual: p.cBer,
+  Actual: phn.cBer,
   Expected: 'Ber'
 }, {
   Name: 'cyst',
-  Actual: p.cyst,
+  Actual: phn.cyst,
   Expected: 'yst'
 }, {
   Name: 'cnze',
-  Actual: p.cnze,
+  Actual: phn.cnze,
   Expected: 'nze'
 }, {
   Name: 'conze',
-  Actual: p.conze,
+  Actual: phn.conze,
   Expected: 'onze'
 }, {
   Name: 'cronze',
-  Actual: p.cronze,
+  Actual: phn.cronze,
   Expected: 'ronze'
 }, {
   Name: 'chsia',
-  Actual: p.chsia,
+  Actual: phn.chsia,
   Expected: 'hsia'
 }, {
   Name: 'cchsia',
-  Actual: p.cchsia,
+  Actual: phn.cchsia,
   Expected: 'chsia'
 }, {
   Name: 'cuchsia',
-  Actual: p.cuchsia,
+  Actual: phn.cuchsia,
   Expected: 'uchsia'
 }, {
   Name: 'cuby',
-  Actual: p.cuby,
+  Actual: phn.cuby,
   Expected: 'uby'
 }, {
   Name: 'chite',
-  Actual: p.chite,
+  Actual: phn.chite,
   Expected: 'hite'
 }, {
   Name: 'clish',
-  Actual: p.clish,
+  Actual: phn.clish,
   Expected: 'lish'
 }, {
   Name: 'cglish',
-  Actual: p.cglish,
+  Actual: phn.cglish,
   Expected: 'glish'
 }, {
   Name: 'cnglish',
-  Actual: p.cnglish,
+  Actual: phn.cnglish,
   Expected: 'nglish'
 }, {
   Name: 'ccot',
-  Actual: p.ccot,
+  Actual: phn.ccot,
   Expected: 'cot'
 }, {
   Name: 'cicot',
-  Actual: p.cicot,
+  Actual: phn.cicot,
   Expected: 'icot'
 }, {
   Name: 'cricot',
-  Actual: p.cricot,
+  Actual: phn.cricot,
   Expected: 'ricot'
 }, {
   Name: 'cpricot',
-  Actual: p.cpricot,
+  Actual: phn.cpricot,
   Expected: 'pricot'
 }, {
   Name: 'carine',
-  Actual: p.carine,
+  Actual: phn.carine,
   Expected: 'arine'
 }, {
   Name: 'coke',
-  Actual: p.coke,
+  Actual: phn.coke,
   Expected: 'oke'
 }, {
   Name: 'cllow',
-  Actual: p.cllow,
+  Actual: phn.cllow,
   Expected: 'llow'
 }, {
   Name: 'cellow',
-  Actual: p.cellow,
+  Actual: phn.cellow,
   Expected: 'ellow'
 }, {
   Name: 'cerine',
-  Actual: p.cerine,
+  Actual: phn.cerine,
   Expected: 'erine'
 }, {
   Name: 'cgerine',
-  Actual: p.cgerine,
+  Actual: phn.cgerine,
   Expected: 'gerine'
 }, {
   Name: 'cngerine',
-  Actual: p.cngerine,
+  Actual: phn.cngerine,
   Expected: 'ngerine'
 }, {
   Name: 'cangerine',
-  Actual: p.cangerine,
+  Actual: phn.cangerine,
   Expected: 'angerine'
 }, {
   Name: 'curn',
-  Actual: p.curn,
+  Actual: phn.curn,
   Expected: 'urn'
 }, {
   Name: 'colin',
-  Actual: p.colin,
+  Actual: phn.colin,
   Expected: 'olin'
 }, {
   Name: 'cado',
-  Actual: p.cado,
+  Actual: phn.cado,
   Expected: 'ado'
 }, {
   Name: 'czure',
-  Actual: p.czure,
+  Actual: phn.czure,
   Expected: 'zure'
 }, {
   Name: 'cwder',
-  Actual: p.cwder,
+  Actual: phn.cwder,
   Expected: 'wder'
 }, {
   Name: 'cowder',
-  Actual: p.cowder,
+  Actual: phn.cowder,
   Expected: 'owder'
 }, {
   Name: 'crey',
-  Actual: p.crey,
+  Actual: phn.crey,
   Expected: 'rey'
 }, {
   Name: 'cige',
-  Actual: p.cige,
+  Actual: phn.cige,
   Expected: 'ige'
 }, {
   Name: 'ceige',
-  Actual: p.ceige,
+  Actual: phn.ceige,
   Expected: 'eige'
 }, {
   Name: 'ctre',
-  Actual: p.ctre,
+  Actual: phn.ctre,
   Expected: 'tre'
 }, {
   Name: 'cstre',
-  Actual: p.cstre,
+  Actual: phn.cstre,
   Expected: 'stre'
 }, {
   Name: 'cistre',
-  Actual: p.cistre,
+  Actual: phn.cistre,
   Expected: 'istre'
 }, {
   Name: 'cown',
-  Actual: p.cown,
+  Actual: phn.cown,
   Expected: 'own'
 }, {
   Name: 'crown',
-  Actual: p.crown,
+  Actual: phn.crown,
   Expected: 'rown'
 }, {
   Name: 'cemon',
-  Actual: p.cemon,
+  Actual: phn.cemon,
   Expected: 'emon'
 }, {
   Name: 'ceet',
-  Actual: p.ceet,
+  Actual: phn.ceet,
   Expected: 'eet'
 }, {
   Name: 'cweet',
-  Actual: p.cweet,
+  Actual: phn.cweet,
   Expected: 'weet'
 }, {
   Name: 'cmer',
-  Actual: p.cmer,
+  Actual: phn.cmer,
   Expected: 'mer'
 }, {
   Name: 'cmmer',
-  Actual: p.cmmer,
+  Actual: phn.cmmer,
   Expected: 'mmer'
 }, {
   Name: 'cimmer',
-  Actual: p.cimmer,
+  Actual: phn.cimmer,
   Expected: 'immer'
 }, {
   Name: 'chimmer',
-  Actual: p.chimmer,
+  Actual: phn.chimmer,
   Expected: 'himmer'
 }, {
   Name: 'cean',
-  Actual: p.cean,
+  Actual: phn.cean,
   Expected: 'ean'
 }, {
   Name: 'clate',
-  Actual: p.clate,
+  Actual: phn.clate,
   Expected: 'late'
 }, {
   Name: 'colate',
-  Actual: p.colate,
+  Actual: phn.colate,
   Expected: 'olate'
 }, {
   Name: 'ccolate',
-  Actual: p.ccolate,
+  Actual: phn.ccolate,
   Expected: 'colate'
 }, {
   Name: 'cocolate',
-  Actual: p.cocolate,
+  Actual: phn.cocolate,
   Expected: 'ocolate'
 }, {
   Name: 'chocolate',
-  Actual: p.chocolate,
+  Actual: phn.chocolate,
   Expected: 'hocolate'
 }, {
   Name: 'cfee',
-  Actual: p.cfee,
+  Actual: phn.cfee,
   Expected: 'fee'
 }, {
   Name: 'cffee',
-  Actual: p.cffee,
+  Actual: phn.cffee,
   Expected: 'ffee'
 }, {
   Name: 'coffee',
-  Actual: p.coffee,
+  Actual: phn.coffee,
   Expected: 'offee'
 }, {
   Name: 'coral',
-  Actual: p.coral,
+  Actual: phn.coral,
   Expected: 'oral'
 }, {
   Name: 'clive',
-  Actual: p.clive,
+  Actual: phn.clive,
   Expected: 'live'
 }, {
   Name: 'cyola',
-  Actual: p.cyola,
+  Actual: phn.cyola,
   Expected: 'yola'
 }, {
   Name: 'cayola',
-  Actual: p.cayola,
+  Actual: phn.cayola,
   Expected: 'ayola'
 }, {
   Name: 'crayola',
-  Actual: p.crayola,
+  Actual: phn.crayola,
   Expected: 'rayola'
 }, {
   Name: 'csell',
-  Actual: p.csell,
+  Actual: phn.csell,
   Expected: 'sell'
 }, {
   Name: 'cnsell',
-  Actual: p.cnsell,
+  Actual: phn.cnsell,
   Expected: 'nsell'
 }, {
   Name: 'cunsell',
-  Actual: p.cunsell,
+  Actual: phn.cunsell,
   Expected: 'unsell'
 }, {
   Name: 'cNCS',
-  Actual: p.cNCS,
+  Actual: phn.cNCS,
   Expected: 'NCS'
 }, {
   Name: 'ctone',
-  Actual: p.ctone,
+  Actual: phn.ctone,
   Expected: 'tone'
 }, {
   Name: 'cntone',
-  Actual: p.cntone,
+  Actual: phn.cntone,
   Expected: 'ntone'
 }, {
   Name: 'cantone',
-  Actual: p.cantone,
+  Actual: phn.cantone,
   Expected: 'antone'
 }, {
   Name: 'cgment',
-  Actual: p.cgment,
+  Actual: phn.cgment,
   Expected: 'gment'
 }, {
   Name: 'cigment',
-  Actual: p.cigment,
+  Actual: phn.cigment,
   Expected: 'igment'
 }, {
   Name: 'cRYB',
-  Actual: p.cRYB,
+  Actual: phn.cRYB,
   Expected: 'RYB'
 }, {
   Name: 'cheel',
-  Actual: p.cheel,
+  Actual: phn.cheel,
   Expected: 'heel'
 }, {
   Name: 'ceel',
-  Actual: p.ceel,
+  Actual: phn.ceel,
   Expected: 'eel'
 }, {
   Name: 'cans',
-  Actual: p.cans,
+  Actual: phn.cans,
   Expected: 'ans'
 }, {
   Name: 'cire',
-  Actual: p.cire,
+  Actual: phn.cire,
   Expected: 'ire'
 }, {
   Name: 'chire',
-  Actual: p.chire,
+  Actual: phn.chire,
   Expected: 'hire'
 }, {
   Name: 'cphire',
-  Actual: p.cphire,
+  Actual: phn.cphire,
   Expected: 'phire'
 }, {
   Name: 'cpphire',
-  Actual: p.cpphire,
+  Actual: phn.cpphire,
   Expected: 'pphire'
 }, {
   Name: 'capphire',
-  Actual: p.capphire,
+  Actual: phn.capphire,
   Expected: 'apphire'
 }, {
   Name: 'cnder',
-  Actual: p.cnder,
+  Actual: phn.cnder,
   Expected: 'nder'
 }, {
   Name: 'conder',
-  Actual: p.conder,
+  Actual: phn.conder,
   Expected: 'onder'
 }, {
   Name: 'cole',
-  Actual: p.cole,
+  Actual: phn.cole,
   Expected: 'ole'
 }, {
   Name: 'cndy',
-  Actual: p.cndy,
+  Actual: phn.cndy,
   Expected: 'ndy'
 }, {
   Name: 'candy',
-  Actual: p.candy,
+  Actual: phn.candy,
   Expected: 'andy'
 }, {
   Name: 'clac',
-  Actual: p.clac,
+  Actual: phn.clac,
   Expected: 'lac'
 }, {
   Name: 'cilac',
-  Actual: p.cilac,
+  Actual: phn.cilac,
   Expected: 'ilac'
 }, {
   Name: 'coon',
-  Actual: p.coon,
+  Actual: phn.coon,
   Expected: 'oon'
 }, {
   Name: 'croon',
-  Actual: p.croon,
+  Actual: phn.croon,
   Expected: 'roon'
 }, {
   Name: 'caroon',
-  Actual: p.caroon,
+  Actual: phn.caroon,
   Expected: 'aroon'
 }, {
   Name: 'cgar',
-  Actual: p.cgar,
+  Actual: phn.cgar,
   Expected: 'gar'
 }, {
   Name: 'cugar',
-  Actual: p.cugar,
+  Actual: phn.cugar,
   Expected: 'ugar'
 }, {
   Name: 'cuff',
-  Actual: p.cuff,
+  Actual: phn.cuff,
   Expected: 'uff'
 }, {
   Name: 'cundy',
-  Actual: p.cundy,
+  Actual: phn.cundy,
   Expected: 'undy'
 }, {
   Name: 'cgundy',
-  Actual: p.cgundy,
+  Actual: phn.cgundy,
   Expected: 'gundy'
 }, {
   Name: 'crgundy',
-  Actual: p.crgundy,
+  Actual: phn.crgundy,
   Expected: 'rgundy'
 }, {
   Name: 'curgundy',
-  Actual: p.curgundy,
+  Actual: phn.curgundy,
   Expected: 'urgundy'
 }, {
   Name: 'cnna',
-  Actual: p.cnna,
+  Actual: phn.cnna,
   Expected: 'nna'
 }, {
   Name: 'cenna',
-  Actual: p.cenna,
+  Actual: phn.cenna,
   Expected: 'enna'
 }, {
   Name: 'cienna',
-  Actual: p.cienna,
+  Actual: phn.cienna,
   Expected: 'ienna'
 }, {
   Name: 'cntium',
-  Actual: p.cntium,
+  Actual: phn.cntium,
   Expected: 'ntium'
 }, {
   Name: 'cantium',
-  Actual: p.cantium,
+  Actual: phn.cantium,
   Expected: 'antium'
 }, {
   Name: 'czantium',
-  Actual: p.czantium,
+  Actual: phn.czantium,
   Expected: 'zantium'
 }, {
   Name: 'cyzantium',
-  Actual: p.cyzantium,
+  Actual: phn.cyzantium,
   Expected: 'yzantium'
 }, {
   Name: 'cdet',
-  Actual: p.cdet,
+  Actual: phn.cdet,
   Expected: 'det'
 }, {
   Name: 'cadet',
-  Actual: p.cadet,
+  Actual: phn.cadet,
   Expected: 'adet'
 }, {
   Name: 'cnary',
-  Actual: p.cnary,
+  Actual: phn.cnary,
   Expected: 'nary'
 }, {
   Name: 'canary',
-  Actual: p.canary,
+  Actual: phn.canary,
   Expected: 'anary'
 }, {
   Name: 'crmine',
-  Actual: p.crmine,
+  Actual: phn.crmine,
   Expected: 'rmine'
 }, {
   Name: 'carmine',
-  Actual: p.carmine,
+  Actual: phn.carmine,
   Expected: 'armine'
 }, {
   Name: 'chest',
-  Actual: p.chest,
+  Actual: phn.chest,
   Expected: 'hest'
 }, {
   Name: 'cdon',
-  Actual: p.cdon,
+  Actual: phn.cdon,
   Expected: 'don'
 }, {
   Name: 'cadon',
-  Actual: p.cadon,
+  Actual: phn.cadon,
   Expected: 'adon'
 }, {
   Name: 'cladon',
-  Actual: p.cladon,
+  Actual: phn.cladon,
   Expected: 'ladon'
 }, {
   Name: 'celadon',
-  Actual: p.celadon,
+  Actual: phn.celadon,
   Expected: 'eladon'
 }, {
   Name: 'cise',
-  Actual: p.cise,
+  Actual: phn.cise,
   Expected: 'ise'
 }, {
   Name: 'crise',
-  Actual: p.crise,
+  Actual: phn.crise,
   Expected: 'rise'
 }, {
   Name: 'cerise',
-  Actual: p.cerise,
+  Actual: phn.cerise,
   Expected: 'erise'
 }, {
   Name: 'culean',
-  Actual: p.culean,
+  Actual: phn.culean,
   Expected: 'ulean'
 }, {
   Name: 'crulean',
-  Actual: p.crulean,
+  Actual: phn.crulean,
   Expected: 'rulean'
 }, {
   Name: 'cerulean',
-  Actual: p.cerulean,
+  Actual: phn.cerulean,
   Expected: 'erulean'
 }, {
   Name: 'crost',
-  Actual: p.crost,
+  Actual: phn.crost,
   Expected: 'rost'
 }, {
   Name: 'cgne',
-  Actual: p.cgne,
+  Actual: phn.cgne,
   Expected: 'gne'
 }, {
   Name: 'cagne',
-  Actual: p.cagne,
+  Actual: phn.cagne,
   Expected: 'agne'
 }, {
   Name: 'cpagne',
-  Actual: p.cpagne,
+  Actual: phn.cpagne,
   Expected: 'pagne'
 }, {
   Name: 'cmpagne',
-  Actual: p.cmpagne,
+  Actual: phn.cmpagne,
   Expected: 'mpagne'
 }, {
   Name: 'campagne',
-  Actual: p.campagne,
+  Actual: phn.campagne,
   Expected: 'ampagne'
 }, {
   Name: 'champagne',
-  Actual: p.champagne,
+  Actual: phn.champagne,
   Expected: 'hampagne'
 }, {
   Name: 'conal',
-  Actual: p.conal,
+  Actual: phn.conal,
   Expected: 'onal'
 }, {
   Name: 'citional',
-  Actual: p.citional,
+  Actual: phn.citional,
   Expected: 'itional'
 }, {
   Name: 'cditional',
-  Actual: p.cditional,
+  Actual: phn.cditional,
   Expected: 'ditional'
 }, {
   Name: 'caditional',
-  Actual: p.caditional,
+  Actual: phn.caditional,
   Expected: 'aditional'
 }, {
   Name: 'craditional',
-  Actual: p.craditional,
+  Actual: phn.craditional,
   Expected: 'raditional'
 }, {
   Name: 'ctin',
-  Actual: p.ctin,
+  Actual: phn.ctin,
   Expected: 'tin'
 }, {
   Name: 'catin',
-  Actual: p.catin,
+  Actual: phn.catin,
   Expected: 'atin'
 }, {
   Name: 'cpper',
-  Actual: p.cpper,
+  Actual: phn.cpper,
   Expected: 'pper'
 }, {
   Name: 'copper',
-  Actual: p.copper,
+  Actual: phn.copper,
   Expected: 'opper'
 }, {
   Name: 'cnny',
-  Actual: p.cnny,
+  Actual: phn.cnny,
   Expected: 'nny'
 }, {
   Name: 'corn',
-  Actual: p.corn,
+  Actual: phn.corn,
   Expected: 'orn'
 }, {
   Name: 'cilk',
-  Actual: p.cilk,
+  Actual: phn.cilk,
   Expected: 'ilk'
 }, {
   Name: 'calt',
-  Actual: p.calt,
+  Actual: phn.calt,
   Expected: 'alt'
 }, {
   Name: 'cbalt',
-  Actual: p.cbalt,
+  Actual: phn.cbalt,
   Expected: 'balt'
 }, {
   Name: 'cobalt',
-  Actual: p.cobalt,
+  Actual: phn.cobalt,
   Expected: 'obalt'
 }, {
   Name: 'ctte',
-  Actual: p.ctte,
+  Actual: phn.ctte,
   Expected: 'tte'
 }, {
   Name: 'catte',
-  Actual: p.catte,
+  Actual: phn.catte,
   Expected: 'atte'
 }, {
   Name: 'ceam',
-  Actual: p.ceam,
+  Actual: phn.ceam,
   Expected: 'eam'
 }, {
   Name: 'cream',
-  Actual: p.cream,
+  Actual: phn.cream,
   Expected: 'ream'
 }, {
   Name: 'cmson',
-  Actual: p.cmson,
+  Actual: phn.cmson,
   Expected: 'mson'
 }, {
   Name: 'cimson',
-  Actual: p.cimson,
+  Actual: phn.cimson,
   Expected: 'imson'
 }, {
   Name: 'crimson',
-  Actual: p.crimson,
+  Actual: phn.crimson,
   Expected: 'rimson'
 }, {
   Name: 'cocess',
-  Actual: p.cocess,
+  Actual: phn.cocess,
   Expected: 'ocess'
 }, {
   Name: 'crocess',
-  Actual: p.crocess,
+  Actual: phn.crocess,
   Expected: 'rocess'
 }, {
   Name: 'cape',
-  Actual: p.cape,
+  Actual: phn.cape,
   Expected: 'ape'
 }, {
   Name: 'camen',
-  Actual: p.camen,
+  Actual: phn.camen,
   Expected: 'amen'
 }, {
   Name: 'caki',
-  Actual: p.caki,
+  Actual: phn.caki,
   Expected: 'aki'
 }, {
   Name: 'chaki',
-  Actual: p.chaki,
+  Actual: phn.chaki,
   Expected: 'haki'
 }, {
   Name: 'cava',
-  Actual: p.cava,
+  Actual: phn.cava,
   Expected: 'ava'
 }, {
   Name: 'civer',
-  Actual: p.civer,
+  Actual: phn.civer,
   Expected: 'iver'
 }, {
   Name: 'cnta',
-  Actual: p.cnta,
+  Actual: phn.cnta,
   Expected: 'nta'
 }, {
   Name: 'cgenta',
-  Actual: p.cgenta,
+  Actual: phn.cgenta,
   Expected: 'genta'
 }, {
   Name: 'cagenta',
-  Actual: p.cagenta,
+  Actual: phn.cagenta,
   Expected: 'agenta'
 }, {
   Name: 'chid',
-  Actual: p.chid,
+  Actual: phn.chid,
   Expected: 'hid'
 }, {
   Name: 'cchid',
-  Actual: p.cchid,
+  Actual: phn.cchid,
   Expected: 'chid'
 }, {
   Name: 'crchid',
-  Actual: p.crchid,
+  Actual: phn.crchid,
   Expected: 'rchid'
 }, {
   Name: 'clmon',
-  Actual: p.clmon,
+  Actual: phn.clmon,
   Expected: 'lmon'
 }, {
   Name: 'calmon',
-  Actual: p.calmon,
+  Actual: phn.calmon,
   Expected: 'almon'
 }, {
   Name: 'coise',
-  Actual: p.coise,
+  Actual: phn.coise,
   Expected: 'oise'
 }, {
   Name: 'cuoise',
-  Actual: p.cuoise,
+  Actual: phn.cuoise,
   Expected: 'uoise'
 }, {
   Name: 'cquoise',
-  Actual: p.cquoise,
+  Actual: phn.cquoise,
   Expected: 'quoise'
 }, {
   Name: 'crquoise',
-  Actual: p.crquoise,
+  Actual: phn.crquoise,
   Expected: 'rquoise'
 }, {
   Name: 'curquoise',
-  Actual: p.curquoise,
+  Actual: phn.curquoise,
   Expected: 'urquoise'
 }, {
   Name: 'cfron',
-  Actual: p.cfron,
+  Actual: phn.cfron,
   Expected: 'fron'
 }, {
   Name: 'cffron',
-  Actual: p.cffron,
+  Actual: phn.cffron,
   Expected: 'ffron'
 }, {
   Name: 'caffron',
-  Actual: p.caffron,
+  Actual: phn.caffron,
   Expected: 'affron'
 }, {
   Name: 'ckle',
-  Actual: p.ckle,
+  Actual: phn.ckle,
   Expected: 'kle'
 }, {
   Name: 'cupe',
-  Actual: p.cupe,
+  Actual: phn.cupe,
   Expected: 'upe'
 }, {
   Name: 'caupe',
-  Actual: p.caupe,
+  Actual: phn.caupe,
   Expected: 'aupe'
 }, {
   Name: 'cnim',
-  Actual: p.cnim,
+  Actual: phn.cnim,
   Expected: 'nim'
 }, {
   Name: 'cenim',
-  Actual: p.cenim,
+  Actual: phn.cenim,
   Expected: 'enim'
 }, {
   Name: 'cesert',
-  Actual: p.cesert,
+  Actual: phn.cesert,
   Expected: 'esert'
 }, {
   Name: 'crab',
-  Actual: p.crab,
+  Actual: phn.crab,
   Expected: 'rab'
 }, {
   Name: 'cbony',
-  Actual: p.cbony,
+  Actual: phn.cbony,
   Expected: 'bony'
 }, {
   Name: 'cony',
-  Actual: p.cony,
+  Actual: phn.cony,
   Expected: 'ony'
 }, {
   Name: 'cant',
-  Actual: p.cant,
+  Actual: phn.cant,
   Expected: 'ant'
 }, {
   Name: 'chell',
-  Actual: p.chell,
+  Actual: phn.chell,
   Expected: 'hell'
 }, {
   Name: 'cigo',
-  Actual: p.cigo,
+  Actual: phn.cigo,
   Expected: 'igo'
 }, {
   Name: 'cdigo',
-  Actual: p.cdigo,
+  Actual: phn.cdigo,
   Expected: 'digo'
 }, {
   Name: 'cndigo',
-  Actual: p.cndigo,
+  Actual: phn.cndigo,
   Expected: 'ndigo'
 }, {
   Name: 'cald',
-  Actual: p.cald,
+  Actual: phn.cald,
   Expected: 'ald'
 }, {
   Name: 'crald',
-  Actual: p.crald,
+  Actual: phn.crald,
   Expected: 'rald'
 }, {
   Name: 'cerald',
-  Actual: p.cerald,
+  Actual: phn.cerald,
   Expected: 'erald'
 }, {
   Name: 'cmerald',
-  Actual: p.cmerald,
+  Actual: phn.cmerald,
   Expected: 'merald'
 }, {
   Name: 'cender',
-  Actual: p.cender,
+  Actual: phn.cender,
   Expected: 'ender'
 }, {
   Name: 'cvender',
-  Actual: p.cvender,
+  Actual: phn.cvender,
   Expected: 'vender'
 }, {
   Name: 'cavender',
-  Actual: p.cavender,
+  Actual: phn.cavender,
   Expected: 'avender'
 }, {
   Name: 'crin',
-  Actual: p.crin,
+  Actual: phn.crin,
   Expected: 'rin'
 }, {
   Name: 'cango',
-  Actual: p.cango,
+  Actual: phn.cango,
   Expected: 'ango'
 }, {
   Name: 'cdango',
-  Actual: p.cdango,
+  Actual: phn.cdango,
   Expected: 'dango'
 }, {
   Name: 'cndango',
-  Actual: p.cndango,
+  Actual: phn.cndango,
   Expected: 'ndango'
 }, {
   Name: 'candango',
-  Actual: p.candango,
+  Actual: phn.candango,
   Expected: 'andango'
 }, {
   Name: 'cawn',
-  Actual: p.cawn,
+  Actual: phn.cawn,
   Expected: 'awn'
 }, {
   Name: 'crick',
-  Actual: p.crick,
+  Actual: phn.crick,
   Expected: 'rick'
 }, {
   Name: 'clame',
-  Actual: p.clame,
+  Actual: phn.clame,
   Expected: 'lame'
 }, {
   Name: 'cuve',
-  Actual: p.cuve,
+  Actual: phn.cuve,
   Expected: 'uve'
 }, {
   Name: 'cauve',
-  Actual: p.cauve,
+  Actual: phn.cauve,
   Expected: 'auve'
 }, {
   Name: 'crry',
-  Actual: p.crry,
+  Actual: phn.crry,
   Expected: 'rry'
 }, {
   Name: 'cerry',
-  Actual: p.cerry,
+  Actual: phn.cerry,
   Expected: 'erry'
 }, {
   Name: 'cdian',
-  Actual: p.cdian,
+  Actual: phn.cdian,
   Expected: 'dian'
 }, {
   Name: 'cidian',
-  Actual: p.cidian,
+  Actual: phn.cidian,
   Expected: 'idian'
 }, {
   Name: 'cridian',
-  Actual: p.cridian,
+  Actual: phn.cridian,
   Expected: 'ridian'
 }, {
   Name: 'ciridian',
-  Actual: p.ciridian,
+  Actual: phn.ciridian,
   Expected: 'iridian'
 }, {
   Name: 'cllic',
-  Actual: p.cllic,
+  Actual: phn.cllic,
   Expected: 'llic'
 }, {
   Name: 'callic',
-  Actual: p.callic,
+  Actual: phn.callic,
   Expected: 'allic'
 }, {
   Name: 'ctallic',
-  Actual: p.ctallic,
+  Actual: phn.ctallic,
   Expected: 'tallic'
 }, {
   Name: 'cetallic',
-  Actual: p.cetallic,
+  Actual: phn.cetallic,
   Expected: 'etallic'
 }, {
   Name: 'cden',
-  Actual: p.cden,
+  Actual: phn.cden,
   Expected: 'den'
 }, {
   Name: 'clden',
-  Actual: p.clden,
+  Actual: phn.clden,
   Expected: 'lden'
 }, {
   Name: 'colden',
-  Actual: p.colden,
+  Actual: phn.colden,
   Expected: 'olden'
 }, {
   Name: 'cpple',
-  Actual: p.cpple,
+  Actual: phn.cpple,
   Expected: 'pple'
 }, {
   Name: 'czard',
-  Actual: p.czard,
+  Actual: phn.czard,
   Expected: 'zard'
 }, {
   Name: 'cheen',
-  Actual: p.cheen,
+  Actual: phn.cheen,
   Expected: 'heen'
 }, {
   Name: 'cllo',
-  Actual: p.cllo,
+  Actual: phn.cllo,
   Expected: 'llo'
 }, {
   Name: 'cetal',
-  Actual: p.cetal,
+  Actual: phn.cetal,
   Expected: 'etal'
 }, {
   Name: 'ctal',
-  Actual: p.ctal,
+  Actual: phn.ctal,
   Expected: 'tal'
 }, {
   Name: 'cuin',
-  Actual: p.cuin,
+  Actual: phn.cuin,
   Expected: 'uin'
 }, {
   Name: 'cope',
-  Actual: p.cope,
+  Actual: phn.cope,
   Expected: 'ope'
 }, {
   Name: 'cpace',
-  Actual: p.cpace,
+  Actual: phn.cpace,
   Expected: 'pace'
 }, {
   Name: 'cris',
-  Actual: p.cris,
+  Actual: phn.cris,
   Expected: 'ris'
 }, {
   Name: 'cade',
-  Actual: p.cade,
+  Actual: phn.cade,
   Expected: 'ade'
 }, {
   Name: 'cobe',
-  Actual: p.cobe,
+  Actual: phn.cobe,
   Expected: 'obe'
 }, {
   Name: 'cobi',
-  Actual: p.cobi,
+  Actual: phn.cobi,
   Expected: 'obi'
 }, {
   Name: 'ccha',
-  Actual: p.ccha,
+  Actual: phn.ccha,
   Expected: 'cha'
 }, {
   Name: 'culi',
-  Actual: p.culi,
+  Actual: phn.culi,
   Expected: 'uli'
 }, {
   Name: 'cloral',
-  Actual: p.cloral,
+  Actual: phn.cloral,
   Expected: 'loral'
 }, {
   Name: 'cier',
-  Actual: p.cier,
+  Actual: phn.cier,
   Expected: 'ier'
 }, {
   Name: 'cnkle',
-  Actual: p.cnkle,
+  Actual: phn.cnkle,
   Expected: 'nkle'
 }, {
   Name: 'cinkle',
-  Actual: p.cinkle,
+  Actual: phn.cinkle,
   Expected: 'inkle'
 }, {
   Name: 'cnen',
-  Actual: p.cnen,
+  Actual: phn.cnen,
   Expected: 'nen'
 }, {
   Name: 'cinen',
-  Actual: p.cinen,
+  Actual: phn.cinen,
   Expected: 'inen'
 }, {
   Name: 'cgan',
-  Actual: p.cgan,
+  Actual: phn.cgan,
   Expected: 'gan'
 }, {
   Name: 'cvid',
-  Actual: p.cvid,
+  Actual: phn.cvid,
   Expected: 'vid'
 }, {
   Name: 'civid',
-  Actual: p.civid,
+  Actual: phn.civid,
   Expected: 'ivid'
 }, {
   Name: 'cake',
-  Actual: p.cake,
+  Actual: phn.cake,
   Expected: 'ake'
 }, {
   Name: 'caze',
-  Actual: p.caze,
+  Actual: phn.caze,
   Expected: 'aze'
 }, {
   Name: 'cany',
-  Actual: p.cany,
+  Actual: phn.cany,
   Expected: 'any'
 }, {
   Name: 'caize',
-  Actual: p.caize,
+  Actual: phn.caize,
   Expected: 'aize'
 }, {
   Name: 'ctee',
-  Actual: p.ctee,
+  Actual: phn.ctee,
   Expected: 'tee'
 }, {
   Name: 'carin',
-  Actual: p.carin,
+  Actual: phn.carin,
   Expected: 'arin'
 }, {
   Name: 'ctis',
-  Actual: p.ctis,
+  Actual: phn.ctis,
   Expected: 'tis'
 }, {
   Name: 'cras',
-  Actual: p.cras,
+  Actual: phn.cras,
   Expected: 'ras'
 }, {
   Name: 'celon',
-  Actual: p.celon,
+  Actual: phn.celon,
   Expected: 'elon'
 }, {
   Name: 'caro',
-  Actual: p.caro,
+  Actual: phn.caro,
   Expected: 'aro'
 }, {
   Name: 'coss',
-  Actual: p.coss,
+  Actual: phn.coss,
   Expected: 'oss'
 }, {
   Name: 'cdow',
-  Actual: p.cdow,
+  Actual: phn.cdow,
   Expected: 'dow'
 }, {
   Name: 'cadow',
-  Actual: p.cadow,
+  Actual: phn.cadow,
   Expected: 'adow'
 }, {
   Name: 'ctic',
-  Actual: p.ctic,
+  Actual: phn.ctic,
   Expected: 'tic'
 }, {
   Name: 'cstic',
-  Actual: p.cstic,
+  Actual: phn.cstic,
   Expected: 'stic'
 }, {
   Name: 'cystic',
-  Actual: p.cystic,
+  Actual: phn.cystic,
   Expected: 'ystic'
 }, {
   Name: 'crot',
-  Actual: p.crot,
+  Actual: phn.crot,
   Expected: 'rot'
 }, {
   Name: 'crrot',
-  Actual: p.crrot,
+  Actual: phn.crrot,
   Expected: 'rrot'
 }, {
   Name: 'carrot',
-  Actual: p.carrot,
+  Actual: phn.carrot,
   Expected: 'arrot'
 }, {
   Name: 'clver',
-  Actual: p.clver,
+  Actual: phn.clver,
   Expected: 'lver'
 }, {
   Name: 'cilver',
-  Actual: p.cilver,
+  Actual: phn.cilver,
   Expected: 'ilver'
 }, {
   Name: 'clood',
-  Actual: p.clood,
+  Actual: phn.clood,
   Expected: 'lood'
 }, {
   Name: 'chip',
-  Actual: p.chip,
+  Actual: phn.chip,
   Expected: 'hip'
 }, {
   Name: 'cach',
-  Actual: p.cach,
+  Actual: phn.cach,
   Expected: 'ach'
 }, {
   Name: 'ceach',
-  Actual: p.ceach,
+  Actual: phn.ceach,
   Expected: 'each'
 }, {
   Name: 'cree',
-  Actual: p.cree,
+  Actual: phn.cree,
   Expected: 'ree'
 }, {
   Name: 'chio',
-  Actual: p.chio,
+  Actual: phn.chio,
   Expected: 'hio'
 }, {
   Name: 'cower',
-  Actual: p.cower,
+  Actual: phn.cower,
   Expected: 'ower'
 }, {
   Name: 'cwer',
-  Actual: p.cwer,
+  Actual: phn.cwer,
   Expected: 'wer'
 }, {
   Name: 'cstar',
-  Actual: p.cstar,
+  Actual: phn.cstar,
   Expected: 'star'
 }, {
   Name: 'cune',
-  Actual: p.cune,
+  Actual: phn.cune,
   Expected: 'une'
 }, {
   Name: 'ckin',
-  Actual: p.ckin,
+  Actual: phn.ckin,
   Expected: 'kin'
 }, {
   Name: 'csty',
-  Actual: p.csty,
+  Actual: phn.csty,
   Expected: 'sty'
 }, {
   Name: 'cavy',
-  Actual: p.cavy,
+  Actual: phn.cavy,
   Expected: 'avy'
 }, {
   Name: 'cazz',
-  Actual: p.cazz,
+  Actual: phn.cazz,
   Expected: 'azz'
 }, {
   Name: 'creus',
-  Actual: p.creus,
+  Actual: phn.creus,
   Expected: 'reus'
 }, {
   Name: 'ceus',
-  Actual: p.ceus,
+  Actual: phn.ceus,
   Expected: 'eus'
 }, {
   Name: 'cbon',
-  Actual: p.cbon,
+  Actual: phn.cbon,
   Expected: 'bon'
 }, {
   Name: 'cdder',
-  Actual: p.cdder,
+  Actual: phn.cdder,
   Expected: 'dder'
 }, {
   Name: 'cadder',
-  Actual: p.cadder,
+  Actual: phn.cadder,
   Expected: 'adder'
 }, {
   Name: 'cale',
-  Actual: p.cale,
+  Actual: phn.cale,
   Expected: 'ale'
 }, {
   Name: 'cark',
-  Actual: p.cark,
+  Actual: phn.cark,
   Expected: 'ark'
 }, {
   Name: 'cpia',
-  Actual: p.cpia,
+  Actual: phn.cpia,
   Expected: 'pia'
 }, {
   Name: 'chadow',
-  Actual: p.chadow,
+  Actual: phn.chadow,
   Expected: 'hadow'
 }, {
   Name: 'cock',
-  Actual: p.cock,
+  Actual: phn.cock,
   Expected: 'ock'
 }, {
   Name: 'ctten',
-  Actual: p.ctten,
+  Actual: phn.ctten,
   Expected: 'tten'
 }, {
   Name: 'ceal',
-  Actual: p.ceal,
+  Actual: phn.ceal,
   Expected: 'eal'
 }, {
   Name: 'ctraw',
-  Actual: p.ctraw,
+  Actual: phn.ctraw,
   Expected: 'traw'
 }, {
   Name: 'craw',
-  Actual: p.craw,
+  Actual: phn.craw,
   Expected: 'raw'
 }, {
   Name: 'ctle',
-  Actual: p.ctle,
+  Actual: phn.ctle,
   Expected: 'tle'
 }, {
   Name: 'cstle',
-  Actual: p.cstle,
+  Actual: phn.cstle,
   Expected: 'stle'
 }, {
   Name: 'crest',
-  Actual: p.crest,
+  Actual: phn.crest,
   Expected: 'rest'
 }, {
   Name: 'corest',
-  Actual: p.corest,
+  Actual: phn.corest,
   Expected: 'orest'
 }, {
   Name: 'ccan',
-  Actual: p.ccan,
+  Actual: phn.ccan,
   Expected: 'can'
 }, {
   Name: 'cuscan',
-  Actual: p.cuscan,
+  Actual: phn.cuscan,
   Expected: 'uscan'
 }, {
   Name: 'clla',
-  Actual: p.clla,
+  Actual: phn.clla,
   Expected: 'lla'
 }, {
   Name: 'cilla',
-  Actual: p.cilla,
+  Actual: phn.cilla,
   Expected: 'illa'
 }, {
   Name: 'cnilla',
-  Actual: p.cnilla,
+  Actual: phn.cnilla,
   Expected: 'nilla'
 }, {
   Name: 'canilla',
-  Actual: p.canilla,
+  Actual: phn.canilla,
   Expected: 'anilla'
 }, {
   Name: 'cilion',
-  Actual: p.cilion,
+  Actual: phn.cilion,
   Expected: 'ilion'
 }, {
   Name: 'cmilion',
-  Actual: p.cmilion,
+  Actual: phn.cmilion,
   Expected: 'milion'
 }, {
   Name: 'crmilion',
-  Actual: p.crmilion,
+  Actual: phn.crmilion,
   Expected: 'rmilion'
 }, {
   Name: 'cermilion',
-  Actual: p.cermilion,
+  Actual: phn.cermilion,
   Expected: 'ermilion'
 }, {
   Name: 'chine',
-  Actual: p.chine,
+  Actual: phn.chine,
   Expected: 'hine'
 }, {
   Name: 'comp',
-  Actual: p.comp,
+  Actual: phn.comp,
   Expected: 'omp'
 }, {
   Name: 'cclr',
-  Actual: p.cclr,
+  Actual: phn.cclr,
   Expected: 'clr'
 }, {
   Name: 'cded',
-  Actual: p.cded,
+  Actual: phn.cded,
   Expected: 'ded'
 }, {
   Name: 'cbing',
-  Actual: p.cbing,
+  Actual: phn.cbing,
   Expected: 'bing'
 }, {
   Name: 'ceth',
-  Actual: p.ceth,
+  Actual: phn.ceth,
   Expected: 'eth'
+}, {
+  Name: 'clang',
+  Actual: phn.clang,
+  Expected: 'lang'
+}, {
+  Name: 'cLang',
+  Actual: phn.cLang,
+  Expected: 'Lang'
+}, {
+  Name: 'cuage',
+  Actual: phn.cuage,
+  Expected: 'uage'
+}, {
+  Name: 'cries',
+  Actual: phn.cries,
+  Expected: 'ries'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

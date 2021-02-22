@@ -15,9 +15,8 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import loggers from '../../Executrix/loggers';
-import * as b from '../../Constants/basic.constants';
-import * as g from '../../Constants/generic.constants';
-import * as s from '../../Constants/system.constants';
+import * as bas from '../../Constants/basic.constants';
+import * as sys from '../../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -32,10 +31,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * {@link: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb}
  */
 export const hex2rgbConversion = function(inputData, inputMetaData) {
-  let functionName = s.chex2rgbConversion;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  let functionName = biz.chex2rgbConversion;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData;
   if (!inputData) {
     returnData = false;
@@ -59,13 +58,13 @@ export const hex2rgbConversion = function(inputData, inputMetaData) {
 
     let bigInteger = parseInt(inputData, 16);
     // bigInteger is:
-    loggers.consoleLog(baseFileName + b.cDot + functionName, s.cMathOperationsMessage1 + bigInteger);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cMathOperationsMessage1 + bigInteger);
     let red = (bigInteger >> 16) & 255;
     let green = (bigInteger >> 8) & 255;
     let blue = bigInteger & 255;
     returnData = [red, green, blue];
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
