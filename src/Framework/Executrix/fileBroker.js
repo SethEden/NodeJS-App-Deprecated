@@ -36,8 +36,8 @@ import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/messages.constants';
 var fs = require('fs');
 var path = require('path');
-var zip = require('bestzip');
-const zip-a-folder = require('zip-a-folder');
+// var zip = require('bestzip');
+// const zip-a-folder = require('zip-a-folder');
 var AdmZip = require('adm-zip');
 var D = require('../Structures/data');
 var Papa = require('papaparse');
@@ -319,9 +319,12 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
   let currentVersionReleased = false;
   let releaseDateTimeStamp;
+  let originalSource, originalDestination;
   var zip = new AdmZip();
   // current version is:
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionIs + currentVersion);
+  originalSource = bas.cDot + sourceFolder;
+  originalDestination = destinationFolder;
   sourceFolder = rootPath + sourceFolder;
   sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   destinationFolder = rootPath + destinationFolder
@@ -372,7 +375,25 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
     // zip.addLocalFile("/home/me/some_picture.png");
     // zip.writeZip(/*target file name*/"/home/me/files.zip");
-    
+    // for (let j = 0; j < releaseFiles.length; j++) {
+    //   let fileToRelease = releaseFiles[j];
+    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, 'zipping file: ' + fileToRelease);
+    //   zip.addLocalFile(fileToRelease, fs.readFileSync(fileToRelease), '', 0644);
+    // }
+    // zip.writeZip(fullReleasePath);
+    try {
+      zip.addLocalFolder(sourceFolder, originalSource);
+      zip.writeZip(fullReleasePath);
+      // Done writing the zip file:
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath);
+      // Set the return packageSuccess flag to TRUE
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
+      packageSuccess = true;
+    } catch (err) {
+      console.log('ERROR: Zip package release failed: ');
+      console.error(err.stack);
+      process.exit(1);
+    }
   } else {
     // current version already released
     loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionAlreadyReleased);

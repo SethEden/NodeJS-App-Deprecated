@@ -1093,7 +1093,7 @@
           <ConfigurationElement Name="fileBroker.copyAllFilesAndFoldersFromFolderToFolder@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.copyAllFilesAndFoldersFromFolderToFolder@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="fileBroker.buildReleasePackage" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="fileBroker.buildReleasePackage" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.buildReleasePackage@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.buildReleasePackage@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.buildReleasePackage@MessageFontStyle" Type="Default" Value="Default" Version="3"/>

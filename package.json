@@ -1,6 +1,6 @@
 {
   "name": "NodeJS-App",
-  "version": "1.5.20",
+  "version": "1.5.22",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "./src/Application/NodeJS-App/application.js",
   "bin": "./bin/Application/NodeJS-App/application.js",
@@ -41,15 +41,14 @@
     "@babel/core": "^7.10.1",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
-    "bestzip": ">=2.1.7",
-    "jsdoc": "^3.6.4",
-    "standard-version": ">=8.0.1",
     "dot-prop": ">=4.2.1",
+    "jsdoc": "^3.6.4",
+    "pkg": ">=4.4.9",
+    "standard-version": ">=8.0.1",
     "trash-cli": "^4.0.0",
-    "pkg": ">=4.4.9"
+    "adm-zip": "^0.5.3"
   },
   "dependencies": {
-    "adm-zip": "^0.5.3",
     "chalk": "^4.0.0",
     "dotenv": "^8.2.0",
     "figlet": "^1.4.0",
@@ -58,7 +57,6 @@
     "n-readlines": "^1.0.0",
     "papaparse": "^5.2.0",
     "prompt-sync": "^4.2.0",
-    "xml2js": "^0.4.23",
-    "zip-a-folder": "0.0.12"
+    "xml2js": "^0.4.23"
   }
 }

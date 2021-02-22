@@ -49,6 +49,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/bestzip|bestzip}
+ * @requires {@link https://www.npmjs.com/package/zip-a-folder|zip-a-folder}
+ * @requires {@link https://www.npmjs.com/package/adm-zip|adm-zip}
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/papaparse|papaparse}
  * @requires xml2js
@@ -58,9 +60,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var fs = require('fs');
 
-var path = require('path');
+var path = require('path'); // var zip = require('bestzip');
+// const zip-a-folder = require('zip-a-folder');
 
-var zip = require('bestzip');
+
+var AdmZip = require('adm-zip');
 
 var D = require('../Structures/data');
 
@@ -431,10 +435,14 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   var applicationName = _configurator["default"].getConfigurationSetting(sys.cApplicationName);
 
   var currentVersionReleased = false;
-  var releaseDateTimeStamp; // current version is:
+  var releaseDateTimeStamp;
+  var originalSource, originalDestination;
+  var zip = new AdmZip(); // current version is:
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionIs + currentVersion);
 
+  originalSource = bas.cDot + sourceFolder;
+  originalDestination = destinationFolder;
   sourceFolder = rootPath + sourceFolder;
   sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
 
@@ -477,22 +485,44 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
     _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseFileNameIs + releaseFileName);
 
-    var fullReleasePath = path.resolve(destinationFolder + bas.cForwardSlash + releaseFileName + gen.cDotzip);
-    zip({
-      source: sourceFolder + '/*',
-      destination: fullReleasePath
-    }).then(function () {
-      // Done writing the zip file:
+    var fullReleasePath = path.resolve(destinationFolder + bas.cForwardSlash + releaseFileName + gen.cDotzip); // zip({
+    //   source: sourceFolder + '/*',
+    //   destination: fullReleasePath
+    // }).then(function() {
+    //   // Done writing the zip file:
+    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath);
+    //   // Set the return packageSuccess flag to TRUE
+    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
+    //   packageSuccess = true;
+    // }).catch(function(err) {
+    //   console.error(err.stack);
+    //   process.exit(1);
+    // });
+    // await zip-a-folder.zip('/path/to/the/folder', '/path/to/archive.zip');
+    // zip.addLocalFile("/home/me/some_picture.png");
+    // zip.writeZip(/*target file name*/"/home/me/files.zip");
+    // for (let j = 0; j < releaseFiles.length; j++) {
+    //   let fileToRelease = releaseFiles[j];
+    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, 'zipping file: ' + fileToRelease);
+    //   zip.addLocalFile(fileToRelease, fs.readFileSync(fileToRelease), '', 0644);
+    // }
+    // zip.writeZip(fullReleasePath);
+
+    try {
+      zip.addLocalFolder(sourceFolder, originalSource);
+      zip.writeZip(fullReleasePath); // Done writing the zip file:
+
       _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath); // Set the return packageSuccess flag to TRUE
 
 
       _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
 
       packageSuccess = true;
-    })["catch"](function (err) {
+    } catch (err) {
+      console.log('ERROR: Zip package release failed: ');
       console.error(err.stack);
       process.exit(1);
-    });
+    }
   } else {
     // current version already released
     _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionAlreadyReleased);
