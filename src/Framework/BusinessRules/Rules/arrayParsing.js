@@ -503,14 +503,17 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
   let returnData = '';
   if (inputData) {
     let passMessage = '';
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
     let j = 0; // We will use this as an iterator to count the number of times we add a string to the returnData coma-seperated list.
     for (let i = 0; i < inputData.length; i++) {
       let currentString = inputData[i];
       if (strParse.doesConstantExist(currentString, '') === false) {
         // Constant does NOT exist:
         passMessage = msg.cConstantDoesNotExist + currentString;
-        passMessage = chalk.rgb(0,0,0)(passMessage);
-        passMessage = chalk.bgRgb(0,255,0)(passMessage);
+        if (colorizeLogsEnabled === true) {
+          passMessage = chalk.rgb(0,0,0)(passMessage);
+          passMessage = chalk.bgRgb(0,255,0)(passMessage);
+        }
         console.log(passMessage);
         // constant does NOT exist:
         loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cConstantDoesNotExist + currentString);
@@ -525,8 +528,10 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
       } else {
         // Constant does exist:
         passMessage = msg.cConstantDoesExist + currentString;
-        passMessage = chalk.rgb(0,0,0)(passMessage);
-        passMessage = chalk.bgRgb(255,0,0)(passMessage);
+        if (colorizeLogsEnabled === true) {
+          passMessage = chalk.rgb(0,0,0)(passMessage);
+          passMessage = chalk.bgRgb(255,0,0)(passMessage);
+        }
         console.log(passMessage);
         // constant does exist:
         loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cConstantDoesExist + currentString);

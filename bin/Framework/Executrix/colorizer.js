@@ -19,6 +19,8 @@ var clr = _interopRequireWildcard(require("../Constants/color.constants"));
 
 var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
+var cfg = _interopRequireWildcard(require("../Constants/configurations.constants"));
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35,6 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:word-constants
  * @requires module:color-constants
  * @requires module:system-constants
+ * @requires module:configurations-constants
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
@@ -510,7 +513,11 @@ function setUnderlineFontStyleOnMessageComponentAccordingToSetting(messageCompon
   var returnMessageComponent = messageComponent;
 
   if (underlineSettingValue === true) {
-    returnMessageComponent = chalk.underline(returnMessageComponent);
+    var colorizeLogsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+
+    if (colorizeLogsEnabled === true) {
+      returnMessageComponent = chalk.underline(returnMessageComponent);
+    }
   } // console.log('returnMessageComponent is: ' + returnMessageComponent);
   // console.log('END colorizer.setUnderlineFontStyleOnMessageComponentAccordingToSetting function');
 
@@ -536,7 +543,11 @@ function setBoldFontStyleOnMessageComponentAccordingToSetting(messageComponent, 
   var returnMessageComponent = messageComponent;
 
   if (boldsettingValue === true) {
-    returnMessageComponent = chalk.bold(returnMessageComponent);
+    var colorizeLogsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+
+    if (colorizeLogsEnabled === true) {
+      returnMessageComponent = chalk.bold(returnMessageComponent);
+    }
   } // console.log('returnMessageComponent is: ' + returnMessageComponent);
   // console.log('END colorizer.setBoldFontStyleOnMessageComponentAccordingToSetting function');
 
@@ -568,7 +579,11 @@ function setFontForgroundColorOnMessageComponentAccordingToSetting(messageCompon
     // console.log('Blue color setting value is: ' + colorSettingValue[clr.cBlue]);
     // console.log('Before using chalk, returnMessageComponent is: ' + returnMessageComponent);
     if (colorSettingValue[clr.cRed] !== undefined && colorSettingValue[clr.cGreen] !== undefined && colorSettingValue[clr.cBlue] !== undefined) {
-      returnMessageComponent = chalk.rgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      var colorizeLogsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+
+      if (colorizeLogsEnabled === true) {
+        returnMessageComponent = chalk.rgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      }
     } // console.log('After using chalk, returnMessageComponent is: ' + returnMessageComponent);
 
   } // console.log('returnMessageComponent is: ' + returnMessageComponent);
@@ -602,7 +617,11 @@ function setFontBackgroundColorOnMessageComponentAccordingToSetting(messageCompo
     // console.log('Blue color setting value is: ' + colorSettingValue[clr.cBlue]);
     // console.log('Before using chalk, returnMessageComponent is: ' + returnMessageComponent);
     if (colorSettingValue[clr.cRed] !== undefined && colorSettingValue[clr.cGreen] !== undefined && colorSettingValue[clr.cBlue] !== undefined) {
-      returnMessageComponent = chalk.bgRgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      var colorizeLogsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+
+      if (colorizeLogsEnabled === true) {
+        returnMessageComponent = chalk.bgRgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      }
     } // console.log('After using chalk, returnMessageComponent is: ' + returnMessageComponent);
 
   } // console.log('returnMessageComponent is: ' + returnMessageComponent);

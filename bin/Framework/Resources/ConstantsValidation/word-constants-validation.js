@@ -4284,6 +4284,30 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cColors,
   Expected: 'Colors'
 }, {
+  Name: 'ccolored',
+  Actual: wrd.ccolored,
+  Expected: 'colored'
+}, {
+  Name: 'cColored',
+  Actual: wrd.cColored,
+  Expected: 'Colored'
+}, {
+  Name: 'ccolorize',
+  Actual: wrd.ccolorize,
+  Expected: 'colorize'
+}, {
+  Name: 'cColorize',
+  Actual: wrd.cColorize,
+  Expected: 'Colorize'
+}, {
+  Name: 'ccolorized',
+  Actual: wrd.ccolorized,
+  Expected: 'colorized'
+}, {
+  Name: 'cColorized',
+  Actual: wrd.cColorized,
+  Expected: 'Colorized'
+}, {
   Name: 'cold',
   Actual: wrd.cold,
   Expected: 'old'
@@ -7899,6 +7923,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cLanguages',
   Actual: wrd.cLanguages,
   Expected: 'Languages'
+}, {
+  Name: 'csole',
+  Actual: wrd.csole,
+  Expected: 'sole'
+}, {
+  Name: 'cSole',
+  Actual: wrd.cSole,
+  Expected: 'Sole'
+}, {
+  Name: 'cconsole',
+  Actual: wrd.cconsole,
+  Expected: 'console'
+}, {
+  Name: 'cConsole',
+  Actual: wrd.cConsole,
+  Expected: 'Console'
 }, //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 {

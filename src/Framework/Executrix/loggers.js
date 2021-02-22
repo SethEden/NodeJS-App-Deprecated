@@ -99,18 +99,23 @@ function consoleTableLog(classPath, tableData, columnNames) {
  */
 function constantsValidationSummaryLog(message, passFail) {
   let outputMessage = '';
+  let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
   if (passFail === true) {
     if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationPassMessages) === true) {
       outputMessage = wrd.cPASSED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASSED; // `PASSED -- ${message} -- PASSED`;
-      outputMessage = chalk.rgb(0,0,0)(outputMessage);
-      outputMessage = chalk.bgRgb(0,255,0)(outputMessage);
+      if (colorizeLogsEnabled === true) {
+        outputMessage = chalk.rgb(0,0,0)(outputMessage);
+        outputMessage = chalk.bgRgb(0,255,0)(outputMessage);
+      }
       console.log(outputMessage);
     }
   } else {
     if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationFailMessages) === true) {
       outputMessage = wrd.cFAILED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAILED; // `FAILED -- ${message} -- FAILED`;
-      outputMessage = chalk.rgb(0,0,0)(outputMessage);
-      outputMessage = chalk.bgRgb(255,0,0)(outputMessage);
+      if (colorizeLogsEnabled === true) {
+        outputMessage = chalk.rgb(0,0,0)(outputMessage);
+        outputMessage = chalk.bgRgb(255,0,0)(outputMessage);
+      }
       console.log(outputMessage);
     }
   }
