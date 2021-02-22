@@ -26,6 +26,7 @@ export const initClientCommandsLibrary = function() {
     // ClientStringParsing rules in order
     // ********************************
     [apc.ccustomEchoCommand]: (inputData, inputMetaData) => clientCommands.customEchoCommand(inputData, inputMetaData),
+    [apc.cbossPanic]: (inputData, inputMetaData) => clientCommands.bossPanic(inputData, inputMetaData)
   };
 };
 

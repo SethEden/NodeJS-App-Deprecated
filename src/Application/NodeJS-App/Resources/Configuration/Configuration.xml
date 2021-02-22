@@ -4397,6 +4397,20 @@
           <ConfigurationElement Name="clientCommands.customEchoCommand@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="clientCommands.bossPanic" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
         </ConfigurationElement>
       </ConfigurationElements>
     </Configuration>

@@ -1997,6 +1997,10 @@ export const wordConstantsValidation = [
    {Name: 'cSole', Actual: wrd.cSole, Expected: 'Sole'},
    {Name: 'cconsole', Actual: wrd.cconsole, Expected: 'console'},
    {Name: 'cConsole', Actual: wrd.cConsole, Expected: 'Console'},
+   {Name: 'cboss', Actual: wrd.cboss, Expected: 'boss'},
+   {Name: 'cBoss', Actual: wrd.cBoss, Expected: 'Boss'},
+   {Name: 'cpanic', Actual: wrd.cpanic, Expected: 'panic'},
+   {Name: 'cPanic', Actual: wrd.cPanic, Expected: 'Panic'},
    //////////////////////////////////////////////////////////////////
    //////////////////////////////////////////////////////////////////
    {Name: 'cAbsolute', Actual: wrd.cAbsolute, Expected: 'Absolute'},

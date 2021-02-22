@@ -1997,6 +1997,10 @@ export const csole = bas.cs + phn.cole; // sole
 export const cSole = bas.cS + phn.cole; // Sole
 export const cconsole = phn.ccon + csole; // console
 export const cConsole = phn.cCon + csole; // Console
+export const cboss = bas.cb + phn.coss; // boss
+export const cBoss = bas.cB + phn.coss; // Boss
+export const cpanic = bas.cpa + phn.cnic; // panic
+export const cPanic = bas.cPa + phn.cnic; // Panic
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 export const cAbsolute = bas.cAb + phn.csol + phn.cute; // Absolute

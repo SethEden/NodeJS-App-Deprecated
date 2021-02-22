@@ -55,4 +55,5 @@ export const cProdClientWorkflowsActualPath = cProductionResourcesPath + wrd.cWo
 // ********************************
 // Client Commands in order
 // ********************************
-export const ccustomEchoCommand = wrd.ccustom + sys.cEcho + wrd.cCommand;
+export const ccustomEchoCommand = wrd.ccustom + sys.cEcho + wrd.cCommand; // customEchoCommand
+export const cbossPanic = wrd.cboss + wrd.cPanic; // bossPanic
