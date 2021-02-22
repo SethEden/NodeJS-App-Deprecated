@@ -934,21 +934,25 @@ export const determineWordDelimiter = function(inputData, inputMetaData) {
     loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cperiodCountIs + periodCount);
     let dashCount = countDelimiterInString(inputData, bas.cDash);
     loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdashCountIs + dashCount);
+    let comaCount = countDelimiterInString(inputData, bas.cComa);
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccomaCountIs + comaCount);
     let underscoreCount = countDelimiterInString(inputData, bas.cUnderscore);
     loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cunderscoreCountIs + underscoreCount);
-    if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
+    if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && comaCount === 0 && underscoreCount === 0) {
       returnData = sys.cCamelCase;
     // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
     // We could have multiple acronyms in a word, or in multiple words that are camelCase.
     // Each of these could be a really complex special case. If we get to that point we will handle those cases on a case by case basis to improve the algorithm.
     // } else if (camelCaseWordCount > 1 && containsAcronym === false)
-    } else if (spacesCount > 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
+    } else if (spacesCount > 0 && periodCount === 0 && dashCount === 0 && comaCount === 0 && underscoreCount === 0) {
       returnData = bas.cSpace;
-    } else if (spacesCount === 0 && periodCount > 0 && dashCount === 0 && underscoreCount === 0) {
+    } else if (spacesCount === 0 && periodCount > 0 && dashCount === 0 && comaCount === 0 && underscoreCount === 0) {
       returnData = bas.cDot;
-    } else if (spacesCount === 0 && periodCount === 0 && dashCount > 0 && underscoreCount === 0) {
+    } else if (spacesCount === 0 && periodCount === 0 && dashCount > 0 && comaCount === 0 && underscoreCount === 0) {
       returnData = bas.cDash;
-    } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount > 0) {
+    } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && comaCount > 0 && underscoreCount === 0) {
+      returnData = bas.cComa;
+    } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && comaCount === 0 && underscoreCount > 0) {
       returnData = bas.cUnderscore;
     } else {
       // We don't need to be showing this warning unless we are debugging.
@@ -1314,21 +1318,21 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
       loggers.consoleLog(baseFileName + bas.cDot + functionName, line.toString(gen.cascii));
       let lineInCode = line.toString(gen.cascii);
       let foundConstant = false;
-      if (lineInCode.includes(msg.cexportconst) === true) {
+      if (lineInCode.includes(sys.cexportconst) === true) {
         let lineArray = lineInCode.split(bas.cSpace);
         // lineArray[2] is:
         loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.clineArray2Is + lineArray[2]);
         foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
         let qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
         if (foundConstant === true) {
-          if (configurator.getConfigurationSetting(msg.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
             let passMessage = wrd.cPASS + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cPASS;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(0,255,0)(passMessage);
             console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + passMessage);
           }
         } else {
-          if (configurator.getConfigurationSetting(msg.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
             let failMessage = wrd.cFAIL + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL;
             failMessage = chalk.rgb(0,0,0)(failMessage);
             failMessage = chalk.bgRgb(255,0,0)(failMessage);
@@ -1481,8 +1485,8 @@ export const validateConstantsDataValidationLineItemName = function(inputData, i
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData && inputMetaData) {
-    for (let i = 0; i < D[msg.cConstantsValidationData][inputMetaData].length; i++) {
-      let validationLineItem = D[msg.cConstantsValidationData][inputMetaData][i];
+    for (let i = 0; i < D[sys.cConstantsValidationData][inputMetaData].length; i++) {
+      let validationLineItem = D[sys.cConstantsValidationData][inputMetaData][i];
       if (validationLineItem) {
         if (inputData === validationLineItem.Name) {
           returnData = true;
@@ -1984,7 +1988,7 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
           if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
             // `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
             passMessage = wrd.cPASS + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace +
-              validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cbSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASS;
+              validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASS;
             passMessage = chalk.rgb(0,0,0)(passMessage);
             passMessage = chalk.bgRgb(0,255,0)(passMessage);
             console.log(passMessage);

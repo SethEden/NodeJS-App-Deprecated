@@ -40,6 +40,8 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
@@ -52,14 +54,16 @@ import configurator from './configurator';
 import colorizer from './colorizer';
 import ruleBroker from '../BusinessRules/ruleBroker';
 import timers from './timers';
-import * as b from '../Constants/basic.constants';
-import * as g from '../Constants/generic.constants';
-import * as w from '../Constants/word.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as gen from '../Constants/generic.constants';
+import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
+import * as biz from '../Constants/business.constants';
+import * as cfg from '../Constants/configurations.constants';
 var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 /**
  * @function consoleLog
@@ -79,13 +83,13 @@ function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
     let logFile = configurator.getConfigurationSetting(sys.cApplicationCleanedRootPath);
     if (logFile !== undefined) {
-      logFile = logFile + b.cForwardSlash + w.clogs;
+      logFile = logFile + bas.cForwardSlash + wrd.clogs;
       // console.log('logFile is !== undefined');
       let debugSetting = false;
       let outputMessage = '';
       let rules = {};
-      rules[1] = s.creplaceDoublePercentWithMessage;
-      logFile = path.resolve(logFile + b.cForwardSlash + configurator.getConfigurationSetting(sys.cLogFilePathAndName));
+      rules[0] = biz.creplaceDoublePercentWithMessage;
+      logFile = path.resolve(logFile + bas.cForwardSlash + configurator.getConfigurationSetting(sys.cLogFilePathAndName));
       // console.log('determine if there is a configuration setting for the class path');
       debugSetting = configurator.getConfigurationSetting(classPath);
       // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
@@ -124,15 +128,15 @@ function consoleTableLog(classPath, tableData, columnNames) {
 function constantsValidationSummaryLog(message, passFail) {
   let outputMessage = '';
   if (passFail === true) {
-    if (configurator.getConfigurationSetting(sys.cDisplaySummaryConstantsValidationPassMessages) === true) {
-      outputMessage = w.cPASSED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cPASSED; // `PASSED -- ${message} -- PASSED`;
+    if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationPassMessages) === true) {
+      outputMessage = wrd.cPASSED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASSED; // `PASSED -- ${message} -- PASSED`;
       outputMessage = chalk.rgb(0,0,0)(outputMessage);
       outputMessage = chalk.bgRgb(0,255,0)(outputMessage);
       console.log(outputMessage);
     }
   } else {
-    if (configurator.getConfigurationSetting(sys.cDisplaySummaryConstantsValidationFailMessages) === true) {
-      outputMessage = w.cFAILED + b.cSpace + b.cDoubleDash + b.cSpace + message + b.cSpace + b.cDoubleDash + b.cSpace + w.cFAILED; // `FAILED -- ${message} -- FAILED`;
+    if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationFailMessages) === true) {
+      outputMessage = wrd.cFAILED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAILED; // `FAILED -- ${message} -- FAILED`;
       outputMessage = chalk.rgb(0,0,0)(outputMessage);
       outputMessage = chalk.bgRgb(255,0,0)(outputMessage);
       console.log(outputMessage);
@@ -246,7 +250,7 @@ function validMessage(outputMessage, originalMessage) {
   // }
   if (outputMessage !== false &amp;&amp; outputMessage !== originalMessage) {
     returnValue = true;
-  } else if (outputMessage !== false &amp;&amp; outputMessage.includes(bas.cPercent + b.cPercent) === false) {
+  } else if (outputMessage !== false &amp;&amp; outputMessage.includes(bas.cPercent + bas.cPercent) === false) {
     returnValue = true;
   }
   // console.log('returnValue is: ' + returnValue);
@@ -285,7 +289,7 @@ function parseClassPath(logFile, classPath, message) {
     // printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
     // console.log('ERROR: Advanced debugging capability more than 3 not supported at all!');
   } else if (Object.keys(classPathArray).length === 3 ) {
-    className = classPathArray[0] + b.cDot + classPathArray[1];
+    className = classPathArray[0] + bas.cDot + classPathArray[1];
 
     // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
     // printMessageToFile(logFile, 'className is: ' + className);
@@ -309,20 +313,20 @@ function parseClassPath(logFile, classPath, message) {
     // printMessageToFile(logFile, 'ERROR: No class data, just print the message as is.');
     // console.log('ERROR: No class data, just print the message as is.');
   }
-  // printMessageToFile(logFile, 'getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
-  // console.log('getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
-  debugFunctionsSetting = configurator.getConfigurationSetting(sys.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
+  // printMessageToFile(logFile, 'getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
+  // console.log('getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
+  debugFunctionsSetting = configurator.getConfigurationSetting(sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
   // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
   // console.log('configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
-  debugFilesSetting = configurator.getConfigurationSetting(sys.cDebugFiles + b.cPipe + className);
+  debugFilesSetting = configurator.getConfigurationSetting(sys.cDebugFiles + bas.cPipe + className);
   // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
   // console.log('configuration setting debugFilesSetting is: ' + debugFilesSetting);
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
     // message = chalk.white(message);
     // className = chalk.red.bold(className);
     // functionName = chalk.red.bold(functionName);
-    // // message = message.replace('%%', className + b.cDot + functionName);
-    // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    // // message = message.replace('%%', className + bas.cDot + functionName);
+    // return ruleBroker.processRules(message, className + bas.cDot + functionName, rules);
     // console.log('both true, call colorizer.colorizeMessage with the false flag');
     message = colorizer.colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
     returnData = message;
@@ -358,7 +362,7 @@ function printMessageToFile(file, message) {
   let fd;
   let dateTimeStamp = '';
   // let currentOS = configurator.getConfigurationSetting(sys.cOperatingSystem);
-  // if (currentOS === w.cWindows || currentOS === w.cLinux) {
+  // if (currentOS === wrd.cWindows || currentOS === wrd.cLinux) {
     if (configurator.getConfigurationSetting(sys.cLogFileEnabled) === true) {
       // console.log('LogFileEnabled = true');
       message = colorizer.removeFontStyles(message);
@@ -366,13 +370,13 @@ function printMessageToFile(file, message) {
         // Individual messages need to have a time stamp on them. So lets sign the message with a time stamp.
         dateTimeStamp = timers.getNowMoment(gen.cYYYY_MM_DD_HH_mm_ss_SSS);
         // console.log('dateTimeStamp is: ' + dateTimeStamp);
-        message = dateTimeStamp + b.cColon + b.cSpace + message;
+        message = dateTimeStamp + bas.cColon + bas.cSpace + message;
       }
 
       // console.log('final Message is: ' + message);
       try {
         fd = fs.openSync(file, 'a');
-        fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, g.cUTF8);
+        fs.appendFileSync(fd, message + bas.cCarriageReturn + bas.cNewLine, gen.cUTF8);
       } catch (err) {
         return console.log(err);
       } finally {
@@ -381,7 +385,7 @@ function printMessageToFile(file, message) {
         }
       }
       // // console.log('writing message to file: ' + file + ' message: ' + message);
-      // fs.appendFile(file, message + b.cCarriageReturn + b.cNewLine, 'utf8', function(err) {
+      // fs.appendFile(file, message + bas.cCarriageReturn + bas.cNewLine, 'utf8', function(err) {
       //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
       //   if (err) { return console.log(err); }
       // });
@@ -418,13 +422,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 15:30:59 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Feb 21 2021 18:06:10 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

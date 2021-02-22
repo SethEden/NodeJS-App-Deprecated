@@ -38,8 +38,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function bootStrapCommands() {
   let functionName = bootStrapCommands.name;
+  // console.log('BEGIN chiefCommander.bootStrapCommands');
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   commandBroker.bootStrapCommands();
+  // console.log('END chiefCommander.bootStrapCommands');
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 

@@ -16,6 +16,8 @@
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/bestzip|bestzip}
+ * @requires {@link https://www.npmjs.com/package/zip-a-folder|zip-a-folder}
+ * @requires {@link https://www.npmjs.com/package/adm-zip|adm-zip}
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/papaparse|papaparse}
  * @requires xml2js
@@ -35,6 +37,8 @@ import * as msg from '../Constants/messages.constants';
 var fs = require('fs');
 var path = require('path');
 var zip = require('bestzip');
+const zip-a-folder = require('zip-a-folder');
+var AdmZip = require('adm-zip');
 var D = require('../Structures/data');
 var Papa = require('papaparse');
 var xml2js = require('xml2js').Parser({
@@ -315,6 +319,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
   let currentVersionReleased = false;
   let releaseDateTimeStamp;
+  var zip = new AdmZip();
   // current version is:
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionIs + currentVersion);
   sourceFolder = rootPath + sourceFolder;
@@ -349,19 +354,25 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
     // release fileName is:
     loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseFileNameIs + releaseFileName);
     let fullReleasePath = path.resolve(destinationFolder + bas.cForwardSlash + releaseFileName + gen.cDotzip);
-    zip({
-      source: sourceFolder + '/*',
-      destination: fullReleasePath
-    }).then(function() {
-      // Done writing the zip file:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath);
-      // Set the return packageSuccess flag to TRUE
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
-      packageSuccess = true;
-    }).catch(function(err) {
-      console.error(err.stack);
-      process.exit(1);
-    });
+    // zip({
+    //   source: sourceFolder + '/*',
+    //   destination: fullReleasePath
+    // }).then(function() {
+    //   // Done writing the zip file:
+    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath);
+    //   // Set the return packageSuccess flag to TRUE
+    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
+    //   packageSuccess = true;
+    // }).catch(function(err) {
+    //   console.error(err.stack);
+    //   process.exit(1);
+    // });
+
+    // await zip-a-folder.zip('/path/to/the/folder', '/path/to/archive.zip');
+
+    // zip.addLocalFile("/home/me/some_picture.png");
+    // zip.writeZip(/*target file name*/"/home/me/files.zip");
+    
   } else {
     // current version already released
     loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionAlreadyReleased);

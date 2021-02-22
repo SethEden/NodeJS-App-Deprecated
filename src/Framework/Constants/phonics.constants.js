@@ -546,6 +546,7 @@ export const cruc = bas.cru + bas.cc; // ruc
 export const cture = bas.ct + cure; // ture
 export const crea = bas.cre + bas.ca; // rea
 export const cRea = bas.cRe + bas.ca; // Rea
+export const cREA = bas.cRE + bas.cA; // REA
 export const ceen = bas.cee + bas.cn; // een
 export const core = bas.cor + bas.ce; // ore
 export const cstd = bas.cst + bas.cd; // std

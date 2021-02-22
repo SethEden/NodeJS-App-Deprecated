@@ -7,14 +7,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.unitsConstantsValidation = void 0;
 
-var u = _interopRequireWildcard(require("../../Constants/units.constants"));
+var unt = _interopRequireWildcard(require("../../Constants/units.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 /**
- * @file units.constants-validation.js
+ * @file units-constants-validation.js
  * @module units-constants-validation
  * @description Contains validations for many unit & unit conversion constants.
  * Also included are validations for units of measurement, units of time, etc...
@@ -34,165 +34,165 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var unitsConstantsValidation = [// Units of Measure
 {
   Name: 'cFemto',
-  Actual: u.cFemto,
+  Actual: unt.cFemto,
   Expected: 'Femto'
 }, {
   Name: 'cPico',
-  Actual: u.cPico,
+  Actual: unt.cPico,
   Expected: 'Pico'
 }, {
   Name: 'cNano',
-  Actual: u.cNano,
+  Actual: unt.cNano,
   Expected: 'Nano'
 }, {
   Name: 'cMicro',
-  Actual: u.cMicro,
+  Actual: unt.cMicro,
   Expected: 'Micro'
 }, {
   Name: 'cMill',
-  Actual: u.cMill,
+  Actual: unt.cMill,
   Expected: 'Mill'
 }, {
   Name: 'cMilli',
-  Actual: u.cMilli,
+  Actual: unt.cMilli,
   Expected: 'Milli'
 }, // Units of Time
 {
   Name: 'csecond',
-  Actual: u.csecond,
+  Actual: unt.csecond,
   Expected: 'second'
 }, {
   Name: 'cSecond',
-  Actual: u.cSecond,
+  Actual: unt.cSecond,
   Expected: 'Second'
 }, {
   Name: 'cSeconds',
-  Actual: u.cSeconds,
+  Actual: unt.cSeconds,
   Expected: 'Seconds'
 }, {
   Name: 'cMinute',
-  Actual: u.cMinute,
+  Actual: unt.cMinute,
   Expected: 'Minute'
 }, {
   Name: 'cMinutes',
-  Actual: u.cMinutes,
+  Actual: unt.cMinutes,
   Expected: 'Minutes'
 }, {
   Name: 'cHour',
-  Actual: u.cHour,
+  Actual: unt.cHour,
   Expected: 'Hour'
 }, {
   Name: 'cHours',
-  Actual: u.cHours,
+  Actual: unt.cHours,
   Expected: 'Hours'
 }, {
   Name: 'cDay',
-  Actual: u.cDay,
+  Actual: unt.cDay,
   Expected: 'Day'
 }, {
   Name: 'cDays',
-  Actual: u.cDays,
+  Actual: unt.cDays,
   Expected: 'Days'
 }, {
   Name: 'cWeek',
-  Actual: u.cWeek,
+  Actual: unt.cWeek,
   Expected: 'Week'
 }, {
   Name: 'cWeeks',
-  Actual: u.cWeeks,
+  Actual: unt.cWeeks,
   Expected: 'Weeks'
 }, {
   Name: 'cMonth',
-  Actual: u.cMonth,
+  Actual: unt.cMonth,
   Expected: 'Month'
 }, {
   Name: 'cMonths',
-  Actual: u.cMonths,
+  Actual: unt.cMonths,
   Expected: 'Months'
 }, {
   Name: 'cYear',
-  Actual: u.cYear,
+  Actual: unt.cYear,
   Expected: 'Year'
 }, {
   Name: 'cYears',
-  Actual: u.cYears,
+  Actual: unt.cYears,
   Expected: 'Years'
 }, {
   Name: 'cDecade',
-  Actual: u.cDecade,
+  Actual: unt.cDecade,
   Expected: 'Decade'
 }, {
   Name: 'cDecades',
-  Actual: u.cDecades,
+  Actual: unt.cDecades,
   Expected: 'Decades'
 }, {
   Name: 'ccent',
-  Actual: u.ccent,
+  Actual: unt.ccent,
   Expected: 'cent'
 }, {
   Name: 'cCent',
-  Actual: u.cCent,
+  Actual: unt.cCent,
   Expected: 'Cent'
 }, {
   Name: 'cCentur',
-  Actual: u.cCentur,
+  Actual: unt.cCentur,
   Expected: 'Centur'
 }, {
   Name: 'cCentury',
-  Actual: u.cCentury,
+  Actual: unt.cCentury,
   Expected: 'Century'
 }, {
   Name: 'cCenturies',
-  Actual: u.cCenturies,
+  Actual: unt.cCenturies,
   Expected: 'Centuries'
 }, {
   Name: 'cMillennium',
-  Actual: u.cMillennium,
+  Actual: unt.cMillennium,
   Expected: 'Millennium'
 }, // Millennium Falcon ;-)
 {
   Name: 'cMillenniums',
-  Actual: u.cMillenniums,
+  Actual: unt.cMillenniums,
   Expected: 'Millenniums'
 }, {
   Name: 'cNanoSecond',
-  Actual: u.cNanoSecond,
+  Actual: unt.cNanoSecond,
   Expected: 'NanoSecond'
 }, {
   Name: 'cNanoSeconds',
-  Actual: u.cNanoSeconds,
+  Actual: unt.cNanoSeconds,
   Expected: 'NanoSeconds'
 }, {
   Name: 'cMicroSecond',
-  Actual: u.cMicroSecond,
+  Actual: unt.cMicroSecond,
   Expected: 'MicroSecond'
 }, {
   Name: 'cMicroSeconds',
-  Actual: u.cMicroSeconds,
+  Actual: unt.cMicroSeconds,
   Expected: 'MicroSeconds'
 }, {
   Name: 'cMilliSecond',
-  Actual: u.cMilliSecond,
+  Actual: unt.cMilliSecond,
   Expected: 'MilliSecond'
 }, {
   Name: 'cMilliSeconds',
-  Actual: u.cMilliSeconds,
+  Actual: unt.cMilliSeconds,
   Expected: 'MilliSeconds'
 }, {
   Name: 'cPicoSecond',
-  Actual: u.cPicoSecond,
+  Actual: unt.cPicoSecond,
   Expected: 'PicoSecond'
 }, {
   Name: 'cPicoSeconds',
-  Actual: u.cPicoSeconds,
+  Actual: unt.cPicoSeconds,
   Expected: 'PicoSeconds'
 }, {
   Name: 'cFemtoSecond',
-  Actual: u.cFemtoSecond,
+  Actual: unt.cFemtoSecond,
   Expected: 'FemtoSecond'
 }, {
   Name: 'cFemtoSeconds',
-  Actual: u.cFemtoSeconds,
+  Actual: unt.cFemtoSeconds,
   Expected: 'FemtoSeconds'
 } // Unit Conversions
 // Miles to Km

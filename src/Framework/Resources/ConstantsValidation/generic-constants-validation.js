@@ -208,6 +208,26 @@ export const genericConstantsValidation = [
    // {Name: 'cNovember', Actual: gen.cNovember, Expected: 'November'},
    {Name: 'cDecember', Actual: gen.cDecember, Expected: 'December'},
 
+   // Constants Abreviations
+   {Name: 'cbas', Actual: gen.cbas, Expected: 'bas'},
+   {Name: 'cbiz', Actual: gen.cbiz, Expected: 'biz'},
+   {Name: 'cclr', Actual: gen.cclr, Expected: 'clr'},
+   {Name: 'ccmd', Actual: gen.ccmd, Expected: 'cmd'},
+   {Name: 'ccfg', Actual: gen.ccfg, Expected: 'cfg'},
+   {Name: 'cctr', Actual: gen.cctr, Expected: 'ctr'},
+   {Name: 'celm', Actual: gen.celm, Expected: 'elm'},
+   {Name: 'cgen', Actual: gen.cgen, Expected: 'gen'},
+   {Name: 'ciso', Actual: gen.ciso, Expected: 'iso'},
+   {Name: 'ckts', Actual: gen.ckts, Expected: 'kts'},
+   {Name: 'clng', Actual: gen.clng, Expected: 'lng'},
+   {Name: 'cmsg', Actual: gen.cmsg, Expected: 'msg'},
+   {Name: 'cnum', Actual: gen.cnum, Expected: 'num'},
+   {Name: 'cphn', Actual: gen.cphn, Expected: 'phn'},
+   {Name: 'cshp', Actual: gen.cshp, Expected: 'shp'},
+   {Name: 'csys', Actual: gen.csys, Expected: 'sys'},
+   {Name: 'cunt', Actual: gen.cunt, Expected: 'unt'},
+   {Name: 'cwrd', Actual: gen.cwrd, Expected: 'wrd'},
+
    // Miscelanious
    {Name: 'cUTF8', Actual: gen.cUTF8, Expected: 'UTF8'},
    {Name: 'cconst', Actual: gen.cconst, Expected: 'const'},
@@ -228,5 +248,5 @@ export const genericConstantsValidation = [
    {Name: 'cRegExp', Actual: gen.cRegExp, Expected: 'RegExp'},
    {Name: 'cbin', Actual: gen.cbin, Expected: 'bin'},
    {Name: 'cBin', Actual: gen.cBin, Expected: 'Bin'},
-   {Name: 'cBIN', Actual: gen.cBIN, Expected: 'BIN'}
+   {Name: 'cBIN', Actual: gen.cBIN, Expected: 'BIN'},
  ];

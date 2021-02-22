@@ -2,17 +2,9 @@
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var b = _interopRequireWildcard(require("./basic.constants"));
+var num = _interopRequireWildcard(require("./numeric.constants"));
 
-var p = _interopRequireWildcard(require("./phonics.constants"));
-
-var n = _interopRequireWildcard(require("./numeric.constants"));
-
-var g = _interopRequireWildcard(require("./generic.constants"));
-
-var w = _interopRequireWildcard(require("./word.constants"));
-
-var e = _interopRequireWildcard(require("./element.constants"));
+var elm = _interopRequireWildcard(require("./element.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 

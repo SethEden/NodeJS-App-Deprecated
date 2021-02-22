@@ -40,9 +40,14 @@ import * as cmd from '../../Constants/commands.constants';
    {Name: 'cprintDataHiveAttributes', Actual: cmd.cprintDataHiveAttributes, Expected: 'printDataHiveAttributes'},
    {Name: 'cclearDataStorage', Actual: cmd.cclearDataStorage, Expected: 'clearDataStorage'},
    {Name: 'ccommandGenerator', Actual: cmd.ccommandGenerator, Expected: 'commandGenerator'},
+   {Name: 'ccommandAliasGenerator', Actual: cmd.ccommandAliasGenerator, Expected: 'commandAliasGenerator'},
+   {Name: 'cconstantsGenerator', Actual: cmd.cconstantsGenerator, Expected: 'constantsGenerator'},
+   {Name: 'cconstantsGeneratorList', Actual: cmd.cconstantsGeneratorList, Expected: 'constantsGeneratorList'},
+   {Name: 'cconstantsPatternRecognizer', Actual: cmd.cconstantsPatternRecognizer, Expected: 'constantsPatternRecognizer'},
    {Name: 'cbusinessRulesMetrics', Actual: cmd.cbusinessRulesMetrics, Expected: 'businessRulesMetrics'},
    {Name: 'ccommandMetrics', Actual: cmd.ccommandMetrics, Expected: 'commandMetrics'},
    {Name: 'cconvertColors', Actual: cmd.cconvertColors, Expected: 'convertColors'},
+
    // ********************************
    // Unit Test Constants commands in order
    // ********************************

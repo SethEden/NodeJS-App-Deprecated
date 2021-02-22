@@ -27,7 +27,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file units.constants-validation.js
+ * @file units-constants-validation.js
  * @module units-constants-validation
  * @description Contains validations for many unit &amp; unit conversion constants.
  * Also included are validations for units of measurement, units of time, etc...
@@ -36,7 +36,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as u from '../../Constants/units.constants';
+import * as unt from '../../Constants/units.constants';
 
  /**
  * @function unitsConstantsValidation
@@ -47,48 +47,48 @@ import * as u from '../../Constants/units.constants';
  */
 export const unitsConstantsValidation = [
    // Units of Measure
-   {Name: 'cFemto', Actual: u.cFemto, Expected: 'Femto'},
-   {Name: 'cPico', Actual: u.cPico, Expected: 'Pico'},
-   {Name: 'cNano', Actual: u.cNano, Expected: 'Nano'},
-   {Name: 'cMicro', Actual: u.cMicro, Expected: 'Micro'},
-   {Name: 'cMill', Actual: u.cMill, Expected: 'Mill'},
-   {Name: 'cMilli', Actual: u.cMilli, Expected: 'Milli'},
+   {Name: 'cFemto', Actual: unt.cFemto, Expected: 'Femto'},
+   {Name: 'cPico', Actual: unt.cPico, Expected: 'Pico'},
+   {Name: 'cNano', Actual: unt.cNano, Expected: 'Nano'},
+   {Name: 'cMicro', Actual: unt.cMicro, Expected: 'Micro'},
+   {Name: 'cMill', Actual: unt.cMill, Expected: 'Mill'},
+   {Name: 'cMilli', Actual: unt.cMilli, Expected: 'Milli'},
 
    // Units of Time
-   {Name: 'csecond', Actual: u.csecond, Expected: 'second'},
-   {Name: 'cSecond', Actual: u.cSecond, Expected: 'Second'},
-   {Name: 'cSeconds', Actual: u.cSeconds, Expected: 'Seconds'},
-   {Name: 'cMinute', Actual: u.cMinute, Expected: 'Minute'},
-   {Name: 'cMinutes', Actual: u.cMinutes, Expected: 'Minutes'},
-   {Name: 'cHour', Actual: u.cHour, Expected: 'Hour'},
-   {Name: 'cHours', Actual: u.cHours, Expected: 'Hours'},
-   {Name: 'cDay', Actual: u.cDay, Expected: 'Day'},
-   {Name: 'cDays', Actual: u.cDays, Expected: 'Days'},
-   {Name: 'cWeek', Actual: u.cWeek, Expected: 'Week'},
-   {Name: 'cWeeks', Actual: u.cWeeks, Expected: 'Weeks'},
-   {Name: 'cMonth', Actual: u.cMonth, Expected: 'Month'},
-   {Name: 'cMonths', Actual: u.cMonths, Expected: 'Months'},
-   {Name: 'cYear', Actual: u.cYear, Expected: 'Year'},
-   {Name: 'cYears', Actual: u.cYears, Expected: 'Years'},
-   {Name: 'cDecade', Actual: u.cDecade, Expected: 'Decade'},
-   {Name: 'cDecades', Actual: u.cDecades, Expected: 'Decades'},
-   {Name: 'ccent', Actual: u.ccent, Expected: 'cent'},
-   {Name: 'cCent', Actual: u.cCent, Expected: 'Cent'},
-   {Name: 'cCentur', Actual: u.cCentur, Expected: 'Centur'},
-   {Name: 'cCentury', Actual: u.cCentury, Expected: 'Century'},
-   {Name: 'cCenturies', Actual: u.cCenturies, Expected: 'Centuries'},
-   {Name: 'cMillennium', Actual: u.cMillennium, Expected: 'Millennium'}, // Millennium Falcon ;-)
-   {Name: 'cMillenniums', Actual: u.cMillenniums, Expected: 'Millenniums'},
-   {Name: 'cNanoSecond', Actual: u.cNanoSecond, Expected: 'NanoSecond'},
-   {Name: 'cNanoSeconds', Actual: u.cNanoSeconds, Expected: 'NanoSeconds'},
-   {Name: 'cMicroSecond', Actual: u.cMicroSecond, Expected: 'MicroSecond'},
-   {Name: 'cMicroSeconds', Actual: u.cMicroSeconds, Expected: 'MicroSeconds'},
-   {Name: 'cMilliSecond', Actual: u.cMilliSecond, Expected: 'MilliSecond'},
-   {Name: 'cMilliSeconds', Actual: u.cMilliSeconds, Expected: 'MilliSeconds'},
-   {Name: 'cPicoSecond', Actual: u.cPicoSecond, Expected: 'PicoSecond'},
-   {Name: 'cPicoSeconds', Actual: u.cPicoSeconds, Expected: 'PicoSeconds'},
-   {Name: 'cFemtoSecond', Actual: u.cFemtoSecond, Expected: 'FemtoSecond'},
-   {Name: 'cFemtoSeconds', Actual: u.cFemtoSeconds, Expected: 'FemtoSeconds'}
+   {Name: 'csecond', Actual: unt.csecond, Expected: 'second'},
+   {Name: 'cSecond', Actual: unt.cSecond, Expected: 'Second'},
+   {Name: 'cSeconds', Actual: unt.cSeconds, Expected: 'Seconds'},
+   {Name: 'cMinute', Actual: unt.cMinute, Expected: 'Minute'},
+   {Name: 'cMinutes', Actual: unt.cMinutes, Expected: 'Minutes'},
+   {Name: 'cHour', Actual: unt.cHour, Expected: 'Hour'},
+   {Name: 'cHours', Actual: unt.cHours, Expected: 'Hours'},
+   {Name: 'cDay', Actual: unt.cDay, Expected: 'Day'},
+   {Name: 'cDays', Actual: unt.cDays, Expected: 'Days'},
+   {Name: 'cWeek', Actual: unt.cWeek, Expected: 'Week'},
+   {Name: 'cWeeks', Actual: unt.cWeeks, Expected: 'Weeks'},
+   {Name: 'cMonth', Actual: unt.cMonth, Expected: 'Month'},
+   {Name: 'cMonths', Actual: unt.cMonths, Expected: 'Months'},
+   {Name: 'cYear', Actual: unt.cYear, Expected: 'Year'},
+   {Name: 'cYears', Actual: unt.cYears, Expected: 'Years'},
+   {Name: 'cDecade', Actual: unt.cDecade, Expected: 'Decade'},
+   {Name: 'cDecades', Actual: unt.cDecades, Expected: 'Decades'},
+   {Name: 'ccent', Actual: unt.ccent, Expected: 'cent'},
+   {Name: 'cCent', Actual: unt.cCent, Expected: 'Cent'},
+   {Name: 'cCentur', Actual: unt.cCentur, Expected: 'Centur'},
+   {Name: 'cCentury', Actual: unt.cCentury, Expected: 'Century'},
+   {Name: 'cCenturies', Actual: unt.cCenturies, Expected: 'Centuries'},
+   {Name: 'cMillennium', Actual: unt.cMillennium, Expected: 'Millennium'}, // Millennium Falcon ;-)
+   {Name: 'cMillenniums', Actual: unt.cMillenniums, Expected: 'Millenniums'},
+   {Name: 'cNanoSecond', Actual: unt.cNanoSecond, Expected: 'NanoSecond'},
+   {Name: 'cNanoSeconds', Actual: unt.cNanoSeconds, Expected: 'NanoSeconds'},
+   {Name: 'cMicroSecond', Actual: unt.cMicroSecond, Expected: 'MicroSecond'},
+   {Name: 'cMicroSeconds', Actual: unt.cMicroSeconds, Expected: 'MicroSeconds'},
+   {Name: 'cMilliSecond', Actual: unt.cMilliSecond, Expected: 'MilliSecond'},
+   {Name: 'cMilliSeconds', Actual: unt.cMilliSeconds, Expected: 'MilliSeconds'},
+   {Name: 'cPicoSecond', Actual: unt.cPicoSecond, Expected: 'PicoSecond'},
+   {Name: 'cPicoSeconds', Actual: unt.cPicoSeconds, Expected: 'PicoSeconds'},
+   {Name: 'cFemtoSecond', Actual: unt.cFemtoSecond, Expected: 'FemtoSecond'},
+   {Name: 'cFemtoSeconds', Actual: unt.cFemtoSeconds, Expected: 'FemtoSeconds'}
 
    // Unit Conversions
    // Miles to Km
@@ -105,13 +105,13 @@ export const unitsConstantsValidation = [
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 17 2021 15:30:59 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sun Feb 21 2021 18:06:10 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

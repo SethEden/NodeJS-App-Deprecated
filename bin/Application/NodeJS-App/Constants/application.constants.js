@@ -7,15 +7,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ccustomEchoCommand = exports.cProdClientWorkflowsActualPath = exports.cProdClientCommandAliasesActualPath = exports.cDevClientWorkflowsActualPath = exports.cDevClientCommandAliasesActualPath = exports.carrayCounter = exports.cthreePointAverage = exports.cisAlmostPalindrome = exports.cmostPopularNumber = exports.ccustomEcho = exports.cclientEcho = exports.cApplicationProductionRootPath = exports.cApplicationDevelopRootPath = exports.cReleasePath = exports.cProductionRootPath = exports.cDevelopRootPath = exports.cProductionResourcesPath = exports.cDevelopResourcesPath = exports.cResourcesCommonPath = exports.cConfigurationDataLookupPrefixPath = exports.cApplicationName = exports.cConfigurationFilename = void 0;
 
-var b = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../../../Framework/Constants/basic.constants"));
 
-var g = _interopRequireWildcard(require("../../../Framework/Constants/generic.constants"));
+var gen = _interopRequireWildcard(require("../../../Framework/Constants/generic.constants"));
 
-var n = _interopRequireWildcard(require("../../../Framework/Constants/numeric.constants"));
+var wrd = _interopRequireWildcard(require("../../../Framework/Constants/word.constants"));
 
-var w = _interopRequireWildcard(require("../../../Framework/Constants/word.constants"));
-
-var s = _interopRequireWildcard(require("../../../Framework/Constants/system.constants"));
+var sys = _interopRequireWildcard(require("../../../Framework/Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -34,60 +32,60 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-var cConfigurationFilename = w.cConfiguration;
+var cConfigurationFilename = wrd.cConfiguration;
 exports.cConfigurationFilename = cConfigurationFilename;
 var cApplicationName = 'NodeJS-App'; // Configuration Path
 
 exports.cApplicationName = cApplicationName;
-var cConfigurationDataLookupPrefixPath = b.cForwardSlash + w.cResources + b.cForwardSlash;
+var cConfigurationDataLookupPrefixPath = bas.cForwardSlash + wrd.cResources + bas.cForwardSlash;
 exports.cConfigurationDataLookupPrefixPath = cConfigurationDataLookupPrefixPath;
-var cResourcesCommonPath = w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash + w.cResources + b.cForwardSlash; // Source Resources Path
+var cResourcesCommonPath = wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash + wrd.cResources + bas.cForwardSlash; // Source Resources Path
 
 exports.cResourcesCommonPath = cResourcesCommonPath;
-var cDevelopResourcesPath = b.cForwardSlash + w.csrc + b.cForwardSlash + cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
+var cDevelopResourcesPath = bas.cForwardSlash + wrd.csrc + bas.cForwardSlash + cResourcesCommonPath; // '/src/Application/NodeJS-App/Resources/';
 // Binary Resources Path
 
 exports.cDevelopResourcesPath = cDevelopResourcesPath;
-var cProductionResourcesPath = b.cForwardSlash + w.cbin + b.cForwardSlash + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
+var cProductionResourcesPath = bas.cForwardSlash + wrd.cbin + bas.cForwardSlash + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash; // cResourcesCommonPath; // '/bin/Application/NodeJS-App/Resources/'
 
 exports.cProductionResourcesPath = cProductionResourcesPath;
-var cDevelopRootPath = b.cForwardSlash + w.csrc + b.cForwardSlash;
+var cDevelopRootPath = bas.cForwardSlash + wrd.csrc + bas.cForwardSlash;
 exports.cDevelopRootPath = cDevelopRootPath;
-var cProductionRootPath = b.cForwardSlash + w.cbin + b.cForwardSlash;
+var cProductionRootPath = bas.cForwardSlash + wrd.cbin + bas.cForwardSlash;
 exports.cProductionRootPath = cProductionRootPath;
-var cReleasePath = b.cForwardSlash + w.cRelease + b.cForwardSlash;
+var cReleasePath = bas.cForwardSlash + wrd.cRelease + bas.cForwardSlash;
 exports.cReleasePath = cReleasePath;
-var cApplicationDevelopRootPath = cDevelopRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash;
+var cApplicationDevelopRootPath = cDevelopRootPath + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash;
 exports.cApplicationDevelopRootPath = cApplicationDevelopRootPath;
-var cApplicationProductionRootPath = cProductionRootPath + w.cApplication + b.cForwardSlash + cApplicationName + b.cForwardSlash; // Client Business Rules
+var cApplicationProductionRootPath = cProductionRootPath + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash; // Client Business Rules
 
 exports.cApplicationProductionRootPath = cApplicationProductionRootPath;
-var cclientEcho = w.cclient + s.cEcho; // ********************************
+var cclientEcho = wrd.cclient + sys.cEcho; // ********************************
 // ClientStringParsing rules in order
 // ********************************
 
 exports.cclientEcho = cclientEcho;
-var ccustomEcho = w.ccustom + s.cEcho;
+var ccustomEcho = wrd.ccustom + sys.cEcho;
 exports.ccustomEcho = ccustomEcho;
-var cmostPopularNumber = w.cmost + w.cPopular + w.cNumber;
+var cmostPopularNumber = wrd.cmost + wrd.cPopular + wrd.cNumber;
 exports.cmostPopularNumber = cmostPopularNumber;
-var cisAlmostPalindrome = w.cis + w.cAlmost + w.cPalindrom;
+var cisAlmostPalindrome = wrd.cis + wrd.cAlmost + wrd.cPalindrom;
 exports.cisAlmostPalindrome = cisAlmostPalindrome;
-var cthreePointAverage = g.cthree + w.cPoint + w.cAverage;
+var cthreePointAverage = gen.cthree + wrd.cPoint + wrd.cAverage;
 exports.cthreePointAverage = cthreePointAverage;
-var carrayCounter = w.carray + w.cCounter; // Client Commands
+var carrayCounter = wrd.carray + wrd.cCounter; // Client Commands
 
 exports.carrayCounter = carrayCounter;
-var cDevClientCommandAliasesActualPath = cDevelopResourcesPath + w.cCommands + b.cForwardSlash;
+var cDevClientCommandAliasesActualPath = cDevelopResourcesPath + wrd.cCommands + bas.cForwardSlash;
 exports.cDevClientCommandAliasesActualPath = cDevClientCommandAliasesActualPath;
-var cDevClientWorkflowsActualPath = cDevelopResourcesPath + w.cWorkflows + b.cForwardSlash;
+var cDevClientWorkflowsActualPath = cDevelopResourcesPath + wrd.cWorkflows + bas.cForwardSlash;
 exports.cDevClientWorkflowsActualPath = cDevClientWorkflowsActualPath;
-var cProdClientCommandAliasesActualPath = cProductionResourcesPath + w.cCommands + b.cForwardSlash;
+var cProdClientCommandAliasesActualPath = cProductionResourcesPath + wrd.cCommands + bas.cForwardSlash;
 exports.cProdClientCommandAliasesActualPath = cProdClientCommandAliasesActualPath;
-var cProdClientWorkflowsActualPath = cProductionResourcesPath + w.cWorkflows + b.cForwardSlash; // ********************************
+var cProdClientWorkflowsActualPath = cProductionResourcesPath + wrd.cWorkflows + bas.cForwardSlash; // ********************************
 // Client Commands in order
 // ********************************
 
 exports.cProdClientWorkflowsActualPath = cProdClientWorkflowsActualPath;
-var ccustomEchoCommand = w.ccustom + s.cEcho + w.cCommand;
+var ccustomEchoCommand = wrd.ccustom + sys.cEcho + wrd.cCommand;
 exports.ccustomEchoCommand = ccustomEchoCommand;

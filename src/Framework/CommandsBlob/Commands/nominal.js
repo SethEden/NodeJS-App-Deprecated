@@ -215,7 +215,7 @@ export const clearScreen = function(inputData, inputMetaData) {
  * @date 2020/07/30
  */
 export const deployApplication = function(inputData, inputMetaData) {
-  let functionName = cmd.cdeployApplication;
+  let functionName = sys.cdeployApplication;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -224,12 +224,16 @@ export const deployApplication = function(inputData, inputMetaData) {
   configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
     // DEPLOY APPLICATION
     console.log(msg.cDEPLOY_APPLICATION);
-    let sourcePath = configurator.getConfigurationSetting(cfg.cSourceResourcesPath);
-    let destinationPath = configurator.getConfigurationSetting(cfg.cDestinationResourcesPath);
+    let sourcePath = configurator.getConfigurationSetting(sys.cSourceResourcesPath);
+    let destinationPath = configurator.getConfigurationSetting(sys.cDestinationResourcesPath);
     let deploymentStatus = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
-    // console.log('Deployment was completed: ' + deploymentStatus);
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDeploymentWasCompleted + true);
-    configurator.setConfigurationSetting(sys.cdeploymentCompleted, true);
+    if (deploymentStatus === true) {
+      // console.log('Deployment was completed: ' + deploymentStatus);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDeploymentWasCompleted + true);
+      configurator.setConfigurationSetting(cfg.cdeploymentCompleted, true);
+    } else {
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDeploymentFailed);
+    }
   } else {
     if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
       // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
@@ -255,7 +259,7 @@ export const deployApplication = function(inputData, inputMetaData) {
  * @date 2021/01/08
  */
 export const deployMetaData = function(inputData, inputMetaData) {
-  let functionName = cmd.cdeployMetaData;
+  let functionName = sys.cdeployMetaData;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -323,21 +327,25 @@ export const deployMetaData = function(inputData, inputMetaData) {
  * @date 2020/07/30
  */
 export const releaseApplication = function(inputData, inputMetaData) {
-  let functionName = cmd.creleaseApplication;
+  let functionName = sys.creleaseApplication;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(sys.cPassAllConstantsValidations) === true &&
-  configurator.getConfigurationSetting(sys.cPassedAllCommandAliasesDuplicateChecks) === true) {
+  if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
     // RELEASE APPLICATION
     console.log(msg.cRELEASE_APPLICATION);
     let sourcePath = configurator.getConfigurationSetting(sys.cBinaryRootPath);
     let destinationPath = configurator.getConfigurationSetting(sys.cBinaryReleasePath);
     let releaseResult = fileBroker.buildReleasePackage(sourcePath, destinationPath);
-    // console.log('Release was completed: ' + releaseResult);
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBuildMessage2 + true);
-    configurator.setConfigurationSetting(cfg.creleaseCompleted, true);
+    if (releaseResult === true) {
+      // console.log('Release was completed: ' + releaseResult);
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBuildMessage2 + true);
+      configurator.setConfigurationSetting(cfg.creleaseCompleted, true);
+    } else {
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cReleaseFailed);
+    }
   } else {
     if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
       // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
@@ -526,7 +534,7 @@ export const printDataHive = function(inputData, inputMetaData) {
       // END i-th iteration:
       loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
     }
-    console.log(inputData[1] + bas.cSpace + sys.ccontentsAre + JSON.stringify(leafDataHiveElement));
+    console.log(inputData[1] + bas.cSpace + msg.ccontentsAre + JSON.stringify(leafDataHiveElement));
   } else {
     if (D[inputData[1]] !== undefined) {
       // contents are:

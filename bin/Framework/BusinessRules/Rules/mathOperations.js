@@ -9,11 +9,9 @@ exports.hex2rgbConversion = void 0;
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
-var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
-var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
-
-var s = _interopRequireWildcard(require("../../Constants/system.constants"));
+var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -52,13 +50,13 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
-  var functionName = s.chex2rgbConversion;
+  var functionName = biz.chex2rgbConversion;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData;
 
@@ -82,7 +80,7 @@ var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
     // }
     var bigInteger = parseInt(inputData, 16); // bigInteger is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cMathOperationsMessage1 + bigInteger);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cMathOperationsMessage1 + bigInteger);
 
     var red = bigInteger >> 16 & 255;
     var green = bigInteger >> 8 & 255;
@@ -90,9 +88,9 @@ var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
     returnData = [red, green, blue];
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };

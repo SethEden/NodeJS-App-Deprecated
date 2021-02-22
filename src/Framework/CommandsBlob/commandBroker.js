@@ -55,8 +55,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
  function bootStrapCommands() {
    let functionName = bootStrapCommands.name;
+   // console.log('BEGIN commandBroker.bootStrapCommands');
    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
    commands.initCommandsLibrary();
+   // console.log('END commandBroker.bootStrapCommands');
    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
  };
 
@@ -108,15 +110,18 @@ function getValidCommand(commandString, commandDelimiter) {
   } else {
     commandToExecute = commandString;
   }
-
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandString is: ' + commandString);
+  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
   if (commandString) {
     if (D[wrd.cCommands][commandToExecute] !== undefined) {
       foundValidCommand = true;
       returnData = commandToExecute;
     } else {
+      // console.log('else-clause looking for command aliiases');
       // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
       // to see if we can find a match, then get the actual command that should be executed.
       let allCommandAliases = D[sys.cCommandsAliases][wrd.cCommand];
+      // console.log('allCommandAliases is: ' + JSON.stringify(allCommandAliases));
   loop1:
       for (let i = 0; i < allCommandAliases.length; i++) {
         // Iterate through all of the command aliases and see if we can find a
@@ -353,7 +358,9 @@ function getCommandArgs(commandString, commandDelimiter) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringIs + commandString);
   let returnData = false;
   let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
   let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandArgs is: ' + commandArgs);
   let commandMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableCommandPerformanceMetrics);
   let commandStartTime = '';
   let commandEndTime = '';

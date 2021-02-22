@@ -40,6 +40,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 export const initCommandsLibrary = function() {
   let functionName = initCommandsLibrary.name;
+  // console.log('BEGIN commandsLibrary.initCommandsLibrary');
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   D[wrd.cCommands] = {};
   D[wrd.cCommands] = {
@@ -53,9 +54,9 @@ export const initCommandsLibrary = function() {
     [wrd.cabout]: (inputData, inputMetaData) => nominalCommands.about(inputData, inputMetaData),
     [wrd.cname]: (inputData, inputMetaData) => nominalCommands.name(inputData, inputMetaData),
     [cmd.cclearScreen]: (inputData, inputMetaData) => nominalCommands.clearScreen(inputData, inputMetaData),
-    [cmd.cdeployApplication]: (inputData, inputMetaData) => nominalCommands.deployApplication(inputData, inputMetaData),
-    [cmd.cdeployMetaData]: (inputData, inputMetaData) => nominalCommands.deployMetaData(inputData, inputMetaData),
-    [cmd.creleaseApplication]: (inputData, inputMetaData) => nominalCommands.releaseApplication(inputData, inputMetaData),
+    [sys.cdeployApplication]: (inputData, inputMetaData) => nominalCommands.deployApplication(inputData, inputMetaData),
+    [sys.cdeployMetaData]: (inputData, inputMetaData) => nominalCommands.deployMetaData(inputData, inputMetaData),
+    [sys.creleaseApplication]: (inputData, inputMetaData) => nominalCommands.releaseApplication(inputData, inputMetaData),
     [wrd.chelp]: (inputData, inputMetaData) => nominalCommands.help(inputData, inputMetaData),
     [cmd.cworkflowHelp]: (inputData, inputMetaData) => nominalCommands.workflowHelp(inputData, inputMetaData),
     [cmd.ccommandSequencer]: (inputData, inputMetaData) => nominalCommands.commandSequencer(inputData, inputMetaData),
@@ -79,5 +80,6 @@ export const initCommandsLibrary = function() {
     [cmd.cvalidateConstants]: (inputData, inputMetaData) => unitTests.validateConstants(inputData, inputMetaData),
     [cmd.cvalidateCommandAliases]: (inputData, inputMetaData) => unitTests.validateCommandAliases(inputData, inputMetaData)
   }
+  // console.log('END commandsLibrary.initCommandsLibrary');
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };

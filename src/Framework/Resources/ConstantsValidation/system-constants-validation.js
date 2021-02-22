@@ -226,6 +226,7 @@ export const systemConstantsValidation = [
    {Name: 'ccurrentMasterStringArrayElement', Actual: sys.ccurrentMasterStringArrayElement, Expected: 'currentMasterStringArrayElement'},
    {Name: 'cLehmerCodeArray', Actual: sys.cLehmerCodeArray, Expected: 'LehmerCodeArray'},
    {Name: 'creturnData', Actual: sys.creturnData, Expected: 'returnData'},
+   {Name: 'cCamelCase', Actual: sys.cCamelCase, Expected: 'CamelCase'},
 
    // Logging Styles Constants
    {Name: 'cModuleFontStyle', Actual: sys.cModuleFontStyle, Expected: 'ModuleFontStyle'},
@@ -322,10 +323,17 @@ export const systemConstantsValidation = [
    {Name: 'cCommandQueue', Actual: sys.cCommandQueue, Expected: 'CommandQueue'},
    {Name: 'cConstantsValidationData', Actual: sys.cConstantsValidationData, Expected: 'ConstantsValidationData'},
    {Name: 'cBasicConstantsValidation', Actual: sys.cBasicConstantsValidation, Expected: 'BasicConstantsValidation'},
+   {Name: 'cBusinessConstantsValidation', Actual: sys.cBusinessConstantsValidation, Expected: 'BusinessConstantsValidation'},
    {Name: 'cColorConstantsValidation', Actual: sys.cColorConstantsValidation, Expected: 'ColorConstantsValidation'},
+   {Name: 'cCommandsConstantsValidation', Actual: sys.cCommandsConstantsValidation, Expected: 'CommandsConstantsValidation'},
+   {Name: 'cConfigurationsConstantsValidation', Actual: sys.cConfigurationsConstantsValidation, Expected: 'ConfigurationsConstantsValidation'},
+   {Name: 'cCountriesConstantsValidation', Actual: sys.cCountriesConstantsValidation, Expected: 'CountriesConstantsValidation'},
    {Name: 'cElementConstantsValidation', Actual: sys.cElementConstantsValidation, Expected: 'ElementConstantsValidation'},
    {Name: 'cGenericConstantsValidation', Actual: sys.cGenericConstantsValidation, Expected: 'GenericConstantsValidation'},
    {Name: 'cIsotopeConstantsValidation', Actual: sys.cIsotopeConstantsValidation, Expected: 'IsotopeConstantsValidation'},
+   {Name: 'cKnotsConstantsValidation', Actual: sys.cKnotsConstantsValidation, Expected: 'KnotsConstantsValidation'},
+   {Name: 'cLanguagesConstantsValidation', Actual: sys.cLanguagesConstantsValidation, Expected: 'LanguagesConstantsValidation'},
+   {Name: 'cMessagesConstantsValidation', Actual: sys.cMessagesConstantsValidation, Expected: 'MessagesConstantsValidation'},
    {Name: 'cNumericConstantsValidation', Actual: sys.cNumericConstantsValidation, Expected: 'NumericConstantsValidation'},
    {Name: 'cPhonicsConstantsValidation', Actual: sys.cPhonicsConstantsValidation, Expected: 'PhonicsConstantsValidation'},
    {Name: 'cShapeConstantsValidation', Actual: sys.cShapeConstantsValidation, Expected: 'ShapeConstantsValidation'},
@@ -339,14 +347,21 @@ export const systemConstantsValidation = [
 
    // Constants Filenames
    {Name: 'cbasic_constants_js', Actual: sys.cbasic_constants_js, Expected: 'basic.constants.js'},
+   {Name: 'cbusiness_constants_js', Actual: sys.cbusiness_constants_js, Expected: 'business.constants.js'},
    {Name: 'ccolor_constants_js', Actual: sys.ccolor_constants_js, Expected: 'color.constants.js'},
+   {Name: 'ccommands_constants_js', Actual: sys.ccommands_constants_js, Expected: 'commands.constants.js'},
+   {Name: 'cconfigurations_constants_js', Actual: sys.cconfigurations_constants_js, Expected: 'configurations.constants.js'},
+   {Name: 'ccountries_constants_js', Actual: sys.ccountries_constants_js, Expected: 'countries.constants.js'},
    {Name: 'celement_constants_js', Actual: sys.celement_constants_js, Expected: 'element.constants.js'},
    {Name: 'cgeneric_constants_js', Actual: sys.cgeneric_constants_js, Expected: 'generic.constants.js'},
    {Name: 'cisotope_constants_js', Actual: sys.cisotope_constants_js, Expected: 'isotope.constants.js'},
+   {Name: 'cknots_constants_js', Actual: sys.cknots_constants_js, Expected: 'knots.constants.js'},
+   {Name: 'clanguages_constants_js', Actual: sys.clanguages_constants_js, Expected: 'languages.constants.js'},
+   {Name: 'cmessages_constants_js', Actual: sys.cmessages_constants_js, Expected: 'messages.constants.js'},
    {Name: 'cnumeric_constants_js', Actual: sys.cnumeric_constants_js, Expected: 'numeric.constants.js'},
    {Name: 'cphonics_constants_js', Actual: sys.cphonics_constants_js, Expected: 'phonics.constants.js'},
    {Name: 'cshape_constants_js', Actual: sys.cshape_constants_js, Expected: 'shape.constants.js'},
    {Name: 'csystem_constants_js', Actual: sys.csystem_constants_js, Expected: 'system.constants.js'},
    {Name: 'cunits_constants_js', Actual: sys.cunits_constants_js, Expected: 'units.constants.js'},
-   {Name: 'cword_constants_js', Actual: sys.cword_constants_js, Expected: 'word.constants.js'},
+   {Name: 'cword_constants_js', Actual: sys.cword_constants_js, Expected: 'word.constants.js'}
  ];

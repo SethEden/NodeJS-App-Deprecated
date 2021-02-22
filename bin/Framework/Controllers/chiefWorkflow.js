@@ -11,11 +11,13 @@ var _chiefData = _interopRequireDefault(require("../Controllers/chiefData"));
 
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
-var b = _interopRequireWildcard(require("../Constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../Constants/basic.constants"));
 
-var w = _interopRequireWildcard(require("../Constants/word.constants"));
+var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
 
-var s = _interopRequireWildcard(require("../Constants/system.constants"));
+var sys = _interopRequireWildcard(require("../Constants/system.constants"));
+
+var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -34,6 +36,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -42,7 +45,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var path = require('path');
 
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
@@ -58,25 +61,25 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   var functionName = loadCommandWorkflowsFromPath.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function); // commandWorkflowFilePathConfigurationName is:
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // commandWorkflowFilePathConfigurationName is:
 
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
 
   var allCommandWorkflowsData = {};
-  allCommandWorkflowsData = _chiefData["default"].setupAllXmlData(commandWorkflowFilePathConfigurationName, s.cCommandWorkflows);
+  allCommandWorkflowsData = _chiefData["default"].setupAllXmlData(commandWorkflowFilePathConfigurationName, sys.cCommandWorkflows);
 
-  if (D[s.cCommandWorkflows] === undefined) {
+  if (D[sys.cCommandWorkflows] === undefined) {
     // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
-    D[s.cCommandWorkflows] = {};
-    D[s.cCommandWorkflows] = allCommandWorkflowsData[s.cCommandWorkflows];
+    D[sys.cCommandWorkflows] = {};
+    D[sys.cCommandWorkflows] = allCommandWorkflowsData[sys.cCommandWorkflows];
   } else {
-    for (var i = 0; i < allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow].length; i++) {
-      D[s.cCommandWorkflows][w.cWorkflow].push(allCommandWorkflowsData[s.cCommandWorkflows][w.cWorkflow][i]);
+    for (var i = 0; i < allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow].length; i++) {
+      D[sys.cCommandWorkflows][wrd.cWorkflow].push(allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow][i]);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
 
 ;

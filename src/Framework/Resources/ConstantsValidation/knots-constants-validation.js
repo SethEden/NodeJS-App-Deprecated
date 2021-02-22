@@ -17,7 +17,7 @@ import * as kts from '../../Constants/knots.constants';
  * @date 2021/02/17
  */
 export const knotsConstantsValidation = [
-  // // Knots
+  // Knots
   // {Name: 'cAdjustableGripHitch', Actual: kts.cAdjustableGripHitch, Expected: 'AdjustableGripHitch'},
   // {Name: 'cAdjustableSling', Actual: kts.cAdjustableSling, Expected: 'AdjustableSling'},
   // {Name: 'cAlbrightKnot', Actual: kts.cAlbrightKnot, Expected: 'AlbrightKnot'},

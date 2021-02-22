@@ -10,11 +10,16 @@
  * It also includes the release process where the compiled code & non-code files (Configuration & Documentation)
  * is packaged up into a single zip file and saved in the Release folder.
  * @requires module:warden
- * @requires module:application-constants
- * @requires module:system-constants
+ * @requires module:clientRulesLibrary
+ * @requires module:clientCommandsLibrary
+ * @requires module:basic-constants
  * @requires module:generic-constants
  * @requires module:word-constants
- * @requires module:basic-constants
+ * @requires module:system-constants
+ * @requires module:commands-constants
+ * @requires module:configurations-constants
+ * @requires module:messages-constants
+ * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/dotenv|dotenv}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -32,15 +37,21 @@ var _clientRulesLibrary = _interopRequireDefault(require("./BusinessRules/client
 
 var _clientCommandsLibrary = _interopRequireDefault(require("./Commands/clientCommandsLibrary"));
 
-var c = _interopRequireWildcard(require("./Constants/application.constants"));
+var bas = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
 
-var s = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
+var gen = _interopRequireWildcard(require("../../Framework/Constants/generic.constants"));
 
-var g = _interopRequireWildcard(require("../../Framework/Constants/generic.constants"));
+var wrd = _interopRequireWildcard(require("../../Framework/Constants/word.constants"));
 
-var w = _interopRequireWildcard(require("../../Framework/Constants/word.constants"));
+var sys = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
 
-var b = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
+var cmd = _interopRequireWildcard(require("../../Framework/Constants/commands.constants"));
+
+var cfg = _interopRequireWildcard(require("../../Framework/Constants/configurations.constants"));
+
+var msg = _interopRequireWildcard(require("../../Framework/Constants/messages.constants"));
+
+var apc = _interopRequireWildcard(require("./Constants/application.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -56,7 +67,7 @@ var NODE_ENV = process.env.NODE_ENV;
 
 var path = require('path');
 
-var D = require('../../Framework/Resources/data');
+var D = require('../../Framework/Structures/data');
 
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
@@ -71,20 +82,20 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function bootStrapApplicationDeployment() {
-  if (NODE_ENV === w.cdevelopment) {
-    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
-  } else if (NODE_ENV === w.cproduction) {
-    rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  if (NODE_ENV === wrd.cdevelopment) {
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationDevelopRootPath;
+  } else if (NODE_ENV === wrd.cproduction) {
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationProductionRootPath;
   } else {
     // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
-    console.log(s.cApplicationWarningMessage1a + s.ccApplicationWarningMessage1b);
-    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
+    console.log(sys.cApplicationWarningMessage1a + sys.ccApplicationWarningMessage1b);
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationDevelopRootPath;
   } // console.log('rootPath is: ' + rootPath);
 
 
   rootPath = _warden["default"].processRootPath(rootPath); // console.log('processed rootPath is: ' + rootPath);
 
-  _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
+  _warden["default"].bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
 
   _warden["default"].saveRootPath(rootPath);
 
@@ -92,14 +103,16 @@ function bootStrapApplicationDeployment() {
 
   _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
 
-  if (NODE_ENV === w.cdevelopment) {
-    _warden["default"].loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
+  if (NODE_ENV === wrd.cdevelopment) {
+    // console.log('development mode');
+    _warden["default"].loadCommandAliases(cmd.cDevSystemCommandsAliasesActualPath, apc.cDevClientCommandAliasesActualPath);
 
-    _warden["default"].loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
-  } else if (NODE_ENV === w.cproduction) {
-    _warden["default"].loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+    _warden["default"].loadCommandWorkflows(cmd.cDevSystemWorkflowsActualPath, apc.cDevClientWorkflowsActualPath);
+  } else if (NODE_ENV === wrd.cproduction) {
+    // console.log('production mode');
+    _warden["default"].loadCommandAliases(cmd.cProdSystemCommandsAliasesActualPath, apc.cProdClientCommandAliasesActualPath);
 
-    _warden["default"].loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+    _warden["default"].loadCommandWorkflows(cmd.cProdSystemWorkflowsActualPath, apc.cProdClientWorkflowsActualPath);
   }
 }
 
@@ -117,31 +130,31 @@ function bootStrapApplicationDeployment() {
  */
 
 function deployApplication() {
-  var functionName = s.cdeployApplication;
+  var functionName = sys.cdeployApplication;
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
   var copyResult;
 
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    _warden["default"].setConfigurationSetting(s.creleaseCompleted, false);
+    _warden["default"].setConfigurationSetting(cfg.creleaseCompleted, false);
 
-    _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    _warden["default"].setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
 
-    _warden["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
+    _warden["default"].setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
 
-    _warden["default"].setConfigurationSetting(s.cSourceResourcesPath, c.cDevelopResourcesPath);
+    _warden["default"].setConfigurationSetting(sys.cSourceResourcesPath, apc.cDevelopResourcesPath);
 
-    _warden["default"].setConfigurationSetting(s.cDestinationResourcesPath, c.cProductionResourcesPath);
+    _warden["default"].setConfigurationSetting(sys.cDestinationResourcesPath, apc.cProductionResourcesPath);
 
-    var appName = b.cDoubleQuote + w.cName + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.name + b.cDoubleQuote;
-    var appVersion = b.cDoubleQuote + w.cVersion + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.version + b.cDoubleQuote;
-    var appDescription = b.cDoubleQuote + w.cDescription + b.cDoubleQuote + b.cColon + b.cSpace + b.cDoubleQuote + pjson.description + b.cDoubleQuote;
+    var appName = bas.cDoubleQuote + wrd.cName + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.name + bas.cDoubleQuote;
+    var appVersion = bas.cDoubleQuote + wrd.cVersion + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.version + bas.cDoubleQuote;
+    var appDescription = bas.cDoubleQuote + wrd.cDescription + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.description + bas.cDoubleQuote;
 
-    _warden["default"].enqueueCommand(s.cdeployMetaData + b.cSpace + appName + b.cComa + appVersion + b.cComa + appDescription);
+    _warden["default"].enqueueCommand(sys.cdeployMetaData + bas.cSpace + appName + bas.cComa + appVersion + bas.cComa + appDescription);
 
-    _warden["default"].enqueueCommand(s.cBuildWorkflow);
+    _warden["default"].enqueueCommand(cmd.cBuildWorkflow);
 
     var commandResult = true;
 
@@ -150,23 +163,23 @@ function deployApplication() {
       commandResult = _warden["default"].processCommandQueue();
     }
 
-    var deploymentResult = _warden["default"].getConfigurationSetting(s.cdeploymentCompleted);
+    var deploymentResult = _warden["default"].getConfigurationSetting(cfg.cdeploymentCompleted);
 
     if (deploymentResult) {
       // Deployment was completed:
-      console.log(s.cBuildMessage1 + deploymentResult);
+      console.log(msg.cBuildMessage1 + deploymentResult);
     } else {
-      console.log(s.cBuildMessage1 + g.cFalse);
+      console.log(msg.cBuildMessage1 + gen.cFalse);
 
-      _warden["default"].setConfigurationSetting(s.cdeploymentCompleted, false);
+      _warden["default"].setConfigurationSetting(cfg.cdeploymentCompleted, false);
     }
   } catch (err) {
     console.error(err); // deploymentCompleted
 
-    _warden["default"].setConfigurationSetting(s.cdeploymentCompleted, false);
+    _warden["default"].setConfigurationSetting(cfg.cdeploymentCompleted, false);
   }
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
 
 ;
@@ -179,24 +192,24 @@ function deployApplication() {
  */
 
 function releaseApplication() {
-  var functionName = s.creleaseApplication;
+  var functionName = sys.creleaseApplication;
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
   var releaseResult;
 
   try {
-    _warden["default"].setConfigurationSetting(s.creleaseCompleted, false);
+    _warden["default"].setConfigurationSetting(cfg.creleaseCompleted, false);
 
-    _warden["default"].setConfigurationSetting(s.cPassAllConstantsValidations, false);
+    _warden["default"].setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
 
-    _warden["default"].setConfigurationSetting(s.cPassedAllCommandAliasesDuplicateChecks, false);
+    _warden["default"].setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
 
-    _warden["default"].setConfigurationSetting(s.cBinaryRootPath, c.cProductionRootPath);
+    _warden["default"].setConfigurationSetting(sys.cBinaryRootPath, apc.cProductionRootPath);
 
-    _warden["default"].setConfigurationSetting(s.cBinaryReleasePath, c.cReleasePath);
+    _warden["default"].setConfigurationSetting(sys.cBinaryReleasePath, apc.cReleasePath);
 
-    _warden["default"].enqueueCommand(s.cReleaseWorkflow);
+    _warden["default"].enqueueCommand(cmd.cReleaseWorkflow);
 
     var commandResult = true;
 
@@ -205,19 +218,21 @@ function releaseApplication() {
       commandResult = _warden["default"].processCommandQueue();
     }
 
-    var _releaseResult = _warden["default"].getConfigurationSetting(s.creleaseCompleted);
+    var _releaseResult = _warden["default"].getConfigurationSetting(cfg.creleaseCompleted);
 
     if (_releaseResult) {
       // Release was completed
-      console.log(s.cBuildMessage1 + _releaseResult);
+      console.log(msg.cBuildMessage2 + _releaseResult);
     } else {
-      console.log(s.cBuildMessage1 + g.cFalse);
+      console.log(msg.cBuildMessage2 + gen.cFalse);
     }
   } catch (err) {
     console.error(err);
+
+    _warden["default"].setConfigurationSetting(cfg.creleaseCompleted, false);
   }
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
 
 ;

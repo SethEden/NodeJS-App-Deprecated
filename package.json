@@ -1,6 +1,6 @@
 {
   "name": "NodeJS-App",
-  "version": "1.5.18",
+  "version": "1.5.20",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "./src/Application/NodeJS-App/application.js",
   "bin": "./bin/Application/NodeJS-App/application.js",
@@ -49,6 +49,7 @@
     "pkg": ">=4.4.9"
   },
   "dependencies": {
+    "adm-zip": "^0.5.3",
     "chalk": "^4.0.0",
     "dotenv": "^8.2.0",
     "figlet": "^1.4.0",
@@ -57,6 +58,7 @@
     "n-readlines": "^1.0.0",
     "papaparse": "^5.2.0",
     "prompt-sync": "^4.2.0",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "zip-a-folder": "0.0.12"
   }
 }

@@ -13,6 +13,7 @@
  * @requires module:generic-constants
  * @requires module:system-constants
  * @requires module:business-constants
+ * @requires module:configurations-constants
  * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -30,6 +31,7 @@ import * as bas from '../../Constants/basic.constants';
 import * as gen from '../../Constants/generic.constants';
 import * as sys from '../../Constants/system.constants';
 import * as biz from '../../Constants/business.constants';
+import * as cfg from '../../Constants/configurations.constants';
 import * as msg from '../../Constants/messages.constants';
 const _ = require('lodash');
 var path = require('path');
@@ -126,13 +128,20 @@ export const convertCamelCaseStringToArray = function(inputData, inputMetaData) 
 export const getWordsArrayFromString = function(inputData, inputMetaData) {
   let functionName = biz.cgetWordsArrayFromString;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = 0;
   if (inputData) {
-    if (strParse.getWordCountInString(inputData, '') > 0) {
+    let wordCount = strParse.getWordCountInString(inputData, '');
+    // wordCount is:
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cwordCountIs + wordCount);
+    if (wordCount > 0) {
       let wordDelimiter = strParse.determineWordDelimiter(inputData, inputMetaData);
+      // wordDelimiter is:
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cwordDelimiterIs + wordDelimiter);
       let stringContainsAcronym = strParse.doesStringContainAcronym(inputData, '');
+      // stringContainsAcronym is:
+      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstringContainsAcronymIs + stringContainsAcronym);
       if (wordDelimiter === sys.cCamelCase && stringContainsAcronym === false) {
         returnData = convertCamelCaseStringToArray(inputData, '');
       } else if (wordDelimiter != '' && wordDelimiter != sys.cCamelCase) {

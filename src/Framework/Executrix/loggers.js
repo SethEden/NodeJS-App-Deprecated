@@ -152,7 +152,7 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
       }
     }
     // console.log('Past the block of code that checks if the setting is true or not.');
-  } else if (configurator.getConfigurationSetting(cfg.cDebugTestExhaustive) === true) {
+  } else if (configurator.getConfigurationSetting(sys.cDebugTestExhaustive) === true) {
     // console.log('else-block the DebugTestExhaustive setting is true');
     outputMessage = ruleBroker.processRules(message, classPath, rules);
     // Debug Exhaustive is probably not the best, we might want to consider another configuration setting to

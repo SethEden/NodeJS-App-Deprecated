@@ -86,6 +86,7 @@ export const phonicsConstantsValidation = [
    {Name: 'celete', Actual: phn.celete, Expected: 'elete'},
    {Name: 'cnner', Actual: phn.cnner, Expected: 'nner'},
    {Name: 'click', Actual: phn.click, Expected: 'lick'},
+   {Name: 'cctr', Actual: phn.cctr, Expected: 'ctr'},
    {Name: 'cctrl', Actual: phn.cctrl, Expected: 'ctrl'},
    {Name: 'cype', Actual: phn.cype, Expected: 'ype'},
    {Name: 'ceql', Actual: phn.ceql, Expected: 'eql'},
@@ -316,6 +317,7 @@ export const phonicsConstantsValidation = [
    {Name: 'clue', Actual: phn.clue, Expected: 'lue'}, // Referance to Tron here! :-P
    {Name: 'cyan', Actual: phn.cyan, Expected: 'yan'},
    {Name: 'cite', Actual: phn.cite, Expected: 'ite'},
+   {Name: 'cang', Actual: phn.cang, Expected: 'ang'},
    {Name: 'cange', Actual: phn.cange, Expected: 'ange'},
    {Name: 'cANGE', Actual: phn.cANGE, Expected: 'ANGE'},
    {Name: 'cost', Actual: phn.cost, Expected: 'ost'},
@@ -552,6 +554,7 @@ export const phonicsConstantsValidation = [
    {Name: 'cture', Actual: phn.cture, Expected: 'ture'},
    {Name: 'crea', Actual: phn.crea, Expected: 'rea'},
    {Name: 'cRea', Actual: phn.cRea, Expected: 'Rea'},
+   {Name: 'cREA', Actual: phn.cREA, Expected: 'REA'},
    {Name: 'ceen', Actual: phn.ceen, Expected: 'een'},
    {Name: 'core', Actual: phn.core, Expected: 'ore'},
    {Name: 'cstd', Actual: phn.cstd, Expected: 'std'},
@@ -1077,5 +1080,9 @@ export const phonicsConstantsValidation = [
    {Name: 'cclr', Actual: phn.cclr, Expected: 'clr'},
    {Name: 'cded', Actual: phn.cded, Expected: 'ded'},
    {Name: 'cbing', Actual: phn.cbing, Expected: 'bing'},
-   {Name: 'ceth', Actual: phn.ceth, Expected: 'eth'}
+   {Name: 'ceth', Actual: phn.ceth, Expected: 'eth'},
+   {Name: 'clang', Actual: phn.clang, Expected: 'lang'},
+   {Name: 'cLang', Actual: phn.cLang, Expected: 'Lang'},
+   {Name: 'cuage', Actual: phn.cuage, Expected: 'uage'},
+   {Name: 'cries', Actual: phn.cries, Expected: 'ries'}
  ];

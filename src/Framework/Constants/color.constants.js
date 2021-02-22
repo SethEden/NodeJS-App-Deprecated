@@ -7,6 +7,8 @@
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
+ * @requires module:languages-constants
+ * @requires module:countries-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -16,11 +18,13 @@ import * as phn from './phonics.constants';
 import * as gen from './generic.constants';
 import * as num from './numeric.constants';
 import * as wrd from './word.constants';
+import * as lng from './languages.constants';
+import * as ctr from './countries.constants';
 
 // NOTE: I changed e-x-p-o-r-t c-o-n-s-t => smuggle something,
 // because the constants validation system is scanning these files looking for that keyword and
 // if it finds it then it will use that line for validation pruposes.
-// So to reverse this, just do a find replace and change // smuggle something back into the other e-x-p-o-r-t c-o-n-s-t string.
+// So to reverse this, just do a find replace and change // s.muggle something back into the other e-x-p-o-r-t c-o-n-s-t string.
 // The current state of the application doesn't need all of these, but future applications will most definately need them.
 // So they are left here as a matter of future-proofing.
 
@@ -172,7 +176,7 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cAntiqueFuchsia = wrd.cAntique + cFuchsia; // AntiqueFuchsia
 // smuggle something cAntiqueRuby = wrd.cAntique + cRuby; // AntiqueRuby
 // smuggle something cAntiqueWhite = wrd.cAntique + cWhite; // AntiqueWhite
-// smuggle something cAoEnglish = bas.cAo + wrd.cEnglish; // AoEnglish
+// smuggle something cAoEnglish = bas.cAo + lng.cEnglish; // AoEnglish
 // smuggle something cAppleGreen = wrd.cApple + cGreen; // AppleGreen
 // smuggle something cAquamarine = cAqua + phn.cmar + phn.cine; // Aquamarine
 // smuggle something cArcticLime = wrd.cArctic + cLime; // ArcticLime
@@ -213,7 +217,7 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cBlackShadows = cBlack + wrd.cShadows; // BlackShadows
 // smuggle something cBlanchedAlmond = wrd.cBlanched + bas.cAl + phn.cmond; // BlanchedAlmond
 // smuggle something cBlastOffBronze = wrd.cBlast + gen.cOff + wrd.cBronze; // BlastOffBronze
-// smuggle something cBleuDeFrance = bas.cBl + bas.ceu + bas.cDe + wrd.cFrance; // BleuDeFrance
+// smuggle something cBleuDeFrance = bas.cBl + bas.ceu + bas.cDe + ctr.cFrance; // BleuDeFrance
 // smuggle something cBlizzardBlue = wrd.cBlizzard + cBlue; // BlizzardBlue
 // smuggle something cBlond = bas.cBl + phn.cond; // Blond
 // smuggle something cBloodRed = wrd.cBlood + cRed; // BloodRed
@@ -311,11 +315,11 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cChartreuseWeb = wrd.cChartreuse + wrd.cWeb; // ChartreuseWeb
 // smuggle something cCherryBlossomPink = cCherry + wrd.cBlossom + cPink; // CherryBlossomPink
 // smuggle something cChestnut = wrd.cChestnut; // Chestnut
-// smuggle something cChinaPink = wrd.cChina + cPink; // ChinaPink
-// smuggle something cChinaRose = wrd.cChina + cRose; // ChinaRose
-// smuggle something cChineseRed = wrd.cChinese + cRed; // ChineseRed
-// smuggle something cChineseViolet = wrd.cChinese + cViolet; // ChineseViolet
-// smuggle something cChineseYellow = wrd.cChinese + cYellow; // ChineseYellow
+// smuggle something cChinaPink = ctr.cChina + cPink; // ChinaPink
+// smuggle something cChinaRose = ctr.cChina + cRose; // ChinaRose
+// smuggle something cChineseRed = lng.cChinese + cRed; // ChineseRed
+// smuggle something cChineseViolet = lng.cChinese + cViolet; // ChineseViolet
+// smuggle something cChineseYellow = lng.cChinese + cYellow; // ChineseYellow
 // smuggle something cChocolateTraditional = wrd.cChocolate + wrd.cTraditional; // ChocolateTraditional
 // smuggle something cChocolateWeb = wrd.cChocolate + wrd.cWeb; // ChocolateWeb
 // smuggle something cChromeYellow = wrd.cChrome + cYellow; // ChromeYellow
@@ -329,7 +333,7 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cCocoaBrown = wrd.cCocoa + cBrown; // CocoaBrown
 // smuggle something cCoffee = wrd.cCoffee; // Coffee
 // smuggle something cColumbiaBlue = wrd.cColumbia + cBlue; // ColumbiaBlue
-// smuggle something cCongoPink = wrd.cCongo + cPink; // CongoPink
+// smuggle something cCongoPink = ctr.cCongo + cPink; // CongoPink
 // smuggle something cCoolGrey = wrd.cCool + cGrey; // CoolGrey
 // smuggle something cCopperCrayola = cCopper + wrd.cCrayola; // CopperCrayola
 // smuggle something cCopperPenny = cCopper + wrd.cPen + bas.cny; // CopperPenny
@@ -410,7 +414,7 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cEerieBlack = wrd.cEerie + cBlack; // EerieBlack
 // smuggle something cEggplant = wrd.cEgg + bas.cpl + phn.cant; // Eggplant
 // smuggle something cEggshell = wrd.cEgg + wrd.cshell; // Eggshell
-// smuggle something cEgyptianBlue = wrd.cEgypt + phn.cian + cBlue; // EgyptianBlue
+// smuggle something cEgyptianBlue = ctr.cEgypt + phn.cian + cBlue; // EgyptianBlue
 // smuggle something cElectricBlue = wrd.cElectric + cBlue; // ElectricBlue
 // smuggle something cElectricGreen = wrd.cElectric + cGreen; // ElectricGreen
 // smuggle something cElectricIndigo = wrd.cElectric + cIndigo; // ElectricIndigo
@@ -419,11 +423,11 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cElectricViolet = wrd.cElectric + cViolet; // ElectricViolet
 // smuggle something cEmerald = bas.cEm + phn.cerald; // Emerald
 // smuggle something cEminence = bas.cEm + phn.cinen + bas.cce; // Eminence
-// smuggle something cEnglishGreen = wrd.cEnglish + cGreen; // EnglishGreen
-// smuggle something cEnglishLavender = wrd.cEnglish + cLavender; // EnglishLavender
-// smuggle something cEnglishRed = wrd.cEnglish + cRed; // EnglishRed
-// smuggle something cEnglishVermillion = wrd.cEnglish + phn.cVer + num.cmillion; // EnglishVermillion
-// smuggle something cEnglishViolet = wrd.cEnglish + cViolet; // EnglishViolet
+// smuggle something cEnglishGreen = lng.cEnglish + cGreen; // EnglishGreen
+// smuggle something cEnglishLavender = lng.cEnglish + cLavender; // EnglishLavender
+// smuggle something cEnglishRed = lng.cEnglish + cRed; // EnglishRed
+// smuggle something cEnglishVermillion = lng.cEnglish + phn.cVer + num.cmillion; // EnglishVermillion
+// smuggle something cEnglishViolet = lng.cEnglish + cViolet; // EnglishViolet
 // smuggle something cErin = bas.cEr + bas.cin; // Erin
 // smuggle something cEtonBlue = wrd.cEton + cBlue; // EtonBlue
 // smuggle something cFallow = bas.cFa + phn.cllow; // Fallow
@@ -446,18 +450,18 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cForestGreenCrayola = wrd.cForest + cGreen + wrd.cCrayola; // ForestGreenCrayola
 // smuggle something cForestGreenTraditional = wrd.cForest + cGreen + wrd.cTraditional; // ForestGreenTraditional
 // smuggle something cForestGreenWeb = wrd.cForest + cGreen + wrd.cWeb; // ForestGreenWeb
-// smuggle something cFrenchBeige = wrd.cFrench + cBeige; // FrenchBeige
-// smuggle something cFrenchBistre = wrd.cFrench + wrd.cBistre; // FrenchBistre
-// smuggle something cFrenchBlue = wrd.cFrench + cBlue; // FrenchBlue
-// smuggle something cFrenchFuchsia = wrd.cFrench + cFuchsia; // FrenchFuchsia
-// smuggle something cFrenchLilac = wrd.cFrench + cLilac; // FrenchLilac
-// smuggle something cFrenchLime = wrd.cFrench + cLime; // FrenchLime
-// smuggle something cFrenchMauve = wrd.cFrench + cMauve; // FrenchMauve
-// smuggle something cFrenchPink = wrd.cFrench + cPink; // FrenchPink
-// smuggle something cFrenchRaspberry = wrd.cFrench + bas.cRa + bas.csp + wrd.cberry; // FrenchRaspberry
-// smuggle something cFrenchRose = wrd.cFrench + cRose; // FrenchRose
-// smuggle something cFrenchSkyBlue = wrd.cFrench + wrd.cSky + cBlue; // FrenchSkyBlue
-// smuggle something cFrenchViolet = wrd.cFrench + cViolet; // FrenchViolet
+// smuggle something cFrenchBeige = lng.cFrench + cBeige; // FrenchBeige
+// smuggle something cFrenchBistre = lng.cFrench + wrd.cBistre; // FrenchBistre
+// smuggle something cFrenchBlue = lng.cFrench + cBlue; // FrenchBlue
+// smuggle something cFrenchFuchsia = lng.cFrench + cFuchsia; // FrenchFuchsia
+// smuggle something cFrenchLilac = lng.cFrench + cLilac; // FrenchLilac
+// smuggle something cFrenchLime = lng.cFrench + cLime; // FrenchLime
+// smuggle something cFrenchMauve = lng.cFrench + cMauve; // FrenchMauve
+// smuggle something cFrenchPink = lng.cFrench + cPink; // FrenchPink
+// smuggle something cFrenchRaspberry = lng.cFrench + bas.cRa + bas.csp + wrd.cberry; // FrenchRaspberry
+// smuggle something cFrenchRose = lng.cFrench + cRose; // FrenchRose
+// smuggle something cFrenchSkyBlue = lng.cFrench + wrd.cSky + cBlue; // FrenchSkyBlue
+// smuggle something cFrenchViolet = lng.cFrench + cViolet; // FrenchViolet
 // smuggle something cFrostbite = wrd.cFrost + wrd.cbite; // Frostbite
 // smuggle something cFuchsiaCrayola = cFuchsia + wrd.cCrayola; // FuchsiaCrayola
 // smuggle something cFuchsiaPurple = cFuchsia + cPurple; // FuchsiaPurple
@@ -530,11 +534,11 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cIris = bas.cIr + bas.cis; // Iris
 // smuggle something cIrresistible = bas.cIr + phn.cres + phn.cist + bas.cib + bas.cle; // Irresistible
 // smuggle something cIsabelline = bas.cIs + bas.cab + phn.cell + phn.cine; // Isabelline
-// smuggle something cItalianSkyBlue = wrd.cItalian + wrd.cSky + cBlue; // ItalianSkyBlue
+// smuggle something cItalianSkyBlue = lng.cItalian + wrd.cSky + cBlue; // ItalianSkyBlue
 // smuggle something cIvory = bas.cIv + bas.cor + bas.cy; // Ivory
 // smuggle something cJade = bas.cJa + bas.cde; // Jade
-// smuggle something cJapaneseCarmine = wrd.cJapanese + wrd.cCarmine; // JapaneseCarmine
-// smuggle something cJapaneseViolet = wrd.cJapanese + cViolet; // JapaneseViolet
+// smuggle something cJapaneseCarmine = lng.cJapanese + wrd.cCarmine; // JapaneseCarmine
+// smuggle something cJapaneseViolet = lng.cJapanese + cViolet; // JapaneseViolet
 // smuggle something cJasmine = bas.cJa + bas.csm + phn.cine; // Jasmine
 // smuggle something cJazzberryJam = wrd.cJazz + wrd.cberry + wrd.cJam; // JazzberryJam
 // smuggle something cJet = bas.cJe + bas.ct; // Jet
@@ -573,7 +577,7 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cLightCoral = wrd.cLight + wrd.cCoral; // LightCoral
 // smuggle something cLightCornflowerBlue = wrd.cLight + phn.cCor + bas.cnf + wrd.clower + cBlue; // LightCornflowerBlue
 // smuggle something cLightCyan = wrd.cLight + cCyan; // LightCyan
-// smuggle something cLightFrenchBeige = wrd.cLight + wrd.cFrench + cBeige; // LightFrenchBeige
+// smuggle something cLightFrenchBeige = wrd.cLight + lng.cFrench + cBeige; // LightFrenchBeige
 // smuggle something cLightGoldenrodYellow = wrd.cLight + cGold + bas.cen + bas.cro + bas.cd + cYellow; // LightGoldenrodYellow
 // smuggle something cLightGray = wrd.cLight + cGray; // LightGray
 // smuggle something cLightGreen = wrd.cLight + cGreen; // LightGreen
@@ -741,7 +745,7 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cOxfordBlue = wrd.cOxford + cBlue; // OxfordBlue
 // smuggle something cOUCrimsonRed = bas.cOU + cCrimson + cRed; // OUCrimsonRed
 // smuggle something cPacificBlue = wrd.cPacific + cBlue; // PacificBlue
-// smuggle something cPakistanGreen = wrd.cPakistan + cGreen; // PakistanGreen
+// smuggle something cPakistanGreen = ctr.cPakistan + cGreen; // PakistanGreen
 // smuggle something cPalatinatePurple = wrd.cPalatinate + cPurple; // PalatinatePurple
 // smuggle something cPaleAqua = wrd.cPale + cAqua; // PaleAqua
 // smuggle something cPaleCerulean = wrd.cPale + bas.cCe + phn.crulean; // PaleCerulean
@@ -871,8 +875,8 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cRubyRed = cRuby + cRed; // RubyRed
 // smuggle something cRufous = bas.cRu + bas.cfo + bas.cus; // Rufous
 // smuggle something cRusset = bas.cRu + bas.css + bas.cet; // Russet
-// smuggle something cRussianGreen = wrd.cRussian + cGreen; // RussianGreen
-// smuggle something cRussianViolet = wrd.cRussian + cViolet; // RussianViolet
+// smuggle something cRussianGreen = lng.cRussian + cGreen; // RussianGreen
+// smuggle something cRussianViolet = lng.cRussian + cViolet; // RussianViolet
 // smuggle something cRust = bas.cRu + bas.cst; // Rust
 // smuggle something cRustyRed = bas.cRu + phn.csty + cRed; // RustyRed
 // smuggle something cSacramentoStateGreen = wrd.cSacramento + wrd.cState + cGreen; // SacramentoStateGreen
@@ -930,17 +934,17 @@ export const cVermilion = bas.cV + phn.cermilion; // Vermilion
 // smuggle something cSolidPink = wrd.cSolid + cPink; // SolidPink
 // smuggle something cSonicSilver = wrd.cSonic + cSilver; // SonicSilver
 // smuggle something cSpaceCadet = wrd.cSpace + wrd.cCadet; // SpaceCadet
-// smuggle something cSpanishBistre = wrd.cSpanish + wrd.cBistre; // SpanishBistre
-// smuggle something cSpanishBlue = wrd.cSpanish + cBlue; // SpanishBlue
-// smuggle something cSpanishCarmine = wrd.cSpanish + wrd.cCarmine; // SpanishCarmine
-// smuggle something cSpanishGray = wrd.cSpanish + cGray; // SpanishGray
-// smuggle something cSpanishGreen = wrd.cSpanish + cGreen; // SpanishGreen
-// smuggle something cSpanishOrange = wrd.cSpanish + cOrange; // SpanishOrange
-// smuggle something cSpanishPink = wrd.cSpanish + cPink; // SpanishPink
-// smuggle something cSpanishRed = wrd.cSpanish + cRed; // SpanishRed
-// smuggle something cSpanishSkyBlue = wrd.cSpanish + wrd.cSky + cBlue; // SpanishSkyBlue
-// smuggle something cSpanishViolet = wrd.cSpanish + cViolet; // SpanishViolet
-// smuggle something cSpanishViridian = wrd.cSpanish + cViridian; // SpanishViridian
+// smuggle something cSpanishBistre = lng.cSpanish + wrd.cBistre; // SpanishBistre
+// smuggle something cSpanishBlue = lng.cSpanish + cBlue; // SpanishBlue
+// smuggle something cSpanishCarmine = lng.cSpanish + wrd.cCarmine; // SpanishCarmine
+// smuggle something cSpanishGray = lng.cSpanish + cGray; // SpanishGray
+// smuggle something cSpanishGreen = lng.cSpanish + cGreen; // SpanishGreen
+// smuggle something cSpanishOrange = lng.cSpanish + cOrange; // SpanishOrange
+// smuggle something cSpanishPink = lng.cSpanish + cPink; // SpanishPink
+// smuggle something cSpanishRed = lng.cSpanish + cRed; // SpanishRed
+// smuggle something cSpanishSkyBlue = lng.cSpanish + wrd.cSky + cBlue; // SpanishSkyBlue
+// smuggle something cSpanishViolet = lng.cSpanish + cViolet; // SpanishViolet
+// smuggle something cSpanishViridian = lng.cSpanish + cViridian; // SpanishViridian
 // smuggle something cSpringBud = wrd.cSpring + wrd.cBud; // SpringBud
 // smuggle something cSpringFrost = wrd.cSpring + wrd.cFrost; // SpringFrost
 // smuggle something cSpringGreen = wrd.cSpring + cGreen; // SpringGreen
