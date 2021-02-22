@@ -1083,6 +1083,12 @@ export const wordConstantsValidation = [
    {Name: 'cColor', Actual: wrd.cColor, Expected: 'Color'},
    {Name: 'ccolors', Actual: wrd.ccolors, Expected: 'colors'},
    {Name: 'cColors', Actual: wrd.cColors, Expected: 'Colors'},
+   {Name: 'ccolored', Actual: wrd.ccolored, Expected: 'colored'},
+   {Name: 'cColored', Actual: wrd.cColored, Expected: 'Colored'},
+   {Name: 'ccolorize', Actual: wrd.ccolorize, Expected: 'colorize'},
+   {Name: 'cColorize', Actual: wrd.cColorize, Expected: 'Colorize'},
+   {Name: 'ccolorized', Actual: wrd.ccolorized, Expected: 'colorized'},
+   {Name: 'cColorized', Actual: wrd.cColorized, Expected: 'Colorized'},
    {Name: 'cold', Actual: wrd.cold, Expected: 'old'},
    {Name: 'cOld', Actual: wrd.cOld, Expected: 'Old'},
    {Name: 'cbold', Actual: wrd.cbold, Expected: 'bold'},
@@ -1987,6 +1993,10 @@ export const wordConstantsValidation = [
    {Name: 'cLanguage', Actual: wrd.cLanguage, Expected: 'Language'},
    {Name: 'clanguages', Actual: wrd.clanguages, Expected: 'languages'},
    {Name: 'cLanguages', Actual: wrd.cLanguages, Expected: 'Languages'},
+   {Name: 'csole', Actual: wrd.csole, Expected: 'sole'},
+   {Name: 'cSole', Actual: wrd.cSole, Expected: 'Sole'},
+   {Name: 'cconsole', Actual: wrd.cconsole, Expected: 'console'},
+   {Name: 'cConsole', Actual: wrd.cConsole, Expected: 'Console'},
    //////////////////////////////////////////////////////////////////
    //////////////////////////////////////////////////////////////////
    {Name: 'cAbsolute', Actual: wrd.cAbsolute, Expected: 'Absolute'},

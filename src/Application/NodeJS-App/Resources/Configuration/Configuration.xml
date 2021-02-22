@@ -21,6 +21,7 @@
         <ConfigurationElement Name="EnableConstantsValidation" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="EnableConstantsPatternGeneration" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="LogFileEnabled" Type="Default" Value="False" Version="3"/>
+        <ConfigurationElement Name="EnableColorizedConsoleLogs" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="IncludeDateTimeStampInLogFiles" Type="Default" Value="True" Version="3"/>
         <ConfigurationElement Name="DisplayIndividualConstantsValidationPassMessages" Type="Default" Value="False" Version="3"/>
         <ConfigurationElement Name="DisplayIndividualConstantsValidationFailMessages" Type="Default" Value="True" Version="3"/>

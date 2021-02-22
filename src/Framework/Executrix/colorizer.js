@@ -8,6 +8,7 @@
  * @requires module:word-constants
  * @requires module:color-constants
  * @requires module:system-constants
+ * @requires module:configurations-constants
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
@@ -20,6 +21,7 @@ import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as clr from '../Constants/color.constants';
 import * as sys from '../Constants/system.constants';
+import * as cfg from '../Constants/configurations.constants';
 var chalk = require('chalk');
 var D = require('../Structures/data');
 
@@ -460,7 +462,10 @@ function setUnderlineFontStyleOnMessageComponentAccordingToSetting(messageCompon
   // console.log('underlineSettingValue is: ' + underlineSettingValue);
   let returnMessageComponent = messageComponent;
   if (underlineSettingValue === true) {
-    returnMessageComponent = chalk.underline(returnMessageComponent);
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+    if (colorizeLogsEnabled === true) {
+      returnMessageComponent = chalk.underline(returnMessageComponent);
+    }
   }
   // console.log('returnMessageComponent is: ' + returnMessageComponent);
   // console.log('END colorizer.setUnderlineFontStyleOnMessageComponentAccordingToSetting function');
@@ -482,7 +487,10 @@ function setBoldFontStyleOnMessageComponentAccordingToSetting(messageComponent, 
   // console.log('boldSettingValue is: ' + boldsettingValue);
   let returnMessageComponent = messageComponent;
   if (boldsettingValue === true) {
-    returnMessageComponent = chalk.bold(returnMessageComponent);
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+    if (colorizeLogsEnabled === true) {
+      returnMessageComponent = chalk.bold(returnMessageComponent);
+    }
   }
   // console.log('returnMessageComponent is: ' + returnMessageComponent);
   // console.log('END colorizer.setBoldFontStyleOnMessageComponentAccordingToSetting function');
@@ -510,7 +518,10 @@ function setFontForgroundColorOnMessageComponentAccordingToSetting(messageCompon
     // console.log('Blue color setting value is: ' + colorSettingValue[clr.cBlue]);
     // console.log('Before using chalk, returnMessageComponent is: ' + returnMessageComponent);
     if (colorSettingValue[clr.cRed] !== undefined && colorSettingValue[clr.cGreen] !== undefined && colorSettingValue[clr.cBlue] !== undefined) {
-      returnMessageComponent = chalk.rgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+      if (colorizeLogsEnabled === true) {
+        returnMessageComponent = chalk.rgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      }
     }
     // console.log('After using chalk, returnMessageComponent is: ' + returnMessageComponent);
   }
@@ -540,7 +551,10 @@ function setFontBackgroundColorOnMessageComponentAccordingToSetting(messageCompo
     // console.log('Blue color setting value is: ' + colorSettingValue[clr.cBlue]);
     // console.log('Before using chalk, returnMessageComponent is: ' + returnMessageComponent);
     if (colorSettingValue[clr.cRed] !== undefined && colorSettingValue[clr.cGreen] !== undefined && colorSettingValue[clr.cBlue] !== undefined) {
-      returnMessageComponent = chalk.bgRgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+      if (colorizeLogsEnabled === true) {
+        returnMessageComponent = chalk.bgRgb(colorSettingValue[clr.cRed], colorSettingValue[clr.cGreen], colorSettingValue[clr.cBlue])(returnMessageComponent);
+      }
     }
     // console.log('After using chalk, returnMessageComponent is: ' + returnMessageComponent);
   }

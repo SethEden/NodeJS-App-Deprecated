@@ -1313,6 +1313,7 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
   if (inputData && inputMetaData) {
     const liner = new lineByLine(inputData);
     let line;
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
 
     while (line = liner.next()) {
       loggers.consoleLog(baseFileName + bas.cDot + functionName, line.toString(gen.cascii));
@@ -1327,23 +1328,29 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
         if (foundConstant === true) {
           if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
             let passMessage = wrd.cPASS + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cPASS;
-            passMessage = chalk.rgb(0,0,0)(passMessage);
-            passMessage = chalk.bgRgb(0,255,0)(passMessage);
+            if (colorizeLogsEnabled === true) {
+              passMessage = chalk.rgb(0,0,0)(passMessage);
+              passMessage = chalk.bgRgb(0,255,0)(passMessage);
+            }
             console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + passMessage);
           }
         } else {
           if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
             let failMessage = wrd.cFAIL + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL;
-            failMessage = chalk.rgb(0,0,0)(failMessage);
-            failMessage = chalk.bgRgb(255,0,0)(failMessage);
+            if (colorizeLogsEnabled === true) {
+              failMessage = chalk.rgb(0,0,0)(failMessage);
+              failMessage = chalk.bgRgb(255,0,0)(failMessage);
+            }
             let qualifiedConstantsPrefix = determineConstantsContextQualifiedPrefix(qualifiedConstantsFilename, '');
             console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + failMessage);
             // loggers.consoleLog(baseFileName + bas.cDot + functionName, wrd.cFAIL + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL);
             // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
             let suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], qualifiedConstantsPrefix);
             if (suggestedLineOfCode !== '') {
-              suggestedLineOfCode = chalk.rgb(0,0,0)(suggestedLineOfCode);
-              suggestedLineOfCode = chalk.bgRgb(255,0,0)(suggestedLineOfCode);
+              if (colorizeLogsEnabled === true) {
+                suggestedLineOfCode = chalk.rgb(0,0,0)(suggestedLineOfCode);
+                suggestedLineOfCode = chalk.bgRgb(255,0,0)(suggestedLineOfCode);
+              }
               // Suggested line of code is:
               console.log(msg.cSuggestedLineOfCodeIs + suggestedLineOfCode);
             }
@@ -1980,6 +1987,7 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
   let returnData = true;
   let passMessage = '';
   if (inputData) {
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
     for (let i = 0; i < D[sys.cConstantsValidationData][inputData].length; i++) {
       passMessage = '';
       let validationLineItem = D[sys.cConstantsValidationData][inputData][i];
@@ -1989,8 +1997,10 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
             // `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
             passMessage = wrd.cPASS + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace +
               validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASS;
-            passMessage = chalk.rgb(0,0,0)(passMessage);
-            passMessage = chalk.bgRgb(0,255,0)(passMessage);
+            if (colorizeLogsEnabled === true) {
+              passMessage = chalk.rgb(0,0,0)(passMessage);
+              passMessage = chalk.bgRgb(0,255,0)(passMessage);
+            }
             console.log(passMessage);
           }
         } else {
@@ -1999,16 +2009,20 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
             // `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
             passMessage = wrd.cFAIL + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace +
               validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAIL;
-            passMessage = chalk.rgb(0,0,0)(passMessage);
-            passMessage = chalk.bgRgb(255,0,0)(passMessage);
+            if (colorizeLogsEnabled === true) {
+              passMessage = chalk.rgb(0,0,0)(passMessage);
+              passMessage = chalk.bgRgb(255,0,0)(passMessage);
+            }
             console.log(passMessage);
           }
         }
       } else {
         // `FAIL -- ${inputData} -- FAIL`
         passMessage = wrd.cFAIL + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAIL;
-        passMessage = chalk.rgb(0,0,0)(passMessage);
-        passMessage = chalk.bgRgb(255,0,0)(passMessage);
+        if (colorizeLogsEnabled === true) {
+          passMessage = chalk.rgb(0,0,0)(passMessage);
+          passMessage = chalk.bgRgb(255,0,0)(passMessage);
+        }
         console.log(passMessage);
       }
     }
@@ -2095,6 +2109,7 @@ export const countDuplicateCommandAliases = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = 0;
   if (inputData && inputMetaData) {
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
 loop1:
     for (let i = 0; i < inputMetaData.length; i++) {
       // BEGIN i-th loop:
@@ -2128,13 +2143,17 @@ loop2:
   if (returnData > 1) {
     // duplicateAliasCount is:
     let duplicateAliasCountMessage = msg.cduplicateAliasCountIs + returnData;
-    duplicateAliasCountMessage = chalk.rgb(0,0,0)(duplicateAliasCountMessage);
-    duplicateAliasCountMessage = chalk.bgRgb(255,0,0)(duplicateAliasCountMessage);
+    if (colorizeLogsEnabled === true) {
+      duplicateAliasCountMessage = chalk.rgb(0,0,0)(duplicateAliasCountMessage);
+      duplicateAliasCountMessage = chalk.bgRgb(255,0,0)(duplicateAliasCountMessage);
+    }
     console.log(duplicateAliasCountMessage);
     // duplicate command alias is:
     let duplicateAliasCommandMessage = msg.cduplicateCommandAliasIs + inputData;
-    duplicateAliasCommandMessage = chalk.rgb(0,0,0)(duplicateAliasCommandMessage);
-    duplicateAliasCommandMessage = chalk.bgRgb(255,0,0)(duplicateAliasCommandMessage);
+    if (colorizeLogsEnabled === true) {
+      duplicateAliasCommandMessage = chalk.rgb(0,0,0)(duplicateAliasCommandMessage);
+      duplicateAliasCommandMessage = chalk.bgRgb(255,0,0)(duplicateAliasCommandMessage);
+    }
     console.log(duplicateAliasCommandMessage);
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
