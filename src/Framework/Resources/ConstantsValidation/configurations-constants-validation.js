@@ -37,6 +37,7 @@ import * as cfg from '../../Constants/configurations.constants';
    {Name: 'cPassedAllCommandAliasesDuplicateChecks', Actual: cfg.cPassedAllCommandAliasesDuplicateChecks, Expected: 'PassedAllCommandAliasesDuplicateChecks'},
    {Name: 'cdeploymentCompleted', Actual: cfg.cdeploymentCompleted, Expected: 'deploymentCompleted'},
    {Name: 'creleaseCompleted', Actual: cfg.creleaseCompleted, Expected: 'releaseCompleted'},
+   {Name: 'cEnableColorizedConsoleLogs', Actual: cfg.cEnableColorizedConsoleLogs, Expected: 'EnableColorizedConsoleLogs'},
 
    // Test Time Tracking
    {Name: 'cBeginDateTimeStamp', Actual: cfg.cBeginDateTimeStamp, Expected: 'BeginDateTimeStamp'},

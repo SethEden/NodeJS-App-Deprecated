@@ -1083,6 +1083,12 @@ export const ccolor = phn.ccol + bas.cor; // color
 export const cColor = phn.cCol + bas.cor; // Color
 export const ccolors = ccolor + bas.cs; // colors
 export const cColors = cColor + bas.cs; // Colors
+export const ccolored = ccolor + bas.ced; // colored
+export const cColored = cColor + bas.ced; // Colored
+export const ccolorize = ccolor + phn.cize; // colorize
+export const cColorize = cColor + phn.cize; // Colorize
+export const ccolorized = ccolorize + bas.cd; // colorized
+export const cColorized = cColorize + bas.cd; // Colorized
 export const cold = bas.col + bas.cd; // old
 export const cOld = bas.cOl + bas.cd; // Old
 export const cbold = bas.cb + cold; // bold
@@ -1987,6 +1993,10 @@ export const clanguage = phn.clang + phn.cuage; // language
 export const cLanguage = phn.cLang + phn.cuage; // Language
 export const clanguages = clanguage + bas.cs; // languages
 export const cLanguages = cLanguage + bas.cs; // Languages
+export const csole = bas.cs + phn.cole; // sole
+export const cSole = bas.cS + phn.cole; // Sole
+export const cconsole = phn.ccon + csole; // console
+export const cConsole = phn.cCon + csole; // Console
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 export const cAbsolute = bas.cAb + phn.csol + phn.cute; // Absolute

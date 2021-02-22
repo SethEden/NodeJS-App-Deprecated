@@ -35,6 +35,7 @@ export const cPassAllConstantsValidations = wrd.cPass + wrd.cAll + wrd.cConstant
 export const cPassedAllCommandAliasesDuplicateChecks = wrd.cPassed + wrd.cAll + wrd.cCommand + wrd.cAliases + wrd.cDuplicate + wrd.cChecks
 export const cdeploymentCompleted = wrd.cdeployment + wrd.cCompleted; // deploymentCompleted
 export const creleaseCompleted = wrd.crelease + wrd.cCompleted; // releaseCompleted
+export const cEnableColorizedConsoleLogs = wrd.cEnable + wrd.cColorized + wrd.cConsole + wrd.cLogs; // EnableColorizedConsoleLogs
 
 // Test Time Tracking
 export const cBeginDateTimeStamp = wrd.cBegin + sys.cDateTimeStamp; // BeginDateTimeStamp
