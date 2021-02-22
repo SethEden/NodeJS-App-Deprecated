@@ -8,11 +8,14 @@
  * Of course most of the detailed work is handed off to the application framework.
  * @requires module:warden
  * @requires module:clientRulesLibrary
+ * @requires module:clientCommandsLibrary
  * @requires module:application-constants
  * @requires module:basic-constants
- * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:configurations-constants
+ * @requires module:messages-constants
+ * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -23,16 +26,18 @@
 import warden from '../../Framework/Controllers/warden';
 import clientRules from './BusinessRules/clientRulesLibrary';
 import clientCommands from './Commands/clientCommandsLibrary';
-import * as c from './Constants/application.constants';
-import * as b from '../../Framework/Constants/basic.constants';
-import * as g from '../../Framework/Constants/generic.constants';
-import * as w from '../../Framework/Constants/word.constants';
-import * as s from '../../Framework/Constants/system.constants';
+import * as bas from '../../Framework/Constants/basic.constants';
+import * as wrd from '../../Framework/Constants/word.constants';
+import * as sys from '../../Framework/Constants/system.constants';
+import * as cmd from '../../Framework/Constants/commands.constants';
+import * as cfg from '../../Framework/Constants/configurations.constants';
+import * as msg from '../../Framework/Constants/messages.constants';
+import * as apc from './Constants/application.constants';
 require('dotenv').config();
 const {NODE_ENV} = process.env;
 const prompt = require('prompt-sync')();
 var path = require('path');
-var D = require('../../Framework/Resources/data');
+var D = require('../../Framework/Structures/data');
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -45,27 +50,28 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  * @date 2020/01/30
  */
 function bootStrapApplication() {
-  if (NODE_ENV === w.cdevelopment) {
-    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
-  } else if (NODE_ENV === w.cproduction) {
-    rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  if (NODE_ENV === wrd.cdevelopment) {
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationDevelopRootPath;
+  } else if (NODE_ENV === wrd.cproduction) {
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationProductionRootPath;
   } else {
-    console.log('WARNING: No .env file found! going to default to the DEVELOPMENT ENVIRONMENT!!!!!!!!!')
-    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
+    // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
+    console.log(sys.cApplicationWarningMessage1a + sys.ccApplicationWarningMessage1b);
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationDevelopRootPath;
   }
   // console.log('rootPath is: ' + rootPath);
   rootPath = warden.processRootPath(rootPath);
   // console.log('processed rootPath is: ' + rootPath);
-  warden.bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
+  warden.bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
   warden.saveRootPath(rootPath);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
-  if (NODE_ENV === w.cdevelopment) {
-    warden.loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
-    warden.loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
-  } else if (NODE_ENV === w.cproduction) {
-    warden.loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
-    warden.loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+  if (NODE_ENV === wrd.cdevelopment) {
+    warden.loadCommandAliases(cmd.cDevSystemCommandsAliasesActualPath, apc.cDevClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(cmd.cDevSystemWorkflowsActualPath, apc.cDevClientWorkflowsActualPath);
+  } else if (NODE_ENV === wrd.cproduction) {
+    warden.loadCommandAliases(cmd.cProdSystemCommandsAliasesActualPath, apc.cProdClientCommandAliasesActualPath);
+    warden.loadCommandWorkflows(cmd.cProdSystemWorkflowsActualPath, apc.cProdClientWorkflowsActualPath);
   }
 };
 
@@ -77,15 +83,17 @@ function bootStrapApplication() {
  * @date 2020/05/21
  */
 function application() {
-  let functionName = w.capplication;
+  let functionName = wrd.capplication;
   let argumentDrivenInterface = true;
   let commandInput;
   let commandResult;
-  warden.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN main program loop');
-  warden.consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
-  argumentDrivenInterface = warden.getConfigurationSetting(s.cArgumentDrivenInterface);
-  warden.enqueueCommand(s.cStartupWorkflow);
+  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  // BEGIN main program loop
+  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage2);
+  // BEGIN command parser
+  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage3);
+  argumentDrivenInterface = warden.getConfigurationSetting(cfg.cArgumentDrivenInterface);
+  warden.enqueueCommand(cmd.cStartupWorkflow);
 
   // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
@@ -105,10 +113,10 @@ function application() {
 
   // NOW process the command args and add them to the command queue for execution.
   if (!process.argv && process.argv.length > 0) {
-    if (process.argv[2].includes(b.cDash) === true ||
-    process.argv[2].includes(b.cForwardSlash) === true ||
-    process.argv[2].includes(b.cBackSlash) === true) {
-      commandToExecute = warden.executeBusinessRule(s.caggregateCommandArguments, process.argv, '');
+    if (process.argv[2].includes(bas.cDash) === true ||
+    process.argv[2].includes(bas.cForwardSlash) === true ||
+    process.argv[2].includes(bas.cBackSlash) === true) {
+      commandToExecute = warden.executeBusinessRule(biz.caggregateCommandArguments, process.argv, '');
     }
     warden.enqueueCommand(commandToExecute);
     while(warden.isCommandQueueEmpty() === false) {
@@ -120,16 +128,18 @@ function application() {
   if (argumentDrivenInterface === false) {
     while(programRunning === true) {
       if (warden.isCommandQueueEmpty() === true) {
-        commandInput = prompt(b.cGreaterThan);
+        commandInput = prompt(bas.cGreaterThan);
         warden.enqueueCommand(commandInput);
       }
       commandResult = warden.processCommandQueue();
       if (commandResult === false) {
-        warden.consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
+        // END command parser
+        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage4);
         programRunning = false;
-        warden.consoleLog(baseFileName + b.cDot + functionName, 'END main program loop');
-        // console.log('Exiting, Good bye, Have a nice day & stay safe!');
-        warden.consoleLog(baseFileName + b.cDot + functionName, 'Exiting, Good bye, Have a nice day & stay safe!');
+        // END main program loop
+        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage5);
+        // Exiting, Good bye, Have a nice day & stay safe!
+        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
         break;
       } else {
         // console.log('contents of D are: ' + JSON.stringify(D));
@@ -137,7 +147,7 @@ function application() {
       }
     }
   }
-  warden.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 // Launch the application!!

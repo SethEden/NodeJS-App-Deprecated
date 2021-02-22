@@ -1,5 +1,5 @@
 /**
- * @file units.constants-validation.js
+ * @file units-constants-validation.js
  * @module units-constants-validation
  * @description Contains validations for many unit & unit conversion constants.
  * Also included are validations for units of measurement, units of time, etc...
@@ -8,7 +8,7 @@
  * @date 2020/07/23
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as u from '../../Constants/units.constants';
+import * as unt from '../../Constants/units.constants';
 
  /**
  * @function unitsConstantsValidation
@@ -19,48 +19,48 @@ import * as u from '../../Constants/units.constants';
  */
 export const unitsConstantsValidation = [
    // Units of Measure
-   {Name: 'cFemto', Actual: u.cFemto, Expected: 'Femto'},
-   {Name: 'cPico', Actual: u.cPico, Expected: 'Pico'},
-   {Name: 'cNano', Actual: u.cNano, Expected: 'Nano'},
-   {Name: 'cMicro', Actual: u.cMicro, Expected: 'Micro'},
-   {Name: 'cMill', Actual: u.cMill, Expected: 'Mill'},
-   {Name: 'cMilli', Actual: u.cMilli, Expected: 'Milli'},
+   {Name: 'cFemto', Actual: unt.cFemto, Expected: 'Femto'},
+   {Name: 'cPico', Actual: unt.cPico, Expected: 'Pico'},
+   {Name: 'cNano', Actual: unt.cNano, Expected: 'Nano'},
+   {Name: 'cMicro', Actual: unt.cMicro, Expected: 'Micro'},
+   {Name: 'cMill', Actual: unt.cMill, Expected: 'Mill'},
+   {Name: 'cMilli', Actual: unt.cMilli, Expected: 'Milli'},
 
    // Units of Time
-   {Name: 'csecond', Actual: u.csecond, Expected: 'second'},
-   {Name: 'cSecond', Actual: u.cSecond, Expected: 'Second'},
-   {Name: 'cSeconds', Actual: u.cSeconds, Expected: 'Seconds'},
-   {Name: 'cMinute', Actual: u.cMinute, Expected: 'Minute'},
-   {Name: 'cMinutes', Actual: u.cMinutes, Expected: 'Minutes'},
-   {Name: 'cHour', Actual: u.cHour, Expected: 'Hour'},
-   {Name: 'cHours', Actual: u.cHours, Expected: 'Hours'},
-   {Name: 'cDay', Actual: u.cDay, Expected: 'Day'},
-   {Name: 'cDays', Actual: u.cDays, Expected: 'Days'},
-   {Name: 'cWeek', Actual: u.cWeek, Expected: 'Week'},
-   {Name: 'cWeeks', Actual: u.cWeeks, Expected: 'Weeks'},
-   {Name: 'cMonth', Actual: u.cMonth, Expected: 'Month'},
-   {Name: 'cMonths', Actual: u.cMonths, Expected: 'Months'},
-   {Name: 'cYear', Actual: u.cYear, Expected: 'Year'},
-   {Name: 'cYears', Actual: u.cYears, Expected: 'Years'},
-   {Name: 'cDecade', Actual: u.cDecade, Expected: 'Decade'},
-   {Name: 'cDecades', Actual: u.cDecades, Expected: 'Decades'},
-   {Name: 'ccent', Actual: u.ccent, Expected: 'cent'},
-   {Name: 'cCent', Actual: u.cCent, Expected: 'Cent'},
-   {Name: 'cCentur', Actual: u.cCentur, Expected: 'Centur'},
-   {Name: 'cCentury', Actual: u.cCentury, Expected: 'Century'},
-   {Name: 'cCenturies', Actual: u.cCenturies, Expected: 'Centuries'},
-   {Name: 'cMillennium', Actual: u.cMillennium, Expected: 'Millennium'}, // Millennium Falcon ;-)
-   {Name: 'cMillenniums', Actual: u.cMillenniums, Expected: 'Millenniums'},
-   {Name: 'cNanoSecond', Actual: u.cNanoSecond, Expected: 'NanoSecond'},
-   {Name: 'cNanoSeconds', Actual: u.cNanoSeconds, Expected: 'NanoSeconds'},
-   {Name: 'cMicroSecond', Actual: u.cMicroSecond, Expected: 'MicroSecond'},
-   {Name: 'cMicroSeconds', Actual: u.cMicroSeconds, Expected: 'MicroSeconds'},
-   {Name: 'cMilliSecond', Actual: u.cMilliSecond, Expected: 'MilliSecond'},
-   {Name: 'cMilliSeconds', Actual: u.cMilliSeconds, Expected: 'MilliSeconds'},
-   {Name: 'cPicoSecond', Actual: u.cPicoSecond, Expected: 'PicoSecond'},
-   {Name: 'cPicoSeconds', Actual: u.cPicoSeconds, Expected: 'PicoSeconds'},
-   {Name: 'cFemtoSecond', Actual: u.cFemtoSecond, Expected: 'FemtoSecond'},
-   {Name: 'cFemtoSeconds', Actual: u.cFemtoSeconds, Expected: 'FemtoSeconds'}
+   {Name: 'csecond', Actual: unt.csecond, Expected: 'second'},
+   {Name: 'cSecond', Actual: unt.cSecond, Expected: 'Second'},
+   {Name: 'cSeconds', Actual: unt.cSeconds, Expected: 'Seconds'},
+   {Name: 'cMinute', Actual: unt.cMinute, Expected: 'Minute'},
+   {Name: 'cMinutes', Actual: unt.cMinutes, Expected: 'Minutes'},
+   {Name: 'cHour', Actual: unt.cHour, Expected: 'Hour'},
+   {Name: 'cHours', Actual: unt.cHours, Expected: 'Hours'},
+   {Name: 'cDay', Actual: unt.cDay, Expected: 'Day'},
+   {Name: 'cDays', Actual: unt.cDays, Expected: 'Days'},
+   {Name: 'cWeek', Actual: unt.cWeek, Expected: 'Week'},
+   {Name: 'cWeeks', Actual: unt.cWeeks, Expected: 'Weeks'},
+   {Name: 'cMonth', Actual: unt.cMonth, Expected: 'Month'},
+   {Name: 'cMonths', Actual: unt.cMonths, Expected: 'Months'},
+   {Name: 'cYear', Actual: unt.cYear, Expected: 'Year'},
+   {Name: 'cYears', Actual: unt.cYears, Expected: 'Years'},
+   {Name: 'cDecade', Actual: unt.cDecade, Expected: 'Decade'},
+   {Name: 'cDecades', Actual: unt.cDecades, Expected: 'Decades'},
+   {Name: 'ccent', Actual: unt.ccent, Expected: 'cent'},
+   {Name: 'cCent', Actual: unt.cCent, Expected: 'Cent'},
+   {Name: 'cCentur', Actual: unt.cCentur, Expected: 'Centur'},
+   {Name: 'cCentury', Actual: unt.cCentury, Expected: 'Century'},
+   {Name: 'cCenturies', Actual: unt.cCenturies, Expected: 'Centuries'},
+   {Name: 'cMillennium', Actual: unt.cMillennium, Expected: 'Millennium'}, // Millennium Falcon ;-)
+   {Name: 'cMillenniums', Actual: unt.cMillenniums, Expected: 'Millenniums'},
+   {Name: 'cNanoSecond', Actual: unt.cNanoSecond, Expected: 'NanoSecond'},
+   {Name: 'cNanoSeconds', Actual: unt.cNanoSeconds, Expected: 'NanoSeconds'},
+   {Name: 'cMicroSecond', Actual: unt.cMicroSecond, Expected: 'MicroSecond'},
+   {Name: 'cMicroSeconds', Actual: unt.cMicroSeconds, Expected: 'MicroSeconds'},
+   {Name: 'cMilliSecond', Actual: unt.cMilliSecond, Expected: 'MilliSecond'},
+   {Name: 'cMilliSeconds', Actual: unt.cMilliSeconds, Expected: 'MilliSeconds'},
+   {Name: 'cPicoSecond', Actual: unt.cPicoSecond, Expected: 'PicoSecond'},
+   {Name: 'cPicoSeconds', Actual: unt.cPicoSeconds, Expected: 'PicoSeconds'},
+   {Name: 'cFemtoSecond', Actual: unt.cFemtoSecond, Expected: 'FemtoSecond'},
+   {Name: 'cFemtoSeconds', Actual: unt.cFemtoSeconds, Expected: 'FemtoSeconds'}
 
    // Unit Conversions
    // Miles to Km

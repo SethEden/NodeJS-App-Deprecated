@@ -13,11 +13,19 @@ var _colorizer = _interopRequireDefault(require("./colorizer"));
 
 var _ruleBroker = _interopRequireDefault(require("../BusinessRules/ruleBroker"));
 
-var b = _interopRequireWildcard(require("../Constants/basic.constants"));
+var _timers = _interopRequireDefault(require("./timers"));
 
-var w = _interopRequireWildcard(require("../Constants/word.constants"));
+var bas = _interopRequireWildcard(require("../Constants/basic.constants"));
 
-var s = _interopRequireWildcard(require("../Constants/system.constants"));
+var gen = _interopRequireWildcard(require("../Constants/generic.constants"));
+
+var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
+
+var sys = _interopRequireWildcard(require("../Constants/system.constants"));
+
+var biz = _interopRequireWildcard(require("../Constants/business.constants"));
+
+var cfg = _interopRequireWildcard(require("../Constants/configurations.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -35,10 +43,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:configurator
  * @requires module:colorizer
  * @requires module:ruleBroker
+ * @requires module:timers
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
@@ -47,9 +59,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var fs = require('fs');
 
+var path = require('path');
+
 var chalk = require('chalk');
 
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 /**
  * @function consoleLog
  * @description compares the class path to a series of configuration settings to determine
@@ -68,19 +82,20 @@ var D = require('../Resources/data');
 
 function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
-    var logFile = _configurator["default"].getConfigurationSetting(s.cApplicationRootPath);
+    var logFile = _configurator["default"].getConfigurationSetting(sys.cApplicationCleanedRootPath);
 
     if (logFile !== undefined) {
-      // console.log('logFile is !== undefined');
+      logFile = logFile + bas.cForwardSlash + wrd.clogs; // console.log('logFile is !== undefined');
+
       var debugSetting = false;
       var outputMessage = '';
       var _rules = {};
-      _rules[1] = s.creplaceDoublePercentWithMessage;
-      logFile = logFile + _configurator["default"].getConfigurationSetting(s.cLogFilePathAndName); // console.log('determine if there is a configuration setting for the class path');
+      _rules[0] = biz.creplaceDoublePercentWithMessage;
+      logFile = path.resolve(logFile + bas.cForwardSlash + _configurator["default"].getConfigurationSetting(sys.cLogFilePathAndName)); // console.log('determine if there is a configuration setting for the class path');
 
       debugSetting = _configurator["default"].getConfigurationSetting(classPath); // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
 
-      if (logFile.indexOf('txt') !== -1) {
+      if (logFile.toUpperCase().includes(gen.cLOG) || logFile.toUpperCase().includes(gen.cTXT)) {
         // If we have a log file then we will log it to the console & file.
         consoleLogProcess(debugSetting, logFile, classPath, message, true);
       } else {
@@ -121,18 +136,28 @@ function consoleTableLog(classPath, tableData, columnNames) {
 function constantsValidationSummaryLog(message, passFail) {
   var outputMessage = '';
 
+  var colorizeLogsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+
   if (passFail === true) {
-    if (_configurator["default"].getConfigurationSetting(s.cDisplaySummaryConstantsValidationPassMessages) === true) {
-      outputMessage = "PASSED -- ".concat(message, " -- PASSED");
-      outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
-      outputMessage = chalk.bgRgb(0, 255, 0)(outputMessage);
+    if (_configurator["default"].getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationPassMessages) === true) {
+      outputMessage = wrd.cPASSED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASSED; // `PASSED -- ${message} -- PASSED`;
+
+      if (colorizeLogsEnabled === true) {
+        outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
+        outputMessage = chalk.bgRgb(0, 255, 0)(outputMessage);
+      }
+
       console.log(outputMessage);
     }
   } else {
-    if (_configurator["default"].getConfigurationSetting(s.cDisplaySummaryConstantsValidationFailMessages) === true) {
-      outputMessage = "FAILED -- ".concat(message, " -- FAILED");
-      outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
-      outputMessage = chalk.bgRgb(255, 0, 0)(outputMessage);
+    if (_configurator["default"].getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationFailMessages) === true) {
+      outputMessage = wrd.cFAILED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAILED; // `FAILED -- ${message} -- FAILED`;
+
+      if (colorizeLogsEnabled === true) {
+        outputMessage = chalk.rgb(0, 0, 0)(outputMessage);
+        outputMessage = chalk.bgRgb(255, 0, 0)(outputMessage);
+      }
+
       console.log(outputMessage);
     }
   }
@@ -176,7 +201,7 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
       }
     } // console.log('Past the block of code that checks if the setting is true or not.');
 
-  } else if (_configurator["default"].getConfigurationSetting(s.cDebugTestExhaustive) === true) {
+  } else if (_configurator["default"].getConfigurationSetting(sys.cDebugTestExhaustive) === true) {
     // console.log('else-block the DebugTestExhaustive setting is true');
     outputMessage = _ruleBroker["default"].processRules(message, classPath, rules); // Debug Exhaustive is probably not the best, we might want to consider another configuration setting to
     // enable or disable the console specifically. Right now there is no real business need for it.
@@ -247,7 +272,7 @@ function validMessage(outputMessage, originalMessage) {
 
   if (outputMessage !== false && outputMessage !== originalMessage) {
     returnValue = true;
-  } else if (outputMessage !== false && outputMessage.includes(b.cPercent + b.cPercent) === false) {
+  } else if (outputMessage !== false && outputMessage.includes(bas.cPercent + bas.cPercent) === false) {
     returnValue = true;
   } // console.log('returnValue is: ' + returnValue);
   // console.log('END loggers.validMessage');
@@ -279,7 +304,7 @@ function parseClassPath(logFile, classPath, message) {
   var debugFilesSetting = false;
   var classPathArray = {};
   var returnData = '';
-  classPathArray = classPath.split(b.cDot); // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
+  classPathArray = classPath.split(bas.cDot); // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
   // printMessageToFile(logFile, 'classPathArray.length is: ' + Object.keys(classPathArray).length);
   // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
   // console.log('classPathArray.length is: ' + Object.keys(classPathArray).length);
@@ -287,7 +312,7 @@ function parseClassPath(logFile, classPath, message) {
   if (Object.keys(classPathArray).length > 3) {// printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
     // console.log('ERROR: Advanced debugging capability more than 3 not supported at all!');
   } else if (Object.keys(classPathArray).length === 3) {
-    className = classPathArray[0] + b.cDot + classPathArray[1]; // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
+    className = classPathArray[0] + bas.cDot + classPathArray[1]; // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
     // printMessageToFile(logFile, 'className is: ' + className);
     // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
     // console.log('className is: ' + className);
@@ -305,22 +330,22 @@ function parseClassPath(logFile, classPath, message) {
     // console.log('className is: ' + className);
   } else {} // printMessageToFile(logFile, 'ERROR: No class data, just print the message as is.');
     // console.log('ERROR: No class data, just print the message as is.');
-    // printMessageToFile(logFile, 'getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
-    // console.log('getting configuration setting value for: ' + s.cDebugFunctions + b.cPipe + className + b.cDot + functionName);
+    // printMessageToFile(logFile, 'getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
+    // console.log('getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
 
 
-  debugFunctionsSetting = _configurator["default"].getConfigurationSetting(s.cDebugFunctions + b.cPipe + className + b.cDot + functionName); // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
+  debugFunctionsSetting = _configurator["default"].getConfigurationSetting(sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName); // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
   // console.log('configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
 
-  debugFilesSetting = _configurator["default"].getConfigurationSetting(s.cDebugFiles + b.cPipe + className); // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
+  debugFilesSetting = _configurator["default"].getConfigurationSetting(sys.cDebugFiles + bas.cPipe + className); // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
   // console.log('configuration setting debugFilesSetting is: ' + debugFilesSetting);
 
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
     // message = chalk.white(message);
     // className = chalk.red.bold(className);
     // functionName = chalk.red.bold(functionName);
-    // // message = message.replace('%%', className + b.cDot + functionName);
-    // return ruleBroker.processRules(message, className + b.cDot + functionName, rules);
+    // // message = message.replace('%%', className + bas.cDot + functionName);
+    // return ruleBroker.processRules(message, className + bas.cDot + functionName, rules);
     // console.log('both true, call colorizer.colorizeMessage with the false flag');
     message = _colorizer["default"].colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
     returnData = message;
@@ -352,43 +377,51 @@ function parseClassPath(logFile, classPath, message) {
 function printMessageToFile(file, message) {
   // console.log('BEGIN loggers.printMessageToFile function');
   // console.log('file is: ' + file);
-  console.log(message);
+  // console.log(message);
   var fd;
+  var dateTimeStamp = ''; // let currentOS = configurator.getConfigurationSetting(sys.cOperatingSystem);
+  // if (currentOS === wrd.cWindows || currentOS === wrd.cLinux) {
 
-  var currentOS = _configurator["default"].getConfigurationSetting(s.cOperatingSystem);
+  if (_configurator["default"].getConfigurationSetting(sys.cLogFileEnabled) === true) {
+    // console.log('LogFileEnabled = true');
+    message = _colorizer["default"].removeFontStyles(message);
 
-  if (currentOS === w.cWindows || currentOS === w.cLinux) {
-    if (_configurator["default"].getConfigurationSetting(s.cLogFileEnabled) === true) {
-      try {
-        fd = fs.openSync(file, 'a');
-        fs.appendFileSync(fd, message + b.cCarriageReturn + b.cNewLine, 'utf8');
-      } catch (err) {
-        return console.log(err);
-      } finally {
-        if (fd !== undefined) {
-          fs.closeSync(fd);
-        }
-      } // // console.log('writing message to file: ' + file + ' message: ' + message);
-      // fs.appendFile(file, message + b.cCarriageReturn + b.cNewLine, 'utf8', function(err) {
-      //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
-      //   if (err) { return console.log(err); }
-      // });
+    if (_configurator["default"].getConfigurationSetting(sys.cIncludeDateTimeStampInLogFiles) === true) {
+      // Individual messages need to have a time stamp on them. So lets sign the message with a time stamp.
+      dateTimeStamp = _timers["default"].getNowMoment(gen.cYYYY_MM_DD_HH_mm_ss_SSS); // console.log('dateTimeStamp is: ' + dateTimeStamp);
 
-    } else {// console.log('ERROR: Failure to log to file: ' + file);
+      message = dateTimeStamp + bas.cColon + bas.cSpace + message;
+    } // console.log('final Message is: ' + message);
+
+
+    try {
+      fd = fs.openSync(file, 'a');
+      fs.appendFileSync(fd, message + bas.cCarriageReturn + bas.cNewLine, gen.cUTF8);
+    } catch (err) {
+      return console.log(err);
+    } finally {
+      if (fd !== undefined) {
+        fs.closeSync(fd);
       }
-  } else {
-    console.log('ERROR: Invalid OS: ' + currentOS);
-  } // console.log('END loggers.printMessageToFile function');
-  // let fd;
-  // try {
-  //   fd = fs.openSync('message.txt', 'a');
-  //   fs.appendFileSync(fd, 'data to append', 'utf8');
-  // } catch (err) {
-  //   /* Handle the error */
-  // } finally {
-  //   if (fd !== undefined)
-  //     fs.closeSync(fd);
-  // }
+    } // // console.log('writing message to file: ' + file + ' message: ' + message);
+    // fs.appendFile(file, message + bas.cCarriageReturn + bas.cNewLine, 'utf8', function(err) {
+    //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
+    //   if (err) { return console.log(err); }
+    // });
+
+  } else {} // console.log('ERROR: Failure to log to file: ' + file);
+    // } else { console.log('ERROR: Invalid OS: ' + currentOS); }
+    // console.log('END loggers.printMessageToFile function');
+    // let fd;
+    // try {
+    //   fd = fs.openSync('message.txt', 'a');
+    //   fs.appendFileSync(fd, 'data to append', 'utf8');
+    // } catch (err) {
+    //   /* Handle the error */
+    // } finally {
+    //   if (fd !== undefined)
+    //     fs.closeSync(fd);
+    // }
 
 }
 

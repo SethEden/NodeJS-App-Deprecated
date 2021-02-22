@@ -9,7 +9,7 @@ exports["default"] = exports.initClientCommandsLibrary = void 0;
 
 var clientCommands = _interopRequireWildcard(require("./ClientCommands/clientCommands"));
 
-var c = _interopRequireWildcard(require("../Constants/application.constants"));
+var apc = _interopRequireWildcard(require("../Constants/application.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -27,7 +27,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var initClientCommandsLibrary = function initClientCommandsLibrary() {
   // console.log('BEGIN clientCommandsLibrary.initClientCommandsLibrary function');
   // console.log('END clientCommandsLibrary.initClientCommandsLibrary function');
-  return _defineProperty({}, c.ccustomEchoCommand, function (inputData, inputMetaData) {
+  return _defineProperty({}, apc.ccustomEchoCommand, function (inputData, inputMetaData) {
     return clientCommands.customEchoCommand(inputData, inputMetaData);
   });
 };

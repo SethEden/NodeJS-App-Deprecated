@@ -8,11 +8,14 @@
  * Of course most of the detailed work is handed off to the application framework.
  * @requires module:warden
  * @requires module:clientRulesLibrary
+ * @requires module:clientCommandsLibrary
  * @requires module:application-constants
  * @requires module:basic-constants
- * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:configurations-constants
+ * @requires module:messages-constants
+ * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -30,15 +33,19 @@ var _clientRulesLibrary = _interopRequireDefault(require("./BusinessRules/client
 
 var _clientCommandsLibrary = _interopRequireDefault(require("./Commands/clientCommandsLibrary"));
 
-var c = _interopRequireWildcard(require("./Constants/application.constants"));
+var bas = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
 
-var b = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
+var wrd = _interopRequireWildcard(require("../../Framework/Constants/word.constants"));
 
-var g = _interopRequireWildcard(require("../../Framework/Constants/generic.constants"));
+var sys = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
 
-var w = _interopRequireWildcard(require("../../Framework/Constants/word.constants"));
+var cmd = _interopRequireWildcard(require("../../Framework/Constants/commands.constants"));
 
-var s = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
+var cfg = _interopRequireWildcard(require("../../Framework/Constants/configurations.constants"));
+
+var msg = _interopRequireWildcard(require("../../Framework/Constants/messages.constants"));
+
+var apc = _interopRequireWildcard(require("./Constants/application.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -54,7 +61,7 @@ var prompt = require('prompt-sync')();
 
 var path = require('path');
 
-var D = require('../../Framework/Resources/data');
+var D = require('../../Framework/Structures/data');
 
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
@@ -68,19 +75,20 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function bootStrapApplication() {
-  if (NODE_ENV === w.cdevelopment) {
-    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
-  } else if (NODE_ENV === w.cproduction) {
-    rootPath = path.resolve(process.cwd()) + c.cApplicationProductionRootPath;
+  if (NODE_ENV === wrd.cdevelopment) {
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationDevelopRootPath;
+  } else if (NODE_ENV === wrd.cproduction) {
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationProductionRootPath;
   } else {
-    console.log('WARNING: No .env file found! going to default to the DEVELOPMENT ENVIRONMENT!!!!!!!!!');
-    rootPath = path.resolve(process.cwd()) + c.cApplicationDevelopRootPath;
+    // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
+    console.log(sys.cApplicationWarningMessage1a + sys.ccApplicationWarningMessage1b);
+    rootPath = path.resolve(process.cwd()) + apc.cApplicationDevelopRootPath;
   } // console.log('rootPath is: ' + rootPath);
 
 
   rootPath = _warden["default"].processRootPath(rootPath); // console.log('processed rootPath is: ' + rootPath);
 
-  _warden["default"].bootStrapApplication(rootPath + c.cConfigurationDataLookupPrefixPath);
+  _warden["default"].bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
 
   _warden["default"].saveRootPath(rootPath);
 
@@ -88,14 +96,14 @@ function bootStrapApplication() {
 
   _warden["default"].mergeClientCommands(_clientCommandsLibrary["default"].initClientCommandsLibrary());
 
-  if (NODE_ENV === w.cdevelopment) {
-    _warden["default"].loadCommandAliases(s.cDevSystemCommandsAliasesActualPath, c.cDevClientCommandAliasesActualPath);
+  if (NODE_ENV === wrd.cdevelopment) {
+    _warden["default"].loadCommandAliases(cmd.cDevSystemCommandsAliasesActualPath, apc.cDevClientCommandAliasesActualPath);
 
-    _warden["default"].loadCommandWorkflows(s.cDevSystemWorkflowsActualPath, c.cDevClientWorkflowsActualPath);
-  } else if (NODE_ENV === w.cproduction) {
-    _warden["default"].loadCommandAliases(s.cProdSystemCommandsAliasesActualPath, c.cProdClientCommandAliasesActualPath);
+    _warden["default"].loadCommandWorkflows(cmd.cDevSystemWorkflowsActualPath, apc.cDevClientWorkflowsActualPath);
+  } else if (NODE_ENV === wrd.cproduction) {
+    _warden["default"].loadCommandAliases(cmd.cProdSystemCommandsAliasesActualPath, apc.cProdClientCommandAliasesActualPath);
 
-    _warden["default"].loadCommandWorkflows(s.cProdSystemWorkflowsActualPath, c.cProdClientWorkflowsActualPath);
+    _warden["default"].loadCommandWorkflows(cmd.cProdSystemWorkflowsActualPath, apc.cProdClientWorkflowsActualPath);
   }
 }
 
@@ -109,20 +117,22 @@ function bootStrapApplication() {
  */
 
 function application() {
-  var functionName = w.capplication;
+  var functionName = wrd.capplication;
   var argumentDrivenInterface = true;
   var commandInput;
   var commandResult;
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // BEGIN main program loop
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN main program loop');
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN command parser');
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage2); // BEGIN command parser
 
-  argumentDrivenInterface = _warden["default"].getConfigurationSetting(s.cArgumentDrivenInterface);
 
-  _warden["default"].enqueueCommand(s.cStartupWorkflow); // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage3);
+
+  argumentDrivenInterface = _warden["default"].getConfigurationSetting(cfg.cArgumentDrivenInterface);
+
+  _warden["default"].enqueueCommand(cmd.cStartupWorkflow); // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
   //
   // console.log('argument driven execution');
@@ -142,8 +152,8 @@ function application() {
 
 
   if (!process.argv && process.argv.length > 0) {
-    if (process.argv[2].includes(b.cDash) === true || process.argv[2].includes(b.cForwardSlash) === true || process.argv[2].includes(b.cBackSlash) === true) {
-      commandToExecute = _warden["default"].executeBusinessRule(s.caggregateCommandArguments, process.argv, '');
+    if (process.argv[2].includes(bas.cDash) === true || process.argv[2].includes(bas.cForwardSlash) === true || process.argv[2].includes(bas.cBackSlash) === true) {
+      commandToExecute = _warden["default"].executeBusinessRule(biz.caggregateCommandArguments, process.argv, '');
     }
 
     _warden["default"].enqueueCommand(commandToExecute);
@@ -157,7 +167,7 @@ function application() {
   if (argumentDrivenInterface === false) {
     while (programRunning === true) {
       if (_warden["default"].isCommandQueueEmpty() === true) {
-        commandInput = prompt(b.cGreaterThan);
+        commandInput = prompt(bas.cGreaterThan);
 
         _warden["default"].enqueueCommand(commandInput);
       }
@@ -165,14 +175,15 @@ function application() {
       commandResult = _warden["default"].processCommandQueue();
 
       if (commandResult === false) {
-        _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'END command parser');
+        // END command parser
+        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage4);
 
-        programRunning = false;
+        programRunning = false; // END main program loop
 
-        _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'END main program loop'); // console.log('Exiting, Good bye, Have a nice day & stay safe!');
+        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage5); // Exiting, Good bye, Have a nice day & stay safe!
 
 
-        _warden["default"].consoleLog(baseFileName + b.cDot + functionName, 'Exiting, Good bye, Have a nice day & stay safe!');
+        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
 
         break;
       } else {// console.log('contents of D are: ' + JSON.stringify(D));
@@ -181,7 +192,7 @@ function application() {
     }
   }
 
-  _warden["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
 
 ; // Launch the application!!

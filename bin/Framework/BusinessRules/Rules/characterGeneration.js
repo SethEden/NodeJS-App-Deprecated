@@ -11,13 +11,17 @@ var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var _stringParsing = require("./stringParsing");
 
-var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
-var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
+var gen = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
-var n = _interopRequireWildcard(require("../../Constants/numeric.constants"));
+var num = _interopRequireWildcard(require("../../Constants/numeric.constants"));
 
-var s = _interopRequireWildcard(require("../../Constants/system.constants"));
+var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
+
+var biz = _interopRequireWildcard(require("../../Constants/business.constants"));
+
+var msg = _interopRequireWildcard(require("../../Constants/messages.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -121,6 +125,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -141,13 +147,13 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 var randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1;
+  var functionName = biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var typeToGenerate = -1;
@@ -159,9 +165,9 @@ var randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function randomlyGenera
     returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -180,20 +186,20 @@ var randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = function randomlyGenera
 exports.randomlyGenerateMixedCaseLetterOrSpecialCharacter1 = randomlyGenerateMixedCaseLetterOrSpecialCharacter1;
 
 var randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2;
+  var functionName = biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -212,13 +218,13 @@ var randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = function randomlyGenera
 exports.randomlyGenerateMixedCaseLetterOrSpecialCharacter2 = randomlyGenerateMixedCaseLetterOrSpecialCharacter2;
 
 var randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1;
+  var functionName = biz.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var typeToGenerate = -1;
@@ -230,9 +236,9 @@ var randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function randomlyGenera
     returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -251,20 +257,20 @@ var randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = function randomlyGenera
 exports.randomlyGenerateUpperCaseLetterOrSpecialCharacter1 = randomlyGenerateUpperCaseLetterOrSpecialCharacter1;
 
 var randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = function randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2;
+  var functionName = biz.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -283,13 +289,13 @@ var randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = function randomlyGenera
 exports.randomlyGenerateUpperCaseLetterOrSpecialCharacter2 = randomlyGenerateUpperCaseLetterOrSpecialCharacter2;
 
 var randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1;
+  var functionName = biz.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var typeToGenerate = -1;
@@ -301,9 +307,9 @@ var randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function randomlyGenera
     returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -322,20 +328,20 @@ var randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = function randomlyGenera
 exports.randomlyGenerateLowerCaseLetterOrSpecialCharacter1 = randomlyGenerateLowerCaseLetterOrSpecialCharacter1;
 
 var randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2;
+  var functionName = biz.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cLowerCaseEnglishAlphabet);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -354,60 +360,60 @@ var randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = function randomlyGenera
 exports.randomlyGenerateLowerCaseLetterOrSpecialCharacter2 = randomlyGenerateLowerCaseLetterOrSpecialCharacter2;
 
 var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
+  var functionName = biz.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var typeToGenerate = -1; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c3 = n.c3;
-  var c9 = n.c9;
-  var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  var c3 = num.c3;
+  var c9 = num.c9;
+  var cTrue = gen.cTrue;
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, gen.cTrue, gen.cTrue]); // typeToGenerate is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'typeToGenerate is: ' + typeToGenerate);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage1 + typeToGenerate);
 
   switch (typeToGenerate) {
     case 1:
-    case '1':
+    case num.c1:
       // Generate a number.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a number.');
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage2);
 
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
       break;
 
     case 2:
-    case '2':
+    case num.c2:
       // Generate a random upper case or lower case letter.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a random upper case or lower case letter.');
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage3);
 
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
 
     case 3:
-    case '3':
-      // Generate a special characters.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Generate a special character.');
+    case num.c3:
+      // Generate a special character.
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage4);
 
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
 
     default:
-      // Default to a random upper case or lower case letter as a fall-back.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'DEFAULT: Generate a random upper case or lower case letter.');
+      // DEFAULT: Generate a random upper case or lower case letter.
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCharacterGenerationMessage5);
 
       returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
       break;
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -426,20 +432,20 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = function 
 exports.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
 
 var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = function randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
+  var functionName = biz.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -458,27 +464,27 @@ var randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = function 
 exports.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
 
 var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
+  var functionName = biz.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var typeToGenerate = -1; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c3 = n.c3;
-  var c9 = n.c9;
-  var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  var c3 = num.c3;
+  var c9 = num.c9;
+  var cTrue = gen.cTrue;
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, gen.cTrue, gen.cTrue]);
 
   switch (typeToGenerate) {
     case 1:
     case '1':
       // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
       break;
 
     case 2:
@@ -499,9 +505,9 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function 
       break;
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -520,20 +526,20 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = function 
 exports.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
 
 var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = function randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
+  var functionName = biz.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cUpperCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cUpperCaseEnglishAlphabet + gen.cAllNumbers);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -552,37 +558,37 @@ var randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = function 
 exports.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
 
 var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
+  var functionName = biz.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var typeToGenerate = -1; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c3 = n.c3;
-  var c9 = n.c9;
-  var cTrue = g.cTrue;
-  typeToGenerate = randomlyGenerateNumberInRange1(n.c1, [n.c3, g.cTrue, g.cTrue]);
+  var c3 = num.c3;
+  var c9 = num.c9;
+  var cTrue = gen.cTrue;
+  typeToGenerate = randomlyGenerateNumberInRange1(num.c1, [num.c3, gen.cTrue, gen.cTrue]);
 
   switch (typeToGenerate) {
     case 1:
-    case '1':
+    case num.c1:
       // Generate a number.
-      returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+      returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
       break;
 
     case 2:
-    case '2':
+    case num.c2:
       // Generate a random lower case letter.
       returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
       break;
 
     case 3:
-    case '3':
+    case num.c3:
       // Generate a special character.
       returnData = randomlyGenerateSpecialCharacter1(inputData, inputMetaData);
       break;
@@ -593,9 +599,9 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function 
       break;
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -614,20 +620,20 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = function 
 exports.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
 
 var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = function randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
+  var functionName = biz.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(inputData + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(inputData + gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -646,13 +652,13 @@ var randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = function 
 exports.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
 
 var randomlyGenerateMixedCaseAlphaNumericCharacter1 = function randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateMixedCaseAlphaNumericCharacter1;
+  var functionName = biz.crandomlyGenerateMixedCaseAlphaNumericCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
@@ -662,9 +668,9 @@ var randomlyGenerateMixedCaseAlphaNumericCharacter1 = function randomlyGenerateM
     returnData = randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -683,20 +689,20 @@ var randomlyGenerateMixedCaseAlphaNumericCharacter1 = function randomlyGenerateM
 exports.randomlyGenerateMixedCaseAlphaNumericCharacter1 = randomlyGenerateMixedCaseAlphaNumericCharacter1;
 
 var randomlyGenerateMixedCaseAlphaNumericCharacter2 = function randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateMixedCaseAlphaNumericCharacter2;
+  var functionName = biz.crandomlyGenerateMixedCaseAlphaNumericCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -715,13 +721,13 @@ var randomlyGenerateMixedCaseAlphaNumericCharacter2 = function randomlyGenerateM
 exports.randomlyGenerateMixedCaseAlphaNumericCharacter2 = randomlyGenerateMixedCaseAlphaNumericCharacter2;
 
 var randomlyGenerateUpperCaseAlphaNumericCharacter1 = function randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateUpperCaseAlphaNumericCharacter1;
+  var functionName = biz.crandomlyGenerateUpperCaseAlphaNumericCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
@@ -731,9 +737,9 @@ var randomlyGenerateUpperCaseAlphaNumericCharacter1 = function randomlyGenerateU
     returnData = randomlyGenerateUpperCaseLetter1(inputData, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -752,20 +758,20 @@ var randomlyGenerateUpperCaseAlphaNumericCharacter1 = function randomlyGenerateU
 exports.randomlyGenerateUpperCaseAlphaNumericCharacter1 = randomlyGenerateUpperCaseAlphaNumericCharacter1;
 
 var randomlyGenerateUpperCaseAlphaNumericCharacter2 = function randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateUpperCaseAlphaNumericCharacter2;
+  var functionName = biz.crandomlyGenerateUpperCaseAlphaNumericCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + gen.cAllNumbers);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -784,13 +790,13 @@ var randomlyGenerateUpperCaseAlphaNumericCharacter2 = function randomlyGenerateU
 exports.randomlyGenerateUpperCaseAlphaNumericCharacter2 = randomlyGenerateUpperCaseAlphaNumericCharacter2;
 
 var randomlyGenerateLowerCaseAlphaNumericCharacter1 = function randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateLowerCaseAlphaNumericCharacter1;
+  var functionName = biz.crandomlyGenerateLowerCaseAlphaNumericCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
@@ -800,9 +806,9 @@ var randomlyGenerateLowerCaseAlphaNumericCharacter1 = function randomlyGenerateL
     returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -821,20 +827,20 @@ var randomlyGenerateLowerCaseAlphaNumericCharacter1 = function randomlyGenerateL
 exports.randomlyGenerateLowerCaseAlphaNumericCharacter1 = randomlyGenerateLowerCaseAlphaNumericCharacter1;
 
 var randomlyGenerateLowerCaseAlphaNumericCharacter2 = function randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateLowerCaseAlphaNumericCharacter2;
+  var functionName = biz.crandomlyGenerateLowerCaseAlphaNumericCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet + g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cLowerCaseEnglishAlphabet + gen.cAllNumbers);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -853,20 +859,20 @@ var randomlyGenerateLowerCaseAlphaNumericCharacter2 = function randomlyGenerateL
 exports.randomlyGenerateLowerCaseAlphaNumericCharacter2 = randomlyGenerateLowerCaseAlphaNumericCharacter2;
 
 var randomlyGenerateNumericCharacter1 = function randomlyGenerateNumericCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateNumericCharacter1;
+  var functionName = biz.crandomlyGenerateNumericCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateNumberInRange1(n.c0, [n.c9, g.cTrue, g.cTrue]);
+  returnData = randomlyGenerateNumberInRange1(num.c0, [num.c9, gen.cTrue, gen.cTrue]);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -885,20 +891,20 @@ var randomlyGenerateNumericCharacter1 = function randomlyGenerateNumericCharacte
 exports.randomlyGenerateNumericCharacter1 = randomlyGenerateNumericCharacter1;
 
 var randomlyGenerateNumericCharacter2 = function randomlyGenerateNumericCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateNumericCharacter2;
+  var functionName = biz.crandomlyGenerateNumericCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cAllNumbers);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cAllNumbers);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -917,30 +923,28 @@ var randomlyGenerateNumericCharacter2 = function randomlyGenerateNumericCharacte
 exports.randomlyGenerateNumericCharacter2 = randomlyGenerateNumericCharacter2;
 
 var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateSpecialCharacter1;
+  var functionName = biz.crandomlyGenerateSpecialCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var cTrue = g.cTrue;
+  var cTrue = gen.cTrue;
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var inputDataLength = inputData.length.toString();
-    var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+    var number = randomlyGenerateNumberInRange1(num.c1, [inputDataLength, gen.cTrue, gen.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 
     returnData = inputData.substring(number - 1, number);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -960,30 +964,28 @@ var randomlyGenerateSpecialCharacter1 = function randomlyGenerateSpecialCharacte
 exports.randomlyGenerateSpecialCharacter1 = randomlyGenerateSpecialCharacter1;
 
 var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateSpecialCharacter2;
+  var functionName = biz.crandomlyGenerateSpecialCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var cTrue = g.cTrue;
+  var cTrue = gen.cTrue;
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var inputDataLength = inputData.length.toString();
-    var number = randomlyGenerateNumberInRange1(n.c1, [inputDataLength, g.cTrue, g.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
+    var number = randomlyGenerateNumberInRange1(num.c1, [inputDataLength, gen.cTrue, gen.cTrue]); // @NOTE: The String.length() above is a 1-base count, the String.substring is zero-based.
 
     returnData = inputData.substring(number - 1, number);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1005,19 +1007,17 @@ var randomlyGenerateSpecialCharacter2 = function randomlyGenerateSpecialCharacte
 exports.randomlyGenerateSpecialCharacter2 = randomlyGenerateSpecialCharacter2;
 
 var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateNumberInRange1;
+  var functionName = biz.crandomlyGenerateNumberInRange1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = '';
 
-  if (!inputData && !inputMetaData) {
-    returnData = '';
-  } else {
+  if (inputData && inputMetaData) {
     var minimum = parseInt(inputData);
     var maximum = parseInt(inputMetaData[0]);
     var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1], '');
@@ -1038,9 +1038,9 @@ var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inp
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData.toString();
 };
@@ -1063,19 +1063,17 @@ var randomlyGenerateNumberInRange1 = function randomlyGenerateNumberInRange1(inp
 exports.randomlyGenerateNumberInRange1 = randomlyGenerateNumberInRange1;
 
 var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateNumberInRange2;
+  var functionName = biz.crandomlyGenerateNumberInRange2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData && !inputMetaData) {
-    returnData = '';
-  } else {
+  if (inputData && inputMetaData) {
     var minimum = parseInt(inputData);
     var maximum = parseInt(inputMetaData[0]);
     var addOne = (0, _stringParsing.stringToBoolean)(inputMetaData[1]);
@@ -1096,9 +1094,9 @@ var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inp
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData.toString();
 };
@@ -1117,20 +1115,20 @@ var randomlyGenerateNumberInRange2 = function randomlyGenerateNumberInRange2(inp
 exports.randomlyGenerateNumberInRange2 = randomlyGenerateNumberInRange2;
 
 var randomlyGenerateBooleanValue1 = function randomlyGenerateBooleanValue1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateBooleanValue1;
+  var functionName = biz.crandomlyGenerateBooleanValue1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   returnData = Math.random() >= 0.5;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1150,20 +1148,20 @@ var randomlyGenerateBooleanValue1 = function randomlyGenerateBooleanValue1(input
 exports.randomlyGenerateBooleanValue1 = randomlyGenerateBooleanValue1;
 
 var randomlyGenerateBooleanValue2 = function randomlyGenerateBooleanValue2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateBooleanValue2;
+  var functionName = biz.crandomlyGenerateBooleanValue2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   returnData = Math.random() >= 0.5;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1182,13 +1180,13 @@ var randomlyGenerateBooleanValue2 = function randomlyGenerateBooleanValue2(input
 exports.randomlyGenerateBooleanValue2 = randomlyGenerateBooleanValue2;
 
 var randomlyGenerateMixedCaseAlphabeticCharacter1 = function randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateMixedCaseAlphabeticCharacter1;
+  var functionName = biz.crandomlyGenerateMixedCaseAlphabeticCharacter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
@@ -1198,9 +1196,9 @@ var randomlyGenerateMixedCaseAlphabeticCharacter1 = function randomlyGenerateMix
     returnData = randomlyGenerateLowerCaseLetter1(inputData, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1219,20 +1217,20 @@ var randomlyGenerateMixedCaseAlphabeticCharacter1 = function randomlyGenerateMix
 exports.randomlyGenerateMixedCaseAlphabeticCharacter1 = randomlyGenerateMixedCaseAlphabeticCharacter1;
 
 var randomlyGenerateMixedCaseAlphabeticCharacter2 = function randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateMixedCaseAlphabeticCharacter2;
+  var functionName = biz.crandomlyGenerateMixedCaseAlphabeticCharacter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet + g.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet + gen.cLowerCaseEnglishAlphabet);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1251,23 +1249,23 @@ var randomlyGenerateMixedCaseAlphabeticCharacter2 = function randomlyGenerateMix
 exports.randomlyGenerateMixedCaseAlphabeticCharacter2 = randomlyGenerateMixedCaseAlphabeticCharacter2;
 
 var randomlyGenerateLowerCaseLetter1 = function randomlyGenerateLowerCaseLetter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateLowerCaseLetter1;
+  var functionName = biz.crandomlyGenerateLowerCaseLetter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c26 = n.c2 + n.c6;
-  var cTrue = g.cTrue;
-  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
+  var c26 = num.c2 + num.c6;
+  var cTrue = gen.cTrue;
+  returnData = convertNumberToLowerCaseLetter(randomlyGenerateNumberInRange1(num.c1, [num.c26, gen.cTrue, gen.cTrue]));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1286,20 +1284,20 @@ var randomlyGenerateLowerCaseLetter1 = function randomlyGenerateLowerCaseLetter1
 exports.randomlyGenerateLowerCaseLetter1 = randomlyGenerateLowerCaseLetter1;
 
 var randomlyGenerateLowerCaseLetter2 = function randomlyGenerateLowerCaseLetter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateLowerCaseLetter2;
+  var functionName = biz.crandomlyGenerateLowerCaseLetter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cLowerCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cLowerCaseEnglishAlphabet);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1318,23 +1316,23 @@ var randomlyGenerateLowerCaseLetter2 = function randomlyGenerateLowerCaseLetter2
 exports.randomlyGenerateLowerCaseLetter2 = randomlyGenerateLowerCaseLetter2;
 
 var randomlyGenerateUpperCaseLetter1 = function randomlyGenerateUpperCaseLetter1(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateUpperCaseLetter1;
+  var functionName = biz.crandomlyGenerateUpperCaseLetter1;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = ''; // NOTE: Cannot have a "." as part of a variable name in a {set}
 
-  var c26 = n.c2 + n.c6;
-  var cTrue = g.cTrue;
-  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(n.c1, [n.c26, g.cTrue, g.cTrue]));
+  var c26 = num.c2 + num.c6;
+  var cTrue = gen.cTrue;
+  returnData = convertNumberToUpperCaseLetter(randomlyGenerateNumberInRange1(num.c1, [num.c26, gen.cTrue, gen.cTrue]));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1353,20 +1351,20 @@ var randomlyGenerateUpperCaseLetter1 = function randomlyGenerateUpperCaseLetter1
 exports.randomlyGenerateUpperCaseLetter1 = randomlyGenerateUpperCaseLetter1;
 
 var randomlyGenerateUpperCaseLetter2 = function randomlyGenerateUpperCaseLetter2(inputData, inputMetaData) {
-  var functionName = s.crandomlyGenerateUpperCaseLetter2;
+  var functionName = biz.crandomlyGenerateUpperCaseLetter2;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  returnData = randomlyGenerateSpecialCharacter2(g.cUpperCaseEnglishAlphabet);
+  returnData = randomlyGenerateSpecialCharacter2(gen.cUpperCaseEnglishAlphabet);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1384,32 +1382,30 @@ var randomlyGenerateUpperCaseLetter2 = function randomlyGenerateUpperCaseLetter2
 exports.randomlyGenerateUpperCaseLetter2 = randomlyGenerateUpperCaseLetter2;
 
 var convertNumberToUpperCaseLetter = function convertNumberToUpperCaseLetter(inputData, inputMetaData) {
-  var functionName = s.cconvertNumberToUpperCaseLetter;
+  var functionName = biz.cconvertNumberToUpperCaseLetter;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var number = parseInt(inputData);
     number--; // console.log('number is: ' + number.toString(10));
 
     if (number > 25 || number < 0) {
       returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
     } else {
-      returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+      returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1427,32 +1423,30 @@ var convertNumberToUpperCaseLetter = function convertNumberToUpperCaseLetter(inp
 exports.convertNumberToUpperCaseLetter = convertNumberToUpperCaseLetter;
 
 var convertNumberToLowerCaseLetter = function convertNumberToLowerCaseLetter(inputData, inputMetaData) {
-  var functionName = s.cconvertNumberToLowerCaseLetter;
+  var functionName = biz.cconvertNumberToLowerCaseLetter;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = '';
-  } else {
+  if (inputData) {
     var number = parseInt(inputData);
     number--; // console.log('number is: ' + number.toString(10));
 
     if (number > 25 || number < 0) {
       returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
     } else {
-      returnData = g.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+      returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };

@@ -11,15 +11,17 @@ var _chiefData = _interopRequireDefault(require("../Controllers/chiefData"));
 
 var _commandBroker = _interopRequireDefault(require("../CommandsBlob/commandBroker"));
 
-var _queue = _interopRequireDefault(require("../Resources/queue"));
+var _queue = _interopRequireDefault(require("../Structures/queue"));
 
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
-var b = _interopRequireWildcard(require("../Constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../Constants/basic.constants"));
 
-var w = _interopRequireWildcard(require("../Constants/word.constants"));
+var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
 
-var s = _interopRequireWildcard(require("../Constants/system.constants"));
+var sys = _interopRequireWildcard(require("../Constants/system.constants"));
+
+var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -39,6 +41,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -47,7 +50,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var path = require('path');
 
-var D = require('../Resources/data');
+var D = require('../Structures/data');
 
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
@@ -59,13 +62,14 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 function bootStrapCommands() {
-  var functionName = bootStrapCommands.name;
+  var functionName = bootStrapCommands.name; // console.log('BEGIN chiefCommander.bootStrapCommands');
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _commandBroker["default"].bootStrapCommands();
+  _commandBroker["default"].bootStrapCommands(); // console.log('END chiefCommander.bootStrapCommands');
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
 
 ;
@@ -83,24 +87,25 @@ function bootStrapCommands() {
 function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
   var functionName = loadCommandAliasesFromPath.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // commandAliasesFilePathConfigurationName is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandAliasesFilePathConfigurationName is: ' + commandAliasesFilePathConfigurationName);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandAliasesFilePathConfigurationNameIs + commandAliasesFilePathConfigurationName);
 
   var allCommandAliasesData = {};
-  allCommandAliasesData = _chiefData["default"].setupAllXmlData(commandAliasesFilePathConfigurationName, s.cCommandsAliases);
+  allCommandAliasesData = _chiefData["default"].setupAllXmlData(commandAliasesFilePathConfigurationName, sys.cCommandsAliases);
 
-  if (D[s.cCommandsAliases] === undefined) {
+  if (D[sys.cCommandsAliases] === undefined) {
     // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
-    D[s.cCommandsAliases] = {};
-    D[s.cCommandsAliases] = allCommandAliasesData[s.cCommandsAliases];
+    D[sys.cCommandsAliases] = {};
+    D[sys.cCommandsAliases] = allCommandAliasesData[sys.cCommandsAliases];
   } else {
-    for (var i = 0; i < allCommandAliasesData[s.cCommandsAliases][w.cCommand].length; i++) {
-      D[s.cCommandsAliases][w.cCommand].push(allCommandAliasesData[s.cCommandsAliases][w.cCommand][i]);
+    for (var i = 0; i < allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand].length; i++) {
+      D[sys.cCommandsAliases][wrd.cCommand].push(allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand][i]);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
 
 ;
@@ -117,17 +122,18 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
 function enqueueCommand(command) {
   var functionName = enqueueCommand.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // command is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'command is: ' + command);
 
-  if (D[s.cCommandQueue] === undefined) {
-    _queue["default"].initQueue(s.cCommandQueue);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandIs + command);
+
+  if (D[sys.cCommandQueue] === undefined) {
+    _queue["default"].initQueue(sys.cCommandQueue);
   }
 
-  _queue["default"].enqueue(s.cCommandQueue, command);
+  _queue["default"].enqueue(sys.cCommandQueue, command);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
 
 ;
@@ -142,16 +148,16 @@ function enqueueCommand(command) {
 function isCommandQueueEmpty() {
   var functionName = isCommandQueueEmpty.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  var returnValue = false;
-  returnValue = _queue["default"].isEmpty(s.cCommandQueue);
+  var returnData = false;
+  returnData = _queue["default"].isEmpty(sys.cCommandQueue);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
-  return returnValue;
+  return returnData;
 }
 
 ;
@@ -166,21 +172,21 @@ function isCommandQueueEmpty() {
 function processCommandQueue() {
   var functionName = processCommandQueue.name;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
   var commandToExecute;
-  var returnValue;
-  commandToExecute = _queue["default"].dequeue(s.cCommandQueue);
+  var returnData;
+  commandToExecute = _queue["default"].dequeue(sys.cCommandQueue); // commandToExecute is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandToExecuteIs + commandToExecute);
 
-  returnValue = _commandBroker["default"].executeCommand(commandToExecute);
+  returnData = _commandBroker["default"].executeCommand(commandToExecute);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnValue is: ' + returnValue);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
-  return returnValue;
+  return returnData;
 }
 
 ;

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Framework/Resources/ConstantsValidation/business-constants-validation.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Framework/Resources/ConstantsValidation/business-constants-validation.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file business-constants-validation.js
+ * @module business-constants-validation
+ * @description Contains validations for business rules.
+ * @requires module:business-constants
+ * @author Seth Hollingsead
+ * @date 2021/02/17
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+ */
+import * as biz from '../../Constants/business.constants';
+
+ /**
+ * @function businessConstantsValidation
+ * @description Initializes the business constants validation data objects array.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/02/17
+ */
+ export const businessConstantsValidation = [
+   // Business Rules
+   {Name: 'cecho', Actual: biz.cecho, Expected: 'echo'},
+   {Name: 'cEcho', Actual: biz.cEcho, Expected: 'Echo'},
+   // ********************************
+   // StringParsing rules in order
+   // ********************************
+   {Name: 'cstringToBoolean', Actual: biz.cstringToBoolean, Expected: 'stringToBoolean'},
+   {Name: 'cstringToDataType', Actual: biz.cstringToDataType, Expected: 'stringToDataType'},
+   {Name: 'cdetermineObjectDataType', Actual: biz.cdetermineObjectDataType, Expected: 'determineObjectDataType'},
+   {Name: 'cisBoolean', Actual: biz.cisBoolean, Expected: 'isBoolean'},
+   {Name: 'cisInteger', Actual: biz.cisInteger, Expected: 'isInteger'},
+   {Name: 'cisFloat', Actual: biz.cisFloat, Expected: 'isFloat'},
+   {Name: 'cisString', Actual: biz.cisString, Expected: 'isString'},
+   {Name: 'csingleQuoteSwapAfterEquals', Actual: biz.csingleQuoteSwapAfterEquals, Expected: 'singleQuoteSwapAfterEquals'},
+   {Name: 'cswapForwardSlashToBackSlash', Actual: biz.cswapForwardSlashToBackSlash, Expected: 'swapForwardSlashToBackSlash'},
+   {Name: 'cswapBackSlashToForwardSlash', Actual: biz.cswapBackSlashToForwardSlash, Expected: 'swapBackSlashToForwardSlash'},
+   {Name: 'cswapDoubleForwardSlashToSingleForwardSlash', Actual: biz.cswapDoubleForwardSlashToSingleForwardSlash, Expected: 'swapDoubleForwardSlashToSingleForwardSlash'},
+   {Name: 'cswapDoubleBackSlashToSingleBackSlash', Actual: biz.cswapDoubleBackSlashToSingleBackSlash, Expected: 'swapDoubleBackSlashToSingleBackSlash'},
+   {Name: 'cgetUserNameFromEmail', Actual: biz.cgetUserNameFromEmail, Expected: 'getUserNameFromEmail'},
+   {Name: 'creplaceSpacesWithPlus', Actual: biz.creplaceSpacesWithPlus, Expected: 'replaceSpacesWithPlus'},
+   {Name: 'creplaceColonWithUnderscore', Actual: biz.creplaceColonWithUnderscore, Expected: 'replaceColonWithUnderscore'},
+   {Name: 'ccleanCarriageReturnFromString', Actual: biz.ccleanCarriageReturnFromString, Expected: 'cleanCarriageReturnFromString'},
+   {Name: 'cconvertStringToLowerCase', Actual: biz.cconvertStringToLowerCase, Expected: 'convertStringToLowerCase'},
+   {Name: 'cconvertStringToUpperCase', Actual: biz.cconvertStringToUpperCase, Expected: 'convertStringToUpperCase'},
+   {Name: 'cgetFileNameFromPath', Actual: biz.cgetFileNameFromPath, Expected: 'getFileNameFromPath'},
+   {Name: 'cgetFileExtension', Actual: biz.cgetFileExtension, Expected: 'getFileExtension'},
+   {Name: 'cremoveDotFromFileExtension', Actual: biz.cremoveDotFromFileExtension, Expected: 'removeDotFromFileExtension'},
+   {Name: 'cremoveFileExtensionFromFileName', Actual: biz.cremoveFileExtensionFromFileName, Expected: 'removeFileExtensionFromFileName'},
+   {Name: 'cgetValueFromAssignmentOperationString', Actual: biz.cgetValueFromAssignmentOperationString, Expected: 'getValueFromAssignmentOperationString'},
+   {Name: 'caggregateNumericalDifferenceBetweenTwoStrings', Actual: biz.caggregateNumericalDifferenceBetweenTwoStrings, Expected: 'aggregateNumericalDifferenceBetweenTwoStrings'},
+   {Name: 'ccountCamelCaseWords', Actual: biz.ccountCamelCaseWords, Expected: 'countCamelCaseWords'},
+   {Name: 'cdoesStringContainAcronym', Actual: biz.cdoesStringContainAcronym, Expected: 'doesStringContainAcronym'},
+   {Name: 'ccountDelimiterInString', Actual: biz.ccountDelimiterInString, Expected: 'countDelimiterInString'},
+   {Name: 'cdetermineWordDelimiter', Actual: biz.cdetermineWordDelimiter, Expected: 'determineWordDelimiter'},
+   {Name: 'cgetWordCountInString', Actual: biz.cgetWordCountInString, Expected: 'getWordCountInString'},
+   {Name: 'cdoesStringContainUpperCaseCharacter', Actual: biz.cdoesStringContainUpperCaseCharacter, Expected: 'doesStringContainUpperCaseCharacter'},
+   {Name: 'cdoesStringContainLowerCaseCharacter', Actual: biz.cdoesStringContainLowerCaseCharacter, Expected: 'doesStringContainLowerCaseCharacter'},
+   {Name: 'cisFirstCharacterLowerCase', Actual: biz.cisFirstCharacterLowerCase, Expected: 'isFirstCharacterLowerCase'},
+   {Name: 'cisFirstCharacterUpperCase', Actual: biz.cisFirstCharacterUpperCase, Expected: 'isFirstCharacterUpperCase'},
+   {Name: 'cisStringList', Actual: biz.cisStringList, Expected: 'isStringList'},
+   {Name: 'cisStringCamelCase', Actual: biz.cisStringCamelCase, Expected: 'isStringCamelCase'},
+   {Name: 'cmapWordToCamelCaseWord', Actual: biz.cmapWordToCamelCaseWord, Expected: 'mapWordToCamelCaseWord'},
+   {Name: 'csimplifyAndConsolidateString', Actual: biz.csimplifyAndConsolidateString, Expected: 'simplifyAndConsolidateString'},
+   {Name: 'ccompareSimplifiedAndConsolidatedStrings', Actual: biz.ccompareSimplifiedAndConsolidatedStrings, Expected: 'compareSimplifiedAndConsolidatedStrings'},
+   {Name: 'cascertainMatchingFilenames', Actual: biz.cascertainMatchingFilenames, Expected: 'ascertainMatchingFilenames'},
+   {Name: 'cvalidateConstantsDataValidation', Actual: biz.cvalidateConstantsDataValidation, Expected: 'validateConstantsDataValidation'},
+   {Name: 'cdetermineConstantsContextQualifiedPrefix', Actual: biz.cdetermineConstantsContextQualifiedPrefix, Expected: 'determineConstantsContextQualifiedPrefix'},
+   {Name: 'cdetermineSuggestedConstantsValidationLineOfCode', Actual: biz.cdetermineSuggestedConstantsValidationLineOfCode, Expected: 'determineSuggestedConstantsValidationLineOfCode'},
+   {Name: 'cvalidateConstantsDataValidationLineItemName', Actual: biz.cvalidateConstantsDataValidationLineItemName, Expected: 'validateConstantsDataValidationLineItemName'},
+   {Name: 'cdoesConstantExist', Actual: biz.cdoesConstantExist, Expected: 'doesConstantExist'},
+   {Name: 'cgetConstantType', Actual: biz.cgetConstantType, Expected: 'getConstantType'},
+   {Name: 'cgetConstantActualValue', Actual: biz.cgetConstantActualValue, Expected: 'getConstantActualValue'},
+   {Name: 'cgetConstantName', Actual: biz.cgetConstantName, Expected: 'getConstantName'},
+   {Name: 'cfindConstantName', Actual: biz.cfindConstantName, Expected: 'findConstantName'},
+   {Name: 'cisConstantTypeValid', Actual: biz.cisConstantTypeValid, Expected: 'isConstantTypeValid'},
+   {Name: 'cconvertConstantTypeToConstantPrefix', Actual: biz.cconvertConstantTypeToConstantPrefix, Expected: 'convertConstantTypeToConstantPrefix'},
+   {Name: 'cconstantsOptimizedFulfillmentSystem', Actual: biz.cconstantsOptimizedFulfillmentSystem, Expected: 'constantsOptimizedFulfillmentSystem'},
+   {Name: 'cconstantsFulfillmentSystem', Actual: biz.cconstantsFulfillmentSystem, Expected: 'constantsFulfillmentSystem'},
+   {Name: 'cvalidateConstantsDataValues', Actual: biz.cvalidateConstantsDataValues, Expected: 'validateConstantsDataValues'},
+   {Name: 'cisValidCommandNameString', Actual: biz.cisValidCommandNameString, Expected: 'isValidCommandNameString'},
+   {Name: 'cisConstantValid', Actual: biz.cisConstantValid, Expected: 'isConstantValid'},
+   {Name: 'ccountDuplicateCommandAliases', Actual: biz.ccountDuplicateCommandAliases, Expected: 'countDuplicateCommandAliases'},
+   {Name: 'cgetDataCatagoryFromDataContextName', Actual: biz.cgetDataCatagoryFromDataContextName, Expected: 'getDataCatagoryFromDataContextName'},
+   {Name: 'cgetDataCatagoryDetailNameFromDataContextName', Actual: biz.cgetDataCatagoryDetailNameFromDataContextName, Expected: 'getDataCatagoryDetailNameFromDataContextName'},
+   {Name: 'cgetKeywordNameFromDataContextName', Actual: biz.cgetKeywordNameFromDataContextName, Expected: 'getKeywordNameFromDataContextName'},
+   {Name: 'cparseSystemRootPath', Actual: biz.cparseSystemRootPath, Expected: 'parseSystemRootPath'},
+   {Name: 'creplaceDoublePercentWithMessage', Actual: biz.creplaceDoublePercentWithMessage, Expected: 'replaceDoublePercentWithMessage'},
+   {Name: 'cremoveXnumberOfFoldersFromEndOfPath', Actual: biz.cremoveXnumberOfFoldersFromEndOfPath, Expected: 'removeXnumberOfFoldersFromEndOfPath'},
+   {Name: 'cgetFirstTopLevelFolderFromPath', Actual: biz.cgetFirstTopLevelFolderFromPath, Expected: 'getFirstTopLevelFolderFromPath'},
+   {Name: 'cloadDataFile', Actual: biz.cloadDataFile, Expected: 'loadDataFile'},
+   {Name: 'csupportedFileFormatsAre', Actual: biz.csupportedFileFormatsAre, Expected: 'supportedFileFormatsAre'},
+   {Name: 'cgetAttributeName', Actual: biz.cgetAttributeName, Expected: 'getAttributeName'},
+   {Name: 'cgetAttributeValue', Actual: biz.cgetAttributeValue, Expected: 'getAttributeValue'},
+   {Name: 'cisOdd', Actual: biz.cisOdd, Expected: 'isOdd'},
+   {Name: 'cisEven', Actual: biz.cisEven, Expected: 'isEven'},
+   {Name: 'ccleanCommandInput', Actual: biz.ccleanCommandInput, Expected: 'cleanCommandInput'},
+   {Name: 'creplaceCharacterAtIndexOfString', Actual: biz.creplaceCharacterAtIndexOfString, Expected: 'replaceCharacterAtIndexOfString'},
+
+   // *********************************
+   // ArrayParsing rules in order
+   // *********************************
+   {Name: 'creplaceCharacterWithCharacter', Actual: biz.creplaceCharacterWithCharacter, Expected: 'replaceCharacterWithCharacter'},
+   {Name: 'cconvertCamelCaseStringToArray', Actual: biz.cconvertCamelCaseStringToArray, Expected: 'convertCamelCaseStringToArray'},
+   {Name: 'cgetWordsArrayFromString', Actual: biz.cgetWordsArrayFromString, Expected: 'getWordsArrayFromString'},
+   {Name: 'crecombineStringArrayWithSpaces', Actual: biz.crecombineStringArrayWithSpaces, Expected: 'recombineStringArrayWithSpaces'},
+   {Name: 'cconvertArrayToCamelCaseString', Actual: biz.cconvertArrayToCamelCaseString, Expected: 'convertArrayToCamelCaseString'},
+   {Name: 'cdoesArrayContainLowerCaseConsolidatedString', Actual: biz.cdoesArrayContainLowerCaseConsolidatedString, Expected: 'doesArrayContainLowerCaseConsolidatedString'},
+   {Name: 'cdoesArrayContainCharacter', Actual: biz.cdoesArrayContainCharacter, Expected: 'doesArrayContainCharacter'},
+   {Name: 'cremoveCharacterFromArray', Actual: biz.cremoveCharacterFromArray, Expected: 'removeCharacterFromArray'},
+   {Name: 'cascertainMatchingElements', Actual: biz.cascertainMatchingElements, Expected: 'ascertainMatchingElements'},
+   {Name: 'cdoesArrayContainFilename', Actual: biz.cdoesArrayContainFilename, Expected: 'doesArrayContainFilename'},
+   {Name: 'cgetLengthOfLongestStringInArray', Actual: biz.cgetLengthOfLongestStringInArray, Expected: 'getLengthOfLongestStringInArray'},
+   {Name: 'csearchForPatternsInStringArray', Actual: biz.csearchForPatternsInStringArray, Expected: 'searchForPatternsInStringArray'},
+   {Name: 'cvalidatePatternsThatNeedImplementation', Actual: biz.cvalidatePatternsThatNeedImplementation, Expected: 'validatePatternsThatNeedImplementation'},
+   {Name: 'csolveLehmerCode', Actual: biz.csolveLehmerCode, Expected: 'solveLehmerCode'},
+   {Name: 'crecursiveArrayExpansion', Actual: biz.crecursiveArrayExpansion, Expected: 'recursiveArrayExpansion'},
+   {Name: 'cgetLehmerCodeValue', Actual: biz.cgetLehmerCodeValue, Expected: 'getLehmerCodeValue'},
+   {Name: 'carraysAreEqual', Actual: biz.carraysAreEqual, Expected: 'arraysAreEqual'},
+   {Name: 'cstoreData', Actual: biz.cstoreData, Expected: 'storeData'},
+   {Name: 'cgetStoredData', Actual: biz.cgetStoredData, Expected: 'getStoredData'},
+   {Name: 'cisObjectEmpty', Actual: biz.cisObjectEmpty, Expected: 'isObjectEmpty'},
+   {Name: 'cisArrayEmpty', Actual: biz.cisArrayEmpty, Expected: 'isArrayEmpty'},
+   {Name: 'cisObject', Actual: biz.cisObject, Expected: 'isObject'},
+   {Name: 'cisArray', Actual: biz.cisArray, Expected: 'isArray'},
+   {Name: 'cisArrayOrObject', Actual: biz.cisArrayOrObject, Expected: 'isArrayOrObject'},
+   {Name: 'cisNonZeroLengthArray', Actual: biz.cisNonZeroLengthArray, Expected: 'isNonZeroLengthArray'},
+   {Name: 'carrayDeepClone', Actual: biz.carrayDeepClone, Expected: 'arrayDeepClone'},
+   {Name: 'creplaceCharacterAtIndex', Actual: biz.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},
+   {Name: 'cgenerateCommandAliases', Actual: biz.cgenerateCommandAliases, Expected: 'generateCommandAliases'},
+   {Name: 'caggregateCommandArguments', Actual: biz.caggregateCommandArguments, Expected: 'aggregateCommandArguments'},
+   {Name: 'cdoesArrayContainValue', Actual: biz.cdoesArrayContainValue, Expected: 'doesArrayContainValue'},
+
+   // *********************************
+   // StringGeneration rules in order
+   // *********************************
+   {Name: 'cgenerateRandomMixedCaseTextByLength1', Actual: biz.cgenerateRandomMixedCaseTextByLength1, Expected: 'generateRandomMixedCaseTextByLength1'},
+   {Name: 'cgenerateRandomMixedCaseTextByLength2', Actual: biz.cgenerateRandomMixedCaseTextByLength2, Expected: 'generateRandomMixedCaseTextByLength2'},
+   {Name: 'cgenerateRandomUpperCaseTextByLength1', Actual: biz.cgenerateRandomUpperCaseTextByLength1, Expected: 'generateRandomUpperCaseTextByLength1'},
+   {Name: 'cgenerateRandomUpperCaseTextByLength2', Actual: biz.cgenerateRandomUpperCaseTextByLength2, Expected: 'generateRandomUpperCaseTextByLength2'},
+   {Name: 'cgenerateRandomLowerCaseTextByLength1', Actual: biz.cgenerateRandomLowerCaseTextByLength1, Expected: 'generateRandomLowerCaseTextByLength1'},
+   {Name: 'cgenerateRandomLowerCaseTextByLength2', Actual: biz.cgenerateRandomLowerCaseTextByLength2, Expected: 'generateRandomLowerCaseTextByLength2'},
+   {Name: 'cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1', Actual: biz.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1, Expected: 'generateRandomMixedCaseTextWithSpecialCharactersByLength1'},
+   {Name: 'cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2', Actual: biz.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2, Expected: 'generateRandomMixedCaseTextWithSpecialCharactersByLength2'},
+   {Name: 'cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1', Actual: biz.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1, Expected: 'generateRandomUpperCaseTextWithSpecialCharactersByLength1'},
+   {Name: 'cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2', Actual: biz.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2, Expected: 'generateRandomUpperCaseTextWithSpecialCharactersByLength2'},
+   {Name: 'cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1', Actual: biz.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1, Expected: 'generateRandomLowerCaseTextWithSpecialCharactersByLength1'},
+   {Name: 'cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2', Actual: biz.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2, Expected: 'generateRandomLowerCaseTextWithSpecialCharactersByLength2'},
+   {Name: 'cgenerateRandomMixedCaseAlphaNumericCodeByLength1', Actual: biz.cgenerateRandomMixedCaseAlphaNumericCodeByLength1, Expected: 'generateRandomMixedCaseAlphaNumericCodeByLength1'},
+   {Name: 'cgenerateRandomMixedCaseAlphaNumericCodeByLength2', Actual: biz.cgenerateRandomMixedCaseAlphaNumericCodeByLength2, Expected: 'generateRandomMixedCaseAlphaNumericCodeByLength2'},
+   {Name: 'cgenerateRandomUpperCaseAlphaNumericCodeByLength1', Actual: biz.cgenerateRandomUpperCaseAlphaNumericCodeByLength1, Expected: 'generateRandomUpperCaseAlphaNumericCodeByLength1'},
+   {Name: 'cgenerateRandomUpperCaseAlphaNumericCodeByLength2', Actual: biz.cgenerateRandomUpperCaseAlphaNumericCodeByLength2, Expected: 'generateRandomUpperCaseAlphaNumericCodeByLength2'},
+   {Name: 'cgenerateRandomLowerCaseAlphaNumericCodeByLength1', Actual: biz.cgenerateRandomLowerCaseAlphaNumericCodeByLength1, Expected: 'generateRandomLowerCaseAlphaNumericCodeByLength1'},
+   {Name: 'cgenerateRandomLowerCaseAlphaNumericCodeByLength2', Actual: biz.cgenerateRandomLowerCaseAlphaNumericCodeByLength2, Expected: 'generateRandomLowerCaseAlphaNumericCodeByLength2'},
+   {Name: 'cgenerateRandomNumericCodeByLength1', Actual: biz.cgenerateRandomNumericCodeByLength1, Expected: 'generateRandomNumericCodeByLength1'},
+   {Name: 'cgenerateRandomNumericCodeByLength2', Actual: biz.cgenerateRandomNumericCodeByLength2, Expected: 'generateRandomNumericCodeByLength2'},
+   {Name: 'cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1', Actual: biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1, Expected: 'generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1'},
+   {Name: 'cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2', Actual: biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2, Expected: 'generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2'},
+   {Name: 'cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1', Actual: biz.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1, Expected: 'generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1'},
+   {Name: 'cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2', Actual: biz.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2, Expected: 'generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2'},
+   {Name: 'cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1', Actual: biz.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1, Expected: 'generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1'},
+   {Name: 'cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2', Actual: biz.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2, Expected: 'generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2'},
+   {Name: 'cgenerateRandomSpecialCharacterCodeByLength1', Actual: biz.cgenerateRandomSpecialCharacterCodeByLength1, Expected: 'generateRandomSpecialCharacterCodeByLength1'},
+   {Name: 'cgenerateRandomSpecialCharacterCodeByLength2', Actual: biz.cgenerateRandomSpecialCharacterCodeByLength2, Expected: 'generateRandomSpecialCharacterCodeByLength2'},
+   {Name: 'cgenerateValidEmail1', Actual: biz.cgenerateValidEmail1, Expected: 'generateValidEmail1'},
+   {Name: 'cgenerateValidEmail2', Actual: biz.cgenerateValidEmail2, Expected: 'generateValidEmail2'},
+   {Name: 'cgenerateInvalidEmail1', Actual: biz.cgenerateInvalidEmail1, Expected: 'generateInvalidEmail1'},
+   {Name: 'cgenerateInvalidEmail2', Actual: biz.cgenerateInvalidEmail2, Expected: 'generateInvalidEmail2'},
+   {Name: 'cgenerateValidEmailWithSpecificSuffixAndDomainName1', Actual: biz.cgenerateValidEmailWithSpecificSuffixAndDomainName1, Expected: 'generateValidEmailWithSpecificSuffixAndDomainName1'},
+   {Name: 'cgenerateValidEmailWithSpecificSuffixAndDomainName2', Actual: biz.cgenerateValidEmailWithSpecificSuffixAndDomainName2, Expected: 'generateValidEmailWithSpecificSuffixAndDomainName2'},
+   {Name: 'cgenerateRandomValidEmail1', Actual: biz.cgenerateRandomValidEmail1, Expected: 'generateRandomValidEmail1'},
+   {Name: 'cgenerateRandomValidEmail2', Actual: biz.cgenerateRandomValidEmail2, Expected: 'generateRandomValidEmail2'},
+   {Name: 'cgenerateInvalidEmailWithSpecificSuffixAndDomainName1', Actual: biz.cgenerateInvalidEmailWithSpecificSuffixAndDomainName1, Expected: 'generateInvalidEmailWithSpecificSuffixAndDomainName1'},
+   {Name: 'cgenerateInvalidEmailWithSpecificSuffixAndDomainName2', Actual: biz.cgenerateInvalidEmailWithSpecificSuffixAndDomainName2, Expected: 'generateInvalidEmailWithSpecificSuffixAndDomainName2'},
+   {Name: 'cgenerateRandomInvalidEmail1', Actual: biz.cgenerateRandomInvalidEmail1, Expected: 'generateRandomInvalidEmail1'},
+   {Name: 'cgenerateRandomInvalidEmail2', Actual: biz.cgenerateRandomInvalidEmail2, Expected: 'generateRandomInvalidEmail2'},
+
+   // *********************************
+   // CharacterGeneration rules in order
+   // *********************************
+   {Name: 'crandomlyGenerateMixedCaseLetterOrSpecialCharacter1', Actual: biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1, Expected: 'randomlyGenerateMixedCaseLetterOrSpecialCharacter1'},
+   {Name: 'crandomlyGenerateMixedCaseLetterOrSpecialCharacter2', Actual: biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2, Expected: 'randomlyGenerateMixedCaseLetterOrSpecialCharacter2'},
+   {Name: 'crandomlyGenerateUpperCaseLetterOrSpecialCharacter1', Actual: biz.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1, Expected: 'randomlyGenerateUpperCaseLetterOrSpecialCharacter1'},
+   {Name: 'crandomlyGenerateUpperCaseLetterOrSpecialCharacter2', Actual: biz.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2, Expected: 'randomlyGenerateUpperCaseLetterOrSpecialCharacter2'},
+   {Name: 'crandomlyGenerateLowerCaseLetterOrSpecialCharacter1', Actual: biz.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1, Expected: 'randomlyGenerateLowerCaseLetterOrSpecialCharacter1'},
+   {Name: 'crandomlyGenerateLowerCaseLetterOrSpecialCharacter2', Actual: biz.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2, Expected: 'randomlyGenerateLowerCaseLetterOrSpecialCharacter2'},
+   {Name: 'crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1', Actual: biz.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1, Expected: 'randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1'},
+   {Name: 'crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2', Actual: biz.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2, Expected: 'randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2'},
+   {Name: 'crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1', Actual: biz.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1, Expected: 'randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1'},
+   {Name: 'crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2', Actual: biz.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2, Expected: 'randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2'},
+   {Name: 'crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1', Actual: biz.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1, Expected: 'randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1'},
+   {Name: 'crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2', Actual: biz.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2, Expected: 'randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2'},
+   {Name: 'crandomlyGenerateMixedCaseAlphaNumericCharacter1', Actual: biz.crandomlyGenerateMixedCaseAlphaNumericCharacter1, Expected: 'randomlyGenerateMixedCaseAlphaNumericCharacter1'},
+   {Name: 'crandomlyGenerateMixedCaseAlphaNumericCharacter2', Actual: biz.crandomlyGenerateMixedCaseAlphaNumericCharacter2, Expected: 'randomlyGenerateMixedCaseAlphaNumericCharacter2'},
+   {Name: 'crandomlyGenerateUpperCaseAlphaNumericCharacter1', Actual: biz.crandomlyGenerateUpperCaseAlphaNumericCharacter1, Expected: 'randomlyGenerateUpperCaseAlphaNumericCharacter1'},
+   {Name: 'crandomlyGenerateUpperCaseAlphaNumericCharacter2', Actual: biz.crandomlyGenerateUpperCaseAlphaNumericCharacter2, Expected: 'randomlyGenerateUpperCaseAlphaNumericCharacter2'},
+   {Name: 'crandomlyGenerateLowerCaseAlphaNumericCharacter1', Actual: biz.crandomlyGenerateLowerCaseAlphaNumericCharacter1, Expected: 'randomlyGenerateLowerCaseAlphaNumericCharacter1'},
+   {Name: 'crandomlyGenerateLowerCaseAlphaNumericCharacter2', Actual: biz.crandomlyGenerateLowerCaseAlphaNumericCharacter2, Expected: 'randomlyGenerateLowerCaseAlphaNumericCharacter2'},
+   {Name: 'crandomlyGenerateNumericCharacter1', Actual: biz.crandomlyGenerateNumericCharacter1, Expected: 'randomlyGenerateNumericCharacter1'},
+   {Name: 'crandomlyGenerateNumericCharacter2', Actual: biz.crandomlyGenerateNumericCharacter2, Expected: 'randomlyGenerateNumericCharacter2'},
+   {Name: 'crandomlyGenerateSpecialCharacter1', Actual: biz.crandomlyGenerateSpecialCharacter1, Expected: 'randomlyGenerateSpecialCharacter1'},
+   {Name: 'crandomlyGenerateSpecialCharacter2', Actual: biz.crandomlyGenerateSpecialCharacter2, Expected: 'randomlyGenerateSpecialCharacter2'},
+   {Name: 'crandomlyGenerateNumberInRange1', Actual: biz.crandomlyGenerateNumberInRange1, Expected: 'randomlyGenerateNumberInRange1'},
+   {Name: 'crandomlyGenerateNumberInRange2', Actual: biz.crandomlyGenerateNumberInRange2, Expected: 'randomlyGenerateNumberInRange2'},
+   {Name: 'crandomlyGenerateBooleanValue1', Actual: biz.crandomlyGenerateBooleanValue1, Expected: 'randomlyGenerateBooleanValue1'},
+   {Name: 'crandomlyGenerateBooleanValue2', Actual: biz.crandomlyGenerateBooleanValue2, Expected: 'randomlyGenerateBooleanValue2'},
+   {Name: 'crandomlyGenerateMixedCaseAlphabeticCharacter1', Actual: biz.crandomlyGenerateMixedCaseAlphabeticCharacter1, Expected: 'randomlyGenerateMixedCaseAlphabeticCharacter1'},
+   {Name: 'crandomlyGenerateMixedCaseAlphabeticCharacter2', Actual: biz.crandomlyGenerateMixedCaseAlphabeticCharacter2, Expected: 'randomlyGenerateMixedCaseAlphabeticCharacter2'},
+   {Name: 'crandomlyGenerateLowerCaseLetter1', Actual: biz.crandomlyGenerateLowerCaseLetter1, Expected: 'randomlyGenerateLowerCaseLetter1'},
+   {Name: 'crandomlyGenerateLowerCaseLetter2', Actual: biz.crandomlyGenerateLowerCaseLetter2, Expected: 'randomlyGenerateLowerCaseLetter2'},
+   {Name: 'crandomlyGenerateUpperCaseLetter1', Actual: biz.crandomlyGenerateUpperCaseLetter1, Expected: 'randomlyGenerateUpperCaseLetter1'},
+   {Name: 'crandomlyGenerateUpperCaseLetter2', Actual: biz.crandomlyGenerateUpperCaseLetter2, Expected: 'randomlyGenerateUpperCaseLetter2'},
+   {Name: 'cconvertNumberToUpperCaseLetter', Actual: biz.cconvertNumberToUpperCaseLetter, Expected: 'convertNumberToUpperCaseLetter'},
+   {Name: 'cconvertNumberToLowerCaseLetter', Actual: biz.cconvertNumberToLowerCaseLetter, Expected: 'convertNumberToLowerCaseLetter'},
+
+   // *********************************
+   // mathOperations rules in order
+   // *********************************
+   {Name: 'chex2rgbConversion', Actual: biz.chex2rgbConversion, Expected: 'hex2rgbConversion'},
+ ];
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 22 2021 15:47:15 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

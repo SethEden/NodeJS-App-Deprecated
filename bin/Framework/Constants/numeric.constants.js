@@ -18,9 +18,9 @@ exports.c989 = exports.c988 = exports.c987 = exports.c986 = exports.c985 = expor
 exports.cFourteenth = exports.cfourteenth = exports.cThirteenth = exports.cthirteenth = exports.cTwelveth = exports.ctwelveth = exports.cEleventh = exports.celeventh = exports.cTenth = exports.ctenth = exports.cEighth = exports.ceighth = exports.cSeventh = exports.cseventh = exports.cSixth = exports.csixth = exports.cFifth = exports.cfifth = exports.cFourth = exports.cfourth = exports.cThird = exports.cthird = exports.cFirst = exports.cfirst = exports.cTrillion = exports.cBillion = exports.cMillion = exports.cThousand = exports.cHundred = exports.cNinety = exports.cEighty = exports.cSeventy = exports.cSixty = exports.cFifty = exports.cFourty = exports.cThirty = exports.cTwenty = exports.cNineteen = exports.cEighteen = exports.cSeventeen = exports.cSixteen = exports.cFifteen = exports.cFourteen = exports.cThirteen = exports.cTwelve = exports.cEleven = exports.cTen = exports.cNine = exports.cEight = exports.cSeven = exports.cSix = exports.cFive = exports.cFour = exports.cThree = exports.cTwo = exports.cOne = exports.ctrillion = exports.cbillion = exports.cmillion = exports.cthousand = exports.chundred = exports.cninety = exports.ceighty = exports.cseventy = exports.csixty = exports.cfifty = exports.cfourty = exports.cthirty = exports.ctwenty = exports.cnineteen = exports.ceighteen = exports.cseventeen = exports.csixteen = exports.cfifteen = exports.cfourteen = exports.cthirteen = exports.ctwelve = exports.celeven = exports.cten = exports.cnine = exports.ceight = exports.cseven = exports.csix = exports.cfive = exports.cfour = exports.cthree = exports.ctwo = exports.cone = exports.cZero = exports.czero = exports.c999 = exports.c998 = exports.c997 = exports.c996 = exports.c995 = exports.c994 = exports.c993 = exports.c992 = exports.c991 = exports.c990 = void 0;
 exports.cTrillionth = exports.ctrillionth = exports.cBillionth = exports.cbillionth = exports.cMillionth = exports.cmillionth = exports.cThousandth = exports.cthousandth = exports.cHundredth = exports.chundredth = exports.cNinetieth = exports.cninetieth = exports.cEightieth = exports.ceightieth = exports.cSeventieth = exports.cseventieth = exports.cSixtieth = exports.csixtieth = exports.cFiftieth = exports.cfiftieth = exports.cFourtieth = exports.cfourtieth = exports.cThirtieth = exports.cthirtieth = exports.cTwentieth = exports.ctwentieth = exports.cNineteenth = exports.cnineteenth = exports.cEighteenth = exports.ceighteenth = exports.cSeventeenth = exports.cseventeenth = exports.cSixteenth = exports.csixteenth = exports.cFifteenth = exports.cfifteenth = void 0;
 
-var b = _interopRequireWildcard(require("../constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../constants/basic.constants"));
 
-var p = _interopRequireWildcard(require("../constants/phonics.constants"));
+var phn = _interopRequireWildcard(require("../constants/phonics.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -3068,383 +3068,383 @@ var c999 = c9 + c99; // 999
 // String Numbers
 
 exports.c999 = c999;
-var czero = b.cze + b.cro; // zero
+var czero = bas.cze + bas.cro; // zero
 
 exports.czero = czero;
-var cZero = b.cZe + b.cro; // Zero
+var cZero = bas.cZe + bas.cro; // Zero
 
 exports.cZero = cZero;
-var cone = b.co + b.cne; // one
+var cone = bas.co + bas.cne; // one
 
 exports.cone = cone;
-var ctwo = b.ct + b.cwo; // two
+var ctwo = bas.ct + bas.cwo; // two
 
 exports.ctwo = ctwo;
-var cthree = b.ct + p.chree; // three
+var cthree = bas.ct + phn.chree; // three
 
 exports.cthree = cthree;
-var cfour = b.cf + p.cour; // four
+var cfour = bas.cf + phn.cour; // four
 
 exports.cfour = cfour;
-var cfive = b.cf + p.cive; // five
+var cfive = bas.cf + phn.cive; // five
 
 exports.cfive = cfive;
-var csix = b.cs + b.cix; // six
+var csix = bas.cs + bas.cix; // six
 
 exports.csix = csix;
-var cseven = b.cs + p.ceven; // seven
+var cseven = bas.cs + phn.ceven; // seven
 
 exports.cseven = cseven;
-var ceight = b.ce + p.cight; // eight
+var ceight = bas.ce + phn.cight; // eight
 
 exports.ceight = ceight;
-var cnine = b.cn + p.cine; // nine
+var cnine = bas.cn + phn.cine; // nine
 
 exports.cnine = cnine;
-var cten = b.ct + b.cen; // ten
+var cten = bas.ct + bas.cen; // ten
 
 exports.cten = cten;
-var celeven = b.ce + p.cleven; // eleven
+var celeven = bas.ce + phn.cleven; // eleven
 
 exports.celeven = celeven;
-var ctwelve = b.ct + p.cwelve; // twelve
+var ctwelve = bas.ct + phn.cwelve; // twelve
 
 exports.ctwelve = ctwelve;
-var cthirteen = b.ct + p.chir + p.cteen; // thirteen
+var cthirteen = bas.ct + phn.chir + phn.cteen; // thirteen
 
 exports.cthirteen = cthirteen;
-var cfourteen = cfour + p.cteen; // fourteen
+var cfourteen = cfour + phn.cteen; // fourteen
 
 exports.cfourteen = cfourteen;
-var cfifteen = b.cf + b.cif + p.cteen; // fifteen
+var cfifteen = bas.cf + bas.cif + phn.cteen; // fifteen
 
 exports.cfifteen = cfifteen;
-var csixteen = csix + p.cteen; // sixteen
+var csixteen = csix + phn.cteen; // sixteen
 
 exports.csixteen = csixteen;
-var cseventeen = cseven + p.cteen; // seventeen
+var cseventeen = cseven + phn.cteen; // seventeen
 
 exports.cseventeen = cseventeen;
-var ceighteen = b.ce + p.cigh + p.cteen; // eighteen
+var ceighteen = bas.ce + phn.cigh + phn.cteen; // eighteen
 
 exports.ceighteen = ceighteen;
-var cnineteen = cnine + p.cteen; // nineteen
+var cnineteen = cnine + phn.cteen; // nineteen
 
 exports.cnineteen = cnineteen;
-var ctwenty = b.ct + p.cwenty; // twenty
+var ctwenty = bas.ct + phn.cwenty; // twenty
 
 exports.ctwenty = ctwenty;
-var cthirty = b.ct + p.chirty; // thirty
+var cthirty = bas.ct + phn.chirty; // thirty
 
 exports.cthirty = cthirty;
-var cfourty = cfour + b.cty; // fourty
+var cfourty = cfour + bas.cty; // fourty
 
 exports.cfourty = cfourty;
-var cfifty = b.cf + p.cifty; // fifty
+var cfifty = bas.cf + phn.cifty; // fifty
 
 exports.cfifty = cfifty;
-var csixty = csix + b.cty; // sixty
+var csixty = csix + bas.cty; // sixty
 
 exports.csixty = csixty;
-var cseventy = cseven + b.cty; // seventy
+var cseventy = cseven + bas.cty; // seventy
 
 exports.cseventy = cseventy;
-var ceighty = ceight + b.cy; // eighty
+var ceighty = ceight + bas.cy; // eighty
 
 exports.ceighty = ceighty;
-var cninety = cnine + b.cty; // ninety
+var cninety = cnine + bas.cty; // ninety
 
 exports.cninety = cninety;
-var chundred = b.ch + p.cundred; // hundred
+var chundred = bas.ch + phn.cundred; // hundred
 
 exports.chundred = chundred;
-var cthousand = b.ct + p.chousand; // thousand
+var cthousand = bas.ct + phn.chousand; // thousand
 
 exports.cthousand = cthousand;
-var cmillion = b.cm + p.cillion; // million
+var cmillion = bas.cm + phn.cillion; // million
 
 exports.cmillion = cmillion;
-var cbillion = b.cb + p.cillion; // billion
+var cbillion = bas.cb + phn.cillion; // billion
 
 exports.cbillion = cbillion;
-var ctrillion = b.ctr + p.cillion; // trillion
+var ctrillion = bas.ctr + phn.cillion; // trillion
 
 exports.ctrillion = ctrillion;
-var cOne = b.cO + b.cne; // One
+var cOne = bas.cO + bas.cne; // One
 
 exports.cOne = cOne;
-var cTwo = b.cT + b.cwo; // Two
+var cTwo = bas.cT + bas.cwo; // Two
 
 exports.cTwo = cTwo;
-var cThree = b.cT + p.chree; // Three
+var cThree = bas.cT + phn.chree; // Three
 
 exports.cThree = cThree;
-var cFour = b.cF + p.cour; // Four
+var cFour = bas.cF + phn.cour; // Four
 
 exports.cFour = cFour;
-var cFive = b.cF + p.cive; // Five
+var cFive = bas.cF + phn.cive; // Five
 
 exports.cFive = cFive;
-var cSix = b.cS + b.cix; // Six
+var cSix = bas.cS + bas.cix; // Six
 
 exports.cSix = cSix;
-var cSeven = b.cS + p.ceven; // Seven
+var cSeven = bas.cS + phn.ceven; // Seven
 
 exports.cSeven = cSeven;
-var cEight = b.cE + p.cight; // Eight
+var cEight = bas.cE + phn.cight; // Eight
 
 exports.cEight = cEight;
-var cNine = b.cN + p.cine; // Nine
+var cNine = bas.cN + phn.cine; // Nine
 
 exports.cNine = cNine;
-var cTen = b.cT + b.cen; // Ten
+var cTen = bas.cT + bas.cen; // Ten
 
 exports.cTen = cTen;
-var cEleven = b.cE + p.cleven; // Eleven
+var cEleven = bas.cE + phn.cleven; // Eleven
 
 exports.cEleven = cEleven;
-var cTwelve = b.cT + p.cwelve; // Twelve
+var cTwelve = bas.cT + phn.cwelve; // Twelve
 
 exports.cTwelve = cTwelve;
-var cThirteen = b.cT + p.chir + p.cteen; // Thirteen
+var cThirteen = bas.cT + phn.chir + phn.cteen; // Thirteen
 
 exports.cThirteen = cThirteen;
-var cFourteen = cFour + p.cteen; // Fourteen
+var cFourteen = cFour + phn.cteen; // Fourteen
 
 exports.cFourteen = cFourteen;
-var cFifteen = b.cF + b.cif + p.cteen; // Fifteen
+var cFifteen = bas.cF + bas.cif + phn.cteen; // Fifteen
 
 exports.cFifteen = cFifteen;
-var cSixteen = cSix + p.cteen; // Sixteen
+var cSixteen = cSix + phn.cteen; // Sixteen
 
 exports.cSixteen = cSixteen;
-var cSeventeen = cSeven + p.cteen; // Seventeen
+var cSeventeen = cSeven + phn.cteen; // Seventeen
 
 exports.cSeventeen = cSeventeen;
-var cEighteen = b.cE + p.cigh + p.cteen; // Eighteen
+var cEighteen = bas.cE + phn.cigh + phn.cteen; // Eighteen
 
 exports.cEighteen = cEighteen;
-var cNineteen = cNine + p.cteen; // Nineteen
+var cNineteen = cNine + phn.cteen; // Nineteen
 
 exports.cNineteen = cNineteen;
-var cTwenty = b.cT + p.cwenty; // Twenty
+var cTwenty = bas.cT + phn.cwenty; // Twenty
 
 exports.cTwenty = cTwenty;
-var cThirty = b.cT + p.chirty; // Thirty
+var cThirty = bas.cT + phn.chirty; // Thirty
 
 exports.cThirty = cThirty;
-var cFourty = cFour + b.cty; // Fourty
+var cFourty = cFour + bas.cty; // Fourty
 
 exports.cFourty = cFourty;
-var cFifty = b.cF + p.cifty; // Fifty
+var cFifty = bas.cF + phn.cifty; // Fifty
 
 exports.cFifty = cFifty;
-var cSixty = cSix + b.cty; // Sixty
+var cSixty = cSix + bas.cty; // Sixty
 
 exports.cSixty = cSixty;
-var cSeventy = cSeven + b.cty; // Seventy
+var cSeventy = cSeven + bas.cty; // Seventy
 
 exports.cSeventy = cSeventy;
-var cEighty = cEight + b.cy; // Eighty
+var cEighty = cEight + bas.cy; // Eighty
 
 exports.cEighty = cEighty;
-var cNinety = cNine + b.cty; // Ninety
+var cNinety = cNine + bas.cty; // Ninety
 
 exports.cNinety = cNinety;
-var cHundred = b.cH + p.cundred; // Hundred
+var cHundred = bas.cH + phn.cundred; // Hundred
 
 exports.cHundred = cHundred;
-var cThousand = b.cT + p.chousand; // Thousand
+var cThousand = bas.cT + phn.chousand; // Thousand
 
 exports.cThousand = cThousand;
-var cMillion = b.cM + p.cillion; // Million
+var cMillion = bas.cM + phn.cillion; // Million
 
 exports.cMillion = cMillion;
-var cBillion = b.cB + p.cillion; // Billion
+var cBillion = bas.cB + phn.cillion; // Billion
 
 exports.cBillion = cBillion;
-var cTrillion = b.cTr + p.cillion; // Trillion
+var cTrillion = bas.cTr + phn.cillion; // Trillion
 // String Number Values
 
 exports.cTrillion = cTrillion;
-var cfirst = b.cfi + b.crs + b.ct; // first
+var cfirst = bas.cfi + bas.crs + bas.ct; // first
 
 exports.cfirst = cfirst;
-var cFirst = b.cFi + b.crs + b.ct; // First
+var cFirst = bas.cFi + bas.crs + bas.ct; // First
 // Second - See below
 
 exports.cFirst = cFirst;
-var cthird = b.cth + b.cir + b.cd; // third
+var cthird = bas.cth + bas.cir + bas.cd; // third
 
 exports.cthird = cthird;
-var cThird = b.cTh + b.cir + b.cd; // Third
+var cThird = bas.cTh + bas.cir + bas.cd; // Third
 
 exports.cThird = cThird;
-var cfourth = cfour + b.cth; // fourth
+var cfourth = cfour + bas.cth; // fourth
 
 exports.cfourth = cfourth;
-var cFourth = cFour + b.cth; // Fourth
+var cFourth = cFour + bas.cth; // Fourth
 
 exports.cFourth = cFourth;
-var cfifth = b.cfi + b.cft + b.ch; // fifth
+var cfifth = bas.cfi + bas.cft + bas.ch; // fifth
 
 exports.cfifth = cfifth;
-var cFifth = b.cFi + b.cft + b.ch; // Fifth
+var cFifth = bas.cFi + bas.cft + bas.ch; // Fifth
 
 exports.cFifth = cFifth;
-var csixth = csix + b.cth; // sixth
+var csixth = csix + bas.cth; // sixth
 
 exports.csixth = csixth;
-var cSixth = cSix + b.cth; // Sixth
+var cSixth = cSix + bas.cth; // Sixth
 
 exports.cSixth = cSixth;
-var cseventh = cseven + b.cth; // seventh
+var cseventh = cseven + bas.cth; // seventh
 
 exports.cseventh = cseventh;
-var cSeventh = cSeven + b.cth; // Seventh
+var cSeventh = cSeven + bas.cth; // Seventh
 
 exports.cSeventh = cSeventh;
-var ceighth = ceight + b.ch; // eighth
+var ceighth = ceight + bas.ch; // eighth
 
 exports.ceighth = ceighth;
-var cEighth = cEight + b.ch; // Eighth
+var cEighth = cEight + bas.ch; // Eighth
 
 exports.cEighth = cEighth;
-var ctenth = cten + b.cth; // tenth
+var ctenth = cten + bas.cth; // tenth
 
 exports.ctenth = ctenth;
-var cTenth = cTen + b.cth; // Tenth
+var cTenth = cTen + bas.cth; // Tenth
 
 exports.cTenth = cTenth;
-var celeventh = celeven + b.cth; // eleventh
+var celeventh = celeven + bas.cth; // eleventh
 
 exports.celeventh = celeventh;
-var cEleventh = cEleven + b.cth; // Eleventh
+var cEleventh = cEleven + bas.cth; // Eleventh
 
 exports.cEleventh = cEleventh;
-var ctwelveth = ctwelve + b.cth; // twelveth
+var ctwelveth = ctwelve + bas.cth; // twelveth
 
 exports.ctwelveth = ctwelveth;
-var cTwelveth = cTwelve + b.cth; // Twelveth
+var cTwelveth = cTwelve + bas.cth; // Twelveth
 
 exports.cTwelveth = cTwelveth;
-var cthirteenth = cthirteen + b.cth; // thirteenth
+var cthirteenth = cthirteen + bas.cth; // thirteenth
 
 exports.cthirteenth = cthirteenth;
-var cThirteenth = cThirteen + b.cth; // Thirteenth
+var cThirteenth = cThirteen + bas.cth; // Thirteenth
 
 exports.cThirteenth = cThirteenth;
-var cfourteenth = cfourteen + b.cth; // fourteenth
+var cfourteenth = cfourteen + bas.cth; // fourteenth
 
 exports.cfourteenth = cfourteenth;
-var cFourteenth = cFourteen + b.cth; // Fourteenth
+var cFourteenth = cFourteen + bas.cth; // Fourteenth
 
 exports.cFourteenth = cFourteenth;
-var cfifteenth = cfifteen + b.cth; // fifteenth
+var cfifteenth = cfifteen + bas.cth; // fifteenth
 
 exports.cfifteenth = cfifteenth;
-var cFifteenth = cFifteen + b.cth; // Fifteenth
+var cFifteenth = cFifteen + bas.cth; // Fifteenth
 
 exports.cFifteenth = cFifteenth;
-var csixteenth = csixteen + b.cth; // sixteenth
+var csixteenth = csixteen + bas.cth; // sixteenth
 
 exports.csixteenth = csixteenth;
-var cSixteenth = cSixteen + b.cth; // Sixteenth
+var cSixteenth = cSixteen + bas.cth; // Sixteenth
 
 exports.cSixteenth = cSixteenth;
-var cseventeenth = cseventeen + b.cth; // seventeenth
+var cseventeenth = cseventeen + bas.cth; // seventeenth
 
 exports.cseventeenth = cseventeenth;
-var cSeventeenth = cSeventeen + b.cth; // Seventeenth
+var cSeventeenth = cSeventeen + bas.cth; // Seventeenth
 
 exports.cSeventeenth = cSeventeenth;
-var ceighteenth = ceighteen + b.cth; // eighteenth
+var ceighteenth = ceighteen + bas.cth; // eighteenth
 
 exports.ceighteenth = ceighteenth;
-var cEighteenth = cEighteen + b.cth; // Eighteenth
+var cEighteenth = cEighteen + bas.cth; // Eighteenth
 
 exports.cEighteenth = cEighteenth;
-var cnineteenth = cnineteen + b.cth; // nineteenth
+var cnineteenth = cnineteen + bas.cth; // nineteenth
 
 exports.cnineteenth = cnineteenth;
-var cNineteenth = cNineteen + b.cth; // Nineteenth
+var cNineteenth = cNineteen + bas.cth; // Nineteenth
 
 exports.cNineteenth = cNineteenth;
-var ctwentieth = b.ctw + b.cen + p.ctieth; // twentieth
+var ctwentieth = bas.ctw + bas.cen + phn.ctieth; // twentieth
 
 exports.ctwentieth = ctwentieth;
-var cTwentieth = b.cTw + b.cen + p.ctieth; // Twentieth
+var cTwentieth = bas.cTw + bas.cen + phn.ctieth; // Twentieth
 
 exports.cTwentieth = cTwentieth;
-var cthirtieth = b.cth + b.cir + p.ctieth; // thirtieth
+var cthirtieth = bas.cth + bas.cir + phn.ctieth; // thirtieth
 
 exports.cthirtieth = cthirtieth;
-var cThirtieth = b.cTh + b.cir + p.ctieth; // Thirtieth
+var cThirtieth = bas.cTh + bas.cir + phn.ctieth; // Thirtieth
 
 exports.cThirtieth = cThirtieth;
-var cfourtieth = cfour + p.ctieth; // fourtieth
+var cfourtieth = cfour + phn.ctieth; // fourtieth
 
 exports.cfourtieth = cfourtieth;
-var cFourtieth = cFour + p.ctieth; // Fourtieth
+var cFourtieth = cFour + phn.ctieth; // Fourtieth
 
 exports.cFourtieth = cFourtieth;
-var cfiftieth = b.cfi + b.cf + p.ctieth; // fiftieth
+var cfiftieth = bas.cfi + bas.cf + phn.ctieth; // fiftieth
 
 exports.cfiftieth = cfiftieth;
-var cFiftieth = b.cFi + b.cf + p.ctieth; // Fiftieth
+var cFiftieth = bas.cFi + bas.cf + phn.ctieth; // Fiftieth
 
 exports.cFiftieth = cFiftieth;
-var csixtieth = csix + p.ctieth; // sixtieth
+var csixtieth = csix + phn.ctieth; // sixtieth
 
 exports.csixtieth = csixtieth;
-var cSixtieth = cSix + p.ctieth; // Sixtieth
+var cSixtieth = cSix + phn.ctieth; // Sixtieth
 
 exports.cSixtieth = cSixtieth;
-var cseventieth = cseven + p.ctieth; // seventieth
+var cseventieth = cseven + phn.ctieth; // seventieth
 
 exports.cseventieth = cseventieth;
-var cSeventieth = cSeven + p.ctieth; // Seventieth
+var cSeventieth = cSeven + phn.ctieth; // Seventieth
 
 exports.cSeventieth = cSeventieth;
-var ceightieth = ceight + p.cieth; // eightieth
+var ceightieth = ceight + phn.cieth; // eightieth
 
 exports.ceightieth = ceightieth;
-var cEightieth = cEight + p.cieth; // Eightieth
+var cEightieth = cEight + phn.cieth; // Eightieth
 
 exports.cEightieth = cEightieth;
-var cninetieth = cnine + p.ctieth; // ninetieth
+var cninetieth = cnine + phn.ctieth; // ninetieth
 
 exports.cninetieth = cninetieth;
-var cNinetieth = cNine + p.ctieth; // Ninetieth
+var cNinetieth = cNine + phn.ctieth; // Ninetieth
 
 exports.cNinetieth = cNinetieth;
-var chundredth = chundred + b.cth; // hundredth
+var chundredth = chundred + bas.cth; // hundredth
 
 exports.chundredth = chundredth;
-var cHundredth = cHundred + b.cth; // Hundredth
+var cHundredth = cHundred + bas.cth; // Hundredth
 
 exports.cHundredth = cHundredth;
-var cthousandth = cthousand + b.cth; // thousandth
+var cthousandth = cthousand + bas.cth; // thousandth
 
 exports.cthousandth = cthousandth;
-var cThousandth = cThousand + b.cth; // Thousandth
+var cThousandth = cThousand + bas.cth; // Thousandth
 
 exports.cThousandth = cThousandth;
-var cmillionth = cmillion + b.cth; // millionth
+var cmillionth = cmillion + bas.cth; // millionth
 
 exports.cmillionth = cmillionth;
-var cMillionth = cMillion + b.cth; // Millionth
+var cMillionth = cMillion + bas.cth; // Millionth
 
 exports.cMillionth = cMillionth;
-var cbillionth = cbillion + b.cth; // billionth
+var cbillionth = cbillion + bas.cth; // billionth
 
 exports.cbillionth = cbillionth;
-var cBillionth = cBillion + b.cth; // Billionth
+var cBillionth = cBillion + bas.cth; // Billionth
 
 exports.cBillionth = cBillionth;
-var ctrillionth = ctrillion + b.cth; // trillionth
+var ctrillionth = ctrillion + bas.cth; // trillionth
 
 exports.ctrillionth = ctrillionth;
-var cTrillionth = cTrillion + b.cth; // Trillionth
+var cTrillionth = cTrillion + bas.cth; // Trillionth
 
 exports.cTrillionth = cTrillionth;

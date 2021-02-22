@@ -5,14 +5,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = exports.cYYYY = exports.cascii = exports.cDotJSON = exports.cDotJson = exports.cDotjson = exports.cDotXML = exports.cDotXml = exports.cDotxml = exports.cDotTXT = exports.cDotTxt = exports.cDottxt = exports.cDotZIP = exports.cDotZip = exports.cDotzip = exports.cDotCom = exports.cDotCSV = exports.cDotCsv = exports.cDotcsv = exports.cENV = exports.cEnv = exports.cenv = exports.cJSON = exports.cJson = exports.cjson = exports.cXML = exports.cXml = exports.cxml = exports.cCSV = exports.cCsv = exports.ccsv = exports.cTXT = exports.cTxt = exports.ctxt = exports.cZIP = exports.cZip = exports.czip = exports.cCOM = exports.cCom = exports.ccom = exports.cDOC = exports.cDoc = exports.cdoc = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
-exports.cConst = exports.cconst = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = void 0;
+exports.cYYYY = exports.cascii = exports.cDotENV = exports.cDotEnv = exports.cDotenv = exports.cDotJSON = exports.cDotJson = exports.cDotjson = exports.cDotLOG = exports.cDotLog = exports.cDotlog = exports.cDotXML = exports.cDotXml = exports.cDotxml = exports.cDotTXT = exports.cDotTxt = exports.cDottxt = exports.cDotZIP = exports.cDotZip = exports.cDotzip = exports.cDotCom = exports.cDotCSV = exports.cDotCsv = exports.cDotcsv = exports.cDotEXE = exports.cDotExe = exports.cDotexe = exports.cENV = exports.cEnv = exports.cenv = exports.cJSON = exports.cJson = exports.cjson = exports.cLOG = exports.cLog = exports.clog = exports.cXML = exports.cXml = exports.cxml = exports.cCSV = exports.cCsv = exports.ccsv = exports.cTXT = exports.cTxt = exports.ctxt = exports.cZIP = exports.cZip = exports.czip = exports.cCOM = exports.cCom = exports.ccom = exports.cDOC = exports.cDoc = exports.cdoc = exports.cEXE = exports.cExe = exports.cexe = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cMin = exports.cmin = exports.cMax = exports.cmax = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
+exports.cArgs = exports.cargs = exports.cArg = exports.carg = exports.cAPP = exports.cApp = exports.capp = exports.cASAP = exports.cConst = exports.cconst = exports.cUTF8 = exports.cwrd = exports.cunt = exports.csys = exports.cshp = exports.cphn = exports.cnum = exports.cmsg = exports.clng = exports.ckts = exports.ciso = exports.cgen = exports.celm = exports.cctr = exports.ccfg = exports.ccmd = exports.cclr = exports.cbiz = exports.cbas = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = void 0;
+exports.cBIN = exports.cBin = exports.cbin = exports.cRegExp = exports.cregExp = exports.cRegEx = exports.cregEx = exports.cHex = exports.chex = void 0;
 
-var b = _interopRequireWildcard(require("../constants/basic.constants"));
+var bas = _interopRequireWildcard(require("../constants/basic.constants"));
 
-var p = _interopRequireWildcard(require("../constants/phonics.constants"));
+var phn = _interopRequireWildcard(require("../constants/phonics.constants"));
 
-var n = _interopRequireWildcard(require("../constants/numeric.constants"));
+var num = _interopRequireWildcard(require("../constants/numeric.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -31,473 +32,641 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @date 2020/06/04
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-var cDotDot = b.cDot + b.cDot; // ..
+var cDotDot = bas.cDot + bas.cDot; // ..
 
 exports.cDotDot = cDotDot;
-var cDotDotForwardSlash = cDotDot + b.cForwardSlash; // ../
+var cDotDotForwardSlash = cDotDot + bas.cForwardSlash; // ../
 // Boolean strings
 
 exports.cDotDotForwardSlash = cDotDotForwardSlash;
-var cTrue = b.cT + p.crue; // True
+var cTrue = bas.cT + phn.crue; // True
 
 exports.cTrue = cTrue;
-var cFalse = b.cF + p.calse; // False
+var cFalse = bas.cF + phn.calse; // False
 
 exports.cFalse = cFalse;
-var ctrue = b.ct + p.crue; // true
+var ctrue = bas.ct + phn.crue; // true
 
 exports.ctrue = ctrue;
-var cfalse = b.cf + p.calse; // false
+var cfalse = bas.cf + phn.calse; // false
 
 exports.cfalse = cfalse;
-var cTRUE = b.cTR + b.cUE; // TRUE
+var cTRUE = bas.cTR + bas.cUE; // TRUE
 
 exports.cTRUE = cTRUE;
-var cFALSE = b.cFA + b.cLS + b.cE; // FALSE
+var cFALSE = bas.cFA + bas.cLS + bas.cE; // FALSE
 
 exports.cFALSE = cFALSE;
-var cOff = b.cO + b.cff; // Off
+var cOff = bas.cO + bas.cff; // Off
 
 exports.cOff = cOff;
-var coff = b.co + b.cff; // off
+var coff = bas.co + bas.cff; // off
 
 exports.coff = coff;
-var cOFF = b.cOF + b.cF; // OFF
+var cOFF = bas.cOF + bas.cF; // OFF
 
 exports.cOFF = cOFF;
-var cyes = b.cy + b.ces; // yes
+var cyes = bas.cy + bas.ces; // yes
 
 exports.cyes = cyes;
-var cnot = b.cno + b.ct; // not
+var cnot = bas.cno + bas.ct; // not
 
 exports.cnot = cnot;
-var cYes = b.cY + b.ces; // Yes
+var cYes = bas.cY + bas.ces; // Yes
 
 exports.cYes = cYes;
-var cNot = b.cNo + b.ct; // Not
+var cNot = bas.cNo + bas.ct; // Not
 
 exports.cNot = cNot;
-var cYES = b.cYE + b.cS; // YES
+var cYES = bas.cYE + bas.cS; // YES
 
 exports.cYES = cYES;
-var cNOT = 'NOT'; // b.c_NO + b.cT; // NOTE cNOT is some how a reserved word that is a variable.
+var cNOT = 'NOT'; // bas.c_NO + bas.cT; // NOTE cNOT is some how a reserved word that is a variable.
 
 exports.cNOT = cNOT;
-var cnotok = cnot + b.cok; // notok
+var cnotok = cnot + bas.cok; // notok
 
 exports.cnotok = cnotok;
-var cnotOk = cnot + b.cOk; // notOk
+var cnotOk = cnot + bas.cOk; // notOk
 
 exports.cnotOk = cnotOk;
-var cnotOK = cnot + b.cOK; // notOK
+var cnotOK = cnot + bas.cOK; // notOK
 
 exports.cnotOK = cnotOK;
-var cNotok = cNot + b.cok; // Notok
+var cNotok = cNot + bas.cok; // Notok
 
 exports.cNotok = cNotok;
-var cNotOk = cNot + b.cOk; // NotOk
+var cNotOk = cNot + bas.cOk; // NotOk
 
 exports.cNotOk = cNotOk;
-var cNotOK = cNot + b.cOK; // NotOK
+var cNotOK = cNot + bas.cOK; // NotOK
 
 exports.cNotOK = cNotOK;
-var cNOTok = 'NOTok'; // c_NOT = b.cok;
+var cNOTok = 'NOTok'; // c_NOT = bas.cok;
 
 exports.cNOTok = cNOTok;
-var cNOTOk = 'NOTOk'; // c_NOT = b.cOk;
+var cNOTOk = 'NOTOk'; // c_NOT = bas.cOk;
 
 exports.cNOTOk = cNOTOk;
-var cNOTOK = 'NOTOK'; // c_NOT + b.cOK;
+var cNOTOK = 'NOTOK'; // c_NOT + bas.cOK;
 
 exports.cNOTOK = cNOTOK;
-var cnotEql = cnot + p.cEql; // notEql
+var cnotEql = cnot + phn.cEql; // notEql
 
 exports.cnotEql = cnotEql;
-var cnoteql = cnot + p.ceql; // noteql
+var cnoteql = cnot + phn.ceql; // noteql
 
 exports.cnoteql = cnoteql;
-var cNotEql = cNot + p.cEql; // NotEql
+var cNotEql = cNot + phn.cEql; // NotEql
 
 exports.cNotEql = cNotEql;
-var cNoteql = cNot + p.ceql; // Noteql
-// Test Status
+var cNoteql = cNot + phn.ceql; // Noteql
 
 exports.cNoteql = cNoteql;
-var cPass = b.cPa + b.css; // Pass
+var cmax = bas.cma + bas.cx; // max
+
+exports.cmax = cmax;
+var cMax = bas.cMa + bas.cx; // Max
+
+exports.cMax = cMax;
+var cmin = bas.camai + bas.cn; // min
+
+exports.cmin = cmin;
+var cMin = bas.cMi + bas.cn; // Min
+// Test Status
+
+exports.cMin = cMin;
+var cPass = bas.cPa + bas.css; // Pass
 
 exports.cPass = cPass;
-var cWarning = b.cWa + b.crn + b.cin + b.cg; // Warning
+var cWarning = bas.cWa + bas.crn + bas.cin + bas.cg; // Warning
 
 exports.cWarning = cWarning;
-var cFail = b.cFa + b.cil; // Fail
+var cFail = bas.cFa + bas.cil; // Fail
 // Directions
 
 exports.cFail = cFail;
-var cDown = b.cDo + b.cwn; // Down
+var cDown = bas.cDo + bas.cwn; // Down
 
 exports.cDown = cDown;
-var cLeft = b.cLe + b.cft; // Left
+var cLeft = bas.cLe + bas.cft; // Left
 
 exports.cLeft = cLeft;
-var cRight = b.cRi + b.cgh + b.ct; // Right
+var cRight = bas.cRi + bas.cgh + bas.ct; // Right
 // Alphabets
 
 exports.cRight = cRight;
-var cLowerCaseEnglishAlphabet = b.cab + b.ccd + b.cef + b.cgh + b.cij + b.ckl + b.cmn + b.cop + b.cqr + b.cst + b.cuv + b.cwx + b.cyz; // abcdefghijklmnopqrstuvwxyz
+var cLowerCaseEnglishAlphabet = bas.cab + bas.ccd + bas.cef + bas.cgh + bas.cij + bas.ckl + bas.cmn + bas.cop + bas.cqr + bas.cst + bas.cuv + bas.cwx + bas.cyz; // abcdefghijklmnopqrstuvwxyz
 
 exports.cLowerCaseEnglishAlphabet = cLowerCaseEnglishAlphabet;
-var cUpperCaseEnglishAlphabet = b.cAB + b.cCD + b.cEF + b.cGH + b.cIJ + b.cKL + b.cMN + b.cOP + b.cQR + b.cST + b.cUV + b.cWX + b.cYZ; // ABCDEFGHIJKLMNOPQRSTUVWXYZ
+var cUpperCaseEnglishAlphabet = bas.cAB + bas.cCD + bas.cEF + bas.cGH + bas.cIJ + bas.cKL + bas.cMN + bas.cOP + bas.cQR + bas.cST + bas.cUV + bas.cWX + bas.cYZ; // ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 exports.cUpperCaseEnglishAlphabet = cUpperCaseEnglishAlphabet;
-var cAllNumbers = n.c0 + n.c1 + n.c2 + n.c3 + n.c4 + n.c5 + n.c6 + n.c7 + n.c8 + n.c9; // 0123456789
+var cAllNumbers = num.c0 + num.c1 + num.c2 + num.c3 + num.c4 + num.c5 + num.c6 + num.c7 + num.c8 + num.c9; // 0123456789
 // File Extensions
 
 exports.cAllNumbers = cAllNumbers;
-var cdoc = b.cdo + b.cc; // doc
+var cexe = bas.cex + bas.ce; // exe
+
+exports.cexe = cexe;
+var cExe = bas.cEx + bas.ce; // Exe
+
+exports.cExe = cExe;
+var cEXE = bas.cEX + bas.cE; // EXE
+
+exports.cEXE = cEXE;
+var cdoc = bas.cdo + bas.cc; // doc
 
 exports.cdoc = cdoc;
-var cDoc = b.cDo + b.cc; // Doc
+var cDoc = bas.cDo + bas.cc; // Doc
 
 exports.cDoc = cDoc;
-var cDOC = b.cDO + b.cC; // DOC
+var cDOC = bas.cDO + bas.cC; // DOC
 
 exports.cDOC = cDOC;
-var ccom = b.cco + b.cm; // com
+var ccom = bas.cco + bas.cm; // com
 
 exports.ccom = ccom;
-var cCom = b.cCo + b.cm; // Com
+var cCom = bas.cCo + bas.cm; // Com
 
 exports.cCom = cCom;
-var cCOM = b.cCO + b.cM; // COM
+var cCOM = bas.cCO + bas.cM; // COM
 
 exports.cCOM = cCOM;
-var czip = b.cz + b.cip; // zip
+var czip = bas.cz + bas.cip; // zip
 
 exports.czip = czip;
-var cZip = b.cZ + b.cip; // Zip
+var cZip = bas.cZ + bas.cip; // Zip
 
 exports.cZip = cZip;
-var cZIP = b.cZ + b.cIP; // ZIP
+var cZIP = bas.cZ + bas.cIP; // ZIP
 
 exports.cZIP = cZIP;
-var ctxt = b.ct + b.cxt; // txt
+var ctxt = bas.ct + bas.cxt; // txt
 
 exports.ctxt = ctxt;
-var cTxt = b.cT + b.cxt; // Txt
+var cTxt = bas.cT + bas.cxt; // Txt
 
 exports.cTxt = cTxt;
-var cTXT = b.cT + b.cXT; // TXT
+var cTXT = bas.cT + bas.cXT; // TXT
 
 exports.cTXT = cTXT;
-var ccsv = b.ccs + b.cv; // csv
+var ccsv = bas.ccs + bas.cv; // csv
 
 exports.ccsv = ccsv;
-var cCsv = b.cCs + b.cv; // Csv
+var cCsv = bas.cCs + bas.cv; // Csv
 
 exports.cCsv = cCsv;
-var cCSV = b.cCS + b.cV; // CSV
+var cCSV = bas.cCS + bas.cV; // CSV
 
 exports.cCSV = cCSV;
-var cxml = b.cxm + b.cl; // xml
+var cxml = bas.cxm + bas.cl; // xml
 
 exports.cxml = cxml;
-var cXml = b.cXm + b.cl; // Xml
+var cXml = bas.cXm + bas.cl; // Xml
 
 exports.cXml = cXml;
-var cXML = b.cXM + b.cL; // XML
+var cXML = bas.cXM + bas.cL; // XML
 
 exports.cXML = cXML;
-var cjson = b.cjs + b.con; // json
+var clog = bas.clo + bas.cg; // log
+
+exports.clog = clog;
+var cLog = bas.cLo + bas.cg; // Log
+
+exports.cLog = cLog;
+var cLOG = bas.cLO + bas.cG; // LOG
+
+exports.cLOG = cLOG;
+var cjson = bas.cjs + bas.con; // json
 
 exports.cjson = cjson;
-var cJson = b.cJs + b.con; // Json
+var cJson = bas.cJs + bas.con; // Json
 
 exports.cJson = cJson;
-var cJSON = b.cJS + b.cON; // JSON
+var cJSON = bas.cJS + bas.cON; // JSON
 
 exports.cJSON = cJSON;
-var cenv = b.cen + b.cv; // env
+var cenv = bas.cen + bas.cv; // env
 
 exports.cenv = cenv;
-var cEnv = b.cEn + b.cv; // Env
+var cEnv = bas.cEn + bas.cv; // Env
 
 exports.cEnv = cEnv;
-var cENV = b.cEN + b.cV; // ENV
+var cENV = bas.cEN + bas.cV; // ENV
 
 exports.cENV = cENV;
-var cDotcsv = b.cDot + ccsv; // .csv
+var cDotexe = bas.cDot + cexe; // .exe
+
+exports.cDotexe = cDotexe;
+var cDotExe = bas.cDot + cExe; // .Exe
+
+exports.cDotExe = cDotExe;
+var cDotEXE = bas.cDot + cEXE; // .EXE
+
+exports.cDotEXE = cDotEXE;
+var cDotcsv = bas.cDot + ccsv; // .csv
 
 exports.cDotcsv = cDotcsv;
-var cDotCsv = b.cDot + cCsv; // .Csv
+var cDotCsv = bas.cDot + cCsv; // .Csv
 
 exports.cDotCsv = cDotCsv;
-var cDotCSV = b.cDot + cCSV; // .CSV
+var cDotCSV = bas.cDot + cCSV; // .CSV
 
 exports.cDotCSV = cDotCSV;
-var cDotCom = b.cDot + cCom; // .Com
+var cDotCom = bas.cDot + cCom; // .Com
 
 exports.cDotCom = cDotCom;
-var cDotzip = b.cDot + czip; // .zip
+var cDotzip = bas.cDot + czip; // .zip
 
 exports.cDotzip = cDotzip;
-var cDotZip = b.cDot + cZip; // .Zip
+var cDotZip = bas.cDot + cZip; // .Zip
 
 exports.cDotZip = cDotZip;
-var cDotZIP = b.cDot + cZIP; // .ZIP
+var cDotZIP = bas.cDot + cZIP; // .ZIP
 
 exports.cDotZIP = cDotZIP;
-var cDottxt = b.cDot + ctxt; // .txt
+var cDottxt = bas.cDot + ctxt; // .txt
 
 exports.cDottxt = cDottxt;
-var cDotTxt = b.cDot + cTxt; // .Txt
+var cDotTxt = bas.cDot + cTxt; // .Txt
 
 exports.cDotTxt = cDotTxt;
-var cDotTXT = b.cDot + cTXT; // .TXT
+var cDotTXT = bas.cDot + cTXT; // .TXT
 
 exports.cDotTXT = cDotTXT;
-var cDotxml = b.cDot + cxml; // .xml
+var cDotxml = bas.cDot + cxml; // .xml
 
 exports.cDotxml = cDotxml;
-var cDotXml = b.cDot + cXml; // .Xml
+var cDotXml = bas.cDot + cXml; // .Xml
 
 exports.cDotXml = cDotXml;
-var cDotXML = b.cDot + cXML; // .XML
+var cDotXML = bas.cDot + cXML; // .XML
 
 exports.cDotXML = cDotXML;
-var cDotjson = b.cDot + cjson; // .json
+var cDotlog = bas.cDot + clog; // .log
+
+exports.cDotlog = cDotlog;
+var cDotLog = bas.cDot + cLog; // .Log
+
+exports.cDotLog = cDotLog;
+var cDotLOG = bas.cDot + cLOG; // .LOG
+
+exports.cDotLOG = cDotLOG;
+var cDotjson = bas.cDot + cjson; // .json
 
 exports.cDotjson = cDotjson;
-var cDotJson = b.cDot + cJson; // .Json
+var cDotJson = bas.cDot + cJson; // .Json
 
 exports.cDotJson = cDotJson;
-var cDotJSON = b.cDot + cJSON; // .JSON
+var cDotJSON = bas.cDot + cJSON; // .JSON
 
 exports.cDotJSON = cDotJSON;
-var cascii = b.cas + b.cci + b.ci; // ascii
+var cDotenv = bas.cDot + cenv; // .env
+
+exports.cDotenv = cDotenv;
+var cDotEnv = bas.cDot + cEnv; // .Env
+
+exports.cDotEnv = cDotEnv;
+var cDotENV = bas.cDot + cENV; // .ENV
+
+exports.cDotENV = cDotENV;
+var cascii = bas.cas + bas.cci + bas.ci; // ascii
 // Time Formatting
 
 exports.cascii = cascii;
-var cYYYY = b.cYY + b.cYY; // YYYY
+var cYYYY = bas.cYY + bas.cYY; // YYYY
 
 exports.cYYYY = cYYYY;
-var cSSS = b.cSS + b.cS; // SSS
+var cSSS = bas.cSS + bas.cS; // SSS
 
 exports.cSSS = cSSS;
-var cYYYYMMDD = cYYYY + b.cMM + b.cDD; // YYYYMMDD
+var cYYYYMMDD = cYYYY + bas.cMM + bas.cDD; // YYYYMMDD
 
 exports.cYYYYMMDD = cYYYYMMDD;
-var cHHmmss = b.cHH + b.cmm + b.css; // HHmmss
+var cHHmmss = bas.cHH + bas.cmm + bas.css; // HHmmss
 
 exports.cHHmmss = cHHmmss;
-var cHHmmss_SSS = cHHmmss + b.cDash + cSSS; // HHmmss_SSS
+var cHHmmss_SSS = cHHmmss + bas.cDash + cSSS; // HHmmss_SSS
 
 exports.cHHmmss_SSS = cHHmmss_SSS;
-var cYYYYMMDD_HHmmss = cYYYYMMDD + b.cDash + cHHmmss; // YYYYMMDD_HHmmss
+var cYYYYMMDD_HHmmss = cYYYYMMDD + bas.cDash + cHHmmss; // YYYYMMDD_HHmmss
 
 exports.cYYYYMMDD_HHmmss = cYYYYMMDD_HHmmss;
 var cYYYYMMDD_HHmmss_SSS = cYYYYMMDD_HHmmss + cSSS; // YYYYMMDD_HHmmss_SSS
 
 exports.cYYYYMMDD_HHmmss_SSS = cYYYYMMDD_HHmmss_SSS;
-var cYYYY_MM_DD_HH_mm_ss_SSS = cYYYY + b.cColon + b.cMM + b.cColon + b.cDD + b.cDash + b.cHH + b.cColon + b.cmm + b.cColon + b.css + b.cColon + cSSS; // YYYY_MM_DD_HH_mm_ss_SSS
+var cYYYY_MM_DD_HH_mm_ss_SSS = cYYYY + bas.cColon + bas.cMM + bas.cColon + bas.cDD + bas.cDash + bas.cHH + bas.cColon + bas.cmm + bas.cColon + bas.css + bas.cColon + cSSS; // YYYY_MM_DD_HH_mm_ss_SSS
 // Naval & Military Codes
 
 exports.cYYYY_MM_DD_HH_mm_ss_SSS = cYYYY_MM_DD_HH_mm_ss_SSS;
-var cAlfa = b.cAl + b.cfa; //  Alfa
+var cAlfa = bas.cAl + bas.cfa; //  Alfa
 
 exports.cAlfa = cAlfa;
-var cBravo = b.cBr + b.cav + b.co; // Bravo
+var cBravo = bas.cBr + bas.cav + bas.co; // Bravo
 
 exports.cBravo = cBravo;
-var cCharlie = b.cCh + b.car + b.cli + b.ce; // Charlie
+var cCharlie = bas.cCh + bas.car + bas.cli + bas.ce; // Charlie
 
 exports.cCharlie = cCharlie;
-var cDelta = b.cDe + b.clt + b.ca; // Delta
+var cDelta = bas.cDe + bas.clt + bas.ca; // Delta
 
 exports.cDelta = cDelta;
-var cEcho = b.cEc + b.cho; // Echo
+var cEcho = bas.cEc + bas.cho; // Echo
 
 exports.cEcho = cEcho;
-var cFoxtrot = b.cFo + b.cxt + b.cro + b.ct; // Foxtrot
+var cFoxtrot = bas.cFo + bas.cxt + bas.cro + bas.ct; // Foxtrot
 
 exports.cFoxtrot = cFoxtrot;
-var cGolf = b.cGo + b.clf; // Golf
+var cGolf = bas.cGo + bas.clf; // Golf
 
 exports.cGolf = cGolf;
-var cHotel = b.cHo + b.cte + b.cl; // Hotel
+var cHotel = bas.cHo + bas.cte + bas.cl; // Hotel
 
 exports.cHotel = cHotel;
-var cIndia = b.cIn + b.cdi + b.ca; // India
+var cIndia = bas.cIn + bas.cdi + bas.ca; // India
 
 exports.cIndia = cIndia;
-var cJuliett = b.cJu + b.cli + b.cet + b.ct; // Juliett
+var cJuliett = bas.cJu + bas.cli + bas.cet + bas.ct; // Juliett
 
 exports.cJuliett = cJuliett;
-var cKilo = b.cKi + b.clo; // Kilo
+var cKilo = bas.cKi + bas.clo; // Kilo
 
 exports.cKilo = cKilo;
-var cLima = b.cLi + b.cma; // Lima
+var cLima = bas.cLi + bas.cma; // Lima
 
 exports.cLima = cLima;
-var cMike = b.cMi + b.cke; // Mike
+var cMike = bas.cMi + bas.cke; // Mike
 
 exports.cMike = cMike;
-var cNovember = b.cNo + b.cv + p.cemb + b.cer; // November
+var cNovember = bas.cNo + bas.cv + phn.cemb + bas.cer; // November
 
 exports.cNovember = cNovember;
-var cOscar = b.cOs + b.cca + b.cr; // Oscar
+var cOscar = bas.cOs + bas.cca + bas.cr; // Oscar
 
 exports.cOscar = cOscar;
-var cPapa = b.cPa + b.cpa; // Papa
+var cPapa = bas.cPa + bas.cpa; // Papa
 
 exports.cPapa = cPapa;
-var cQuebec = b.cQu + b.ceb + b.cec; // Quebec
+var cQuebec = bas.cQu + bas.ceb + bas.cec; // Quebec
 
 exports.cQuebec = cQuebec;
-var cRomeo = b.cRo + b.cme + b.co; // Romeo
+var cRomeo = bas.cRo + bas.cme + bas.co; // Romeo
 
 exports.cRomeo = cRomeo;
-var cSierra = b.cSi + b.cer + b.cra; // Sierra
+var cSierra = bas.cSi + bas.cer + bas.cra; // Sierra
 
 exports.cSierra = cSierra;
-var cTango = b.cTa + b.cng + b.co; // Tango
+var cTango = bas.cTa + bas.cng + bas.co; // Tango
 
 exports.cTango = cTango;
-var cUniform = b.cUn + b.cif + b.cor + b.cm; // Uniform
+var cUniform = bas.cUn + bas.cif + bas.cor + bas.cm; // Uniform
 
 exports.cUniform = cUniform;
-var cVictor = b.cVi + p.cctor; // Victor
+var cVictor = bas.cVi + phn.cctor; // Victor
 
 exports.cVictor = cVictor;
-var cWhiskey = b.cWh + b.cis + b.cke + b.cy; // Whiskey
+var cWhiskey = bas.cWh + bas.cis + bas.cke + bas.cy; // Whiskey
 
 exports.cWhiskey = cWhiskey;
-var cXray = b.cXr + b.cay; // Xray
+var cXray = bas.cXr + bas.cay; // Xray
 
 exports.cXray = cXray;
-var cYankee = b.cYa + b.cnk + b.cee; // Yankee
+var cYankee = bas.cYa + bas.cnk + bas.cee; // Yankee
 
 exports.cYankee = cYankee;
-var cZulu = b.cZu + b.clu; // Zulu
+var cZulu = bas.cZu + bas.clu; // Zulu
 
 exports.cZulu = cZulu;
-var cAlpha = b.cAl + b.cph + b.ca; // Alpha
+var cAlpha = bas.cAl + bas.cph + bas.ca; // Alpha
 
 exports.cAlpha = cAlpha;
-var cBeta = b.cBe + b.cta; // Beta
+var cBeta = bas.cBe + bas.cta; // Beta
 
 exports.cBeta = cBeta;
-var cGamma = b.cGa + b.cmm + b.ca; // Gamma
+var cGamma = bas.cGa + bas.cmm + bas.ca; // Gamma
 
 exports.cGamma = cGamma;
-var cEpsilon = b.cEp + b.csi + b.clo + b.cn; // Epsilon
+var cEpsilon = bas.cEp + bas.csi + bas.clo + bas.cn; // Epsilon
 
 exports.cEpsilon = cEpsilon;
-var cDigamma = b.cDi + b.cga + b.cmm + b.ca; // Digamma
+var cDigamma = bas.cDi + bas.cga + bas.cmm + bas.ca; // Digamma
 
 exports.cDigamma = cDigamma;
-var cZeta = b.cZe + b.cta; // Zeta
+var cZeta = bas.cZe + bas.cta; // Zeta
 
 exports.cZeta = cZeta;
-var ceta = b.cet + b.ca; // eta
+var ceta = bas.cet + bas.ca; // eta
 
 exports.ceta = ceta;
-var cEta = b.cEt + b.ca; // Eta
+var cEta = bas.cEt + bas.ca; // Eta
 
 exports.cEta = cEta;
-var cTheta = b.cTh + b.cet + b.ca; // Theta
+var cTheta = bas.cTh + bas.cet + bas.ca; // Theta
 
 exports.cTheta = cTheta;
-var cIota = b.cIo + b.cta; // Iota
+var cIota = bas.cIo + bas.cta; // Iota
 
 exports.cIota = cIota;
-var cKappa = b.cKa + b.cpp + b.ca; // Kappa
+var cKappa = bas.cKa + bas.cpp + bas.ca; // Kappa
 
 exports.cKappa = cKappa;
-var cLambda = b.cLa + b.cmb + b.cda; // Lambda
+var cLambda = bas.cLa + bas.cmb + bas.cda; // Lambda
 
 exports.cLambda = cLambda;
-var cMu = b.cMu; // Mu
+var cMu = bas.cMu; // Mu
 
 exports.cMu = cMu;
-var cNu = b.cNu; // Nu
+var cNu = bas.cNu; // Nu
 
 exports.cNu = cNu;
-var cXi = b.cXi; // Xi
+var cXi = bas.cXi; // Xi
 
 exports.cXi = cXi;
-var cOmicron = b.cOm + b.cic + b.cro + b.cn; // Omicron
+var cOmicron = bas.cOm + bas.cic + bas.cro + bas.cn; // Omicron
 
 exports.cOmicron = cOmicron;
-var cPi = b.cPi; // Pi
+var cPi = bas.cPi; // Pi
 
 exports.cPi = cPi;
-var cSan = b.cSa + b.cn; // San
+var cSan = bas.cSa + bas.cn; // San
 
 exports.cSan = cSan;
-var cKoppa = b.cKo + b.cpp + b.ca; // Koppa
+var cKoppa = bas.cKo + bas.cpp + bas.ca; // Koppa
 
 exports.cKoppa = cKoppa;
-var cRho = b.cRh + b.co; // Rho
+var cRho = bas.cRh + bas.co; // Rho
 
 exports.cRho = cRho;
-var cSigma = b.cSi + b.cgm + b.ca; // Sigma
+var cSigma = bas.cSi + bas.cgm + bas.ca; // Sigma
 
 exports.cSigma = cSigma;
-var cTau = b.cTa + b.cu; // Tau
+var cTau = bas.cTa + bas.cu; // Tau
 
 exports.cTau = cTau;
-var cUpsilon = b.cUp + b.csi + b.clo + b.cn; // Upsilon
+var cUpsilon = bas.cUp + bas.csi + bas.clo + bas.cn; // Upsilon
 
 exports.cUpsilon = cUpsilon;
-var cPhi = b.cPh + b.ci; // Phi
+var cPhi = bas.cPh + bas.ci; // Phi
 
 exports.cPhi = cPhi;
-var cChi = b.cCh + b.ci; // Chi
+var cChi = bas.cCh + bas.ci; // Chi
 
 exports.cChi = cChi;
-var cPsi = b.cPs + b.ci; // Psi
+var cPsi = bas.cPs + bas.ci; // Psi
 
 exports.cPsi = cPsi;
-var cOmega = b.cOm + b.ceg + b.ca; // Omega
+var cOmega = bas.cOm + bas.ceg + bas.ca; // Omega
 // Months Of The Year
 
 exports.cOmega = cOmega;
-var cJanuary = b.cJa + b.cn + p.cuary; // January
+var cJanuary = bas.cJa + bas.cn + phn.cuary; // January
 
 exports.cJanuary = cJanuary;
-var cFebuary = b.cFe + b.cb + p.cuary; // Febuary
+var cFebuary = bas.cFe + bas.cb + phn.cuary; // Febuary
 
 exports.cFebuary = cFebuary;
-var cMarch = b.cMa + b.crc + b.ch; // March
+var cMarch = bas.cMa + bas.crc + bas.ch; // March
 
 exports.cMarch = cMarch;
-var cApril = b.cAp + b.cri + b.cl; // April
+var cApril = bas.cAp + bas.cri + bas.cl; // April
 
 exports.cApril = cApril;
-var cMay = b.cMa + b.cy; // May
+var cMay = bas.cMa + bas.cy; // May
 
 exports.cMay = cMay;
-var cJune = b.cJu + b.cne; // June
+var cJune = bas.cJu + bas.cne; // June
 
 exports.cJune = cJune;
-var cJuly = b.cJu + b.cly; // July
+var cJuly = bas.cJu + bas.cly; // July
 
 exports.cJuly = cJuly;
-var cAugust = b.cAu + b.cgu + b.cst; // August
+var cAugust = bas.cAu + bas.cgu + bas.cst; // August
 
 exports.cAugust = cAugust;
-var cSeptember = b.cSe + b.cpt + p.cemb + b.cer; // September
+var cSeptember = bas.cSe + bas.cpt + phn.cemb + bas.cer; // September
 
 exports.cSeptember = cSeptember;
-var cOctober = b.cOc + b.cto + b.cb + b.cer; // October
-// cNovember = b.cNo + b.cv + b.cemb + b.cer; // November
+var cOctober = bas.cOc + bas.cto + bas.cb + bas.cer; // October
+// cNovember = bas.cNo + bas.cv + bas.cemb + bas.cer; // November
 
 exports.cOctober = cOctober;
-var cDecember = b.cDe + b.cc + p.cemb + b.cer; // December
-// Miscelanious
+var cDecember = bas.cDe + bas.cc + phn.cemb + bas.cer; // December
+// Constants Abreviations
 
 exports.cDecember = cDecember;
-var cconst = p.ccon + b.cst;
+var cbas = bas.cba + bas.cs; // bas
+
+exports.cbas = cbas;
+var cbiz = bas.cbi + bas.cz; // biz
+
+exports.cbiz = cbiz;
+var cclr = phn.cclr; // clr
+
+exports.cclr = cclr;
+var ccmd = bas.ccm + bas.cd; // cmd
+
+exports.ccmd = ccmd;
+var ccfg = bas.ccf + bas.cg; // cfg
+
+exports.ccfg = ccfg;
+var cctr = phn.cctr; // ctr
+
+exports.cctr = cctr;
+var celm = bas.cel + bas.cm; // elm
+
+exports.celm = celm;
+var cgen = phn.cgen; // gen
+
+exports.cgen = cgen;
+var ciso = phn.ciso; // iso
+
+exports.ciso = ciso;
+var ckts = bas.ckt + bas.cs; // kts
+
+exports.ckts = ckts;
+var clng = bas.cln + bas.cg; // lng
+
+exports.clng = clng;
+var cmsg = bas.cms + bas.cg; // msg
+
+exports.cmsg = cmsg;
+var cnum = phn.cnum; // num
+
+exports.cnum = cnum;
+var cphn = bas.cph + bas.cn; // phn
+
+exports.cphn = cphn;
+var cshp = phn.cshp; // shp
+
+exports.cshp = cshp;
+var csys = bas.csy + bas.cs; // sys
+
+exports.csys = csys;
+var cunt = phn.cunt; // unt
+
+exports.cunt = cunt;
+var cwrd = bas.cwr + bas.cd; // wrd
+// Miscelanious
+
+exports.cwrd = cwrd;
+var cUTF8 = bas.cUT + bas.cF + num.c8; // UTF8
+
+exports.cUTF8 = cUTF8;
+var cconst = phn.ccon + bas.cst; // const
+
 exports.cconst = cconst;
-var cConst = p.cCon + b.cst;
+var cConst = phn.cCon + bas.cst; // Const
+
 exports.cConst = cConst;
+var cASAP = bas.cAS + bas.cAP; // ASAP
+
+exports.cASAP = cASAP;
+var capp = bas.cap + bas.cp; // app
+
+exports.capp = capp;
+var cApp = bas.cAp + bas.cp; // App
+
+exports.cApp = cApp;
+var cAPP = bas.cAP + bas.cP; // APP
+
+exports.cAPP = cAPP;
+var carg = bas.car + bas.cg; // arg
+
+exports.carg = carg;
+var cArg = bas.cAr + bas.cg; // Arg
+
+exports.cArg = cArg;
+var cargs = bas.ca + phn.crgs; // args
+
+exports.cargs = cargs;
+var cArgs = bas.cA + phn.crgs; // Args
+
+exports.cArgs = cArgs;
+var chex = bas.che + bas.cx; // hex
+
+exports.chex = chex;
+var cHex = bas.cHe + bas.cx; // Hex
+
+exports.cHex = cHex;
+var cregEx = phn.creg + bas.cEx; // regEx
+
+exports.cregEx = cregEx;
+var cRegEx = phn.cReg + bas.cEx; // RegEx
+
+exports.cRegEx = cRegEx;
+var cregExp = cregEx + bas.cp; // regExp
+
+exports.cregExp = cregExp;
+var cRegExp = cRegEx + bas.cp; // RegExp
+
+exports.cRegExp = cRegExp;
+var cbin = bas.cbi + bas.cn; // bin
+
+exports.cbin = cbin;
+var cBin = bas.cBi + bas.cn; // Bin
+
+exports.cBin = cBin;
+var cBIN = bas.cBI + bas.cN; // BIN
+
+exports.cBIN = cBIN;

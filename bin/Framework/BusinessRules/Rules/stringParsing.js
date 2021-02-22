@@ -1,13 +1,15 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.replaceCharacterAtIndexOfString = exports.aggregateCommandArguments = exports.cleanCommandInput = exports.replaceCharacterAtIndex = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.isArrayOrObject = exports.isObject = exports.arrayDeepClone = exports.isNonZeroLengthArray = exports.isArray = exports.isArrayEmpty = exports.isObjectEmpty = exports.storeData = exports.getStoredData = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.arraysAreEqual = exports.getLehmerCodeValue = exports.recursiveArrayExpansion = exports.solveLehmerCode = exports.generateCommandAliases = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.validatePatternsThatNeedImplementation = exports.searchForPatternsInStringArray = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.getLengthOfLongestStringInArray = exports.doesArrayContainFilename = exports.ascertainMatchingElements = exports.ascertainMatchingFilenames = exports.removeCharacterFromArray = exports.doesArrayContainCharacter = exports.doesArrayContainLowerCaseConsolidatedString = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.convertArrayToCamelCaseString = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.recombineStringArrayWithSpaces = exports.getWordsArrayFromString = exports.getWordCountInString = exports.determineWordDelimiter = exports.countDelimiterInString = exports.doesStringContainAcronym = exports.countCamelCaseWords = exports.convertCamelCaseStringToArray = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceCharacterWithCharacter = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
+exports.replaceCharacterAtIndexOfString = exports.cleanCommandInput = exports.isEven = exports.isOdd = exports.getAttributeValue = exports.getAttributeName = exports.supportedFileFormatsAre = exports.loadDataFile = exports.getFirstTopLevelFolderFromPath = exports.removeXnumberOfFoldersFromEndOfPath = exports.replaceDoublePercentWithMessage = exports.parseSystemRootPath = exports.getKeywordNameFromDataContextName = exports.getDataCatagoryDetailNameFromDataContextName = exports.getDataCatagoryFromDataContextName = exports.countDuplicateCommandAliases = exports.isConstantValid = exports.isValidCommandNameString = exports.validateConstantsDataValues = exports.constantsFulfillmentSystem = exports.constantsOptimizedFulfillmentSystem = exports.convertConstantTypeToConstantPrefix = exports.isConstantTypeValid = exports.findConstantName = exports.getConstantName = exports.getConstantActualValue = exports.getConstantType = exports.doesConstantExist = exports.validateConstantsDataValidationLineItemName = exports.determineSuggestedConstantsValidationLineOfCode = exports.determineConstantsContextQualifiedPrefix = exports.validateConstantsDataValidation = exports.ascertainMatchingFilenames = exports.compareSimplifiedAndConsolidatedStrings = exports.simplifyAndConsolidateString = exports.mapWordToCamelCaseWord = exports.isStringCamelCase = exports.isStringList = exports.isFirstCharacterUpperCase = exports.isFirstCharacterLowerCase = exports.doesStringContainLowerCaseCharacter = exports.doesStringContainUpperCaseCharacter = exports.getWordCountInString = exports.determineWordDelimiter = exports.countDelimiterInString = exports.doesStringContainAcronym = exports.countCamelCaseWords = exports.aggregateNumericalDifferenceBetweenTwoStrings = exports.getValueFromAssignmentOperationString = exports.removeFileExtensionFromFileName = exports.removeDotFromFileExtension = exports.getFileExtension = exports.getFileNameFromPath = exports.convertStringToUpperCase = exports.convertStringToLowerCase = exports.cleanCarriageReturnFromString = exports.replaceColonWithUnderscore = exports.replaceSpacesWithPlus = exports.getUserNameFromEmail = exports.swapDoubleBackSlashToSingleBackSlash = exports.swapDoubleForwardSlashToSingleForwardSlash = exports.swapBackSlashToForwardSlash = exports.swapForwardSlashToBackSlash = exports.singleQuoteSwapAfterEquals = exports.isString = exports.isFloat = exports.isInteger = exports.isBoolean = exports.determineObjectDataType = exports.stringToDataType = exports.stringToBoolean = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
-var _stack = _interopRequireDefault(require("../../Resources/stack"));
+var _stack = _interopRequireDefault(require("../../Structures/stack"));
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
@@ -15,13 +17,25 @@ var _dataBroker = _interopRequireDefault(require("../../Executrix/dataBroker"));
 
 var _fileBroker = _interopRequireDefault(require("../../Executrix/fileBroker"));
 
-var b = _interopRequireWildcard(require("../../Constants/basic.constants"));
+var aryParse = _interopRequireWildcard(require("./arrayParsing"));
 
-var g = _interopRequireWildcard(require("../../Constants/generic.constants"));
+var bas = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
-var w = _interopRequireWildcard(require("../../Constants/word.constants"));
+var phn = _interopRequireWildcard(require("../../Constants/phonics.constants"));
 
-var s = _interopRequireWildcard(require("../../Constants/system.constants"));
+var gen = _interopRequireWildcard(require("../../Constants/generic.constants"));
+
+var num = _interopRequireWildcard(require("../../Constants/numeric.constants"));
+
+var wrd = _interopRequireWildcard(require("../../Constants/word.constants"));
+
+var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
+
+var biz = _interopRequireWildcard(require("../../Constants/business.constants"));
+
+var cfg = _interopRequireWildcard(require("../../Constants/configurations.constants"));
+
+var msg = _interopRequireWildcard(require("../../Constants/messages.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -29,20 +43,39 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+// NOTE: DO NOT directly import this library to your script(s).
+// please call via the RuleBroker.js.
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
+/**
+ * @file stringParsing.js
+ * @module stringParsing
+ * @description Contains all system defined business rules for parsing strings, values, arrays,
+ * values of all kinds, with various operations.
+ * @requires module:configurator
+ * @requires module:stack
+ * @requires module:loggers
+ * @requires module:dataBroker
+ * @requires module:fileBroker
+ * @requires module:arrayParsing
+ * @requires module:basic-constants
+ * @requires module:phonics-constants
+ * @requires module:generic-constants
+ * @requires module:numeric-constants
+ * @requires module:word-constants
+ * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:configurations-constants
+ * @requires module:messages-constants
+ * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
+ * @requires {@link https://www.npmjs.com/package/lodash|lodash}
+ * @requires {@link https://www.npmjs.com/package/path|path}
+ * @requires {@link https://mathjs.org/index.html|math}
+ * @requires {@link https://www.npmjs.com/package/chalk|chalk}
+ * @requires module:data
+ * @author Seth Hollingsead
+ * @date 2020/06/04
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+ */
 var lineByLine = require('n-readlines');
 
 var _ = require('lodash');
@@ -53,7 +86,7 @@ var math = require('mathjs');
 
 var chalk = require('chalk');
 
-var D = require('../../../Framework/Resources/data');
+var D = require('../../../Framework/Structures/data');
 
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
@@ -70,13 +103,13 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 
 var stringToBoolean = function stringToBoolean(inputData, inputMetaData) {
-  var functionName = s.cstringToBoolean;
+  var functionName = biz.cstringToBoolean;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -84,35 +117,35 @@ var stringToBoolean = function stringToBoolean(inputData, inputMetaData) {
     returnData = false;
   } else {
     switch (inputData.toLowerCase().trim()) {
-      case g.ctrue:
-      case g.cTrue:
-      case g.cTRUE:
-      case b.ct:
-      case b.cT:
-      case b.cy:
-      case b.cY:
-      case g.cyes:
-      case g.cYes:
-      case g.cYES:
-      case b.con:
-      case b.cOn:
-      case b.cON:
+      case gen.ctrue:
+      case gen.cTrue:
+      case gen.cTRUE:
+      case bas.ct:
+      case bas.cT:
+      case bas.cy:
+      case bas.cY:
+      case gen.cyes:
+      case gen.cYes:
+      case gen.cYES:
+      case bas.con:
+      case bas.cOn:
+      case bas.cON:
         returnData = true;
         break;
 
-      case g.cfalse:
-      case g.cFalse:
-      case g.cFALSE:
-      case b.cf:
-      case b.cF:
-      case b.cn:
-      case b.cN:
-      case b.cno:
-      case b.cNo:
-      case b.cNO:
-      case g.coff:
-      case g.cOff:
-      case g.cOFF:
+      case gen.cfalse:
+      case gen.cFalse:
+      case gen.cFALSE:
+      case bas.cf:
+      case bas.cF:
+      case bas.cn:
+      case bas.cN:
+      case bas.cno:
+      case bas.cNo:
+      case bas.cNO:
+      case gen.coff:
+      case gen.cOff:
+      case gen.cOFF:
         returnData = false;
         break;
 
@@ -122,9 +155,9 @@ var stringToBoolean = function stringToBoolean(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -147,13 +180,13 @@ var stringToBoolean = function stringToBoolean(inputData, inputMetaData) {
 exports.stringToBoolean = stringToBoolean;
 
 var stringToDataType = function stringToDataType(inputData, inputMetaData) {
-  var functionName = s.cstringToDataType;
+  var functionName = biz.cstringToDataType;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -163,19 +196,19 @@ var stringToDataType = function stringToDataType(inputData, inputMetaData) {
     var dataType = determineObjectDataType(inputData);
 
     switch (dataType) {
-      case w.cBoolean:
+      case wrd.cBoolean:
         returnData = stringToBoolean(inputData);
         break;
 
-      case w.cInteger:
+      case wrd.cInteger:
         returnData = parseInt(inputData);
         break;
 
-      case w.cFloat:
+      case wrd.cFloat:
         returnData = parseFloat(inputData);
         break;
 
-      case w.cString:
+      case wrd.cString:
         returnData = inputData;
         break;
 
@@ -186,9 +219,9 @@ var stringToDataType = function stringToDataType(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -206,13 +239,13 @@ var stringToDataType = function stringToDataType(inputData, inputMetaData) {
 exports.stringToDataType = stringToDataType;
 
 var determineObjectDataType = function determineObjectDataType(inputData, inputMetaData) {
-  var functionName = s.cdetermineObjectDataType;
+  var functionName = biz.cdetermineObjectDataType;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -220,25 +253,25 @@ var determineObjectDataType = function determineObjectDataType(inputData, inputM
     returnData = false;
   } else {
     if (isBoolean(inputData) === true) {
-      returnData = w.cBoolean;
+      returnData = wrd.cBoolean;
     } else if (isInteger(inputData) === true) {
-      returnData = w.cInteger;
+      returnData = wrd.cInteger;
     } else if (isFloat(inputData) === true) {
-      returnData = w.cFloat;
+      returnData = wrd.cFloat;
     } else if (isString(inputData) === true) {
-      returnData = w.cString;
+      returnData = wrd.cString;
     } else {
       // Otherwise we cannot figure out what the data type is.
       // No real way to tell the difference between Short, Long and Double.
       // And we don't really need to tell the difference between all those complicated data types.
       // At least not yet!
-      returnData = w.cObject;
+      returnData = wrd.cObject;
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -257,13 +290,13 @@ var determineObjectDataType = function determineObjectDataType(inputData, inputM
 exports.determineObjectDataType = determineObjectDataType;
 
 var isBoolean = function isBoolean(inputData, inputMetaData) {
-  var functionName = s.cisBoolean;
+  var functionName = biz.cisBoolean;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -272,16 +305,16 @@ var isBoolean = function isBoolean(inputData, inputMetaData) {
   } else {
     inputData = inputData.toLowerCase().trim();
 
-    if (inputData === g.ctrue || inputData === b.ct || inputData === b.cy || inputData === g.cyes || inputData === b.con || inputData === g.cfalse || inputData === b.cf || inputData === b.cn || inputData === b.cno || inputData === g.coff) {
+    if (inputData === gen.ctrue || inputData === bas.ct || inputData === bas.cy || inputData === gen.cyes || inputData === bas.con || inputData === gen.cfalse || inputData === bas.cf || inputData === bas.cn || inputData === bas.cno || inputData === gen.coff) {
       returnData = true;
     } else {
       returnData = false;
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -299,21 +332,21 @@ var isBoolean = function isBoolean(inputData, inputMetaData) {
 exports.isBoolean = isBoolean;
 
 var isInteger = function isInteger(inputData, inputMetaData) {
-  var functionName = s.cisInteger;
+  var functionName = biz.cisInteger;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    // if (!isNaN(inputData) && inputData.indexOf(b.cDot) === -1) {
-    // if (!isNaN(inputData) && inputData.includes(b.cDot) === false) { // Might work for strings, but not numbers.
+    // if (!isNaN(inputData) && inputData.indexOf(bas.cDot) === -1) {
+    // if (!isNaN(inputData) && inputData.includes(bas.cDot) === false) { // Might work for strings, but not numbers.
     // // Technically this works, but we want to make sure we don't attempt to evaluate a string here, and also filter out string decimal points.
     // if (!isNaN(inputData) && inputData % 1 === 0) {
     if (!isNaN(inputData)) {
@@ -329,9 +362,9 @@ var isInteger = function isInteger(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -349,29 +382,29 @@ var isInteger = function isInteger(inputData, inputMetaData) {
 exports.isInteger = isInteger;
 
 var isFloat = function isFloat(inputData, inputMetaData) {
-  var functionName = s.cisFloat;
+  var functionName = biz.cisFloat;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    if (!isNaN(inputData) && inputData.indexOf(b.cDot) !== -1) {
+    if (!isNaN(inputData) && inputData.indexOf(bas.cDot) !== -1) {
       returnData = true;
     } else {
       returnData = false;
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -389,13 +422,13 @@ var isFloat = function isFloat(inputData, inputMetaData) {
 exports.isFloat = isFloat;
 
 var isString = function isString(inputData, inputMetaData) {
-  var functionName = s.cisString;
+  var functionName = biz.cisString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -409,9 +442,9 @@ var isString = function isString(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -431,13 +464,13 @@ var isString = function isString(inputData, inputMetaData) {
 exports.isString = isString;
 
 var singleQuoteSwapAfterEquals = function singleQuoteSwapAfterEquals(inputData, inputMetaData) {
-  var functionName = s.csingleQuoteSwapAfterEquals;
+  var functionName = biz.csingleQuoteSwapAfterEquals;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -445,25 +478,25 @@ var singleQuoteSwapAfterEquals = function singleQuoteSwapAfterEquals(inputData, 
     returnData = false;
   } else {
     // console.log('inputData is: ' + inputData);
-    if (inputData.includes(b.cSingleQuote) === true) {
+    if (inputData.includes(bas.cSingleQuote) === true) {
       // First replace all the quotes in the string with double quotes.
-      returnData = inputData.replace(/'/g, b.cDoubleQuote); // Next replace the first and last double quote with single quote.
+      returnData = inputData.replace(/'/g, bas.cDoubleQuote); // Next replace the first and last double quote with single quote.
 
-      if (returnData.indexOf(b.cDoubleQuote) === 0) {
-        returnData = inputData.replace(b.cDoubleQuote, b.cSingleQuote);
+      if (returnData.indexOf(bas.cDoubleQuote) === 0) {
+        returnData = inputData.replace(bas.cDoubleQuote, bas.cSingleQuote);
       }
 
-      if (returnData.charAt(returnData.length - 1) === b.cDoubleQuote) {
-        returnData = returnData.slice(0, -1) + b.cSingleQuote;
+      if (returnData.charAt(returnData.length - 1) === bas.cDoubleQuote) {
+        returnData = returnData.slice(0, -1) + bas.cSingleQuote;
       }
     } else {
       returnData = inputData;
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -482,25 +515,25 @@ var singleQuoteSwapAfterEquals = function singleQuoteSwapAfterEquals(inputData, 
 exports.singleQuoteSwapAfterEquals = singleQuoteSwapAfterEquals;
 
 var swapForwardSlashToBackSlash = function swapForwardSlashToBackSlash(inputData, inputMetaData) {
-  var functionName = s.cswapForwardSlashToBackSlash;
+  var functionName = biz.cswapForwardSlashToBackSlash;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = replaceCharacterWithCharacter(inputData, [/\//g, b.cBackSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\//g, bas.cBackSlash]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -522,25 +555,25 @@ var swapBackSlashToForwardSlash = function swapBackSlashToForwardSlash(inputData
   // console.log('BEGIN stringParsing.swapBackSlashToForwardSlash function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.cswapBackSlashToForwardSlash;
+  var functionName = biz.cswapBackSlashToForwardSlash;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = replaceCharacterWithCharacter(inputData, [/\\/g, b.cForwardSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\\/g, bas.cForwardSlash]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.swapBackSlashToForwardSlash function');
 
 
@@ -561,25 +594,25 @@ var swapBackSlashToForwardSlash = function swapBackSlashToForwardSlash(inputData
 exports.swapBackSlashToForwardSlash = swapBackSlashToForwardSlash;
 
 var swapDoubleForwardSlashToSingleForwardSlash = function swapDoubleForwardSlashToSingleForwardSlash(inputData, inputMetaData) {
-  var functionName = s.cswapDoubleForwardSlashToSingleForwardSlash;
+  var functionName = biz.cswapDoubleForwardSlashToSingleForwardSlash;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = replaceCharacterWithCharacter(inputData, [/\/\//g, b.cForwardSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\/\//g, bas.cForwardSlash]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -601,25 +634,25 @@ var swapDoubleBackSlashToSingleBackSlash = function swapDoubleBackSlashToSingleB
   // console.log('BEGIN stringParsing.swapDoubleBackSlashToSingleBackSlash function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.cswapDoubleBackSlashToSingleBackSlash;
+  var functionName = biz.cswapDoubleBackSlashToSingleBackSlash;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    returnData = replaceCharacterWithCharacter(inputData, [/\\\\/g, b.cBackSlash]);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/\\\\/g, bas.cBackSlash]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.swapDoubleBackSlashToSingleBackSlash function');
 
 
@@ -639,27 +672,27 @@ var swapDoubleBackSlashToSingleBackSlash = function swapDoubleBackSlashToSingleB
 exports.swapDoubleBackSlashToSingleBackSlash = swapDoubleBackSlashToSingleBackSlash;
 
 var getUserNameFromEmail = function getUserNameFromEmail(inputData, inputMetaData) {
-  var functionName = s.cgetUserNameFromEmail;
+  var functionName = biz.cgetUserNameFromEmail;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'index of the ' + b.cAt + ' is: ' + inputData.indexOf(b.cAt));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cIndexOfTheSpace + bas.cAt + msg.cSpaceIsColonSpace + inputData.indexOf(bas.cAt));
 
-    var _returnData = inputData.substr(0, inputData.indexOf(b.cAt));
+    var _returnData = inputData.substr(0, inputData.indexOf(bas.cAt));
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -677,26 +710,26 @@ var getUserNameFromEmail = function getUserNameFromEmail(inputData, inputMetaDat
 exports.getUserNameFromEmail = getUserNameFromEmail;
 
 var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaData) {
-  var functionName = s.creplaceSpacesWithPlus;
+  var functionName = biz.creplaceSpacesWithPlus;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    // returnData = inputData.replace(/ /g, b.cPlus);
-    returnData = replaceCharacterWithCharacter(inputData, [/ /g, b.cPlus]);
+    // returnData = inputData.replace(/ /g, bas.cPlus);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/ /g, bas.cPlus]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -714,74 +747,26 @@ var replaceSpacesWithPlus = function replaceSpacesWithPlus(inputData, inputMetaD
 exports.replaceSpacesWithPlus = replaceSpacesWithPlus;
 
 var replaceColonWithUnderscore = function replaceColonWithUnderscore(inputData, inputMetaData) {
-  var functionName = s.creplaceColonWithUnderscore;
+  var functionName = biz.creplaceColonWithUnderscore;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    // returnData == inputData.replace(/:/g, b.cUnderscore);
-    returnData = replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
+    // returnData == inputData.replace(/:/g, bas.cUnderscore);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/:/g, bas.cUnderscore]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function replaceCharacterWithCharacter
- * @description Replaces all of a specified character in the input data with another specified character.
- * @NOTE: This is NOT a public facing business rule, because the function signature cannot be made to match with the accepted business rules standards.
- * It actually could be made to match but we would have to combine the 2nd two parameters into one with a delimiter.
- * In practice this would be a mistake, but would be an acceptable solution if we find there are many additional needs for this kind of business rule.
- * @param {string} inputData A string that may or may not contain the specified characters that should be converted to another specified character.
- * @param {array<string,string>} inputMetaData An array of data that contains 2 additional string parameters:
- * inputMetaData[0] === character2Find - The character to be searched and replaced from the input string.
- * inputMetaData[1] === character2Replace - The character that should be used to replace the character specified for replacement from the input data.
- * @return {string} The same as the input string but with specified characters converted to the other specified character.
- * @author Seth Hollingsead
- * @date 2020/02/03
- */
-
-
-exports.replaceColonWithUnderscore = replaceColonWithUnderscore;
-
-var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(inputData, inputMetaData) {
-  // console.log('BEGIN stringParsing.replaceCharacterWithCharacter function');
-  // console.log('inputData is: ' + inputData);
-  // console.log('inputMetaData is: ' + JSON.stringify(inputMetaData));
-  var functionName = s.creplaceCharacterWithCharacter;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData;
-  var character2Find = inputMetaData[0];
-  var character2Replace = inputMetaData[1];
-
-  if (!inputData && !character2Find && !character2Replace) {
-    returnData = false;
-  } else {
-    returnData = inputData.replace(character2Find, character2Replace);
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
-  // console.log('END stringParsing.replaceCharacterWithCharacter function');
-
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -796,16 +781,16 @@ var replaceCharacterWithCharacter = function replaceCharacterWithCharacter(input
  */
 
 
-exports.replaceCharacterWithCharacter = replaceCharacterWithCharacter;
+exports.replaceColonWithUnderscore = replaceColonWithUnderscore;
 
 var cleanCarriageReturnFromString = function cleanCarriageReturnFromString(inputData, inputMetaData) {
-  var functionName = s.ccleanCarriageReturnFromString;
+  var functionName = biz.ccleanCarriageReturnFromString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -815,9 +800,9 @@ var cleanCarriageReturnFromString = function cleanCarriageReturnFromString(input
     returnData = inputData.replace(/\s+/g, ' ').trim();
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -835,13 +820,13 @@ var cleanCarriageReturnFromString = function cleanCarriageReturnFromString(input
 exports.cleanCarriageReturnFromString = cleanCarriageReturnFromString;
 
 var convertStringToLowerCase = function convertStringToLowerCase(inputData, inputMetaData) {
-  var functionName = s.cconvertStringToLowerCase;
+  var functionName = biz.cconvertStringToLowerCase;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -851,9 +836,9 @@ var convertStringToLowerCase = function convertStringToLowerCase(inputData, inpu
     returnData = inputData.toLowerCase();
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -871,13 +856,13 @@ var convertStringToLowerCase = function convertStringToLowerCase(inputData, inpu
 exports.convertStringToLowerCase = convertStringToLowerCase;
 
 var convertStringToUpperCase = function convertStringToUpperCase(inputData, inputMetaData) {
-  var functionName = s.cconvertStringToUpperCase;
+  var functionName = biz.cconvertStringToUpperCase;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -887,9 +872,9 @@ var convertStringToUpperCase = function convertStringToUpperCase(inputData, inpu
     returnData = inputData.toUpperCase();
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -910,13 +895,13 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
   // console.log('BEGIN stringParsing.getFileNameFromPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.cgetFileNameFromPath;
+  var functionName = biz.cgetFileNameFromPath;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -924,21 +909,21 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
     returnData = false;
   } else {
     // Clean the path string for any double slashes.
-    if (inputData.includes(b.cDoubleForwardSlash)) {
+    if (inputData.includes(bas.cDoubleForwardSlash)) {
       inputData = swapDoubleForwardSlashToSingleForwardSlash(inputData, '');
     }
 
-    if (inputData.includes(b.cForwardSlash)) {
+    if (inputData.includes(bas.cForwardSlash)) {
       inputData = swapForwardSlashToBackSlash(inputData, '');
     } // console.log('inputData right before processing is: ' + inputData);
 
 
-    returnData = inputData.split(b.cBackSlash).pop().trim();
+    returnData = inputData.split(bas.cBackSlash).pop().trim();
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -957,13 +942,13 @@ var getFileNameFromPath = function getFileNameFromPath(inputData, inputMetaData)
 exports.getFileNameFromPath = getFileNameFromPath;
 
 var getFileExtension = function getFileExtension(inputData, inputMetaData) {
-  var functionName = s.cgetFileExtension;
+  var functionName = biz.cgetFileExtension;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -973,9 +958,9 @@ var getFileExtension = function getFileExtension(inputData, inputMetaData) {
     returnData = path.extname(inputData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -993,13 +978,13 @@ var getFileExtension = function getFileExtension(inputData, inputMetaData) {
 exports.getFileExtension = getFileExtension;
 
 var removeDotFromFileExtension = function removeDotFromFileExtension(inputData, inputMetaData) {
-  var functionName = s.cremoveDotFromFileExtension;
+  var functionName = biz.cremoveDotFromFileExtension;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -1009,9 +994,9 @@ var removeDotFromFileExtension = function removeDotFromFileExtension(inputData, 
     returnData = inputData.substring(1);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1030,13 +1015,13 @@ var removeDotFromFileExtension = function removeDotFromFileExtension(inputData, 
 exports.removeDotFromFileExtension = removeDotFromFileExtension;
 
 var removeFileExtensionFromFileName = function removeFileExtensionFromFileName(inputData, inputMetaData) {
-  var functionName = s.cremoveFileExtensionFromFileName;
+  var functionName = biz.cremoveFileExtensionFromFileName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
@@ -1046,9 +1031,9 @@ var removeFileExtensionFromFileName = function removeFileExtensionFromFileName(i
     returnData = inputData.replace(/\.[^/.]+$/, '');
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1066,32 +1051,32 @@ var removeFileExtensionFromFileName = function removeFileExtensionFromFileName(i
 exports.removeFileExtensionFromFileName = removeFileExtensionFromFileName;
 
 var getValueFromAssignmentOperationString = function getValueFromAssignmentOperationString(inputData, inputMetaData) {
-  console.log('s.cgetValueFromAssignmentOperationString is resolving as: ' + s.cgetValueFromAssignmentOperationString);
-  var functionName = s.cgetValueFromAssignmentOperationString;
+  console.log('biz.cgetValueFromAssignmentOperationString' + bas.cSpace + msg.cisResolvingAs + biz.cgetValueFromAssignmentOperationString);
+  var functionName = biz.cgetValueFromAssignmentOperationString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
 
   if (!inputData) {
     returnData = false;
   } else {
-    var parsedString = inputData.split(b.cEqual);
+    var parsedString = inputData.split(bas.cEqual);
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'parsedString term 1 is: ' + parsedString[0]);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cparsedStringSpaceTerm + bas.cSpace + num.c1 + msg.cSpaceIsColonSpace + parsedString[0]);
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'parsedString term 2 is: ' + parsedString[1]);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cparsedStringSpaceTerm + bas.cSpace + num.c2 + msg.cSpaceIsColonSpace + parsedString[1]);
 
     returnData = parsedString[1].replace(/['"]+/g, '');
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1111,22 +1096,22 @@ var getValueFromAssignmentOperationString = function getValueFromAssignmentOpera
 exports.getValueFromAssignmentOperationString = getValueFromAssignmentOperationString;
 
 var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalDifferenceBetweenTwoStrings(inputData, inputMetaData) {
-  var functionName = s.caggregateNumericalDifferenceBetweenTwoStrings;
+  var functionName = biz.caggregateNumericalDifferenceBetweenTwoStrings;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData; // Convert the input strings to lower case and clean them up for parsing.
 
   var string1 = inputData.toLowerCase().replace(/\W/g, '');
   var string2 = inputMetaData.toLowerCase().replace(/\W/g, '');
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'string1 is: ' + string1);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cstring1Is + string1);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'string2 is: ' + string2); // Build some arrays of variations on string 2, we will use these for doing the comparisons.
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cstring2Is + string2); // Build some arrays of variations on string 2, we will use these for doing the comparisons.
 
 
   var variation0 = Array(string2.length + 1).fill(0).map(function (v, i) {
@@ -1134,19 +1119,19 @@ var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalD
   });
   var variation1 = Array(string2.length + 1).fill(0);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'variation0 value is: ' + variation0);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation0ValueIs + variation0);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'variation1 value is: ' + variation1);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation1ValueIs + variation1);
 
   for (var i = 0; i < string1.length; i++) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'i value is: ' + i);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ciValueIs + i);
 
     variation1[0] = i + 1;
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'variation0 value is: ' + variation0);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation0ValueIs + variation0);
 
     for (var j = 0; j < string2.length; j++) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'j value is: ' + j);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cjValueIs + j);
 
       var deletionCost = variation0[j + 1] + 1;
       var insertionCost = variation1[j] + 1;
@@ -1158,15 +1143,15 @@ var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalD
         substitutionCost = variation0[j] + 1;
       }
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deletionCost is: ' + deletionCost);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdeletionCostIs + deletionCost);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'insertionCost is: ' + insertionCost);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinsertionCostIs + insertionCost);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'substitutionCost is: ' + substitutionCost);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csubstitutionCostIs + substitutionCost);
 
       variation1[j + 1] = math.min(deletionCost, insertionCost, substitutionCost);
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'variation1 value is: ' + variation1);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cvariation1ValueIs + variation1);
     }
 
     var temp = variation1;
@@ -1176,64 +1161,9 @@ var aggregateNumericalDifferenceBetweenTwoStrings = function aggregateNumericalD
 
   returnData = variation0[string2.length];
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function convertCamelCaseStringToArray
- * @description Takes a string in camelCase and returns an array of the words.
- * @param {string} inputData String to decompose into an array.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {array<string>} The array of words that were composed in the original string.
- * @author Seth Hollingsead
- * @date 2020/02/10
- * @NOTE Might not work so well with numbers as part of the string, they are not treated as capital letters.
- * We might need to do some refactoring of this function if
- * mixed numbers and camel case strings ever becomes a requirement as input to this function.
- */
-
-
-exports.aggregateNumericalDifferenceBetweenTwoStrings = aggregateNumericalDifferenceBetweenTwoStrings;
-
-var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(inputData, inputMetaData) {
-  var functionName = s.cconvertCamelCaseStringToArray;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData;
-  var caps = [];
-
-  for (var i = 1; i < inputData.length; i++) {
-    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
-      caps.push(i);
-    }
-  }
-
-  if (caps.length > 0) {
-    var last = 0;
-    var decomposedString = [];
-
-    for (var j = 0; j < caps.length; j++) {
-      decomposedString.push(inputData.slice(last, caps[j]));
-      last = caps[j];
-    }
-
-    decomposedString.push(inputData.slice(last));
-    returnData = decomposedString;
-  } else {
-    returnData = [inputData];
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1248,35 +1178,38 @@ var convertCamelCaseStringToArray = function convertCamelCaseStringToArray(input
  * @NOTE Might not work so well with numbers as part of the string, they are not treated as capital letters.
  * We might need to do some refactoring of this function if
  * mixed numbers and camel case strings ever becomes a requirement as input to this function.
- * @NOTE Based on the above implementation for the business rule/function convertCamelCaseStringToArray
+ * @NOTE Based on the above implementation for the business rule/function aryParse.convertCamelCaseStringToArray
  */
 
 
-exports.convertCamelCaseStringToArray = convertCamelCaseStringToArray;
+exports.aggregateNumericalDifferenceBetweenTwoStrings = aggregateNumericalDifferenceBetweenTwoStrings;
 
 var countCamelCaseWords = function countCamelCaseWords(inputData, inputMetaData) {
-  var functionName = s.ccountCamelCaseWords;
+  var functionName = biz.ccountCamelCaseWords;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
-  var caps = [];
+  var returnData = 0;
 
-  for (var i = 1; i < inputData.length; i++) {
-    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
-      caps.push(i);
+  if (inputData) {
+    var caps = [];
+
+    for (var i = 1; i < inputData.length; i++) {
+      if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+        caps.push(i);
+      }
     }
+
+    returnData = caps.length;
   }
 
-  returnData = caps.length;
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1295,35 +1228,37 @@ var countCamelCaseWords = function countCamelCaseWords(inputData, inputMetaData)
 exports.countCamelCaseWords = countCamelCaseWords;
 
 var doesStringContainAcronym = function doesStringContainAcronym(inputData, inputMetaData) {
-  var functionName = s.cdoesStringContainAcronym;
+  var functionName = biz.cdoesStringContainAcronym;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
   var lastCharacterWasUpperCase = false;
   var caps = [];
 
-  for (var i = 1; i < inputData.length; i++) {
-    // If the last character was upper case and the current character is upper case then we have found an acronym and we can exit the loop.
-    if (lastCharacterWasUpperCase === true && g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
-      returnData = true;
-      break;
-    }
+  if (inputData) {
+    for (var i = 1; i < inputData.length; i++) {
+      // If the last character was upper case and the current character is upper case then we have found an acronym and we can exit the loop.
+      if (lastCharacterWasUpperCase === true && gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+        returnData = true;
+        break;
+      }
 
-    if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
-      lastCharacterWasUpperCase = true;
-    } else {
-      lastCharacterWasUpperCase = false;
+      if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+        lastCharacterWasUpperCase = true;
+      } else {
+        lastCharacterWasUpperCase = false;
+      }
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1342,19 +1277,23 @@ var doesStringContainAcronym = function doesStringContainAcronym(inputData, inpu
 exports.doesStringContainAcronym = doesStringContainAcronym;
 
 var countDelimiterInString = function countDelimiterInString(inputData, inputMetaData) {
-  var functionName = s.ccountDelimiterInString;
+  var functionName = biz.ccountDelimiterInString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData = inputData.split(inputMetaData).length - 1;
+  var returnData = 0;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  if (inputData && inputMetaData) {
+    returnData = inputData.split(inputMetaData).length - 1;
+  }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1372,60 +1311,70 @@ var countDelimiterInString = function countDelimiterInString(inputData, inputMet
 exports.countDelimiterInString = countDelimiterInString;
 
 var determineWordDelimiter = function determineWordDelimiter(inputData, inputMetaData) {
-  var functionName = s.cdetermineWordDelimiter;
+  var functionName = biz.cdetermineWordDelimiter;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
-  var camelCaseWordCount = countCamelCaseWords(inputData, '');
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'camelCaseWordCount is: ' + camelCaseWordCount);
+  if (inputData) {
+    var camelCaseWordCount = countCamelCaseWords(inputData, '');
 
-  var containsAcronym = doesStringContainAcronym(inputData, '');
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccamelCaseWordCountIs + camelCaseWordCount);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'containsAcronym is: ' + containsAcronym);
+    var containsAcronym = doesStringContainAcronym(inputData, '');
 
-  var spacesCount = countDelimiterInString(inputData, b.cSpace);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccontainsAcronymIs + containsAcronym);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'spacesCount is: ' + spacesCount);
+    var spacesCount = countDelimiterInString(inputData, bas.cSpace);
 
-  var periodCount = countDelimiterInString(inputData, b.cDot);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cspacesCountIs + spacesCount);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'periodCount is: ' + periodCount);
+    var periodCount = countDelimiterInString(inputData, bas.cDot);
 
-  var dashCount = countDelimiterInString(inputData, b.cDash);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cperiodCountIs + periodCount);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'dashCount is: ' + dashCount);
+    var dashCount = countDelimiterInString(inputData, bas.cDash);
 
-  var underscoreCount = countDelimiterInString(inputData, b.cUnderscore);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdashCountIs + dashCount);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'underscoreCount is: ' + underscoreCount);
+    var comaCount = countDelimiterInString(inputData, bas.cComa);
 
-  if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
-    returnData = s.cCamelCase; // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
-    // We could have multiple acronyms in a word, or in multiple words that are camelCase.
-    // Each of these could be a really complex special case. If we get to that point we will handle those cases on a case by case basis to improve the algorithm.
-    // } else if (camelCaseWordCount > 1 && containsAcronym === false)
-  } else if (spacesCount > 0 && periodCount === 0 && dashCount === 0 && underscoreCount === 0) {
-    returnData = b.cSpace;
-  } else if (spacesCount === 0 && periodCount > 0 && dashCount === 0 && underscoreCount === 0) {
-    returnData = b.cDot;
-  } else if (spacesCount === 0 && periodCount === 0 && dashCount > 0 && underscoreCount === 0) {
-    returnData = b.cDash;
-  } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && underscoreCount > 0) {
-    returnData = b.cUnderscore;
-  } else {
-    // We don't need to be showing this warning unless we are debugging.
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.');
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccomaCountIs + comaCount);
+
+    var underscoreCount = countDelimiterInString(inputData, bas.cUnderscore);
+
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cunderscoreCountIs + underscoreCount);
+
+    if (camelCaseWordCount > 0 && containsAcronym === false && spacesCount === 0 && periodCount === 0 && dashCount === 0 && comaCount === 0 && underscoreCount === 0) {
+      returnData = sys.cCamelCase; // We haven't hit the case yet where we need to differenciate between all these extra cases, and there are several of them.
+      // We could have multiple acronyms in a word, or in multiple words that are camelCase.
+      // Each of these could be a really complex special case. If we get to that point we will handle those cases on a case by case basis to improve the algorithm.
+      // } else if (camelCaseWordCount > 1 && containsAcronym === false)
+    } else if (spacesCount > 0 && periodCount === 0 && dashCount === 0 && comaCount === 0 && underscoreCount === 0) {
+      returnData = bas.cSpace;
+    } else if (spacesCount === 0 && periodCount > 0 && dashCount === 0 && comaCount === 0 && underscoreCount === 0) {
+      returnData = bas.cDot;
+    } else if (spacesCount === 0 && periodCount === 0 && dashCount > 0 && comaCount === 0 && underscoreCount === 0) {
+      returnData = bas.cDash;
+    } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && comaCount > 0 && underscoreCount === 0) {
+      returnData = bas.cComa;
+    } else if (spacesCount === 0 && periodCount === 0 && dashCount === 0 && comaCount === 0 && underscoreCount > 0) {
+      returnData = bas.cUnderscore;
+    } else {
+      // We don't need to be showing this warning unless we are debugging.
+      // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDetermineWordDelimiterMessage1 + msg.cDetermineWordDelimiterMessage2 + msg.cDetermineWordDelimiterMessage3 + msg.cDetermineWordDelimiterMessage4);
+    }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1443,115 +1392,32 @@ var determineWordDelimiter = function determineWordDelimiter(inputData, inputMet
 exports.determineWordDelimiter = determineWordDelimiter;
 
 var getWordCountInString = function getWordCountInString(inputData, inputMetaData) {
-  var functionName = s.cgetWordCountInString;
+  var functionName = biz.cgetWordCountInString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = 0;
-  var wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
-
-  if (wordDelimiter === s.cCamelCase) {
-    returnData = countCamelCaseWords(inputData, '');
-  } else if (wordDelimiter != '') {
-    returnData = inputData.split(wordDelimiter).length;
-  } else {
-    // We don't need to be showing this warning unless we are debugging.
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot determine how words are delimited in the string. Unable to count words.');
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function getWordsArrayFromString
- * @description Gets an array of words from a string,
- * automatically determining how the words are delimited based on common word delimiters: camel case, space, period, dash & underscore.
- * @param {string} inputData The string that should be broken down into words and returned as an array.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {array<string>} The array of words found in the string.
- * @author Seth Hollingsead
- * @date 2021/01/28
- */
-
-
-exports.getWordCountInString = getWordCountInString;
-
-var getWordsArrayFromString = function getWordsArrayFromString(inputData, inputMetaData) {
-  var functionName = s.cgetWordsArrayFromString;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = 0;
-
-  if (getWordCountInString(inputData, '') > 0) {
-    var wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
-    var stringContainsAcronym = doesStringContainAcronym(inputData, '');
-
-    if (wordDelimiter === s.cCamelCase && stringContainsAcronym === false) {
-      returnData = convertCamelCaseStringToArray(inputData, '');
-    } else if (wordDelimiter != '' && wordDelimiter != s.cCamelCase) {
-      returnData = inputData.split(wordDelimiter);
-    } else {
-      // We don't need to be showing this warning unless we are debugging.
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Mixed string. Cannot get words from the string. Unable to determine words.');
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function recombineStringArrayWithSpaces
- * @description Takes an array of strings and recombines them sequentially with spaces between each array element.
- * This function is needed, because commands parse inputs by spaces into an array,
- * and some commands need a single continuous string that might be delimited by coma's.
- * So this function lets us recombine and then re-parse the string with another delimiter.
- * @param {array<string>} inputData The array of strings that should be recombined.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {string} The string array with spaces between array elements.
- * @author Seth Hollingsead
- * @date 2021/01/29
- */
-
-
-exports.getWordsArrayFromString = getWordsArrayFromString;
-
-var recombineStringArrayWithSpaces = function recombineStringArrayWithSpaces(inputData, inputMetaData) {
-  var functionName = s.crecombineStringArrayWithSpaces;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = '';
 
   if (inputData) {
-    returnData = inputData[1];
+    var wordDelimiter = determineWordDelimiter(inputData, inputMetaData);
 
-    for (var i = 2; i < inputData.length; i++) {
-      returnData = returnData + b.cSpace + inputData[i];
+    if (wordDelimiter === sys.cCamelCase) {
+      returnData = countCamelCaseWords(inputData, '');
+    } else if (wordDelimiter != '') {
+      returnData = inputData.split(wordDelimiter).length;
+    } else {
+      // We don't need to be showing this warning unless we are debugging.
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cGetWordCountInStringMessage1 + msg.cGetWordCountInStringMessage2 + msg.cGetWordCountInStringMessage3);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1566,33 +1432,31 @@ var recombineStringArrayWithSpaces = function recombineStringArrayWithSpaces(inp
  */
 
 
-exports.recombineStringArrayWithSpaces = recombineStringArrayWithSpaces;
+exports.getWordCountInString = getWordCountInString;
 
 var doesStringContainUpperCaseCharacter = function doesStringContainUpperCaseCharacter(inputData, inputMetaData) {
-  var functionName = s.cdoesStringContainUpperCaseCharacter;
+  var functionName = biz.cdoesStringContainUpperCaseCharacter;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
+  if (inputData) {
     for (var i = 1; i < inputData.length; i++) {
-      if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
         returnData = true;
         break;
       }
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1610,30 +1474,28 @@ var doesStringContainUpperCaseCharacter = function doesStringContainUpperCaseCha
 exports.doesStringContainUpperCaseCharacter = doesStringContainUpperCaseCharacter;
 
 var doesStringContainLowerCaseCharacter = function doesStringContainLowerCaseCharacter(inputData, inputMetaData) {
-  var functionName = s.cdoesStringContainLowerCaseCharacter;
+  var functionName = biz.cdoesStringContainLowerCaseCharacter;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
+  if (inputData) {
     for (var i = 1; i < inputData.length; i++) {
-      if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+      if (gen.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
         returnData = true;
         break;
       }
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1651,25 +1513,23 @@ var doesStringContainLowerCaseCharacter = function doesStringContainLowerCaseCha
 exports.doesStringContainLowerCaseCharacter = doesStringContainLowerCaseCharacter;
 
 var isFirstCharacterLowerCase = function isFirstCharacterLowerCase(inputData, inputMetaData) {
-  var functionName = s.cisFirstCharacterLowerCase;
+  var functionName = biz.cisFirstCharacterLowerCase;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    returnData = g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(0));
+  if (inputData) {
+    returnData = gen.cLowerCaseEnglishAlphabet.includes(inputData.charAt(0));
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1687,25 +1547,23 @@ var isFirstCharacterLowerCase = function isFirstCharacterLowerCase(inputData, in
 exports.isFirstCharacterLowerCase = isFirstCharacterLowerCase;
 
 var isFirstCharacterUpperCase = function isFirstCharacterUpperCase(inputData, inputMetaData) {
-  var functionName = s.cisFirstCharacterUpperCase;
+  var functionName = biz.cisFirstCharacterUpperCase;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    returnData = g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(0));
+  if (inputData) {
+    returnData = gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(0));
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1723,33 +1581,31 @@ var isFirstCharacterUpperCase = function isFirstCharacterUpperCase(inputData, in
 exports.isFirstCharacterUpperCase = isFirstCharacterUpperCase;
 
 var isStringList = function isStringList(inputData, inputMetaData) {
-  var functionName = s.cisStringList;
+  var functionName = biz.cisStringList;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
+  if (inputData) {
+    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
 
-    var secondaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
+    var secondaryCommandDelimiter = _configurator["default"].getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
 
-    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter);
+    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
 
     if (inputData.includes(primaryCommandDelimiter) === true || inputData.includes(secondaryCommandDelimiter) === true || inputData.includes(tertiaryCommandDelimiter) === true) {
       returnData = true;
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1775,13 +1631,13 @@ var isStringList = function isStringList(inputData, inputMetaData) {
 exports.isStringList = isStringList;
 
 var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
-  var functionName = s.cisStringCamelCase;
+  var functionName = biz.cisStringCamelCase;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
@@ -1800,12 +1656,12 @@ var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
         // NOTE: This for-loop is how we iterate over the characters of the string.
         // First we need to look for the first upper case letter.
         if (foundFirstCapitalLetter === false) {
-          if (g.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+          if (gen.cUpperCaseEnglishAlphabet.includes(inputData.charAt(i))) {
             // Found an upper case letter, ensure the next letter is lower case.
             foundFirstCapitalLetter = true;
           }
         } else if (foundFirstCapitalLetter === true) {
-          if (g.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
+          if (gen.cLowerCaseEnglishAlphabet.includes(inputData.charAt(i))) {
             returnData = true;
             break; // Sufficent evidence to prove this is a camel case string.
           }
@@ -1816,42 +1672,9 @@ var isStringCamelCase = function isStringCamelCase(inputData, inputMetaData) {
 
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function convertArrayToCamelCaseString
- * @description Takes an array of words and returns a camelCase string of the input words.
- * @param {array<string>} inputData The array of words that should be strung together into a single long string.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {string} A String that contains all of the words from the input array put together in sequential order.
- * @author Seth Hollingsead
- * @date 2020/02/10
- */
-
-
-exports.isStringCamelCase = isStringCamelCase;
-
-var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(inputData, inputMetaData) {
-  var functionName = s.cconvertArrayToCamelCaseString;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData;
-  returnData = inputData.map(function (key, index) {
-    return mapWordToCamelCaseWord(key, index);
-  });
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1866,25 +1689,28 @@ var convertArrayToCamelCaseString = function convertArrayToCamelCaseString(input
  */
 
 
-exports.convertArrayToCamelCaseString = convertArrayToCamelCaseString;
+exports.isStringCamelCase = isStringCamelCase;
 
 var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMetaData) {
-  var functionName = s.cmapWordToCamelCaseWord;
+  var functionName = biz.cmapWordToCamelCaseWord;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
-  returnData = inputData.replace(/^./, function (character) {
-    return character.toUpperCase();
-  });
+  var returnData = '';
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  if (inputData) {
+    returnData = inputData.replace(/^./, function (character) {
+      return character.toUpperCase();
+    });
+  }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1907,20 +1733,23 @@ var mapWordToCamelCaseWord = function mapWordToCamelCaseWord(inputData, inputMet
 exports.mapWordToCamelCaseWord = mapWordToCamelCaseWord;
 
 var simplifyAndConsolidateString = function simplifyAndConsolidateString(inputData, inputMetaData) {
-  var functionName = s.csimplifyAndConsolidateString;
+  var functionName = biz.csimplifyAndConsolidateString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
-  returnData = _.replace(inputData.toLowerCase(), /[\W]/g, '');
+  var returnData = '';
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  if (inputData) {
+    returnData = _.replace(inputData.toLowerCase(), /[\W]/g, '');
+  }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -1938,150 +1767,23 @@ var simplifyAndConsolidateString = function simplifyAndConsolidateString(inputDa
 exports.simplifyAndConsolidateString = simplifyAndConsolidateString;
 
 var compareSimplifiedAndConsolidatedStrings = function compareSimplifiedAndConsolidatedStrings(inputData, inputMetaData) {
-  var functionName = s.ccompareSimplifiedAndConsolidatedStrings;
+  var functionName = biz.ccompareSimplifiedAndConsolidatedStrings;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData;
-  returnData = simplifyAndConsolidateString(inputData) === simplifyAndConsolidateString(inputMetaData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function doesArrayContainLowerCaseConsolidatedString
- * @description Checks if an array contains a string, comparison made by lowerCaseAndConsolidateString().
- * @param {array} inputData The array of strings that should be checked if it contains the specified string.
- * @param {string} inputMetaData The string we are looking for in the array.
- * @return {boolean} A Boolean to indicate if the string is found in the array or not.
- * @NOTE Duplicated code in the app.js file,
- * because the app.js code does not support calling and importing ES6 code from CommonJS code.
- * @author Seth Hollingsead
- * @date 2020/02/10
- */
-
-
-exports.compareSimplifiedAndConsolidatedStrings = compareSimplifiedAndConsolidatedStrings;
-
-var doesArrayContainLowerCaseConsolidatedString = function doesArrayContainLowerCaseConsolidatedString(inputData, inputMetaData) {
-  var functionName = s.cdoesArrayContainLowerCaseConsolidatedString;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData;
-
-  var stringDelta = function stringDelta(value1, value2) {
-    return aggregateNumericalDifferenceBetweenTwoStrings(value1, value2) < 2;
-  };
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'stringDelta value is: ' + stringDelta);
-
-  returnData = doesArrayContainValue(inputData, inputMetaData, stringDelta);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function doesArrayContainCharacter
- * @description Parses through all the elements of an array and determines if any one of them contains the input character.
- * @param {string|boolean|integer|object} inputData The character that should be searched for in the array of elements.
- * @param {array<string|boolean|integer|object>} inputMetaData The array that should be searched for the specified character/value/etc...
- * @return {boolean} True or False to indicate if the value was found or not found.
- * @author Seth Hollingsead
- * @date 2020/06/25
- */
-
-
-exports.doesArrayContainLowerCaseConsolidatedString = doesArrayContainLowerCaseConsolidatedString;
-
-var doesArrayContainCharacter = function doesArrayContainCharacter(inputData, inputMetaData) {
-  var functionName = s.cdoesArrayContainCharacter;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
-  if (!inputData && !inputMetaData) {
-    returnData = false;
-  } else {
-    for (var i = 0; i < inputMetaData.length; i++) {
-      var arrayElement = inputMetaData[i];
-
-      if (arrayElement.includes(inputData) === true) {
-        returnData = true;
-        break;
-      }
-    }
+  if (inputData && inputMetaData) {
+    returnData = simplifyAndConsolidateString(inputData, '') === simplifyAndConsolidateString(inputMetaData, '');
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function removeCharacterFromArray
- * @description Removes all instances of a character or value from all array elements.
- * @param {string|integer|boolean|float|object} inputData The character, integer, boolean, float or object
- * that should be removed from all instances of the input array.
- * @param {array<string|boolean|integer|object>} inputMetaData The array from which all instances of the input character, integer, etc... should be removed.
- * @return {array<string|boolean|integer|object>} The array after having the specified character removed from all elements of the input array.
- * @author Seth Hollingsead
- * @date 2020/06/25
- */
-
-
-exports.doesArrayContainCharacter = doesArrayContainCharacter;
-
-var removeCharacterFromArray = function removeCharacterFromArray(inputData, inputMetaData) {
-  var functionName = s.cremoveCharacterFromArray;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false;
-
-  if (!inputData && !inputMetaData) {
-    return false;
-  } else {
-    for (var i = 0; i < inputMetaData.length; i++) {
-      var arrayElement = inputMetaData[i];
-
-      if (arrayElement.includes(inputData) === true) {
-        // replaceCharacterWithCharacter Use this to parse the string and remove all characters that match.
-        // replaceCharacterWithCharacter(inputData, [/:/g, b.cUnderscore]);
-        inputMetaData[i] = replaceCharacterWithCharacter(arrayElement, [RegExp('\\' + inputData, b.cg), '']);
-      }
-    }
-
-    returnData = inputMetaData;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2096,150 +1798,36 @@ var removeCharacterFromArray = function removeCharacterFromArray(inputData, inpu
  */
 
 
-exports.removeCharacterFromArray = removeCharacterFromArray;
+exports.compareSimplifiedAndConsolidatedStrings = compareSimplifiedAndConsolidatedStrings;
 
 var ascertainMatchingFilenames = function ascertainMatchingFilenames(inputData, inputMetaData) {
-  var functionName = s.cascertainMatchingFilenames;
+  var functionName = biz.cascertainMatchingFilenames;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = false;
 
-  if (path.basename(inputData) === path.basename(inputMetaData)) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Filenames match');
+  if (inputData && inputMetaData) {
+    if (path.basename(inputData) === path.basename(inputMetaData)) {
+      // Filenames match
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cFilenamesMatch);
 
-    returnData = true;
-  } else {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Filenames do not match');
+      returnData = true;
+    } else {
+      // Filenames do not match
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cFilenamesDoNotMatch);
 
-    returnData = false;
+      returnData = false;
+    }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function acertainMatchingElements
- * @description Determines if two values are identical. Needed for completeness of comparison for nested arrays.
- * @param {array} inputData An array that should be compared for equality.
- * @param {array} inputMetaData Second array that should be compared for equality.
- * @return {boolean} True or False to indicate array equality or not.
- * @author Seth Hollingsead
- * @date 2021/01/21
- */
-
-
-exports.ascertainMatchingFilenames = ascertainMatchingFilenames;
-
-var ascertainMatchingElements = function ascertainMatchingElements(inputData, inputMetaData) {
-  var functionName = s.cascertainMatchingElements;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData;
-
-  if (inputData === inputMetaData) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Array elements match');
-
-    returnData = true;
-  } else {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Array elements do not match');
-
-    returnData = false;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function doesArrayContainFilename
- * @description Checks if an array contains a filename, after stripping off the path.
- * @param {array<string>} inputData The Array of file names that should be checked for the input file name we are looking for.
- * @param {string} inputMetaData The file name we are looking for in the input Array.
- * @return {boolean} A Boolean value to indicate if the file name was found or not.
- * @author Seth Hollingsead
- * @date 2020/02/10
- */
-
-
-exports.ascertainMatchingElements = ascertainMatchingElements;
-
-var doesArrayContainFilename = function doesArrayContainFilename(inputData, inputMetaData) {
-  var functionName = s.cdoesArrayContainFilename;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false; // NOTE: This call doesn't actually work, it may have worked at one time, but it doesn't work now.
-  // And I'm not going to spend the time trying to figure out why,
-  // when it will be much simpler to just call that same function in a loop to figure out the result.
-
-  returnData = doesArrayContainValue(inputData, inputMetaData, ascertainMatchingFilenames); // NOTE: The below code also works, I am going to attempt to re-enable the above code and see if it also works.
-  // YES! This is a second way of doing the same thing. If the above code ever has a problem, we can fall back to this method.
-  // for (let i = 0; i < inputData.length; i++) {
-  //   if (ascertainMatchingFilenames(inputData[i], inputMetaData) === true) {
-  //     returnData = true;
-  //     break;
-  //   }
-  // }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function getLengthOfLongestStringInArray
- * @description Determines what the longest string is in an array of strings.
- * @param {array<string>} inputData The array for which we should find the longest length string in.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {integer} The length of the longest string in the array.
- * @author Seth Hollingsead
- * @date 2021/01/30
- * @NOTE https://stackoverflow.com/questions/6521245/finding-longest-string-in-array
- */
-
-
-exports.doesArrayContainFilename = doesArrayContainFilename;
-
-var getLengthOfLongestStringInArray = function getLengthOfLongestStringInArray(inputData, inputMetaData) {
-  var functionName = s.cgetLengthOfLongestStringInArray;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = 0;
-
-  if (inputData) {
-    returnData = Math.max.apply(Math, _toConsumableArray(inputData.map(function (el) {
-      return el.length;
-    })));
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2255,63 +1843,80 @@ var getLengthOfLongestStringInArray = function getLengthOfLongestStringInArray(i
  */
 
 
-exports.getLengthOfLongestStringInArray = getLengthOfLongestStringInArray;
+exports.ascertainMatchingFilenames = ascertainMatchingFilenames;
 
 var validateConstantsDataValidation = function validateConstantsDataValidation(inputData, inputMetaData) {
-  var functionName = s.cvalidateConstantsDataValidation;
+  var functionName = biz.cvalidateConstantsDataValidation;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false; // Set it to false and we will prove if it should be true.
 
   var foundAFailure = false;
-  var liner = new lineByLine(inputData);
-  var line;
 
-  while (line = liner.next()) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, line.toString(g.cascii));
+  if (inputData && inputMetaData) {
+    var liner = new lineByLine(inputData);
+    var line;
 
-    var lineInCode = line.toString(g.cascii);
-    var foundConstant = false;
+    var _colorizeLogsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
 
-    if (lineInCode.includes(s.cexportconst) === true) {
-      var lineArray = lineInCode.split(b.cSpace);
+    while (line = liner.next()) {
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, line.toString(gen.cascii));
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'lineArray[2] is: ' + lineArray[2]);
+      var lineInCode = line.toString(gen.cascii);
+      var foundConstant = false;
 
-      foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
-      var qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
+      if (lineInCode.includes(sys.cexportconst) === true) {
+        var lineArray = lineInCode.split(bas.cSpace); // lineArray[2] is:
 
-      if (foundConstant === true) {
-        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-          var passMessage = 'PASS: ' + lineArray[2] + ' PASS';
-          passMessage = chalk.rgb(0, 0, 0)(passMessage);
-          passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
-          console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + passMessage);
-        }
-      } else {
-        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-          var failMessage = 'FAIL: ' + lineArray[2] + ' FAIL';
-          failMessage = chalk.rgb(0, 0, 0)(failMessage);
-          failMessage = chalk.bgRgb(255, 0, 0)(failMessage);
-          var qualifiedConstantsPrefix = determineConstantsContextQualifiedPrefix(qualifiedConstantsFilename, '');
-          console.log(qualifiedConstantsFilename + b.cColon + b.cSpace + failMessage); // loggers.consoleLog(baseFileName + b.cDot + functionName, w.cFAIL + b.cSpace + lineArray[2] + b.cSpace + w.cFAIL);
-          // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.clineArray2Is + lineArray[2]);
 
-          var suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], qualifiedConstantsPrefix);
+        foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
+        var qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
 
-          if (suggestedLineOfCode !== '') {
-            suggestedLineOfCode = chalk.rgb(0, 0, 0)(suggestedLineOfCode);
-            suggestedLineOfCode = chalk.bgRgb(255, 0, 0)(suggestedLineOfCode);
-            console.log('Suggested line of code is: ' + suggestedLineOfCode);
+        if (foundConstant === true) {
+          if (_configurator["default"].getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
+            var passMessage = wrd.cPASS + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cPASS;
+
+            if (_colorizeLogsEnabled === true) {
+              passMessage = chalk.rgb(0, 0, 0)(passMessage);
+              passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+            }
+
+            console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + passMessage);
           }
-        }
+        } else {
+          if (_configurator["default"].getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
+            var failMessage = wrd.cFAIL + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL;
 
-        foundAFailure = true;
+            if (_colorizeLogsEnabled === true) {
+              failMessage = chalk.rgb(0, 0, 0)(failMessage);
+              failMessage = chalk.bgRgb(255, 0, 0)(failMessage);
+            }
+
+            var qualifiedConstantsPrefix = determineConstantsContextQualifiedPrefix(qualifiedConstantsFilename, '');
+            console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + failMessage); // loggers.consoleLog(baseFileName + bas.cDot + functionName, wrd.cFAIL + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL);
+            // TODO: Make sure we craft a message for what the constant should be added to the constants validation data file.
+
+            var suggestedLineOfCode = determineSuggestedConstantsValidationLineOfCode(lineArray[2], qualifiedConstantsPrefix);
+
+            if (suggestedLineOfCode !== '') {
+              if (_colorizeLogsEnabled === true) {
+                suggestedLineOfCode = chalk.rgb(0, 0, 0)(suggestedLineOfCode);
+                suggestedLineOfCode = chalk.bgRgb(255, 0, 0)(suggestedLineOfCode);
+              } // Suggested line of code is:
+
+
+              console.log(msg.cSuggestedLineOfCodeIs + suggestedLineOfCode);
+            }
+          }
+
+          foundAFailure = true;
+        }
       }
     }
   }
@@ -2320,9 +1925,9 @@ var validateConstantsDataValidation = function validateConstantsDataValidation(i
     returnData = true;
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2342,45 +1947,64 @@ var validateConstantsDataValidation = function validateConstantsDataValidation(i
 exports.validateConstantsDataValidation = validateConstantsDataValidation;
 
 var determineConstantsContextQualifiedPrefix = function determineConstantsContextQualifiedPrefix(inputData, inputMetaData) {
-  var functionName = s.cdetermineConstantsContextQualifiedPrefix;
+  var functionName = biz.cdetermineConstantsContextQualifiedPrefix;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData = inputData;
+  var returnData = '';
 
-  if (inputData.includes(w.cbasic) === true) {
-    returnData = b.cb;
-  } else if (inputData.includes(w.ccolor) === true) {
-    returnData = p.ccolr;
-  } else if (inputData.includes(w.celement) === true) {
-    returnData = b.ce;
-  } else if (inputData.includes(w.cgeneric) === true) {
-    returnData = b.cg;
-  } else if (inputData.includes(w.cisotope) === true) {
-    returnData = b.ci;
-  } else if (inputData.includes(w.cnumeric) === true) {
-    returnData = b.cn;
-  } else if (inputData.includes(w.cphonics) === true) {
-    returnData = b.cp;
-  } else if (inputData.includes(w.cshape) === true) {
-    returnData = p.cshp;
-  } else if (inputData.includes(w.csystem) === true) {
-    returnData = b.cs;
-  } else if (inputData.includes(w.cunits) === true) {
-    returnData = b.cu;
-  } else if (inputData.includes(w.cword) === true) {
-    returnData = b.cw;
-  } else {
-    console.log('ERROR: Unknown constant file.');
+  if (inputData) {
+    returnData = inputData;
+
+    if (inputData.includes(wrd.cbasic) === true) {
+      returnData = gen.cbas;
+    } else if (inputData.includes(wrd.business) === true) {
+      returnData = gen.cbiz;
+    } else if (inputData.includes(wrd.ccolor) === true) {
+      returnData = gen.cclr;
+    } else if (inputData.includes(wrd.ccommands) === true) {
+      returnData = gen.ccmd;
+    } else if (inputData.includes(wrd.cconfigurations) === true) {
+      returnData = gen.ccfg;
+    } else if (inputData.includes(wrd.ccountries) === true) {
+      returnData = gen.cctr;
+    } else if (inputData.includes(wrd.celement) === true) {
+      returnData = gen.celm;
+    } else if (inputData.includes(wrd.cgeneric) === true) {
+      returnData = gen.cgen;
+    } else if (inputData.includes(wrd.cisotope) === true) {
+      returnData = gen.ciso;
+    } else if (inputData.includes(wrd.cknots) === true) {
+      returnData = gen.ckts;
+    } else if (inputData.includes(wrd.clanguages) === true) {
+      returnData = gen.clng;
+    } else if (inputData.includes(wrd.cmessages) === true) {
+      returnData = gen.cmsg;
+    } else if (inputData.includes(wrd.cnumeric) === true) {
+      returnData = gen.cnum;
+    } else if (inputData.includes(wrd.cphonics) === true) {
+      returnData = gen.cphn;
+    } else if (inputData.includes(wrd.cshape) === true) {
+      returnData = gen.cshp;
+    } else if (inputData.includes(wrd.csystem) === true) {
+      returnData = gen.csys;
+    } else if (inputData.includes(wrd.cunits) === true) {
+      returnData = gen.cunt;
+    } else if (inputData.includes(wrd.cword) === true) {
+      returnData = gen.cwrd;
+    } else {
+      // ERROR: Unknown constant file.
+      console.log(sys.cErrorUnknownConstantFile);
+    }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2399,28 +2023,36 @@ var determineConstantsContextQualifiedPrefix = function determineConstantsContex
 exports.determineConstantsContextQualifiedPrefix = determineConstantsContextQualifiedPrefix;
 
 var determineSuggestedConstantsValidationLineOfCode = function determineSuggestedConstantsValidationLineOfCode(inputData, inputMetaData) {
-  var functionName = s.cdetermineSuggestedConstantsValidationLineOfCode;
+  var functionName = biz.cdetermineSuggestedConstantsValidationLineOfCode;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData = inputData; // Input: cZZTopIntentionalFailure
-  // Output: {Name: 'cZZTopIntentionalFailure', Actual: w.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
+  var returnData = '';
 
-  if (inputData.charAt(0) === b.cc) {
-    var literalValue = inputData.substr(1);
-    returnData = "{Name: '".concat(inputData, "', Actual: ").concat(inputMetaData, ".").concat(inputData, ", Expected: '").concat(literalValue, "'}");
-  } else {
-    console.log('ERROR: Attempted to generate a suggested line of code to validate the constant, ' + 'but the constant is not formatted correctly, it should begin with a lower case "c". ' + 'Please reformat the constant correctly so a line of code can be generated for you.');
-    returnData = '';
+  if (inputData && inputMetaData) {
+    returnData = inputData; // Input: cZZTopIntentionalFailure
+    // Output: {Name: 'cZZTopIntentionalFailure', Actual: wrd.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
+
+    if (inputData.charAt(0) === bas.cc) {
+      var literalValue = inputData.substr(1); // `Name: '${inputData}', Actual: ${inputMetaData}.${inputData}, Expected: '${literalValue}'}`;
+
+      returnData = bas.cOpenCurlyBrace + wrd.cName + bas.cColon + bas.cSpace + bas.cSingleQuote + inputData + bas.cSingleQuote + bas.cComa + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace + inputMetaData + bas.cDot + inputData + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + bas.cSingleQuote + literalValue + bas.cSingleQuote + bas.cCloseCurlyBrace;
+    } else {
+      // ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
+      // 'but the constant is not formatted correctly, it should begin with a lower case "c". ' +
+      // 'Please reformat the constant correctly so a line of code can be generated for you.
+      console.log(msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1 + msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2 + msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 + msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage4 + msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage5 + msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage6);
+      returnData = '';
+    }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2438,30 +2070,32 @@ var determineSuggestedConstantsValidationLineOfCode = function determineSuggeste
 exports.determineSuggestedConstantsValidationLineOfCode = determineSuggestedConstantsValidationLineOfCode;
 
 var validateConstantsDataValidationLineItemName = function validateConstantsDataValidationLineItemName(inputData, inputMetaData) {
-  var functionName = s.cvalidateConstantsDataValidationLineItemName;
+  var functionName = biz.cvalidateConstantsDataValidationLineItemName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
-  for (var i = 0; i < D[s.cConstantsValidationData][inputMetaData].length; i++) {
-    var validationLineItem = D[s.cConstantsValidationData][inputMetaData][i];
+  if (inputData && inputMetaData) {
+    for (var i = 0; i < D[sys.cConstantsValidationData][inputMetaData].length; i++) {
+      var validationLineItem = D[sys.cConstantsValidationData][inputMetaData][i];
 
-    if (validationLineItem) {
-      if (inputData === validationLineItem.Name) {
-        returnData = true;
-        break;
+      if (validationLineItem) {
+        if (inputData === validationLineItem.Name) {
+          returnData = true;
+          break;
+        }
       }
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2480,42 +2114,42 @@ var validateConstantsDataValidationLineItemName = function validateConstantsData
 exports.validateConstantsDataValidationLineItemName = validateConstantsDataValidationLineItemName;
 
 var doesConstantExist = function doesConstantExist(inputData, inputMetaData) {
-  var functionName = s.cdoesConstantExist;
+  var functionName = biz.cdoesConstantExist;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
   if (inputData) {
-    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+    var constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]); // constantsTypesKeys is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 
     loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
-      var constantTypeKey = constantsTypesKeys[i];
+      var constantTypeKey = constantsTypesKeys[i]; // constantTypeKey is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
 
-      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+      var constantTypeValues = D[sys.cConstantsValidationData][constantTypeKey]; // constantTypeValues is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
 
-      var constantsKeys = Object.keys(constantTypeValues);
+      var constantsKeys = Object.keys(constantTypeValues); // constantsKeys is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsKeysIs + JSON.stringify(constantsKeys));
 
       loop2: for (var j = 0; j < constantsKeys.length; j++) {
-        var constantKey = constantsKeys[j];
+        var constantKey = constantsKeys[j]; // constantKey is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantKeyIs + JSON.stringify(constantKey));
 
-        var constantActualValue = constantTypeValues[constantKey];
+        var constantActualValue = constantTypeValues[constantKey]; // constantActualValue is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantActualValueIs + JSON.stringify(constantActualValue));
 
         if (inputData === constantActualValue.Actual) {
           returnData = true;
@@ -2527,9 +2161,9 @@ var doesConstantExist = function doesConstantExist(inputData, inputMetaData) {
 
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2551,42 +2185,42 @@ var doesConstantExist = function doesConstantExist(inputData, inputMetaData) {
 exports.doesConstantExist = doesConstantExist;
 
 var getConstantType = function getConstantType(inputData, inputMetaData) {
-  var functionName = s.cgetConstantType;
+  var functionName = biz.cgetConstantType;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
   if (inputData) {
-    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+    var constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]); // constantsTypesKeys is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 
     loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
-      var constantTypeKey = constantsTypesKeys[i];
+      var constantTypeKey = constantsTypesKeys[i]; // constantTypeKey is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
 
-      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+      var constantTypeValues = D[sys.cConstantsValidationData][constantTypeKey]; // constantTypeValues is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
 
-      var constantsKeys = Object.keys(constantTypeValues);
+      var constantsKeys = Object.keys(constantTypeValues); // constantsKeys is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsKeysIs + JSON.stringify(constantsKeys));
 
       loop2: for (var j = 0; j < constantsKeys.length; j++) {
-        var constantKey = constantsKeys[j];
+        var constantKey = constantsKeys[j]; // constantKey is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantKeyIs + JSON.stringify(constantKey));
 
-        var constantActualValue = constantTypeValues[constantKey];
+        var constantActualValue = constantTypeValues[constantKey]; // constantActualValue is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantActualValueIs + JSON.stringify(constantActualValue));
 
         if (inputData === constantActualValue.Actual) {
           if (returnData === '') {
@@ -2597,7 +2231,7 @@ var getConstantType = function getConstantType(inputData, inputMetaData) {
               break loop1;
             }
           } else {
-            returnData = returnData + b.cComa + constantTypeKey;
+            returnData = returnData + bas.cComa + constantTypeKey;
           }
         }
       } // for-loop j-th iterator.
@@ -2606,9 +2240,9 @@ var getConstantType = function getConstantType(inputData, inputMetaData) {
 
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2626,34 +2260,34 @@ var getConstantType = function getConstantType(inputData, inputMetaData) {
 exports.getConstantType = getConstantType;
 
 var getConstantActualValue = function getConstantActualValue(inputData, inputMetaData) {
-  var functionName = s.cgetConstantActualValue;
+  var functionName = biz.cgetConstantActualValue;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
   if (inputData) {
     if (isConstantTypeValid(inputMetaData, '') === true) {
-      var constantTypeValues1 = D[s.cConstantsValidationData][inputMetaData];
+      var constantTypeValues1 = D[sys.cConstantsValidationData][inputMetaData]; // 1 constantTypeValues is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues1 is: ' + JSON.stringify(constantTypeValues1));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues1));
 
-      var constantsKeys1 = Object.keys(constantTypeValues1);
+      var constantsKeys1 = Object.keys(constantTypeValues1); // 1 constantsKeys is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys1 is: ' + JSON.stringify(constantsKeys1));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantsKeysIs + JSON.stringify(constantsKeys1));
 
       loop1: for (var i = 0; i < constantsKeys1.length; i++) {
-        var constantKey1 = constantsKeys1[i];
+        var constantKey1 = constantsKeys1[i]; // 1 constantKey is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey1 is: ' + JSON.stringify(constantKey1));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantKeyIs + JSON.stringify(constantKey1));
 
-        var constantActualValue1 = constantTypeValues1[constantKey1];
+        var constantActualValue1 = constantTypeValues1[constantKey1]; // 1 constantActualValue is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(constantActualValue1));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantActualValueIs + JSON.stringify(constantActualValue1));
 
         if (inputData === constantActualValue1.Name) {
           returnData = constantActualValue1.Actual;
@@ -2661,31 +2295,31 @@ var getConstantActualValue = function getConstantActualValue(inputData, inputMet
       } // for-loop j-th iterator.
 
     } else {
-      var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+      var constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]); // constantsTypesKeys is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 
       loop2: for (var j = 0; j < constantsTypesKeys.length; j++) {
-        var constantTypeKey = constantsTypesKeys[j];
+        var constantTypeKey = constantsTypesKeys[j]; // constantTypeKey is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
 
-        var constantTypeValues2 = D[s.cConstantsValidationData][constantTypeKey];
+        var constantTypeValues2 = D[sys.cConstantsValidationData][constantTypeKey]; // 2 constantTypeValues is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues2 is: ' + JSON.stringify(constantTypeValues2));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c2 + bas.cSpace + msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues2));
 
-        var constantsKeys2 = Object.keys(constantTypeValues2);
+        var constantsKeys2 = Object.keys(constantTypeValues2); // 2 constantsKeys is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys2 is: ' + JSON.stringify(constantsKeys2));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c2 + bas.cSpace + msg.cconstantsKeysIs + JSON.stringify(constantsKeys2));
 
         loop3: for (var k = 0; k < constantsKeys2.length; k++) {
-          var constantKey2 = constantsKeys2[k];
+          var constantKey2 = constantsKeys2[k]; // 2 constantKey is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey2 is: ' + JSON.stringify(constantKey2));
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c2 + bas.cSpace + msg.cconstantKeyIs + JSON.stringify(constantKey2));
 
-          var _constantActualValue = constantTypeValues2[constantKey2];
+          var _constantActualValue = constantTypeValues2[constantKey2]; // 1 constantActualValue is:
 
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue1 is: ' + JSON.stringify(_constantActualValue));
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, num.c1 + bas.cSpace + msg.cconstantActualValueIs + JSON.stringify(_constantActualValue));
 
           if (inputData === _constantActualValue.Name) {
             returnData = _constantActualValue.Actual;
@@ -2698,9 +2332,9 @@ var getConstantActualValue = function getConstantActualValue(inputData, inputMet
 
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2718,42 +2352,42 @@ var getConstantActualValue = function getConstantActualValue(inputData, inputMet
 exports.getConstantActualValue = getConstantActualValue;
 
 var getConstantName = function getConstantName(inputData, inputMetaData) {
-  var functionName = s.cgetConstantName;
+  var functionName = biz.cgetConstantName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
   if (inputData) {
-    var constantsTypesKeys = Object.keys(D[s.cConstantsValidationData]);
+    var constantsTypesKeys = Object.keys(D[sys.cConstantsValidationData]); // constantsTypesKeys is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsTypesKeys is: ' + JSON.stringify(constantsTypesKeys));
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsTypesKeysIs + JSON.stringify(constantsTypesKeys));
 
     loop1: for (var i = 0; i < constantsTypesKeys.length; i++) {
-      var constantTypeKey = constantsTypesKeys[i];
+      var constantTypeKey = constantsTypesKeys[i]; // constantTypeKey is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeKey is: ' + JSON.stringify(constantTypeKey));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeKeyIs + JSON.stringify(constantTypeKey));
 
-      var constantTypeValues = D[s.cConstantsValidationData][constantTypeKey];
+      var constantTypeValues = D[sys.cConstantsValidationData][constantTypeKey]; // constantTypeValues is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantTypeValues is: ' + JSON.stringify(constantTypeValues));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantTypeValuesIs + JSON.stringify(constantTypeValues));
 
-      var constantsKeys = Object.keys(constantTypeValues);
+      var constantsKeys = Object.keys(constantTypeValues); // constantsKeys is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantsKeys is: ' + JSON.stringify(constantsKeys));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsKeysIs + JSON.stringify(constantsKeys));
 
       loop2: for (var j = 0; j < constantsKeys.length; j++) {
-        var constantKey = constantsKeys[j];
+        var constantKey = constantsKeys[j]; // constantKey is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantKey is: ' + JSON.stringify(constantKey));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantKeyIs + JSON.stringify(constantKey));
 
-        var constantActualValue = constantTypeValues[constantKey];
+        var constantActualValue = constantTypeValues[constantKey]; // constantActualValue is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantActualValue is: ' + JSON.stringify(constantActualValue));
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantActualValueIs + JSON.stringify(constantActualValue));
 
         if (inputData === constantActualValue.Actual) {
           returnData = constantActualValue.Name;
@@ -2765,9 +2399,9 @@ var getConstantName = function getConstantName(inputData, inputMetaData) {
 
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2785,25 +2419,25 @@ var getConstantName = function getConstantName(inputData, inputMetaData) {
 exports.getConstantName = getConstantName;
 
 var findConstantName = function findConstantName(inputData, inputMetaData) {
-  var functionName = s.cfindConstantName;
+  var functionName = biz.cfindConstantName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
   if (inputData) {
-    if (inputData.includes(b.cDot)) {
-      returnData = inputData.substr(inputData.lastIndexOf(b.cDot) + 1, inputData.length);
+    if (inputData.includes(bas.cDot)) {
+      returnData = inputData.substr(inputData.lastIndexOf(bas.cDot) + 1, inputData.length);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2821,29 +2455,36 @@ var findConstantName = function findConstantName(inputData, inputMetaData) {
 exports.findConstantName = findConstantName;
 
 var isConstantTypeValid = function isConstantTypeValid(inputData, inputMetaData) {
-  var functionName = s.cisConstantTypeValid;
+  var functionName = biz.cisConstantTypeValid;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
   if (inputData) {
     switch (inputData) {
-      case s.cBasicConstantsValidation:
-      case s.cColorConstantsValidation:
-      case s.cElementConstantsValidation:
-      case s.cGenericConstantsValidation:
-      case s.cIsotopeConstantsValidation:
-      case s.cNumericConstantsValidation:
-      case s.cPhonicsConstantsValidation:
-      case s.cShapeConstantsValidation:
-      case s.cSystemConstantsValidation:
-      case s.cUnitsConstantsValidation:
-      case s.cWordConstantsValidation:
+      case sys.cBasicConstantsValidation:
+      case sys.cBusinessConstantsValidation:
+      case sys.cColorConstantsValidation:
+      case sys.cCommandsConstantsValidation:
+      case sys.cConfigurationsConstantsValidation:
+      case sys.cCountriesConstantsValidation:
+      case sys.cElementConstantsValidation:
+      case sys.cGenericConstantsValidation:
+      case sys.cIsotopeConstantsValidation:
+      case sys.cKnotsConstantsValidation:
+      case sys.cLanguagesConstantsValidation:
+      case sys.cMessagesConstantsValidation:
+      case sys.cNumericConstantsValidation:
+      case sys.cPhonicsConstantsValidation:
+      case sys.cShapeConstantsValidation:
+      case sys.cSystemConstantsValidation:
+      case sys.cUnitsConstantsValidation:
+      case sys.cWordConstantsValidation:
         returnData = true;
         break;
 
@@ -2853,9 +2494,9 @@ var isConstantTypeValid = function isConstantTypeValid(inputData, inputMetaData)
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2873,13 +2514,13 @@ var isConstantTypeValid = function isConstantTypeValid(inputData, inputMetaData)
 exports.isConstantTypeValid = isConstantTypeValid;
 
 var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstantPrefix(inputData, inputMetaData) {
-  var functionName = s.cconvertConstantTypeToConstantPrefix;
+  var functionName = biz.cconvertConstantTypeToConstantPrefix;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
@@ -2887,48 +2528,76 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
     returnData = inputData;
 
     switch (inputData) {
-      case s.cBasicConstantsValidation:
-        returnData = b.cb + b.cDot;
+      case sys.cBasicConstantsValidation:
+        returnData = gen.cbas + bas.cDot;
         break;
 
-      case s.cColorConstantsValidation:
-        returnData = s.ccolr + b.cDot;
+      case sys.cBusinessConstantsValidation:
+        returnData = gen.cbiz + bas.cDot;
         break;
 
-      case s.cElementConstantsValidation:
-        returnData = b.ce + b.cDot;
+      case sys.cColorConstantsValidation:
+        returnData = gen.cclr + bas.cDot;
         break;
 
-      case s.cGenericConstantsValidation:
-        returnData = b.cg + b.cDot;
+      case sys.cCommandsConstantsValidation:
+        returnData = gen.ccmd + bas.cDot;
         break;
 
-      case s.cIsotopeConstantsValidation:
-        returnData = b.ci + b.cDot;
+      case sys.cConfigurationsConstantsValidation:
+        returnData = gen.ccfg + bas.cDot;
         break;
 
-      case s.cNumericConstantsValidation:
-        returnData = b.cn + b.cDot;
+      case sys.cCountriesConstantsValidation:
+        returnData = gen.cctr + bas.cDot;
         break;
 
-      case s.cPhonicsConstantsValidation:
-        returnData = b.cp + b.cDot;
+      case sys.cElementConstantsValidation:
+        returnData = gen.celm + bas.cDot;
         break;
 
-      case s.cShapeConstantsValidation:
-        returnData = s.cshp + b.cDot;
+      case sys.cGenericConstantsValidation:
+        returnData = gen.cgen + bas.cDot;
         break;
 
-      case s.cSystemConstantsValidation:
-        returnData = b.cs + b.cDot;
+      case sys.cIsotopeConstantsValidation:
+        returnData = gen.ciso + bas.cDot;
         break;
 
-      case s.cUnitsConstantsValidation:
-        returnData = b.cu + b.cDot;
+      case sys.cKnotsConstantsValidation:
+        returnData = gen.ckts + bas.cDot;
         break;
 
-      case s.cWordConstantsValidation:
-        returnData = b.cw + b.cDot;
+      case sys.cLanguagesConstantsValidation:
+        returnData = gen.clng + bas.cDot;
+        break;
+
+      case sys.cMessagesConstantsValidation:
+        returnData = gen.cmsg + bas.cDot;
+        break;
+
+      case sys.cNumericConstantsValidation:
+        returnData = gen.cnum + bas.cDot;
+        break;
+
+      case sys.cPhonicsConstantsValidation:
+        returnData = gen.cphn + bas.cDot;
+        break;
+
+      case sys.cShapeConstantsValidation:
+        returnData = gen.cshp + bas.cDot;
+        break;
+
+      case sys.cSystemConstantsValidation:
+        returnData = gen.csys + bas.cDot;
+        break;
+
+      case sys.cUnitsConstantsValidation:
+        returnData = gen.cunt + bas.cDot;
+        break;
+
+      case sys.cWordConstantsValidation:
+        returnData = gen.cwrd + bas.cDot;
         break;
 
       default:
@@ -2937,9 +2606,9 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -2957,13 +2626,13 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
 exports.convertConstantTypeToConstantPrefix = convertConstantTypeToConstantPrefix;
 
 var constantsOptimizedFulfillmentSystem = function constantsOptimizedFulfillmentSystem(inputData, inputMetaData) {
-  var functionName = s.cconstantsOptimizedFulfillmentSystem;
+  var functionName = biz.cconstantsOptimizedFulfillmentSystem;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var constantType = '';
@@ -2980,9 +2649,9 @@ var constantsOptimizedFulfillmentSystem = function constantsOptimizedFulfillment
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -3001,13 +2670,13 @@ var constantsOptimizedFulfillmentSystem = function constantsOptimizedFulfillment
 exports.constantsOptimizedFulfillmentSystem = constantsOptimizedFulfillmentSystem;
 
 var constantsFulfillmentSystem = function constantsFulfillmentSystem(inputData, inputMetaData) {
-  var functionName = s.cconstantsFulfillmentSystem;
+  var functionName = biz.cconstantsFulfillmentSystem;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
   var constantName = '';
@@ -3017,205 +2686,32 @@ var constantsFulfillmentSystem = function constantsFulfillmentSystem(inputData, 
     returnData = constantsOptimizedFulfillmentSystem(inputData, ''); // We found the first part of the string, now lets continue processing the rest of the string!
     // First determine how many characters are being returned so we can determine what portion of the string we need to continue processing with.
 
-    constantName = findConstantName(returnData, '');
+    constantName = findConstantName(returnData, ''); // constantName is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantName is: ' + constantName);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantNameIs + constantName);
 
-    var constantValue = getConstantActualValue(constantName, '');
+    var constantValue = getConstantActualValue(constantName, ''); // constantValue is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constantValue is: ' + constantValue);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantValueIs + constantValue);
 
-    var deltaLength = inputData.length - constantValue.length;
+    var deltaLength = inputData.length - constantValue.length; // deltaLength is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'deltaLength is: ' + deltaLength);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdeltaLengthIs + deltaLength);
 
     if (deltaLength != 0) {
-      var recursiveSubString = inputMetaData.substring(inputMetaData.length - deltaLength, inputMetaData.length);
+      var recursiveSubString = inputMetaData.substring(inputMetaData.length - deltaLength, inputMetaData.length); // recursiveSubString is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'recursiveSubString is: ' + recursiveSubString);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.crecursiveSubStringIs + recursiveSubString);
 
-      returnData = returnData + b.cSpace + b.cPlus + b.cSpace + constantsFulfillmentSystem(recursiveSubString, inputData);
+      returnData = returnData + bas.cSpace + bas.cPlus + bas.cSpace + constantsFulfillmentSystem(recursiveSubString, inputData);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function searchForPatternsInStringArray
- * @description Walks through sub-strings of each string in the input array of strings searching for common patterns using a brute-force sequential array search.
- * Maximum string length to search is the maximum string length - 1 (basically the longest string in the array minus 1 character).
- * Minimum string length to search is 3 characters.
- * @param {array<string>} inputData The array of strings that should be searched for matching patterns.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {array<string>} A string array of common string values found in more than 1 element of the array and 3 or more characters long.
- * @author Seth Hollingsead
- * @date 2021/01/30
- */
-
-
-exports.constantsFulfillmentSystem = constantsFulfillmentSystem;
-
-var searchForPatternsInStringArray = function searchForPatternsInStringArray(inputData, inputMetaData) {
-  var functionName = s.csearchForPatternsInStringArray;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false; // Set it to false just in case invalid data was passed into this function.
-
-  if (inputData && inputData.length > 0) {
-    returnData = []; // Reset it to an empty array, the input data has something in it so we should be able to process it.
-
-    var maxStringLength = getLengthOfLongestStringInArray(inputData, '') - 1;
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'maxStringLength is: ' + maxStringLength);
-
-    var minStringLength = 3;
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'minStringLength is: ' + minStringLength);
-
-    for (var a = 0; a < inputData.length; a++) {
-      // Initial high-level loop over each of the array elements. (This is the source string for the comparison)
-      var currentMasterStringArrayElement = inputData[a];
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement is: ' + currentMasterStringArrayElement);
-
-      if (currentMasterStringArrayElement.includes(b.cSpace) === false) {
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement does not contain a space character'); // NOTE: All of the other loggers.consolelog below this are not actually getting called for some reason.
-        // That is why I have added the hard-coded console Logs, but really they only need to be enabled if this function needs to be debugged.
-        // It's difficult to debug these because they really dump a LOT of data to the output.
-        // The only real way to debug larger data sets would be to force the output to a log file.
-        // A small data-set might be possible to debug.
-        // Loop over the length of the string we need to compare.
-
-
-        for (var _b = minStringLength; _b <= maxStringLength; _b++) {
-          // b will now hold the length of the string we are using to compare.
-          // loggers.consoleLog(baseFileName + b.cDot + functionName, 'length of string to compare is: ' + toString(b));
-          // console.log('length of string to compare is: ' + b);
-          // First make sure that the length of our master string is less than or equal to the length of j, otherwise we will just skip to the next.
-          if (currentMasterStringArrayElement.length <= _b) {
-            // loggers.consoleLog(baseFileName + b.cDot + functionName, 'currentMasterStringArrayElement.length is less than b');
-            // console.log('currentMasterStringArrayElement.length is less than b');
-            // Loop again for the length of the current string - 3 (minStringLength)
-            // Each loop will determine our currentComparisonString (which will be used when we actually iterate over the array in our search)
-            for (var c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++) {
-              // loop through each set of strings in the master comparison string.
-              // loggers.consoleLog(baseFileName + b.cDot + functionName, 'c value is: ' + c);
-              // console.log('c value is: ' + c);
-              // Now here we should be able to finally compute the beginning and ending of the indexes for the string we want to use for comparison.
-              var beginningIndex = c; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'beginningIndex is: ' + beginningIndex);
-              // console.log('beginningIndex is: ' + beginningIndex);
-
-              var endingIndex = c + _b; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'endingIndex is: ' + endingIndex);
-              // console.log('endingIndex is: ' + endingIndex);
-
-              var stringToCompare = currentMasterStringArrayElement.substring(beginningIndex, endingIndex); // loggers.consoleLog(baseFileName + b.cDot + functionName, 'stringToCompare is: ' + stringToCompare);
-              // console.log('stringToCompare is: ' + stringToCompare);
-              // Now we need another loop to go over all of the array elements, make sure we always ignore the current array element.
-
-              for (var d = 0; d < inputData.length; d++) {
-                // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd value is: ' + d);
-                // console.log('d value is: ' + d);
-                if (d != a) {
-                  // loggers.consoleLog(baseFileName + b.cDot + functionName, 'd != a');
-                  // console.log('d != a');
-                  var otherStringToCompare = inputData[d]; // loggers.consoleLog(baseFileName + b.cDot + functionName, 'otherStringToCompare is: ' + otherStringToCompare);
-                  // console.log('otherStringToCompare is: ' + otherStringToCompare);
-
-                  if (otherStringToCompare.includes(stringToCompare)) {
-                    // loggers.consoleLog(baseFileName + b.cDot + functionName, 'FOUND A MATCH!!!!');
-                    // console.log('FOUND A MATCH!!!! ' + stringToCompare);
-                    // Here we have found a match amoung brothers. We need to see if this stringToCompare has already been added to the returnData array.
-                    if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false) {
-                      returnData.push(stringToCompare);
-                    } // End-if if (doesArrayContainValue(returnData, stringToCompare, ascertainMatchingElements) === false)
-
-                  } // End-if (otherStringToCompare.includes(stringToCompare))
-
-                } // End-if (d != a)
-
-              } // End-for (let d = 0; d < inputData.length; d++)
-
-            } // End-for (let c = 0; c <= currentMasterStringArrayElement.length - minStringLength; c++)
-
-          } // End-if (currentMasterStringArrayElement <= b)
-
-        } // End-for (let b = minStringLength; b <= maxStringLength; b++) {
-
-      } else {
-        // Else-clause if (currentMasterStringArrayElement.includes(b.cSpace) === false)
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: The current string being searched contains a space character, we are going to skip comparison.');
-      }
-    } // End-for (let a = 0; a < inputData.length; a++)
-
-  } else {
-    // Else-clause if (inputData && inputData.length > 0)
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: InputData was not an array or had an empty array.');
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
-};
-/**
- * @function validatePatternsThatNeedImplementation
- * @description Scans through an array of strings and determines which ones are not yet implemented in the constants system.
- * @param {array<string>} inputData The array of strings that should be checked if they are already implemented in the constants system or not.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {void}
- * @author Seth Hollingsead
- * @date 2021/01/31
- */
-
-
-exports.searchForPatternsInStringArray = searchForPatternsInStringArray;
-
-var validatePatternsThatNeedImplementation = function validatePatternsThatNeedImplementation(inputData, inputMetaData) {
-  var functionName = s.cvalidatePatternsThatNeedImplementation;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  if (inputData) {
-    var passMessage = '';
-
-    for (var i = 0; i < inputData.length; i++) {
-      var currentString = inputData[i];
-
-      if (doesConstantExist(currentString, '') === false) {
-        passMessage = 'Constant does NOT exist: ' + currentString;
-        passMessage = chalk.rgb(0, 0, 0)(passMessage);
-        passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
-        console.log(passMessage);
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constant does NOT exist: ' + currentString);
-      } else {
-        passMessage = 'Constant does exist: ' + currentString;
-        passMessage = chalk.rgb(0, 0, 0)(passMessage);
-        passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
-        console.log(passMessage);
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'constant does exist: ' + currentString);
-      }
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return null;
 };
 /**
  * @function validateConstantsDataValues
@@ -3228,53 +2724,72 @@ var validatePatternsThatNeedImplementation = function validatePatternsThatNeedIm
  */
 
 
-exports.validatePatternsThatNeedImplementation = validatePatternsThatNeedImplementation;
+exports.constantsFulfillmentSystem = constantsFulfillmentSystem;
 
 var validateConstantsDataValues = function validateConstantsDataValues(inputData, inputMetaData) {
-  var functionName = s.cvalidateConstantsDataValues;
+  var functionName = biz.cvalidateConstantsDataValues;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var passMessage = '';
 
-  for (var i = 0; i < D[s.cConstantsValidationData][inputData].length; i++) {
-    passMessage = '';
-    var validationLineItem = D[s.cConstantsValidationData][inputData][i];
+  if (inputData) {
+    var _colorizeLogsEnabled2 = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
 
-    if (validationLineItem) {
-      if (validationLineItem.Actual === validationLineItem.Expected) {
-        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationPassMessages) === true) {
-          passMessage = "PASS -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- PASS");
-          passMessage = chalk.rgb(0, 0, 0)(passMessage);
-          passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
-          console.log(passMessage);
+    for (var i = 0; i < D[sys.cConstantsValidationData][inputData].length; i++) {
+      passMessage = '';
+      var validationLineItem = D[sys.cConstantsValidationData][inputData][i];
+
+      if (validationLineItem) {
+        if (validationLineItem.Actual === validationLineItem.Expected) {
+          if (_configurator["default"].getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
+            // `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
+            passMessage = wrd.cPASS + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace + validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASS;
+
+            if (_colorizeLogsEnabled2 === true) {
+              passMessage = chalk.rgb(0, 0, 0)(passMessage);
+              passMessage = chalk.bgRgb(0, 255, 0)(passMessage);
+            }
+
+            console.log(passMessage);
+          }
+        } else {
+          returnData = false;
+
+          if (_configurator["default"].getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
+            // `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
+            passMessage = wrd.cFAIL + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace + validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAIL;
+
+            if (_colorizeLogsEnabled2 === true) {
+              passMessage = chalk.rgb(0, 0, 0)(passMessage);
+              passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
+            }
+
+            console.log(passMessage);
+          }
         }
       } else {
-        returnData = false;
+        // `FAIL -- ${inputData} -- FAIL`
+        passMessage = wrd.cFAIL + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAIL;
 
-        if (_configurator["default"].getConfigurationSetting(s.cDisplayIndividualConstantsValidationFailMessages) === true) {
-          passMessage = "FAIL -- ".concat(inputData, " Actual: ").concat(validationLineItem.Actual, ", Expected: ").concat(validationLineItem.Expected, " -- FAIL");
+        if (_colorizeLogsEnabled2 === true) {
           passMessage = chalk.rgb(0, 0, 0)(passMessage);
           passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
-          console.log(passMessage);
         }
+
+        console.log(passMessage);
       }
-    } else {
-      passMessage = "FAIL -- ".concat(inputData, " -- FAIL");
-      passMessage = chalk.rgb(0, 0, 0)(passMessage);
-      passMessage = chalk.bgRgb(255, 0, 0)(passMessage);
-      console.log(passMessage);
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -3294,13 +2809,13 @@ var validateConstantsDataValues = function validateConstantsDataValues(inputData
 exports.validateConstantsDataValues = validateConstantsDataValues;
 
 var isValidCommandNameString = function isValidCommandNameString(inputData, inputMetaData) {
-  var functionName = s.cisValidCommandNameString;
+  var functionName = biz.cisValidCommandNameString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = false;
 
@@ -3309,7 +2824,7 @@ var isValidCommandNameString = function isValidCommandNameString(inputData, inpu
     // It could actually be a single word, but of course we want to make sure it's more than 3 characters long.
     // Less than that, shouldn't really be considered a valid word, but could be appropriate as a command alias/abreviation.
     if (inputData.length > 3) {
-      var camelCaseArray = convertCamelCaseStringToArray(inputData);
+      var camelCaseArray = aryParse.convertCamelCaseStringToArray(inputData);
 
       if (camelCaseArray.length === 1) {
         if (isFirstCharacterLowerCase(inputData) === true) {
@@ -3323,9 +2838,9 @@ var isValidCommandNameString = function isValidCommandNameString(inputData, inpu
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -3343,13 +2858,13 @@ var isValidCommandNameString = function isValidCommandNameString(inputData, inpu
 exports.isValidCommandNameString = isValidCommandNameString;
 
 var isConstantValid = function isConstantValid(inputData, inputMetaData) {
-  var functionName = s.cisConstantValid;
+  var functionName = biz.cisConstantValid;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = false;
 
@@ -3359,9 +2874,9 @@ var isConstantValid = function isConstantValid(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -3380,469 +2895,81 @@ var isConstantValid = function isConstantValid(inputData, inputMetaData) {
 exports.isConstantValid = isConstantValid;
 
 var countDuplicateCommandAliases = function countDuplicateCommandAliases(inputData, inputMetaData) {
-  var functionName = s.ccountDuplicateCommandAliases;
+  var functionName = biz.ccountDuplicateCommandAliases;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = 0;
 
-  if (!inputData && !inputMetaData) {
-    returnData = 0;
-  } else {
+  if (inputData && inputMetaData) {
+    var _colorizeLogsEnabled3 = _configurator["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+
     loop1: for (var i = 0; i < inputMetaData.length; i++) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th loop: ' + i);
+      // BEGIN i-th loop:
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithLoop + i);
 
-      var currentCommand = inputMetaData[i];
+      var currentCommand = inputMetaData[i]; // currentCommand is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentCommand is: ' + JSON.stringify(currentCommand));
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentCommandIs + JSON.stringify(currentCommand));
 
-      var aliasList = currentCommand[w.cAliases];
+      var aliasList = currentCommand[wrd.cAliases]; // aliasList is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'aliasList is: ' + aliasList);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.caliasListIs + aliasList);
 
-      var arrayOfAliases = aliasList.split(b.cComa);
+      var arrayOfAliases = aliasList.split(bas.cComa);
 
       loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN j-th loop: ' + i);
+        // BEGIN j-th loop:
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_jthLoop + i);
 
-        var currentAlias = arrayOfAliases[j];
+        var currentAlias = arrayOfAliases[j]; // currentAlias is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'currentAlias is: ' + currentAlias);
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentAliasIs + currentAlias);
 
         if (currentAlias === inputData) {
           returnData = returnData + 1;
-        }
+        } // duplicateAliasCount is:
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'duplicateAliasCount is: ' + returnData);
 
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END j-th loop: ' + i);
-      }
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cduplicateAliasCountIs + returnData); // END j-th loop:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th loop: ' + i);
+
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_jthLoop + i);
+      } // END i-th loop:
+
+
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithLoop + i);
     }
   }
 
   if (returnData > 1) {
-    var duplicateAliasCountMessage = 'duplicateAliasCount is: ' + returnData;
-    duplicateAliasCountMessage = chalk.rgb(0, 0, 0)(duplicateAliasCountMessage);
-    duplicateAliasCountMessage = chalk.bgRgb(255, 0, 0)(duplicateAliasCountMessage);
-    console.log(duplicateAliasCountMessage);
-    var duplicateAliasCommandMessage = 'duplicate command alias is: ' + inputData;
-    duplicateAliasCommandMessage = chalk.rgb(0, 0, 0)(duplicateAliasCommandMessage);
-    duplicateAliasCommandMessage = chalk.bgRgb(255, 0, 0)(duplicateAliasCommandMessage);
+    // duplicateAliasCount is:
+    var duplicateAliasCountMessage = msg.cduplicateAliasCountIs + returnData;
+
+    if (colorizeLogsEnabled === true) {
+      duplicateAliasCountMessage = chalk.rgb(0, 0, 0)(duplicateAliasCountMessage);
+      duplicateAliasCountMessage = chalk.bgRgb(255, 0, 0)(duplicateAliasCountMessage);
+    }
+
+    console.log(duplicateAliasCountMessage); // duplicate command alias is:
+
+    var duplicateAliasCommandMessage = msg.cduplicateCommandAliasIs + inputData;
+
+    if (colorizeLogsEnabled === true) {
+      duplicateAliasCommandMessage = chalk.rgb(0, 0, 0)(duplicateAliasCommandMessage);
+      duplicateAliasCommandMessage = chalk.bgRgb(255, 0, 0)(duplicateAliasCommandMessage);
+    }
+
     console.log(duplicateAliasCommandMessage);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function generateCommandAliases
- * @description Generates all possible combinations of command aliases given a set of command words and command word abreviations.
- * @param {object} inputData An object containing all of the meta-data needed for command words and
- * command abreviations needed to generate every possible combination of command alias.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {string} A coma-separated list of every possible combination of command aliases.
- * @author Seth Hollingsead
- * @date 2021/01/19
- */
-
-
-exports.countDuplicateCommandAliases = countDuplicateCommandAliases;
-
-var generateCommandAliases = function generateCommandAliases(inputData, inputMetaData) {
-  var functionName = s.cgenerateCommandAliases;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData;
-
-  if (!inputData) {
-    returnData = false;
-  } else {
-    // {"wonder":"wondr,wundr,wndr","Woman":"wman,wmn,womn","Amazing":"amzing,amzng"}
-    //
-    // {
-    // "wonder": "wondr,wundr,wndr",
-    // "Woman": "wman,wmn,womn",
-    // "Amazing": "amzing,amzng"
-    // }
-    var primaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cPrimaryCommandDelimiter);
-
-    var secondaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cSecondaryCommandDelimiter);
-
-    var tertiaryCommandDelimiter = _configurator["default"].getConfigurationSetting(s.cTertiaryCommandDelimiter);
-
-    var commandDelimiter = '';
-    var commandWordsKeys1 = Object.keys(inputData);
-    var commandWordAliasesArray = [];
-    var masterCommandWordAliasesArray = [commandWordsKeys1.length - 1];
-    var masterArrayIndex = [commandWordsKeys1.length - 1];
-
-    for (var i = 0; i < commandWordsKeys1.length; i++) {
-      // commandWordsKeys1.forEach((key1) => {
-      var key1 = commandWordsKeys1[i];
-      var commandWordAliases = inputData[key1];
-
-      if (commandWordAliases.includes(primaryCommandDelimiter)) {
-        commandDelimiter = primaryCommandDelimiter;
-      } else if (commandWordAliases.includes(secondaryCommandDelimiter)) {
-        commandDelimiter = secondaryCommandDelimiter;
-      } else if (commandWordAliases.includes(tertiaryCommandDelimiter)) {
-        commandDelimiter = tertiaryCommandDelimiter;
-      }
-
-      commandWordAliases = commandWordAliases + commandDelimiter + key1;
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliases BEFORE CHANGE is: ' + commandWordAliases);
-
-      commandWordAliasesArray = commandWordAliases.split(commandDelimiter);
-      masterArrayIndex[i] = commandWordAliasesArray.length - 1;
-
-      for (var j = 0; j < commandWordAliasesArray.length; j++) {
-        var commandAliasWord = commandWordAliasesArray[j];
-
-        if (isFirstCharacterLowerCase(commandAliasWord, '') === true) {
-          var firstLetterOfCommandAliasWord = commandAliasWord.charAt(0).toUpperCase();
-          commandAliasWord = replaceCharacterAtIndexOfString(commandAliasWord, 0, firstLetterOfCommandAliasWord);
-          commandWordAliasesArray[j] = commandAliasWord; // Saved the changes back to array.
-        }
-      }
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'commandWordAliasesArray AFTER CHANGE is: ' + JSON.stringify(commandWordAliasesArray));
-
-      masterCommandWordAliasesArray[i] = commandWordAliasesArray; // Try to build an array of arrays (2D)
-    }
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterCommandWordAliasesArray is: ' + JSON.stringify(masterCommandWordAliasesArray));
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterArrayIndex is: ' + JSON.stringify(masterArrayIndex)); // NOTES: Console output is:
-    // masterCommandWordAliasesArray is: [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
-    // masterArrayIndex is: [4,4,3]
-    //
-    // We should be able to have 2 nested for-loops, and we will delcare a counter array initialized to [0,0,0] to match the masterArrayIndex above.
-    // The counter array tells us which combination of words we should get.
-    // We can simply push those combination of words as a string on a stack we will make for this business rule.
-    // Then iterate the last array element as long as it's not greater than the number in the master array index and do the same things over again.
-    // When the array index for the last element in the array reaches the masterArrayIndex for the same array index then we increment the second from the last array counter.
-    // And start over again with the last element in the array counter.
-    // This way we should be able to iterate over the entire 2D array and get every combination without having to create x number of nested for-loops.
-    // Essentially we will be having 2-nested for-loops looping over the counter array. The top level loop will be looping over masterArrayIndex.length,
-    // and the second loop will be iterating over the integers in the counter array.
-    // The counter array will tell the algorthim which combination of words to put together and push on the stack.
-    //
-    // NOTE: The algorthim described above is called: Lehmer code
-    // https://en.wikipedia.org/wiki/Lehmer_code
-
-
-    var _returnData2 = solveLehmerCode(masterArrayIndex, masterCommandWordAliasesArray);
-
-    console.log('Command Aliases are: ' + _returnData2);
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function solveLehmerCode
- * @description Used the inputData as an addressable Lehmer Code to find all possible combinations of array elements.
- * @param {array<integer>} inputData The Lehmer code addressable index array we will use to permutate over all possible combinations.
- * @param {array<array<string>>} inputMetaData The nested array that contains all instances of strings that should be used when generating permutations.
- * @return {string} The delimited list of possible combinations generated by solving the Lehmer Code.
- * @author Seth Hollingsead
- * @date 2021/01/20
- * @NOTE: https://en.wikipedia.org/wiki/Lehmer_code
- */
-
-
-exports.generateCommandAliases = generateCommandAliases;
-
-var solveLehmerCode = function solveLehmerCode(inputData, inputMetaData) {
-  var functionName = s.csolveLehmerCode;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData;
-
-  if (!inputData) {
-    returnData = false;
-  } else {
-    returnData = ''; // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
-    // [3,3,2]
-    //
-    // {
-    // "wonder": "wondr,wundr,wndr",
-    // "Woman": "wman,wmn,womn",
-    // "Amazing": "amzing,amzng"
-    // }
-
-    var lengthOfInputData = inputData.length;
-    var expandedLehmerCodeArray = [];
-    var tempArray = [];
-    var lehmerCodeArray = Array.from(Array(lengthOfInputData), function () {
-      return 0;
-    });
-    expandedLehmerCodeArray = arrayDeepClone(recursiveArrayExpansion([0, lehmerCodeArray], inputData));
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'expandedLehmerCodeArray is: ' + JSON.stringify(expandedLehmerCodeArray)); // Now we just iterate over each array in expandedLehmerCodeArray and call: getLehmerCodeValue
-
-
-    for (var i = 0; i < expandedLehmerCodeArray.length - 1; i++) {
-      var lehmerCodeStringValue = getLehmerCodeValue(expandedLehmerCodeArray[i], inputMetaData);
-
-      if (i === 0) {
-        returnData = returnData + lehmerCodeStringValue;
-      } else {
-        returnData = returnData + b.cComa + lehmerCodeStringValue;
-      }
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function recursiveArrayExpansion
- * @description Recursively expands all possible combinations of an input array given an index of expansion and returns the list of arrays.
- * @param {array<integer,array<integer>>} inputData The index of expansion and the array to be expanded as an array object.
- * @param {array<integer>} inputMetaData The Lehmer Codex that should be used to set the limit of expansion based on the index of expansion.
- * @return {array<array<integer>>} The final list of arrays after the array expansion has completed successfully.
- * @author Seth Hollingsead
- * @date 2021/01/21
- */
-
-
-exports.solveLehmerCode = solveLehmerCode;
-
-var recursiveArrayExpansion = function recursiveArrayExpansion(inputData, inputMetaData) {
-  var functionName = s.crecursiveArrayExpansion;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData = [];
-
-  if (inputData && inputMetaData && isArray(inputData) === true && isArray(inputMetaData) === true && inputData.length > 0 && inputMetaData.length > 0) {
-    // Setup & parse the inputData & inputMetaData into a format we can use to actually do recursive array expansion.
-    var indexOfExpansion = inputData[0];
-    var arrayToBeExpanded = inputData[1];
-    var limitOfExpansion = inputMetaData[indexOfExpansion];
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'indexOfExpansion is: ' + indexOfExpansion);
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded is: ' + JSON.stringify(arrayToBeExpanded));
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'limitOfExpansion is: ' + limitOfExpansion);
-
-    var masterTempReturnData = []; // When we are all done we will set the returnData back to the list of arrays in this array.
-    // [["Wondr","Wundr","Wndr","Wonder"],["Wman","Wmn","Womn","Woman"],["Amzing","Amzng","Amazing"]]
-    // [3,3,2]
-    //
-    // {
-    // "wonder": "wondr,wundr,wndr",
-    // "Woman": "wman,wmn,womn",
-    // "Amazing": "amzing,amzng"
-    // }
-    // First level array expansion.
-
-    for (var i = 0; i <= limitOfExpansion; i++) {
-      var lehmerCodeArray1 = arrayDeepClone(arrayToBeExpanded, '');
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
-
-      lehmerCodeArray1[indexOfExpansion] = i;
-
-      if (doesArrayContainValue(returnData, lehmerCodeArray1, ascertainMatchingElements) === false) {
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pushing lehmerCodeArray1 to returnData value: ' + JSON.stringify(lehmerCodeArray1));
-
-        returnData.push(lehmerCodeArray1);
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData after push is: ' + JSON.stringify(returnData));
-      }
-    }
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData after Level 1 is: ' + JSON.stringify(returnData)); // Second level array expansion, this is where we call recursively.
-    // We need to determine if the index of expansion is equal to the length of the arrayToBeExpanded.
-    // If it is then we have reached our recursive expansion limit.
-    // If NOT then we need to recursively expand some more on each of the arrays that are now in the returnData array.
-
-
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'arrayToBeExpanded.length is: ' + arrayToBeExpanded.length);
-
-    if (indexOfExpansion < arrayToBeExpanded.length - 1) {
-      // We need to remove arrays from the returnData and recursively call the recursiveArrayExpansion with each array we remove.
-      // The data we get back from each recursive call should be pushed back to masterTempReturnData array
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData.length is: ' + returnData.length); // Make sure we clone the array we will be removing array elements from,
-      // because otherwise we would be looping over the same array we are removing elements from,
-      // which would mean that we would never visit all of the elemtns.
-      // https://stackoverflow.com/questions/54081930/why-array-foreach-array-pop-would-not-empty-the-array
-
-
-      var returnDataTemp = arrayDeepClone(returnData, '');
-      returnDataTemp.forEach(function (item) {
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData BEFORE POP is: ' + JSON.stringify(returnData));
-
-        var lehmerCodeArray2 = arrayDeepClone(returnData.pop(), '');
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData AFTER POP is: ' + JSON.stringify(returnData));
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData BEFORE recursive call is: ' + JSON.stringify(masterTempReturnData));
-
-        var tempReturnData1 = arrayDeepClone(recursiveArrayExpansion([indexOfExpansion + 1, lehmerCodeArray2], inputMetaData), '');
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1 is: ' + JSON.stringify(tempReturnData1));
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'tempReturnData1.length is: ' + tempReturnData1.length);
-
-        for (var k = 0; k <= tempReturnData1.length - 1; k++) {
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN k-th iteration: ' + k);
-
-          if (doesArrayContainValue(masterTempReturnData, tempReturnData1[k], ascertainMatchingElements) === false) {
-            _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pushing tempReturnData1[k] value: ' + JSON.stringify(tempReturnData1[k]));
-
-            masterTempReturnData.push(arrayDeepClone(tempReturnData1[k], ''));
-          }
-
-          _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END k-th iteration: ' + k);
-        }
-
-        tempReturnData1 = null;
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'masterTempReturnData AFTER recursive call is: ' + JSON.stringify(masterTempReturnData));
-      });
-      returnData = arrayDeepClone(masterTempReturnData, '');
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function getLehmerCodeValue
- * @description Takes a Lehmer code array and an array of arrays and uses the Lehmer Code array to look up the corosponding values in the array of arrays.
- * @param {array<integer>} inputData The Lehmer code array with indices for values we should get & return.
- * @param {array<array<string>>} inputMetaData The nested array of arrays with the values we should get and combine then return as a single string.
- * @return {string} The joined string from each of the array element strings at the Lehmer code indices.
- * @author Seth Hollingsead
- * @date 2021/01/20
- */
-
-
-exports.recursiveArrayExpansion = recursiveArrayExpansion;
-
-var getLehmerCodeValue = function getLehmerCodeValue(inputData, inputMetaData) {
-  var functionName = s.cgetLehmerCodeValue;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData;
-
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var lengthOfInputData = inputData.length;
-    returnData = '';
-
-    for (var i = 0; i < lengthOfInputData; i++) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
-
-      var lookupIndex = inputData[i];
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'lookupIndex is: ' + lookupIndex);
-
-      var lookupValue = inputMetaData[i][lookupIndex];
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'lookupValue is: ' + lookupValue);
-
-      returnData = returnData + lookupValue;
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function arraysAreEqual
- * @description Determines if a set of arrays are equal or not.
- * @param {array} inputData The first array that should be checked for equality.
- * @param {array} inputMetaData The second array that should be checked for equality.
- * @return {boolean} True or False to indicate if the arrays are equal or not equal.
- * @author Seth Hollingsead
- * @date 2021/01/20
- * @NOTE: https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript
- */
-
-
-exports.getLehmerCodeValue = getLehmerCodeValue;
-
-var arraysAreEqual = function arraysAreEqual(inputData, inputMetaData) {
-  var functionName = s.carraysAreEqual;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + JSON.stringify(inputData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData;
-
-  if (!inputData && !inputMetaData) {
-    returnData = false;
-  } else {
-    if (inputData === inputMetaData) {
-      returnData = true;
-    }
-
-    if (inputData === null || inputMetaData === null) {
-      returnData === false;
-    }
-
-    if (inputData.length !== inputMetaData.length) {
-      returnData === false;
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 }; // ******************************************************
@@ -3860,31 +2987,29 @@ var arraysAreEqual = function arraysAreEqual(inputData, inputMetaData) {
  */
 
 
-exports.arraysAreEqual = arraysAreEqual;
+exports.countDuplicateCommandAliases = countDuplicateCommandAliases;
 
 var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContextName(inputData, inputMetaData) {
-  var functionName = s.cgetDataCatagoryFromDataContextName;
+  var functionName = biz.cgetDataCatagoryFromDataContextName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = '';
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var dataCatagory = inputData.split(b.cUnderscore);
-    returnData = dataCatagory[0];
+  if (inputData) {
+    var dataCatagory = inputData.split(bas.cUnderscore);
+    returnData = dataCatagory[0]; // Data Catagory should be:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Data Catagory should be: ' + dataCatagory[0]);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDataCatagoryShouldBe + dataCatagory[0]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -3902,28 +3027,26 @@ var getDataCatagoryFromDataContextName = function getDataCatagoryFromDataContext
 exports.getDataCatagoryFromDataContextName = getDataCatagoryFromDataContextName;
 
 var getDataCatagoryDetailNameFromDataContextName = function getDataCatagoryDetailNameFromDataContextName(inputData, inputMetaData) {
-  var functionName = s.cgetDataCatagoryDetailNameFromDataContextName;
+  var functionName = biz.cgetDataCatagoryDetailNameFromDataContextName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = '';
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var dataCatagoryDetailName = inputData.split(b.cUnderscore);
-    returnData = dataCatagoryDetailName[1];
+  if (inputData) {
+    var dataCatagoryDetailName = inputData.split(bas.cUnderscore);
+    returnData = dataCatagoryDetailName[1]; // Data Catagory Detail Name should be:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Data Catagory Detail Name should be: ' + dataCatagoryDetailName[1]);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDataCatagoryDetailNameShouldBe + dataCatagoryDetailName[1]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -3941,28 +3064,26 @@ var getDataCatagoryDetailNameFromDataContextName = function getDataCatagoryDetai
 exports.getDataCatagoryDetailNameFromDataContextName = getDataCatagoryDetailNameFromDataContextName;
 
 var getKeywordNameFromDataContextName = function getKeywordNameFromDataContextName(inputData, inputMetaData) {
-  var functionName = s.cgetKeywordNameFromDataContextName;
+  var functionName = biz.cgetKeywordNameFromDataContextName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
-  var returnData;
+  var returnData = '';
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var dataCatagoryKeywordName = inputData.split(b.cUnderscore);
-    returnData = dataCatagoryKeywordName[2];
+  if (inputData) {
+    var dataCatagoryKeywordName = inputData.split(bas.cUnderscore);
+    returnData = dataCatagoryKeywordName[2]; // Keyword Name should be:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Keyword Name should be: ' + dataCatagoryKeywordName[2]);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cKeywordNameShouldBe + dataCatagoryKeywordName[2]);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -3988,63 +3109,68 @@ var parseSystemRootPath = function parseSystemRootPath(inputData, inputMetaData)
   // console.log('BEGIN stringParsing.parseSystemRootPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.cparseSystemRootPath;
+  var functionName = biz.cparseSystemRootPath;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var applicationName = _configurator["default"].getConfigurationSetting(s.cApplicationName);
+  if (inputData) {
+    var applicationName = _configurator["default"].getConfigurationSetting(sys.cApplicationName);
 
-    var pathElements = inputData.split(b.cBackSlash);
+    var pathElements = inputData.split(bas.cBackSlash);
 
     loop1: for (var i = 0; i < pathElements.length; i++) {
       // console.log('BEGIN iteration i: ' + i);
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN iteration i: ' + i);
+      // BEGIN i-th iteration:
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
 
       var pathElement = pathElements[i]; // console.log('pathElement is ' + pathElement);
+      // pathElement is:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathElement is: ' + pathElement);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpathElementIs + pathElement);
 
       if (i === 0) {
         // console.log('case: i = 0');
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'case: i = 0');
+        // case: i = 0
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccaseIEqual0);
 
         returnData = pathElement;
       } else if (pathElement === applicationName) {
-        // console.log('case: pathElement = ' + s.cCAFfeinated);
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'case: pathElement = ' + applicationName);
+        // console.log('case: pathElement = ' + sys.cCAFfeinated);
+        // case: pathElement =
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccasePathElementEqual + applicationName);
 
-        returnData = returnData + b.cBackSlash + pathElement + b.cBackSlash;
+        returnData = returnData + bas.cBackSlash + pathElement + bas.cBackSlash;
         break loop1;
       } else {
         // console.log('case else');
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'case else');
+        // case else
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccaseElse);
 
-        returnData = returnData + b.cBackSlash + pathElement;
+        returnData = returnData + bas.cBackSlash + pathElement;
       } // console.log('returnData so far is: ' + returnData);
       // console.log('END iteration i: ' + i);
+      // returnData so far is:
 
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData so far is: ' + returnData);
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataSoFarIs + returnData); // END i-th iteration:
 
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END iteration i: ' + i);
+
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
     }
 
     returnData = swapDoubleBackSlashToSingleBackSlash(returnData, '');
     returnData = swapBackSlashToForwardSlash(returnData, '');
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.parseSystemRootPath function');
 
 
@@ -4073,25 +3199,23 @@ var replaceDoublePercentWithMessage = function replaceDoublePercentWithMessage(i
   // We just have to hard code everything and it won't be loged to the log file.
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.creplaceDoublePercentWithMessage;
+  var functionName = biz.creplaceDoublePercentWithMessage;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    returnData = inputData.replace(b.cPercent + b.cPercent, inputMetaData);
+  if (inputData) {
+    returnData = inputData.replace(bas.cPercent + bas.cPercent, inputMetaData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.replaceDoublePercentWithMessage business rule');
 
 
@@ -4111,27 +3235,25 @@ var replaceDoublePercentWithMessage = function replaceDoublePercentWithMessage(i
 exports.replaceDoublePercentWithMessage = replaceDoublePercentWithMessage;
 
 var removeXnumberOfFoldersFromEndOfPath = function removeXnumberOfFoldersFromEndOfPath(inputData, inputMetaData) {
-  var functionName = s.cremoveXnumberOfFoldersFromEndOfPath;
+  var functionName = biz.cremoveXnumberOfFoldersFromEndOfPath;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData && math.isNumeric(inputMetaData) === false) {
-    returnData = false;
-  } else {
+  if (inputData && math.isNumeric(inputMetaData) === true) {
     var pathArray;
     var pathAsForwardSlash;
 
-    if (inputData.includes(b.cForwardSlash) === true) {
-      pathArray = inputData.split(b.cForwardSlash);
+    if (inputData.includes(bas.cForwardSlash) === true) {
+      pathArray = inputData.split(bas.cForwardSlash);
       pathAsForwardSlash = true;
-    } else if (inputData.includes(b.cBackSlash) === true) {
-      pathArray = inputData.split(b.cBackSlash);
+    } else if (inputData.includes(bas.cBackSlash) === true) {
+      pathArray = inputData.split(bas.cBackSlash);
       pathAsForwardSlash = false;
     } else {
       pathAsForwardSlash = false;
@@ -4139,18 +3261,20 @@ var removeXnumberOfFoldersFromEndOfPath = function removeXnumberOfFoldersFromEnd
     }
 
     if (returnData !== false) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathArray is: ' + JSON.stringify(pathArray));
+      // pathArray is:
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpathArrayIs + JSON.stringify(pathArray));
 
       for (var i = 0; i <= pathArray.length - inputMetaData - 1; i++) {
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'current path element is: ' + pathArray[i]);
+        // current path element is:
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentPathElementIs + pathArray[i]);
 
         if (i === 0) {
           returnData = pathArray[i];
         } else {
           if (pathAsForwardSlash === true) {
-            returnData = returnData + b.cForwardSlash + pathArray[i];
+            returnData = returnData + bas.cForwardSlash + pathArray[i];
           } else if (pathAsForwardSlash === false) {
-            returnData = returnData + b.cBackSlash + pathArray[i];
+            returnData = returnData + bas.cBackSlash + pathArray[i];
           } else {
             returnData = false;
             break;
@@ -4162,9 +3286,9 @@ var removeXnumberOfFoldersFromEndOfPath = function removeXnumberOfFoldersFromEnd
 
 
       if (pathAsForwardSlash === true) {
-        returnData = returnData + b.cForwardSlash;
+        returnData = returnData + bas.cForwardSlash;
       } else if (pathAsForwardSlash === false) {
-        returnData = returnData + b.cBackSlash;
+        returnData = returnData + bas.cBackSlash;
       } else {
         returnData = false;
       }
@@ -4172,9 +3296,9 @@ var removeXnumberOfFoldersFromEndOfPath = function removeXnumberOfFoldersFromEnd
 
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -4195,40 +3319,39 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
   // console.log('BEGIN stringParsing.getFirstTopLevelFolderFromPath function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.cgetFirstTopLevelFolderFromPath;
+  var functionName = biz.cgetFirstTopLevelFolderFromPath;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = false;
-  } else {
+  if (inputData) {
     var pathArray;
 
-    if (inputData.includes(b.cForwardSlash) === true) {
-      pathArray = inputData.split(b.cForwardSlash);
-    } else if (inputData.includes(b.cBackSlash) === true) {
-      pathArray = inputData.split(b.cBackSlash);
+    if (inputData.includes(bas.cForwardSlash) === true) {
+      pathArray = inputData.split(bas.cForwardSlash);
+    } else if (inputData.includes(bas.cBackSlash) === true) {
+      pathArray = inputData.split(bas.cBackSlash);
     } else {
       returnData = false;
     }
 
     if (returnData !== false) {
       // console.log('pathArray is: ' + JSON.stringify(pathArray));
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'pathArray is: ' + JSON.stringify(pathArray));
+      // pathArray is:
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpathArrayIs + JSON.stringify(pathArray));
 
       returnData = pathArray[pathArray.length - 2];
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.getFirstTopLevelFolderFromPath function');
 
 
@@ -4248,40 +3371,46 @@ var getFirstTopLevelFolderFromPath = function getFirstTopLevelFolderFromPath(inp
 exports.getFirstTopLevelFolderFromPath = getFirstTopLevelFolderFromPath;
 
 var loadDataFile = function loadDataFile(inputData, inputMetaData) {
-  var functionName = s.cloadDataFile;
+  var functionName = biz.cloadDataFile;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
   if (!inputData) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: No data to load, please specify a valid path & filename!');
+    // WARNING: No data to load, please specify a valid path & filename!
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadDataFileMessage1 + msg.cLoadDataFileMessage2);
 
     returnData = false;
   } else {
     var loadedData = {};
 
-    if (inputData.includes(g.cDotxml) || inputData.includes(g.cDotXml) || inputData.includes(g.cDotXML)) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Attempting to load XML data!');
+    if (inputData.includes(gen.cDotxml) || inputData.includes(gen.cDotXml) || inputData.includes(gen.cDotXML)) {
+      // Attempting to load XML data!
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cAttemptingToLoadXmlData);
 
       loadedData = _fileBroker["default"].getXmlData(inputData);
-    } else if (inputData.includes(g.cDotcsv) || inputData.includes(g.cDotCsv) || inputData.includes(g.cDotCSV)) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Attempting to load CSV data!');
+    } else if (inputData.includes(gen.cDotcsv) || inputData.includes(gen.cDotCsv) || inputData.includes(gen.cDotCSV)) {
+      // Attempting to load CSV data!
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cAttemptingToLoadCsvData);
 
       loadedData = _fileBroker["default"].getCsvData(inputData);
-    } else if (inputData.includes(g.cDotjson) || inputData.includes(g.cDotJson) || inputData.includes(g.cDotJSON)) {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Attempting to load JSON data!');
+    } else if (inputData.includes(gen.cDotjson) || inputData.includes(gen.cDotJson) || inputData.includes(gen.cDotJSON)) {
+      // Attempting to load JSON data!
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cAttemptingToLoadJsonData);
 
       loadedData = _fileBroker["default"].getJsonData(inputData);
     } else {
-      _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'WARNING: Invalid file format, file formats supported are: XML, CSV, JSON');
-    }
+      // WARNING: Invalid file format, file formats supported are:
+      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cloadDataFileMessage3 + supportedFileFormatsAre());
+    } // Loaded data is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'Loaded data is: ' + JSON.stringify(loadedData));
+
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadedDataIs + JSON.stringify(loadedData));
 
     if (loadedData !== null && loadedData) {
       returnData = true;
@@ -4290,328 +3419,41 @@ var loadDataFile = function loadDataFile(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
 /**
- * @function getStoredData
- * @description Gets the named data stored in the D data structure in the DataStorage data hive.
- * @param {string} inputData The name of the sub-data hive that should contain the stored data we are looking for.
+ * @function supportedFileFormatsAre
+ * @description Returns a list of supported file formats.
+ * @param {string} inputData Not used for this business rule.
  * @param {string} inputMetaData Not used for this business rule.
- * @return {object} The data that was stored in the sub-data hive under the DataStorage data hive of the D data structure.
+ * @return {string} A coma seperated list of supported file formats. IE a list of file extensions.
  * @author Seth Hollingsead
- * @date 2020/12/28
+ * @date 2021/02/06
  */
 
 
 exports.loadDataFile = loadDataFile;
 
-var getStoredData = function getStoredData(inputData, inputMetaData) {
-  var functionName = s.cgetStoredData;
+var supportedFileFormatsAre = function supportedFileFormatsAre(inputData, inputMetaData) {
+  var functionName = biz.csupportedFileFormatsAre;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData); // NOTE: In the future it might be better to store this data in a configuration setting so it's easier to update.
+  // This this function could just look up that data and return it as a list.
 
-  var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    returnData = _dataBroker["default"].getData(inputData);
-  }
+  var returnData = gen.cXML + bas.cComa + bas.cSpace + gen.cCSV + bas.cComa + bas.cSpace + gen.cJSON;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function storeData
- * @description Stores some data using the DataStorage data hive on the D data store.
- * @param {string} inputData The context name that the data should be stored with.
- * @param {string/integer/boolean/object/array} inputMetaData The data that should be stored.
- * @return {void}
- * @author Seth Hollingsead
- * @date 2021/01/05
- */
-
-
-exports.getStoredData = getStoredData;
-
-var storeData = function storeData(inputData, inputMetaData) {
-  var functionName = s.cstoreData;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData = false;
-
-  if (!inputData) {
-    returnData = false;
-  } else {
-    _dataBroker["default"].storeData(inputData, inputMetaData);
-
-    returnData = true;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function isObjectEmpty
- * @description Determines if a JSON object is empty or not.
- * @param {object} inputData The object that should be checked for emptyness.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {boolean} True or False to indicate if the object is empty or not empty.
- * @author Seth Hollingsead
- * @date 2021/01/15
- */
-
-
-exports.storeData = storeData;
-
-var isObjectEmpty = function isObjectEmpty(inputData, inputMetaData) {
-  var functionName = s.cisObjectEmpty;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData = true;
-
-  if (inputData) {
-    for (var key in inputData) {
-      if (inputData.hasOwnProperty(key)) {
-        returnData = false; // It may have a value, but is that value === null, if it is, reset back to true.
-
-        if (inputData[key] === null) {
-          returnData = true;
-        }
-      }
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function isArrayEmpty
- * @description Determines if a JSON array is empty or not.
- * @param {array} inputData The array that should be checked for emptyness.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {boolean} True or False to indicate if the array is empty or not empty.
- * @author Seth Hollingsead
- * @date 2021/01/15
- */
-
-
-exports.isObjectEmpty = isObjectEmpty;
-
-var isArrayEmpty = function isArrayEmpty(inputData, inputMetaData) {
-  var functionName = s.cisArrayEmpty;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
-
-  var returnData = true;
-
-  if (inputData) {
-    returnData = !Object.keys(inputData).length;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function isArray
- * @description Determines if an object is an array or not.
- * @param {object} inputData The object that should be tested to see if is an array or not.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {boolean} True or False to indicate if the input object is an array or not.
- * @author Seth Hollingsead
- * @date 2021/01/14
- */
-
-
-exports.isArrayEmpty = isArrayEmpty;
-
-var isArray = function isArray(inputData, inputMetaData) {
-  var functionName = s.cisArray;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false;
-  returnData = Array.isArray(inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function isNonZeroLengthArray
- * @description Determines if an object is an array of length greater than or equal to one or not.
- * @param {object} inputData The object that should be tested to see if is an array of length greater than or equal to 1 or not.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {boolean} True or False to indicate if the input object is an array of length greater than equal to zero or not.
- * @author Seth Hollingsead
- * @date 2021/01/14
- */
-
-
-exports.isArray = isArray;
-
-var isNonZeroLengthArray = function isNonZeroLengthArray(inputData, inputMetaData) {
-  var functionName = s.cisNonZeroLengthArray;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false;
-
-  if (isArray(inputData) === true && inputData.length >= 1) {
-    returnData = true;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function arrayDeepClone
- * @description Clones an array by using JSON.stringify & JSON.parse.
- * Almost all other methods of cloning an array will actually clone by referance which essentially just clones the pointer to the array.
- * @NOTE: https://www.freecodecamp.org/news/how-to-clone-an-array-in-javascript-1d3183468f6a/
- * @param {array} inputData The array that should be deeply cloned.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {array} The new array object after being cloned deeply.
- * @author Seth Hollingsead
- * @date 2021/01/21
- */
-
-
-exports.isNonZeroLengthArray = isNonZeroLengthArray;
-
-var arrayDeepClone = function arrayDeepClone(inputData, inputMetaData) {
-  var functionName = s.carrayDeepClone;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData;
-
-  if (inputData && isArray(inputData, '') === true && isArrayEmpty(inputData, '') === false) {
-    returnData = JSON.parse(JSON.stringify(inputData));
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function isObject
- * @description Determines if an object is a JSON object or not.
- * @param {object} inputData The object that should be tested to see if it is a JSON object or not.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {boolean} True or False to indicate if the input object is an array or not.
- * @author Seth Hollingsead
- * @date 2021/01/14
- */
-
-
-exports.arrayDeepClone = arrayDeepClone;
-
-var isObject = function isObject(inputData, inputMetaData) {
-  var functionName = s.cisObject;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false;
-
-  if (_typeof(inputData) === 'object') {
-    returnData = true;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function isArrayOrObject
- * @description Determines if an input object is either an array or a JSON object.
- * @param {object} inputData The object that should be tested to see if it is either an array or a JSON object or not.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {boolean} True or False to indicate if the input object is either an array or a JSON object.
- * @author Seth Hollingsead
- * @date 2021/01/14
- */
-
-
-exports.isObject = isObject;
-
-var isArrayOrObject = function isArrayOrObject(inputData, inputMetaData) {
-  var functionName = s.cisArrayOrObject;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false;
-
-  if (isObject(inputData, '') === true || isArray(inputData, '') === true) {
-    returnData = true;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -4626,35 +3468,34 @@ var isArrayOrObject = function isArrayOrObject(inputData, inputMetaData) {
  */
 
 
-exports.isArrayOrObject = isArrayOrObject;
+exports.supportedFileFormatsAre = supportedFileFormatsAre;
 
 var getAttributeName = function getAttributeName(inputData, inputMetaData) {
-  var functionName = s.cgetAttributeName;
+  var functionName = biz.cgetAttributeName;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var attributeArray = inputData.split(b.cColon);
+  if (inputData) {
+    var attributeArray = inputData.split(bas.cColon); // attributeArray is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArrayIs + attributeArray); // attributeArray[0] is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[0]);
 
-    returnData = replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArray0Is + attributeArray[0]);
+
+    returnData = aryParse.replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
     returnData = returnData.trim();
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -4672,32 +3513,31 @@ var getAttributeName = function getAttributeName(inputData, inputMetaData) {
 exports.getAttributeName = getAttributeName;
 
 var getAttributeValue = function getAttributeValue(inputData, inputMetaData) {
-  var functionName = s.cgetAttributeValue;
+  var functionName = biz.cgetAttributeValue;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var attributeArray = inputData.split(b.cColon);
+  if (inputData) {
+    var attributeArray = inputData.split(bas.cColon); // attributeArray is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray is: ' + attributeArray);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArrayIs + attributeArray); // attributeArray[0] is:
 
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'attributeArray[0] is: ' + attributeArray[1]);
 
-    returnData = replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeArray0Is + attributeArray[1]);
+
+    returnData = aryParse.replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
     returnData = returnData.trim();
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -4719,19 +3559,17 @@ var isOdd = function isOdd(inputData, inputMetaData) {
   // console.log('BEGIN stringParsing.isOdd function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.cisOdd;
+  var functionName = biz.cisOdd;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
+  if (inputData) {
     if (isInteger(inputData, '') === true) {
       var inputValue = parseInt(inputData);
       var result = inputValue % 2;
@@ -4742,9 +3580,9 @@ var isOdd = function isOdd(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.isOdd function');
 
 
@@ -4766,19 +3604,17 @@ var isOdd = function isOdd(inputData, inputMetaData) {
 exports.isOdd = isOdd;
 
 var isEven = function isEven(inputData, inputMetaData) {
-  var functionName = s.cisEven;
+  var functionName = biz.cisEven;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
 
-  if (!inputData) {
-    returnData = false;
-  } else {
+  if (inputData) {
     if (math.isNumeric(inputData) === true) {
       var inputValue = parseInt(inputData);
       var result = inputValue % 2;
@@ -4789,61 +3625,9 @@ var isEven = function isEven(inputData, inputMetaData) {
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function replaceCharacterAtIndex
- * @description Replaces a character at the specified index with another character.
- * @param {string} inputData The string which should have the specified character changed, then returned.
- * @param {array<integer,string>} inputMetaData An array with an integer of what index the character should be replaced,
- * and a string with the character or characters that should be inserted at the specified index.
- * @return {string} The modified string.
- * @author Seth Hollingsead
- * @date 2020/06/24
- * {@link https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript}
- */
-
-
-exports.isEven = isEven;
-
-var replaceCharacterAtIndex = function replaceCharacterAtIndex(inputData, inputMetaData) {
-  // console.log('BEGIN stringParsing.replaceCharacterAtIndex function');
-  // console.log('inputData is: ' + inputData);
-  // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = s.creplaceCharacterAtIndex;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = false;
-
-  if (!inputData) {
-    returnData = false;
-  } else {
-    var indexOfReplacement;
-    var stringToReplaceWith;
-
-    if (inputMetaData.length === 2) {
-      indexOfReplacement = inputMetaData[0];
-      stringToReplaceWith = inputMetaData[1];
-      var stringArray = inputData.split('');
-      stringArray.splice(indexOfReplacement, 1, stringToReplaceWith);
-      returnData = stringArray.join('');
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function); // console.log('returnData is: ' + returnData);
-  // console.log('END stringParsing.replaceCharacterAtIndex function');
-
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };
@@ -4858,145 +3642,35 @@ var replaceCharacterAtIndex = function replaceCharacterAtIndex(inputData, inputM
  */
 
 
-exports.replaceCharacterAtIndex = replaceCharacterAtIndex;
+exports.isEven = isEven;
 
 var cleanCommandInput = function cleanCommandInput(inputData, inputMetaData) {
-  var functionName = s.ccleanCommandInput;
+  var functionName = biz.ccleanCommandInput;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = '';
 
-  if (!inputData) {
-    returnData = false;
-  } else {
+  if (inputData) {
     returnData = inputData;
-    returnData = replaceCharacterWithCharacter(inputData, [/--/g, '']);
-    returnData = replaceCharacterWithCharacter(returnData, [/\[/g, '']);
-    returnData = replaceCharacterWithCharacter(returnData, [/\]/g, '']);
+    returnData = aryParse.replaceCharacterWithCharacter(inputData, [/--/g, '']);
+    returnData = aryParse.replaceCharacterWithCharacter(returnData, [/\[/g, '']);
+    returnData = aryParse.replaceCharacterWithCharacter(returnData, [/\]/g, '']);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-};
-/**
- * @function aggregateCommandArguments
- * @description Combines all of the input arguments into a single command line to be executed by the command parser.
- * @param {array<string>} inputData An array of strings that represents the command and command parameters to execute.
- * @param {string} inputMetaData Not used for this business rule.
- * @return {string} A single string command line of code that should be sent to the command parser.
- * @author Seth Hollingsead
- * @date 2020/12/21
- */
-
-
-exports.cleanCommandInput = cleanCommandInput;
-
-var aggregateCommandArguments = function aggregateCommandArguments(inputData, inputMetaData) {
-  var functionName = s.caggregateCommandArguments;
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputDataIs + inputData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cinputMetaDataIs + inputMetaData);
-
-  var returnData = '';
-
-  if (!inputData) {
-    returnData = false;
-  } else {
-    if (inputData.length > 3) {
-      for (var i = 2; i < inputData.length; i++) {
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'BEGIN i-th iteration: ' + i);
-
-        if (i === 2) {
-          returnData = cleanCommandInput(inputData[i]);
-        } else {
-          returnData = returnData + b.cSpace + cleanCommandInput(inputData[i]);
-        }
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-
-        _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'END i-th iteration: ' + i);
-      }
-    } else {
-      returnData = cleanCommandInput(inputData[2]);
-    }
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 }; // ******************************************************
 // Internal functions
 // ******************************************************
 
-/**
- * @function doesArrayContainValue
- * @description Checks if an array contains a value, checking equality by function(val, arr[i])
- * @param {array<string|object|map>} inputData The input array that should be searched for the given input value.
- * @param {string|integer|object} inputMetaData The value that should be searched for in the input array.
- * @param {function} myFunction The function that should be used to do the search.
- * @return {boolean} A Boolean value to indicate if the value was found in the array or not found.
- * @NOTE Duplicated code in the app.js file,
- * because the app.js code does not support calling and importing ES6 code from CommonJS code.
- * @author Seth Hollingsead
- * @date 2020/02/03
- */
-
-
-exports.aggregateCommandArguments = aggregateCommandArguments;
-
-function doesArrayContainValue(array, value, myFunction) {
-  var functionName = 'doesArrayContainValue';
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'inputData value is: ' + JSON.stringify(array));
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'inputMetaData value is: ' + value); // Not sure how this will output, would be good to also put some type checking on this input variable.
-
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'myFunction value is: ' + JSON.stringify(myFunction));
-
-  var returnData;
-
-  if (_.isArray(array) === false) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'array input object is not an array.');
-
-    returnData = false;
-  }
-
-  if (!!array.find(function (i) {
-    return myFunction(i, value);
-  })) {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'The value was found in the array.');
-
-    returnData = true;
-  } else {
-    _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'The value was NOT found in the array.');
-
-    returnData = false;
-  }
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
-
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
-
-  return returnData;
-}
-
-;
 /**
  * @function replaceCharacterAtIndexOfString
  * @description Replaces the character at a specified index with another character.
@@ -5009,16 +3683,22 @@ function doesArrayContainValue(array, value, myFunction) {
  * @NOTE: https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
  */
 
+
+exports.cleanCommandInput = cleanCommandInput;
+
 var replaceCharacterAtIndexOfString = function replaceCharacterAtIndexOfString(originalString, index, replacement) {
-  var functionName = 'replaceCharacterAtIndexOfString';
+  var functionName = biz.creplaceCharacterAtIndexOfString;
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // originalString is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'originalString value is: ' + originalString);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'index value is: ' + index);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.coriginalStringIs + originalString); // index is:
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, 'replacement value is: ' + replacement);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cindexIs + index); // replacement is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creplacementIs + replacement);
 
   var returnData;
 
@@ -5026,9 +3706,9 @@ var replaceCharacterAtIndexOfString = function replaceCharacterAtIndexOfString(o
     returnData = originalString.substr(0, index) + replacement + originalString.substr(index + replacement.length);
   }
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 
   return returnData;
 };

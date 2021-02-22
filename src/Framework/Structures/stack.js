@@ -6,7 +6,8 @@
  * @requires module:ruleBroker
  * @requires module:loggers
  * @requires module:basic-constants
- * @requires module:system-constants
+ * @requires module:business-constants
+ * @requires module:messages-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -15,8 +16,9 @@
  */
 import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from '../Executrix/loggers';
-import * as b from '../Constants/basic.constants';
-import * as s from '../Constants/system.constants';
+import * as bas from '../Constants/basic.constants';
+import * as biz from '../Constants/business.constants';
+import * as msg from '../Constants/messages.constants';
 var path = require('path');
 var D = require('./data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -31,14 +33,16 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function initStack(stackNameSpace) {
    let functionName = initStack.name;
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
+   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
    if (D[stackNameSpace] === undefined) {
      D[stackNameSpace] = [];
    } else {
-     console.log('WARNING: Stack: ' + stackNameSpace + ' ALREADY exist!!');
+     // WARNING: Stack:
+     // ALREADY exist!
+     console.log(msg.cWarningStackColon + stackNameSpace + msg.cAlreadyExists);
    }
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 /**
@@ -51,14 +55,16 @@ function initStack(stackNameSpace) {
  */
 function clearStack(stackNameSpace) {
   let functionName = clearStack.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   if (D[stackNameSpace] !== undefined) {
     D[stackNameSpace] = [];
   } else {
-    console.log('WARNING: Stack: ' + stackNameSpace + ' does not exist!!');
+    // WARNING: Stack:
+    // does not exist!
+    console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 /**
@@ -72,15 +78,17 @@ function clearStack(stackNameSpace) {
  */
 function push(stackNameSpace, value) {
   let functionName = push.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvalueIs + JSON.stringify(value));
   if (D[stackNameSpace] !== undefined) {
     D[stackNameSpace].push(value);
   } else {
-    console.log('WARNING: Stack: ' + stackNameSpace + ' does not exist!!');
+    // WARNING: Stack:
+    // does not exist!
+    console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 /**
@@ -93,21 +101,25 @@ function push(stackNameSpace, value) {
  */
 function pop(stackNameSpace) {
   let functionName = pop.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   let returnData;
   if (D[stackNameSpace] !== undefined) {
     if (D[stackNameSpace].length === 0) {
-      returnData = 'WARNING: Stack: ' + stackNameSpace + ' is empty!!';
+      // WARNING: Stack:
+      // is empty!
+      returnData = msg.cWarningStackColon + stackNameSpace + bas.ccisEmpty;
       console.log(returnData);
     } else {
       returnData = D[stackNameSpace].pop();
     }
   } else {
-    console.log('WARNING: Stack: ' + stackNameSpace + ' does not exist!!');
+    // WARNING: Stack:
+    // does not exist!
+    console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -121,18 +133,20 @@ function pop(stackNameSpace) {
  */
 function isEmpty(stackNameSpace) {
   let functionName = isEmpty.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   let returnData = false;
   if (D[stackNameSpace] !== undefined) {
     if (D[stackNameSpace].length === 0) {
       returnData = true;
     }
   } else {
-    console.log('WARNING: Stack: ' + stackNameSpace + ' does not exist!!');
+    // WARNING: Stack:
+    // does not exist!
+    console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -146,16 +160,18 @@ function isEmpty(stackNameSpace) {
  */
 function length(stackNameSpace) {
   let functionName = length.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   let returnData = -1;
   if (D[stackNameSpace] !== undefined) {
     returnData = D[stackNameSpace].length;
   } else {
-    console.log('WARNING: Stack: ' + stackNameSpace + ' does not exist!!');
+    // WARNING: Stack:
+    // does not exist!
+    console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -170,19 +186,21 @@ function length(stackNameSpace) {
  */
 function contains(stackNameSpace, value) {
   let functionName = contains.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvalueIs + value);
   let returnData = false;
   let containsRule = [];
-  containsRule[0] = s.cdoesArrayContainCharacter;
+  containsRule[0] = biz.cdoesArrayContainCharacter;
   if (D[stackNameSpace] !== undefined) {
     returnData = ruleBroker.processRules(value, D[stackNameSpace], containsRule);
   } else {
-    console.log('WARNING: Stack: ' + stackNameSpace + ' does not exist!!');
+    // WARNING: Stack:
+    // does not exist!
+    console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + returnData);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -196,14 +214,17 @@ function contains(stackNameSpace, value) {
  */
 function print(stackNameSpace) {
   let functionName = contains.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'stackNameSpace is: ' + stackNameSpace);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   if (D[stackNameSpace] !== undefined) {
-    console.log('Contents of the stack namespace: ' + stackNameSpace + ' is: ' + JSON.stringify(D[stackNameSpace]));
+    // Contents of the stack namespace:
+    console.log(msg.cConentsOfTheStackNamespace + stackNameSpace + sys.cSpaceIsColonSpace + JSON.stringify(D[stackNameSpace]));
   } else {
-    console.log('WARNING: Stack: ' + stackNameSpace + ' does not exist!!');
+    // WARNING: Stack:
+    // does not exist!
+    console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
  export default {

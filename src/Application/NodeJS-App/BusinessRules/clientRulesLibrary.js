@@ -9,7 +9,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as clientStringParsing from './ClientRules/clientStringParsing';
-import * as c from '../Constants/application.constants';
+import * as apc from '../Constants/application.constants';
 
 /**
  * @function initClientRulesLibrary
@@ -22,17 +22,17 @@ export const initClientRulesLibrary = function() {
   // console.log('BEGIN clientRulesLibrary.initClientRulesLibrary function');
   // console.log('END clientRulesLibrary.initClientRulesLibrary function');
   return {
-      [c.cclientEcho]: (inputData, inputMetaData) => (inputData, inputMetaData),
+      [apc.cclientEcho]: (inputData, inputMetaData) => (inputData, inputMetaData),
 
       // Client Business Rules
       // ********************************
       // ClientStringParsing rules in order
       // ********************************
-      [c.ccustomEcho]: (inputData, inputMetaData) => clientStringParsing.customEcho(inputData, inputMetaData),
-      [c.cmostPopularNumber]: (inputData, inputMetaData) => clientStringParsing.mostPopularNumber(inputData, inputMetaData),
-      [c.cisAlmostPalindrome]: (inputData, inputMetaData) => clientStringParsing.isAlmostPalindrome(inputData, inputMetaData),
-      [c.cthreePointAverage]: (inputData, inputMetaData) => clientStringParsing.threePointAverage(inputData, inputMetaData),
-      [c.carrayCounter]: (inputData, inputMetaData) => clientStringParsing.arrayCounter(inputData, inputMetaData)
+      [apc.ccustomEcho]: (inputData, inputMetaData) => clientStringParsing.customEcho(inputData, inputMetaData),
+      [apc.cmostPopularNumber]: (inputData, inputMetaData) => clientStringParsing.mostPopularNumber(inputData, inputMetaData),
+      [apc.cisAlmostPalindrome]: (inputData, inputMetaData) => clientStringParsing.isAlmostPalindrome(inputData, inputMetaData),
+      [apc.cthreePointAverage]: (inputData, inputMetaData) => clientStringParsing.threePointAverage(inputData, inputMetaData),
+      [apc.carrayCounter]: (inputData, inputMetaData) => clientStringParsing.arrayCounter(inputData, inputMetaData)
   };
 };
 

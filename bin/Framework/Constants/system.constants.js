@@ -5,24 +5,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ctypeText = exports.cTestRunTime = exports.cScriptRunTime = exports.cVersionControl = exports.cConfigurationElements = exports.cConfigurationElement = exports.cConfigurationName = exports.cFileNumber = exports.cAccessLevel = exports.cShareEmail = exports.cTestDataFileName = exports.cProjectDescription = exports.cProjectName = exports.cPassword = exports.cUsername = exports.cRowNumber = exports.cIngestionCompleteDwellTime = exports.cProcessingTimeout = exports.cTestData = exports.cInnerHTML = exports.cinnerHTML = exports.cInnerText = exports.cinnerText = exports.cOperatingSystem = exports.cVisibilityCheck = exports.cvisibilityCheck = exports.cDeltaT = exports.cFileCounter = exports.cLogFileEnabled = exports.cTestDataPath = exports.cResultsLogFilePathAndName = exports.cExecutionJournalFilePathAndName = exports.cDataLogFilePathAndName = exports.cLogFilePathAndName = exports.cDwellTime = exports.cTimeoutOverride = exports.cSpecialCharacters = exports.cAllowableCharacters = exports.cParallelMultiUnified = exports.cSynchSingular = exports.cAsynchSingular = exports.cPreValidateFileName = exports.cFileNames = exports.cFilenames = exports.cfilenames = exports.cFileName = exports.cFilename = exports.cfilename = exports.cFileTypes = exports.cfilesLists = exports.cTestRunID = exports.cHostName = exports.cBrowserName = exports.cRunTime = exports.cRuntime = exports.cEndKeywordTimeStamp = exports.cBeginKeywordTimeStamp = exports.cEndPageScriptTimeStamp = exports.cBeginPageScriptTimeStamp = exports.cEndTestTimeStamp = exports.cBeginTestTimeStamp = exports.cEndScriptTimeStamp = exports.cBeginScriptTimeStamp = exports.cScriptDateTimeStamp = exports.cTestTimeStamp = exports.cKeywordTimeStamp = exports.cScriptTimeStamp = exports.cScriptDateStamp = exports.cDateTimeStamp = exports.cPageScriptTimeStamp = exports.cTimeStamp = exports.cIntermediatePath = exports.cPageScript = exports.cEnvironmentRowNumber = exports.cEnvironmentRow = exports.cMasterRowNumber = exports.cNumberOfRows = exports.cTestAutomation = exports.cDebugFiles = exports.cDebugFunctions = exports.cDebugSelectors = exports.cDebugBrowserActions = exports.cJournalBrowserActions = exports.cLogBrowserActions = exports.cDebugKeywords = exports.cDebugPageData = exports.cDebugPageScripts = exports.cDebugTestData = exports.cDebugTestExhaustive = exports.cDebugPage = exports.cDebugTest = exports.cWithText = exports.cwithText = exports.cUnderline = exports.cunderline = exports.cSTYLE = exports.cITERATION = exports.cENVIRONMENT = exports.cLOG = exports.cENV = void 0;
-exports.cCommandNamePrompt3 = exports.cCommandNamePrompt2 = exports.cCommandNamePrompt1 = exports.cDataFontBackgroundColor = exports.cMessageFontBackgroundColor = exports.cFunctionFontBackgroundColor = exports.cModuleFontBackgroundColor = exports.cDataFontColor = exports.cMessageFontColor = exports.cFunctionFontColor = exports.cModuleFontColor = exports.cDataFontStyle = exports.cMessageFontStyle = exports.cFunctionFontStyle = exports.cModuleFontStyle = exports.cLogWarnings = exports.cLogBasicSystemEvents = exports.creturnDataIs = exports.cinputMetaDataIs = exports.cinputDataIs = exports.cEND_Function = exports.cBEGIN_Function = exports.cSource2 = exports.cSource1 = exports.cDataStorage = exports.cExportConst = exports.cexportconst = exports.cHexValue = exports.cStandardDeviation = exports.cCommandWorkflows = exports.cCommandsAliases = exports.cFramework = exports.cframework = exports.crulesLibrary = exports.cBusinessRules = exports.cbusinessRules = exports.cBusinessRule = exports.cbusinessRule = exports.cColorName = exports.cColorData = exports.cConfiguration_Colors = exports.cBackground = exports.cbackground = exports.creleaseApplication = exports.cdeployMetaData = exports.cdeployApplication = exports.cSpaceIsColonSpace = exports.cBrowserRefresh = exports.cNavigateTo = exports.cnavigateTo = exports.cPage_Keywords = exports.cBackSlash = exports.cForwardSlash = exports.cVideoLogs = exports.cDashboardLogs = exports.cCarriageReturn = exports.cAlphabeticCharacter = exports.cBooleanValue = exports.cNumberInRange = exports.cNumericCharacter = exports.cAlphaNumericCharacter = exports.cLetterOrNumberOrSpecialCharacter = exports.cLetterOrSpecialCharacter = exports.cLetterOr = exports.cInvalidEmail = exports.cValidEmail = exports.cvalidEmail = exports.cSpecialCharacterCodeByLength = exports.cAlphaNumericCodeWithSpecialCharactersByLength = exports.cAlphaNumericCodeWithSpecialCharacters = exports.cNumericCodeByLength = exports.cNumericCode = exports.cAlphaNumericCodeByLength = exports.cAlphaNumericCode = exports.cAlphaNumeric = exports.cTextWithSpecialCharactersByLength = exports.cTextWithSpecialCharacters = exports.cTextByLength = exports.cWithSpecialCharacters = exports.cSpecialCharacter = exports.cByLength = exports.cLowerCase = exports.cUpperCase = exports.cMixedCase = exports.crandomlyGenerate = exports.cgenerateRandom = exports.caddFilter = exports.caddSibling = exports.caddNth = exports.caddFindValue = exports.caddParent = exports.caddTimeout = exports.caddWithText = exports.cTestBureau = exports.cUnderscore = exports.cchildElementCount = exports.cselectorTimeout = exports.cAbreviatedSelectorsInLogs = exports.cAbreviatedSelectors = exports.cTypeText = void 0;
-exports.cGerman = exports.cGeorgia = exports.cGambia = exports.cGabon = exports.cFrance = exports.cFinland = exports.cFiji = exports.cEthiopia = exports.cEswatini = exports.cEstonia = exports.cEritrea = exports.cEquatorialGuinea = exports.cElSalvador = exports.cEgypt = exports.cEcuador = exports.cDominicanRepublic = exports.cDominica = exports.cDjibouti = exports.cDenmark = exports.cDemocraticRepublicOfTheCongo = exports.cCzechia = exports.cCyprus = exports.cCuba = exports.cCroatia = exports.cCostaRica = exports.cCongo = exports.cComoros = exports.cColombia = exports.cChina = exports.cChile = exports.cChad = exports.cCentralAfricanRepublic = exports.cCanada = exports.cCameroon = exports.cCambodia = exports.cCaboVerde = exports.cCotedlvoire = exports.cBurundi = exports.cBurkinaFaso = exports.cBulgaria = exports.cBrunei = exports.cBrazil = exports.cBotswana = exports.cBosnia = exports.cBolivia = exports.cBhutan = exports.cBenin = exports.cBelize = exports.cBelgium = exports.cBelarus = exports.cBarbuda = exports.cBarbados = exports.cBangladesh = exports.cBahrain = exports.cBahamas = exports.cAzerbaijan = exports.cAustria = exports.cAustralia = exports.cArmenia = exports.cArgentina = exports.cAntigua = exports.cAngola = exports.cAndorra = exports.cAlgeria = exports.cAlbania = exports.cAfghanistan = exports.cVRML = exports.cVrml = exports.cvrml = exports.cSolidWorks = exports.cSolidEdge = exports.cRhino = exports.cProE = exports.cParasolid = exports.cNX = exports.cNeutral = exports.cInventor = exports.cImages = exports.cImage = exports.cHOOPS = exports.cHoops = exports.cDWG = exports.cDraft = exports.cDocuments = exports.cDocument = exports.cCatia = exports.cConstantsListPatternSearchPrompt3 = exports.cConstantsListPatternSearchPrompt2 = exports.cConstantsListPatternSearchPrompt1 = exports.cConstantsListPrompt3 = exports.cConstantsListPrompt2 = exports.cConstantsListPrompt1 = exports.cConstantPrompt3 = exports.cConstantPrompt2 = exports.cConstantPrompt1 = exports.cCommandWordAliasPrompt3 = exports.cCommandWordAliasPrompt2 = exports.cCommandWordAliasPrompt1 = exports.cCommandNamePrompt5 = exports.cCommandNamePrompt4 = void 0;
-exports.cSomalia = exports.cSolomonIslands = exports.cSlovenia = exports.cSlovakia = exports.cSingapore = exports.cSierraLeone = exports.cSeychelles = exports.cSerbia = exports.cSenegal = exports.cSaudiArabia = exports.cSaoTome = exports.cSanMarino = exports.cSomoa = exports.cSaintVincent = exports.cSaintLucia = exports.cSaintKitts = exports.cRwanda = exports.cRussia = exports.cRomania = exports.cQatar = exports.cPrincipe = exports.cPortugal = exports.cPoland = exports.cPhilippines = exports.cPeru = exports.cParaguay = exports.cPapuaNewGuinea = exports.cPanama = exports.cPalestine = exports.cPalau = exports.cPakistan = exports.cOman = exports.cNorway = exports.cNorthMacedonia = exports.cNorthKorea = exports.cNigeria = exports.cNiger = exports.cNicaragua = exports.cNevis = exports.cNewZealand = exports.cNetherlands = exports.cNepal = exports.cNauru = exports.cNamibia = exports.cMyanmar = exports.cMozambique = exports.cMorocco = exports.cMontenegro = exports.cMongolia = exports.cMonaco = exports.cMoldova = exports.cMicronesia = exports.cMexico = exports.cMauritius = exports.cMauritania = exports.cMarshallIslands = exports.cMalta = exports.cMali = exports.cMaldives = exports.cMalaysia = exports.cMalawi = exports.cMadagascar = exports.cLuxembourg = exports.cLithuania = exports.cLiechtenstein = exports.cLibya = exports.cLiberia = exports.cLesotho = exports.cLebanon = exports.cLatvia = exports.cLaos = exports.cKyrgyzstan = exports.cKuwait = exports.cKiribati = exports.cKenya = exports.cKazakhstan = exports.cJordan = exports.cJapan = exports.cJamaica = exports.cItaly = exports.cIsrael = exports.cIreland = exports.cIraq = exports.cIran = exports.cIndonesia = exports.cIndia = exports.cIceland = exports.cHungary = exports.cHonduras = exports.cHolySee = exports.cHerzegovina = exports.cHaiti = exports.cGuyana = exports.cGuineaBissau = exports.cGuinea = exports.cGuatemala = exports.cGrenada = exports.cGreece = exports.cGhana = exports.cGermany = void 0;
-exports.cCommandQueue = exports.cclientRulesLibrary = exports.cConstantsPathActual = exports.cConstantsPath = exports.cLocatorsDataPath = exports.cKeywordsDataPath = exports.cWorkflowDataPath = exports.cPageDataPath = exports.cCtempPath = exports.cDataPath = exports.cApplicationDescription = exports.cApplicationVersionNumber = exports.cConfigurationPath = exports.cApplicationCleanedRootPath = exports.cApplicationRootPath = exports.cApplicationName = exports.cctrl_z = exports.cctrl_y = exports.cctrl_x = exports.cctrl_w = exports.cctrl_v = exports.cctrl_u = exports.cctrl_t = exports.cctrl_s = exports.cctrl_r = exports.cctrl_q = exports.cctrl_p = exports.cctrl_o = exports.cctrl_n = exports.cctrl_m = exports.cctrl_l = exports.cctrl_k = exports.cctrl_j = exports.cctrl_i = exports.cctrl_h = exports.cctrl_g = exports.cctrl_f = exports.cctrl_e = exports.cctrl_d = exports.cctrl_c = exports.cctrl_b = exports.cctrl_a = exports.cPREPROD = exports.cPreProd = exports.cPRE = exports.cPre = exports.cPROD = exports.cProd = exports.cDEV = exports.cQA = exports.cButton = exports.cSpanish = exports.cRussian = exports.cPortuguese = exports.cPolish = exports.cMiscellaneous = exports.cKorean = exports.cJapanese = exports.cItalian = exports.cHungarian = exports.cFrench = exports.cEnglish = exports.cCzech = exports.cChineseTraditional = exports.cChineseSimplified = exports.cChinese = exports.cZimbabwe = exports.cZambia = exports.cYemen = exports.cVietnam = exports.cVenezuela = exports.cVanuatu = exports.cUzbekistan = exports.cUruguay = exports.cUnitedStatesOfAmerica = exports.cUnitedKingdom = exports.cUnitedArabEmirates = exports.cUkraine = exports.cUganda = exports.cTuvalu = exports.cTurkmenistan = exports.cTurkey = exports.cTunisia = exports.cTrinidadAndTabago = exports.cTonga = exports.cTogo = exports.cTimorLeste = exports.cThailand = exports.cTanzania = exports.cTajikistan = exports.cSyria = exports.cSwitzerland = exports.cSweden = exports.cSuriname = exports.cSudan = exports.cSriLanka = exports.cSpain = exports.cSouthSudan = exports.cSouthKorea = exports.cSouthAfrica = void 0;
-exports.cisStringCamelCase = exports.cisStringList = exports.cisFirstCharacterUpperCase = exports.cisFirstCharacterLowerCase = exports.cdoesStringContainLowerCaseCharacter = exports.cdoesStringContainUpperCaseCharacter = exports.crecombineStringArrayWithSpaces = exports.cgetWordsArrayFromString = exports.cgetWordCountInString = exports.cdetermineWordDelimiter = exports.ccountDelimiterInString = exports.cdoesStringContainAcronym = exports.ccountCamelCaseWords = exports.cconvertCamelCaseStringToArray = exports.caggregateNumericalDifferenceBetweenTwoStrings = exports.cgetValueFromAssignmentOperationString = exports.cremoveFileExtensionFromFileName = exports.cremoveDotFromFileExtension = exports.cgetFileExtension = exports.cgetFileNameFromPath = exports.cconvertStringToUpperCase = exports.cconvertStringToLowerCase = exports.ccleanCarriageReturnFromString = exports.creplaceCharacterWithCharacter = exports.creplaceColonWithUnderscore = exports.creplaceSpacesWithPlus = exports.cgetUserNameFromEmail = exports.cswapDoubleBackSlashToSingleBackSlash = exports.cswapDoubleForwardSlashToSingleForwardSlash = exports.cswapBackSlashToForwardSlash = exports.cswapForwardSlashToBackSlash = exports.csingleQuoteSwapAfterEquals = exports.cisString = exports.cisFloat = exports.cisInteger = exports.cisBoolean = exports.cdetermineObjectDataType = exports.cstringToDataType = exports.cstringToBoolean = exports.cEcho = exports.cecho = exports.cClearCommandPerformanceDataAfterAnalysis = exports.cCommandsPerformanceAnalysisStack = exports.cCommandNamesPerformanceTrackingStack = exports.cCommandPerformanceTrackingStack = exports.cClearBusinessRulesPerformanceDataAfterAnalysis = exports.cBusinessRulesPerformanceAnalysisStack = exports.cBusinessRuleNamesPerformanceTrackingStack = exports.cBusinessRulePerformanceTrackingStack = exports.cEndTimeStampVariableName = exports.cBeginTimeStampVariableName = exports.cTimeStampVariableName = exports.cItemsIndividuallySynch = exports.cEndDateTimeStamp = exports.cBeginDateTimeStamp = exports.creleaseCompleted = exports.cdeploymentCompleted = exports.cPassedAllCommandAliasesDuplicateChecks = exports.cPassAllConstantsValidations = exports.cDisplaySummaryConstantsValidationFailMessages = exports.cDisplaySummaryConstantsValidationPassMessages = exports.cDisplayIndividualConstantsValidationFailMessages = exports.cDisplayIndividualConstantsValidationPassMessages = exports.cEnableConstantsValidation = exports.cEnableCommandPerformanceMetrics = exports.cEnableBusinessRulePerformanceMetrics = exports.cEnableBusinessRuleOutput = exports.cTertiaryCommandDelimiter = exports.cSecondaryCommandDelimiter = exports.cPrimaryCommandDelimiter = exports.cFigletFont = exports.cArgumentDrivenInterface = exports.cmetaDataDotJson = exports.cword_constants_js = exports.cunits_constants_js = exports.csystem_constants_js = exports.cshape_constants_js = exports.cphonics_constants_js = exports.cnumeric_constants_js = exports.cisotope_constants_js = exports.cgeneric_constants_js = exports.celement_constants_js = exports.ccolor_constants_js = exports.cbasic_constants_js = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cDestinationResourcesPath = exports.cSourceResourcesPath = exports.cWordConstantsValidation = exports.cUnitsConstantsValidation = exports.cSystemConstantsValidation = exports.cShapeConstantsValidation = exports.cPhonicsConstantsValidation = exports.cNumericConstantsValidation = exports.cIsotopeConstantsValidation = exports.cGenericConstantsValidation = exports.cElementConstantsValidation = exports.cColorConstantsValidation = exports.cBasicConstantsValidation = exports.cConstantsValidationData = void 0;
-exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1 = exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1 = exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2 = exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1 = exports.cgenerateInvalidEmail2 = exports.cgenerateInvalidEmail1 = exports.cgenerateValidEmail2 = exports.cgenerateValidEmail1 = exports.cgenerateRandomSpecialCharacterCodeByLength2 = exports.cgenerateRandomSpecialCharacterCodeByLength1 = exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.cgenerateRandomNumericCodeByLength2 = exports.cgenerateRandomNumericCodeByLength1 = exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength2 = exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength1 = exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2 = exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1 = exports.cgenerateRandomLowerCaseTextByLength2 = exports.cgenerateRandomLowerCaseTextByLength1 = exports.cgenerateRandomUpperCaseTextByLength2 = exports.cgenerateRandomUpperCaseTextByLength1 = exports.cgenerateRandomMixedCaseTextByLength2 = exports.cgenerateRandomMixedCaseTextByLength1 = exports.carraysAreEqual = exports.cgetLehmerCodeValue = exports.crecursiveArrayExpansion = exports.csolveLehmerCode = exports.cgenerateCommandAliases = exports.caggregateCommandArguments = exports.ccleanCommandInput = exports.creplaceCharacterAtIndex = exports.cisEven = exports.cisOdd = exports.cgetAttributeValue = exports.cgetAttributeName = exports.cisArrayOrObject = exports.cisObject = exports.carrayDeepClone = exports.cisNonZeroLengthArray = exports.cisArray = exports.cisArrayEmpty = exports.cisObjectEmpty = exports.cstoreData = exports.cgetStoredData = exports.cloadDataFile = exports.cgetFirstTopLevelFolderFromPath = exports.cremoveXnumberOfFoldersFromEndOfPath = exports.creplaceDoublePercentWithMessage = exports.cparseSystemRootPath = exports.cgetKeywordNameFromDataContextName = exports.cgetDataCatagoryDetailNameFromDataContextName = exports.cgetDataCatagoryFromDataContextName = exports.ccountDuplicateCommandAliases = exports.cisConstantValid = exports.cisValidCommandNameString = exports.cvalidateConstantsDataValues = exports.cvalidatePatternsThatNeedImplementation = exports.csearchForPatternsInStringArray = exports.cconstantsFulfillmentSystem = exports.cconstantsOptimizedFulfillmentSystem = exports.cconvertConstantTypeToConstantPrefix = exports.cisConstantTypeValid = exports.cfindConstantName = exports.cgetConstantName = exports.cgetConstantActualValue = exports.cgetConstantType = exports.cdoesConstantExist = exports.cvalidateConstantsDataValidationLineItemName = exports.cdetermineSuggestedConstantsValidationLineOfCode = exports.cdetermineConstantsContextQualifiedPrefix = exports.cvalidateConstantsDataValidation = exports.cgetLengthOfLongestStringInArray = exports.cdoesArrayContainFilename = exports.cascertainMatchingElements = exports.cascertainMatchingFilenames = exports.cremoveCharacterFromArray = exports.cdoesArrayContainCharacter = exports.cdoesArrayContainLowerCaseConsolidatedString = exports.ccompareSimplifiedAndConsolidatedStrings = exports.csimplifyAndConsolidateString = exports.cmapWordToCamelCaseWord = exports.cconvertArrayToCamelCaseString = void 0;
-exports.cReleaseWorkflow = exports.cBuildWorkflow = exports.cStartupWorkflow = exports.cvalidateCommandAliases = exports.cvalidateConstants = exports.cconvertColors = exports.ccommandMetrics = exports.cbusinessRulesMetrics = exports.cconstantsPatternRecognizer = exports.cconstantsGeneratorList = exports.cconstantsGenerator = exports.ccommandAliasGenerator = exports.ccommandGenerator = exports.cclearDataStorage = exports.cprintDataHive = exports.ccommandSequencer = exports.cworkflowHelp = exports.cclearScreen = exports.cEchoCommand = exports.cechoCommand = exports.cClientWorkflowsPath = exports.cSystemWorkflowsPath = exports.cClientCommandsAliasesPath = exports.cSystemCommandsAliasesPath = exports.cProdSystemWorkflowsActualPath = exports.cProdSystemCommandsAliasesActualPath = exports.cDevSystemWorkflowsActualPath = exports.cDevSystemCommandsAliasesActualPath = exports.cSystemWorkflowsActualPath = exports.cSystemCommandsAliasesActualPath = exports.chex2rgbConversion = exports.cconvertNumberToLowerCaseLetter = exports.cconvertNumberToUpperCaseLetter = exports.crandomlyGenerateUpperCaseLetter2 = exports.crandomlyGenerateUpperCaseLetter1 = exports.crandomlyGenerateLowerCaseLetter2 = exports.crandomlyGenerateLowerCaseLetter1 = exports.crandomlyGenerateMixedCaseAlphabeticCharacter2 = exports.crandomlyGenerateMixedCaseAlphabeticCharacter1 = exports.crandomlyGenerateBooleanValue2 = exports.crandomlyGenerateBooleanValue1 = exports.crandomlyGenerateNumberInRange2 = exports.crandomlyGenerateNumberInRange1 = exports.crandomlyGenerateSpecialCharacter2 = exports.crandomlyGenerateSpecialCharacter1 = exports.crandomlyGenerateNumericCharacter2 = exports.crandomlyGenerateNumericCharacter1 = exports.crandomlyGenerateLowerCaseAlphaNumericCharacter2 = exports.crandomlyGenerateLowerCaseAlphaNumericCharacter1 = exports.crandomlyGenerateUpperCaseAlphaNumericCharacter2 = exports.crandomlyGenerateUpperCaseAlphaNumericCharacter1 = exports.crandomlyGenerateMixedCaseAlphaNumericCharacter2 = exports.crandomlyGenerateMixedCaseAlphaNumericCharacter1 = exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = void 0;
+exports.cTestRunTime = exports.cScriptRunTime = exports.cVersionControl = exports.cConfigurationElements = exports.cConfigurationElement = exports.cConfigurationName = exports.cFileNumber = exports.cAccessLevel = exports.cShareEmail = exports.cTestDataFileName = exports.cProjectDescription = exports.cProjectName = exports.cPassword = exports.cUsername = exports.cRowNumber = exports.cIngestionCompleteDwellTime = exports.cProcessingTimeout = exports.cTestData = exports.cInnerHTML = exports.cinnerHTML = exports.cInnerText = exports.cinnerText = exports.cOperatingSystem = exports.cVisibilityCheck = exports.cvisibilityCheck = exports.cDeltaT = exports.cFileCounter = exports.cIncludeDateTimeStampInLogFiles = exports.cLogFileEnabled = exports.cTestDataPath = exports.cResultsLogFilePathAndName = exports.cExecutionJournalFilePathAndName = exports.cDataLogFilePathAndName = exports.cLogFilePathAndName = exports.cDwellTime = exports.cTimeoutOverride = exports.cSpecialCharacters = exports.cAllowableCharacters = exports.cParallelMultiUnified = exports.cSynchSingular = exports.cAsynchSingular = exports.cPreValidateFileName = exports.cFileNames = exports.cFilenames = exports.cfilenames = exports.cFileName = exports.cFilename = exports.cfilename = exports.cFileTypes = exports.cfilesLists = exports.cTestRunID = exports.cHostName = exports.cBrowserName = exports.cRunTime = exports.cRuntime = exports.cEndKeywordTimeStamp = exports.cBeginKeywordTimeStamp = exports.cEndPageScriptTimeStamp = exports.cBeginPageScriptTimeStamp = exports.cEndTestTimeStamp = exports.cBeginTestTimeStamp = exports.cEndScriptTimeStamp = exports.cBeginScriptTimeStamp = exports.cScriptDateTimeStamp = exports.cTestTimeStamp = exports.cKeywordTimeStamp = exports.cScriptTimeStamp = exports.cScriptDateStamp = exports.cDateTimeStamp = exports.cPageScriptTimeStamp = exports.cTimeStamp = exports.cIntermediatePath = exports.cPageScript = exports.cEnvironmentRowNumber = exports.cEnvironmentRow = exports.cMasterRowNumber = exports.cNumberOfRows = exports.cTestAutomation = exports.cDebugFiles = exports.cDebugFunctions = exports.cDebugSelectors = exports.cDebugBrowserActions = exports.cJournalBrowserActions = exports.cLogBrowserActions = exports.cDebugKeywords = exports.cDebugPageData = exports.cDebugPageScripts = exports.cDebugTestData = exports.cDebugTestExhaustive = exports.cDebugPage = exports.cDebugTest = exports.cWithText = exports.cwithText = exports.cUnderline = exports.cunderline = exports.cSTYLE = exports.cITERATION = exports.cENVIRONMENT = exports.cLOG = exports.cENV = void 0;
+exports.ccurrentMasterStringArrayElement = exports.candSpaceDomainSpaceName = exports.cdomainSpaceName = exports.candSuffix = exports.candPrefix = exports.cprogramLoop = exports.cGenerateA = exports.cwasCompleted = exports.cWithoutThe = exports.cfailureMode = exports.cspecifiedSuffixAndDomain = exports.callowableSpecialCharacters = exports.cgenerateSpecialCharacters = exports.cnumberOfCharactersToGenerate = exports.cbigInteger = exports.cSource2 = exports.cSource1 = exports.cDataStorage = exports.cExportConst = exports.cexportconst = exports.cHexValue = exports.cStandardDeviation = exports.cCommandWorkflows = exports.cCommandsAliases = exports.cFramework = exports.cframework = exports.crulesLibrary = exports.cBusinessRules = exports.cbusinessRules = exports.cBusinessRule = exports.cbusinessRule = exports.cColorName = exports.cColorData = exports.cConfiguration_Colors = exports.cBackground = exports.cbackground = exports.creleaseApplication = exports.cdeployMetaData = exports.cdeployApplication = exports.cSpaceIsColonSpace = exports.cBrowserRefresh = exports.cNavigateTo = exports.cnavigateTo = exports.cPage_Keywords = exports.cBackSlash = exports.cForwardSlash = exports.cVideoLogs = exports.cDashboardLogs = exports.cCarriageReturn = exports.cAlphabeticCharacter = exports.cBooleanValue = exports.cNumberInRange = exports.cNumericCharacter = exports.cWithSpecificSuffixAndDomainName = exports.cSuffixAndDomain = exports.cAlphaNumericCharacter = exports.cLetterOrNumberOrSpecialCharacter = exports.cLetterOrSpecialCharacter = exports.cLetterOr = exports.cRandomInvalidEmail = exports.cRandomValidEmail = exports.cgenerateInvalidEmail = exports.cgenerateValidEmail = exports.cInvalidEmail = exports.cValidEmail = exports.cvalidEmail = exports.cSpecialCharacterCodeByLength = exports.cAlphaNumericCodeWithSpecialCharactersByLength = exports.cAlphaNumericCodeWithSpecialCharacters = exports.cNumericCodeByLength = exports.cNumericCode = exports.cAlphaNumericCodeByLength = exports.cAlphaNumericCode = exports.cAlphaNumeric = exports.cTextWithSpecialCharactersByLength = exports.cTextWithSpecialCharacters = exports.cTextByLength = exports.cWithSpecialCharacters = exports.cSpecialCharacter = exports.cByLength = exports.cLowerCase = exports.cUpperCase = exports.cMixedCase = exports.crandomlyGenerate = exports.cgenerateRandom = exports.caddFilter = exports.caddSibling = exports.caddNth = exports.caddFindValue = exports.caddParent = exports.caddTimeout = exports.caddWithText = exports.cTestBureau = exports.cUnderscore = exports.cchildElementCount = exports.cselectorTimeout = exports.cAbreviatedSelectorsInLogs = exports.cAbreviatedSelectors = exports.cTypeText = exports.ctypeText = void 0;
+exports.cNumericConstantsValidation = exports.cMessagesConstantsValidation = exports.cLanguagesConstantsValidation = exports.cKnotsConstantsValidation = exports.cIsotopeConstantsValidation = exports.cGenericConstantsValidation = exports.cElementConstantsValidation = exports.cCountriesConstantsValidation = exports.cConfigurationsConstantsValidation = exports.cCommandsConstantsValidation = exports.cColorConstantsValidation = exports.cBusinessConstantsValidation = exports.cBasicConstantsValidation = exports.cConstantsValidationData = exports.cCommandQueue = exports.cclientRulesLibrary = exports.cConstantsPathActual = exports.cConstantsPath = exports.cLocatorsDataPath = exports.cKeywordsDataPath = exports.cWorkflowDataPath = exports.cPageDataPath = exports.cCtempPath = exports.cDataPath = exports.cApplicationDescription = exports.cApplicationVersionNumber = exports.cConfigurationPath = exports.cApplicationCleanedRootPath = exports.cApplicationRootPath = exports.cApplicationName = exports.cctrl_z = exports.cctrl_y = exports.cctrl_x = exports.cctrl_w = exports.cctrl_v = exports.cctrl_u = exports.cctrl_t = exports.cctrl_s = exports.cctrl_r = exports.cctrl_q = exports.cctrl_p = exports.cctrl_o = exports.cctrl_n = exports.cctrl_m = exports.cctrl_l = exports.cctrl_k = exports.cctrl_j = exports.cctrl_i = exports.cctrl_h = exports.cctrl_g = exports.cctrl_f = exports.cctrl_e = exports.cctrl_d = exports.cctrl_c = exports.cctrl_b = exports.cctrl_a = exports.cPREPROD = exports.cPreProd = exports.cPRE = exports.cPre = exports.cPROD = exports.cProd = exports.cDEV = exports.cQA = exports.cButton = exports.cVRML = exports.cVrml = exports.cvrml = exports.cSolidWorks = exports.cSolidEdge = exports.cRhino = exports.cProE = exports.cParasolid = exports.cNX = exports.cNeutral = exports.cInventor = exports.cImages = exports.cImage = exports.cHOOPS = exports.cHoops = exports.cDWG = exports.cDraft = exports.cDocuments = exports.cDocument = exports.cCatia = exports.cDataFontBackgroundColor = exports.cMessageFontBackgroundColor = exports.cFunctionFontBackgroundColor = exports.cModuleFontBackgroundColor = exports.cDataFontColor = exports.cMessageFontColor = exports.cFunctionFontColor = exports.cModuleFontColor = exports.cDataFontStyle = exports.cMessageFontStyle = exports.cFunctionFontStyle = exports.cModuleFontStyle = exports.cCamelCase = exports.creturnData = exports.cLehmerCodeArray = void 0;
+exports.cword_constants_js = exports.cunits_constants_js = exports.csystem_constants_js = exports.cshape_constants_js = exports.cphonics_constants_js = exports.cnumeric_constants_js = exports.cmessages_constants_js = exports.clanguages_constants_js = exports.cknots_constants_js = exports.cisotope_constants_js = exports.cgeneric_constants_js = exports.celement_constants_js = exports.ccountries_constants_js = exports.cconfigurations_constants_js = exports.ccommands_constants_js = exports.ccolor_constants_js = exports.cbusiness_constants_js = exports.cbasic_constants_js = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cDestinationResourcesPath = exports.cSourceResourcesPath = exports.cWordConstantsValidation = exports.cUnitsConstantsValidation = exports.cSystemConstantsValidation = exports.cShapeConstantsValidation = exports.cPhonicsConstantsValidation = void 0;
 
-var b = _interopRequireWildcard(require("./basic.constants"));
+var bas = _interopRequireWildcard(require("./basic.constants"));
 
-var p = _interopRequireWildcard(require("./phonics.constants"));
+var phn = _interopRequireWildcard(require("./phonics.constants"));
 
-var g = _interopRequireWildcard(require("./generic.constants"));
+var gen = _interopRequireWildcard(require("./generic.constants"));
 
-var n = _interopRequireWildcard(require("./numeric.constants"));
+var num = _interopRequireWildcard(require("./numeric.constants"));
 
-var w = _interopRequireWildcard(require("./word.constants"));
+var wrd = _interopRequireWildcard(require("./word.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -46,392 +42,395 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 // Miscelaneious
-var cENV = b.cEN + b.cV; // ENV
+var cENV = bas.cEN + bas.cV; // ENV
 
 exports.cENV = cENV;
-var cLOG = b.cLO + b.cG; // LOG
+var cLOG = bas.cLO + bas.cG; // LOG
 
 exports.cLOG = cLOG;
-var cENVIRONMENT = p.cENV + b.cIR + b.cON + p.cMENT; // ENVIRONMENT
+var cENVIRONMENT = phn.cENV + bas.cIR + bas.cON + phn.cMENT; // ENVIRONMENT
 
 exports.cENVIRONMENT = cENVIRONMENT;
-var cITERATION = b.cIT + b.cER + b.cAT + b.cIO + b.cN; // ITERATION
+var cITERATION = bas.cIT + bas.cER + bas.cAT + bas.cIO + bas.cN; // ITERATION
 
 exports.cITERATION = cITERATION;
-var cSTYLE = b.cST + b.cYL + b.cE; // STYLE
+var cSTYLE = bas.cST + bas.cYL + bas.cE; // STYLE
 // Compound System Words
 
 exports.cSTYLE = cSTYLE;
-var cunderline = w.cunder + w.cline; // underline
+var cunderline = wrd.cunder + wrd.cline; // underline
 
 exports.cunderline = cunderline;
-var cUnderline = w.cUnder + w.cline; // Underline
+var cUnderline = wrd.cUnder + wrd.cline; // Underline
 
 exports.cUnderline = cUnderline;
-var cwithText = w.cwith + w.cText; // withText
+var cwithText = wrd.cwith + wrd.cText; // withText
 
 exports.cwithText = cwithText;
-var cWithText = w.cWith + w.cText; // WithText
+var cWithText = wrd.cWith + wrd.cText; // WithText
 
 exports.cWithText = cWithText;
-var cDebugTest = w.cDebug + w.cTest; // DebugTest
+var cDebugTest = wrd.cDebug + wrd.cTest; // DebugTest
 
 exports.cDebugTest = cDebugTest;
-var cDebugPage = w.cDebug + w.cPage; // DebugPage
+var cDebugPage = wrd.cDebug + wrd.cPage; // DebugPage
 
 exports.cDebugPage = cDebugPage;
-var cDebugTestExhaustive = cDebugTest + w.cExhaustive; // DebugTestExhaustive
+var cDebugTestExhaustive = cDebugTest + wrd.cExhaustive; // DebugTestExhaustive
 
 exports.cDebugTestExhaustive = cDebugTestExhaustive;
-var cDebugTestData = cDebugTest + w.cData; // DebugTestData
+var cDebugTestData = cDebugTest + wrd.cData; // DebugTestData
 
 exports.cDebugTestData = cDebugTestData;
-var cDebugPageScripts = cDebugPage + w.cScripts; // DebugPageScripts
+var cDebugPageScripts = cDebugPage + wrd.cScripts; // DebugPageScripts
 
 exports.cDebugPageScripts = cDebugPageScripts;
-var cDebugPageData = cDebugPage + w.cData; // DebugPageData
+var cDebugPageData = cDebugPage + wrd.cData; // DebugPageData
 
 exports.cDebugPageData = cDebugPageData;
-var cDebugKeywords = w.cDebug + w.cKeywords; // DebugKeywords
+var cDebugKeywords = wrd.cDebug + wrd.cKeywords; // DebugKeywords
 
 exports.cDebugKeywords = cDebugKeywords;
-var cLogBrowserActions = w.cLog + w.cBrowser + w.cActions; // LogBrowserActions
+var cLogBrowserActions = wrd.cLog + wrd.cBrowser + wrd.cActions; // LogBrowserActions
 
 exports.cLogBrowserActions = cLogBrowserActions;
-var cJournalBrowserActions = w.cJournal + w.cBrowser + w.cActions; // JournalBrowserActions
+var cJournalBrowserActions = wrd.cJournal + wrd.cBrowser + wrd.cActions; // JournalBrowserActions
 
 exports.cJournalBrowserActions = cJournalBrowserActions;
-var cDebugBrowserActions = w.cDebug + w.cBrowser + w.cActions; // DebugBrowserActions
+var cDebugBrowserActions = wrd.cDebug + wrd.cBrowser + wrd.cActions; // DebugBrowserActions
 
 exports.cDebugBrowserActions = cDebugBrowserActions;
-var cDebugSelectors = w.cDebug + w.cSelectors; // DebugSelectors
+var cDebugSelectors = wrd.cDebug + wrd.cSelectors; // DebugSelectors
 
 exports.cDebugSelectors = cDebugSelectors;
-var cDebugFunctions = w.cDebug + w.cFunctions; // DebugFunctions
+var cDebugFunctions = wrd.cDebug + wrd.cFunctions; // DebugFunctions
 
 exports.cDebugFunctions = cDebugFunctions;
-var cDebugFiles = w.cDebug + w.cFiles; // DebugFiles
+var cDebugFiles = wrd.cDebug + wrd.cFiles; // DebugFiles
 
 exports.cDebugFiles = cDebugFiles;
-var cTestAutomation = w.cTest + w.cAutomation; // TestAutomation
+var cTestAutomation = wrd.cTest + wrd.cAutomation; // TestAutomation
 
 exports.cTestAutomation = cTestAutomation;
-var cNumberOfRows = w.cNumber + w.cOf + w.cRows; // NumberOfRows
+var cNumberOfRows = wrd.cNumber + wrd.cOf + wrd.cRows; // NumberOfRows
 
 exports.cNumberOfRows = cNumberOfRows;
-var cMasterRowNumber = w.cMaster + w.cRow + w.cNumber; // MasterRowNumber
+var cMasterRowNumber = wrd.cMaster + wrd.cRow + wrd.cNumber; // MasterRowNumber
 
 exports.cMasterRowNumber = cMasterRowNumber;
-var cEnvironmentRow = w.cEnvironment + w.cRow; // EnvironmentRow
+var cEnvironmentRow = wrd.cEnvironment + wrd.cRow; // EnvironmentRow
 
 exports.cEnvironmentRow = cEnvironmentRow;
-var cEnvironmentRowNumber = cEnvironmentRow + w.cNumber; // EnvironmentRowNumber
+var cEnvironmentRowNumber = cEnvironmentRow + wrd.cNumber; // EnvironmentRowNumber
 
 exports.cEnvironmentRowNumber = cEnvironmentRowNumber;
-var cPageScript = w.cPage + w.cScript; // PageScript
+var cPageScript = wrd.cPage + wrd.cScript; // PageScript
 
 exports.cPageScript = cPageScript;
-var cIntermediatePath = w.cIntermediate + w.cPath; // IntermediatePath
+var cIntermediatePath = wrd.cIntermediate + wrd.cPath; // IntermediatePath
 
 exports.cIntermediatePath = cIntermediatePath;
-var cTimeStamp = w.cTime + w.cStamp; // TimeStamp
+var cTimeStamp = wrd.cTime + wrd.cStamp; // TimeStamp
 
 exports.cTimeStamp = cTimeStamp;
 var cPageScriptTimeStamp = cPageScript + cTimeStamp; // PageScriptTimeStamp
 
 exports.cPageScriptTimeStamp = cPageScriptTimeStamp;
-var cDateTimeStamp = w.cDate + cTimeStamp; // DateTimeStamp
+var cDateTimeStamp = wrd.cDate + cTimeStamp; // DateTimeStamp
 
 exports.cDateTimeStamp = cDateTimeStamp;
-var cScriptDateStamp = w.cScript + w.cDate + w.cStamp; // ScriptDateStamp
+var cScriptDateStamp = wrd.cScript + wrd.cDate + wrd.cStamp; // ScriptDateStamp
 
 exports.cScriptDateStamp = cScriptDateStamp;
-var cScriptTimeStamp = w.cScript + cTimeStamp; // ScriptTimeStamp
+var cScriptTimeStamp = wrd.cScript + cTimeStamp; // ScriptTimeStamp
 
 exports.cScriptTimeStamp = cScriptTimeStamp;
-var cKeywordTimeStamp = w.cKeyword + cTimeStamp; // KeywordTimeStamp
+var cKeywordTimeStamp = wrd.cKeyword + cTimeStamp; // KeywordTimeStamp
 
 exports.cKeywordTimeStamp = cKeywordTimeStamp;
-var cTestTimeStamp = w.cTest + cTimeStamp; // TestTimeStamp
+var cTestTimeStamp = wrd.cTest + cTimeStamp; // TestTimeStamp
 
 exports.cTestTimeStamp = cTestTimeStamp;
-var cScriptDateTimeStamp = w.cScript + cDateTimeStamp; // ScriptDateTimeStamp
+var cScriptDateTimeStamp = wrd.cScript + cDateTimeStamp; // ScriptDateTimeStamp
 
 exports.cScriptDateTimeStamp = cScriptDateTimeStamp;
-var cBeginScriptTimeStamp = w.cBegin + cScriptTimeStamp; // BeginScriptTimeStamp
+var cBeginScriptTimeStamp = wrd.cBegin + cScriptTimeStamp; // BeginScriptTimeStamp
 
 exports.cBeginScriptTimeStamp = cBeginScriptTimeStamp;
-var cEndScriptTimeStamp = w.cEnd + cScriptTimeStamp; // EndScriptTimeStamp
+var cEndScriptTimeStamp = wrd.cEnd + cScriptTimeStamp; // EndScriptTimeStamp
 
 exports.cEndScriptTimeStamp = cEndScriptTimeStamp;
-var cBeginTestTimeStamp = w.cBegin + cTestTimeStamp; // BeginTestTimeStamp
+var cBeginTestTimeStamp = wrd.cBegin + cTestTimeStamp; // BeginTestTimeStamp
 
 exports.cBeginTestTimeStamp = cBeginTestTimeStamp;
-var cEndTestTimeStamp = w.cEnd + cTestTimeStamp; // EndTestTimeStamp
+var cEndTestTimeStamp = wrd.cEnd + cTestTimeStamp; // EndTestTimeStamp
 
 exports.cEndTestTimeStamp = cEndTestTimeStamp;
-var cBeginPageScriptTimeStamp = w.cBegin + cPageScriptTimeStamp; // BeginPageScriptTimeStamp
+var cBeginPageScriptTimeStamp = wrd.cBegin + cPageScriptTimeStamp; // BeginPageScriptTimeStamp
 
 exports.cBeginPageScriptTimeStamp = cBeginPageScriptTimeStamp;
-var cEndPageScriptTimeStamp = w.cEnd + cPageScriptTimeStamp; // EndPageScriptTimeStamp
+var cEndPageScriptTimeStamp = wrd.cEnd + cPageScriptTimeStamp; // EndPageScriptTimeStamp
 
 exports.cEndPageScriptTimeStamp = cEndPageScriptTimeStamp;
-var cBeginKeywordTimeStamp = w.cBegin + cKeywordTimeStamp; // BeginKeywordTimeStamp
+var cBeginKeywordTimeStamp = wrd.cBegin + cKeywordTimeStamp; // BeginKeywordTimeStamp
 
 exports.cBeginKeywordTimeStamp = cBeginKeywordTimeStamp;
-var cEndKeywordTimeStamp = w.cEnd + cKeywordTimeStamp; // EndKeywordTimeStamp
+var cEndKeywordTimeStamp = wrd.cEnd + cKeywordTimeStamp; // EndKeywordTimeStamp
 
 exports.cEndKeywordTimeStamp = cEndKeywordTimeStamp;
-var cRuntime = w.cRun + w.ctime; // Runtime
+var cRuntime = wrd.cRun + wrd.ctime; // Runtime
 
 exports.cRuntime = cRuntime;
-var cRunTime = w.cRun + w.cTime; // RunTime
+var cRunTime = wrd.cRun + wrd.cTime; // RunTime
 
 exports.cRunTime = cRunTime;
-var cBrowserName = w.cBrowser + w.cName; // BrowserName
+var cBrowserName = wrd.cBrowser + wrd.cName; // BrowserName
 
 exports.cBrowserName = cBrowserName;
-var cHostName = w.cHost + w.cName; // HostName
+var cHostName = wrd.cHost + wrd.cName; // HostName
 
 exports.cHostName = cHostName;
-var cTestRunID = w.cTest + w.cRun + w.cID; // TestRunID
+var cTestRunID = wrd.cTest + wrd.cRun + wrd.cID; // TestRunID
 
 exports.cTestRunID = cTestRunID;
-var cfilesLists = w.cfiles + w.cLists; // filesLists
+var cfilesLists = wrd.cfiles + wrd.cLists; // filesLists
 
 exports.cfilesLists = cfilesLists;
-var cFileTypes = w.cFile + w.cTypes; // FileTypes
+var cFileTypes = wrd.cFile + wrd.cTypes; // FileTypes
 
 exports.cFileTypes = cFileTypes;
-var cfilename = w.cfile + w.cname; // filename
+var cfilename = wrd.cfile + wrd.cname; // filename
 
 exports.cfilename = cfilename;
-var cFilename = w.cFile + w.cname; // Filename
+var cFilename = wrd.cFile + wrd.cname; // Filename
 
 exports.cFilename = cFilename;
-var cFileName = w.cFile + w.cName; // FileName
+var cFileName = wrd.cFile + wrd.cName; // FileName
 
 exports.cFileName = cFileName;
-var cfilenames = cfilename + b.cs; // filenames
+var cfilenames = cfilename + bas.cs; // filenames
 
 exports.cfilenames = cfilenames;
-var cFilenames = cFilename + b.cs; // Filenames
+var cFilenames = cFilename + bas.cs; // Filenames
 
 exports.cFilenames = cFilenames;
-var cFileNames = cFileName + b.cs; // FileNames
+var cFileNames = cFileName + bas.cs; // FileNames
 
 exports.cFileNames = cFileNames;
-var cPreValidateFileName = p.cPre + w.cValidate + cFileName; // PreValidateFileName
+var cPreValidateFileName = phn.cPre + wrd.cValidate + cFileName; // PreValidateFileName
 
 exports.cPreValidateFileName = cPreValidateFileName;
-var cAsynchSingular = w.cAsynch + w.cSingular; // AsynchSingular
+var cAsynchSingular = wrd.cAsynch + wrd.cSingular; // AsynchSingular
 
 exports.cAsynchSingular = cAsynchSingular;
-var cSynchSingular = w.cSynch + w.cSingular; // SynchSingular
+var cSynchSingular = wrd.cSynch + wrd.cSingular; // SynchSingular
 
 exports.cSynchSingular = cSynchSingular;
-var cParallelMultiUnified = w.cParallel + w.cMulti + w.cUnified; // ParallelMultiUnified
+var cParallelMultiUnified = wrd.cParallel + wrd.cMulti + wrd.cUnified; // ParallelMultiUnified
 
 exports.cParallelMultiUnified = cParallelMultiUnified;
-var cAllowableCharacters = w.cAllowable + w.cCharacters; // AllowableCharacters
+var cAllowableCharacters = wrd.cAllowable + wrd.cCharacters; // AllowableCharacters
 
 exports.cAllowableCharacters = cAllowableCharacters;
-var cSpecialCharacters = w.cSpecial + w.cCharacters; // SpecialCharacters
+var cSpecialCharacters = wrd.cSpecial + wrd.cCharacters; // SpecialCharacters
 
 exports.cSpecialCharacters = cSpecialCharacters;
-var cTimeoutOverride = w.cTimeout + w.cOverride; // TimeoutOverride
+var cTimeoutOverride = wrd.cTimeout + wrd.cOverride; // TimeoutOverride
 
 exports.cTimeoutOverride = cTimeoutOverride;
-var cDwellTime = w.cDwell + w.cTime; // DwellTime
+var cDwellTime = wrd.cDwell + wrd.cTime; // DwellTime
 
 exports.cDwellTime = cDwellTime;
-var cLogFilePathAndName = w.cLog + w.cFile + w.cPath + w.cAnd + w.cName; // LogFilePathAndName
+var cLogFilePathAndName = wrd.cLog + wrd.cFile + wrd.cPath + wrd.cAnd + wrd.cName; // LogFilePathAndName
 
 exports.cLogFilePathAndName = cLogFilePathAndName;
-var cDataLogFilePathAndName = w.cData + w.cLog + w.cFile + w.cPath + w.cAnd + w.cName; // DataLogFilePathAndName
+var cDataLogFilePathAndName = wrd.cData + wrd.cLog + wrd.cFile + wrd.cPath + wrd.cAnd + wrd.cName; // DataLogFilePathAndName
 
 exports.cDataLogFilePathAndName = cDataLogFilePathAndName;
-var cExecutionJournalFilePathAndName = w.cExecution + w.cJournal + w.cFile + w.cPath + w.cAnd + w.cName; // ExecutionJournalFilePathAndName
+var cExecutionJournalFilePathAndName = wrd.cExecution + wrd.cJournal + wrd.cFile + wrd.cPath + wrd.cAnd + wrd.cName; // ExecutionJournalFilePathAndName
 
 exports.cExecutionJournalFilePathAndName = cExecutionJournalFilePathAndName;
-var cResultsLogFilePathAndName = w.cResults + w.cLog + w.cFile + w.cPath + w.cAnd + w.cName; // ResultsLogFilePathAndName
+var cResultsLogFilePathAndName = wrd.cResults + wrd.cLog + wrd.cFile + wrd.cPath + wrd.cAnd + wrd.cName; // ResultsLogFilePathAndName
 
 exports.cResultsLogFilePathAndName = cResultsLogFilePathAndName;
-var cTestDataPath = w.cTest + w.cData + w.cPath; // TestDataPath
+var cTestDataPath = wrd.cTest + wrd.cData + wrd.cPath; // TestDataPath
 
 exports.cTestDataPath = cTestDataPath;
-var cLogFileEnabled = w.cLog + w.cFile + w.cEnabled; // LogFileEnabled
+var cLogFileEnabled = wrd.cLog + wrd.cFile + wrd.cEnabled; // LogFileEnabled
 
 exports.cLogFileEnabled = cLogFileEnabled;
-var cFileCounter = w.cFile + w.cCounter; // FileCounter
+var cIncludeDateTimeStampInLogFiles = wrd.cInclude + wrd.cDate + wrd.cTime + wrd.cStamp + bas.cIn + gen.cLog + wrd.cFiles; // IncludeDateTimeStampInLogFiles
+
+exports.cIncludeDateTimeStampInLogFiles = cIncludeDateTimeStampInLogFiles;
+var cFileCounter = wrd.cFile + wrd.cCounter; // FileCounter
 
 exports.cFileCounter = cFileCounter;
-var cDeltaT = g.cDelta + b.cT; // DeltaT
+var cDeltaT = gen.cDelta + bas.cT; // DeltaT
 
 exports.cDeltaT = cDeltaT;
-var cvisibilityCheck = w.cvisibility + w.cCheck; // visibilityCheck
+var cvisibilityCheck = wrd.cvisibility + wrd.cCheck; // visibilityCheck
 
 exports.cvisibilityCheck = cvisibilityCheck;
-var cVisibilityCheck = w.cVisibility + w.cCheck; // VisibilityCheck
+var cVisibilityCheck = wrd.cVisibility + wrd.cCheck; // VisibilityCheck
 
 exports.cVisibilityCheck = cVisibilityCheck;
-var cOperatingSystem = w.cOperating + w.cSystem; // OperatingSystem
+var cOperatingSystem = wrd.cOperating + wrd.cSystem; // OperatingSystem
 
 exports.cOperatingSystem = cOperatingSystem;
-var cinnerText = w.cinner + w.cText; // innerText
+var cinnerText = wrd.cinner + wrd.cText; // innerText
 
 exports.cinnerText = cinnerText;
-var cInnerText = w.cInner + w.cText; // InnerText
+var cInnerText = wrd.cInner + wrd.cText; // InnerText
 
 exports.cInnerText = cInnerText;
-var cinnerHTML = w.cinner + w.cHTML; // innerHTML
+var cinnerHTML = wrd.cinner + wrd.cHTML; // innerHTML
 
 exports.cinnerHTML = cinnerHTML;
-var cInnerHTML = w.cInner + w.cHTML; // InnerHTML
+var cInnerHTML = wrd.cInner + wrd.cHTML; // InnerHTML
 
 exports.cInnerHTML = cInnerHTML;
-var cTestData = w.cTest + w.cData; // TestData
+var cTestData = wrd.cTest + wrd.cData; // TestData
 
 exports.cTestData = cTestData;
-var cProcessingTimeout = w.cProcessing + w.cTimeout; // ProcessingTimeout
+var cProcessingTimeout = wrd.cProcessing + wrd.cTimeout; // ProcessingTimeout
 
 exports.cProcessingTimeout = cProcessingTimeout;
-var cIngestionCompleteDwellTime = w.cIngestion + w.cComplete + cDwellTime; // IngestionCompleteDwellTime
+var cIngestionCompleteDwellTime = wrd.cIngestion + wrd.cComplete + cDwellTime; // IngestionCompleteDwellTime
 
 exports.cIngestionCompleteDwellTime = cIngestionCompleteDwellTime;
-var cRowNumber = w.cRow + w.cNumber; // RowNumber
+var cRowNumber = wrd.cRow + wrd.cNumber; // RowNumber
 
 exports.cRowNumber = cRowNumber;
-var cUsername = w.cUser + w.cname; // Username
+var cUsername = wrd.cUser + wrd.cname; // Username
 
 exports.cUsername = cUsername;
-var cPassword = w.cPass + w.cword; // Password
+var cPassword = wrd.cPass + wrd.cword; // Password
 
 exports.cPassword = cPassword;
-var cProjectName = w.cProject + w.cName; // ProjectName
+var cProjectName = wrd.cProject + wrd.cName; // ProjectName
 
 exports.cProjectName = cProjectName;
-var cProjectDescription = w.cProject + w.cDescription; // ProjectDescription
+var cProjectDescription = wrd.cProject + wrd.cDescription; // ProjectDescription
 
 exports.cProjectDescription = cProjectDescription;
-var cTestDataFileName = w.cTest + w.cData + cFileName; // TestDataFileName
+var cTestDataFileName = wrd.cTest + wrd.cData + cFileName; // TestDataFileName
 
 exports.cTestDataFileName = cTestDataFileName;
-var cShareEmail = w.cShare + w.cEmail; // ShareEmail
+var cShareEmail = wrd.cShare + wrd.cEmail; // ShareEmail
 
 exports.cShareEmail = cShareEmail;
-var cAccessLevel = w.cAccess + w.cLevel; // AccessLevel
+var cAccessLevel = wrd.cAccess + wrd.cLevel; // AccessLevel
 
 exports.cAccessLevel = cAccessLevel;
-var cFileNumber = w.cFile + w.cNumber; // FileNumber
+var cFileNumber = wrd.cFile + wrd.cNumber; // FileNumber
 
 exports.cFileNumber = cFileNumber;
-var cConfigurationName = w.cConfiguration + w.cName; // ConfigurationName
+var cConfigurationName = wrd.cConfiguration + wrd.cName; // ConfigurationName
 
 exports.cConfigurationName = cConfigurationName;
-var cConfigurationElement = w.cConfiguration + w.cElement; // ConfigurationElement
+var cConfigurationElement = wrd.cConfiguration + wrd.cElement; // ConfigurationElement
 
 exports.cConfigurationElement = cConfigurationElement;
-var cConfigurationElements = cConfigurationElement + b.cs; // ConfigurationElements
+var cConfigurationElements = cConfigurationElement + bas.cs; // ConfigurationElements
 
 exports.cConfigurationElements = cConfigurationElements;
-var cVersionControl = w.cVersion + w.cControl; // VersionControl
+var cVersionControl = wrd.cVersion + wrd.cControl; // VersionControl
 
 exports.cVersionControl = cVersionControl;
-var cScriptRunTime = w.cScript + cRunTime; // ScriptRunTime
+var cScriptRunTime = wrd.cScript + cRunTime; // ScriptRunTime
 
 exports.cScriptRunTime = cScriptRunTime;
-var cTestRunTime = w.cTest + cRunTime; // TestRunTime
+var cTestRunTime = wrd.cTest + cRunTime; // TestRunTime
 
 exports.cTestRunTime = cTestRunTime;
-var ctypeText = w.ctype + w.cText; // typeText
+var ctypeText = wrd.ctype + wrd.cText; // typeText
 
 exports.ctypeText = ctypeText;
-var cTypeText = w.cType + w.cText; // TypeText
+var cTypeText = wrd.cType + wrd.cText; // TypeText
 
 exports.cTypeText = cTypeText;
-var cAbreviatedSelectors = w.cAbreviated + w.cSelectors; // AbreviatedSelectors
+var cAbreviatedSelectors = wrd.cAbreviated + wrd.cSelectors; // AbreviatedSelectors
 
 exports.cAbreviatedSelectors = cAbreviatedSelectors;
-var cAbreviatedSelectorsInLogs = cAbreviatedSelectors + b.cIn + w.cLogs; // AbreviatedSelectorsInLogs
+var cAbreviatedSelectorsInLogs = cAbreviatedSelectors + bas.cIn + wrd.cLogs; // AbreviatedSelectorsInLogs
 
 exports.cAbreviatedSelectorsInLogs = cAbreviatedSelectorsInLogs;
-var cselectorTimeout = w.cselector + w.cTimeout; // selectorTimeout
+var cselectorTimeout = wrd.cselector + wrd.cTimeout; // selectorTimeout
 
 exports.cselectorTimeout = cselectorTimeout;
-var cchildElementCount = w.cchild + w.cElement + w.cCount; // childElementCount
+var cchildElementCount = wrd.cchild + wrd.cElement + wrd.cCount; // childElementCount
 
 exports.cchildElementCount = cchildElementCount;
-var cUnderscore = w.cUnder + w.cscore; // Underscore
+var cUnderscore = wrd.cUnder + wrd.cscore; // Underscore
 
 exports.cUnderscore = cUnderscore;
-var cTestBureau = w.cTest + w.cBureau; // TestBureau
+var cTestBureau = wrd.cTest + wrd.cBureau; // TestBureau
 
 exports.cTestBureau = cTestBureau;
-var caddWithText = w.c_add + w.cWith + w.cText; // addWithText
+var caddWithText = wrd.c_add + wrd.cWith + wrd.cText; // addWithText
 
 exports.caddWithText = caddWithText;
-var caddTimeout = w.c_add + w.cTimeout; // addTimeout
+var caddTimeout = wrd.c_add + wrd.cTimeout; // addTimeout
 
 exports.caddTimeout = caddTimeout;
-var caddParent = w.c_add + w.cParent; // addParent
+var caddParent = wrd.c_add + wrd.cParent; // addParent
 
 exports.caddParent = caddParent;
-var caddFindValue = w.c_add + w.cFind + w.cValue; // addFindValue
+var caddFindValue = wrd.c_add + wrd.cFind + wrd.cValue; // addFindValue
 
 exports.caddFindValue = caddFindValue;
-var caddNth = w.c_add + w.cNth; // addNth
+var caddNth = wrd.c_add + wrd.cNth; // addNth
 
 exports.caddNth = caddNth;
-var caddSibling = w.c_add + w.cSibling; // addSibling
+var caddSibling = wrd.c_add + wrd.cSibling; // addSibling
 
 exports.caddSibling = caddSibling;
-var caddFilter = w.c_add + w.cFilter; // addFilter
+var caddFilter = wrd.c_add + wrd.cFilter; // addFilter
 
 exports.caddFilter = caddFilter;
-var cgenerateRandom = w.cgenerate + w.cRandom; // generateRandom
+var cgenerateRandom = wrd.cgenerate + wrd.cRandom; // generateRandom
 
 exports.cgenerateRandom = cgenerateRandom;
-var crandomlyGenerate = w.crandomly + w.cGenerate; // randomlyGenerate
+var crandomlyGenerate = wrd.crandomly + wrd.cGenerate; // randomlyGenerate
 
 exports.crandomlyGenerate = crandomlyGenerate;
-var cMixedCase = w.cMixed + w.cCase; // MixedCase
+var cMixedCase = wrd.cMixed + wrd.cCase; // MixedCase
 
 exports.cMixedCase = cMixedCase;
-var cUpperCase = w.cUpper + w.cCase; // UpperCase
+var cUpperCase = wrd.cUpper + wrd.cCase; // UpperCase
 
 exports.cUpperCase = cUpperCase;
-var cLowerCase = w.cLower + w.cCase; // LowerCase
+var cLowerCase = wrd.cLower + wrd.cCase; // LowerCase
 
 exports.cLowerCase = cLowerCase;
-var cByLength = w.cBy + w.cLength; // ByLength
+var cByLength = wrd.cBy + wrd.cLength; // ByLength
 
 exports.cByLength = cByLength;
-var cSpecialCharacter = w.cSpecial + w.cCharacter; // SpecialCharacter
+var cSpecialCharacter = wrd.cSpecial + wrd.cCharacter; // SpecialCharacter
 
 exports.cSpecialCharacter = cSpecialCharacter;
-var cWithSpecialCharacters = w.cWith + cSpecialCharacters; // WithSpecialCharacters
+var cWithSpecialCharacters = wrd.cWith + cSpecialCharacters; // WithSpecialCharacters
 
 exports.cWithSpecialCharacters = cWithSpecialCharacters;
-var cTextByLength = w.cText + cByLength; // TextByLength
+var cTextByLength = wrd.cText + cByLength; // TextByLength
 
 exports.cTextByLength = cTextByLength;
-var cTextWithSpecialCharacters = w.cText + cWithSpecialCharacters; // TextWithSpecialCharacters
+var cTextWithSpecialCharacters = wrd.cText + cWithSpecialCharacters; // TextWithSpecialCharacters
 
 exports.cTextWithSpecialCharacters = cTextWithSpecialCharacters;
 var cTextWithSpecialCharactersByLength = cTextWithSpecialCharacters + cByLength; // TextWithSpecialCharactersByLength
 
 exports.cTextWithSpecialCharactersByLength = cTextWithSpecialCharactersByLength;
-var cAlphaNumeric = w.cAlpha + w.cNumeric; // AlphaNumeric
+var cAlphaNumeric = wrd.cAlpha + wrd.cNumeric; // AlphaNumeric
 
 exports.cAlphaNumeric = cAlphaNumeric;
-var cAlphaNumericCode = cAlphaNumeric + w.cCode; // AlphaNumericCode
+var cAlphaNumericCode = cAlphaNumeric + wrd.cCode; // AlphaNumericCode
 
 exports.cAlphaNumericCode = cAlphaNumericCode;
 var cAlphaNumericCodeByLength = cAlphaNumericCode + cByLength; // AlphaNumericCodeByLength
 
 exports.cAlphaNumericCodeByLength = cAlphaNumericCodeByLength;
-var cNumericCode = w.cNumeric + w.cCode; // NumericCode
+var cNumericCode = wrd.cNumeric + wrd.cCode; // NumericCode
 
 exports.cNumericCode = cNumericCode;
 var cNumericCodeByLength = cNumericCode + cByLength; // NumericCodeByLength
@@ -443,1909 +442,590 @@ exports.cAlphaNumericCodeWithSpecialCharacters = cAlphaNumericCodeWithSpecialCha
 var cAlphaNumericCodeWithSpecialCharactersByLength = cAlphaNumericCodeWithSpecialCharacters + cByLength; // AlphaNumericCodeWithSpecialCharactersByLength
 
 exports.cAlphaNumericCodeWithSpecialCharactersByLength = cAlphaNumericCodeWithSpecialCharactersByLength;
-var cSpecialCharacterCodeByLength = cSpecialCharacter + w.cCode + cByLength; // SpecialCharacterCodeByLength
+var cSpecialCharacterCodeByLength = cSpecialCharacter + wrd.cCode + cByLength; // SpecialCharacterCodeByLength
 
 exports.cSpecialCharacterCodeByLength = cSpecialCharacterCodeByLength;
-var cvalidEmail = w.cvalid + w.cEmail; // validEmail
+var cvalidEmail = wrd.cvalid + wrd.cEmail; // validEmail
 
 exports.cvalidEmail = cvalidEmail;
-var cValidEmail = w.cValid + w.cEmail; // ValidEmail
+var cValidEmail = wrd.cValid + wrd.cEmail; // ValidEmail
 
 exports.cValidEmail = cValidEmail;
-var cInvalidEmail = b.cIn + cvalidEmail; // InvalidEmail
+var cInvalidEmail = bas.cIn + cvalidEmail; // InvalidEmail
 
 exports.cInvalidEmail = cInvalidEmail;
-var cLetterOr = w.cLetter + b.cOr; // LetterOr
+var cgenerateValidEmail = wrd.cgenerate + cValidEmail; // generateValidEmail
+
+exports.cgenerateValidEmail = cgenerateValidEmail;
+var cgenerateInvalidEmail = wrd.cgenerate + cInvalidEmail; // generateInvalidEmail
+
+exports.cgenerateInvalidEmail = cgenerateInvalidEmail;
+var cRandomValidEmail = wrd.cRandom + cValidEmail; // RandomValidEmail
+
+exports.cRandomValidEmail = cRandomValidEmail;
+var cRandomInvalidEmail = wrd.cRandom + cInvalidEmail; // RandomInvalidEmail
+
+exports.cRandomInvalidEmail = cRandomInvalidEmail;
+var cLetterOr = wrd.cLetter + bas.cOr; // LetterOr
 
 exports.cLetterOr = cLetterOr;
 var cLetterOrSpecialCharacter = cLetterOr + cSpecialCharacter; // LetterOrSpecialCharacter
 
 exports.cLetterOrSpecialCharacter = cLetterOrSpecialCharacter;
-var cLetterOrNumberOrSpecialCharacter = cLetterOr + w.cNumber + w.cOr + cSpecialCharacter; // LetterOrNumberOrSpecialCharacter
+var cLetterOrNumberOrSpecialCharacter = cLetterOr + wrd.cNumber + wrd.cOr + cSpecialCharacter; // LetterOrNumberOrSpecialCharacter
 
 exports.cLetterOrNumberOrSpecialCharacter = cLetterOrNumberOrSpecialCharacter;
-var cAlphaNumericCharacter = cAlphaNumeric + w.cCharacter; // AlphaNumericCharacter
+var cAlphaNumericCharacter = cAlphaNumeric + wrd.cCharacter; // AlphaNumericCharacter
 
 exports.cAlphaNumericCharacter = cAlphaNumericCharacter;
-var cNumericCharacter = w.cNumeric + w.cCharacter; // NumericCharacter
+var cSuffixAndDomain = wrd.cSuffix + wrd.cAnd + wrd.cDomain; // SuffixAndDomain
+
+exports.cSuffixAndDomain = cSuffixAndDomain;
+var cWithSpecificSuffixAndDomainName = wrd.cWith + wrd.cSpecific + wrd.cSuffix + wrd.cAnd + wrd.cDomain + wrd.cName; // WithSpecificSuffixAndDomainName
+
+exports.cWithSpecificSuffixAndDomainName = cWithSpecificSuffixAndDomainName;
+var cNumericCharacter = wrd.cNumeric + wrd.cCharacter; // NumericCharacter
 
 exports.cNumericCharacter = cNumericCharacter;
-var cNumberInRange = w.cNumber + b.cIn + w.cRange; // NumberInRange
+var cNumberInRange = wrd.cNumber + bas.cIn + wrd.cRange; // NumberInRange
 
 exports.cNumberInRange = cNumberInRange;
-var cBooleanValue = w.cBoolean + w.cValue; // BooleanValue
+var cBooleanValue = wrd.cBoolean + wrd.cValue; // BooleanValue
 
 exports.cBooleanValue = cBooleanValue;
-var cAlphabeticCharacter = w.cAlphabetic + w.cCharacter; // AlphabeticCharacter
+var cAlphabeticCharacter = wrd.cAlphabetic + wrd.cCharacter; // AlphabeticCharacter
 
 exports.cAlphabeticCharacter = cAlphabeticCharacter;
-var cCarriageReturn = w.cCarriage + w.cReturn; // CarriageReturn
+var cCarriageReturn = wrd.cCarriage + wrd.cReturn; // CarriageReturn
 
 exports.cCarriageReturn = cCarriageReturn;
-var cDashboardLogs = w.cDashboard + w.cLogs; // DashboardLogs
+var cDashboardLogs = wrd.cDashboard + wrd.cLogs; // DashboardLogs
 
 exports.cDashboardLogs = cDashboardLogs;
-var cVideoLogs = w.cVideo + w.cLogs; // VideoLogs
+var cVideoLogs = wrd.cVideo + wrd.cLogs; // VideoLogs
 
 exports.cVideoLogs = cVideoLogs;
-var cForwardSlash = w.cForward + w.cSlash; // ForwardSlash
+var cForwardSlash = wrd.cForward + wrd.cSlash; // ForwardSlash
 
 exports.cForwardSlash = cForwardSlash;
-var cBackSlash = w.cBack + w.cSlash; // BackSlash
+var cBackSlash = wrd.cBack + wrd.cSlash; // BackSlash
 
 exports.cBackSlash = cBackSlash;
-var cPage_Keywords = w.cPage + b.cUnderscore + w.cKeywords; // Page_Keywords
+var cPage_Keywords = wrd.cPage + bas.cUnderscore + wrd.cKeywords; // Page_Keywords
 
 exports.cPage_Keywords = cPage_Keywords;
-var cnavigateTo = w.cnavigate + b.cTo; // navigateTo
+var cnavigateTo = wrd.cnavigate + bas.cTo; // navigateTo
 
 exports.cnavigateTo = cnavigateTo;
-var cNavigateTo = w.cNavigate + b.cTo; // NavigateTo
+var cNavigateTo = wrd.cNavigate + bas.cTo; // NavigateTo
 
 exports.cNavigateTo = cNavigateTo;
-var cBrowserRefresh = w.cBrowser + w.cRefresh; // BrowserRefresh
+var cBrowserRefresh = wrd.cBrowser + wrd.cRefresh; // BrowserRefresh
 
 exports.cBrowserRefresh = cBrowserRefresh;
-var cSpaceIsColonSpace = b.cSpace + b.cIs + b.cColon + b.cSpace; // Is:
+var cSpaceIsColonSpace = bas.cSpace + bas.cis + bas.cColon + bas.cSpace; // is:
 
 exports.cSpaceIsColonSpace = cSpaceIsColonSpace;
-var cdeployApplication = w.cdeploy + w.cApplication; // deployApplication
+var cdeployApplication = wrd.cdeploy + wrd.cApplication; // deployApplication
 
 exports.cdeployApplication = cdeployApplication;
-var cdeployMetaData = w.cdeploy + w.cMetaData; // deployMetaData
+var cdeployMetaData = wrd.cdeploy + wrd.cMetaData; // deployMetaData
 
 exports.cdeployMetaData = cdeployMetaData;
-var creleaseApplication = w.crelease + w.cApplication; // releaseApplication
+var creleaseApplication = wrd.crelease + wrd.cApplication; // releaseApplication
 
 exports.creleaseApplication = creleaseApplication;
-var cbackground = w.cback + w.cground; // background
+var cbackground = wrd.cback + wrd.cground; // background
 
 exports.cbackground = cbackground;
-var cBackground = w.cBack + w.cground; // Background
+var cBackground = wrd.cBack + wrd.cground; // Background
 
 exports.cBackground = cBackground;
-var cConfiguration_Colors = w.cConfiguration + b.cUnderscore + w.cColors; // Configuration_Colors
+var cConfiguration_Colors = wrd.cConfiguration + bas.cUnderscore + wrd.cColors; // Configuration_Colors
 
 exports.cConfiguration_Colors = cConfiguration_Colors;
-var cColorData = w.cColor + w.cData; // ColorData
+var cColorData = wrd.cColor + wrd.cData; // ColorData
 
 exports.cColorData = cColorData;
-var cColorName = w.cColor + w.cName; // ColorName
+var cColorName = wrd.cColor + wrd.cName; // ColorName
 
 exports.cColorName = cColorName;
-var cbusinessRule = w.cbusiness + w.cRule; // businessRule
+var cbusinessRule = wrd.cbusiness + wrd.cRule; // businessRule
 
 exports.cbusinessRule = cbusinessRule;
-var cBusinessRule = w.cBusiness + w.cRule; // BusinessRule
+var cBusinessRule = wrd.cBusiness + wrd.cRule; // BusinessRule
 
 exports.cBusinessRule = cBusinessRule;
-var cbusinessRules = w.cbusiness + w.cRules; // businessRules
+var cbusinessRules = wrd.cbusiness + wrd.cRules; // businessRules
 
 exports.cbusinessRules = cbusinessRules;
-var cBusinessRules = w.cBusiness + w.cRules; // BusinessRules
+var cBusinessRules = wrd.cBusiness + wrd.cRules; // BusinessRules
 
 exports.cBusinessRules = cBusinessRules;
-var crulesLibrary = w.crules + w.cLibrary; // rulesLibrary
+var crulesLibrary = wrd.crules + wrd.cLibrary; // rulesLibrary
 
 exports.crulesLibrary = crulesLibrary;
-var cframework = w.cframe + w.cwork; // framework
+var cframework = wrd.cframe + wrd.cwork; // framework
 
 exports.cframework = cframework;
-var cFramework = w.cFrame + w.cwork; // Framework
+var cFramework = wrd.cFrame + wrd.cwork; // Framework
 
 exports.cFramework = cFramework;
-var cCommandsAliases = w.cCommands + w.cAliases; // CommandsAliases
+var cCommandsAliases = wrd.cCommands + wrd.cAliases; // CommandsAliases
 
 exports.cCommandsAliases = cCommandsAliases;
-var cCommandWorkflows = w.cCommand + w.cWorkflows; // CommandWorkflows
+var cCommandWorkflows = wrd.cCommand + wrd.cWorkflows; // CommandWorkflows
 
 exports.cCommandWorkflows = cCommandWorkflows;
-var cStandardDeviation = w.cStandard + w.cDeviation; // StandardDeviation
+var cStandardDeviation = wrd.cStandard + wrd.cDeviation; // StandardDeviation
 
 exports.cStandardDeviation = cStandardDeviation;
-var cHexValue = p.cHex + w.cValue; // HexValue
+var cHexValue = phn.cHex + wrd.cValue; // HexValue
 
 exports.cHexValue = cHexValue;
-var cexportconst = w.cexport + b.cSpace + g.cconst; // export-const // With a space not a dash, but the validation code is looking for that exact string.
+var cexportconst = wrd.cexport + bas.cSpace + gen.cconst; // export-const // With a space not a dash, but the validation code is looking for that exact string.
 
 exports.cexportconst = cexportconst;
-var cExportConst = w.cExport + b.cSpace + g.cConst; // Export Const
+var cExportConst = wrd.cExport + bas.cSpace + gen.cConst; // smuggle something
 
 exports.cExportConst = cExportConst;
-var cDataStorage = w.cData + w.cStorage; // DataStorage
+var cDataStorage = wrd.cData + wrd.cStorage; // DataStorage
 
 exports.cDataStorage = cDataStorage;
-var cSource1 = w.cSource + n.c1; // Source1
+var cSource1 = wrd.cSource + num.c1; // Source1
 
 exports.cSource1 = cSource1;
-var cSource2 = w.cSource + n.c2; // Source2
-// Logging Constants
+var cSource2 = wrd.cSource + num.c2; // Source2
 
 exports.cSource2 = cSource2;
-var cBEGIN_Function = w.cBEGIN + b.cSpace + b.cPercent + b.cPercent + b.cSpace + w.cFunction; // BEGIN %% Function
+var cbigInteger = wrd.cbig + wrd.cInteger; // bigInteger
 
-exports.cBEGIN_Function = cBEGIN_Function;
-var cEND_Function = w.cEND + b.cSpace + b.cPercent + b.cPercent + b.cSpace + w.cFunction; // END %% Function
+exports.cbigInteger = cbigInteger;
+var cnumberOfCharactersToGenerate = wrd.cnumber + bas.cOf + wrd.cCharacters + bas.cTo + wrd.cGenerate; // numberOfCharactersToGenerate
 
-exports.cEND_Function = cEND_Function;
-var cinputDataIs = w.cinput + w.cData + cSpaceIsColonSpace; // input Data is:
+exports.cnumberOfCharactersToGenerate = cnumberOfCharactersToGenerate;
+var cgenerateSpecialCharacters = wrd.cgenerate + cSpecialCharacters; // generateSpecialCharacters
 
-exports.cinputDataIs = cinputDataIs;
-var cinputMetaDataIs = w.cinput + w.cMetaData + cSpaceIsColonSpace; // input MetaData is:
+exports.cgenerateSpecialCharacters = cgenerateSpecialCharacters;
+var callowableSpecialCharacters = wrd.callowable + cSpecialCharacters; // allowableSpecialCharacters
 
-exports.cinputMetaDataIs = cinputMetaDataIs;
-var creturnDataIs = w.creturn + w.cData + cSpaceIsColonSpace; // return Data is:
+exports.callowableSpecialCharacters = callowableSpecialCharacters;
+var cspecifiedSuffixAndDomain = wrd.cspecified + cSuffixAndDomain; // specifiedSuffixAndDomain
 
-exports.creturnDataIs = creturnDataIs;
-var cLogBasicSystemEvents = w.cLog + w.cBasic + w.cSystem + w.cEvents; // LogBasicSystemEvents
+exports.cspecifiedSuffixAndDomain = cspecifiedSuffixAndDomain;
+var cfailureMode = wrd.cfailure + wrd.cMode; // failureMode
 
-exports.cLogBasicSystemEvents = cLogBasicSystemEvents;
-var cLogWarnings = w.cLog + w.cWarnings; // LogWarnings
+exports.cfailureMode = cfailureMode;
+var cWithoutThe = wrd.cWithout + bas.cSpace + wrd.cthe; // Without the
+
+exports.cWithoutThe = cWithoutThe;
+var cwasCompleted = wrd.cwas + bas.cSpace + wrd.ccompleted; // was completed
+
+exports.cwasCompleted = cwasCompleted;
+var cGenerateA = wrd.cGenerate + bas.cSpace + bas.ca; // Generate a
+
+exports.cGenerateA = cGenerateA;
+var cprogramLoop = wrd.cprogram + bas.cSpace + wrd.cloop; // program loop
+
+exports.cprogramLoop = cprogramLoop;
+var candPrefix = wrd.cand + bas.cSpace + wrd.cprefix; // and prefix
+
+exports.candPrefix = candPrefix;
+var candSuffix = wrd.cand + bas.cSpace + wrd.csuffix; // and suffix
+
+exports.candSuffix = candSuffix;
+var cdomainSpaceName = wrd.cdomain + bas.cSpace + wrd.cname; // domain name
+
+exports.cdomainSpaceName = cdomainSpaceName;
+var candSpaceDomainSpaceName = wrd.cand + bas.cSpace + cdomainSpaceName; // and domain name
+
+exports.candSpaceDomainSpaceName = candSpaceDomainSpaceName;
+var ccurrentMasterStringArrayElement = wrd.ccurrent + wrd.cMaster + wrd.cString + wrd.cArray + wrd.cElement; // currentMasterStringArrayElement
+
+exports.ccurrentMasterStringArrayElement = ccurrentMasterStringArrayElement;
+var cLehmerCodeArray = wrd.cLehmer + wrd.cCode + wrd.cArray; // LehmerCodeArray
+
+exports.cLehmerCodeArray = cLehmerCodeArray;
+var creturnData = wrd.creturn + wrd.cData; // returnData
+
+exports.creturnData = creturnData;
+var cCamelCase = wrd.cCamel + wrd.cCase; // CamelCase
 // Logging Styles Constants
 
-exports.cLogWarnings = cLogWarnings;
-var cModuleFontStyle = w.cModule + w.cFont + w.cStyle; // ModuleFontStyle
+exports.cCamelCase = cCamelCase;
+var cModuleFontStyle = wrd.cModule + wrd.cFont + wrd.cStyle; // ModuleFontStyle
 
 exports.cModuleFontStyle = cModuleFontStyle;
-var cFunctionFontStyle = w.cFunction + w.cFont + w.cStyle; // FunctionFontStyle
+var cFunctionFontStyle = wrd.cFunction + wrd.cFont + wrd.cStyle; // FunctionFontStyle
 
 exports.cFunctionFontStyle = cFunctionFontStyle;
-var cMessageFontStyle = w.cMessage + w.cFont + w.cStyle; // MessageFontStyle
+var cMessageFontStyle = wrd.cMessage + wrd.cFont + wrd.cStyle; // MessageFontStyle
 
 exports.cMessageFontStyle = cMessageFontStyle;
-var cDataFontStyle = w.cData + w.cFont + w.cStyle; // DataFontStyle
+var cDataFontStyle = wrd.cData + wrd.cFont + wrd.cStyle; // DataFontStyle
 
 exports.cDataFontStyle = cDataFontStyle;
-var cModuleFontColor = w.cModule + w.cFont + w.cColor; // ModuleFontColor
+var cModuleFontColor = wrd.cModule + wrd.cFont + wrd.cColor; // ModuleFontColor
 
 exports.cModuleFontColor = cModuleFontColor;
-var cFunctionFontColor = w.cFunction + w.cFont + w.cColor; // FunctionFontColor
+var cFunctionFontColor = wrd.cFunction + wrd.cFont + wrd.cColor; // FunctionFontColor
 
 exports.cFunctionFontColor = cFunctionFontColor;
-var cMessageFontColor = w.cMessage + w.cFont + w.cColor; // MessageFontColor
+var cMessageFontColor = wrd.cMessage + wrd.cFont + wrd.cColor; // MessageFontColor
 
 exports.cMessageFontColor = cMessageFontColor;
-var cDataFontColor = w.cData + w.cFont + w.cColor; // DataFontColor
+var cDataFontColor = wrd.cData + wrd.cFont + wrd.cColor; // DataFontColor
 
 exports.cDataFontColor = cDataFontColor;
-var cModuleFontBackgroundColor = w.cModule + w.cFont + cBackground + w.cColor; // ModuleFontBackgroundColor
+var cModuleFontBackgroundColor = wrd.cModule + wrd.cFont + cBackground + wrd.cColor; // ModuleFontBackgroundColor
 
 exports.cModuleFontBackgroundColor = cModuleFontBackgroundColor;
-var cFunctionFontBackgroundColor = w.cFunction + w.cFont + cBackground + w.cColor; // FunctionFontBackgroundColor
+var cFunctionFontBackgroundColor = wrd.cFunction + wrd.cFont + cBackground + wrd.cColor; // FunctionFontBackgroundColor
 
 exports.cFunctionFontBackgroundColor = cFunctionFontBackgroundColor;
-var cMessageFontBackgroundColor = w.cMessage + w.cFont + cBackground + w.cColor; // MessageFontBackgroundColor
+var cMessageFontBackgroundColor = wrd.cMessage + wrd.cFont + cBackground + wrd.cColor; // MessageFontBackgroundColor
 
 exports.cMessageFontBackgroundColor = cMessageFontBackgroundColor;
-var cDataFontBackgroundColor = w.cData + w.cFont + cBackground + w.cColor; // DataFontBackgroundColor
-// System Messages
-// Please enter a named command where the first word starts with a lower case letter and all other words in the named command start with an upper case letter:
-
-exports.cDataFontBackgroundColor = cDataFontBackgroundColor;
-var cCommandNamePrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cnamed + b.cSpace + w.ccommand + b.cSpace + w.cwhere + b.cSpace; // Please enter a named command where
-
-exports.cCommandNamePrompt1 = cCommandNamePrompt1;
-var cCommandNamePrompt2 = w.cthe + b.cSpace + n.cfirst + b.cSpace + w.cword + b.cSpace + w.cstarts + b.cSpace + w.cwith + b.cSpace + b.ca + b.cSpace; // the first word starts with a
-
-exports.cCommandNamePrompt2 = cCommandNamePrompt2;
-var cCommandNamePrompt3 = w.clower + b.cSpace + w.ccase + b.cSpace + w.cletter + b.cSpace + w.cand + b.cSpace + w.call + b.cSpace + w.cother + b.cSpace; // lower case letter and all other
-
-exports.cCommandNamePrompt3 = cCommandNamePrompt3;
-var cCommandNamePrompt4 = w.cwords + b.cSpace + b.cin + b.cSpace + w.cthe + b.cSpace + w.cnamed + b.cSpace + w.ccommand + b.cSpace + w.cstart + b.cSpace; // words in the named command start
-
-exports.cCommandNamePrompt4 = cCommandNamePrompt4;
-var cCommandNamePrompt5 = w.cwith + b.cSpace + b.can + b.cSpace + w.cupper + b.cSpace + w.ccase + b.cSpace + w.cletter + b.cColon; // with an upper case letter:
-// Please enter a list of command word abreviations/acronyms/aliases for the command word:
-
-exports.cCommandNamePrompt5 = cCommandNamePrompt5;
-var cCommandWordAliasPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace + w.ccommand + b.cSpace;
-exports.cCommandWordAliasPrompt1 = cCommandWordAliasPrompt1;
-var cCommandWordAliasPrompt2 = w.cword + b.cSpace + w.cabreviations + b.cForwardSlash + w.cacronyms + b.cForwardSlash + w.caliases + b.cSpace;
-exports.cCommandWordAliasPrompt2 = cCommandWordAliasPrompt2;
-var cCommandWordAliasPrompt3 = w.cfor + b.cSpace + w.cthe + b.cSpace + w.ccommand + b.cSpace + w.cword + b.cColon; // Please enter a string you would like to define as a constant in the constants system:
-
-exports.cCommandWordAliasPrompt3 = cCommandWordAliasPrompt3;
-var cConstantPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.cstring + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace; // Please enter a string you would
-
-exports.cConstantPrompt1 = cConstantPrompt1;
-var cConstantPrompt2 = w.clike + b.cSpace + b.cto + b.cSpace + w.cdefine + b.cSpace + b.cas + b.cSpace + b.ca + b.cSpace + w.cconstant + b.cSpace; // like to define as a constant
-
-exports.cConstantPrompt2 = cConstantPrompt2;
-var cConstantPrompt3 = b.cin + b.cSpace + w.cthe + b.cSpace + w.cconstants + b.cSpace + w.csystem + b.cColon; // in the constants system:
-// Please enter a coma separated list of strings you would like to define in the constants system:
-
-exports.cConstantPrompt3 = cConstantPrompt3;
-var cConstantsListPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.ccoma + b.cSpace + w.cseparated + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace;
-exports.cConstantsListPrompt1 = cConstantsListPrompt1;
-var cConstantsListPrompt2 = w.cstrings + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace + w.clike + b.cSpace + b.cto + b.cSpace + w.cdefine + b.cSpace + b.cin + b.cSpace;
-exports.cConstantsListPrompt2 = cConstantsListPrompt2;
-var cConstantsListPrompt3 = w.cthe + b.cSpace + w.cconstants + b.cSpace + w.csystem + b.cColon; // Please enter a coma separated list of strings you would like to search for common patterns:
-
-exports.cConstantsListPrompt3 = cConstantsListPrompt3;
-var cConstantsListPatternSearchPrompt1 = w.cPlease + b.cSpace + w.center + b.cSpace + b.ca + b.cSpace + w.ccoma + b.cSpace + w.cseparated + b.cSpace + w.clist + b.cSpace + b.cof + b.cSpace; // Please enter a coma separated list of
-
-exports.cConstantsListPatternSearchPrompt1 = cConstantsListPatternSearchPrompt1;
-var cConstantsListPatternSearchPrompt2 = w.cstrings + b.cSpace + w.cyou + b.cSpace + w.cwould + b.cSpace + w.clike + b.cSpace + b.cto + b.cSpace + w.csearch + b.cSpace + w.cfor + b.cSpace; // strings you would like to search for
-
-exports.cConstantsListPatternSearchPrompt2 = cConstantsListPatternSearchPrompt2;
-var cConstantsListPatternSearchPrompt3 = w.ccommon + b.cSpace + w.cpatterns + b.cColon; // common patterns:
+var cDataFontBackgroundColor = wrd.cData + wrd.cFont + cBackground + wrd.cColor; // DataFontBackgroundColor
 // File Types
 
-exports.cConstantsListPatternSearchPrompt3 = cConstantsListPatternSearchPrompt3;
-var cCatia = b.cCa + b.cti + b.ca; // Catia
+exports.cDataFontBackgroundColor = cDataFontBackgroundColor;
+var cCatia = bas.cCa + bas.cti + bas.ca; // Catia
 
 exports.cCatia = cCatia;
-var cDocument = w.cDocument; // Document
+var cDocument = wrd.cDocument; // Document
 
 exports.cDocument = cDocument;
-var cDocuments = cDocument + b.cs; // Documents
+var cDocuments = cDocument + bas.cs; // Documents
 
 exports.cDocuments = cDocuments;
-var cDraft = b.cDr + p.caft; // Draft
+var cDraft = bas.cDr + phn.caft; // Draft
 
 exports.cDraft = cDraft;
-var cDWG = b.cDW + b.cG; // DWG
+var cDWG = bas.cDW + bas.cG; // DWG
 
 exports.cDWG = cDWG;
-var cHoops = b.cH + w.coops; // Hoops
+var cHoops = bas.cH + wrd.coops; // Hoops
 
 exports.cHoops = cHoops;
-var cHOOPS = b.cH + w.cOOPS; // HOOPS
+var cHOOPS = bas.cH + wrd.cOOPS; // HOOPS
 
 exports.cHOOPS = cHOOPS;
-var cImage = b.cIm + p.cage; // Image
+var cImage = bas.cIm + phn.cage; // Image
 
 exports.cImage = cImage;
-var cImages = cImage + b.cs; // Images
+var cImages = cImage + bas.cs; // Images
 
 exports.cImages = cImages;
-var cInventor = p.cInv + b.cen + p.ctor; // Inventor
+var cInventor = phn.cInv + bas.cen + phn.ctor; // Inventor
 
 exports.cInventor = cInventor;
-var cNeutral = b.cNe + b.cut + p.cral; // Neutral
+var cNeutral = bas.cNe + bas.cut + phn.cral; // Neutral
 
 exports.cNeutral = cNeutral;
-var cNX = b.cNX; // NX
+var cNX = bas.cNX; // NX
 
 exports.cNX = cNX;
-var cParasolid = b.cP + p.cara + w.csolid; // Parasolid
+var cParasolid = bas.cP + phn.cara + wrd.csolid; // Parasolid
 
 exports.cParasolid = cParasolid;
-var cProE = p.cPro + b.cE; // ProE
+var cProE = phn.cPro + bas.cE; // ProE
 
 exports.cProE = cProE;
-var cRhino = b.cRh + p.cino; // Rhino
+var cRhino = bas.cRh + phn.cino; // Rhino
 
 exports.cRhino = cRhino;
-var cSolidEdge = w.cSolid + w.cEdge; // SolidEdge
+var cSolidEdge = wrd.cSolid + wrd.cEdge; // SolidEdge
 
 exports.cSolidEdge = cSolidEdge;
-var cSolidWorks = w.cSolid + w.cWorks; // SolidWorks
+var cSolidWorks = wrd.cSolid + wrd.cWorks; // SolidWorks
 
 exports.cSolidWorks = cSolidWorks;
-var cvrml = b.cvr + b.cml; // vrml
+var cvrml = bas.cvr + bas.cml; // vrml
 
 exports.cvrml = cvrml;
-var cVrml = b.cVr + b.cml; // Vrml
+var cVrml = bas.cVr + bas.cml; // Vrml
 
 exports.cVrml = cVrml;
-var cVRML = b.cVR + b.cML; // VRML
-// Countires
-// TODO: Need to come back and generalize these with constants re-use.
-
-exports.cVRML = cVRML;
-var cAfghanistan = 'Afghanistan'; // Afghanistan
-
-exports.cAfghanistan = cAfghanistan;
-var cAlbania = 'Albania'; // Albania
-
-exports.cAlbania = cAlbania;
-var cAlgeria = 'Algeria'; // Algeria
-
-exports.cAlgeria = cAlgeria;
-var cAndorra = 'Andorra'; // Andorra
-
-exports.cAndorra = cAndorra;
-var cAngola = 'Angola'; // Angola
-
-exports.cAngola = cAngola;
-var cAntigua = 'Antigua'; // Antigua
-
-exports.cAntigua = cAntigua;
-var cArgentina = 'Argentina'; // Argentina
-
-exports.cArgentina = cArgentina;
-var cArmenia = 'Armenia'; // Armenia
-
-exports.cArmenia = cArmenia;
-var cAustralia = 'Australia'; // Australia
-
-exports.cAustralia = cAustralia;
-var cAustria = 'Austria'; // Austria
-
-exports.cAustria = cAustria;
-var cAzerbaijan = 'Azerbaijan'; // Azerbaijan
-
-exports.cAzerbaijan = cAzerbaijan;
-var cBahamas = 'Bahamas'; // Bahamas
-
-exports.cBahamas = cBahamas;
-var cBahrain = 'Bahrain'; // Bahrain
-
-exports.cBahrain = cBahrain;
-var cBangladesh = 'Bangladesh'; // Bangladesh
-
-exports.cBangladesh = cBangladesh;
-var cBarbados = 'Barbados'; // Barbados
-
-exports.cBarbados = cBarbados;
-var cBarbuda = 'Barbuda'; // Barbuda
-
-exports.cBarbuda = cBarbuda;
-var cBelarus = 'Belarus'; // Belarus
-
-exports.cBelarus = cBelarus;
-var cBelgium = 'Belgium'; // Belgium
-
-exports.cBelgium = cBelgium;
-var cBelize = 'Belize'; // Belize
-
-exports.cBelize = cBelize;
-var cBenin = 'Benin'; // Benin
-
-exports.cBenin = cBenin;
-var cBhutan = 'Bhutan'; // Bhutan
-
-exports.cBhutan = cBhutan;
-var cBolivia = 'Bolivia'; // Bolivia
-
-exports.cBolivia = cBolivia;
-var cBosnia = 'Bosnia'; // Bosnia
-
-exports.cBosnia = cBosnia;
-var cBotswana = 'Botswana'; // Botswana
-
-exports.cBotswana = cBotswana;
-var cBrazil = 'Brazil'; // Brazil
-
-exports.cBrazil = cBrazil;
-var cBrunei = 'Brunei'; // Brunei
-
-exports.cBrunei = cBrunei;
-var cBulgaria = 'Bulgaria'; // Bulgaria
-
-exports.cBulgaria = cBulgaria;
-var cBurkinaFaso = 'BurkinaFaso'; // BurkinaFaso
-
-exports.cBurkinaFaso = cBurkinaFaso;
-var cBurundi = 'Burundi'; // Burundi
-
-exports.cBurundi = cBurundi;
-var cCotedlvoire = 'Cote dlvoire'; // Cote dlvoire
-
-exports.cCotedlvoire = cCotedlvoire;
-var cCaboVerde = 'Cabo Verde'; // Cabo Verde
-
-exports.cCaboVerde = cCaboVerde;
-var cCambodia = 'Cambodia'; // Cambodia
-
-exports.cCambodia = cCambodia;
-var cCameroon = 'Cameroon'; // Cameroon
-
-exports.cCameroon = cCameroon;
-var cCanada = 'Canada'; // Canada
-
-exports.cCanada = cCanada;
-var cCentralAfricanRepublic = 'Central African Republic'; // Central African Republic
-
-exports.cCentralAfricanRepublic = cCentralAfricanRepublic;
-var cChad = 'Chad'; // Chad
-
-exports.cChad = cChad;
-var cChile = 'Chile'; // Chile
-
-exports.cChile = cChile;
-var cChina = 'China'; // China
-
-exports.cChina = cChina;
-var cColombia = 'Colombia'; // Colombia
-
-exports.cColombia = cColombia;
-var cComoros = 'Comoros'; // Comoros
-
-exports.cComoros = cComoros;
-var cCongo = 'Congo'; // Congo
-
-exports.cCongo = cCongo;
-var cCostaRica = 'Costa Rica'; // Costa Rica
-
-exports.cCostaRica = cCostaRica;
-var cCroatia = 'Croatia'; // Croatia
-
-exports.cCroatia = cCroatia;
-var cCuba = 'Cuba'; // Cuba
-
-exports.cCuba = cCuba;
-var cCyprus = 'Cyprus'; // Cyprus
-
-exports.cCyprus = cCyprus;
-var cCzechia = 'Czechia'; // Czechia
-
-exports.cCzechia = cCzechia;
-var cDemocraticRepublicOfTheCongo = 'Democratic Republic of the Congo'; // Democratic Republic of the Congo
-
-exports.cDemocraticRepublicOfTheCongo = cDemocraticRepublicOfTheCongo;
-var cDenmark = 'Denmark'; // Denmark
-
-exports.cDenmark = cDenmark;
-var cDjibouti = 'Djibouti'; // Djibouti
-
-exports.cDjibouti = cDjibouti;
-var cDominica = 'Dominica'; // Dominica
-
-exports.cDominica = cDominica;
-var cDominicanRepublic = 'Dominican Republic'; // Dominican Republic
-
-exports.cDominicanRepublic = cDominicanRepublic;
-var cEcuador = 'Ecuador'; // Ecuador
-
-exports.cEcuador = cEcuador;
-var cEgypt = 'Egypt'; // Egypt
-
-exports.cEgypt = cEgypt;
-var cElSalvador = 'El Salvador'; // El Salvador
-
-exports.cElSalvador = cElSalvador;
-var cEquatorialGuinea = 'Equatorial Guinea'; // Equatorial Guinea
-
-exports.cEquatorialGuinea = cEquatorialGuinea;
-var cEritrea = 'Eritrea'; // Eritrea
-
-exports.cEritrea = cEritrea;
-var cEstonia = 'Estonia'; // Estonia
-
-exports.cEstonia = cEstonia;
-var cEswatini = 'Eswatini'; // Eswatini -- Formerly Swaziland
-
-exports.cEswatini = cEswatini;
-var cEthiopia = 'Ethiopia'; // Ethiopia
-
-exports.cEthiopia = cEthiopia;
-var cFiji = 'Fiji'; // Fiji
-
-exports.cFiji = cFiji;
-var cFinland = 'Finland'; // Finland
-
-exports.cFinland = cFinland;
-var cFrance = 'France'; // France
-
-exports.cFrance = cFrance;
-var cGabon = 'Gabon'; // Gabon
-
-exports.cGabon = cGabon;
-var cGambia = 'Gambia'; // Gambia
-
-exports.cGambia = cGambia;
-var cGeorgia = 'Georgia'; // Georgia
-
-exports.cGeorgia = cGeorgia;
-var cGerman = b.cGe + b.cr + w.cman; // German
-
-exports.cGerman = cGerman;
-var cGermany = cGerman + b.cy; // Germany
-
-exports.cGermany = cGermany;
-var cGhana = 'Ghana'; // Ghana
-
-exports.cGhana = cGhana;
-var cGreece = 'Greece'; // Greece
-
-exports.cGreece = cGreece;
-var cGrenada = 'Grenada'; // Grenada
-
-exports.cGrenada = cGrenada;
-var cGuatemala = 'Guatemala'; // Guatemala
-
-exports.cGuatemala = cGuatemala;
-var cGuinea = 'Guinea'; // Guinea
-
-exports.cGuinea = cGuinea;
-var cGuineaBissau = 'Guinea-Bissau'; // Guinea-Bissau
-
-exports.cGuineaBissau = cGuineaBissau;
-var cGuyana = 'Guyana'; // Guyana
-
-exports.cGuyana = cGuyana;
-var cHaiti = 'Haiti'; // Haiti
-
-exports.cHaiti = cHaiti;
-var cHerzegovina = 'Herzegovina'; // Herzegovina
-
-exports.cHerzegovina = cHerzegovina;
-var cHolySee = 'Holy See'; // Holy See
-
-exports.cHolySee = cHolySee;
-var cHonduras = 'Honduras'; // Honduras
-
-exports.cHonduras = cHonduras;
-var cHungary = w.cHung + p.cary; // Hungary
-
-exports.cHungary = cHungary;
-var cIceland = 'Iceland'; // Iceland
-
-exports.cIceland = cIceland;
-var cIndia = 'India'; // India
-
-exports.cIndia = cIndia;
-var cIndonesia = 'Indonesia'; // Indonesia
-
-exports.cIndonesia = cIndonesia;
-var cIran = 'Iran'; // Iran
-
-exports.cIran = cIran;
-var cIraq = 'Iraq'; // Iraq
-
-exports.cIraq = cIraq;
-var cIreland = 'Ireland'; // Ireland
-
-exports.cIreland = cIreland;
-var cIsrael = 'Israel'; // Israel
-
-exports.cIsrael = cIsrael;
-var cItaly = 'Italy'; // Italy
-
-exports.cItaly = cItaly;
-var cJamaica = 'Jamaica'; // Jamaica
-
-exports.cJamaica = cJamaica;
-var cJapan = 'Japan'; // Japan
-
-exports.cJapan = cJapan;
-var cJordan = 'Jordan'; // Jordan
-
-exports.cJordan = cJordan;
-var cKazakhstan = 'Kazakhstan'; // Kazakhstan
-
-exports.cKazakhstan = cKazakhstan;
-var cKenya = 'Kenya'; // Kenya
-
-exports.cKenya = cKenya;
-var cKiribati = 'Kiribati'; // Kiribati
-
-exports.cKiribati = cKiribati;
-var cKuwait = 'Kuwait'; // Kuwait
-
-exports.cKuwait = cKuwait;
-var cKyrgyzstan = 'Kyrgyzstan'; // Kyrgyzstan
-
-exports.cKyrgyzstan = cKyrgyzstan;
-var cLaos = 'Laos'; // Laos
-
-exports.cLaos = cLaos;
-var cLatvia = 'Latvia'; // Latvia
-
-exports.cLatvia = cLatvia;
-var cLebanon = 'Lebanon'; // Lebanon
-
-exports.cLebanon = cLebanon;
-var cLesotho = 'Lesotho'; // Lesotho
-
-exports.cLesotho = cLesotho;
-var cLiberia = 'Liberia'; // Liberia
-
-exports.cLiberia = cLiberia;
-var cLibya = 'Libya'; // Libya
-
-exports.cLibya = cLibya;
-var cLiechtenstein = 'Liechtenstein'; // Liechtenstein
-
-exports.cLiechtenstein = cLiechtenstein;
-var cLithuania = 'Lithuania'; // Lithuania
-
-exports.cLithuania = cLithuania;
-var cLuxembourg = 'Luxembourg'; // Luxembourg
-
-exports.cLuxembourg = cLuxembourg;
-var cMadagascar = 'Madagascar'; // Madagascar
-
-exports.cMadagascar = cMadagascar;
-var cMalawi = 'Malawi'; // Malawi
-
-exports.cMalawi = cMalawi;
-var cMalaysia = 'Malaysia'; // Malaysia
-
-exports.cMalaysia = cMalaysia;
-var cMaldives = 'Maldives'; // Maldives
-
-exports.cMaldives = cMaldives;
-var cMali = 'Mali'; // Mali
-
-exports.cMali = cMali;
-var cMalta = 'Malta'; // Malta
-
-exports.cMalta = cMalta;
-var cMarshallIslands = 'Marshall Islands'; // Marshall Islands
-
-exports.cMarshallIslands = cMarshallIslands;
-var cMauritania = 'Mauritania'; // Mauritania
-
-exports.cMauritania = cMauritania;
-var cMauritius = 'Mauritius'; // Mauritius
-
-exports.cMauritius = cMauritius;
-var cMexico = 'Mexico'; // Mexico
-
-exports.cMexico = cMexico;
-var cMicronesia = 'Micronesia'; // Micronesia
-
-exports.cMicronesia = cMicronesia;
-var cMoldova = 'Moldova'; // Moldova
-
-exports.cMoldova = cMoldova;
-var cMonaco = 'Monaco'; // Monaco
-
-exports.cMonaco = cMonaco;
-var cMongolia = 'Mongolia'; // Mongolia
-
-exports.cMongolia = cMongolia;
-var cMontenegro = 'Montenegro'; // Montenegro
-
-exports.cMontenegro = cMontenegro;
-var cMorocco = 'Morocco'; // Morocco
-
-exports.cMorocco = cMorocco;
-var cMozambique = 'Mozambique'; // Mozambique
-
-exports.cMozambique = cMozambique;
-var cMyanmar = 'Myanmar'; // Myanmar
-
-exports.cMyanmar = cMyanmar;
-var cNamibia = 'Namibia'; // Namibia
-
-exports.cNamibia = cNamibia;
-var cNauru = 'Nauru'; // Nauru
-
-exports.cNauru = cNauru;
-var cNepal = 'Nepal'; // Nepal
-
-exports.cNepal = cNepal;
-var cNetherlands = 'Netherlands'; // Netherlands
-
-exports.cNetherlands = cNetherlands;
-var cNewZealand = 'New Zealand'; // New Zealand
-
-exports.cNewZealand = cNewZealand;
-var cNevis = 'Nevis'; // Nevis
-
-exports.cNevis = cNevis;
-var cNicaragua = 'Nicaragua'; // Nicaragua
-
-exports.cNicaragua = cNicaragua;
-var cNiger = 'Niger'; // Niger
-
-exports.cNiger = cNiger;
-var cNigeria = 'Nigeria'; // Nigeria
-
-exports.cNigeria = cNigeria;
-var cNorthKorea = 'North Korea'; // North Korea
-
-exports.cNorthKorea = cNorthKorea;
-var cNorthMacedonia = 'North Macedonia'; // North Macedonia
-
-exports.cNorthMacedonia = cNorthMacedonia;
-var cNorway = 'Norway'; // Norway
-
-exports.cNorway = cNorway;
-var cOman = 'Oman'; // Oman
-
-exports.cOman = cOman;
-var cPakistan = 'Pakistan'; // Pakistan
-
-exports.cPakistan = cPakistan;
-var cPalau = 'Palau'; // Palau
-
-exports.cPalau = cPalau;
-var cPalestine = 'Palestine'; // Palestine
-
-exports.cPalestine = cPalestine;
-var cPanama = 'Panama'; // Panama
-
-exports.cPanama = cPanama;
-var cPapuaNewGuinea = 'Papua New Guinea'; // Papua New Guinea
-
-exports.cPapuaNewGuinea = cPapuaNewGuinea;
-var cParaguay = 'Paraguay'; // Paraguay
-
-exports.cParaguay = cParaguay;
-var cPeru = 'Peru'; // Peru
-
-exports.cPeru = cPeru;
-var cPhilippines = 'Philippines'; // Philippines
-
-exports.cPhilippines = cPhilippines;
-var cPoland = 'Poland'; // Poland
-
-exports.cPoland = cPoland;
-var cPortugal = 'Portugal'; // Portugal
-
-exports.cPortugal = cPortugal;
-var cPrincipe = 'Principe'; // Principe
-
-exports.cPrincipe = cPrincipe;
-var cQatar = 'Qatar'; // Qatar
-
-exports.cQatar = cQatar;
-var cRomania = 'Romania'; // Romania
-
-exports.cRomania = cRomania;
-var cRussia = 'Russia'; // Russia
-
-exports.cRussia = cRussia;
-var cRwanda = 'Rwanda'; // Rwanda
-
-exports.cRwanda = cRwanda;
-var cSaintKitts = 'Saint Kitts'; // Saint Kitts
-
-exports.cSaintKitts = cSaintKitts;
-var cSaintLucia = 'Saint Lucia'; // Saint Lucia
-
-exports.cSaintLucia = cSaintLucia;
-var cSaintVincent = 'Saint Vincent'; // Saint Vincent
-
-exports.cSaintVincent = cSaintVincent;
-var cSomoa = 'Somoa'; // Somoa
-
-exports.cSomoa = cSomoa;
-var cSanMarino = 'San Marino'; // San Marino
-
-exports.cSanMarino = cSanMarino;
-var cSaoTome = 'Sao Tome'; // Sao Tome
-
-exports.cSaoTome = cSaoTome;
-var cSaudiArabia = 'Saudi Arabia'; // Saudi Arabia
-
-exports.cSaudiArabia = cSaudiArabia;
-var cSenegal = 'Senegal'; // Senegal
-
-exports.cSenegal = cSenegal;
-var cSerbia = 'Serbia'; // Serbia
-
-exports.cSerbia = cSerbia;
-var cSeychelles = 'Seychelles'; // Seychelles
-
-exports.cSeychelles = cSeychelles;
-var cSierraLeone = 'Sierra Leone'; // Sierra Leone
-
-exports.cSierraLeone = cSierraLeone;
-var cSingapore = 'Singapore'; // Singapore
-
-exports.cSingapore = cSingapore;
-var cSlovakia = 'Slovakia'; // Slovakia
-
-exports.cSlovakia = cSlovakia;
-var cSlovenia = 'Slovenia'; // Slovenia
-
-exports.cSlovenia = cSlovenia;
-var cSolomonIslands = 'Solomon Islands'; // Solomon Islands
-
-exports.cSolomonIslands = cSolomonIslands;
-var cSomalia = 'Somalia'; // Somalia
-
-exports.cSomalia = cSomalia;
-var cSouthAfrica = 'South Africa'; // South Africa
-
-exports.cSouthAfrica = cSouthAfrica;
-var cSouthKorea = 'South Korea'; // South Korea
-
-exports.cSouthKorea = cSouthKorea;
-var cSouthSudan = 'South Sudan'; // South Sudan
-
-exports.cSouthSudan = cSouthSudan;
-var cSpain = 'Spain'; // Spain
-
-exports.cSpain = cSpain;
-var cSriLanka = 'Sri Lanka'; // Sri Lanka
-
-exports.cSriLanka = cSriLanka;
-var cSudan = 'Sudan'; // Sudan
-
-exports.cSudan = cSudan;
-var cSuriname = 'Suriname'; // Suriname
-
-exports.cSuriname = cSuriname;
-var cSweden = 'Sweden'; // Sweden
-
-exports.cSweden = cSweden;
-var cSwitzerland = 'Switzerland'; // Switzerland
-
-exports.cSwitzerland = cSwitzerland;
-var cSyria = 'Syria'; // Syria
-
-exports.cSyria = cSyria;
-var cTajikistan = 'Tajikistan'; // Tajikistan
-
-exports.cTajikistan = cTajikistan;
-var cTanzania = 'Tanzania'; // Tanzania
-
-exports.cTanzania = cTanzania;
-var cThailand = 'Thailand'; // Thailand
-
-exports.cThailand = cThailand;
-var cTimorLeste = 'Timor-Leste'; // Timor-Leste
-
-exports.cTimorLeste = cTimorLeste;
-var cTogo = 'Togo'; // Togo
-
-exports.cTogo = cTogo;
-var cTonga = 'Tonga'; // Tonga
-
-exports.cTonga = cTonga;
-var cTrinidadAndTabago = 'Trinidad and Tabago'; // Trinidad and Tabago
-
-exports.cTrinidadAndTabago = cTrinidadAndTabago;
-var cTunisia = 'Tunisia'; // Tunisia
-
-exports.cTunisia = cTunisia;
-var cTurkey = 'Turkey'; // Turkey
-
-exports.cTurkey = cTurkey;
-var cTurkmenistan = 'Turkmenistan'; // Turkmenistan
-
-exports.cTurkmenistan = cTurkmenistan;
-var cTuvalu = 'Tuvalu'; // Tuvalu
-
-exports.cTuvalu = cTuvalu;
-var cUganda = 'Uganda'; // Uganda
-
-exports.cUganda = cUganda;
-var cUkraine = 'Ukraine'; // Ukraine
-
-exports.cUkraine = cUkraine;
-var cUnitedArabEmirates = 'United Arab Emirates'; // United Arab Emirates
-
-exports.cUnitedArabEmirates = cUnitedArabEmirates;
-var cUnitedKingdom = 'United Kingdom'; // United Kingdom
-
-exports.cUnitedKingdom = cUnitedKingdom;
-var cUnitedStatesOfAmerica = 'United States of America'; // United States of America
-
-exports.cUnitedStatesOfAmerica = cUnitedStatesOfAmerica;
-var cUruguay = 'Uruguay'; // Uruguay
-
-exports.cUruguay = cUruguay;
-var cUzbekistan = 'Uzbekistan'; // Uzbekistan
-
-exports.cUzbekistan = cUzbekistan;
-var cVanuatu = 'Vanuatu'; // Vanuatu
-
-exports.cVanuatu = cVanuatu;
-var cVenezuela = 'Venezuela'; // Venezuela
-
-exports.cVenezuela = cVenezuela;
-var cVietnam = 'Vietnam'; // Vietnam
-
-exports.cVietnam = cVietnam;
-var cYemen = 'Yemen'; // Yemen
-
-exports.cYemen = cYemen;
-var cZambia = 'Zambia'; // Zambia
-
-exports.cZambia = cZambia;
-var cZimbabwe = 'Zimbabwe'; // Zimbabwe
-// Languages
-
-exports.cZimbabwe = cZimbabwe;
-var cChinese = p.cChi + b.cn + p.cese; // Chinese
-
-exports.cChinese = cChinese;
-var cChineseSimplified = cChinese + w.cSimplified; // ChineseSimplified
-
-exports.cChineseSimplified = cChineseSimplified;
-var cChineseTraditional = cChinese + w.cTraditional; // ChineseTraditional
-
-exports.cChineseTraditional = cChineseTraditional;
-var cCzech = b.cCz + b.ce + b.cch; // Czech
-
-exports.cCzech = cCzech;
-var cEnglish = b.cEn + b.cgl + p.cish; // English
-
-exports.cEnglish = cEnglish;
-var cFrench = b.cFr + b.cen + b.cch; // French
-// cGerman = b.cGe + b.cr + cman; // German // Defined above in the countries section
-
-exports.cFrench = cFrench;
-var cHungarian = w.cHung + b.car + p.cian; // Hungarian
-
-exports.cHungarian = cHungarian;
-var cItalian = b.cIt + b.cal + p.cian; // Italian
-
-exports.cItalian = cItalian;
-var cJapanese = cJapan + p.cese; // Japanese
-
-exports.cJapanese = cJapanese;
-var cKorean = b.cKo + b.cre + b.can; // Korean
-
-exports.cKorean = cKorean;
-var cMiscellaneous = p.cMis + w.ccell + b.can + p.ceous; // Miscellaneous
-
-exports.cMiscellaneous = cMiscellaneous;
-var cPolish = b.cPo + b.cl + p.cish; // Polish
-
-exports.cPolish = cPolish;
-var cPortuguese = w.cPort + b.cug + b.cu + p.cese; // Portuguese
-
-exports.cPortuguese = cPortuguese;
-var cRussian = b.cRu + b.css + p.cian; // Russian
-
-exports.cRussian = cRussian;
-var cSpanish = b.cSp + b.can + p.cish; // Spanish
+var cVRML = bas.cVR + bas.cML; // VRML
 // UI Element Types
 
-exports.cSpanish = cSpanish;
-var cButton = b.cBu + b.ctt + b.con; // Button
+exports.cVRML = cVRML;
+var cButton = bas.cBu + bas.ctt + bas.con; // Button
 // Environment Variables
 
 exports.cButton = cButton;
-var cQA = b.cQA; // QA
+var cQA = bas.cQA; // QA
 
 exports.cQA = cQA;
-var cDEV = b.cDE + b.cV; // DEV
+var cDEV = bas.cDE + bas.cV; // DEV
 
 exports.cDEV = cDEV;
-var cProd = p.cPro + b.cd; // Prod
+var cProd = phn.cPro + bas.cd; // Prod
 
 exports.cProd = cProd;
-var cPROD = p.cPRO + b.cD; // PROD
+var cPROD = phn.cPRO + bas.cD; // PROD
 
 exports.cPROD = cPROD;
-var cPre = p.cPre; // Pre
+var cPre = phn.cPre; // Pre
 
 exports.cPre = cPre;
-var cPRE = p.cPRE; // PRE
+var cPRE = phn.cPRE; // PRE
 
 exports.cPRE = cPRE;
-var cPreProd = p.cPre + cProd; // PreProd
+var cPreProd = phn.cPre + cProd; // PreProd
 
 exports.cPreProd = cPreProd;
-var cPREPROD = p.cPRE + cPROD; // PREPROD
+var cPREPROD = phn.cPRE + cPROD; // PREPROD
 // Key Combinations
 
 exports.cPREPROD = cPREPROD;
-var cctrl_a = p.cctrl + b.cPlus + b.ca; // ctrl+a
+var cctrl_a = phn.cctrl + bas.cPlus + bas.ca; // ctrl+a
 
 exports.cctrl_a = cctrl_a;
-var cctrl_b = p.cctrl + b.cPlus + b.cb; // ctrl+b
+var cctrl_b = phn.cctrl + bas.cPlus + bas.cb; // ctrl+b
 
 exports.cctrl_b = cctrl_b;
-var cctrl_c = p.cctrl + b.cPlus + b.cc; // ctrl+c
+var cctrl_c = phn.cctrl + bas.cPlus + bas.cc; // ctrl+c
 
 exports.cctrl_c = cctrl_c;
-var cctrl_d = p.cctrl + b.cPlus + b.cd; // ctrl+d
+var cctrl_d = phn.cctrl + bas.cPlus + bas.cd; // ctrl+d
 
 exports.cctrl_d = cctrl_d;
-var cctrl_e = p.cctrl + b.cPlus + b.ce; // ctrl+e
+var cctrl_e = phn.cctrl + bas.cPlus + bas.ce; // ctrl+e
 
 exports.cctrl_e = cctrl_e;
-var cctrl_f = p.cctrl + b.cPlus + b.cf; // ctrl+f
+var cctrl_f = phn.cctrl + bas.cPlus + bas.cf; // ctrl+f
 
 exports.cctrl_f = cctrl_f;
-var cctrl_g = p.cctrl + b.cPlus + b.cg; // ctrl+g
+var cctrl_g = phn.cctrl + bas.cPlus + bas.cg; // ctrl+g
 
 exports.cctrl_g = cctrl_g;
-var cctrl_h = p.cctrl + b.cPlus + b.ch; // ctrl+h
+var cctrl_h = phn.cctrl + bas.cPlus + bas.ch; // ctrl+h
 
 exports.cctrl_h = cctrl_h;
-var cctrl_i = p.cctrl + b.cPlus + b.ci; // ctrl+i
+var cctrl_i = phn.cctrl + bas.cPlus + bas.ci; // ctrl+i
 
 exports.cctrl_i = cctrl_i;
-var cctrl_j = p.cctrl + b.cPlus + b.cj; // ctrl+j
+var cctrl_j = phn.cctrl + bas.cPlus + bas.cj; // ctrl+j
 
 exports.cctrl_j = cctrl_j;
-var cctrl_k = p.cctrl + b.cPlus + b.ck; // ctrl+k
+var cctrl_k = phn.cctrl + bas.cPlus + bas.ck; // ctrl+k
 
 exports.cctrl_k = cctrl_k;
-var cctrl_l = p.cctrl + b.cPlus + b.cl; // ctrl+l
+var cctrl_l = phn.cctrl + bas.cPlus + bas.cl; // ctrl+l
 
 exports.cctrl_l = cctrl_l;
-var cctrl_m = p.cctrl + b.cPlus + b.cm; // ctrl+m
+var cctrl_m = phn.cctrl + bas.cPlus + bas.cm; // ctrl+m
 
 exports.cctrl_m = cctrl_m;
-var cctrl_n = p.cctrl + b.cPlus + b.cn; // ctrl+n
+var cctrl_n = phn.cctrl + bas.cPlus + bas.cn; // ctrl+n
 
 exports.cctrl_n = cctrl_n;
-var cctrl_o = p.cctrl + b.cPlus + b.co; // ctrl+o
+var cctrl_o = phn.cctrl + bas.cPlus + bas.co; // ctrl+o
 
 exports.cctrl_o = cctrl_o;
-var cctrl_p = p.cctrl + b.cPlus + b.cp; // ctrl+p
+var cctrl_p = phn.cctrl + bas.cPlus + bas.cp; // ctrl+p
 
 exports.cctrl_p = cctrl_p;
-var cctrl_q = p.cctrl + b.cPlus + b.cq; // ctrl+q
+var cctrl_q = phn.cctrl + bas.cPlus + bas.cq; // ctrl+q
 
 exports.cctrl_q = cctrl_q;
-var cctrl_r = p.cctrl + b.cPlus + b.cr; // ctrl+r
+var cctrl_r = phn.cctrl + bas.cPlus + bas.cr; // ctrl+r
 
 exports.cctrl_r = cctrl_r;
-var cctrl_s = p.cctrl + b.cPlus + b.cs; // ctrl+s
+var cctrl_s = phn.cctrl + bas.cPlus + bas.cs; // ctrl+s
 
 exports.cctrl_s = cctrl_s;
-var cctrl_t = p.cctrl + b.cPlus + b.ct; // ctrl+t
+var cctrl_t = phn.cctrl + bas.cPlus + bas.ct; // ctrl+t
 
 exports.cctrl_t = cctrl_t;
-var cctrl_u = p.cctrl + b.cPlus + b.cu; // ctrl+u
+var cctrl_u = phn.cctrl + bas.cPlus + bas.cu; // ctrl+u
 
 exports.cctrl_u = cctrl_u;
-var cctrl_v = p.cctrl + b.cPlus + b.cv; // ctrl+v
+var cctrl_v = phn.cctrl + bas.cPlus + bas.cv; // ctrl+v
 
 exports.cctrl_v = cctrl_v;
-var cctrl_w = p.cctrl + b.cPlus + b.cw; // ctrl+w
+var cctrl_w = phn.cctrl + bas.cPlus + bas.cw; // ctrl+w
 
 exports.cctrl_w = cctrl_w;
-var cctrl_x = p.cctrl + b.cPlus + b.cx; // ctrl+x
+var cctrl_x = phn.cctrl + bas.cPlus + bas.cx; // ctrl+x
 
 exports.cctrl_x = cctrl_x;
-var cctrl_y = p.cctrl + b.cPlus + b.cy; // ctrl+y
+var cctrl_y = phn.cctrl + bas.cPlus + bas.cy; // ctrl+y
 
 exports.cctrl_y = cctrl_y;
-var cctrl_z = p.cctrl + b.cPlus + b.cz; // ctrl+z
+var cctrl_z = phn.cctrl + bas.cPlus + bas.cz; // ctrl+z
 
 exports.cctrl_z = cctrl_z;
-var cApplicationName = w.cApplication + w.cName; // ApplicationName
+var cApplicationName = wrd.cApplication + wrd.cName; // ApplicationName
 
 exports.cApplicationName = cApplicationName;
-var cApplicationRootPath = w.cApplication + w.cRoot + w.cPath; // ApplicationRootPath
+var cApplicationRootPath = wrd.cApplication + wrd.cRoot + wrd.cPath; // ApplicationRootPath
 
 exports.cApplicationRootPath = cApplicationRootPath;
-var cApplicationCleanedRootPath = w.cApplication + w.cCleaned + w.cRoot + w.cPath; // ApplicationCleanedRootPath
+var cApplicationCleanedRootPath = wrd.cApplication + wrd.cCleaned + wrd.cRoot + wrd.cPath; // ApplicationCleanedRootPath
 
 exports.cApplicationCleanedRootPath = cApplicationCleanedRootPath;
-var cConfigurationPath = w.cConfiguration + w.cPath; // ConfigurationPath
+var cConfigurationPath = wrd.cConfiguration + wrd.cPath; // ConfigurationPath
 
 exports.cConfigurationPath = cConfigurationPath;
-var cApplicationVersionNumber = w.cApplication + w.cVersion + w.cNumber; // ApplicationVersionNumber
+var cApplicationVersionNumber = wrd.cApplication + wrd.cVersion + wrd.cNumber; // ApplicationVersionNumber
 
 exports.cApplicationVersionNumber = cApplicationVersionNumber;
-var cApplicationDescription = w.cApplication + w.cDescription; // ApplicationDescription
+var cApplicationDescription = wrd.cApplication + wrd.cDescription; // ApplicationDescription
 
 exports.cApplicationDescription = cApplicationDescription;
-var cDataPath = w.cData + w.cPath; // DataPath
+var cDataPath = wrd.cData + wrd.cPath; // DataPath
 
 exports.cDataPath = cDataPath;
-var cCtempPath = b.cc + b.cColon + b.cForwardSlash + p.ctemp + b.cForwardSlash; // CtempPath
+var cCtempPath = bas.cc + bas.cColon + bas.cForwardSlash + phn.ctemp + bas.cForwardSlash; // CtempPath
 
 exports.cCtempPath = cCtempPath;
-var cPageDataPath = w.cPage + cDataPath; // PageDataPath
+var cPageDataPath = wrd.cPage + cDataPath; // PageDataPath
 
 exports.cPageDataPath = cPageDataPath;
-var cWorkflowDataPath = w.cWorkflow + cDataPath; // WorkflowDataPath
+var cWorkflowDataPath = wrd.cWorkflow + cDataPath; // WorkflowDataPath
 
 exports.cWorkflowDataPath = cWorkflowDataPath;
-var cKeywordsDataPath = w.cKeywords + cDataPath; // KeywordsDataPath
+var cKeywordsDataPath = wrd.cKeywords + cDataPath; // KeywordsDataPath
 
 exports.cKeywordsDataPath = cKeywordsDataPath;
-var cLocatorsDataPath = w.cLocators + cDataPath; // LocatorsDataPath
+var cLocatorsDataPath = wrd.cLocators + cDataPath; // LocatorsDataPath
 
 exports.cLocatorsDataPath = cLocatorsDataPath;
-var cConstantsPath = w.cConstants + w.cPath;
+var cConstantsPath = wrd.cConstants + wrd.cPath;
 exports.cConstantsPath = cConstantsPath;
-var cConstantsPathActual = w.csrc + b.cForwardSlash + cFramework + b.cForwardSlash + w.cConstants + b.cForwardSlash; // src/Framework/Constants/
+var cConstantsPathActual = wrd.csrc + bas.cForwardSlash + cFramework + bas.cForwardSlash + wrd.cConstants + bas.cForwardSlash; // src/Framework/Constants/
 
 exports.cConstantsPathActual = cConstantsPathActual;
-var cclientRulesLibrary = w.cclient + w.cRules + w.cLibrary; // clientRulesLibrary
+var cclientRulesLibrary = wrd.cclient + wrd.cRules + wrd.cLibrary; // clientRulesLibrary
 
 exports.cclientRulesLibrary = cclientRulesLibrary;
-var cCommandQueue = w.cCommand + w.cQueue; // CommandQueue
+var cCommandQueue = wrd.cCommand + wrd.cQueue; // CommandQueue
 
 exports.cCommandQueue = cCommandQueue;
-var cConstantsValidationData = w.cConstants + w.cValidation + w.cData; // ConstantsValidationData
+var cConstantsValidationData = wrd.cConstants + wrd.cValidation + wrd.cData; // ConstantsValidationData
 
 exports.cConstantsValidationData = cConstantsValidationData;
-var cBasicConstantsValidation = w.cBasic + w.cConstants + w.cValidation; // BasicConstantsValidation
+var cBasicConstantsValidation = wrd.cBasic + wrd.cConstants + wrd.cValidation; // BasicConstantsValidation
 
 exports.cBasicConstantsValidation = cBasicConstantsValidation;
-var cColorConstantsValidation = w.cColor + w.cConstants + w.cValidation; // ColorConstantsValidation
+var cBusinessConstantsValidation = wrd.cBusiness + wrd.cConstants + wrd.cValidation; // BusinessConstantsValidation
+
+exports.cBusinessConstantsValidation = cBusinessConstantsValidation;
+var cColorConstantsValidation = wrd.cColor + wrd.cConstants + wrd.cValidation; // ColorConstantsValidation
 
 exports.cColorConstantsValidation = cColorConstantsValidation;
-var cElementConstantsValidation = w.cElement + w.cConstants + w.cValidation; // ElementConstantsValidation
+var cCommandsConstantsValidation = wrd.cCommands + wrd.cConstants + wrd.cValidation; // CommandsConstantsValidation
+
+exports.cCommandsConstantsValidation = cCommandsConstantsValidation;
+var cConfigurationsConstantsValidation = wrd.cConfigurations + wrd.cConstants + wrd.cValidation; // ConfigurationsConstantsValidation
+
+exports.cConfigurationsConstantsValidation = cConfigurationsConstantsValidation;
+var cCountriesConstantsValidation = wrd.cCountries + wrd.cConstants + wrd.cValidation; // CountriesConstantsValidation
+
+exports.cCountriesConstantsValidation = cCountriesConstantsValidation;
+var cElementConstantsValidation = wrd.cElement + wrd.cConstants + wrd.cValidation; // ElementConstantsValidation
 
 exports.cElementConstantsValidation = cElementConstantsValidation;
-var cGenericConstantsValidation = w.cGeneric + w.cConstants + w.cValidation; // GenericConstantsValidation
+var cGenericConstantsValidation = wrd.cGeneric + wrd.cConstants + wrd.cValidation; // GenericConstantsValidation
 
 exports.cGenericConstantsValidation = cGenericConstantsValidation;
-var cIsotopeConstantsValidation = w.cIsotope + w.cConstants + w.cValidation; // IsotopeConstantsValidation
+var cIsotopeConstantsValidation = wrd.cIsotope + wrd.cConstants + wrd.cValidation; // IsotopeConstantsValidation
 
 exports.cIsotopeConstantsValidation = cIsotopeConstantsValidation;
-var cNumericConstantsValidation = w.cNumeric + w.cConstants + w.cValidation; // NumericConstantsValidation
+var cKnotsConstantsValidation = wrd.cKnots + wrd.cConstants + wrd.cValidation; // KnotsConstantsValidation
+
+exports.cKnotsConstantsValidation = cKnotsConstantsValidation;
+var cLanguagesConstantsValidation = wrd.cLanguages + wrd.cConstants + wrd.cValidation; // LanguagesConstantsValidation
+
+exports.cLanguagesConstantsValidation = cLanguagesConstantsValidation;
+var cMessagesConstantsValidation = wrd.cMessages + wrd.cConstants + wrd.cValidation; // MessagesConstantsValidation
+
+exports.cMessagesConstantsValidation = cMessagesConstantsValidation;
+var cNumericConstantsValidation = wrd.cNumeric + wrd.cConstants + wrd.cValidation; // NumericConstantsValidation
 
 exports.cNumericConstantsValidation = cNumericConstantsValidation;
-var cPhonicsConstantsValidation = w.cPhonics + w.cConstants + w.cValidation; // PhonicsConstantsValidation
+var cPhonicsConstantsValidation = wrd.cPhonics + wrd.cConstants + wrd.cValidation; // PhonicsConstantsValidation
 
 exports.cPhonicsConstantsValidation = cPhonicsConstantsValidation;
-var cShapeConstantsValidation = w.cShape + w.cConstants + w.cValidation; // ShapeConstantsValidation
+var cShapeConstantsValidation = wrd.cShape + wrd.cConstants + wrd.cValidation; // ShapeConstantsValidation
 
 exports.cShapeConstantsValidation = cShapeConstantsValidation;
-var cSystemConstantsValidation = w.cSystem + w.cConstants + w.cValidation; // SystemConstantsValidation
+var cSystemConstantsValidation = wrd.cSystem + wrd.cConstants + wrd.cValidation; // SystemConstantsValidation
 
 exports.cSystemConstantsValidation = cSystemConstantsValidation;
-var cUnitsConstantsValidation = w.cUnits + w.cConstants + w.cValidation; // UnitsConstantsValidation
+var cUnitsConstantsValidation = wrd.cUnits + wrd.cConstants + wrd.cValidation; // UnitsConstantsValidation
 
 exports.cUnitsConstantsValidation = cUnitsConstantsValidation;
-var cWordConstantsValidation = w.cWord + w.cConstants + w.cValidation; // WordConstantsValidation
+var cWordConstantsValidation = wrd.cWord + wrd.cConstants + wrd.cValidation; // WordConstantsValidation
 
 exports.cWordConstantsValidation = cWordConstantsValidation;
-var cSourceResourcesPath = w.cSource + w.cResources + w.cPath; // SourceResourcesPath
+var cSourceResourcesPath = wrd.cSource + wrd.cResources + wrd.cPath; // SourceResourcesPath
 
 exports.cSourceResourcesPath = cSourceResourcesPath;
-var cDestinationResourcesPath = w.cDestination + w.cResources + w.cPath; // BinaryResourcesPath
+var cDestinationResourcesPath = wrd.cDestination + wrd.cResources + wrd.cPath; // BinaryResourcesPath
 
 exports.cDestinationResourcesPath = cDestinationResourcesPath;
-var cBinaryRootPath = w.cBinary + w.cRoot + w.cPath; // BinaryRootPath
+var cBinaryRootPath = wrd.cBinary + wrd.cRoot + wrd.cPath; // BinaryRootPath
 
 exports.cBinaryRootPath = cBinaryRootPath;
-var cBinaryReleasePath = w.cBinary + w.cRelease + w.cPath; // BinaryReleasePath
+var cBinaryReleasePath = wrd.cBinary + wrd.cRelease + wrd.cPath; // BinaryReleasePath
 // Constants Filenames
 
 exports.cBinaryReleasePath = cBinaryReleasePath;
-var cbasic_constants_js = w.cbasic + b.cDot + w.cconstants + b.cDot + b.cjs; // basic.constants.js
+var cbasic_constants_js = wrd.cbasic + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // basic.constants.js
 
 exports.cbasic_constants_js = cbasic_constants_js;
-var ccolor_constants_js = w.ccolor + b.cDot + w.cconstants + b.cDot + b.cjs; // color.constants.js
+var cbusiness_constants_js = wrd.cbusiness + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // business.constants.js
+
+exports.cbusiness_constants_js = cbusiness_constants_js;
+var ccolor_constants_js = wrd.ccolor + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // color.constants.js
 
 exports.ccolor_constants_js = ccolor_constants_js;
-var celement_constants_js = w.celement + b.cDot + w.cconstants + b.cDot + b.cjs; // element.constants.js
+var ccommands_constants_js = wrd.ccommands + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // commands.constants.js
+
+exports.ccommands_constants_js = ccommands_constants_js;
+var cconfigurations_constants_js = wrd.cconfigurations + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // configurations.constants.js
+
+exports.cconfigurations_constants_js = cconfigurations_constants_js;
+var ccountries_constants_js = wrd.ccountries + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // countries.constants.js
+
+exports.ccountries_constants_js = ccountries_constants_js;
+var celement_constants_js = wrd.celement + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // element.constants.js
 
 exports.celement_constants_js = celement_constants_js;
-var cgeneric_constants_js = w.cgeneric + b.cDot + w.cconstants + b.cDot + b.cjs; // generic.constants.js
+var cgeneric_constants_js = wrd.cgeneric + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // generic.constants.js
 
 exports.cgeneric_constants_js = cgeneric_constants_js;
-var cisotope_constants_js = w.cisotope + b.cDot + w.cconstants + b.cDot + b.cjs; // isotope.constants.js
+var cisotope_constants_js = wrd.cisotope + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // isotope.constants.js
 
 exports.cisotope_constants_js = cisotope_constants_js;
-var cnumeric_constants_js = w.cnumeric + b.cDot + w.cconstants + b.cDot + b.cjs; // numeric.constants.js
+var cknots_constants_js = wrd.cknots + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // knots.constants.js
+
+exports.cknots_constants_js = cknots_constants_js;
+var clanguages_constants_js = wrd.clanguages + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // languages.constants.js
+
+exports.clanguages_constants_js = clanguages_constants_js;
+var cmessages_constants_js = wrd.cmessages + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // messages.constants.js
+
+exports.cmessages_constants_js = cmessages_constants_js;
+var cnumeric_constants_js = wrd.cnumeric + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // numeric.constants.js
 
 exports.cnumeric_constants_js = cnumeric_constants_js;
-var cphonics_constants_js = w.cphonics + b.cDot + w.cconstants + b.cDot + b.cjs; // phonics.constants.js
+var cphonics_constants_js = wrd.cphonics + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // phonics.constants.js
 
 exports.cphonics_constants_js = cphonics_constants_js;
-var cshape_constants_js = w.cshape + b.cDot + w.cconstants + b.cDot + b.cjs; // shape.constants.js
+var cshape_constants_js = wrd.cshape + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // shape.constants.js
 
 exports.cshape_constants_js = cshape_constants_js;
-var csystem_constants_js = w.csystem + b.cDot + w.cconstants + b.cDot + b.cjs; // system.constants.js
+var csystem_constants_js = wrd.csystem + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // system.constants.js
 
 exports.csystem_constants_js = csystem_constants_js;
-var cunits_constants_js = w.cunits + b.cDot + w.cconstants + b.cDot + b.cjs; // units.constants.js
+var cunits_constants_js = wrd.cunits + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // units.constants.js
 
 exports.cunits_constants_js = cunits_constants_js;
-var cword_constants_js = w.cword + b.cDot + w.cconstants + b.cDot + b.cjs; // word.constants.js
-// Configuration Settings
+var cword_constants_js = wrd.cword + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // word.constants.js
 
 exports.cword_constants_js = cword_constants_js;
-var cmetaDataDotJson = w.cmeta + w.cData + b.cDot + g.cjson; // metaData.json
-
-exports.cmetaDataDotJson = cmetaDataDotJson;
-var cArgumentDrivenInterface = w.cArgument + w.cDriven + w.cInterface; // ArgumentDrivenInterface
-
-exports.cArgumentDrivenInterface = cArgumentDrivenInterface;
-var cFigletFont = w.cFiglet + w.cFont; // FigletFont
-
-exports.cFigletFont = cFigletFont;
-var cPrimaryCommandDelimiter = w.cPrimary + w.cCommand + w.cDelimiter; // PrimaryCommandDelimiter
-
-exports.cPrimaryCommandDelimiter = cPrimaryCommandDelimiter;
-var cSecondaryCommandDelimiter = w.cSecondary + w.cCommand + w.cDelimiter; // SecondaryCommandDelimiter
-
-exports.cSecondaryCommandDelimiter = cSecondaryCommandDelimiter;
-var cTertiaryCommandDelimiter = w.cTertiary + w.cCommand + w.cDelimiter; // TertiaryCommandDelimiter
-
-exports.cTertiaryCommandDelimiter = cTertiaryCommandDelimiter;
-var cEnableBusinessRuleOutput = w.cEnable + w.cBusiness + w.cRule + w.cOutput; // EnableBusinessRuleOutput
-
-exports.cEnableBusinessRuleOutput = cEnableBusinessRuleOutput;
-var cEnableBusinessRulePerformanceMetrics = w.cEnable + w.cBusiness + w.cRule + w.cPerformance + w.cMetrics; // EnableBusinessRulePerformanceMetrics
-
-exports.cEnableBusinessRulePerformanceMetrics = cEnableBusinessRulePerformanceMetrics;
-var cEnableCommandPerformanceMetrics = w.cEnable + w.cCommand + w.cPerformance + w.cMetrics; // EnableCommandPerformanceMetrics
-
-exports.cEnableCommandPerformanceMetrics = cEnableCommandPerformanceMetrics;
-var cEnableConstantsValidation = w.cEnable + w.cConstants + w.cValidation; // EnableConstantsValidation
-
-exports.cEnableConstantsValidation = cEnableConstantsValidation;
-var cDisplayIndividualConstantsValidationPassMessages = w.cDisplay + w.cIndividual + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplayIndividualConstantsValidationPassMessages
-
-exports.cDisplayIndividualConstantsValidationPassMessages = cDisplayIndividualConstantsValidationPassMessages;
-var cDisplayIndividualConstantsValidationFailMessages = w.cDisplay + w.cIndividual + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplayIndividualConstantsValidationFailMessages
-
-exports.cDisplayIndividualConstantsValidationFailMessages = cDisplayIndividualConstantsValidationFailMessages;
-var cDisplaySummaryConstantsValidationPassMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cPass + w.cMessages; // DisplaySummaryConstantsValidationPassMessages
-
-exports.cDisplaySummaryConstantsValidationPassMessages = cDisplaySummaryConstantsValidationPassMessages;
-var cDisplaySummaryConstantsValidationFailMessages = w.cDisplay + w.cSummary + w.cConstants + w.cValidation + w.cFail + w.cMessages; // DisplaySummaryConstantsValidationFailMessages
-
-exports.cDisplaySummaryConstantsValidationFailMessages = cDisplaySummaryConstantsValidationFailMessages;
-var cPassAllConstantsValidations = w.cPass + w.cAll + w.cConstants + w.cValidations; // PassAllConstantsValidations
-
-exports.cPassAllConstantsValidations = cPassAllConstantsValidations;
-var cPassedAllCommandAliasesDuplicateChecks = w.cPassed + w.cAll + w.cCommand + w.cAliases + w.cDuplicate + w.cChecks;
-exports.cPassedAllCommandAliasesDuplicateChecks = cPassedAllCommandAliasesDuplicateChecks;
-var cdeploymentCompleted = w.cdeployment + w.cCompleted; // deploymentCompleted
-
-exports.cdeploymentCompleted = cdeploymentCompleted;
-var creleaseCompleted = w.crelease + w.cCompleted; // releaseCompleted
-// Test Time Tracking
-
-exports.creleaseCompleted = creleaseCompleted;
-var cBeginDateTimeStamp = w.cBegin + cDateTimeStamp; // BeginDateTimeStamp
-
-exports.cBeginDateTimeStamp = cBeginDateTimeStamp;
-var cEndDateTimeStamp = w.cEnd + cDateTimeStamp; // EndDateTimeStamp
-
-exports.cEndDateTimeStamp = cEndDateTimeStamp;
-var cItemsIndividuallySynch = w.cItems + w.cIndividually + w.cSynch; // ItemsIndividuallySynch
-
-exports.cItemsIndividuallySynch = cItemsIndividuallySynch;
-var cTimeStampVariableName = cTimeStamp + w.cVariable + w.cName; // TimeStampVariableName
-
-exports.cTimeStampVariableName = cTimeStampVariableName;
-var cBeginTimeStampVariableName = w.cBegin + cTimeStampVariableName; // BeginTimeStampVariableName
-
-exports.cBeginTimeStampVariableName = cBeginTimeStampVariableName;
-var cEndTimeStampVariableName = w.cEnd + cTimeStampVariableName; // EndTimeStampVariableName
-
-exports.cEndTimeStampVariableName = cEndTimeStampVariableName;
-var cBusinessRulePerformanceTrackingStack = w.cBusiness + w.cRule + w.cPerformance + w.cTracking + w.cStack; // BusinessRulePerformanceTrackingStack
-
-exports.cBusinessRulePerformanceTrackingStack = cBusinessRulePerformanceTrackingStack;
-var cBusinessRuleNamesPerformanceTrackingStack = w.cBusiness + w.cRule + w.cNames + w.cPerformance + w.cTracking + w.cStack; // BusinessRuleNamesPerformanceTrackingStack
-
-exports.cBusinessRuleNamesPerformanceTrackingStack = cBusinessRuleNamesPerformanceTrackingStack;
-var cBusinessRulesPerformanceAnalysisStack = w.cBusiness + w.cRules + w.cPerformance + w.cAnalysis + w.cStack; // BusinessRulesPerformanceAnalysisStack
-
-exports.cBusinessRulesPerformanceAnalysisStack = cBusinessRulesPerformanceAnalysisStack;
-var cClearBusinessRulesPerformanceDataAfterAnalysis = w.cClear + w.cBusiness + w.cRules + w.cPerformance + w.cData + w.cAfter + w.cAnalysis; // ClearBusinessRulesPerformanceDataAfterAnalysis
-
-exports.cClearBusinessRulesPerformanceDataAfterAnalysis = cClearBusinessRulesPerformanceDataAfterAnalysis;
-var cCommandPerformanceTrackingStack = w.cCommand + w.cPerformance + w.cTracking + w.cStack; // CommandPerformanceTrackingStack
-
-exports.cCommandPerformanceTrackingStack = cCommandPerformanceTrackingStack;
-var cCommandNamesPerformanceTrackingStack = w.cCommand + w.cNames + w.cPerformance + w.cTracking + w.cStack; // CommandNamesPerformanceTrackingStack
-
-exports.cCommandNamesPerformanceTrackingStack = cCommandNamesPerformanceTrackingStack;
-var cCommandsPerformanceAnalysisStack = w.cCommands + w.cPerformance + w.cAnalysis + w.cStack; // CommandsPerformanceAnalysisStack
-
-exports.cCommandsPerformanceAnalysisStack = cCommandsPerformanceAnalysisStack;
-var cClearCommandPerformanceDataAfterAnalysis = w.cClear + w.cCommand + w.cPerformance + w.cData + w.cAfter + w.cAnalysis; // ClearCommandPerformanceDataAfterAnalysis
-// Business Rules
-
-exports.cClearCommandPerformanceDataAfterAnalysis = cClearCommandPerformanceDataAfterAnalysis;
-var cecho = b.cec + b.cho; // echo
-
-exports.cecho = cecho;
-var cEcho = b.cEc + b.cho; // Echo
-// ********************************
-// StringParsing rules in order
-// ********************************
-
-exports.cEcho = cEcho;
-var cstringToBoolean = w.cstring + w.cTo + w.cBoolean; // stringToBoolean
-
-exports.cstringToBoolean = cstringToBoolean;
-var cstringToDataType = w.cstring + w.cTo + w.cData + w.cType; // stringToDataType
-
-exports.cstringToDataType = cstringToDataType;
-var cdetermineObjectDataType = w.cdetermine + w.cObject + w.cData + w.cType; // determineObjectDataType
-
-exports.cdetermineObjectDataType = cdetermineObjectDataType;
-var cisBoolean = w.cis + w.cBoolean; // isBoolean
-
-exports.cisBoolean = cisBoolean;
-var cisInteger = w.cis + w.cInteger; // isInteger
-
-exports.cisInteger = cisInteger;
-var cisFloat = w.cis + w.cFloat; // isFloat
-
-exports.cisFloat = cisFloat;
-var cisString = w.cis + w.cString; // isString
-
-exports.cisString = cisString;
-var csingleQuoteSwapAfterEquals = w.csingle + w.cQuote + w.cSwap + w.cAfter + w.cEquals; // singleQuoteSwapAfterEquals
-
-exports.csingleQuoteSwapAfterEquals = csingleQuoteSwapAfterEquals;
-var cswapForwardSlashToBackSlash = w.cswap + cForwardSlash + b.cTo + cBackSlash; // swapForwadSlashToBackSlash
-
-exports.cswapForwardSlashToBackSlash = cswapForwardSlashToBackSlash;
-var cswapBackSlashToForwardSlash = w.cswap + cBackSlash + b.cTo + cForwardSlash; // swapBackSlashToForwardSlash
-
-exports.cswapBackSlashToForwardSlash = cswapBackSlashToForwardSlash;
-var cswapDoubleForwardSlashToSingleForwardSlash = w.cswap + w.cDouble + cForwardSlash + b.cTo + w.cSingle + cForwardSlash; // swapDoubleForwardSlashToSingleForwardSlash
-
-exports.cswapDoubleForwardSlashToSingleForwardSlash = cswapDoubleForwardSlashToSingleForwardSlash;
-var cswapDoubleBackSlashToSingleBackSlash = w.cswap + w.cDouble + cBackSlash + b.cTo + w.cSingle + cBackSlash; // swapDoubleBackSlashToSingleBackSlash
-
-exports.cswapDoubleBackSlashToSingleBackSlash = cswapDoubleBackSlashToSingleBackSlash;
-var cgetUserNameFromEmail = w.cget + w.cUser + w.cName + w.cFrom + w.cEmail; // getUserNameFromEmail
-
-exports.cgetUserNameFromEmail = cgetUserNameFromEmail;
-var creplaceSpacesWithPlus = w.creplace + w.cSpaces + w.cWith + w.cPlus; // replaceSpacesWithPlus
-
-exports.creplaceSpacesWithPlus = creplaceSpacesWithPlus;
-var creplaceColonWithUnderscore = w.creplace + w.cColon + w.cWith + cUnderscore; // replaceColonWithUnderscore
-
-exports.creplaceColonWithUnderscore = creplaceColonWithUnderscore;
-var creplaceCharacterWithCharacter = w.creplace + w.cCharacter + w.cWith + w.cCharacter; // replaceCharacterWithCharacter
-
-exports.creplaceCharacterWithCharacter = creplaceCharacterWithCharacter;
-var ccleanCarriageReturnFromString = w.cclean + cCarriageReturn + w.cFrom + w.cString; // cleanCarriageReturnFromString
-
-exports.ccleanCarriageReturnFromString = ccleanCarriageReturnFromString;
-var cconvertStringToLowerCase = w.cconvert + w.cString + w.cTo + cLowerCase; // convertStringToLowerCase
-
-exports.cconvertStringToLowerCase = cconvertStringToLowerCase;
-var cconvertStringToUpperCase = w.cconvert + w.cString + w.cTo + cUpperCase; // convertStringToUpperCase
-
-exports.cconvertStringToUpperCase = cconvertStringToUpperCase;
-var cgetFileNameFromPath = w.cget + cFileName + w.cFrom + w.cPath; // getFileNameFromPath
-
-exports.cgetFileNameFromPath = cgetFileNameFromPath;
-var cgetFileExtension = w.cget + w.cFile + w.cExtension; // getFileExtension
-
-exports.cgetFileExtension = cgetFileExtension;
-var cremoveDotFromFileExtension = w.cremove + p.cDot + w.cFrom + w.cFile + w.cExtension; // removeDotFromFileExtension
-
-exports.cremoveDotFromFileExtension = cremoveDotFromFileExtension;
-var cremoveFileExtensionFromFileName = w.cremove + w.cFile + w.cExtension + w.cFrom + cFileName; // removeFileExtensionFromFileName
-
-exports.cremoveFileExtensionFromFileName = cremoveFileExtensionFromFileName;
-var cgetValueFromAssignmentOperationString = w.cget + w.cValue + w.cFrom + w.cAssignment + w.cOperation + w.cString; // getValueFromAssignmentOperationString
-
-exports.cgetValueFromAssignmentOperationString = cgetValueFromAssignmentOperationString;
-var caggregateNumericalDifferenceBetweenTwoStrings = w.caggregate + w.cNumerical + w.cDifference + w.cBetween + n.cTwo + w.cStrings; // aggregateNumericalDifferenceBetweenTwoStrings
-
-exports.caggregateNumericalDifferenceBetweenTwoStrings = caggregateNumericalDifferenceBetweenTwoStrings;
-var cconvertCamelCaseStringToArray = w.cconvert + w.cCamel + w.cCase + w.cString + b.cTo + w.cArray; // convertCamelCaseStringToArray
-
-exports.cconvertCamelCaseStringToArray = cconvertCamelCaseStringToArray;
-var ccountCamelCaseWords = w.ccount + w.cCamel + w.cCase + w.cWords; // countCamelCaseWords
-
-exports.ccountCamelCaseWords = ccountCamelCaseWords;
-var cdoesStringContainAcronym = w.cdoes + w.cString + w.cContain + w.cAcronym; // doesStringContainAcronym
-
-exports.cdoesStringContainAcronym = cdoesStringContainAcronym;
-var ccountDelimiterInString = w.ccount + w.cDelimiter + b.cIn + w.cString; // countDelimiterInString
-
-exports.ccountDelimiterInString = ccountDelimiterInString;
-var cdetermineWordDelimiter = w.cdetermine + w.cWord + w.cDelimiter; // determineWordDelimiter
-
-exports.cdetermineWordDelimiter = cdetermineWordDelimiter;
-var cgetWordCountInString = w.cget + w.cWord + w.cCount + b.cIn + w.cString; // getWordCountInString
-
-exports.cgetWordCountInString = cgetWordCountInString;
-var cgetWordsArrayFromString = w.cget + w.cWords + w.cArray + w.cFrom + w.cString; // getWordsArrayFromString
-
-exports.cgetWordsArrayFromString = cgetWordsArrayFromString;
-var crecombineStringArrayWithSpaces = w.crecombine + w.cString + w.cArray + w.cWith + w.cSpaces; // recombineStringArrayWithSpaces
-
-exports.crecombineStringArrayWithSpaces = crecombineStringArrayWithSpaces;
-var cdoesStringContainUpperCaseCharacter = w.cdoes + w.cString + w.cContain + cUpperCase + w.cCharacter; // doesStringContainUpperCaseCharacter
-
-exports.cdoesStringContainUpperCaseCharacter = cdoesStringContainUpperCaseCharacter;
-var cdoesStringContainLowerCaseCharacter = w.cdoes + w.cString + w.cContain + cLowerCase + w.cCharacter; // doesStringContainLowerCaseCharacter
-
-exports.cdoesStringContainLowerCaseCharacter = cdoesStringContainLowerCaseCharacter;
-var cisFirstCharacterLowerCase = b.cis + n.cFirst + w.cCharacter + cLowerCase; // isFirstCharacterLowerCase
-
-exports.cisFirstCharacterLowerCase = cisFirstCharacterLowerCase;
-var cisFirstCharacterUpperCase = b.cis + n.cFirst + w.cCharacter + cUpperCase; // isFirstCharacterUpperCase
-
-exports.cisFirstCharacterUpperCase = cisFirstCharacterUpperCase;
-var cisStringList = b.cis + w.cString + w.cList; // isStringList
-
-exports.cisStringList = cisStringList;
-var cisStringCamelCase = b.cis + w.cString + w.cCamel + w.cCase; // isStringCamelCase
-
-exports.cisStringCamelCase = cisStringCamelCase;
-var cconvertArrayToCamelCaseString = w.cconvert + w.cArray + b.cTo + w.cCamel + w.cCase + w.cString; // convertArrayToCamelCaseString
-
-exports.cconvertArrayToCamelCaseString = cconvertArrayToCamelCaseString;
-var cmapWordToCamelCaseWord = p.cmap + w.cWord + b.cTo + w.cCamel + w.cCase + w.cWord; // mapWordToCamelCaseWord
-
-exports.cmapWordToCamelCaseWord = cmapWordToCamelCaseWord;
-var csimplifyAndConsolidateString = w.csimplify + w.cAnd + w.cConsolidate + w.cString; // simplifyAndConsolidateString
-
-exports.csimplifyAndConsolidateString = csimplifyAndConsolidateString;
-var ccompareSimplifiedAndConsolidatedStrings = w.ccompare + w.cSimplified + w.cAnd + w.cConsolidated + w.cStrings; // compareSimplifiedAndConsolidatedStrings
-
-exports.ccompareSimplifiedAndConsolidatedStrings = ccompareSimplifiedAndConsolidatedStrings;
-var cdoesArrayContainLowerCaseConsolidatedString = w.cdoes + w.cArray + w.cContain + w.cLower + w.cCase + w.cConsolidated + w.cString; // doesArrayContainLowerCaseConsolidatedString
-
-exports.cdoesArrayContainLowerCaseConsolidatedString = cdoesArrayContainLowerCaseConsolidatedString;
-var cdoesArrayContainCharacter = w.cdoes + w.cArray + w.cContain + w.cCharacter; // doesArrayContainCharacter
-
-exports.cdoesArrayContainCharacter = cdoesArrayContainCharacter;
-var cremoveCharacterFromArray = w.cremove + w.cCharacter + w.cFrom + w.cArray; // removeCharacterFromArray
-
-exports.cremoveCharacterFromArray = cremoveCharacterFromArray;
-var cascertainMatchingFilenames = w.cascertain + w.cMatching + cFilenames; // ascertainMatchingFilenames
-
-exports.cascertainMatchingFilenames = cascertainMatchingFilenames;
-var cascertainMatchingElements = w.cascertain + w.cMatching + w.cElements; // acertainMatchingElements
-
-exports.cascertainMatchingElements = cascertainMatchingElements;
-var cdoesArrayContainFilename = w.cdoes + w.cArray + w.cContain + cFilename; // doesArrayContainFilename
-
-exports.cdoesArrayContainFilename = cdoesArrayContainFilename;
-var cgetLengthOfLongestStringInArray = w.cget + w.cLength + b.cOf + w.cLongest + w.cString + b.cIn + w.cArray; // getLengthOfLongestStringInArray
-
-exports.cgetLengthOfLongestStringInArray = cgetLengthOfLongestStringInArray;
-var cvalidateConstantsDataValidation = w.cvalidate + w.cConstants + w.cData + w.cValidation; // validateConstantsDataValidation
-
-exports.cvalidateConstantsDataValidation = cvalidateConstantsDataValidation;
-var cdetermineConstantsContextQualifiedPrefix = w.cdetermine + w.cConstants + w.cContext + w.cQualified + w.cPrefix; // determineConstantsContextQualifiedPrefix
-
-exports.cdetermineConstantsContextQualifiedPrefix = cdetermineConstantsContextQualifiedPrefix;
-var cdetermineSuggestedConstantsValidationLineOfCode = w.cdetermine + w.cSuggested + w.cConstants + w.cValidation + w.cLine + b.cOf + w.cCode; // determineSuggestedConstantsValidationLineOfCode
-
-exports.cdetermineSuggestedConstantsValidationLineOfCode = cdetermineSuggestedConstantsValidationLineOfCode;
-var cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidation + w.cLine + w.cItem + w.cName; // validateConstantsDataValidationLineItemName
-
-exports.cvalidateConstantsDataValidationLineItemName = cvalidateConstantsDataValidationLineItemName;
-var cdoesConstantExist = w.cdoes + w.cConstant + w.cExist; // doesConstantExist
-
-exports.cdoesConstantExist = cdoesConstantExist;
-var cgetConstantType = w.cget + w.cConstant + w.cType; // getConstantType
-
-exports.cgetConstantType = cgetConstantType;
-var cgetConstantActualValue = w.cget + w.cConstant + w.cActual + w.cValue; // getConstantActualValue
-
-exports.cgetConstantActualValue = cgetConstantActualValue;
-var cgetConstantName = w.cget + w.cConstant + w.cName; // getConstantName
-
-exports.cgetConstantName = cgetConstantName;
-var cfindConstantName = w.cfind + w.cConstant + w.cName; // findConstantName
-
-exports.cfindConstantName = cfindConstantName;
-var cisConstantTypeValid = b.cis + w.cConstant + w.cType + w.cValid; // isConstantTypeValid
-
-exports.cisConstantTypeValid = cisConstantTypeValid;
-var cconvertConstantTypeToConstantPrefix = w.cconvert + w.cConstant + w.cType + b.cTo + w.cConstant + w.cPrefix; // convertConstantTypeToConstantPrefix
-
-exports.cconvertConstantTypeToConstantPrefix = cconvertConstantTypeToConstantPrefix;
-var cconstantsOptimizedFulfillmentSystem = w.cconstants + w.cOptimized + w.cFulfillment + w.cSystem; // constantsOptimizedFulfillmentSystem
-
-exports.cconstantsOptimizedFulfillmentSystem = cconstantsOptimizedFulfillmentSystem;
-var cconstantsFulfillmentSystem = w.cconstants + w.cFulfillment + w.cSystem; // constantsFulfillmentSystem
-
-exports.cconstantsFulfillmentSystem = cconstantsFulfillmentSystem;
-var csearchForPatternsInStringArray = w.csearch + w.cFor + w.cPatterns + b.cIn + w.cString + w.cArray; // searchForPatternsInStringArray
-
-exports.csearchForPatternsInStringArray = csearchForPatternsInStringArray;
-var cvalidatePatternsThatNeedImplementation = w.cvalidate + w.cPatterns + w.cThat + w.cNeed + w.cImplementation; // validatePatternsThatNeedImplementation
-
-exports.cvalidatePatternsThatNeedImplementation = cvalidatePatternsThatNeedImplementation;
-var cvalidateConstantsDataValues = w.cvalidate + w.cConstants + w.cData + w.cValues; // validateConstantsDataValues
-
-exports.cvalidateConstantsDataValues = cvalidateConstantsDataValues;
-var cisValidCommandNameString = b.cis + w.cValid + w.cCommand + w.cName + w.cString; // isValidCommandNameString
-
-exports.cisValidCommandNameString = cisValidCommandNameString;
-var cisConstantValid = b.cis + w.cConstant + w.cValid; // isConstantValid
-
-exports.cisConstantValid = cisConstantValid;
-var ccountDuplicateCommandAliases = w.ccount + w.cDuplicate + w.cCommand + w.cAliases; // countDuplicateCommandAliases
-
-exports.ccountDuplicateCommandAliases = ccountDuplicateCommandAliases;
-var cgetDataCatagoryFromDataContextName = w.cget + w.cData + w.cCatagory + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryFromDataContextName
-
-exports.cgetDataCatagoryFromDataContextName = cgetDataCatagoryFromDataContextName;
-var cgetDataCatagoryDetailNameFromDataContextName = w.cget + w.cData + w.cCatagory + w.cDetail + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getDataCatagoryDetailNameFromDataContextName
-
-exports.cgetDataCatagoryDetailNameFromDataContextName = cgetDataCatagoryDetailNameFromDataContextName;
-var cgetKeywordNameFromDataContextName = w.cget + w.cKeyword + w.cName + w.cFrom + w.cData + w.cContext + w.cName; // getKeywordNameFromDataContextName
-
-exports.cgetKeywordNameFromDataContextName = cgetKeywordNameFromDataContextName;
-var cparseSystemRootPath = w.cparse + w.cSystem + w.cRoot + w.cPath; // parseSystemRootPath
-
-exports.cparseSystemRootPath = cparseSystemRootPath;
-var creplaceDoublePercentWithMessage = w.creplace + w.cDouble + w.cPercent + w.cWith + w.cMessage; // replaceDoublePercentWithMessage
-
-exports.creplaceDoublePercentWithMessage = creplaceDoublePercentWithMessage;
-var cremoveXnumberOfFoldersFromEndOfPath = w.cremove + b.cX + w.cnumber + b.cOf + w.cFolders + w.cFrom + w.cEnd + b.cOf + w.cPath; // removeXnumberOfFoldersFromEndOfPath
-
-exports.cremoveXnumberOfFoldersFromEndOfPath = cremoveXnumberOfFoldersFromEndOfPath;
-var cgetFirstTopLevelFolderFromPath = w.cget + n.cFirst + w.cTop + w.cLevel + w.cFolder + w.cFrom + w.cPath; // getFirstTopLevelFolderFromPath
-
-exports.cgetFirstTopLevelFolderFromPath = cgetFirstTopLevelFolderFromPath;
-var cloadDataFile = w.cload + w.cData + w.cFile; // loadDataFile
-
-exports.cloadDataFile = cloadDataFile;
-var cgetStoredData = w.cget + w.cStored + w.cData; // getStoredData
-
-exports.cgetStoredData = cgetStoredData;
-var cstoreData = w.cstore + w.cData; // storeData
-
-exports.cstoreData = cstoreData;
-var cisObjectEmpty = b.cis + w.cObject + w.cEmpty; // isObjectEmpty
-
-exports.cisObjectEmpty = cisObjectEmpty;
-var cisArrayEmpty = b.cis + w.cArray + w.cEmpty; // isArrayEmpty
-
-exports.cisArrayEmpty = cisArrayEmpty;
-var cisArray = b.cis + w.cArray; // isArray
-
-exports.cisArray = cisArray;
-var cisNonZeroLengthArray = b.cis + p.cNon + n.cZero + w.cLength + w.cArray; // isNonZeroLengthArray
-
-exports.cisNonZeroLengthArray = cisNonZeroLengthArray;
-var carrayDeepClone = w.carray + w.cDeep + w.cClone; // arrayDeepClone
-
-exports.carrayDeepClone = carrayDeepClone;
-var cisObject = b.cis + w.cObject; // isObject
-
-exports.cisObject = cisObject;
-var cisArrayOrObject = b.cis + w.cArray + b.cOr + w.cObject; // isArrayOrObject
-
-exports.cisArrayOrObject = cisArrayOrObject;
-var cgetAttributeName = w.cget + w.cAttribute + w.cName; // getAttributeName
-
-exports.cgetAttributeName = cgetAttributeName;
-var cgetAttributeValue = w.cget + w.cAttribute + w.cValue; // getAttributeValue
-
-exports.cgetAttributeValue = cgetAttributeValue;
-var cisOdd = b.cis + w.cOdd; // isOdd
-
-exports.cisOdd = cisOdd;
-var cisEven = b.cis + w.cEven; // isEven
-
-exports.cisEven = cisEven;
-var creplaceCharacterAtIndex = w.creplace + w.cCharacter + w.cAt + w.cIndex; // replaceCharacterAtIndex
-
-exports.creplaceCharacterAtIndex = creplaceCharacterAtIndex;
-var ccleanCommandInput = w.cclean + w.cCommand + w.cInput; // cleanCommandInput
-
-exports.ccleanCommandInput = ccleanCommandInput;
-var caggregateCommandArguments = w.caggregate + w.cCommand + w.cArguments; // aggregateCommandArguments
-
-exports.caggregateCommandArguments = caggregateCommandArguments;
-var cgenerateCommandAliases = w.cgenerate + w.cCommand + w.cAliases; // generateCommandAliases
-
-exports.cgenerateCommandAliases = cgenerateCommandAliases;
-var csolveLehmerCode = w.csolve + w.cLehmer + w.cCode; // solveLehmerCode
-
-exports.csolveLehmerCode = csolveLehmerCode;
-var crecursiveArrayExpansion = w.crecursive + w.cArray + w.cExpansion; // recursiveArrayExpansion
-
-exports.crecursiveArrayExpansion = crecursiveArrayExpansion;
-var cgetLehmerCodeValue = w.cget + w.cLehmer + w.cCode + w.cValue; // getLehmerCodeValue
-
-exports.cgetLehmerCodeValue = cgetLehmerCodeValue;
-var carraysAreEqual = w.carrays + w.cAre + w.cEqual; // arraysAreEqual
-// *********************************
-// StringGeneration rules in order
-// *********************************
-
-exports.carraysAreEqual = carraysAreEqual;
-var cgenerateRandomMixedCaseTextByLength1 = cgenerateRandom + cMixedCase + cTextByLength + n.c1; // generateRandomMixedCaseTextByLength1
-
-exports.cgenerateRandomMixedCaseTextByLength1 = cgenerateRandomMixedCaseTextByLength1;
-var cgenerateRandomMixedCaseTextByLength2 = cgenerateRandom + cMixedCase + cTextByLength + n.c2; // generateRandomMixedCaseTextByLength2
-
-exports.cgenerateRandomMixedCaseTextByLength2 = cgenerateRandomMixedCaseTextByLength2;
-var cgenerateRandomUpperCaseTextByLength1 = cgenerateRandom + cUpperCase + cTextByLength + n.c1; // generateRandomUpperCaseTextByLength1
-
-exports.cgenerateRandomUpperCaseTextByLength1 = cgenerateRandomUpperCaseTextByLength1;
-var cgenerateRandomUpperCaseTextByLength2 = cgenerateRandom + cUpperCase + cTextByLength + n.c2; // generateRandomUpperCaseTextByLength2
-
-exports.cgenerateRandomUpperCaseTextByLength2 = cgenerateRandomUpperCaseTextByLength2;
-var cgenerateRandomLowerCaseTextByLength1 = cgenerateRandom + cLowerCase + cTextByLength + n.c1; // generateRandomLowerCaseTextByLength1
-
-exports.cgenerateRandomLowerCaseTextByLength1 = cgenerateRandomLowerCaseTextByLength1;
-var cgenerateRandomLowerCaseTextByLength2 = cgenerateRandom + cLowerCase + cTextByLength + n.c2; // generateRandomLowerCaseTextByLength2
-
-exports.cgenerateRandomLowerCaseTextByLength2 = cgenerateRandomLowerCaseTextByLength2;
-var cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cMixedCase + cTextWithSpecialCharactersByLength + n.c1; // generateRandomMixedCaseTextWithSpecialCharactersByLength1
-
-exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1 = cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1;
-var cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cMixedCase + cTextWithSpecialCharactersByLength + n.c2; // generateRandomMixedCaseTextWithSpecialCharactersByLength2
-
-exports.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2 = cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2;
-var cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cUpperCase + cTextWithSpecialCharactersByLength + n.c1; // generateRandomUpperCaseTextWithSpecialCharactersByLength1
-
-exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1 = cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1;
-var cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cUpperCase + cTextWithSpecialCharactersByLength + n.c2; // generateRandomUpperCaseTextWithSpecialCharactersByLength2
-
-exports.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2 = cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2;
-var cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1 = cgenerateRandom + cLowerCase + cTextWithSpecialCharactersByLength + n.c1; // generateRandomLowerCaseTextWithSpecialCharactersByLength1
-
-exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1 = cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1;
-var cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2 = cgenerateRandom + cLowerCase + cTextWithSpecialCharactersByLength + n.c2; // generateRandomLowerCaseTextWithSpecialCharactersByLength2
-
-exports.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2 = cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2;
-var cgenerateRandomMixedCaseAlphaNumericCodeByLength1 = cgenerateRandom + cMixedCase + cAlphaNumericCodeByLength + n.c1; // generateRandomMixedCaseAlphaNumericCodeByLength1
-
-exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength1 = cgenerateRandomMixedCaseAlphaNumericCodeByLength1;
-var cgenerateRandomMixedCaseAlphaNumericCodeByLength2 = cgenerateRandom + cMixedCase + cAlphaNumericCodeByLength + n.c2; // generateRandomMixedCaseAlphaNumericCodeByLength2
-
-exports.cgenerateRandomMixedCaseAlphaNumericCodeByLength2 = cgenerateRandomMixedCaseAlphaNumericCodeByLength2;
-var cgenerateRandomUpperCaseAlphaNumericCodeByLength1 = cgenerateRandom + cUpperCase + cAlphaNumericCodeByLength + n.c1; // generateRandomUpperCaseAlphaNumericCodeByLength1
-
-exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength1 = cgenerateRandomUpperCaseAlphaNumericCodeByLength1;
-var cgenerateRandomUpperCaseAlphaNumericCodeByLength2 = cgenerateRandom + cUpperCase + cAlphaNumericCodeByLength + n.c2; // generateRandomUpperCaseAlphaNumericCodeByLength2
-
-exports.cgenerateRandomUpperCaseAlphaNumericCodeByLength2 = cgenerateRandomUpperCaseAlphaNumericCodeByLength2;
-var cgenerateRandomLowerCaseAlphaNumericCodeByLength1 = cgenerateRandom + cLowerCase + cAlphaNumericCodeByLength + n.c1; // generateRandomLowerCaseAlphaNumericCodeByLength1
-
-exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength1 = cgenerateRandomLowerCaseAlphaNumericCodeByLength1;
-var cgenerateRandomLowerCaseAlphaNumericCodeByLength2 = cgenerateRandom + cLowerCase + cAlphaNumericCodeByLength + n.c2; // generateRandomLowerCaseAlphaNumericCodeByLength2
-
-exports.cgenerateRandomLowerCaseAlphaNumericCodeByLength2 = cgenerateRandomLowerCaseAlphaNumericCodeByLength2;
-var cgenerateRandomNumericCodeByLength1 = cgenerateRandom + cNumericCodeByLength + n.c1; // generateRandomNumericCodeByLength1
-
-exports.cgenerateRandomNumericCodeByLength1 = cgenerateRandomNumericCodeByLength1;
-var cgenerateRandomNumericCodeByLength2 = cgenerateRandom + cNumericCodeByLength + n.c2; // generateRandomNumericCodeByLength2
-
-exports.cgenerateRandomNumericCodeByLength2 = cgenerateRandomNumericCodeByLength2;
-var cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cMixedCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c1; // generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1
-
-exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1;
-var cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cMixedCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c2; // generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2
-
-exports.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2;
-var cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cUpperCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c1; // generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1
-
-exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1;
-var cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cUpperCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c2; // generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2
-
-exports.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2;
-var cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandom + cLowerCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c1; // generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1
-
-exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1;
-var cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandom + cLowerCase + cAlphaNumericCodeWithSpecialCharactersByLength + n.c2; // generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2
-
-exports.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2;
-var cgenerateRandomSpecialCharacterCodeByLength1 = cgenerateRandom + cSpecialCharacterCodeByLength + n.c1; // generateRandomSpecialCharacterCodeByLength1
-
-exports.cgenerateRandomSpecialCharacterCodeByLength1 = cgenerateRandomSpecialCharacterCodeByLength1;
-var cgenerateRandomSpecialCharacterCodeByLength2 = cgenerateRandom + cSpecialCharacterCodeByLength + n.c2; // generateRandomSpecialCharacterCodeByLength2
-
-exports.cgenerateRandomSpecialCharacterCodeByLength2 = cgenerateRandomSpecialCharacterCodeByLength2;
-var cgenerateValidEmail1 = w.cgenerate + cValidEmail + n.c1; // generateValidEmail1
-
-exports.cgenerateValidEmail1 = cgenerateValidEmail1;
-var cgenerateValidEmail2 = w.cgenerate + cValidEmail + n.c2; // generateValidEmail2
-
-exports.cgenerateValidEmail2 = cgenerateValidEmail2;
-var cgenerateInvalidEmail1 = w.cgenerate + cInvalidEmail + n.c1; // generateInvalidEmail1
-
-exports.cgenerateInvalidEmail1 = cgenerateInvalidEmail1;
-var cgenerateInvalidEmail2 = w.cgenerate + cInvalidEmail + n.c2; // generateInvalidEmail2
-// *********************************
-// CharacterGeneration rules in order
-// *********************************
-
-exports.cgenerateInvalidEmail2 = cgenerateInvalidEmail2;
-var crandomlyGenerateMixedCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cMixedCase + cLetterOrSpecialCharacter + n.c1; // randomlyGenerateMixedCaseLetterOrSpecialCharacter1
-
-exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1 = crandomlyGenerateMixedCaseLetterOrSpecialCharacter1;
-var crandomlyGenerateMixedCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cMixedCase + cLetterOrSpecialCharacter + n.c2; // randomlyGenerateMixedCaseLetterOrSpecialCharacter2
-
-exports.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2 = crandomlyGenerateMixedCaseLetterOrSpecialCharacter2;
-var crandomlyGenerateUpperCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cUpperCase + cLetterOrSpecialCharacter + n.c1; // randomlyGenerateUpperCaseLetterOrSpecialCharacter1
-
-exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter1 = crandomlyGenerateUpperCaseLetterOrSpecialCharacter1;
-var crandomlyGenerateUpperCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cUpperCase + cLetterOrSpecialCharacter + n.c2; // randomlyGenerateUpperCaseLetterOrSpecialCharacter2
-
-exports.crandomlyGenerateUpperCaseLetterOrSpecialCharacter2 = crandomlyGenerateUpperCaseLetterOrSpecialCharacter2;
-var crandomlyGenerateLowerCaseLetterOrSpecialCharacter1 = crandomlyGenerate + cLowerCase + cLetterOrSpecialCharacter + n.c1; // randomlyGenerateLowerCaseLetterOrSpecialCharacter1
-
-exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter1 = crandomlyGenerateLowerCaseLetterOrSpecialCharacter1;
-var crandomlyGenerateLowerCaseLetterOrSpecialCharacter2 = crandomlyGenerate + cLowerCase + cLetterOrSpecialCharacter + n.c2; // randomlyGenerateLowerCaseLetterOrSpecialCharacter2
-
-exports.crandomlyGenerateLowerCaseLetterOrSpecialCharacter2 = crandomlyGenerateLowerCaseLetterOrSpecialCharacter2;
-var crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cMixedCase + cLetterOrNumberOrSpecialCharacter + n.c1; // randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1
-
-exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1;
-var crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cMixedCase + cLetterOrNumberOrSpecialCharacter + n.c2; // randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2
-
-exports.crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2;
-var crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cUpperCase + cLetterOrNumberOrSpecialCharacter + n.c1; // randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1
-
-exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1;
-var crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cUpperCase + cLetterOrNumberOrSpecialCharacter + n.c2; // randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2
-
-exports.crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2;
-var crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerate + w.cEither + cLowerCase + cLetterOrNumberOrSpecialCharacter + n.c1; // randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1
-
-exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1 = crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1;
-var crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerate + w.cEither + cLowerCase + cLetterOrNumberOrSpecialCharacter + n.c2; // randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2
-
-exports.crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2 = crandomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2;
-var crandomlyGenerateMixedCaseAlphaNumericCharacter1 = crandomlyGenerate + cMixedCase + cAlphaNumericCharacter + n.c1; // randomlyGenerateMixedCaseAlphaNumericCharacter1
-
-exports.crandomlyGenerateMixedCaseAlphaNumericCharacter1 = crandomlyGenerateMixedCaseAlphaNumericCharacter1;
-var crandomlyGenerateMixedCaseAlphaNumericCharacter2 = crandomlyGenerate + cMixedCase + cAlphaNumericCharacter + n.c2; // randomlyGenerateMixedCaseAlphaNumericCharacter2
-
-exports.crandomlyGenerateMixedCaseAlphaNumericCharacter2 = crandomlyGenerateMixedCaseAlphaNumericCharacter2;
-var crandomlyGenerateUpperCaseAlphaNumericCharacter1 = crandomlyGenerate + cUpperCase + cAlphaNumericCharacter + n.c1; // randomlyGenerateUpperCaseAlphaNumericCharacter1
-
-exports.crandomlyGenerateUpperCaseAlphaNumericCharacter1 = crandomlyGenerateUpperCaseAlphaNumericCharacter1;
-var crandomlyGenerateUpperCaseAlphaNumericCharacter2 = crandomlyGenerate + cUpperCase + cAlphaNumericCharacter + n.c2; // randomlyGenerateUpperCaseAlphaNumericCharacter2
-
-exports.crandomlyGenerateUpperCaseAlphaNumericCharacter2 = crandomlyGenerateUpperCaseAlphaNumericCharacter2;
-var crandomlyGenerateLowerCaseAlphaNumericCharacter1 = crandomlyGenerate + cLowerCase + cAlphaNumericCharacter + n.c1; // randomlyGenerateLowerCaseAlphaNumericCharacter1
-
-exports.crandomlyGenerateLowerCaseAlphaNumericCharacter1 = crandomlyGenerateLowerCaseAlphaNumericCharacter1;
-var crandomlyGenerateLowerCaseAlphaNumericCharacter2 = crandomlyGenerate + cLowerCase + cAlphaNumericCharacter + n.c2; // randomlyGenerateLowerCaseAlphaNumericCharacter2
-
-exports.crandomlyGenerateLowerCaseAlphaNumericCharacter2 = crandomlyGenerateLowerCaseAlphaNumericCharacter2;
-var crandomlyGenerateNumericCharacter1 = crandomlyGenerate + cNumericCharacter + n.c1; // randomlyGenerateNumericCharacter1
-
-exports.crandomlyGenerateNumericCharacter1 = crandomlyGenerateNumericCharacter1;
-var crandomlyGenerateNumericCharacter2 = crandomlyGenerate + cNumericCharacter + n.c2; // randomlyGenerateNumericCharacter2
-
-exports.crandomlyGenerateNumericCharacter2 = crandomlyGenerateNumericCharacter2;
-var crandomlyGenerateSpecialCharacter1 = crandomlyGenerate + cSpecialCharacter + n.c1; // randomlyGenerateSpecialCharacter1
-
-exports.crandomlyGenerateSpecialCharacter1 = crandomlyGenerateSpecialCharacter1;
-var crandomlyGenerateSpecialCharacter2 = crandomlyGenerate + cSpecialCharacter + n.c2; // randomlyGenerateSpecialCharacter2
-
-exports.crandomlyGenerateSpecialCharacter2 = crandomlyGenerateSpecialCharacter2;
-var crandomlyGenerateNumberInRange1 = crandomlyGenerate + cNumberInRange + n.c1; // randomlyGenerateNumberInRange1
-
-exports.crandomlyGenerateNumberInRange1 = crandomlyGenerateNumberInRange1;
-var crandomlyGenerateNumberInRange2 = crandomlyGenerate + cNumberInRange + n.c2; // randomlyGenerateNumberInRange2
-
-exports.crandomlyGenerateNumberInRange2 = crandomlyGenerateNumberInRange2;
-var crandomlyGenerateBooleanValue1 = crandomlyGenerate + cBooleanValue + n.c1; // randomlyGenerateBooleanValue1
-
-exports.crandomlyGenerateBooleanValue1 = crandomlyGenerateBooleanValue1;
-var crandomlyGenerateBooleanValue2 = crandomlyGenerate + cBooleanValue + n.c2; // randomlyGenerateBooleanValue2
-
-exports.crandomlyGenerateBooleanValue2 = crandomlyGenerateBooleanValue2;
-var crandomlyGenerateMixedCaseAlphabeticCharacter1 = crandomlyGenerate + cMixedCase + cAlphabeticCharacter + n.c1; // randomlyGenerateMixedCaseAlphabeticCharacter1
-
-exports.crandomlyGenerateMixedCaseAlphabeticCharacter1 = crandomlyGenerateMixedCaseAlphabeticCharacter1;
-var crandomlyGenerateMixedCaseAlphabeticCharacter2 = crandomlyGenerate + cMixedCase + cAlphabeticCharacter + n.c2; // randomlyGenerateMixedCaseAlphabeticCharacter2
-
-exports.crandomlyGenerateMixedCaseAlphabeticCharacter2 = crandomlyGenerateMixedCaseAlphabeticCharacter2;
-var crandomlyGenerateLowerCaseLetter1 = crandomlyGenerate + cLowerCase + w.cLetter + n.c1; // randomlyGenerateLowerCaseLetter1
-
-exports.crandomlyGenerateLowerCaseLetter1 = crandomlyGenerateLowerCaseLetter1;
-var crandomlyGenerateLowerCaseLetter2 = crandomlyGenerate + cLowerCase + w.cLetter + n.c2; // randomlyGenerateLowerCaseLetter2
-
-exports.crandomlyGenerateLowerCaseLetter2 = crandomlyGenerateLowerCaseLetter2;
-var crandomlyGenerateUpperCaseLetter1 = crandomlyGenerate + cUpperCase + w.cLetter + n.c1; // randomlyGenerateUpperCaseLetter1
-
-exports.crandomlyGenerateUpperCaseLetter1 = crandomlyGenerateUpperCaseLetter1;
-var crandomlyGenerateUpperCaseLetter2 = crandomlyGenerate + cUpperCase + w.cLetter + n.c2; // randomlyGenerateUpperCaseLetter2
-
-exports.crandomlyGenerateUpperCaseLetter2 = crandomlyGenerateUpperCaseLetter2;
-var cconvertNumberToUpperCaseLetter = w.cconvert + w.cNumber + w.cTo + cUpperCase + w.cLetter; // convertNumberToUpperCaseLetter
-
-exports.cconvertNumberToUpperCaseLetter = cconvertNumberToUpperCaseLetter;
-var cconvertNumberToLowerCaseLetter = w.cconvert + w.cNumber + w.cTo + cLowerCase + w.cLetter; // convertNumberToLowerCaseLetter
-// *********************************
-// mathOperations rules in order
-// *********************************
-
-exports.cconvertNumberToLowerCaseLetter = cconvertNumberToLowerCaseLetter;
-var chex2rgbConversion = p.chex + n.c2 + p.crgb + w.cConversion; // hex2rgbConversion
-// Commands
-
-exports.chex2rgbConversion = chex2rgbConversion;
-var cSystemCommandsAliasesActualPath = b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cCommands + b.cForwardSlash; // SystemCommandsAliasesActualPath
-
-exports.cSystemCommandsAliasesActualPath = cSystemCommandsAliasesActualPath;
-var cSystemWorkflowsActualPath = b.cForwardSlash + cFramework + b.cForwardSlash + w.cResources + b.cForwardSlash + w.cWorkflows + b.cForwardSlash; // SystemWorkflowsActualPath
-
-exports.cSystemWorkflowsActualPath = cSystemWorkflowsActualPath;
-var cDevSystemCommandsAliasesActualPath = w.csrc + cSystemCommandsAliasesActualPath; // DevSystemCommandsAliasesActualPath
-
-exports.cDevSystemCommandsAliasesActualPath = cDevSystemCommandsAliasesActualPath;
-var cDevSystemWorkflowsActualPath = w.csrc + cSystemWorkflowsActualPath; // DevSystemWorkflowsActualPath
-
-exports.cDevSystemWorkflowsActualPath = cDevSystemWorkflowsActualPath;
-var cProdSystemCommandsAliasesActualPath = w.cbin + cSystemCommandsAliasesActualPath; // ProdSystemCommasAliasesActualPath
-
-exports.cProdSystemCommandsAliasesActualPath = cProdSystemCommandsAliasesActualPath;
-var cProdSystemWorkflowsActualPath = w.cbin + cSystemWorkflowsActualPath; // ProdSystemWorkflowsActualPath
-
-exports.cProdSystemWorkflowsActualPath = cProdSystemWorkflowsActualPath;
-var cSystemCommandsAliasesPath = w.cSystem + w.cCommands + w.cAliases + w.cPath; // SystemCommandsAliasesPath
-
-exports.cSystemCommandsAliasesPath = cSystemCommandsAliasesPath;
-var cClientCommandsAliasesPath = w.cClient + w.cCommands + w.cAliases + w.cPath; // ClientCommandsAliasesPath
-
-exports.cClientCommandsAliasesPath = cClientCommandsAliasesPath;
-var cSystemWorkflowsPath = w.cSystem + w.cWorkflows + w.cPath; // SystemWorkflowsPath
-
-exports.cSystemWorkflowsPath = cSystemWorkflowsPath;
-var cClientWorkflowsPath = w.cClient + w.cWorkflows + w.cPath; // ClientWorkflowsPath
-// ********************************
-// Nominal Commands in order
-// ********************************
-
-exports.cClientWorkflowsPath = cClientWorkflowsPath;
-var cechoCommand = cecho + w.cCommand; // echoCommand
-
-exports.cechoCommand = cechoCommand;
-var cEchoCommand = cEcho + w.cCommand; // EchoCommand
-
-exports.cEchoCommand = cEchoCommand;
-var cclearScreen = w.cclear + w.cScreen; // clearScreen
-
-exports.cclearScreen = cclearScreen;
-var cworkflowHelp = w.cworkflow + w.cHelp; // workflowHelp
-
-exports.cworkflowHelp = cworkflowHelp;
-var ccommandSequencer = w.ccommand + w.cSequencer; // commandSequencer
-
-exports.ccommandSequencer = ccommandSequencer;
-var cprintDataHive = w.cprint + w.cData + w.cHive; // printDataHive
-
-exports.cprintDataHive = cprintDataHive;
-var cclearDataStorage = w.cclear + w.cData + w.cStorage; // clearDataStorage
-
-exports.cclearDataStorage = cclearDataStorage;
-var ccommandGenerator = w.ccommand + w.cGenerator; // commandGenerator
-
-exports.ccommandGenerator = ccommandGenerator;
-var ccommandAliasGenerator = w.ccommand + w.cAlias + w.cGenerator; // commandAliasGenerator
-
-exports.ccommandAliasGenerator = ccommandAliasGenerator;
-var cconstantsGenerator = w.cconstants + w.cGenerator; // constantsGenerator
-
-exports.cconstantsGenerator = cconstantsGenerator;
-var cconstantsGeneratorList = cconstantsGenerator + w.cList; // constantsGeneratorList
-
-exports.cconstantsGeneratorList = cconstantsGeneratorList;
-var cconstantsPatternRecognizer = w.cconstants + w.cPattern + w.cRecognizer; // constantsPatternRecognizer
-
-exports.cconstantsPatternRecognizer = cconstantsPatternRecognizer;
-var cbusinessRulesMetrics = w.cbusiness + w.cRules + w.cMetrics; // businessRulesMetrics
-
-exports.cbusinessRulesMetrics = cbusinessRulesMetrics;
-var ccommandMetrics = w.ccommand + w.cMetrics; // commandMetrics
-
-exports.ccommandMetrics = ccommandMetrics;
-var cconvertColors = w.cconvert + w.cColors; // convertColors
-// ********************************
-// Unit Test Constants commands in order
-// ********************************
-
-exports.cconvertColors = cconvertColors;
-var cvalidateConstants = w.cvalidate + w.cConstants; // validateConstants
-
-exports.cvalidateConstants = cvalidateConstants;
-var cvalidateCommandAliases = w.cvalidate + w.cCommand + w.cAliases; // validateCommandAliases
-// ********************************
-// System defined workflows
-// ********************************
-
-exports.cvalidateCommandAliases = cvalidateCommandAliases;
-var cStartupWorkflow = w.cWorkflow + b.cSpace + w.cstartup; // Workflow startup
-
-exports.cStartupWorkflow = cStartupWorkflow;
-var cBuildWorkflow = w.cWorkflow + b.cSpace + w.cbuild; // Workflow build
-
-exports.cBuildWorkflow = cBuildWorkflow;
-var cReleaseWorkflow = w.cWorkflow + b.cSpace + w.crelease; // Workflow release
-
-exports.cReleaseWorkflow = cReleaseWorkflow;
