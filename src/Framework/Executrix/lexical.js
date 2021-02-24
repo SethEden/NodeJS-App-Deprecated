@@ -9,8 +9,8 @@
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/026
@@ -23,8 +23,8 @@ import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
-import * as cfg from '../Constants/configurations.constants';
-import * as msg from '../Constants/messages.constants';
+import * as cfg from '../Constants/configuration.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 

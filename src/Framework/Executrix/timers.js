@@ -8,7 +8,7 @@
  * @requires module:basic-constants
  * @requires module:generic-constants
  * @requires module:system-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/moment|moment}
  * @author Seth Hollingsead
@@ -20,7 +20,7 @@ import loggers from './loggers';
 import * as bas from '../Constants/basic.constants';
 import * as gen from '../Constants/generic.constants';
 import * as sys from '../Constants/system.constants';
-import * as msg from '../Constants/messages.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var moment = require('moment');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));

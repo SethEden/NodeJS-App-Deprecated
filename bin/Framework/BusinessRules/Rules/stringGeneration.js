@@ -27,7 +27,7 @@ var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../../Constants/business.constants"));
 
-var msg = _interopRequireWildcard(require("../../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -144,7 +144,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -3068,9 +3068,8 @@ var generateRandomDarkColor = function generateRandomDarkColor(inputData, inputM
 
   var returnData = [0, 0, 0];
   var minimumColorRange = 0;
-  var tempMinimumColorRange = 0;
   var maximumColorRange = 127;
-  var tempMaximumColorRange = 0;
+  var parsedColorRangeArray = [];
 
   if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
     // Try to parse them as numbers for the range.
@@ -3111,9 +3110,8 @@ var generateRandomColor = function generateRandomColor(inputData, inputMetaData)
 
   var returnData = [0, 0, 0];
   var minimumColorRange = 0;
-  var tempMinimumColorRange = 0;
   var maximumColorRange = 0;
-  var tempMaximumColorRange = 0;
+  var parsedColorRangeArray = [];
 
   if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
     // Try to parse them as numbers for the range.

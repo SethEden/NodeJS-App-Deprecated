@@ -7,7 +7,7 @@
  * @requires module:numeric-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
@@ -21,8 +21,8 @@ import * as gen from '../../../../Framework/Constants/generic.constants';
 import * as num from '../../../../Framework/Constants/numeric.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
 import * as biz from '../../../../Framework/Constants/business.constants';
-import * as cfg from '../../../../Framework/Constants/configurations.constants';
-import * as msg from '../../../../Framework/Constants/messages.constants';
+import * as cfg from '../../../../Framework/Constants/configuration.constants';
+import * as msg from '../../../../Framework/Constants/message.constants';
 import * as apc from '../../Constants/application.constants';
 var path = require('path');
 var chalk = require('chalk');

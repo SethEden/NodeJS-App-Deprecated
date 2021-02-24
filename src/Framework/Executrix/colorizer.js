@@ -8,7 +8,7 @@
  * @requires module:word-constants
  * @requires module:color-constants
  * @requires module:system-constants
- * @requires module:configurations-constants
+ * @requires module:configuration-constants
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @requires module:data
  * @author Seth Hollingsead
@@ -21,7 +21,7 @@ import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as clr from '../Constants/color.constants';
 import * as sys from '../Constants/system.constants';
-import * as cfg from '../Constants/configurations.constants';
+import * as cfg from '../Constants/configuration.constants';
 var chalk = require('chalk');
 var D = require('../Structures/data');
 

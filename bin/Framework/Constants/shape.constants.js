@@ -4,7 +4,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 var bas = _interopRequireWildcard(require("./basic.constants"));
 
-var phn = _interopRequireWildcard(require("./phonics.constants"));
+var phn = _interopRequireWildcard(require("./phonic.constants"));
 
 var wrd = _interopRequireWildcard(require("./word.constants"));
 

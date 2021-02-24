@@ -7,7 +7,7 @@
  * system defined words and codes, user interface object types,
  * and names of business rules/system defined named commands, etc...
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
@@ -16,7 +16,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as bas from './basic.constants';
-import * as phn from './phonics.constants';
+import * as phn from './phonic.constants';
 import * as gen from './generic.constants';
 import * as num from './numeric.constants';
 import * as wrd from './word.constants';
@@ -325,20 +325,20 @@ export const cConstantsValidationData = wrd.cConstants + wrd.cValidation + wrd.c
 export const cBasicConstantsValidation = wrd.cBasic + wrd.cConstants + wrd.cValidation; // BasicConstantsValidation
 export const cBusinessConstantsValidation = wrd.cBusiness + wrd.cConstants + wrd.cValidation; // BusinessConstantsValidation
 export const cColorConstantsValidation = wrd.cColor + wrd.cConstants + wrd.cValidation; // ColorConstantsValidation
-export const cCommandsConstantsValidation = wrd.cCommands + wrd.cConstants + wrd.cValidation; // CommandsConstantsValidation
-export const cConfigurationsConstantsValidation = wrd.cConfigurations + wrd.cConstants + wrd.cValidation; // ConfigurationsConstantsValidation
-export const cCountriesConstantsValidation = wrd.cCountries + wrd.cConstants + wrd.cValidation; // CountriesConstantsValidation
+export const cCommandConstantsValidation = wrd.cCommand + wrd.cConstants + wrd.cValidation; // CommandConstantsValidation
+export const cConfigurationConstantsValidation = wrd.cConfiguration + wrd.cConstants + wrd.cValidation; // ConfigurationConstantsValidation
+export const cCountryConstantsValidation = wrd.cCountry + wrd.cConstants + wrd.cValidation; // CountryConstantsValidation
 export const cElementConstantsValidation = wrd.cElement + wrd.cConstants + wrd.cValidation; // ElementConstantsValidation
 export const cGenericConstantsValidation = wrd.cGeneric + wrd.cConstants + wrd.cValidation; // GenericConstantsValidation
 export const cIsotopeConstantsValidation = wrd.cIsotope + wrd.cConstants + wrd.cValidation; // IsotopeConstantsValidation
-export const cKnotsConstantsValidation = wrd.cKnots + wrd.cConstants + wrd.cValidation; // KnotsConstantsValidation
-export const cLanguagesConstantsValidation = wrd.cLanguages + wrd.cConstants + wrd.cValidation; // LanguagesConstantsValidation
-export const cMessagesConstantsValidation = wrd.cMessages + wrd.cConstants + wrd.cValidation; // MessagesConstantsValidation
+export const cKnotConstantsValidation = wrd.cKnot + wrd.cConstants + wrd.cValidation; // KnotConstantsValidation
+export const cLanguageConstantsValidation = wrd.cLanguage + wrd.cConstants + wrd.cValidation; // LanguageConstantsValidation
+export const cMessageConstantsValidation = wrd.cMessage + wrd.cConstants + wrd.cValidation; // MessageConstantsValidation
 export const cNumericConstantsValidation = wrd.cNumeric + wrd.cConstants + wrd.cValidation; // NumericConstantsValidation
-export const cPhonicsConstantsValidation = wrd.cPhonics + wrd.cConstants + wrd.cValidation; // PhonicsConstantsValidation
+export const cPhonicConstantsValidation = wrd.cPhonic + wrd.cConstants + wrd.cValidation; // PhonicConstantsValidation
 export const cShapeConstantsValidation = wrd.cShape + wrd.cConstants + wrd.cValidation; // ShapeConstantsValidation
 export const cSystemConstantsValidation = wrd.cSystem + wrd.cConstants + wrd.cValidation; // SystemConstantsValidation
-export const cUnitsConstantsValidation = wrd.cUnits + wrd.cConstants + wrd.cValidation; // UnitsConstantsValidation
+export const cUnitConstantsValidation = wrd.cUnit + wrd.cConstants + wrd.cValidation; // UnitConstantsValidation
 export const cWordConstantsValidation = wrd.cWord + wrd.cConstants + wrd.cValidation; // WordConstantsValidation
 export const cSourceResourcesPath = wrd.cSource + wrd.cResources + wrd.cPath; // SourceResourcesPath
 export const cDestinationResourcesPath = wrd.cDestination + wrd.cResources + wrd.cPath; // BinaryResourcesPath
@@ -349,18 +349,18 @@ export const cBinaryReleasePath = wrd.cBinary + wrd.cRelease + wrd.cPath; // Bin
 export const cbasic_constants_js = wrd.cbasic + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // basic.constants.js
 export const cbusiness_constants_js = wrd.cbusiness + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // business.constants.js
 export const ccolor_constants_js = wrd.ccolor + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // color.constants.js
-export const ccommands_constants_js = wrd.ccommands + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // commands.constants.js
-export const cconfigurations_constants_js = wrd.cconfigurations + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // configurations.constants.js
-export const ccountries_constants_js = wrd.ccountries + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // countries.constants.js
+export const ccommand_constants_js = wrd.ccommand + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // command.constants.js
+export const cconfiguration_constants_js = wrd.cconfiguration + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // configuration.constants.js
+export const ccountry_constants_js = wrd.ccountry + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // country.constants
 export const celement_constants_js = wrd.celement + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // element.constants.js
 export const cgeneric_constants_js = wrd.cgeneric + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // generic.constants.js
 export const cisotope_constants_js = wrd.cisotope + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // isotope.constants.js
-export const cknots_constants_js = wrd.cknots + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // knots.constants.js
-export const clanguages_constants_js = wrd.clanguages + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // languages.constants.js
-export const cmessages_constants_js = wrd.cmessages + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // messages.constants.js
+export const cknot_constants_js = wrd.cknot + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // knot.constants.js
+export const clanguage_constants_js = wrd.clanguage + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // language.constants.js
+export const cmessage_constants_js = wrd.cmessage + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // message.constants.js
 export const cnumeric_constants_js = wrd.cnumeric + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // numeric.constants.js
-export const cphonics_constants_js = wrd.cphonics + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // phonics.constants.js
+export const cphonic_constants_js = wrd.cphonic + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // phonic.constants.js
 export const cshape_constants_js = wrd.cshape + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // shape.constants.js
 export const csystem_constants_js = wrd.csystem + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // system.constants.js
-export const cunits_constants_js = wrd.cunits + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // units.constants.js
+export const cunit_constants_js = wrd.cunit + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // unit.constants.js
 export const cword_constants_js = wrd.cword + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // word.constants.js

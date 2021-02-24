@@ -21,11 +21,11 @@ var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../../Constants/business.constants"));
 
-var cmd = _interopRequireWildcard(require("../../Constants/commands.constants"));
+var cmd = _interopRequireWildcard(require("../../Constants/command.constants"));
 
-var cfg = _interopRequireWildcard(require("../../Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../../Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -44,8 +44,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 * @requires module:word-constants
 * @requires module:system-constants
 * @requires module:business-constants
-* @requires module:commands-constants
-* @requires module:messages-constants
+* @requires module:command-constants
+* @requires module:message-constants
 * @requires {@link https://www.npmjs.com/package/path|path}
 * @requires module:data
 * @author Seth Hollingsead
@@ -102,17 +102,17 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ColorIs + resolvedConstantsPath_Color);
 
-  var resolvedConstantsPath_Commands = path.resolve(constantsPath + bas.cForwardSlash + sys.ccommands_constants_js); // resolvedConstantsPath_Commands is:
+  var resolvedConstantsPath_Command = path.resolve(constantsPath + bas.cForwardSlash + sys.ccommand_constants_js); // resolvedConstantsPath_Command is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CommandsIs + resolvedConstantsPath_Commands);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CommandIs + resolvedConstantsPath_Command);
 
-  var resolvedConstantsPath_Configurations = path.resolve(constantsPath + bas.cForwardSlash + sys.cconfigurations_constants_js); // resolvedConstantsPath_Configurations is:
+  var resolvedConstantsPath_Configuration = path.resolve(constantsPath + bas.cForwardSlash + sys.cconfiguration_constants_js); // resolvedConstantsPath_Configuration is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ConfigurationsIs + resolvedConstantsPath_Configurations);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ConfigurationIs + resolvedConstantsPath_Configuration);
 
-  var resolvedConstantsPath_Countries = path.resolve(constantsPath + bas.cForwardSlash + sys.ccountries_constants_js); // resolvedConstantsPath_Countries is:
+  var resolvedConstantsPath_Country = path.resolve(constantsPath + bas.cForwardSlash + sys.ccountry_constants_js); // resolvedConstantsPath_Country is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CountriesIs + resolvedConstantsPath_Countries);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CountryIs + resolvedConstantsPath_Country);
 
   var resolvedConstantsPath_Element = path.resolve(constantsPath + bas.cForwardSlash + sys.celement_constants_js); // resolvedConstantsPath_Element is:
 
@@ -126,25 +126,25 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_IsotopeIs + resolvedConstantsPath_Isotope);
 
-  var resolvedConstantsPath_Knots = path.resolve(constantsPath + bas.cForwardSlash + sys.cknots_constants_js); // resolvedConstantsPath_Knots is:
+  var resolvedConstantsPath_Knot = path.resolve(constantsPath + bas.cForwardSlash + sys.cknot_constants_js); // resolvedConstantsPath_Knot is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_KnotsIs + resolvedConstantsPath_Knots);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_KnotIs + resolvedConstantsPath_Knot);
 
-  var resolvedConstantsPath_Languages = path.resolve(constantsPath + bas.cForwardSlash + sys.clanguages_constants_js); // resolvedConstantsPath_Languages is:
+  var resolvedConstantsPath_Language = path.resolve(constantsPath + bas.cForwardSlash + sys.clanguage_constants_js); // resolvedConstantsPath_Language is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_LanguagesIs + resolvedConstantsPath_Languages);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_LanguagesIs + resolvedConstantsPath_Language);
 
-  var resolvedConstantsPath_Messages = path.resolve(constantsPath + bas.cForwardSlash + sys.cmessages_constants_js); // resolvedConstantsPath_Messages is:
+  var resolvedConstantsPath_Message = path.resolve(constantsPath + bas.cForwardSlash + sys.cmessage_constants_js); // resolvedConstantsPath_Message is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_MessagesIs + resolvedConstantsPath_Messages);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_MessageIs + resolvedConstantsPath_Message);
 
   var resolvedConstantsPath_Numeric = path.resolve(constantsPath + bas.cForwardSlash + sys.cnumeric_constants_js); // resolvedConstantsPath_Numeric is:
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_NumericIs + resolvedConstantsPath_Numeric);
 
-  var resolvedConstantsPath_Phonics = path.resolve(constantsPath + bas.cForwardSlash + sys.cphonics_constants_js); // resolvedConstantsPath_Phonics is:
+  var resolvedConstantsPath_Phonic = path.resolve(constantsPath + bas.cForwardSlash + sys.cphonic_constants_js); // resolvedConstantsPath_Phonic is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_PhonicsIs + resolvedConstantsPath_Phonics);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_PhonicIs + resolvedConstantsPath_Phonic);
 
   var resolvedConstantsPath_Shape = path.resolve(constantsPath + bas.cForwardSlash + sys.cshape_constants_js); // resolvedConstantsPath_Shape is:
 
@@ -154,13 +154,13 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_SystemIs + resolvedConstantsPath_System);
 
-  var resolvedConstantsPath_Units = path.resolve(constantsPath + bas.cForwardSlash + sys.cunits_constants_js); // resolvedConstantsPath_Units is:
+  var resolvedConstantsPath_Unit = path.resolve(constantsPath + bas.cForwardSlash + sys.cunit_constants_js); // resolvedConstantsPath_Unit is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_UnitsIs + resolvedConstantsPath_Units);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_UnitIs + resolvedConstantsPath_Unit);
 
-  var resolvedConstantsPath_Words = path.resolve(constantsPath + bas.cForwardSlash + sys.cword_constants_js); // resolvedConstantsPath_Words is:
+  var resolvedConstantsPath_Word = path.resolve(constantsPath + bas.cForwardSlash + sys.cword_constants_js); // resolvedConstantsPath_Word is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_WordsIs + resolvedConstantsPath_Words);
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_WordIs + resolvedConstantsPath_Word);
 
   var basicConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Basic, sys.cBasicConstantsValidation, rulesPhase1);
 
@@ -168,11 +168,11 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   var colorConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Color, sys.cColorConstantsValidation, rulesPhase1);
 
-  var commandsConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Commands, sys.cCommandsConstantsValidation, rulesPhase1);
+  var commandConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Command, sys.ccommandConstantsValidation, rulesPhase1);
 
-  var configurationsConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Configurations, sys.cConfigurationsConstantsValidation, rulesPhase1);
+  var configurationConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Configuration, sys.cconfigurationConstantsValidation, rulesPhase1);
 
-  var countriesConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Countries, sys.cCountriesConstantsValidation, rulesPhase1);
+  var countryConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Country, sys.ccountryConstantsValidation, rulesPhase1);
 
   var elementConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Element, sys.cElementConstantsValidation, rulesPhase1);
 
@@ -180,23 +180,23 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   var isotopeConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Isotope, sys.cIsotopeConstantsValidation, rulesPhase1);
 
-  var knotsConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Knots, sys.cKnotsConstantsValidation, rulesPhase1);
+  var knotConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Knot, sys.cknotConstantsValidation, rulesPhase1);
 
-  var languagesConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Languages, sys.cLanguagesConstantsValidation, rulesPhase1);
+  var languageConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Language, sys.clanguageConstantsValidation, rulesPhase1);
 
-  var messagesConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Messages, sys.cMessagesConstantsValidation, rulesPhase1);
+  var messageConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Message, sys.cmessageConstantsValidation, rulesPhase1);
 
   var numericConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Numeric, sys.cNumericConstantsValidation, rulesPhase1);
 
-  var phonicsConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Phonics, sys.cPhonicsConstantsValidation, rulesPhase1);
+  var phonicConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Phonic, sys.cphonicConstantsValidation, rulesPhase1);
 
   var shapeConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Shape, sys.cShapeConstantsValidation, rulesPhase1);
 
   var systemConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_System, sys.cSystemConstantsValidation, rulesPhase1);
 
-  var unitsConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Units, sys.cUnitsConstantsValidation, rulesPhase1);
+  var unitConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Unit, sys.cunitConstantsValidation, rulesPhase1);
 
-  var wordConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Words, sys.cWordConstantsValidation, rulesPhase1); // END Phase 1 Constants Validation
+  var wordConstantsValidationPhase1Result = _ruleBroker["default"].processRules(resolvedConstantsPath_Word, sys.cWordConstantsValidation, rulesPhase1); // END Phase 1 Constants Validation
 
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEndPhase1ConstantsValidation); // Phase 2 Constants Validation
@@ -212,11 +212,11 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   var colorConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cColorConstantsValidation, '', rulesPhase2);
 
-  var commandsConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cCommandsConstantsValidation, '', rulesPhase2);
+  var commandConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.ccommandConstantsValidation, '', rulesPhase2);
 
-  var configurationsConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cConfigurationsConstantsValidation, '', rulesPhase2);
+  var configurationConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cconfigurationConstantsValidation, '', rulesPhase2);
 
-  var countriesConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cCountriesConstantsValidation, '', rulesPhase2);
+  var countryConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.ccountryConstantsValidation, '', rulesPhase2);
 
   var elementConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cElementConstantsValidation, '', rulesPhase2);
 
@@ -224,21 +224,21 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
 
   var isotopeConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cIsotopeConstantsValidation, '', rulesPhase2);
 
-  var knotsConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cKnotsConstantsValidation, '', rulesPhase2);
+  var knotConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cknotConstantsValidation, '', rulesPhase2);
 
-  var languagesConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cLanguagesConstantsValidation, '', rulesPhase2);
+  var languageConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.clanguageConstantsValidation, '', rulesPhase2);
 
-  var messagesConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cMessagesConstantsValidation, '', rulesPhase2);
+  var messageConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cmessageConstantsValidation, '', rulesPhase2);
 
   var numericConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cNumericConstantsValidation, '', rulesPhase2);
 
-  var phonicsConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cPhonicsConstantsValidation, '', rulesPhase2);
+  var phonicConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cphonicConstantsValidation, '', rulesPhase2);
 
   var shapeConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cShapeConstantsValidation, '', rulesPhase2);
 
   var systemConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cSystemConstantsValidation, '', rulesPhase2);
 
-  var unitsConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cUnitsConstantsValidation, '', rulesPhase2);
+  var unitConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cunitConstantsValidation, '', rulesPhase2);
 
   var wordConstantsValidationPhase2Result = _ruleBroker["default"].processRules(sys.cWordConstantsValidation, '', rulesPhase2); // END Phase 2 Constants Validation
 
@@ -252,16 +252,16 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   _loggers["default"].constantsValidationSummaryLog(msg.cBusinessConstantsPhase1Validation, businessConstantsValidationPhase1Result); // Color Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cColorConstantsPhase1Validation, colorConstantsValidationPhase1Result); // Commands Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cColorConstantsPhase1Validation, colorConstantsValidationPhase1Result); // Command Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cCommandsConstantsPhase1Validation, commandsConstantsValidationPhase1Result); // Configurations Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cCommandConstantsPhase1Validation, commandConstantsValidationPhase1Result); // Configuration Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cConfigurationsConstantsPhase1Validation, configurationsConstantsValidationPhase1Result); // Countries Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cConfigurationConstantsPhase1Validation, configurationConstantsValidationPhase1Result); // Country Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cCountriesConstantsPhase1Validation, countriesConstantsValidationPhase1Result); // Element Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cCountryConstantsPhase1Validation, countryConstantsValidationPhase1Result); // Element Constants Phase 1 Validation
 
 
   _loggers["default"].constantsValidationSummaryLog(msg.cElementConstantsPhase1Validation, elementConstantsValidationPhase1Result); // Generic Constants Phase 1 Validation
@@ -270,31 +270,31 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   _loggers["default"].constantsValidationSummaryLog(msg.cGenericConstantsPhase1Validation, genericConstantsValidationPhase1Result); // Isotope Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cIsotopeConstantsPhase1Validation, isotopeConstantsValidationPhase1Result); // Knots Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cIsotopeConstantsPhase1Validation, isotopeConstantsValidationPhase1Result); // Knot Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cKnotsConstantsPhase1Validation, knotsConstantsValidationPhase1Result); // Languages Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cKnotConstantsPhase1Validation, knotConstantsValidationPhase1Result); // Language Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cLanguagesConstantsPhase1Validation, languagesConstantsValidationPhase1Result); // Messages Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cLanguageConstantsPhase1Validation, languageConstantsValidationPhase1Result); // Message Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cMessagesConstantsPhase1Validation, messagesConstantsValidationPhase1Result); // Numerical Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cMessageConstantsPhase1Validation, messageConstantsValidationPhase1Result); // Numerical Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cNumericalConstantsPhase1Validation, numericConstantsValidationPhase1Result); // Phonics Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cNumericalConstantsPhase1Validation, numericConstantsValidationPhase1Result); // Phonic Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cPhonicsConstantsPhase1Validation, phonicsConstantsValidationPhase1Result); // Shape Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cPhonicConstantsPhase1Validation, phonicConstantsValidationPhase1Result); // Shape Constants Phase 1 Validation
 
 
   _loggers["default"].constantsValidationSummaryLog(msg.cShapeConstantsPhase1Validation, shapeConstantsValidationPhase1Result); // System Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cSystemConstantsPhase1Validation, systemConstantsValidationPhase1Result); // Units Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cSystemConstantsPhase1Validation, systemConstantsValidationPhase1Result); // Unit Constants Phase 1 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cUnitsConstantsPhase1Validation, unitsConstantsValidationPhase1Result); // Word Constants Phase 1 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cUnitConstantsPhase1Validation, unitConstantsValidationPhase1Result); // Word Constants Phase 1 Validation
 
 
   _loggers["default"].constantsValidationSummaryLog(msg.cWordConstantsPhase1Validation, wordConstantsValidationPhase1Result); // Basic Constants Phase 2 Validation
@@ -306,16 +306,16 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   _loggers["default"].constantsValidationSummaryLog(msg.cBusinessConstantsPhase2Validation, businessConstantsValidationPhase2Result); // Color Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cColorConstantsPhase2Validation, colorConstantsValidationPhase2Result); // Commands Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cColorConstantsPhase2Validation, colorConstantsValidationPhase2Result); // Command Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cCommandsConstantsPhase2Validation, commandsConstantsValidationPhase2Result); // Configurations Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cCommandConstantsPhase2Validation, commandConstantsValidationPhase2Result); // Configuration Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cConfigurationsConstantsPhase2Validation, configurationsConstantsValidationPhase2Result); // Countries Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cConfigurationConstantsPhase2Validation, configurationConstantsValidationPhase2Result); // Country Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cCountriesConstantsPhase2Validation, countriesConstantsValidationPhase2Result); // Element Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cCountryConstantsPhase2Validation, countryConstantsValidationPhase2Result); // Element Constants Phase 2 Validation
 
 
   _loggers["default"].constantsValidationSummaryLog(msg.cElementConstantsPhase2Validation, elementConstantsValidationPhase2Result); // Generic Constants Phase 2 Validation
@@ -324,36 +324,36 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   _loggers["default"].constantsValidationSummaryLog(msg.cGenericConstantsPhase2Validation, genericConstantsValidationPhase2Result); // Isotope Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cIsotopeConstantsPhase2Validation, isotopeConstantsValidationPhase2Result); // Knots Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cIsotopeConstantsPhase2Validation, isotopeConstantsValidationPhase2Result); // Knot Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cKnotsConstantsPhase2Validation, knotsConstantsValidationPhase2Result); // Languages Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cKnotConstantsPhase2Validation, knotConstantsValidationPhase2Result); // Language Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cLanguagesConstantsPhase2Validation, languagesConstantsValidationPhase2Result); // Messages Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cLanguageConstantsPhase2Validation, languageConstantsValidationPhase2Result); // Message Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cMessagesConstantsPhase2Validation, messagesConstantsValidationPhase2Result); // Numerical Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cMessageConstantsPhase2Validation, messageConstantsValidationPhase2Result); // Numerical Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cNumericalConstantsPhase2Validation, numericConstantsValidationPhase2Result); // Phonics Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cNumericalConstantsPhase2Validation, numericConstantsValidationPhase2Result); // Phonic Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cPhonicsConstantsPhase2Validation, phonicsConstantsValidationPhase2Result); // Shape Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cPhonicConstantsPhase2Validation, phonicConstantsValidationPhase2Result); // Shape Constants Phase 2 Validation
 
 
   _loggers["default"].constantsValidationSummaryLog(msg.cShapeConstantsPhase2Validation, shapeConstantsValidationPhase2Result); // System Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cSystemConstantsPhase2Validation, systemConstantsValidationPhase2Result); // Units Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cSystemConstantsPhase2Validation, systemConstantsValidationPhase2Result); // Unit Constants Phase 2 Validation
 
 
-  _loggers["default"].constantsValidationSummaryLog(msg.cUnitsConstantsPhase2Validation, unitsConstantsValidationPhase2Result); // Word Constants Phase 2 Validation
+  _loggers["default"].constantsValidationSummaryLog(msg.cUnitConstantsPhase2Validation, unitConstantsValidationPhase2Result); // Word Constants Phase 2 Validation
 
 
   _loggers["default"].constantsValidationSummaryLog(msg.cWordConstantsPhase2Validation, wordConstantsValidationPhase2Result);
 
-  if (basicConstantsValidationPhase1Result === true && businessConstantsValidationPhase1Result === true && colorConstantsValidationPhase1Result === true && commandsConstantsValidationPhase1Result === true && configurationsConstantsValidationPhase1Result === true && countriesConstantsValidationPhase1Result === true && elementConstantsValidationPhase1Result === true && genericConstantsValidationPhase1Result === true && isotopeConstantsValidationPhase1Result === true && knotsConstantsValidationPhase1Result === true && languagesConstantsValidationPhase1Result === true && messagesConstantsValidationPhase1Result === true && numericConstantsValidationPhase1Result === true && phonicsConstantsValidationPhase1Result === true && shapeConstantsValidationPhase1Result === true && systemConstantsValidationPhase1Result === true && unitsConstantsValidationPhase1Result === true && wordConstantsValidationPhase1Result === true && basicConstantsValidationPhase2Result === true && businessConstantsValidationPhase2Result === true && colorConstantsValidationPhase2Result === true && commandsConstantsValidationPhase2Result === true && configurationsConstantsValidationPhase2Result === true && countriesConstantsValidationPhase2Result === true && elementConstantsValidationPhase2Result === true && genericConstantsValidationPhase2Result === true && isotopeConstantsValidationPhase2Result === true && knotsConstantsValidationPhase2Result === true && languagesConstantsValidationPhase2Result === true && messagesConstantsValidationPhase2Result === true && numericConstantsValidationPhase2Result === true && phonicsConstantsValidationPhase2Result === true && shapeConstantsValidationPhase2Result === true && systemConstantsValidationPhase2Result === true && unitsConstantsValidationPhase2Result === true && wordConstantsValidationPhase2Result === true) {
+  if (basicConstantsValidationPhase1Result === true && businessConstantsValidationPhase1Result === true && colorConstantsValidationPhase1Result === true && commandConstantsValidationPhase1Result === true && configurationConstantsValidationPhase1Result === true && countryConstantsValidationPhase1Result === true && elementConstantsValidationPhase1Result === true && genericConstantsValidationPhase1Result === true && isotopeConstantsValidationPhase1Result === true && knotConstantsValidationPhase1Result === true && languageConstantsValidationPhase1Result === true && messageConstantsValidationPhase1Result === true && numericConstantsValidationPhase1Result === true && phonicConstantsValidationPhase1Result === true && shapeConstantsValidationPhase1Result === true && systemConstantsValidationPhase1Result === true && unitConstantsValidationPhase1Result === true && wordConstantsValidationPhase1Result === true && basicConstantsValidationPhase2Result === true && businessConstantsValidationPhase2Result === true && colorConstantsValidationPhase2Result === true && commandConstantsValidationPhase2Result === true && configurationConstantsValidationPhase2Result === true && countryConstantsValidationPhase2Result === true && elementConstantsValidationPhase2Result === true && genericConstantsValidationPhase2Result === true && isotopeConstantsValidationPhase2Result === true && knotConstantsValidationPhase2Result === true && languageConstantsValidationPhase2Result === true && messageConstantsValidationPhase2Result === true && numericConstantsValidationPhase2Result === true && phonicConstantsValidationPhase2Result === true && shapeConstantsValidationPhase2Result === true && systemConstantsValidationPhase2Result === true && unitConstantsValidationPhase2Result === true && wordConstantsValidationPhase2Result === true) {
     _configurator["default"].setConfigurationSetting(cfg.cPassAllConstantsValidations, true);
   } else {
     _configurator["default"].setConfigurationSetting(cfg.cPassAllConstantsValidations, false);

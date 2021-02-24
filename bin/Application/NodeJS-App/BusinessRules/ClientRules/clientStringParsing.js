@@ -13,7 +13,7 @@ var bas = _interopRequireWildcard(require("../../../../Framework/Constants/basic
 
 var sys = _interopRequireWildcard(require("../../../../Framework/Constants/system.constants"));
 
-var msg = _interopRequireWildcard(require("../../../../Framework/Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../../../Framework/Constants/message.constants"));
 
 var apc = _interopRequireWildcard(require("../../Constants/application.constants"));
 

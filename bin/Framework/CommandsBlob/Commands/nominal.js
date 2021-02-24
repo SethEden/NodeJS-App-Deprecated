@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.convertColors = exports.commandMetrics = exports.businessRulesMetrics = exports.constantsPatternRecognizer = exports.constantsGeneratorList = exports.constantsGenerator = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHiveAttributes = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
+exports.convertColors = exports.saveConfiguration = exports.commandMetrics = exports.businessRulesMetrics = exports.constantsPatternRecognizer = exports.constantsGeneratorList = exports.constantsGenerator = exports.commandAliasGenerator = exports.commandGenerator = exports.businessRule = exports.clearDataStorage = exports.printDataHiveAttributes = exports.printDataHive = exports.workflow = exports.commandSequencer = exports.workflowHelp = exports.help = exports.releaseApplication = exports.deployMetaData = exports.deployApplication = exports.clearScreen = exports.name = exports.about = exports.version = exports.exit = exports.echoCommand = void 0;
 
 var _configurator = _interopRequireDefault(require("../../Executrix/configurator"));
 
@@ -37,13 +37,13 @@ var wrd = _interopRequireWildcard(require("../../Constants/word.constants"));
 
 var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
 
-var cmd = _interopRequireWildcard(require("../../Constants/commands.constants"));
+var cmd = _interopRequireWildcard(require("../../Constants/command.constants"));
 
 var biz = _interopRequireWildcard(require("../../Constants/business.constants"));
 
-var cfg = _interopRequireWildcard(require("../../Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../../Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -70,10 +70,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:commands-constants
+ * @requires module:command-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/figlet|figlet}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -1800,6 +1800,38 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
   return returnData;
 };
 /**
+ * @function saveConfiguration
+ * @description Saves out all of the configuration data to a JSON file so custom user settings can be persisted between sessions.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+
+
+exports.commandMetrics = commandMetrics;
+
+var saveConfiguration = function saveConfiguration(inputData, inputMetaData) {
+  var functionName = cmd.csaveConfiguration;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+
+  var returnData = true;
+
+  _fileBroker["default"].writeJsonData(_configurator["default"].getConfigurationSetting(sys.cConfigurationPath) + 'config.json', D[wrd.cConfiguration]);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+
+  return returnData;
+};
+/**
  * @function convertColors
  * @description Converts all of the color hexidecimal values into RGB color values.
  * @param {string} inputData Not used for this command.
@@ -1811,7 +1843,7 @@ var commandMetrics = function commandMetrics(inputData, inputMetaData) {
  */
 
 
-exports.commandMetrics = commandMetrics;
+exports.saveConfiguration = saveConfiguration;
 
 var convertColors = function convertColors(inputData, inputMetaData) {
   var functionName = cmd.cconvertColors;

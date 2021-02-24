@@ -25,7 +25,7 @@ var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../Constants/business.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
 var bas_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/basic-constants-validation"));
 
@@ -33,11 +33,11 @@ var biz_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/b
 
 var clr_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/color-constants-validation"));
 
-var cmd_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/commands-constants-validation"));
+var cmd_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/command-constants-validation"));
 
-var cfg_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/configurations-constants-validation"));
+var cfg_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/configuration-constants-validation"));
 
-var ctr_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/countries-constants-validation"));
+var ctr_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/country-constants-validation"));
 
 var elm_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/element-constants-validation"));
 
@@ -45,21 +45,21 @@ var gen_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/g
 
 var iso_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/isotope-constants-validation"));
 
-var kts_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/knots-constants-validation"));
+var kts_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/knot-constants-validation"));
 
 var lng_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/language-constants-validation"));
 
-var msg_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/messages-constants-validation"));
+var msg_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/message-constants-validation"));
 
 var num_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/numeric-constants-validation"));
 
-var phn_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/phonics-constants-validation"));
+var phn_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/phonic-constants-validation"));
 
 var shp_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/shape-constants-validation"));
 
 var sys_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/system-constants-validation"));
 
-var unt_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/units-constants-validation"));
+var unt_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/unit-constants-validation"));
 
 var wrd_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/word-constants-validation"));
 
@@ -83,24 +83,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires module:basic-constants-validation
  * @requires module:business-constants-validation
  * @requires module:color-constants-validation
- * @requires module:commands-constants-validation
+ * @requires module:command-constants-validation
  * @requires module:configuration-constants-validation
- * @requires module:countries-constants-validation
+ * @requires module:country-constants-validation
  * @requires module:element-constants-validation
  * @requires module:generic-constants-validation
  * @requires module:isotope-constants-validation
- * @requires module:knots-constants-validation
+ * @requires module:knot-constants-validation
  * @requires module:language-constants-validation
- * @requires module:messages-constants-validation
+ * @requires module:message-constants-validation
  * @requires module:numeric-constants-validation
- * @requires module:phonics-constants-validation
+ * @requires module:phonic-constants-validation
  * @requires module:shape-constants-validation
  * @requires module:system-constants-validation
- * @requires module:units-constants-validation
+ * @requires module:unit-constants-validation
  * @requires module:word-constants-validation
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -962,38 +962,38 @@ function initializeConstantsValidationData() {
   D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cCommandsConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cConfigurationsConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cCountriesConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cKnotsConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cLanguagesConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cMessagesConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cPhonicsConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cUnitsConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = [];
   D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = bas_cv.basicConstantsValidation;
   D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = biz_cv.businessConstantsValidation;
   D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = clr_cv.colorConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cCommandsConstantsValidation] = cmd_cv.commandsConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cConfigurationsConstantsValidation] = cfg_cv.configurationsConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cCountriesConstantsValidation] = ctr_cv.countriesConstantsValidation;
+  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = cmd_cv.commandConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = cfg_cv.configurationConstantsValidation;
+  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = ctr_cv.countryConstantsValidation;
   D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = elm_cv.elementConstantsValidation;
   D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = gen_cv.genericConstantsValidation;
   D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = iso_cv.isotopeConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cKnotsConstantsValidation] = kts_cv.knotsConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cLanguagesConstantsValidation] = lng_cv.languageConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cMessagesConstantsValidation] = msg_cv.messagesConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = kts_cv.knotConstantsValidation;
+  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = lng_cv.languageConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = msg_cv.messageConstantsValidation;
   D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = num_cv.numericConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cPhonicsConstantsValidation] = phn_cv.phonicsConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = phn_cv.phonicConstantsValidation;
   D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = shp_cv.shapeConstantsValidation;
   D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = sys_cv.systemConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cUnitsConstantsValidation] = unt_cv.unitsConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = unt_cv.unitConstantsValidation;
   D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = wrd_cv.wordConstantsValidation;
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);

@@ -14,8 +14,8 @@
  * @requires module:generic-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://mathjs.org/index.html|math}
@@ -33,8 +33,8 @@ import * as bas from '../../Constants/basic.constants';
 import * as gen from '../../Constants/generic.constants';
 import * as sys from '../../Constants/system.constants';
 import * as biz from '../../Constants/business.constants';
-import * as cfg from '../../Constants/configurations.constants';
-import * as msg from '../../Constants/messages.constants';
+import * as cfg from '../../Constants/configuration.constants';
+import * as msg from '../../Constants/message.constants';
 const _ = require('lodash');
 var path = require('path');
 var math = require('mathjs');

@@ -18,7 +18,7 @@
 import warden from '../../../../Framework/Controllers/warden';
 import * as bas from '../../../../Framework/Constants/basic.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
-import * as msg from '../../../../Framework/Constants/messages.constants';
+import * as msg from '../../../../Framework/Constants/message.constants';
 import * as apc from '../../Constants/application.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));

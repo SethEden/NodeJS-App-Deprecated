@@ -1202,17 +1202,17 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.cColorConstantsValidation,
   Expected: 'ColorConstantsValidation'
 }, {
-  Name: 'cCommandsConstantsValidation',
-  Actual: sys.cCommandsConstantsValidation,
-  Expected: 'CommandsConstantsValidation'
+  Name: 'cCommandConstantsValidation',
+  Actual: sys.cCommandConstantsValidation,
+  Expected: 'CommandConstantsValidation'
 }, {
-  Name: 'cConfigurationsConstantsValidation',
-  Actual: sys.cConfigurationsConstantsValidation,
-  Expected: 'ConfigurationsConstantsValidation'
+  Name: 'cConfigurationConstantsValidation',
+  Actual: sys.cConfigurationConstantsValidation,
+  Expected: 'ConfigurationConstantsValidation'
 }, {
-  Name: 'cCountriesConstantsValidation',
-  Actual: sys.cCountriesConstantsValidation,
-  Expected: 'CountriesConstantsValidation'
+  Name: 'cCountryConstantsValidation',
+  Actual: sys.cCountryConstantsValidation,
+  Expected: 'CountryConstantsValidation'
 }, {
   Name: 'cElementConstantsValidation',
   Actual: sys.cElementConstantsValidation,
@@ -1226,25 +1226,25 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.cIsotopeConstantsValidation,
   Expected: 'IsotopeConstantsValidation'
 }, {
-  Name: 'cKnotsConstantsValidation',
-  Actual: sys.cKnotsConstantsValidation,
-  Expected: 'KnotsConstantsValidation'
+  Name: 'cKnotConstantsValidation',
+  Actual: sys.cKnotConstantsValidation,
+  Expected: 'KnotConstantsValidation'
 }, {
-  Name: 'cLanguagesConstantsValidation',
-  Actual: sys.cLanguagesConstantsValidation,
-  Expected: 'LanguagesConstantsValidation'
+  Name: 'cLanguageConstantsValidation',
+  Actual: sys.cLanguageConstantsValidation,
+  Expected: 'LanguageConstantsValidation'
 }, {
-  Name: 'cMessagesConstantsValidation',
-  Actual: sys.cMessagesConstantsValidation,
-  Expected: 'MessagesConstantsValidation'
+  Name: 'cMessageConstantsValidation',
+  Actual: sys.cMessageConstantsValidation,
+  Expected: 'MessageConstantsValidation'
 }, {
   Name: 'cNumericConstantsValidation',
   Actual: sys.cNumericConstantsValidation,
   Expected: 'NumericConstantsValidation'
 }, {
-  Name: 'cPhonicsConstantsValidation',
-  Actual: sys.cPhonicsConstantsValidation,
-  Expected: 'PhonicsConstantsValidation'
+  Name: 'cPhonicConstantsValidation',
+  Actual: sys.cPhonicConstantsValidation,
+  Expected: 'PhonicConstantsValidation'
 }, {
   Name: 'cShapeConstantsValidation',
   Actual: sys.cShapeConstantsValidation,
@@ -1254,9 +1254,9 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.cSystemConstantsValidation,
   Expected: 'SystemConstantsValidation'
 }, {
-  Name: 'cUnitsConstantsValidation',
-  Actual: sys.cUnitsConstantsValidation,
-  Expected: 'UnitsConstantsValidation'
+  Name: 'cUnitConstantsValidation',
+  Actual: sys.cUnitConstantsValidation,
+  Expected: 'UnitConstantsValidation'
 }, {
   Name: 'cWordConstantsValidation',
   Actual: sys.cWordConstantsValidation,
@@ -1291,17 +1291,17 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.ccolor_constants_js,
   Expected: 'color.constants.js'
 }, {
-  Name: 'ccommands_constants_js',
-  Actual: sys.ccommands_constants_js,
-  Expected: 'commands.constants.js'
+  Name: 'ccommand_constants_js',
+  Actual: sys.ccommand_constants_js,
+  Expected: 'command.constants.js'
 }, {
-  Name: 'cconfigurations_constants_js',
-  Actual: sys.cconfigurations_constants_js,
-  Expected: 'configurations.constants.js'
+  Name: 'cconfiguration_constants_js',
+  Actual: sys.cconfiguration_constants_js,
+  Expected: 'configuration.constants.js'
 }, {
-  Name: 'ccountries_constants_js',
-  Actual: sys.ccountries_constants_js,
-  Expected: 'countries.constants.js'
+  Name: 'ccountry_constants_js',
+  Actual: sys.ccountry_constants_js,
+  Expected: 'country.constants.js'
 }, {
   Name: 'celement_constants_js',
   Actual: sys.celement_constants_js,
@@ -1315,25 +1315,25 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.cisotope_constants_js,
   Expected: 'isotope.constants.js'
 }, {
-  Name: 'cknots_constants_js',
-  Actual: sys.cknots_constants_js,
-  Expected: 'knots.constants.js'
+  Name: 'cknot_constants_js',
+  Actual: sys.cknot_constants_js,
+  Expected: 'knot.constants.js'
 }, {
-  Name: 'clanguages_constants_js',
-  Actual: sys.clanguages_constants_js,
-  Expected: 'languages.constants.js'
+  Name: 'clanguage_constants_js',
+  Actual: sys.clanguage_constants_js,
+  Expected: 'language.constants.js'
 }, {
-  Name: 'cmessages_constants_js',
-  Actual: sys.cmessages_constants_js,
-  Expected: 'messages.constants.js'
+  Name: 'cmessage_constants_js',
+  Actual: sys.cmessage_constants_js,
+  Expected: 'message.constants.js'
 }, {
   Name: 'cnumeric_constants_js',
   Actual: sys.cnumeric_constants_js,
   Expected: 'numeric.constants.js'
 }, {
-  Name: 'cphonics_constants_js',
-  Actual: sys.cphonics_constants_js,
-  Expected: 'phonics.constants.js'
+  Name: 'cphonic_constants_js',
+  Actual: sys.cphonic_constants_js,
+  Expected: 'phonic.constants.js'
 }, {
   Name: 'cshape_constants_js',
   Actual: sys.cshape_constants_js,
@@ -1343,9 +1343,9 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.csystem_constants_js,
   Expected: 'system.constants.js'
 }, {
-  Name: 'cunits_constants_js',
-  Actual: sys.cunits_constants_js,
-  Expected: 'units.constants.js'
+  Name: 'cunit_constants_js',
+  Actual: sys.cunit_constants_js,
+  Expected: 'unit.constants.js'
 }, {
   Name: 'cword_constants_js',
   Actual: sys.cword_constants_js,

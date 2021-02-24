@@ -4,7 +4,7 @@
  * @description A file to hold all of the client application specific constants.
  * So none of the constants in this file should be generic/system/framework constants.
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
@@ -13,7 +13,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as bas from '../../../Framework/Constants/basic.constants';
-import * as phn from '../../../Framework/Constants/phonics.constants';
+import * as phn from '../../../Framework/Constants/phonic.constants';
 import * as gen from '../../../Framework/Constants/generic.constants';
 import * as wrd from '../../../Framework/Constants/word.constants';
 import * as sys from '../../../Framework/Constants/system.constants';

@@ -18,9 +18,9 @@
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:commands-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:command-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -44,9 +44,9 @@ import * as gen from '../Constants/generic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
-import * as cmd from '../Constants/commands.constants';
-import * as cfg from '../Constants/configurations.constants';
-import * as msg from '../Constants/messages.constants';
+import * as cmd from '../Constants/command.constants';
+import * as cfg from '../Constants/configuration.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));

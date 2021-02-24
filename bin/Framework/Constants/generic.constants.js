@@ -11,7 +11,7 @@ exports.cBIN = exports.cBin = exports.cbin = exports.cRegExp = exports.cregExp =
 
 var bas = _interopRequireWildcard(require("../constants/basic.constants"));
 
-var phn = _interopRequireWildcard(require("../constants/phonics.constants"));
+var phn = _interopRequireWildcard(require("../constants/phonic.constants"));
 
 var num = _interopRequireWildcard(require("../constants/numeric.constants"));
 
@@ -26,7 +26,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * Also included are other generic constants like string numbers like "one", "two", "three".
  * Also included are spellings of Greek letters, military codes/standards, units of measurement, units of time, etc...
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:numeric-constants
  * @author Seth Hollingsead
  * @date 2020/06/04

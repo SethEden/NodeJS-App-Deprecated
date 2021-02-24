@@ -1110,6 +1110,10 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cNavigate,
   Expected: 'Navigate'
 }, {
+  Name: 'csave',
+  Actual: wrd.csave,
+  Expected: 'save'
+}, {
   Name: 'cSave',
   Actual: wrd.cSave,
   Expected: 'Save'
@@ -4951,6 +4955,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cIsotope',
   Actual: wrd.cIsotope,
   Expected: 'Isotope'
+}, {
+  Name: 'cphonic',
+  Actual: wrd.cphonic,
+  Expected: 'phonic'
+}, {
+  Name: 'cPhonic',
+  Actual: wrd.cPhonic,
+  Expected: 'Phonic'
 }, {
   Name: 'cphonics',
   Actual: wrd.cphonics,

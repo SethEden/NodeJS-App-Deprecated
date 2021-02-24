@@ -25,7 +25,7 @@ var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../Constants/business.constants"));
 
-var cfg = _interopRequireWildcard(require("../Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../Constants/configuration.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -48,7 +48,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
+ * @requires module:configuration-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}

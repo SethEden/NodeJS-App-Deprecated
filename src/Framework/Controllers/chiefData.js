@@ -8,7 +8,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:system-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/04
@@ -19,7 +19,7 @@ import configurator from '../Executrix/configurator';
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as sys from '../Constants/system.constants';
-import * as msg from '../Constants/messages.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 

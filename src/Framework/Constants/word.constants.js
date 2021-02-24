@@ -3,19 +3,19 @@
  * @module word-constants
  * @description Contains many re-usable word constants.
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:numeric-constants
  * @requires module:generic-constants
- * @requires module:units-constants
+ * @requires module:unit-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as bas from './basic.constants';
-import * as phn from './phonics.constants';
+import * as phn from './phonic.constants';
 import * as num from './numeric.constants';
 import * as gen from './generic.constants';
-import * as unt from './units.constants';
+import * as unt from './unit.constants';
 
 // Miscelaneious Words
 export const c1a1d = 'a' + 'd'; // ad // 'ca' & 'cd' is some how a reserved word.
@@ -1251,8 +1251,10 @@ export const cgeneric = phn.cgen + bas.ce + phn.cric; // generic
 export const cGeneric = phn.cGen + bas.ce + phn.cric; // Generic
 export const cisotope = phn.ciso + phn.ctope; // isotope
 export const cIsotope = phn.cIso + phn.ctope; // Isotope
-export const cphonics = phn.cphon + phn.cics; // phonics
-export const cPhonics = phn.cPhon + phn.cics; // Phonics
+export const cphonic = phn.cphon + bas.cic; // phonic
+export const cPhonic = phn.cPhon + bas.cic; // Phonic
+export const cphonics = cphonic + bas.cs; // phonics
+export const cPhonics = cPhonic + bas.cs; // Phonics
 export const cshape = phn.csha + bas.cpe; // shape
 export const cShape = phn.cSha + bas.cpe; // Shape
 export const cexport = bas.cex + cport; // export

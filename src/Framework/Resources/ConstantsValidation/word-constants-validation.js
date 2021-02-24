@@ -1251,6 +1251,8 @@ export const wordConstantsValidation = [
    {Name: 'cGeneric', Actual: wrd.cGeneric, Expected: 'Generic'},
    {Name: 'cisotope', Actual: wrd.cisotope, Expected: 'isotope'},
    {Name: 'cIsotope', Actual: wrd.cIsotope, Expected: 'Isotope'},
+   {Name: 'cphonic', Actual: wrd.cphonic, Expected: 'phonic'},
+   {Name: 'cPhonic', Actual: wrd.cPhonic, Expected: 'Phonic'},
    {Name: 'cphonics', Actual: wrd.cphonics, Expected: 'phonics'},
    {Name: 'cPhonics', Actual: wrd.cPhonics, Expected: 'Phonics'},
    {Name: 'cshape', Actual: wrd.cshape, Expected: 'shape'},

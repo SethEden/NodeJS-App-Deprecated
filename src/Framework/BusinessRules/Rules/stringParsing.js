@@ -13,14 +13,14 @@
  * @requires module:fileBroker
  * @requires module:arrayParsing
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -38,14 +38,14 @@ import dataBroker from '../../Executrix/dataBroker';
 import fileBroker from '../../Executrix/fileBroker';
 import * as aryParse from './arrayParsing';
 import * as bas from '../../Constants/basic.constants';
-import * as phn from '../../Constants/phonics.constants';
+import * as phn from '../../Constants/phonic.constants';
 import * as gen from '../../Constants/generic.constants';
 import * as num from '../../Constants/numeric.constants';
 import * as wrd from '../../Constants/word.constants';
 import * as sys from '../../Constants/system.constants';
 import * as biz from '../../Constants/business.constants';
-import * as cfg from '../../Constants/configurations.constants';
-import * as msg from '../../Constants/messages.constants';
+import * as cfg from '../../Constants/configuration.constants';
+import * as msg from '../../Constants/message.constants';
 const lineByLine = require('n-readlines');
 const _ = require('lodash');
 var path = require('path');
@@ -1785,20 +1785,20 @@ export const isConstantTypeValid = function(inputData, inputMetaData) {
       case sys.cBasicConstantsValidation:
       case sys.cBusinessConstantsValidation:
       case sys.cColorConstantsValidation:
-      case sys.cCommandsConstantsValidation:
-      case sys.cConfigurationsConstantsValidation:
-      case sys.cCountriesConstantsValidation:
+      case sys.ccommandConstantsValidation:
+      case sys.cconfigurationConstantsValidation:
+      case sys.ccountryConstantsValidation:
       case sys.cElementConstantsValidation:
       case sys.cGenericConstantsValidation:
       case sys.cIsotopeConstantsValidation:
-      case sys.cKnotsConstantsValidation:
-      case sys.cLanguagesConstantsValidation:
-      case sys.cMessagesConstantsValidation:
+      case sys.cknotConstantsValidation:
+      case sys.clanguageConstantsValidation:
+      case sys.cmessageConstantsValidation:
       case sys.cNumericConstantsValidation:
-      case sys.cPhonicsConstantsValidation:
+      case sys.cphonicConstantsValidation:
       case sys.cShapeConstantsValidation:
       case sys.cSystemConstantsValidation:
-      case sys.cUnitsConstantsValidation:
+      case sys.cunitConstantsValidation:
       case sys.cWordConstantsValidation:
         returnData = true;
         break;
@@ -1839,13 +1839,13 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
       case sys.cColorConstantsValidation:
         returnData = gen.cclr + bas.cDot;
         break;
-      case sys.cCommandsConstantsValidation:
+      case sys.ccommandConstantsValidation:
         returnData = gen.ccmd + bas.cDot;
         break;
-      case sys.cConfigurationsConstantsValidation:
+      case sys.cconfigurationConstantsValidation:
         returnData = gen.ccfg + bas.cDot;
         break;
-      case sys.cCountriesConstantsValidation:
+      case sys.ccountryConstantsValidation:
         returnData = gen.cctr + bas.cDot;
         break;
       case sys.cElementConstantsValidation:
@@ -1857,19 +1857,19 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
       case sys.cIsotopeConstantsValidation:
         returnData = gen.ciso + bas.cDot;
         break;
-      case sys.cKnotsConstantsValidation:
+      case sys.cknotConstantsValidation:
         returnData = gen.ckts + bas.cDot;
         break;
-      case sys.cLanguagesConstantsValidation:
+      case sys.clanguageConstantsValidation:
         returnData = gen.clng + bas.cDot;
         break;
-      case sys.cMessagesConstantsValidation:
+      case sys.cmessageConstantsValidation:
         returnData = gen.cmsg + bas.cDot;
         break;
       case sys.cNumericConstantsValidation:
         returnData = gen.cnum + bas.cDot;
         break;
-      case sys.cPhonicsConstantsValidation:
+      case sys.cphonicConstantsValidation:
         returnData = gen.cphn + bas.cDot;
         break;
       case sys.cShapeConstantsValidation:
@@ -1878,7 +1878,7 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
       case sys.cSystemConstantsValidation:
         returnData = gen.csys + bas.cDot;
         break;
-      case sys.cUnitsConstantsValidation:
+      case sys.cunitConstantsValidation:
         returnData = gen.cunt + bas.cDot;
         break;
       case sys.cWordConstantsValidation:

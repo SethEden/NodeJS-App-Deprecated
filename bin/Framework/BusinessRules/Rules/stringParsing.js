@@ -21,7 +21,7 @@ var aryParse = _interopRequireWildcard(require("./arrayParsing"));
 
 var bas = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
-var phn = _interopRequireWildcard(require("../../Constants/phonics.constants"));
+var phn = _interopRequireWildcard(require("../../Constants/phonic.constants"));
 
 var gen = _interopRequireWildcard(require("../../Constants/generic.constants"));
 
@@ -33,9 +33,9 @@ var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../../Constants/business.constants"));
 
-var cfg = _interopRequireWildcard(require("../../Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../../Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -58,14 +58,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:fileBroker
  * @requires module:arrayParsing
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/n-readlines|n-readlines}
  * @requires {@link https://www.npmjs.com/package/lodash|lodash}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -2470,20 +2470,20 @@ var isConstantTypeValid = function isConstantTypeValid(inputData, inputMetaData)
       case sys.cBasicConstantsValidation:
       case sys.cBusinessConstantsValidation:
       case sys.cColorConstantsValidation:
-      case sys.cCommandsConstantsValidation:
-      case sys.cConfigurationsConstantsValidation:
-      case sys.cCountriesConstantsValidation:
+      case sys.ccommandConstantsValidation:
+      case sys.cconfigurationConstantsValidation:
+      case sys.ccountryConstantsValidation:
       case sys.cElementConstantsValidation:
       case sys.cGenericConstantsValidation:
       case sys.cIsotopeConstantsValidation:
-      case sys.cKnotsConstantsValidation:
-      case sys.cLanguagesConstantsValidation:
-      case sys.cMessagesConstantsValidation:
+      case sys.cknotConstantsValidation:
+      case sys.clanguageConstantsValidation:
+      case sys.cmessageConstantsValidation:
       case sys.cNumericConstantsValidation:
-      case sys.cPhonicsConstantsValidation:
+      case sys.cphonicConstantsValidation:
       case sys.cShapeConstantsValidation:
       case sys.cSystemConstantsValidation:
-      case sys.cUnitsConstantsValidation:
+      case sys.cunitConstantsValidation:
       case sys.cWordConstantsValidation:
         returnData = true;
         break;
@@ -2540,15 +2540,15 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
         returnData = gen.cclr + bas.cDot;
         break;
 
-      case sys.cCommandsConstantsValidation:
+      case sys.ccommandConstantsValidation:
         returnData = gen.ccmd + bas.cDot;
         break;
 
-      case sys.cConfigurationsConstantsValidation:
+      case sys.cconfigurationConstantsValidation:
         returnData = gen.ccfg + bas.cDot;
         break;
 
-      case sys.cCountriesConstantsValidation:
+      case sys.ccountryConstantsValidation:
         returnData = gen.cctr + bas.cDot;
         break;
 
@@ -2564,15 +2564,15 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
         returnData = gen.ciso + bas.cDot;
         break;
 
-      case sys.cKnotsConstantsValidation:
+      case sys.cknotConstantsValidation:
         returnData = gen.ckts + bas.cDot;
         break;
 
-      case sys.cLanguagesConstantsValidation:
+      case sys.clanguageConstantsValidation:
         returnData = gen.clng + bas.cDot;
         break;
 
-      case sys.cMessagesConstantsValidation:
+      case sys.cmessageConstantsValidation:
         returnData = gen.cmsg + bas.cDot;
         break;
 
@@ -2580,7 +2580,7 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
         returnData = gen.cnum + bas.cDot;
         break;
 
-      case sys.cPhonicsConstantsValidation:
+      case sys.cphonicConstantsValidation:
         returnData = gen.cphn + bas.cDot;
         break;
 
@@ -2592,7 +2592,7 @@ var convertConstantTypeToConstantPrefix = function convertConstantTypeToConstant
         returnData = gen.csys + bas.cDot;
         break;
 
-      case sys.cUnitsConstantsValidation:
+      case sys.cunitConstantsValidation:
         returnData = gen.cunt + bas.cDot;
         break;
 

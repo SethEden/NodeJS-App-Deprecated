@@ -13,8 +13,8 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -29,9 +29,9 @@ import clientCommands from './Commands/clientCommandsLibrary';
 import * as bas from '../../Framework/Constants/basic.constants';
 import * as wrd from '../../Framework/Constants/word.constants';
 import * as sys from '../../Framework/Constants/system.constants';
-import * as cmd from '../../Framework/Constants/commands.constants';
-import * as cfg from '../../Framework/Constants/configurations.constants';
-import * as msg from '../../Framework/Constants/messages.constants';
+import * as cmd from '../../Framework/Constants/command.constants';
+import * as cfg from '../../Framework/Constants/configuration.constants';
+import * as msg from '../../Framework/Constants/message.constants';
 import * as apc from './Constants/application.constants';
 require('dotenv').config();
 const {NODE_ENV} = process.env;

@@ -13,8 +13,8 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -39,11 +39,11 @@ var wrd = _interopRequireWildcard(require("../../Framework/Constants/word.consta
 
 var sys = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
 
-var cmd = _interopRequireWildcard(require("../../Framework/Constants/commands.constants"));
+var cmd = _interopRequireWildcard(require("../../Framework/Constants/command.constants"));
 
-var cfg = _interopRequireWildcard(require("../../Framework/Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../../Framework/Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../../Framework/Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../Framework/Constants/message.constants"));
 
 var apc = _interopRequireWildcard(require("./Constants/application.constants"));
 

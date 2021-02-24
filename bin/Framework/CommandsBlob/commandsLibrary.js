@@ -19,9 +19,9 @@ var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
 
 var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
-var cmd = _interopRequireWildcard(require("../Constants/commands.constants"));
+var cmd = _interopRequireWildcard(require("../Constants/command.constants"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -95,15 +95,17 @@ var initCommandsLibrary = function initCommandsLibrary() {
   }), _defineProperty(_D$wrd$cCommands, cmd.ccommandAliasGenerator, function (inputData, inputMetaData) {
     return nominalCommands.commandAliasGenerator(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconstantsGenerator, function (inputData, inputMetaData) {
-    return nominalCommands.constantsGenerator(inputData, inputMetaData);
+    return nominalcommand.constantsGenerator(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconstantsGeneratorList, function (inputData, inputMetaData) {
-    return nominalCommands.constantsGeneratorList(inputData, inputMetaData);
+    return nominalcommand.constantsGeneratorList(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconstantsPatternRecognizer, function (inputData, inputMetaData) {
-    return nominalCommands.constantsPatternRecognizer(inputData, inputMetaData);
+    return nominalcommand.constantsPatternRecognizer(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cbusinessRulesMetrics, function (inputData, inputMetaData) {
     return nominalCommands.businessRulesMetrics(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.ccommandMetrics, function (inputData, inputMetaData) {
     return nominalCommands.commandMetrics(inputData, inputMetaData);
+  }), _defineProperty(_D$wrd$cCommands, cmd.csaveConfiguration, function (inputData, inputMetaData) {
+    return nominalCommands.saveConfiguration(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconvertColors, function (inputData, inputMetaData) {
     return nominalCommands.convertColors(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cvalidateConstants, function (inputData, inputMetaData) {

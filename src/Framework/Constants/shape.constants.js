@@ -3,7 +3,7 @@
  * @module shape-constants
  * @description Contains named geometric shapes & knots.
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:word-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
@@ -11,7 +11,7 @@
  * {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
  */
 import * as bas from './basic.constants';
-import * as phn from './phonics.constants';
+import * as phn from './phonic.constants';
 import * as wrd from './word.constants';
 
 // NOTE: I changed e-x-p-o-r-t c-o-n-s-t => smuggle something,

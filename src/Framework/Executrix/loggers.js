@@ -13,7 +13,7 @@
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
+ * @requires module:configuration-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
@@ -31,7 +31,7 @@ import * as gen from '../Constants/generic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
-import * as cfg from '../Constants/configurations.constants';
+import * as cfg from '../Constants/configuration.constants';
 var fs = require('fs');
 var path = require('path');
 var chalk = require('chalk');
