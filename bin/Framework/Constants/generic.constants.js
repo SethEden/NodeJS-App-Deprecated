@@ -5,9 +5,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cYYYY = exports.cascii = exports.cDotENV = exports.cDotEnv = exports.cDotenv = exports.cDotJSON = exports.cDotJson = exports.cDotjson = exports.cDotLOG = exports.cDotLog = exports.cDotlog = exports.cDotXML = exports.cDotXml = exports.cDotxml = exports.cDotTXT = exports.cDotTxt = exports.cDottxt = exports.cDotZIP = exports.cDotZip = exports.cDotzip = exports.cDotCom = exports.cDotCSV = exports.cDotCsv = exports.cDotcsv = exports.cDotEXE = exports.cDotExe = exports.cDotexe = exports.cENV = exports.cEnv = exports.cenv = exports.cJSON = exports.cJson = exports.cjson = exports.cLOG = exports.cLog = exports.clog = exports.cXML = exports.cXml = exports.cxml = exports.cCSV = exports.cCsv = exports.ccsv = exports.cTXT = exports.cTxt = exports.ctxt = exports.cZIP = exports.cZip = exports.czip = exports.cCOM = exports.cCom = exports.ccom = exports.cDOC = exports.cDoc = exports.cdoc = exports.cEXE = exports.cExe = exports.cexe = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cMin = exports.cmin = exports.cMax = exports.cmax = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
-exports.cArgs = exports.cargs = exports.cArg = exports.carg = exports.cAPP = exports.cApp = exports.capp = exports.cASAP = exports.cConst = exports.cconst = exports.cUTF8 = exports.cwrd = exports.cunt = exports.csys = exports.cshp = exports.cphn = exports.cnum = exports.cmsg = exports.clng = exports.ckts = exports.ciso = exports.cgen = exports.celm = exports.cctr = exports.ccfg = exports.ccmd = exports.cclr = exports.cbiz = exports.cbas = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = void 0;
-exports.cBIN = exports.cBin = exports.cbin = exports.cRegExp = exports.cregExp = exports.cRegEx = exports.cregEx = exports.cHex = exports.chex = void 0;
+exports.cascii = exports.cDotENV = exports.cDotEnv = exports.cDotenv = exports.cDotJSON = exports.cDotJson = exports.cDotjson = exports.cDotLOG = exports.cDotLog = exports.cDotlog = exports.cDotXML = exports.cDotXml = exports.cDotxml = exports.cDotTXT = exports.cDotTxt = exports.cDottxt = exports.cDotZIP = exports.cDotZip = exports.cDotzip = exports.cDotCom = exports.cDotCSV = exports.cDotCsv = exports.cDotcsv = exports.cDotEXE = exports.cDotExe = exports.cDotexe = exports.cENV = exports.cEnv = exports.cenv = exports.cJSON = exports.cJson = exports.cjson = exports.cLOG = exports.cLog = exports.clog = exports.cXML = exports.cXml = exports.cxml = exports.cCSV = exports.cCsv = exports.ccsv = exports.cTXT = exports.cTxt = exports.ctxt = exports.cZIP = exports.cZip = exports.czip = exports.cCOM = exports.cCom = exports.ccom = exports.cDOC = exports.cDoc = exports.cdoc = exports.cEXE = exports.cExe = exports.cexe = exports.cMostSpecialCharacters = exports.cAllNumbers = exports.cUpperCaseEnglishAlphabet = exports.cLowerCaseEnglishAlphabet = exports.cRight = exports.cLeft = exports.cDown = exports.cFail = exports.cWarning = exports.cPass = exports.cMin = exports.cmin = exports.cMax = exports.cmax = exports.cNoteql = exports.cNotEql = exports.cnoteql = exports.cnotEql = exports.cNOTOK = exports.cNOTOk = exports.cNOTok = exports.cNotOK = exports.cNotOk = exports.cNotok = exports.cnotOK = exports.cnotOk = exports.cnotok = exports.cNOT = exports.cYES = exports.cNot = exports.cYes = exports.cnot = exports.cyes = exports.cOFF = exports.coff = exports.cOff = exports.cFALSE = exports.cTRUE = exports.cfalse = exports.ctrue = exports.cFalse = exports.cTrue = exports.cDotDotForwardSlash = exports.cDotDot = void 0;
+exports.cargs = exports.cArg = exports.carg = exports.cAPP = exports.cApp = exports.capp = exports.cASAP = exports.cConst = exports.cconst = exports.cUTF8 = exports.cwrd = exports.cunt = exports.csys = exports.cshp = exports.cphn = exports.cnum = exports.cmsg = exports.clng = exports.ckts = exports.ciso = exports.cgen = exports.celm = exports.cctr = exports.ccfg = exports.ccmd = exports.cclr = exports.cbiz = exports.cbas = exports.cDecember = exports.cOctober = exports.cSeptember = exports.cAugust = exports.cJuly = exports.cJune = exports.cMay = exports.cApril = exports.cMarch = exports.cFebuary = exports.cJanuary = exports.cOmega = exports.cPsi = exports.cChi = exports.cPhi = exports.cUpsilon = exports.cTau = exports.cSigma = exports.cRho = exports.cKoppa = exports.cSan = exports.cPi = exports.cOmicron = exports.cXi = exports.cNu = exports.cMu = exports.cLambda = exports.cKappa = exports.cIota = exports.cTheta = exports.cEta = exports.ceta = exports.cZeta = exports.cDigamma = exports.cEpsilon = exports.cGamma = exports.cBeta = exports.cAlpha = exports.cZulu = exports.cYankee = exports.cXray = exports.cWhiskey = exports.cVictor = exports.cUniform = exports.cTango = exports.cSierra = exports.cRomeo = exports.cQuebec = exports.cPapa = exports.cOscar = exports.cNovember = exports.cMike = exports.cLima = exports.cKilo = exports.cJuliett = exports.cIndia = exports.cHotel = exports.cGolf = exports.cFoxtrot = exports.cEcho = exports.cDelta = exports.cCharlie = exports.cBravo = exports.cAlfa = exports.cYYYY_MM_DD_HH_mm_ss_SSS = exports.cYYYYMMDD_HHmmss_SSS = exports.cYYYYMMDD_HHmmss = exports.cHHmmss_SSS = exports.cHHmmss = exports.cYYYYMMDD = exports.cSSS = exports.cYYYY = void 0;
+exports.cBIN = exports.cBin = exports.cbin = exports.cRegExp = exports.cregExp = exports.cRegEx = exports.cregEx = exports.cHex = exports.chex = exports.cArgs = void 0;
 
 var bas = _interopRequireWildcard(require("../constants/basic.constants"));
 
@@ -123,16 +123,16 @@ exports.cNotEql = cNotEql;
 var cNoteql = cNot + phn.ceql; // Noteql
 
 exports.cNoteql = cNoteql;
-var cmax = bas.cma + bas.cx; // max
+var cmax = phn.cmax; // max
 
 exports.cmax = cmax;
-var cMax = bas.cMa + bas.cx; // Max
+var cMax = phn.cMax; // Max
 
 exports.cMax = cMax;
-var cmin = bas.camai + bas.cn; // min
+var cmin = phn.cmin; // min
 
 exports.cmin = cmin;
-var cMin = bas.cMi + bas.cn; // Min
+var cMin = phn.cMin; // Min
 // Test Status
 
 exports.cMin = cMin;
@@ -163,9 +163,12 @@ var cUpperCaseEnglishAlphabet = bas.cAB + bas.cCD + bas.cEF + bas.cGH + bas.cIJ 
 
 exports.cUpperCaseEnglishAlphabet = cUpperCaseEnglishAlphabet;
 var cAllNumbers = num.c0 + num.c1 + num.c2 + num.c3 + num.c4 + num.c5 + num.c6 + num.c7 + num.c8 + num.c9; // 0123456789
-// File Extensions
 
 exports.cAllNumbers = cAllNumbers;
+var cMostSpecialCharacters = bas.cExclamation + bas.cAt + bas.cHash + bas.cDollar + bas.cPercent + bas.cCarrot + bas.cAndPersand + bas.cStar + bas.cOpenParenthesis + bas.cCloseParenthesis + bas.cUnderscore + bas.cPlus + bas.cOpenCurlyBrace + bas.cCloseCurlyBrace + bas.cPipe + bas.cColon + bas.cDoubleQuote + bas.cLessThan + bas.cGreaterThan + bas.cQuestion + bas.cDot + bas.cComa + bas.cTilde; // !@#$%^&*()_+{}|:"<>?.,~
+// File Extensions
+
+exports.cMostSpecialCharacters = cMostSpecialCharacters;
 var cexe = bas.cex + bas.ce; // exe
 
 exports.cexe = cexe;

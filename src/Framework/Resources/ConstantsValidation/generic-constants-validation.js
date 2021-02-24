@@ -68,6 +68,7 @@ export const genericConstantsValidation = [
    {Name: 'cLowerCaseEnglishAlphabet', Actual: gen.cLowerCaseEnglishAlphabet, Expected: 'abcdefghijklmnopqrstuvwxyz'},
    {Name: 'cUpperCaseEnglishAlphabet', Actual: gen.cUpperCaseEnglishAlphabet, Expected: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'},
    {Name: 'cAllNumbers', Actual: gen.cAllNumbers, Expected: '0123456789'},
+   {Name: 'cMostSpecialCharacters', Actual: gen.cMostSpecialCharacters, Expected: '!@#$%^&*()_+{}|:"<>?.,~'},
 
    // File Extensions
    {Name: 'cexe', Actual: gen.cexe, Expected: 'exe'},

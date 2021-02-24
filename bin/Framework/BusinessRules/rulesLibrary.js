@@ -246,6 +246,10 @@ var initRulesLibrary = function initRulesLibrary() {
     return arrayParsing.generateCommandAliases(inputData, inputMetaData);
   }), _defineProperty(_D$sys$cBusinessRules, biz.caggregateCommandArguments, function (inputData, inputMetaData) {
     return arrayParsing.aggregateCommandArguments(inputData, inputMetaData);
+  }), _defineProperty(_D$sys$cBusinessRules, biz.cgetFileAndPathListForPath, function (inputData, inputMetaData) {
+    return arrayParsing.getFileAndPathListForPath(inputData, inputMetaData);
+  }), _defineProperty(_D$sys$cBusinessRules, biz.cparseColorRangeInputs, function (inputData, inputMetaData) {
+    return arrayParsing.parseColorRangeInputs(inputData, inputMetaData);
   }), _defineProperty(_D$sys$cBusinessRules, biz.cgenerateRandomMixedCaseTextByLength1, function (inputData, inputMetaData) {
     return stringGeneration.generateRandomMixedCaseTextByLength1(inputData, inputMetaData);
   }), _defineProperty(_D$sys$cBusinessRules, biz.cgenerateRandomMixedCaseTextByLength2, function (inputData, inputMetaData) {
@@ -310,6 +314,12 @@ var initRulesLibrary = function initRulesLibrary() {
     return stringGeneration.generateInvalidEmail1(inputData, inputMetaData);
   }), _defineProperty(_D$sys$cBusinessRules, biz.cgenerateInvalidEmail2, function (inputData, inputMetaData) {
     return stringGeneration.generateInvalidEmail2(inputData, inputMetaData);
+  }), _defineProperty(_D$sys$cBusinessRules, biz.cgenerateRandomBrightColor, function (inputData, inputMetaData) {
+    return stringGeneration.generateRandomBrightColor(inputData, inputMetaData);
+  }), _defineProperty(_D$sys$cBusinessRules, biz.cgenerateRandomDarkColor, function (inputData, inputMetaData) {
+    return stringGeneration.generateRandomDarkColor(inputData, inputMetaData);
+  }), _defineProperty(_D$sys$cBusinessRules, biz.cgenerateRandomColor, function (inputData, inputMetaData) {
+    return stringGeneration.generateRandomColor(inputData, inputMetaData);
   }), _defineProperty(_D$sys$cBusinessRules, biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter1, function (inputData, inputMetaData) {
     return characterGeneration.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputData, inputMetaData);
   }), _defineProperty(_D$sys$cBusinessRules, biz.crandomlyGenerateMixedCaseLetterOrSpecialCharacter2, function (inputData, inputMetaData) {

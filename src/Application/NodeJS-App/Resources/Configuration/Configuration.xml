@@ -562,6 +562,20 @@
           <ConfigurationElement Name="warden.getConfigurationSetting@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.getConfigurationSetting@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="warden.sleep" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.sleep@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="chiefCommander.bootStrapCommands" Type="Default" Value="True" Version="3"/>
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefCommander.bootStrapCommands@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1065,6 +1079,20 @@
           <ConfigurationElement Name="fileBroker.readDirectoryContents@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectoryContents@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectoryContents@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="fileBroker.scanDirectoryContents@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="fileBroker.readDirectorySynchronously" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.readDirectorySynchronously@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -2844,6 +2872,20 @@
           <ConfigurationElement Name="arrayParsing.aggregateCommandArguments@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="arrayParsing.aggregateCommandArguments@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="arrayParsing.getFileAndPathListForPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
           <ConfigurationElement Name="arrayParsing.doesArrayContainValue" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="arrayParsing.doesArrayContainValue@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="arrayParsing.doesArrayContainValue@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -3431,6 +3473,34 @@
           <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="stringGeneration.generateRandomInvalidEmail2@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomBrightColor@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="stringGeneration.generateRandomDarkColor@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="characterGeneration.randomlyGenerateMixedCaseLetterOrSpecialCharacter1" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="characterGeneration.randomlyGenerateMixedCaseLetterOrSpecialCharacter1@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -4397,6 +4467,20 @@
           <ConfigurationElement Name="clientCommands.customEchoCommand@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="clientCommands.customEchoCommand@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="clientCommands.bossPanic" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="clientCommands.bossPanic@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
         </ConfigurationElement>
       </ConfigurationElements>
     </Configuration>

@@ -21,6 +21,7 @@ export const basicConstantsValidation = [
   {Name: 'cUnderscore', Actual: bas.cUnderscore, Expected: '_'},
   {Name: 'cPipe', Actual: bas.cPipe, Expected: '|'},
   {Name: 'cExclamation', Actual: bas.cExclamation, Expected: '!'},
+  {Name: 'cQuestion', Actual: bas.cQuestion, Expected: '?'},
   {Name: 'cSingleQuote', Actual: bas.cSingleQuote, Expected: '\''},
   {Name: 'cBackTickQuote', Actual: bas.cBackTickQuote, Expected: '`'},
   {Name: 'cDoubleQuote', Actual: bas.cDoubleQuote, Expected: '"'},

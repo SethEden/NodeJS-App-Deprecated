@@ -147,6 +147,8 @@ export const initRulesLibrary = function() {
     [biz.creplaceCharacterAtIndex]: (inputData, inputMetaData) => arrayParsing.replaceCharacterAtIndex(inputData, inputMetaData),
     [biz.cgenerateCommandAliases]: (inputData, inputMetaData) => arrayParsing.generateCommandAliases(inputData, inputMetaData),
     [biz.caggregateCommandArguments]: (inputData, inputMetaData) => arrayParsing.aggregateCommandArguments(inputData, inputMetaData),
+    [biz.cgetFileAndPathListForPath]: (inputData, inputMetaData) => arrayParsing.getFileAndPathListForPath(inputData, inputMetaData),
+    [biz.cparseColorRangeInputs]: (inputData, inputMetaData) => arrayParsing.parseColorRangeInputs(inputData, inputMetaData),
 
     // *********************************
     // StringGeneration rules in order
@@ -183,6 +185,9 @@ export const initRulesLibrary = function() {
     [biz.cgenerateValidEmail2]: (inputData, inputMetaData) => stringGeneration.generateValidEmail2(inputData, inputMetaData),
     [biz.cgenerateInvalidEmail1]: (inputData, inputMetaData) => stringGeneration.generateInvalidEmail1(inputData, inputMetaData),
     [biz.cgenerateInvalidEmail2]: (inputData, inputMetaData) => stringGeneration.generateInvalidEmail2(inputData, inputMetaData),
+    [biz.cgenerateRandomBrightColor]: (inputData, inputMetaData) => stringGeneration.generateRandomBrightColor(inputData, inputMetaData),
+    [biz.cgenerateRandomDarkColor]: (inputData, inputMetaData) => stringGeneration.generateRandomDarkColor(inputData, inputMetaData),
+    [biz.cgenerateRandomColor]: (inputData, inputMetaData) => stringGeneration.generateRandomColor(inputData, inputMetaData),
 
     // *********************************
     // CharacterGeneration rules in order

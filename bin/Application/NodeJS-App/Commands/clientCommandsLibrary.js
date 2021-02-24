@@ -25,11 +25,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * @date 2020/06/19
  */
 var initClientCommandsLibrary = function initClientCommandsLibrary() {
+  var _ref;
+
   // console.log('BEGIN clientCommandsLibrary.initClientCommandsLibrary function');
   // console.log('END clientCommandsLibrary.initClientCommandsLibrary function');
-  return _defineProperty({}, apc.ccustomEchoCommand, function (inputData, inputMetaData) {
+  return _ref = {}, _defineProperty(_ref, apc.ccustomEchoCommand, function (inputData, inputMetaData) {
     return clientCommands.customEchoCommand(inputData, inputMetaData);
-  });
+  }), _defineProperty(_ref, apc.cbossPanic, function (inputData, inputMetaData) {
+    return clientCommands.bossPanic(inputData, inputMetaData);
+  }), _ref;
 };
 
 exports.initClientCommandsLibrary = initClientCommandsLibrary;

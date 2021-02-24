@@ -5,11 +5,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.generateInvalidEmail2 = exports.generateInvalidEmail1 = exports.generateValidEmail2 = exports.generateValidEmail1 = exports.generateRandomSpecialCharacterCodeByLength2 = exports.generateRandomSpecialCharacterCodeByLength1 = exports.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.generateRandomNumericCodeByLength2 = exports.generateRandomNumericCodeByLength1 = exports.generateRandomLowerCaseAlphaNumericCodeByLength2 = exports.generateRandomLowerCaseAlphaNumericCodeByLength1 = exports.generateRandomUpperCaseAlphaNumericCodeByLength2 = exports.generateRandomUpperCaseAlphaNumericCodeByLength1 = exports.generateRandomMixedCaseAlphaNumericCodeByLength2 = exports.generateRandomMixedCaseAlphaNumericCodeByLength1 = exports.generateRandomLowerCaseTextWithSpecialCharactersByLength2 = exports.generateRandomLowerCaseTextWithSpecialCharactersByLength1 = exports.generateRandomUpperCaseTextWithSpecialCharactersByLength2 = exports.generateRandomUpperCaseTextWithSpecialCharactersByLength1 = exports.generateRandomMixedCaseTextWithSpecialCharactersByLength2 = exports.generateRandomMixedCaseTextWithSpecialCharactersByLength1 = exports.generateRandomLowerCaseTextByLength2 = exports.generateRandomLowerCaseTextByLength1 = exports.generateRandomUpperCaseTextByLength2 = exports.generateRandomUpperCaseTextByLength1 = exports.generateRandomMixedCaseTextByLength2 = exports.generateRandomMixedCaseTextByLength1 = void 0;
+exports.generateRandomColor = exports.generateRandomDarkColor = exports.generateRandomBrightColor = exports.generateInvalidEmail2 = exports.generateInvalidEmail1 = exports.generateValidEmail2 = exports.generateValidEmail1 = exports.generateRandomSpecialCharacterCodeByLength2 = exports.generateRandomSpecialCharacterCodeByLength1 = exports.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = exports.generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = exports.generateRandomNumericCodeByLength2 = exports.generateRandomNumericCodeByLength1 = exports.generateRandomLowerCaseAlphaNumericCodeByLength2 = exports.generateRandomLowerCaseAlphaNumericCodeByLength1 = exports.generateRandomUpperCaseAlphaNumericCodeByLength2 = exports.generateRandomUpperCaseAlphaNumericCodeByLength1 = exports.generateRandomMixedCaseAlphaNumericCodeByLength2 = exports.generateRandomMixedCaseAlphaNumericCodeByLength1 = exports.generateRandomLowerCaseTextWithSpecialCharactersByLength2 = exports.generateRandomLowerCaseTextWithSpecialCharactersByLength1 = exports.generateRandomUpperCaseTextWithSpecialCharactersByLength2 = exports.generateRandomUpperCaseTextWithSpecialCharactersByLength1 = exports.generateRandomMixedCaseTextWithSpecialCharactersByLength2 = exports.generateRandomMixedCaseTextWithSpecialCharactersByLength1 = exports.generateRandomLowerCaseTextByLength2 = exports.generateRandomLowerCaseTextByLength1 = exports.generateRandomUpperCaseTextByLength2 = exports.generateRandomUpperCaseTextByLength1 = exports.generateRandomMixedCaseTextByLength2 = exports.generateRandomMixedCaseTextByLength1 = void 0;
 
 var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var _stringParsing = require("./stringParsing");
+
+var aryParse = _interopRequireWildcard(require("./arrayParsing"));
 
 var charGen = _interopRequireWildcard(require("./characterGeneration"));
 
@@ -2994,3 +2996,149 @@ var generateRandomInvalidEmail2 = function generateRandomInvalidEmail2(numberOfC
 
   return returnData;
 };
+/**
+ * @function generateRandomBrightColor
+ * @description Generates a random set of RGB values in the bright color spectrum range.
+ * Originally I thought to generate just a bright color, but dividing the spectrum straight in half resulted in mostly drab colors.
+ * So I adjusted this function to use the inputs to provide a narrow range of bright values that can be generated.
+ * This makes the function nearly identical to the same function that generates random dark colors.
+ * Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.
+ * @param {string|integer} inputData Not used for this business rule.
+ * @param {string|integer} inputMetaData Not used for this business rule.
+ * @return {array<integers>} An array of RGB values in the bright color spectrum range.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+
+
+var generateRandomBrightColor = function generateRandomBrightColor(inputData, inputMetaData) {
+  var functionName = biz.cgenerateRandomBrightColor;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+
+  var returnData = [255, 255, 255];
+  var minimumColorRange = 127;
+  var maximumColorRange = 255;
+  var parsedColorRangeArray = [];
+
+  if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
+    // Try to parse them as numbers for the range.
+    parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
+    minimumColorRange = parsedColorRangeArray[0];
+    maximumColorRange = parsedColorRangeArray[1];
+  }
+
+  returnData = generateRandomColor(minimumColorRange, maximumColorRange);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function generateRandomDarkColor
+ * @description Generates a random set of RGB values in the dark color spectrum range.
+ * Originally I thought to generate just a dark color, but dividing the spectrum straight in half resulted in mostly drab colors.
+ * So I adjusted this function to use the inputs to provide a narrow range of dark values that can be generated.
+ * This makes the function nearly identical to the same function that generates random bright colors.
+ * Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.
+ * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
+ * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
+ * @return {array<integers>} An array of RGB values in the dark color spectrum range.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+
+
+exports.generateRandomBrightColor = generateRandomBrightColor;
+
+var generateRandomDarkColor = function generateRandomDarkColor(inputData, inputMetaData) {
+  var functionName = biz.cgenerateRandomDarkColor;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+
+  var returnData = [0, 0, 0];
+  var minimumColorRange = 0;
+  var tempMinimumColorRange = 0;
+  var maximumColorRange = 127;
+  var tempMaximumColorRange = 0;
+
+  if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
+    // Try to parse them as numbers for the range.
+    parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
+    minimumColorRange = parsedColorRangeArray[0];
+    maximumColorRange = parsedColorRangeArray[1];
+  }
+
+  returnData = generateRandomColor(minimumColorRange, maximumColorRange);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+
+  return returnData;
+};
+/**
+ * @function generateRandomColor
+ * @description Generates a random set of RGB values in the given color range.
+ * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
+ * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
+ * @return {array<integers>} An array of RGB values in the dark color spectrum range.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+
+
+exports.generateRandomDarkColor = generateRandomDarkColor;
+
+var generateRandomColor = function generateRandomColor(inputData, inputMetaData) {
+  var functionName = biz.cgenerateRandomColor;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+
+  var returnData = [0, 0, 0];
+  var minimumColorRange = 0;
+  var tempMinimumColorRange = 0;
+  var maximumColorRange = 0;
+  var tempMaximumColorRange = 0;
+
+  if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
+    // Try to parse them as numbers for the range.
+    parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
+    minimumColorRange = parsedColorRangeArray[0];
+    maximumColorRange = parsedColorRangeArray[1];
+  } // minimumColorRange is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cminimumColorRangeIs + minimumColorRange); // maximumColorRange is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cmaximumColorRangeIs + maximumColorRange);
+
+  returnData[0] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Red
+
+  returnData[1] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Green
+
+  returnData[2] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Blue
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+
+  return returnData;
+};
+
+exports.generateRandomColor = generateRandomColor;

@@ -47,6 +47,10 @@ var basicConstantsValidation = [{
   Actual: bas.cExclamation,
   Expected: '!'
 }, {
+  Name: 'cQuestion',
+  Actual: bas.cQuestion,
+  Expected: '?'
+}, {
   Name: 'cSingleQuote',
   Actual: bas.cSingleQuote,
   Expected: '\''

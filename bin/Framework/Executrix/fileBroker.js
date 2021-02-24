@@ -78,7 +78,10 @@ var xml2js = require('xml2js').Parser({
 });
 
 var filesCollection = [];
-var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release', 'Documentation'];
+var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms', 'Release', 'Documentation', 'Recycle', 'Trash'];
+var enableFilesListLimit = false;
+var filesListLimit = -1;
+var hitFileLimit = false;
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 /**
  * @function getXmlData
@@ -283,6 +286,56 @@ function readDirectoryContents(directory) {
 
 ;
 /**
+ * @function scanDirectoryContents
+ * @description This function also acts as a wrapper for calling readDirectorySynchronously since that function is recursive.
+ * The difference between this function and the readDirectoryContents is that this function has an optional limit on the number of files to return.
+ * Really this is used for scanning large volumes of data such as the entire C-Drive.
+ * This way the user can control the number of files that are returned by the system.
+ * The user might only want 10,000 files or just the first million files found. etc...
+ * @param {string} directory The path that should be scanned for files including all sub-folders and all sub-files.
+ * @param {boolean} enableLimit True or False to indicate if the boolean limit should be enabled or not.
+ * @param {integer} filesLimit The number of files that should be limited when scanning, if the enableLimit is set to True.
+ * @return {object} And object containing an array of all of the files in the folder up to the limit if specified.
+ * @author Seth Hollingsead
+ * @date 2021/02/22
+ */
+
+function scanDirectoryContents(directory, enableLimit, filesLimit) {
+  var functionName = scanDirectoryContents.name;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // Path that should be scanned is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cPathThatShouldBeScannedIs + directory);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'enableLimit is: ' + enableLimit);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'filesLimit is: ' + filesLimit);
+
+  var filesFound = [];
+  directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+
+  enableFilesListLimit = enableLimit;
+  filesListLimit = filesLimit;
+  readDirectorySynchronously(directory);
+  filesFound = filesCollection; // Copy the data into a local variable first.
+
+  filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
+
+  filesCollection = [];
+  enableFilesListLimit = false;
+  filesListLimit = -1;
+  hitFileLimit = false; // files found are:
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+
+  return filesFound;
+}
+
+;
+/**
  * @function readDirectorySynchronously
  * @description Recursively parses through all the sub-folders in a given path and loads all of the files contained in each sub-folder into a map.
  * @param {string} directory The system path that should be scanned recursively for files.
@@ -303,40 +356,59 @@ function readDirectorySynchronously(directory) {
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdirectorIs + directory);
 
-  directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
+  if (hitFileLimit === false) {
+    directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
 
-  var currentDirectoryPath = directory;
-  var currentDirectory = '';
+    var currentDirectoryPath = directory;
+    var currentDirectory = '';
 
-  try {
-    currentDirectory = fs.readdirSync(currentDirectoryPath, gen.cUTF8);
-  } catch (e) {
-    fs.mkdirSync(currentDirectoryPath);
-    currentDirectory = fs.readdirSync(currentDirectoryPath, gen.cUTF8);
-  }
-
-  currentDirectory.forEach(function (file) {
-    var filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
-    var pathOfCurrentItem = directory + '/' + file;
-
-    if (!filesShouldBeSkipped && fs.statSync(pathOfCurrentItem).isFile()) {
-      filesCollection.push(pathOfCurrentItem);
-    } else if (!filesShouldBeSkipped) {
-      // NOTE: There is a difference in how paths are handled in Windows VS Mac/Linux,
-      // So for now I'm putting this code here like this to handle both situations.
-      // The ideal solution would be to detect which OS the code is being run on.
-      // Then handle each case appropriately.
-      var directoryPath = '';
-      directoryPath = path.resolve(directory + bas.cForwardSlash + file); // directoryPath is:
-
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdirectoryPathIs + directoryPath);
-
-      readDirectorySynchronously(directoryPath);
+    try {
+      currentDirectory = fs.readdirSync(currentDirectoryPath, gen.cUTF8);
+    } catch (e) {
+      fs.mkdirSync(currentDirectoryPath);
+      currentDirectory = fs.readdirSync(currentDirectoryPath, gen.cUTF8);
     }
-  });
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
+    currentDirectory.forEach(function (file) {
+      var filesShouldBeSkipped = directoriesToSkip.indexOf(file) > -1;
+      var pathOfCurrentItem = directory + '/' + file;
 
+      try {
+        if (!filesShouldBeSkipped && fs.statSync(pathOfCurrentItem).isFile()) {
+          if (enableFilesListLimit === true && filesListLimit > 0) {
+            if (filesCollection.length <= filesListLimit) {
+              // console.log('Did not hit the file limit yet!');
+              filesCollection.push(pathOfCurrentItem); // console.log('filesCollection is: ' + JSON.stringify(filesCollection));
+            } else {
+              // console.log('Hit the file limit!!');
+              hitFileLimit = true;
+              return;
+            }
+          } else {
+            // console.log('adding the file the old fashioned way');
+            filesCollection.push(pathOfCurrentItem);
+          }
+        } else if (!filesShouldBeSkipped) {
+          // NOTE: There is a difference in how paths are handled in Windows VS Mac/Linux,
+          // So for now I'm putting this code here like this to handle both situations.
+          // The ideal solution would be to detect which OS the code is being run on.
+          // Then handle each case appropriately.
+          var directoryPath = '';
+          directoryPath = path.resolve(directory + bas.cForwardSlash + file); // directoryPath is:
+
+          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdirectoryPathIs + directoryPath);
+
+          readDirectorySynchronously(directoryPath);
+        }
+      } catch (e) {
+        // Catch the error in the hopes that we can continue scanning the file system.
+        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'ERROR: Invalid access to: ' + pathOfCurrentItem);
+      }
+    });
+
+    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
+
+  }
 }
 
 ;
@@ -485,28 +557,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
     _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseFileNameIs + releaseFileName);
 
-    var fullReleasePath = path.resolve(destinationFolder + bas.cForwardSlash + releaseFileName + gen.cDotzip); // zip({
-    //   source: sourceFolder + '/*',
-    //   destination: fullReleasePath
-    // }).then(function() {
-    //   // Done writing the zip file:
-    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath);
-    //   // Set the return packageSuccess flag to TRUE
-    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
-    //   packageSuccess = true;
-    // }).catch(function(err) {
-    //   console.error(err.stack);
-    //   process.exit(1);
-    // });
-    // await zip-a-folder.zip('/path/to/the/folder', '/path/to/archive.zip');
-    // zip.addLocalFile("/home/me/some_picture.png");
-    // zip.writeZip(/*target file name*/"/home/me/files.zip");
-    // for (let j = 0; j < releaseFiles.length; j++) {
-    //   let fileToRelease = releaseFiles[j];
-    //   loggers.consoleLog(baseFileName + bas.cDot + functionName, 'zipping file: ' + fileToRelease);
-    //   zip.addLocalFile(fileToRelease, fs.readFileSync(fileToRelease), '', 0644);
-    // }
-    // zip.writeZip(fullReleasePath);
+    var fullReleasePath = path.resolve(destinationFolder + bas.cForwardSlash + releaseFileName + gen.cDotzip);
 
     try {
       zip.addLocalFolder(sourceFolder, originalSource);
@@ -519,7 +570,8 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
       packageSuccess = true;
     } catch (err) {
-      console.log('ERROR: Zip package release failed: ');
+      // ERROR: Zip package release failed:
+      console.log(msg.cErrorZipPackageReleaseFailed);
       console.error(err.stack);
       process.exit(1);
     }
@@ -709,6 +761,7 @@ var _default = {
   getJsonData: getJsonData,
   writeJsonData: writeJsonData,
   readDirectoryContents: readDirectoryContents,
+  scanDirectoryContents: scanDirectoryContents,
   copyAllFilesAndFoldersFromFolderToFolder: copyAllFilesAndFoldersFromFolderToFolder,
   buildReleasePackage: buildReleasePackage,
   cleanRootPath: cleanRootPath,
