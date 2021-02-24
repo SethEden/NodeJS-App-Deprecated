@@ -8,6 +8,7 @@
  * @requires module:configurator
  * @requires module:loggers
  * @requires module:dataBroker
+ * @requires module:arrayParsing
  * @requires module:stringParsing
  * @requires module:basic-constants
  * @requires module:generic-constants
@@ -26,6 +27,7 @@
 import configurator from '../../Executrix/configurator';
 import loggers from '../../Executrix/loggers';
 import dataBroker from '../../Executrix/dataBroker';
+import fileBroker from '../../Executrix/fileBroker';
 import * as strParse from './stringParsing';
 import * as bas from '../../Constants/basic.constants';
 import * as gen from '../../Constants/generic.constants';
@@ -1150,6 +1152,98 @@ export const aggregateCommandArguments = function(inputData, inputMetaData) {
     }
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function getFileAndPathListForPath
+ * @description Scans all files and folders recursively given an input path and
+ * returns a list of all files and their full paths found under the specified input path.
+ * @param {string} inputData The path that should be scanned for files and their full paths.
+ * @param {integer} inputMetaData Optional file limit, ignored if the configuration flag is not set to true,
+ * if nothing is passed the configuration setting will be used.
+ * @return {array<string>} The array that contains the full path and file name for every file found under the specified path.
+ * @author Seth Hollingsead
+ * @date 2021/02/22
+ */
+export const getFileAndPathListForPath = function(inputData, inputMetaData) {
+  let functionName = biz.cgetFileAndPathListForPath;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let returnData = '';
+  let enableFilesListLimit = false;
+  let filesListLimit = -1;
+  if (inputData) {
+    if (inputMetaData) {
+      enableFilesListLimit = configurator.getConfigurationSetting(cfg.cEnableFilesListLimit);
+      filesListLimit = inputMetaData;
+    } else {
+      enableFilesListLimit = configurator.getConfigurationSetting(cfg.cEnableFilesListLimit);
+      filesListLimit = configurator.getConfigurationSetting(cfg.cFilesListLimit);
+    }
+    loggers.consoleLog(baseFileName + bas.cDot + functionName, 'filesListLimit is: ' + filesListLimit);
+    returnData = fileBroker.scanDirectoryContents(inputData, enableFilesListLimit, filesListLimit);
+  }
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function parseColorRangeInputs
+ * @description Parses minimum and maximum range integer values to ensure they are in the range of 0 - 255.
+ * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
+ * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
+ * @return {array<integer>} The minimum and maximum values returned in an array.
+ * returnData[0] = minimum value.
+ * returnData[1] = maximum value.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+export const parseColorRangeInputs = function(inputData, inputMetaData) {
+  let functionName = biz.cparseColorRangeInputs;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let returnData = [0,0,0];
+  let minimumColorRange = 0;
+  let tempMinimumColorRange = 0;
+  let maximumColorRange = 0;
+  let tempMaximumColorRange = 0;
+  if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
+    // Try to parse them as numbers for the range.
+    if (typeof(inputData) === 'string') {
+      tempMinimumColorRange = parseInt(inputData);
+    } else if (typeof(inputData) === 'number') {
+      tempMinimumColorRange = inputData;
+    }
+    if (typeof(inputMetaData) === 'string') {
+      tempMaximumColorRange = parseInt(inputMetaData);
+    } else if (typeof(inputMetaData) === 'number') {
+      tempMaximumColorRange = inputMetaData;
+    }
+    if (tempMinimumColorRange < tempMaximumColorRange) {
+      minimumColorRange = tempMinimumColorRange;
+      maximumColorRange = tempMaximumColorRange;
+    } else if (tempMinimumColorRange > tempMaximumColorRange) {
+      minimumColorRange = tempMaximumColorRange;
+      maximumColorRange = tempMinimumColorRange;
+    }
+  }
+  if (minimumColorRange < 0) {
+    minimumColorRange = Math.abs(minimumColorRange);
+  } else if (minimumColorRange > 255) {
+    minimumColorRange = 255;
+  }
+  if (maximumColorRange < 0) {
+    maximumColorRange = Math.abs(maximumColorRange);
+  } else if (maximumColorRange > 255) {
+    maximumColorRange = 255;
+  }
+  returnData = [minimumColorRange, maximumColorRange];
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };

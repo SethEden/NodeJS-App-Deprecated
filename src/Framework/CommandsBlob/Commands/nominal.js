@@ -887,11 +887,11 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
 
   if (inputData.length === 0) {
     while(validCommandName === false) {
-      console.log(sys.cCommandNamePrompt1);
-      console.log(sys.cCommandNamePrompt2);
-      console.log(sys.cCommandNamePrompt3);
-      console.log(sys.cCommandNamePrompt4);
-      console.log(sys.cCommandNamePrompt5);
+      console.log(msg.cCommandNamePrompt1);
+      console.log(msg.cCommandNamePrompt2);
+      console.log(msg.cCommandNamePrompt3);
+      console.log(msg.cCommandNamePrompt4);
+      console.log(msg.cCommandNamePrompt5);
       commandName = prompt(bas.cGreaterThan);
       validCommandName = ruleBroker.processRules(commandName, '', commandNameParsingRule);
       if (validCommandName === false) {

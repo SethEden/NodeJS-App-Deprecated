@@ -141,11 +141,19 @@
         
             <li><a href="module-basic-constants.html">module:basic-constants</a></li>
         
+            <li><a href="module-numeric-constants.html">module:numeric-constants</a></li>
+        
             <li><a href="module-system-constants.html">module:system-constants</a></li>
+        
+            <li><a href="module-business-constants.html">module:business-constants</a></li>
+        
+            <li><a href="module-messages-constants.html">module:messages-constants</a></li>
         
             <li><a href="module-application-constants.html">module:application-constants</a></li>
         
             <li><a href="https://www.npmjs.com/package/path">path</a></li>
+        
+            <li><a href="https://www.npmjs.com/package/chalk">chalk</a></li>
         </ul>
     
 
@@ -161,6 +169,209 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~bossPanic"><span class="type-signature">(inner) </span>bossPanic<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Prints out the entire contents of all files and their full paths on the screen
+in a custom length loop that makes the screen look like it is doing something busy.
+So anybody who looks at the screen will think you are working on something super important like: &quot;quantum&quot; cryptography or artificial Intelligence.
+(As if putting the word &quot;Quantum&quot; in front of everything some how makes it smarter)
+Could also be used to turn a computer into a movie or TV-episode set-piece to make the people standing in front of the computer seem smarter.
+If someone does some fake typing on the keyboard and the BossPanic command is configured to run slowly then it might look like someone is writing code super fast!
+Like an expert hacker!</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string used to load the BossPanic configuration setting.
+This command can work with no arguments or with the any of the following optional arguments.
+They are all numbers so if you want the 3rd one you need to provide the first 2 parameters as well.
+inputData[1] = PerformanceIndex - This is the number of milliseconds t hat should be delayed between running each loop iteration.
+inputData[2] = Maximum line length - The maximum number of characters that should be generated for printing on the screen.
+inputData[3] = Maximum number of no-colored sequential lines, a smaller number means more colores lines will be generated over all.
+inputData[4] = Maximum number of colored sequential lines, a smaller number means less colored lines will be generated sequentially.
+inputData[5] = Boolean True or False to indicate if typing individual characters should be enabled.
+inputData[6] = Speed-Typing Performance Index, time-out in milliseconds between typing each character.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this command.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Application_NodeJS-App_Commands_ClientCommands_clientCommands.js.html">Application/NodeJS-App/Commands/ClientCommands/clientCommands.js</a>, <a href="Application_NodeJS-App_Commands_ClientCommands_clientCommands.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>True to indicate that the command should not exit when it is completed.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
 
         
             
@@ -299,7 +510,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Application_NodeJS-App_Commands_ClientCommands_clientCommands.js.html">Application/NodeJS-App/Commands/ClientCommands/clientCommands.js</a>, <a href="Application_NodeJS-App_Commands_ClientCommands_clientCommands.js.html#line21">line 21</a>
+        <a href="Application_NodeJS-App_Commands_ClientCommands_clientCommands.js.html">Application/NodeJS-App/Commands/ClientCommands/clientCommands.js</a>, <a href="Application_NodeJS-App_Commands_ClientCommands_clientCommands.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -373,7 +584,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 22 2021 15:47:15 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Feb 23 2021 21:17:35 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

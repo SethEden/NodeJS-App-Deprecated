@@ -110,7 +110,7 @@ function reformatDeltaTime(deltaTime, format) {
  * {@link https://www.sitepoint.com/delay-sleep-pause-wait/}
  */
 function sleep(sleepTime) {
-  let functionName = reformatDeltaTime.name;
+  let functionName = sleep.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // sleepTime is:
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csleepTimeIs + sleepTime);

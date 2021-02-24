@@ -4036,6 +4036,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cParsed,
   Expected: 'Parsed'
 }, {
+  Name: 'cparsing',
+  Actual: wrd.cparsing,
+  Expected: 'parsing'
+}, {
+  Name: 'cParsing',
+  Actual: wrd.cParsing,
+  Expected: 'Parsing'
+}, {
   Name: 'cforward',
   Actual: wrd.cforward,
   Expected: 'forward'
@@ -4615,6 +4623,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cstartup',
   Actual: wrd.cstartup,
   Expected: 'startup'
+}, {
+  Name: 'cstarting',
+  Actual: wrd.cstarting,
+  Expected: 'starting'
+}, {
+  Name: 'cStarting',
+  Actual: wrd.cStarting,
+  Expected: 'Starting'
 }, {
   Name: 'coutput',
   Actual: wrd.coutput,
@@ -7939,6 +7955,86 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cConsole',
   Actual: wrd.cConsole,
   Expected: 'Console'
+}, {
+  Name: 'cboss',
+  Actual: wrd.cboss,
+  Expected: 'boss'
+}, {
+  Name: 'cBoss',
+  Actual: wrd.cBoss,
+  Expected: 'Boss'
+}, {
+  Name: 'cpanic',
+  Actual: wrd.cpanic,
+  Expected: 'panic'
+}, {
+  Name: 'cPanic',
+  Actual: wrd.cPanic,
+  Expected: 'Panic'
+}, {
+  Name: 'cslow',
+  Actual: wrd.cslow,
+  Expected: 'slow'
+}, {
+  Name: 'cSlow',
+  Actual: wrd.cSlow,
+  Expected: 'Slow'
+}, {
+  Name: 'cgot',
+  Actual: wrd.cgot,
+  Expected: 'got'
+}, {
+  Name: 'cGot',
+  Actual: wrd.cGot,
+  Expected: 'Got'
+}, {
+  Name: 'cmiss',
+  Actual: wrd.cmiss,
+  Expected: 'miss'
+}, {
+  Name: 'cMiss',
+  Actual: wrd.cMiss,
+  Expected: 'Miss'
+}, {
+  Name: 'cecho',
+  Actual: wrd.cecho,
+  Expected: 'echo'
+}, {
+  Name: 'cEcho',
+  Actual: wrd.cEcho,
+  Expected: 'Echo'
+}, {
+  Name: 'cincrement',
+  Actual: wrd.cincrement,
+  Expected: 'increment'
+}, {
+  Name: 'cIncrement',
+  Actual: wrd.cIncrement,
+  Expected: 'Increment'
+}, {
+  Name: 'cincrements',
+  Actual: wrd.cincrements,
+  Expected: 'increments'
+}, {
+  Name: 'cIncrements',
+  Actual: wrd.cIncrements,
+  Expected: 'Increments'
+}, {
+  Name: 'cincremented',
+  Actual: wrd.cincremented,
+  Expected: 'incremented'
+}, {
+  Name: 'cIncremented',
+  Actual: wrd.cIncremented,
+  Expected: 'Incremented'
+}, {
+  Name: 'cincrementing',
+  Actual: wrd.cincrementing,
+  Expected: 'incrementing'
+}, {
+  Name: 'cIncrementing',
+  Actual: wrd.cIncrementing,
+  Expected: 'Incrementing'
 }, //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 {
@@ -8782,9 +8878,37 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cMajorelle,
   Expected: 'Majorelle'
 }, {
+  Name: 'cminimum',
+  Actual: wrd.cminimum,
+  Expected: 'minimum'
+}, {
+  Name: 'cMinimum',
+  Actual: wrd.cMinimum,
+  Expected: 'Minimum'
+}, {
+  Name: 'cminimums',
+  Actual: wrd.cminimums,
+  Expected: 'minimums'
+}, {
+  Name: 'cMinimums',
+  Actual: wrd.cMinimums,
+  Expected: 'Minimums'
+}, {
+  Name: 'cmaximum',
+  Actual: wrd.cmaximum,
+  Expected: 'maximum'
+}, {
   Name: 'cMaximum',
   Actual: wrd.cMaximum,
   Expected: 'Maximum'
+}, {
+  Name: 'cmaximums',
+  Actual: wrd.cmaximums,
+  Expected: 'maximums'
+}, {
+  Name: 'cMaximums',
+  Actual: wrd.cMaximums,
+  Expected: 'Maximums'
 }, {
   Name: 'cMaya',
   Actual: wrd.cMaya,

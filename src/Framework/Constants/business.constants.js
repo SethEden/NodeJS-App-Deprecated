@@ -18,8 +18,8 @@ import * as wrd from './word.constants';
 import * as sys from './system.constants';
 
 // Business Rules
-export const cecho = bas.cec + bas.cho; // echo
-export const cEcho = bas.cEc + bas.cho; // Echo
+export const cecho = wrd.cecho; // echo
+export const cEcho = wrd.cEcho; // Echo
 // ********************************
 // StringParsing rules in order
 // ********************************
@@ -127,6 +127,8 @@ export const carrayDeepClone = wrd.carray + wrd.cDeep + wrd.cClone; // arrayDeep
 export const creplaceCharacterAtIndex = wrd.creplace  + wrd.cCharacter + wrd.cAt + wrd.cIndex; // replaceCharacterAtIndex
 export const cgenerateCommandAliases = wrd.cgenerate + wrd.cCommand + wrd.cAliases; // generateCommandAliases
 export const caggregateCommandArguments = wrd.caggregate + wrd.cCommand + wrd.cArguments; // aggregateCommandArguments
+export const cgetFileAndPathListForPath = wrd.cget + wrd.cFile + wrd.cAnd + wrd.cPath + wrd.cList + wrd.cFor + wrd.cPath; // getFileAndPathListForPath
+export const cparseColorRangeInputs = wrd.cparse + wrd.cColor + wrd.cRange + wrd.cInputs; // parseColorRangeInputs
 export const cdoesArrayContainValue = wrd.cdoes + wrd.cArray + wrd.cContain + wrd.cValue; // doesArrayContainValue
 
 // *********************************
@@ -172,6 +174,9 @@ export const cgenerateInvalidEmailWithSpecificSuffixAndDomainName1 = sys.cgenera
 export const cgenerateInvalidEmailWithSpecificSuffixAndDomainName2 = sys.cgenerateInvalidEmail + sys.cWithSpecificSuffixAndDomainName + num.c2; // generateInvalidEmailWithSpecificSuffixAndDomainName2
 export const cgenerateRandomInvalidEmail1 = wrd.cgenerate + sys.cRandomInvalidEmail + num.c1; // generateRandomInvalidEmail1
 export const cgenerateRandomInvalidEmail2 = wrd.cgenerate + sys.cRandomInvalidEmail + num.c2; // generateRandomInvalidEmail2
+export const cgenerateRandomBrightColor = wrd.cgenerate + wrd.cRandom + wrd.cBright + wrd.cColor; // generateRandomBrightColor
+export const cgenerateRandomDarkColor = wrd.cgenerate + wrd.cRandom + wrd.cDark + wrd.cColor; // generateRandomDarkColor
+export const cgenerateRandomColor = wrd.cgenerate + wrd.cRandom + wrd.cColor; // generateRandomColor
 
 // *********************************
 // CharacterGeneration rules in order

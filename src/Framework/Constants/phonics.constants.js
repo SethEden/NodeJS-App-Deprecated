@@ -156,6 +156,10 @@ export const ciary = bas.ci + cary; // iary
 export const cMis = bas.cMi + bas.cs; // Mis
 export const cmis = bas.camai + bas.cs; // mis
 export const cource = bas.cou + bas.crc + bas.ce; // ource
+export const cmin = bas.camai + bas.cn; // min
+export const cMin = bas.cMi + bas.cn; // Min
+export const cmax = bas.cma + bas.cx; // max
+export const cMax = bas.cMa + bas.cx; // Max
 export const cmine = bas.camai + bas.cne; // mine
 //b.cet + bas.cer + bas.cmi + bas.cne; //cmine;
 export const cetermine = bas.ce + bas.ct + bas.ce + bas.cr + bas.cm + bas.ci + bas.cn + bas.ce; // etermine
@@ -262,6 +266,7 @@ export const cAPP = bas.cA + bas.cPP; // APP
 export const coot = bas.coo + bas.ct; // oot
 export const crse = bas.crs + bas.ce; // rse
 export const cRSE = bas.cRS + bas.cE; // RSE
+export const cars = bas.car + bas.cs; // ars
 export const carse = bas.ca + crse; // arse
 export const cARSE = bas.cA + cRSE; // ARSE
 export const cwap = bas.cwa + bas.cp; // wap
@@ -1073,6 +1078,11 @@ export const clang = bas.cl + cang; // lang
 export const cLang = bas.cL + cang; // Lang
 export const cuage = bas.cu + cage; // uage
 export const cries = bas.cr + cies; // ries
+export const ciss = bas.cis + bas.cs; // iss
+export const cinc = bas.cin + bas.cc; // inc
+export const cInc = bas.cIn + bas.cc; // Inc
+export const cmum = bas.cmu + bas.cm; // mum
+export const cimum = bas.ci + cmum; // imum
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////

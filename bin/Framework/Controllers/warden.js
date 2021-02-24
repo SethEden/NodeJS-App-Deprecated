@@ -595,6 +595,29 @@ function consoleLog(classPath, message) {
 }
 
 ;
+/**
+ * @function sleep
+ * @description Causes the entire application to sleep for a set time.
+ * @param {integer} sleepTime The time that the application should sleep in milliseconds.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/02/22
+ */
+
+function sleep(sleepTime) {
+  var functionName = sleep.name;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // configurationName is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'sleepTime is: ' + sleepTime);
+
+  _timers["default"].sleep(sleepTime);
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+}
+
+;
 var _default = {
   bootStrapApplication: bootStrapApplication,
   processRootPath: processRootPath,
@@ -609,6 +632,7 @@ var _default = {
   processCommandQueue: processCommandQueue,
   setConfigurationSetting: setConfigurationSetting,
   getConfigurationSetting: getConfigurationSetting,
-  consoleLog: consoleLog
+  consoleLog: consoleLog,
+  sleep: sleep
 };
 exports["default"] = _default;

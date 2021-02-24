@@ -316,7 +316,7 @@ specifiedSuffixAndDomain - The specified suffix and domain to use after the &quo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1007">line 1007</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1008">line 1008</a>
     </li></ul></dd>
     
 
@@ -510,7 +510,7 @@ specifiedSuffixAndDomain - The specified suffix and domain to use after the &quo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1065">line 1065</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1066">line 1066</a>
     </li></ul></dd>
     
 
@@ -747,7 +747,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1429">line 1429</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1430">line 1430</a>
     </li></ul></dd>
     
 
@@ -984,7 +984,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1537">line 1537</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1538">line 1538</a>
     </li></ul></dd>
     
 
@@ -1026,6 +1026,599 @@ where the length of the string is also defined as one of the input parameters, f
     <dd>
         
 <span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateRandomBrightColor"><span class="type-signature">(inner) </span>generateRandomBrightColor<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;integers>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generates a random set of RGB values in the bright color spectrum range.
+Originally I thought to generate just a bright color, but dividing the spectrum straight in half resulted in mostly drab colors.
+So I adjusted this function to use the inputs to provide a narrow range of bright values that can be generated.
+This makes the function nearly identical to the same function that generates random dark colors.
+Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not used for this business rule.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line2265">line 2265</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An array of RGB values in the bright color spectrum range.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;integers></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateRandomColor"><span class="type-signature">(inner) </span>generateRandomColor<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;integers>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generates a random set of RGB values in the given color range.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The number in either numeric or string format that represents the minimum range that should be used to generate the random color.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The number in either numeric or string format that represents the maximum range that should be used to generate the random color.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line2334">line 2334</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An array of RGB values in the dark color spectrum range.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;integers></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~generateRandomDarkColor"><span class="type-signature">(inner) </span>generateRandomDarkColor<span class="signature">(inputData, inputMetaData)</span><span class="type-signature"> &rarr; {array.&lt;integers>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Generates a random set of RGB values in the dark color spectrum range.
+Originally I thought to generate just a dark color, but dividing the spectrum straight in half resulted in mostly drab colors.
+So I adjusted this function to use the inputs to provide a narrow range of dark values that can be generated.
+This makes the function nearly identical to the same function that generates random bright colors.
+Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The number in either numeric or string format that represents the minimum range that should be used to generate the random color.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputMetaData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The number in either numeric or string format that represents the maximum range that should be used to generate the random color.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line2299">line 2299</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An array of RGB values in the dark color spectrum range.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array.&lt;integers></span>
 
 
     </dd>
@@ -1198,7 +1791,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1645">line 1645</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1646">line 1646</a>
     </li></ul></dd>
     
 
@@ -1412,7 +2005,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1954">line 1954</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1955">line 1955</a>
     </li></ul></dd>
     
 
@@ -1602,7 +2195,7 @@ where the length of the string is also defined as one of the input parameters, f
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line561">line 561</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line562">line 562</a>
     </li></ul></dd>
     
 
@@ -1791,7 +2384,7 @@ where the length of the string is also defined as one of the input parameters, f
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line588">line 588</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line589">line 589</a>
     </li></ul></dd>
     
 
@@ -1981,7 +2574,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line781">line 781</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line782">line 782</a>
     </li></ul></dd>
     
 
@@ -2171,7 +2764,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line809">line 809</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line810">line 810</a>
     </li></ul></dd>
     
 
@@ -2360,7 +2953,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line237">line 237</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line238">line 238</a>
     </li></ul></dd>
     
 
@@ -2549,7 +3142,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line264">line 264</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line265">line 265</a>
     </li></ul></dd>
     
 
@@ -2738,7 +3331,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line399">line 399</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line400">line 400</a>
     </li></ul></dd>
     
 
@@ -2927,7 +3520,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line426">line 426</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line427">line 427</a>
     </li></ul></dd>
     
 
@@ -3116,7 +3709,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line453">line 453</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line454">line 454</a>
     </li></ul></dd>
     
 
@@ -3305,7 +3898,7 @@ should be generated, generate them ans string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line480">line 480</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line481">line 481</a>
     </li></ul></dd>
     
 
@@ -3495,7 +4088,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line669">line 669</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line670">line 670</a>
     </li></ul></dd>
     
 
@@ -3685,7 +4278,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line697">line 697</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line698">line 698</a>
     </li></ul></dd>
     
 
@@ -3874,7 +4467,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line129">line 129</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -4063,7 +4656,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line156">line 156</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line157">line 157</a>
     </li></ul></dd>
     
 
@@ -4252,7 +4845,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line291">line 291</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line292">line 292</a>
     </li></ul></dd>
     
 
@@ -4441,7 +5034,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line318">line 318</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line319">line 319</a>
     </li></ul></dd>
     
 
@@ -4630,7 +5223,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line615">line 615</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line616">line 616</a>
     </li></ul></dd>
     
 
@@ -4819,7 +5412,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line642">line 642</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line643">line 643</a>
     </li></ul></dd>
     
 
@@ -5008,7 +5601,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line837">line 837</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line838">line 838</a>
     </li></ul></dd>
     
 
@@ -5197,7 +5790,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line864">line 864</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line865">line 865</a>
     </li></ul></dd>
     
 
@@ -5386,7 +5979,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line507">line 507</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line508">line 508</a>
     </li></ul></dd>
     
 
@@ -5575,7 +6168,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line534">line 534</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line535">line 535</a>
     </li></ul></dd>
     
 
@@ -5765,7 +6358,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line725">line 725</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line726">line 726</a>
     </li></ul></dd>
     
 
@@ -5955,7 +6548,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line753">line 753</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line754">line 754</a>
     </li></ul></dd>
     
 
@@ -6144,7 +6737,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line183">line 183</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -6333,7 +6926,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line210">line 210</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line211">line 211</a>
     </li></ul></dd>
     
 
@@ -6522,7 +7115,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line345">line 345</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line346">line 346</a>
     </li></ul></dd>
     
 
@@ -6711,7 +7304,7 @@ should be generated; generate them and string them together to the specified len
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line372">line 372</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line373">line 373</a>
     </li></ul></dd>
     
 
@@ -6924,7 +7517,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1217">line 1217</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1218">line 1218</a>
     </li></ul></dd>
     
 
@@ -7138,7 +7731,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1325">line 1325</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1326">line 1326</a>
     </li></ul></dd>
     
 
@@ -7332,7 +7925,7 @@ specifiedSuffixAndDomain - The specified suffix and domain to use after the &quo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line891">line 891</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line892">line 892</a>
     </li></ul></dd>
     
 
@@ -7526,7 +8119,7 @@ specifiedSuffixAndDomain - The specified suffix and domain to use after the &quo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line949">line 949</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line950">line 950</a>
     </li></ul></dd>
     
 
@@ -7763,7 +8356,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1123">line 1123</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1124">line 1124</a>
     </li></ul></dd>
     
 
@@ -8000,7 +8593,7 @@ from an optional list of allowable special characters, should be generated; gene
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1170">line 1170</a>
+        <a href="Framework_BusinessRules_Rules_stringGeneration.js.html">Framework/BusinessRules/Rules/stringGeneration.js</a>, <a href="Framework_BusinessRules_Rules_stringGeneration.js.html#line1171">line 1171</a>
     </li></ul></dd>
     
 
@@ -8075,7 +8668,7 @@ where the length of the string is also defined as one of the input parameters, f
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Feb 22 2021 15:47:16 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Feb 23 2021 21:17:36 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

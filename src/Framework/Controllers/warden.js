@@ -445,6 +445,23 @@ function consoleLog(classPath, message) {
   // console.log('END warden.consoleLog function');
 };
 
+/**
+ * @function sleep
+ * @description Causes the entire application to sleep for a set time.
+ * @param {integer} sleepTime The time that the application should sleep in milliseconds.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/02/22
+ */
+function sleep(sleepTime) {
+  let functionName = sleep.name;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  // configurationName is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'sleepTime is: ' + sleepTime);
+  timers.sleep(sleepTime);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+};
+
 export default {
   bootStrapApplication,
   processRootPath,
@@ -459,5 +476,6 @@ export default {
   processCommandQueue,
   setConfigurationSetting,
   getConfigurationSetting,
-  consoleLog
+  consoleLog,
+  sleep
 };

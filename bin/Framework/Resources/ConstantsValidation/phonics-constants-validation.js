@@ -614,6 +614,22 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Actual: phn.cource,
   Expected: 'ource'
 }, {
+  Name: 'cmin',
+  Actual: phn.cmin,
+  Expected: 'min'
+}, {
+  Name: 'cMin',
+  Actual: phn.cMin,
+  Expected: 'Min'
+}, {
+  Name: 'cmax',
+  Actual: phn.cmax,
+  Expected: 'max'
+}, {
+  Name: 'cMax',
+  Actual: phn.cMax,
+  Expected: 'Max'
+}, {
   Name: 'cmine',
   Actual: phn.cmine,
   Expected: 'mine'
@@ -1026,6 +1042,10 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cRSE',
   Actual: phn.cRSE,
   Expected: 'RSE'
+}, {
+  Name: 'cars',
+  Actual: phn.cars,
+  Expected: 'ars'
 }, {
   Name: 'carse',
   Actual: phn.carse,
@@ -4285,5 +4305,25 @@ var phonicsConstantsValidation = [// Reusable Grammer
   Name: 'cries',
   Actual: phn.cries,
   Expected: 'ries'
+}, {
+  Name: 'ciss',
+  Actual: phn.ciss,
+  Expected: 'iss'
+}, {
+  Name: 'cinc',
+  Actual: phn.cinc,
+  Expected: 'inc'
+}, {
+  Name: 'cInc',
+  Actual: phn.cInc,
+  Expected: 'Inc'
+}, {
+  Name: 'cmum',
+  Actual: phn.cmum,
+  Expected: 'mum'
+}, {
+  Name: 'cimum',
+  Actual: phn.cimum,
+  Expected: 'imum'
 }];
 exports.phonicsConstantsValidation = phonicsConstantsValidation;

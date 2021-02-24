@@ -164,6 +164,10 @@ export const phonicsConstantsValidation = [
    {Name: 'cMis', Actual: phn.cMis, Expected: 'Mis'},
    {Name: 'cmis', Actual: phn.cmis, Expected: 'mis'},
    {Name: 'cource', Actual: phn.cource, Expected: 'ource'},
+   {Name: 'cmin', Actual: phn.cmin, Expected: 'min'},
+   {Name: 'cMin', Actual: phn.cMin, Expected: 'Min'},
+   {Name: 'cmax', Actual: phn.cmax, Expected: 'max'},
+   {Name: 'cMax', Actual: phn.cMax, Expected: 'Max'},
    {Name: 'cmine', Actual: phn.cmine, Expected: 'mine'},
    //p.cet + phn.cer + phn.cmi + phn.cne; //cmine;
    {Name: 'cetermine', Actual: phn.cetermine, Expected: 'etermine'},
@@ -268,6 +272,7 @@ export const phonicsConstantsValidation = [
    {Name: 'coot', Actual: phn.coot, Expected: 'oot'},
    {Name: 'crse', Actual: phn.crse, Expected: 'rse'},
    {Name: 'cRSE', Actual: phn.cRSE, Expected: 'RSE'},
+   {Name: 'cars', Actual: phn.cars, Expected: 'ars'},
    {Name: 'carse', Actual: phn.carse, Expected: 'arse'},
    {Name: 'cARSE', Actual: phn.cARSE, Expected: 'ARSE'},
    {Name: 'cwap', Actual: phn.cwap, Expected: 'wap'},
@@ -1084,5 +1089,10 @@ export const phonicsConstantsValidation = [
    {Name: 'clang', Actual: phn.clang, Expected: 'lang'},
    {Name: 'cLang', Actual: phn.cLang, Expected: 'Lang'},
    {Name: 'cuage', Actual: phn.cuage, Expected: 'uage'},
-   {Name: 'cries', Actual: phn.cries, Expected: 'ries'}
+   {Name: 'cries', Actual: phn.cries, Expected: 'ries'},
+   {Name: 'ciss', Actual: phn.ciss, Expected: 'iss'},
+   {Name: 'cinc', Actual: phn.cinc, Expected: 'inc'},
+   {Name: 'cInc', Actual: phn.cInc, Expected: 'Inc'},
+   {Name: 'cmum', Actual: phn.cmum, Expected: 'mum'},
+   {Name: 'cimum', Actual: phn.cimum, Expected: 'imum'}
  ];
