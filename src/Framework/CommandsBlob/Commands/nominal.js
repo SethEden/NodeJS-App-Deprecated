@@ -1370,6 +1370,7 @@ export const saveConfiguration = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
 
+  fileBroker.writeJsonData(configurator.getConfigurationSetting(sys.cConfigurationPath) + 'config.json', D[wrd.cConfiguration]);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
