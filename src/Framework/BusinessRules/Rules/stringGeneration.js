@@ -2316,9 +2316,8 @@ export const generateRandomDarkColor = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = [0,0,0];
   let minimumColorRange = 0;
-  let tempMinimumColorRange = 0;
   let maximumColorRange = 127;
-  let tempMaximumColorRange = 0;
+  let parsedColorRangeArray = [];
   if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
     // Try to parse them as numbers for the range.
     parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
@@ -2347,9 +2346,8 @@ export const generateRandomColor = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = [0,0,0];
   let minimumColorRange = 0;
-  let tempMinimumColorRange = 0;
   let maximumColorRange = 0;
-  let tempMaximumColorRange = 0;
+  let parsedColorRangeArray = [];
   if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
     // Try to parse them as numbers for the range.
     parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
