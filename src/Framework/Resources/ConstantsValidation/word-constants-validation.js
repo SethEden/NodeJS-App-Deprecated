@@ -290,6 +290,7 @@ export const wordConstantsValidation = [
    {Name: 'cExpecting', Actual: wrd.cExpecting, Expected: 'Expecting'},
    {Name: 'cnavigate', Actual: wrd.cnavigate, Expected: 'navigate'},
    {Name: 'cNavigate', Actual: wrd.cNavigate, Expected: 'Navigate'},
+   {Name: 'csave', Actual: wrd.csave, Expected: 'save'},
    {Name: 'cSave', Actual: wrd.cSave, Expected: 'Save'},
    {Name: 'cDownload', Actual: wrd.cDownload, Expected: 'Download'},
    {Name: 'cNegative', Actual: wrd.cNegative, Expected: 'Negative'},

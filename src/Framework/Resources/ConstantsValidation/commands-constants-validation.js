@@ -46,6 +46,7 @@ import * as cmd from '../../Constants/commands.constants';
    {Name: 'cconstantsPatternRecognizer', Actual: cmd.cconstantsPatternRecognizer, Expected: 'constantsPatternRecognizer'},
    {Name: 'cbusinessRulesMetrics', Actual: cmd.cbusinessRulesMetrics, Expected: 'businessRulesMetrics'},
    {Name: 'ccommandMetrics', Actual: cmd.ccommandMetrics, Expected: 'commandMetrics'},
+   {Name: 'csaveConfiguration', Actual: cmd.csaveConfiguration, Expected: 'saveConfiguration'},
    {Name: 'cconvertColors', Actual: cmd.cconvertColors, Expected: 'convertColors'},
 
    // ********************************

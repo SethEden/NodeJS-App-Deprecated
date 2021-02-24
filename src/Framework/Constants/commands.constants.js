@@ -44,6 +44,7 @@ export const cconstantsGeneratorList = cconstantsGenerator + wrd.cList; // const
 export const cconstantsPatternRecognizer = wrd.cconstants + wrd.cPattern + wrd.cRecognizer; // constantsPatternRecognizer
 export const cbusinessRulesMetrics = wrd.cbusiness + wrd.cRules + wrd.cMetrics; // businessRulesMetrics
 export const ccommandMetrics = wrd.ccommand + wrd.cMetrics; // commandMetrics
+export const csaveConfiguration = wrd.csave + wrd.cConfiguration; // saveConfiguration
 export const cconvertColors = wrd.cconvert + wrd.cColors; // convertColors
 // ********************************
 // Unit Test Constants commands in order

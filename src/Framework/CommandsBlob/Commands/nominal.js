@@ -1355,6 +1355,27 @@ export const commandMetrics = function(inputData, inputMetaData) {
 };
 
 /**
+ * @function saveConfiguration
+ * @description Saves out all of the configuration data to a JSON file so custom user settings can be persisted between sessions.
+ * @param {string} inputData Not used for this command.
+ * @param {string} inputMetaData Not used for this command.
+ * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+export const saveConfiguration = function(inputData, inputMetaData) {
+  let functionName = cmd.csaveConfiguration;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let returnData = true;
+
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
+};
+
+/**
  * @function convertColors
  * @description Converts all of the color hexidecimal values into RGB color values.
  * @param {string} inputData Not used for this command.
