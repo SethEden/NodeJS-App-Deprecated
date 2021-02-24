@@ -17,9 +17,11 @@
  */
 import warden from '../../../../Framework/Controllers/warden';
 import * as bas from '../../../../Framework/Constants/basic.constants';
+import * as gen from '../../../../Framework/Constants/generic.constants';
 import * as num from '../../../../Framework/Constants/numeric.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
 import * as biz from '../../../../Framework/Constants/business.constants';
+import * as cfg from '../../../../Framework/Constants/configurations.constants';
 import * as msg from '../../../../Framework/Constants/messages.constants';
 import * as apc from '../../Constants/application.constants';
 var path = require('path');
@@ -155,7 +157,7 @@ export const bossPanic = function(inputData, inputMetaData) {
     // Now we will generate a number between 0 and the string length, this will be the color limit so we can break the line up randomly into a beginning segement and an ending segment.
     // Each segment of the line will get a different random foreground font color and random background font color.
     colorBreakPoint = warden.executeBusinessRule(biz.crandomlyGenerateNumberInRange2, num.c1, [stringLength, false, false]);
-    stringToPrint = warden.executeBusinessRule(biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2, stringLength, '!@#$%^&*()_+{}|:"<>?.,~');
+    stringToPrint = warden.executeBusinessRule(biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2, stringLength, gen.cMostSpecialCharacters);
     if (enableColoredLine === true && systemColorLogsEnabled === true) {
       subString1 = stringToPrint.substr(0, colorBreakPoint);
       subString2 = stringToPrint.substr(colorBreakPoint, stringToPrint.length);

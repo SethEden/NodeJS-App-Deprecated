@@ -11,11 +11,15 @@ var _warden = _interopRequireDefault(require("../../../../Framework/Controllers/
 
 var bas = _interopRequireWildcard(require("../../../../Framework/Constants/basic.constants"));
 
+var gen = _interopRequireWildcard(require("../../../../Framework/Constants/generic.constants"));
+
 var num = _interopRequireWildcard(require("../../../../Framework/Constants/numeric.constants"));
 
 var sys = _interopRequireWildcard(require("../../../../Framework/Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../../../../Framework/Constants/business.constants"));
+
+var cfg = _interopRequireWildcard(require("../../../../Framework/Constants/configurations.constants"));
 
 var msg = _interopRequireWildcard(require("../../../../Framework/Constants/messages.constants"));
 
@@ -207,7 +211,7 @@ var bossPanic = function bossPanic(inputData, inputMetaData) {
     // Each segment of the line will get a different random foreground font color and random background font color.
 
     colorBreakPoint = _warden["default"].executeBusinessRule(biz.crandomlyGenerateNumberInRange2, num.c1, [stringLength, false, false]);
-    stringToPrint = _warden["default"].executeBusinessRule(biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2, stringLength, '!@#$%^&*()_+{}|:"<>?.,~');
+    stringToPrint = _warden["default"].executeBusinessRule(biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2, stringLength, gen.cMostSpecialCharacters);
 
     if (enableColoredLine === true && systemColorLogsEnabled === true) {
       subString1 = stringToPrint.substr(0, colorBreakPoint);
