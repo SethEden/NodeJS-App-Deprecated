@@ -12,6 +12,7 @@ export const cSpace = ' ';
 export const cUnderscore = '_'; // _
 export const cPipe = '|'; // |
 export const cExclamation = '!'; // !
+export const cQuestion = '?'; // ?
 export const cSingleQuote = '\''; // '
 export const cBackTickQuote = '`'; // `
 export const cDoubleQuote = '"'; // "

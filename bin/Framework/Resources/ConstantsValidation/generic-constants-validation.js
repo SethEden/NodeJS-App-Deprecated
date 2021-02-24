@@ -210,6 +210,10 @@ var genericConstantsValidation = [{
   Name: 'cAllNumbers',
   Actual: gen.cAllNumbers,
   Expected: '0123456789'
+}, {
+  Name: 'cMostSpecialCharacters',
+  Actual: gen.cMostSpecialCharacters,
+  Expected: '!@#$%^&*()_+{}|:"<>?.,~'
 }, // File Extensions
 {
   Name: 'cexe',

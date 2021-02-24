@@ -479,6 +479,9 @@ import * as msg from '../../Constants/messages.constants';
    {Name: 'cConentsOfTheStackNamespace', Actual: msg.cConentsOfTheStackNamespace, Expected: 'Contents of the stack namespace: '},
    {Name: 'cwordDelimiterIs', Actual: msg.cwordDelimiterIs, Expected: 'wordDelimiter is: '},
    {Name: 'cstringContainsAcronymIs', Actual: msg.cstringContainsAcronymIs, Expected: 'stringContainsAcronym is: '},
+   {Name: 'cErrorZipPackageReleaseFailed', Actual: msg.cErrorZipPackageReleaseFailed, Expected: 'ERROR: Zip package release failed: '},
+   {Name: 'cminimumColorRangeIs', Actual: msg.cminimumColorRangeIs, Expected: 'minimumColorRange is: '},
+   {Name: 'cmaximumColorRangeIs', Actual: msg.cmaximumColorRangeIs, Expected: 'maximumColorRange is: '},
 
    {Name: 'cDetermineWordDelimiterMessage1', Actual: msg.cDetermineWordDelimiterMessage1, Expected: 'WARNING: Mixed string. '},
    {Name: 'cDetermineWordDelimiterMessage2', Actual: msg.cDetermineWordDelimiterMessage2, Expected: 'Cannot determine what delimiter should '},
@@ -551,5 +554,5 @@ import * as msg from '../../Constants/messages.constants';
    {Name: 'cparseBusinessRuleArgumentMessage2', Actual: msg.cparseBusinessRuleArgumentMessage2, Expected: 'Please adjust inputs and try again.'},
    {Name: 'cprintDataHiveAttributesMessage1', Actual: msg.cprintDataHiveAttributesMessage1, Expected: 'Caught the case the user may have only specified a single data hive, '},
    {Name: 'cprintDataHiveAttributesMessage2', Actual: msg.cprintDataHiveAttributesMessage2, Expected: 'such as the configuration data hive.'},
-   {Name: 'cprintDataHiveAttributesMessage3', Actual: msg.cprintDataHiveAttributesMessage3, Expected: 'ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.'}
+   {Name: 'cprintDataHiveAttributesMessage3', Actual: msg.cprintDataHiveAttributesMessage3, Expected: 'ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.'},
  ];

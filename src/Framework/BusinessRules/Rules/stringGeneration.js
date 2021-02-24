@@ -115,6 +115,7 @@
  */
 import loggers from '../../Executrix/loggers';
 import { stringToBoolean } from './stringParsing';
+import * as aryParse from './arrayParsing';
 import * as charGen from './characterGeneration';
 import * as bas from '../../Constants/basic.constants';
 import * as gen from '../../Constants/generic.constants';
@@ -2257,6 +2258,112 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       break;
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function generateRandomBrightColor
+ * @description Generates a random set of RGB values in the bright color spectrum range.
+ * Originally I thought to generate just a bright color, but dividing the spectrum straight in half resulted in mostly drab colors.
+ * So I adjusted this function to use the inputs to provide a narrow range of bright values that can be generated.
+ * This makes the function nearly identical to the same function that generates random dark colors.
+ * Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.
+ * @param {string|integer} inputData Not used for this business rule.
+ * @param {string|integer} inputMetaData Not used for this business rule.
+ * @return {array<integers>} An array of RGB values in the bright color spectrum range.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+export const generateRandomBrightColor = function(inputData, inputMetaData) {
+  let functionName = biz.cgenerateRandomBrightColor;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let returnData = [255,255,255];
+  let minimumColorRange = 127;
+  let maximumColorRange = 255;
+  let parsedColorRangeArray = [];
+  if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
+    // Try to parse them as numbers for the range.
+    parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
+    minimumColorRange = parsedColorRangeArray[0];
+    maximumColorRange = parsedColorRangeArray[1];
+  }
+  returnData = generateRandomColor(minimumColorRange, maximumColorRange);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function generateRandomDarkColor
+ * @description Generates a random set of RGB values in the dark color spectrum range.
+ * Originally I thought to generate just a dark color, but dividing the spectrum straight in half resulted in mostly drab colors.
+ * So I adjusted this function to use the inputs to provide a narrow range of dark values that can be generated.
+ * This makes the function nearly identical to the same function that generates random bright colors.
+ * Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.
+ * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
+ * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
+ * @return {array<integers>} An array of RGB values in the dark color spectrum range.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+export const generateRandomDarkColor = function(inputData, inputMetaData) {
+  let functionName = biz.cgenerateRandomDarkColor;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let returnData = [0,0,0];
+  let minimumColorRange = 0;
+  let tempMinimumColorRange = 0;
+  let maximumColorRange = 127;
+  let tempMaximumColorRange = 0;
+  if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
+    // Try to parse them as numbers for the range.
+    parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
+    minimumColorRange = parsedColorRangeArray[0];
+    maximumColorRange = parsedColorRangeArray[1];
+  }
+  returnData = generateRandomColor(minimumColorRange, maximumColorRange);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return returnData;
+};
+
+/**
+ * @function generateRandomColor
+ * @description Generates a random set of RGB values in the given color range.
+ * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
+ * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
+ * @return {array<integers>} An array of RGB values in the dark color spectrum range.
+ * @author Seth Hollingsead
+ * @date 2021/02/23
+ */
+export const generateRandomColor = function(inputData, inputMetaData) {
+  let functionName = biz.cgenerateRandomColor;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let returnData = [0,0,0];
+  let minimumColorRange = 0;
+  let tempMinimumColorRange = 0;
+  let maximumColorRange = 0;
+  let tempMaximumColorRange = 0;
+  if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
+    // Try to parse them as numbers for the range.
+    parsedColorRangeArray = aryParse.parseColorRangeInputs(inputData, inputMetaData);
+    minimumColorRange = parsedColorRangeArray[0];
+    maximumColorRange = parsedColorRangeArray[1];
+  }
+  // minimumColorRange is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cminimumColorRangeIs + minimumColorRange);
+  // maximumColorRange is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmaximumColorRangeIs + maximumColorRange);
+  returnData[0] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Red
+  returnData[1] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Green
+  returnData[2] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Blue
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };

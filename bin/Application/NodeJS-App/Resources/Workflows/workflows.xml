@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><CommandWorkflows>
   <Workflow Name="workflow1" Value="commandSequencer echoCommand customEchoCommand"/>
   <Workflow Name="workflow2" Value="commandSequencer customEchoCommand echoCommand"/>
+  <Workflow Name="bossPanicWorkflow1" Value="bossPanic 0 100 20 15"/>
+  <Workflow Name="bossPanicWorkflow2" Value="bossPanic 100 100 25 20"/>
+  <Workflow Name="bossPanicWorkflow3" Value="bossPanic 25 50 30 20"/>
+  <Workflow Name="bossPanicWorkflow4" Value="bossPanic 400 200 30 25"/>
+  <Workflow Name="bossPanicWorkflow5" Value="bossPanic 0 200 30 5 True"/>
+  <Workflow Name="bossPanicWorkflow6" Value="bossPanic 0 200 30 5 True 25"/>
 </CommandWorkflows>

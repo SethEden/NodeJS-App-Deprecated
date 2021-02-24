@@ -158,7 +158,7 @@ function reformatDeltaTime(deltaTime, format) {
  */
 
 function sleep(sleepTime) {
-  var functionName = reformatDeltaTime.name;
+  var functionName = sleep.name;
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // sleepTime is:
 

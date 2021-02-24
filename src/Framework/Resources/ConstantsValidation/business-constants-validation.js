@@ -127,6 +127,8 @@ import * as biz from '../../Constants/business.constants';
    {Name: 'creplaceCharacterAtIndex', Actual: biz.creplaceCharacterAtIndex, Expected: 'replaceCharacterAtIndex'},
    {Name: 'cgenerateCommandAliases', Actual: biz.cgenerateCommandAliases, Expected: 'generateCommandAliases'},
    {Name: 'caggregateCommandArguments', Actual: biz.caggregateCommandArguments, Expected: 'aggregateCommandArguments'},
+   {Name: 'cgetFileAndPathListForPath', Actual: biz.cgetFileAndPathListForPath, Expected: 'getFileAndPathListForPath'},
+   {Name: 'cparseColorRangeInputs', Actual: biz.cparseColorRangeInputs, Expected: 'parseColorRangeInputs'},
    {Name: 'cdoesArrayContainValue', Actual: biz.cdoesArrayContainValue, Expected: 'doesArrayContainValue'},
 
    // *********************************
@@ -172,6 +174,9 @@ import * as biz from '../../Constants/business.constants';
    {Name: 'cgenerateInvalidEmailWithSpecificSuffixAndDomainName2', Actual: biz.cgenerateInvalidEmailWithSpecificSuffixAndDomainName2, Expected: 'generateInvalidEmailWithSpecificSuffixAndDomainName2'},
    {Name: 'cgenerateRandomInvalidEmail1', Actual: biz.cgenerateRandomInvalidEmail1, Expected: 'generateRandomInvalidEmail1'},
    {Name: 'cgenerateRandomInvalidEmail2', Actual: biz.cgenerateRandomInvalidEmail2, Expected: 'generateRandomInvalidEmail2'},
+   {Name: 'cgenerateRandomBrightColor', Actual: biz.cgenerateRandomBrightColor, Expected: 'generateRandomBrightColor'},
+   {Name: 'cgenerateRandomDarkColor', Actual: biz.cgenerateRandomDarkColor, Expected: 'generateRandomDarkColor'},
+   {Name: 'cgenerateRandomColor', Actual: biz.cgenerateRandomColor, Expected: 'generateRandomColor'},
 
    // *********************************
    // CharacterGeneration rules in order

@@ -482,6 +482,9 @@ export const cisEmpty = bas.cSpace + bas.cis + bas.cSpace + wrd.cempty + bas.cEx
 export const cConentsOfTheStackNamespace = wrd.cContents + bas.cSpace + bas.cof + bas.cSpace + wrd.cthe + bas.cSpace + wrd.cstack + bas.cSpace + wrd.cname + wrd.cspace + bas.cColon + bas.cSpace; // Contents of the stack namespace:
 export const cwordDelimiterIs = wrd.cword + wrd.cDelimiter + sys.cSpaceIsColonSpace; // wordDelimiter is:
 export const cstringContainsAcronymIs = wrd.cstring + wrd.cContains + wrd.cAcronym + sys.cSpaceIsColonSpace; // stringContainsAcronym is:
+export const cErrorZipPackageReleaseFailed = wrd.cERROR + bas.cColon + bas.cSpace + gen.cZip + bas.cSpace + wrd.cpackage + bas.cSpace + wrd.crelease + bas.cSpace + wrd.cfailed + bas.cColon + bas.cSpace; // ERROR: Zip package release failed:
+export const cminimumColorRangeIs = wrd.cminimum + wrd.cColor + wrd.cRange + sys.cSpaceIsColonSpace; // minimumColorRange is:
+export const cmaximumColorRangeIs = wrd.cmaximum + wrd.cColor + wrd.cRange + sys.cSpaceIsColonSpace; // maximumColorRange is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = wrd.cWARNING + bas.cColon + bas.cSpace + wrd.cMixed + bas.cSpace + wrd.cstring + bas.cDot + bas.cSpace; // WARNING: Mixed string.
