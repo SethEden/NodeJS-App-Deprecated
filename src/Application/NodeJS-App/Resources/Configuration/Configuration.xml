@@ -408,19 +408,19 @@
           <ConfigurationElement Name="warden.bootStrapApplication@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.bootStrapApplication@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="warden.saveRootPath" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@MessageFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@DataFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="warden.mergeClientBusinessRules" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientBusinessRules@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1009,6 +1009,34 @@
           <ConfigurationElement Name="dataBroker.getDataElementCount@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeClientConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="fileBroker.getXmlData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.getXmlData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

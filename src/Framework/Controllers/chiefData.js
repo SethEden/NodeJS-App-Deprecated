@@ -148,14 +148,18 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
 /**
  * @function setupConstantsValidationData
  * @description Calls the dataBroker to setup & initialize all of the constants verification data.
+ * @param {array<string>} arrayClientValidationLibraryNames An array of client constants library validation names.
+ * @param {array<object>} arrayClientValidationDataLibraries An array of client constants library validation data.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/07/27
  */
-function setupConstantsValidationData() {
+function setupConstantsValidationData(arrayClientValidationLibraryNames, arrayClientValidationDataLibraries) {
   let functionName = setupAllCsvData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   dataBroker.initializeConstantsValidationData();
+  // Now don't forget to initialize all of the client constants validation libraries as well.
+  
   loggers.consoleLog(baseFileName = bas.cDot + functionName, msg.cEND_Function);
 };
 

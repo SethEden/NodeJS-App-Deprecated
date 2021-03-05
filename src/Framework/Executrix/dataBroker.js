@@ -731,7 +731,7 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
  * @date 2020/07/28
  */
 function initializeConstantsValidationData() {
-  let functionName = getDataElementCount.name;
+  let functionName = initializeConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   D[sys.cConstantsValidationData] = {};
   D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];
@@ -774,6 +774,25 @@ function initializeConstantsValidationData() {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
+/**
+ * @function initializeClientConstantsValidationData
+ * @description Initializes all of the client constants validation data so that it can be used to validate all of the client constants.
+ * @param {string} constantLibraryName The name of the library that should be added to the constants validation data-set.
+ * @param {array<object>} constantLibraryData The array of data that should be added to the validation data set for the purpose of valdation.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/02/24
+ */
+function initializeClientConstantsValidationData(constantLibraryName, constantLibraryData) {
+  let functionName = initializeClientConstantsValidationData.name;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  D[sys.cConstantsValidationData][constantLibraryName] = [];
+  D[sys.cConstantsValidationData][constantLibraryName] = constantLibraryData;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.celementCountIs + elementCount);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return elementCount;
+};
+
 export default {
   scanDataPath,
   loadAllCsvData,
@@ -783,5 +802,6 @@ export default {
   storeData,
   getData,
   clearData,
-  initializeConstantsValidationData
+  initializeConstantsValidationData,
+  initializeClientConstantsValidationData
 };

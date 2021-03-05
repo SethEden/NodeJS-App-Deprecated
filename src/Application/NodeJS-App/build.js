@@ -69,7 +69,7 @@ function bootStrapApplicationDeployment() {
   rootPath = warden.processRootPath(rootPath);
   // console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
-  warden.saveRootPath(rootPath);
+  warden.initApplicationSchema(rootPath, [], []);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
   if (NODE_ENV === wrd.cdevelopment) {

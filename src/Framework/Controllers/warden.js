@@ -117,7 +117,7 @@ function processRootPath(systemRootPath) {
 };
 
 /**
- * @function saveRootPath
+ * @function initApplicationSchema
  * @description Saves the root path and also cleans the root path and saves the cleaned root path.
  * Also saves the current application version number and the application name.
  * @param {string} rootPath The root path of the application.
@@ -125,10 +125,22 @@ function processRootPath(systemRootPath) {
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
-function saveRootPath(rootPath) {
-  // console.log('BEGIN warden.saveRootPath function');
+
+/**
+ * @function initApplicationSchema
+ * @description Saves the root path and also cleans the root path and saves the cleaned root path.
+ * Also saves the current application version number and the application name.
+ * @param {string} rootPath The root path of the application.
+ * @param {array<string>} arrayClientValidationLibraryNames An array of client constants library validation names.
+ * @param {array<object>} arrayClientValidationDataLibraries An array of client constants library validation data.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+function initApplicationSchema(rootPath, arrayClientValidationLibraryNames, arrayClientValidationDataLibraries) {
+  // console.log('BEGIN warden.initApplicationSchema function');
   // console.log('rootPath is: ' + rootPath);
-  let functionName = saveRootPath.name;
+  let functionName = initApplicationSchema.name;
   // console.log('logging the BEGIN warden.saveRootPath function');
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // console.log('logging the current rootPath input.');
@@ -152,7 +164,7 @@ function saveRootPath(rootPath) {
   // console.log('set the application description as a configuration setting: ' + applicationData[wrd.cDescription]);
   configurator.setConfigurationSetting(sys.cApplicationDescription, applicationData[wrd.cDescription]);
   if (configurator.getConfigurationSetting(cfg.cEnableConstantsValidation) === true) {
-      chiefData.setupConstantsValidationData();
+      chiefData.setupConstantsValidationData(arrayClientValidationLibraryNames, arrayClientValidationDataLibraries);
       let resolvedConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cConstantsPathActual)
       // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
       configurator.setConfigurationSetting(sys.cConstantsPath, resolvedConstantsPathActual);
@@ -465,7 +477,7 @@ function sleep(sleepTime) {
 export default {
   bootStrapApplication,
   processRootPath,
-  saveRootPath,
+  initApplicationSchema,
   mergeClientBusinessRules,
   mergeClientCommands,
   loadCommandAliases,
