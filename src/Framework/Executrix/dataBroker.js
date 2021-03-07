@@ -13,24 +13,6 @@
  * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:message-constants
- * @requires module:basic-constants-validation
- * @requires module:business-constants-validation
- * @requires module:color-constants-validation
- * @requires module:command-constants-validation
- * @requires module:configuration-constants-validation
- * @requires module:country-constants-validation
- * @requires module:element-constants-validation
- * @requires module:generic-constants-validation
- * @requires module:isotope-constants-validation
- * @requires module:knot-constants-validation
- * @requires module:language-constants-validation
- * @requires module:message-constants-validation
- * @requires module:numeric-constants-validation
- * @requires module:phonic-constants-validation
- * @requires module:shape-constants-validation
- * @requires module:system-constants-validation
- * @requires module:unit-constants-validation
- * @requires module:word-constants-validation
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -47,24 +29,6 @@ import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/message.constants';
-import * as bas_cv from '../Resources/ConstantsValidation/basic-constants-validation';
-import * as biz_cv from '../Resources/ConstantsValidation/business-constants-validation';
-import * as clr_cv from '../Resources/ConstantsValidation/color-constants-validation';
-import * as cmd_cv from '../Resources/ConstantsValidation/command-constants-validation';
-import * as cfg_cv from '../Resources/ConstantsValidation/configuration-constants-validation';
-import * as ctr_cv from '../Resources/ConstantsValidation/country-constants-validation';
-import * as elm_cv from '../Resources/ConstantsValidation/element-constants-validation';
-import * as gen_cv from '../Resources/ConstantsValidation/generic-constants-validation';
-import * as iso_cv from '../Resources/ConstantsValidation/isotope-constants-validation';
-import * as kts_cv from '../Resources/ConstantsValidation/knot-constants-validation';
-import * as lng_cv from '../Resources/ConstantsValidation/language-constants-validation';
-import * as msg_cv from '../Resources/ConstantsValidation/message-constants-validation';
-import * as num_cv from '../Resources/ConstantsValidation/numeric-constants-validation';
-import * as phn_cv from '../Resources/ConstantsValidation/phonic-constants-validation';
-import * as shp_cv from '../Resources/ConstantsValidation/shape-constants-validation';
-import * as sys_cv from '../Resources/ConstantsValidation/system-constants-validation';
-import * as unt_cv from '../Resources/ConstantsValidation/unit-constants-validation';
-import * as wrd_cv from '../Resources/ConstantsValidation/word-constants-validation';
 var D = require('../Structures/data');
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -725,72 +689,31 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
 
 /**
  * @function initializeConstantsValidationData
- * @description Initializes all of the constants validation data so that it can be used to validate all of the constants.
- * @return {void}
- * @author Seth Hollingsead
- * @date 2020/07/28
- */
-function initializeConstantsValidationData() {
-  let functionName = initializeConstantsValidationData.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  D[sys.cConstantsValidationData] = {};
-  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = [];
-
-  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = bas_cv.basicConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = biz_cv.businessConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = clr_cv.colorConstantsValidation;
-  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = cmd_cv.commandConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = cfg_cv.configurationConstantsValidation;
-  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = ctr_cv.countryConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = elm_cv.elementConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = gen_cv.genericConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = iso_cv.isotopeConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = kts_cv.knotConstantsValidation;
-  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = lng_cv.languageConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = msg_cv.messageConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = num_cv.numericConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = phn_cv.phonicConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = shp_cv.shapeConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = sys_cv.systemConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = unt_cv.unitConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = wrd_cv.wordConstantsValidation;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
-};
-
-/**
- * @function initializeClientConstantsValidationData
- * @description Initializes all of the client constants validation data so that it can be used to validate all of the client constants.
- * @param {string} constantLibraryName The name of the library that should be added to the constants validation data-set.
- * @param {array<object>} constantLibraryData The array of data that should be added to the validation data set for the purpose of valdation.
+ * @description Initializes the constants validation data structure.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2021/02/24
  */
-function initializeClientConstantsValidationData(constantLibraryName, constantLibraryData) {
-  let functionName = initializeClientConstantsValidationData.name;
+function initializeConstantsValidationData() {
+  let functionName = initializeConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  D[sys.cConstantsValidationData][constantLibraryName] = [];
-  D[sys.cConstantsValidationData][constantLibraryName] = constantLibraryData;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.celementCountIs + elementCount);
+  D[sys.cConstantsValidationData] = [];
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
-  return elementCount;
+};
+
+/**
+ * @function addConstantsValidationData
+ * @description Adds a library of constants validation data to the existing constants validation data.
+ * @param {array<array<string,object>>} constantLibraryData The array of data that should be added to the validation data set for the purpose of valdation.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/03/06
+ */
+function addConstantsValidationData(constantLibraryData) {
+  let functionName = initializeConstantsValidationData.name;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  D[sys.cConstantsValidationData] = constantLibraryData;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 export default {
@@ -803,5 +726,5 @@ export default {
   getData,
   clearData,
   initializeConstantsValidationData,
-  initializeClientConstantsValidationData
+  addConstantsValidationData
 };

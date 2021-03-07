@@ -47,6 +47,7 @@ import * as biz from '../Constants/business.constants';
 import * as cmd from '../Constants/command.constants';
 import * as cfg from '../Constants/configuration.constants';
 import * as msg from '../Constants/message.constants';
+import * as all_cv from '../Resources/ConstantsValidation/all-constants-validation';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -131,13 +132,12 @@ function processRootPath(systemRootPath) {
  * @description Saves the root path and also cleans the root path and saves the cleaned root path.
  * Also saves the current application version number and the application name.
  * @param {string} rootPath The root path of the application.
- * @param {array<string>} arrayClientValidationLibraryNames An array of client constants library validation names.
- * @param {array<object>} arrayClientValidationDataLibraries An array of client constants library validation data.
+ * @param {array<array<string,object>>} arrayValidationData And array of arrays that contains all of the constants library validation names and data objects.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
-function initApplicationSchema(rootPath, arrayClientValidationLibraryNames, arrayClientValidationDataLibraries) {
+function initApplicationSchema(rootPath, arrayClientValidationData) {
   // console.log('BEGIN warden.initApplicationSchema function');
   // console.log('rootPath is: ' + rootPath);
   let functionName = initApplicationSchema.name;
@@ -164,7 +164,10 @@ function initApplicationSchema(rootPath, arrayClientValidationLibraryNames, arra
   // console.log('set the application description as a configuration setting: ' + applicationData[wrd.cDescription]);
   configurator.setConfigurationSetting(sys.cApplicationDescription, applicationData[wrd.cDescription]);
   if (configurator.getConfigurationSetting(cfg.cEnableConstantsValidation) === true) {
-      chiefData.setupConstantsValidationData(arrayClientValidationLibraryNames, arrayClientValidationDataLibraries);
+      chiefData.initializeConstantsValidationData(); // This just makes sure that the data structure is created on the D-Data structure.
+      let systemValidationData =
+      chiefData.addConstantsValidationData(arraySystemValidationData);
+      chiefData.addConstantsValidationData(arrayClientValidationData);
       let resolvedConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cConstantsPathActual)
       // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
       configurator.setConfigurationSetting(sys.cConstantsPath, resolvedConstantsPathActual);

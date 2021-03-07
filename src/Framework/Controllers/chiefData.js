@@ -146,20 +146,31 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
 };
 
 /**
- * @function setupConstantsValidationData
- * @description Calls the dataBroker to setup & initialize all of the constants verification data.
- * @param {array<string>} arrayClientValidationLibraryNames An array of client constants library validation names.
- * @param {array<object>} arrayClientValidationDataLibraries An array of client constants library validation data.
+ * @function initializeConstantsValidationData
+ * @description Calls the dataBroker to initialize the constants verification data structure.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/07/27
  */
-function setupConstantsValidationData(arrayClientValidationLibraryNames, arrayClientValidationDataLibraries) {
-  let functionName = setupAllCsvData.name;
+function initializeConstantsValidationData() {
+  let functionName = initializeConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   dataBroker.initializeConstantsValidationData();
-  // Now don't forget to initialize all of the client constants validation libraries as well.
-  
+  loggers.consoleLog(baseFileName = bas.cDot + functionName, msg.cEND_Function);
+};
+
+/**
+ * @function addConstantsValidationData
+ * @description Calls the dataBroker to add constants validation data to the constants validation data structure.
+ * @param {array<array<string,object>>} arrayValidationData And array of arrays that contains all of the constants library validation names and data objects.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/03/06
+ */
+function addConstantsValidationData(arrayValidationData) {
+  let functionName = initializeConstantsValidationData.name;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  dataBroker.addConstantsValidationData(arrayValidationData);
   loggers.consoleLog(baseFileName = bas.cDot + functionName, msg.cEND_Function);
 };
 
@@ -168,5 +179,6 @@ export default {
   getAndProcessXmlData,
   setupAllCsvData,
   setupAllXmlData,
-  setupConstantsValidationData
+  initializeConstantsValidationData,
+  addConstantsValidationData
 };
