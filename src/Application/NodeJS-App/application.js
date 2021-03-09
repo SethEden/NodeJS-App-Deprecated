@@ -9,10 +9,11 @@
  * @requires module:warden
  * @requires module:clientRulesLibrary
  * @requires module:clientCommandsLibrary
- * @requires module:application-constants
+ * @requires module:all-client-constants-validation
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:command-constants
  * @requires module:configuration-constants
  * @requires module:message-constants
  * @requires module:application-constants
@@ -26,6 +27,7 @@
 import warden from '../../Framework/Controllers/warden';
 import clientRules from './BusinessRules/clientRulesLibrary';
 import clientCommands from './Commands/clientCommandsLibrary';
+import all_clt_cv from './Resources/ConstantsValidation/all-client-constants-validation';
 import * as bas from '../../Framework/Constants/basic.constants';
 import * as wrd from '../../Framework/Constants/word.constants';
 import * as sys from '../../Framework/Constants/system.constants';
@@ -63,7 +65,7 @@ function bootStrapApplication() {
   rootPath = warden.processRootPath(rootPath);
   // console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
-  warden.initApplicationSchema(rootPath, [], []);
+  warden.initApplicationSchema(rootPath, all_clt_cv.initializeAllClientConstantsValidationData());
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
   if (NODE_ENV === wrd.cdevelopment) {

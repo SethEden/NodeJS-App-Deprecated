@@ -1,7 +1,8 @@
 /**
-* @file all-constants-validation.js
-* @module all-constants-validation
-* @description Contains validation for constants for all of the most basic characters and basic 2-character combinations.
+* @file all-system-constants-validation.js
+* @module all-system-constants-validation
+* @description Contains validation for all system constants.
+* @requires module:loggers
 * @requires module:basic-constants
 * @requires module:system-constants
 * @requires module:message-constants
@@ -23,13 +24,15 @@
 * @requires module:system-constants-validation
 * @requires module:unit-constants-validation
 * @requires module:word-constants-validation
+* @requires {@link https://www.npmjs.com/package/path|path}
 * @author Seth Hollingsead
 * @date 2020/07/23
 * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
 */
-import * as bas from '../Constants/basic.constants';
-import * as sys from '../Constants/system.constants';
-import * as msg from '../Constants/message.constants';
+import loggers from '../../Executrix/loggers';
+import * as bas from '../../Constants/basic.constants';
+import * as sys from '../../Constants/system.constants';
+import * as msg from '../../Constants/message.constants';
 import * as bas_cv from './basic-constants-validation';
 import * as biz_cv from './business-constants-validation';
 import * as clr_cv from './color-constants-validation';
@@ -48,6 +51,8 @@ import * as shp_cv from './shape-constants-validation';
 import * as sys_cv from './system-constants-validation';
 import * as unt_cv from './unit-constants-validation';
 import * as wrd_cv from './word-constants-validation';
+var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
  * @function initializeAllSystemConstantsValidationData
@@ -60,7 +65,7 @@ function initializeAllSystemConstantsValidationData() {
   let functionName = initializeAllSystemConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
-  let allSystemConstantsValidationData = [];
+  let allSystemConstantsValidationData = {};
 
   allSystemConstantsValidationData[sys.cConstantsValidationData] = {};
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];

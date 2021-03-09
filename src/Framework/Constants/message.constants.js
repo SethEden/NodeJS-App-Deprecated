@@ -486,6 +486,7 @@ export const cErrorZipPackageReleaseFailed = wrd.cERROR + bas.cColon + bas.cSpac
 export const cminimumColorRangeIs = wrd.cminimum + wrd.cColor + wrd.cRange + sys.cSpaceIsColonSpace; // minimumColorRange is:
 export const cmaximumColorRangeIs = wrd.cmaximum + wrd.cColor + wrd.cRange + sys.cSpaceIsColonSpace; // maximumColorRange is:
 export const callSystemConstantsValidationDataIs = wrd.call + wrd.cSystem + wrd.cConstants + wrd.cValidation + wrd.cData + sys.cSpaceIsColonSpace; // allSystemConstantsValidationData is:
+export const callClientConstantsValidationDataIs = wrd.call + wrd.cClient + wrd.cConstants + wrd.cValidation + wrd.cData + sys.cSpaceIsColonSpace; // allClientConstantsValidationData is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = wrd.cWARNING + bas.cColon + bas.cSpace + wrd.cMixed + bas.cSpace + wrd.cstring + bas.cDot + bas.cSpace; // WARNING: Mixed string.

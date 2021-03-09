@@ -1,9 +1,20 @@
 /**
- * @file application.messages.constants.js
- * @module application-messages-constants
- * @description 
- * @type {[type]}
+ * @file application.message.constants.js
+ * @module application-message-constants
+ * @description A file to hold all of the client application message constants.
+ * So none of the constants in this file should be generic/system/framework constants.
+ * @requires module:basic-constants
+ * @requires module:phonic-constants
+ * @requires module:word-constants
+ * @requires module:system-constants
+ * @author Seth Hollingsead
+ * @date 2021/03/08
+ * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
+ import * as bas from '../../../Framework/Constants/basic.constants';
+ import * as phn from '../../../Framework/Constants/phonic.constants';
+ import * as wrd from '../../../Framework/Constants/word.constants';
+ import * as sys from '../../../Framework/Constants/system.constants';
 
 // Messages
 export const cclientStringParsingDotCustomEcho = wrd.cclient + wrd.cString + wrd.cParsing + bas.cDot + wrd.cCustom + wrd.cEcho; // clientStringParsing.customEcho

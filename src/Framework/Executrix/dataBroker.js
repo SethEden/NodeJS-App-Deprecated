@@ -697,7 +697,7 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
 function initializeConstantsValidationData() {
   let functionName = initializeConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  D[sys.cConstantsValidationData] = [];
+  D[sys.cConstantsValidationData] = {};
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
@@ -710,9 +710,17 @@ function initializeConstantsValidationData() {
  * @date 2021/03/06
  */
 function addConstantsValidationData(constantLibraryData) {
-  let functionName = initializeConstantsValidationData.name;
+  let functionName = addConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  D[sys.cConstantsValidationData] = constantLibraryData;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'constantLibraryData is: ' + JSON.stringify(constantLibraryData));
+  for (var key in constantLibraryData[sys.cConstantsValidationData]) {
+    if (constantLibraryData[sys.cConstantsValidationData].hasOwnProperty(key)) {
+      let data = constantLibraryData[sys.cConstantsValidationData][key];
+      D[sys.cConstantsValidationData][key] = [];
+      Object.assign(D[sys.cConstantsValidationData][key], data);
+    }
+  }
+  // console.log('contents of the D-data structure are: ' + JSON.stringify(D));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 

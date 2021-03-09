@@ -168,8 +168,9 @@ function initializeConstantsValidationData() {
  * @date 2021/03/06
  */
 function addConstantsValidationData(arrayValidationData) {
-  let functionName = initializeConstantsValidationData.name;
+  let functionName = addConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'arrayValidationData is: ' + JSON.stringify(arrayValidationData));
   dataBroker.addConstantsValidationData(arrayValidationData);
   loggers.consoleLog(baseFileName = bas.cDot + functionName, msg.cEND_Function);
 };

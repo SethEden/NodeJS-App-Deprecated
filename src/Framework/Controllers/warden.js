@@ -13,6 +13,7 @@
  * @requires module:dataBroker
  * @requires module:fileBroker
  * @requires module:loggers
+ * @requires module:all-system-constants-validation
  * @requires module:basic-constants
  * @requires module:generic-constants
  * @requires module:word-constants
@@ -39,6 +40,7 @@ import dataBroker from '../Executrix/dataBroker';
 import chiefData from './chiefData';
 import fileBroker from '../Executrix/fileBroker';
 import loggers from '../Executrix/loggers';
+import all_sys_cv from '../Resources/ConstantsValidation/all-system-constants-validation';
 import * as bas from '../Constants/basic.constants';
 import * as gen from '../Constants/generic.constants';
 import * as wrd from '../Constants/word.constants';
@@ -47,7 +49,6 @@ import * as biz from '../Constants/business.constants';
 import * as cmd from '../Constants/command.constants';
 import * as cfg from '../Constants/configuration.constants';
 import * as msg from '../Constants/message.constants';
-import * as all_cv from '../Resources/ConstantsValidation/all-constants-validation';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -137,7 +138,7 @@ function processRootPath(systemRootPath) {
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
-function initApplicationSchema(rootPath, arrayClientValidationData) {
+function initApplicationSchema(rootPath, clientValidationData) {
   // console.log('BEGIN warden.initApplicationSchema function');
   // console.log('rootPath is: ' + rootPath);
   let functionName = initApplicationSchema.name;
@@ -146,6 +147,8 @@ function initApplicationSchema(rootPath, arrayClientValidationData) {
   // console.log('logging the current rootPath input.');
   // rootPath is:
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.crootPathIs + rootPath);
+  // clientValidationData is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'clientValidationData is: ' + JSON.stringify(clientValidationData));
   // console.log('setting the configuration setting for the root path');
   configurator.setConfigurationSetting(sys.cApplicationRootPath, rootPath);
   let cleanedRootPath;
@@ -165,9 +168,10 @@ function initApplicationSchema(rootPath, arrayClientValidationData) {
   configurator.setConfigurationSetting(sys.cApplicationDescription, applicationData[wrd.cDescription]);
   if (configurator.getConfigurationSetting(cfg.cEnableConstantsValidation) === true) {
       chiefData.initializeConstantsValidationData(); // This just makes sure that the data structure is created on the D-Data structure.
-      let systemValidationData =
-      chiefData.addConstantsValidationData(arraySystemValidationData);
-      chiefData.addConstantsValidationData(arrayClientValidationData);
+      let systemValidationData = all_sys_cv.initializeAllSystemConstantsValidationData();
+      // console.log('systemValidationData is: ' + JSON.stringify(systemValidationData));
+      chiefData.addConstantsValidationData(systemValidationData);
+      chiefData.addConstantsValidationData(clientValidationData);
       let resolvedConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cConstantsPathActual)
       // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
       configurator.setConfigurationSetting(sys.cConstantsPath, resolvedConstantsPathActual);
