@@ -3,13 +3,13 @@
  * @module clientRulesLibrary
  * @description Contains all of the client defined business rules as a map between function names and function calls.
  * @requires module:clientStringParsing
- * @requires module:application-constants
+ * @requires module:application-business-constants
  * @author Seth Hollingsead
  * @date 2020/06/10
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as clientStringParsing from './ClientRules/clientStringParsing';
-import * as apc from '../Constants/application.constants';
+import * as app_biz from '../Constants/application.business.constants';
 
 /**
  * @function initClientRulesLibrary
@@ -22,17 +22,17 @@ export const initClientRulesLibrary = function() {
   // console.log('BEGIN clientRulesLibrary.initClientRulesLibrary function');
   // console.log('END clientRulesLibrary.initClientRulesLibrary function');
   return {
-      [apc.cclientEcho]: (inputData, inputMetaData) => (inputData, inputMetaData),
+      [app_biz.cclientEcho]: (inputData, inputMetaData) => (inputData, inputMetaData),
 
       // Client Business Rules
       // ********************************
       // ClientStringParsing rules in order
       // ********************************
-      [apc.ccustomEcho]: (inputData, inputMetaData) => clientStringParsing.customEcho(inputData, inputMetaData),
-      [apc.cmostPopularNumber]: (inputData, inputMetaData) => clientStringParsing.mostPopularNumber(inputData, inputMetaData),
-      [apc.cisAlmostPalindrome]: (inputData, inputMetaData) => clientStringParsing.isAlmostPalindrome(inputData, inputMetaData),
-      [apc.cthreePointAverage]: (inputData, inputMetaData) => clientStringParsing.threePointAverage(inputData, inputMetaData),
-      [apc.carrayCounter]: (inputData, inputMetaData) => clientStringParsing.arrayCounter(inputData, inputMetaData)
+      [app_biz.ccustomEcho]: (inputData, inputMetaData) => clientStringParsing.customEcho(inputData, inputMetaData),
+      [app_biz.cmostPopularNumber]: (inputData, inputMetaData) => clientStringParsing.mostPopularNumber(inputData, inputMetaData),
+      [app_biz.cisAlmostPalindrome]: (inputData, inputMetaData) => clientStringParsing.isAlmostPalindrome(inputData, inputMetaData),
+      [app_biz.cthreePointAverage]: (inputData, inputMetaData) => clientStringParsing.threePointAverage(inputData, inputMetaData),
+      [app_biz.carrayCounter]: (inputData, inputMetaData) => clientStringParsing.arrayCounter(inputData, inputMetaData)
   };
 };
 

@@ -746,7 +746,7 @@ function addConstantsValidationData(constantLibraryData) {
  * @description Adds all the constants validation auxilary data that is deeply nested inside sub-data structures to the main D-data structure.
  * Such as file paths, and validation messages.
  * @param {string} contextName The name that should be used when accessing and also adding the data to the D-data structure.
- * @param {array<array<string,object>} deeplyNestedData The actual data that should be added.
+ * @param {array<array<string,object>>} deeplyNestedData The actual data that should be added.
  * @author Seth Hollingsead
  * @date 2021/03/10
  */

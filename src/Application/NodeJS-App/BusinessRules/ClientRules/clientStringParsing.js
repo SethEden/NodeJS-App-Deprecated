@@ -9,7 +9,8 @@
  * @requires module:warden
  * @requires module:basic-constants
  * @requires module:system-constants
- * @requires module:application-constants
+ * @requires module:application-business-constants
+ * @requires module:application-message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/10
@@ -19,7 +20,8 @@ import warden from '../../../../Framework/Controllers/warden';
 import * as bas from '../../../../Framework/Constants/basic.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
 import * as msg from '../../../../Framework/Constants/message.constants';
-import * as apc from '../../Constants/application.constants';
+import * as app_biz from '../../Constants/application.business.constants';
+import * as app_msg from '../../Constants/application.message.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -36,13 +38,13 @@ export const customEcho = function(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEcho function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = apc.ccustomEcho;
+  let functionName = app_biz.ccustomEcho;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   // clientStringParsing.customEcho
-  returnData = inputData + apc.cclientStringParsingDotCustomEcho;
+  returnData = inputData + app_msg.cclientStringParsingDotCustomEcho;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
@@ -63,7 +65,7 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
   // console.log('BEGIN mostPopularNumber function');
   // console.log('inputArray is: ' + JSON.stringify(inputArray));
   // console.log('length is: ' + length);
-  let functionName = apc.cmostPopularNumber;
+  let functionName = app_biz.cmostPopularNumber;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -154,7 +156,7 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
 export const isAlmostPalindrome = function(inputData, inputMetaData) {
   // console.log('BEGIN isAlmostPalindrome function');
   // console.log('inputData is: ' + inputData);
-  let functionName = apc.cisAlmostPalindrome;
+  let functionName = app_biz.cisAlmostPalindrome;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -171,7 +173,7 @@ loop1:
   for (let i = 0; i < 3; i++) {
     // Setup the different start point & end points to do the comparison.
     // comparison iteration is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.ccomparisonIterationIs + i);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.ccomparisonIterationIs + i);
     if (i === 0) {
       startingPoint = 0;
       endingPoint = -1;
@@ -186,34 +188,34 @@ loop1:
       break;
     }
     // startingPoint is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cstartingPointIs + startingPoint);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cstartingPointIs + startingPoint);
     // endingPoint is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cendingPointIs + endingPoint);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cendingPointIs + endingPoint);
 loop2:
     for (let j = startingPoint; j < inputData.length; j++) {
       // j value is:
       warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cjValueIs + j);
       // inputData.charAt(j) is:
-      warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cinputDataDotCharAtJIs + inputData.charAt(j));
+      warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtJIs + inputData.charAt(j));
       // inputData.chartAt(inputData.length -
       // ) is:
-      warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + apc.cCloseParenthesisIs +
+      warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + app_msg.cCloseParenthesisIs +
         inputData.charAt(inputData.length - j + endingPoint));
       if (inputData.charAt(j) !== inputData.charAt(inputData.length - j + endingPoint)) {
         // We got a mismatch!
-        warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cWeGotMismatch);
+        warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cWeGotMismatch);
         // misCompareCount before increment is:
-        warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountBeforeIncrementIs + misCompareCount);
+        warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountBeforeIncrementIs + misCompareCount);
         misCompareCount += 1;
         // misCompareCount post increment is:
-        warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountPostIncrementIs + misCompareCount);
+        warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountPostIncrementIs + misCompareCount);
         if (misCompareCount >= 2) {
           break loop2;
         }
       }
     }
     // misCompareCount after the for-loop is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountAfterForLoopIs + misCompareCount);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountAfterForLoopIs + misCompareCount);
     if (i === 0) {
       if (misCompareCount <= 1) {
         returnData = true;
@@ -255,7 +257,7 @@ export const threePointAverage = function(inputData, inputMetaData) {
   // console.log('BEGIN threePointAverage function');
   // console.log('inputPointArray is: ' + inputPointArray);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = apc.cthreePointAverage;
+  let functionName = app_biz.cthreePointAverage;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -294,7 +296,7 @@ export const arrayCounter = function(inputData, inputMetaData) {
   // console.log('BEGIN arrayCounter function');
   // console.log('inputArray is: ' + inputArray);
   // console.log('instance is: ' + instance);
-  let functionName = apc.carrayCounter;
+  let functionName = app_biz.carrayCounter;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);

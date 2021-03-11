@@ -15,7 +15,9 @@ var sys = _interopRequireWildcard(require("../../../../Framework/Constants/syste
 
 var msg = _interopRequireWildcard(require("../../../../Framework/Constants/message.constants"));
 
-var apc = _interopRequireWildcard(require("../../Constants/application.constants"));
+var app_biz = _interopRequireWildcard(require("../../Constants/application.business.constants"));
+
+var app_msg = _interopRequireWildcard(require("../../Constants/application.message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -34,7 +36,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:warden
  * @requires module:basic-constants
  * @requires module:system-constants
- * @requires module:application-constants
+ * @requires module:application-business-constants
+ * @requires module:application-message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/10
@@ -57,7 +60,7 @@ var customEcho = function customEcho(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEcho function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = apc.ccustomEcho;
+  var functionName = app_biz.ccustomEcho;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
@@ -67,7 +70,7 @@ var customEcho = function customEcho(inputData, inputMetaData) {
 
   var returnData; // clientStringParsing.customEcho
 
-  returnData = inputData + apc.cclientStringParsingDotCustomEcho;
+  returnData = inputData + app_msg.cclientStringParsingDotCustomEcho;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
 
@@ -94,7 +97,7 @@ var mostPopularNumber = function mostPopularNumber(inputData, inputMetaData) {
   // console.log('BEGIN mostPopularNumber function');
   // console.log('inputArray is: ' + JSON.stringify(inputArray));
   // console.log('length is: ' + length);
-  var functionName = apc.cmostPopularNumber;
+  var functionName = app_biz.cmostPopularNumber;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
@@ -192,7 +195,7 @@ exports.mostPopularNumber = mostPopularNumber;
 var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
   // console.log('BEGIN isAlmostPalindrome function');
   // console.log('inputData is: ' + inputData);
-  var functionName = apc.cisAlmostPalindrome;
+  var functionName = app_biz.cisAlmostPalindrome;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
@@ -212,7 +215,7 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
   loop1: for (var i = 0; i < 3; i++) {
     // Setup the different start point & end points to do the comparison.
     // comparison iteration is:
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.ccomparisonIterationIs + i);
+    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.ccomparisonIterationIs + i);
 
     if (i === 0) {
       startingPoint = 0;
@@ -230,32 +233,32 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
     } // startingPoint is:
 
 
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cstartingPointIs + startingPoint); // endingPoint is:
+    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cstartingPointIs + startingPoint); // endingPoint is:
 
 
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cendingPointIs + endingPoint);
+    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cendingPointIs + endingPoint);
 
     loop2: for (var j = startingPoint; j < inputData.length; j++) {
       // j value is:
       _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cjValueIs + j); // inputData.charAt(j) is:
 
 
-      _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cinputDataDotCharAtJIs + inputData.charAt(j)); // inputData.chartAt(inputData.length -
+      _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtJIs + inputData.charAt(j)); // inputData.chartAt(inputData.length -
       // ) is:
 
 
-      _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + apc.cCloseParenthesisIs + inputData.charAt(inputData.length - j + endingPoint));
+      _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + app_msg.cCloseParenthesisIs + inputData.charAt(inputData.length - j + endingPoint));
 
       if (inputData.charAt(j) !== inputData.charAt(inputData.length - j + endingPoint)) {
         // We got a mismatch!
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cWeGotMismatch); // misCompareCount before increment is:
+        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cWeGotMismatch); // misCompareCount before increment is:
 
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountBeforeIncrementIs + misCompareCount);
+        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountBeforeIncrementIs + misCompareCount);
 
         misCompareCount += 1; // misCompareCount post increment is:
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountPostIncrementIs + misCompareCount);
+        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountPostIncrementIs + misCompareCount);
 
         if (misCompareCount >= 2) {
           break loop2;
@@ -264,7 +267,7 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
     } // misCompareCount after the for-loop is:
 
 
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountAfterForLoopIs + misCompareCount);
+    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountAfterForLoopIs + misCompareCount);
 
     if (i === 0) {
       if (misCompareCount <= 1) {
@@ -314,7 +317,7 @@ var threePointAverage = function threePointAverage(inputData, inputMetaData) {
   // console.log('BEGIN threePointAverage function');
   // console.log('inputPointArray is: ' + inputPointArray);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = apc.cthreePointAverage;
+  var functionName = app_biz.cthreePointAverage;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
@@ -361,7 +364,7 @@ var arrayCounter = function arrayCounter(inputData, inputMetaData) {
   // console.log('BEGIN arrayCounter function');
   // console.log('inputArray is: ' + inputArray);
   // console.log('instance is: ' + instance);
-  var functionName = apc.carrayCounter;
+  var functionName = app_biz.carrayCounter;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 

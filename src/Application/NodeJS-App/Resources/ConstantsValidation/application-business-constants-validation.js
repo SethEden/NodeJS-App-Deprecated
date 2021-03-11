@@ -7,7 +7,7 @@
  * @date 2021/03/08
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as apc from '../../Constants/application.business.constants';
+import * as app_biz from '../../Constants/application.business.constants';
 
  /**
  * @function applicationBusinessConstantsValidation
@@ -17,6 +17,10 @@ import * as apc from '../../Constants/application.business.constants';
  * @date 2021/03/08
  */
 export const applicationBusinessConstantsValidation = [
-  // Knots
-  // {Name: 'cAdjustableGripHitch', Actual: kts.cAdjustableGripHitch, Expected: 'AdjustableGripHitch'},
+  {Name: 'cclientEcho', Actual: app_biz.cclientEcho, Expected: 'clientEcho'},
+  {Name: 'ccustomEcho', Actual: app_biz.ccustomEcho, Expected: 'customEcho'},
+  {Name: 'cmostPopularNumber', Actual: app_biz.cmostPopularNumber, Expected: 'mostPopularNumber'},
+  {Name: 'cisAlmostPalindrome', Actual: app_biz.cisAlmostPalindrome, Expected: 'isAlmostPalindrome'},
+  {Name: 'cthreePointAverage', Actual: app_biz.cthreePointAverage, Expected: 'threePointAverage'},
+  {Name: 'carrayCounter', Actual: app_biz.carrayCounter, Expected: 'arrayCounter'}
 ];

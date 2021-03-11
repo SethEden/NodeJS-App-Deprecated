@@ -9,10 +9,11 @@
  * @requires module:warden
  * @requires module:clientRulesLibrary
  * @requires module:clientCommandsLibrary
- * @requires module:application-constants
+ * @requires module:all-client-constants-validation
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:command-constants
  * @requires module:configuration-constants
  * @requires module:message-constants
  * @requires module:application-constants
@@ -32,6 +33,8 @@ var _warden = _interopRequireDefault(require("../../Framework/Controllers/warden
 var _clientRulesLibrary = _interopRequireDefault(require("./BusinessRules/clientRulesLibrary"));
 
 var _clientCommandsLibrary = _interopRequireDefault(require("./Commands/clientCommandsLibrary"));
+
+var _allClientConstantsValidation = _interopRequireDefault(require("./Resources/ConstantsValidation/all-client-constants-validation"));
 
 var bas = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
 
@@ -88,9 +91,12 @@ function bootStrapApplication() {
 
   rootPath = _warden["default"].processRootPath(rootPath); // console.log('processed rootPath is: ' + rootPath);
 
-  _warden["default"].bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
+  _warden["default"].bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath); // NOTE: We are passing all_clt_cv.initializeAllClientConstantsValidationData function as an object on the next line of code.
+  // We are doing this because we have not yet evaluated the constants path based on the root path,
+  // and we don't want the function to be evaluated immediately because it will need to get the root path as part of evaluating the path to the constants files for validation.
 
-  _warden["default"].saveRootPath(rootPath);
+
+  _warden["default"].initApplicationSchema(rootPath, apc.cClientConstantsPathActual, _allClientConstantsValidation["default"].initializeAllClientConstantsValidationData);
 
   _warden["default"].mergeClientBusinessRules(_clientRulesLibrary["default"].initClientRulesLibrary());
 

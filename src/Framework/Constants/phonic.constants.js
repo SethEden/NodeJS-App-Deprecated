@@ -322,6 +322,7 @@ export const cANGE = bas.cAN + bas.cGE; // ANGE
 export const cost = bas.cos + bas.ct; // ost
 export const cular = bas.cul + bas.car; // ular
 export const cdrom = bas.cdr + bas.com; // drom
+export const cdrome = cdrom + bas.ce; // drome
 export const cave = bas.cav + bas.ce; // ave
 export const cAve = bas.cAv + bas.ce; // Ave
 export const ccli = bas.ccl + bas.ci; // cli

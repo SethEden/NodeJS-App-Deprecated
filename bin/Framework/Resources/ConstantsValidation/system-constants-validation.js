@@ -1170,12 +1170,16 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.cLocatorsDataPath,
   Expected: 'LocatorsDataPath'
 }, {
-  Name: 'cConstantsPath',
-  Actual: sys.cConstantsPath,
-  Expected: 'ConstantsPath'
+  Name: 'cClientConstantsPath',
+  Actual: sys.cClientConstantsPath,
+  Expected: 'ClientConstantsPath'
 }, {
-  Name: 'cConstantsPathActual',
-  Actual: sys.cConstantsPathActual,
+  Name: 'cSystemConstantsPath',
+  Actual: sys.cSystemConstantsPath,
+  Expected: 'SystemConstantsPath'
+}, {
+  Name: 'cSystemConstantsPathActual',
+  Actual: sys.cSystemConstantsPathActual,
   Expected: 'src/Framework/Constants/'
 }, {
   Name: 'cclientRulesLibrary',
@@ -1189,6 +1193,30 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cConstantsValidationData',
   Actual: sys.cConstantsValidationData,
   Expected: 'ConstantsValidationData'
+}, {
+  Name: 'cConstantsShortNames',
+  Actual: sys.cConstantsShortNames,
+  Expected: 'ConstantsShortNames'
+}, {
+  Name: 'cConstantsFileNames',
+  Actual: sys.cConstantsFileNames,
+  Expected: 'ConstantsFileNames'
+}, {
+  Name: 'cConstantsPrefix',
+  Actual: sys.cConstantsPrefix,
+  Expected: 'ConstantsPrefix'
+}, {
+  Name: 'cConstantsFilePaths',
+  Actual: sys.cConstantsFilePaths,
+  Expected: 'ConstantsFilePaths'
+}, {
+  Name: 'cConstantsPhase1ValidationMessages',
+  Actual: sys.cConstantsPhase1ValidationMessages,
+  Expected: 'ConstantsPhase1ValidationMessages'
+}, {
+  Name: 'cConstantsPhase2ValidationMessages',
+  Actual: sys.cConstantsPhase2ValidationMessages,
+  Expected: 'ConstantsPhase2ValidationMessages'
 }, {
   Name: 'cBasicConstantsValidation',
   Actual: sys.cBasicConstantsValidation,

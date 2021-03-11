@@ -29,6 +29,8 @@ var _fileBroker = _interopRequireDefault(require("../Executrix/fileBroker"));
 
 var _loggers = _interopRequireDefault(require("../Executrix/loggers"));
 
+var _allSystemConstantsValidation = _interopRequireDefault(require("../Resources/ConstantsValidation/all-system-constants-validation"));
+
 var bas = _interopRequireWildcard(require("../Constants/basic.constants"));
 
 var gen = _interopRequireWildcard(require("../Constants/generic.constants"));
@@ -66,6 +68,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:dataBroker
  * @requires module:fileBroker
  * @requires module:loggers
+ * @requires module:all-system-constants-validation
  * @requires module:basic-constants
  * @requires module:generic-constants
  * @requires module:word-constants
@@ -166,7 +169,7 @@ function processRootPath(systemRootPath) {
 
 ;
 /**
- * @function saveRootPath
+ * @function initApplicationSchema
  * @description Saves the root path and also cleans the root path and saves the cleaned root path.
  * Also saves the current application version number and the application name.
  * @param {string} rootPath The root path of the application.
@@ -175,16 +178,31 @@ function processRootPath(systemRootPath) {
  * @date 2020/06/02
  */
 
-function saveRootPath(rootPath) {
-  // console.log('BEGIN warden.saveRootPath function');
+/**
+ * @function initApplicationSchema
+ * @description Saves the root path and also cleans the root path and saves the cleaned root path.
+ * Also saves the current application version number and the application name.
+ * @param {string} rootPath The root path of the application.
+ * @param {string} clientConstantsPath The path to the client constants files in the application path sub-folder structure.
+ * @param {array<array<string,object>>} arrayValidationData And array of arrays that contains all of the constants library validation names and data objects.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/06/02
+ */
+
+function initApplicationSchema(rootPath, clientConstantsPath, clientValidationData) {
+  // console.log('BEGIN warden.initApplicationSchema function');
   // console.log('rootPath is: ' + rootPath);
-  var functionName = saveRootPath.name; // console.log('logging the BEGIN warden.saveRootPath function');
+  var functionName = initApplicationSchema.name; // console.log('logging the BEGIN warden.saveRootPath function');
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // console.log('logging the current rootPath input.');
   // rootPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.crootPathIs + rootPath); // console.log('setting the configuration setting for the root path');
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.crootPathIs + rootPath); // clientValidationData is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cclientValidationDataIs + JSON.stringify(clientValidationData)); // console.log('setting the configuration setting for the root path');
 
 
   _configurator["default"].setConfigurationSetting(sys.cApplicationRootPath, rootPath);
@@ -211,11 +229,23 @@ function saveRootPath(rootPath) {
   _configurator["default"].setConfigurationSetting(sys.cApplicationDescription, applicationData[wrd.cDescription]);
 
   if (_configurator["default"].getConfigurationSetting(cfg.cEnableConstantsValidation) === true) {
-    _chiefData["default"].setupConstantsValidationData();
+    var resolvedSystemConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cSystemConstantsPathActual);
+    var resolvedClientConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + clientConstantsPath); // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
 
-    var resolvedConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cConstantsPathActual); // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
+    _configurator["default"].setConfigurationSetting(sys.cSystemConstantsPath, resolvedSystemConstantsPathActual);
 
-    _configurator["default"].setConfigurationSetting(sys.cConstantsPath, resolvedConstantsPathActual);
+    _configurator["default"].setConfigurationSetting(sys.cClientConstantsPath, resolvedClientConstantsPathActual);
+
+    _chiefData["default"].initializeConstantsValidationData(); // This just makes sure that the data structure is created on the D-Data structure.
+
+
+    var systemValidationData = _allSystemConstantsValidation["default"].initializeAllSystemConstantsValidationData(); // console.log('systemValidationData is: ' + JSON.stringify(systemValidationData));
+
+
+    _chiefData["default"].addConstantsValidationData(systemValidationData);
+
+    _chiefData["default"].addConstantsValidationData(clientValidationData.call()); // Here we will evaluate the function that was passed in, now the configuration setting should be setup.
+
   }
 
   var enableLogFileOutputSetting = _configurator["default"].getConfigurationSetting(cfg.cLogFileEnabled);
@@ -621,7 +651,7 @@ function sleep(sleepTime) {
 var _default = {
   bootStrapApplication: bootStrapApplication,
   processRootPath: processRootPath,
-  saveRootPath: saveRootPath,
+  initApplicationSchema: initApplicationSchema,
   mergeClientBusinessRules: mergeClientBusinessRules,
   mergeClientCommands: mergeClientCommands,
   loadCommandAliases: loadCommandAliases,

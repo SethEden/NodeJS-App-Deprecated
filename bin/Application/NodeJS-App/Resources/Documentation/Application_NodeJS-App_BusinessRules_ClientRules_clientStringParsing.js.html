@@ -37,7 +37,8 @@
  * @requires module:warden
  * @requires module:basic-constants
  * @requires module:system-constants
- * @requires module:application-constants
+ * @requires module:application-business-constants
+ * @requires module:application-message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/10
@@ -47,7 +48,8 @@ import warden from '../../../../Framework/Controllers/warden';
 import * as bas from '../../../../Framework/Constants/basic.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
 import * as msg from '../../../../Framework/Constants/message.constants';
-import * as apc from '../../Constants/application.constants';
+import * as app_biz from '../../Constants/application.business.constants';
+import * as app_msg from '../../Constants/application.message.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
@@ -64,13 +66,13 @@ export const customEcho = function(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEcho function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = apc.ccustomEcho;
+  let functionName = app_biz.ccustomEcho;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   // clientStringParsing.customEcho
-  returnData = inputData + apc.cclientStringParsingDotCustomEcho;
+  returnData = inputData + app_msg.cclientStringParsingDotCustomEcho;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
@@ -91,7 +93,7 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
   // console.log('BEGIN mostPopularNumber function');
   // console.log('inputArray is: ' + JSON.stringify(inputArray));
   // console.log('length is: ' + length);
-  let functionName = apc.cmostPopularNumber;
+  let functionName = app_biz.cmostPopularNumber;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -182,7 +184,7 @@ export const mostPopularNumber = function(inputData, inputMetaData) {
 export const isAlmostPalindrome = function(inputData, inputMetaData) {
   // console.log('BEGIN isAlmostPalindrome function');
   // console.log('inputData is: ' + inputData);
-  let functionName = apc.cisAlmostPalindrome;
+  let functionName = app_biz.cisAlmostPalindrome;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -199,7 +201,7 @@ loop1:
   for (let i = 0; i &lt; 3; i++) {
     // Setup the different start point &amp; end points to do the comparison.
     // comparison iteration is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.ccomparisonIterationIs + i);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.ccomparisonIterationIs + i);
     if (i === 0) {
       startingPoint = 0;
       endingPoint = -1;
@@ -214,34 +216,34 @@ loop1:
       break;
     }
     // startingPoint is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cstartingPointIs + startingPoint);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cstartingPointIs + startingPoint);
     // endingPoint is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cendingPointIs + endingPoint);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cendingPointIs + endingPoint);
 loop2:
     for (let j = startingPoint; j &lt; inputData.length; j++) {
       // j value is:
       warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cjValueIs + j);
       // inputData.charAt(j) is:
-      warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cinputDataDotCharAtJIs + inputData.charAt(j));
+      warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtJIs + inputData.charAt(j));
       // inputData.chartAt(inputData.length -
       // ) is:
-      warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + apc.cCloseParenthesisIs +
+      warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + app_msg.cCloseParenthesisIs +
         inputData.charAt(inputData.length - j + endingPoint));
       if (inputData.charAt(j) !== inputData.charAt(inputData.length - j + endingPoint)) {
         // We got a mismatch!
-        warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cWeGotMismatch);
+        warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cWeGotMismatch);
         // misCompareCount before increment is:
-        warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountBeforeIncrementIs + misCompareCount);
+        warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountBeforeIncrementIs + misCompareCount);
         misCompareCount += 1;
         // misCompareCount post increment is:
-        warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountPostIncrementIs + misCompareCount);
+        warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountPostIncrementIs + misCompareCount);
         if (misCompareCount >= 2) {
           break loop2;
         }
       }
     }
     // misCompareCount after the for-loop is:
-    warden.consoleLog(baseFileName + bas.cDot + functionName, apc.cmisCompareCountAfterForLoopIs + misCompareCount);
+    warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountAfterForLoopIs + misCompareCount);
     if (i === 0) {
       if (misCompareCount &lt;= 1) {
         returnData = true;
@@ -283,7 +285,7 @@ export const threePointAverage = function(inputData, inputMetaData) {
   // console.log('BEGIN threePointAverage function');
   // console.log('inputPointArray is: ' + inputPointArray);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = apc.cthreePointAverage;
+  let functionName = app_biz.cthreePointAverage;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -322,7 +324,7 @@ export const arrayCounter = function(inputData, inputMetaData) {
   // console.log('BEGIN arrayCounter function');
   // console.log('inputArray is: ' + inputArray);
   // console.log('instance is: ' + instance);
-  let functionName = apc.carrayCounter;
+  let functionName = app_biz.carrayCounter;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -348,13 +350,13 @@ export const arrayCounter = function(inputData, inputMetaData) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-all-client-constants-validation.html">all-client-constants-validation</a></li><li><a href="module-all-system-constants-validation.html">all-system-constants-validation</a></li><li><a href="module-application.html">application</a></li><li><a href="module-application-business-constants.html">application-business-constants</a></li><li><a href="module-application-business-constants-validation.html">application-business-constants-validation</a></li><li><a href="module-application-command-constants.html">application-command-constants</a></li><li><a href="module-application-command-constants-validation.html">application-command-constants-validation</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-application-constants-validation.html">application-constants-validation</a></li><li><a href="module-application-message-constants.html">application-message-constants</a></li><li><a href="module-application-message-constants-validation.html">application-message-constants-validation</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 24 2021 15:46:28 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Mar 11 2021 14:21:23 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

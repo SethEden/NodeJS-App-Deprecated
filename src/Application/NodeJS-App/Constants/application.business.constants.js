@@ -11,6 +11,7 @@
  */
  import * as gen from '../../../Framework/Constants/generic.constants';
  import * as wrd from '../../../Framework/Constants/word.constants';
+ import * as num from '../../../Framework/Constants/numeric.constants';
 
 // Client Business Rules
 export const cclientEcho = wrd.cclient + wrd.cEcho;
@@ -19,6 +20,6 @@ export const cclientEcho = wrd.cclient + wrd.cEcho;
 // ********************************
 export const ccustomEcho = wrd.ccustom + wrd.cEcho;
 export const cmostPopularNumber = wrd.cmost + wrd.cPopular + wrd.cNumber;
-export const cisAlmostPalindrome = wrd.cis + wrd.cAlmost + wrd.cPalindrom;
-export const cthreePointAverage = gen.cthree + wrd.cPoint + wrd.cAverage;
+export const cisAlmostPalindrome = wrd.cis + wrd.cAlmost + wrd.cPalindrome;
+export const cthreePointAverage = num.cthree + wrd.cPoint + wrd.cAverage;
 export const carrayCounter = wrd.carray + wrd.cCounter;

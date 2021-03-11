@@ -7,7 +7,7 @@
  * @date 2021/03/08
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as apc from '../../Constants/application.command.constants';
+import * as app_cmd from '../../Constants/application.command.constants';
 
  /**
  * @function applicationCommandConstantsValidation
@@ -17,6 +17,6 @@ import * as apc from '../../Constants/application.command.constants';
  * @date 2021/03/08
  */
 export const applicationCommandConstantsValidation = [
-  // Knots
-  // {Name: 'cAdjustableGripHitch', Actual: kts.cAdjustableGripHitch, Expected: 'AdjustableGripHitch'},
+  {Name: 'ccustomEchoCommand', Actual: app_cmd.ccustomEchoCommand, Expected: 'customEchoCommand'},
+  {Name: 'cbossPanic', Actual: app_cmd.cbossPanic, Expected: 'bossPanic'}
 ];

@@ -328,6 +328,7 @@ export const phonicConstantsValidation = [
    {Name: 'cost', Actual: phn.cost, Expected: 'ost'},
    {Name: 'cular', Actual: phn.cular, Expected: 'ular'},
    {Name: 'cdrom', Actual: phn.cdrom, Expected: 'drom'},
+   {Name: 'cdrome', Actual: phn.cdrome, Expected: 'drome'},
    {Name: 'cave', Actual: phn.cave, Expected: 'ave'},
    {Name: 'cAve', Actual: phn.cAve, Expected: 'Ave'},
    {Name: 'ccli', Actual: phn.ccli, Expected: 'cli'},

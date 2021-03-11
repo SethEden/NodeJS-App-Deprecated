@@ -23,7 +23,7 @@ var cfg = _interopRequireWildcard(require("../../../../Framework/Constants/confi
 
 var msg = _interopRequireWildcard(require("../../../../Framework/Constants/message.constants"));
 
-var apc = _interopRequireWildcard(require("../../Constants/application.constants"));
+var app_cmd = _interopRequireWildcard(require("../../Constants/application.command.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -41,7 +41,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:message-constants
- * @requires module:application-constants
+ * @requires module:application-command-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @author Seth Hollingsead
@@ -67,7 +67,7 @@ var customEchoCommand = function customEchoCommand(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEchoCommand function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = apc.ccustomEchoCommand;
+  var functionName = app_cmd.ccustomEchoCommand;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
@@ -115,7 +115,7 @@ var customEchoCommand = function customEchoCommand(inputData, inputMetaData) {
 exports.customEchoCommand = customEchoCommand;
 
 var bossPanic = function bossPanic(inputData, inputMetaData) {
-  var functionName = apc.cbossPanic;
+  var functionName = app_cmd.cbossPanic;
 
   _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 

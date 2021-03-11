@@ -1690,6 +1690,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cPath,
   Expected: 'Path'
 }, {
+  Name: 'cpaths',
+  Actual: wrd.cpaths,
+  Expected: 'paths'
+}, {
+  Name: 'cPaths',
+  Actual: wrd.cPaths,
+  Expected: 'Paths'
+}, {
   Name: 'cexit',
   Actual: wrd.cexit,
   Expected: 'exit'
@@ -4380,13 +4388,13 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cPal,
   Expected: 'Pal'
 }, {
-  Name: 'cpalindrom',
-  Actual: wrd.cpalindrom,
-  Expected: 'palindrom'
+  Name: 'cpalindrome',
+  Actual: wrd.cpalindrome,
+  Expected: 'palindrome'
 }, {
-  Name: 'cPalindrom',
-  Actual: wrd.cPalindrom,
-  Expected: 'Palindrom'
+  Name: 'cPalindrome',
+  Actual: wrd.cPalindrome,
+  Expected: 'Palindrome'
 }, {
   Name: 'caverage',
   Actual: wrd.caverage,

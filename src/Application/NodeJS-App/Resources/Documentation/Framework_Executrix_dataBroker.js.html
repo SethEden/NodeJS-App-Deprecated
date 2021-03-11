@@ -41,24 +41,6 @@
  * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:message-constants
- * @requires module:basic-constants-validation
- * @requires module:business-constants-validation
- * @requires module:color-constants-validation
- * @requires module:command-constants-validation
- * @requires module:configuration-constants-validation
- * @requires module:country-constants-validation
- * @requires module:element-constants-validation
- * @requires module:generic-constants-validation
- * @requires module:isotope-constants-validation
- * @requires module:knot-constants-validation
- * @requires module:language-constants-validation
- * @requires module:message-constants-validation
- * @requires module:numeric-constants-validation
- * @requires module:phonic-constants-validation
- * @requires module:shape-constants-validation
- * @requires module:system-constants-validation
- * @requires module:unit-constants-validation
- * @requires module:word-constants-validation
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -75,24 +57,6 @@ import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/message.constants';
-import * as bas_cv from '../Resources/ConstantsValidation/basic-constants-validation';
-import * as biz_cv from '../Resources/ConstantsValidation/business-constants-validation';
-import * as clr_cv from '../Resources/ConstantsValidation/color-constants-validation';
-import * as cmd_cv from '../Resources/ConstantsValidation/command-constants-validation';
-import * as cfg_cv from '../Resources/ConstantsValidation/configuration-constants-validation';
-import * as ctr_cv from '../Resources/ConstantsValidation/country-constants-validation';
-import * as elm_cv from '../Resources/ConstantsValidation/element-constants-validation';
-import * as gen_cv from '../Resources/ConstantsValidation/generic-constants-validation';
-import * as iso_cv from '../Resources/ConstantsValidation/isotope-constants-validation';
-import * as kts_cv from '../Resources/ConstantsValidation/knot-constants-validation';
-import * as lng_cv from '../Resources/ConstantsValidation/language-constants-validation';
-import * as msg_cv from '../Resources/ConstantsValidation/message-constants-validation';
-import * as num_cv from '../Resources/ConstantsValidation/numeric-constants-validation';
-import * as phn_cv from '../Resources/ConstantsValidation/phonic-constants-validation';
-import * as shp_cv from '../Resources/ConstantsValidation/shape-constants-validation';
-import * as sys_cv from '../Resources/ConstantsValidation/system-constants-validation';
-import * as unt_cv from '../Resources/ConstantsValidation/unit-constants-validation';
-import * as wrd_cv from '../Resources/ConstantsValidation/word-constants-validation';
 var D = require('../Structures/data');
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -753,52 +717,82 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
 
 /**
  * @function initializeConstantsValidationData
- * @description Initializes all of the constants validation data so that it can be used to validate all of the constants.
+ * @description Initializes the constants validation data structure.
  * @return {void}
  * @author Seth Hollingsead
- * @date 2020/07/28
+ * @date 2021/02/24
  */
 function initializeConstantsValidationData() {
-  let functionName = getDataElementCount.name;
+  let functionName = initializeConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   D[sys.cConstantsValidationData] = {};
-  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = [];
+  D[sys.cConstantsValidationData][sys.cConstantsShortNames] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsFileNames] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPrefix] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsFilePaths] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages] = {};
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+};
 
-  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = bas_cv.basicConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = biz_cv.businessConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = clr_cv.colorConstantsValidation;
-  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = cmd_cv.commandConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = cfg_cv.configurationConstantsValidation;
-  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = ctr_cv.countryConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = elm_cv.elementConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = gen_cv.genericConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = iso_cv.isotopeConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = kts_cv.knotConstantsValidation;
-  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = lng_cv.languageConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = msg_cv.messageConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = num_cv.numericConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = phn_cv.phonicConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = shp_cv.shapeConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = sys_cv.systemConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = unt_cv.unitConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = wrd_cv.wordConstantsValidation;
+/**
+ * @function addConstantsValidationData
+ * @description Adds a library of constants validation data to the existing constants validation data.
+ * @param {array&lt;array&lt;string,object>>} constantLibraryData The array of data that should be added to the validation data set for the purpose of valdation.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/03/06
+ */
+function addConstantsValidationData(constantLibraryData) {
+  let functionName = addConstantsValidationData.name;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  // constantLibraryData is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantLibraryDataIs + JSON.stringify(constantLibraryData));
+  for (let key1 in constantLibraryData[sys.cConstantsValidationData]) {
+    if (constantLibraryData[sys.cConstantsValidationData].hasOwnProperty(key1)) {
+      if (key1 === sys.cConstantsFilePaths ||
+      key1 === sys.cConstantsPhase1ValidationMessages ||
+      key1 === sys.cConstantsPhase2ValidationMessages ||
+      key1 === sys.cConstantsShortNames ||
+      key1 === sys.cConstantsFileNames ||
+      key1 === sys.cConstantsPrefix) {
+        addDeeplyNestedConstantsValidationData(key1, constantLibraryData[sys.cConstantsValidationData][key1]);
+      } else {
+        let data1 = constantLibraryData[sys.cConstantsValidationData][key1];
+        D[sys.cConstantsValidationData][key1] = [];
+        Object.assign(D[sys.cConstantsValidationData][key1], data1);
+      }
+    }
+  }
+  // console.log('contents of the D-data structure are: ' + JSON.stringify(D));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+};
+
+
+/**
+ * @function addDeeplyNestedConstantsValidationData
+ * @description Adds all the constants validation auxilary data that is deeply nested inside sub-data structures to the main D-data structure.
+ * Such as file paths, and validation messages.
+ * @param {string} contextName The name that should be used when accessing and also adding the data to the D-data structure.
+ * @param {array&lt;array&lt;string,object>>} deeplyNestedData The actual data that should be added.
+ * @author Seth Hollingsead
+ * @date 2021/03/10
+ */
+function addDeeplyNestedConstantsValidationData(contextName, deeplyNestedData) {
+  let functionName = addDeeplyNestedConstantsValidationData.name;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  // contextName is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccontextNameIs + contextName);
+  // deeplyNestedData is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdeeplyNestedDataIs + JSON.stringify(deeplyNestedData));
+
+  let d_dataStructureConstantsFilePaths = D[sys.cConstantsValidationData][contextName];
+  for (let key2 in deeplyNestedData) {
+    if (deeplyNestedData.hasOwnProperty(key2)) {
+      let data2 = deeplyNestedData[key2];
+      D[sys.cConstantsValidationData][contextName][key2] = data2;
+    }
+  }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
@@ -811,7 +805,8 @@ export default {
   storeData,
   getData,
   clearData,
-  initializeConstantsValidationData
+  initializeConstantsValidationData,
+  addConstantsValidationData
 };
 </code></pre>
         </article>
@@ -823,13 +818,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-all-client-constants-validation.html">all-client-constants-validation</a></li><li><a href="module-all-system-constants-validation.html">all-system-constants-validation</a></li><li><a href="module-application.html">application</a></li><li><a href="module-application-business-constants.html">application-business-constants</a></li><li><a href="module-application-business-constants-validation.html">application-business-constants-validation</a></li><li><a href="module-application-command-constants.html">application-command-constants</a></li><li><a href="module-application-command-constants-validation.html">application-command-constants-validation</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-application-constants-validation.html">application-constants-validation</a></li><li><a href="module-application-message-constants.html">application-message-constants</a></li><li><a href="module-application-message-constants-validation.html">application-message-constants-validation</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Feb 24 2021 15:46:28 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Mar 11 2021 14:21:23 GMT-0600 (Central Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

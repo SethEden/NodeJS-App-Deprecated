@@ -482,6 +482,11 @@ import * as msg from '../../Constants/message.constants';
    {Name: 'cErrorZipPackageReleaseFailed', Actual: msg.cErrorZipPackageReleaseFailed, Expected: 'ERROR: Zip package release failed: '},
    {Name: 'cminimumColorRangeIs', Actual: msg.cminimumColorRangeIs, Expected: 'minimumColorRange is: '},
    {Name: 'cmaximumColorRangeIs', Actual: msg.cmaximumColorRangeIs, Expected: 'maximumColorRange is: '},
+   {Name: 'callSystemConstantsValidationDataIs', Actual: msg.callSystemConstantsValidationDataIs, Expected: 'allSystemConstantsValidationData is: '},
+   {Name: 'callClientConstantsValidationDataIs', Actual: msg.callClientConstantsValidationDataIs, Expected: 'allClientConstantsValidationData is: '},
+   {Name: 'cconstantLibraryDataIs', Actual: msg.cconstantLibraryDataIs, Expected: 'constantLibraryData is: '},
+   {Name: 'cclientValidationDataIs', Actual: msg.cclientValidationDataIs, Expected: 'clientValidationData is: '},
+   {Name: 'carrayValidationDataIs', Actual: msg.carrayValidationDataIs, Expected: 'arrayValidationData is: '},
 
    {Name: 'cDetermineWordDelimiterMessage1', Actual: msg.cDetermineWordDelimiterMessage1, Expected: 'WARNING: Mixed string. '},
    {Name: 'cDetermineWordDelimiterMessage2', Actual: msg.cDetermineWordDelimiterMessage2, Expected: 'Cannot determine what delimiter should '},

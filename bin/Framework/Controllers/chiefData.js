@@ -211,19 +211,42 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
 
 ;
 /**
- * @function setupConstantsValidationData
- * @description Calls the dataBroker to setup & initialize all of the constants verification data.
+ * @function initializeConstantsValidationData
+ * @description Calls the dataBroker to initialize the constants verification data structure.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/07/27
  */
 
-function setupConstantsValidationData() {
-  var functionName = setupAllCsvData.name;
+function initializeConstantsValidationData() {
+  var functionName = initializeConstantsValidationData.name;
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
   _dataBroker["default"].initializeConstantsValidationData();
+
+  _loggers["default"].consoleLog(baseFileName = bas.cDot + functionName, msg.cEND_Function);
+}
+
+;
+/**
+ * @function addConstantsValidationData
+ * @description Calls the dataBroker to add constants validation data to the constants validation data structure.
+ * @param {array<array<string,object>>} arrayValidationData And array of arrays that contains all of the constants library validation names and data objects.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/03/06
+ */
+
+function addConstantsValidationData(arrayValidationData) {
+  var functionName = addConstantsValidationData.name;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // arrayValidationData is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.carrayValidationDataIs + JSON.stringify(arrayValidationData));
+
+  _dataBroker["default"].addConstantsValidationData(arrayValidationData);
 
   _loggers["default"].consoleLog(baseFileName = bas.cDot + functionName, msg.cEND_Function);
 }
@@ -234,6 +257,7 @@ var _default = {
   getAndProcessXmlData: getAndProcessXmlData,
   setupAllCsvData: setupAllCsvData,
   setupAllXmlData: setupAllXmlData,
-  setupConstantsValidationData: setupConstantsValidationData
+  initializeConstantsValidationData: initializeConstantsValidationData,
+  addConstantsValidationData: addConstantsValidationData
 };
 exports["default"] = _default;

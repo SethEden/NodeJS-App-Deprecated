@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Application/NodeJS-App/Resources/ConstantsValidation/all-client-constants-validation.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Application/NodeJS-App/Resources/ConstantsValidation/all-client-constants-validation.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+* @file all-client-constants-validation.js
+* @module all-client-constants-validation
+* @description Contains validation for all client constants.
+* @requires module:warden
+* @requires module:basic-constants
+* @requires module:generic-constants
+* @requires module:word-constants
+* @requires module:system-constants
+* @requires module:message-constants
+* @requires module:application-constants
+* @requires module:application-message-constants
+* @requires module:application-business-constants-validation
+* @requires module:application-command-constants-validation
+* @requires module:application-constants-validation
+* @requires module:application-message-constants-validation
+* @requires {@link https://www.npmjs.com/package/path|path}
+* @author Seth Hollingsead
+* @date 2021/03/08
+* @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
+*/
+import warden from '../../../../Framework/Controllers/warden';
+import * as bas from '../../../../Framework/Constants/basic.constants';
+import * as gen from '../../../../Framework/Constants/generic.constants';
+import * as wrd from '../../../../Framework/Constants/word.constants';
+import * as sys from '../../../../Framework/Constants/system.constants';
+import * as msg from '../../../../Framework/Constants/message.constants';
+import * as apc from '../../Constants/application.constants';
+import * as app_msg from '../../Constants/application.message.constants';
+import * as app_biz_cv from './application-business-constants-validation';
+import * as app_cmd_cv from './application-command-constants-validation';
+import * as app_cv from './application-constants-validation';
+import * as app_msg_cv from './application-message-constants-validation';
+var path = require('path');
+var baseFileName = path.basename(module.filename, path.extname(module.filename));
+
+/**
+ * @function initializeAllClientConstantsValidationData
+ * @description Initializes all of the client constants validation data so that it can be used to validate all of the constants.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2020/03/08
+ */
+function initializeAllClientConstantsValidationData() {
+  let functionName = initializeAllClientConstantsValidationData.name;
+  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  let constantsPath = warden.getConfigurationSetting(sys.cClientConstantsPath);
+  // constantsPath is:
+  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsPathIs + constantsPath);
+
+  let allClientConstantsValidationData = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData] = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsShortNames] = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFileNames] = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix] = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths] = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages] = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages] = {};
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationBusinessConstantsValidation] = [];
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationCommandConstantsValidation] = [];
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationConstantsValidation] = [];
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationMessageConstantsValidation] = [];
+
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationBusinessConstantsValidation] = app_biz_cv.applicationBusinessConstantsValidation;
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationCommandConstantsValidation] = app_cmd_cv.applicationCommandConstantsValidation;
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationConstantsValidation] = app_cv.applicationConstantsValidation;
+  allClientConstantsValidationData[sys.cConstantsValidationData][apc.capplicationMessageConstantsValidation] = app_msg_cv.applicationMessageConstantsValidation;
+
+  // Setup all the paths to the constants files.
+  let resolvedConstantsPath_ApplicationBusiness = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_business_constants_js);
+  // resolvedConstantsPath_ApplicationBusiness is:
+  warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationBusinessIs + resolvedConstantsPath_ApplicationBusiness);
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationBusinessConstantsValidation] = resolvedConstantsPath_ApplicationBusiness;
+
+  let resolvedConstantsPath_ApplicationCommand = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_command_constants_js);
+  // resolvedConstantsPath_ApplicationCommand is:
+  warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationCommandIs + resolvedConstantsPath_ApplicationCommand);
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationCommandConstantsValidation] = resolvedConstantsPath_ApplicationCommand;
+
+  let resolvedConstantsPath_ApplicationConstants = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_constants_js);
+  // resolvedConstantsPath_ApplicationConstants is:
+  warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationConstantsIs + resolvedConstantsPath_ApplicationConstants);
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationConstantsValidation] = resolvedConstantsPath_ApplicationConstants;
+
+  let resolvedConstantsPath_ApplicationMessage = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_message_constants_js);
+  // resolvedConstantsPath_ApplicationMessage is:
+  warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationMessageIs + resolvedConstantsPath_ApplicationMessage);
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationMessageConstantsValidation] = resolvedConstantsPath_ApplicationMessage;
+
+  // Application Business Constants Phase 1 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages][apc.capplicationBusinessConstantsValidation] = app_msg.cApplicationBusinessConstantsPhase1Validation;
+  // Application Command Constants Phase 1 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages][apc.capplicationCommandConstantsValidation] = app_msg.cApplicationCommandConstantsPhase1Validation;
+  // Application Constants Phase 1 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages][apc.capplicationConstantsValidation] = app_msg.cApplicationConstantsPhase1Validation;
+  // Application Message Constants Phase 1 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages][apc.capplicationMessageConstantsValidation] = app_msg.cApplicationMessageConstantsPhase1Validation;
+
+  // Application Business Constants Phase 2 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages][apc.capplicationBusinessConstantsValidation] = app_msg.cApplicationBusinessConstantsPhase2Validation;
+  // Application Command Constants Phase 2 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages][apc.capplicationCommandConstantsValidation] = app_msg.cApplicationCommandConstantsPhase2Validation;
+  // Application Constants Phase 2 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages][apc.capplicationConstantsValidation] = app_msg.cApplicationConstantsPhase2Validation;
+  // Application Message Constants Phase 2 Validation
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages][apc.capplicationMessageConstantsValidation] = app_msg.cApplicationMessageConstantsPhase2Validation;
+
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsShortNames][apc.capplicationBusinessConstantsValidation] = gen.capp + bas.cUnderscore + gen.cbiz;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsShortNames][apc.capplicationCommandConstantsValidation] = gen.capp + bas.cUnderscore + gen.ccmd;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsShortNames][apc.capplicationConstantsValidation] = gen.capc;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsShortNames][apc.capplicationMessageConstantsValidation] = gen.capp + bas.cUnderscore + gen.cmsg;
+
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFileNames][apc.capplicationBusinessConstantsValidation] = apc.capplication_business_constants_js;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFileNames][apc.capplicationCommandConstantsValidation] = apc.capplication_command_constants_js;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFileNames][apc.capplicationConstantsValidation] = apc.capplication_constants_js;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFileNames][apc.capplicationMessageConstantsValidation] = apc.capplication_message_constants_js;
+
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][apc.capplicationBusinessConstantsValidation] = gen.capp + bas.cUnderscore + gen.cbiz + bas.cDot;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][apc.capplicationCommandConstantsValidation] = gen.capp + bas.cUnderscore + gen.ccmd + bas.cDot;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][apc.capplicationConstantsValidation] = gen.capc + bas.cDot;
+  allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][apc.capplicationMessageConstantsValidation] = gen.capp + bas.cUnderscore + gen.cmsg + bas.cDot;
+
+  // allSystemConstantsValidationData is:
+  warden.consoleLog(baseFileName + bas.cDot + functionName, app_msg.callClientConstantsValidationDataIs + JSON.stringify(allClientConstantsValidationData));
+  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  return allClientConstantsValidationData;
+};
+
+export default {
+  initializeAllClientConstantsValidationData
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-all-client-constants-validation.html">all-client-constants-validation</a></li><li><a href="module-all-system-constants-validation.html">all-system-constants-validation</a></li><li><a href="module-application.html">application</a></li><li><a href="module-application-business-constants.html">application-business-constants</a></li><li><a href="module-application-business-constants-validation.html">application-business-constants-validation</a></li><li><a href="module-application-command-constants.html">application-command-constants</a></li><li><a href="module-application-command-constants-validation.html">application-command-constants-validation</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-application-constants-validation.html">application-constants-validation</a></li><li><a href="module-application-message-constants.html">application-message-constants</a></li><li><a href="module-application-message-constants-validation.html">application-message-constants-validation</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Mar 11 2021 14:21:23 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

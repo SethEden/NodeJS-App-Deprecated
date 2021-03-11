@@ -27,42 +27,6 @@ var biz = _interopRequireWildcard(require("../Constants/business.constants"));
 
 var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
-var bas_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/basic-constants-validation"));
-
-var biz_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/business-constants-validation"));
-
-var clr_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/color-constants-validation"));
-
-var cmd_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/command-constants-validation"));
-
-var cfg_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/configuration-constants-validation"));
-
-var ctr_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/country-constants-validation"));
-
-var elm_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/element-constants-validation"));
-
-var gen_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/generic-constants-validation"));
-
-var iso_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/isotope-constants-validation"));
-
-var kts_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/knot-constants-validation"));
-
-var lng_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/language-constants-validation"));
-
-var msg_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/message-constants-validation"));
-
-var num_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/numeric-constants-validation"));
-
-var phn_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/phonic-constants-validation"));
-
-var shp_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/shape-constants-validation"));
-
-var sys_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/system-constants-validation"));
-
-var unt_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/unit-constants-validation"));
-
-var wrd_cv = _interopRequireWildcard(require("../Resources/ConstantsValidation/word-constants-validation"));
-
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -84,24 +48,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:message-constants
- * @requires module:basic-constants-validation
- * @requires module:business-constants-validation
- * @requires module:color-constants-validation
- * @requires module:command-constants-validation
- * @requires module:configuration-constants-validation
- * @requires module:country-constants-validation
- * @requires module:element-constants-validation
- * @requires module:generic-constants-validation
- * @requires module:isotope-constants-validation
- * @requires module:knot-constants-validation
- * @requires module:language-constants-validation
- * @requires module:message-constants-validation
- * @requires module:numeric-constants-validation
- * @requires module:phonic-constants-validation
- * @requires module:shape-constants-validation
- * @requires module:system-constants-validation
- * @requires module:unit-constants-validation
- * @requires module:word-constants-validation
  * @requires module:data
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -947,54 +893,92 @@ function getDataElementCount(dataObject, pageName, elementNamePattern) {
 ;
 /**
  * @function initializeConstantsValidationData
- * @description Initializes all of the constants validation data so that it can be used to validate all of the constants.
+ * @description Initializes the constants validation data structure.
  * @return {void}
  * @author Seth Hollingsead
- * @date 2020/07/28
+ * @date 2021/02/24
  */
 
 function initializeConstantsValidationData() {
-  var functionName = getDataElementCount.name;
+  var functionName = initializeConstantsValidationData.name;
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
 
   D[sys.cConstantsValidationData] = {};
-  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = [];
-  D[sys.cConstantsValidationData][sys.cBasicConstantsValidation] = bas_cv.basicConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cBusinessConstantsValidation] = biz_cv.businessConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cColorConstantsValidation] = clr_cv.colorConstantsValidation;
-  D[sys.cConstantsValidationData][sys.ccommandConstantsValidation] = cmd_cv.commandConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cconfigurationConstantsValidation] = cfg_cv.configurationConstantsValidation;
-  D[sys.cConstantsValidationData][sys.ccountryConstantsValidation] = ctr_cv.countryConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cElementConstantsValidation] = elm_cv.elementConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cGenericConstantsValidation] = gen_cv.genericConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cIsotopeConstantsValidation] = iso_cv.isotopeConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cknotConstantsValidation] = kts_cv.knotConstantsValidation;
-  D[sys.cConstantsValidationData][sys.clanguageConstantsValidation] = lng_cv.languageConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cmessageConstantsValidation] = msg_cv.messageConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cNumericConstantsValidation] = num_cv.numericConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cphonicConstantsValidation] = phn_cv.phonicConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cShapeConstantsValidation] = shp_cv.shapeConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cSystemConstantsValidation] = sys_cv.systemConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cunitConstantsValidation] = unt_cv.unitConstantsValidation;
-  D[sys.cConstantsValidationData][sys.cWordConstantsValidation] = wrd_cv.wordConstantsValidation;
+  D[sys.cConstantsValidationData][sys.cConstantsShortNames] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsFileNames] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPrefix] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsFilePaths] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages] = {};
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+}
+
+;
+/**
+ * @function addConstantsValidationData
+ * @description Adds a library of constants validation data to the existing constants validation data.
+ * @param {array<array<string,object>>} constantLibraryData The array of data that should be added to the validation data set for the purpose of valdation.
+ * @return {void}
+ * @author Seth Hollingsead
+ * @date 2021/03/06
+ */
+
+function addConstantsValidationData(constantLibraryData) {
+  var functionName = addConstantsValidationData.name;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // constantLibraryData is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantLibraryDataIs + JSON.stringify(constantLibraryData));
+
+  for (var key1 in constantLibraryData[sys.cConstantsValidationData]) {
+    if (constantLibraryData[sys.cConstantsValidationData].hasOwnProperty(key1)) {
+      if (key1 === sys.cConstantsFilePaths || key1 === sys.cConstantsPhase1ValidationMessages || key1 === sys.cConstantsPhase2ValidationMessages || key1 === sys.cConstantsShortNames || key1 === sys.cConstantsFileNames || key1 === sys.cConstantsPrefix) {
+        addDeeplyNestedConstantsValidationData(key1, constantLibraryData[sys.cConstantsValidationData][key1]);
+      } else {
+        var data1 = constantLibraryData[sys.cConstantsValidationData][key1];
+        D[sys.cConstantsValidationData][key1] = [];
+        Object.assign(D[sys.cConstantsValidationData][key1], data1);
+      }
+    }
+  } // console.log('contents of the D-data structure are: ' + JSON.stringify(D));
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+}
+
+;
+/**
+ * @function addDeeplyNestedConstantsValidationData
+ * @description Adds all the constants validation auxilary data that is deeply nested inside sub-data structures to the main D-data structure.
+ * Such as file paths, and validation messages.
+ * @param {string} contextName The name that should be used when accessing and also adding the data to the D-data structure.
+ * @param {array<array<string,object>>} deeplyNestedData The actual data that should be added.
+ * @author Seth Hollingsead
+ * @date 2021/03/10
+ */
+
+function addDeeplyNestedConstantsValidationData(contextName, deeplyNestedData) {
+  var functionName = addDeeplyNestedConstantsValidationData.name;
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // contextName is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccontextNameIs + contextName); // deeplyNestedData is:
+
+
+  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdeeplyNestedDataIs + JSON.stringify(deeplyNestedData));
+
+  var d_dataStructureConstantsFilePaths = D[sys.cConstantsValidationData][contextName];
+
+  for (var key2 in deeplyNestedData) {
+    if (deeplyNestedData.hasOwnProperty(key2)) {
+      var data2 = deeplyNestedData[key2];
+      D[sys.cConstantsValidationData][contextName][key2] = data2;
+    }
+  }
 
   _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 }
@@ -1009,6 +993,7 @@ var _default = {
   storeData: storeData,
   getData: getData,
   clearData: clearData,
-  initializeConstantsValidationData: initializeConstantsValidationData
+  initializeConstantsValidationData: initializeConstantsValidationData,
+  addConstantsValidationData: addConstantsValidationData
 };
 exports["default"] = _default;

@@ -2,13 +2,13 @@
  * @file clientCommandsLibrary.js
  * @module clientCommandsLibrary
  * @description Contains all of the client defined commands as a map between function names and function calls.
- * @requires module:application-constants
+ * @requires module:application-command-constants
  * @author Seth Hollingsead
  * @date 2020/06/19
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as clientCommands from './ClientCommands/clientCommands';
-import * as apc from '../Constants/application.constants';
+import * as app_cmd from '../Constants/application.command.constants';
 
 /**
  * @function initClientCommandsLibrary
@@ -25,8 +25,8 @@ export const initClientCommandsLibrary = function() {
     // ********************************
     // ClientStringParsing rules in order
     // ********************************
-    [apc.ccustomEchoCommand]: (inputData, inputMetaData) => clientCommands.customEchoCommand(inputData, inputMetaData),
-    [apc.cbossPanic]: (inputData, inputMetaData) => clientCommands.bossPanic(inputData, inputMetaData)
+    [app_cmd.ccustomEchoCommand]: (inputData, inputMetaData) => clientCommands.customEchoCommand(inputData, inputMetaData),
+    [app_cmd.cbossPanic]: (inputData, inputMetaData) => clientCommands.bossPanic(inputData, inputMetaData)
   };
 };
 

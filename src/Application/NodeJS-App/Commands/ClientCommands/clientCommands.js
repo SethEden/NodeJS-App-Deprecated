@@ -8,7 +8,7 @@
  * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:message-constants
- * @requires module:application-constants
+ * @requires module:application-command-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @author Seth Hollingsead
@@ -23,7 +23,8 @@ import * as sys from '../../../../Framework/Constants/system.constants';
 import * as biz from '../../../../Framework/Constants/business.constants';
 import * as cfg from '../../../../Framework/Constants/configuration.constants';
 import * as msg from '../../../../Framework/Constants/message.constants';
-import * as apc from '../../Constants/application.constants';
+import * as app_cmd from '../../Constants/application.command.constants';
+
 var path = require('path');
 var chalk = require('chalk');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
@@ -41,7 +42,7 @@ export const customEchoCommand = function(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEchoCommand function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = apc.ccustomEchoCommand;
+  let functionName = app_cmd.ccustomEchoCommand;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
@@ -79,7 +80,7 @@ export const customEchoCommand = function(inputData, inputMetaData) {
  * @NOTE This is an INFINITE LOOP function, so press control+C to exit from the application when you want to exit.
  */
 export const bossPanic = function(inputData, inputMetaData) {
-  let functionName = apc.cbossPanic;
+  let functionName = app_cmd.cbossPanic;
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
   warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
