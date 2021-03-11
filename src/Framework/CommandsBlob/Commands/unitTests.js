@@ -45,91 +45,26 @@ export const validateConstants = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
-  // Phase 1 Constants Validation
-  // BEGIN Phase 1 Constants Validation
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBeginPhase1ConstantsValidation);
-  // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
-  let constantsPath = configurator.getConfigurationSetting(sys.cConstantsPath);
-  // constantsPath is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantsPathIs + constantsPath);
+
+  // Get the array of keys and values for all the constants that need to be validated.
+  let validationArray = D[sys.cConstantsValidationData][sys.cConstantsFilePaths]; // This will return an object with all the key-value pair attributes we need.
+  let phase1FinalResult = true;
+  let phase2FinalResult = true;
+  let phase1ResultsArray = {};
+  let phase2ResultsArray = {};
   let rulesPhase1 = [];
   let rulesPhase2 = [];
   rulesPhase1[0] = biz.cvalidateConstantsDataValidation;
   rulesPhase2[0] = biz.cvalidateConstantsDataValues;
 
-  let resolvedConstantsPath_Basic = path.resolve(constantsPath + bas.cForwardSlash + sys.cbasic_constants_js);
-  // resolvedConstantsPath_Basic is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_BasicIs + resolvedConstantsPath_Basic);
-  let resolvedConstantsPath_Business = path.resolve(constantsPath + bas.cForwardSlash + sys.cbusiness_constants_js);
-  // resolvedConstantsPath_Business is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_BusinessIs + resolvedConstantsPath_Business);
-  let resolvedConstantsPath_Color = path.resolve(constantsPath + bas.cForwardSlash + sys.ccolor_constants_js);
-  // resolvedConstantsPath_Color is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ColorIs + resolvedConstantsPath_Color);
-  let resolvedConstantsPath_Command = path.resolve(constantsPath + bas.cForwardSlash + sys.ccommand_constants_js);
-  // resolvedConstantsPath_Command is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CommandIs + resolvedConstantsPath_Command);
-  let resolvedConstantsPath_Configuration = path.resolve(constantsPath + bas.cForwardSlash + sys.cconfiguration_constants_js);
-  // resolvedConstantsPath_Configuration is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ConfigurationIs + resolvedConstantsPath_Configuration);
-  let resolvedConstantsPath_Country = path.resolve(constantsPath + bas.cForwardSlash + sys.ccountry_constants_js);
-  // resolvedConstantsPath_Country is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CountryIs + resolvedConstantsPath_Country);
-  let resolvedConstantsPath_Element = path.resolve(constantsPath + bas.cForwardSlash + sys.celement_constants_js);
-  // resolvedConstantsPath_Element is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ElementIs + resolvedConstantsPath_Element);
-  let resolvedConstantsPath_Generic = path.resolve(constantsPath + bas.cForwardSlash + sys.cgeneric_constants_js);
-  // resolvedConstantsPath_Generic is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_GenericIs + resolvedConstantsPath_Generic);
-  let resolvedConstantsPath_Isotope = path.resolve(constantsPath + bas.cForwardSlash + sys.cisotope_constants_js);
-  // resolvedConstantsPath_Isotope is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_IsotopeIs + resolvedConstantsPath_Isotope);
-  let resolvedConstantsPath_Knot = path.resolve(constantsPath + bas.cForwardSlash + sys.cknot_constants_js);
-  // resolvedConstantsPath_Knot is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_KnotIs + resolvedConstantsPath_Knot);
-  let resolvedConstantsPath_Language = path.resolve(constantsPath + bas.cForwardSlash + sys.clanguage_constants_js);
-  // resolvedConstantsPath_Language is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_LanguagesIs + resolvedConstantsPath_Language);
-  let resolvedConstantsPath_Message = path.resolve(constantsPath + bas.cForwardSlash + sys.cmessage_constants_js);
-  // resolvedConstantsPath_Message is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_MessageIs + resolvedConstantsPath_Message);
-  let resolvedConstantsPath_Numeric = path.resolve(constantsPath + bas.cForwardSlash + sys.cnumeric_constants_js);
-  // resolvedConstantsPath_Numeric is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_NumericIs + resolvedConstantsPath_Numeric);
-  let resolvedConstantsPath_Phonic = path.resolve(constantsPath + bas.cForwardSlash + sys.cphonic_constants_js);
-  // resolvedConstantsPath_Phonic is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_PhonicIs + resolvedConstantsPath_Phonic);
-  let resolvedConstantsPath_Shape = path.resolve(constantsPath + bas.cForwardSlash + sys.cshape_constants_js);
-  // resolvedConstantsPath_Shape is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ShapeIs + resolvedConstantsPath_Shape);
-  let resolvedConstantsPath_System = path.resolve(constantsPath + bas.cForwardSlash + sys.csystem_constants_js);
-  // resolvedConstantsPath_System is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_SystemIs + resolvedConstantsPath_System);
-  let resolvedConstantsPath_Unit = path.resolve(constantsPath + bas.cForwardSlash + sys.cunit_constants_js);
-  // resolvedConstantsPath_Unit is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_UnitIs + resolvedConstantsPath_Unit);
-  let resolvedConstantsPath_Word = path.resolve(constantsPath + bas.cForwardSlash + sys.cword_constants_js);
-  // resolvedConstantsPath_Word is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_WordIs + resolvedConstantsPath_Word);
-
-  let basicConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Basic, sys.cBasicConstantsValidation, rulesPhase1);
-  let businessConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Business, sys.cBusinessConstantsValidation, rulesPhase1);
-  let colorConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Color, sys.cColorConstantsValidation, rulesPhase1);
-  let commandConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Command, sys.ccommandConstantsValidation, rulesPhase1);
-  let configurationConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Configuration, sys.cconfigurationConstantsValidation, rulesPhase1);
-  let countryConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Country, sys.ccountryConstantsValidation, rulesPhase1);
-  let elementConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Element, sys.cElementConstantsValidation, rulesPhase1);
-  let genericConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Generic, sys.cGenericConstantsValidation, rulesPhase1);
-  let isotopeConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Isotope, sys.cIsotopeConstantsValidation, rulesPhase1);
-  let knotConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Knot, sys.cknotConstantsValidation, rulesPhase1);
-  let languageConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Language, sys.clanguageConstantsValidation, rulesPhase1);
-  let messageConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Message, sys.cmessageConstantsValidation, rulesPhase1);
-  let numericConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Numeric, sys.cNumericConstantsValidation, rulesPhase1);
-  let phonicConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Phonic, sys.cphonicConstantsValidation, rulesPhase1);
-  let shapeConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Shape, sys.cShapeConstantsValidation, rulesPhase1);
-  let systemConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_System, sys.cSystemConstantsValidation, rulesPhase1);
-  let unitConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Unit, sys.cunitConstantsValidation, rulesPhase1);
-  let wordConstantsValidationPhase1Result = ruleBroker.processRules(resolvedConstantsPath_Word, sys.cWordConstantsValidation, rulesPhase1);
+  // Phase 1 Constants Validation
+  // BEGIN Phase 1 Constants Validation
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBeginPhase1ConstantsValidation);
+  // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
+  for (let key1 in validationArray) {
+    let path = validationArray[key1];
+    phase1ResultsArray[key1] = ruleBroker.processRules(path, key1, rulesPhase1);
+  }
   // END Phase 1 Constants Validation
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEndPhase1ConstantsValidation);
 
@@ -137,139 +72,35 @@ export const validateConstants = function(inputData, inputMetaData) {
   // BEGIN Phase 2 Constants Validation
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBeginPhase2ConstantsValidation);
   // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
-  let basicConstantsValidationPhase2Result = ruleBroker.processRules(sys.cBasicConstantsValidation, '', rulesPhase2);
-  let businessConstantsValidationPhase2Result = ruleBroker.processRules(sys.cBusinessConstantsValidation, '', rulesPhase2);
-  let colorConstantsValidationPhase2Result = ruleBroker.processRules(sys.cColorConstantsValidation, '', rulesPhase2);
-  let commandConstantsValidationPhase2Result = ruleBroker.processRules(sys.ccommandConstantsValidation, '', rulesPhase2);
-  let configurationConstantsValidationPhase2Result = ruleBroker.processRules(sys.cconfigurationConstantsValidation, '', rulesPhase2);
-  let countryConstantsValidationPhase2Result = ruleBroker.processRules(sys.ccountryConstantsValidation, '', rulesPhase2);
-  let elementConstantsValidationPhase2Result = ruleBroker.processRules(sys.cElementConstantsValidation, '', rulesPhase2);
-  let genericConstantsValidationPhase2Result = ruleBroker.processRules(sys.cGenericConstantsValidation, '', rulesPhase2);
-  let isotopeConstantsValidationPhase2Result = ruleBroker.processRules(sys.cIsotopeConstantsValidation, '', rulesPhase2);
-  let knotConstantsValidationPhase2Result = ruleBroker.processRules(sys.cknotConstantsValidation, '', rulesPhase2);
-  let languageConstantsValidationPhase2Result = ruleBroker.processRules(sys.clanguageConstantsValidation, '', rulesPhase2);
-  let messageConstantsValidationPhase2Result = ruleBroker.processRules(sys.cmessageConstantsValidation, '', rulesPhase2);
-  let numericConstantsValidationPhase2Result = ruleBroker.processRules(sys.cNumericConstantsValidation, '', rulesPhase2);
-  let phonicConstantsValidationPhase2Result = ruleBroker.processRules(sys.cphonicConstantsValidation, '', rulesPhase2);
-  let shapeConstantsValidationPhase2Result = ruleBroker.processRules(sys.cShapeConstantsValidation, '', rulesPhase2);
-  let systemConstantsValidationPhase2Result = ruleBroker.processRules(sys.cSystemConstantsValidation, '', rulesPhase2);
-  let unitConstantsValidationPhase2Result = ruleBroker.processRules(sys.cunitConstantsValidation, '', rulesPhase2);
-  let wordConstantsValidationPhase2Result = ruleBroker.processRules(sys.cWordConstantsValidation, '', rulesPhase2);
+  for (let key2 in validationArray) {
+    phase2ResultsArray[key2] = ruleBroker.processRules(key2, '', rulesPhase2);
+  }
   // END Phase 2 Constants Validation
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEndPhase2ConstantsValidation);
 
-  // Basic Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cBasicConstantsPhase1Validation, basicConstantsValidationPhase1Result);
-  // Business Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cBusinessConstantsPhase1Validation, businessConstantsValidationPhase1Result);
-  // Color Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cColorConstantsPhase1Validation, colorConstantsValidationPhase1Result);
-  // Command Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cCommandConstantsPhase1Validation, commandConstantsValidationPhase1Result);
-  // Configuration Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cConfigurationConstantsPhase1Validation, configurationConstantsValidationPhase1Result);
-  // Country Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cCountryConstantsPhase1Validation, countryConstantsValidationPhase1Result);
-  // Element Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cElementConstantsPhase1Validation, elementConstantsValidationPhase1Result);
-  // Generic Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cGenericConstantsPhase1Validation, genericConstantsValidationPhase1Result);
-  // Isotope Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cIsotopeConstantsPhase1Validation, isotopeConstantsValidationPhase1Result);
-  // Knot Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cKnotConstantsPhase1Validation, knotConstantsValidationPhase1Result);
-  // Language Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cLanguageConstantsPhase1Validation, languageConstantsValidationPhase1Result);
-  // Message Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cMessageConstantsPhase1Validation, messageConstantsValidationPhase1Result);
-  // Numerical Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cNumericalConstantsPhase1Validation, numericConstantsValidationPhase1Result);
-  // Phonic Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cPhonicConstantsPhase1Validation, phonicConstantsValidationPhase1Result);
-  // Shape Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cShapeConstantsPhase1Validation, shapeConstantsValidationPhase1Result);
-  // System Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cSystemConstantsPhase1Validation, systemConstantsValidationPhase1Result);
-  // Unit Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cUnitConstantsPhase1Validation, unitConstantsValidationPhase1Result);
-  // Word Constants Phase 1 Validation
-  loggers.constantsValidationSummaryLog(msg.cWordConstantsPhase1Validation, wordConstantsValidationPhase1Result);
+  for (let key3 in phase1ResultsArray) {
+    loggers.constantsValidationSummaryLog(D[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages][key3], phase1ResultsArray[key3]);
+  }
 
-  // Basic Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cBasicConstantsPhase2Validation, basicConstantsValidationPhase2Result);
-  // Business Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cBusinessConstantsPhase2Validation, businessConstantsValidationPhase2Result);
-  // Color Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cColorConstantsPhase2Validation, colorConstantsValidationPhase2Result);
-  // Command Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cCommandConstantsPhase2Validation, commandConstantsValidationPhase2Result);
-  // Configuration Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cConfigurationConstantsPhase2Validation, configurationConstantsValidationPhase2Result);
-  // Country Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cCountryConstantsPhase2Validation, countryConstantsValidationPhase2Result);
-  // Element Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cElementConstantsPhase2Validation, elementConstantsValidationPhase2Result);
-  // Generic Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cGenericConstantsPhase2Validation, genericConstantsValidationPhase2Result);
-  // Isotope Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cIsotopeConstantsPhase2Validation, isotopeConstantsValidationPhase2Result);
-  // Knot Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cKnotConstantsPhase2Validation, knotConstantsValidationPhase2Result);
-  // Language Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cLanguageConstantsPhase2Validation, languageConstantsValidationPhase2Result);
-  // Message Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cMessageConstantsPhase2Validation, messageConstantsValidationPhase2Result);
-  // Numerical Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cNumericalConstantsPhase2Validation, numericConstantsValidationPhase2Result);
-  // Phonic Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cPhonicConstantsPhase2Validation, phonicConstantsValidationPhase2Result);
-  // Shape Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cShapeConstantsPhase2Validation, shapeConstantsValidationPhase2Result);
-  // System Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cSystemConstantsPhase2Validation, systemConstantsValidationPhase2Result);
-  // Unit Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cUnitConstantsPhase2Validation, unitConstantsValidationPhase2Result);
-  // Word Constants Phase 2 Validation
-  loggers.constantsValidationSummaryLog(msg.cWordConstantsPhase2Validation, wordConstantsValidationPhase2Result);
+  for (let key4 in phase2ResultsArray) {
+    loggers.constantsValidationSummaryLog(D[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages][key4], phase2ResultsArray[key4]);
+  }
 
-  if (
-    basicConstantsValidationPhase1Result === true &&
-    businessConstantsValidationPhase1Result === true &&
-    colorConstantsValidationPhase1Result === true &&
-    commandConstantsValidationPhase1Result === true &&
-    configurationConstantsValidationPhase1Result === true &&
-    countryConstantsValidationPhase1Result === true &&
-    elementConstantsValidationPhase1Result === true &&
-    genericConstantsValidationPhase1Result === true &&
-    isotopeConstantsValidationPhase1Result === true &&
-    knotConstantsValidationPhase1Result === true &&
-    languageConstantsValidationPhase1Result === true &&
-    messageConstantsValidationPhase1Result === true &&
-    numericConstantsValidationPhase1Result === true &&
-    phonicConstantsValidationPhase1Result === true &&
-    shapeConstantsValidationPhase1Result === true &&
-    systemConstantsValidationPhase1Result === true &&
-    unitConstantsValidationPhase1Result === true &&
-    wordConstantsValidationPhase1Result === true &&
-    basicConstantsValidationPhase2Result === true &&
-    businessConstantsValidationPhase2Result === true &&
-    colorConstantsValidationPhase2Result === true &&
-    commandConstantsValidationPhase2Result === true &&
-    configurationConstantsValidationPhase2Result === true &&
-    countryConstantsValidationPhase2Result === true &&
-    elementConstantsValidationPhase2Result === true &&
-    genericConstantsValidationPhase2Result === true &&
-    isotopeConstantsValidationPhase2Result === true &&
-    knotConstantsValidationPhase2Result === true &&
-    languageConstantsValidationPhase2Result === true &&
-    messageConstantsValidationPhase2Result === true &&
-    numericConstantsValidationPhase2Result === true &&
-    phonicConstantsValidationPhase2Result === true &&
-    shapeConstantsValidationPhase2Result === true &&
-    systemConstantsValidationPhase2Result === true &&
-    unitConstantsValidationPhase2Result === true &&
-    wordConstantsValidationPhase2Result === true
-  ) {
+  for (let key5 in phase1ResultsArray) {
+    if (phase1ResultsArray[key5] === false) {
+      phase1FinalResult = false;
+      break;
+    }
+  }
+
+  for (let key6 in phase2ResultsArray) {
+    if (phase2ResultsArray[key6] === false) {
+      phase2FinalResult = false;
+      break;
+    }
+  }
+
+  if (phase1FinalResult === true && phase2FinalResult === true) {
     configurator.setConfigurationSetting(cfg.cPassAllConstantsValidations, true);
   } else {
     configurator.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);

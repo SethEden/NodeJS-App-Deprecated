@@ -133,12 +133,13 @@ function processRootPath(systemRootPath) {
  * @description Saves the root path and also cleans the root path and saves the cleaned root path.
  * Also saves the current application version number and the application name.
  * @param {string} rootPath The root path of the application.
+ * @param {string} clientConstantsPath The path to the client constants files in the application path sub-folder structure.
  * @param {array<array<string,object>>} arrayValidationData And array of arrays that contains all of the constants library validation names and data objects.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/02
  */
-function initApplicationSchema(rootPath, clientValidationData) {
+function initApplicationSchema(rootPath, clientConstantsPath, clientValidationData) {
   // console.log('BEGIN warden.initApplicationSchema function');
   // console.log('rootPath is: ' + rootPath);
   let functionName = initApplicationSchema.name;
@@ -148,7 +149,7 @@ function initApplicationSchema(rootPath, clientValidationData) {
   // rootPath is:
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.crootPathIs + rootPath);
   // clientValidationData is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'clientValidationData is: ' + JSON.stringify(clientValidationData));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cclientValidationDataIs + JSON.stringify(clientValidationData));
   // console.log('setting the configuration setting for the root path');
   configurator.setConfigurationSetting(sys.cApplicationRootPath, rootPath);
   let cleanedRootPath;
@@ -167,14 +168,16 @@ function initApplicationSchema(rootPath, clientValidationData) {
   // console.log('set the application description as a configuration setting: ' + applicationData[wrd.cDescription]);
   configurator.setConfigurationSetting(sys.cApplicationDescription, applicationData[wrd.cDescription]);
   if (configurator.getConfigurationSetting(cfg.cEnableConstantsValidation) === true) {
+      let resolvedSystemConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cSystemConstantsPathActual);
+      let resolvedClientConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + clientConstantsPath);
+      // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
+      configurator.setConfigurationSetting(sys.cSystemConstantsPath, resolvedSystemConstantsPathActual);
+      configurator.setConfigurationSetting(sys.cClientConstantsPath, resolvedClientConstantsPathActual);
       chiefData.initializeConstantsValidationData(); // This just makes sure that the data structure is created on the D-Data structure.
       let systemValidationData = all_sys_cv.initializeAllSystemConstantsValidationData();
       // console.log('systemValidationData is: ' + JSON.stringify(systemValidationData));
       chiefData.addConstantsValidationData(systemValidationData);
-      chiefData.addConstantsValidationData(clientValidationData);
-      let resolvedConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cConstantsPathActual)
-      // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
-      configurator.setConfigurationSetting(sys.cConstantsPath, resolvedConstantsPathActual);
+      chiefData.addConstantsValidationData(clientValidationData.call()); // Here we will evaluate the function that was passed in, now the configuration setting should be setup.
   }
   let enableLogFileOutputSetting = configurator.getConfigurationSetting(cfg.cLogFileEnabled);
   if (enableLogFileOutputSetting === true) {

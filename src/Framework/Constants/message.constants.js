@@ -272,7 +272,7 @@ export const cBasicConstantsPhase1Validation = wrd.cBasic + bas.cSpace + wrd.cCo
 export const cBusinessConstantsPhase1Validation = wrd.cBusiness + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Business Constants Phase 1 Validation
 export const cColorConstantsPhase1Validation = wrd.cColor + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Color Constants Phase 1 Validation
 export const cCommandConstantsPhase1Validation = wrd.cCommand + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Command Constants Phase 1 Validation
-export const cConfigurationConstantsPhase1Validation = wrd.cConfigurations + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Configuration Constants Phase 1 Validation
+export const cConfigurationConstantsPhase1Validation = wrd.cConfiguration + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Configuration Constants Phase 1 Validation
 export const cCountryConstantsPhase1Validation = wrd.cCountry + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Country Constants Phase 1 Validation
 export const cElementConstantsPhase1Validation = wrd.cElement + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Element Constants Phase 1 Validation
 export const cGenericConstantsPhase1Validation = wrd.cGeneric + bas.cSpace + wrd.cConstants + bas.cSpace + wrd.cPhase + bas.cSpace + num.c1 + bas.cSpace + wrd.cValidation; // Generic Constants Phase 1 Validation
@@ -487,6 +487,9 @@ export const cminimumColorRangeIs = wrd.cminimum + wrd.cColor + wrd.cRange + sys
 export const cmaximumColorRangeIs = wrd.cmaximum + wrd.cColor + wrd.cRange + sys.cSpaceIsColonSpace; // maximumColorRange is:
 export const callSystemConstantsValidationDataIs = wrd.call + wrd.cSystem + wrd.cConstants + wrd.cValidation + wrd.cData + sys.cSpaceIsColonSpace; // allSystemConstantsValidationData is:
 export const callClientConstantsValidationDataIs = wrd.call + wrd.cClient + wrd.cConstants + wrd.cValidation + wrd.cData + sys.cSpaceIsColonSpace; // allClientConstantsValidationData is:
+export const cconstantLibraryDataIs = wrd.cconstant + wrd.cLibrary + wrd.cData + sys.cSpaceIsColonSpace; // constantLibraryData is:
+export const cclientValidationDataIs = wrd.cclient + wrd.cValidation + wrd.cData + sys.cSpaceIsColonSpace; // clientValidationData is:
+export const carrayValidationDataIs = wrd.carray + wrd.cValidation + wrd.cData + sys.cSpaceIsColonSpace; // arrayValidationData is:
 
 // WARNING: Mixed string. Cannot determine what delimiter should be used to break up the string into words.
 export const cDetermineWordDelimiterMessage1 = wrd.cWARNING + bas.cColon + bas.cSpace + wrd.cMixed + bas.cSpace + wrd.cstring + bas.cDot + bas.cSpace; // WARNING: Mixed string.

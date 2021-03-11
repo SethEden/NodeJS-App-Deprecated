@@ -1052,7 +1052,7 @@
           <ConfigurationElement Name="dataBroker.getDataElementCount@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1066,7 +1066,7 @@
           <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="dataBroker.addConstantsValidationData" Type="Default" Value="True" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.addConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.addConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.addConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1079,6 +1079,20 @@
           <ConfigurationElement Name="dataBroker.addConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.addConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.addConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="fileBroker.getXmlData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.getXmlData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>

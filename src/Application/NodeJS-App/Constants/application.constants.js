@@ -32,6 +32,8 @@ export const cReleasePath = bas.cForwardSlash + wrd.cRelease + bas.cForwardSlash
 export const cApplicationDevelopRootPath = cDevelopRootPath + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash;
 export const cApplicationProductionRootPath = cProductionRootPath + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash;
 
+export const cClientConstantsPathActual = wrd.csrc + bas.cForwardSlash + wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash + wrd.cConstants + bas.cForwardSlash; // src/Application/NodeJS-App/Constants
+
 // Client Commands
 export const cDevClientCommandAliasesActualPath = cDevelopResourcesPath + wrd.cCommands + bas.cForwardSlash;
 export const cDevClientWorkflowsActualPath = cDevelopResourcesPath + wrd.cWorkflows + bas.cForwardSlash;
@@ -42,3 +44,9 @@ export const capplicationBusinessConstantsValidation = wrd.capplication + bas.cD
 export const capplicationCommandConstantsValidation = wrd.capplication + bas.cDash + wrd.ccommand + bas.cDash + wrd.cconstants + bas.cDash + wrd.cvalidation; // application-command-constants-validation
 export const capplicationConstantsValidation = wrd.capplication + bas.cDash + wrd.cconstants + bas.cDash + wrd.cvalidation; // application-constants-validation
 export const capplicationMessageConstantsValidation = wrd.capplication + bas.cDash + wrd.cmessage + bas.cDash + wrd.cconstants + bas.cDash + wrd.cvalidation; // application-message-constants-validation
+
+// Constants Filenames
+export const capplication_business_constants_js = wrd.capplication + bas.cDot + wrd.cbusiness + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // application.business.constants.js
+export const capplication_command_constants_js = wrd.capplication + bas.cDot + wrd.ccommand + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // application.command.constants.js
+export const capplication_constants_js = wrd.capplication + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // application.constants.js
+export const capplication_message_constants_js = wrd.capplication + bas.cDot + wrd.cmessage + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // application.message.constants.js

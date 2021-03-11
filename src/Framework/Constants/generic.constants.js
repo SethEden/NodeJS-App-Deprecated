@@ -227,6 +227,7 @@ export const cshp = phn.cshp; // shp
 export const csys = bas.csy + bas.cs; // sys
 export const cunt = phn.cunt; // unt
 export const cwrd = bas.cwr + bas.cd; // wrd
+export const capc = bas.cap + bas.cc; // apc
 
 // Miscelanious
 export const cUTF8 = bas.cUT + bas.cF + num.c8; // UTF8

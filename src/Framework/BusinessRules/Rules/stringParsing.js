@@ -1387,46 +1387,55 @@ export const determineConstantsContextQualifiedPrefix = function(inputData, inpu
   let returnData = '';
   if (inputData) {
     returnData = inputData;
-    if (inputData.includes(wrd.cbasic) === true) {
-      returnData = gen.cbas;
-    } else if (inputData.includes(wrd.business) === true) {
-      returnData = gen.cbiz;
-    } else if (inputData.includes(wrd.ccolor) === true) {
-      returnData = gen.cclr;
-    } else if (inputData.includes(wrd.ccommands) === true) {
-      returnData = gen.ccmd;
-    } else if (inputData.includes(wrd.cconfigurations) === true) {
-      returnData = gen.ccfg;
-    } else if (inputData.includes(wrd.ccountries) === true) {
-      returnData = gen.cctr;
-    } else if (inputData.includes(wrd.celement) === true) {
-      returnData = gen.celm;
-    } else if (inputData.includes(wrd.cgeneric) === true) {
-      returnData = gen.cgen;
-    } else if (inputData.includes(wrd.cisotope) === true) {
-      returnData = gen.ciso;
-    } else if (inputData.includes(wrd.cknots) === true) {
-      returnData = gen.ckts;
-    } else if (inputData.includes(wrd.clanguages) === true) {
-      returnData = gen.clng;
-    } else if (inputData.includes(wrd.cmessages) === true) {
-      returnData = gen.cmsg;
-    } else if (inputData.includes(wrd.cnumeric) === true) {
-      returnData = gen.cnum;
-    } else if (inputData.includes(wrd.cphonics) === true) {
-      returnData = gen.cphn;
-    } else if (inputData.includes(wrd.cshape) === true) {
-      returnData = gen.cshp;
-    } else if (inputData.includes(wrd.csystem) === true) {
-      returnData = gen.csys;
-    } else if (inputData.includes(wrd.cunits) === true) {
-      returnData = gen.cunt;
-    } else if (inputData.includes(wrd.cword) === true) {
-      returnData = gen.cwrd;
-    } else {
-      // ERROR: Unknown constant file.
-      console.log(sys.cErrorUnknownConstantFile);
+    let inputDataAsArray = inputData.split(bas.cDot);
+    let constantsFileNames = D[sys.cConstantsValidationData][sys.cConstantsFileNames];
+    let constantsShortNames = D[sys.cConstantsValidationData][sys.cConstantsShortNames];
+    for (let key in constantsFileNames) {
+      if (inputData === constantsFileNames[key]) {
+        returnData = constantsShortNames[key];
+      }
     }
+
+    // if (inputData.includes(wrd.cbasic) === true) {
+    //   returnData = gen.cbas;
+    // } else if (inputData.includes(wrd.business) === true) {
+    //   returnData = gen.cbiz;
+    // } else if (inputData.includes(wrd.ccolor) === true) {
+    //   returnData = gen.cclr;
+    // } else if (inputData.includes(wrd.ccommands) === true) {
+    //   returnData = gen.ccmd;
+    // } else if (inputData.includes(wrd.cconfigurations) === true) {
+    //   returnData = gen.ccfg;
+    // } else if (inputData.includes(wrd.ccountries) === true) {
+    //   returnData = gen.cctr;
+    // } else if (inputData.includes(wrd.celement) === true) {
+    //   returnData = gen.celm;
+    // } else if (inputData.includes(wrd.cgeneric) === true) {
+    //   returnData = gen.cgen;
+    // } else if (inputData.includes(wrd.cisotope) === true) {
+    //   returnData = gen.ciso;
+    // } else if (inputData.includes(wrd.cknots) === true) {
+    //   returnData = gen.ckts;
+    // } else if (inputData.includes(wrd.clanguages) === true) {
+    //   returnData = gen.clng;
+    // } else if (inputData.includes(wrd.cmessages) === true) {
+    //   returnData = gen.cmsg;
+    // } else if (inputData.includes(wrd.cnumeric) === true) {
+    //   returnData = gen.cnum;
+    // } else if (inputData.includes(wrd.cphonics) === true) {
+    //   returnData = gen.cphn;
+    // } else if (inputData.includes(wrd.cshape) === true) {
+    //   returnData = gen.cshp;
+    // } else if (inputData.includes(wrd.csystem) === true) {
+    //   returnData = gen.csys;
+    // } else if (inputData.includes(wrd.cunits) === true) {
+    //   returnData = gen.cunt;
+    // } else if (inputData.includes(wrd.cword) === true) {
+    //   returnData = gen.cwrd;
+    // } else {
+    //   // ERROR: Unknown constant file.
+    //   console.log(msg.cErrorUnknownConstantFile);
+    // }
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
@@ -1781,31 +1790,38 @@ export const isConstantTypeValid = function(inputData, inputMetaData) {
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
-    switch (inputData) {
-      case sys.cBasicConstantsValidation:
-      case sys.cBusinessConstantsValidation:
-      case sys.cColorConstantsValidation:
-      case sys.ccommandConstantsValidation:
-      case sys.cconfigurationConstantsValidation:
-      case sys.ccountryConstantsValidation:
-      case sys.cElementConstantsValidation:
-      case sys.cGenericConstantsValidation:
-      case sys.cIsotopeConstantsValidation:
-      case sys.cknotConstantsValidation:
-      case sys.clanguageConstantsValidation:
-      case sys.cmessageConstantsValidation:
-      case sys.cNumericConstantsValidation:
-      case sys.cphonicConstantsValidation:
-      case sys.cShapeConstantsValidation:
-      case sys.cSystemConstantsValidation:
-      case sys.cunitConstantsValidation:
-      case sys.cWordConstantsValidation:
+    let constantsShortNames = D[sys.cConstantsValidationData][sys.cConstantsShortNames];
+    for (let key in constantsShortNames) {
+      if (inputData === key || inputData === constantsShortNames[key]) {
         returnData = true;
         break;
-      default:
-        returnData = false;
-        break;
+      }
     }
+    // switch (inputData) {
+    //   case sys.cBasicConstantsValidation:
+    //   case sys.cBusinessConstantsValidation:
+    //   case sys.cColorConstantsValidation:
+    //   case sys.ccommandConstantsValidation:
+    //   case sys.cconfigurationConstantsValidation:
+    //   case sys.ccountryConstantsValidation:
+    //   case sys.cElementConstantsValidation:
+    //   case sys.cGenericConstantsValidation:
+    //   case sys.cIsotopeConstantsValidation:
+    //   case sys.cknotConstantsValidation:
+    //   case sys.clanguageConstantsValidation:
+    //   case sys.cmessageConstantsValidation:
+    //   case sys.cNumericConstantsValidation:
+    //   case sys.cphonicConstantsValidation:
+    //   case sys.cShapeConstantsValidation:
+    //   case sys.cSystemConstantsValidation:
+    //   case sys.cunitConstantsValidation:
+    //   case sys.cWordConstantsValidation:
+    //     returnData = true;
+    //     break;
+    //   default:
+    //     returnData = false;
+    //     break;
+    // }
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
@@ -1829,65 +1845,71 @@ export const convertConstantTypeToConstantPrefix = function(inputData, inputMeta
   let returnData = '';
   if (inputData) {
     returnData = inputData;
-    switch (inputData) {
-      case sys.cBasicConstantsValidation:
-        returnData = gen.cbas + bas.cDot;
-        break;
-      case sys.cBusinessConstantsValidation:
-        returnData = gen.cbiz + bas.cDot;
-        break;
-      case sys.cColorConstantsValidation:
-        returnData = gen.cclr + bas.cDot;
-        break;
-      case sys.ccommandConstantsValidation:
-        returnData = gen.ccmd + bas.cDot;
-        break;
-      case sys.cconfigurationConstantsValidation:
-        returnData = gen.ccfg + bas.cDot;
-        break;
-      case sys.ccountryConstantsValidation:
-        returnData = gen.cctr + bas.cDot;
-        break;
-      case sys.cElementConstantsValidation:
-        returnData = gen.celm + bas.cDot;
-        break;
-      case sys.cGenericConstantsValidation:
-        returnData = gen.cgen + bas.cDot;
-        break;
-      case sys.cIsotopeConstantsValidation:
-        returnData = gen.ciso + bas.cDot;
-        break;
-      case sys.cknotConstantsValidation:
-        returnData = gen.ckts + bas.cDot;
-        break;
-      case sys.clanguageConstantsValidation:
-        returnData = gen.clng + bas.cDot;
-        break;
-      case sys.cmessageConstantsValidation:
-        returnData = gen.cmsg + bas.cDot;
-        break;
-      case sys.cNumericConstantsValidation:
-        returnData = gen.cnum + bas.cDot;
-        break;
-      case sys.cphonicConstantsValidation:
-        returnData = gen.cphn + bas.cDot;
-        break;
-      case sys.cShapeConstantsValidation:
-        returnData = gen.cshp + bas.cDot;
-        break;
-      case sys.cSystemConstantsValidation:
-        returnData = gen.csys + bas.cDot;
-        break;
-      case sys.cunitConstantsValidation:
-        returnData = gen.cunt + bas.cDot;
-        break;
-      case sys.cWordConstantsValidation:
-        returnData = gen.cwrd + bas.cDot;
-        break;
-      default:
-        returnData = false;
-        break;
+    let constantsPrefixData = D[sys.cConstantsValidationData][sys.cConstantsPrefix];
+    for (let key in constantsPrefixData) {
+      if (inputData === key) {
+        returnData = constantsPrefixData[key];
+      }
     }
+    // switch (inputData) {
+    //   case sys.cBasicConstantsValidation:
+    //     returnData = gen.cbas + bas.cDot;
+    //     break;
+    //   case sys.cBusinessConstantsValidation:
+    //     returnData = gen.cbiz + bas.cDot;
+    //     break;
+    //   case sys.cColorConstantsValidation:
+    //     returnData = gen.cclr + bas.cDot;
+    //     break;
+    //   case sys.ccommandConstantsValidation:
+    //     returnData = gen.ccmd + bas.cDot;
+    //     break;
+    //   case sys.cconfigurationConstantsValidation:
+    //     returnData = gen.ccfg + bas.cDot;
+    //     break;
+    //   case sys.ccountryConstantsValidation:
+    //     returnData = gen.cctr + bas.cDot;
+    //     break;
+    //   case sys.cElementConstantsValidation:
+    //     returnData = gen.celm + bas.cDot;
+    //     break;
+    //   case sys.cGenericConstantsValidation:
+    //     returnData = gen.cgen + bas.cDot;
+    //     break;
+    //   case sys.cIsotopeConstantsValidation:
+    //     returnData = gen.ciso + bas.cDot;
+    //     break;
+    //   case sys.cknotConstantsValidation:
+    //     returnData = gen.ckts + bas.cDot;
+    //     break;
+    //   case sys.clanguageConstantsValidation:
+    //     returnData = gen.clng + bas.cDot;
+    //     break;
+    //   case sys.cmessageConstantsValidation:
+    //     returnData = gen.cmsg + bas.cDot;
+    //     break;
+    //   case sys.cNumericConstantsValidation:
+    //     returnData = gen.cnum + bas.cDot;
+    //     break;
+    //   case sys.cphonicConstantsValidation:
+    //     returnData = gen.cphn + bas.cDot;
+    //     break;
+    //   case sys.cShapeConstantsValidation:
+    //     returnData = gen.cshp + bas.cDot;
+    //     break;
+    //   case sys.cSystemConstantsValidation:
+    //     returnData = gen.csys + bas.cDot;
+    //     break;
+    //   case sys.cunitConstantsValidation:
+    //     returnData = gen.cunt + bas.cDot;
+    //     break;
+    //   case sys.cWordConstantsValidation:
+    //     returnData = gen.cwrd + bas.cDot;
+    //     break;
+    //   default:
+    //     returnData = false;
+    //     break;
+    // }
   }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);

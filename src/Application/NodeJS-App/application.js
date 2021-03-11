@@ -65,7 +65,10 @@ function bootStrapApplication() {
   rootPath = warden.processRootPath(rootPath);
   // console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
-  warden.initApplicationSchema(rootPath, all_clt_cv.initializeAllClientConstantsValidationData());
+  // NOTE: We are passing all_clt_cv.initializeAllClientConstantsValidationData function as an object on the next line of code.
+  // We are doing this because we have not yet evaluated the constants path based on the root path,
+  // and we don't want the function to be evaluated immediately because it will need to get the root path as part of evaluating the path to the constants files for validation.
+  warden.initApplicationSchema(rootPath, apc.cClientConstantsPathActual, all_clt_cv.initializeAllClientConstantsValidationData);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
   if (NODE_ENV === wrd.cdevelopment) {

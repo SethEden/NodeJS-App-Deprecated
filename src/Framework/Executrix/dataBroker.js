@@ -698,6 +698,12 @@ function initializeConstantsValidationData() {
   let functionName = initializeConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   D[sys.cConstantsValidationData] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsShortNames] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsFileNames] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPrefix] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsFilePaths] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages] = {};
+  D[sys.cConstantsValidationData][sys.cConstantsPhase2ValidationMessages] = {};
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
@@ -712,15 +718,53 @@ function initializeConstantsValidationData() {
 function addConstantsValidationData(constantLibraryData) {
   let functionName = addConstantsValidationData.name;
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'constantLibraryData is: ' + JSON.stringify(constantLibraryData));
-  for (var key in constantLibraryData[sys.cConstantsValidationData]) {
-    if (constantLibraryData[sys.cConstantsValidationData].hasOwnProperty(key)) {
-      let data = constantLibraryData[sys.cConstantsValidationData][key];
-      D[sys.cConstantsValidationData][key] = [];
-      Object.assign(D[sys.cConstantsValidationData][key], data);
+  // constantLibraryData is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cconstantLibraryDataIs + JSON.stringify(constantLibraryData));
+  for (let key1 in constantLibraryData[sys.cConstantsValidationData]) {
+    if (constantLibraryData[sys.cConstantsValidationData].hasOwnProperty(key1)) {
+      if (key1 === sys.cConstantsFilePaths ||
+      key1 === sys.cConstantsPhase1ValidationMessages ||
+      key1 === sys.cConstantsPhase2ValidationMessages ||
+      key1 === sys.cConstantsShortNames ||
+      key1 === sys.cConstantsFileNames ||
+      key1 === sys.cConstantsPrefix) {
+        addDeeplyNestedConstantsValidationData(key1, constantLibraryData[sys.cConstantsValidationData][key1]);
+      } else {
+        let data1 = constantLibraryData[sys.cConstantsValidationData][key1];
+        D[sys.cConstantsValidationData][key1] = [];
+        Object.assign(D[sys.cConstantsValidationData][key1], data1);
+      }
     }
   }
   // console.log('contents of the D-data structure are: ' + JSON.stringify(D));
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+};
+
+
+/**
+ * @function addDeeplyNestedConstantsValidationData
+ * @description Adds all the constants validation auxilary data that is deeply nested inside sub-data structures to the main D-data structure.
+ * Such as file paths, and validation messages.
+ * @param {string} contextName The name that should be used when accessing and also adding the data to the D-data structure.
+ * @param {array<array<string,object>} deeplyNestedData The actual data that should be added.
+ * @author Seth Hollingsead
+ * @date 2021/03/10
+ */
+function addDeeplyNestedConstantsValidationData(contextName, deeplyNestedData) {
+  let functionName = addDeeplyNestedConstantsValidationData.name;
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  // contextName is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccontextNameIs + contextName);
+  // deeplyNestedData is:
+  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdeeplyNestedDataIs + JSON.stringify(deeplyNestedData));
+
+  let d_dataStructureConstantsFilePaths = D[sys.cConstantsValidationData][contextName];
+  for (let key2 in deeplyNestedData) {
+    if (deeplyNestedData.hasOwnProperty(key2)) {
+      let data2 = deeplyNestedData[key2];
+      D[sys.cConstantsValidationData][contextName][key2] = data2;
+    }
+  }
   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
