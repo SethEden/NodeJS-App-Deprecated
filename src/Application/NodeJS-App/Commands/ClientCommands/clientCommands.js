@@ -28,6 +28,7 @@ import * as app_cmd from '../../Constants/application.command.constants';
 var path = require('path');
 var chalk = require('chalk');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cCommands + bas.cDot + wrd.cClient + wrd.cCommands + bas.cDot; // Application.Commands.ClientCommands.
 
 /**
  * @function customEchoCommand
@@ -43,13 +44,13 @@ export const customEchoCommand = function(inputData, inputMetaData) {
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
   let functionName = app_cmd.ccustomEchoCommand;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   returnData = inputData + ' clientStringParsing.customEchoCommand';
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END clientStringParsing.customEcho function');
   return returnData;
@@ -81,9 +82,9 @@ export const customEchoCommand = function(inputData, inputMetaData) {
  */
 export const bossPanic = function(inputData, inputMetaData) {
   let functionName = app_cmd.cbossPanic;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let stringLength = 0;
   let colorBreakPoint = 0;
@@ -206,7 +207,7 @@ export const bossPanic = function(inputData, inputMetaData) {
     warden.sleep(performanceIndex);
   }
 
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };

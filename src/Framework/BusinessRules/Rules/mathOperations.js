@@ -19,7 +19,7 @@ import * as bas from '../../Constants/basic.constants';
 import * as sys from '../../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Business + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot; // Framework.BusinessRules.Rules.
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot; // Framework.BusinessRules.Rules.
 
 /**
  * @function hex2rgbConversion

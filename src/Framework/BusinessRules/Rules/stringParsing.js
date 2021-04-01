@@ -53,7 +53,7 @@ var math = require('mathjs');
 var chalk = require('chalk');
 var D = require('../../../Framework/Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Business + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot; // Framework.BusinessRules.Rules.
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot; // Framework.BusinessRules.Rules.
 
 /**
  * @function stringToBoolean

@@ -43,6 +43,7 @@ var D = require('../../Framework/Structures/data');
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var namespacePrefix = wrd.cApplication + bas.cDot; // Application.
 
 /**
  * @function bootStrapApplication
@@ -92,11 +93,11 @@ function application() {
   let argumentDrivenInterface = true;
   let commandInput;
   let commandResult;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // BEGIN main program loop
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage2);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cApplicationMessage2);
   // BEGIN command parser
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage3);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cApplicationMessage3);
   argumentDrivenInterface = warden.getConfigurationSetting(cfg.cArgumentDrivenInterface);
   warden.enqueueCommand(cmd.cStartupWorkflow);
 
@@ -139,12 +140,12 @@ function application() {
       commandResult = warden.processCommandQueue();
       if (commandResult === false) {
         // END command parser
-        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage4);
+        warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cApplicationMessage4);
         programRunning = false;
         // END main program loop
-        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage5);
+        warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cApplicationMessage5);
         // Exiting, Good bye, Have a nice day & stay safe!
-        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
+        warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
         break;
       } else {
         // console.log('contents of D are: ' + JSON.stringify(D));
@@ -152,7 +153,7 @@ function application() {
       }
     }
   }
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 // Launch the application!!
