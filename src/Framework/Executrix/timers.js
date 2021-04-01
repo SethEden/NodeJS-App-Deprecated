@@ -24,6 +24,7 @@ import * as msg from '../Constants/message.constants';
 var path = require('path');
 var moment = require('moment');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot; // Framework.Executrix.
 
 /**
  * @function getNowMoment
@@ -35,13 +36,13 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function getNowMoment(formatting) {
   let functionName = getNowMoment.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // formatting is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cformattingIs + formatting);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, sys.cformattingIs + formatting);
   let returnData = '';
   returnData = moment().format(formatting);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -59,11 +60,11 @@ function computeDeltaTime(startTime, endTime) {
   // console.log('BEGIN timer.computeDeltaTime function');
   // console.log('level is: ' + level);
   let functionName = computeDeltaTime.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // startTime is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstartTimeIs + startTime);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cstartTimeIs + startTime);
   // endTime is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cendTimeIs + endTime);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cendTimeIs + endTime);
   let deltaTimeResult;
   startTime = moment(startTime, gen.cYYYYMMDD_HHmmss_SSS);
   endTime = moment(endTime, gen.cYYYYMMDD_HHmmss_SSS);
@@ -71,8 +72,8 @@ function computeDeltaTime(startTime, endTime) {
   // console.log('deltaTimeResult is: ' + deltaTimeResult);
   // console.log('END timer.computeDeltaTime function');
   // deltaTimeResult is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdeltaTimeResultIs + deltaTimeResult);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cdeltaTimeResultIs + deltaTimeResult);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return deltaTimeResult;
 };
 
@@ -87,16 +88,16 @@ function computeDeltaTime(startTime, endTime) {
  */
 function reformatDeltaTime(deltaTime, format) {
   let functionName = reformatDeltaTime.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // deltaTime is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdeltaTimeIs + deltaTime);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cdeltaTimeIs + deltaTime);
   // format is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cformatIs + format);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cformatIs + format);
   let returnDeltaTime = '';
   returnDeltaTime = moment.duration(deltaTime).format(format);
   // returnDeltaTime is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDeltaTimeIs + returnDeltaTime);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDeltaTimeIs + returnDeltaTime);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnDeltaTime;
 };
 
@@ -111,15 +112,15 @@ function reformatDeltaTime(deltaTime, format) {
  */
 function sleep(sleepTime) {
   let functionName = sleep.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // sleepTime is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csleepTimeIs + sleepTime);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.csleepTimeIs + sleepTime);
   const date = moment();
   let currentDate = null;
   do {
     currentDate = moment();
   } while (currentDate - date < sleepTime);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 export default {

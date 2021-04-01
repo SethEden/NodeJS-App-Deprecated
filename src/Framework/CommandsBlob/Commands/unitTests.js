@@ -30,6 +30,7 @@ import * as msg from '../../Constants/message.constants';
 var path = require('path');
 var D = require('../../../Framework/Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas.cDot + wrd.cCommands + bas.cDot; // Framework.CommandsBlob.Commands.
 
 /**
  * @function validateConstants
@@ -42,9 +43,9 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 export const validateConstants = function(inputData, inputMetaData) {
   let functionName = cmd.cvalidateConstants;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   // Get the array of keys and values for all the constants that need to be validated.
   let validationArray = D[sys.cConstantsValidationData][sys.cConstantsFilePaths]; // This will return an object with all the key-value pair attributes we need.
@@ -59,24 +60,24 @@ export const validateConstants = function(inputData, inputMetaData) {
 
   // Phase 1 Constants Validation
   // BEGIN Phase 1 Constants Validation
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBeginPhase1ConstantsValidation);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBeginPhase1ConstantsValidation);
   // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
   for (let key1 in validationArray) {
     let path = validationArray[key1];
     phase1ResultsArray[key1] = ruleBroker.processRules(path, key1, rulesPhase1);
   }
   // END Phase 1 Constants Validation
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEndPhase1ConstantsValidation);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEndPhase1ConstantsValidation);
 
   // Phase 2 Constants Validation
   // BEGIN Phase 2 Constants Validation
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBeginPhase2ConstantsValidation);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBeginPhase2ConstantsValidation);
   // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
   for (let key2 in validationArray) {
     phase2ResultsArray[key2] = ruleBroker.processRules(key2, '', rulesPhase2);
   }
   // END Phase 2 Constants Validation
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEndPhase2ConstantsValidation);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEndPhase2ConstantsValidation);
 
   for (let key3 in phase1ResultsArray) {
     loggers.constantsValidationSummaryLog(D[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages][key3], phase1ResultsArray[key3]);
@@ -105,7 +106,7 @@ export const validateConstants = function(inputData, inputMetaData) {
   } else {
     configurator.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };
 
 /**
@@ -119,9 +120,9 @@ export const validateConstants = function(inputData, inputMetaData) {
  */
 export const validateCommandAliases = function(inputData, inputMetaData) {
   let functionName = cmd.cvalidateCommandAliases;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let allCommandAliases = D[sys.cCommandsAliases][wrd.cCommand];
   let passedAllCommandAliasesDuplicateCheck = true;
   let rules = [];
@@ -129,35 +130,35 @@ export const validateCommandAliases = function(inputData, inputMetaData) {
 loop1:
   for (let i = 0; i < allCommandAliases.length; i++) {
     // BEGIN i-th loop:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithLoop + i);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_ithLoop + i);
     let currentCommand = allCommandAliases[i];
     // currentCommand is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentCommandIs + JSON.stringify(currentCommand));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccurrentCommandIs + JSON.stringify(currentCommand));
     let aliasList = currentCommand[wrd.cAliases];
     // aliasList is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.caliasListIs + aliasList);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.caliasListIs + aliasList);
     let arrayOfAliases = aliasList.split(bas.cComa);
 loop2:
     for (let j = 0; j < arrayOfAliases.length; j++) {
       // BEGIN j-th loop:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_jthLoop + i);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_jthLoop + i);
       let currentAlias = arrayOfAliases[j];
       // currentAlias is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentAliasIs + currentAlias);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccurrentAliasIs + currentAlias);
       let duplicateAliasCount = ruleBroker.processRules(currentAlias, allCommandAliases, rules);
       if (duplicateAliasCount > 1) {
         passedAllCommandAliasesDuplicateCheck = false;
       }
       // END j-th loop:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_jthLoop + i);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_jthLoop + i);
     }
     // END i-th loop:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithLoop + i);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_ithLoop + i);
   }
   if (passedAllCommandAliasesDuplicateCheck === true) {
     // PASSED: All duplicate command aliases validation tests!
     console.log(msg.cvalidateCommandAliasesMessage1);
   }
   configurator.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
 };

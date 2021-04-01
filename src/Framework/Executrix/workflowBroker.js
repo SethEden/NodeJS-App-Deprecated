@@ -23,6 +23,7 @@ import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot; // Framework.Executrix.
 
 /**
  * @function getWorkflow
@@ -36,25 +37,25 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function getWorkflow(workflowName) {
   let functionName = getWorkflow.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
   // workflowName is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowNameIs + workflowName);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cworkflowNameIs + workflowName);
   let workflowValue = false;
   let arrayOfWorkflows = D[sys.cCommandWorkflows][wrd.cWorkflow];
   for (let i = 0; i < arrayOfWorkflows.length; i++) {
     let currentWorkflow = arrayOfWorkflows[i];
     // currentWorkflow is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
     if (currentWorkflow[wrd.cName] === workflowName) {
       workflowValue = currentWorkflow[wrd.cValue];
       // workflowValue is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + JSON.stringify(workflowValue));
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + JSON.stringify(workflowValue));
       break;
     }
   }
   // workflowValue is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + workflowValue);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + workflowValue);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return workflowValue;
 };
 

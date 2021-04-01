@@ -126,6 +126,7 @@ import * as biz from '../../Constants/business.constants';
 import * as msg from '../../Constants/message.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Business + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot; // Framework.BusinessRules.Rules.
 
 /**
  * @function generateRandomMixedCaseTextByLength1
@@ -139,9 +140,9 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseTextByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -149,8 +150,8 @@ export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMet
 		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphabeticCharacter1(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -166,9 +167,9 @@ export const generateRandomMixedCaseTextByLength1 = function(inputData, inputMet
  */
 export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseTextByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -176,8 +177,8 @@ export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMet
 		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphabeticCharacter2(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -193,9 +194,9 @@ export const generateRandomMixedCaseTextByLength2 = function(inputData, inputMet
  */
 export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseTextByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -203,8 +204,8 @@ export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMet
 		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetter1(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -220,9 +221,9 @@ export const generateRandomUpperCaseTextByLength1 = function(inputData, inputMet
  */
 export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseTextByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -230,8 +231,8 @@ export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMet
 		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetter2(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -247,9 +248,9 @@ export const generateRandomUpperCaseTextByLength2 = function(inputData, inputMet
  */
 export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseTextByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -257,8 +258,8 @@ export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMet
 		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetter1(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -274,9 +275,9 @@ export const generateRandomLowerCaseTextByLength1 = function(inputData, inputMet
  */
 export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseTextByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -284,8 +285,8 @@ export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMet
 		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetter2(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -301,9 +302,9 @@ export const generateRandomLowerCaseTextByLength2 = function(inputData, inputMet
  */
 export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -311,8 +312,8 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = functio
 		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseLetterOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -328,9 +329,9 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength1 = functio
  */
 export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseTextWithSpecialCharactersByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -338,8 +339,8 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = functio
 		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseLetterOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -355,9 +356,9 @@ export const generateRandomMixedCaseTextWithSpecialCharactersByLength2 = functio
  */
 export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -365,8 +366,8 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = functio
 		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetterOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -382,9 +383,9 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength1 = functio
  */
 export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseTextWithSpecialCharactersByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -392,8 +393,8 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = functio
 		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseLetterOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -409,9 +410,9 @@ export const generateRandomUpperCaseTextWithSpecialCharactersByLength2 = functio
  */
 export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -419,8 +420,8 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = functio
 		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetterOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -436,9 +437,9 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength1 = functio
  */
 export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseTextWithSpecialCharactersByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -446,8 +447,8 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = functio
 		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseLetterOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -463,9 +464,9 @@ export const generateRandomLowerCaseTextWithSpecialCharactersByLength2 = functio
  */
 export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseAlphaNumericCodeByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -473,8 +474,8 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputDa
 		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphaNumericCharacter1(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -490,9 +491,9 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength1 = function(inputDa
  */
 export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseAlphaNumericCodeByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -500,8 +501,8 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputDa
 		returnData = returnData.concat(charGen.randomlyGenerateMixedCaseAlphaNumericCharacter2(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -517,9 +518,9 @@ export const generateRandomMixedCaseAlphaNumericCodeByLength2 = function(inputDa
  */
 export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseAlphaNumericCodeByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -527,8 +528,8 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputDa
 		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseAlphaNumericCharacter1(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -544,9 +545,9 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength1 = function(inputDa
  */
 export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseAlphaNumericCodeByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -554,8 +555,8 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputDa
 		returnData = returnData.concat(charGen.randomlyGenerateUpperCaseAlphaNumericCharacter2(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -571,9 +572,9 @@ export const generateRandomUpperCaseAlphaNumericCodeByLength2 = function(inputDa
  */
 export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseAlphaNumericCodeByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -581,8 +582,8 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputDa
 		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseAlphaNumericCharacter1(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -598,9 +599,9 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength1 = function(inputDa
  */
 export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseAlphaNumericCodeByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -608,8 +609,8 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputDa
 		returnData = returnData.concat(charGen.randomlyGenerateLowerCaseAlphaNumericCharacter2(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -625,9 +626,9 @@ export const generateRandomLowerCaseAlphaNumericCodeByLength2 = function(inputDa
  */
 export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomNumericCodeByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -635,8 +636,8 @@ export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaD
 		returnData = returnData.concat(charGen.randomlyGenerateNumericCharacter1(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -652,9 +653,9 @@ export const generateRandomNumericCodeByLength1 = function(inputData, inputMetaD
  */
 export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomNumericCodeByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -662,8 +663,8 @@ export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaD
 		returnData = returnData.concat(charGen.randomlyGenerateNumericCharacter2(inputData, inputMetaData));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -680,9 +681,9 @@ export const generateRandomNumericCodeByLength2 = function(inputData, inputMetaD
  */
 export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -690,8 +691,8 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
 		returnData = returnData.concat(charGen.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -708,9 +709,9 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
  */
 export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -718,8 +719,8 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
 		returnData = returnData.concat(charGen.randomlyGenerateEitherMixedCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -736,9 +737,9 @@ export const generateRandomMixedCaseAlphaNumericCodeWithSpecialCharactersByLengt
  */
 export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -746,8 +747,8 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
 		returnData = returnData.concat(charGen.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -764,9 +765,9 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
  */
 export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -774,8 +775,8 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
 		returnData = returnData.concat(charGen.randomlyGenerateEitherUpperCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -792,9 +793,9 @@ export const generateRandomUpperCaseAlphaNumericCodeWithSpecialCharactersByLengt
  */
 export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -802,8 +803,8 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
 		returnData = returnData.concat(charGen.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter1(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -820,9 +821,9 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
  */
 export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -830,8 +831,8 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
 		returnData = returnData.concat(charGen.randomlyGenerateEitherLowerCaseLetterOrNumberOrSpecialCharacter2(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -847,9 +848,9 @@ export const generateRandomLowerCaseAlphaNumericCodeWithSpecialCharactersByLengt
  */
 export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomSpecialCharacterCodeByLength1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -857,8 +858,8 @@ export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, i
 		returnData = returnData.concat(charGen.randomlyGenerateSpecialCharacter1(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -874,9 +875,9 @@ export const generateRandomSpecialCharacterCodeByLength1 = function(inputData, i
  */
 export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomSpecialCharacterCodeByLength2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
 	  let numberOfCharactersToGenerate = parseInt(inputData);
@@ -884,8 +885,8 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
 		returnData = returnData.concat(charGen.randomlyGenerateSpecialCharacter2(inputMetaData, ''));
 	  }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -906,9 +907,9 @@ export const generateRandomSpecialCharacterCodeByLength2 = function(inputData, i
  */
 export const generateValidEmail1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateValidEmail1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = '';
   let allowableSpecialCharacters;
   let generateSpecialCharacters;
@@ -942,8 +943,8 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
   } else {
     returnData = generateRandomValidEmail1(inputData, bas.cFalse, wrd.cEmpty);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -964,9 +965,9 @@ export const generateValidEmail1 = function(inputData, inputMetaData) {
  */
 export const generateValidEmail2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateValidEmail2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = '';
   let allowableSpecialCharacters;
   let generateSpecialCharacters;
@@ -1000,8 +1001,8 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
   } else {
     returnData = generateRandomValidEmail2(inputData, bas.cFalse, wrd.cEmpty);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1022,9 +1023,9 @@ export const generateValidEmail2 = function(inputData, inputMetaData) {
  */
 export const generateInvalidEmail1 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateInvalidEmail1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let allowableSpecialCharacters;
   let generateSpecialCharacters;
@@ -1058,8 +1059,8 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
   } else {
     returnData = generateRandomInvalidEmail1(inputData, [bFalse, sEmpty]);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1080,9 +1081,9 @@ export const generateInvalidEmail1 = function(inputData, inputMetaData) {
  */
 export const generateInvalidEmail2 = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateInvalidEmail2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   let allowableSpecialCharacters;
   let generateSpecialCharacters;
@@ -1116,8 +1117,8 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
   } else {
     returnData = generateRandomInvalidEmail2(inputData, [bFalse, sEmpty]);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1138,11 +1139,11 @@ export const generateInvalidEmail2 = function(inputData, inputMetaData) {
  */
 const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
   let functionName = biz.cgenerateValidEmailWithSpecificSuffixAndDomainName1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
   let returnData = '';
   let prefix = '';
   if ((numberOfCharactersToGenerate >= specifiedSuffixAndDomain.length + 2) && numberOfCharactersToGenerate >= 6 &&
@@ -1163,8 +1164,8 @@ const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfChar
   } else {
     returnData = '';
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1185,11 +1186,11 @@ const generateValidEmailWithSpecificSuffixAndDomainName1 = function(numberOfChar
  */
 const generateValidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
   let functionName = biz.cgenerateValidEmailWithSpecificSuffixAndDomainName2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
   let returnData = '';
   let prefix = '';
   if ((numberOfCharactersToGenerate >= specifiedSuffixAndDomain.length + 2) && numberOfCharactersToGenerate >= 6 &&
@@ -1210,8 +1211,8 @@ const generateValidEmailWithSpecificSuffixAndDomainName2 = function(numberOfChar
   } else {
     returnData = '';
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1230,10 +1231,10 @@ const generateValidEmailWithSpecificSuffixAndDomainName2 = function(numberOfChar
  */
 const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
   let functionName = biz.cgenerateRandomValidEmail1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
   let returnData = '';
   let prefix = '';
   let suffix = '';
@@ -1318,8 +1319,8 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
   } else {
     returnData = '';
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1338,10 +1339,10 @@ const generateRandomValidEmail1 = function(numberOfCharactersToGenerate, generat
  */
 const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
   let functionName = biz.cgenerateRandomValidEmail2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
   let returnData = '';
   let prefix = '';
   let suffix = '';
@@ -1422,8 +1423,8 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
   } else {
     returnData = '';
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1444,11 +1445,11 @@ const generateRandomValidEmail2 = function(numberOfCharactersToGenerate, generat
  */
 const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
   let functionName = biz.cgenerateInvalidEmailWithSpecificSuffixAndDomainName1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
   let returnData = '';
   let prefix = '';
   let numberOfPrefixCharacters = 0;
@@ -1464,7 +1465,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
 
   failureMode = charGen.randomlyGenerateNumberInRange1(num.c1, [c3, cTrue, cTrue]);
   // failureMode is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -1495,7 +1496,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
         break;
     }
     // numberOfCharactersToGenerate is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
 
     // This is a pretty dumb and stupid way of doing it, but we only have 3 failure modes for this rule.
     // There are basically with and without the prefix, and we've ractored in all the other cases already above.
@@ -1509,29 +1510,29 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
       }
     }
     // prefix is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
 
     switch (failureMode) {
       case 1: case num.c1: // Without the @ symbol.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
         returnData = prefix + specifiedSuffixAndDomain;
         break;
       case 2: case num.c2: // Without the prefix.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
         returnData = bas.cAt + specifiedSuffixAndDomain;
         break;
       case 3: case num.c3: // Without the @ and prefix.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
         returnData = specifiedSuffixAndDomain;
         break;
       default: // DEFAULT: Without the @ and prefix.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDEFAULTWithoutTheAtSymbolAndPrefix);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDEFAULTWithoutTheAtSymbolAndPrefix);
         returnData = specifiedSuffixAndDomain;
         break;
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1552,11 +1553,11 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName1 = function(numberOfCh
  */
 const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters, specifiedSuffixAndDomain) {
   let functionName = biz.cgenerateInvalidEmailWithSpecificSuffixAndDomainName2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cspecifiedSuffixAndDomainIs + specifiedSuffixAndDomain);
   let returnData = '';
   let prefix = '';
   let numberOfPrefixCharacters = 0;
@@ -1572,7 +1573,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
 
   failureMode = charGen.randomlyGenerateNumberInRange2(num.c1, [c3, cTrue, cTrue]);
   // failureMode is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -1607,7 +1608,7 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
     // There are basically with and without the prefix, and we've ractored in all the other cases already above.
     numberOfPrefixCharacters = numberOfCharactersToGenerate;
     // numberOfCharactersToGenerate is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
 
     if (numberOfPrefixCharacters > 0) {
       if (generateSpecialCharacters === false) {
@@ -1617,29 +1618,29 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
       }
     }
     // prefix is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
 
     switch (failureMode) {
       case 1: case num.c1: // Without the @ symbol.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
         returnData = prefix + specifiedSuffixAndDomain;
         break;
       case 2: case num.c2: // Without the prefix.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
         returnData = bas.cAt + specifiedSuffixAndDomain;
         break;
       case 3: case num.c3: // Without the @ and prefix.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
         returnData = specifiedSuffixAndDomain;
         break;
       default: // DEFAULT: Without the @ and prefix.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDEFAULTWithoutTheAtSymbolAndPrefix);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDEFAULTWithoutTheAtSymbolAndPrefix);
         returnData = specifiedSuffixAndDomain;
         break;
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1658,10 +1659,10 @@ const generateInvalidEmailWithSpecificSuffixAndDomainName2 = function(numberOfCh
  */
 const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
   let functionName = biz.cgenerateRandomInvalidEmail1;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
   let returnData = '';
   let prefix = '';
   let suffix = '';
@@ -1677,7 +1678,7 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
   failureMode = charGen.randomlyGenerateNumberInRange1(num.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);
   // failureMode is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -1727,7 +1728,7 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
     // numberOfCharactersToGenerate is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
 
     // Only work generating the domain name if we are not going to be building our invalid email on a missing domain name.
     if (failureMode === 1 || failureMode === 2 || failureMode === 3 || (failureMode >= 8 && failureMode <= 16) || failureMode === 19 || failureMode > 27) {
@@ -1777,7 +1778,7 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       }
     }
     // domainName is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdomainNameIs + domainName);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cdomainNameIs + domainName);
 
     // ONLY do suffix and prefix if our failure modes do not exclude both.
     if (failureMode >= 1 && failureMode <= 7) {
@@ -1800,9 +1801,9 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       numberOfSuffixCharacters = 0;
     }
     // numberOfPrefixCharacters is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfPrefixCharactersIs + numberOfPrefixCharacters);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfPrefixCharactersIs + numberOfPrefixCharacters);
     // numberOfSuffixCharacters is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfSuffixCharactersIs + numberOfSuffixCharacters);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfSuffixCharactersIs + numberOfSuffixCharacters);
 
     if (numberOfPrefixCharacters > 0) {
       if (generateSpecialCharacters === false) {
@@ -1816,7 +1817,7 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       }
     }
     // prefix is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
 
     if (numberOfSuffixCharacters > 0) {
       if (generateSpecialCharacters === false) {
@@ -1830,125 +1831,125 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
       }
     }
     // suffix is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csuffixIs + prefix);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.csuffixIs + prefix);
   }
 
   switch (failureMode) {
     case 1: // Without the @ symbol.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
       returnData = prefix + suffix + bas.cDot + domainName;
       break;
     case 2: // Without the . symbol.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSymbol);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSymbol);
       returnData = prefix + bas.cAt + suffix + domainName;
       break;
     case 3: // Without both the @ and . symbols.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtAndDotSymbols);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtAndDotSymbols);
       returnData = prefix + suffix + domainName;
       break;
     case 4: // Without the domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDomainName);
       returnData = prefix + bas.cAt + suffix + bas.cDot;
       break;
     case 5: // Without the @ and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndDomainName);
       returnData = prefix + suffix + bas.cDot + domainName;
       break;
     case 6: // Without the . and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndDomainName);
       returnData = prefix + bas.cAt + suffix;
       break;
     case 7: // Without the @, . and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndDomainName);
       returnData = prefix + suffix;
       break;
     case 8: // Without the prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
       returnData = bas.cAt + suffix + bas.cDot + domainName;
       break;
     case 9: // Without the suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffix);
       returnData = prefix + bas.cAt + bas.cDot + domainName;
       break;
     case 10: // Without the @ and prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
       returnData = suffix + bas.cDot + domainName;
       break;
     case 11: // Without the . and prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndPrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndPrefix);
       returnData = bas.cAt + suffix + domainName;
       break;
     case 12: // Without the @ and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndSuffix);
       returnData = prefix + bas.cDot + domainName;
       break;
     case 13: // Without the . and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndSuffix);
       returnData = prefix + bas.cAt + domainName;
       break;
     case 14: // Without the @, . and prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndPrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndPrefix);
       returnData = suffix + domainName;
       break;
     case 15: // Without the @, . and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndSuffix);
       returnData = prefix + domainName;
       break;
     case 16: // Without the @, ., prefix, and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotPrefixAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotPrefixAndSuffix);
       returnData = domainName;
       break;
     case 17: // Without the prefix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndDomainName);
       returnData = bas.cAt + suffix + bas.cDot;
       break;
     case 18: // Without the suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffixAndDomainName);
       returnData = prefix + bas.cAt + bas.cDot;
       break;
     case 19: // Without the prefix and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndSuffix);
       returnData = bas.cAt + bas.cDot + domainName;
       break;
     case 20: // Without the prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDomainName);
       returnData = bas.cAt + bas.cDot;
       break;
     case 21: // Without the @, prefix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixAndDomainName);
       returnData = suffix + bas.cDot;
       break;
     case 22: // Without the ., prefix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixAndDomainName);
       returnData = bas.cAt + suffix;
       break;
     case 23: // Without the @, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolSuffixAndDomainName);
       returnData = prefix + bas.cDot;
       break;
     case 24: // Without the ., suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSuffixAndDomainName);
       returnData = prefix + bas.cAt + bas.cDot;
       break;
     case 25: // Without the @, prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixSuffixAndDomainName);
       returnData = bas.cDot;
       break;
     case 26: // Without the ., prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixSuffixAndDomainName);
       returnData = bas.cAt;
       break;
     case 27: // Without the prefix, suffix and @.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndAtSymbol);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndAtSymbol);
       returnData = bas.cDot + domainName;
       break;
     case 28: // Without the prefix, suffix and ..
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDot);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDot);
       returnData = bas.cAt + domainName;
       break;
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1967,10 +1968,10 @@ const generateRandomInvalidEmail1 = function(numberOfCharactersToGenerate, gener
  */
 const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, generateSpecialCharacters, allowableSpecialCharacters) {
   let functionName = biz.cgenerateRandomInvalidEmail2;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cgenerateSpecialCharactersIs + generateSpecialCharacters);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callowableSpecialCharactersIs + allowableSpecialCharacters);
   let returnData = '';
   let prefix = '';
   let suffix = '';
@@ -1986,7 +1987,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
   failureMode = charGen.randomlyGenerateNumberInRange2(num.c1, [c28, cTrue, cTrue]);
   failureMode = parseInt(failureMode);
   // failureModeIs
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cfailureModeIs + failureMode);
   // ************************************************************
   // Failure Mode Legend:
   // ************************************************************
@@ -2036,7 +2037,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       numberOfCharactersToGenerate = numberOfCharactersToGenerate - 2;
     }
     // numberOfCharactersToGenerate is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfCharactersToGenerateIs + numberOfCharactersToGenerate);
 
     // Only work generating the domain name if we are not going to be building our invalid email on a missing domain name.
     if (failureMode === 1 || failureMode === 2 || failureMode === 3 || (failureMode >= 8 && failureMode <= 16) || failureMode === 19 || failureMode > 27) {
@@ -2087,7 +2088,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       }
     }
     // domainName is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdomainNameIs + domainName);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cdomainNameIs + domainName);
 
     // ONLY do suffix and prefix if our failure modes do not exclude both.
     if (failureMode >= 1 && failureMode <= 7) {
@@ -2110,9 +2111,9 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       numberOfSuffixCharacters = 0;
     }
     // numberOfPrefixCharacters is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfPrefixCharactersIs + numberOfPrefixCharacters);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfPrefixCharactersIs + numberOfPrefixCharacters);
     // numberOfSuffixCharacters is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfSuffixCharactersIs + numberOfSuffixCharacters);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cnumberOfSuffixCharactersIs + numberOfSuffixCharacters);
 
     if (numberOfPrefixCharacters > 0) {
       if (generateSpecialCharacters === false) {
@@ -2126,7 +2127,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       }
     }
     // prefix is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cprefixIs + prefix);
 
     if (numberOfSuffixCharacters > 0) {
       if (generateSpecialCharacters === false) {
@@ -2140,125 +2141,125 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       }
     }
     // suffix is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csuffixIs + prefix);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.csuffixIs + prefix);
   }
 
   switch (failureMode) {
     case 1: // Without the @ symbol.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbol);
       returnData = prefix + suffix + bas.cDot + domainName;
       break;
     case 2: // Without the . symbol.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSymbol);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSymbol);
       returnData = prefix + bas.cAt + suffix + domainName;
       break;
     case 3: // Without both the @ and . symbols.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtAndDotSymbols);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtAndDotSymbols);
       returnData = prefix + suffix + domainName;
       break;
     case 4: // Without the domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDomainName);
       returnData = prefix + bas.cAt + suffix + bas.cDot;
       break;
     case 5: // Without the @ and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndDomainName);
       returnData = prefix + suffix + bas.cDot + domainName;
       break;
     case 6: // Without the . and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndDomainName);
       returnData = prefix + bas.cAt + suffix;
       break;
     case 7: // Without the @, . and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndDomainName);
       returnData = prefix + suffix;
       break;
     case 8: // Without the prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefix);
       returnData = bas.cAt + suffix + bas.cDot + domainName;
       break;
     case 9: // Without the suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffix);
       returnData = prefix + bas.cAt + bas.cDot + domainName;
       break;
     case 10: // Without the @ and prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndPrefix);
       returnData = suffix + bas.cDot + domainName;
       break;
     case 11: // Without the . and prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndPrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndPrefix);
       returnData = bas.cAt + suffix + domainName;
       break;
     case 12: // Without the @ and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolAndSuffix);
       returnData = prefix + bas.cDot + domainName;
       break;
     case 13: // Without the . and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotAndSuffix);
       returnData = prefix + bas.cAt + domainName;
       break;
     case 14: // Without the @, . and prefix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndPrefix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndPrefix);
       returnData = suffix + domainName;
       break;
     case 15: // Without the @, . and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotAndSuffix);
       returnData = prefix + domainName;
       break;
     case 16: // Without the @, ., prefix, and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotPrefixAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolDotPrefixAndSuffix);
       returnData = domainName;
       break;
     case 17: // Without the prefix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndDomainName);
       returnData = bas.cAt + suffix + bas.cDot;
       break;
     case 18: // Without the suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheSuffixAndDomainName);
       returnData = prefix + bas.cAt + bas.cDot;
       break;
     case 19: // Without the prefix and suffix.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndSuffix);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixAndSuffix);
       returnData = bas.cAt + bas.cDot + domainName;
       break;
     case 20: // Without the prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDomainName);
       returnData = bas.cAt + bas.cDot;
       break;
     case 21: // Without the @, prefix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixAndDomainName);
       returnData = suffix + bas.cDot;
       break;
     case 22: // Without the ., prefix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixAndDomainName);
       returnData = bas.cAt + suffix;
       break;
     case 23: // Without the @, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolSuffixAndDomainName);
       returnData = prefix + bas.cDot;
       break;
     case 24: // Without the ., suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotSuffixAndDomainName);
       returnData = prefix + bas.cAt + bas.cDot;
       break;
     case 25: // Without the @, prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheAtSymbolPrefixSuffixAndDomainName);
       returnData = bas.cDot;
       break;
     case 26: // Without the ., prefix, suffix and domain name.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixSuffixAndDomainName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutTheDotPrefixSuffixAndDomainName);
       returnData = bas.cAt;
       break;
     case 27: // Without the prefix, suffix and @.
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndAtSymbol);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndAtSymbol);
       returnData = bas.cDot + domainName;
       break;
     case 28: // Without the prefix, suffix and ..
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDot);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cWithoutThePrefixSuffixAndDot);
       returnData = bas.cAt + domainName;
       break;
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2277,9 +2278,9 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
  */
 export const generateRandomBrightColor = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomBrightColor;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = [255,255,255];
   let minimumColorRange = 127;
   let maximumColorRange = 255;
@@ -2291,8 +2292,8 @@ export const generateRandomBrightColor = function(inputData, inputMetaData) {
     maximumColorRange = parsedColorRangeArray[1];
   }
   returnData = generateRandomColor(minimumColorRange, maximumColorRange);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2311,9 +2312,9 @@ export const generateRandomBrightColor = function(inputData, inputMetaData) {
  */
 export const generateRandomDarkColor = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomDarkColor;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = [0,0,0];
   let minimumColorRange = 0;
   let maximumColorRange = 127;
@@ -2325,8 +2326,8 @@ export const generateRandomDarkColor = function(inputData, inputMetaData) {
     maximumColorRange = parsedColorRangeArray[1];
   }
   returnData = generateRandomColor(minimumColorRange, maximumColorRange);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -2341,9 +2342,9 @@ export const generateRandomDarkColor = function(inputData, inputMetaData) {
  */
 export const generateRandomColor = function(inputData, inputMetaData) {
   let functionName = biz.cgenerateRandomColor;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = [0,0,0];
   let minimumColorRange = 0;
   let maximumColorRange = 0;
@@ -2355,13 +2356,13 @@ export const generateRandomColor = function(inputData, inputMetaData) {
     maximumColorRange = parsedColorRangeArray[1];
   }
   // minimumColorRange is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cminimumColorRangeIs + minimumColorRange);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cminimumColorRangeIs + minimumColorRange);
   // maximumColorRange is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmaximumColorRangeIs + maximumColorRange);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cmaximumColorRangeIs + maximumColorRange);
   returnData[0] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Red
   returnData[1] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Green
   returnData[2] = charGen.randomlyGenerateNumberInRange2(minimumColorRange.toString(), [maximumColorRange.toString(), gen.ctrue, gen.ctrue]); // Blue
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };

@@ -20,6 +20,7 @@
  var path = require('path');
  var D = require('./data');
  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cStructures + bas.cDot; // Framework.Structures.
 
 /**
  * @function rbNodeConstructor
@@ -36,16 +37,16 @@
  */
  function rbNodeConstructor(color, key, value, left, right, count) {
    let functionName = rbNodeConstructor.name;
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'color is: ' + color);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'key is: ' + key);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'value is: ' + value);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'left is: ' + left);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'right is: ' + right);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'count is: ' + count);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, s.cBEGIN_Function);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'color is: ' + color);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'key is: ' + key);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'value is: ' + value);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'left is: ' + left);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'right is: ' + right);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'count is: ' + count);
    let returnData = {nodeColor: color, nodeKey: key, nodeValue: value, nodeLeft: left, nodeRight: right, nodeCount: count};
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
+   loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, s.cEND_Function);
    return returnData;
  };
 

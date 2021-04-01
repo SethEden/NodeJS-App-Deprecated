@@ -55,6 +55,7 @@ var path = require('path');
 var math = require('mathjs');
 var D = require('../../../Framework/Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas.cDot + wrd.cCommands + bas.cDot; // Framework.CommandsBlob.Commands.
 
  /**
   * @function echoCommand
@@ -68,16 +69,16 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
   */
  export const echoCommand = function(inputData, inputMetaData) {
    let functionName = cmd.cechoCommand;
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+   loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+   loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+   loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
    if (!inputData) {
      return false;
    }
    loggers.consoleLog(inputData);
    let returnData = true;
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+   loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+   loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
    return returnData;
  };
 
@@ -93,12 +94,12 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 export const exit = function(inputData, inputMetaData) {
   let functionName = wrd.cexit;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -114,13 +115,13 @@ export const exit = function(inputData, inputMetaData) {
  */
 export const version = function(inputData, inputMetaData) {
   let functionName = wrd.cversion;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   console.log(configurator.getConfigurationSetting(sys.cApplicationVersionNumber));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -136,13 +137,13 @@ export const version = function(inputData, inputMetaData) {
  */
 export const about = function(inputData, inputMetaData) {
   let functionName = wrd.cabout;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   console.log(configurator.getConfigurationSetting(sys.cApplicationDescription));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -161,9 +162,9 @@ export const about = function(inputData, inputMetaData) {
  */
 export const name = function(inputData, inputMetaData) {
   let functionName = wrd.cname;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
   let figletFont = '';
@@ -177,8 +178,8 @@ export const name = function(inputData, inputMetaData) {
   } else {
     console.log(applicationName);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -193,15 +194,15 @@ export const name = function(inputData, inputMetaData) {
  */
 export const clearScreen = function(inputData, inputMetaData) {
   let functionName = cmd.cclearScreen;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   // console.clear(); // This will clear the screen, but not the cache, you can still scroll up and see the previous commands.
   // process.stdout.write('\u001B[2J\u001B[0;0f'); // Same as above
   process.stdout.write('\u001b[H\u001b[2J\u001b[3J');
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -216,9 +217,9 @@ export const clearScreen = function(inputData, inputMetaData) {
  */
 export const deployApplication = function(inputData, inputMetaData) {
   let functionName = sys.cdeployApplication;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === true &&
   configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
@@ -229,10 +230,10 @@ export const deployApplication = function(inputData, inputMetaData) {
     let deploymentStatus = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
     if (deploymentStatus === true) {
       // console.log('Deployment was completed: ' + deploymentStatus);
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDeploymentWasCompleted + true);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDeploymentWasCompleted + true);
       configurator.setConfigurationSetting(cfg.cdeploymentCompleted, true);
     } else {
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDeploymentFailed);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDeploymentFailed);
     }
   } else {
     if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
@@ -244,8 +245,8 @@ export const deployApplication = function(inputData, inputMetaData) {
       console.log(msg.cdeployApplicationMessage1b + msg.cdeployApplicationMessage2a);
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -260,9 +261,9 @@ export const deployApplication = function(inputData, inputMetaData) {
  */
 export const deployMetaData = function(inputData, inputMetaData) {
   let functionName = sys.cdeployMetaData;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   returnData = true;
   if (!inputData) {
@@ -276,21 +277,21 @@ export const deployMetaData = function(inputData, inputMetaData) {
     inputData.shift(); // Remove the first element of the array, because that is what is used to call this command.
     let metaDataParameters = inputData.join(bas.cSpace).split(bas.cComa);
     // metaDataParameters is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmetaDataParametersIs + JSON.stringify(metaDataParameters));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cmetaDataParametersIs + JSON.stringify(metaDataParameters));
     // metaDataParameters length is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmetaDataParametersLengthIs + metaDataParameters.length);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cmetaDataParametersLengthIs + metaDataParameters.length);
 
     let metaDataOutput = {};
     for (let i = 0; i < metaDataParameters.length; i++) {
       let attributeJsonString = metaDataParameters[i];
       // attributeJsonString is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cattributeJsonStringIs + attributeJsonString);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cattributeJsonStringIs + attributeJsonString);
       let appAttributeName = ruleBroker.processRules(attributeJsonString, '', getAttributeNameRule);
       // appAttributeName is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cappAttributeNameIs + appAttributeName);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cappAttributeNameIs + appAttributeName);
       let appAttributeValue = ruleBroker.processRules(attributeJsonString, '', getAttributeValueRule);
       // appAttributeValue is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cappAttributeValueIs + appAttributeValue);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cappAttributeValueIs + appAttributeValue);
       if (appAttributeName.includes(wrd.cName) === true) {
         configurator.setConfigurationSetting(sys.cApplicationName, appAttributeValue);
       } else if (appAttributeName.includes(wrd.cVersion) === true) {
@@ -305,11 +306,11 @@ export const deployMetaData = function(inputData, inputMetaData) {
     let metaDataPathAndFilename = configurator.getConfigurationSetting(sys.cConfigurationPath);
     metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + cfg.cmetaDataDotJson);
     // metaDataPathAndFilename is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cmetaDataPathAndFilenameIs + metaDataPathAndFilename);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cmetaDataPathAndFilenameIs + metaDataPathAndFilename);
     fileBroker.writeJsonData(metaDataPathAndFilename, metaDataOutput);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -328,9 +329,9 @@ export const deployMetaData = function(inputData, inputMetaData) {
  */
 export const releaseApplication = function(inputData, inputMetaData) {
   let functionName = sys.creleaseApplication;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === true &&
   configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
@@ -341,10 +342,10 @@ export const releaseApplication = function(inputData, inputMetaData) {
     let releaseResult = fileBroker.buildReleasePackage(sourcePath, destinationPath);
     if (releaseResult === true) {
       // console.log('Release was completed: ' + releaseResult);
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBuildMessage2 + true);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBuildMessage2 + true);
       configurator.setConfigurationSetting(cfg.creleaseCompleted, true);
     } else {
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cReleaseFailed);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cReleaseFailed);
     }
   } else {
     if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
@@ -356,8 +357,8 @@ export const releaseApplication = function(inputData, inputMetaData) {
       console.log(msg.cdeployApplicationMessage1b + msg.cdeployApplicationMessage2a);
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -374,13 +375,13 @@ export const releaseApplication = function(inputData, inputMetaData) {
  */
 export const help = function(inputData, inputMetaData) {
   let functionName = wrd.chelp;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   loggers.consoleTableLog(baseFileName + bas.cDot + functionName, D[sys.cCommandsAliases][wrd.cCommand], [wrd.cName, wrd.cDescription]);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -397,13 +398,13 @@ export const help = function(inputData, inputMetaData) {
  */
 export const workflowHelp = function(inputData, inputMetaData) {
   let functionName = cmd.cworkflowHelp;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   loggers.consoleTableLog(baseFileName + bas.cDot + functionName, D[sys.cCommandWorkflows][wrd.cWorkflow], [wrd.cName]);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -425,9 +426,9 @@ export const workflowHelp = function(inputData, inputMetaData) {
  */
 export const commandSequencer = function(inputData, inputMetaData) {
   let functionName = cmd.ccommandSequencer;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   for (let i = 1; i < inputData.length; i++) {
     let commandString = inputData[i];
@@ -457,8 +458,8 @@ export const commandSequencer = function(inputData, inputMetaData) {
       console.log(msg.ccommandSequencerMessage1 + msg.ccommandSequencerMessage2);
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -479,9 +480,9 @@ export const commandSequencer = function(inputData, inputMetaData) {
  */
 export const workflow = function(inputData, inputMetaData) {
   let functionName = wrd.cworkflow;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let workflowName = inputData[1];
   let workflowValue = workflowBroker.getWorkflow(workflowName);
@@ -490,8 +491,8 @@ export const workflow = function(inputData, inputMetaData) {
   } else {
     console.log(msg.cworkflowMessage1 + workflowName + bas.cComa + msg.cworkflowMessage2 + msg.cworkflowMessage3);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -514,25 +515,25 @@ export const workflow = function(inputData, inputMetaData) {
  */
 export const printDataHive = function(inputData, inputMetaData) {
   let functionName = cmd.cprintDataHive;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   if (inputData && inputData[1].includes(bas.cDot) === true) {
     let dataHivePathArray = inputData[1].split(bas.cDot);
     let leafDataHiveElement = D;
     // dataHivePathArray is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
     // This for-loop should let us drill down in the D-Data structure following the path that was provided.
     // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
     for (let i = 0; i < dataHivePathArray.length; i++) {
       // BEGIN i-th iteration:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
       leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]];
       // contents of leafDataHiveElement is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
       // END i-th iteration:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
     }
     console.log(inputData[1] + bas.cSpace + msg.ccontentsAre + JSON.stringify(leafDataHiveElement));
   } else {
@@ -544,8 +545,8 @@ export const printDataHive = function(inputData, inputMetaData) {
       console.log(msg.ccontentsOfDare + JSON.stringify(D));
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -564,29 +565,29 @@ export const printDataHive = function(inputData, inputMetaData) {
  */
 export const printDataHiveAttributes = function(inputData, inputMetaData) {
   let functionName = cmd.cprintDataHiveAttributes;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   if (inputData && inputData.length > 1) {
     if (inputData[1].includes(bas.cDot) === true) {
       let dataHivePathArray = inputData[1].split(bas.cDot);
       let leafDataHiveElement = D;
       // dataHivePathArray is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cdataHivePathArrayIs + JSON.stringify(dataHivePathArray));
       // This for-loop should let us drill down in the D-Data structure following the path that was provided.
       // This assumes the namespace style path provided is a valid heirarchy in the D-Data Structure.
       // Make sure we don't try to grab the very last term of the namespace. See note below.
       for (let i = 0; i < dataHivePathArray.length - 1; i++) {
         // BEGIN i-th iteration:
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIteration + i);
         leafDataHiveElement = leafDataHiveElement[dataHivePathArray[i]];
         // contents of leafDataHiveElement is:
-        // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
+        // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, sys.ccontentsOfLeafDataHiveElementIs + JSON.stringify(leafDataHiveElement));
         // END i-th iteration:
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
+        loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_ithIteration + i);
       }
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, inputData[1] + bas.cSpace + msg.ccontentsAre + JSON.stringify(leafDataHiveElement));
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, inputData[1] + bas.cSpace + msg.ccontentsAre + JSON.stringify(leafDataHiveElement));
       let attributeName = dataHivePathArray[dataHivePathArray.length - 1];
       if (leafDataHiveElement && leafDataHiveElement.length > 0) {
         let leafDataHiveElementKeys1 = Object.keys(leafDataHiveElement);
@@ -631,8 +632,8 @@ export const printDataHiveAttributes = function(inputData, inputMetaData) {
     // ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.
     console.log(msg.cprintDataHiveAttributesMessage3);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -645,13 +646,13 @@ export const printDataHiveAttributes = function(inputData, inputMetaData) {
  */
 export const clearDataStorage = function(inputData, inputMetaData) {
   let functionName = cmd.cclearDataStorage;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   dataBroker.clearData('');
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -679,9 +680,9 @@ export const clearDataStorage = function(inputData, inputMetaData) {
  */
 export const businessRule = function(inputData, inputMetaData) {
   let functionName = cmd.cbusinessRule;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
   let rules = [];
@@ -703,10 +704,10 @@ export const businessRule = function(inputData, inputMetaData) {
   // there are any inputs that need to be passed into the business rule.
   for (let i = 1; i < inputData.length; i++) {
     // Begin the i-th iteration of the inputData array. i is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIterationOfInputDataArray + i);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_ithIterationOfInputDataArray + i);
     let currentRuleArg = inputData[i]; // Check to see if this rule has inputs separate from the rule name.
     // currentRule is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentRuleIs + JSON.stringify(currentRuleArg));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccurrentRuleIs + JSON.stringify(currentRuleArg));
     let ruleArgs = [];
     if (i === 1) {
       rules = lexical.parseBusinessRuleArgument(currentRuleArg, i, false);
@@ -722,29 +723,29 @@ export const businessRule = function(inputData, inputMetaData) {
     }
   }
   // rules is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.crulesIs + JSON.stringify(rules));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.crulesIs + JSON.stringify(rules));
   // ruleInputData is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cruleInputDataIs + ruleInputData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cruleInputDataIs + ruleInputData);
   // ruleInputMetaData is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cruleInputMetaData + JSON.stringify(ruleInputMetaData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cruleInputMetaData + JSON.stringify(ruleInputMetaData));
   if (businessRuleMetricsEnabled === true) {
     // Here we will capture the start time of the business rule we are about to execute.
     // After executing we will capture the end time and then
     // compute the difference to determine how many milliseconds it took to run the business rule.
     businessRuleStartTime = timers.getNowMoment(gen.cYYYYMMDD_HHmmss_SSS);
     // Business Rule Start time is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBusinessRuleStartTimeIs + businessRuleStartTime);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBusinessRuleStartTimeIs + businessRuleStartTime);
   }
   ruleOutput = ruleBroker.processRules(ruleInputData, ruleInputMetaData, rules);
   if (businessRuleMetricsEnabled === true) {
     let performanceTrackingObject = {};
     businessRuleEndTime = timers.getNowMoment(gen.cYYYYMMDD_HHmmss_SSS);
     // BusinessRule End time is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBusinessRuleEndTimeIs + businessRuleEndTime);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBusinessRuleEndTimeIs + businessRuleEndTime);
     // Now compute the delta time so we know how long it took to run that business rule.
     businessRuleDeltaTime = timers.computeDeltaTime(businessRuleStartTime, businessRuleEndTime);
     // BusinessRule run-time is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBusinessRuleRunTimeIs + businessRuleDeltaTime);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBusinessRuleRunTimeIs + businessRuleDeltaTime);
     // Check to make sure the business rule performance tracking stack exists or does not exist.
     if (D[cfg.cBusinessRulePerformanceTrackingStack] === undefined) {
       stack.initStack(cfg.cBusinessRulePerformanceTrackingStack);
@@ -767,8 +768,8 @@ export const businessRule = function(inputData, inputMetaData) {
   businessRuleStartTime = '';
   businessRuleEndTime = '';
   businessRuleDeltaTime = '';
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -789,9 +790,9 @@ export const businessRule = function(inputData, inputMetaData) {
  */
 export const commandGenerator = function(inputData, inputMetaData) {
   let functionName = cmd.ccommandGenerator;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let replaceCharacterWithCharacterRule = [];
   replaceCharacterWithCharacterRule[0] = biz.creplaceCharacterWithCharacter;
@@ -810,17 +811,17 @@ export const commandGenerator = function(inputData, inputMetaData) {
   // commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
   // commandString = commandString.replace(tertiaryCommandDelimiter, secondaryCommandArgsDelimiter);
   // commandString before attempted delimiter swap is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringBeforeAttemptedDelimiterSwapIs + commandString);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandStringBeforeAttemptedDelimiterSwapIs + commandString);
   // replaceCharacterWithCharacterRule is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creplaceCharacterWithCharacterRuleIs + JSON.stringify(replaceCharacterWithCharacterRule));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creplaceCharacterWithCharacterRuleIs + JSON.stringify(replaceCharacterWithCharacterRule));
   let secondaryCommandDelimiterRegEx = new RegExp('\\' + secondaryCommandArgsDelimiter, 'g');
   commandString = ruleBroker.processRules(commandString, [secondaryCommandDelimiterRegEx, primaryCommandDelimiter], replaceCharacterWithCharacterRule);
   // After attempting to replace the secondaryCommandArgsDelimiter with the primaryCommandDelimiter commandString is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandGeneratorMessage1 + commandString);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandGeneratorMessage1 + commandString);
   let tertiaryCommandDelimiterRegEx = new RegExp('\\' + tertiaryCommandDelimiter, 'g');
   commandString = ruleBroker.processRules(commandString, [tertiaryCommandDelimiterRegEx, secondaryCommandArgsDelimiter], replaceCharacterWithCharacterRule);
   // After attempting to replace the tertiaryCommandDelimiter with the secondaryCommandArgsDelimiter commandString is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandGeneratorMessage2 + commandString);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandGeneratorMessage2 + commandString);
   let currentCommand = commandBroker.getValidCommand(commandString, primaryCommandDelimiter);
   let commandArgs = commandBroker.getCommandArgs(commandString, primaryCommandDelimiter);
   if (currentCommand !== false) {
@@ -843,8 +844,8 @@ export const commandGenerator = function(inputData, inputMetaData) {
     // was not found, please enter a valid command and try again.
     console.log(msg.ccommandGeneratorMessage5 + commandString + msg.ccommandGeneratorMessage6);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -862,9 +863,9 @@ export const commandGenerator = function(inputData, inputMetaData) {
  */
 export const commandAliasGenerator = function(inputData, inputMetaData) {
   let functionName = cmd.ccommandAliasGenerator;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let commandName = '';
   let commandWordAliasList = '';
@@ -902,7 +903,7 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
 
     let camelCaseCommandNameArray = ruleBroker.processRules(commandName, '', camelCaseToArrayRule);
     // camelCaseCommandNameArray is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccamelCaseCommandNameArrayIs + JSON.stringify(camelCaseCommandNameArray));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccamelCaseCommandNameArrayIs + JSON.stringify(camelCaseCommandNameArray));
 
     for (let i = 0; i < camelCaseCommandNameArray.length; i++) {
       let commandWord = camelCaseCommandNameArray[i];
@@ -949,14 +950,14 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
 
   if (validCommandInput === true) {
     // ccommandAliasDataStructure is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandAliasDataStructureIs + JSON.stringify(commandAliasDataStructure));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandAliasDataStructureIs + JSON.stringify(commandAliasDataStructure));
     // At this point the user should have entered all valid data and we should be ready to proceed.
     // TODO: Start generating all the possible combinations of the command words and command word aliases.
     // Pass the data object to a business rule to do the above task.
     let commandAliases = ruleBroker.processRules(commandAliasDataStructure, '', generateCommandAliasesRule);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -973,9 +974,9 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
  */
 export const constantsGenerator = function(inputData, inputMetaData) {
   let functionName = cmd.cconstantsGenerator;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let validEntry = false;
   let userDefinedConstant = '';
@@ -1013,7 +1014,7 @@ export const constantsGenerator = function(inputData, inputMetaData) {
     userDefinedConstant = ruleBroker.processRules(inputData, '', recombineArrayInputRule);
   }
   // userDefinedConstant is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantIs + userDefinedConstant);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantIs + userDefinedConstant);
 
   // First lets check if the constant is already defined, so we can warn the user.
   // NOTE: It could be that the developer is just looking to optimize the existing constant,
@@ -1027,12 +1028,12 @@ export const constantsGenerator = function(inputData, inputMetaData) {
   userDefinedConstant = userDefinedConstant.trim();
   let wordCount = ruleBroker.processRules(userDefinedConstant, '', wordsCountRule);
   // wordCount is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cwordCountIs + wordCount);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cwordCountIs + wordCount);
   // Now begin the fulfillment algorithm.
   if (wordCount > 1) {
     let wordsArray = ruleBroker.processRules(userDefinedConstant, '', wordsArrayRule);
     // wordsArray is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cwordsArrayIs + JSON.stringify(wordsArray));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cwordsArrayIs + JSON.stringify(wordsArray));
     for(let j = 0; j < wordsArray.length; j++) {
       // Optimized constant definition for word:
       console.log(msg.cOptimizedConstantDefinitionForWord + bas.cc + wordsArray[j] + bas.cSpace + bas.cEqual + bas.cSpace +
@@ -1045,8 +1046,8 @@ export const constantsGenerator = function(inputData, inputMetaData) {
       ruleBroker.processRules(userDefinedConstant, userDefinedConstant, constantsFulfillmentSystemRule) +
       bas.cSemiColon + bas.cSpace + bas.cDoubleForwardSlash + bas.cSpace + userDefinedConstant);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1064,9 +1065,9 @@ export const constantsGenerator = function(inputData, inputMetaData) {
  */
 export const constantsGeneratorList = function(inputData, inputMetaData) {
   let functionName = cmd.cconstantsGeneratorList;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let validEntry = false;
   let userDefinedConstantList = '';
@@ -1094,13 +1095,13 @@ export const constantsGeneratorList = function(inputData, inputMetaData) {
     userDefinedConstantList = ruleBroker.processRules(inputData, '', recombineArrayInputRule);
   }
   // userDefinedConstantList is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListIs + userDefinedConstantList);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListIs + userDefinedConstantList);
   if (userDefinedConstantList.includes(bas.cComa) === true) {
     // userDefinedConstantList contains comas
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListContainsComas);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListContainsComas);
     let userDefinedConstantsListArray = userDefinedConstantList.split(bas.cComa);
     // userDefinedConstantsListArray is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListArrayIs + JSON.stringify(userDefinedConstantsListArray));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListArrayIs + JSON.stringify(userDefinedConstantsListArray));
     if (userDefinedConstantsListArray.length > 1) {
       for (let i = 0; i < userDefinedConstantsListArray.length; i++) {
         queue.enqueue(sys.cCommandQueue, cmd.cconstantsGenerator + bas.cSpace + userDefinedConstantsListArray[i].trim());
@@ -1111,12 +1112,12 @@ export const constantsGeneratorList = function(inputData, inputMetaData) {
     }
   } else {
     // userDefinedConstantList DOES NOT contain comas
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListDoesNotContainComas);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListDoesNotContainComas);
     // Just enqueue the constants Generator command with the input directly.
     queue.enqueue(sys.cCommandQueue, cmd.cconstantsGenerator + bas.cSpace + userDefinedConstantList.trim());
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1132,9 +1133,9 @@ export const constantsGeneratorList = function(inputData, inputMetaData) {
  */
 export const constantsPatternRecognizer = function(inputData, inputMetaData) {
   let functionName = cmd.cconstantsPatternRecognizer;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let validEntry = false;
   let userDefinedConstantList = '';
@@ -1170,29 +1171,29 @@ export const constantsPatternRecognizer = function(inputData, inputMetaData) {
     userDefinedConstantList = ruleBroker.processRules(inputData, '', recombineArrayInputRule);
   }
   // userDefinedConstantList is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListIs + userDefinedConstantList);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantListIs + userDefinedConstantList);
   if (userDefinedConstantList.includes(bas.cComa) === true) {
     wordsArray = userDefinedConstantList.split(bas.cComa);
   } else {
     // userDefinedConstantList DOES NOT contain comas
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListDoesNotContainComas);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cuserDefinedConstantsListDoesNotContainComas);
     // Check and see if there is another delimiter we can use to break up the string into an array,
     // such as a space character, Maybe the user entered a sentence and would like all the words of the sentence to be optimized.
     wordsArray = ruleBroker.processRules(userDefinedConstantList, '', wordsArrayFromStringRule);
   }
   // wordsArray is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cwordsArrayIs + JSON.stringify(wordsArray));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cwordsArrayIs + JSON.stringify(wordsArray));
   commonPatternsArray = ruleBroker.processRules(wordsArray, '', searchForPatternsInStringArrayRule);
   // commonPatternsArray is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray));
   // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
   let newConstantsList = ruleBroker.processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
   let constantsPatternGenerationSetting = configurator.getConfigurationSetting(cfg.cEnableConstantsPatternGeneration);
   if (constantsPatternGenerationSetting === true) {
     queue.enqueue(sys.cCommandQueue, cmd.cconstantsGeneratorList + bas.cSpace + newConstantsList);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1207,9 +1208,9 @@ export const constantsPatternRecognizer = function(inputData, inputMetaData) {
  */
 export const businessRulesMetrics = function(inputData, inputMetaData) {
   let functionName = cmd.cbusinessRulesMetrics;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let businessRuleMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableBusinessRulePerformanceMetrics);
   if (businessRuleMetricsEnabled === true) {
@@ -1232,30 +1233,30 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
         if (D[cfg.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
           businessRuleCounter = businessRuleCounter + 1;
           // businessRuleCounter is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRuleCounterIs + businessRuleCounter);
+          loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cbusinessRuleCounterIs + businessRuleCounter);
           businessRulePerformanceSum = businessRulePerformanceSum + D[cfg.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime];
           // businessRulePerformanceSum is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceSumIs + businessRulePerformanceSum);
+          loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceSumIs + businessRulePerformanceSum);
         }
       }
       // DONE! businessRulePerformanceSum is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneBusinessRulePerformanceSumIs + businessRulePerformanceSum);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDoneBusinessRulePerformanceSumIs + businessRulePerformanceSum);
       average = businessRulePerformanceSum / businessRuleCounter;
       // average is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.caverageIs + average);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.caverageIs + average);
       // Now go back through them all so we can compute the standard deviation
       for (let j = 0; j < stack.length(cfg.cBusinessRulePerformanceTrackingStack); j++) {
         if (D[cfg.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
           businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow((D[cfg.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime] - average), 2);
           // businessRulePerformanceStdSum is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
+          loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cbusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
         }
       }
       // DONE! businessRulePerformanceStdSum is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneBusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDoneBusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
       standardDev = math.sqrt(businessRulePerformanceStdSum / businessRuleCounter);
       // standardDev is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
       if (D[cfg.cBusinessRulesPerformanceAnalysisStack] === undefined) {
         stack.initStack(cfg.cBusinessRulesPerformanceAnalysisStack);
       }
@@ -1270,8 +1271,8 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       stack.clearStack(cfg.cBusinessRuleNamesPerformanceTrackingStack);
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1286,9 +1287,9 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
  */
 export const commandMetrics = function(inputData, inputMetaData) {
   let functionName = cmd.ccommandMetrics;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let commandMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableCommandPerformanceMetrics);
   if (commandMetricsEnabled === true) {
@@ -1311,30 +1312,30 @@ export const commandMetrics = function(inputData, inputMetaData) {
         if (D[cfg.cCommandPerformanceTrackingStack][j][wrd.cName] === currentCommandName) {
           commandCounter = commandCounter + 1;
           // commandCounter is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandCounterIs + commandCounter);
+          loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandCounterIs + commandCounter);
           commandPerformanceSum = commandPerformanceSum + D[cfg.cCommandPerformanceTrackingStack][j][sys.cRunTime];
           // commandPerformanceSum is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandPerformanceSumIs + commandPerformanceSum);
+          loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandPerformanceSumIs + commandPerformanceSum);
         }
       }
       // DONE! commandPerformanceSum is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneCommandPerformanceSumIs + commandPerformanceSum);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDoneCommandPerformanceSumIs + commandPerformanceSum);
       average = commandPerformanceSum / commandCounter;
       // average is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.caverageIs + average);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.caverageIs + average);
       // Now go back through them all so we can compute the standard deviation
       for (let j = 0; j < stack.length(cfg.cCommandPerformanceTrackingStack); j++) {
         if (D[cfg.cCommandPerformanceTrackingStack][j][wrd.cName] === currentCommandName) {
           commandPerformanceStdSum = commandPerformanceStdSum + math.pow((D[cfg.cCommandPerformanceTrackingStack][j][sys.cRunTime] - average), 2);
           // commandPerformanceStdSum is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandPerformanceStdSumIs + commandPerformanceStdSum);
+          loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandPerformanceStdSumIs + commandPerformanceStdSum);
         }
       }
       // DONE! commandPerformanceStdSum is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneCommandPerformanceStdSumIs + commandPerformanceStdSum);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cDoneCommandPerformanceStdSumIs + commandPerformanceStdSum);
       standardDev = math.sqrt(commandPerformanceStdSum / commandCounter);
       // standardDev is:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
+      loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cstandardDevIs + standardDev);
       if (D[cfg.cCommandsPerformanceAnalysisStack] === undefined) {
         stack.initStack(cfg.cCommandsPerformanceAnalysisStack);
       }
@@ -1349,8 +1350,8 @@ export const commandMetrics = function(inputData, inputMetaData) {
       stack.clearStack(cfg.cCommandNamesPerformanceTrackingStack);
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1365,14 +1366,14 @@ export const commandMetrics = function(inputData, inputMetaData) {
  */
 export const saveConfiguration = function(inputData, inputMetaData) {
   let functionName = cmd.csaveConfiguration;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
 
   fileBroker.writeJsonData(configurator.getConfigurationSetting(sys.cConfigurationPath) + 'config.json', D[wrd.cConfiguration]);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -1388,9 +1389,9 @@ export const saveConfiguration = function(inputData, inputMetaData) {
  */
 export const convertColors = function(inputData, inputMetaData) {
   let functionName = cmd.cconvertColors;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let colorConvertionRule = [];
   colorConvertionRule[0] = biz.creplaceCharacterWithCharacter;
@@ -1398,23 +1399,23 @@ export const convertColors = function(inputData, inputMetaData) {
 
   let colorKeys = Object.keys(D[sys.cColors][sys.cColorData]);
   // colorKeys is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccolorKeysIs + JSON.stringify(colorKeys));
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccolorKeysIs + JSON.stringify(colorKeys));
   for (let i = 0; i < colorKeys.length; i++) {
     let currentColorName = colorKeys[i];
     // currentColorName is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentColorNameIs + currentColorName);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccurrentColorNameIs + currentColorName);
     let currentColorObject = D[wrd.cColors][sys.cColorData][currentColorName];
     // currentColorObject is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentColorObjectIs + JSON.stringify(currentColorObject));
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccurrentColorObjectIs + JSON.stringify(currentColorObject));
     let currentColorHexValue = currentColorObject[sys.cHexValue];
     // currentColorHexValue is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentColorHexValueIs + currentColorHexValue);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccurrentColorHexValueIs + currentColorHexValue);
     let ruleOutput = ruleBroker.processRules(currentColorHexValue, [bas.cHash, ''], colorConvertionRule);
     // ruleOutput is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cruleOutputIs + ruleOutput);
+    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cruleOutputIs + ruleOutput);
     console.log(currentColorName + bas.cComa + currentColorHexValue + bas.cComa + ruleOutput[0] + bas.cComa + ruleOutput[1] + bas.cComa + ruleOutput[2]);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
   return returnData;
 };
