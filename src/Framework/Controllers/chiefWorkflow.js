@@ -25,7 +25,8 @@ import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot; // Framework.Controllers.
+// Framework.Controllers.chiefWorkflow.
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function loadCommandWorkflowsFromPath
@@ -38,9 +39,9 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot; /
  */
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   let functionName = loadCommandWorkflowsFromPath.name;
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // commandWorkflowFilePathConfigurationName is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
   let allCommandWorkflowsData = {};
   allCommandWorkflowsData = chiefData.setupAllXmlData(commandWorkflowFilePathConfigurationName, sys.cCommandWorkflows);
   if (D[sys.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
@@ -51,7 +52,7 @@ function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) 
       D[sys.cCommandWorkflows][wrd.cWorkflow].push(allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow][i])
     }
   }
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 export default {

@@ -59,7 +59,8 @@ import * as unt_cv from './unit-constants-validation';
 import * as wrd_cv from './word-constants-validation';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cResources + bas.cDot + wrd.cConstants + wrd.cValidation + bas.cDot; // Framework.Resources.ConstantsValidation.
+// Framework.Resources.ConstantsValidation.all-system-constants-validation.
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cResources + bas.cDot + wrd.cConstants + wrd.cValidation + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initializeAllSystemConstantsValidationData
@@ -70,10 +71,10 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cResources + bas.cDot + wr
  */
 function initializeAllSystemConstantsValidationData() {
   let functionName = initializeAllSystemConstantsValidationData.name;
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let constantsPath = configurator.getConfigurationSetting(sys.cSystemConstantsPath);
   // constantsPath is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cconstantsPathIs + constantsPath);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cconstantsPathIs + constantsPath);
 
   let allSystemConstantsValidationData = {};
   allSystemConstantsValidationData[sys.cConstantsValidationData] = {};
@@ -124,92 +125,92 @@ function initializeAllSystemConstantsValidationData() {
   // Setup all the paths to the constants files.
   let resolvedConstantsPath_Basic = path.resolve(constantsPath + bas.cForwardSlash + sys.cbasic_constants_js);
   // resolvedConstantsPath_Basic is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_BasicIs + resolvedConstantsPath_Basic);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_BasicIs + resolvedConstantsPath_Basic);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cBasicConstantsValidation] = resolvedConstantsPath_Basic;
 
   let resolvedConstantsPath_Business = path.resolve(constantsPath + bas.cForwardSlash + sys.cbusiness_constants_js);
   // resolvedConstantsPath_Business is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_BusinessIs + resolvedConstantsPath_Business);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_BusinessIs + resolvedConstantsPath_Business);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cBusinessConstantsValidation] = resolvedConstantsPath_Business;
 
   let resolvedConstantsPath_Color = path.resolve(constantsPath + bas.cForwardSlash + sys.ccolor_constants_js);
   // resolvedConstantsPath_Color is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ColorIs + resolvedConstantsPath_Color);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_ColorIs + resolvedConstantsPath_Color);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cColorConstantsValidation] = resolvedConstantsPath_Color;
 
   let resolvedConstantsPath_Command = path.resolve(constantsPath + bas.cForwardSlash + sys.ccommand_constants_js);
   // resolvedConstantsPath_Command is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CommandIs + resolvedConstantsPath_Command);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_CommandIs + resolvedConstantsPath_Command);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cCommandConstantsValidation] = resolvedConstantsPath_Command;
 
   let resolvedConstantsPath_Configuration = path.resolve(constantsPath + bas.cForwardSlash + sys.cconfiguration_constants_js);
   // resolvedConstantsPath_Configuration is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ConfigurationIs + resolvedConstantsPath_Configuration);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_ConfigurationIs + resolvedConstantsPath_Configuration);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cConfigurationConstantsValidation] = resolvedConstantsPath_Configuration;
 
   let resolvedConstantsPath_Country = path.resolve(constantsPath + bas.cForwardSlash + sys.ccountry_constants_js);
   // resolvedConstantsPath_Country is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_CountryIs + resolvedConstantsPath_Country);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_CountryIs + resolvedConstantsPath_Country);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cCountryConstantsValidation] = resolvedConstantsPath_Country;
 
   let resolvedConstantsPath_Element = path.resolve(constantsPath + bas.cForwardSlash + sys.celement_constants_js);
   // resolvedConstantsPath_Element is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ElementIs + resolvedConstantsPath_Element);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_ElementIs + resolvedConstantsPath_Element);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cElementConstantsValidation] = resolvedConstantsPath_Element;
 
   let resolvedConstantsPath_Generic = path.resolve(constantsPath + bas.cForwardSlash + sys.cgeneric_constants_js);
   // resolvedConstantsPath_Generic is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_GenericIs + resolvedConstantsPath_Generic);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_GenericIs + resolvedConstantsPath_Generic);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cGenericConstantsValidation] = resolvedConstantsPath_Generic;
 
   let resolvedConstantsPath_Isotope = path.resolve(constantsPath + bas.cForwardSlash + sys.cisotope_constants_js);
   // resolvedConstantsPath_Isotope is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_IsotopeIs + resolvedConstantsPath_Isotope);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_IsotopeIs + resolvedConstantsPath_Isotope);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cIsotopeConstantsValidation] = resolvedConstantsPath_Isotope;
 
   let resolvedConstantsPath_Knot = path.resolve(constantsPath + bas.cForwardSlash + sys.cknot_constants_js);
   // resolvedConstantsPath_Knot is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_KnotIs + resolvedConstantsPath_Knot);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_KnotIs + resolvedConstantsPath_Knot);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cKnotConstantsValidation] = resolvedConstantsPath_Knot;
 
   let resolvedConstantsPath_Language = path.resolve(constantsPath + bas.cForwardSlash + sys.clanguage_constants_js);
   // resolvedConstantsPath_Language is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_LanguagesIs + resolvedConstantsPath_Language);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_LanguagesIs + resolvedConstantsPath_Language);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cLanguageConstantsValidation] = resolvedConstantsPath_Language;
 
   let resolvedConstantsPath_Message = path.resolve(constantsPath + bas.cForwardSlash + sys.cmessage_constants_js);
   // resolvedConstantsPath_Message is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_MessageIs + resolvedConstantsPath_Message);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_MessageIs + resolvedConstantsPath_Message);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cMessageConstantsValidation] = resolvedConstantsPath_Message;
 
   let resolvedConstantsPath_Numeric = path.resolve(constantsPath + bas.cForwardSlash + sys.cnumeric_constants_js);
   // resolvedConstantsPath_Numeric is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_NumericIs + resolvedConstantsPath_Numeric);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_NumericIs + resolvedConstantsPath_Numeric);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cNumericConstantsValidation] = resolvedConstantsPath_Numeric;
 
   let resolvedConstantsPath_Phonic = path.resolve(constantsPath + bas.cForwardSlash + sys.cphonic_constants_js);
   // resolvedConstantsPath_Phonic is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_PhonicIs + resolvedConstantsPath_Phonic);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_PhonicIs + resolvedConstantsPath_Phonic);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cPhonicConstantsValidation] = resolvedConstantsPath_Phonic;
 
   let resolvedConstantsPath_Shape = path.resolve(constantsPath + bas.cForwardSlash + sys.cshape_constants_js);
   // resolvedConstantsPath_Shape is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_ShapeIs + resolvedConstantsPath_Shape);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_ShapeIs + resolvedConstantsPath_Shape);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cShapeConstantsValidation] = resolvedConstantsPath_Shape;
 
   let resolvedConstantsPath_System = path.resolve(constantsPath + bas.cForwardSlash + sys.csystem_constants_js);
   // resolvedConstantsPath_System is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_SystemIs + resolvedConstantsPath_System);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_SystemIs + resolvedConstantsPath_System);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cSystemConstantsValidation] = resolvedConstantsPath_System;
 
   let resolvedConstantsPath_Unit = path.resolve(constantsPath + bas.cForwardSlash + sys.cunit_constants_js);
   // resolvedConstantsPath_Unit is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_UnitIs + resolvedConstantsPath_Unit);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_UnitIs + resolvedConstantsPath_Unit);
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cUnitConstantsValidation] = resolvedConstantsPath_Unit;
 
   let resolvedConstantsPath_Word = path.resolve(constantsPath + bas.cForwardSlash + sys.cword_constants_js);
   // resolvedConstantsPath_Word is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cresolvedConstantsPath_WordIs + resolvedConstantsPath_Word);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedConstantsPath_WordIs + resolvedConstantsPath_Word);
     allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][sys.cWordConstantsValidation] = resolvedConstantsPath_Word;
 
   // Basic Constants Phase 1 Validation
@@ -344,8 +345,8 @@ function initializeAllSystemConstantsValidationData() {
   allSystemConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][sys.cWordConstantsValidation] = gen.cwrd + bas.cDot;
 
   // allSystemConstantsValidationData is:
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.callSystemConstantsValidationDataIs + JSON.stringify(allSystemConstantsValidationData));
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.callSystemConstantsValidationDataIs + JSON.stringify(allSystemConstantsValidationData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return allSystemConstantsValidationData;
 };
 

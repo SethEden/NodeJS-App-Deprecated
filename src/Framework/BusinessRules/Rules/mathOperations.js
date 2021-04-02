@@ -19,7 +19,8 @@ import * as bas from '../../Constants/basic.constants';
 import * as sys from '../../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot; // Framework.BusinessRules.Rules.
+// Framework.BusinessRules.Rules.mathOperations.
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function hex2rgbConversion
@@ -33,9 +34,9 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + b
  */
 export const hex2rgbConversion = function(inputData, inputMetaData) {
   let functionName = biz.chex2rgbConversion;
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData;
   if (!inputData) {
     returnData = false;
@@ -59,13 +60,13 @@ export const hex2rgbConversion = function(inputData, inputMetaData) {
 
     let bigInteger = parseInt(inputData, 16);
     // bigInteger is:
-    loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cMathOperationsMessage1 + bigInteger);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cMathOperationsMessage1 + bigInteger);
     let red = (bigInteger >> 16) & 255;
     let green = (bigInteger >> 8) & 255;
     let blue = bigInteger & 255;
     returnData = [red, green, blue];
   }
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };

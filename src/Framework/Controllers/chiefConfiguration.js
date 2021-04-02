@@ -32,7 +32,8 @@ import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot; // Framework.Controllers.
+// Framework.Controllers.chiefCommander.
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function setupConfiguration
@@ -51,8 +52,8 @@ function setupConfiguration(pathAndFilename) {
   // console.log('BEGIN chiefConfiguration.setupConfiguration function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
   let functionName = setupConfiguration.name; // 'setupConfiguration';
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cpathAndFilenameIs + pathAndFilename);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cpathAndFilenameIs + pathAndFilename);
   let rules = {};
   rules[0] = biz.cswapBackSlashToForwardSlash;
   D[wrd.cConfiguration] = {};
@@ -68,7 +69,7 @@ function setupConfiguration(pathAndFilename) {
 
   // Get the operating system envrionment variable here and setup how to setup the log files.
   loggers.consoleLog(msg.cLogFileEnabled, configurator.getConfigurationSetting(sys.cDateTimeSTamp));
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   // console.log(configurator.getConfigurationSetting(sys.cDateTimeSTamp));
   // console.log('END chiefConfiguration.setupTestConfiguration function');
 };
@@ -94,8 +95,8 @@ function parseLoadedConfigurationData(allConfigurationData) {
   // console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
   // console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
   // var functionName = parseLoadedConfigurationData.name;
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, sys.cBEGIN_Function);
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
+  // loggers.consoleLog(namespacePrefix + functionName, sys.cBEGIN_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
   let highLevelConfigurationContainer = {};
   let allConfigurations = {};
   let allSubConfigurations = {};
@@ -124,16 +125,16 @@ function parseLoadedConfigurationData(allConfigurationData) {
   highLevelConfigurationContainer = allConfigurationData[wrd.cPage][wrd.cApplication][wrd.cConfigurations][wrd.cConfiguration];
   configurationsName = highLevelConfigurationContainer[sys.cConfigurationName];
   // console.log('configurationsName is: ' + configurationsName);
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'configurationsName is: ' + configurationsName);
+  // loggers.consoleLog(namespacePrefix + functionName, 'configurationsName is: ' + configurationsName);
   if (highLevelConfigurationContainer[wrd.cCommon][sys.cConfigurationElement][wrd.cName] === sys.cVersionControl) {
     configurationsVersion = highLevelConfigurationContainer[wrd.cCommon][sys.cConfigurationElement][wrd.cValue];
     configurationsVersion = ruleBroker.processRules(configurationsVersion, '', rules);
   }
   // console.log('configurationsVersion is: ' + configurationsVersion);
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'configurationsVersion is: ' + configurationsVersion);
+  // loggers.consoleLog(namespacePrefix + functionName, 'configurationsVersion is: ' + configurationsVersion);
   allConfigurations = highLevelConfigurationContainer[sys.cConfigurationElements][sys.cConfigurationElement];
   // console.log('allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
+  // loggers.consoleLog(namespacePrefix + functionName, 'allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
 
   if (configurationsVersion !== undefined && configurationsVersion !== '' &&
   configurationsName !== undefined && configurationsName !== '' &&
@@ -146,7 +147,7 @@ function parseLoadedConfigurationData(allConfigurationData) {
     // Although we might actually not have more than one configuration file.
     for (let key in allConfigurations) {
       // console.log('single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
-      // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
+      // loggers.consoleLog(namespacePrefix + functionName, 'single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
       configurationElement = allConfigurations[key];
       name = '';
       type = '';
@@ -165,10 +166,10 @@ function parseLoadedConfigurationData(allConfigurationData) {
           if (type === configurationsName && version == configurationsVersion) {
             if ((name === sys.cDebugFunctions || name === sys.cDebugFiles) && value === wrd.cMultiple) {
               // console.log('configurationElement is: ' + JSON.stringify(configurationElement));
-              // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
+              // loggers.consoleLog(namespacePrefix + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
               allSubConfigurations = configurationElement[sys.cConfigurationElement];
               // console.log('allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
-              // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
+              // loggers.consoleLog(namespacePrefix + functionName, 'allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
               advancedDebugSettingPrefix = name;
               for (let subKey in allSubConfigurations) {
                 name = '';
@@ -185,15 +186,15 @@ function parseLoadedConfigurationData(allConfigurationData) {
                   if (name !== '' && type !== '' && value !== '' && version !== '') {
                     if (type === configurationsName && version === configurationsVersion) {
                       // console.log('process advanced configuration setting: ');
-                      // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'process advanced configuration setting: ');
+                      // loggers.consoleLog(namespacePrefix + functionName, 'process advanced configuration setting: ');
                       // console.log('name is: ' + name);
-                      // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'name is: ' + name);
+                      // loggers.consoleLog(namespacePrefix + functionName, 'name is: ' + name);
                       // console.log('type is: ' + type);
-                      // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'type is: ' + type);
+                      // loggers.consoleLog(namespacePrefix + functionName, 'type is: ' + type);
                       // console.log('value is: ' + value);
-                      // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'value is: ' + value);
+                      // loggers.consoleLog(namespacePrefix + functionName, 'value is: ' + value);
                       // console.log('version is: ' + version);
-                      // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'version is: ' + version);
+                      // loggers.consoleLog(namespacePrefix + functionName, 'version is: ' + version);
                       value = ruleBroker.processRules(value, '', rules);
                       configurator.setConfigurationSetting(advancedDebugSettingPrefix + bas.cPipe + name, value);
                     }
@@ -205,9 +206,9 @@ function parseLoadedConfigurationData(allConfigurationData) {
               value = processConfigurationRules(name, value);
               value = ruleBroker.processRules(value, '', rules);
               // console.log('setting the configuration name: ' + name);
-              // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'setting the configuration name: ' + name);
+              // loggers.consoleLog(namespacePrefix + functionName, 'setting the configuration name: ' + name);
               // console.log('setting the configuration value: ' + value);
-              // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'setting the configuration value: ' + value);
+              // loggers.consoleLog(namespacePrefix + functionName, 'setting the configuration value: ' + value);
               configurator.setConfigurationSetting(name, value);
             }
           }
@@ -217,8 +218,8 @@ function parseLoadedConfigurationData(allConfigurationData) {
   }
   // console.log('full contents of the D are: ' + JSON.stringify(D));
   // console.log('END chiefConfiguration.parseLoadedConfigurationData function');
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'full contents of the D are: ' + JSON.stringify(D));
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, sys.cEND_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, 'full contents of the D are: ' + JSON.stringify(D));
+  // loggers.consoleLog(namespacePrefix + functionName, sys.cEND_Function);
 };
 
 /**
@@ -242,9 +243,9 @@ function processConfigurationRules(name, value) {
   // console.log('name is: ' + name);
   // console.log('value is: ' + value);
   // var functionName = parseLoadedConfigurationData.name;
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'name is: ' + name);
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'value is: ' + value);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, 'name is: ' + name);
+  // loggers.consoleLog(namespacePrefix + functionName, 'value is: ' + value);
   let returnValue;
   switch (name) {
     case sys.cDateTimeStamp: case sys.cDateStamp: case sys.cTimeStamp:
@@ -259,8 +260,8 @@ function processConfigurationRules(name, value) {
       returnValue = value;
       break;
   }
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, 'returnValue is: ' + returnValue);
-  // loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, 'returnValue is: ' + returnValue);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   // console.log('returnValue is: ' + returnValue);
   // console.log('END chiefConfiguration.processConfigurationRules function');
   return returnValue;

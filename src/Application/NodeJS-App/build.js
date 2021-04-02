@@ -49,7 +49,8 @@ global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var copyResult = false;
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cApplication + bas.cDot; // Application.
+// Application.build.
+var namespacePrefix = wrd.cApplication + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function bootStrapApplication
@@ -102,7 +103,7 @@ function bootStrapApplicationDeployment() {
  */
 function deployApplication() {
   let functionName = sys.cdeployApplication;
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
@@ -134,7 +135,7 @@ function deployApplication() {
     // deploymentCompleted
     warden.setConfigurationSetting(cfg.cdeploymentCompleted, false);
   }
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -146,7 +147,7 @@ function deployApplication() {
  */
 function releaseApplication() {
   let functionName = sys.creleaseApplication;
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let releaseResult;
   try {
     warden.setConfigurationSetting(cfg.creleaseCompleted, false);
@@ -171,7 +172,7 @@ function releaseApplication() {
     console.error(err);
     warden.setConfigurationSetting(cfg.creleaseCompleted, false);
   }
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 bootStrapApplicationDeployment();

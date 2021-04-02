@@ -26,7 +26,8 @@ import * as cmd from '../Constants/command.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas.cDot; // Framework.CommandsBlob.
+// Framework.CommandsBlob.commandsLibrary.
+var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initCommandsLibrary
@@ -42,7 +43,7 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas
 export const initCommandsLibrary = function() {
   let functionName = initCommandsLibrary.name;
   // console.log('BEGIN commandsLibrary.initCommandsLibrary');
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   D[wrd.cCommands] = {};
   D[wrd.cCommands] = {
     // Commands
@@ -83,5 +84,5 @@ export const initCommandsLibrary = function() {
     [cmd.cvalidateCommandAliases]: (inputData, inputMetaData) => unitTests.validateCommandAliases(inputData, inputMetaData)
   }
   // console.log('END commandsLibrary.initCommandsLibrary');
-  loggers.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };

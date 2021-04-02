@@ -33,7 +33,8 @@ import * as app_cv from './application-constants-validation';
 import * as app_msg_cv from './application-message-constants-validation';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
-var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cResources + bas.cDot + wrd.cConstants + wrd.cValidation + bas.cDot; // Application.Resources.ConstantsValidation.
+// Application.Resources.ConstantsValidation.all-client-constants-validation.
+var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cResources + bas.cDot + wrd.cConstants + wrd.cValidation + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initializeAllClientConstantsValidationData
@@ -44,10 +45,10 @@ var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cResources + bas.cDot + 
  */
 function initializeAllClientConstantsValidationData() {
   let functionName = initializeAllClientConstantsValidationData.name;
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let constantsPath = warden.getConfigurationSetting(sys.cClientConstantsPath);
   // constantsPath is:
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cconstantsPathIs + constantsPath);
+  warden.consoleLog(namespacePrefix + functionName, msg.cconstantsPathIs + constantsPath);
 
   let allClientConstantsValidationData = {};
   allClientConstantsValidationData[sys.cConstantsValidationData] = {};
@@ -70,22 +71,22 @@ function initializeAllClientConstantsValidationData() {
   // Setup all the paths to the constants files.
   let resolvedConstantsPath_ApplicationBusiness = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_business_constants_js);
   // resolvedConstantsPath_ApplicationBusiness is:
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationBusinessIs + resolvedConstantsPath_ApplicationBusiness);
+  warden.consoleLog(namespacePrefix + functionName, app_msg.cresolvedConstantsPath_ApplicationBusinessIs + resolvedConstantsPath_ApplicationBusiness);
   allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationBusinessConstantsValidation] = resolvedConstantsPath_ApplicationBusiness;
 
   let resolvedConstantsPath_ApplicationCommand = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_command_constants_js);
   // resolvedConstantsPath_ApplicationCommand is:
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationCommandIs + resolvedConstantsPath_ApplicationCommand);
+  warden.consoleLog(namespacePrefix + functionName, app_msg.cresolvedConstantsPath_ApplicationCommandIs + resolvedConstantsPath_ApplicationCommand);
   allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationCommandConstantsValidation] = resolvedConstantsPath_ApplicationCommand;
 
   let resolvedConstantsPath_ApplicationConstants = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_constants_js);
   // resolvedConstantsPath_ApplicationConstants is:
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationConstantsIs + resolvedConstantsPath_ApplicationConstants);
+  warden.consoleLog(namespacePrefix + functionName, app_msg.cresolvedConstantsPath_ApplicationConstantsIs + resolvedConstantsPath_ApplicationConstants);
   allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationConstantsValidation] = resolvedConstantsPath_ApplicationConstants;
 
   let resolvedConstantsPath_ApplicationMessage = path.resolve(constantsPath + bas.cForwardSlash + apc.capplication_message_constants_js);
   // resolvedConstantsPath_ApplicationMessage is:
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, app_msg.cresolvedConstantsPath_ApplicationMessageIs + resolvedConstantsPath_ApplicationMessage);
+  warden.consoleLog(namespacePrefix + functionName, app_msg.cresolvedConstantsPath_ApplicationMessageIs + resolvedConstantsPath_ApplicationMessage);
   allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsFilePaths][apc.capplicationMessageConstantsValidation] = resolvedConstantsPath_ApplicationMessage;
 
   // Application Business Constants Phase 1 Validation
@@ -122,8 +123,8 @@ function initializeAllClientConstantsValidationData() {
   allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][apc.capplicationMessageConstantsValidation] = gen.capp + bas.cUnderscore + gen.cmsg + bas.cDot;
 
   // allSystemConstantsValidationData is:
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, app_msg.callClientConstantsValidationDataIs + JSON.stringify(allClientConstantsValidationData));
-  warden.consoleLog(namespacePrefix + baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, app_msg.callClientConstantsValidationDataIs + JSON.stringify(allClientConstantsValidationData));
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return allClientConstantsValidationData;
 };
 
