@@ -7,7 +7,7 @@
  * @description Contains all of the business rule functions for doing math operations and conversions.
  * @requires module:loggers
  * @requires module:basic-constants
- * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -16,6 +16,7 @@
  */
 import loggers from '../../Executrix/loggers';
 import * as bas from '../../Constants/basic.constants';
+import * as wrd from '../../Constants/word.constants';
 import * as sys from '../../Constants/system.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));

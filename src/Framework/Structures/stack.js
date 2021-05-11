@@ -6,6 +6,7 @@
  * @requires module:ruleBroker
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:business-constants
  * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -17,6 +18,7 @@
 import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
+import * as wrd from '../Constants/word.constants';
 import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/message.constants';
 var path = require('path');

@@ -7,6 +7,7 @@
  * @requires module:configurator
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -18,9 +19,11 @@ import dataBroker from '../Executrix/dataBroker';
 import configurator from '../Executrix/configurator';
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
+import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as msg from '../Constants/message.constants';
 var path = require('path');
+var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Controllers.chiefData.
 var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
@@ -162,7 +165,7 @@ function setupAllJsonConfigData(dataPathConfigurationName, contextName) {
   console.log('contextName is: ' + contextName);
   let functionName = setupAllJsonConfigData.name;
   let loadedAndMergedDataAllFiles = {};
-  let dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  let dataPath = configurator.getConfigurationSetting(wrd.csystem, dataPathConfigurationName);
   dataPath = path.resolve(dataPath);
   console.log('dataPath is: ' + dataPath);
   let filesToLoad = dataBroker.scanDataPath(dataPath);

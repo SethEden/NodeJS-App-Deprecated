@@ -99,7 +99,7 @@ function application() {
   warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage2);
   // BEGIN command parser
   warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage3);
-  argumentDrivenInterface = warden.getConfigurationSetting(cfg.cArgumentDrivenInterface);
+  argumentDrivenInterface = warden.getConfigurationSetting(wrd.csystem, cfg.cArgumentDrivenInterface);
   warden.enqueueCommand(cmd.cStartupWorkflow);
 
   // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,

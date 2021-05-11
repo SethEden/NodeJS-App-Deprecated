@@ -69,8 +69,8 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot + 
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function bootStrapApplication(pathAndFilename) {
-  // console.log('BEGIN warden.bootStrapApplication function');
-  // console.log('pathAndFilename is: ' + pathAndFilename);
+  console.log('BEGIN warden.bootStrapApplication function');
+  console.log('pathAndFilename is: ' + pathAndFilename);
   let functionName = bootStrapApplication.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(namespacePrefix + functionName, msg.cpathAndFilenameIs + pathAndFilename);
@@ -78,8 +78,8 @@ function bootStrapApplication(pathAndFilename) {
   // contents of D-data structure is:
   loggers.consoleLog(namespacePrefix + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
-  // console.log('contents of D are: ' + JSON.stringify(D));
-  // console.log('END warden.bootStrapApplication function');
+  console.log('contents of D are: ' + JSON.stringify(D));
+  console.log('END warden.bootStrapApplication function');
 };
 
 /**
@@ -102,8 +102,8 @@ function bootStrapApplication(pathAndFilename) {
  * the configuration system still hasn't loaded yet. But enabling them at least will not crash the system any more.
  */
 function processRootPath(systemRootPath) {
-  // console.log('BEGIN warden.processRootPath function');
-  // console.log('systemRootPath is: ' + systemRootPath);
+  console.log('BEGIN warden.processRootPath function');
+  console.log('systemRootPath is: ' + systemRootPath);
   // var functionName = processRootPath.name;
   // loggers.consoleLog(namespacePrefix + functionName, sys.cBEGIN_Function);
   // loggers.consoleLog(namespacePrefix + functionName, 'systemRootPath is: ' + systemRootPath);
@@ -114,8 +114,8 @@ function processRootPath(systemRootPath) {
   let rootPath = ruleBroker.processRules(systemRootPath, '', rules);
   dataBroker.setupDataStorage();
   rootPath = path.resolve(rootPath);
-  // console.log('systemRootPath after business rule processing is: ' + rootPath);
-  // console.log('END warden.processRootPath function');
+  console.log('systemRootPath after business rule processing is: ' + rootPath);
+  console.log('END warden.processRootPath function');
   // loggers.consoleLog(namespacePrefix + functionName, sys.cEND_Function);
   return rootPath;
 };
@@ -409,18 +409,20 @@ function processCommandQueue() {
  * @author Seth Hollingsead
  * @data 2020/05/26
  */
-function setConfigurationSetting(configurationName, configurationValue) {
+function setConfigurationSetting(configurationNamespace, configurationName, configurationValue) {
   // console.log('BEGIN warden.setConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // console.log('configurationValue is: ' + configurationValue);
   let functionName = setConfigurationSetting.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  // configurationNamespace is:
+  loggers.consoleLog(namespacePrefix + functionName, msg.cconfigurationNamespaceIs + configurationNamespace);
   // configurationName is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cconfigurationNameIs + configurationName);
   // configurationValue is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cconfigurationValueIs + configurationValue);
   // D[sys.cConfiguration][configurationName] = configurationValue;
-  configurator.setConfigurationSetting(configurationName, configurationValue);
+  configurator.setConfigurationSetting(configurationNamespace, configurationName, configurationValue);
   // console.log('END warden.setConfigurationSetting function');
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
@@ -433,15 +435,17 @@ function setConfigurationSetting(configurationName, configurationValue) {
  * @author Seth Hollingsead
  * @date 2020/05/26
  */
-function getConfigurationSetting(configurationName) {
+function getConfigurationSetting(configurationNamespace, configurationName) {
 // console.log('BEGIN warden.getConfigurationSetting function');
 // console.log('configurationName is: ' + configurationName);
 let functionName = getConfigurationSetting.name;
 loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+// configurationNamespace is:
+loggers.consoleLog(namespacePrefix + functionName, msg.cconfigurationNamespaceIs + configurationNamespace);
 // configurationName is:
 loggers.consoleLog(namespacePrefix + functionName, msg.cconfigurationNameIs + configurationName);
 // var returnConfigurationValue = D[sys.cConfiguration][configurationName];
-let returnConfigurationValue = configurator.getConfigurationSetting(configurationName);
+let returnConfigurationValue = configurator.getConfigurationSetting(configurationNamespace, configurationName);
 // console.log('returnConfigurationValue is: ' + JSON.stringify(returnConfigurationValue));
 // console.log('END warden.getConfigurationSetting function');
 // returnConfigurationValue is:

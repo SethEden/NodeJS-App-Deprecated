@@ -49,16 +49,16 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot + 
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function setupConfiguration(pathAndFilename) {
-  // console.log('BEGIN chiefConfiguration.setupConfiguration function');
-  // console.log('pathAndFilename is: ' + pathAndFilename);
+  console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  console.log('pathAndFilename is: ' + pathAndFilename);
   let functionName = setupConfiguration.name; // 'setupConfiguration';
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(namespacePrefix + functionName, msg.cpathAndFilenameIs + pathAndFilename);
   let rules = {};
   rules[0] = biz.cswapBackSlashToForwardSlash;
-  D[wrd.cConfiguration] = {};
+  // D[wrd.cConfiguration] = {};
   pathAndFilename = ruleBroker.processRules(pathAndFilename, '', rules);
-  configurator.setConfigurationSetting(sys.cConfigurationPath, pathAndFilename);
+  configurator.setConfigurationSetting(wrd.csystem, sys.cConfigurationPath, pathAndFilename);
   let allConfigurationData = {};
   // allConfigurationData = chiefData.setupAllXmlData(sys.cConfigurationPath, wrd.cConfiguration);
   allConfigurationData = chiefData.setupAllJsonConfigData(sys.cConfigurationPath, wrd.cConfiguration);
@@ -68,10 +68,10 @@ function setupConfiguration(pathAndFilename) {
   // parseLoadedConfigurationData(allConfigurationData);
 
   // Get the operating system envrionment variable here and setup how to setup the log files.
-  loggers.consoleLog(msg.cLogFileEnabled, configurator.getConfigurationSetting(sys.cDateTimeSTamp));
+  loggers.consoleLog(msg.cLogFileEnabled, configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp));
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
-  // console.log(configurator.getConfigurationSetting(sys.cDateTimeSTamp));
-  // console.log('END chiefConfiguration.setupTestConfiguration function');
+  console.log(configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp));
+  console.log('END chiefConfiguration.setupTestConfiguration function');
 };
 
 /**
@@ -92,26 +92,17 @@ function setupConfiguration(pathAndFilename) {
  * the configuration system still hasn't loaded yet. But enabling them at least will not crash the system any more.
  */
 function parseLoadedConfigurationData(allConfigurationData) {
-  // console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
-  // console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
+  console.log('BEGIN chiefConfiguration.parseLoadedConfigurationData function');
+  console.log('allConfigurationData contents are: ' + JSON.stringify(allConfigurationData));
   // var functionName = parseLoadedConfigurationData.name;
   // loggers.consoleLog(namespacePrefix + functionName, sys.cBEGIN_Function);
   // loggers.consoleLog(namespacePrefix + functionName, 'allConfigurationData is: ' + JSON.stringify(allConfigurationData));
-  let highLevelConfigurationContainer = {};
-  let allConfigurations = {};
-  let allSubConfigurations = {};
-  let configurations = {};
-  let singleConfigurationFile = {};
+  let highLevelSystemConfigurationContainer = {};
+  let highLevelDebugConfigurationContainer = {};
+  let allSystemConfigurations = {};
   let rules = {};
-  let configurationsName; // This is the top level name for all of these configuration elements.
-  let configurationsVersion;
   let configurationElement;
-  // NOTE We are probably only going to have one nested level deep of configuration settings.
-  // So there-fore I will hard-code the Sub-Element rather than
-  // trying to add complexity to make this function recursive. That just makes things WAY to difficult.
-  // If there is a business need to have many many levels deep of configurations and settings,
-  // Then we can reconsider that and solve the problems to make it recursive at that time.
-  // It just doesn't make sense at this time.
+
   let configurationSubElement;
   let name;
   let type;
@@ -120,99 +111,61 @@ function parseLoadedConfigurationData(allConfigurationData) {
   let advancedDebugSettingPrefix;
   rules[0] = biz.cstringToDataType;
 
-  // First we need to pull out all the high level configuration meta-data
-  // about the rest of the cofiguration elements we are about to process.
-  highLevelConfigurationContainer = allConfigurationData[wrd.cPage][wrd.cApplication][wrd.cConfigurations][wrd.cConfiguration];
-  configurationsName = highLevelConfigurationContainer[sys.cConfigurationName];
-  // console.log('configurationsName is: ' + configurationsName);
-  // loggers.consoleLog(namespacePrefix + functionName, 'configurationsName is: ' + configurationsName);
-  if (highLevelConfigurationContainer[wrd.cCommon][sys.cConfigurationElement][wrd.cName] === sys.cVersionControl) {
-    configurationsVersion = highLevelConfigurationContainer[wrd.cCommon][sys.cConfigurationElement][wrd.cValue];
-    configurationsVersion = ruleBroker.processRules(configurationsVersion, '', rules);
-  }
-  // console.log('configurationsVersion is: ' + configurationsVersion);
-  // loggers.consoleLog(namespacePrefix + functionName, 'configurationsVersion is: ' + configurationsVersion);
-  allConfigurations = highLevelConfigurationContainer[sys.cConfigurationElements][sys.cConfigurationElement];
-  // console.log('allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
-  // loggers.consoleLog(namespacePrefix + functionName, 'allConfigurationData.length is: ' + Object.keys(allConfigurations).length);
+  highLevelSystemConfigurationContainer = allConfigurationData[wrd.csystem];
+  highLevelDebugConfigurationContainer = allConfigurationData[cfg.cDebugSettings];
 
-  if (configurationsVersion !== undefined && configurationsVersion !== '' &&
-  configurationsName !== undefined && configurationsName !== '' &&
-  !!allConfigurations && Object.keys(allConfigurations).length > 0) {
-    // NOTE: Right now this is only being tested with a single configuration file.
-    // but it should work with more than one configuration file.
-    // I'm trying my best here to pre-design it for working with more than one configuration file.
-    // But I'll probably need to revisit this code when we do
-    // acutally start working with more than one configuration file.
-    // Although we might actually not have more than one configuration file.
-    for (let key in allConfigurations) {
-      // console.log('single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
-      // loggers.consoleLog(namespacePrefix + functionName, 'single configurationElement is: ' + JSON.stringify(allConfigurations[key]));
-      configurationElement = allConfigurations[key];
-      name = '';
-      type = '';
-      value = '';
-      version = '';
-      advancedDebugSettingPrefix = '';
-      configurationSubElement = undefined;
-      allSubConfigurations = {};
-      if (!!configurationElement) {
-        name = configurationElement[wrd.cName];
-        type = configurationElement[wrd.cType];
-        value = configurationElement[wrd.cValue];
-        version = configurationElement[wrd.cVersion];
-        version = ruleBroker.processRules(version, '', rules);
-        if (name !== '' && type !== '' && value !== '' && version !== '') {
-          if (type === configurationsName && version == configurationsVersion) {
-            if ((name === sys.cDebugFunctions || name === sys.cDebugFiles) && value === wrd.cMultiple) {
-              // console.log('configurationElement is: ' + JSON.stringify(configurationElement));
-              // loggers.consoleLog(namespacePrefix + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
-              allSubConfigurations = configurationElement[sys.cConfigurationElement];
-              // console.log('allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
-              // loggers.consoleLog(namespacePrefix + functionName, 'allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
-              advancedDebugSettingPrefix = name;
-              for (let subKey in allSubConfigurations) {
-                name = '';
-                type = '';
-                value = '';
-                version = '';
-                configurationSubElement = allSubConfigurations[subKey];
-                if (!!configurationSubElement) {
-                  name = configurationSubElement[wrd.cName];
-                  type = configurationSubElement[wrd.cType];
-                  value = configurationSubElement[wrd.cValue];
-                  version = configurationSubElement[wrd.cVersion];
-                  version = ruleBroker.processRules(version, '', rules);
-                  if (name !== '' && type !== '' && value !== '' && version !== '') {
-                    if (type === configurationsName && version === configurationsVersion) {
-                      // console.log('process advanced configuration setting: ');
-                      // loggers.consoleLog(namespacePrefix + functionName, 'process advanced configuration setting: ');
-                      // console.log('name is: ' + name);
-                      // loggers.consoleLog(namespacePrefix + functionName, 'name is: ' + name);
-                      // console.log('type is: ' + type);
-                      // loggers.consoleLog(namespacePrefix + functionName, 'type is: ' + type);
-                      // console.log('value is: ' + value);
-                      // loggers.consoleLog(namespacePrefix + functionName, 'value is: ' + value);
-                      // console.log('version is: ' + version);
-                      // loggers.consoleLog(namespacePrefix + functionName, 'version is: ' + version);
-                      value = ruleBroker.processRules(value, '', rules);
-                      configurator.setConfigurationSetting(advancedDebugSettingPrefix + bas.cPipe + name, value);
-                    }
-                  }
-                }
+  for (let key in highLevelSystemConfigurationContainer) {
+    name = '';
+    value = '';
+    value = highLevelSystemConfigurationContainer[key];
+    if (!!value) {
+      name = key;
+      if ((name === sys.cDebugFunctions || name === sys.cDebugFiles) && value === wrd.cMultiple) {
+        // console.log('configurationElement is: ' + JSON.stringify(configurationElement));
+        // loggers.consoleLog(namespacePrefix + functionName, 'configurationElement is: ' + JSON.stringify(configurationElement));
+        allSubConfigurations = configurationElement[sys.cConfigurationElement];
+        // console.log('allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
+        // loggers.consoleLog(namespacePrefix + functionName, 'allSubConfigurations is: ' + JSON.stringify(allSubConfigurations));
+        advancedDebugSettingPrefix = name;
+        for (let subKey in allSubConfigurations) {
+          name = '';
+          type = '';
+          value = '';
+          version = '';
+          configurationSubElement = allSubConfigurations[subKey];
+          if (!!configurationSubElement) {
+            name = configurationSubElement[wrd.cName];
+            type = configurationSubElement[wrd.cType];
+            value = configurationSubElement[wrd.cValue];
+            version = configurationSubElement[wrd.cVersion];
+            version = ruleBroker.processRules(version, '', rules);
+            if (name !== '' && type !== '' && value !== '' && version !== '') {
+              if (type === configurationsName && version === configurationsVersion) {
+                // console.log('process advanced configuration setting: ');
+                // loggers.consoleLog(namespacePrefix + functionName, 'process advanced configuration setting: ');
+                // console.log('name is: ' + name);
+                // loggers.consoleLog(namespacePrefix + functionName, 'name is: ' + name);
+                // console.log('type is: ' + type);
+                // loggers.consoleLog(namespacePrefix + functionName, 'type is: ' + type);
+                // console.log('value is: ' + value);
+                // loggers.consoleLog(namespacePrefix + functionName, 'value is: ' + value);
+                // console.log('version is: ' + version);
+                // loggers.consoleLog(namespacePrefix + functionName, 'version is: ' + version);
+                value = ruleBroker.processRules(value, '', rules);
+                configurator.setConfigurationSetting(advancedDebugSettingPrefix + bas.cPipe + name, value);
               }
-            } else { // We are not processing any of the advanced debugging configuration settings.
-              // These are just the regular configuration settings, and some basic debug settings.
-              value = processConfigurationRules(name, value);
-              value = ruleBroker.processRules(value, '', rules);
-              // console.log('setting the configuration name: ' + name);
-              // loggers.consoleLog(namespacePrefix + functionName, 'setting the configuration name: ' + name);
-              // console.log('setting the configuration value: ' + value);
-              // loggers.consoleLog(namespacePrefix + functionName, 'setting the configuration value: ' + value);
-              configurator.setConfigurationSetting(name, value);
             }
           }
         }
+      } else { // We are not processing any of the advanced debugging configuration settings.
+        // These are just the regular configuration settings, and some basic debug settings.
+        value = processConfigurationRules(name, value);
+        value = ruleBroker.processRules(value, '', rules);
+        // console.log('setting the configuration name: ' + name);
+        // loggers.consoleLog(namespacePrefix + functionName, 'setting the configuration name: ' + name);
+        // console.log('setting the configuration value: ' + value);
+        // loggers.consoleLog(namespacePrefix + functionName, 'setting the configuration value: ' + value);
+        configurator.setConfigurationSetting(name, value);
       }
     }
   }

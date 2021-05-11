@@ -107,11 +107,11 @@ function deployApplication() {
   let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
-    warden.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(sys.cSourceResourcesPath, apc.cDevelopResourcesPath);
-    warden.setConfigurationSetting(sys.cDestinationResourcesPath, apc.cProductionResourcesPath);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(wrd.csystem, sys.cSourceResourcesPath, apc.cDevelopResourcesPath);
+    warden.setConfigurationSetting(wrd.csystem, sys.cDestinationResourcesPath, apc.cProductionResourcesPath);
     let appName = bas.cDoubleQuote + wrd.cName + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.name + bas.cDoubleQuote;
     let appVersion = bas.cDoubleQuote + wrd.cVersion + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.version + bas.cDoubleQuote;
     let appDescription = bas.cDoubleQuote + wrd.cDescription + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.description + bas.cDoubleQuote;
@@ -122,18 +122,18 @@ function deployApplication() {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let deploymentResult = warden.getConfigurationSetting(cfg.cdeploymentCompleted);
+    let deploymentResult = warden.getConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted);
     if (deploymentResult) {
       // Deployment was completed:
       console.log(msg.cBuildMessage1 + deploymentResult);
     } else {
       console.log(msg.cBuildMessage1 + gen.cFalse);
-      warden.setConfigurationSetting(cfg.cdeploymentCompleted, false);
+      warden.setConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted, false);
     }
   } catch (err) {
     console.error(err);
     // deploymentCompleted
-    warden.setConfigurationSetting(cfg.cdeploymentCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted, false);
   }
   warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
@@ -150,18 +150,18 @@ function releaseApplication() {
   warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let releaseResult;
   try {
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
-    warden.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(sys.cBinaryRootPath, apc.cProductionRootPath);
-    warden.setConfigurationSetting(sys.cBinaryReleasePath, apc.cReleasePath);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(wrd.csystem, sys.cBinaryRootPath, apc.cProductionRootPath);
+    warden.setConfigurationSetting(wrd.csystem, sys.cBinaryReleasePath, apc.cReleasePath);
     warden.enqueueCommand(cmd.cReleaseWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let releaseResult = warden.getConfigurationSetting(cfg.creleaseCompleted);
+    let releaseResult = warden.getConfigurationSetting(wrd.csystem, cfg.creleaseCompleted);
     if (releaseResult) {
       // Release was completed
       console.log(msg.cBuildMessage2 + releaseResult);
@@ -170,7 +170,7 @@ function releaseApplication() {
     }
   } catch (err) {
     console.error(err);
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
   }
   warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };

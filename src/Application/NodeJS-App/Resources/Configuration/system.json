@@ -15,6 +15,7 @@
   "system.ClearCommandPerformanceDataAfterAnalysis": true,
   "system.EnableConstantsValidation": true,
   "system.EnableConstantsPatternGeneration": true,
+  "system.EnableDebugConfigurationSettings": true,
   "system.LogFileEnabled": false,
   "system.EnableColorizedConsoleLogs": true,
   "system.IncludeDateTimeStampInLogFiles": true,

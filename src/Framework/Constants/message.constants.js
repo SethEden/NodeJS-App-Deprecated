@@ -353,6 +353,7 @@ export const cresolvedClientWorkflowsPathIs = wrd.cresolved + wrd.cClient + wrd.
 export const cbusinessRuleIs = wrd.cbusiness + wrd.cRule + sys.cSpaceIsColonSpace; // businessRule is:
 export const cruleInputIs = wrd.crule + wrd.cInput + sys.cSpaceIsColonSpace; // ruleInput is:
 export const cruleMetaDataIs = wrd.crule + wrd.cMetaData + sys.cSpaceIsColonSpace; // ruleMetaData is:
+export const cconfigurationNamespaceIs = wrd.cconfiguration + wrd.cName + wrd.cspace + sys.cSpaceIsColonSpace; // configurationNamespace is:
 export const cconfigurationNameIs = wrd.cconfiguration + wrd.cName + sys.cSpaceIsColonSpace; // configurationName is:
 export const cconfigurationValueIs = wrd.cconfiguration + wrd.cValue + sys.cSpaceIsColonSpace; // configurationValue is:
 export const creturnConfiguraitonValueIs = wrd.creturn + wrd.cConfiguration + wrd.cValue + sys.cSpaceIsColonSpace; // returnConfigurationValue is:

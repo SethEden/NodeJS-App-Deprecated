@@ -5,6 +5,7 @@
  * using the specified name-space on the D-data structure.
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
@@ -14,6 +15,7 @@
  */
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
+import * as wrd from '../Constants/word.constants';
 import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('./data');

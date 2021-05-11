@@ -3,6 +3,7 @@
  * @module configurator
  * @description Contains the functions necessary to set and get configuration settings from the shared data structure.
  * @requires module:loggers
+ * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -14,6 +15,7 @@
  * Because having these functions in the chiefConfiguration can cause a circular dependency.
  */
 import loggers from './loggers';
+import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 var path = require('path');
@@ -43,7 +45,7 @@ function setConfigurationSetting(configurationNamespace, configurationName, conf
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'configurationValue is: ' + configurationValue);
   // D[wrd.cConfiguration][configurationName] = configurationValue;
-  let namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace);
+  let namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace.split(bas.cDot));
   if (namespaceConfigObject) {
     namespaceConfigObject[configurationName] = configurationValue;
   }
@@ -68,7 +70,7 @@ function getConfigurationSetting(configurationNamespace, configurationName) {
   // let functionName = getConfigurationSetting.name;
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, msg.cBEGIN_Function);
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
-  let namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace);
+  let namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace.split(bas.cDot));
   if (namespaceConfigObject) {
     returnConfigurationValue = namespaceConfigObject[configurationName];
   }
@@ -97,10 +99,15 @@ function getConfigurationSetting(configurationNamespace, configurationName) {
  * @date 2021/03/31
  */
 function getConfigurationNamespaceObject(configurationNamespace) {
-  console.log('BEGIN configurator.getConfigurationNamespaceObject function');
-  console.log('configurationNamespace is: ' + configurationNamespace);
+  // console.log('BEGIN configurator.getConfigurationNamespaceObject function');
+  // console.log('configurationNamespace is: ' + JSON.stringify(configurationNamespace));
   let configurationDataRoot = D[wrd.cConfiguration];
   let configurationPathObject = configurationDataRoot;
+  if (!configurationPathObject) { // Need to handle the case that the configuration data object doesn't even exist at all!
+    D[wrd.cConfiguration] = {};
+    configurationDataRoot = D[wrd.cConfiguration];
+    configurationPathObject = configurationDataRoot;
+  }
   for (let i = 0; i < configurationNamespace.length; i++) {
     if (!configurationPathObject[configurationNamespace[i]]) {
       // It doesn't exist yet, so lets make it.
@@ -108,8 +115,8 @@ function getConfigurationNamespaceObject(configurationNamespace) {
     }
     configurationPathObject = configurationPathObject[configurationNamespace[i]];
   }
-  console.log('configurationPathObject is: ' + JSON.stringify(configurationPathObject));
-  console.log('END configurator.getConfigurationNamespaceObject function');
+  // console.log('configurationPathObject is: ' + JSON.stringify(configurationPathObject));
+  // console.log('END configurator.getConfigurationNamespaceObject function');
   return configurationPathObject;
 };
 

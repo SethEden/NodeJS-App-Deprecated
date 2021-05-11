@@ -11,6 +11,7 @@
  * @requires module.generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
+ * @requires module:configuration-constants
  * @requires module:business-constants
  * @requires module:message-constants
  * @requires module:data
@@ -27,10 +28,11 @@ import * as bas from '../Constants/basic.constants';
 import * as gen from '../Constants/generic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
+import * as cfg from '../Constants/configuration.constants';
 import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/message.constants';
-var D = require('../Structures/data');
 var path = require('path');
+var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Executrix.dataBroker.
 var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
@@ -233,57 +235,101 @@ function loadAllXmlData(filesToLoad, contextName) {
  * @date 2021/03/31
  */
 function loadAllJsonData(filesToLoad, contextName) {
-  console.log('BEGIN dataBroker.loadAllJsonData function');
-  console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
-  console.log('contextName is: ' + contextName);
+  // console.log('BEGIN dataBroker.loadAllJsonData function');
+  // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
+  // console.log('contextName is: ' + contextName);
   let functionName = loadAllJsonData.name;
-  let j = 0;
+  let foundSystemData = false;
+  let systemConfigFileName = wrd.csystem + gen.cDotjson;
   let multiMergedData = {};
   let parsedDataFile = {};
-  let fileNameRules = {};
-  let fileExtensionRules = {};
-  let filePathRules = {};
-  fileNameRules[0] = biz.cgetFileNameFromPath;
-  fileNameRules[1] = biz.cremoveFileExtensionFromFileName;
-  filePathRules[0] = biz.cswapDoubleForwardSlashToSingleForwardSlash;
-  fileExtensionRules[0] = biz.cgetFileExtension;
-  fileExtensionRules[1] = biz.cremoveDotFromFileExtension;
 
   // Before we load all configuration data we need to FIRST load all the system configuration settings.
   // There will be a system configuration setting that will tell us if we need to load the debug settings or not.
   for (let i = 0; i < filesToLoad.length; i++) {
-    console.log('****************************************************');
-    console.log('BEGIN i-th iteration of the loop: ' + i);
-    console.log('****************************************************');
+    // console.log('****************************************************');
+    // console.log('BEGIN i-th iteration of the loop: ' + i);
+    // console.log('****************************************************');
     let fileToLoad = filesToLoad[i];
-    let systemConfigFileName = wrd.csystem + gen.cDotjson;
     // Look for the system configuration setting file. That is the one to load FIRST!
     if (fileToLoad.includes(systemConfigFileName)) {
-      console.log('execute business rules: ' + JSON.stringify(filePathRules));
-      fileToLoad = ruleBroker.processRules(fileToLoad, '', filePathRules);
-      console.log('File to Load is: ' + fileToLoad);
+      let dataFile = preprocessJsonFile(fileToLoad);
 
-      // NOTE We still need a filename to use as a context for the page data that we just loaded.
-      // A context name will be composed of the input context name with the file name we are processing
-      // which tells us where we will put the data in the D[contextName] sub-structure.
-      let fileExtension = ruleBroker.processRules(fileToLoad, '', fileExtensionRules);
-      console.log('fileExtension is: ' + fileExtension);
-
-      let dataFile = fileBroker.getJsonData(fileToLoad);
-      console.log('loaded file data is: ' + JSON.stringify(dataFile));
+      // NOTE: In this case we have just loaded the system data and nothing else, so we can just assign the data to the multiMergedData.
+      // We will need to merge all the other files, but there will be a setting here we should examin to determine if the rest of the data should even be loaded or not.
+      // We will have a new setting that determins if all the extra debug settings should be loaded or not.
+      // This way the application performance can be seriously optimized to greater levels of lean performance.
+      // Adding all that extra debugging configuration settings can affect load times, and application performance to a much lesser degree.
+      multiMergedData[wrd.csystem] = {};
+      multiMergedData[wrd.csystem] = dataFile;
+      foundSystemData = true;
     }
-
-
-    console.log('MERGED data is: ' + JSON.stringify(multiMergedData));
-    console.log('****************************************************');
-    console.log('END i-th iteration of the loop: ' + i);
-    console.log('****************************************************');
+    // console.log('MERGED data is: ' + JSON.stringify(multiMergedData));
+    // console.log('****************************************************');
+    // console.log('END i-th iteration of the loop: ' + i);
+    // console.log('****************************************************');
+    if (foundSystemData === true) {
+      break;
+    }
   }
 
+  // Now we need to determine if we should load the rest of the data.
+  if (multiMergedData[wrd.csystem][wrd.csystem + bas.cDot + cfg.cEnableDebugConfigurationSettings] === true ||
+  multiMergedData[wrd.csystem][wrd.csystem + bas.cDot + cfg.cEnableDebugConfigurationSettings].toUpperCase === gen.cTRUE) {
+    for (let j = 0; j < filesToLoad.length; j++) {
+      // console.log('****************************************************');
+      // console.log('BEGIN i-th iteration of the loop: ' + j);
+      // console.log('****************************************************');
+      let fileToLoad = filesToLoad[j];
+      // Look for the system configuration setting file. That is the one to load FIRST!
+      if (!fileToLoad.includes(systemConfigFileName) && fileToLoad.toUpperCase().includes(gen.cDotJSON)) {
+        let dataFile = preprocessJsonFile(fileToLoad);
+
+        // NOTE: In this case we have just loaded the system data and nothing else, so we can just assign the data to the multiMergedData.
+        // We will need to merge all the other files, but there will be a setting here we should examin to determine if the rest of the data should even be loaded or not.
+        // We will have a new setting that determins if all the extra debug settings should be loaded or not.
+        // This way the application performance can be seriously optimized to greater levels of lean performance.
+        // Adding all that extra debugging configuration settings can affect load times, and application performance to a much lesser degree.
+        if (!multiMergedData[cfg.cDebugSettings]) {
+          multiMergedData[cfg.cDebugSettings] = {};
+          multiMergedData[cfg.cDebugSettings] = dataFile;
+        } else {
+          Object.assign(multiMergedData[cfg.cDebugSettings], dataFile);
+        }
+      }
+      // console.log('MERGED data is: ' + JSON.stringify(multiMergedData));
+      // console.log('****************************************************');
+      // console.log('END i-th iteration of the loop: ' + j);
+      // console.log('****************************************************');
+    }
+  }
+
+  parsedDataFile = multiMergedData;
   // parsedDataFile contents are:
-  console.log('parsedDataFile contents are: ' + JSON.stringify(parsedDataFile));
-  console.log('END dataBroker.loadAllJsonData function');
+  // console.log('parsedDataFile contents are: ' + JSON.stringify(parsedDataFile));
+  // console.log('END dataBroker.loadAllJsonData function');
   return parsedDataFile;
+};
+
+/**
+ * @function preprocessJsonFile
+ * @description
+ * @param  {[type]} fileToLoad [description]
+ * @return {[type]}            [description]
+ */
+function preprocessJsonFile(fileToLoad) {
+  console.log('BEGIN dataBroker.preprocessJsonFile function');
+  console.log('fileToLoad is: ' + fileToLoad);
+  let filePathRules = {};
+  filePathRules[0] = biz.cswapDoubleForwardSlashToSingleForwardSlash;
+
+  console.log('execute business rules: ' + JSON.stringify(filePathRules));
+  let finalFileToLoad = ruleBroker.processRules(fileToLoad, '', filePathRules);
+  console.log('File to Load is: ' + finalFileToLoad);
+  let dataFile = fileBroker.getJsonData(finalFileToLoad);
+  console.log('loaded file data is: ' + JSON.stringify(dataFile));
+  console.log('END dataBroker.preprocessJsonFile function');
+  return dataFile;
 };
 
 /**

@@ -57,10 +57,10 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas
  */
  function bootStrapCommands() {
    let functionName = bootStrapCommands.name;
-   // console.log('BEGIN commandBroker.bootStrapCommands');
+   console.log('BEGIN commandBroker.bootStrapCommands');
    loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
    commands.initCommandsLibrary();
-   // console.log('END commandBroker.bootStrapCommands');
+   console.log('END commandBroker.bootStrapCommands');
    loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
  };
 

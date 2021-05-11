@@ -8,6 +8,7 @@
  * values of all kinds, with various operations.
  * @requires module:warden
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:application-business-constants
  * @requires module:application-message-constants
@@ -18,6 +19,7 @@
  */
 import warden from '../../../../Framework/Controllers/warden';
 import * as bas from '../../../../Framework/Constants/basic.constants';
+import * as wrd from '../../../../Framework/Constants/word.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
 import * as msg from '../../../../Framework/Constants/message.constants';
 import * as app_biz from '../../Constants/application.business.constants';

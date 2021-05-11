@@ -53,7 +53,7 @@ var D = require('../Structures/data');
  */
 function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) {
-    let logFile = configurator.getConfigurationSetting(sys.cApplicationCleanedRootPath);
+    let logFile = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
     if (logFile !== undefined) {
       logFile = logFile + bas.cForwardSlash + wrd.clogs;
       // console.log('logFile is !== undefined');
