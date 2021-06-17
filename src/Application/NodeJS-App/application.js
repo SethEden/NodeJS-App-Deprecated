@@ -96,11 +96,16 @@ function application() {
   let commandResult;
   warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // BEGIN main program loop
+  console.log('BEGIN main program loop');
   warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage2);
   // BEGIN command parser
+  console.log('BEGIN command parser');
   warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage3);
   argumentDrivenInterface = warden.getConfigurationSetting(wrd.csystem, cfg.cArgumentDrivenInterface);
+  console.log('argumentDrivenInterface is: ' + argumentDrivenInterface);
+  console.log('starting warden.enqueueCommand(cmd.cStartupWorkflow)');
   warden.enqueueCommand(cmd.cStartupWorkflow);
+  console.log('finished warden.enqueueCommand(cmd.cStartupWorkflow)');
 
   // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.

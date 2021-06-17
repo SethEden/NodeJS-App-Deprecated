@@ -118,7 +118,7 @@ function analyzeArgument(argumentValue) {
   argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;
   removeBracketsFromArgsArrayRule[0] = biz.cremoveCharacterFromArray;
 
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
   if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
     // Check if there are brackets or no brackets.
     loggers.consoleLog(namespacePrefix + functionName, msg.cCheckIfThereAreBracketsOrNoBrackets);
@@ -246,7 +246,7 @@ function parseArgumentAsArray(argumentValue) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
   let returnData;
   let isArray = false;
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
   let argsArrayContainsCharacterRule = [];
   let removeBracketsFromArgsArrayRule = [];
   argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;

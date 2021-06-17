@@ -77,16 +77,20 @@ export const stringToBoolean = function(inputData, inputMetaData) {
   if (!inputData) {
     returnData = false;
   } else {
-    switch (inputData.toLowerCase().trim()) {
-      case gen.ctrue: case gen.cTrue: case gen.cTRUE: case bas.ct: case bas.cT: case bas.cy: case bas.cY: case gen.cyes: case gen.cYes: case gen.cYES: case bas.con: case bas.cOn: case bas.cON:
-        returnData = true;
-        break;
-      case gen.cfalse: case gen.cFalse: case gen.cFALSE: case bas.cf: case bas.cF: case bas.cn: case bas.cN: case bas.cno: case bas.cNo: case bas.cNO: case gen.coff: case gen.cOff: case gen.cOFF:
-        returnData = false;
-        break;
-      default:
-        returnData = false;
-        break;
+    if (inputData === true || inputData === false) {
+      returnData = inputData;
+    } else {
+      switch (inputData.toLowerCase().trim()) {
+        case gen.ctrue: case gen.cTrue: case gen.cTRUE: case bas.ct: case bas.cT: case bas.cy: case bas.cY: case gen.cyes: case gen.cYes: case gen.cYES: case bas.con: case bas.cOn: case bas.cON:
+          returnData = true;
+          break;
+        case gen.cfalse: case gen.cFalse: case gen.cFALSE: case bas.cf: case bas.cF: case bas.cn: case bas.cN: case bas.cno: case bas.cNo: case bas.cNO: case gen.coff: case gen.cOff: case gen.cOFF:
+          returnData = false;
+          break;
+        default:
+          returnData = false;
+          break;
+      }
     }
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
@@ -198,12 +202,16 @@ export const isBoolean = function(inputData, inputMetaData) {
   if (!inputData) {
     returnData = false;
   } else {
-    inputData = inputData.toLowerCase().trim();
-    if (inputData === gen.ctrue || inputData === bas.ct || inputData === bas.cy || inputData === gen.cyes || inputData === bas.con ||
-    inputData === gen.cfalse || inputData === bas.cf || inputData === bas.cn || inputData === bas.cno || inputData === gen.coff) {
-      returnData = true;
+    if (inputData === true || inputData === false) {
+      returnData = inputData;
     } else {
-      returnData = false;
+      inputData = inputData.toLowerCase().trim();
+      if (inputData === gen.ctrue || inputData === bas.ct || inputData === bas.cy || inputData === gen.cyes || inputData === bas.con ||
+      inputData === gen.cfalse || inputData === bas.cf || inputData === bas.cn || inputData === bas.cno || inputData === gen.coff) {
+        returnData = true;
+      } else {
+        returnData = false;
+      }
     }
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
@@ -1117,9 +1125,9 @@ export const isStringList = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = false;
   if (inputData) {
-    let primaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
-    let secondaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
-    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter);
+    let secondaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cTertiaryCommandDelimiter);
     if (inputData.includes(primaryCommandDelimiter) === true ||
     inputData.includes(secondaryCommandDelimiter) === true ||
     inputData.includes(tertiaryCommandDelimiter) === true) {
@@ -1315,7 +1323,7 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
   if (inputData && inputMetaData) {
     const liner = new lineByLine(inputData);
     let line;
-    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
 
     while (line = liner.next()) {
       loggers.consoleLog(namespacePrefix + functionName, line.toString(gen.cascii));
@@ -1328,7 +1336,7 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
         foundConstant = validateConstantsDataValidationLineItemName(lineArray[2], inputMetaData);
         let qualifiedConstantsFilename = getFileNameFromPath(inputData, '');
         if (foundConstant === true) {
-          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          if (configurator.getConfigurationSetting(wrd.csystem, cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
             let passMessage = wrd.cPASS + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cPASS;
             if (colorizeLogsEnabled === true) {
               passMessage = chalk.rgb(0,0,0)(passMessage);
@@ -1337,7 +1345,7 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
             console.log(qualifiedConstantsFilename + bas.cColon + bas.cSpace + passMessage);
           }
         } else {
-          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          if (configurator.getConfigurationSetting(wrd.csystem, cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
             let failMessage = wrd.cFAIL + bas.cColon + bas.cSpace + lineArray[2] + bas.cSpace + wrd.cFAIL;
             if (colorizeLogsEnabled === true) {
               failMessage = chalk.rgb(0,0,0)(failMessage);
@@ -1886,13 +1894,13 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
   let returnData = true;
   let passMessage = '';
   if (inputData) {
-    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
     for (let i = 0; i < D[sys.cConstantsValidationData][inputData].length; i++) {
       passMessage = '';
       let validationLineItem = D[sys.cConstantsValidationData][inputData][i];
       if (validationLineItem) {
         if (validationLineItem.Actual === validationLineItem.Expected) {
-          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
+          if (configurator.getConfigurationSetting(wrd.csystem, cfg.cDisplayIndividualConstantsValidationPassMessages) === true) {
             // `PASS -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- PASS`;
             passMessage = wrd.cPASS + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace +
               validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASS;
@@ -1904,7 +1912,7 @@ export const validateConstantsDataValues = function(inputData, inputMetaData) {
           }
         } else {
           returnData = false;
-          if (configurator.getConfigurationSetting(cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
+          if (configurator.getConfigurationSetting(wrd.csystem, cfg.cDisplayIndividualConstantsValidationFailMessages) === true) {
             // `FAIL -- ${inputData} Actual: ${validationLineItem.Actual}, Expected: ${validationLineItem.Expected} -- FAIL`;
             passMessage = wrd.cFAIL + bas.cSpace + bas.cDoubleDash + bas.cSpace + inputData + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace +
               validationLineItem.Actual + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + validationLineItem.Expected + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAIL;
@@ -2008,7 +2016,7 @@ export const countDuplicateCommandAliases = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
   let returnData = 0;
   if (inputData && inputMetaData) {
-    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
 loop1:
     for (let i = 0; i < inputMetaData.length; i++) {
       // BEGIN i-th loop:
@@ -2166,7 +2174,7 @@ export const parseSystemRootPath = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
+    let applicationName = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationName);
     let pathElements = inputData.split(bas.cBackSlash);
     loop1:
       for (let i = 0; i < pathElements.length; i++) {

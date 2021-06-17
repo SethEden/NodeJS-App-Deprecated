@@ -69,8 +69,8 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot + 
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function bootStrapApplication(pathAndFilename) {
-  console.log('BEGIN warden.bootStrapApplication function');
-  console.log('pathAndFilename is: ' + pathAndFilename);
+  // console.log('BEGIN warden.bootStrapApplication function');
+  // console.log('pathAndFilename is: ' + pathAndFilename);
   let functionName = bootStrapApplication.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(namespacePrefix + functionName, msg.cpathAndFilenameIs + pathAndFilename);
@@ -78,8 +78,8 @@ function bootStrapApplication(pathAndFilename) {
   // contents of D-data structure is:
   loggers.consoleLog(namespacePrefix + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
-  console.log('contents of D are: ' + JSON.stringify(D));
-  console.log('END warden.bootStrapApplication function');
+  // console.log('contents of D are: ' + JSON.stringify(D));
+  // console.log('END warden.bootStrapApplication function');
 };
 
 /**
@@ -102,8 +102,8 @@ function bootStrapApplication(pathAndFilename) {
  * the configuration system still hasn't loaded yet. But enabling them at least will not crash the system any more.
  */
 function processRootPath(systemRootPath) {
-  console.log('BEGIN warden.processRootPath function');
-  console.log('systemRootPath is: ' + systemRootPath);
+  // console.log('BEGIN warden.processRootPath function');
+  // console.log('systemRootPath is: ' + systemRootPath);
   // var functionName = processRootPath.name;
   // loggers.consoleLog(namespacePrefix + functionName, sys.cBEGIN_Function);
   // loggers.consoleLog(namespacePrefix + functionName, 'systemRootPath is: ' + systemRootPath);
@@ -114,8 +114,8 @@ function processRootPath(systemRootPath) {
   let rootPath = ruleBroker.processRules(systemRootPath, '', rules);
   dataBroker.setupDataStorage();
   rootPath = path.resolve(rootPath);
-  console.log('systemRootPath after business rule processing is: ' + rootPath);
-  console.log('END warden.processRootPath function');
+  // console.log('systemRootPath after business rule processing is: ' + rootPath);
+  // console.log('END warden.processRootPath function');
   // loggers.consoleLog(namespacePrefix + functionName, sys.cEND_Function);
   return rootPath;
 };
@@ -142,8 +142,8 @@ function processRootPath(systemRootPath) {
  * @date 2020/06/02
  */
 function initApplicationSchema(rootPath, clientConstantsPath, clientValidationData) {
-  // console.log('BEGIN warden.initApplicationSchema function');
-  // console.log('rootPath is: ' + rootPath);
+  console.log('BEGIN warden.initApplicationSchema function');
+  console.log('rootPath is: ' + rootPath);
   let functionName = initApplicationSchema.name;
   // console.log('logging the BEGIN warden.saveRootPath function');
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
@@ -153,7 +153,7 @@ function initApplicationSchema(rootPath, clientConstantsPath, clientValidationDa
   // clientValidationData is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cclientValidationDataIs + JSON.stringify(clientValidationData));
   // console.log('setting the configuration setting for the root path');
-  configurator.setConfigurationSetting(sys.cApplicationRootPath, rootPath);
+  configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationRootPath, rootPath);
   let cleanedRootPath;
   // console.log('calling file broker to clean the root path.');
   cleanedRootPath = fileBroker.cleanRootPath(rootPath);
@@ -162,36 +162,36 @@ function initApplicationSchema(rootPath, clientConstantsPath, clientValidationDa
   let applicationMetaDataPathAndFilename = path.resolve(rootPath + bas.cForwardSlash + wrd.cResources + bas.cForwardSlash + cfg.cmetaDataDotJson);
   let applicationData = fileBroker.getJsonData(applicationMetaDataPathAndFilename);
   // console.log('loaded application meta-data is: ' + JSON.stringify(applicationData));
-  configurator.setConfigurationSetting(sys.cApplicationCleanedRootPath, cleanedRootPath);
+  configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath, cleanedRootPath);
   // console.log('set the application name as a configuration setting: ' + applicationData[wrd.cName]);
-  configurator.setConfigurationSetting(sys.cApplicationName, applicationData[wrd.cName]);
+  configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationName, applicationData[wrd.cName]);
   // console.log('set the application version number as a configuration setting: ' + applicationData[wrd.cVersion]);
-  configurator.setConfigurationSetting(sys.cApplicationVersionNumber, applicationData[wrd.cVersion]);
+  configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationVersionNumber, applicationData[wrd.cVersion]);
   // console.log('set the application description as a configuration setting: ' + applicationData[wrd.cDescription]);
-  configurator.setConfigurationSetting(sys.cApplicationDescription, applicationData[wrd.cDescription]);
-  if (configurator.getConfigurationSetting(cfg.cEnableConstantsValidation) === true) {
+  configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationDescription, applicationData[wrd.cDescription]);
+  if (configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableConstantsValidation) === true) {
       let resolvedSystemConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cSystemConstantsPathActual);
       let resolvedClientConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + clientConstantsPath);
       // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
-      configurator.setConfigurationSetting(sys.cSystemConstantsPath, resolvedSystemConstantsPathActual);
-      configurator.setConfigurationSetting(sys.cClientConstantsPath, resolvedClientConstantsPathActual);
+      configurator.setConfigurationSetting(wrd.csystem, sys.cSystemConstantsPath, resolvedSystemConstantsPathActual);
+      configurator.setConfigurationSetting(wrd.csystem, sys.cClientConstantsPath, resolvedClientConstantsPathActual);
       chiefData.initializeConstantsValidationData(); // This just makes sure that the data structure is created on the D-Data structure.
       let systemValidationData = all_sys_cv.initializeAllSystemConstantsValidationData();
       // console.log('systemValidationData is: ' + JSON.stringify(systemValidationData));
       chiefData.addConstantsValidationData(systemValidationData);
       chiefData.addConstantsValidationData(clientValidationData.call()); // Here we will evaluate the function that was passed in, now the configuration setting should be setup.
   }
-  let enableLogFileOutputSetting = configurator.getConfigurationSetting(cfg.cLogFileEnabled);
+  let enableLogFileOutputSetting = configurator.getConfigurationSetting(wrd.csystem, sys.cLogFileEnabled);
   if (enableLogFileOutputSetting === true) {
-    // console.log('Capture the session date-time-stamp so we can determine a log file name.');
-    let sessionDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(cfg.cDateTimeStamp));
-    // console.log('sessionDateTimeStamp is: ' + sessionDateTimeStamp);
+    console.log('Capture the session date-time-stamp so we can determine a log file name.');
+    let sessionDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(wrd.csystem, cfg.cDateTimeStamp));
+    console.log('sessionDateTimeStamp is: ' + sessionDateTimeStamp);
     let logFileName = sessionDateTimeStamp + bas.cUnderscore + applicationData[wrd.cVersion] + bas.cUnderscore + applicationData[wrd.cName] + gen.cDotLog;
-    // console.log('logFileName is: ' + logFileName);
-    configurator.setConfigurationSetting(sys.cLogFilePathAndName, logFileName);
+    console.log('logFileName is: ' + logFileName);
+    configurator.setConfigurationSetting(wrd.csystem, sys.cLogFilePathAndName, logFileName);
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
-  // console.log('END warden.saveRootPath function');
+  console.log('END warden.saveRootPath function');
 };
 
 /**
@@ -257,15 +257,15 @@ function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath
   loggers.consoleLog(namespacePrefix + functionName, msg.csystemCommandsAliasesPathIs + systemCommandsAliasesPath);
   // clientCommandsAliasesPath is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cclientCommandsAliasesPathIs + clientCommandsAliasesPath);
-  let applicationRootPath = configurator.getConfigurationSetting(sys.cApplicationCleanedRootPath);
+  let applicationRootPath = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
   let resolvedSystemCommandsAliasesPath = path.resolve(applicationRootPath + bas.cForwardSlash + systemCommandsAliasesPath);
   let resolvedClientCommandsAliasesPath = path.resolve(applicationRootPath + bas.cForwardSlash + clientCommandsAliasesPath);
   // resolvedSystemCommandsAliasesPath is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedSystemCommandsAliasesPathIs + resolvedSystemCommandsAliasesPath);
   // resolvedClientCommandsAliasesPath is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedClientCommandsAliasesPathIs + resolvedClientCommandsAliasesPath);
-  configurator.setConfigurationSetting(cmd.cSystemCommandsAliasesPath, resolvedSystemCommandsAliasesPath);
-  configurator.setConfigurationSetting(cmd.cClientCommandsAliasesPath, resolvedClientCommandsAliasesPath);
+  configurator.setConfigurationSetting(wrd.csystem, cmd.cSystemCommandsAliasesPath, resolvedSystemCommandsAliasesPath);
+  configurator.setConfigurationSetting(wrd.csystem, cmd.cClientCommandsAliasesPath, resolvedClientCommandsAliasesPath);
   chiefCommander.loadCommandAliasesFromPath(cmd.cSystemCommandsAliasesPath);
   // loggers.consoleLog(namespacePrefix + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
   chiefCommander.loadCommandAliasesFromPath(cmd.cClientCommandsAliasesPath);
@@ -289,15 +289,15 @@ function loadCommandWorkflows(systemWorkflowPath, clientWorkflowPath) {
   loggers.consoleLog(namespacePrefix + functionName, msg.csystemWorkflowPathIs + systemWorkflowPath);
   // clientWorkflowPath is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cclientWorkflowPathIs + clientWorkflowPath);
-  let applicationRootPath = configurator.getConfigurationSetting(sys.cApplicationCleanedRootPath);
+  let applicationRootPath = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
   let resolvedSystemWorkflowsPath = path.resolve(applicationRootPath + bas.cForwardSlash + systemWorkflowPath);
   let resolvedClientWorkflowsPath = path.resolve(applicationRootPath + bas.cForwardSlash + clientWorkflowPath);
   // resolvedSystemWorkflowsPath is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedSystemWorkflowsPathIs + resolvedSystemWorkflowsPath);
   // resolvedClientWorkflowsPath is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cresolvedClientWorkflowsPathIs + resolvedClientWorkflowsPath);
-  configurator.setConfigurationSetting(cmd.cSystemWorkflowsPath, resolvedSystemWorkflowsPath);
-  configurator.setConfigurationSetting(cmd.cClientWorkflowsPath, resolvedClientWorkflowsPath);
+  configurator.setConfigurationSetting(wrd.csystem, cmd.cSystemWorkflowsPath, resolvedSystemWorkflowsPath);
+  configurator.setConfigurationSetting(wrd.csystem, cmd.cClientWorkflowsPath, resolvedClientWorkflowsPath);
   chiefWorkflow.loadCommandWorkflowsFromPath(cmd.cSystemWorkflowsPath);
   chiefWorkflow.loadCommandWorkflowsFromPath(cmd.cClientWorkflowsPath);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);

@@ -57,10 +57,10 @@ var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas
  */
  function bootStrapCommands() {
    let functionName = bootStrapCommands.name;
-   console.log('BEGIN commandBroker.bootStrapCommands');
+   // console.log('BEGIN commandBroker.bootStrapCommands');
    loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
    commands.initCommandsLibrary();
-   console.log('END commandBroker.bootStrapCommands');
+   // console.log('END commandBroker.bootStrapCommands');
    loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
  };
 
@@ -209,7 +209,7 @@ function getCommandArgs(commandString, commandDelimiter) {
   isOddRule[0] = biz.cisOdd;
   replaceCharacterAtIndexRule[0] = biz.creplaceCharacterAtIndex;
   replaceTildesWithSingleQuoteRule[0] = biz.creplaceCharacterWithCharacter;
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
   if (commandDelimiter === null || commandDelimiter !== commandDelimiter || commandDelimiter === undefined) {
     commandArgsDelimiter = bas.cSpace;
   }
@@ -359,11 +359,11 @@ function getCommandArgs(commandString, commandDelimiter) {
   // commandString is:
   loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringIs + commandString);
   let returnData = false;
-  let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
+  let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter));
   loggers.consoleLog(namespacePrefix + functionName, 'commandToExecute is: ' + commandToExecute);
-  let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
+  let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter));
   loggers.consoleLog(namespacePrefix + functionName, 'commandArgs is: ' + commandArgs);
-  let commandMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableCommandPerformanceMetrics);
+  let commandMetricsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableCommandPerformanceMetrics);
   let commandStartTime = '';
   let commandEndTime = '';
   let commandDeltaTime = '';

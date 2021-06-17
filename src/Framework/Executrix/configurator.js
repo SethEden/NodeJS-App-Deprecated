@@ -20,6 +20,7 @@ import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 var path = require('path');
 var D = require('../Structures/data');
+// var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
 // var baseFileName = path.basename(module.filename, path.extname(module.filename));
 
 /**
@@ -47,7 +48,7 @@ function setConfigurationSetting(configurationNamespace, configurationName, conf
   // D[wrd.cConfiguration][configurationName] = configurationValue;
   let namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace.split(bas.cDot));
   if (namespaceConfigObject) {
-    namespaceConfigObject[configurationName] = configurationValue;
+    namespaceConfigObject[configurationNamespace + bas.cDot + configurationName] = configurationValue;
   }
   // console.log('END configurator.setConfigurationSetting function');
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, msg.cEND_Function);
@@ -69,10 +70,13 @@ function getConfigurationSetting(configurationNamespace, configurationName) {
   // console.log('configurationName is: ' + configurationName);
   // let functionName = getConfigurationSetting.name;
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, msg.cBEGIN_Function);
+  // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'configurationNamespace is: ' + configurationNamespace);
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
-  let namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace.split(bas.cDot));
+  let namespaceConfigObject = undefined;
+  namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace.split(bas.cDot));
+  // console.log('namespaceConfigObject is: ' + JSON.stringify(namespaceConfigObject));
   if (namespaceConfigObject) {
-    returnConfigurationValue = namespaceConfigObject[configurationName];
+    returnConfigurationValue = namespaceConfigObject[configurationNamespace + bas.cDot + configurationName];
   }
   // if (D[wrd.cConfiguration] !== undefined) {
   //   if (D[wrd.cConfiguration][configurationName] !== undefined) {
@@ -94,13 +98,14 @@ function getConfigurationSetting(configurationNamespace, configurationName) {
  * @function getConfigurationNamespaceObject
  * @description Navigates the configuration JSON data object tree to find the namespace of configuration settings.
  * @param {array<string>} configurationNamespace The path in the configuration JSON object where the configuration setting should be set.
- * @return {object} The object found at the specified namespace address in the configuration data object.
+ * @return {object|boolean} The object found at the specified namespace address in the configuration data object, or False if nothing was found.
  * @author Seth Hollingsead
  * @date 2021/03/31
  */
 function getConfigurationNamespaceObject(configurationNamespace) {
   // console.log('BEGIN configurator.getConfigurationNamespaceObject function');
   // console.log('configurationNamespace is: ' + JSON.stringify(configurationNamespace));
+  let returnValue = true; // Assume there will be a return value;
   let configurationDataRoot = D[wrd.cConfiguration];
   let configurationPathObject = configurationDataRoot;
   if (!configurationPathObject) { // Need to handle the case that the configuration data object doesn't even exist at all!
@@ -109,15 +114,30 @@ function getConfigurationNamespaceObject(configurationNamespace) {
     configurationPathObject = configurationDataRoot;
   }
   for (let i = 0; i < configurationNamespace.length; i++) {
-    if (!configurationPathObject[configurationNamespace[i]]) {
-      // It doesn't exist yet, so lets make it.
-      configurationPathObject[configurationNamespace[i]] = {};
-    }
-    configurationPathObject = configurationPathObject[configurationNamespace[i]];
+    // if (i === configurationNamespace.length - 1) {
+      // We are dealing with a leaf-node.
+      if (!configurationPathObject[configurationNamespace[i]]) {
+        // It doesn't exist yet, so lets make it.
+        configurationPathObject[configurationNamespace[i]] = {};
+      }
+      configurationPathObject = configurationPathObject[configurationNamespace[i]];
+    // }
+    // else {
+    //   // So if it exists then we package it up, if not then return false, because the path doesn't exist.
+    //   if (configurationPathObject[configurationNamespace[i]]) {
+    //     configurationPathObject = configurationPathObject[configurationNamespace[i]];
+    //   } else {
+    //     returnValue = false;
+    //     break; // End the for-loop, the entire namespace address was not found.
+    //   }
+    // }
+  } // End for-loop (let i = 0; i < configurationNamespace.length; i++)
+  if (returnValue === true) {
+    returnValue = configurationPathObject
   }
-  // console.log('configurationPathObject is: ' + JSON.stringify(configurationPathObject));
+  // console.log('returnValue is: ' + JSON.stringify(returnValue));
   // console.log('END configurator.getConfigurationNamespaceObject function');
-  return configurationPathObject;
+  return returnValue;
 };
 
 export default {

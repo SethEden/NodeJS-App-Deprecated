@@ -94,7 +94,7 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
   // contextName is:
   loggers.consoleLog(namespacePrefix + functionName, msg.ccontextNameIs + contextName);
   let loadedAndMergedDataAllFiles = {};
-  let dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  let dataPath = configurator.getConfigurationSetting(wrd.csystem, dataPathConfigurationName);
   dataPath = path.resolve(dataPath);
   // console.log('dataPath is: ' + dataPath);
   // dataPath is:
@@ -132,7 +132,7 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
   // contextName is:
   loggers.consoleLog(namespacePrefix + functionName, msg.ccontextNameIs + contextName);
   let loadedAndMergedDataAllFiles = {};
-  let dataPath = configurator.getConfigurationSetting(dataPathConfigurationName);
+  let dataPath = configurator.getConfigurationSetting(wrd.csystem, dataPathConfigurationName);
   dataPath = path.resolve(dataPath);
   // console.log('dataPath is: ' + dataPath);
   // dataPath is:
@@ -160,19 +160,20 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
  * @date 2021/03/31
  */
 function setupAllJsonConfigData(dataPathConfigurationName, contextName) {
-  console.log('BEGIN chiefData.setupAllJsonConfigData function');
-  console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
-  console.log('contextName is: ' + contextName);
+  // console.log('BEGIN chiefData.setupAllJsonConfigData function');
+  // console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
+  // console.log('contextName is: ' + contextName);
   let functionName = setupAllJsonConfigData.name;
   let loadedAndMergedDataAllFiles = {};
+  // console.log('contents of D are: ' + JSON.stringify(D));
   let dataPath = configurator.getConfigurationSetting(wrd.csystem, dataPathConfigurationName);
   dataPath = path.resolve(dataPath);
-  console.log('dataPath is: ' + dataPath);
+  // console.log('dataPath is: ' + dataPath);
   let filesToLoad = dataBroker.scanDataPath(dataPath);
-  console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
+  // console.log('filesToLoad is: ' + JSON.stringify(filesToLoad));
   loadedAndMergedDataAllFiles = dataBroker.loadAllJsonData(filesToLoad, contextName);
-  console.log('loadedAndMergedDataAllFiles is: ' + JSON.stringify(loadedAndMergedDataAllFiles));
-  console.log('END chiefData.setupAllJsonConfigData function');
+  // console.log('loadedAndMergedDataAllFiles is: ' + JSON.stringify(loadedAndMergedDataAllFiles));
+  // console.log('END chiefData.setupAllJsonConfigData function');
   return loadedAndMergedDataAllFiles;
 };
 

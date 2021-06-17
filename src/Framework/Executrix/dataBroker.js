@@ -318,17 +318,17 @@ function loadAllJsonData(filesToLoad, contextName) {
  * @return {[type]}            [description]
  */
 function preprocessJsonFile(fileToLoad) {
-  console.log('BEGIN dataBroker.preprocessJsonFile function');
-  console.log('fileToLoad is: ' + fileToLoad);
+  // console.log('BEGIN dataBroker.preprocessJsonFile function');
+  // console.log('fileToLoad is: ' + fileToLoad);
   let filePathRules = {};
   filePathRules[0] = biz.cswapDoubleForwardSlashToSingleForwardSlash;
 
-  console.log('execute business rules: ' + JSON.stringify(filePathRules));
+  // console.log('execute business rules: ' + JSON.stringify(filePathRules));
   let finalFileToLoad = ruleBroker.processRules(fileToLoad, '', filePathRules);
-  console.log('File to Load is: ' + finalFileToLoad);
+  // console.log('File to Load is: ' + finalFileToLoad);
   let dataFile = fileBroker.getJsonData(finalFileToLoad);
-  console.log('loaded file data is: ' + JSON.stringify(dataFile));
-  console.log('END dataBroker.preprocessJsonFile function');
+  // console.log('loaded file data is: ' + JSON.stringify(dataFile));
+  // console.log('END dataBroker.preprocessJsonFile function');
   return dataFile;
 };
 

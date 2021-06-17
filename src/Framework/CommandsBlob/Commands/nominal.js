@@ -120,7 +120,7 @@ export const version = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  console.log(configurator.getConfigurationSetting(sys.cApplicationVersionNumber));
+  console.log(configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationVersionNumber));
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
@@ -142,7 +142,7 @@ export const about = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  console.log(configurator.getConfigurationSetting(sys.cApplicationDescription));
+  console.log(configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationDescription));
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
@@ -167,14 +167,14 @@ export const name = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
+  let applicationName = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationName);
   let figletFont = '';
   let useFancyFont = false;
   let rules = {};
   rules[0] = biz.cstringToDataType;
   useFancyFont = ruleBroker.processRules(inputData[1], '', rules);
   if (useFancyFont === true) {
-    figletFont = configurator.getConfigurationSetting(cfg.cFigletFont);
+    figletFont = configurator.getConfigurationSetting(wrd.csystem, cfg.cFigletFont);
     console.log(figlet.textSync(applicationName, {font: figletFont, horizontalLayout: sys.cfull }));
   } else {
     console.log(applicationName);
@@ -222,26 +222,26 @@ export const deployApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === true &&
-  configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
+  if (configurator.getConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
     // DEPLOY APPLICATION
     console.log(msg.cDEPLOY_APPLICATION);
-    let sourcePath = configurator.getConfigurationSetting(sys.cSourceResourcesPath);
-    let destinationPath = configurator.getConfigurationSetting(sys.cDestinationResourcesPath);
+    let sourcePath = configurator.getConfigurationSetting(wrd.csystem, sys.cSourceResourcesPath);
+    let destinationPath = configurator.getConfigurationSetting(wrd.csystem, sys.cDestinationResourcesPath);
     let deploymentStatus = fileBroker.copyAllFilesAndFoldersFromFolderToFolder(sourcePath, destinationPath);
     if (deploymentStatus === true) {
       // console.log('Deployment was completed: ' + deploymentStatus);
       loggers.consoleLog(namespacePrefix + functionName, msg.cDeploymentWasCompleted + true);
-      configurator.setConfigurationSetting(cfg.cdeploymentCompleted, true);
+      configurator.setConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted, true);
     } else {
       loggers.consoleLog(namespacePrefix + functionName, msg.cDeploymentFailed);
     }
   } else {
-    if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations) === false) {
       // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
       console.log(msg.cdeployApplicationMessage1a + msg.cdeployApplicationMessage2a);
     }
-    if (configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === false) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks) === false) {
       // ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.
       console.log(msg.cdeployApplicationMessage1b + msg.cdeployApplicationMessage2a);
     }
@@ -294,17 +294,17 @@ export const deployMetaData = function(inputData, inputMetaData) {
       // appAttributeValue is:
       loggers.consoleLog(namespacePrefix + functionName, msg.cappAttributeValueIs + appAttributeValue);
       if (appAttributeName.includes(wrd.cName) === true) {
-        configurator.setConfigurationSetting(sys.cApplicationName, appAttributeValue);
+        configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationName, appAttributeValue);
       } else if (appAttributeName.includes(wrd.cVersion) === true) {
-        configurator.setConfigurationSetting(sys.cApplicationVersionNumber, appAttributeValue);
+        configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationVersionNumber, appAttributeValue);
       } else if (appAttributeName.includes(wrd.cDescription) === true) {
-        configurator.setConfigurationSetting(sys.cApplicationDescription, appAttributeValue);
+        configurator.setConfigurationSetting(wrd.csystem, sys.cApplicationDescription, appAttributeValue);
       } else {
-        configurator.setConfigurationSetting(appAttributeName, appAttributeValue);
+        configurator.setConfigurationSetting(wrd.csystem, appAttributeName, appAttributeValue);
       }
       metaDataOutput[appAttributeName] = appAttributeValue;
     }
-    let metaDataPathAndFilename = configurator.getConfigurationSetting(sys.cConfigurationPath);
+    let metaDataPathAndFilename = configurator.getConfigurationSetting(wrd.csystem, sys.cConfigurationPath);
     metaDataPathAndFilename = path.resolve(metaDataPathAndFilename + cfg.cmetaDataDotJson);
     // metaDataPathAndFilename is:
     loggers.consoleLog(namespacePrefix + functionName, msg.cmetaDataPathAndFilenameIs + metaDataPathAndFilename);
@@ -334,26 +334,26 @@ export const releaseApplication = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === true &&
-  configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
+  if (configurator.getConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations) === true &&
+  configurator.getConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks) === true) {
     // RELEASE APPLICATION
     console.log(msg.cRELEASE_APPLICATION);
-    let sourcePath = configurator.getConfigurationSetting(sys.cBinaryRootPath);
-    let destinationPath = configurator.getConfigurationSetting(sys.cBinaryReleasePath);
+    let sourcePath = configurator.getConfigurationSetting(wrd.csystem, sys.cBinaryRootPath);
+    let destinationPath = configurator.getConfigurationSetting(wrd.csystem, sys.cBinaryReleasePath);
     let releaseResult = fileBroker.buildReleasePackage(sourcePath, destinationPath);
     if (releaseResult === true) {
       // console.log('Release was completed: ' + releaseResult);
       loggers.consoleLog(namespacePrefix + functionName, msg.cBuildMessage2 + true);
-      configurator.setConfigurationSetting(cfg.creleaseCompleted, true);
+      configurator.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, true);
     } else {
       loggers.consoleLog(namespacePrefix + functionName, msg.cReleaseFailed);
     }
   } else {
-    if (configurator.getConfigurationSetting(cfg.cPassAllConstantsValidations) === false) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations) === false) {
       // ERROR: Release failed because of a failure in the constants validation system. Please fix ASAP before attempting another release.
       console.log(msg.cdeployApplicationMessage1a + msg.cdeployApplicationMessage2a);
     }
-    if (configurator.getConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks) === false) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks) === false) {
       // ERROR: Release failed because of a failure in the commands alias validation system. Please fix ASAP before attempting another release.
       console.log(msg.cdeployApplicationMessage1b + msg.cdeployApplicationMessage2a);
     }
@@ -434,14 +434,14 @@ export const commandSequencer = function(inputData, inputMetaData) {
   for (let i = 1; i < inputData.length; i++) {
     let commandString = inputData[i];
     // bas.cli + bas.cmi + bas.ct;
-    let primaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter);
     // console.log('primaryCommandDelimiter is: ' + primaryCommandDelimiter);
     if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
       primaryCommandDelimiter = bas.cSpace;
     }
-    let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+    let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
     // console.log('secondaryCommandDelimiter is: ' + secondaryCommandArgsDelimiter);
-    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cTertiaryCommandDelimiter);
     // console.log('tertiaryCommandDelimiter is: ' + tertiaryCommandDelimiter);
     // Replace 2nd & 3rd level delimiters and down-increment them so we are dealing with command strings that can actually be executed.
     commandString = commandString.replace(secondaryCommandArgsDelimiter, primaryCommandDelimiter);
@@ -685,7 +685,7 @@ export const businessRule = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
   let rules = [];
   let ruleInputData, ruleInputMetaData;
   let ruleOutput = '';
@@ -695,8 +695,8 @@ export const businessRule = function(inputData, inputMetaData) {
   argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;
   removeBracketsFromArgsArrayRule[0] = biz.cremoveCharacterFromArray;
   let addedARule = false;
-  let businessRuleOutput = configurator.getConfigurationSetting(cfg.cEnableBusinessRuleOutput);
-  let businessRuleMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableBusinessRulePerformanceMetrics);
+  let businessRuleOutput = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableBusinessRuleOutput);
+  let businessRuleMetricsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableBusinessRulePerformanceMetrics);
   let businessRuleStartTime = '';
   let businessRuleEndTime = '';
   let businessRuleDeltaTime = '';
@@ -797,12 +797,12 @@ export const commandGenerator = function(inputData, inputMetaData) {
   let returnData = true;
   let replaceCharacterWithCharacterRule = [];
   replaceCharacterWithCharacterRule[0] = biz.creplaceCharacterWithCharacter;
-  let primaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
+  let primaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter);
   if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
     primaryCommandDelimiter = bas.cSpace;
   }
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
-  let tertiaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
+  let tertiaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cTertiaryCommandDelimiter);
   let commandString = inputData[1];
   // NOTE: The str.replace only replaces the first instance of a string value, not all values.
   // but we might have another issue in the sense that if the string begins and ends with "[" & "]" respectively,
@@ -1189,7 +1189,7 @@ export const constantsPatternRecognizer = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.ccommonPatternsArrayIs + JSON.stringify(commonPatternsArray));
   // This next call will compare the identified string patterns with existing constants, and highlight which ones are not yet implemented.
   let newConstantsList = ruleBroker.processRules(commonPatternsArray, '', validatePatternsNeedImplementationRule);
-  let constantsPatternGenerationSetting = configurator.getConfigurationSetting(cfg.cEnableConstantsPatternGeneration);
+  let constantsPatternGenerationSetting = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableConstantsPatternGeneration);
   if (constantsPatternGenerationSetting === true) {
     queue.enqueue(sys.cCommandQueue, cmd.cconstantsGeneratorList + bas.cSpace + newConstantsList);
   }
@@ -1213,7 +1213,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  let businessRuleMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableBusinessRulePerformanceMetrics);
+  let businessRuleMetricsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableBusinessRulePerformanceMetrics);
   if (businessRuleMetricsEnabled === true) {
     let businessRuleCounter = 0;
     let businessRulePerformanceSum = 0;
@@ -1267,7 +1267,7 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
     stack.clearStack(cfg.cBusinessRulesPerformanceAnalysisStack);
     // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
-    if (configurator.getConfigurationSetting(cfg.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cClearBusinessRulesPerformanceDataAfterAnalysis) === true) {
       stack.clearStack(cfg.cBusinessRulePerformanceTrackingStack);
       stack.clearStack(cfg.cBusinessRuleNamesPerformanceTrackingStack);
     }
@@ -1292,7 +1292,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  let commandMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableCommandPerformanceMetrics);
+  let commandMetricsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableCommandPerformanceMetrics);
   if (commandMetricsEnabled === true) {
     let commandCounter = 0;
     let commandPerformanceSum = 0;
@@ -1346,7 +1346,7 @@ export const commandMetrics = function(inputData, inputMetaData) {
     stack.clearStack(cfg.cCommandsPerformanceAnalysisStack);
     // We need to have a flag that will enable the user to determine if the data should be cleared after the analysis is complete.
     // It might be that the user wants to do something else with this data in memory after it's done.
-    if (configurator.getConfigurationSetting(cfg.cClearCommandPerformanceDataAfterAnalysis) === true) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cClearCommandPerformanceDataAfterAnalysis) === true) {
       stack.clearStack(cfg.cCommandPerformanceTrackingStack);
       stack.clearStack(cfg.cCommandNamesPerformanceTrackingStack);
     }
@@ -1372,7 +1372,7 @@ export const saveConfiguration = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
 
-  fileBroker.writeJsonData(configurator.getConfigurationSetting(sys.cConfigurationPath) + 'config.json', D[wrd.cConfiguration]);
+  fileBroker.writeJsonData(configurator.getConfigurationSetting(wrd.csystem, sys.cConfigurationPath) + 'config.json', D[wrd.cConfiguration]);
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;

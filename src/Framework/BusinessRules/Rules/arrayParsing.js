@@ -509,7 +509,7 @@ export const validatePatternsThatNeedImplementation = function(inputData, inputM
   let returnData = '';
   if (inputData) {
     let passMessage = '';
-    let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+    let colorizeLogsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
     let j = 0; // We will use this as an iterator to count the number of times we add a string to the returnData coma-seperated list.
     for (let i = 0; i < inputData.length; i++) {
       let currentString = inputData[i];
@@ -1054,9 +1054,9 @@ export const generateCommandAliases = function(inputData, inputMetaData) {
     // "Woman": "wman,wmn,womn",
     // "Amazing": "amzing,amzng"
     // }
-    let primaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter);
-    let secondaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
-    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(cfg.cTertiaryCommandDelimiter);
+    let primaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter);
+    let secondaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
+    let tertiaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cTertiaryCommandDelimiter);
     let commandDelimiter = '';
     let commandWordsKeys1 = Object.keys(inputData);
     let commandWordAliasesArray = [];
@@ -1181,11 +1181,11 @@ export const getFileAndPathListForPath = function(inputData, inputMetaData) {
   let filesListLimit = -1;
   if (inputData) {
     if (inputMetaData) {
-      enableFilesListLimit = configurator.getConfigurationSetting(cfg.cEnableFilesListLimit);
+      enableFilesListLimit = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableFilesListLimit);
       filesListLimit = inputMetaData;
     } else {
-      enableFilesListLimit = configurator.getConfigurationSetting(cfg.cEnableFilesListLimit);
-      filesListLimit = configurator.getConfigurationSetting(cfg.cFilesListLimit);
+      enableFilesListLimit = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableFilesListLimit);
+      filesListLimit = configurator.getConfigurationSetting(wrd.csystem, cfg.cFilesListLimit);
     }
     loggers.consoleLog(namespacePrefix + functionName, 'filesListLimit is: ' + filesListLimit);
     returnData = fileBroker.scanDirectoryContents(inputData, enableFilesListLimit, filesListLimit);

@@ -103,9 +103,9 @@ export const validateConstants = function(inputData, inputMetaData) {
   }
 
   if (phase1FinalResult === true && phase2FinalResult === true) {
-    configurator.setConfigurationSetting(cfg.cPassAllConstantsValidations, true);
+    configurator.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, true);
   } else {
-    configurator.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
+    configurator.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
@@ -160,6 +160,6 @@ loop2:
     // PASSED: All duplicate command aliases validation tests!
     console.log(msg.cvalidateCommandAliasesMessage1);
   }
-  configurator.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
+  configurator.setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };

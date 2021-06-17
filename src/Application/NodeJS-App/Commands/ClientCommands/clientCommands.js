@@ -110,7 +110,7 @@ export const bossPanic = function(inputData, inputMetaData) {
   let coloredLinesMaxLength = 20;
   let fastTypingOutput = false;
   let speedTypingPerformanceIndex = 100; // Default to a fast typing speed.
-  let systemColorLogsEnabled = warden.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+  let systemColorLogsEnabled = warden.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
 
   // Rather than doing the above, I'll just call the business rule to generate a random number between 1 and 100.
   // Then I can call the string generator to generate a random string of characters to match that length.

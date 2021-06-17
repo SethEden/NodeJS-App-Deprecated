@@ -127,6 +127,7 @@ function processCommandQueue() {
   let returnData;
   commandToExecute = queue.dequeue(sys.cCommandQueue);
   // commandToExecute is:
+  // console.log('commandToExecute is: ' + commandToExecute);
   loggers.consoleLog(namespacePrefix + functionName, msg.ccommandToExecuteIs + commandToExecute);
   returnData = commandBroker.executeCommand(commandToExecute);
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);

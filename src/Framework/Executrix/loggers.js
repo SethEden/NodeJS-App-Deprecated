@@ -61,7 +61,7 @@ function consoleLog(classPath, message) {
       let outputMessage = '';
       let rules = {};
       rules[0] = biz.creplaceDoublePercentWithMessage;
-      logFile = path.resolve(logFile + bas.cForwardSlash + configurator.getConfigurationSetting(sys.cLogFilePathAndName));
+      logFile = path.resolve(logFile + bas.cForwardSlash + configurator.getConfigurationSetting(wrd.csystem, sys.cLogFilePathAndName));
       // console.log('determine if there is a configuration setting for the class path');
       debugSetting = configurator.getConfigurationSetting(classPath);
       // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
@@ -99,9 +99,9 @@ function consoleTableLog(classPath, tableData, columnNames) {
  */
 function constantsValidationSummaryLog(message, passFail) {
   let outputMessage = '';
-  let colorizeLogsEnabled = configurator.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+  let colorizeLogsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
   if (passFail === true) {
-    if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationPassMessages) === true) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cDisplaySummaryConstantsValidationPassMessages) === true) {
       outputMessage = wrd.cPASSED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cPASSED; // `PASSED -- ${message} -- PASSED`;
       if (colorizeLogsEnabled === true) {
         outputMessage = chalk.rgb(0,0,0)(outputMessage);
@@ -110,7 +110,7 @@ function constantsValidationSummaryLog(message, passFail) {
       console.log(outputMessage);
     }
   } else {
-    if (configurator.getConfigurationSetting(cfg.cDisplaySummaryConstantsValidationFailMessages) === true) {
+    if (configurator.getConfigurationSetting(wrd.csystem, cfg.cDisplaySummaryConstantsValidationFailMessages) === true) {
       outputMessage = wrd.cFAILED + bas.cSpace + bas.cDoubleDash + bas.cSpace + message + bas.cSpace + bas.cDoubleDash + bas.cSpace + wrd.cFAILED; // `FAILED -- ${message} -- FAILED`;
       if (colorizeLogsEnabled === true) {
         outputMessage = chalk.rgb(0,0,0)(outputMessage);
@@ -157,7 +157,7 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
       }
     }
     // console.log('Past the block of code that checks if the setting is true or not.');
-  } else if (configurator.getConfigurationSetting(sys.cDebugTestExhaustive) === true) {
+  } else if (configurator.getConfigurationSetting(wrd.csystem, sys.cDebugTestExhaustive) === true) {
     // console.log('else-block the DebugTestExhaustive setting is true');
     outputMessage = ruleBroker.processRules(message, classPath, rules);
     // Debug Exhaustive is probably not the best, we might want to consider another configuration setting to
@@ -198,7 +198,7 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
     // }
   }
   // console.log('Past all of the if-else-if-else blocks of code.');
-  // console.log('END loggers.consoleLogProcess function');
+  console.log('END loggers.consoleLogProcess function');
   // printMessageToFile(logFile, 'END loggers.consoleLog function (File & Console)');
 };
 
@@ -333,17 +333,17 @@ function parseClassPath(logFile, classPath, message) {
  * @date 2020/03/23
  */
 function printMessageToFile(file, message) {
-  // console.log('BEGIN loggers.printMessageToFile function');
-  // console.log('file is: ' + file);
+  console.log('BEGIN loggers.printMessageToFile function');
+  console.log('file is: ' + file);
   // console.log(message);
   let fd;
   let dateTimeStamp = '';
   // let currentOS = configurator.getConfigurationSetting(sys.cOperatingSystem);
   // if (currentOS === wrd.cWindows || currentOS === wrd.cLinux) {
-    if (configurator.getConfigurationSetting(sys.cLogFileEnabled) === true) {
+    if (configurator.getConfigurationSetting(wrd.csystem, sys.cLogFileEnabled) === true) {
       // console.log('LogFileEnabled = true');
       message = colorizer.removeFontStyles(message);
-      if (configurator.getConfigurationSetting(sys.cIncludeDateTimeStampInLogFiles) === true) {
+      if (configurator.getConfigurationSetting(wrd.csystem, sys.cIncludeDateTimeStampInLogFiles) === true) {
         // Individual messages need to have a time stamp on them. So lets sign the message with a time stamp.
         dateTimeStamp = timers.getNowMoment(gen.cYYYY_MM_DD_HH_mm_ss_SSS);
         // console.log('dateTimeStamp is: ' + dateTimeStamp);

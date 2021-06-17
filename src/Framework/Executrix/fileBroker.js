@@ -378,9 +378,9 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   cleanFilePathsBusinessRules[0] = biz.cswapDoubleForwardSlashToSingleForwardSlash;
   cleanFilePathsBusinessRules[1] = biz.cswapDoubleBackSlashToSingleBackSlash;
   cleanFilePathsBusinessRules[2] = biz.cswapForwardSlashToBackSlash;
-  let rootPath = configurator.getConfigurationSetting(sys.cApplicationCleanedRootPath);
-  let currentVersion = configurator.getConfigurationSetting(sys.cApplicationVersionNumber);
-  let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
+  let rootPath = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
+  let currentVersion = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationVersionNumber);
+  let applicationName = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationName);
   let currentVersionReleased = false;
   let releaseDateTimeStamp;
   let originalSource, originalDestination;
@@ -413,7 +413,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   if (currentVersionReleased === false) {
     // release files list is:
     loggers.consoleLog(namespacePrefix + functionName, msg.creleaseFilesListIs + JSON.stringify(releaseFiles));
-    releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(sys.cDateTimeStamp));
+    releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp));
     // release date-time stamp is:
     loggers.consoleLog(namespacePrefix + functionName, msg.creleaseDateTimeStampIs + releaseDateTimeStamp);
     // loggers.consoleLog(namespacePrefix + functionName, 'contents of D are: ' + JSON.stringify(D));
@@ -462,7 +462,7 @@ function cleanRootPath() {
   let functionName = cleanRootPath.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let rootPath;
-  rootPath = configurator.getConfigurationSetting(sys.cApplicationRootPath);
+  rootPath = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationRootPath);
   let cleanRootPathRules = {};
   cleanRootPathRules[1] = biz.cremoveXnumberOfFoldersFromEndOfPath;
   // RootPath before processing is:
