@@ -52,26 +52,42 @@ var D = require('../Structures/data');
  * @date 2020/03/11
  */
 function consoleLog(classPath, message) {
-  if (Object.keys(D).length !== 0) {
-    let logFile = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
-    if (logFile !== undefined) {
-      logFile = logFile + bas.cForwardSlash + wrd.clogs;
-      // console.log('logFile is !== undefined');
+  if (Object.keys(D).length !== 0) { // Make sure we don't log anything if we haven't yet loaded the configuration data.
+    let consoleLogEnabled = configurator.getConfigurationSetting(wrd.csystem, sys.cConsoleLogEnabled);
+    if (consoleLogEnabled === true) {
+      console.log('BEGIN consoleLog');
+      console.log('classPath is: ' + classPath);
+      console.log('message is: ' + message);
+      let logFile = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
+      if (logFile !== undefined) {
+        logFile = logFile + bas.cForwardSlash + wrd.clogs;
+        // console.log('logFile before path.resolve is: ' + logFile);
+        logFile = path.resolve(logFile);
+        // console.log('logFile after path.resolve is: ' + logFile);
+        logFile = logFile + bas.cForwardSlash + configurator.getConfigurationSetting(wrd.csystem, sys.cLogFilePathAndName);
+        // console.log('logFile after adding the log filename: ' + logFile);
+      }
+
       let debugSetting = false;
       let outputMessage = '';
+      let configurationName = '';
+      let configurationNamespace = '';
       let rules = {};
       rules[0] = biz.creplaceDoublePercentWithMessage;
-      logFile = path.resolve(logFile + bas.cForwardSlash + configurator.getConfigurationSetting(wrd.csystem, sys.cLogFilePathAndName));
+
       // console.log('determine if there is a configuration setting for the class path');
-      debugSetting = configurator.getConfigurationSetting(classPath);
+      configurationName = configurator.processConfigurationNameRules(classPath);
+      configurationNamespace = configurator.processConfigurationNamespaceRules(classPath);
+      debugSetting = configurator.getConfigurationSetting(cfg.cDebugSettings + bas.cDot + configurationNamespace, configurationName);
       // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
-      if (logFile.toUpperCase().includes(gen.cLOG) || logFile.toUpperCase().includes(gen.cTXT)) { // If we have a log file then we will log it to the console & file.
+      if (logFile !== undefined && (logFile.toUpperCase().includes(gen.cLOG) || logFile.toUpperCase().includes(gen.cTXT))) { // If we have a log file then we will log it to the console & file.
         consoleLogProcess(debugSetting, logFile, classPath, message, true);
       } else { // No text log file specified, proceed with the same process for console only.
         consoleLogProcess(debugSetting, undefined, classPath, message, false);
       }
-    }
-  }
+      console.log('END consoleLog');
+    } // end-if (consoleLogEnabled === true)
+  } // end-if (Object.keys(D).length !== 0)
 };
 
 /**
@@ -198,7 +214,7 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
     // }
   }
   // console.log('Past all of the if-else-if-else blocks of code.');
-  console.log('END loggers.consoleLogProcess function');
+  // console.log('END loggers.consoleLogProcess function');
   // printMessageToFile(logFile, 'END loggers.consoleLog function (File & Console)');
 };
 
@@ -230,6 +246,7 @@ function validMessage(outputMessage, originalMessage) {
   } else if (outputMessage !== false && outputMessage.includes(bas.cPercent + bas.cPercent) === false) {
     returnValue = true;
   }
+  // else if (outputMessage !== false && configurator.getConfigurationSetting(wrd.csystem, sys.cDebugForceMessageToLogFile))
   // console.log('returnValue is: ' + returnValue);
   // console.log('END loggers.validMessage');
   return returnValue;
@@ -333,16 +350,18 @@ function parseClassPath(logFile, classPath, message) {
  * @date 2020/03/23
  */
 function printMessageToFile(file, message) {
-  console.log('BEGIN loggers.printMessageToFile function');
-  console.log('file is: ' + file);
-  // console.log(message);
+  // console.log('BEGIN loggers.printMessageToFile function');
+  // console.log('file is: ' + file);
+  // console.log('message is: ' + message);
   let fd;
   let dateTimeStamp = '';
   // let currentOS = configurator.getConfigurationSetting(sys.cOperatingSystem);
   // if (currentOS === wrd.cWindows || currentOS === wrd.cLinux) {
     if (configurator.getConfigurationSetting(wrd.csystem, sys.cLogFileEnabled) === true) {
       // console.log('LogFileEnabled = true');
-      message = colorizer.removeFontStyles(message);
+      if (message) {
+        message = colorizer.removeFontStyles(message);
+      }
       if (configurator.getConfigurationSetting(wrd.csystem, sys.cIncludeDateTimeStampInLogFiles) === true) {
         // Individual messages need to have a time stamp on them. So lets sign the message with a time stamp.
         dateTimeStamp = timers.getNowMoment(gen.cYYYY_MM_DD_HH_mm_ss_SSS);

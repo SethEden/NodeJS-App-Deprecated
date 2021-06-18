@@ -27,7 +27,7 @@ var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.CommandsBlob.commandsLibrary.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.Commands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initCommandsLibrary

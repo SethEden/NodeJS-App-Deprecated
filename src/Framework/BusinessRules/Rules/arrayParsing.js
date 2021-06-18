@@ -43,7 +43,7 @@ var math = require('mathjs');
 var chalk = require('chalk');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.BusinessRules.Rules.arrayParsing.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function replaceCharacterWithCharacter

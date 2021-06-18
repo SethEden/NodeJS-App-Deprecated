@@ -578,8 +578,10 @@ function removeFontStyles(message) {
   // console.log('BEGIN colorizer.removeFontStyles function');
   // console.log('message is: ' + message);
   let returnMessage = '';
-  // [48;2;255;255;255m[38;2;0;0;0mBEGIN main program loop[39m[49m
-  returnMessage = message.replace(/\u001b[^m]*?m/g,'');
+  if (message) {
+    // [48;2;255;255;255m[38;2;0;0;0mBEGIN main program loop[39m[49m
+    returnMessage = message.replace(/\u001b[^m]*?m/g,'');
+  }
   // console.log('returnMessage is: ' + returnMessage);
   // console.log('END colorizer.removeFontStyles function');
   return returnMessage;

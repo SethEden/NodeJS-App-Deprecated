@@ -1084,6 +1084,13 @@ export const cinc = bas.cin + bas.cc; // inc
 export const cInc = bas.cIn + bas.cc; // Inc
 export const cmum = bas.cmu + bas.cm; // mum
 export const cimum = bas.ci + cmum; // imum
+export const crix = bas.cri + bas.cx; // rix
+export const cled = bas.cle + bas.cd; // led
+export const cLed = bas.cLe + bas.cd; // Led
+export const cLED = bas.cLE + bas.cD; // LED
+export const cling = clin + bas.cg; // ling
+export const cler = bas.cle + bas.cr; // ler
+
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -1195,7 +1202,6 @@ export const cimum = bas.ci + cmum; // imum
 // smuggle something cectrix = p.cect + bas.cri + bas.cx; // ectrix
 // smuggle something cctrix = bas.cct + bas.cri + bas.cx; // ctrix
 // smuggle something ctrix = p.ctri + bas.cx; // trix
-// smuggle something crix = bas.cri + bas.cx; // rix
 // smuggle something croid = bas.cro + bas.cid; // roid
 // smuggle something cloid = bas.clo + bas.cid; // loid
 // smuggle something crifolium = bas.cri + bas.cfo + p.clium; // rifolium
@@ -1246,7 +1252,6 @@ export const cimum = bas.ci + cmum; // imum
 // smuggle something cactrix = w.cact + bas.cri + bas.cx; // actrix
 // smuggle something cctrix = bas.cct + bas.cri + bas.cx; // ctrix
 // smuggle something ctrix = p.ctri + bas.cx; // trix
-// smuggle something crix = bas.cri + bas.cx; // rix
 // smuggle something cchoid = bas.cch + bas.coi + bas.cd; // choid
 // smuggle something choid = bas.cho + bas.cid; // hoid
 // smuggle something cBSpline = bas.cBS + bas.cpl + p.cine; // BSpline
@@ -1340,7 +1345,6 @@ export const cimum = bas.ci + cmum; // imum
 // smuggle something crve = bas.crv + bas.ce; // rve
 // smuggle something cTiling = bas.cTi + p.clin + bas.cg; // Tiling
 // smuggle something ciling = p.cili + bas.cng; // iling
-// smuggle something cling = p.clin + bas.cg; // ling
 // smuggle something cFractal = p.cFra + bas.cct + bas.cal; // Fractal
 // smuggle something cractal = bas.cra + bas.cct + bas.cal; // ractal
 // smuggle something cactal = w.cact + bas.cal; // actal
@@ -1484,7 +1488,6 @@ export const cimum = bas.ci + cmum; // imum
 // smuggle something ceTiling = bas.ceT + p.cili + bas.cng; // eTiling
 // smuggle something cTiling = bas.cTi + p.clin + bas.cg; // Tiling
 // smuggle something ciling = p.cili + bas.cng; // iling
-// smuggle something cling = p.clin + bas.cg; // ling
 // smuggle something cTriangularTiling = p.cTri + bas.can + bas.cgu + bas.cla + bas.crT + p.cili + bas.cng; // TriangularTiling
 // smuggle something criangularTiling = p.cria + bas.cng + p.cular + bas.cTi + p.clin + bas.cg; // riangularTiling
 // smuggle something ciangularTiling = p.cian + bas.cgu + bas.cla + bas.crT + p.cili + bas.cng; // iangularTiling

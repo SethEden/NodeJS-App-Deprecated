@@ -28,7 +28,7 @@ import * as msg from '../Constants/message.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Executrix.lexical.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
 
  /**
   * @function parseBusinessRuleArgument

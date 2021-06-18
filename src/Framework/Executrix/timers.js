@@ -27,7 +27,7 @@ var path = require('path');
 var moment = require('moment');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Executrix.timers.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function getNowMoment

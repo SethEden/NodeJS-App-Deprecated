@@ -16,12 +16,13 @@
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
 import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('./data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Structures.queue.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initQueue

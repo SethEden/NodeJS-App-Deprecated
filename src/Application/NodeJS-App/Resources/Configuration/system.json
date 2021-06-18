@@ -16,6 +16,7 @@
   "system.EnableConstantsValidation": true,
   "system.EnableConstantsPatternGeneration": true,
   "system.EnableDebugConfigurationSettings": true,
+  "system.ConsoleLogEnabled": true,
   "system.LogFileEnabled": true,
   "system.EnableColorizedConsoleLogs": true,
   "system.IncludeDateTimeStampInLogFiles": true,

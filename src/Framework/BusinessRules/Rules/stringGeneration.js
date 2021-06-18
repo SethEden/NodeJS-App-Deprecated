@@ -127,7 +127,7 @@ import * as msg from '../../Constants/message.constants';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.BusinessRules.Rules.stringGeneration.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function generateRandomMixedCaseTextByLength1

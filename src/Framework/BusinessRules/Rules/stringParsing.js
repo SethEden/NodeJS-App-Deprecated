@@ -54,7 +54,7 @@ var chalk = require('chalk');
 var D = require('../../../Framework/Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.BusinessRules.Rules.stringParsing.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function stringToBoolean
@@ -203,7 +203,7 @@ export const isBoolean = function(inputData, inputMetaData) {
     returnData = false;
   } else {
     if (inputData === true || inputData === false) {
-      returnData = inputData;
+      returnData = true;
     } else {
       inputData = inputData.toLowerCase().trim();
       if (inputData === gen.ctrue || inputData === bas.ct || inputData === bas.cy || inputData === gen.cyes || inputData === bas.con ||

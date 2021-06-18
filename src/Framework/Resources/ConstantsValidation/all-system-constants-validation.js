@@ -60,7 +60,7 @@ import * as wrd_cv from './word-constants-validation';
 var path = require('path');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Resources.ConstantsValidation.all-system-constants-validation.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cResources + bas.cDot + wrd.cConstants + wrd.cValidation + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cResources + bas.cDot + wrd.cConstants + wrd.cValidation + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initializeAllSystemConstantsValidationData

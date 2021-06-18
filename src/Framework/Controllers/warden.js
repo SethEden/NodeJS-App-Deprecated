@@ -53,7 +53,7 @@ var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Controllers.warden.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function bootStrapApplication
@@ -142,8 +142,8 @@ function processRootPath(systemRootPath) {
  * @date 2020/06/02
  */
 function initApplicationSchema(rootPath, clientConstantsPath, clientValidationData) {
-  console.log('BEGIN warden.initApplicationSchema function');
-  console.log('rootPath is: ' + rootPath);
+  // console.log('BEGIN warden.initApplicationSchema function');
+  // console.log('rootPath is: ' + rootPath);
   let functionName = initApplicationSchema.name;
   // console.log('logging the BEGIN warden.saveRootPath function');
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
@@ -183,15 +183,15 @@ function initApplicationSchema(rootPath, clientConstantsPath, clientValidationDa
   }
   let enableLogFileOutputSetting = configurator.getConfigurationSetting(wrd.csystem, sys.cLogFileEnabled);
   if (enableLogFileOutputSetting === true) {
-    console.log('Capture the session date-time-stamp so we can determine a log file name.');
-    let sessionDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(wrd.csystem, cfg.cDateTimeStamp));
-    console.log('sessionDateTimeStamp is: ' + sessionDateTimeStamp);
+    // console.log('Capture the session date-time-stamp so we can determine a log file name.');
+    let sessionDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp));
+    // console.log('sessionDateTimeStamp is: ' + sessionDateTimeStamp);
     let logFileName = sessionDateTimeStamp + bas.cUnderscore + applicationData[wrd.cVersion] + bas.cUnderscore + applicationData[wrd.cName] + gen.cDotLog;
-    console.log('logFileName is: ' + logFileName);
+    // console.log('logFileName is: ' + logFileName);
     configurator.setConfigurationSetting(wrd.csystem, sys.cLogFilePathAndName, logFileName);
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
-  console.log('END warden.saveRootPath function');
+  // console.log('END warden.saveRootPath function');
 };
 
 /**

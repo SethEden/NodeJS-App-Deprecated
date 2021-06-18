@@ -7,6 +7,7 @@
  * @requires module:loggers
  * @requires module:basic-constants
  * @requires module:word-constants
+ * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -19,13 +20,14 @@ import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
 import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('./data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
 // Framework.Structures.stack.
-var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initStack

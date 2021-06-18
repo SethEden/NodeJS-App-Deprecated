@@ -24,7 +24,7 @@
  var D = require('./data');
  var baseFileName = path.basename(module.filename, path.extname(module.filename));
  // Framework.Structures.rbTree.
- var namespacePrefix = wrd.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
+ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
 
  var RED = 0;
  var BLACK = 1;
