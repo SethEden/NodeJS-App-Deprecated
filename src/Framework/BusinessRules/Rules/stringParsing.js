@@ -2238,16 +2238,16 @@ export const replaceDoublePercentWithMessage = function(inputData, inputMetaData
   // We just have to hard code everything and it won't be loged to the log file.
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = biz.creplaceDoublePercentWithMessage;
-  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
-  loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
+  // let functionName = biz.creplaceDoublePercentWithMessage;
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-    returnData = inputData.replace(bas.cPercent + bas.cPercent, inputMetaData);
+    returnData = inputData.replace(bas.cDoublePercent, inputMetaData);
   }
-  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END stringParsing.replaceDoublePercentWithMessage business rule');
   return returnData;

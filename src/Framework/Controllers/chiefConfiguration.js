@@ -48,7 +48,7 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cControllers + bas.cDot + 
  * Believe me I don't like it any more than you do, but it's just the way the system works.
  */
 function setupConfiguration(pathAndFilename) {
-  console.log('BEGIN chiefConfiguration.setupConfiguration function');
+  // console.log('BEGIN chiefConfiguration.setupConfiguration function');
   // console.log('pathAndFilename is: ' + pathAndFilename);
   let functionName = setupConfiguration.name; // 'setupConfiguration';
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
@@ -72,8 +72,8 @@ function setupConfiguration(pathAndFilename) {
   // loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   // console.log('configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp)');
   // console.log('contents of D are: ' + JSON.stringify(D));
-  console.log(configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp));
-  console.log('END chiefConfiguration.setupTestConfiguration function');
+  // console.log(configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp));
+  // console.log('END chiefConfiguration.setupTestConfiguration function');
 };
 
 /**
@@ -138,7 +138,7 @@ function parseLoadedConfigurationData(allConfigurationData) {
       // console.log('setting the configuration value: ' + value);
       // loggers.consoleLog(namespacePrefix + functionName, 'setting the configuration value: ' + value);
       configurator.setConfigurationSetting(namespace, name, value);
-      console.log('contents of D are: ' + JSON.stringify(D));
+      // console.log('contents of D are: ' + JSON.stringify(D));
 
       // if ((name === sys.cDebugFunctions || name === sys.cDebugFiles) && value === wrd.cMultiple) {
       //   // console.log('configurationElement is: ' + JSON.stringify(configurationElement));

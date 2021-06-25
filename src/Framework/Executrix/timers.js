@@ -38,14 +38,14 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + ba
  * @date 2020/05/21
  */
 function getNowMoment(formatting) {
-  let functionName = getNowMoment.name;
-  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  // let functionName = getNowMoment.name;
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // formatting is:
-  loggers.consoleLog(namespacePrefix + functionName, sys.cformattingIs + formatting);
+  // loggers.consoleLog(namespacePrefix + functionName, sys.cformattingIs + formatting);
   let returnData = '';
   returnData = moment().format(formatting);
-  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  // loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 

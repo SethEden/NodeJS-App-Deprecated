@@ -72,7 +72,7 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cResources + bas.cDot + wr
 function initializeAllSystemConstantsValidationData() {
   let functionName = initializeAllSystemConstantsValidationData.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
-  let constantsPath = configurator.getConfigurationSetting(sys.cSystemConstantsPath);
+  let constantsPath = configurator.getConfigurationSetting(wrd.csystem, sys.cSystemConstantsPath);
   // constantsPath is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cconstantsPathIs + constantsPath);
 

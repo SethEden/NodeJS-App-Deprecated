@@ -75,20 +75,38 @@ function getConfigurationSetting(configurationNamespace, configurationName) {
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'configurationNamespace is: ' + configurationNamespace);
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'configurationName is: ' + configurationName);
   let namespaceConfigObject = undefined;
+  let parentConfigurationNamespaceArray = undefined;
+  let newParentConfigurationName = undefined;
+  let newParentConfigurationNamespace = undefined;
+  let parentNamespaceConfigObject = undefined;
   namespaceConfigObject = getConfigurationNamespaceObject(configurationNamespace.split(bas.cDot));
   // console.log('namespaceConfigObject is: ' + JSON.stringify(namespaceConfigObject));
   if (namespaceConfigObject) {
-    returnConfigurationValue = namespaceConfigObject[configurationNamespace + bas.cDot + configurationName];
+    if (configurationName && configurationName !== '') {
+      // console.log('configurationName is: ' + configurationName);
+      if (configurationName.includes(bas.cAt)) {
+        // DebugSettings.Framework.BusinessRules.Rules.stringGeneration@ModuleFontStyle -- @ is already included in the configuration Name by the colorizer
+        if (configurationName.indexOf(bas.cAt) === 0) {
+          // console.log('caught the case that the configurationName starts with an "@", means we need to get the parent namespace config object.');
+          returnConfigurationValue = getParentConfigurationNamespaceObject(configurationNamespace, configurationName);
+          // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
+        } else {
+          // console.log('caught the case that the configurationName contains an "@", but does not start with it. Might have to do some special processing here!')
+          // console.log('configurationNamespace is: ' + configurationNamespace);
+          // console.log('configurationName is: ' + configurationName);
+          // console.log('namespaceConfigObject is: ' + JSON.stringify(namespaceConfigObject));
+          returnConfigurationValue = namespaceConfigObject[configurationNamespace + bas.cDot + configurationName];
+          // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
+        }
+      } else {
+        returnConfigurationValue = namespaceConfigObject[configurationNamespace + bas.cDot + configurationName];
+      }
+    } else {
+      // console.log('getConfigurationSetting, caught the case that an empty configurationName was passed in.')
+      returnConfigurationValue = getParentConfigurationNamespaceObject(configurationNamespace, '');
+      // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
+    }
   }
-  // if (D[wrd.cConfiguration] !== undefined) {
-  //   if (D[wrd.cConfiguration][configurationName] !== undefined) {
-  //     returnConfigurationValue = D[wrd.cConfiguration][configurationName];
-  //   } else {
-  //     returnConfigurationValue = undefined;
-  //   }
-  // } else {
-  //   returnConfigurationValue = undefined;
-  // }
   // console.log('returnConfigurationValue is: ' + returnConfigurationValue);
   // console.log('END configurator.getConfigurationSetting function');
   // loggers.consoleLog(namespacePrefix + baseFileName + b.cDot + functionName, 'returnConfigurationValue is: ' + returnConfigurationValue);
@@ -211,6 +229,41 @@ function processConfigurationValueRules(name, value) {
 };
 
 /**
+ * @function getParentConfigurationNamespaceObject
+ * @description Navigates the configuration JSON data object tree to find the namespace of the
+ * configuration setting and then determines the parent and returns the entire tree of configuration data including that parent and all its top level contents.
+ * @param {string} configurationNamespace The fully qualified path in the configuration JSON object where the configuration setting should be found.
+ * @param {string} optionalFunctionNameAppendix An optional function name appendix that could potentially be added to the end of the function name.
+ * Ex: @ModuleFontBackgroundColor
+ * @return {object|boolean} The parent of the object found at the specified namespace address in the configuration data object, or False if nothing was found.
+ * @author Seth Hollingsead
+ * @date 2021/06/24
+ */
+function getParentConfigurationNamespaceObject(configurationNamespace, optionalFunctionNameAppendix) {
+  // console.log('BEGIN configurator.getParentConfigurationNamespaceObject function');
+  // console.log('configurationNamespace is: ' + JSON.stringify(configurationNamespace));
+  // console.log('optionalFunctionNameAppendix is: ' + optionalFunctionNameAppendix);
+  let returnValue = true; // Assume there will be a return value.
+  let parentConfigurationNamespaceArray = configurationNamespace.split(bas.cDot);
+  // console.log('parentConfigurationNamespaceArray before pop is: ' + JSON.stringify(parentConfigurationNamespaceArray));
+  let newParentConfigurationName = parentConfigurationNamespaceArray.pop();
+  // console.log('newParentConfigurationName is: ' + newParentConfigurationName);
+  // console.log('parentConfigurationNamespaceArray after pop is: ' + JSON.stringify(parentConfigurationNamespaceArray));
+  let newParentConfigurationNamespace = parentConfigurationNamespaceArray.join(bas.cDot);
+  // console.log('newParentConfigurationNamespace is: ' + newParentConfigurationNamespace);
+  let parentNamespaceConfigObject = getConfigurationNamespaceObject(parentConfigurationNamespaceArray);
+  // console.log('parentNamespaceConfigObject is: ' + JSON.stringify(parentNamespaceConfigObject));
+  if (optionalFunctionNameAppendix !== '') {
+    returnValue = parentNamespaceConfigObject[newParentConfigurationNamespace + bas.cDot + newParentConfigurationName + optionalFunctionNameAppendix];
+  } else {
+    returnValue = parentNamespaceConfigObject[newParentConfigurationNamespace + bas.cDot + newParentConfigurationName];
+  }
+  // console.log('returnValue is: ' + JSON.stringify(returnValue));
+  // console.log('END configurator.getParentConfigurationNamespaceObject function');
+  return returnValue;
+};
+
+/**
  * @function getConfigurationNamespaceObject
  * @description Navigates the configuration JSON data object tree to find the namespace of configuration settings.
  * @param {array<string>} configurationNamespace The path in the configuration JSON object where the configuration setting should be set.
@@ -219,9 +272,9 @@ function processConfigurationValueRules(name, value) {
  * @date 2021/03/31
  */
 function getConfigurationNamespaceObject(configurationNamespace) {
-  console.log('BEGIN configurator.getConfigurationNamespaceObject function');
-  console.log('configurationNamespace is: ' + JSON.stringify(configurationNamespace));
-  let returnValue = true; // Assume there will be a return value;
+  // console.log('BEGIN configurator.getConfigurationNamespaceObject function');
+  // console.log('configurationNamespace is: ' + JSON.stringify(configurationNamespace));
+  let returnValue = true; // Assume there will be a return value.
   let configurationDataRoot = D[wrd.cConfiguration];
   let configurationPathObject = configurationDataRoot;
   if (!configurationPathObject) { // Need to handle the case that the configuration data object doesn't even exist at all!
@@ -251,8 +304,8 @@ function getConfigurationNamespaceObject(configurationNamespace) {
   if (returnValue === true) {
     returnValue = configurationPathObject
   }
-  console.log('returnValue is: ' + JSON.stringify(returnValue));
-  console.log('END configurator.getConfigurationNamespaceObject function');
+  // console.log('returnValue is: ' + JSON.stringify(returnValue));
+  // console.log('END configurator.getConfigurationNamespaceObject function');
   return returnValue;
 };
 

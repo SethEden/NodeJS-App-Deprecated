@@ -55,9 +55,9 @@ function consoleLog(classPath, message) {
   if (Object.keys(D).length !== 0) { // Make sure we don't log anything if we haven't yet loaded the configuration data.
     let consoleLogEnabled = configurator.getConfigurationSetting(wrd.csystem, sys.cConsoleLogEnabled);
     if (consoleLogEnabled === true) {
-      console.log('BEGIN consoleLog');
-      console.log('classPath is: ' + classPath);
-      console.log('message is: ' + message);
+      // console.log('BEGIN consoleLog');
+      // console.log('classPath is: ' + classPath);
+      // console.log('message is: ' + message);
       let logFile = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
       if (logFile !== undefined) {
         logFile = logFile + bas.cForwardSlash + wrd.clogs;
@@ -68,24 +68,33 @@ function consoleLog(classPath, message) {
         // console.log('logFile after adding the log filename: ' + logFile);
       }
 
+      let debugFunctionSetting = false;
+      let debugFileSetting = false;
       let debugSetting = false;
       let outputMessage = '';
       let configurationName = '';
       let configurationNamespace = '';
-      let rules = {};
-      rules[0] = biz.creplaceDoublePercentWithMessage;
 
       // console.log('determine if there is a configuration setting for the class path');
       configurationName = configurator.processConfigurationNameRules(classPath);
+      // console.log('configurationName is: ' + configurationName);
       configurationNamespace = configurator.processConfigurationNamespaceRules(classPath);
-      debugSetting = configurator.getConfigurationSetting(cfg.cDebugSettings + bas.cDot + configurationNamespace, configurationName);
+      // console.log('configurationNamespace is: ' + configurationNamespace);
+      debugFunctionSetting = configurator.getConfigurationSetting(cfg.cDebugSettings + bas.cDot + configurationNamespace, configurationName);
+      // console.log('debugFunctionSetting is: ' + debugFunctionSetting);
+      debugFileSetting = configurator.getConfigurationSetting(cfg.cDebugSettings + bas.cDot + configurationNamespace, '');
+      // console.log('debugFileSetting is: ' + debugFileSetting);
+      if (debugFunctionSetting === true || debugFileSetting === true) {
+        debugSetting = true;
+      }
+      // console.log('debugSetting is: ' + debugSetting);
       // console.log('DONE attempting to get the configuration setting for the class path, now check if it is not undefined and true');
       if (logFile !== undefined && (logFile.toUpperCase().includes(gen.cLOG) || logFile.toUpperCase().includes(gen.cTXT))) { // If we have a log file then we will log it to the console & file.
         consoleLogProcess(debugSetting, logFile, classPath, message, true);
       } else { // No text log file specified, proceed with the same process for console only.
         consoleLogProcess(debugSetting, undefined, classPath, message, false);
       }
-      console.log('END consoleLog');
+      // console.log('END consoleLog');
     } // end-if (consoleLogEnabled === true)
   } // end-if (Object.keys(D).length !== 0)
 };
@@ -160,32 +169,11 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
   // console.log('loggingToFileAndConsole is: ' + loggingToFileAndConsole);
   let outputMessage = '';
   let messageIsValid = false;
+  let rules = {};
+  rules[0] = biz.creplaceDoublePercentWithMessage;
 
-  if (debugSetting !== undefined) {
-    // console.log('The debugSetting is not undefined, now check if it is true or not.');
-    if (debugSetting === true) {
-      // console.log('The debugSetting is true now stringify it');
-      outputMessage = JSON.stringify(message);
-      console.log(outputMessage);
-      if (loggingToFileAndConsole === true) {
-        printMessageToFile(logFile, outputMessage);
-        // console.log('done printing the message to the logfile');
-      }
-    }
-    // console.log('Past the block of code that checks if the setting is true or not.');
-  } else if (configurator.getConfigurationSetting(wrd.csystem, sys.cDebugTestExhaustive) === true) {
-    // console.log('else-block the DebugTestExhaustive setting is true');
-    outputMessage = ruleBroker.processRules(message, classPath, rules);
-    // Debug Exhaustive is probably not the best, we might want to consider another configuration setting to
-    // enable or disable the console specifically. Right now there is no real business need for it.
-    // If you really wanted to disable it just comment it out here.
-    console.log(outputMessage);
-    if (loggingToFileAndConsole === true) {
-      printMessageToFile(logFile, outputMessage);
-      // console.log('done printing the message to the logfile');
-    }
-  } else {
-    // console.log('else-block we will parse the ClassPath');
+  if (debugSetting !== undefined && debugSetting === true) {
+    // console.log('The debugSetting is not undefined and also true.');
     outputMessage = parseClassPath(logFile, classPath, message);
     // console.log('outputMessage is: ' + outputMessage);
     // console.log('message is: ' + message);
@@ -198,6 +186,7 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
     // }
     messageIsValid = validMessage(outputMessage, message);
     if (messageIsValid === true) {
+      outputMessage = ruleBroker.processRules(outputMessage, classPath, rules);
       console.log(outputMessage);
     }
     if (messageIsValid === true && loggingToFileAndConsole === true) {
@@ -212,6 +201,36 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
     //   outputMessage = JSON.stringify(message);
     //   console.log(outputMessage);
     // }
+    // console.log('Past the block of code that checks if the setting is true or not.');
+  } else if (configurator.getConfigurationSetting(wrd.csystem, sys.cDebugTestExhaustive) === true) {
+    // console.log('else-block the DebugTestExhaustive setting is true');
+    outputMessage = ruleBroker.processRules(message, classPath, rules);
+    // Debug Exhaustive is probably not the best, we might want to consider another configuration setting to
+    // enable or disable the console specifically. Right now there is no real business need for it.
+    // If you really wanted to disable it just comment it out here.
+    console.log(outputMessage);
+    if (loggingToFileAndConsole === true) {
+      printMessageToFile(logFile, outputMessage);
+      // console.log('done printing the message to the logfile');
+    }
+  } else {
+    // console.log('else-block we will dump the message to the console, now stringify it.');
+    // NOTE: The debug setting is set to false, so we shouldn't actually be printing anything to the console.
+    // HOWEVER, there is a precedent that we would want to print a message if it contains the word "Warning" or "Error".
+    if (message.toUpperCase().includes(wrd.cWARNING) || message.toUpperCase().includes(wrd.cERROR)) {
+      outputMessage = JSON.stringify(message);
+      console.log(outputMessage);
+      if (loggingToFileAndConsole === true) {
+        // console.log('calling printMessageToFile() to print the message to the log file');
+        // console.log('output log file before path.resolve is: ' + logFile);
+        logFile = path.resolve(logFile);
+        // console.log('output log file after path.resolve is: ' + logFile);
+        printMessageToFile(logFile, outputMessage);
+        // console.log('done printing the message to the logfile');
+      } else {
+        // console.log('loggingToFileAndConsole !== true');
+      }
+    }
   }
   // console.log('Past all of the if-else-if-else blocks of code.');
   // console.log('END loggers.consoleLogProcess function');
@@ -273,46 +292,61 @@ function parseClassPath(logFile, classPath, message) {
   let debugFilesSetting = false;
   let classPathArray = {};
   let returnData = '';
+  let rules = {};
+  rules[0] = biz.creplaceDoublePercentWithMessage;
 
-  classPathArray = classPath.split(bas.cDot);
-  // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
-  // printMessageToFile(logFile, 'classPathArray.length is: ' + Object.keys(classPathArray).length);
-  // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
-  // console.log('classPathArray.length is: ' + Object.keys(classPathArray).length);
-  if (Object.keys(classPathArray).length > 3) {
-    // printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
-    // console.log('ERROR: Advanced debugging capability more than 3 not supported at all!');
-  } else if (Object.keys(classPathArray).length === 3 ) {
-    className = classPathArray[0] + bas.cDot + classPathArray[1];
+  // classPathArray = classPath.split(bas.cDot);
+  // // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
+  // // printMessageToFile(logFile, 'classPathArray.length is: ' + Object.keys(classPathArray).length);
+  // // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
+  // // console.log('classPathArray.length is: ' + Object.keys(classPathArray).length);
+  // if (Object.keys(classPathArray).length > 3) {
+  //   // printMessageToFile(logFile, 'ERROR: Advanced debugging capability more than 3 not supported at all!');
+  //   // console.log('ERROR: Advanced debugging capability more than 3 not supported at all!');
+  // } else if (Object.keys(classPathArray).length === 3 ) {
+  //   className = classPathArray[0] + bas.cDot + classPathArray[1];
+  //
+  //   // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
+  //   // printMessageToFile(logFile, 'className is: ' + className);
+  //   // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
+  //   // console.log('className is: ' + className);
+  //   functionName = classPathArray[2];
+  //   // printMessageToFile(logFile, 'functionName is: ' + functionName);
+  //   // console.log('functionName is: ' + functionName);
+  // } else if (Object.keys(classPathArray).length === 2) {
+  //   className = classPathArray[0];
+  //   // printMessageToFile(logFile, 'className is: ' + className);
+  //   // console.log('className is: ' + className);
+  //   functionName = classPathArray[1];
+  //   // printMessageToFile(logFile, 'functionName is: ' + functionName);
+  //   // console.log('functionName is: ' + functionName);
+  // } else if (Object.keys(classPathArray).length === 1) {
+  //   className = classPathArray[0];
+  //   // printMessageToFile(logFile, 'className is: ' + className);
+  //   // console.log('className is: ' + className);
+  // } else {
+  //   // printMessageToFile(logFile, 'ERROR: No class data, just print the message as is.');
+  //   // console.log('ERROR: No class data, just print the message as is.');
+  // }
+  //
+  // NOTE: Cannot replace the double Percent here because we still need to parse and split the message up for different formatting color/style settings.
+  // if (message.includes(bas.cDoublePercent)) {
+  //   console.log('Caught the case that the message contains a double percent, need to replace with the fully qualified namespace.')
+  //   message = ruleBroker.processRules(message, classPath, rules);
+  //   console.log('message after the replace is: ' + message);
+  // }
 
-    // printMessageToFile(logFile, 'classPathArray contents are: ' + JSON.stringify(classPathArray));
-    // printMessageToFile(logFile, 'className is: ' + className);
-    // console.log('classPathArray contents are: ' + JSON.stringify(classPathArray));
-    // console.log('className is: ' + className);
-    functionName = classPathArray[2];
-    // printMessageToFile(logFile, 'functionName is: ' + functionName);
-    // console.log('functionName is: ' + functionName);
-  } else if (Object.keys(classPathArray).length === 2) {
-    className = classPathArray[0];
-    // printMessageToFile(logFile, 'className is: ' + className);
-    // console.log('className is: ' + className);
-    functionName = classPathArray[1];
-    // printMessageToFile(logFile, 'functionName is: ' + functionName);
-    // console.log('functionName is: ' + functionName);
-  } else if (Object.keys(classPathArray).length === 1) {
-    className = classPathArray[0];
-    // printMessageToFile(logFile, 'className is: ' + className);
-    // console.log('className is: ' + className);
-  } else {
-    // printMessageToFile(logFile, 'ERROR: No class data, just print the message as is.');
-    // console.log('ERROR: No class data, just print the message as is.');
-  }
+  className = cfg.cDebugSettings + bas.cDot + configurator.processConfigurationNamespaceRules(classPath);
+  // console.log('className is: ' + className);
+  functionName = configurator.processConfigurationNameRules(classPath);
+  // console.log('functionName is: ' + functionName);
+
   // printMessageToFile(logFile, 'getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
   // console.log('getting configuration setting value for: ' + sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
-  debugFunctionsSetting = configurator.getConfigurationSetting(sys.cDebugFunctions + bas.cPipe + className + bas.cDot + functionName);
+  debugFunctionsSetting = configurator.getConfigurationSetting(className, functionName);
   // printMessageToFile(logFile, 'configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
   // console.log('configuration setting debugFunctionsSetting is: ' + debugFunctionsSetting);
-  debugFilesSetting = configurator.getConfigurationSetting(sys.cDebugFiles + bas.cPipe + className);
+  debugFilesSetting = configurator.getConfigurationSetting(className, '');
   // printMessageToFile(logFile, 'configuration setting debugFilesSetting is: ' + debugFilesSetting);
   // console.log('configuration setting debugFilesSetting is: ' + debugFilesSetting);
   if (debugFunctionsSetting === true || debugFilesSetting === true) {
@@ -321,7 +355,7 @@ function parseClassPath(logFile, classPath, message) {
     // functionName = chalk.red.bold(functionName);
     // // message = message.replace('%%', className + bas.cDot + functionName);
     // return ruleBroker.processRules(message, className + bas.cDot + functionName, rules);
-    // console.log('both true, call colorizer.colorizeMessage with the false flag');
+    // console.log('One of them is true, call colorizer.colorizeMessage with the false flag');
     message = colorizer.colorizeMessage(message, className, functionName, debugFilesSetting, debugFunctionsSetting, false);
     returnData = message;
   } else if ((debugFunctionsSetting === undefined && debugFilesSetting === undefined) ||
@@ -357,6 +391,8 @@ function printMessageToFile(file, message) {
   let dateTimeStamp = '';
   // let currentOS = configurator.getConfigurationSetting(sys.cOperatingSystem);
   // if (currentOS === wrd.cWindows || currentOS === wrd.cLinux) {
+  if (!file.includes('undefined')) {
+    // console.log('!file.includes(undefined)');
     if (configurator.getConfigurationSetting(wrd.csystem, sys.cLogFileEnabled) === true) {
       // console.log('LogFileEnabled = true');
       if (message) {
@@ -371,8 +407,11 @@ function printMessageToFile(file, message) {
 
       // console.log('final Message is: ' + message);
       try {
+        // console.log('open the file sync');
         fd = fs.openSync(file, 'a');
+        // console.log('append to the file sync');
         fs.appendFileSync(fd, message + bas.cCarriageReturn + bas.cNewLine, gen.cUTF8);
+        // console.log('DONE appending to the file');
       } catch (err) {
         return console.log(err);
       } finally {
@@ -380,7 +419,7 @@ function printMessageToFile(file, message) {
           fs.closeSync(fd);
         }
       }
-      // // console.log('writing message to file: ' + file + ' message: ' + message);
+      // console.log('writing message to file: ' + file + ' message: ' + message);
       // fs.appendFile(file, message + bas.cCarriageReturn + bas.cNewLine, 'utf8', function(err) {
       //   // fs.writeFileSync(file, message, 'utf8', { 'flags': 'a' }); // DO NOT UNCOMMENT, will over-write the log file!
       //   if (err) { return console.log(err); }
@@ -388,6 +427,9 @@ function printMessageToFile(file, message) {
     } else {
       // console.log('ERROR: Failure to log to file: ' + file);
     }
+  } else {
+    // console.log('file includes undefined');
+  }
   // } else { console.log('ERROR: Invalid OS: ' + currentOS); }
   // console.log('END loggers.printMessageToFile function');
 
