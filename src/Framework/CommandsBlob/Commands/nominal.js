@@ -73,11 +73,14 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + ba
    loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
    loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
    loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
-   if (!inputData) {
-     return false;
-   }
-   loggers.consoleLog(inputData);
    let returnData = true;
+   if (!inputData) {
+     // Nothing to echo.
+     console.log(msg.cNothingToEcho);
+     return returnData;
+   }
+   inputData.shift();
+   console.log(inputData.join(bas.cSpace));
    loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
    loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
    return returnData;

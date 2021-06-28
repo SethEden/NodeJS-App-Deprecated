@@ -216,21 +216,24 @@ function consoleLogProcess(debugSetting, logFile, classPath, message, loggingToF
   } else {
     // console.log('else-block we will dump the message to the console, now stringify it.');
     // NOTE: The debug setting is set to false, so we shouldn't actually be printing anything to the console.
-    // HOWEVER, there is a precedent that we would want to print a message if it contains the word "Warning" or "Error".
-    if (message.toUpperCase().includes(wrd.cWARNING) || message.toUpperCase().includes(wrd.cERROR)) {
-      outputMessage = JSON.stringify(message);
-      console.log(outputMessage);
-      if (loggingToFileAndConsole === true) {
-        // console.log('calling printMessageToFile() to print the message to the log file');
-        // console.log('output log file before path.resolve is: ' + logFile);
-        logFile = path.resolve(logFile);
-        // console.log('output log file after path.resolve is: ' + logFile);
-        printMessageToFile(logFile, outputMessage);
-        // console.log('done printing the message to the logfile');
-      } else {
-        // console.log('loggingToFileAndConsole !== true');
-      }
-    }
+    // HOWEVER, there is a precedent that we would want to print a message if it contains the word "WARNING: " or "ERROR: ".
+    // But not if it includes "WARNING: " or "ERROR: " and also contains the string "//",
+    // because this will cause constants validation to print out validation messages as it is scanning the constants files.
+    // if (!message.includes(bas.cDoubleForwardSlash)) &&
+    // (message.includes(wrd.cWARNING + bas.cColon) || message.includes(wrd.cERROR + bas.cColon))) {
+    //   outputMessage = JSON.stringify(message);
+    //   console.log(outputMessage);
+    //   if (loggingToFileAndConsole === true) {
+    //     // console.log('calling printMessageToFile() to print the message to the log file');
+    //     // console.log('output log file before path.resolve is: ' + logFile);
+    //     logFile = path.resolve(logFile);
+    //     // console.log('output log file after path.resolve is: ' + logFile);
+    //     printMessageToFile(logFile, outputMessage);
+    //     // console.log('done printing the message to the logfile');
+    //   } else {
+    //     // console.log('loggingToFileAndConsole !== true');
+    //   }
+    // }
   }
   // console.log('Past all of the if-else-if-else blocks of code.');
   // console.log('END loggers.consoleLogProcess function');

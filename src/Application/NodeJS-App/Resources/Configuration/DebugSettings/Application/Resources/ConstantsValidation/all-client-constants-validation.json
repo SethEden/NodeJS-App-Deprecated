@@ -1,5 +1,5 @@
 {
-  "DebugFiles|DebugSettings.Application.Resources.ConstantsValidation.all-client-constants-validation": false,
+  "DebugFiles|DebugSettings.Application.Resources.ConstantsValidation.all-client-constants-validation": true,
   "DebugFiles|DebugSettings.Application.Resources.ConstantsValidation.all-client-constants-validation@ModuleFontStyle": "Bold|Underline",
   "DebugFiles|DebugSettings.Application.Resources.ConstantsValidation.all-client-constants-validation@FunctionFontStyle": "Bold|Underline",
   "DebugFiles|DebugSettings.Application.Resources.ConstantsValidation.all-client-constants-validation@MessageFontStyle": "Underline",

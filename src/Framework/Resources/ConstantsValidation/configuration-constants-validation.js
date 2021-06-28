@@ -29,6 +29,8 @@ import * as cfg from '../../Constants/configuration.constants';
    {Name: 'cEnableCommandPerformanceMetrics', Actual: cfg.cEnableCommandPerformanceMetrics, Expected: 'EnableCommandPerformanceMetrics'},
    {Name: 'cEnableConstantsValidation', Actual: cfg.cEnableConstantsValidation, Expected: 'EnableConstantsValidation'},
    {Name: 'cEnableConstantsPatternGeneration', Actual: cfg.cEnableConstantsPatternGeneration, Expected: 'EnableConstantsPatternGeneration'},
+   {Name: 'cEnableDebugConfigurationSettings', Actual: cfg.cEnableDebugConfigurationSettings, Expected: 'EnableDebugConfigurationSettings'},
+   {Name: 'cDebugSettings', Actual: cfg.cDebugSettings, Expected: 'DebugSettings'},
    {Name: 'cDisplayIndividualConstantsValidationPassMessages', Actual: cfg.cDisplayIndividualConstantsValidationPassMessages, Expected: 'DisplayIndividualConstantsValidationPassMessages'},
    {Name: 'cDisplayIndividualConstantsValidationFailMessages', Actual: cfg.cDisplayIndividualConstantsValidationFailMessages, Expected: 'DisplayIndividualConstantsValidationFailMessages'},
    {Name: 'cDisplaySummaryConstantsValidationPassMessages', Actual: cfg.cDisplaySummaryConstantsValidationPassMessages, Expected: 'DisplaySummaryConstantsValidationPassMessages'},

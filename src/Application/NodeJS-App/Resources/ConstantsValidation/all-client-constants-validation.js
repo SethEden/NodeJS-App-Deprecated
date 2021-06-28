@@ -46,8 +46,9 @@ var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cResources + bas.cDot + 
 function initializeAllClientConstantsValidationData() {
   let functionName = initializeAllClientConstantsValidationData.name;
   warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
-  let constantsPath = warden.getConfigurationSetting(sys.cClientConstantsPath);
+  let constantsPath = warden.getConfigurationSetting(wrd.csystem, sys.cClientConstantsPath);
   // constantsPath is:
+  console.log('constantsPath is: ' + constantsPath);
   warden.consoleLog(namespacePrefix + functionName, msg.cconstantsPathIs + constantsPath);
 
   let allClientConstantsValidationData = {};

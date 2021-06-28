@@ -1,5 +1,5 @@
 {
-  "DebugFiles|DebugSettings.Framework.Resources.ConstantsValidation.all-system-constants-validation": false,
+  "DebugFiles|DebugSettings.Framework.Resources.ConstantsValidation.all-system-constants-validation": true,
   "DebugFiles|DebugSettings.Framework.Resources.ConstantsValidation.all-system-constants-validation@ModuleFontStyle": "Bold|Underline",
   "DebugFiles|DebugSettings.Framework.Resources.ConstantsValidation.all-system-constants-validation@FunctionFontStyle": "Bold|Underline",
   "DebugFiles|DebugSettings.Framework.Resources.ConstantsValidation.all-system-constants-validation@MessageFontStyle": "Underline",

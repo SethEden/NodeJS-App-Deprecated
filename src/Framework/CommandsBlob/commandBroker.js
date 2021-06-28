@@ -377,6 +377,7 @@ function getCommandArgs(commandString, commandDelimiter) {
     loggers.consoleLog(namespacePrefix + functionName, msg.cCommandStartTimeIs + commandStartTime);
   }
   if (commandToExecute !== false && commandArgs !== false) {
+    // console.log('commandToExecute is: ' + commandToExecute);
     returnData = D[wrd.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false && commandArgs === false) {
     // This could be a command without any arguments.

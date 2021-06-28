@@ -350,6 +350,7 @@ import * as msg from '../../Constants/message.constants';
    {Name: 'cbusinessRuleIs', Actual: msg.cbusinessRuleIs, Expected: 'businessRule is: '},
    {Name: 'cruleInputIs', Actual: msg.cruleInputIs, Expected: 'ruleInput is: '},
    {Name: 'cruleMetaDataIs', Actual: msg.cruleMetaDataIs, Expected: 'ruleMetaData is: '},
+   {Name: 'cconfigurationNamespaceIs', Actual: msg.cconfigurationNamespaceIs, Expected: 'configurationNamespace is: '},
    {Name: 'cconfigurationNameIs', Actual: msg.cconfigurationNameIs, Expected: 'configurationName is: '},
    {Name: 'cconfigurationValueIs', Actual: msg.cconfigurationValueIs, Expected: 'configurationValue is: '},
    {Name: 'creturnConfiguraitonValueIs', Actual: msg.creturnConfiguraitonValueIs, Expected: 'returnConfigurationValue is: '},
@@ -560,4 +561,5 @@ import * as msg from '../../Constants/message.constants';
    {Name: 'cprintDataHiveAttributesMessage1', Actual: msg.cprintDataHiveAttributesMessage1, Expected: 'Caught the case the user may have only specified a single data hive, '},
    {Name: 'cprintDataHiveAttributesMessage2', Actual: msg.cprintDataHiveAttributesMessage2, Expected: 'such as the configuration data hive.'},
    {Name: 'cprintDataHiveAttributesMessage3', Actual: msg.cprintDataHiveAttributesMessage3, Expected: 'ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.'},
+   {Name: 'cNothingToEcho', Actual: msg.cNothingToEcho, Expected: 'Nothing to echo.'}
  ];

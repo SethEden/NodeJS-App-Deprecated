@@ -601,3 +601,5 @@ export const cprintDataHiveAttributesMessage1 = wrd.cCaught + bas.cSpace + wrd.c
 export const cprintDataHiveAttributesMessage2 = wrd.csuch + bas.cSpace + bas.cas + bas.cSpace + wrd.cthe + bas.cSpace + wrd.cconfiguration + bas.cSpace + wrd.cdata + bas.cSpace + wrd.chive + bas.cDot;
 // ERROR: Please enter a valid name.space.attributeName for the system to print out attribute data from.
 export const cprintDataHiveAttributesMessage3 = wrd.cERROR + bas.cColon + bas.cSpace + wrd.cPlease + bas.cSpace + wrd.center + bas.cSpace + bas.ca + bas.cSpace + wrd.cvalid + bas.cSpace + wrd.cname + bas.cDot + wrd.cspace + bas.cDot + wrd.cattribute + wrd.cName + bas.cSpace + wrd.cfor + bas.cSpace + wrd.cthe + bas.cSpace + wrd.csystem + bas.cSpace + bas.cto + bas.cSpace + wrd.cprint + bas.cSpace + wrd.cout + bas.cSpace + wrd.cattribute + bas.cSpace + wrd.cdata + bas.cSpace + wrd.cfrom + bas.cDot;
+// Nothing to echo.
+export const cNothingToEcho = wrd.cNothing + bas.cSpace + bas.cTo + bas.cSpace + wrd.cecho + bas.cDot; // Nothing to echo.

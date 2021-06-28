@@ -20,7 +20,7 @@ export const applicationConstantsValidation = [
   {Name: 'cConfigurationFilename', Actual: apc.cConfigurationFilename, Expected: 'Configuration'},
   {Name: 'cApplicationName', Actual: apc.cApplicationName, Expected: 'NodeJS-App'},
 
-  {Name: 'cConfigurationDataLookupPrefixPath', Actual: apc.cConfigurationDataLookupPrefixPath, Expected: '/Resources/'},
+  {Name: 'cConfigurationDataLookupPrefixPath', Actual: apc.cConfigurationDataLookupPrefixPath, Expected: '/Resources/Configuration/'},
   {Name: 'cResourcesCommonPath', Actual: apc.cResourcesCommonPath, Expected: 'Application/NodeJS-App/Resources/'},
   {Name: 'cDevelopResourcesPath', Actual: apc.cDevelopResourcesPath, Expected: '/src/Application/NodeJS-App/Resources/'},
   {Name: 'cProductionResourcesPath', Actual: apc.cProductionResourcesPath, Expected: '/bin/Application/NodeJS-App/'},

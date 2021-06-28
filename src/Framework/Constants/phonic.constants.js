@@ -1090,6 +1090,7 @@ export const cLed = bas.cLe + bas.cd; // Led
 export const cLED = bas.cLE + bas.cD; // LED
 export const cling = clin + bas.cg; // ling
 export const cler = bas.cle + bas.cr; // ler
+export const ching = bas.ch + cing; // hing
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////

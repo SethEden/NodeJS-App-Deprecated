@@ -1326,7 +1326,9 @@ export const validateConstantsDataValidation = function(inputData, inputMetaData
     let colorizeLogsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
 
     while (line = liner.next()) {
-      loggers.consoleLog(namespacePrefix + functionName, line.toString(gen.cascii));
+      // console.log('namespacePrefix is: ' + namespacePrefix);
+      // console.log('functionName is: ' + functionName);
+      loggers.consoleLog(namespacePrefix + functionName, 'constants line is: ' + line.toString(gen.cascii));
       let lineInCode = line.toString(gen.cascii);
       let foundConstant = false;
       if (lineInCode.includes(sys.cexportconst) === true) {
