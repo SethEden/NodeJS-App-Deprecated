@@ -1,5 +1,6 @@
 # NodeJS-App
 A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.
+NOTE: This branch is a version of the application with a simple configuration system. It is preserved here in branch form but development from this branch is officially discontinued.
 
 # Purpose
 The purpose of this repository is to provide a command-line utility to do whatever it is that you need to automate.
