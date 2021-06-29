@@ -1,6 +1,6 @@
 {
   "name": "NodeJS-App",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "description": "A basic NodeJS template App that can be easily re-used and forked to make many different kinds of apps written with ES6 syntax.",
   "main": "./src/Application/NodeJS-App/application.js",
   "bin": "./bin/Application/NodeJS-App/application.js",
