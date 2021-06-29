@@ -43,8 +43,8 @@
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -64,11 +64,13 @@ import * as num from '../Constants/numeric.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
-import * as cfg from '../Constants/configurations.constants';
-import * as msg from '../Constants/messages.constants';
+import * as cfg from '../Constants/configuration.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Framework.CommandsBlob.commandBroker.
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function bootStrapCommands
@@ -84,10 +86,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  function bootStrapCommands() {
    let functionName = bootStrapCommands.name;
    // console.log('BEGIN commandBroker.bootStrapCommands');
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
    commands.initCommandsLibrary();
    // console.log('END commandBroker.bootStrapCommands');
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
  };
 
 /**
@@ -100,9 +102,9 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function addClientCommands(clientCommands) {
   let functionName = addClientCommands.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   Object.assign(D[wrd.cCommands], clientCommands);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -118,11 +120,11 @@ function addClientCommands(clientCommands) {
  */
 function getValidCommand(commandString, commandDelimiter) {
   let functionName = getValidCommand.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // commandString is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringIs + commandString);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringIs + commandString);
   // commandDelimiter is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandDelimiterIs + commandDelimiter);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandDelimiterIs + commandDelimiter);
   let returnData = false; // Assume it is not a valid command, until we prove that it is.
   let foundValidCommand = false;
   let foundSomeCommandArgs = false;
@@ -138,8 +140,8 @@ function getValidCommand(commandString, commandDelimiter) {
   } else {
     commandToExecute = commandString;
   }
-  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandString is: ' + commandString);
-  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
+  // loggers.consoleLog(namespacePrefix + functionName, 'commandString is: ' + commandString);
+  // loggers.consoleLog(namespacePrefix + functionName, 'commandToExecute is: ' + commandToExecute);
   if (commandString) {
     if (D[wrd.cCommands][commandToExecute] !== undefined) {
       foundValidCommand = true;
@@ -176,10 +178,10 @@ function getValidCommand(commandString, commandDelimiter) {
           commandToExecute.toLowerCase() === bas.cBackSlash + arrayOfAliases[j].toLowerCase()) {
             foundValidCommand = true;
             // commandToExecute before the Alias is:
-            loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandToExecuteBeforeTheAliasIs + commandToExecute);
+            loggers.consoleLog(namespacePrefix + functionName, msg.ccommandToExecuteBeforeTheAliasIs + commandToExecute);
             commandToExecute = currentCommand[wrd.cName];
             // commandToExecute after the Alias is:
-            loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandToExecuteAfterTheAliasIs + commandToExecute);
+            loggers.consoleLog(namespacePrefix + functionName, msg.ccommandToExecuteAfterTheAliasIs + commandToExecute);
             break loop1;
           }
         }
@@ -204,8 +206,8 @@ function getValidCommand(commandString, commandDelimiter) {
     // does not exist, please try again!
     console.log(msg.cWarningTheSpecifiedCommand + commandToExecute + msg.cdoesNotExistPleaseTryAgain);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -220,11 +222,11 @@ function getValidCommand(commandString, commandDelimiter) {
  */
 function getCommandArgs(commandString, commandDelimiter) {
   let functionName = getCommandArgs.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // commandString is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringIs + commandString);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringIs + commandString);
   // commandDelimiter is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandDelimiterIs + commandDelimiter);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandDelimiterIs + commandDelimiter);
   let returnData = false;
   let foundValidCommand = false;
   let commandArgsDelimiter = commandDelimiter;
@@ -235,7 +237,7 @@ function getCommandArgs(commandString, commandDelimiter) {
   isOddRule[0] = biz.cisOdd;
   replaceCharacterAtIndexRule[0] = biz.creplaceCharacterAtIndex;
   replaceTildesWithSingleQuoteRule[0] = biz.creplaceCharacterWithCharacter;
-  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  let secondaryCommandArgsDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
   if (commandDelimiter === null || commandDelimiter !== commandDelimiter || commandDelimiter === undefined) {
     commandArgsDelimiter = bas.cSpace;
   }
@@ -246,21 +248,21 @@ function getCommandArgs(commandString, commandDelimiter) {
     // non-string array elements to parse command arguments without accidently parsing string literal values as command arguments.
     if (commandString.includes(bas.cBackTickQuote) === true) {
       // commandString contains either a singleQuote or a backTickQuote
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringContainsEitherSingleQuoteOrBackTickQuote);
+      loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringContainsEitherSingleQuoteOrBackTickQuote);
       let preSplitCommandString;
       if (commandString.includes(bas.cBackTickQuote) === true) {
         // commandString contains a singleQuote!
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringContainsSingleQuote);
+        loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringContainsSingleQuote);
         // NOTE: We cannot actually just replace each single quote, we need to tag each single quote in pairs of 2.
         // The first one should be post-tagged, i.e. replace "'" with "'~" and the second should be pre-tagged i.e. replace "'" with "~'".
         // Then if there are more single quotes, the third post-tagged, i.e. replace "'" with "'~", etc...
         let numberOfSingleQuotes = commandString.split(bas.cBackTickQuote).length - 1;
         // Determine if the number of single quotes is odd or event?
         // About to call the rule broker to process on the number of single quotes and determine if it-be even or odd
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cgetCommandArgsMessage1 + sys.cgetCommandArgsMessage2);
+        loggers.consoleLog(namespacePrefix + functionName, msg.cgetCommandArgsMessage1 + sys.cgetCommandArgsMessage2);
         if (numberOfSingleQuotes >= 2 &amp;&amp; ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false) {
           // numberOfSingleQuotes is >= 2 &amp; the numberOfSingleQuotes is EVEN! YAY!
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfSingleQuotesIsEven);
+          loggers.consoleLog(namespacePrefix + functionName, msg.cnumberOfSingleQuotesIsEven);
           let indexOfStringDelimiter;
           for (let i = 0; i &lt; numberOfSingleQuotes; i++) {
             // Iterate over each one and if they are even or odd we will change how we replace each single quote character as described above.
@@ -268,36 +270,36 @@ function getCommandArgs(commandString, commandDelimiter) {
               // Get the index of the first string delimiter.
               indexOfStringDelimiter = commandString.indexOf(bas.cBackTickQuote, 0);
               // First index is:
-              loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cFirstIndexIs + indexOfStringDelimiter);
+              loggers.consoleLog(namespacePrefix + functionName, msg.cFirstIndexIs + indexOfStringDelimiter);
               // commandString.replace(bas.cBackTickQuote, bas.cBackTickQuote + bas.cTilde)
               // Rather than use the above, we will make a business rule to replace at index, the above replaces all instances and we don't want that!
               commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, bas.cBackTickQuote + bas.cTilde], replaceCharacterAtIndexRule);
               stringLiteralCommandDelimiterAdded = true
               // commandString after tagging the first string delimiter:
-              loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringAfterTaggingTheFirstStringDelimiter + commandString);
+              loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringAfterTaggingTheFirstStringDelimiter + commandString);
             } else {
               indexOfStringDelimiter = commandString.indexOf(bas.cBackTickQuote, indexOfStringDelimiter + 1);
               // Additional index is:
-              loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cAdditionalIndexIs + indexOfStringDelimiter);
+              loggers.consoleLog(namespacePrefix + functionName, msg.cAdditionalIndexIs + indexOfStringDelimiter);
               // Determine if it is odd or even.
               // NOTE: We start our count with 0 which would technically be our odd, then 1 should be even, but 1 is an odd number, so the logic here should actaully be backwards.
               // an even value for "i" would be the odd i-th delimiter value.
               if (ruleBroker.processRules(i.toString(), '', isOddRule) === true) {
                 // We are on the odd index, 1, 3, 5, etc...
                 // odd index
-                loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.coddIndex);
+                loggers.consoleLog(namespacePrefix + functionName, msg.coddIndex);
                 commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, bas.cTilde + bas.cBackTickQuote], replaceCharacterAtIndexRule);
                 stringLiteralCommandDelimiterAdded = true;
                 // commandString after tagging an odd string delimiter:
-                loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringAfterTaggingAnOddStringDelimiter + commandString);
+                loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringAfterTaggingAnOddStringDelimiter + commandString);
               } else {
                 // We are on the even index, 2, 4, 6, etc...
                 // even index
-                loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cevenIndex);
+                loggers.consoleLog(namespacePrefix + functionName, msg.cevenIndex);
                 commandString = ruleBroker.processRules(commandString, [indexOfStringDelimiter, bas.cBackTickQuote + bas.cTilde], replaceCharacterAtIndexRule);
                 stringLiteralCommandDelimiterAdded = true;
                 // commandString after tagging an even string delimiter:
-                loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringAfterTaggingAnEvenStringDelimiter + commandString);
+                loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringAfterTaggingAnEvenStringDelimiter + commandString);
               }
             }
           }
@@ -306,7 +308,7 @@ function getCommandArgs(commandString, commandDelimiter) {
           // And the array element that contains the Tilde tag we will not split.
           // ultimately everything needs to be returned as an array, make sure we trim the array elements so we don't get any empty array elements.
           // preSplitCommandString is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpreSplitCommandStringIs + JSON.stringify(preSplitCommandString));
+          loggers.consoleLog(namespacePrefix + functionName, msg.cpreSplitCommandStringIs + JSON.stringify(preSplitCommandString));
           for (let j = 0; j &lt; preSplitCommandString.length; j++) {
             let preSplitCommandStringElement = preSplitCommandString[j];
             preSplitCommandStringElement = preSplitCommandStringElement.trim(); // Make sure to get rid of any white space on the ends of the string.
@@ -320,9 +322,9 @@ function getCommandArgs(commandString, commandDelimiter) {
               for (let k = 0; k &lt; postSplitCommandString.length; k++) {
                 if (postSplitCommandString[k] !== '') {
                   // postSplitCommandString[k] is:
-                  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpostSplitCommandStringIs + JSON.stringify(postSplitCommandString[k]));
+                  loggers.consoleLog(namespacePrefix + functionName, msg.cpostSplitCommandStringIs + JSON.stringify(postSplitCommandString[k]));
                   returnData.push(postSplitCommandString[k]);
-                  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+                  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
                 }
               }
               postSplitCommandString = []; // Clear it for the next time around the loop.
@@ -336,10 +338,10 @@ function getCommandArgs(commandString, commandDelimiter) {
                 returnData[returnData.length - 1] = returnData[returnData.length - 1] + preSplitCommandStringElement;
               } else {
                 // preSplitCommandStringElement is:
-                loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpreSplitCommandStringElementIs + JSON.stringify(preSplitCommandStringElement));
+                loggers.consoleLog(namespacePrefix + functionName, msg.cpreSplitCommandStringElementIs + JSON.stringify(preSplitCommandStringElement));
                 returnData.push(preSplitCommandStringElement); // Add the string now.
               } // End else-clause: returnData[returnData.length - 1].slice(-1) === secondaryCommandArgsDelimiter
-              loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+              loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
             } // End else-clause: preSplitCommandStringElement.includes(bas.cTilde) === false
           } // End for-loop: preSplitCommandString, j++
         } // End if-condition: numberOfSingleQuotes >= 2 &amp;&amp; ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false
@@ -350,17 +352,17 @@ function getCommandArgs(commandString, commandDelimiter) {
       // So I will handle that case if &amp; when I come to it.
     } else {
       // Doing a straight split of the commandString:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoingStraightSplitCommandString + commandString);
+      loggers.consoleLog(namespacePrefix + functionName, msg.cDoingStraightSplitCommandString + commandString);
       returnData = commandString.split(commandArgsDelimiter);
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+      loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
     }
   }
   if (stringLiteralCommandDelimiterAdded === true) {
     // This means we need to remove some bas.cTilde from one or more of the command args.
     lexical.removeStringLiteralTagsFromArray(returnData);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -381,15 +383,15 @@ function getCommandArgs(commandString, commandDelimiter) {
   // tracking &amp; command results processing such as pass-fail,
   // so that when a chain of commands has completed execution we can evaluate command statistics and metrics.
   let functionName = executeCommand.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // commandString is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringIs + commandString);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandStringIs + commandString);
   let returnData = false;
-  let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
-  let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandArgs is: ' + commandArgs);
-  let commandMetricsEnabled = configurator.getConfigurationSetting(cfg.cEnableCommandPerformanceMetrics);
+  let commandToExecute = getValidCommand(commandString, configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter));
+  loggers.consoleLog(namespacePrefix + functionName, 'commandToExecute is: ' + commandToExecute);
+  let commandArgs = getCommandArgs(commandString, configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter));
+  loggers.consoleLog(namespacePrefix + functionName, 'commandArgs is: ' + commandArgs);
+  let commandMetricsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableCommandPerformanceMetrics);
   let commandStartTime = '';
   let commandEndTime = '';
   let commandDeltaTime = '';
@@ -400,9 +402,10 @@ function getCommandArgs(commandString, commandDelimiter) {
     // compute the difference to determine how many milliseconds it took to run the command.
     commandStartTime = timers.getNowMoment(gen.cYYYYMMDD_HHmmss_SSS);
     // Command Start time is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCommandStartTimeIs + commandStartTime);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cCommandStartTimeIs + commandStartTime);
   }
   if (commandToExecute !== false &amp;&amp; commandArgs !== false) {
+    // console.log('commandToExecute is: ' + commandToExecute);
     returnData = D[wrd.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false &amp;&amp; commandArgs === false) {
     // This could be a command without any arguments.
@@ -418,11 +421,11 @@ function getCommandArgs(commandString, commandDelimiter) {
     let performanceTrackingObject = {};
     commandEndTime = timers.getNowMoment(gen.cYYYYMMDD_HHmmss_SSS);
     // Command End time is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCommandEndTimeIs + commandEndTime);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cCommandEndTimeIs + commandEndTime);
     // Now compute the delta time so we know how long it took to run that command.
     commandDeltaTime = timers.computeDeltaTime(commandStartTime, commandEndTime);
     // Command run-time is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cCommandRunTimeIs + commandDeltaTime);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cCommandRunTimeIs + commandDeltaTime);
     // Check to make sure the command performance tracking stack exists or does not exist.
     if (D[cfg.cCommandPerformanceTrackingStack] === undefined) {
       stack.initStack(cfg.cCommandPerformanceTrackingStack);
@@ -438,8 +441,8 @@ function getCommandArgs(commandString, commandDelimiter) {
     // stack.print(cfg.cCommandNamesPerformanceTrackingStack);
     // stack.print(cfg.cCommandPerformanceTrackingStack);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -460,13 +463,13 @@ function getCommandArgs(commandString, commandDelimiter) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-all-client-constants-validation.html">all-client-constants-validation</a></li><li><a href="module-all-system-constants-validation.html">all-system-constants-validation</a></li><li><a href="module-application.html">application</a></li><li><a href="module-application-business-constants.html">application-business-constants</a></li><li><a href="module-application-business-constants-validation.html">application-business-constants-validation</a></li><li><a href="module-application-command-constants.html">application-command-constants</a></li><li><a href="module-application-command-constants-validation.html">application-command-constants-validation</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-application-constants-validation.html">application-constants-validation</a></li><li><a href="module-application-message-constants.html">application-message-constants</a></li><li><a href="module-application-message-constants-validation.html">application-message-constants-validation</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Feb 23 2021 21:17:35 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 28 2021 20:41:23 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

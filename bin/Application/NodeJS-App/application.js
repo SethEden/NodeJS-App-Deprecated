@@ -9,12 +9,13 @@
  * @requires module:warden
  * @requires module:clientRulesLibrary
  * @requires module:clientCommandsLibrary
- * @requires module:application-constants
+ * @requires module:all-client-constants-validation
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:command-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -33,17 +34,19 @@ var _clientRulesLibrary = _interopRequireDefault(require("./BusinessRules/client
 
 var _clientCommandsLibrary = _interopRequireDefault(require("./Commands/clientCommandsLibrary"));
 
+var _allClientConstantsValidation = _interopRequireDefault(require("./Resources/ConstantsValidation/all-client-constants-validation"));
+
 var bas = _interopRequireWildcard(require("../../Framework/Constants/basic.constants"));
 
 var wrd = _interopRequireWildcard(require("../../Framework/Constants/word.constants"));
 
 var sys = _interopRequireWildcard(require("../../Framework/Constants/system.constants"));
 
-var cmd = _interopRequireWildcard(require("../../Framework/Constants/commands.constants"));
+var cmd = _interopRequireWildcard(require("../../Framework/Constants/command.constants"));
 
-var cfg = _interopRequireWildcard(require("../../Framework/Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../../Framework/Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../../Framework/Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../Framework/Constants/message.constants"));
 
 var apc = _interopRequireWildcard(require("./Constants/application.constants"));
 
@@ -65,7 +68,9 @@ var D = require('../../Framework/Structures/data');
 
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Application.application.
+
+var namespacePrefix = wrd.cApplication + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function bootStrapApplication
  * @description Setup all the application data and configuration settings.
@@ -88,9 +93,12 @@ function bootStrapApplication() {
 
   rootPath = _warden["default"].processRootPath(rootPath); // console.log('processed rootPath is: ' + rootPath);
 
-  _warden["default"].bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
+  _warden["default"].bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath); // NOTE: We are passing all_clt_cv.initializeAllClientConstantsValidationData function as an object on the next line of code.
+  // We are doing this because we have not yet evaluated the constants path based on the root path,
+  // and we don't want the function to be evaluated immediately because it will need to get the root path as part of evaluating the path to the constants files for validation.
 
-  _warden["default"].saveRootPath(rootPath);
+
+  _warden["default"].initApplicationSchema(rootPath, apc.cClientConstantsPathActual, _allClientConstantsValidation["default"].initializeAllClientConstantsValidationData);
 
   _warden["default"].mergeClientBusinessRules(_clientRulesLibrary["default"].initClientRulesLibrary());
 
@@ -122,17 +130,23 @@ function application() {
   var commandInput;
   var commandResult;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // BEGIN main program loop
+  _warden["default"].setConfigurationSetting(wrd.csystem, sys.cConsoleLogEnabled, true);
+
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // BEGIN main program loop
+  // console.log('BEGIN main program loop');
 
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage2); // BEGIN command parser
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage2); // // BEGIN command parser
+  // console.log('BEGIN command parser');
 
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage3);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage3);
 
-  argumentDrivenInterface = _warden["default"].getConfigurationSetting(cfg.cArgumentDrivenInterface);
+  argumentDrivenInterface = _warden["default"].getConfigurationSetting(wrd.csystem, cfg.cArgumentDrivenInterface); // console.log('argumentDrivenInterface is: ' + argumentDrivenInterface);
+  // console.log('starting warden.enqueueCommand(cmd.cStartupWorkflow)');
 
-  _warden["default"].enqueueCommand(cmd.cStartupWorkflow); // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
+  _warden["default"].enqueueCommand(cmd.cStartupWorkflow); // console.log('finished warden.enqueueCommand(cmd.cStartupWorkflow)');
+  // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
   //
   // console.log('argument driven execution');
@@ -176,14 +190,14 @@ function application() {
 
       if (commandResult === false) {
         // END command parser
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage4);
+        _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage4);
 
         programRunning = false; // END main program loop
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage5); // Exiting, Good bye, Have a nice day & stay safe!
+        _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage5); // Exiting, Good bye, Have a nice day & stay safe!
 
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
+        _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
 
         break;
       } else {// console.log('contents of D are: ' + JSON.stringify(D));
@@ -192,7 +206,7 @@ function application() {
     }
   }
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ; // Launch the application!!

@@ -34,8 +34,10 @@
  * @requires module:ruleBroker
  * @requires module:loggers
  * @requires module:basic-constants
+ * @requires module:word-constants
+ * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -45,11 +47,15 @@
 import ruleBroker from '../BusinessRules/ruleBroker';
 import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
+import * as wrd from '../Constants/word.constants';
+import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
-import * as msg from '../Constants/messages.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('./data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Framework.Structures.stack.
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initStack
@@ -61,8 +67,8 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function initStack(stackNameSpace) {
    let functionName = initStack.name;
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+   loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
    if (D[stackNameSpace] === undefined) {
      D[stackNameSpace] = [];
    } else {
@@ -70,7 +76,7 @@ function initStack(stackNameSpace) {
      // ALREADY exist!
      console.log(msg.cWarningStackColon + stackNameSpace + msg.cAlreadyExists);
    }
-   loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -83,8 +89,8 @@ function initStack(stackNameSpace) {
  */
 function clearStack(stackNameSpace) {
   let functionName = clearStack.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   if (D[stackNameSpace] !== undefined) {
     D[stackNameSpace] = [];
   } else {
@@ -92,7 +98,7 @@ function clearStack(stackNameSpace) {
     // does not exist!
     console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -106,9 +112,9 @@ function clearStack(stackNameSpace) {
  */
 function push(stackNameSpace, value) {
   let functionName = push.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvalueIs + JSON.stringify(value));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cvalueIs + JSON.stringify(value));
   if (D[stackNameSpace] !== undefined) {
     D[stackNameSpace].push(value);
   } else {
@@ -116,7 +122,7 @@ function push(stackNameSpace, value) {
     // does not exist!
     console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -129,8 +135,8 @@ function push(stackNameSpace, value) {
  */
 function pop(stackNameSpace) {
   let functionName = pop.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   let returnData;
   if (D[stackNameSpace] !== undefined) {
     if (D[stackNameSpace].length === 0) {
@@ -146,8 +152,8 @@ function pop(stackNameSpace) {
     // does not exist!
     console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -161,8 +167,8 @@ function pop(stackNameSpace) {
  */
 function isEmpty(stackNameSpace) {
   let functionName = isEmpty.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   let returnData = false;
   if (D[stackNameSpace] !== undefined) {
     if (D[stackNameSpace].length === 0) {
@@ -173,8 +179,8 @@ function isEmpty(stackNameSpace) {
     // does not exist!
     console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -188,8 +194,8 @@ function isEmpty(stackNameSpace) {
  */
 function length(stackNameSpace) {
   let functionName = length.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   let returnData = -1;
   if (D[stackNameSpace] !== undefined) {
     returnData = D[stackNameSpace].length;
@@ -198,8 +204,8 @@ function length(stackNameSpace) {
     // does not exist!
     console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -214,9 +220,9 @@ function length(stackNameSpace) {
  */
 function contains(stackNameSpace, value) {
   let functionName = contains.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cvalueIs + value);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cvalueIs + value);
   let returnData = false;
   let containsRule = [];
   containsRule[0] = biz.cdoesArrayContainCharacter;
@@ -227,8 +233,8 @@ function contains(stackNameSpace, value) {
     // does not exist!
     console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -242,8 +248,8 @@ function contains(stackNameSpace, value) {
  */
 function print(stackNameSpace) {
   let functionName = contains.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cstackNameSpaceIs + stackNameSpace);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cstackNameSpaceIs + stackNameSpace);
   if (D[stackNameSpace] !== undefined) {
     // Contents of the stack namespace:
     console.log(msg.cConentsOfTheStackNamespace + stackNameSpace + sys.cSpaceIsColonSpace + JSON.stringify(D[stackNameSpace]));
@@ -252,7 +258,7 @@ function print(stackNameSpace) {
     // does not exist!
     console.log(msg.cWarningStackColon + stackNameSpace + msg.cdoesNotExist);
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
  export default {
@@ -275,13 +281,13 @@ function print(stackNameSpace) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-all-client-constants-validation.html">all-client-constants-validation</a></li><li><a href="module-all-system-constants-validation.html">all-system-constants-validation</a></li><li><a href="module-application.html">application</a></li><li><a href="module-application-business-constants.html">application-business-constants</a></li><li><a href="module-application-business-constants-validation.html">application-business-constants-validation</a></li><li><a href="module-application-command-constants.html">application-command-constants</a></li><li><a href="module-application-command-constants-validation.html">application-command-constants-validation</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-application-constants-validation.html">application-constants-validation</a></li><li><a href="module-application-message-constants.html">application-message-constants</a></li><li><a href="module-application-message-constants-validation.html">application-message-constants-validation</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Feb 23 2021 21:17:35 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 28 2021 20:41:24 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

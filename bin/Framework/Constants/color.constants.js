@@ -10,7 +10,7 @@ exports.cVermilion = exports.cvermilion = exports.cViridian = exports.cviridian 
 
 var bas = _interopRequireWildcard(require("./basic.constants"));
 
-var phn = _interopRequireWildcard(require("./phonics.constants"));
+var phn = _interopRequireWildcard(require("./phonic.constants"));
 
 var gen = _interopRequireWildcard(require("./generic.constants"));
 
@@ -18,9 +18,9 @@ var num = _interopRequireWildcard(require("./numeric.constants"));
 
 var wrd = _interopRequireWildcard(require("./word.constants"));
 
-var lng = _interopRequireWildcard(require("./languages.constants"));
+var lng = _interopRequireWildcard(require("./language.constants"));
 
-var ctr = _interopRequireWildcard(require("./countries.constants"));
+var ctr = _interopRequireWildcard(require("./country.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -31,12 +31,12 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @module color-constants
  * @description Contains all named colors.
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
- * @requires module:languages-constants
- * @requires module:countries-constants
+ * @requires module:language-constants
+ * @requires module:country-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved

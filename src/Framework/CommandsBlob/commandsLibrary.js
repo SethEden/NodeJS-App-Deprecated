@@ -8,7 +8,7 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -21,11 +21,13 @@ import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
-import * as msg from '../Constants/messages.constants';
-import * as cmd from '../Constants/commands.constants';
+import * as msg from '../Constants/message.constants';
+import * as cmd from '../Constants/command.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Framework.CommandsBlob.commandsLibrary.
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function initCommandsLibrary
@@ -41,7 +43,7 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 export const initCommandsLibrary = function() {
   let functionName = initCommandsLibrary.name;
   // console.log('BEGIN commandsLibrary.initCommandsLibrary');
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   D[wrd.cCommands] = {};
   D[wrd.cCommands] = {
     // Commands
@@ -72,6 +74,7 @@ export const initCommandsLibrary = function() {
     [cmd.cconstantsPatternRecognizer]: (inputData, inputMetaData) => nominalCommands.constantsPatternRecognizer(inputData, inputMetaData),
     [cmd.cbusinessRulesMetrics]: (inputData, inputMetaData) => nominalCommands.businessRulesMetrics(inputData, inputMetaData),
     [cmd.ccommandMetrics]: (inputData, inputMetaData) => nominalCommands.commandMetrics(inputData, inputMetaData),
+    [cmd.csaveConfiguration]: (inputData, inputMetaData) => nominalCommands.saveConfiguration(inputData, inputMetaData),
     [cmd.cconvertColors]: (inputData, inputMetaData) => nominalCommands.convertColors(inputData, inputMetaData),
 
     // ********************************
@@ -81,5 +84,5 @@ export const initCommandsLibrary = function() {
     [cmd.cvalidateCommandAliases]: (inputData, inputMetaData) => unitTests.validateCommandAliases(inputData, inputMetaData)
   }
   // console.log('END commandsLibrary.initCommandsLibrary');
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };

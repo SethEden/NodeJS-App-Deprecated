@@ -350,6 +350,34 @@
           <ConfigurationElement Name="clientCommands@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
           <ConfigurationElement Name="clientCommands@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
 
+          <ConfigurationElement Name="all-system-constants-validation" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+
+          <ConfigurationElement Name="all-client-constants-validation" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@ModuleFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@FunctionFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@MessageFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@DataFontColor" Type="Default" Value="0,0,0" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@ModuleFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@FunctionFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@MessageFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation@DataFontBackgroundColor" Type="Default" Value="255,255,255" Version="3"/>
+
         </ConfigurationElement>
         <ConfigurationElement Name="DebugFunctions" Type="Default" Value="Multiple" Version="3">
           <ConfigurationElement Name="application.application" Type="Default" Value="False" Version="3"/>
@@ -408,19 +436,19 @@
           <ConfigurationElement Name="warden.bootStrapApplication@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="warden.bootStrapApplication@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="warden.saveRootPath" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@MessageFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@DataFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="warden.saveRootPath@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="warden.initApplicationSchema@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="warden.mergeClientBusinessRules" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="warden.mergeClientBusinessRules@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -814,19 +842,33 @@
           <ConfigurationElement Name="chiefData.setupAllXmlData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="chiefData.setupAllXmlData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData" Type="Default" Value="False" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
-          <ConfigurationElement Name="chiefData.setupConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.initializeConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="chiefData.addConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="chiefData.addConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="dataBroker.scanDataPath" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="dataBroker.scanDataPath@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -1009,6 +1051,48 @@
           <ConfigurationElement Name="dataBroker.getDataElementCount@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
           <ConfigurationElement Name="dataBroker.getDataElementCount@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.initializeConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@ModuleFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@FunctionFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@MessageFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@DataFontColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="dataBroker.addDeeplyNestedConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Default" Version="3"/>
 
           <ConfigurationElement Name="fileBroker.getXmlData" Type="Default" Value="False" Version="3"/>
           <ConfigurationElement Name="fileBroker.getXmlData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
@@ -4481,6 +4565,34 @@
           <ConfigurationElement Name="clientCommands.bossPanic@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="clientCommands.bossPanic@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
           <ConfigurationElement Name="clientCommands.bossPanic@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="all-system-constants-validation.initializeAllSystemConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData" Type="Default" Value="False" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@DataFontStyle" Type="Default" Value="Default" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+          <ConfigurationElement Name="all-client-constants-validation.initializeAllClientConstantsValidationData@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
         </ConfigurationElement>
       </ConfigurationElements>
     </Configuration>

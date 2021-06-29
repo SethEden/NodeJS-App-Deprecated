@@ -11,6 +11,8 @@ var _loggers = _interopRequireDefault(require("../../Executrix/loggers"));
 
 var bas = _interopRequireWildcard(require("../../Constants/basic.constants"));
 
+var wrd = _interopRequireWildcard(require("../../Constants/word.constants"));
+
 var sys = _interopRequireWildcard(require("../../Constants/system.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -28,7 +30,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @description Contains all of the business rule functions for doing math operations and conversions.
  * @requires module:loggers
  * @requires module:basic-constants
- * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
@@ -37,7 +39,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var path = require('path');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.BusinessRules.Rules.mathOperations.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function hex2rgbConversion
  * @description Converts an hexidecimal color value to an RGB color value.
@@ -52,11 +56,11 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
   var functionName = biz.chex2rgbConversion;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + JSON.stringify(inputMetaData));
 
   var returnData;
 
@@ -80,7 +84,7 @@ var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
     // }
     var bigInteger = parseInt(inputData, 16); // bigInteger is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cMathOperationsMessage1 + bigInteger);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cMathOperationsMessage1 + bigInteger);
 
     var red = bigInteger >> 16 & 255;
     var green = bigInteger >> 8 & 255;
@@ -88,9 +92,9 @@ var hex2rgbConversion = function hex2rgbConversion(inputData, inputMetaData) {
     returnData = [red, green, blue];
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 };

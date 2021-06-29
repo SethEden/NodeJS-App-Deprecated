@@ -20,7 +20,7 @@ exports.cTrillionth = exports.ctrillionth = exports.cBillionth = exports.cbillio
 
 var bas = _interopRequireWildcard(require("../constants/basic.constants"));
 
-var phn = _interopRequireWildcard(require("../constants/phonics.constants"));
+var phn = _interopRequireWildcard(require("../constants/phonic.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -31,7 +31,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @module numeric-constants
  * @description Contains numeric string values and numeric strings
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @author Seth Hollingsead
  * @date 2020/07/19
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved

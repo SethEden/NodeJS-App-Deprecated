@@ -33,9 +33,9 @@ var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../Constants/business.constants"));
 
-var cfg = _interopRequireWildcard(require("../Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -60,8 +60,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -72,7 +72,9 @@ var path = require('path');
 
 var D = require('../Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.CommandsBlob.commandBroker.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function bootStrapCommands
  * @description Captures all of the commands string-to-function call map data in the commandsLibrary and migrates that data to the D-data structure.
@@ -88,11 +90,11 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function bootStrapCommands() {
   var functionName = bootStrapCommands.name; // console.log('BEGIN commandBroker.bootStrapCommands');
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
   commands.initCommandsLibrary(); // console.log('END commandBroker.bootStrapCommands');
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;
@@ -108,11 +110,11 @@ function bootStrapCommands() {
 function addClientCommands(clientCommands) {
   var functionName = addClientCommands.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
   Object.assign(D[wrd.cCommands], clientCommands);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;
@@ -131,13 +133,13 @@ function addClientCommands(clientCommands) {
 function getValidCommand(commandString, commandDelimiter) {
   var functionName = getValidCommand.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // commandString is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // commandString is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringIs + commandString); // commandDelimiter is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringIs + commandString); // commandDelimiter is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandDelimiterIs + commandDelimiter);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandDelimiterIs + commandDelimiter);
 
   var returnData = false; // Assume it is not a valid command, until we prove that it is.
 
@@ -156,8 +158,8 @@ function getValidCommand(commandString, commandDelimiter) {
     commandToExecute = commandArgs[0];
   } else {
     commandToExecute = commandString;
-  } // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandString is: ' + commandString);
-  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
+  } // loggers.consoleLog(namespacePrefix + functionName, 'commandString is: ' + commandString);
+  // loggers.consoleLog(namespacePrefix + functionName, 'commandToExecute is: ' + commandToExecute);
 
 
   if (commandString) {
@@ -181,11 +183,11 @@ function getValidCommand(commandString, commandDelimiter) {
           if (commandToExecute === arrayOfAliases[j] || commandToExecute === bas.cDash + arrayOfAliases[j] || commandToExecute === bas.cDoubleDash + arrayOfAliases[j] || commandToExecute === bas.cForwardSlash + arrayOfAliases[j] || commandToExecute === bas.cBackSlash + arrayOfAliases[j] || commandToExecute.toUpperCase() === arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === bas.cDash + arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === bas.cDoubleDash + arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === bas.cForwardSlash + arrayOfAliases[j].toUpperCase() || commandToExecute.toUpperCase() === bas.cBackSlash + arrayOfAliases[j].toUpperCase() || commandToExecute.toLowerCase() === arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === bas.cDash + arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === bas.cDoubleDash + arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === bas.cForwardSlash + arrayOfAliases[j].toLowerCase() || commandToExecute.toLowerCase() === bas.cBackSlash + arrayOfAliases[j].toLowerCase()) {
             foundValidCommand = true; // commandToExecute before the Alias is:
 
-            _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandToExecuteBeforeTheAliasIs + commandToExecute);
+            _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandToExecuteBeforeTheAliasIs + commandToExecute);
 
             commandToExecute = currentCommand[wrd.cName]; // commandToExecute after the Alias is:
 
-            _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandToExecuteAfterTheAliasIs + commandToExecute);
+            _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandToExecuteAfterTheAliasIs + commandToExecute);
 
             break loop1;
           }
@@ -213,9 +215,9 @@ function getValidCommand(commandString, commandDelimiter) {
     console.log(msg.cWarningTheSpecifiedCommand + commandToExecute + msg.cdoesNotExistPleaseTryAgain);
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -234,13 +236,13 @@ function getValidCommand(commandString, commandDelimiter) {
 function getCommandArgs(commandString, commandDelimiter) {
   var functionName = getCommandArgs.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // commandString is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // commandString is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringIs + commandString); // commandDelimiter is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringIs + commandString); // commandDelimiter is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandDelimiterIs + commandDelimiter);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandDelimiterIs + commandDelimiter);
 
   var returnData = false;
   var foundValidCommand = false;
@@ -253,7 +255,7 @@ function getCommandArgs(commandString, commandDelimiter) {
   replaceCharacterAtIndexRule[0] = biz.creplaceCharacterAtIndex;
   replaceTildesWithSingleQuoteRule[0] = biz.creplaceCharacterWithCharacter;
 
-  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
 
   if (commandDelimiter === null || commandDelimiter !== commandDelimiter || commandDelimiter === undefined) {
     commandArgsDelimiter = bas.cSpace;
@@ -266,13 +268,13 @@ function getCommandArgs(commandString, commandDelimiter) {
     // non-string array elements to parse command arguments without accidently parsing string literal values as command arguments.
     if (commandString.includes(bas.cBackTickQuote) === true) {
       // commandString contains either a singleQuote or a backTickQuote
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringContainsEitherSingleQuoteOrBackTickQuote);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringContainsEitherSingleQuoteOrBackTickQuote);
 
       var preSplitCommandString;
 
       if (commandString.includes(bas.cBackTickQuote) === true) {
         // commandString contains a singleQuote!
-        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringContainsSingleQuote); // NOTE: We cannot actually just replace each single quote, we need to tag each single quote in pairs of 2.
+        _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringContainsSingleQuote); // NOTE: We cannot actually just replace each single quote, we need to tag each single quote in pairs of 2.
         // The first one should be post-tagged, i.e. replace "'" with "'~" and the second should be pre-tagged i.e. replace "'" with "~'".
         // Then if there are more single quotes, the third post-tagged, i.e. replace "'" with "'~", etc...
 
@@ -280,11 +282,11 @@ function getCommandArgs(commandString, commandDelimiter) {
         var numberOfSingleQuotes = commandString.split(bas.cBackTickQuote).length - 1; // Determine if the number of single quotes is odd or event?
         // About to call the rule broker to process on the number of single quotes and determine if it-be even or odd
 
-        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cgetCommandArgsMessage1 + sys.cgetCommandArgsMessage2);
+        _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cgetCommandArgsMessage1 + sys.cgetCommandArgsMessage2);
 
         if (numberOfSingleQuotes >= 2 && _ruleBroker["default"].processRules(numberOfSingleQuotes, '', isOddRule) === false) {
           // numberOfSingleQuotes is >= 2 & the numberOfSingleQuotes is EVEN! YAY!
-          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cnumberOfSingleQuotesIsEven);
+          _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cnumberOfSingleQuotesIsEven);
 
           var indexOfStringDelimiter;
 
@@ -294,18 +296,18 @@ function getCommandArgs(commandString, commandDelimiter) {
               // Get the index of the first string delimiter.
               indexOfStringDelimiter = commandString.indexOf(bas.cBackTickQuote, 0); // First index is:
 
-              _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cFirstIndexIs + indexOfStringDelimiter); // commandString.replace(bas.cBackTickQuote, bas.cBackTickQuote + bas.cTilde)
+              _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cFirstIndexIs + indexOfStringDelimiter); // commandString.replace(bas.cBackTickQuote, bas.cBackTickQuote + bas.cTilde)
               // Rather than use the above, we will make a business rule to replace at index, the above replaces all instances and we don't want that!
 
 
               commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, bas.cBackTickQuote + bas.cTilde], replaceCharacterAtIndexRule);
               stringLiteralCommandDelimiterAdded = true; // commandString after tagging the first string delimiter:
 
-              _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringAfterTaggingTheFirstStringDelimiter + commandString);
+              _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringAfterTaggingTheFirstStringDelimiter + commandString);
             } else {
               indexOfStringDelimiter = commandString.indexOf(bas.cBackTickQuote, indexOfStringDelimiter + 1); // Additional index is:
 
-              _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cAdditionalIndexIs + indexOfStringDelimiter); // Determine if it is odd or even.
+              _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cAdditionalIndexIs + indexOfStringDelimiter); // Determine if it is odd or even.
               // NOTE: We start our count with 0 which would technically be our odd, then 1 should be even, but 1 is an odd number, so the logic here should actaully be backwards.
               // an even value for "i" would be the odd i-th delimiter value.
 
@@ -313,21 +315,21 @@ function getCommandArgs(commandString, commandDelimiter) {
               if (_ruleBroker["default"].processRules(i.toString(), '', isOddRule) === true) {
                 // We are on the odd index, 1, 3, 5, etc...
                 // odd index
-                _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.coddIndex);
+                _loggers["default"].consoleLog(namespacePrefix + functionName, msg.coddIndex);
 
                 commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, bas.cTilde + bas.cBackTickQuote], replaceCharacterAtIndexRule);
                 stringLiteralCommandDelimiterAdded = true; // commandString after tagging an odd string delimiter:
 
-                _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringAfterTaggingAnOddStringDelimiter + commandString);
+                _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringAfterTaggingAnOddStringDelimiter + commandString);
               } else {
                 // We are on the even index, 2, 4, 6, etc...
                 // even index
-                _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cevenIndex);
+                _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cevenIndex);
 
                 commandString = _ruleBroker["default"].processRules(commandString, [indexOfStringDelimiter, bas.cBackTickQuote + bas.cTilde], replaceCharacterAtIndexRule);
                 stringLiteralCommandDelimiterAdded = true; // commandString after tagging an even string delimiter:
 
-                _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringAfterTaggingAnEvenStringDelimiter + commandString);
+                _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringAfterTaggingAnEvenStringDelimiter + commandString);
               }
             }
           }
@@ -337,7 +339,7 @@ function getCommandArgs(commandString, commandDelimiter) {
           // ultimately everything needs to be returned as an array, make sure we trim the array elements so we don't get any empty array elements.
           // preSplitCommandString is:
 
-          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpreSplitCommandStringIs + JSON.stringify(preSplitCommandString));
+          _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cpreSplitCommandStringIs + JSON.stringify(preSplitCommandString));
 
           for (var j = 0; j < preSplitCommandString.length; j++) {
             var preSplitCommandStringElement = preSplitCommandString[j];
@@ -356,11 +358,11 @@ function getCommandArgs(commandString, commandDelimiter) {
               for (var k = 0; k < postSplitCommandString.length; k++) {
                 if (postSplitCommandString[k] !== '') {
                   // postSplitCommandString[k] is:
-                  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpostSplitCommandStringIs + JSON.stringify(postSplitCommandString[k]));
+                  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cpostSplitCommandStringIs + JSON.stringify(postSplitCommandString[k]));
 
                   returnData.push(postSplitCommandString[k]);
 
-                  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+                  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
                 }
               }
 
@@ -375,13 +377,13 @@ function getCommandArgs(commandString, commandDelimiter) {
                 returnData[returnData.length - 1] = returnData[returnData.length - 1] + preSplitCommandStringElement;
               } else {
                 // preSplitCommandStringElement is:
-                _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpreSplitCommandStringElementIs + JSON.stringify(preSplitCommandStringElement));
+                _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cpreSplitCommandStringElementIs + JSON.stringify(preSplitCommandStringElement));
 
                 returnData.push(preSplitCommandStringElement); // Add the string now.
               } // End else-clause: returnData[returnData.length - 1].slice(-1) === secondaryCommandArgsDelimiter
 
 
-              _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+              _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
             } // End else-clause: preSplitCommandStringElement.includes(bas.cTilde) === false
 
           } // End for-loop: preSplitCommandString, j++
@@ -396,11 +398,11 @@ function getCommandArgs(commandString, commandDelimiter) {
 
     } else {
       // Doing a straight split of the commandString:
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoingStraightSplitCommandString + commandString);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cDoingStraightSplitCommandString + commandString);
 
       returnData = commandString.split(commandArgsDelimiter);
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
     }
   }
 
@@ -409,9 +411,9 @@ function getCommandArgs(commandString, commandDelimiter) {
     _lexical["default"].removeStringLiteralTagsFromArray(returnData);
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -436,21 +438,21 @@ function executeCommand(commandString) {
   // so that when a chain of commands has completed execution we can evaluate command statistics and metrics.
   var functionName = executeCommand.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // commandString is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // commandString is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandStringIs + commandString);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandStringIs + commandString);
 
   var returnData = false;
-  var commandToExecute = getValidCommand(commandString, _configurator["default"].getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
+  var commandToExecute = getValidCommand(commandString, _configurator["default"].getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'commandToExecute is: ' + commandToExecute);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, 'commandToExecute is: ' + commandToExecute);
 
-  var commandArgs = getCommandArgs(commandString, _configurator["default"].getConfigurationSetting(cfg.cPrimaryCommandDelimiter));
+  var commandArgs = getCommandArgs(commandString, _configurator["default"].getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'commandArgs is: ' + commandArgs);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, 'commandArgs is: ' + commandArgs);
 
-  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(cfg.cEnableCommandPerformanceMetrics);
+  var commandMetricsEnabled = _configurator["default"].getConfigurationSetting(wrd.csystem, cfg.cEnableCommandPerformanceMetrics);
 
   var commandStartTime = '';
   var commandEndTime = '';
@@ -462,10 +464,11 @@ function executeCommand(commandString) {
     // compute the difference to determine how many milliseconds it took to run the command.
     commandStartTime = _timers["default"].getNowMoment(gen.cYYYYMMDD_HHmmss_SSS); // Command Start time is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCommandStartTimeIs + commandStartTime);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCommandStartTimeIs + commandStartTime);
   }
 
   if (commandToExecute !== false && commandArgs !== false) {
+    // console.log('commandToExecute is: ' + commandToExecute);
     returnData = D[wrd.cCommands][commandToExecute](commandArgs, '');
   } else if (commandToExecute !== false && commandArgs === false) {
     // This could be a command without any arguments.
@@ -482,12 +485,12 @@ function executeCommand(commandString) {
     var performanceTrackingObject = {};
     commandEndTime = _timers["default"].getNowMoment(gen.cYYYYMMDD_HHmmss_SSS); // Command End time is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCommandEndTimeIs + commandEndTime); // Now compute the delta time so we know how long it took to run that command.
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCommandEndTimeIs + commandEndTime); // Now compute the delta time so we know how long it took to run that command.
 
 
     commandDeltaTime = _timers["default"].computeDeltaTime(commandStartTime, commandEndTime); // Command run-time is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCommandRunTimeIs + commandDeltaTime); // Check to make sure the command performance tracking stack exists or does not exist.
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCommandRunTimeIs + commandDeltaTime); // Check to make sure the command performance tracking stack exists or does not exist.
 
 
     if (D[cfg.cCommandPerformanceTrackingStack] === undefined) {
@@ -512,9 +515,9 @@ function executeCommand(commandString) {
 
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }

@@ -9,12 +9,13 @@
  * @requires module:warden
  * @requires module:clientRulesLibrary
  * @requires module:clientCommandsLibrary
- * @requires module:application-constants
+ * @requires module:all-client-constants-validation
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:command-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/prompt-sync|prompt-sync}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -26,12 +27,13 @@
 import warden from '../../Framework/Controllers/warden';
 import clientRules from './BusinessRules/clientRulesLibrary';
 import clientCommands from './Commands/clientCommandsLibrary';
+import all_clt_cv from './Resources/ConstantsValidation/all-client-constants-validation';
 import * as bas from '../../Framework/Constants/basic.constants';
 import * as wrd from '../../Framework/Constants/word.constants';
 import * as sys from '../../Framework/Constants/system.constants';
-import * as cmd from '../../Framework/Constants/commands.constants';
-import * as cfg from '../../Framework/Constants/configurations.constants';
-import * as msg from '../../Framework/Constants/messages.constants';
+import * as cmd from '../../Framework/Constants/command.constants';
+import * as cfg from '../../Framework/Constants/configuration.constants';
+import * as msg from '../../Framework/Constants/message.constants';
 import * as apc from './Constants/application.constants';
 require('dotenv').config();
 const {NODE_ENV} = process.env;
@@ -41,6 +43,8 @@ var D = require('../../Framework/Structures/data');
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Application.application.
+var namespacePrefix = wrd.cApplication + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function bootStrapApplication
@@ -63,7 +67,10 @@ function bootStrapApplication() {
   rootPath = warden.processRootPath(rootPath);
   // console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
-  warden.saveRootPath(rootPath);
+  // NOTE: We are passing all_clt_cv.initializeAllClientConstantsValidationData function as an object on the next line of code.
+  // We are doing this because we have not yet evaluated the constants path based on the root path,
+  // and we don't want the function to be evaluated immediately because it will need to get the root path as part of evaluating the path to the constants files for validation.
+  warden.initApplicationSchema(rootPath, apc.cClientConstantsPathActual, all_clt_cv.initializeAllClientConstantsValidationData);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
   if (NODE_ENV === wrd.cdevelopment) {
@@ -87,13 +94,19 @@ function application() {
   let argumentDrivenInterface = true;
   let commandInput;
   let commandResult;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.setConfigurationSetting(wrd.csystem, sys.cConsoleLogEnabled, true);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // BEGIN main program loop
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage2);
-  // BEGIN command parser
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage3);
-  argumentDrivenInterface = warden.getConfigurationSetting(cfg.cArgumentDrivenInterface);
+  // console.log('BEGIN main program loop');
+  warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage2);
+  // // BEGIN command parser
+  // console.log('BEGIN command parser');
+  warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage3);
+  argumentDrivenInterface = warden.getConfigurationSetting(wrd.csystem, cfg.cArgumentDrivenInterface);
+  // console.log('argumentDrivenInterface is: ' + argumentDrivenInterface);
+  // console.log('starting warden.enqueueCommand(cmd.cStartupWorkflow)');
   warden.enqueueCommand(cmd.cStartupWorkflow);
+  // console.log('finished warden.enqueueCommand(cmd.cStartupWorkflow)');
 
   // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
@@ -134,12 +147,12 @@ function application() {
       commandResult = warden.processCommandQueue();
       if (commandResult === false) {
         // END command parser
-        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage4);
+        warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage4);
         programRunning = false;
         // END main program loop
-        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage5);
+        warden.consoleLog(namespacePrefix + functionName, msg.cApplicationMessage5);
         // Exiting, Good bye, Have a nice day & stay safe!
-        warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
+        warden.consoleLog(namespacePrefix + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
         break;
       } else {
         // console.log('contents of D are: ' + JSON.stringify(D));
@@ -147,7 +160,7 @@ function application() {
       }
     }
   }
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 // Launch the application!!

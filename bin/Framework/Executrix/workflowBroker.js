@@ -15,7 +15,7 @@ var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
 
 var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -33,7 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -44,7 +44,9 @@ var path = require('path');
 
 var D = require('../Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.Executrix.workflowBroker.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function getWorkflow
  * @description Given the name of the workflow that is being requested,
@@ -59,10 +61,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function getWorkflow(workflowName) {
   var functionName = getWorkflow.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // workflowName is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // workflowName is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowNameIs + workflowName);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cworkflowNameIs + workflowName);
 
   var workflowValue = false;
   var arrayOfWorkflows = D[sys.cCommandWorkflows][wrd.cWorkflow];
@@ -70,21 +72,21 @@ function getWorkflow(workflowName) {
   for (var i = 0; i < arrayOfWorkflows.length; i++) {
     var currentWorkflow = arrayOfWorkflows[i]; // currentWorkflow is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccurrentWorkflowIs + JSON.stringify(currentWorkflow));
 
     if (currentWorkflow[wrd.cName] === workflowName) {
       workflowValue = currentWorkflow[wrd.cValue]; // workflowValue is:
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + JSON.stringify(workflowValue));
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cworkflowValueIs + JSON.stringify(workflowValue));
 
       break;
     }
   } // workflowValue is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cworkflowValueIs + workflowValue);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cworkflowValueIs + workflowValue);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return workflowValue;
 }

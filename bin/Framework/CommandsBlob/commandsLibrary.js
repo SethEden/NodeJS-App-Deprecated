@@ -19,9 +19,9 @@ var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
 
 var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
-var cmd = _interopRequireWildcard(require("../Constants/commands.constants"));
+var cmd = _interopRequireWildcard(require("../Constants/command.constants"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -35,7 +35,9 @@ var path = require('path');
 
 var D = require('../Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.CommandsBlob.commandsLibrary.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function initCommandsLibrary
  * @description Initializes the commands function data structure on D.
@@ -53,7 +55,7 @@ var initCommandsLibrary = function initCommandsLibrary() {
 
   var functionName = initCommandsLibrary.name; // console.log('BEGIN commandsLibrary.initCommandsLibrary');
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
   D[wrd.cCommands] = {};
   D[wrd.cCommands] = (_D$wrd$cCommands = {}, _defineProperty(_D$wrd$cCommands, cmd.cechoCommand, function (inputData, inputMetaData) {
@@ -104,6 +106,8 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return nominalCommands.businessRulesMetrics(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.ccommandMetrics, function (inputData, inputMetaData) {
     return nominalCommands.commandMetrics(inputData, inputMetaData);
+  }), _defineProperty(_D$wrd$cCommands, cmd.csaveConfiguration, function (inputData, inputMetaData) {
+    return nominalCommands.saveConfiguration(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconvertColors, function (inputData, inputMetaData) {
     return nominalCommands.convertColors(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cvalidateConstants, function (inputData, inputMetaData) {
@@ -112,7 +116,7 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return unitTests.validateCommandAliases(inputData, inputMetaData);
   }), _D$wrd$cCommands); // console.log('END commandsLibrary.initCommandsLibrary');
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 exports.initCommandsLibrary = initCommandsLibrary;

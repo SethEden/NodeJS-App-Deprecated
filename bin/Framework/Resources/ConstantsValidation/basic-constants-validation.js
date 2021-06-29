@@ -172,6 +172,10 @@ var basicConstantsValidation = [{
   Actual: bas.cPercent,
   Expected: '%'
 }, {
+  Name: 'cDoublePercent',
+  Actual: bas.cDoublePercent,
+  Expected: '%%'
+}, {
   Name: 'cCarrot',
   Actual: bas.cCarrot,
   Expected: '^'

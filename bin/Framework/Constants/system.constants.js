@@ -5,14 +5,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cTestRunTime = exports.cScriptRunTime = exports.cVersionControl = exports.cConfigurationElements = exports.cConfigurationElement = exports.cConfigurationName = exports.cFileNumber = exports.cAccessLevel = exports.cShareEmail = exports.cTestDataFileName = exports.cProjectDescription = exports.cProjectName = exports.cPassword = exports.cUsername = exports.cRowNumber = exports.cIngestionCompleteDwellTime = exports.cProcessingTimeout = exports.cTestData = exports.cInnerHTML = exports.cinnerHTML = exports.cInnerText = exports.cinnerText = exports.cOperatingSystem = exports.cVisibilityCheck = exports.cvisibilityCheck = exports.cDeltaT = exports.cFileCounter = exports.cIncludeDateTimeStampInLogFiles = exports.cLogFileEnabled = exports.cTestDataPath = exports.cResultsLogFilePathAndName = exports.cExecutionJournalFilePathAndName = exports.cDataLogFilePathAndName = exports.cLogFilePathAndName = exports.cDwellTime = exports.cTimeoutOverride = exports.cSpecialCharacters = exports.cAllowableCharacters = exports.cParallelMultiUnified = exports.cSynchSingular = exports.cAsynchSingular = exports.cPreValidateFileName = exports.cFileNames = exports.cFilenames = exports.cfilenames = exports.cFileName = exports.cFilename = exports.cfilename = exports.cFileTypes = exports.cfilesLists = exports.cTestRunID = exports.cHostName = exports.cBrowserName = exports.cRunTime = exports.cRuntime = exports.cEndKeywordTimeStamp = exports.cBeginKeywordTimeStamp = exports.cEndPageScriptTimeStamp = exports.cBeginPageScriptTimeStamp = exports.cEndTestTimeStamp = exports.cBeginTestTimeStamp = exports.cEndScriptTimeStamp = exports.cBeginScriptTimeStamp = exports.cScriptDateTimeStamp = exports.cTestTimeStamp = exports.cKeywordTimeStamp = exports.cScriptTimeStamp = exports.cScriptDateStamp = exports.cDateTimeStamp = exports.cPageScriptTimeStamp = exports.cTimeStamp = exports.cIntermediatePath = exports.cPageScript = exports.cEnvironmentRowNumber = exports.cEnvironmentRow = exports.cMasterRowNumber = exports.cNumberOfRows = exports.cTestAutomation = exports.cDebugFiles = exports.cDebugFunctions = exports.cDebugSelectors = exports.cDebugBrowserActions = exports.cJournalBrowserActions = exports.cLogBrowserActions = exports.cDebugKeywords = exports.cDebugPageData = exports.cDebugPageScripts = exports.cDebugTestData = exports.cDebugTestExhaustive = exports.cDebugPage = exports.cDebugTest = exports.cWithText = exports.cwithText = exports.cUnderline = exports.cunderline = exports.cSTYLE = exports.cITERATION = exports.cENVIRONMENT = exports.cLOG = exports.cENV = void 0;
-exports.ccurrentMasterStringArrayElement = exports.candSpaceDomainSpaceName = exports.cdomainSpaceName = exports.candSuffix = exports.candPrefix = exports.cprogramLoop = exports.cGenerateA = exports.cwasCompleted = exports.cWithoutThe = exports.cfailureMode = exports.cspecifiedSuffixAndDomain = exports.callowableSpecialCharacters = exports.cgenerateSpecialCharacters = exports.cnumberOfCharactersToGenerate = exports.cbigInteger = exports.cSource2 = exports.cSource1 = exports.cDataStorage = exports.cExportConst = exports.cexportconst = exports.cHexValue = exports.cStandardDeviation = exports.cCommandWorkflows = exports.cCommandsAliases = exports.cFramework = exports.cframework = exports.crulesLibrary = exports.cBusinessRules = exports.cbusinessRules = exports.cBusinessRule = exports.cbusinessRule = exports.cColorName = exports.cColorData = exports.cConfiguration_Colors = exports.cBackground = exports.cbackground = exports.creleaseApplication = exports.cdeployMetaData = exports.cdeployApplication = exports.cSpaceIsColonSpace = exports.cBrowserRefresh = exports.cNavigateTo = exports.cnavigateTo = exports.cPage_Keywords = exports.cBackSlash = exports.cForwardSlash = exports.cVideoLogs = exports.cDashboardLogs = exports.cCarriageReturn = exports.cAlphabeticCharacter = exports.cBooleanValue = exports.cNumberInRange = exports.cNumericCharacter = exports.cWithSpecificSuffixAndDomainName = exports.cSuffixAndDomain = exports.cAlphaNumericCharacter = exports.cLetterOrNumberOrSpecialCharacter = exports.cLetterOrSpecialCharacter = exports.cLetterOr = exports.cRandomInvalidEmail = exports.cRandomValidEmail = exports.cgenerateInvalidEmail = exports.cgenerateValidEmail = exports.cInvalidEmail = exports.cValidEmail = exports.cvalidEmail = exports.cSpecialCharacterCodeByLength = exports.cAlphaNumericCodeWithSpecialCharactersByLength = exports.cAlphaNumericCodeWithSpecialCharacters = exports.cNumericCodeByLength = exports.cNumericCode = exports.cAlphaNumericCodeByLength = exports.cAlphaNumericCode = exports.cAlphaNumeric = exports.cTextWithSpecialCharactersByLength = exports.cTextWithSpecialCharacters = exports.cTextByLength = exports.cWithSpecialCharacters = exports.cSpecialCharacter = exports.cByLength = exports.cLowerCase = exports.cUpperCase = exports.cMixedCase = exports.crandomlyGenerate = exports.cgenerateRandom = exports.caddFilter = exports.caddSibling = exports.caddNth = exports.caddFindValue = exports.caddParent = exports.caddTimeout = exports.caddWithText = exports.cTestBureau = exports.cUnderscore = exports.cchildElementCount = exports.cselectorTimeout = exports.cAbreviatedSelectorsInLogs = exports.cAbreviatedSelectors = exports.cTypeText = exports.ctypeText = void 0;
-exports.cNumericConstantsValidation = exports.cMessagesConstantsValidation = exports.cLanguagesConstantsValidation = exports.cKnotsConstantsValidation = exports.cIsotopeConstantsValidation = exports.cGenericConstantsValidation = exports.cElementConstantsValidation = exports.cCountriesConstantsValidation = exports.cConfigurationsConstantsValidation = exports.cCommandsConstantsValidation = exports.cColorConstantsValidation = exports.cBusinessConstantsValidation = exports.cBasicConstantsValidation = exports.cConstantsValidationData = exports.cCommandQueue = exports.cclientRulesLibrary = exports.cConstantsPathActual = exports.cConstantsPath = exports.cLocatorsDataPath = exports.cKeywordsDataPath = exports.cWorkflowDataPath = exports.cPageDataPath = exports.cCtempPath = exports.cDataPath = exports.cApplicationDescription = exports.cApplicationVersionNumber = exports.cConfigurationPath = exports.cApplicationCleanedRootPath = exports.cApplicationRootPath = exports.cApplicationName = exports.cctrl_z = exports.cctrl_y = exports.cctrl_x = exports.cctrl_w = exports.cctrl_v = exports.cctrl_u = exports.cctrl_t = exports.cctrl_s = exports.cctrl_r = exports.cctrl_q = exports.cctrl_p = exports.cctrl_o = exports.cctrl_n = exports.cctrl_m = exports.cctrl_l = exports.cctrl_k = exports.cctrl_j = exports.cctrl_i = exports.cctrl_h = exports.cctrl_g = exports.cctrl_f = exports.cctrl_e = exports.cctrl_d = exports.cctrl_c = exports.cctrl_b = exports.cctrl_a = exports.cPREPROD = exports.cPreProd = exports.cPRE = exports.cPre = exports.cPROD = exports.cProd = exports.cDEV = exports.cQA = exports.cButton = exports.cVRML = exports.cVrml = exports.cvrml = exports.cSolidWorks = exports.cSolidEdge = exports.cRhino = exports.cProE = exports.cParasolid = exports.cNX = exports.cNeutral = exports.cInventor = exports.cImages = exports.cImage = exports.cHOOPS = exports.cHoops = exports.cDWG = exports.cDraft = exports.cDocuments = exports.cDocument = exports.cCatia = exports.cDataFontBackgroundColor = exports.cMessageFontBackgroundColor = exports.cFunctionFontBackgroundColor = exports.cModuleFontBackgroundColor = exports.cDataFontColor = exports.cMessageFontColor = exports.cFunctionFontColor = exports.cModuleFontColor = exports.cDataFontStyle = exports.cMessageFontStyle = exports.cFunctionFontStyle = exports.cModuleFontStyle = exports.cCamelCase = exports.creturnData = exports.cLehmerCodeArray = void 0;
-exports.cword_constants_js = exports.cunits_constants_js = exports.csystem_constants_js = exports.cshape_constants_js = exports.cphonics_constants_js = exports.cnumeric_constants_js = exports.cmessages_constants_js = exports.clanguages_constants_js = exports.cknots_constants_js = exports.cisotope_constants_js = exports.cgeneric_constants_js = exports.celement_constants_js = exports.ccountries_constants_js = exports.cconfigurations_constants_js = exports.ccommands_constants_js = exports.ccolor_constants_js = exports.cbusiness_constants_js = exports.cbasic_constants_js = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cDestinationResourcesPath = exports.cSourceResourcesPath = exports.cWordConstantsValidation = exports.cUnitsConstantsValidation = exports.cSystemConstantsValidation = exports.cShapeConstantsValidation = exports.cPhonicsConstantsValidation = void 0;
+exports.cVersionControl = exports.cConfigurationElements = exports.cConfigurationElement = exports.cConfigurationName = exports.cFileNumber = exports.cAccessLevel = exports.cShareEmail = exports.cTestDataFileName = exports.cProjectDescription = exports.cProjectName = exports.cPassword = exports.cUsername = exports.cRowNumber = exports.cIngestionCompleteDwellTime = exports.cProcessingTimeout = exports.cTestData = exports.cInnerHTML = exports.cinnerHTML = exports.cInnerText = exports.cinnerText = exports.cOperatingSystem = exports.cVisibilityCheck = exports.cvisibilityCheck = exports.cDeltaT = exports.cFileCounter = exports.cIncludeDateTimeStampInLogFiles = exports.cLogFileEnabled = exports.cConsoleLogEnabled = exports.cTestDataPath = exports.cResultsLogFilePathAndName = exports.cExecutionJournalFilePathAndName = exports.cDataLogFilePathAndName = exports.cLogFilePathAndName = exports.cDwellTime = exports.cTimeoutOverride = exports.cSpecialCharacters = exports.cAllowableCharacters = exports.cParallelMultiUnified = exports.cSynchSingular = exports.cAsynchSingular = exports.cPreValidateFileName = exports.cFileNames = exports.cFilenames = exports.cfilenames = exports.cFileName = exports.cFilename = exports.cfilename = exports.cFileTypes = exports.cfilesLists = exports.cTestRunID = exports.cHostName = exports.cBrowserName = exports.cRunTime = exports.cRuntime = exports.cEndKeywordTimeStamp = exports.cBeginKeywordTimeStamp = exports.cEndPageScriptTimeStamp = exports.cBeginPageScriptTimeStamp = exports.cEndTestTimeStamp = exports.cBeginTestTimeStamp = exports.cEndScriptTimeStamp = exports.cBeginScriptTimeStamp = exports.cScriptDateTimeStamp = exports.cTestTimeStamp = exports.cKeywordTimeStamp = exports.cScriptTimeStamp = exports.cScriptDateStamp = exports.cDateTimeStamp = exports.cPageScriptTimeStamp = exports.cTimeStamp = exports.cIntermediatePath = exports.cPageScript = exports.cEnvironmentRowNumber = exports.cEnvironmentRow = exports.cMasterRowNumber = exports.cNumberOfRows = exports.cTestAutomation = exports.cDebugFiles = exports.cDebugFunctions = exports.cDebugSelectors = exports.cDebugBrowserActions = exports.cJournalBrowserActions = exports.cLogBrowserActions = exports.cDebugKeywords = exports.cDebugPageData = exports.cDebugPageScripts = exports.cDebugTestData = exports.cDebugForceMessageToLogFile = exports.cDebugTestExhaustive = exports.cDebugPage = exports.cDebugTest = exports.cWithText = exports.cwithText = exports.cUnderline = exports.cunderline = exports.cSTYLE = exports.cITERATION = exports.cENVIRONMENT = exports.cLOG = exports.cENV = void 0;
+exports.cdomainSpaceName = exports.candSuffix = exports.candPrefix = exports.cprogramLoop = exports.cGenerateA = exports.cwasCompleted = exports.cWithoutThe = exports.cfailureMode = exports.cspecifiedSuffixAndDomain = exports.callowableSpecialCharacters = exports.cgenerateSpecialCharacters = exports.cnumberOfCharactersToGenerate = exports.cbigInteger = exports.cSource2 = exports.cSource1 = exports.cDataStorage = exports.cExportConst = exports.cexportconst = exports.cHexValue = exports.cStandardDeviation = exports.cCommandWorkflows = exports.cCommandsAliases = exports.cFramework = exports.cframework = exports.crulesLibrary = exports.cBusinessRules = exports.cbusinessRules = exports.cBusinessRule = exports.cbusinessRule = exports.cColorName = exports.cColorData = exports.cConfiguration_Colors = exports.cBackground = exports.cbackground = exports.creleaseApplication = exports.cdeployMetaData = exports.cdeployApplication = exports.cSpaceIsColonSpace = exports.cBrowserRefresh = exports.cNavigateTo = exports.cnavigateTo = exports.cPage_Keywords = exports.cBackSlash = exports.cForwardSlash = exports.cVideoLogs = exports.cDashboardLogs = exports.cCarriageReturn = exports.cAlphabeticCharacter = exports.cBooleanValue = exports.cNumberInRange = exports.cNumericCharacter = exports.cWithSpecificSuffixAndDomainName = exports.cSuffixAndDomain = exports.cAlphaNumericCharacter = exports.cLetterOrNumberOrSpecialCharacter = exports.cLetterOrSpecialCharacter = exports.cLetterOr = exports.cRandomInvalidEmail = exports.cRandomValidEmail = exports.cgenerateInvalidEmail = exports.cgenerateValidEmail = exports.cInvalidEmail = exports.cValidEmail = exports.cvalidEmail = exports.cSpecialCharacterCodeByLength = exports.cAlphaNumericCodeWithSpecialCharactersByLength = exports.cAlphaNumericCodeWithSpecialCharacters = exports.cNumericCodeByLength = exports.cNumericCode = exports.cAlphaNumericCodeByLength = exports.cAlphaNumericCode = exports.cAlphaNumeric = exports.cTextWithSpecialCharactersByLength = exports.cTextWithSpecialCharacters = exports.cTextByLength = exports.cWithSpecialCharacters = exports.cSpecialCharacter = exports.cByLength = exports.cLowerCase = exports.cUpperCase = exports.cMixedCase = exports.crandomlyGenerate = exports.cgenerateRandom = exports.caddFilter = exports.caddSibling = exports.caddNth = exports.caddFindValue = exports.caddParent = exports.caddTimeout = exports.caddWithText = exports.cTestBureau = exports.cUnderscore = exports.cchildElementCount = exports.cselectorTimeout = exports.cAbreviatedSelectorsInLogs = exports.cAbreviatedSelectors = exports.cTypeText = exports.ctypeText = exports.cTestRunTime = exports.cScriptRunTime = void 0;
+exports.cCommandConstantsValidation = exports.cColorConstantsValidation = exports.cBusinessConstantsValidation = exports.cBasicConstantsValidation = exports.cConstantsPhase2ValidationMessages = exports.cConstantsPhase1ValidationMessages = exports.cConstantsFilePaths = exports.cConstantsPrefix = exports.cConstantsFileNames = exports.cConstantsShortNames = exports.cConstantsValidationData = exports.cCommandQueue = exports.cclientRulesLibrary = exports.cSystemConstantsPathActual = exports.cSystemConstantsPath = exports.cClientConstantsPath = exports.cLocatorsDataPath = exports.cKeywordsDataPath = exports.cWorkflowDataPath = exports.cPageDataPath = exports.cCtempPath = exports.cDataPath = exports.cApplicationDescription = exports.cApplicationVersionNumber = exports.cConfigurationPath = exports.cApplicationCleanedRootPath = exports.cApplicationRootPath = exports.cApplicationName = exports.cctrl_z = exports.cctrl_y = exports.cctrl_x = exports.cctrl_w = exports.cctrl_v = exports.cctrl_u = exports.cctrl_t = exports.cctrl_s = exports.cctrl_r = exports.cctrl_q = exports.cctrl_p = exports.cctrl_o = exports.cctrl_n = exports.cctrl_m = exports.cctrl_l = exports.cctrl_k = exports.cctrl_j = exports.cctrl_i = exports.cctrl_h = exports.cctrl_g = exports.cctrl_f = exports.cctrl_e = exports.cctrl_d = exports.cctrl_c = exports.cctrl_b = exports.cctrl_a = exports.cPREPROD = exports.cPreProd = exports.cPRE = exports.cPre = exports.cPROD = exports.cProd = exports.cDEV = exports.cQA = exports.cButton = exports.cVRML = exports.cVrml = exports.cvrml = exports.cSolidWorks = exports.cSolidEdge = exports.cRhino = exports.cProE = exports.cParasolid = exports.cNX = exports.cNeutral = exports.cInventor = exports.cImages = exports.cImage = exports.cHOOPS = exports.cHoops = exports.cDWG = exports.cDraft = exports.cDocuments = exports.cDocument = exports.cCatia = exports.cDataFontBackgroundColor = exports.cMessageFontBackgroundColor = exports.cFunctionFontBackgroundColor = exports.cModuleFontBackgroundColor = exports.cDataFontColor = exports.cMessageFontColor = exports.cFunctionFontColor = exports.cModuleFontColor = exports.cDataFontStyle = exports.cMessageFontStyle = exports.cFunctionFontStyle = exports.cModuleFontStyle = exports.cCamelCase = exports.creturnData = exports.cLehmerCodeArray = exports.ccurrentMasterStringArrayElement = exports.candSpaceDomainSpaceName = void 0;
+exports.cword_constants_js = exports.cunit_constants_js = exports.csystem_constants_js = exports.cshape_constants_js = exports.cphonic_constants_js = exports.cnumeric_constants_js = exports.cmessage_constants_js = exports.clanguage_constants_js = exports.cknot_constants_js = exports.cisotope_constants_js = exports.cgeneric_constants_js = exports.celement_constants_js = exports.ccountry_constants_js = exports.cconfiguration_constants_js = exports.ccommand_constants_js = exports.ccolor_constants_js = exports.cbusiness_constants_js = exports.cbasic_constants_js = exports.cBinaryReleasePath = exports.cBinaryRootPath = exports.cDestinationResourcesPath = exports.cSourceResourcesPath = exports.cWordConstantsValidation = exports.cUnitConstantsValidation = exports.cSystemConstantsValidation = exports.cShapeConstantsValidation = exports.cPhonicConstantsValidation = exports.cNumericConstantsValidation = exports.cMessageConstantsValidation = exports.cLanguageConstantsValidation = exports.cKnotConstantsValidation = exports.cIsotopeConstantsValidation = exports.cGenericConstantsValidation = exports.cElementConstantsValidation = exports.cCountryConstantsValidation = exports.cConfigurationConstantsValidation = void 0;
 
 var bas = _interopRequireWildcard(require("./basic.constants"));
 
-var phn = _interopRequireWildcard(require("./phonics.constants"));
+var phn = _interopRequireWildcard(require("./phonic.constants"));
 
 var gen = _interopRequireWildcard(require("./generic.constants"));
 
@@ -33,7 +33,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * system defined words and codes, user interface object types,
  * and names of business rules/system defined named commands, etc...
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:generic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
@@ -79,6 +79,9 @@ exports.cDebugPage = cDebugPage;
 var cDebugTestExhaustive = cDebugTest + wrd.cExhaustive; // DebugTestExhaustive
 
 exports.cDebugTestExhaustive = cDebugTestExhaustive;
+var cDebugForceMessageToLogFile = wrd.cDebug + wrd.cForce + wrd.cMessage + bas.cTo + wrd.cLog + wrd.cFile; // DebugForceMessageToLogFile
+
+exports.cDebugForceMessageToLogFile = cDebugForceMessageToLogFile;
 var cDebugTestData = cDebugTest + wrd.cData; // DebugTestData
 
 exports.cDebugTestData = cDebugTestData;
@@ -256,6 +259,9 @@ exports.cResultsLogFilePathAndName = cResultsLogFilePathAndName;
 var cTestDataPath = wrd.cTest + wrd.cData + wrd.cPath; // TestDataPath
 
 exports.cTestDataPath = cTestDataPath;
+var cConsoleLogEnabled = wrd.cConsole + wrd.cLog + wrd.cEnabled; // ConsoleLogEnabled
+
+exports.cConsoleLogEnabled = cConsoleLogEnabled;
 var cLogFileEnabled = wrd.cLog + wrd.cFile + wrd.cEnabled; // LogFileEnabled
 
 exports.cLogFileEnabled = cLogFileEnabled;
@@ -894,11 +900,15 @@ exports.cKeywordsDataPath = cKeywordsDataPath;
 var cLocatorsDataPath = wrd.cLocators + cDataPath; // LocatorsDataPath
 
 exports.cLocatorsDataPath = cLocatorsDataPath;
-var cConstantsPath = wrd.cConstants + wrd.cPath;
-exports.cConstantsPath = cConstantsPath;
-var cConstantsPathActual = wrd.csrc + bas.cForwardSlash + cFramework + bas.cForwardSlash + wrd.cConstants + bas.cForwardSlash; // src/Framework/Constants/
+var cClientConstantsPath = wrd.cClient + wrd.cConstants + wrd.cPath; // ClientConstantsPath
 
-exports.cConstantsPathActual = cConstantsPathActual;
+exports.cClientConstantsPath = cClientConstantsPath;
+var cSystemConstantsPath = wrd.cSystem + wrd.cConstants + wrd.cPath; // SystemConstantsPath
+
+exports.cSystemConstantsPath = cSystemConstantsPath;
+var cSystemConstantsPathActual = wrd.csrc + bas.cForwardSlash + cFramework + bas.cForwardSlash + wrd.cConstants + bas.cForwardSlash; // src/Framework/Constants/
+
+exports.cSystemConstantsPathActual = cSystemConstantsPathActual;
 var cclientRulesLibrary = wrd.cclient + wrd.cRules + wrd.cLibrary; // clientRulesLibrary
 
 exports.cclientRulesLibrary = cclientRulesLibrary;
@@ -908,6 +918,24 @@ exports.cCommandQueue = cCommandQueue;
 var cConstantsValidationData = wrd.cConstants + wrd.cValidation + wrd.cData; // ConstantsValidationData
 
 exports.cConstantsValidationData = cConstantsValidationData;
+var cConstantsShortNames = wrd.cConstants + wrd.cShort + wrd.cNames; // ConstantsShortNames
+
+exports.cConstantsShortNames = cConstantsShortNames;
+var cConstantsFileNames = wrd.cConstants + wrd.cFile + wrd.cNames; // ConstantsFileNames
+
+exports.cConstantsFileNames = cConstantsFileNames;
+var cConstantsPrefix = wrd.cConstants + wrd.cPrefix; // ConstantsPrefix
+
+exports.cConstantsPrefix = cConstantsPrefix;
+var cConstantsFilePaths = wrd.cConstants + wrd.cFile + wrd.cPaths; // ConstantsFilePaths
+
+exports.cConstantsFilePaths = cConstantsFilePaths;
+var cConstantsPhase1ValidationMessages = wrd.cConstants + wrd.cPhase + num.c1 + wrd.cValidation + wrd.cMessages; // ConstantsPhase1ValidationMessages
+
+exports.cConstantsPhase1ValidationMessages = cConstantsPhase1ValidationMessages;
+var cConstantsPhase2ValidationMessages = wrd.cConstants + wrd.cPhase + num.c2 + wrd.cValidation + wrd.cMessages; // ConstantsPhase2ValidationMessages
+
+exports.cConstantsPhase2ValidationMessages = cConstantsPhase2ValidationMessages;
 var cBasicConstantsValidation = wrd.cBasic + wrd.cConstants + wrd.cValidation; // BasicConstantsValidation
 
 exports.cBasicConstantsValidation = cBasicConstantsValidation;
@@ -917,15 +945,15 @@ exports.cBusinessConstantsValidation = cBusinessConstantsValidation;
 var cColorConstantsValidation = wrd.cColor + wrd.cConstants + wrd.cValidation; // ColorConstantsValidation
 
 exports.cColorConstantsValidation = cColorConstantsValidation;
-var cCommandsConstantsValidation = wrd.cCommands + wrd.cConstants + wrd.cValidation; // CommandsConstantsValidation
+var cCommandConstantsValidation = wrd.cCommand + wrd.cConstants + wrd.cValidation; // CommandConstantsValidation
 
-exports.cCommandsConstantsValidation = cCommandsConstantsValidation;
-var cConfigurationsConstantsValidation = wrd.cConfigurations + wrd.cConstants + wrd.cValidation; // ConfigurationsConstantsValidation
+exports.cCommandConstantsValidation = cCommandConstantsValidation;
+var cConfigurationConstantsValidation = wrd.cConfiguration + wrd.cConstants + wrd.cValidation; // ConfigurationConstantsValidation
 
-exports.cConfigurationsConstantsValidation = cConfigurationsConstantsValidation;
-var cCountriesConstantsValidation = wrd.cCountries + wrd.cConstants + wrd.cValidation; // CountriesConstantsValidation
+exports.cConfigurationConstantsValidation = cConfigurationConstantsValidation;
+var cCountryConstantsValidation = wrd.cCountry + wrd.cConstants + wrd.cValidation; // CountryConstantsValidation
 
-exports.cCountriesConstantsValidation = cCountriesConstantsValidation;
+exports.cCountryConstantsValidation = cCountryConstantsValidation;
 var cElementConstantsValidation = wrd.cElement + wrd.cConstants + wrd.cValidation; // ElementConstantsValidation
 
 exports.cElementConstantsValidation = cElementConstantsValidation;
@@ -935,30 +963,30 @@ exports.cGenericConstantsValidation = cGenericConstantsValidation;
 var cIsotopeConstantsValidation = wrd.cIsotope + wrd.cConstants + wrd.cValidation; // IsotopeConstantsValidation
 
 exports.cIsotopeConstantsValidation = cIsotopeConstantsValidation;
-var cKnotsConstantsValidation = wrd.cKnots + wrd.cConstants + wrd.cValidation; // KnotsConstantsValidation
+var cKnotConstantsValidation = wrd.cKnot + wrd.cConstants + wrd.cValidation; // KnotConstantsValidation
 
-exports.cKnotsConstantsValidation = cKnotsConstantsValidation;
-var cLanguagesConstantsValidation = wrd.cLanguages + wrd.cConstants + wrd.cValidation; // LanguagesConstantsValidation
+exports.cKnotConstantsValidation = cKnotConstantsValidation;
+var cLanguageConstantsValidation = wrd.cLanguage + wrd.cConstants + wrd.cValidation; // LanguageConstantsValidation
 
-exports.cLanguagesConstantsValidation = cLanguagesConstantsValidation;
-var cMessagesConstantsValidation = wrd.cMessages + wrd.cConstants + wrd.cValidation; // MessagesConstantsValidation
+exports.cLanguageConstantsValidation = cLanguageConstantsValidation;
+var cMessageConstantsValidation = wrd.cMessage + wrd.cConstants + wrd.cValidation; // MessageConstantsValidation
 
-exports.cMessagesConstantsValidation = cMessagesConstantsValidation;
+exports.cMessageConstantsValidation = cMessageConstantsValidation;
 var cNumericConstantsValidation = wrd.cNumeric + wrd.cConstants + wrd.cValidation; // NumericConstantsValidation
 
 exports.cNumericConstantsValidation = cNumericConstantsValidation;
-var cPhonicsConstantsValidation = wrd.cPhonics + wrd.cConstants + wrd.cValidation; // PhonicsConstantsValidation
+var cPhonicConstantsValidation = wrd.cPhonic + wrd.cConstants + wrd.cValidation; // PhonicConstantsValidation
 
-exports.cPhonicsConstantsValidation = cPhonicsConstantsValidation;
+exports.cPhonicConstantsValidation = cPhonicConstantsValidation;
 var cShapeConstantsValidation = wrd.cShape + wrd.cConstants + wrd.cValidation; // ShapeConstantsValidation
 
 exports.cShapeConstantsValidation = cShapeConstantsValidation;
 var cSystemConstantsValidation = wrd.cSystem + wrd.cConstants + wrd.cValidation; // SystemConstantsValidation
 
 exports.cSystemConstantsValidation = cSystemConstantsValidation;
-var cUnitsConstantsValidation = wrd.cUnits + wrd.cConstants + wrd.cValidation; // UnitsConstantsValidation
+var cUnitConstantsValidation = wrd.cUnit + wrd.cConstants + wrd.cValidation; // UnitConstantsValidation
 
-exports.cUnitsConstantsValidation = cUnitsConstantsValidation;
+exports.cUnitConstantsValidation = cUnitConstantsValidation;
 var cWordConstantsValidation = wrd.cWord + wrd.cConstants + wrd.cValidation; // WordConstantsValidation
 
 exports.cWordConstantsValidation = cWordConstantsValidation;
@@ -984,15 +1012,15 @@ exports.cbusiness_constants_js = cbusiness_constants_js;
 var ccolor_constants_js = wrd.ccolor + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // color.constants.js
 
 exports.ccolor_constants_js = ccolor_constants_js;
-var ccommands_constants_js = wrd.ccommands + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // commands.constants.js
+var ccommand_constants_js = wrd.ccommand + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // command.constants.js
 
-exports.ccommands_constants_js = ccommands_constants_js;
-var cconfigurations_constants_js = wrd.cconfigurations + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // configurations.constants.js
+exports.ccommand_constants_js = ccommand_constants_js;
+var cconfiguration_constants_js = wrd.cconfiguration + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // configuration.constants.js
 
-exports.cconfigurations_constants_js = cconfigurations_constants_js;
-var ccountries_constants_js = wrd.ccountries + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // countries.constants.js
+exports.cconfiguration_constants_js = cconfiguration_constants_js;
+var ccountry_constants_js = wrd.ccountry + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // country.constants
 
-exports.ccountries_constants_js = ccountries_constants_js;
+exports.ccountry_constants_js = ccountry_constants_js;
 var celement_constants_js = wrd.celement + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // element.constants.js
 
 exports.celement_constants_js = celement_constants_js;
@@ -1002,30 +1030,30 @@ exports.cgeneric_constants_js = cgeneric_constants_js;
 var cisotope_constants_js = wrd.cisotope + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // isotope.constants.js
 
 exports.cisotope_constants_js = cisotope_constants_js;
-var cknots_constants_js = wrd.cknots + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // knots.constants.js
+var cknot_constants_js = wrd.cknot + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // knot.constants.js
 
-exports.cknots_constants_js = cknots_constants_js;
-var clanguages_constants_js = wrd.clanguages + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // languages.constants.js
+exports.cknot_constants_js = cknot_constants_js;
+var clanguage_constants_js = wrd.clanguage + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // language.constants.js
 
-exports.clanguages_constants_js = clanguages_constants_js;
-var cmessages_constants_js = wrd.cmessages + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // messages.constants.js
+exports.clanguage_constants_js = clanguage_constants_js;
+var cmessage_constants_js = wrd.cmessage + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // message.constants.js
 
-exports.cmessages_constants_js = cmessages_constants_js;
+exports.cmessage_constants_js = cmessage_constants_js;
 var cnumeric_constants_js = wrd.cnumeric + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // numeric.constants.js
 
 exports.cnumeric_constants_js = cnumeric_constants_js;
-var cphonics_constants_js = wrd.cphonics + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // phonics.constants.js
+var cphonic_constants_js = wrd.cphonic + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // phonic.constants.js
 
-exports.cphonics_constants_js = cphonics_constants_js;
+exports.cphonic_constants_js = cphonic_constants_js;
 var cshape_constants_js = wrd.cshape + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // shape.constants.js
 
 exports.cshape_constants_js = cshape_constants_js;
 var csystem_constants_js = wrd.csystem + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // system.constants.js
 
 exports.csystem_constants_js = csystem_constants_js;
-var cunits_constants_js = wrd.cunits + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // units.constants.js
+var cunit_constants_js = wrd.cunit + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // unit.constants.js
 
-exports.cunits_constants_js = cunits_constants_js;
+exports.cunit_constants_js = cunit_constants_js;
 var cword_constants_js = wrd.cword + bas.cDot + wrd.cconstants + bas.cDot + bas.cjs; // word.constants.js
 
 exports.cword_constants_js = cword_constants_js;

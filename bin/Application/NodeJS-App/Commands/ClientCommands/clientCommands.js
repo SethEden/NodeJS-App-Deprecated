@@ -15,15 +15,17 @@ var gen = _interopRequireWildcard(require("../../../../Framework/Constants/gener
 
 var num = _interopRequireWildcard(require("../../../../Framework/Constants/numeric.constants"));
 
+var wrd = _interopRequireWildcard(require("../../../../Framework/Constants/word.constants"));
+
 var sys = _interopRequireWildcard(require("../../../../Framework/Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../../../../Framework/Constants/business.constants"));
 
-var cfg = _interopRequireWildcard(require("../../../../Framework/Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../../../../Framework/Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../../../../Framework/Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../../../../Framework/Constants/message.constants"));
 
-var apc = _interopRequireWildcard(require("../../Constants/application.constants"));
+var app_cmd = _interopRequireWildcard(require("../../Constants/application.command.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -37,11 +39,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @description Contains all client defined commands for execution client actions with various operations.
  * @requires module:warden
  * @requires module:basic-constants
+ * @requires module:generic-constants
  * @requires module:numeric-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
- * @requires module:application-constants
+ * @requires module:message-constants
+ * @requires module:application-command-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @author Seth Hollingsead
@@ -52,7 +56,9 @@ var path = require('path');
 
 var chalk = require('chalk');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Application.Commands.ClientCommands.clientCommands.
+
+var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cCommands + bas.cDot + wrd.cClient + wrd.cCommands + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function customEchoCommand
  * @description A quick command to validate that the new dynamic data storage technique for client commands.
@@ -67,20 +73,20 @@ var customEchoCommand = function customEchoCommand(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEchoCommand function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  var functionName = apc.ccustomEchoCommand;
+  var functionName = app_cmd.ccustomEchoCommand;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
   returnData = inputData + ' clientStringParsing.customEchoCommand';
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END clientStringParsing.customEcho function');
 
 
@@ -115,13 +121,13 @@ var customEchoCommand = function customEchoCommand(inputData, inputMetaData) {
 exports.customEchoCommand = customEchoCommand;
 
 var bossPanic = function bossPanic(inputData, inputMetaData) {
-  var functionName = apc.cbossPanic;
+  var functionName = app_cmd.cbossPanic;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = true;
   var stringLength = 0;
@@ -146,7 +152,7 @@ var bossPanic = function bossPanic(inputData, inputMetaData) {
   var fastTypingOutput = false;
   var speedTypingPerformanceIndex = 100; // Default to a fast typing speed.
 
-  var systemColorLogsEnabled = _warden["default"].getConfigurationSetting(cfg.cEnableColorizedConsoleLogs); // Rather than doing the above, I'll just call the business rule to generate a random number between 1 and 100.
+  var systemColorLogsEnabled = _warden["default"].getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs); // Rather than doing the above, I'll just call the business rule to generate a random number between 1 and 100.
   // Then I can call the string generator to generate a random string of characters to match that length.
   // And we can build up each line of code that way.
   // In such a way we can have much finer control over how strings are generated and colorized without going into scanning the hard drive.
@@ -267,9 +273,9 @@ var bossPanic = function bossPanic(inputData, inputMetaData) {
     _warden["default"].sleep(performanceIndex);
   }
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 };

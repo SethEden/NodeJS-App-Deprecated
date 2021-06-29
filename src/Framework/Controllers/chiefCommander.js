@@ -10,7 +10,7 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -24,10 +24,12 @@ import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
-import * as msg from '../Constants/messages.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Framework.Controllers.chiefCommander.
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function bootStrapCommands
@@ -39,10 +41,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function bootStrapCommands() {
   let functionName = bootStrapCommands.name;
   // console.log('BEGIN chiefCommander.bootStrapCommands');
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   commandBroker.bootStrapCommands();
   // console.log('END chiefCommander.bootStrapCommands');
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -57,9 +59,9 @@ function bootStrapCommands() {
  */
 function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
   let functionName = loadCommandAliasesFromPath.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // commandAliasesFilePathConfigurationName is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandAliasesFilePathConfigurationNameIs + commandAliasesFilePathConfigurationName);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandAliasesFilePathConfigurationNameIs + commandAliasesFilePathConfigurationName);
   let allCommandAliasesData = {};
   allCommandAliasesData = chiefData.setupAllXmlData(commandAliasesFilePathConfigurationName, sys.cCommandsAliases);
   if (D[sys.cCommandsAliases] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
@@ -70,7 +72,7 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
       D[sys.cCommandsAliases][wrd.cCommand].push(allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand][i])
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -84,14 +86,14 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
  */
 function enqueueCommand(command) {
   let functionName = enqueueCommand.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // command is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandIs + command);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandIs + command);
   if (D[sys.cCommandQueue] === undefined) {
     queue.initQueue(sys.cCommandQueue);
   }
   queue.enqueue(sys.cCommandQueue, command);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -103,11 +105,11 @@ function enqueueCommand(command) {
  */
 function isCommandQueueEmpty() {
   let functionName = isCommandQueueEmpty.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let returnData = false;
   returnData = queue.isEmpty(sys.cCommandQueue);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -120,15 +122,16 @@ function isCommandQueueEmpty() {
  */
 function processCommandQueue() {
   let functionName = processCommandQueue.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let commandToExecute;
   let returnData;
   commandToExecute = queue.dequeue(sys.cCommandQueue);
   // commandToExecute is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandToExecuteIs + commandToExecute);
+  // console.log('commandToExecute is: ' + commandToExecute);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandToExecuteIs + commandToExecute);
   returnData = commandBroker.executeCommand(commandToExecute);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 

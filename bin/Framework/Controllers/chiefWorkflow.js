@@ -17,7 +17,7 @@ var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
 
 var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -36,7 +36,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -47,7 +47,9 @@ var path = require('path');
 
 var D = require('../Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.Controllers.chiefWorkflow.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function loadCommandWorkflowsFromPath
  * @description Loads the command workflows XML file that is specified by the input.
@@ -61,10 +63,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   var functionName = loadCommandWorkflowsFromPath.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // commandWorkflowFilePathConfigurationName is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // commandWorkflowFilePathConfigurationName is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
 
   var allCommandWorkflowsData = {};
   allCommandWorkflowsData = _chiefData["default"].setupAllXmlData(commandWorkflowFilePathConfigurationName, sys.cCommandWorkflows);
@@ -79,7 +81,7 @@ function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) 
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;

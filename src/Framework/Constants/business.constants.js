@@ -3,7 +3,7 @@
  * @module business-constants
  * @description Contains many re-usable business rules constants.
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:numeric-constants
  * @requires module:word-constants
  * @requires module:system-constants
@@ -12,7 +12,7 @@
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as bas from './basic.constants';
-import * as phn from './phonics.constants';
+import * as phn from './phonic.constants';
 import * as num from './numeric.constants';
 import * as wrd from './word.constants';
 import * as sys from './system.constants';

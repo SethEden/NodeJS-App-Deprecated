@@ -52,6 +52,7 @@ export const basicConstantsValidation = [
   {Name: 'cHash', Actual: bas.cHash, Expected: '#'},
   {Name: 'cDollar', Actual: bas.cDollar, Expected: '$'},
   {Name: 'cPercent', Actual: bas.cPercent, Expected: '%'},
+  {Name: 'cDoublePercent', Actual: bas.cDoublePercent, Expected: '%%'},
   {Name: 'cCarrot', Actual: bas.cCarrot, Expected: '^'},
   {Name: 'cAndPersand', Actual: bas.cAndPersand, Expected: '&'},
   {Name: 'cDot', Actual: bas.cDot, Expected: '.'},
