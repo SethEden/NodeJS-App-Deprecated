@@ -521,3 +521,7 @@ END warden.isCommandQueueEmpty Function
 ```
 
 Here you can see that a large number of functions have been called, as well as the inputs to some functions and also some of the variables that are being set and processed inside some functions. So if you want to see what is going on inside the application while it is running this is an excellent developers tool that allows you to control what is logged from where and when and even in what color/font-style.
+
+# Plugins
+
+This is where we will document the process of creating a new plugin so code from an external repo can be loaded at runtime and custom external commands and business rules can be called.
