@@ -366,28 +366,31 @@ END application.application Function
 
 # Debugging
 If you want to or need to debug any part of the application, or you are building on some business rules and adding functions that you want to debug.
-Simply continue to follow the existing patterns in the code then add your functions to the Configuration.xml file with a color schema for your logs:
+Simply continue to follow the existing patterns in the code then add your functions to the appropriate JSON file(s) under the ./Application/Resources/Configuration/DebugSettings/../*.*/*.json file with a color schema for your logs:
 ```
-<ConfigurationElement Name="nominal.name" Type="Default" Value="False" Version="3"/>
-<ConfigurationElement Name="nominal.name@ModuleFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@FunctionFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@MessageFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@DataFontStyle" Type="Default" Value="Default" Version="3"/>
-<ConfigurationElement Name="nominal.name@ModuleFontColor" Type="Default" Value="Blue" Version="3"/>
-<ConfigurationElement Name="nominal.name@FunctionFontColor" Type="Default" Value="Blue" Version="3"/>
-<ConfigurationElement Name="nominal.name@MessageFontColor" Type="Default" Value="Blue" Version="3"/>
-<ConfigurationElement Name="nominal.name@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
-<ConfigurationElement Name="nominal.name@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="nominal.name@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="nominal.name@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="nominal.name@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+{
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal": false,
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@ModuleFontStyle": "Bold|Underline",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@FunctionFontStyle": "Bold|Underline",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@MessageFontStyle": "Underline",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@DataFontStyle": "Bold",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@ModuleFontColor": "0,0,0",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@FunctionFontColor": "0,0,0",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@MessageFontColor": "0,0,0",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@DataFontColor": "0,0,0",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@ModuleFontBackgroundColor": "255,255,255",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@FunctionFontBackgroundColor": "255,255,255",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@MessageFontBackgroundColor": "255,255,255",
+  "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal@DataFontBackgroundColor": "255,255,255",
+  ...
+}
 ```
 
-If you want to debug any function in the entire framework you can find it listed here, just change the Value="False" to Value="True" like so:
+If you want to debug any function in the entire framework you can find it listed in the appropriate JSON file under the same folder structure as the rest of the application/framework, just change the Value="False" to Value="True" like so:
 From:
-    <ConfigurationElement Name="nominal.name" Type="Default" Value="False" Version="3"/>
+    "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal": false,
 To:
-    <ConfigurationElement Name="nominal.name" Type="Default" Value="True" Version="3"/>
+    "DebugFiles|DebugSettings.Framework.CommandsBlob.Commands.nominal": true,
 
 Save the file, and if you are running from a binary file you will need to re-run the Deploy-Build-Release workflow detailed above.
 In any event, when you run the application again you should see this function logged every time it is called. In this case the function is a command.
@@ -433,26 +436,26 @@ These are the debugging lines included in this command function.
 You can also enable logging for an entire file/class of functions simply by changing the configuration setting for a particular file/class.
 Here you can see the configuration setting for the warden.js which acts as a central control manager for execution of the entire application/framework:
 ```
-<ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
-<ConfigurationElement Name="warden@ModuleFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
-<ConfigurationElement Name="warden@FunctionFontStyle" Type="Default" Value="Bold|Underline" Version="3"/>
-<ConfigurationElement Name="warden@MessageFontStyle" Type="Default" Value="Underline" Version="3"/>
-<ConfigurationElement Name="warden@DataFontStyle" Type="Default" Value="Bold" Version="3"/>
-<ConfigurationElement Name="warden@ModuleFontColor" Type="Default" Value="Red" Version="3"/>
-<ConfigurationElement Name="warden@FunctionFontColor" Type="Default" Value="Red" Version="3"/>
-<ConfigurationElement Name="warden@MessageFontColor" Type="Default" Value="Red" Version="3"/>
-<ConfigurationElement Name="warden@DataFontColor" Type="Default" Value="Yellow" Version="3"/>
-<ConfigurationElement Name="warden@ModuleFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="warden@FunctionFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="warden@MessageFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
-<ConfigurationElement Name="warden@DataFontBackgroundColor" Type="Default" Value="Black" Version="3"/>
+"DebugFiles|DebugSettings.Framework.Controllers.warden": false,
+"DebugFiles|DebugSettings.Framework.Controllers.warden@ModuleFontStyle": "Bold|Underline",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@FunctionFontStyle": "Bold|Underline",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@MessageFontStyle": "Underline",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@DataFontStyle": "Bold",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@ModuleFontColor": "Red",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@FunctionFontColor": "Red",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@MessageFontColor": "Red",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@DataFontColor": "Yellow",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@ModuleFontBackgroundColor": "Black",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@FunctionFontBackgroundColor": "Black",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@MessageFontBackgroundColor": "Black",
+"DebugFiles|DebugSettings.Framework.Controllers.warden@DataFontBackgroundColor": "Black",
 ```
 
 If I change the Value="False" to Value="True" such as: (NOTE: I have reverted the name debugging setting above for nominal.name, changed it back to "False")
 From:
-    <ConfigurationElement Name="warden" Type="Default" Value="False" Version="3"/>
+    "DebugFiles|DebugSettings.Framework.Controllers.warden": false,
 To:
-    <ConfigurationElement Name="warden" Type="Default" Value="True" Version="3"/>
+    "DebugFiles|DebugSettings.Framework.Controllers.warden": true,
 
 Save the file and then re-run the application the startup should log something like this:
 ```
