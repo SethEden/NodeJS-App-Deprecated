@@ -1742,6 +1742,14 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cSetting,
   Expected: 'Setting'
 }, {
+  Name: 'csettings',
+  Actual: wrd.csettings,
+  Expected: 'settings'
+}, {
+  Name: 'cSettings',
+  Actual: wrd.cSettings,
+  Expected: 'Settings'
+}, {
   Name: 'cPreview',
   Actual: wrd.cPreview,
   Expected: 'Preview'
@@ -4748,6 +4756,46 @@ var wordConstantsValidation = [// Miscelaneious Words
   Actual: wrd.cControl,
   Expected: 'Control'
 }, {
+  Name: 'ccontrols',
+  Actual: wrd.ccontrols,
+  Expected: 'controls'
+}, {
+  Name: 'cControls',
+  Actual: wrd.cControls,
+  Expected: 'Controls'
+}, {
+  Name: 'ccontrolled',
+  Actual: wrd.ccontrolled,
+  Expected: 'controlled'
+}, {
+  Name: 'cControlled',
+  Actual: wrd.cControlled,
+  Expected: 'Controlled'
+}, {
+  Name: 'ccontrolling',
+  Actual: wrd.ccontrolling,
+  Expected: 'controlling'
+}, {
+  Name: 'cControlling',
+  Actual: wrd.cControlling,
+  Expected: 'Controlling'
+}, {
+  Name: 'ccontroller',
+  Actual: wrd.ccontroller,
+  Expected: 'controller'
+}, {
+  Name: 'cController',
+  Actual: wrd.cController,
+  Expected: 'Controller'
+}, {
+  Name: 'ccontrollers',
+  Actual: wrd.ccontrollers,
+  Expected: 'controllers'
+}, {
+  Name: 'cControllers',
+  Actual: wrd.cControllers,
+  Expected: 'Controllers'
+}, {
   Name: 'cperform',
   Actual: wrd.cperform,
   Expected: 'perform'
@@ -5971,6 +6019,22 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cCannot',
   Actual: wrd.cCannot,
   Expected: 'Cannot'
+}, {
+  Name: 'cnothing',
+  Actual: wrd.cnothing,
+  Expected: 'nothing'
+}, {
+  Name: 'cNothing',
+  Actual: wrd.cNothing,
+  Expected: 'Nothing'
+}, {
+  Name: 'cnothingness',
+  Actual: wrd.cnothingness,
+  Expected: 'nothingness'
+}, {
+  Name: 'cNothingness',
+  Actual: wrd.cNothingness,
+  Expected: 'Nothingness'
 }, {
   Name: 'cused',
   Actual: wrd.cused,
@@ -8055,6 +8119,46 @@ var wordConstantsValidation = [// Miscelaneious Words
   Name: 'cIncrementing',
   Actual: wrd.cIncrementing,
   Expected: 'Incrementing'
+}, {
+  Name: 'cforce',
+  Actual: wrd.cforce,
+  Expected: 'force'
+}, {
+  Name: 'cForce',
+  Actual: wrd.cForce,
+  Expected: 'Force'
+}, {
+  Name: 'cforced',
+  Actual: wrd.cforced,
+  Expected: 'forced'
+}, {
+  Name: 'cForced',
+  Actual: wrd.cForced,
+  Expected: 'Forced'
+}, {
+  Name: 'cforcing',
+  Actual: wrd.cforcing,
+  Expected: 'forcing'
+}, {
+  Name: 'cForcing',
+  Actual: wrd.cForcing,
+  Expected: 'Forcing'
+}, {
+  Name: 'cforces',
+  Actual: wrd.cforces,
+  Expected: 'forces'
+}, {
+  Name: 'cForces',
+  Actual: wrd.cForces,
+  Expected: 'Forces'
+}, {
+  Name: 'cexecutrix',
+  Actual: wrd.cexecutrix,
+  Expected: 'executrix'
+}, {
+  Name: 'cExecutrix',
+  Actual: wrd.cExecutrix,
+  Expected: 'Executrix'
 }, //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 {

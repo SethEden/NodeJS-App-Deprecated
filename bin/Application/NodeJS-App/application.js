@@ -68,7 +68,9 @@ var D = require('../../Framework/Structures/data');
 
 global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Application.application.
+
+var namespacePrefix = wrd.cApplication + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function bootStrapApplication
  * @description Setup all the application data and configuration settings.
@@ -128,17 +130,23 @@ function application() {
   var commandInput;
   var commandResult;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // BEGIN main program loop
+  _warden["default"].setConfigurationSetting(wrd.csystem, sys.cConsoleLogEnabled, true);
+
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // BEGIN main program loop
+  // console.log('BEGIN main program loop');
 
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage2); // BEGIN command parser
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage2); // // BEGIN command parser
+  // console.log('BEGIN command parser');
 
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage3);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage3);
 
-  argumentDrivenInterface = _warden["default"].getConfigurationSetting(cfg.cArgumentDrivenInterface);
+  argumentDrivenInterface = _warden["default"].getConfigurationSetting(wrd.csystem, cfg.cArgumentDrivenInterface); // console.log('argumentDrivenInterface is: ' + argumentDrivenInterface);
+  // console.log('starting warden.enqueueCommand(cmd.cStartupWorkflow)');
 
-  _warden["default"].enqueueCommand(cmd.cStartupWorkflow); // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
+  _warden["default"].enqueueCommand(cmd.cStartupWorkflow); // console.log('finished warden.enqueueCommand(cmd.cStartupWorkflow)');
+  // NOTE: We are processing the argument driven interface first that way even if we are not in an argument driven interface,
   // arguments can still be passed in and they will be executed first, after the startup workflow is complete.
   //
   // console.log('argument driven execution');
@@ -182,14 +190,14 @@ function application() {
 
       if (commandResult === false) {
         // END command parser
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage4);
+        _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage4);
 
         programRunning = false; // END main program loop
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationMessage5); // Exiting, Good bye, Have a nice day & stay safe!
+        _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationMessage5); // Exiting, Good bye, Have a nice day & stay safe!
 
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
+        _warden["default"].consoleLog(namespacePrefix + functionName, msg.cApplicationExitMessage1 + msg.cApplicationExitMessage2);
 
         break;
       } else {// console.log('contents of D are: ' + JSON.stringify(D));
@@ -198,7 +206,7 @@ function application() {
     }
   }
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ; // Launch the application!!

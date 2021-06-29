@@ -85,6 +85,10 @@ var systemConstantsValidation = [// Miscelaneious
   Actual: sys.cDebugTestExhaustive,
   Expected: 'DebugTestExhaustive'
 }, {
+  Name: 'cDebugForceMessageToLogFile',
+  Actual: sys.cDebugForceMessageToLogFile,
+  Expected: 'DebugForceMessageToLogFile'
+}, {
   Name: 'cDebugTestData',
   Actual: sys.cDebugTestData,
   Expected: 'DebugTestData'
@@ -320,6 +324,10 @@ var systemConstantsValidation = [// Miscelaneious
   Name: 'cTestDataPath',
   Actual: sys.cTestDataPath,
   Expected: 'TestDataPath'
+}, {
+  Name: 'cConsoleLogEnabled',
+  Actual: sys.cConsoleLogEnabled,
+  Expected: 'ConsoleLogEnabled'
 }, {
   Name: 'cLogFileEnabled',
   Actual: sys.cLogFileEnabled,

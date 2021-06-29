@@ -88,7 +88,9 @@ var path = require('path');
 
 var D = require('../Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.Controllers.warden.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function bootStrapApplication
  * @description Do all of the activities to setup the application system to run whatever actions the application will run.
@@ -108,16 +110,16 @@ function bootStrapApplication(pathAndFilename) {
   // console.log('pathAndFilename is: ' + pathAndFilename);
   var functionName = bootStrapApplication.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpathAndFilenameIs + pathAndFilename);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cpathAndFilenameIs + pathAndFilename);
 
   _chiefConfiguration["default"].setupConfiguration(pathAndFilename); // contents of D-data structure is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('contents of D are: ' + JSON.stringify(D));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('contents of D are: ' + JSON.stringify(D));
   // console.log('END warden.bootStrapApplication function');
 
 }
@@ -147,8 +149,8 @@ function processRootPath(systemRootPath) {
   // console.log('BEGIN warden.processRootPath function');
   // console.log('systemRootPath is: ' + systemRootPath);
   // var functionName = processRootPath.name;
-  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cBEGIN_Function);
-  // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'systemRootPath is: ' + systemRootPath);
+  // loggers.consoleLog(namespacePrefix + functionName, sys.cBEGIN_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, 'systemRootPath is: ' + systemRootPath);
   var rules = {};
   rules[0] = biz.cparseSystemRootPath;
 
@@ -162,7 +164,7 @@ function processRootPath(systemRootPath) {
 
   rootPath = path.resolve(rootPath); // console.log('systemRootPath after business rule processing is: ' + rootPath);
   // console.log('END warden.processRootPath function');
-  // loggers.consoleLog(baseFileName + bas.cDot + functionName, sys.cEND_Function);
+  // loggers.consoleLog(namespacePrefix + functionName, sys.cEND_Function);
 
   return rootPath;
 }
@@ -195,17 +197,17 @@ function initApplicationSchema(rootPath, clientConstantsPath, clientValidationDa
   // console.log('rootPath is: ' + rootPath);
   var functionName = initApplicationSchema.name; // console.log('logging the BEGIN warden.saveRootPath function');
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // console.log('logging the current rootPath input.');
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // console.log('logging the current rootPath input.');
   // rootPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.crootPathIs + rootPath); // clientValidationData is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.crootPathIs + rootPath); // clientValidationData is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cclientValidationDataIs + JSON.stringify(clientValidationData)); // console.log('setting the configuration setting for the root path');
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cclientValidationDataIs + JSON.stringify(clientValidationData)); // console.log('setting the configuration setting for the root path');
 
 
-  _configurator["default"].setConfigurationSetting(sys.cApplicationRootPath, rootPath);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cApplicationRootPath, rootPath);
 
   var cleanedRootPath; // console.log('calling file broker to clean the root path.');
 
@@ -217,24 +219,24 @@ function initApplicationSchema(rootPath, clientConstantsPath, clientValidationDa
   var applicationData = _fileBroker["default"].getJsonData(applicationMetaDataPathAndFilename); // console.log('loaded application meta-data is: ' + JSON.stringify(applicationData));
 
 
-  _configurator["default"].setConfigurationSetting(sys.cApplicationCleanedRootPath, cleanedRootPath); // console.log('set the application name as a configuration setting: ' + applicationData[wrd.cName]);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath, cleanedRootPath); // console.log('set the application name as a configuration setting: ' + applicationData[wrd.cName]);
 
 
-  _configurator["default"].setConfigurationSetting(sys.cApplicationName, applicationData[wrd.cName]); // console.log('set the application version number as a configuration setting: ' + applicationData[wrd.cVersion]);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cApplicationName, applicationData[wrd.cName]); // console.log('set the application version number as a configuration setting: ' + applicationData[wrd.cVersion]);
 
 
-  _configurator["default"].setConfigurationSetting(sys.cApplicationVersionNumber, applicationData[wrd.cVersion]); // console.log('set the application description as a configuration setting: ' + applicationData[wrd.cDescription]);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cApplicationVersionNumber, applicationData[wrd.cVersion]); // console.log('set the application description as a configuration setting: ' + applicationData[wrd.cDescription]);
 
 
-  _configurator["default"].setConfigurationSetting(sys.cApplicationDescription, applicationData[wrd.cDescription]);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cApplicationDescription, applicationData[wrd.cDescription]);
 
-  if (_configurator["default"].getConfigurationSetting(cfg.cEnableConstantsValidation) === true) {
+  if (_configurator["default"].getConfigurationSetting(wrd.csystem, cfg.cEnableConstantsValidation) === true) {
     var resolvedSystemConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + sys.cSystemConstantsPathActual);
     var resolvedClientConstantsPathActual = path.resolve(cleanedRootPath + bas.cForwardSlash + clientConstantsPath); // console.log('resolvedConstantsPathActual is: ' + resolvedConstantsPathActual);
 
-    _configurator["default"].setConfigurationSetting(sys.cSystemConstantsPath, resolvedSystemConstantsPathActual);
+    _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cSystemConstantsPath, resolvedSystemConstantsPathActual);
 
-    _configurator["default"].setConfigurationSetting(sys.cClientConstantsPath, resolvedClientConstantsPathActual);
+    _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cClientConstantsPath, resolvedClientConstantsPathActual);
 
     _chiefData["default"].initializeConstantsValidationData(); // This just makes sure that the data structure is created on the D-Data structure.
 
@@ -248,19 +250,19 @@ function initApplicationSchema(rootPath, clientConstantsPath, clientValidationDa
 
   }
 
-  var enableLogFileOutputSetting = _configurator["default"].getConfigurationSetting(cfg.cLogFileEnabled);
+  var enableLogFileOutputSetting = _configurator["default"].getConfigurationSetting(wrd.csystem, sys.cLogFileEnabled);
 
   if (enableLogFileOutputSetting === true) {
     // console.log('Capture the session date-time-stamp so we can determine a log file name.');
-    var sessionDateTimeStamp = _timers["default"].getNowMoment(_configurator["default"].getConfigurationSetting(cfg.cDateTimeStamp)); // console.log('sessionDateTimeStamp is: ' + sessionDateTimeStamp);
+    var sessionDateTimeStamp = _timers["default"].getNowMoment(_configurator["default"].getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp)); // console.log('sessionDateTimeStamp is: ' + sessionDateTimeStamp);
 
 
     var logFileName = sessionDateTimeStamp + bas.cUnderscore + applicationData[wrd.cVersion] + bas.cUnderscore + applicationData[wrd.cName] + gen.cDotLog; // console.log('logFileName is: ' + logFileName);
 
-    _configurator["default"].setConfigurationSetting(sys.cLogFilePathAndName, logFileName);
+    _configurator["default"].setConfigurationSetting(wrd.csystem, sys.cLogFilePathAndName, logFileName);
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('END warden.saveRootPath function');
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('END warden.saveRootPath function');
 
 }
 
@@ -280,17 +282,17 @@ function mergeClientBusinessRules(clientBusinessRules) {
   // console.log('clientBusinessRules is: ' + JSON.stringify(clientBusinessRules));
   var functionName = mergeClientBusinessRules.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // clientBusinessRules are:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // clientBusinessRules are:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cclientBusinessRulesAre + JSON.stringify(clientBusinessRules));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cclientBusinessRulesAre + JSON.stringify(clientBusinessRules));
 
   _ruleBroker["default"].addClientRules(clientBusinessRules); // contents of D-data structure is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('END warden.mergeClientBusinessRules function');
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('END warden.mergeClientBusinessRules function');
 
 }
 
@@ -309,17 +311,17 @@ function mergeClientCommands(clientCommands) {
   // console.log('BEGIN warden.mergeClientCommands function');
   var functionName = mergeClientCommands.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // clientCommands are:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // clientCommands are:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cclientCommandsAre + JSON.stringify(clientCommands));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cclientCommandsAre + JSON.stringify(clientCommands));
 
   _commandBroker["default"].addClientCommands(clientCommands); // contents of D-data structure is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccontentsOfDataStructreIs + JSON.stringify(D));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('END warden.mergeClientCommands function');
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('END warden.mergeClientCommands function');
 
 }
 
@@ -337,35 +339,35 @@ function mergeClientCommands(clientCommands) {
 function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath) {
   var functionName = loadCommandAliases.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // systemCommandsAliasesPath is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // systemCommandsAliasesPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csystemCommandsAliasesPathIs + systemCommandsAliasesPath); // clientCommandsAliasesPath is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csystemCommandsAliasesPathIs + systemCommandsAliasesPath); // clientCommandsAliasesPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cclientCommandsAliasesPathIs + clientCommandsAliasesPath);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cclientCommandsAliasesPathIs + clientCommandsAliasesPath);
 
-  var applicationRootPath = _configurator["default"].getConfigurationSetting(sys.cApplicationCleanedRootPath);
+  var applicationRootPath = _configurator["default"].getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
 
   var resolvedSystemCommandsAliasesPath = path.resolve(applicationRootPath + bas.cForwardSlash + systemCommandsAliasesPath);
   var resolvedClientCommandsAliasesPath = path.resolve(applicationRootPath + bas.cForwardSlash + clientCommandsAliasesPath); // resolvedSystemCommandsAliasesPath is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedSystemCommandsAliasesPathIs + resolvedSystemCommandsAliasesPath); // resolvedClientCommandsAliasesPath is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cresolvedSystemCommandsAliasesPathIs + resolvedSystemCommandsAliasesPath); // resolvedClientCommandsAliasesPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedClientCommandsAliasesPathIs + resolvedClientCommandsAliasesPath);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cresolvedClientCommandsAliasesPathIs + resolvedClientCommandsAliasesPath);
 
-  _configurator["default"].setConfigurationSetting(cmd.cSystemCommandsAliasesPath, resolvedSystemCommandsAliasesPath);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, cmd.cSystemCommandsAliasesPath, resolvedSystemCommandsAliasesPath);
 
-  _configurator["default"].setConfigurationSetting(cmd.cClientCommandsAliasesPath, resolvedClientCommandsAliasesPath);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, cmd.cClientCommandsAliasesPath, resolvedClientCommandsAliasesPath);
 
-  _chiefCommander["default"].loadCommandAliasesFromPath(cmd.cSystemCommandsAliasesPath); // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
-
-
-  _chiefCommander["default"].loadCommandAliasesFromPath(cmd.cClientCommandsAliasesPath); // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+  _chiefCommander["default"].loadCommandAliasesFromPath(cmd.cSystemCommandsAliasesPath); // loggers.consoleLog(namespacePrefix + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _chiefCommander["default"].loadCommandAliasesFromPath(cmd.cClientCommandsAliasesPath); // loggers.consoleLog(namespacePrefix + functionName, 'contents of D-data structure is: ' + JSON.stringify(D));
+
+
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;
@@ -382,33 +384,33 @@ function loadCommandAliases(systemCommandsAliasesPath, clientCommandsAliasesPath
 function loadCommandWorkflows(systemWorkflowPath, clientWorkflowPath) {
   var functionName = loadCommandWorkflows.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // systemWorkflowPath is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // systemWorkflowPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csystemWorkflowPathIs + systemWorkflowPath); // clientWorkflowPath is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csystemWorkflowPathIs + systemWorkflowPath); // clientWorkflowPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cclientWorkflowPathIs + clientWorkflowPath);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cclientWorkflowPathIs + clientWorkflowPath);
 
-  var applicationRootPath = _configurator["default"].getConfigurationSetting(sys.cApplicationCleanedRootPath);
+  var applicationRootPath = _configurator["default"].getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
 
   var resolvedSystemWorkflowsPath = path.resolve(applicationRootPath + bas.cForwardSlash + systemWorkflowPath);
   var resolvedClientWorkflowsPath = path.resolve(applicationRootPath + bas.cForwardSlash + clientWorkflowPath); // resolvedSystemWorkflowsPath is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedSystemWorkflowsPathIs + resolvedSystemWorkflowsPath); // resolvedClientWorkflowsPath is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cresolvedSystemWorkflowsPathIs + resolvedSystemWorkflowsPath); // resolvedClientWorkflowsPath is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cresolvedClientWorkflowsPathIs + resolvedClientWorkflowsPath);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cresolvedClientWorkflowsPathIs + resolvedClientWorkflowsPath);
 
-  _configurator["default"].setConfigurationSetting(cmd.cSystemWorkflowsPath, resolvedSystemWorkflowsPath);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, cmd.cSystemWorkflowsPath, resolvedSystemWorkflowsPath);
 
-  _configurator["default"].setConfigurationSetting(cmd.cClientWorkflowsPath, resolvedClientWorkflowsPath);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, cmd.cClientWorkflowsPath, resolvedClientWorkflowsPath);
 
   _chiefWorkflow["default"].loadCommandWorkflowsFromPath(cmd.cSystemWorkflowsPath);
 
   _chiefWorkflow["default"].loadCommandWorkflowsFromPath(cmd.cClientWorkflowsPath);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;
@@ -430,25 +432,25 @@ function executeBusinessRule(businessRule, ruleInput, ruleMetaData) {
   // console.log('ruleMetaData is: ' + JSON.stringify(ruleMetaData));
   var functionName = executeBusinessRule.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // businessRule is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // businessRule is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cbusinessRuleIs + JSON.stringify(businessRule)); // ruleInput is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cbusinessRuleIs + JSON.stringify(businessRule)); // ruleInput is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cruleInputIs + JSON.stringify(ruleInput)); // ruleMetaData is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cruleInputIs + JSON.stringify(ruleInput)); // ruleMetaData is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cruleMetaDataIs + JSON.stringify(ruleMetaData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cruleMetaDataIs + JSON.stringify(ruleMetaData));
 
   var rules = {};
   var returnData;
   rules[0] = businessRule;
   returnData = _ruleBroker["default"].processRules(ruleInput, ruleMetaData, rules);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END warden.executeBusinessRule function');
 
 
@@ -473,14 +475,14 @@ function enqueueCommand(command) {
   // console.log('command is: ' + command);
   var functionName = enqueueCommand.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // command is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // command is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandIs + command);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandIs + command);
 
   _chiefCommander["default"].enqueueCommand(command);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('END warden.enqueueCommand function');
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('END warden.enqueueCommand function');
 
 }
 
@@ -499,14 +501,14 @@ function enqueueCommand(command) {
 function isCommandQueueEmpty() {
   var functionName = isCommandQueueEmpty.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
   var returnData = false;
   returnData = _chiefCommander["default"].isCommandQueueEmpty();
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -526,14 +528,14 @@ function isCommandQueueEmpty() {
 function processCommandQueue() {
   var functionName = processCommandQueue.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
   var returnData = false;
   returnData = _chiefCommander["default"].processCommandQueue();
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -549,25 +551,28 @@ function processCommandQueue() {
  * @data 2020/05/26
  */
 
-function setConfigurationSetting(configurationName, configurationValue) {
+function setConfigurationSetting(configurationNamespace, configurationName, configurationValue) {
   // console.log('BEGIN warden.setConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   // console.log('configurationValue is: ' + configurationValue);
   var functionName = setConfigurationSetting.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // configurationName is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // configurationNamespace is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconfigurationNameIs + configurationName); // configurationValue is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cconfigurationNamespaceIs + configurationNamespace); // configurationName is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconfigurationValueIs + configurationValue); // D[sys.cConfiguration][configurationName] = configurationValue;
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cconfigurationNameIs + configurationName); // configurationValue is:
 
 
-  _configurator["default"].setConfigurationSetting(configurationName, configurationValue); // console.log('END warden.setConfigurationSetting function');
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cconfigurationValueIs + configurationValue); // D[sys.cConfiguration][configurationName] = configurationValue;
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _configurator["default"].setConfigurationSetting(configurationNamespace, configurationName, configurationValue); // console.log('END warden.setConfigurationSetting function');
+
+
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;
@@ -580,25 +585,28 @@ function setConfigurationSetting(configurationName, configurationValue) {
  * @date 2020/05/26
  */
 
-function getConfigurationSetting(configurationName) {
+function getConfigurationSetting(configurationNamespace, configurationName) {
   // console.log('BEGIN warden.getConfigurationSetting function');
   // console.log('configurationName is: ' + configurationName);
   var functionName = getConfigurationSetting.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // configurationName is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // configurationNamespace is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconfigurationNameIs + configurationName); // var returnConfigurationValue = D[sys.cConfiguration][configurationName];
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cconfigurationNamespaceIs + configurationNamespace); // configurationName is:
 
 
-  var returnConfigurationValue = _configurator["default"].getConfigurationSetting(configurationName); // console.log('returnConfigurationValue is: ' + JSON.stringify(returnConfigurationValue));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cconfigurationNameIs + configurationName); // var returnConfigurationValue = D[sys.cConfiguration][configurationName];
+
+
+  var returnConfigurationValue = _configurator["default"].getConfigurationSetting(configurationNamespace, configurationName); // console.log('returnConfigurationValue is: ' + JSON.stringify(returnConfigurationValue));
   // console.log('END warden.getConfigurationSetting function');
   // returnConfigurationValue is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnConfiguraitonValueIs + returnConfigurationValue);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnConfiguraitonValueIs + returnConfigurationValue);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnConfigurationValue;
 }
@@ -637,14 +645,14 @@ function consoleLog(classPath, message) {
 function sleep(sleepTime) {
   var functionName = sleep.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // configurationName is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // configurationName is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'sleepTime is: ' + sleepTime);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, 'sleepTime is: ' + sleepTime);
 
   _timers["default"].sleep(sleepTime);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;

@@ -47,7 +47,9 @@ var path = require('path');
 
 var D = require('../Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.Controllers.chiefWorkflow.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function loadCommandWorkflowsFromPath
  * @description Loads the command workflows XML file that is specified by the input.
@@ -61,10 +63,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   var functionName = loadCommandWorkflowsFromPath.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // commandWorkflowFilePathConfigurationName is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // commandWorkflowFilePathConfigurationName is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
 
   var allCommandWorkflowsData = {};
   allCommandWorkflowsData = _chiefData["default"].setupAllXmlData(commandWorkflowFilePathConfigurationName, sys.cCommandWorkflows);
@@ -79,7 +81,7 @@ function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) 
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;

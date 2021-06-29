@@ -11,6 +11,8 @@ var _warden = _interopRequireDefault(require("../../../../Framework/Controllers/
 
 var bas = _interopRequireWildcard(require("../../../../Framework/Constants/basic.constants"));
 
+var wrd = _interopRequireWildcard(require("../../../../Framework/Constants/word.constants"));
+
 var sys = _interopRequireWildcard(require("../../../../Framework/Constants/system.constants"));
 
 var msg = _interopRequireWildcard(require("../../../../Framework/Constants/message.constants"));
@@ -35,6 +37,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * values of all kinds, with various operations.
  * @requires module:warden
  * @requires module:basic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:application-business-constants
  * @requires module:application-message-constants
@@ -45,7 +48,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var path = require('path');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Application.BusinessRules.ClientRules.clientStringParsing.
+
+var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cBusiness + wrd.cRules + bas.cDot + wrd.cClient + wrd.cRules + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function customEcho
  * @description A quick business rule to validate that the new dynamic data storage technique for business rules.
@@ -62,19 +67,19 @@ var customEcho = function customEcho(inputData, inputMetaData) {
   // console.log('inputMetaData is: ' + inputMetaData);
   var functionName = app_biz.ccustomEcho;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData; // clientStringParsing.customEcho
 
   returnData = inputData + app_msg.cclientStringParsingDotCustomEcho;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END clientStringParsing.customEcho function');
 
 
@@ -99,11 +104,11 @@ var mostPopularNumber = function mostPopularNumber(inputData, inputMetaData) {
   // console.log('length is: ' + length);
   var functionName = app_biz.cmostPopularNumber;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = 0;
   var i,
@@ -169,9 +174,9 @@ var mostPopularNumber = function mostPopularNumber(inputData, inputMetaData) {
   } // console.log('END third for-loop');
 
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END mostPopularNumber function');
 
 
@@ -197,11 +202,11 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
   // console.log('inputData is: ' + inputData);
   var functionName = app_biz.cisAlmostPalindrome;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = false;
   var misCompareCount;
@@ -215,7 +220,7 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
   loop1: for (var i = 0; i < 3; i++) {
     // Setup the different start point & end points to do the comparison.
     // comparison iteration is:
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.ccomparisonIterationIs + i);
+    _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.ccomparisonIterationIs + i);
 
     if (i === 0) {
       startingPoint = 0;
@@ -233,32 +238,32 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
     } // startingPoint is:
 
 
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cstartingPointIs + startingPoint); // endingPoint is:
+    _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cstartingPointIs + startingPoint); // endingPoint is:
 
 
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cendingPointIs + endingPoint);
+    _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cendingPointIs + endingPoint);
 
     loop2: for (var j = startingPoint; j < inputData.length; j++) {
       // j value is:
-      _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cjValueIs + j); // inputData.charAt(j) is:
+      _warden["default"].consoleLog(namespacePrefix + functionName, msg.cjValueIs + j); // inputData.charAt(j) is:
 
 
-      _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtJIs + inputData.charAt(j)); // inputData.chartAt(inputData.length -
+      _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cinputDataDotCharAtJIs + inputData.charAt(j)); // inputData.chartAt(inputData.length -
       // ) is:
 
 
-      _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + app_msg.cCloseParenthesisIs + inputData.charAt(inputData.length - j + endingPoint));
+      _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cinputDataDotCharAtInputDataDotLengthDash + j + ' + ' + endingPoint + app_msg.cCloseParenthesisIs + inputData.charAt(inputData.length - j + endingPoint));
 
       if (inputData.charAt(j) !== inputData.charAt(inputData.length - j + endingPoint)) {
         // We got a mismatch!
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cWeGotMismatch); // misCompareCount before increment is:
+        _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cWeGotMismatch); // misCompareCount before increment is:
 
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountBeforeIncrementIs + misCompareCount);
+        _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cmisCompareCountBeforeIncrementIs + misCompareCount);
 
         misCompareCount += 1; // misCompareCount post increment is:
 
-        _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountPostIncrementIs + misCompareCount);
+        _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cmisCompareCountPostIncrementIs + misCompareCount);
 
         if (misCompareCount >= 2) {
           break loop2;
@@ -267,7 +272,7 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
     } // misCompareCount after the for-loop is:
 
 
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, app_msg.cmisCompareCountAfterForLoopIs + misCompareCount);
+    _warden["default"].consoleLog(namespacePrefix + functionName, app_msg.cmisCompareCountAfterForLoopIs + misCompareCount);
 
     if (i === 0) {
       if (misCompareCount <= 1) {
@@ -279,7 +284,7 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
       }
     }
 
-    _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData); // If we got a positive result then we can break out of the function and return our positive result.
+    _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData); // If we got a positive result then we can break out of the function and return our positive result.
 
 
     if (returnData === true) {
@@ -290,9 +295,9 @@ var isAlmostPalindrome = function isAlmostPalindrome(inputData, inputMetaData) {
     }
   }
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END isAlmostPalindrome function');
 
 
@@ -319,11 +324,11 @@ var threePointAverage = function threePointAverage(inputData, inputMetaData) {
   // console.log('inputMetaData is: ' + inputMetaData);
   var functionName = app_biz.cthreePointAverage;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData;
   var xAverage, x1, x2, x3;
@@ -339,9 +344,9 @@ var threePointAverage = function threePointAverage(inputData, inputMetaData) {
   yAverage = (y1 + y2 + y3) / 3;
   returnData = [xAverage, yAverage];
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END threePointAverage function');
 
 
@@ -366,11 +371,11 @@ var arrayCounter = function arrayCounter(inputData, inputMetaData) {
   // console.log('instance is: ' + instance);
   var functionName = app_biz.carrayCounter;
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var returnData = 0;
 
@@ -380,9 +385,9 @@ var arrayCounter = function arrayCounter(inputData, inputMetaData) {
     }
   }
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _warden["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
+  _warden["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('returnData is: ' + returnData);
   // console.log('END arrayCounter function');
 
 

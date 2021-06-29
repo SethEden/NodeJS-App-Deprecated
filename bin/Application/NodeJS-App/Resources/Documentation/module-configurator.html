@@ -139,6 +139,10 @@
         <ul>
             <li><a href="module-loggers.html">module:loggers</a></li>
         
+            <li><a href="module-timers.html">module:timers</a></li>
+        
+            <li><a href="module-basic-constants.html">module:basic-constants</a></li>
+        
             <li><a href="module-word-constants.html">module:word-constants</a></li>
         
             <li><a href="module-system-constants.html">module:system-constants</a></li>
@@ -168,7 +172,176 @@
     
 
     
-    <h4 class="name" id="~getConfigurationSetting"><span class="type-signature">(inner) </span>getConfigurationSetting<span class="signature">(configurationName)</span><span class="type-signature"> &rarr; {string|integer|boolean}</span></h4>
+    <h4 class="name" id="~getConfigurationNamespaceObject"><span class="type-signature">(inner) </span>getConfigurationNamespaceObject<span class="signature">(configurationNamespace)</span><span class="type-signature"> &rarr; {object|boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Navigates the configuration JSON data object tree to find the namespace of configuration settings.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configurationNamespace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path in the configuration JSON object where the configuration setting should be set.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line266">line 266</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The object found at the specified namespace address in the configuration data object, or False if nothing was found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+|
+
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getConfigurationSetting"><span class="type-signature">(inner) </span>getConfigurationSetting<span class="signature">(configurationNamespace, configurationName)</span><span class="type-signature"> &rarr; {string|integer|boolean}</span></h4>
     
 
     
@@ -208,6 +381,29 @@
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configurationNamespace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path in the configuration JSON object where the configuration setting should be found.</p></td>
+        </tr>
+
     
 
         <tr>
@@ -276,7 +472,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line48">line 48</a>
+        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -305,7 +501,7 @@
 
         
 <div class="param-desc">
-    <p>The value of whatever was stored in the t.ctx[Configuration] sub-tree.</p>
+    <p>The value of whatever was stored in the D[Configuration] sub-tree.</p>
 </div>
 
 
@@ -340,7 +536,7 @@
     
 
     
-    <h4 class="name" id="~setConfigurationSetting"><span class="type-signature">(inner) </span>setConfigurationSetting<span class="signature">(configurationName, configurationValue)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="~getParentConfigurationNamespaceObject"><span class="type-signature">(inner) </span>getParentConfigurationNamespaceObject<span class="signature">(configurationNamespace, optionalFunctionNameAppendix)</span><span class="type-signature"> &rarr; {object|boolean}</span></h4>
     
 
     
@@ -348,7 +544,8 @@
 
 
 <div class="description">
-    <p>Sets a configuration setting on the configuration sub-tree data structure stored on t.ctx.</p>
+    <p>Navigates the configuration JSON data object tree to find the namespace of the
+configuration setting and then determines the parent and returns the entire tree of configuration data including that parent and all its top level contents.</p>
 </div>
 
 
@@ -380,6 +577,755 @@
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configurationNamespace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The fully qualified path in the configuration JSON object where the configuration setting should be found.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>optionalFunctionNameAppendix</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An optional function name appendix that could potentially be added to the end of the function name.
+Ex: @ModuleFontBackgroundColor</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line231">line 231</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The parent of the object found at the specified namespace address in the configuration data object, or False if nothing was found.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+|
+
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~processConfigurationNameRules"><span class="type-signature">(inner) </span>processConfigurationNameRules<span class="signature">(fullyQualifiedName)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Processes a fully qualified name and extracts the configuration name without the namespace.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fullyQualifiedName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The fully qualified name with the namespace included.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The name of the configuration setting without the namespace.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~processConfigurationNamespaceRules"><span class="type-signature">(inner) </span>processConfigurationNamespaceRules<span class="signature">(fullyQualifiedName)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Processes a fully qualified name and extracts the namespace.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fullyQualifiedName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The fully qualified name with the namespace included.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line149">line 149</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The namespace of the configuration setting, without the configuration name.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~processConfigurationValueRules"><span class="type-signature">(inner) </span>processConfigurationValueRules<span class="signature">(name, value)</span><span class="type-signature"> &rarr; {string|boolean|integer|float|object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Processes a name and value to execute required code and convert string values to actual data objects needed by the configuration system.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The name of the configuration variable, without the namespace.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value of the configuration variable.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Seth Hollingsead</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line186">line 186</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A value that is appropriately processed.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type">integer</span>
+|
+
+<span class="param-type">float</span>
+|
+
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~setConfigurationSetting"><span class="type-signature">(inner) </span>setConfigurationSetting<span class="signature">(configurationNamespace, configurationName, configurationValue)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets a configuration setting on the configuration sub-tree data structure stored on D-data structure.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configurationNamespace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path in the configuration JSON object where the configuration setting should be set.</p></td>
+        </tr>
+
     
 
         <tr>
@@ -471,7 +1417,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line23">line 23</a>
+        <a href="Framework_Executrix_configurator.js.html">Framework/Executrix/configurator.js</a>, <a href="Framework_Executrix_configurator.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -541,7 +1487,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Mar 11 2021 14:21:23 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 28 2021 20:41:25 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

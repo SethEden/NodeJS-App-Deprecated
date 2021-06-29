@@ -313,9 +313,11 @@ function loadAllJsonData(filesToLoad, contextName) {
 
 /**
  * @function preprocessJsonFile
- * @description
- * @param  {[type]} fileToLoad [description]
- * @return {[type]}            [description]
+ * @description Load all of the data from a single JSON data file.
+ * @param {string} fileToLoad The fully qualified path to the file that should be loaded.
+ * @return {object} The JSON data object that was loaded from the specified JSON data file.
+ * @author Seth Hollingsead
+ * @date 05/11/2021
  */
 function preprocessJsonFile(fileToLoad) {
   // console.log('BEGIN dataBroker.preprocessJsonFile function');

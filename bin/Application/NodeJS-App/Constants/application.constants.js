@@ -31,7 +31,7 @@ exports.cConfigurationFilename = cConfigurationFilename;
 var cApplicationName = 'NodeJS-App'; // Configuration Path
 
 exports.cApplicationName = cApplicationName;
-var cConfigurationDataLookupPrefixPath = bas.cForwardSlash + wrd.cResources + bas.cForwardSlash;
+var cConfigurationDataLookupPrefixPath = bas.cForwardSlash + wrd.cResources + bas.cForwardSlash + wrd.cConfiguration + bas.cForwardSlash;
 exports.cConfigurationDataLookupPrefixPath = cConfigurationDataLookupPrefixPath;
 var cResourcesCommonPath = wrd.cApplication + bas.cForwardSlash + cApplicationName + bas.cForwardSlash + wrd.cResources + bas.cForwardSlash; // Source Resources Path
 

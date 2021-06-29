@@ -56,7 +56,9 @@ var path = require('path');
 
 var D = require('../../../Framework/Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.CommandsBlob.Commands.unitTests.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + bas.cDot + wrd.cCommands + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function validateConstants
  * @description Validates all constants with a 2-phase verification process.
@@ -70,11 +72,11 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 var validateConstants = function validateConstants(inputData, inputMetaData) {
   var functionName = cmd.cvalidateConstants;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData); // Get the array of keys and values for all the constants that need to be validated.
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData); // Get the array of keys and values for all the constants that need to be validated.
 
 
   var validationArray = D[sys.cConstantsValidationData][sys.cConstantsFilePaths]; // This will return an object with all the key-value pair attributes we need.
@@ -89,7 +91,7 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   rulesPhase2[0] = biz.cvalidateConstantsDataValues; // Phase 1 Constants Validation
   // BEGIN Phase 1 Constants Validation
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBeginPhase1ConstantsValidation); // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBeginPhase1ConstantsValidation); // First scan through each file and validate that the constants defined in the constants code file are also contained in the validation file.
 
 
   for (var key1 in validationArray) {
@@ -98,11 +100,11 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   } // END Phase 1 Constants Validation
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEndPhase1ConstantsValidation); // Phase 2 Constants Validation
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEndPhase1ConstantsValidation); // Phase 2 Constants Validation
   // BEGIN Phase 2 Constants Validation
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBeginPhase2ConstantsValidation); // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBeginPhase2ConstantsValidation); // Now verify that the values of the contants are what they are expected to be by using the constants validation data to validate.
 
 
   for (var key2 in validationArray) {
@@ -110,7 +112,7 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   } // END Phase 2 Constants Validation
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEndPhase2ConstantsValidation);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEndPhase2ConstantsValidation);
 
   for (var key3 in phase1ResultsArray) {
     _loggers["default"].constantsValidationSummaryLog(D[sys.cConstantsValidationData][sys.cConstantsPhase1ValidationMessages][key3], phase1ResultsArray[key3]);
@@ -135,12 +137,12 @@ var validateConstants = function validateConstants(inputData, inputMetaData) {
   }
 
   if (phase1FinalResult === true && phase2FinalResult === true) {
-    _configurator["default"].setConfigurationSetting(cfg.cPassAllConstantsValidations, true);
+    _configurator["default"].setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, true);
   } else {
-    _configurator["default"].setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
+    _configurator["default"].setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 /**
  * @function validateCommandAliases
@@ -158,11 +160,11 @@ exports.validateConstants = validateConstants;
 var validateCommandAliases = function validateCommandAliases(inputData, inputMetaData) {
   var functionName = cmd.cvalidateCommandAliases;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + JSON.stringify(inputData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
 
   var allCommandAliases = D[sys.cCommandsAliases][wrd.cCommand];
   var passedAllCommandAliasesDuplicateCheck = true;
@@ -171,25 +173,25 @@ var validateCommandAliases = function validateCommandAliases(inputData, inputMet
 
   loop1: for (var i = 0; i < allCommandAliases.length; i++) {
     // BEGIN i-th loop:
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_ithLoop + i);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_ithLoop + i);
 
     var currentCommand = allCommandAliases[i]; // currentCommand is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentCommandIs + JSON.stringify(currentCommand));
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccurrentCommandIs + JSON.stringify(currentCommand));
 
     var aliasList = currentCommand[wrd.cAliases]; // aliasList is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.caliasListIs + aliasList);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.caliasListIs + aliasList);
 
     var arrayOfAliases = aliasList.split(bas.cComa);
 
     loop2: for (var j = 0; j < arrayOfAliases.length; j++) {
       // BEGIN j-th loop:
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_jthLoop + i);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_jthLoop + i);
 
       var currentAlias = arrayOfAliases[j]; // currentAlias is:
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentAliasIs + currentAlias);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccurrentAliasIs + currentAlias);
 
       var duplicateAliasCount = _ruleBroker["default"].processRules(currentAlias, allCommandAliases, rules);
 
@@ -198,11 +200,11 @@ var validateCommandAliases = function validateCommandAliases(inputData, inputMet
       } // END j-th loop:
 
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_jthLoop + i);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_jthLoop + i);
     } // END i-th loop:
 
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_ithLoop + i);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_ithLoop + i);
   }
 
   if (passedAllCommandAliasesDuplicateCheck === true) {
@@ -210,9 +212,9 @@ var validateCommandAliases = function validateCommandAliases(inputData, inputMet
     console.log(msg.cvalidateCommandAliasesMessage1);
   }
 
-  _configurator["default"].setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
+  _configurator["default"].setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, passedAllCommandAliasesDuplicateCheck);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 exports.validateCommandAliases = validateCommandAliases;

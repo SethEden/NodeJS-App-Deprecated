@@ -35,7 +35,9 @@ var path = require('path');
 
 var D = require('../Structures/data');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.CommandsBlob.commandsLibrary.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function initCommandsLibrary
  * @description Initializes the commands function data structure on D.
@@ -53,7 +55,7 @@ var initCommandsLibrary = function initCommandsLibrary() {
 
   var functionName = initCommandsLibrary.name; // console.log('BEGIN commandsLibrary.initCommandsLibrary');
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
   D[wrd.cCommands] = {};
   D[wrd.cCommands] = (_D$wrd$cCommands = {}, _defineProperty(_D$wrd$cCommands, cmd.cechoCommand, function (inputData, inputMetaData) {
@@ -95,11 +97,11 @@ var initCommandsLibrary = function initCommandsLibrary() {
   }), _defineProperty(_D$wrd$cCommands, cmd.ccommandAliasGenerator, function (inputData, inputMetaData) {
     return nominalCommands.commandAliasGenerator(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconstantsGenerator, function (inputData, inputMetaData) {
-    return nominalcommand.constantsGenerator(inputData, inputMetaData);
+    return nominalCommands.constantsGenerator(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconstantsGeneratorList, function (inputData, inputMetaData) {
-    return nominalcommand.constantsGeneratorList(inputData, inputMetaData);
+    return nominalCommands.constantsGeneratorList(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cconstantsPatternRecognizer, function (inputData, inputMetaData) {
-    return nominalcommand.constantsPatternRecognizer(inputData, inputMetaData);
+    return nominalCommands.constantsPatternRecognizer(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.cbusinessRulesMetrics, function (inputData, inputMetaData) {
     return nominalCommands.businessRulesMetrics(inputData, inputMetaData);
   }), _defineProperty(_D$wrd$cCommands, cmd.ccommandMetrics, function (inputData, inputMetaData) {
@@ -114,7 +116,7 @@ var initCommandsLibrary = function initCommandsLibrary() {
     return unitTests.validateCommandAliases(inputData, inputMetaData);
   }), _D$wrd$cCommands); // console.log('END commandsLibrary.initCommandsLibrary');
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 exports.initCommandsLibrary = initCommandsLibrary;

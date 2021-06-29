@@ -77,6 +77,8 @@ global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var copyResult = false;
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Application.build.
+var namespacePrefix = wrd.cApplication + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function bootStrapApplication
@@ -129,15 +131,15 @@ function bootStrapApplicationDeployment() {
  */
 function deployApplication() {
   let functionName = sys.cdeployApplication;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
-    warden.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(sys.cSourceResourcesPath, apc.cDevelopResourcesPath);
-    warden.setConfigurationSetting(sys.cDestinationResourcesPath, apc.cProductionResourcesPath);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(wrd.csystem, sys.cSourceResourcesPath, apc.cDevelopResourcesPath);
+    warden.setConfigurationSetting(wrd.csystem, sys.cDestinationResourcesPath, apc.cProductionResourcesPath);
     let appName = bas.cDoubleQuote + wrd.cName + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.name + bas.cDoubleQuote;
     let appVersion = bas.cDoubleQuote + wrd.cVersion + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.version + bas.cDoubleQuote;
     let appDescription = bas.cDoubleQuote + wrd.cDescription + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.description + bas.cDoubleQuote;
@@ -148,20 +150,20 @@ function deployApplication() {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let deploymentResult = warden.getConfigurationSetting(cfg.cdeploymentCompleted);
+    let deploymentResult = warden.getConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted);
     if (deploymentResult) {
       // Deployment was completed:
       console.log(msg.cBuildMessage1 + deploymentResult);
     } else {
       console.log(msg.cBuildMessage1 + gen.cFalse);
-      warden.setConfigurationSetting(cfg.cdeploymentCompleted, false);
+      warden.setConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted, false);
     }
   } catch (err) {
     console.error(err);
     // deploymentCompleted
-    warden.setConfigurationSetting(cfg.cdeploymentCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted, false);
   }
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -173,21 +175,21 @@ function deployApplication() {
  */
 function releaseApplication() {
   let functionName = sys.creleaseApplication;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let releaseResult;
   try {
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
-    warden.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(sys.cBinaryRootPath, apc.cProductionRootPath);
-    warden.setConfigurationSetting(sys.cBinaryReleasePath, apc.cReleasePath);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(wrd.csystem, sys.cBinaryRootPath, apc.cProductionRootPath);
+    warden.setConfigurationSetting(wrd.csystem, sys.cBinaryReleasePath, apc.cReleasePath);
     warden.enqueueCommand(cmd.cReleaseWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let releaseResult = warden.getConfigurationSetting(cfg.creleaseCompleted);
+    let releaseResult = warden.getConfigurationSetting(wrd.csystem, cfg.creleaseCompleted);
     if (releaseResult) {
       // Release was completed
       console.log(msg.cBuildMessage2 + releaseResult);
@@ -196,9 +198,9 @@ function releaseApplication() {
     }
   } catch (err) {
     console.error(err);
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
   }
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 bootStrapApplicationDeployment();
@@ -220,7 +222,7 @@ releaseApplication();
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Thu Mar 11 2021 14:21:23 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 28 2021 20:41:23 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
