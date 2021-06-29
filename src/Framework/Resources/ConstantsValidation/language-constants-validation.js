@@ -2,12 +2,12 @@
  * @file language-constants-validation.js
  * @module language-constants-validation
  * @description Contains validations for named languages.
- * @requires module:languages-constants
+ * @requires module:language-constants
  * @author Seth Hollingsead
  * @date 2021/02/17
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
-import * as lng from '../../Constants/languages.constants';
+import * as lng from '../../Constants/language.constants';
 
  /**
  * @function languageConstantsValidation

@@ -12,13 +12,14 @@
  * @requires module:warden
  * @requires module:clientRulesLibrary
  * @requires module:clientCommandsLibrary
+ * @requires module:all-client-constants-validation
  * @requires module:basic-constants
  * @requires module:generic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:commands-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:command-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires module:application-constants
  * @requires {@link https://www.npmjs.com/package/dotenv|dotenv}
  * @requires {@link https://www.npmjs.com/package/path|path}
@@ -30,13 +31,14 @@
 import warden from '../../Framework/Controllers/warden';
 import clientRules from './BusinessRules/clientRulesLibrary';
 import clientCommands from './Commands/clientCommandsLibrary';
+import all_clt_cv from './Resources/ConstantsValidation/all-client-constants-validation';
 import * as bas from '../../Framework/Constants/basic.constants';
 import * as gen from '../../Framework/Constants/generic.constants';
 import * as wrd from '../../Framework/Constants/word.constants';
 import * as sys from '../../Framework/Constants/system.constants';
-import * as cmd from '../../Framework/Constants/commands.constants';
-import * as cfg from '../../Framework/Constants/configurations.constants';
-import * as msg from '../../Framework/Constants/messages.constants';
+import * as cmd from '../../Framework/Constants/command.constants';
+import * as cfg from '../../Framework/Constants/configuration.constants';
+import * as msg from '../../Framework/Constants/message.constants';
 import * as apc from './Constants/application.constants';
 require('dotenv').config();
 var pjson = require('../../../package.json');
@@ -47,6 +49,8 @@ global.appRoot = path.resolve(process.cwd());
 var rootPath = '';
 var copyResult = false;
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Application.build.
+var namespacePrefix = wrd.cApplication + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function bootStrapApplication
@@ -69,7 +73,10 @@ function bootStrapApplicationDeployment() {
   rootPath = warden.processRootPath(rootPath);
   // console.log('processed rootPath is: ' + rootPath);
   warden.bootStrapApplication(rootPath + apc.cConfigurationDataLookupPrefixPath);
-  warden.saveRootPath(rootPath);
+  // NOTE: We are passing all_clt_cv.initializeAllClientConstantsValidationData function as an object on the next line of code.
+  // We are doing this because we have not yet evaluated the constants path based on the root path,
+  // and we don't want the function to be evaluated immediately because it will need to get the root path as part of evaluating the path to the constants files for validation.
+  warden.initApplicationSchema(rootPath, apc.cClientConstantsPathActual, all_clt_cv.initializeAllClientConstantsValidationData);
   warden.mergeClientBusinessRules(clientRules.initClientRulesLibrary());
   warden.mergeClientCommands(clientCommands.initClientCommandsLibrary());
   if (NODE_ENV === wrd.cdevelopment) {
@@ -96,15 +103,15 @@ function bootStrapApplicationDeployment() {
  */
 function deployApplication() {
   let functionName = sys.cdeployApplication;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let copyResult;
   try {
     // fse.copySync('/src/Application/NodeJS-App/Resources/*', '/bin/Application/NodeJS-App/Resources/*');
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
-    warden.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(sys.cSourceResourcesPath, apc.cDevelopResourcesPath);
-    warden.setConfigurationSetting(sys.cDestinationResourcesPath, apc.cProductionResourcesPath);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(wrd.csystem, sys.cSourceResourcesPath, apc.cDevelopResourcesPath);
+    warden.setConfigurationSetting(wrd.csystem, sys.cDestinationResourcesPath, apc.cProductionResourcesPath);
     let appName = bas.cDoubleQuote + wrd.cName + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.name + bas.cDoubleQuote;
     let appVersion = bas.cDoubleQuote + wrd.cVersion + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.version + bas.cDoubleQuote;
     let appDescription = bas.cDoubleQuote + wrd.cDescription + bas.cDoubleQuote + bas.cColon + bas.cSpace + bas.cDoubleQuote + pjson.description + bas.cDoubleQuote;
@@ -115,20 +122,20 @@ function deployApplication() {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let deploymentResult = warden.getConfigurationSetting(cfg.cdeploymentCompleted);
+    let deploymentResult = warden.getConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted);
     if (deploymentResult) {
       // Deployment was completed:
       console.log(msg.cBuildMessage1 + deploymentResult);
     } else {
       console.log(msg.cBuildMessage1 + gen.cFalse);
-      warden.setConfigurationSetting(cfg.cdeploymentCompleted, false);
+      warden.setConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted, false);
     }
   } catch (err) {
     console.error(err);
     // deploymentCompleted
-    warden.setConfigurationSetting(cfg.cdeploymentCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cdeploymentCompleted, false);
   }
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -140,21 +147,21 @@ function deployApplication() {
  */
 function releaseApplication() {
   let functionName = sys.creleaseApplication;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let releaseResult;
   try {
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
-    warden.setConfigurationSetting(cfg.cPassAllConstantsValidations, false);
-    warden.setConfigurationSetting(cfg.cPassedAllCommandAliasesDuplicateChecks, false);
-    warden.setConfigurationSetting(sys.cBinaryRootPath, apc.cProductionRootPath);
-    warden.setConfigurationSetting(sys.cBinaryReleasePath, apc.cReleasePath);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassAllConstantsValidations, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.cPassedAllCommandAliasesDuplicateChecks, false);
+    warden.setConfigurationSetting(wrd.csystem, sys.cBinaryRootPath, apc.cProductionRootPath);
+    warden.setConfigurationSetting(wrd.csystem, sys.cBinaryReleasePath, apc.cReleasePath);
     warden.enqueueCommand(cmd.cReleaseWorkflow);
     let commandResult = true;
     while(warden.isCommandQueueEmpty() === false) {
       commandResult = true;
       commandResult = warden.processCommandQueue();
     }
-    let releaseResult = warden.getConfigurationSetting(cfg.creleaseCompleted);
+    let releaseResult = warden.getConfigurationSetting(wrd.csystem, cfg.creleaseCompleted);
     if (releaseResult) {
       // Release was completed
       console.log(msg.cBuildMessage2 + releaseResult);
@@ -163,9 +170,9 @@ function releaseApplication() {
     }
   } catch (err) {
     console.error(err);
-    warden.setConfigurationSetting(cfg.creleaseCompleted, false);
+    warden.setConfigurationSetting(wrd.csystem, cfg.creleaseCompleted, false);
   }
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 bootStrapApplicationDeployment();

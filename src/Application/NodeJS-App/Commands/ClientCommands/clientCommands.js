@@ -4,11 +4,13 @@
  * @description Contains all client defined commands for execution client actions with various operations.
  * @requires module:warden
  * @requires module:basic-constants
+ * @requires module:generic-constants
  * @requires module:numeric-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
- * @requires module:application-constants
+ * @requires module:message-constants
+ * @requires module:application-command-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/chalk|chalk}
  * @author Seth Hollingsead
@@ -19,14 +21,18 @@ import warden from '../../../../Framework/Controllers/warden';
 import * as bas from '../../../../Framework/Constants/basic.constants';
 import * as gen from '../../../../Framework/Constants/generic.constants';
 import * as num from '../../../../Framework/Constants/numeric.constants';
+import * as wrd from '../../../../Framework/Constants/word.constants';
 import * as sys from '../../../../Framework/Constants/system.constants';
 import * as biz from '../../../../Framework/Constants/business.constants';
-import * as cfg from '../../../../Framework/Constants/configurations.constants';
-import * as msg from '../../../../Framework/Constants/messages.constants';
-import * as apc from '../../Constants/application.constants';
+import * as cfg from '../../../../Framework/Constants/configuration.constants';
+import * as msg from '../../../../Framework/Constants/message.constants';
+import * as app_cmd from '../../Constants/application.command.constants';
+
 var path = require('path');
 var chalk = require('chalk');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Application.Commands.ClientCommands.clientCommands.
+var namespacePrefix = wrd.cApplication + bas.cDot + wrd.cCommands + bas.cDot + wrd.cClient + wrd.cCommands + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function customEchoCommand
@@ -41,14 +47,14 @@ export const customEchoCommand = function(inputData, inputMetaData) {
   // console.log('BEGIN clientStringParsing.customEchoCommand function');
   // console.log('inputData is: ' + inputData);
   // console.log('inputMetaData is: ' + inputMetaData);
-  let functionName = apc.ccustomEchoCommand;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let functionName = app_cmd.ccustomEchoCommand;
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
+  warden.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData;
   returnData = inputData + ' clientStringParsing.customEchoCommand';
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   // console.log('returnData is: ' + returnData);
   // console.log('END clientStringParsing.customEcho function');
   return returnData;
@@ -79,10 +85,10 @@ export const customEchoCommand = function(inputData, inputMetaData) {
  * @NOTE This is an INFINITE LOOP function, so press control+C to exit from the application when you want to exit.
  */
 export const bossPanic = function(inputData, inputMetaData) {
-  let functionName = apc.cbossPanic;
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputDataIs + inputData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cinputMetaDataIs + inputMetaData);
+  let functionName = app_cmd.cbossPanic;
+  warden.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
+  warden.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   let stringLength = 0;
   let colorBreakPoint = 0;
@@ -104,7 +110,7 @@ export const bossPanic = function(inputData, inputMetaData) {
   let coloredLinesMaxLength = 20;
   let fastTypingOutput = false;
   let speedTypingPerformanceIndex = 100; // Default to a fast typing speed.
-  let systemColorLogsEnabled = warden.getConfigurationSetting(cfg.cEnableColorizedConsoleLogs);
+  let systemColorLogsEnabled = warden.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
 
   // Rather than doing the above, I'll just call the business rule to generate a random number between 1 and 100.
   // Then I can call the string generator to generate a random string of characters to match that length.
@@ -205,7 +211,7 @@ export const bossPanic = function(inputData, inputMetaData) {
     warden.sleep(performanceIndex);
   }
 
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-  warden.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  warden.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+  warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };

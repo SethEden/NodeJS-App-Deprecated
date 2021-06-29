@@ -38,9 +38,10 @@
  * @requires module:timers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/bestzip|bestzip}
@@ -59,9 +60,10 @@ import loggers from './loggers';
 import timers from './timers';
 import * as bas from '../Constants/basic.constants';
 import * as gen from '../Constants/generic.constants';
+import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
 import * as biz from '../Constants/business.constants';
-import * as msg from '../Constants/messages.constants';
+import * as msg from '../Constants/message.constants';
 var fs = require('fs');
 var path = require('path');
 // var zip = require('bestzip');
@@ -80,6 +82,8 @@ var enableFilesListLimit = false;
 var filesListLimit = -1;
 var hitFileLimit = false;
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Framework.Executrix.fileBroker.
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function getXmlData
@@ -91,9 +95,9 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function getXmlData(pathAndFilename) {
   let functionName = getXmlData.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // pathAndFilename is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpathAndFilenameIs + pathAndFilename);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cpathAndFilenameIs + pathAndFilename);
   let returnData;
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let data = fs.readFileSync(pathAndFilename, {encoding: gen.cUTF8 });
@@ -103,15 +107,15 @@ function getXmlData(pathAndFilename) {
       if (err) {
         // ERROR:
         returnData = console.log(sys.cERROR_Colon + err);
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+        loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+        loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
         return returnData;
       }
       xml = result;
     });
   returnData = xml;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
 };
 
@@ -128,9 +132,9 @@ function getXmlData(pathAndFilename) {
  */
 function getCsvData(pathAndFilename) {
   let functionName = getCsvData.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // file and path to load from is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let data = fs.readFileSync(pathAndFilename, { encoding: gen.cUTF8 });
   let parsedData = Papa.parse(data, {
@@ -141,10 +145,10 @@ function getCsvData(pathAndFilename) {
     encoding: gen.cUTF8
   });
   // DONE loading data from:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneLoadingDataFrom + pathAndFilename);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cDoneLoadingDataFrom + pathAndFilename);
   // Loaded data is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return parsedData;
 };
 
@@ -158,17 +162,17 @@ function getCsvData(pathAndFilename) {
  */
 function getJsonData(pathAndFilename) {
   let functionName = getJsonData.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // file and path to load from is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   let rawData = fs.readFileSync(pathAndFilename, { encoding: gen.cUTF8 });
   let parsedData = JSON.parse(rawData);
   // DONE loading data from:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneLoadingDataFrom + pathAndFilename);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cDoneLoadingDataFrom + pathAndFilename);
   // Loaded data is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return parsedData;
 };
 
@@ -183,11 +187,11 @@ function getJsonData(pathAndFilename) {
  */
 function writeJsonData(pathAndFilename, dataToWrite) {
   let functionName = writeJsonData.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // file and path to write data to is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfileAndPathToWriteDataToIs + pathAndFilename);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cfileAndPathToWriteDataToIs + pathAndFilename);
   // data to write is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdataToWriteIs + JSON.stringify(dataToWrite));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cdataToWriteIs + JSON.stringify(dataToWrite));
   let outputSuccess = false;
   try {
     fs.writeFileSync(pathAndFilename, JSON.stringify(dataToWrite, null, 2))
@@ -197,8 +201,8 @@ function writeJsonData(pathAndFilename, dataToWrite) {
     console.error(sys.cERROR_Colon + err)
   }
   // Data was written to the file:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDataWasWrittenToTheFile + outputSuccess);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cDataWasWrittenToTheFile + outputSuccess);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 /**
@@ -213,9 +217,9 @@ function writeJsonData(pathAndFilename, dataToWrite) {
  */
 function readDirectoryContents(directory) {
   let functionName = readDirectoryContents.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // Path that should be scanned is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cPathThatShouldBeScannedIs + directory);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cPathThatShouldBeScannedIs + directory);
   let filesFound = [];
   directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   readDirectorySynchronously(directory);
@@ -223,8 +227,8 @@ function readDirectoryContents(directory) {
   filesCollection = undefined; // Make sure to clear it so we don't have a chance of it corrupting any other file operations.
   filesCollection = [];
   // files found are:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return filesFound;
 };
 
@@ -244,11 +248,11 @@ function readDirectoryContents(directory) {
  */
 function scanDirectoryContents(directory, enableLimit, filesLimit) {
   let functionName = scanDirectoryContents.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // Path that should be scanned is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cPathThatShouldBeScannedIs + directory);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'enableLimit is: ' + enableLimit);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, 'filesLimit is: ' + filesLimit);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cPathThatShouldBeScannedIs + directory);
+  loggers.consoleLog(namespacePrefix + functionName, 'enableLimit is: ' + enableLimit);
+  loggers.consoleLog(namespacePrefix + functionName, 'filesLimit is: ' + filesLimit);
   let filesFound = [];
   directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   enableFilesListLimit = enableLimit;
@@ -261,8 +265,8 @@ function scanDirectoryContents(directory, enableLimit, filesLimit) {
   filesListLimit = -1;
   hitFileLimit = false;
   // files found are:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return filesFound;
 };
 
@@ -280,9 +284,9 @@ function readDirectorySynchronously(directory) {
   // console.log('BEGIN dataBroker.readDirectorySynchronously function');
   // console.log('directory is: ' + directory);
   let functionName = readDirectorySynchronously.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // directory is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdirectorIs + directory);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cdirectorIs + directory);
   if (hitFileLimit === false) {
     directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
     let currentDirectoryPath = directory;
@@ -320,14 +324,14 @@ function readDirectorySynchronously(directory) {
           let directoryPath = '';
           directoryPath = path.resolve(directory + bas.cForwardSlash + file);
           // directoryPath is:
-          loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdirectoryPathIs + directoryPath);
+          loggers.consoleLog(namespacePrefix + functionName, msg.cdirectoryPathIs + directoryPath);
           readDirectorySynchronously(directoryPath);
         }
       } catch (e) { // Catch the error in the hopes that we can continue scanning the file system.
-        loggers.consoleLog(baseFileName + bas.cDot + functionName, 'ERROR: Invalid access to: ' + pathOfCurrentItem);
+        loggers.consoleLog(namespacePrefix + functionName, 'ERROR: Invalid access to: ' + pathOfCurrentItem);
       }
     });
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
     // console.log('END dataBroker.readDirectorySynchronously function');
   }
 };
@@ -348,11 +352,11 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   // console.log('sourceFolder is: ' + sourceFolder);
   // console.log('destinationFolder is: ' + destinationFolder);
   let functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // sourceFolder is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csourceFolderIs + sourceFolder);
+  loggers.consoleLog(namespacePrefix + functionName, msg.csourceFolderIs + sourceFolder);
   // destinationFolder is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdestinationFolderIs + destinationFolder);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cdestinationFolderIs + destinationFolder);
   let copySuccess = false;
   let rootPath = cleanRootPath();
   sourceFolder = rootPath + sourceFolder;
@@ -360,13 +364,13 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   destinationFolder = rootPath + destinationFolder
   destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   // sourceFolder is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csourceFolderIs + sourceFolder);
+  loggers.consoleLog(namespacePrefix + functionName, msg.csourceFolderIs + sourceFolder);
   // destinationFolder is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdestinationFolderIs + destinationFolder);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cdestinationFolderIs + destinationFolder);
   copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder);
   // copySuccess is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccopySuccessIs + copySuccess);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccopySuccessIs + copySuccess);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   // console.log('copySuccess is: ' + copySuccess);
   // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
   return copySuccess;
@@ -387,11 +391,11 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   // console.log('sourceFolder is: ' + sourceFolder);
   // console.log('destinationFolder is: ' + destinationFolder);
   let functionName = buildReleasePackage.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // sourceFolder is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csourceFolderIs + sourceFolder);
+  loggers.consoleLog(namespacePrefix + functionName, msg.csourceFolderIs + sourceFolder);
   // destinationFolder is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cdestinationFolderIs + destinationFolder);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cdestinationFolderIs + destinationFolder);
   let packageSuccess = false;
   let releaseFiles = [];
   let releasedArchiveFiles = [];
@@ -402,15 +406,15 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   cleanFilePathsBusinessRules[0] = biz.cswapDoubleForwardSlashToSingleForwardSlash;
   cleanFilePathsBusinessRules[1] = biz.cswapDoubleBackSlashToSingleBackSlash;
   cleanFilePathsBusinessRules[2] = biz.cswapForwardSlashToBackSlash;
-  let rootPath = configurator.getConfigurationSetting(sys.cApplicationCleanedRootPath);
-  let currentVersion = configurator.getConfigurationSetting(sys.cApplicationVersionNumber);
-  let applicationName = configurator.getConfigurationSetting(sys.cApplicationName);
+  let rootPath = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
+  let currentVersion = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationVersionNumber);
+  let applicationName = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationName);
   let currentVersionReleased = false;
   let releaseDateTimeStamp;
   let originalSource, originalDestination;
   var zip = new AdmZip();
   // current version is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionIs + currentVersion);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccurrentVersionIs + currentVersion);
   originalSource = bas.cDot + sourceFolder;
   originalDestination = destinationFolder;
   sourceFolder = rootPath + sourceFolder;
@@ -420,38 +424,38 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   releaseFiles = readDirectoryContents(sourceFolder);
   releasedArchiveFiles = readDirectoryContents(destinationFolder);
   // released archive files list is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creleasedArchiveFilesListIs + JSON.stringify(releasedArchiveFiles));
+  loggers.consoleLog(namespacePrefix + functionName, msg.creleasedArchiveFilesListIs + JSON.stringify(releasedArchiveFiles));
   // Check if the current version number has already been released as a zip file in the Release folder.
   // If it has not been released, then we can build the zip file with the current release number and date-time stamp.
   for (let i = 0; i &lt;= releasedArchiveFiles.length - 1; i++) {
     // file is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfileIs + releasedArchiveFiles[i]);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cfileIs + releasedArchiveFiles[i]);
     let pathAndFileName = releasedArchiveFiles[i];
     let fileName = ruleBroker.processRules(pathAndFileName, '', fileNameBusinessRules);
     // fileName is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cfileNameIs + fileName);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cfileNameIs + fileName);
     if (fileName.includes(currentVersion) === true) {
       currentVersionReleased = true;
     }
   }
   if (currentVersionReleased === false) {
     // release files list is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseFilesListIs + JSON.stringify(releaseFiles));
-    releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(sys.cDateTimeStamp));
+    loggers.consoleLog(namespacePrefix + functionName, msg.creleaseFilesListIs + JSON.stringify(releaseFiles));
+    releaseDateTimeStamp = timers.getNowMoment(configurator.getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp));
     // release date-time stamp is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseDateTimeStampIs + releaseDateTimeStamp);
-    // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+    loggers.consoleLog(namespacePrefix + functionName, msg.creleaseDateTimeStampIs + releaseDateTimeStamp);
+    // loggers.consoleLog(namespacePrefix + functionName, 'contents of D are: ' + JSON.stringify(D));
     let releaseFileName = releaseDateTimeStamp + bas.cUnderscore + currentVersion + bas.cUnderscore + applicationName;
     // release fileName is:
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseFileNameIs + releaseFileName);
+    loggers.consoleLog(namespacePrefix + functionName, msg.creleaseFileNameIs + releaseFileName);
     let fullReleasePath = path.resolve(destinationFolder + bas.cForwardSlash + releaseFileName + gen.cDotzip);
     try {
       zip.addLocalFolder(sourceFolder, originalSource);
       zip.writeZip(fullReleasePath);
       // Done writing the zip file:
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath);
+      loggers.consoleLog(namespacePrefix + functionName, msg.cDoneWritingTheZipFile + fullReleasePath);
       // Set the return packageSuccess flag to TRUE
-      loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
+      loggers.consoleLog(namespacePrefix + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
       packageSuccess = true;
     } catch (err) {
       // ERROR: Zip package release failed:
@@ -461,11 +465,11 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
     }
   } else {
     // current version already released
-    loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionAlreadyReleased);
+    loggers.consoleLog(namespacePrefix + functionName, msg.ccurrentVersionAlreadyReleased);
   }
   // packageSuccess is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cpackageSuccessIs + packageSuccess);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cpackageSuccessIs + packageSuccess);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   // console.log('packageSuccess is: ' + packageSuccess);
   // console.log('END dataBroker.buildReleasePackage function');
   return packageSuccess;
@@ -484,17 +488,17 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
  */
 function cleanRootPath() {
   let functionName = cleanRootPath.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   let rootPath;
-  rootPath = configurator.getConfigurationSetting(sys.cApplicationRootPath);
+  rootPath = configurator.getConfigurationSetting(wrd.csystem, sys.cApplicationRootPath);
   let cleanRootPathRules = {};
   cleanRootPathRules[1] = biz.cremoveXnumberOfFoldersFromEndOfPath;
   // RootPath before processing is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cRootPathBeforeProcessingIs + rootPath);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cRootPathBeforeProcessingIs + rootPath);
   rootPath = ruleBroker.processRules(rootPath, 3, cleanRootPathRules);
   // RootPath after processing is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cRootPathAfterProcessingIs + rootPath);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cRootPathAfterProcessingIs + rootPath);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return rootPath;
 };
 
@@ -512,11 +516,11 @@ function cleanRootPath() {
  */
 function copyFileSync(source, target) {
   let functionName = copyFileSync.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // source is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSourceIs + source);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cSourceIs + source);
   // target is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ctargetIs + target);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ctargetIs + target);
   let successfullCopy = false;
   let targetFile = target;
 
@@ -540,8 +544,8 @@ function copyFileSync(source, target) {
     successfullCopy = false;
   }
   // successfullCopy is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csuccessfullCopyIs + successfullCopy);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.csuccessfullCopyIs + successfullCopy);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return successfullCopy;
 };
 
@@ -560,11 +564,11 @@ function copyFileSync(source, target) {
  */
 function copyFolderRecursiveSync(source, target) {
   let functionName = copyFolderRecursiveSync.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // source is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cSourceIs + source);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cSourceIs + source);
   // target is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ctargetIs + target);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ctargetIs + target);
   let successfullCopy = false;
   let files = [];
 
@@ -606,8 +610,8 @@ function copyFolderRecursiveSync(source, target) {
     successfullCopy = false;
   }
   // successfullCopy is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.csuccessfullCopyIs + successfullCopy);
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.csuccessfullCopyIs + successfullCopy);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return successfullCopy;
 };
 
@@ -634,13 +638,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-application.html">application</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commands-constants.html">commands-constants</a></li><li><a href="module-commands-constants-validation.html">commands-constants-validation</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configurations-constants.html">configurations-constants</a></li><li><a href="module-configurations-constants-validation.html">configurations-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-countries-constants.html">countries-constants</a></li><li><a href="module-countries-constants-validation.html">countries-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knots-constants-validation.html">knots-constants-validation</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-languages-constants.html">languages-constants</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-messages-constants.html">messages-constants</a></li><li><a href="module-messages-constants-validation.html">messages-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonics-constants.html">phonics-constants</a></li><li><a href="module-phonics-constants-validation.html">phonics-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-units-constants.html">units-constants</a></li><li><a href="module-units-constants-validation.html">units-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-all-client-constants-validation.html">all-client-constants-validation</a></li><li><a href="module-all-system-constants-validation.html">all-system-constants-validation</a></li><li><a href="module-application.html">application</a></li><li><a href="module-application-business-constants.html">application-business-constants</a></li><li><a href="module-application-business-constants-validation.html">application-business-constants-validation</a></li><li><a href="module-application-command-constants.html">application-command-constants</a></li><li><a href="module-application-command-constants-validation.html">application-command-constants-validation</a></li><li><a href="module-application-constants.html">application-constants</a></li><li><a href="module-application-constants-validation.html">application-constants-validation</a></li><li><a href="module-application-message-constants.html">application-message-constants</a></li><li><a href="module-application-message-constants-validation.html">application-message-constants-validation</a></li><li><a href="module-arrayParsing.html">arrayParsing</a></li><li><a href="module-basic-constants.html">basic-constants</a></li><li><a href="module-basic-constants-validation.html">basic-constants-validation</a></li><li><a href="module-build.html">build</a></li><li><a href="module-business-constants.html">business-constants</a></li><li><a href="module-business-constants-validation.html">business-constants-validation</a></li><li><a href="module-characterGeneration.html">characterGeneration</a></li><li><a href="module-chiefCommander.html">chiefCommander</a></li><li><a href="module-chiefConfiguration.html">chiefConfiguration</a></li><li><a href="module-chiefData.html">chiefData</a></li><li><a href="module-chiefWorkflow.html">chiefWorkflow</a></li><li><a href="module-clientCommands.html">clientCommands</a></li><li><a href="module-clientCommandsLibrary.html">clientCommandsLibrary</a></li><li><a href="module-clientRulesLibrary.html">clientRulesLibrary</a></li><li><a href="module-clientStringParsing.html">clientStringParsing</a></li><li><a href="module-color-constants.html">color-constants</a></li><li><a href="module-color-constants-validation.html">color-constants-validation</a></li><li><a href="module-colorizer.html">colorizer</a></li><li><a href="module-command-constants.html">command-constants</a></li><li><a href="module-command-constants-validation.html">command-constants-validation</a></li><li><a href="module-commandBroker.html">commandBroker</a></li><li><a href="module-commandsLibrary.html">commandsLibrary</a></li><li><a href="module-configuration-constants.html">configuration-constants</a></li><li><a href="module-configuration-constants-validation.html">configuration-constants-validation</a></li><li><a href="module-configurator.html">configurator</a></li><li><a href="module-country-constants.html">country-constants</a></li><li><a href="module-country-constants-validation.html">country-constants-validation</a></li><li><a href="module-data.html">data</a></li><li><a href="module-dataBroker.html">dataBroker</a></li><li><a href="module-element-constants.html">element-constants</a></li><li><a href="module-element-constants-validation.html">element-constants-validation</a></li><li><a href="module-fileBroker.html">fileBroker</a></li><li><a href="module-generic-constants.html">generic-constants</a></li><li><a href="module-generic-constants-validation.html">generic-constants-validation</a></li><li><a href="module-isotope-constants-validation.html">isotope-constants-validation</a></li><li><a href="module-knot-constants-validation.html">knot-constants-validation</a></li><li><a href="module-language-constants.html">language-constants</a></li><li><a href="module-language-constants-validation.html">language-constants-validation</a></li><li><a href="module-lexical.html">lexical</a></li><li><a href="module-loggers.html">loggers</a></li><li><a href="module-mathOperations.html">mathOperations</a></li><li><a href="module-message-constants.html">message-constants</a></li><li><a href="module-message-constants-validation.html">message-constants-validation</a></li><li><a href="module-nominal.html">nominal</a></li><li><a href="module-numeric-constants.html">numeric-constants</a></li><li><a href="module-numeric-constants-validation.html">numeric-constants-validation</a></li><li><a href="module-phonic-constants.html">phonic-constants</a></li><li><a href="module-phonic-constants-validation.html">phonic-constants-validation</a></li><li><a href="module-queue.html">queue</a></li><li><a href="module-rbNode.html">rbNode</a></li><li><a href="module-rbTree.html">rbTree</a></li><li><a href="module-ruleBroker.html">ruleBroker</a></li><li><a href="module-rulesLibrary.html">rulesLibrary</a></li><li><a href="module-shape-constants.html">shape-constants</a></li><li><a href="module-shape-constants-validation.html">shape-constants-validation</a></li><li><a href="module-stack.html">stack</a></li><li><a href="module-stringParsing.html">stringParsing</a></li><li><a href="module-stringrGeneration.html">stringrGeneration</a></li><li><a href="module-system-constants.html">system-constants</a></li><li><a href="module-system-constants-validation.html">system-constants-validation</a></li><li><a href="module-timers.html">timers</a></li><li><a href="module-unit-constants.html">unit-constants</a></li><li><a href="module-unit-constants-validation.html">unit-constants-validation</a></li><li><a href="module-unitTests.html">unitTests</a></li><li><a href="module-warden.html">warden</a></li><li><a href="module-word-constants.html">word-constants</a></li><li><a href="module-word-constants-validation.html">word-constants-validation</a></li><li><a href="module-workflowBroker.html">workflowBroker</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue Feb 23 2021 21:17:35 GMT-0600 (Central Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 28 2021 20:41:23 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

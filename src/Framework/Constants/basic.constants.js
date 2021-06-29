@@ -43,6 +43,7 @@ export const cAt = '@'; // @
 export const cHash = '#';  // #
 export const cDollar = '$'; // $
 export const cPercent = '%'; // %
+export const cDoublePercent = cPercent + cPercent; // %%
 export const cCarrot = '^'; // ^
 export const cAndPersand = '&'; // &
 export const cDot = '.'; // .

@@ -9,7 +9,7 @@ exports["default"] = exports.initClientCommandsLibrary = void 0;
 
 var clientCommands = _interopRequireWildcard(require("./ClientCommands/clientCommands"));
 
-var apc = _interopRequireWildcard(require("../Constants/application.constants"));
+var app_cmd = _interopRequireWildcard(require("../Constants/application.command.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -29,9 +29,9 @@ var initClientCommandsLibrary = function initClientCommandsLibrary() {
 
   // console.log('BEGIN clientCommandsLibrary.initClientCommandsLibrary function');
   // console.log('END clientCommandsLibrary.initClientCommandsLibrary function');
-  return _ref = {}, _defineProperty(_ref, apc.ccustomEchoCommand, function (inputData, inputMetaData) {
+  return _ref = {}, _defineProperty(_ref, app_cmd.ccustomEchoCommand, function (inputData, inputMetaData) {
     return clientCommands.customEchoCommand(inputData, inputMetaData);
-  }), _defineProperty(_ref, apc.cbossPanic, function (inputData, inputMetaData) {
+  }), _defineProperty(_ref, app_cmd.cbossPanic, function (inputData, inputMetaData) {
     return clientCommands.bossPanic(inputData, inputMetaData);
   }), _ref;
 };

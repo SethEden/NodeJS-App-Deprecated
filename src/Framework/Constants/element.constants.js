@@ -3,7 +3,7 @@
  * @module element-constants
  * @description Contains named elements.
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:numeric-constants
  * @requires module:generic-constants
  * @requires module:word-constants
@@ -13,7 +13,7 @@
  * {@link https://en.wikipedia.org/wiki/List_of_mathematical_shapes}
  */
 import * as bas from './basic.constants';
-import * as phn from './phonics.constants';
+import * as phn from './phonic.constants';
 import * as num from './numeric.constants';
 import * as gen from './generic.constants';
 import * as wrd from './word.constants';

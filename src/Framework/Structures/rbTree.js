@@ -23,6 +23,8 @@
  var path = require('path');
  var D = require('./data');
  var baseFileName = path.basename(module.filename, path.extname(module.filename));
+ // Framework.Structures.rbTree.
+ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cStructures + bas.cDot + baseFileName + bas.cDot;
 
  var RED = 0;
  var BLACK = 1;
@@ -40,14 +42,14 @@
  */
  function cloneNode(node) {
    let functionName = cloneNode.name;
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'node is: ' + JSON.stringify(node));
+   loggers.consoleLog(namespacePrefix + functionName, s.cBEGIN_Function);
+   loggers.consoleLog(namespacePrefix + functionName, 'node is: ' + JSON.stringify(node));
    let returnData = false;
    if (node != undefined && node != null && node != '' && typeof node === 'object') {
      returnData = rbNode.rbNodeConstructor(node.nodeColor, node.nodeKey, node.nodeValue, node.nodeLeft, node.nodeRight, node.nodeCount);
    }
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+   loggers.consoleLog(namespacePrefix + functionName, 'returnData is: ' + JSON.stringify(returnData));
+   loggers.consoleLog(namespacePrefix + functionName, s.cEND_Function);
    return returnData;
  };
 
@@ -62,15 +64,15 @@
  */
  function repaint(color, node) {
    let functionName = repaint.name;
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'color is: ' + color);
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'node is: ' + JSON.stringify(node));
+   loggers.consoleLog(namespacePrefix + functionName, s.cBEGIN_Function);
+   loggers.consoleLog(namespacePrefix + functionName, 'color is: ' + color);
+   loggers.consoleLog(namespacePrefix + functionName, 'node is: ' + JSON.stringify(node));
    let returnData = false;
    if (node != undefined && node != null && node != '' && typeof node === 'object') {
      returnData = rbNode.rbNodeConstructor(color, node.nodeKey, node.nodeValue, node.nodeLeft, node.nodeRight, node.nodeCount);
    }
-   loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
-   loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+   loggers.consoleLog(namespacePrefix + functionName, 'returnData is: ' + JSON.stringify(returnData));
+   loggers.consoleLog(namespacePrefix + functionName, s.cEND_Function);
    return returnData;
 };
 
@@ -84,14 +86,14 @@
  */
 function recount(node) {
   let functionName = recount.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'node is: ' + JSON.stringify(node));
+  loggers.consoleLog(namespacePrefix + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, 'node is: ' + JSON.stringify(node));
   let returnData = false;
   if (node != undefined && node != null && node != '' && typeof node === 'object') {
     node.nodeCount = 1 + (node.nodeLeft ? node.nodeLeft.nodeCount : 0) + (node.nodeRight ? node.nodeRight.nodeCount : 0)
   }
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'returnData is: ' + JSON.stringify(returnData));
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, 'returnData is: ' + JSON.stringify(returnData));
+  loggers.consoleLog(namespacePrefix + functionName, s.cEND_Function);
   return returnData;
 };
 
@@ -106,12 +108,12 @@ function recount(node) {
  */
 function rbTree(compare, rootNode) {
   let functionName = rbTree.name;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cBEGIN_Function);
-  loggers.consoleLog(baseFileName + b.cDot + functionName, 'node is: ' + JSON.stringify(node));
+  loggers.consoleLog(namespacePrefix + functionName, s.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, 'node is: ' + JSON.stringify(node));
   let returnData = false;
   root = rootNode;
   rbTreeCompare = compare;
-  loggers.consoleLog(baseFileName + b.cDot + functionName, s.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, s.cEND_Function);
 };
 
 

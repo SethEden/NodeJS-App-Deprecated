@@ -3,19 +3,19 @@
  * @module word-constants
  * @description Contains many re-usable word constants.
  * @requires module:basic-constants
- * @requires module:phonics-constants
+ * @requires module:phonic-constants
  * @requires module:numeric-constants
  * @requires module:generic-constants
- * @requires module:units-constants
+ * @requires module:unit-constants
  * @author Seth Hollingsead
  * @date 2020/07/16
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
  */
 import * as bas from './basic.constants';
-import * as phn from './phonics.constants';
+import * as phn from './phonic.constants';
 import * as num from './numeric.constants';
 import * as gen from './generic.constants';
-import * as unt from './units.constants';
+import * as unt from './unit.constants';
 
 // Miscelaneious Words
 export const c1a1d = 'a' + 'd'; // ad // 'ca' & 'cd' is some how a reserved word.
@@ -290,7 +290,8 @@ export const cexpecting = cexpect + phn.cing; // expecting
 export const cExpecting = cExpect + phn.cing; // Expecting
 export const cnavigate = bas.cn + phn.cavigate; // navigate
 export const cNavigate = bas.cN + phn.cavigate; // Navigate
-export const cSave = bas.cSa + bas.cve; // Save
+export const csave = bas.cs + phn.cave; // Save
+export const cSave = bas.cS + phn.cave; // Save
 export const cDownload = bas.cDo + bas.cwn + bas.clo + 'ad'; // Download
 export const cNegative = bas.cNe + bas.cga + phn.ctive; // Negative
 export const cPositive = bas.cPo + bas.csi + phn.ctive; // Positive
@@ -434,6 +435,8 @@ export const cintermediate = phn.cinter + cmediate; // intermediate
 export const cIntermediate = phn.cInter + cmediate; // Intermediate
 export const cpath = bas.cp + phn.cath; // path
 export const cPath = bas.cP + phn.cath; // Path
+export const cpaths = cpath + bas.cs; // paths
+export const cPaths = cPath + bas.cs; // Paths
 export const cexit = bas.cex + bas.cit; // exit
 export const cExit = bas.cEx + bas.cit; // Exit
 export const cexiting = cexit + phn.cing; // exiting
@@ -445,6 +448,8 @@ export const cset = bas.cse + bas.ct; // set
 export const cSet = bas.cSe + bas.ct; // Set
 export const csetting = cset + bas.ct + phn.cing; // setting
 export const cSetting = cSet + bas.ct + phn.cing; // Setting
+export const csettings = csetting + bas.cs; // settings
+export const cSettings = cSetting + bas.cs; // Settings
 export const cPreview = phn.cPre + cview; // Preview
 export const climit = bas.cli + phn.cmit; // limit // NOTE: bas.cmi resolves as "s"
 export const cLimit = bas.cLi + phn.cmit; // Limit // NOTE: bas.cmi resolves as "s"
@@ -1106,8 +1111,8 @@ export const calmost = bas.cal + cmost; // almost
 export const cAlmost = bas.cAl + cmost; // Almost
 export const cpal = bas.cpa + bas.cl; // pal
 export const cPal = bas.cPa + bas.cl; // Pal
-export const cpalindrom = cpal + bas.cin + phn.cdrom; // palindrom
-export const cPalindrom = cPal + bas.cin + phn.cdrom; // Palindrom
+export const cpalindrome = cpal + bas.cin + phn.cdrome; // palindrome
+export const cPalindrome = cPal + bas.cin + phn.cdrome; // Palindrome
 export const caverage = phn.cave + phn.crage; // average
 export const cAverage = phn.cAve + phn.crage; // Average
 export const cclient = phn.ccli + phn.cent; // client
@@ -1196,6 +1201,16 @@ export const cversion = phn.cver + phn.csion; // version
 export const cVersion = phn.cVer + phn.csion; // Version
 export const ccontrol = phn.ccon + phn.ctrol; // control
 export const cControl = phn.cCon + phn.ctrol; // Control
+export const ccontrols = ccontrol + bas.cs; // controls
+export const cControls = cControl + bas.cs; // Controls
+export const ccontrolled = ccontrol + phn.cled; // controlled
+export const cControlled = cControl + phn.cled; // Controlled
+export const ccontrolling = ccontrol + phn.cling; // controlling
+export const cControlling = cControl + phn.cling; // Controlling
+export const ccontroller = ccontrol + phn.cler; // controller
+export const cController = cControl + phn.cler; // Controller
+export const ccontrollers = ccontroller + bas.cs; // controllers
+export const cControllers = cController + bas.cs; // Controllers
 export const cperform = phn.cper + cform; // perform
 export const cPerform = phn.cPer + cform; // Perform
 export const cperformance = cperform + phn.cance; // performance
@@ -1250,8 +1265,10 @@ export const cgeneric = phn.cgen + bas.ce + phn.cric; // generic
 export const cGeneric = phn.cGen + bas.ce + phn.cric; // Generic
 export const cisotope = phn.ciso + phn.ctope; // isotope
 export const cIsotope = phn.cIso + phn.ctope; // Isotope
-export const cphonics = phn.cphon + phn.cics; // phonics
-export const cPhonics = phn.cPhon + phn.cics; // Phonics
+export const cphonic = phn.cphon + bas.cic; // phonic
+export const cPhonic = phn.cPhon + bas.cic; // Phonic
+export const cphonics = cphonic + bas.cs; // phonics
+export const cPhonics = cPhonic + bas.cs; // Phonics
 export const cshape = phn.csha + bas.cpe; // shape
 export const cShape = phn.cSha + bas.cpe; // Shape
 export const cexport = bas.cex + cport; // export
@@ -1500,6 +1517,10 @@ export const cperiod = phn.cper + phn.ciod; // period
 export const cPeriod = phn.cPer + phn.ciod; // Period
 export const ccannot = ccan + gen.cnot; // cannot
 export const cCannot = cCan + gen.cnot; // Cannot
+export const cnothing = gen.cnot + phn.ching; // nothing
+export const cNothing = gen.cNot + phn.ching; // Nothing
+export const cnothingness = cnothing + phn.cness; // nothingness
+export const cNothingness = cNothing + phn.cness; // Nothingness
 export const cused = cuse + bas.cd; // used
 export const cUsed = cUse + bas.cd; // Used
 export const cusing = bas.cus + phn.cing; // using
@@ -2021,6 +2042,16 @@ export const cincremented = cincrement + bas.ced; // incremented
 export const cIncremented = cIncrement + bas.ced; // Incremented
 export const cincrementing = cincrement + phn.cing; // incrementing
 export const cIncrementing = cIncrement + phn.cing; // Incrementing
+export const cforce = cfor + bas.cce; // force
+export const cForce = cFor + bas.cce; // Force
+export const cforced = cforce + bas.cd; // forced
+export const cForced = cForce + bas.cd; // Forced
+export const cforcing = cfor + bas.cc + phn.cing; // forcing
+export const cForcing = cFor + bas.cc + phn.cing; // Forcing
+export const cforces = cforce + bas.cs; // forces
+export const cForces = cForce + bas.cs; // Forces
+export const cexecutrix = phn.cexe + ccut + phn.crix; // executrix
+export const cExecutrix = phn.cExe + ccut + phn.crix; // Executrix
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 export const cAbsolute = bas.cAb + phn.csol + phn.cute; // Absolute

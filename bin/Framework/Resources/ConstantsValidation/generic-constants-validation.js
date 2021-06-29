@@ -804,6 +804,10 @@ var genericConstantsValidation = [{
   Name: 'cwrd',
   Actual: gen.cwrd,
   Expected: 'wrd'
+}, {
+  Name: 'capc',
+  Actual: gen.capc,
+  Expected: 'apc'
 }, // Miscelanious
 {
   Name: 'cUTF8',

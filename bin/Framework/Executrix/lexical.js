@@ -21,9 +21,9 @@ var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../Constants/business.constants"));
 
-var cfg = _interopRequireWildcard(require("../Constants/configurations.constants"));
+var cfg = _interopRequireWildcard(require("../Constants/configuration.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -42,8 +42,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:configurations-constants
- * @requires module:messages-constants
+ * @requires module:configuration-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/026
@@ -51,7 +51,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  */
 var path = require('path');
 
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.Executrix.lexical.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function parseBusinessRuleArgument
  * @description parses a single business rule argument and returns it after cleaning it up or
@@ -71,38 +73,38 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMode) {
   var functionName = parseBusinessRuleArgument.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // argumentValue is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // argumentValue is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue)); // index is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue)); // index is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cindexIs + index); // consolidatedArgumentMode is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cindexIs + index); // consolidatedArgumentMode is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cconsolidatedArgumentModeIs + consolidatedArgumentMode);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cconsolidatedArgumentModeIs + consolidatedArgumentMode);
 
   var returnData;
 
   if (index === 1) {
     // Pushing the argumentValue to the returnData as an array element
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cPushingArgumentValueToReturnDataAsArrayElement);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cPushingArgumentValueToReturnDataAsArrayElement);
 
     returnData = [];
     returnData.push(argumentValue);
   } else if (index === 2 && consolidatedArgumentMode === false) {
     // Calling analyzeArgument for index = 2, consolidatedArgumentMode = false
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeFalse);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeFalse);
 
     returnData = analyzeArgument(argumentValue);
   } else if (index === 2 && consolidatedArgumentMode === true) {
     // Calling analyzeArgument for index = 2, consolidatedArgumentMode = true
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeTrue);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCallingAnalyzeArgumentIndex2ConsolidatedArgumentModeTrue);
 
     if (argumentValue.length > 0) {
       returnData = []; // argumentValue.length > 0
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueLengthGreaterThanZero);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueLengthGreaterThanZero);
 
       for (var i = 1; i < argumentValue.length; i++) {
         // Combine all arguments into a single array on the returnData
@@ -110,13 +112,13 @@ function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMod
       }
     } else {
       // Return the argumentValue the same as it was passed in.
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cReturnArgumentValueSameAsItWasPassedIn);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cReturnArgumentValueSameAsItWasPassedIn);
 
       returnData = argumentValue;
     }
   } else if (index === 3 && consolidatedArgumentMode === false) {
     // Calling analyzeArgument for index = 3, consolidatedArgumentMode = false
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCallingAnalyzeArgumentIndex3ConsolidatedArgumentModeFalse);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCallingAnalyzeArgumentIndex3ConsolidatedArgumentModeFalse);
 
     returnData = analyzeArgument(argumentValue);
   } else {
@@ -124,9 +126,9 @@ function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMod
     console.log(msg.cparseBusinessRuleArgumentMessage1 + msg.cparseBusinessRuleArgumentMessage2);
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -149,10 +151,10 @@ function parseBusinessRuleArgument(argumentValue, index, consolidatedArgumentMod
 function analyzeArgument(argumentValue) {
   var functionName = analyzeArgument.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // argumentValue is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // argumentValue is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData;
   var argsArrayContainsCharacterRule = [];
@@ -160,11 +162,11 @@ function analyzeArgument(argumentValue) {
   argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;
   removeBracketsFromArgsArrayRule[0] = biz.cremoveCharacterFromArray;
 
-  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
 
   if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
     // Check if there are brackets or no brackets.
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCheckIfThereAreBracketsOrNoBrackets);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCheckIfThereAreBracketsOrNoBrackets);
 
     var argsArrayContainsOpenBracket = _ruleBroker["default"].processRules(bas.cOpenBracket, argumentValue, argsArrayContainsCharacterRule);
 
@@ -172,56 +174,56 @@ function analyzeArgument(argumentValue) {
 
     if (argsArrayContainsOpenBracket === false || argsArrayContainsCloseBracket === false) {
       // Brackets were found
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBracketsWereFound); // Check if there is a Regular Expression or not.
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBracketsWereFound); // Check if there is a Regular Expression or not.
 
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCheckIfThereIsRegularExpressionOrNot);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCheckIfThereIsRegularExpressionOrNot);
 
       if (analyzeForRegularExpression(argumentValue) === true) {
         // A regular expression was found!
-        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cRegularExpressionWasFound);
+        _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cRegularExpressionWasFound);
 
         returnData = parseArgumentAsRegularExpression(argumentValue);
       } else {
         // No regular expression, just return the argument as it was passed in, no additional processing required.
         // NO RegExp found!
-        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cNoRegExpFound);
+        _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cNoRegExpFound);
 
         returnData = argumentValue;
       }
     } else {
       // There are Brackets, so treat the argument as an array.
       // Brackets ARE found!
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBracketsAreFound);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBracketsAreFound);
 
       returnData = parseArgumentAsArray(argumentValue);
     }
   } else {
     // The argumentValue does not contain a secondaryCommandArgsDelimiter
     // NO secondary command argument delimiters.
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cNoSecondaryCommandArgumentDelimiters); // Check if there is any regular expression or no regular expression
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cNoSecondaryCommandArgumentDelimiters); // Check if there is any regular expression or no regular expression
     // Check if there is a Regular Expression or not.
 
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cCheckIfThereIsRegularExpressionOrNot);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cCheckIfThereIsRegularExpressionOrNot);
 
     if (analyzeForRegularExpression(argumentValue) === true) {
       // A regular expression was found!
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cRegularExpressionWasFound);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cRegularExpressionWasFound);
 
       returnData = parseArgumentAsRegularExpression(argumentValue);
     } else {
       // No regular expression, just return the argument as it was passed in, no additional processing required.
       // NO RegExp found!
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cNoRegExpFound);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cNoRegExpFound);
 
       returnData = argumentValue;
     }
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -239,10 +241,10 @@ function analyzeArgument(argumentValue) {
 function analyzeForRegularExpression(argumentValue) {
   var functionName = analyzeForRegularExpression.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // argumentValue is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // argumentValue is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData = false;
   var argsArrayContainsCharacterRule = [];
@@ -258,9 +260,9 @@ function analyzeForRegularExpression(argumentValue) {
     returnData = true;
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -278,10 +280,10 @@ function analyzeForRegularExpression(argumentValue) {
 function parseArgumentAsRegularExpression(argumentValue) {
   var functionName = parseArgumentAsRegularExpression.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // argumentValue is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // argumentValue is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData;
   var regExValue, regExFlags;
@@ -291,28 +293,28 @@ function parseArgumentAsRegularExpression(argumentValue) {
     if (regExArray[k] === wrd.cregEx || regExArray[k] === wrd.cRegEx) {
       k++; // regular expression is:
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cregularExpressionIs + regExArray[k]);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cregularExpressionIs + regExArray[k]);
 
       regExValue = regExArray[k]; // regExValue is:
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cregExValueIs + regExValue);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cregExValueIs + regExValue);
     } else if (regExArray[k] === wrd.cflags || regExArray[k] === wrd.cFlags) {
       k++; // regular expression flags are:
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cregularExpressionFlagsAre + regExArray[k]);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cregularExpressionFlagsAre + regExArray[k]);
 
       regExFlags = regExArray[k]; // regExFlags is:
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cregExFlagsIs + regExFlags);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cregExFlagsIs + regExFlags);
     }
   }
 
   var regularExpression = new RegExp(regExValue, regExFlags);
   returnData.push(regularExpression);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -330,15 +332,15 @@ function parseArgumentAsRegularExpression(argumentValue) {
 function parseArgumentAsArray(argumentValue) {
   var functionName = parseArgumentAsArray.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // argumentValue is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // argumentValue is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueIs + JSON.stringify(argumentValue));
 
   var returnData;
   var isArray = false;
 
-  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(cfg.cSecondaryCommandDelimiter);
+  var secondaryCommandArgsDelimiter = _configurator["default"].getConfigurationSetting(wrd.csystem, cfg.cSecondaryCommandDelimiter);
 
   var argsArrayContainsCharacterRule = [];
   var removeBracketsFromArgsArrayRule = [];
@@ -360,7 +362,7 @@ function parseArgumentAsArray(argumentValue) {
   if (isArray === false) {
     if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
       // argumentValue contains the delimiter, lets split it!
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueContainsTheDelimiterLetsSplitIt);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueContainsTheDelimiterLetsSplitIt);
 
       argumentValue = argumentValue.split(secondaryCommandArgsDelimiter);
     }
@@ -369,22 +371,22 @@ function parseArgumentAsArray(argumentValue) {
   if (argsArrayContainsOpenBracket === true) {
     argumentValue = _ruleBroker["default"].processRules(bas.cOpenBracket, argumentValue, removeBracketsFromArgsArrayRule); // argumentValue after attempting to remove a open bracket from all array elements is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueAfterAttemptingToRemoveOpenBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
   }
 
   if (argsArrayContainsCloseBracket === true) {
     argumentValue = _ruleBroker["default"].processRules(bas.cCloseBracket, argumentValue, removeBracketsFromArgsArrayRule); // argumentValue after attempting to remove a close bracket from all array elements is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueAfterAttemptingToRemoveCloseBracketFromAllArrayElementsIs + JSON.stringify(argumentValue));
   } // secondaryCommandArgsDelimiter is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csecondaryCommandArgsDelimiterIs + secondaryCommandArgsDelimiter);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csecondaryCommandArgsDelimiterIs + secondaryCommandArgsDelimiter);
 
   if (isArray === true) {
     if (argumentValue.includes(secondaryCommandArgsDelimiter) === true) {
       // argumentValue contains the delimiter, lets split it!
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentValueContainsTheDelimiterLetsSplitIt);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentValueContainsTheDelimiterLetsSplitIt);
 
       returnData = argumentValue.split(secondaryCommandArgsDelimiter);
     }
@@ -392,9 +394,9 @@ function parseArgumentAsArray(argumentValue) {
     returnData = argumentValue;
   }
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -413,19 +415,19 @@ function parseArgumentAsArray(argumentValue) {
 function removeStringLiteralTagsFromArray(argumentArray) {
   var functionName = parseArgumentAsRegularExpression.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // argumentArray is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // argumentArray is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cargumentArrayIs + JSON.stringify(argumentArray));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cargumentArrayIs + JSON.stringify(argumentArray));
 
   var returnData;
   var removeCharacterRule = [];
   removeCharacterRule[0] = biz.cremoveCharacterFromArray;
   returnData = _ruleBroker["default"].processRules(bas.cTilde, argumentArray, removeCharacterRule);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }

@@ -19,11 +19,13 @@ var bas = _interopRequireWildcard(require("../Constants/basic.constants"));
 
 var gen = _interopRequireWildcard(require("../Constants/generic.constants"));
 
+var wrd = _interopRequireWildcard(require("../Constants/word.constants"));
+
 var sys = _interopRequireWildcard(require("../Constants/system.constants"));
 
 var biz = _interopRequireWildcard(require("../Constants/business.constants"));
 
-var msg = _interopRequireWildcard(require("../Constants/messages.constants"));
+var msg = _interopRequireWildcard(require("../Constants/message.constants"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -43,9 +45,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
  * @requires module:timers
  * @requires module:basic-constants
  * @requires module:generic-constants
+ * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:business-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/fs|fs}
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires {@link https://www.npmjs.com/package/bestzip|bestzip}
@@ -82,7 +85,9 @@ var directoriesToSkip = ['browser_components', 'node_modules', 'www', 'platforms
 var enableFilesListLimit = false;
 var filesListLimit = -1;
 var hitFileLimit = false;
-var baseFileName = path.basename(module.filename, path.extname(module.filename));
+var baseFileName = path.basename(module.filename, path.extname(module.filename)); // Framework.Executrix.fileBroker.
+
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + baseFileName + bas.cDot;
 /**
  * @function getXmlData
  * @description Loads the specified file and parses it into JavaScript Objects, all strings.
@@ -95,10 +100,10 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
 function getXmlData(pathAndFilename) {
   var functionName = getXmlData.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // pathAndFilename is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // pathAndFilename is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpathAndFilenameIs + pathAndFilename);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cpathAndFilenameIs + pathAndFilename);
 
   var returnData;
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
@@ -112,9 +117,9 @@ function getXmlData(pathAndFilename) {
       // ERROR:
       returnData = console.log(sys.cERROR_Colon + err);
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + returnData);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
       return returnData;
     }
@@ -123,9 +128,9 @@ function getXmlData(pathAndFilename) {
   });
   returnData = xml;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creturnDataIs + JSON.stringify(returnData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return returnData;
 }
@@ -146,10 +151,10 @@ function getXmlData(pathAndFilename) {
 function getCsvData(pathAndFilename) {
   var functionName = getCsvData.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // file and path to load from is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // file and path to load from is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
 
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
 
@@ -164,12 +169,12 @@ function getCsvData(pathAndFilename) {
     encoding: gen.cUTF8
   }); // DONE loading data from:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneLoadingDataFrom + pathAndFilename); // Loaded data is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cDoneLoadingDataFrom + pathAndFilename); // Loaded data is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return parsedData;
 }
@@ -187,10 +192,10 @@ function getCsvData(pathAndFilename) {
 function getJsonData(pathAndFilename) {
   var functionName = getJsonData.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // file and path to load from is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // file and path to load from is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cfileAndPathToLoadFromIs + pathAndFilename);
 
   pathAndFilename = path.resolve(pathAndFilename); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
 
@@ -199,12 +204,12 @@ function getJsonData(pathAndFilename) {
   });
   var parsedData = JSON.parse(rawData); // DONE loading data from:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneLoadingDataFrom + pathAndFilename); // Loaded data is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cDoneLoadingDataFrom + pathAndFilename); // Loaded data is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cLoadedDataIs + JSON.stringify(parsedData));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return parsedData;
 }
@@ -223,13 +228,13 @@ function getJsonData(pathAndFilename) {
 function writeJsonData(pathAndFilename, dataToWrite) {
   var functionName = writeJsonData.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // file and path to write data to is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // file and path to write data to is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfileAndPathToWriteDataToIs + pathAndFilename); // data to write is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cfileAndPathToWriteDataToIs + pathAndFilename); // data to write is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdataToWriteIs + JSON.stringify(dataToWrite));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cdataToWriteIs + JSON.stringify(dataToWrite));
 
   var outputSuccess = false;
 
@@ -242,9 +247,9 @@ function writeJsonData(pathAndFilename, dataToWrite) {
   } // Data was written to the file:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDataWasWrittenToTheFile + outputSuccess);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cDataWasWrittenToTheFile + outputSuccess);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 }
 
 ;
@@ -262,10 +267,10 @@ function writeJsonData(pathAndFilename, dataToWrite) {
 function readDirectoryContents(directory) {
   var functionName = readDirectoryContents.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // Path that should be scanned is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // Path that should be scanned is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cPathThatShouldBeScannedIs + directory);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cPathThatShouldBeScannedIs + directory);
 
   var filesFound = [];
   directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
@@ -277,9 +282,9 @@ function readDirectoryContents(directory) {
 
   filesCollection = []; // files found are:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return filesFound;
 }
@@ -303,14 +308,14 @@ function readDirectoryContents(directory) {
 function scanDirectoryContents(directory, enableLimit, filesLimit) {
   var functionName = scanDirectoryContents.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // Path that should be scanned is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // Path that should be scanned is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cPathThatShouldBeScannedIs + directory);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cPathThatShouldBeScannedIs + directory);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'enableLimit is: ' + enableLimit);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, 'enableLimit is: ' + enableLimit);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'filesLimit is: ' + filesLimit);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, 'filesLimit is: ' + filesLimit);
 
   var filesFound = [];
   directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
@@ -327,9 +332,9 @@ function scanDirectoryContents(directory, enableLimit, filesLimit) {
   filesListLimit = -1;
   hitFileLimit = false; // files found are:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cfilesFoundAre + JSON.stringify(filesFound));
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return filesFound;
 }
@@ -351,10 +356,10 @@ function readDirectorySynchronously(directory) {
   // console.log('directory is: ' + directory);
   var functionName = readDirectorySynchronously.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // directory is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // directory is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdirectorIs + directory);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cdirectorIs + directory);
 
   if (hitFileLimit === false) {
     directory = path.resolve(directory); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
@@ -396,17 +401,17 @@ function readDirectorySynchronously(directory) {
           var directoryPath = '';
           directoryPath = path.resolve(directory + bas.cForwardSlash + file); // directoryPath is:
 
-          _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdirectoryPathIs + directoryPath);
+          _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cdirectoryPathIs + directoryPath);
 
           readDirectorySynchronously(directoryPath);
         }
       } catch (e) {
         // Catch the error in the hopes that we can continue scanning the file system.
-        _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, 'ERROR: Invalid access to: ' + pathOfCurrentItem);
+        _loggers["default"].consoleLog(namespacePrefix + functionName, 'ERROR: Invalid access to: ' + pathOfCurrentItem);
       }
     });
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('END dataBroker.readDirectorySynchronously function');
 
   }
 }
@@ -430,13 +435,13 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   // console.log('destinationFolder is: ' + destinationFolder);
   var functionName = copyAllFilesAndFoldersFromFolderToFolder.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // sourceFolder is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // sourceFolder is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csourceFolderIs + sourceFolder); // destinationFolder is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csourceFolderIs + sourceFolder); // destinationFolder is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdestinationFolderIs + destinationFolder);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cdestinationFolderIs + destinationFolder);
 
   var copySuccess = false;
   var rootPath = cleanRootPath();
@@ -447,16 +452,16 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   // sourceFolder is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csourceFolderIs + sourceFolder); // destinationFolder is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csourceFolderIs + sourceFolder); // destinationFolder is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdestinationFolderIs + destinationFolder);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cdestinationFolderIs + destinationFolder);
 
   copySuccess = copyFolderRecursiveSync(sourceFolder, destinationFolder); // copySuccess is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccopySuccessIs + copySuccess);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccopySuccessIs + copySuccess);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('copySuccess is: ' + copySuccess);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('copySuccess is: ' + copySuccess);
   // console.log('END dataBroker.copyAllFilesAndFoldersFromFolderToFolder function');
 
 
@@ -481,13 +486,13 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   // console.log('destinationFolder is: ' + destinationFolder);
   var functionName = buildReleasePackage.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // sourceFolder is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // sourceFolder is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csourceFolderIs + sourceFolder); // destinationFolder is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csourceFolderIs + sourceFolder); // destinationFolder is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cdestinationFolderIs + destinationFolder);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cdestinationFolderIs + destinationFolder);
 
   var packageSuccess = false;
   var releaseFiles = [];
@@ -500,18 +505,18 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   cleanFilePathsBusinessRules[1] = biz.cswapDoubleBackSlashToSingleBackSlash;
   cleanFilePathsBusinessRules[2] = biz.cswapForwardSlashToBackSlash;
 
-  var rootPath = _configurator["default"].getConfigurationSetting(sys.cApplicationCleanedRootPath);
+  var rootPath = _configurator["default"].getConfigurationSetting(wrd.csystem, sys.cApplicationCleanedRootPath);
 
-  var currentVersion = _configurator["default"].getConfigurationSetting(sys.cApplicationVersionNumber);
+  var currentVersion = _configurator["default"].getConfigurationSetting(wrd.csystem, sys.cApplicationVersionNumber);
 
-  var applicationName = _configurator["default"].getConfigurationSetting(sys.cApplicationName);
+  var applicationName = _configurator["default"].getConfigurationSetting(wrd.csystem, sys.cApplicationName);
 
   var currentVersionReleased = false;
   var releaseDateTimeStamp;
   var originalSource, originalDestination;
   var zip = new AdmZip(); // current version is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionIs + currentVersion);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccurrentVersionIs + currentVersion);
 
   originalSource = bas.cDot + sourceFolder;
   originalDestination = destinationFolder;
@@ -524,20 +529,20 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   releaseFiles = readDirectoryContents(sourceFolder);
   releasedArchiveFiles = readDirectoryContents(destinationFolder); // released archive files list is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creleasedArchiveFilesListIs + JSON.stringify(releasedArchiveFiles)); // Check if the current version number has already been released as a zip file in the Release folder.
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creleasedArchiveFilesListIs + JSON.stringify(releasedArchiveFiles)); // Check if the current version number has already been released as a zip file in the Release folder.
   // If it has not been released, then we can build the zip file with the current release number and date-time stamp.
 
 
   for (var i = 0; i <= releasedArchiveFiles.length - 1; i++) {
     // file is:
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfileIs + releasedArchiveFiles[i]);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cfileIs + releasedArchiveFiles[i]);
 
     var pathAndFileName = releasedArchiveFiles[i];
 
     var fileName = _ruleBroker["default"].processRules(pathAndFileName, '', fileNameBusinessRules); // fileName is:
 
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cfileNameIs + fileName);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cfileNameIs + fileName);
 
     if (fileName.includes(currentVersion) === true) {
       currentVersionReleased = true;
@@ -546,16 +551,16 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 
   if (currentVersionReleased === false) {
     // release files list is:
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseFilesListIs + JSON.stringify(releaseFiles));
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creleaseFilesListIs + JSON.stringify(releaseFiles));
 
-    releaseDateTimeStamp = _timers["default"].getNowMoment(_configurator["default"].getConfigurationSetting(sys.cDateTimeStamp)); // release date-time stamp is:
+    releaseDateTimeStamp = _timers["default"].getNowMoment(_configurator["default"].getConfigurationSetting(wrd.csystem, sys.cDateTimeStamp)); // release date-time stamp is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseDateTimeStampIs + releaseDateTimeStamp); // loggers.consoleLog(baseFileName + bas.cDot + functionName, 'contents of D are: ' + JSON.stringify(D));
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creleaseDateTimeStampIs + releaseDateTimeStamp); // loggers.consoleLog(namespacePrefix + functionName, 'contents of D are: ' + JSON.stringify(D));
 
 
     var releaseFileName = releaseDateTimeStamp + bas.cUnderscore + currentVersion + bas.cUnderscore + applicationName; // release fileName is:
 
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.creleaseFileNameIs + releaseFileName);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.creleaseFileNameIs + releaseFileName);
 
     var fullReleasePath = path.resolve(destinationFolder + bas.cForwardSlash + releaseFileName + gen.cDotzip);
 
@@ -563,10 +568,10 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
       zip.addLocalFolder(sourceFolder, originalSource);
       zip.writeZip(fullReleasePath); // Done writing the zip file:
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cDoneWritingTheZipFile + fullReleasePath); // Set the return packageSuccess flag to TRUE
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cDoneWritingTheZipFile + fullReleasePath); // Set the return packageSuccess flag to TRUE
 
 
-      _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
+      _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cSetTheReturnPackageSuccessFlagToTrue);
 
       packageSuccess = true;
     } catch (err) {
@@ -577,13 +582,13 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
     }
   } else {
     // current version already released
-    _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ccurrentVersionAlreadyReleased);
+    _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ccurrentVersionAlreadyReleased);
   } // packageSuccess is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cpackageSuccessIs + packageSuccess);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cpackageSuccessIs + packageSuccess);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function); // console.log('packageSuccess is: ' + packageSuccess);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function); // console.log('packageSuccess is: ' + packageSuccess);
   // console.log('END dataBroker.buildReleasePackage function');
 
 
@@ -606,20 +611,20 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
 function cleanRootPath() {
   var functionName = cleanRootPath.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 
   var rootPath;
-  rootPath = _configurator["default"].getConfigurationSetting(sys.cApplicationRootPath);
+  rootPath = _configurator["default"].getConfigurationSetting(wrd.csystem, sys.cApplicationRootPath);
   var cleanRootPathRules = {};
   cleanRootPathRules[1] = biz.cremoveXnumberOfFoldersFromEndOfPath; // RootPath before processing is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cRootPathBeforeProcessingIs + rootPath);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cRootPathBeforeProcessingIs + rootPath);
 
   rootPath = _ruleBroker["default"].processRules(rootPath, 3, cleanRootPathRules); // RootPath after processing is:
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cRootPathAfterProcessingIs + rootPath);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cRootPathAfterProcessingIs + rootPath);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return rootPath;
 }
@@ -641,13 +646,13 @@ function cleanRootPath() {
 function copyFileSync(source, target) {
   var functionName = copyFileSync.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // source is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // source is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cSourceIs + source); // target is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cSourceIs + source); // target is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ctargetIs + target);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ctargetIs + target);
 
   var successfullCopy = false;
   var targetFile = target; // If target is a directory a new file with the same name will be created
@@ -672,9 +677,9 @@ function copyFileSync(source, target) {
   } // successfullCopy is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csuccessfullCopyIs + successfullCopy);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csuccessfullCopyIs + successfullCopy);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return successfullCopy;
 }
@@ -697,13 +702,13 @@ function copyFileSync(source, target) {
 function copyFolderRecursiveSync(source, target) {
   var functionName = copyFolderRecursiveSync.name;
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function); // source is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function); // source is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cSourceIs + source); // target is:
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cSourceIs + source); // target is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.ctargetIs + target);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.ctargetIs + target);
 
   var successfullCopy = false;
   var files = []; // Check if folder needs to be created or integrated
@@ -747,9 +752,9 @@ function copyFolderRecursiveSync(source, target) {
   } // successfullCopy is:
 
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.csuccessfullCopyIs + successfullCopy);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.csuccessfullCopyIs + successfullCopy);
 
-  _loggers["default"].consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  _loggers["default"].consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 
   return successfullCopy;
 }

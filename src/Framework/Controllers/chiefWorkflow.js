@@ -9,7 +9,7 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:system-constants
- * @requires module:messages-constants
+ * @requires module:message-constants
  * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
  * @author Seth Hollingsead
@@ -21,10 +21,12 @@ import loggers from '../Executrix/loggers';
 import * as bas from '../Constants/basic.constants';
 import * as wrd from '../Constants/word.constants';
 import * as sys from '../Constants/system.constants';
-import * as msg from '../Constants/messages.constants';
+import * as msg from '../Constants/message.constants';
 var path = require('path');
 var D = require('../Structures/data');
 var baseFileName = path.basename(module.filename, path.extname(module.filename));
+// Framework.Controllers.chiefWorkflow.
+var namespacePrefix = sys.cFramework + bas.cDot + wrd.cControllers + bas.cDot + baseFileName + bas.cDot;
 
 /**
  * @function loadCommandWorkflowsFromPath
@@ -37,9 +39,9 @@ var baseFileName = path.basename(module.filename, path.extname(module.filename))
  */
 function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) {
   let functionName = loadCommandWorkflowsFromPath.name;
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cBEGIN_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // commandWorkflowFilePathConfigurationName is:
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccommandWorkflowFilePathConfigurationNameIs + commandWorkflowFilePathConfigurationName);
   let allCommandWorkflowsData = {};
   allCommandWorkflowsData = chiefData.setupAllXmlData(commandWorkflowFilePathConfigurationName, sys.cCommandWorkflows);
   if (D[sys.cCommandWorkflows] === undefined) { // Make sure we only do this if it's undefined, otherwise we might wipe out previously loaded data.
@@ -50,7 +52,7 @@ function loadCommandWorkflowsFromPath(commandWorkflowFilePathConfigurationName) 
       D[sys.cCommandWorkflows][wrd.cWorkflow].push(allCommandWorkflowsData[sys.cCommandWorkflows][wrd.cWorkflow][i])
     }
   }
-  loggers.consoleLog(baseFileName + bas.cDot + functionName, msg.cEND_Function);
+  loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
 export default {
