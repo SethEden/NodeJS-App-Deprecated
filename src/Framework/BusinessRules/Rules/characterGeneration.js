@@ -684,7 +684,7 @@ export const randomlyGenerateSpecialCharacter1 = function(inputData, inputMetaDa
 /**
  * @function randomlyGenerateSpecialCharacter2
  * @description Randommly select a special character from a list of allowable special characters.
- * @param {string} inputData  The list of allowable special characters that should be used to randomly select from.
+ * @param {string} inputData The list of allowable special characters that should be used to randomly select from.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {string} A special character randomly selected from the input list of allowable special characters.
  * @NOTE: NEW implementation.
@@ -780,17 +780,17 @@ export const randomlyGenerateNumberInRange2 = function(inputData, inputMetaData)
 	  let addOne = stringToBoolean(inputMetaData[1]);
 	  let addMinimum = stringToBoolean(inputMetaData[2]);
 	  if (addOne === true) {
-		if (addMinimum === true) {
-		  returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-		} else {
-		  returnData = Math.floor(Math.random() * (maximum - minimum + 1));
-		}
+  		if (addMinimum === true) {
+  		  returnData = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+  		} else {
+  		  returnData = Math.floor(Math.random() * (maximum - minimum + 1));
+  		}
 	  } else {
-		if (addMinimum === true) {
-		  returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
-		} else {
-		  returnData = Math.floor(Math.random() * (maximum - minimum));
-		}
+  		if (addMinimum === true) {
+  		  returnData = Math.floor(Math.random() * (maximum - minimum)) + minimum;
+  		} else {
+  		  returnData = Math.floor(Math.random() * (maximum - minimum));
+  		}
 	  }
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
@@ -987,7 +987,7 @@ export const randomlyGenerateUpperCaseLetter2 = function(inputData, inputMetaDat
 
 /**
  * @function convertNumberToUpperCaseLetter
- * @description Converts a number from 1-26 into a upper case letter of the alphabet A-Z.
+ * @description Converts a number from 1-26 into an upper case letter of the english alphabet A-Z.
  * @param {string} inputData A string that contains a number in the range of 1-26 that should be converted to an upper case letter of the alphabet.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {string} A letter of the alphabet where 1-26 is converted to a letter A-Z.
@@ -1001,14 +1001,14 @@ export const convertNumberToUpperCaseLetter = function(inputData, inputMetaData)
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = '';
   if (inputData) {
-	  let number = parseInt(inputData);
-	  number--;
-	  // console.log('number is: ' + number.toString(10));
-	  if (number > 25 || number < 0) {
-		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
-	  } else {
-		returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
-	  }
+	   let number = parseInt(inputData);
+     number--;
+     // console.log('number is: ' + number.toString(10));
+     if (number > 25 || number < 0) {
+       returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+     } else {
+       returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toUpperCase();
+     }
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
@@ -1035,9 +1035,9 @@ export const convertNumberToLowerCaseLetter = function(inputData, inputMetaData)
 	  number--;
 	  // console.log('number is: ' + number.toString(10));
 	  if (number > 25 || number < 0) {
-		returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
+      returnData = ''; // Shouldn't actually need to do this, but it's a good place holder.
 	  } else {
-		returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
+      returnData = gen.cUpperCaseEnglishAlphabet.substring(number, number + 1).toLowerCase();
 	  }
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);

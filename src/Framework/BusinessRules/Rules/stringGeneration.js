@@ -3,7 +3,7 @@
 
 /**
  * @file stringGeneration.js
- * @module stringrGeneration
+ * @module stringGeneration
  * @description Contains all business rules for randomly generating strings of all kinds.
  * There are two versions of each function, an old implementation and a new implementation.
  * @NOTE The original implementation of the following functions was in bad need of a refactoring two major reasons:

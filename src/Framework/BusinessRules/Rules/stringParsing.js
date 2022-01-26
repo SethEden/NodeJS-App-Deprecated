@@ -524,7 +524,7 @@ export const replaceSpacesWithPlus = function(inputData, inputMetaData) {
 
 /**
  * @function replaceColonWithUnderscore
- * @description Replaces all colons in the input string with underscore symbols
+ * @description Replaces all colons in the input string with underscore symbols.
  * @param {string} inputData A string that contains colons that should be converted to underscore symbols.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {string} The same as the input string but with colon characters converted to underscore symbols.
@@ -748,7 +748,6 @@ export const removeFileExtensionFromFileName = function(inputData, inputMetaData
  * @date 2020/02/03
  */
 export const getValueFromAssignmentOperationString = function(inputData, inputMetaData) {
-  console.log('biz.cgetValueFromAssignmentOperationString' + bas.cSpace + msg.cisResolvingAs + biz.cgetValueFromAssignmentOperationString);
   let functionName = biz.cgetValueFromAssignmentOperationString;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + inputData);
@@ -999,6 +998,7 @@ export const getWordCountInString = function(inputData, inputMetaData) {
       returnData = inputData.split(wordDelimiter).length;
     } else {
       // We don't need to be showing this warning unless we are debugging.
+      // WARNING: Mixed string. Cannot determine how words are delimited in the string. Unable to count words.
       loggers.consoleLog(namespacePrefix + functionName, msg.cGetWordCountInStringMessage1 + msg.cGetWordCountInStringMessage2 + msg.cGetWordCountInStringMessage3);
     }
   }
@@ -1254,7 +1254,7 @@ export const simplifyAndConsolidateString = function(inputData, inputMetaData) {
  * @description Compares two strings by their simplified versions (see simplifyAndConsolidateString()).
  * @param {string} inputData The first string to be compared.
  * @param {string} inputMetaData The second string to be compared.
- * @return {boolean} A Boolean value to indicate if the strings are virtually idential or not.
+ * @return {boolean} A Boolean value to indicate if the strings are virtually identical or not.
  * @author Seth Hollingsead
  * @date 2020/02/10
  */
@@ -1435,13 +1435,13 @@ export const determineSuggestedConstantsValidationLineOfCode = function(inputDat
     // Output: {Name: 'cZZTopIntentionalFailure', Actual: wrd.cZZTopIntentionalFailure, Expected: 'ZZTopIntentionalFailure'}
     if (inputData.charAt(0) === bas.cc) {
       let literalValue = inputData.substr(1);
-      // `Name: '${inputData}', Actual: ${inputMetaData}.${inputData}, Expected: '${literalValue}'}`;
+      // `{Name: '${inputData}', Actual: ${inputMetaData}.${inputData}, Expected: '${literalValue}'}`;
       returnData = bas.cOpenCurlyBrace + wrd.cName + bas.cColon + bas.cSpace + bas.cSingleQuote + inputData + bas.cSingleQuote + bas.cComa + bas.cSpace + wrd.cActual + bas.cColon + bas.cSpace + inputMetaData +
       bas.cDot + inputData + bas.cComa + bas.cSpace + wrd.cExpected + bas.cColon + bas.cSpace + bas.cSingleQuote + literalValue + bas.cSingleQuote + bas.cCloseCurlyBrace;
     } else {
-      // ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
+      // 'ERROR: Attempted to generate a suggested line of code to validate the constant, ' +
       // 'but the constant is not formatted correctly, it should begin with a lower case "c". ' +
-      // 'Please reformat the constant correctly so a line of code can be generated for you.
+      // 'Please reformat the constant correctly so a line of code can be generated for you.'
       console.log(msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage1 +
         msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage2 +
         msg.cDetermineSuggestedConstantsValidationLineOfCodeErrorMessage3 +
@@ -1460,7 +1460,7 @@ export const determineSuggestedConstantsValidationLineOfCode = function(inputDat
  * @function validateConstantsDataValidationLineItemName
  * @description Loops through all of the constants validation data and verifies if a matching constant definition can be found, or not found.
  * @param {string} inputData The constant definition that should be searched for.
- * @param {string} inputMetaData  The name of the data hive that contains the appropriate matching constants validation data.
+ * @param {string} inputMetaData The name of the data hive that contains the appropriate matching constants validation data.
  * @return {boolean} True or False to indicate if a match was found or not found.
  * @author Seth Hollingsead
  * @date 2020/07/28
@@ -1963,7 +1963,7 @@ export const isValidCommandNameString = function(inputData, inputMetaData) {
     // It could actually be a single word, but of course we want to make sure it's more than 3 characters long.
     // Less than that, shouldn't really be considered a valid word, but could be appropriate as a command alias/abreviation.
     if (inputData.length > 3) {
-      let camelCaseArray = aryParse.convertCamelCaseStringToArray(inputData);
+      let camelCaseArray = aryParse.convertCamelCaseStringToArray(inputData, '');
       if (camelCaseArray.length === 1) {
         if (isFirstCharacterLowerCase(inputData) === true) { returnData = true; }
       } else if (camelCaseArray.length > 1) {
@@ -2033,7 +2033,7 @@ loop1:
 loop2:
       for (let j = 0; j < arrayOfAliases.length; j++) {
         // BEGIN j-th loop:
-        loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_jthLoop + i);
+        loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_jthLoop + j);
         let currentAlias = arrayOfAliases[j];
         // currentAlias is:
         loggers.consoleLog(namespacePrefix + functionName, msg.ccurrentAliasIs + currentAlias);
@@ -2043,7 +2043,7 @@ loop2:
         // duplicateAliasCount is:
         loggers.consoleLog(namespacePrefix + functionName, msg.cduplicateAliasCountIs + returnData);
         // END j-th loop:
-        loggers.consoleLog(namespacePrefix + functionName, msg.cEND_jthLoop + i);
+        loggers.consoleLog(namespacePrefix + functionName, msg.cEND_jthLoop + j);
       }
       // END i-th loop:
       loggers.consoleLog(namespacePrefix + functionName, msg.cEND_ithLoop + i);
@@ -2360,7 +2360,7 @@ export const getFirstTopLevelFolderFromPath = function(inputData, inputMetaData)
 
 /**
  * @function loadDataFile
- * @description Loads data from a specified file and stores is in the specified data hive path.
+ * @description Loads data from a specified file and stores it in the specified data hive path.
  * @param {string} inputData The full path and file name for the file that should be loaded into memory.
  * @param {string} inputMetaData The data hive path where the data should be stored once it is loaded.
  * @return {boolean} A True or False to indicate if the data file was loaded successfully or not.
@@ -2447,7 +2447,7 @@ export const getAttributeName = function(inputData, inputMetaData) {
   if (inputData) {
     let attributeArray = inputData.split(bas.cColon);
     // attributeArray is:
-    loggers.consoleLog(namespacePrefix + functionName, msg.cattributeArrayIs + attributeArray);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cattributeArrayIs + JSON.stringify(attributeArray));
     // attributeArray[0] is:
     loggers.consoleLog(namespacePrefix + functionName, msg.cattributeArray0Is + attributeArray[0]);
     returnData = aryParse.replaceCharacterWithCharacter(attributeArray[0], [/"/g, '']);
@@ -2478,7 +2478,7 @@ export const getAttributeValue = function(inputData, inputMetaData) {
     // attributeArray is:
     loggers.consoleLog(namespacePrefix + functionName, msg.cattributeArrayIs + attributeArray);
     // attributeArray[0] is:
-    loggers.consoleLog(namespacePrefix + functionName, msg.cattributeArray0Is + attributeArray[1]);
+    loggers.consoleLog(namespacePrefix + functionName, msg.cattributeArray1Is + attributeArray[1]);
     returnData = aryParse.replaceCharacterWithCharacter(attributeArray[1], [/"/g, '']);
     returnData = returnData.trim();
   }

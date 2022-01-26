@@ -182,6 +182,7 @@ export const cAttemptingToLoadJsonData = wrd.cAttempting + bas.cSpace + bas.cto 
 export const cLoadedDataIs = wrd.cLoaded + bas.cSpace + wrd.cdata + sys.cSpaceIsColonSpace; // Loaded data is:
 export const cattributeArrayIs = wrd.cattribute + wrd.cArray + sys.cSpaceIsColonSpace; // attributeArray is:
 export const cattributeArray0Is = wrd.cattribute + wrd.cArray + bas.cOpenBracket + num.c0 + bas.cCloseBracket + sys.cSpaceIsColonSpace; // attributeArray[0] is:
+export const cattributeArray1Is = wrd.cattribute + wrd.cArray + bas.cOpenBracket + num.c1 + bas.cCloseBracket + sys.cSpaceIsColonSpace; // attributeArray[1] is:
 export const carrayIs = wrd.carray + sys.cSpaceIsColonSpace; // array is:
 export const cvalueIs = wrd.cvalue + sys.cSpaceIsColonSpace; // value is:
 export const cmyFunctionIs = bas.cmy + wrd.cFunction + sys.cSpaceIsColonSpace; // myFunction is:
