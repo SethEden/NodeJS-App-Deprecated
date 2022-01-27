@@ -25,13 +25,13 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cBusiness + wrd.cRules + b
 
 /**
  * @function hex2rgbConversion
- * @description Converts an hexidecimal color value to an RGB color value.
+ * @description Converts a hexidecimal color value to an RGB color value.
  * @param {string} inputData The hexidecimal value that should be converted to an RGB value.
  * @param {string} inputMetaData Not used for this business rule.
  * @return {array<integer,integer,integer>} The RGB value.
  * @author Seth Hollingsead
  * @date 2020/07/01
- * {@link: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb}
+ * @reference {@link: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb}
  */
 export const hex2rgbConversion = function(inputData, inputMetaData) {
   let functionName = biz.chex2rgbConversion;

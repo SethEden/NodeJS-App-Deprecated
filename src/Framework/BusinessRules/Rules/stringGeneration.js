@@ -2104,7 +2104,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
         numberOfPrefixCharacters = numberOfCharactersToGenerate / 2;
         numberOfSuffixCharacters = numberOfPrefixCharacters - 1;
       }
-    } else if (failureMode === 8 || failureMode === 10 || failureMode === 11 || failureMode == 14 || failureMode === 17 || failureMode === 21 || failureMode === 22) {
+    } else if (failureMode === 8 || failureMode === 10 || failureMode === 11 || failureMode === 14 || failureMode === 17 || failureMode === 21 || failureMode === 22) {
       // Excluding the Prefix
       numberOfSuffixCharacters = numberOfCharactersToGenerate; // Suffix get the remainder!
       numberOfPrefixCharacters = 0;
@@ -2144,7 +2144,7 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
       }
     }
     // suffix is:
-    loggers.consoleLog(namespacePrefix + functionName, msg.csuffixIs + prefix);
+    loggers.consoleLog(namespacePrefix + functionName, msg.csuffixIs + suffix);
   } // End-if (numberOfCharactersToGenerate >= 6)
 
   switch (failureMode) {
@@ -2272,10 +2272,10 @@ const generateRandomInvalidEmail2 = function(numberOfCharactersToGenerate, gener
  * Originally I thought to generate just a bright color, but dividing the spectrum straight in half resulted in mostly drab colors.
  * So I adjusted this function to use the inputs to provide a narrow range of bright values that can be generated.
  * This makes the function nearly identical to the same function that generates random dark colors.
- * Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.
- * @param {string|integer} inputData Not used for this business rule.
- * @param {string|integer} inputMetaData Not used for this business rule.
- * @return {array<integers>} An array of RGB values in the bright color spectrum range.
+ * Really the only difference is the default values. So this function is refactored to call a generic random color generator business rule.
+ * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
+ * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
+ * @return {array<integer,integer,integer>} An array of RGB values in the bright color spectrum range.
  * @author Seth Hollingsead
  * @date 2021/02/23
  */
@@ -2306,10 +2306,10 @@ export const generateRandomBrightColor = function(inputData, inputMetaData) {
  * Originally I thought to generate just a dark color, but dividing the spectrum straight in half resulted in mostly drab colors.
  * So I adjusted this function to use the inputs to provide a narrow range of dark values that can be generated.
  * This makes the function nearly identical to the same function that generates random bright colors.
- * Really the only different is the default values. So this function is refactored to call a generic random color generator business rule.
+ * Really the only difference is the default values. So this function is refactored to call a generic random color generator business rule.
  * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
  * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
- * @return {array<integers>} An array of RGB values in the dark color spectrum range.
+ * @return {array<integer,integer,integer>} An array of RGB values in the dark color spectrum range.
  * @author Seth Hollingsead
  * @date 2021/02/23
  */
@@ -2339,7 +2339,7 @@ export const generateRandomDarkColor = function(inputData, inputMetaData) {
  * @description Generates a random set of RGB values in the given color range.
  * @param {string|integer} inputData The number in either numeric or string format that represents the minimum range that should be used to generate the random color.
  * @param {string|integer} inputMetaData The number in either numeric or string format that represents the maximum range that should be used to generate the random color.
- * @return {array<integers>} An array of RGB values in the dark color spectrum range.
+ * @return {array<integer,integer,integer>} An array of RGB values that will be used for a color value.
  * @author Seth Hollingsead
  * @date 2021/02/23
  */
@@ -2350,7 +2350,7 @@ export const generateRandomColor = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = [0,0,0];
   let minimumColorRange = 0;
-  let maximumColorRange = 0;
+  let maximumColorRange = 255;
   let parsedColorRangeArray = [];
   if (inputData && inputMetaData && inputData !== '' && inputMetaData !== '') {
     // Try to parse them as numbers for the range.

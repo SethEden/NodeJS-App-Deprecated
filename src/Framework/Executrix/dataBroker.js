@@ -73,6 +73,7 @@ function scanDataPath(dataPath) {
  * then loads them accordingly in the D.contextName_fileName.
  * @param {object} filesToLoad The data structure containing all of the files to load data from.
  * @param {string} contextName The context name that should be used when adding data to the D data structure.
+ * @return {object}
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -476,8 +477,8 @@ function clearData(dataStorageContextName) {
 
 /**
  * @function getDataCatagoryFromContextName
- * @description Gets the data catagory, give the context name.
- * @param {string} contextName The cotext name which will be something like Application_xxxx or Script_nnnn or Command_yyyy
+ * @description Gets the data catagory, given the context name.
+ * @param {string} contextName The context name which will be something like Application_xxxx or Script_nnnn or Command_yyyy
  * @return {string} The string before the first cUnderscore (Application, Script, Command, etc).
  * @author Seth Hollingsead
  * @date 2020/05/22
@@ -539,10 +540,10 @@ function extractDataFromPapaParseObject(data, contextName) {
   // console.log('data is: ' + JSON.stringify(data));
   let functionName = extractDataFromPapaParseObject.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
-  // contextName is:
-  loggers.consoleLog(namespacePrefix + functionName, msg.ccontextNameIs + contextName);
   // input data is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(data));
+  // contextName is:
+  loggers.consoleLog(namespacePrefix + functionName, msg.ccontextNameIs + contextName);
   let cleanKeysRules = {};
   let tempData = {};
   let validDataAdded = false;
@@ -552,7 +553,7 @@ function extractDataFromPapaParseObject(data, contextName) {
   tempData[contextName] = {};
   cleanKeysRules[0] = biz.ccleanCarriageReturnFromString;
   let highLevelDataCount = Object.keys(data[wrd.cdata]).length;
-  for (let i = 0; i<=highLevelDataCount; i++) {
+  for (let i = 0; i <= highLevelDataCount; i++) {
     validDataAdded = false;
     let lowLevelTempData = {};
     if (contextName === sys.cColorData) {
@@ -582,7 +583,7 @@ function extractDataFromPapaParseObject(data, contextName) {
           Object.assign(tempData[contextName][colorName], lowLevelTempData);
         }
       } // End-if validDataAdd === true
-    } else { // Else-if (contextName === sys.cConfiguration_Colors)
+    } else { // Else-clause (contextName === sys.cColorData)
       for (let key in data[wrd.cdata][i]) {
         validDataAdded = true;
         // console.log('execute business rules: ' + JSON.stringify(cleanKeysRules));
@@ -622,7 +623,8 @@ function extractDataFromPapaParseObject(data, contextName) {
  * @param {string} dataCatagory Command or Script to indicate what catagory the test data should be used as.
  * @param {string} pageName (Optional) The name of the page where the data should be merged under. Pass as empty string if nothing.
  * @param {object} dataToMerge The data to be merged.
- * @return {object} A merged set of data combining all of the original data plust all the additional data from the dataToMerge data set.
+ * @return {object} A merged set of data combining all of the original data plus
+ * all the additional data from the dataToMerge data set.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
