@@ -75,16 +75,16 @@ function getXmlData(pathAndFilename) {
   let data = fs.readFileSync(pathAndFilename, {encoding: gen.cUTF8 });
   let xml;
   xml2js.parseString(data,
-    function(err, result) {
-      if (err) {
-        // ERROR:
-        returnData = console.log(sys.cERROR_Colon + err);
-        loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
-        loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
-        return returnData;
-      }
-      xml = result;
-    });
+  function(err, result) {
+    if (err) {
+      // ERROR:
+      returnData = console.log(sys.cERROR_Colon + err);
+      loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
+      loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
+      return returnData;
+    }
+    xml = result;
+  });
   returnData = xml;
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + JSON.stringify(returnData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
@@ -150,7 +150,7 @@ function getJsonData(pathAndFilename) {
 
 /**
  * @function writeJsonData
- * @description writes out JSON data to the specified file and path location, it will automatically over-write any existing file.
+ * @description Writes out JSON data to the specified file and path location, it will automatically over-write any existing file.
  * @param {string} pathAndFilename The path and file name for the file that should have data written to it.
  * @param {object} dataToWrite The data that should be written to the specified file.
  * @return {boolean} True or False to indicate if the file was written out successfully or not.
@@ -166,11 +166,11 @@ function writeJsonData(pathAndFilename, dataToWrite) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cdataToWriteIs + JSON.stringify(dataToWrite));
   let outputSuccess = false;
   try {
-    fs.writeFileSync(pathAndFilename, JSON.stringify(dataToWrite, null, 2))
+    fs.writeFileSync(pathAndFilename, JSON.stringify(dataToWrite, null, 2));
     outputSuccess = true;
   } catch (err) {
     // ERROR:
-    console.error(sys.cERROR_Colon + err)
+    console.error(sys.cERROR_Colon + err);
   }
   // Data was written to the file:
   loggers.consoleLog(namespacePrefix + functionName, msg.cDataWasWrittenToTheFile + outputSuccess);
@@ -333,7 +333,7 @@ function copyAllFilesAndFoldersFromFolderToFolder(sourceFolder, destinationFolde
   let rootPath = cleanRootPath();
   sourceFolder = rootPath + sourceFolder;
   sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
-  destinationFolder = rootPath + destinationFolder
+  destinationFolder = rootPath + destinationFolder;
   destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   // sourceFolder is:
   loggers.consoleLog(namespacePrefix + functionName, msg.csourceFolderIs + sourceFolder);
@@ -391,7 +391,7 @@ function buildReleasePackage(sourceFolder, destinationFolder) {
   originalDestination = destinationFolder;
   sourceFolder = rootPath + sourceFolder;
   sourceFolder = path.resolve(sourceFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
-  destinationFolder = rootPath + destinationFolder
+  destinationFolder = rootPath + destinationFolder;
   destinationFolder = path.resolve(destinationFolder); // Make sure to resolve the path on the local system, just in case there are issues with the OS that the code is running on.
   releaseFiles = readDirectoryContents(sourceFolder);
   releasedArchiveFiles = readDirectoryContents(destinationFolder);
@@ -496,7 +496,7 @@ function copyFileSync(source, target) {
   let successfullCopy = false;
   let targetFile = target;
 
-  // If target is a directory a new file with the same name will be created
+  // If target is a directory a new file with the same name will be created.
   if (fs.existsSync(target)) {
     if (fs.lstatSync(target).isDirectory()) {
       targetFile = path.join(target, path.basename(source));

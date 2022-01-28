@@ -28,7 +28,7 @@ var D = require('../Structures/data');
 /**
  * @function colorizeMessage
  * @description Applies color settings to various portions of the message according to the settings from the configuration system.
- * @param {string} message The message that should be formatted and returned to be logged to the console and/or loged to a log file.
+ * @param {string} message The message that should be formatted and returned to be logged to the console and/or logged to a log file.
  * @param {string} className The name of the module/file that made the log call.
  * @param {string} functionName The name of the function that made the log call.
  * @param {boolean} debugFilesSetting A TRUE or FALSE value to indicate if the log should happen according to the file/module name.
@@ -39,7 +39,7 @@ var D = require('../Structures/data');
  * We will probably do some additional processing either way, but there is a difference in the workflows.
  * For one a non-flat message will certainly have to replace a "%%" with the class path (className.functionName),
  * and the associated formatting that goes with that according to the settings.
- * @return {String} A colorized version of the message.
+ * @return {string} A colorized version of the message.
  * @author Seth Hollingsead
  * @date 2020/06/05
  */
@@ -85,7 +85,7 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
   // We need a 3rd set of variables because we will need to aggregate these settings together to determine which ones are in effect.
   // One way is to aggregate each setting individually and let which ever one is defined be in effect.
   // Another way is to let the master debug functions and/or debug files setting be the controlling factor.
-  // However if both of them are set to true then we should default to determine which one is in effect from either one.
+  // However, if both of them are set to true then we should default to determine which one is in effect from either one.
   // This will also let us do additional processing on the values that come from the settings file.
   // Because some of those settings like the colors and the font styles might have multiple sub-settings.
   // The color setting will of course have R,G,B; And the style setting might have Bold|Underline, so we will of course have to parse those out.
