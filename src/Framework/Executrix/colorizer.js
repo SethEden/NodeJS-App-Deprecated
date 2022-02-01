@@ -245,7 +245,7 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
       // console.log('Done processing background color settings: messageContent is: ' + messageContent);
     }
     className = setFontForgroundColorOnMessageComponentAccordingToSetting(className, aggregateModuleFontColorSetting);
-    // console.log('Done processing foreground color settings: classname is: ' + className);
+    // console.log('Done processing foreground color settings: className is: ' + className);
     functionName = setFontForgroundColorOnMessageComponentAccordingToSetting(functionName, aggregateFunctionFontColorSetting);
     // console.log('Done processing foreground color settings: functionName is: ' + functionName);
 
@@ -253,7 +253,6 @@ function colorizeMessage(message, className, functionName, debugFilesSetting, de
     // console.log('Done processing background color settings: className is: ' + className);
     functionName = setFontBackgroundColorOnMessageComponentAccordingToSetting(functionName, aggregateFunctionFontBackgroundColorSetting);
     // console.log('Done processing background color settings: functionName is: ' + functionName);
-
 
     if (processingMessageData === true) {
       messageData = setFontForgroundColorOnMessageComponentAccordingToSetting(messageData, aggregateDataFontColorSetting);
@@ -356,24 +355,24 @@ function getFontStyleSettingsFromSetting(settingValue) {
       // console.log('aggregateUnderlineBoldArray[1] is: ' + aggregateUnderlineBoldArray[1]);
       if (aggregateUnderlineBoldArray[0] === wrd.cUnderline && aggregateUnderlineBoldArray[1] === wrd.cBold) {
         // aggregateModuleFontStyleUnderline = true;
-        // aggregateModuleFontStyleBold = true
+        // aggregateModuleFontStyleBold = true;
         fontStyles[true, true];
       } else if (aggregateUnderlineBoldArray[0] === wrd.cBold && aggregateUnderlineBoldArray[1] === wrd.cUnderline) {
         // aggregateModuleFontStyleUnderline = true;
-        // aggregateModuleFontStyleBold = true
+        // aggregateModuleFontStyleBold = true;
         fontStyles[true, true];
       } else if (aggregateUnderlineBoldArray[0] === wrd.cUnderline && aggregateUnderlineBoldArray[1] !== wrd.cBold) {
         // aggregateModuleFontStyleUnderline = true;
         fontStyles[true, false];
       } else if (aggregateUnderlineBoldArray[0] === wrd.cBold && aggregateUnderlineBoldArray[1] !== wrd.cUnderline) {
-        // aggregateModuleFontStyleBold = true
+        // aggregateModuleFontStyleBold = true;
         fontStyles[false, true];
       }
     } else if (settingValue === wrd.cUnderline) {
       // aggregateModuleFontStyleUnderline = true;
       fontStyles[true, false];
     } else if (settingValue === wrd.cBold) {
-      // aggregateModuleFontStyleBold = true
+      // aggregateModuleFontStyleBold = true;
       fontStyles[false, true];
     }
   }
@@ -392,7 +391,7 @@ function getFontStyleSettingsFromSetting(settingValue) {
  */
 function getColorStyleSettingFromSetting(settingValue) {
   // console.log('BEGIN colorizer.getColorStyleSettingFromSetting function');
-  // console.log('settingValue is ' + JSON.stringify(settingValue));
+  // console.log('settingValue is ' + settingValue);
   let colorStyle = {Red: 0, Green: 0, Blue: 0};
   let aggregateColorArray = [];
   if (settingValue !== undefined) {
@@ -451,7 +450,7 @@ function getNamedColorData(colorName) {
  * @function setUnderlineFontStyleOnMessageComponentAccordingToSetting
  * @description Examins the underline setting value and determines if the underline font setting should be applied to the message component or not.
  * @param {string} messageComponent The message to which the underline font setting should be applied if the setting value calls for it.
- * @param {boolean} underlineSettingValue A True or False value to indicate is the underline font setting should be applied or not applied.
+ * @param {boolean} underlineSettingValue A True or False value to indicate if the underline font setting should be applied or not applied.
  * @return {string} The same as the input string, except perhaps it might have an underline setting applied to it.
  * @author Seth Hollingsead
  * @date 2020/06/10
@@ -481,12 +480,12 @@ function setUnderlineFontStyleOnMessageComponentAccordingToSetting(messageCompon
  * @author Seth Hollingsead
  * @date 2020/06/10
  */
-function setBoldFontStyleOnMessageComponentAccordingToSetting(messageComponent, boldsettingValue) {
+function setBoldFontStyleOnMessageComponentAccordingToSetting(messageComponent, boldSettingValue) {
   // console.log('BEGIN colorizer.setBoldFontStyleOnMessageComponentAccordingToSetting function');
   // console.log('messageComponent is: ' + messageComponent);
-  // console.log('boldSettingValue is: ' + boldsettingValue);
+  // console.log('boldSettingValue is: ' + boldSettingValue);
   let returnMessageComponent = messageComponent;
-  if (boldsettingValue === true) {
+  if (boldSettingValue === true) {
     let colorizeLogsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableColorizedConsoleLogs);
     if (colorizeLogsEnabled === true) {
       returnMessageComponent = chalk.bold(returnMessageComponent);
@@ -531,7 +530,7 @@ function setFontForgroundColorOnMessageComponentAccordingToSetting(messageCompon
 };
 
 /**
- * @name setFontBackgroundColorOnMessageComponentAccordingToSetting
+ * @function setFontBackgroundColorOnMessageComponentAccordingToSetting
  * @description Examins the color setting to determine if it is false,
  * if not false then it is assumed to be an array of RGB values which are assigned to the message background using chalk.
  * @param {string} messageComponent The message to which the background color setting should be applied if the color setting value != false.
@@ -570,9 +569,9 @@ function setFontBackgroundColorOnMessageComponentAccordingToSetting(messageCompo
  * Example: [48;2;255;255;255m[38;2;0;0;0mBEGIN main program loop[39m[49m
  * Return: BEGIN main program loop
  * @return {string} The string without all the extra formatting.
- * @date 2021/02/03
  * @author Seth Hollingsead
- * @NOTE https://stackoverflow.com/questions/25245716/remove-all-ansi-colors-styles-from-strings)
+ * @date 2021/02/03
+ * @NOTE https://stackoverflow.com/questions/25245716/remove-all-ansi-colors-styles-from-strings
  */
 function removeFontStyles(message) {
   // console.log('BEGIN colorizer.removeFontStyles function');
