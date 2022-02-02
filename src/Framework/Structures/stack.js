@@ -10,8 +10,8 @@
  * @requires module:system-constants
  * @requires module:business-constants
  * @requires module:message-constants
- * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/30
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -45,7 +45,7 @@ function initStack(stackNameSpace) {
      D[stackNameSpace] = [];
    } else {
      // WARNING: Stack:
-     // ALREADY exist!
+     // ALREADY exists!
      console.log(msg.cWarningStackColon + stackNameSpace + msg.cAlreadyExists);
    }
    loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);

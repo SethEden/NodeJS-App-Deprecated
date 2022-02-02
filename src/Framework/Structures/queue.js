@@ -7,8 +7,8 @@
  * @requires module:basic-constants
  * @requires module:word-constants
  * @requires module:message-constants
- * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/18
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
@@ -31,7 +31,7 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cStructures + bas.cDot + b
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/18
- * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
+ * @reference {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function initQueue(queueNameSpace) {
   let functionName = initQueue.name;
@@ -48,7 +48,7 @@ function initQueue(queueNameSpace) {
  * @return {string} The item at the front of the queue and removes it from the queue.
  * @author Seth Hollingsead
  * @date 2020/06/18
- * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
+ * @reference {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function dequeue(queueNameSpace) {
   let functionName = dequeue.name;
@@ -69,7 +69,7 @@ function dequeue(queueNameSpace) {
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/18
- * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
+ * @reference {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function enqueue(queueNameSpace, value) {
   let functionName = enqueue.name;
@@ -87,7 +87,7 @@ function enqueue(queueNameSpace, value) {
  * @return {Boolean} True or False to indicate if the queue is empty or not empty.
  * @author Seth Hollingsead
  * @date 2020/06/18
- * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
+ * @reference {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function isEmpty(queueNameSpace) {
   let functionName = isEmpty.name;
@@ -111,7 +111,7 @@ function isEmpty(queueNameSpace) {
  * @return {string} The entity at the front of the queue.
  * @author Seth Hollingsead
  * @date 2020/06/18
- * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
+ * @reference {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function queueFront(queueNameSpace) {
   let functionName = queueFront.name;
@@ -131,7 +131,7 @@ function queueFront(queueNameSpace) {
  * @return {integer} A count for the number of entities in the specified queue.
  * @author Seth Hollingsead
  * @date 2020/06/18
- * {@link https://www.youtube.com/watch?v=bK7I79hcm08}
+ * @reference {@link https://www.youtube.com/watch?v=bK7I79hcm08}
  */
 function queueSize(queueNameSpace) {
   let functionName = queueSize.name;

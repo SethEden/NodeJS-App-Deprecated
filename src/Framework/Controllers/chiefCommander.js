@@ -11,8 +11,8 @@
  * @requires module:word-constants
  * @requires module:system-constants
  * @requires module:message-constants
- * @requires {@link https://www.npmjs.com/package/path|path}
  * @requires module:data
+ * @requires {@link https://www.npmjs.com/package/path|path}
  * @author Seth Hollingsead
  * @date 2020/06/18
  * @copyright Copyright © 2020-… by Seth Hollingsead. All rights reserved
