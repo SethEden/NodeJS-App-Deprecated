@@ -69,7 +69,7 @@ function loadCommandAliasesFromPath(commandAliasesFilePathConfigurationName) {
     D[sys.cCommandsAliases] = allCommandAliasesData[sys.cCommandsAliases];
   } else {
     for (let i=0; i<allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand].length; i++) {
-      D[sys.cCommandsAliases][wrd.cCommand].push(allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand][i])
+      D[sys.cCommandsAliases][wrd.cCommand].push(allCommandAliasesData[sys.cCommandsAliases][wrd.cCommand][i]);
     }
   }
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
@@ -99,7 +99,7 @@ function enqueueCommand(command) {
 /**
  * @function isCommandQueueEmpty
  * @description Determines if the command queue is empty or not empty.
- * @return {Boolean} A True or False value to indicate if the command queue is empty or not empty.
+ * @return {boolean} A True or False value to indicate if the command queue is empty or not empty.
  * @author Seth Hollingsead
  * @date 2020/06/18
  */

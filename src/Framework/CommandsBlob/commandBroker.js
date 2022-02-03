@@ -119,7 +119,7 @@ function getValidCommand(commandString, commandDelimiter) {
       foundValidCommand = true;
       returnData = commandToExecute;
     } else {
-      // console.log('else-clause looking for command aliiases');
+      // console.log('else-clause looking for command aliases');
       // NOTE: It could be that the user entered a command alias, so we will need to search through all of the command aliases,
       // to see if we can find a match, then get the actual command that should be executed.
       let allCommandAliases = D[sys.cCommandsAliases][wrd.cCommand];
@@ -230,7 +230,7 @@ function getCommandArgs(commandString, commandDelimiter) {
         // Then if there are more single quotes, the third post-tagged, i.e. replace "'" with "'~", etc...
         let numberOfSingleQuotes = commandString.split(bas.cBackTickQuote).length - 1;
         // Determine if the number of single quotes is odd or event?
-        // About to call the rule broker to process on the number of single quotes and determine if it-be even or odd
+        // About to call the rule broker to process on the number of single quotes and determine if it-be even or odd.
         loggers.consoleLog(namespacePrefix + functionName, msg.cgetCommandArgsMessage1 + sys.cgetCommandArgsMessage2);
         if (numberOfSingleQuotes >= 2 && ruleBroker.processRules(numberOfSingleQuotes, '', isOddRule) === false) {
           // numberOfSingleQuotes is >= 2 & the numberOfSingleQuotes is EVEN! YAY!
