@@ -125,16 +125,6 @@ function processRootPath(systemRootPath) {
  * @description Saves the root path and also cleans the root path and saves the cleaned root path.
  * Also saves the current application version number and the application name.
  * @param {string} rootPath The root path of the application.
- * @return {void}
- * @author Seth Hollingsead
- * @date 2020/06/02
- */
-
-/**
- * @function initApplicationSchema
- * @description Saves the root path and also cleans the root path and saves the cleaned root path.
- * Also saves the current application version number and the application name.
- * @param {string} rootPath The root path of the application.
  * @param {string} clientConstantsPath The path to the client constants files in the application path sub-folder structure.
  * @param {array<array<string,object>>} arrayValidationData And array of arrays that contains all of the constants library validation names and data objects.
  * @return {void}

@@ -60,7 +60,7 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cCommands + wrd.cBlob + ba
 
  /**
   * @function echoCommand
-  * @description returns the input as the output without any changes.
+  * @description Returns the input as the output without any changes.
   * @param {array<boolean|string|integer>} inputData String that should be echoed.
   * inputData[0] === 'echoCommand'
   * @param {string} inputMetaData Not used for this business rule.
@@ -203,7 +203,7 @@ export const clearScreen = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
   // console.clear(); // This will clear the screen, but not the cache, you can still scroll up and see the previous commands.
-  // process.stdout.write('\u001B[2J\u001B[0;0f'); // Same as above
+  // process.stdout.write('\u001B[2J\u001B[0;0f'); // Same as above.
   process.stdout.write('\u001b[H\u001b[2J\u001b[3J');
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
