@@ -32,7 +32,7 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + ba
 
  /**
   * @function parseBusinessRuleArgument
-  * @description parses a single business rule argument and returns it after cleaning it up or
+  * @description Parses a single business rule argument and returns it after cleaning it up or
   * doing required operations on it to convert it to valid input for a command as necessary.
   * @param {string|array<string|integer|boolean|object>} argumentValue The value of the argument, could be an array or a string.
   * @param {integer} index The index of the argument (1, 2, 3).
@@ -99,7 +99,7 @@ var namespacePrefix = sys.cFramework + bas.cDot + wrd.cExecutrix + bas.cDot + ba
  * @description Does additional parsing of an individual argument.
  * Identifies the case that the argument needs to be treated as an array,
  * then the function will clean the array string tags and split the string into an array and return it.
- * This function can also identify the case that an agrument contains a regular expression that must be formally created,
+ * This function can also identify the case that an argument contains a regular expression that must be formally created,
  * using the RegExp constructor, then the RegExp object will be returned as part of the return object.
  * @param {string} argumentValue The argument string that needs additional parsing.
  * @return {string|array<string|integer|boolean|object>} The argument that should be returned and used
