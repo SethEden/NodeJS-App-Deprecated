@@ -1,5 +1,5 @@
 /**
- * @file clientCommands
+ * @file clientCommands.js
  * @module clientCommands
  * @description Contains all client defined commands for execution client actions with various operations.
  * @requires module:warden
