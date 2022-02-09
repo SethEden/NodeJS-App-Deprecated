@@ -21,9 +21,9 @@ export const initClientCommandsLibrary = function() {
   // console.log('BEGIN clientCommandsLibrary.initClientCommandsLibrary function');
   // console.log('END clientCommandsLibrary.initClientCommandsLibrary function');
   return {
-    // Client Business Rules
+    // Client Commands
     // ********************************
-    // ClientStringParsing rules in order
+    // Client commands in order
     // ********************************
     [app_cmd.ccustomEchoCommand]: (inputData, inputMetaData) => clientCommands.customEchoCommand(inputData, inputMetaData),
     [app_cmd.cbossPanic]: (inputData, inputMetaData) => clientCommands.bossPanic(inputData, inputMetaData)
