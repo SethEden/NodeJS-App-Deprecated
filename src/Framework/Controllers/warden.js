@@ -434,7 +434,7 @@ loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
 loggers.consoleLog(namespacePrefix + functionName, msg.cconfigurationNamespaceIs + configurationNamespace);
 // configurationName is:
 loggers.consoleLog(namespacePrefix + functionName, msg.cconfigurationNameIs + configurationName);
-// var returnConfigurationValue = D[sys.cConfiguration][configurationName];
+// let returnConfigurationValue = D[sys.cConfiguration][configurationName];
 let returnConfigurationValue = configurator.getConfigurationSetting(configurationNamespace, configurationName);
 // console.log('returnConfigurationValue is: ' + JSON.stringify(returnConfigurationValue));
 // console.log('END warden.getConfigurationSetting function');
@@ -452,7 +452,7 @@ return returnConfigurationValue;
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/26
- * @NOTE We cannot insturment this code with calls to loggers.consoleLog as it would introduce yet another ciruclar dependency.
+ * @NOTE We cannot insturment this code with calls to loggers.consoleLog as it would introduce yet another circular dependency.
  * We will have to stick with just hard coded console.logs in this case to debug at this level.
  */
 function consoleLog(classPath, message) {
@@ -474,7 +474,7 @@ function consoleLog(classPath, message) {
 function sleep(sleepTime) {
   let functionName = sleep.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
-  // configurationName is:
+  // sleepTime is:
   loggers.consoleLog(namespacePrefix + functionName, 'sleepTime is: ' + sleepTime);
   timers.sleep(sleepTime);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);

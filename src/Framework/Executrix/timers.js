@@ -111,7 +111,7 @@ function reformatDeltaTime(deltaTime, format) {
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/06/30
- * {@link https://www.sitepoint.com/delay-sleep-pause-wait/}
+ * @reference {@link https://www.sitepoint.com/delay-sleep-pause-wait/}
  */
 function sleep(sleepTime) {
   let functionName = sleep.name;

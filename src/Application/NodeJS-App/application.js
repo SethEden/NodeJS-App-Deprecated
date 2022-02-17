@@ -60,7 +60,7 @@ function bootStrapApplication() {
     rootPath = path.resolve(process.cwd()) + apc.cApplicationProductionRootPath;
   } else {
     // WARNING: No .env file found! Going to default to the DEVELOPMENT ENVIRONMENT!
-    console.log(sys.cApplicationWarningMessage1a + sys.ccApplicationWarningMessage1b);
+    console.log(msg.cApplicationWarningMessage1a + msg.ccApplicationWarningMessage1b);
     rootPath = path.resolve(process.cwd()) + apc.cApplicationDevelopRootPath;
   }
   // console.log('rootPath is: ' + rootPath);
