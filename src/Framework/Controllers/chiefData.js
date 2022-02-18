@@ -47,7 +47,7 @@ function getAndProcessCsvData(pathAndFilename, contextName) {
   pathAndFilename = path.resolve(pathAndFilename);
   let loadedData = dataBroker.getCsvData(pathAndFilename);
   // Now pre-process the data into a usable format, string-numbers to actual numbers, string-booleans to actual booleans, etc...
-  let allLoadedData = dataBroker.getAndProcessCsvData(testData, contextName);
+  let allLoadedData = dataBroker.getAndProcessCsvData(loadedData, contextName);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
 };
 
@@ -55,7 +55,7 @@ function getAndProcessCsvData(pathAndFilename, contextName) {
  * @function getAndProcessXmlData
  * @description Loads the specified file, parses it and converts all values into their appropriate data types.
  * @param {string} pathAndFilename The path and file name of the XML file that should be loaded and parsed into JSON objects.
- * @return {object} A parsed XML JSON object where all the values have been converted from their string representation into actual values as appropriate type.
+ * @return {object} A parsed XML JSON object where all the values have been converted from their string representation into actual values of appropriate type.
  * @author Seth Hollingsead
  * @date 2020/05/22
  */
@@ -78,7 +78,7 @@ function getAndProcessXmlData(pathAndFilename) {
  * @function setupAllCsvData
  * @description Sets up all of the specified CSV data.
  * @param {string} dataPathConfigurationName The name of the configuration setting that has the path we should search.
- * @param {string} contextName The context name that should be used when adding data to the D.
+ * @param {string} contextName The context name that should be used when adding data to the D data structure.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/05/22
@@ -116,7 +116,7 @@ function setupAllCsvData(dataPathConfigurationName, contextName) {
  * @function setupAllXmlData
  * @description Sets up all of the specified XML data.
  * @param {string} dataPathConfigurationName The name of the configuration setting that has the path we should search.
- * @param {string} contextName The context name that should be used when adding data to the D.
+ * @param {string} contextName The context name that should be used when adding data to the D data structure.
  * @return {object} A JSON object that contains all of the data that was loaded and merged together.
  * @author Seth Hollingsead
  * @date 2020/05/22
@@ -125,7 +125,7 @@ function setupAllXmlData(dataPathConfigurationName, contextName) {
   // console.log('BEGIN chiefData.setupAllXmlData function');
   // console.log('dataPathConfigurationName is: ' + dataPathConfigurationName);
   // console.log('contextName is: ' + contextName);
-  let functionName = setupAllCsvData.name;
+  let functionName = setupAllXmlData.name;
   loggers.consoleLog(namespacePrefix + functionName, msg.cBEGIN_Function);
   // dataPathConfigurationName is:
   loggers.consoleLog(namespacePrefix + functionName, msg.cdataPathConfigurationNameIs + dataPathConfigurationName);
