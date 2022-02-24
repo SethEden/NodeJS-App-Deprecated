@@ -259,7 +259,7 @@ export const deployApplication = function(inputData, inputMetaData) {
  * @description Copies application meta-data from the source to the destination.
  * @param {object} inputData The data that should be transfered to the output file & path.
  * @param {string} inputMetaData The path the data should be written out to.
- * @return {boolean} A TRUE or FALSE value to indicate if the data was copied succesful or not.
+ * @return {boolean} A TRUE or FALSE value to indicate if the data was copied successfully or not.
  * @author Seth Hollingsead
  * @date 2021/01/08
  */
@@ -392,7 +392,7 @@ export const help = function(inputData, inputMetaData) {
 /**
  * @function workflowHelp
  * @description Displays all the information about all the workflows in the system,
- * including both system defined workflows & client defined commands.
+ * including both system defined workflows & client defined workflows.
  * @param {array<boolean|string|integer>} inputData Not used for this command.
  * inputData[0] === 'workflowHelp'
  * @param {string} inputMetaData Not used for this command.
@@ -436,7 +436,6 @@ export const commandSequencer = function(inputData, inputMetaData) {
   let returnData = true;
   for (let i = 1; i < inputData.length; i++) {
     let commandString = inputData[i];
-    // bas.cli + bas.cmi + bas.ct;
     let primaryCommandDelimiter = configurator.getConfigurationSetting(wrd.csystem, cfg.cPrimaryCommandDelimiter);
     // console.log('primaryCommandDelimiter is: ' + primaryCommandDelimiter);
     if (primaryCommandDelimiter === null || primaryCommandDelimiter !== primaryCommandDelimiter || primaryCommandDelimiter === undefined) {
