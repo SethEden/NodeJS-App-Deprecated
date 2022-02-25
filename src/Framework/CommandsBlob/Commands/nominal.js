@@ -643,9 +643,16 @@ export const printDataHiveAttributes = function(inputData, inputMetaData) {
 /**
  * @function clearDataStorage
  * @description Completely wipes out all the data stored in the DataStorage data hive of the D data structure.
- * @param {string} inputData     [description]
- * @param {string} inputMetaData [description]
+ * @param {array<boolean|string|integer>} inputData An array that could actually contain anything,
+ * depending on what the user entered. But the function filters all of that internally and
+ * extracts the case the user has entered a data storage name to clear.
+ * If none is provided, the all data storage will be cleared!
+ * inputData[0] === 'clearDataStorage'
+ * inputData[1] === myDataStorage
+ * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
+ * @author Seth Hollingsead
+ * @date 2022/02/24
  */
 export const clearDataStorage = function(inputData, inputMetaData) {
   let functionName = cmd.cclearDataStorage;
@@ -653,7 +660,11 @@ export const clearDataStorage = function(inputData, inputMetaData) {
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputDataIs + JSON.stringify(inputData));
   loggers.consoleLog(namespacePrefix + functionName, msg.cinputMetaDataIs + inputMetaData);
   let returnData = true;
-  dataBroker.clearData('');
+  if (inputData[1] !== undefined) {
+    dataBroker.clearData(inputData[1]);
+  } else {
+    dataBroker.clearData('');
+  }
   loggers.consoleLog(namespacePrefix + functionName, msg.creturnDataIs + returnData);
   loggers.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return returnData;
@@ -691,17 +702,16 @@ export const businessRule = function(inputData, inputMetaData) {
   let rules = [];
   let ruleInputData, ruleInputMetaData;
   let ruleOutput = '';
-
-  let argsArrayContainsCharacterRule = [];
-  let removeBracketsFromArgsArrayRule = [];
-  argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;
-  removeBracketsFromArgsArrayRule[0] = biz.cremoveCharacterFromArray;
   let addedARule = false;
   let businessRuleOutput = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableBusinessRuleOutput);
   let businessRuleMetricsEnabled = configurator.getConfigurationSetting(wrd.csystem, cfg.cEnableBusinessRulePerformanceMetrics);
   let businessRuleStartTime = '';
   let businessRuleEndTime = '';
   let businessRuleDeltaTime = '';
+  let argsArrayContainsCharacterRule = [];
+  let removeBracketsFromArgsArrayRule = [];
+  argsArrayContainsCharacterRule[0] = biz.cdoesArrayContainCharacter;
+  removeBracketsFromArgsArrayRule[0] = biz.cremoveCharacterFromArray;
 
   // First go through each rule that should be executed and determine if
   // there are any inputs that need to be passed into the business rule.
@@ -754,7 +764,7 @@ export const businessRule = function(inputData, inputMetaData) {
       stack.initStack(cfg.cBusinessRulePerformanceTrackingStack);
     }
     if (D[cfg.cBusinessRuleNamesPerformanceTrackingStack] === undefined) {
-      stack.initStack(cfg.cBusinessRuleNamesPerformanceTrackingStack)
+      stack.initStack(cfg.cBusinessRuleNamesPerformanceTrackingStack);
     }
     performanceTrackingObject = {Name: rules[0], RunTime: businessRuleDeltaTime};
     if (stack.contains(cfg.cBusinessRuleNamesPerformanceTrackingStack, rules[0]) === false) {
@@ -784,7 +794,7 @@ export const businessRule = function(inputData, inputMetaData) {
  * depending on what the user entered. But the function filters all of that internally and
  * extracts the command that should be executed and the number of times it should be executed.
  * inputData[0] === 'commandGenerator'
- * inputData[1] === command String
+ * inputData[1] === command string
  * inputData[2] === number of times to enqueue the above command string
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
@@ -890,7 +900,7 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
   console.log(msg.ccommandAliasGeneratorMessage2);
 
   if (inputData.length === 0) {
-    while(validCommandName === false) {
+    while (validCommandName === false) {
       console.log(msg.cCommandNamePrompt1);
       console.log(msg.cCommandNamePrompt2);
       console.log(msg.cCommandNamePrompt3);
@@ -913,9 +923,9 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
       // current commandWord is:
       console.log(msg.ccurrentCommandWordIs + commandWord);
       validCommandWordAliasList = false;
-      if (commandWord != '') {
+      if (commandWord !== '') {
         commandAliasDataStructure[commandWord] = {};
-        while(validCommandWordAliasList === false) {
+        while (validCommandWordAliasList === false) {
           console.log(msg.cCommandWordAliasPrompt1);
           console.log(msg.cCommandWordAliasPrompt2);
           console.log(msg.cCommandWordAliasPrompt3 + bas.cSpace + commandWord);
@@ -936,9 +946,9 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
     try {
       commandAliasDataStructure = JSON.parse(inputData[1]);
       validCommandInput = true;
-    } catch (e) {
+    } catch (err) {
       // PARSER ERROR:
-      console.log(msg.cPARSER_ERROR + e.message);
+      console.log(msg.cPARSER_ERROR + err.message);
       // INVALID COMMAND INPUT: Please enter valid command data when trying to call with parameters.
       console.log(msg.ccommandAliasGeneratorMessage5);
       // EXAMPLE: {"constants":"c,const","Generator":"g,gen,genrtr","List":"l,lst"}
@@ -952,7 +962,7 @@ export const commandAliasGenerator = function(inputData, inputMetaData) {
   }
 
   if (validCommandInput === true) {
-    // ccommandAliasDataStructure is:
+    // commandAliasDataStructure is:
     loggers.consoleLog(namespacePrefix + functionName, msg.ccommandAliasDataStructureIs + JSON.stringify(commandAliasDataStructure));
     // At this point the user should have entered all valid data and we should be ready to proceed.
     // TODO: Start generating all the possible combinations of the command words and command word aliases.
