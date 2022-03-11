@@ -1212,7 +1212,8 @@ export const constantsPatternRecognizer = function(inputData, inputMetaData) {
 
 /**
  * @function businessRulesMetrics
- * @description A command to compute business rule metrics for each of the business rules that were called in a sequence of call(s) or workflow(s).
+ * @description A command to compute business rule metrics for each of the
+ * business rules that were called in a sequence of call(s) or workflow(s).
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
@@ -1257,10 +1258,10 @@ export const businessRulesMetrics = function(inputData, inputMetaData) {
       average = businessRulePerformanceSum / businessRuleCounter;
       // average is:
       loggers.consoleLog(namespacePrefix + functionName, msg.caverageIs + average);
-      // Now go back through them all so we can compute the standard deviation
-      for (let j = 0; j < stack.length(cfg.cBusinessRulePerformanceTrackingStack); j++) {
-        if (D[cfg.cBusinessRulePerformanceTrackingStack][j][wrd.cName] === currentBusinessRuleName) {
-          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow((D[cfg.cBusinessRulePerformanceTrackingStack][j][sys.cRunTime] - average), 2);
+      // Now go back through them all so we can compute the standard deviation.
+      for (let k = 0; k < stack.length(cfg.cBusinessRulePerformanceTrackingStack); k++) {
+        if (D[cfg.cBusinessRulePerformanceTrackingStack][k][wrd.cName] === currentBusinessRuleName) {
+          businessRulePerformanceStdSum = businessRulePerformanceStdSum + math.pow((D[cfg.cBusinessRulePerformanceTrackingStack][k][sys.cRunTime] - average), 2);
           // businessRulePerformanceStdSum is:
           loggers.consoleLog(namespacePrefix + functionName, msg.cbusinessRulePerformanceStdSumIs + businessRulePerformanceStdSum);
         }
