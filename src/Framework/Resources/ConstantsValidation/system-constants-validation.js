@@ -15,7 +15,7 @@ import * as sys from '../../Constants/system.constants';
 
  /**
  * @function systemConstantsValidation
- * @description Initializes the basic constants validation data objects array.
+ * @description Initializes the system constants validation data objects array.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2020/07/23

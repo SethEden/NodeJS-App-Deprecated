@@ -1,7 +1,7 @@
 /**
  * @file business-constants-validation.js
  * @module business-constants-validation
- * @description Contains validations for business rules.
+ * @description Contains validations for business rules constants.
  * @requires module:business-constants
  * @author Seth Hollingsead
  * @date 2021/02/17

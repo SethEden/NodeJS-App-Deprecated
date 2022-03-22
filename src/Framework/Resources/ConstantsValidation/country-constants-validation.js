@@ -17,7 +17,7 @@ import * as ctr from '../../Constants/country.constants';
  * @date 2021/02/17
  */
  export const countryConstantsValidation = [
-   // Countires
+   // Countries
    {Name: 'cAfghanistan', Actual: ctr.cAfghanistan, Expected: 'Afghanistan'},
    {Name: 'cAlbania', Actual: ctr.cAlbania, Expected: 'Albania'},
    {Name: 'cAlgeria', Actual: ctr.cAlgeria, Expected: 'Algeria'},

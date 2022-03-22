@@ -1,7 +1,7 @@
 /**
  * @file command-constants-validation.js
  * @module command-constants-validation
- * @description Contains validations for commands.
+ * @description Contains constants validations for all system commands.
  * @requires module:command-constants
  * @author Seth Hollingsead
  * @date 2021/02/17

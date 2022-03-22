@@ -1,7 +1,7 @@
 /**
  * @file color-constants-validation.js
  * @module color-constants-validation
- * @description Contains all validations for named colors.
+ * @description Contains all constants validations for named colors.
  * @requires module:color-constants
  * @author Seth Hollingsead
  * @date 2020/07/23
