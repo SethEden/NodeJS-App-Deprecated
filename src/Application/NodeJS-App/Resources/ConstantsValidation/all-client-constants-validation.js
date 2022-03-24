@@ -123,7 +123,7 @@ function initializeAllClientConstantsValidationData() {
   allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][apc.capplicationConstantsValidation] = gen.capc + bas.cDot;
   allClientConstantsValidationData[sys.cConstantsValidationData][sys.cConstantsPrefix][apc.capplicationMessageConstantsValidation] = gen.capp + bas.cUnderscore + gen.cmsg + bas.cDot;
 
-  // allSystemConstantsValidationData is:
+  // allClientConstantsValidationData is:
   warden.consoleLog(namespacePrefix + functionName, app_msg.callClientConstantsValidationDataIs + JSON.stringify(allClientConstantsValidationData));
   warden.consoleLog(namespacePrefix + functionName, msg.cEND_Function);
   return allClientConstantsValidationData;
