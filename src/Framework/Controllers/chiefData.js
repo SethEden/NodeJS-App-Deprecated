@@ -194,7 +194,7 @@ function initializeConstantsValidationData() {
 /**
  * @function addConstantsValidationData
  * @description Calls the dataBroker to add constants validation data to the constants validation data structure.
- * @param {array<array<string,object>>} arrayValidationData And array of arrays that contains all of the constants library validation names and data objects.
+ * @param {array<array<string,object>>} arrayValidationData An array of arrays that contains all of the constants library validation names and data objects.
  * @return {void}
  * @author Seth Hollingsead
  * @date 2021/03/06
