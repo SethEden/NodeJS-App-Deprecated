@@ -112,7 +112,7 @@ export const validateConstants = function(inputData, inputMetaData) {
 
 /**
  * @function validateCommandAliases
- * @description VAlidates all command aliases have no duplicates within a command, but also between commands.
+ * @description Validates all command aliases have no duplicates within a command, but also between commands.
  * @param {string} inputData Not used for this command.
  * @param {string} inputMetaData Not used for this command.
  * @return {boolean} True to indicate that the application should not exit.
@@ -151,7 +151,7 @@ loop2:
         passedAllCommandAliasesDuplicateCheck = false;
       }
       // END j-th loop:
-      loggers.consoleLog(namespacePrefix + functionName, msg.cEND_jthLoop + i);
+      loggers.consoleLog(namespacePrefix + functionName, msg.cEND_jthLoop + j);
     }
     // END i-th loop:
     loggers.consoleLog(namespacePrefix + functionName, msg.cEND_ithLoop + i);
