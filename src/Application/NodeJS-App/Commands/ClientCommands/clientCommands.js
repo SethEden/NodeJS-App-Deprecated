@@ -62,7 +62,7 @@ export const customEchoCommand = function(inputData, inputMetaData) {
 
 /**
  * @function bossPanic
- * @description Prints out the entire contents of all files and their full paths on the screen
+ * @description Prints out random text on the screen
  *  in a custom length loop that makes the screen look like it is doing something busy.
  *  So anybody who looks at the screen will think you are working on something super important like: "quantum" cryptography or artificial Intelligence.
  *  (As if putting the word "Quantum" in front of everything some how makes it smarter)
@@ -70,16 +70,16 @@ export const customEchoCommand = function(inputData, inputMetaData) {
  *  If someone does some fake typing on the keyboard and the BossPanic command is configured to run slowly then it might look like someone is writing code super fast!
  *  Like an expert hacker!
  * @param {string} inputData The string used to load the BossPanic configuration setting.
- * This command can work with no arguments or with the any of the following optional arguments.
+ * This command can work with no arguments or with any of the following optional arguments.
  * They are all numbers so if you want the 3rd one you need to provide the first 2 parameters as well.
- * inputData[1] = PerformanceIndex - This is the number of milliseconds t hat should be delayed between running each loop iteration.
+ * inputData[1] = PerformanceIndex - This is the number of milliseconds that should be delayed between running each loop iteration.
  * inputData[2] = Maximum line length - The maximum number of characters that should be generated for printing on the screen.
- * inputData[3] = Maximum number of no-colored sequential lines, a smaller number means more colores lines will be generated over all.
+ * inputData[3] = Maximum number of no-colored sequential lines, a smaller number means more colored lines will be generated over all.
  * inputData[4] = Maximum number of colored sequential lines, a smaller number means less colored lines will be generated sequentially.
  * inputData[5] = Boolean True or False to indicate if typing individual characters should be enabled.
  * inputData[6] = Speed-Typing Performance Index, time-out in milliseconds between typing each character.
  * @param {string} inputMetaData Not used for this command.
- * @return {Boolean} True to indicate that the command should not exit when it is completed.
+ * @return {boolean} True to indicate that the command should not exit when it is completed.
  * @author Seth Hollingsead
  * @date 2021/02/22
  * @NOTE This is an INFINITE LOOP function, so press control+C to exit from the application when you want to exit.

@@ -1165,7 +1165,7 @@ export const constantsPatternRecognizer = function(inputData, inputMetaData) {
   searchForPatternsInStringArrayRule[0] = biz.csearchForPatternsInStringArray;
   validatePatternsNeedImplementationRule[0] = biz.cvalidatePatternsThatNeedImplementation;
   if (inputData.length === 0) {
-    while(validEntry === false) {
+    while (validEntry === false) {
       console.log(msg.cConstantsListPatternSearchPrompt1);
       console.log(msg.cConstantsListPatternSearchPrompt2);
       console.log(msg.cConstantsListPatternSearchPrompt3);
