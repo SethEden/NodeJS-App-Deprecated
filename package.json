@@ -53,7 +53,7 @@
     "dotenv": "^8.2.0",
     "figlet": "^1.4.0",
     "mathjs": "^7.0.2",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "n-readlines": "^1.0.0",
     "papaparse": "^5.2.0",
     "prompt-sync": "^4.2.0",
