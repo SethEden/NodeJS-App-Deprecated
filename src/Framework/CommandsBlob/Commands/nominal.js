@@ -323,7 +323,7 @@ export const deployMetaData = function(inputData, inputMetaData) {
  * @description Executes the release of the application, part of the build-deploy-release cycle.
  * Scans the specified release folder path and determines if
  * there is a zip file for the current release or not. If there is not,
- * then the system will build a zip file from the bin folder excluding the release folder
+ * then the system will build a zip file from the bin folder excluding the release folder,
  * and save the resulting archive to the release folder.
  * @param {string} inputData The path for the bin folder where the latest source code will have been deployed. (SOURCE)
  * @param {string} inputMetaData The path for the release folder where the release zip archive file should be saved. (RELEASE)

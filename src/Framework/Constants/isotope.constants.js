@@ -19,7 +19,7 @@ import * as elm from './element.constants';
 // The current state of the application doesn't need all of these, but future applications will most definately need them.
 // So they are left here as a matter of future-proofing.
 
- // Hydrogen - H
+//  // Hydrogen - H
 // smuggle something c1H = num.c1 + elm.cH; // 1H
 // smuggle something c2H = num.c2 + elm.cH; // 2H
 // smuggle something c3H = num.c3 + elm.cH; // 3H
